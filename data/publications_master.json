@@ -1,0 +1,469 @@
+[
+  {
+    "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
+    "year": 2024,
+    "journal": "Nature Communications",
+    "type": "Article",
+    "doi": "10.1038/s41467-024-50415-9",
+    "featured": true,
+    "slug": "aihflevel"
+  },
+  {
+    "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
+    "year": 2023,
+    "journal": "iScience",
+    "type": "Article",
+    "doi": "10.1016/j.isci.2023.107587",
+    "featured": true,
+    "slug": "apvs"
+  },
+  {
+    "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
+    "year": 2022,
+    "journal": "Journal of Translational Medicine",
+    "type": "Article",
+    "doi": "10.1186/s12967-022-03795-9",
+    "featured": true,
+    "slug": "smc-fate"
+  },
+  {
+    "title": "Aspirin after PCI in Acute Coronary Syndromes",
+    "year": 2026,
+    "journal": "The New-England Medical Review and Journal",
+    "type": "Article"
+  },
+  {
+    "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
+    "year": 2025,
+    "journal": "European Heart Journal",
+    "type": "Article"
+  },
+  {
+    "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
+    "year": 2026,
+    "journal": "BIO Integration",
+    "type": "Article"
+  },
+  {
+    "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
+    "year": 2026,
+    "journal": "Med Research",
+    "type": "Article",
+    "doi": "10.1002/mdr2.70073"
+  },
+  {
+    "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
+    "year": 2026,
+    "journal": "Human Mutation",
+    "type": "Article",
+    "doi": "10.1155/humu/5591097"
+  },
+  {
+    "title": "A gene interaction network–based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
+    "year": 2026,
+    "journal": "Clinical and Experimental Medicine",
+    "type": "Article",
+    "doi": "10.1007/s10238-026-02130-6"
+  },
+  {
+    "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
+    "year": 2026,
+    "journal": "PLOS One",
+    "type": "Article",
+    "doi": "10.1371/journal.pone.0346326"
+  },
+  {
+    "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
+    "year": 2026,
+    "journal": "Advanced Genetics",
+    "type": "Article",
+    "doi": "10.1002/ggn2.202500053"
+  },
+  {
+    "title": "Vascular smooth muscle cell–derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
+    "year": 2026,
+    "journal": "Journal of Clinical Investigation",
+    "type": "Article",
+    "doi": "10.1172/JCI194175"
+  },
+  {
+    "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
+    "year": 2026,
+    "journal": "Current Proteomics",
+    "type": "Article"
+  },
+  {
+    "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
+    "year": 2026,
+    "journal": "Frontiers in Cardiovascular Medicine",
+    "type": "Article",
+    "doi": "10.3389/fcvm.2025.1724572"
+  },
+  {
+    "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
+    "year": 2025,
+    "journal": "iScience",
+    "type": "Article",
+    "doi": "10.1016/j.isci.2025.114320"
+  },
+  {
+    "title": "Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair",
+    "year": 2025,
+    "journal": "Clinical Interventions in Aging",
+    "type": "Article"
+  },
+  {
+    "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
+    "year": 2025,
+    "journal": "BMC Biology",
+    "type": "Article",
+    "doi": "10.1186/s12915-025-02400-x"
+  },
+  {
+    "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
+    "year": 2025,
+    "journal": "Frontiers in Nutrition",
+    "type": "Article"
+  },
+  {
+    "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
+    "year": 2025,
+    "journal": "Frontiers in Oncology",
+    "type": "Article"
+  },
+  {
+    "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
+    "year": 2025,
+    "journal": "Oral Diseases",
+    "type": "Article"
+  },
+  {
+    "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
+    "year": 2025,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
+    "year": 2025,
+    "journal": "International Journal of Nanomedicine",
+    "type": "Article"
+  },
+  {
+    "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
+    "year": 2025,
+    "journal": "Life Conflux",
+    "type": "Article"
+  },
+  {
+    "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
+    "year": 2025,
+    "journal": "Journal of Integrative Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
+    "year": 2025,
+    "journal": "Oncology Research",
+    "type": "Article"
+  },
+  {
+    "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
+    "year": 2025,
+    "journal": "Scientific Reports",
+    "type": "Article"
+  },
+  {
+    "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
+    "year": 2025,
+    "journal": "Med Research",
+    "type": "Article",
+    "doi": "10.1002/mdr2.70004"
+  },
+  {
+    "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
+    "year": 2025,
+    "journal": "Frontiers in Public Health",
+    "type": "Article"
+  },
+  {
+    "title": "A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy",
+    "year": 2025,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
+    "year": 2025,
+    "journal": "Journal for ImmunoTherapy of Cancer",
+    "type": "Article",
+    "doi": "10.1136/jitc-2024-010787",
+    "featured": true,
+    "slug": "b4galt2"
+  },
+  {
+    "title": "Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics",
+    "year": 2025,
+    "journal": "Journal of Inflammation Research",
+    "type": "Article"
+  },
+  {
+    "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
+    "year": 2025,
+    "journal": "Chemico-Biological Interactions",
+    "type": "Article"
+  },
+  {
+    "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
+    "year": 2025,
+    "journal": "JCO Precision Oncology",
+    "type": "Article",
+    "doi": "10.1200/PO-24-00875"
+  },
+  {
+    "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
+    "year": 2025,
+    "journal": "Journal for ImmunoTherapy of Cancer",
+    "type": "Article",
+    "doi": "10.1136/jitc-2024-010127",
+    "featured": true,
+    "slug": "nlrp3-ici"
+  },
+  {
+    "title": "ABCA1 Acts as a Protective Modulator in Amyotrophic Lateral Sclerosis and Links to Metabolic Status",
+    "year": 2025,
+    "journal": "Preprint",
+    "type": "Preprint"
+  },
+  {
+    "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
+    "year": 2024,
+    "journal": "Scientific Reports",
+    "type": "Article"
+  },
+  {
+    "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
+    "year": 2024,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
+    "year": 2024,
+    "journal": "Human Molecular Genetics",
+    "type": "Article"
+  },
+  {
+    "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
+    "year": 2024,
+    "journal": "Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension",
+    "year": 2024,
+    "journal": "Respiratory Research",
+    "type": "Article"
+  },
+  {
+    "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
+    "year": 2024,
+    "journal": "Journal of Trace Elements in Medicine and Biology",
+    "type": "Article"
+  },
+  {
+    "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
+    "year": 2024,
+    "journal": "JCO Precision Oncology",
+    "type": "Article"
+  },
+  {
+    "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
+    "year": 2024,
+    "journal": "Clinical Cardiology",
+    "type": "Article"
+  },
+  {
+    "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
+    "year": 2024,
+    "journal": "Frontiers in Oncology",
+    "type": "Article"
+  },
+  {
+    "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+    "year": 2024,
+    "journal": "The Journal of Prevention of Alzheimer's Disease",
+    "type": "Article"
+  },
+  {
+    "title": "Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)",
+    "year": 2024,
+    "journal": "Computer Methods and Programs in Biomedicine Update",
+    "type": "Article"
+  },
+  {
+    "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
+    "year": 2024,
+    "journal": "Journal of Proteome Research",
+    "type": "Article",
+    "doi": "10.1021/acs.jproteome.4c00522",
+    "featured": true,
+    "slug": "olink-dcm"
+  },
+  {
+    "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
+    "year": 2024,
+    "journal": "Clinical and Experimental Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Identification of diagnostic signature and immune infiltration for ischemic cardiomyopathy based on cuproptosis-related genes through bioinformatics analysis and experimental validation",
+    "year": 2024,
+    "journal": "International Immunopharmacology",
+    "type": "Article"
+  },
+  {
+    "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
+    "year": 2024,
+    "journal": "European Journal of Surgical Oncology",
+    "type": "Article"
+  },
+  {
+    "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
+    "year": 2024,
+    "journal": "Molecular Cancer",
+    "type": "Article",
+    "doi": "10.1186/s12943-024-02047-2",
+    "featured": true,
+    "slug": "time-cart"
+  },
+  {
+    "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
+    "year": 2024,
+    "journal": "Scientific Reports",
+    "type": "Article",
+    "doi": "10.1038/s41598-024-65236-5",
+    "featured": true,
+    "slug": "circadian-ihd"
+  },
+  {
+    "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
+    "year": 2024,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
+    "year": 2024,
+    "journal": "Cancer Letters",
+    "type": "Article"
+  },
+  {
+    "title": "Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination",
+    "year": 2024,
+    "journal": "Cancer Letters",
+    "type": "Article",
+    "doi": "10.1016/j.canlet.2024.217079",
+    "featured": true,
+    "slug": "icd-cart"
+  },
+  {
+    "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
+    "year": 2024,
+    "journal": "Clinical Interventions in Aging",
+    "type": "Article"
+  },
+  {
+    "title": "Proteomics appending a complementary dimension to precision oncotherapy",
+    "year": 2024,
+    "journal": "Computational and Structural Biotechnology Journal",
+    "type": "Article"
+  },
+  {
+    "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
+    "year": 2024,
+    "journal": "Cardiovascular Innovations and Applications",
+    "type": "Article"
+  },
+  {
+    "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
+    "year": 2024,
+    "journal": "Environmental Toxicology",
+    "type": "Article"
+  },
+  {
+    "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
+    "year": 2024,
+    "journal": "Aging",
+    "type": "Article"
+  },
+  {
+    "title": "Omics-based molecular classifications empowering in precision oncology",
+    "year": 2024,
+    "journal": "Cellular Oncology",
+    "type": "Article"
+  },
+  {
+    "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
+    "year": 2024,
+    "journal": "Preprint",
+    "type": "Preprint"
+  },
+  {
+    "title": "Urological Evaluation and Psychological-behavioral Profile before and post Detethering Procedures in Children with Tethered Cord Syndrome",
+    "year": 2023,
+    "journal": "Preprint",
+    "type": "Preprint"
+  },
+  {
+    "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
+    "year": 2023,
+    "journal": "Journal of Magnesium and Alloys",
+    "type": "Article"
+  },
+  {
+    "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
+    "year": 2023,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article"
+  },
+  {
+    "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
+    "year": 2023,
+    "journal": "International Journal of Bioprinting",
+    "type": "Article"
+  },
+  {
+    "title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
+    "year": 2023,
+    "journal": "Patent",
+    "type": "Patent"
+  },
+  {
+    "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
+    "year": 2023,
+    "journal": "European Journal of Pharmacology",
+    "type": "Article",
+    "doi": "10.1016/j.ejphar.2023.175569",
+    "featured": true,
+    "slug": "idebenone-ferroptosis"
+  },
+  {
+    "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
+    "year": 2023,
+    "journal": "Preprint",
+    "type": "Preprint"
+  },
+  {
+    "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
+    "year": 2022,
+    "journal": "ESC Heart Failure",
+    "type": "Article"
+  },
+  {
+    "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
+    "year": 2021,
+    "journal": "Frontiers in Oncology",
+    "type": "Article"
+  }
+]

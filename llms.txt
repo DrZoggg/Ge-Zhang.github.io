@@ -1,0 +1,16 @@
+# Ge Zhang Academic Hub
+
+Ge Zhang is a cardiovascular researcher focusing on artificial intelligence, multimodal clinical data, multi-omics, atherosclerosis and vascular biology, circadian cardiovascular biology, heart failure, translational biomarkers, and precision cardiovascular medicine.
+
+Canonical researcher identifier:
+- ORCID: https://orcid.org/0000-0002-3116-3246
+
+Main resources:
+- Publication index: /publications.html
+- Machine-readable publication data: /publications.json
+- Selected research pages: /papers/
+
+Author profiles:
+- Google Scholar: https://scholar.google.com.hk/citations?user=dNAcSlMAAAAJ&hl=zh-CN
+- ResearchGate: https://www.researchgate.net/profile/Ge-Zhang-42/research
+- GitHub: https://github.com/DrZoggg
