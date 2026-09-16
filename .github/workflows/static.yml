@@ -43,7 +43,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           cp -R assets papers _site/
-          cp index.html publications.html publications.json robots.txt sitemap.xml llms.txt 404.html _site/
+          cp index.html publications.html publications.json publication_inventory.csv robots.txt sitemap.xml llms.txt 404.html _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

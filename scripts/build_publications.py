@@ -1,9 +1,31 @@
-import json, html, urllib.parse
-from sync_common import ROOT, load_master
+import csv
+import html
+import json
+import urllib.parse
+
+from sync_common import ROOT, is_withdrawn, load_master, save_master
 
 SITE_ROOT = "https://drzoggg.github.io/Ge-Zhang.github.io"
-items = sorted(load_master(), key=lambda x: (-int(x.get("year") or 0), (x.get("title") or "").lower()))
+master, _ = save_master(load_master())
+items = [item for item in master if not is_withdrawn(item)]
 (ROOT / "publications.json").write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+
+with (ROOT / "publication_inventory.csv").open("w", encoding="utf-8-sig", newline="") as handle:
+    writer = csv.DictWriter(
+        handle,
+        fieldnames=["year", "title", "journal", "type", "doi", "featured"],
+        extrasaction="ignore",
+    )
+    writer.writeheader()
+    for item in items:
+        writer.writerow({
+            "year": item.get("year") or "",
+            "title": item.get("title") or "Untitled work",
+            "journal": item.get("journal") or "Unknown source",
+            "type": item.get("type") or "Work",
+            "doi": item.get("doi") or "",
+            "featured": True if item.get("featured") else "",
+        })
 
 def scholar(title):
     return "https://scholar.google.com/scholar?q=" + urllib.parse.quote(f'"{title}"')
@@ -91,4 +113,7 @@ sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sit
 sitemap += "\n".join(f"  <url><loc>{html.escape(u)}</loc></url>" for u in urls)
 sitemap += "\n</urlset>\n"
 (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
-print(f"Built publications page with {len(items)} records.")
+print(
+    f"Built publications page with {len(items)} public records "
+    f"from {len(master)} unique master records."
+)

@@ -34,7 +34,7 @@ for x in payload.get("message", {}).get("items", []):
     })
 
 master = load_master()
-master, added, enriched = merge_items(master, incoming, "Crossref:ORCID")
+master, added, enriched, duplicates_merged = merge_items(master, incoming, "Crossref:ORCID")
 save_master(master)
 status_path = ROOT / "sync_status.json"
 status = {}
@@ -48,7 +48,11 @@ status["crossref"] = {
     "records_returned": len(incoming),
     "new_records_added": added,
     "records_enriched": enriched,
+    "duplicate_records_merged": duplicates_merged,
     "orcid": ORCID,
 }
 status_path.write_text(json.dumps(status, indent=2), encoding="utf-8")
-print(f"Crossref sync: {len(incoming)} returned; {added} added; {enriched} enriched.")
+print(
+    f"Crossref sync: {len(incoming)} returned; {added} added; "
+    f"{enriched} enriched; {duplicates_merged} duplicates merged."
+)

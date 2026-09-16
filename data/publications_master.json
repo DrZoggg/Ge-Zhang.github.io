@@ -1,6 +1,6 @@
 [
   {
-    "title": "A gene interaction network–based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
+    "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
     "year": 2026,
     "journal": "Clinical and Experimental Medicine",
     "type": "Article",
@@ -44,11 +44,10 @@
     ]
   },
   {
-    "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re‐Assessment",
+    "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
     "year": 2026,
     "journal": "Med Research",
     "type": "Article",
-    "source": "Crossref:ORCID",
     "doi": "10.1002/mdr2.70052",
     "url": "https://doi.org/10.1002/mdr2.70052",
     "sources": [
@@ -115,11 +114,11 @@
     ]
   },
   {
-    "title": "Vascular smooth muscle cell–derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
+    "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
     "year": 2026,
     "journal": "Journal of Clinical Investigation",
     "type": "Article",
-    "doi": "10.1172/JCI194175",
+    "doi": "10.1172/jci194175",
     "url": "https://doi.org/10.1172/jci194175",
     "sources": [
       "ORCID"
@@ -309,7 +308,7 @@
     "year": 2025,
     "journal": "JCO Precision Oncology",
     "type": "Article",
-    "doi": "10.1200/PO-24-00875",
+    "doi": "10.1200/po-24-00875",
     "url": "https://doi.org/10.1200/po-24-00875",
     "sources": [
       "Crossref:ORCID",
@@ -374,19 +373,15 @@
     ]
   },
   {
-    "title": "Advancing predictive markers in lung adenocarcinoma: A machine <scp>learning‐based</scp> immunotherapy prognostic prediction signature",
-    "year": 2024,
-    "journal": "Environmental Toxicology",
-    "type": "Article",
-    "source": "ORCID",
-    "doi": "10.1002/tox.24284",
-    "url": "https://doi.org/10.1002/tox.24284"
-  },
-  {
     "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
     "year": 2024,
     "journal": "Environmental Toxicology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1002/tox.24284",
+    "url": "https://doi.org/10.1002/tox.24284",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
@@ -469,19 +464,15 @@
     ]
   },
   {
-    "title": "Deciphering lung adenocarcinoma evolution: Integrative s<scp>ingle‐cell</scp> genomics identifies the prognostic lung progression associated signature",
-    "year": 2024,
-    "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article",
-    "source": "ORCID",
-    "doi": "10.1111/jcmm.18408",
-    "url": "https://doi.org/10.1111/jcmm.18408"
-  },
-  {
     "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
     "year": 2024,
     "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/jcmm.18408",
+    "url": "https://doi.org/10.1111/jcmm.18408",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
@@ -508,19 +499,15 @@
     ]
   },
   {
-    "title": "Differential Expression Spectrum of\n                    <scp>circRNA</scp>\n                    in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
-    "year": 2024,
-    "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article",
-    "source": "ORCID",
-    "doi": "10.1111/jcmm.70258",
-    "url": "https://doi.org/10.1111/jcmm.70258"
-  },
-  {
     "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
     "year": 2024,
     "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/jcmm.70258",
+    "url": "https://doi.org/10.1111/jcmm.70258",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination",
@@ -784,16 +771,13 @@
     "title": "Urological Evaluation and Psychological-behavioral Profile before and post Detethering Procedures in Children with Tethered Cord Syndrome",
     "year": 2023,
     "journal": "Preprint",
-    "type": "Preprint"
-  },
-  {
-    "title": "WITHDRAWN: Urological Evaluation and Psychological-behavioral Profile before and post Detethering Procedures in Children with Tethered Cord Syndrome",
-    "year": 2023,
-    "journal": "Unknown source",
     "type": "Preprint",
-    "source": "ORCID",
     "doi": "10.21203/rs.3.rs-3395716/v1",
-    "url": "https://doi.org/10.21203/rs.3.rs-3395716/v1"
+    "url": "https://doi.org/10.21203/rs.3.rs-3395716/v1",
+    "status": "withdrawn",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -835,8 +819,10 @@
     "year": 2020,
     "journal": "International Journal of Ophthalmology",
     "type": "Article",
-    "source": "ORCID",
     "doi": "10.3980/j.issn.1672-5123.2020.12.13",
-    "url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13"
+    "url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
+    "sources": [
+      "ORCID"
+    ]
   }
 ]
