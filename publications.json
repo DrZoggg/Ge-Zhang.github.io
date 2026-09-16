@@ -26,6 +26,15 @@
     "type": "Article"
   },
   {
+    "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re‐Assessment",
+    "year": 2026,
+    "journal": "Med Research",
+    "type": "Article",
+    "source": "Crossref:ORCID",
+    "doi": "10.1002/mdr2.70052",
+    "url": "https://doi.org/10.1002/mdr2.70052"
+  },
+  {
     "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
     "year": 2026,
     "journal": "BIO Integration",
@@ -36,14 +45,22 @@
     "year": 2026,
     "journal": "Advanced Genetics",
     "type": "Article",
-    "doi": "10.1002/ggn2.202500053"
+    "doi": "10.1002/ggn2.202500053",
+    "url": "https://doi.org/10.1002/ggn2.202500053",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
     "year": 2026,
     "journal": "Human Mutation",
     "type": "Article",
-    "doi": "10.1155/humu/5591097"
+    "doi": "10.1155/humu/5591097",
+    "url": "https://doi.org/10.1155/humu/5591097",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
@@ -57,7 +74,11 @@
     "year": 2026,
     "journal": "Med Research",
     "type": "Article",
-    "doi": "10.1002/mdr2.70073"
+    "doi": "10.1002/mdr2.70073",
+    "url": "https://doi.org/10.1002/mdr2.70073",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "Vascular smooth muscle cell–derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
@@ -166,14 +187,22 @@
     "year": 2025,
     "journal": "Med Research",
     "type": "Article",
-    "doi": "10.1002/mdr2.70004"
+    "doi": "10.1002/mdr2.70004",
+    "url": "https://doi.org/10.1002/mdr2.70004",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
     "year": 2025,
     "journal": "JCO Precision Oncology",
     "type": "Article",
-    "doi": "10.1200/PO-24-00875"
+    "doi": "10.1200/PO-24-00875",
+    "url": "https://doi.org/10.1200/po-24-00875",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -221,7 +250,11 @@
     "type": "Article",
     "doi": "10.1038/s41467-024-50415-9",
     "featured": true,
-    "slug": "aihflevel"
+    "slug": "aihflevel",
+    "url": "https://doi.org/10.1038/s41467-024-50415-9",
+    "sources": [
+      "Crossref:ORCID"
+    ]
   },
   {
     "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
