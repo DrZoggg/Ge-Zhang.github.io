@@ -4,26 +4,44 @@
     "year": 2026,
     "journal": "Clinical and Experimental Medicine",
     "type": "Article",
-    "doi": "10.1007/s10238-026-02130-6"
+    "doi": "10.1007/s10238-026-02130-6",
+    "url": "https://doi.org/10.1007/s10238-026-02130-6",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
     "year": 2026,
     "journal": "Current Proteomics",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.curpro.2025.100054",
+    "url": "https://doi.org/10.1016/j.curpro.2025.100054",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
     "year": 2026,
     "journal": "Frontiers in Cardiovascular Medicine",
     "type": "Article",
-    "doi": "10.3389/fcvm.2025.1724572"
+    "doi": "10.3389/fcvm.2025.1724572",
+    "url": "https://doi.org/10.3389/fcvm.2025.1724572",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Aspirin after PCI in Acute Coronary Syndromes",
     "year": 2026,
     "journal": "The New-England Medical Review and Journal",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1056/nejmc2518964",
+    "url": "https://doi.org/10.1056/nejmc2518964",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re‐Assessment",
@@ -32,13 +50,22 @@
     "type": "Article",
     "source": "Crossref:ORCID",
     "doi": "10.1002/mdr2.70052",
-    "url": "https://doi.org/10.1002/mdr2.70052"
+    "url": "https://doi.org/10.1002/mdr2.70052",
+    "sources": [
+      "Crossref:ORCID",
+      "ORCID"
+    ]
   },
   {
     "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
     "year": 2026,
     "journal": "BIO Integration",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.15212/bioi-2026-0017",
+    "url": "https://doi.org/10.15212/bioi-2026-0017",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -48,7 +75,8 @@
     "doi": "10.1002/ggn2.202500053",
     "url": "https://doi.org/10.1002/ggn2.202500053",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
@@ -59,7 +87,8 @@
     "doi": "10.1155/humu/5591097",
     "url": "https://doi.org/10.1155/humu/5591097",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
@@ -67,7 +96,11 @@
     "year": 2026,
     "journal": "PLOS One",
     "type": "Article",
-    "doi": "10.1371/journal.pone.0346326"
+    "doi": "10.1371/journal.pone.0346326",
+    "url": "https://doi.org/10.1371/journal.pone.0346326",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
@@ -77,7 +110,8 @@
     "doi": "10.1002/mdr2.70073",
     "url": "https://doi.org/10.1002/mdr2.70073",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
@@ -85,93 +119,165 @@
     "year": 2026,
     "journal": "Journal of Clinical Investigation",
     "type": "Article",
-    "doi": "10.1172/JCI194175"
+    "doi": "10.1172/JCI194175",
+    "url": "https://doi.org/10.1172/jci194175",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy",
     "year": 2025,
     "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/jcmm.70475",
+    "url": "https://doi.org/10.1111/jcmm.70475",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
     "year": 2025,
     "journal": "iScience",
     "type": "Article",
-    "doi": "10.1016/j.isci.2025.114320"
+    "doi": "10.1016/j.isci.2025.114320",
+    "url": "https://doi.org/10.1016/j.isci.2025.114320",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "ABCA1 Acts as a Protective Modulator in Amyotrophic Lateral Sclerosis and Links to Metabolic Status",
     "year": 2025,
     "journal": "Preprint",
-    "type": "Preprint"
+    "type": "Preprint",
+    "doi": "10.2139/ssrn.5292589",
+    "url": "https://doi.org/10.2139/ssrn.5292589",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
     "year": 2025,
     "journal": "Frontiers in Nutrition",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.3389/fnut.2025.1658286",
+    "url": "https://doi.org/10.3389/fnut.2025.1658286",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
     "year": 2025,
     "journal": "Frontiers in Public Health",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.3389/fpubh.2025.1521372",
+    "url": "https://doi.org/10.3389/fpubh.2025.1521372",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
     "year": 2025,
     "journal": "Oncology Research",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.32604/or.2025.059290",
+    "url": "https://doi.org/10.32604/or.2025.059290",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
     "year": 2025,
     "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/jcmm.70725",
+    "url": "https://doi.org/10.1111/jcmm.70725",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair",
     "year": 2025,
     "journal": "Clinical Interventions in Aging",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.2147/cia.s493841",
+    "url": "https://doi.org/10.2147/cia.s493841",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
     "year": 2025,
     "journal": "Scientific Reports",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1038/s41598-025-98859-3",
+    "url": "https://doi.org/10.1038/s41598-025-98859-3",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics",
     "year": 2025,
     "journal": "Journal of Inflammation Research",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.2147/jir.s495784",
+    "url": "https://doi.org/10.2147/jir.s495784",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
     "year": 2025,
     "journal": "Journal of Integrative Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.joim.2025.06.003",
+    "url": "https://doi.org/10.1016/j.joim.2025.06.003",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
     "year": 2025,
     "journal": "BMC Biology",
     "type": "Article",
-    "doi": "10.1186/s12915-025-02400-x"
+    "doi": "10.1186/s12915-025-02400-x",
+    "url": "https://doi.org/10.1186/s12915-025-02400-x",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
     "year": 2025,
     "journal": "Life Conflux",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.71321/fy14v342",
+    "url": "https://doi.org/10.71321/fy14v342",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
     "year": 2025,
     "journal": "Chemico-Biological Interactions",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.cbi.2025.111421",
+    "url": "https://doi.org/10.1016/j.cbi.2025.111421",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -180,7 +286,11 @@
     "type": "Article",
     "doi": "10.1136/jitc-2024-010787",
     "featured": true,
-    "slug": "b4galt2"
+    "slug": "b4galt2",
+    "url": "https://doi.org/10.1136/jitc-2024-010787",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -190,7 +300,8 @@
     "doi": "10.1002/mdr2.70004",
     "url": "https://doi.org/10.1002/mdr2.70004",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
@@ -201,26 +312,42 @@
     "doi": "10.1200/PO-24-00875",
     "url": "https://doi.org/10.1200/po-24-00875",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
     "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
     "year": 2025,
     "journal": "Frontiers in Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.3389/fonc.2025.1538574",
+    "url": "https://doi.org/10.3389/fonc.2025.1538574",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
     "year": 2025,
     "journal": "Oral Diseases",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/odi.70054",
+    "url": "https://doi.org/10.1111/odi.70054",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
     "year": 2025,
     "journal": "International Journal of Nanomedicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.2147/ijn.s522157",
+    "url": "https://doi.org/10.2147/ijn.s522157",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
@@ -229,13 +356,31 @@
     "type": "Article",
     "doi": "10.1136/jitc-2024-010127",
     "featured": true,
-    "slug": "nlrp3-ici"
+    "slug": "nlrp3-ici",
+    "url": "https://doi.org/10.1136/jitc-2024-010127",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
     "year": 2025,
     "journal": "European Heart Journal",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1093/eurheartj/ehaf523",
+    "url": "https://doi.org/10.1093/eurheartj/ehaf523",
+    "sources": [
+      "ORCID"
+    ]
+  },
+  {
+    "title": "Advancing predictive markers in lung adenocarcinoma: A machine <scp>learning‐based</scp> immunotherapy prognostic prediction signature",
+    "year": 2024,
+    "journal": "Environmental Toxicology",
+    "type": "Article",
+    "source": "ORCID",
+    "doi": "10.1002/tox.24284",
+    "url": "https://doi.org/10.1002/tox.24284"
   },
   {
     "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
@@ -253,44 +398,84 @@
     "slug": "aihflevel",
     "url": "https://doi.org/10.1038/s41467-024-50415-9",
     "sources": [
-      "Crossref:ORCID"
+      "Crossref:ORCID",
+      "ORCID"
     ]
   },
   {
     "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
     "year": 2024,
     "journal": "Aging",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.18632/aging.205564",
+    "url": "https://doi.org/10.18632/aging.205564",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
     "year": 2024,
     "journal": "JCO Precision Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1200/po.24.00089",
+    "url": "https://doi.org/10.1200/po.24.00089",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
     "year": 2024,
     "journal": "Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1186/s10020-024-00963-z",
+    "url": "https://doi.org/10.1186/s10020-024-00963-z",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
     "year": 2024,
     "journal": "Clinical Cardiology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1002/clc.70019",
+    "url": "https://doi.org/10.1002/clc.70019",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
     "year": 2024,
     "journal": "Journal of Trace Elements in Medicine and Biology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.jtemb.2024.127543",
+    "url": "https://doi.org/10.1016/j.jtemb.2024.127543",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
     "year": 2024,
     "journal": "Cardiovascular Innovations and Applications",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.15212/cvia.2024.0023",
+    "url": "https://doi.org/10.15212/cvia.2024.0023",
+    "sources": [
+      "ORCID"
+    ]
+  },
+  {
+    "title": "Deciphering lung adenocarcinoma evolution: Integrative s<scp>ingle‐cell</scp> genomics identifies the prognostic lung progression associated signature",
+    "year": 2024,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article",
+    "source": "ORCID",
+    "doi": "10.1111/jcmm.18408",
+    "url": "https://doi.org/10.1111/jcmm.18408"
   },
   {
     "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -302,7 +487,12 @@
     "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
     "year": 2024,
     "journal": "Clinical and Experimental Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1007/s10238-024-01439-4",
+    "url": "https://doi.org/10.1007/s10238-024-01439-4",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
@@ -311,7 +501,20 @@
     "type": "Article",
     "doi": "10.1186/s12943-024-02047-2",
     "featured": true,
-    "slug": "time-cart"
+    "slug": "time-cart",
+    "url": "https://doi.org/10.1186/s12943-024-02047-2",
+    "sources": [
+      "ORCID"
+    ]
+  },
+  {
+    "title": "Differential Expression Spectrum of\n                    <scp>circRNA</scp>\n                    in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
+    "year": 2024,
+    "journal": "Journal of Cellular and Molecular Medicine",
+    "type": "Article",
+    "source": "ORCID",
+    "doi": "10.1111/jcmm.70258",
+    "url": "https://doi.org/10.1111/jcmm.70258"
   },
   {
     "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -326,37 +529,66 @@
     "type": "Article",
     "doi": "10.1016/j.canlet.2024.217079",
     "featured": true,
-    "slug": "icd-cart"
+    "slug": "icd-cart",
+    "url": "https://doi.org/10.1016/j.canlet.2024.217079",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension",
     "year": 2024,
     "journal": "Respiratory Research",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1186/s12931-024-02978-w",
+    "url": "https://doi.org/10.1186/s12931-024-02978-w",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Identification of diagnostic signature and immune infiltration for ischemic cardiomyopathy based on cuproptosis-related genes through bioinformatics analysis and experimental validation",
     "year": 2024,
     "journal": "International Immunopharmacology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.intimp.2024.112574",
+    "url": "https://doi.org/10.1016/j.intimp.2024.112574",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
     "year": 2024,
     "journal": "Frontiers in Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.3389/fonc.2024.1425895",
+    "url": "https://doi.org/10.3389/fonc.2024.1425895",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
     "year": 2024,
     "journal": "Human Molecular Genetics",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1093/hmg/ddae189",
+    "url": "https://doi.org/10.1093/hmg/ddae189",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)",
     "year": 2024,
     "journal": "Computer Methods and Programs in Biomedicine Update",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.cmpbup.2024.100164",
+    "url": "https://doi.org/10.1016/j.cmpbup.2024.100164",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
@@ -365,25 +597,44 @@
     "type": "Article",
     "doi": "10.1038/s41598-024-65236-5",
     "featured": true,
-    "slug": "circadian-ihd"
+    "slug": "circadian-ihd",
+    "url": "https://doi.org/10.1038/s41598-024-65236-5",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
     "year": 2024,
     "journal": "Scientific Reports",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1038/s41598-024-80885-2",
+    "url": "https://doi.org/10.1038/s41598-024-80885-2",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Omics-based molecular classifications empowering in precision oncology",
     "year": 2024,
     "journal": "Cellular Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1007/s13402-023-00912-8",
+    "url": "https://doi.org/10.1007/s13402-023-00912-8",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
     "year": 2024,
     "journal": "European Journal of Surgical Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.ejso.2024.108527",
+    "url": "https://doi.org/10.1016/j.ejso.2024.108527",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -392,37 +643,66 @@
     "type": "Article",
     "doi": "10.1021/acs.jproteome.4c00522",
     "featured": true,
-    "slug": "olink-dcm"
+    "slug": "olink-dcm",
+    "url": "https://doi.org/10.1021/acs.jproteome.4c00522",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Proteomics appending a complementary dimension to precision oncotherapy",
     "year": 2024,
     "journal": "Computational and Structural Biotechnology Journal",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.csbj.2024.04.044",
+    "url": "https://doi.org/10.1016/j.csbj.2024.04.044",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
     "year": 2024,
     "journal": "The Journal of Prevention of Alzheimer's Disease",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.14283/jpad.2024.161",
+    "url": "https://doi.org/10.14283/jpad.2024.161",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
     "year": 2024,
     "journal": "Cancer Letters",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.canlet.2024.217083",
+    "url": "https://doi.org/10.1016/j.canlet.2024.217083",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
     "year": 2024,
     "journal": "Preprint",
-    "type": "Preprint"
+    "type": "Preprint",
+    "doi": "10.2139/ssrn.4857099",
+    "url": "https://doi.org/10.2139/ssrn.4857099",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
     "year": 2024,
     "journal": "Clinical Interventions in Aging",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.2147/cia.s462542",
+    "url": "https://doi.org/10.2147/cia.s462542",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
@@ -434,7 +714,12 @@
     "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
     "year": 2023,
     "journal": "Preprint",
-    "type": "Preprint"
+    "type": "Preprint",
+    "doi": "10.2139/ssrn.4391582",
+    "url": "https://doi.org/10.2139/ssrn.4391582",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -443,19 +728,33 @@
     "type": "Article",
     "doi": "10.1016/j.isci.2023.107587",
     "featured": true,
-    "slug": "apvs"
+    "slug": "apvs",
+    "url": "https://doi.org/10.1016/J.ISCI.2023.107587",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
     "year": 2023,
     "journal": "Journal of Magnesium and Alloys",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1016/j.jma.2023.05.007",
+    "url": "https://doi.org/10.1016/J.JMA.2023.05.007",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
     "year": 2023,
     "journal": "Journal of Cellular and Molecular Medicine",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1111/jcmm.17789",
+    "url": "https://doi.org/10.1111/jcmm.17789",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -464,13 +763,22 @@
     "type": "Article",
     "doi": "10.1016/j.ejphar.2023.175569",
     "featured": true,
-    "slug": "idebenone-ferroptosis"
+    "slug": "idebenone-ferroptosis",
+    "url": "https://doi.org/10.1016/j.ejphar.2023.175569",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
     "year": 2023,
     "journal": "International Journal of Bioprinting",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.18063/ijb.740",
+    "url": "https://doi.org/10.18063/ijb.740",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Urological Evaluation and Psychological-behavioral Profile before and post Detethering Procedures in Children with Tethered Cord Syndrome",
@@ -479,24 +787,56 @@
     "type": "Preprint"
   },
   {
+    "title": "WITHDRAWN: Urological Evaluation and Psychological-behavioral Profile before and post Detethering Procedures in Children with Tethered Cord Syndrome",
+    "year": 2023,
+    "journal": "Unknown source",
+    "type": "Preprint",
+    "source": "ORCID",
+    "doi": "10.21203/rs.3.rs-3395716/v1",
+    "url": "https://doi.org/10.21203/rs.3.rs-3395716/v1"
+  },
+  {
     "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
     "year": 2022,
     "journal": "Journal of Translational Medicine",
     "type": "Article",
     "doi": "10.1186/s12967-022-03795-9",
     "featured": true,
-    "slug": "smc-fate"
+    "slug": "smc-fate",
+    "url": "https://doi.org/10.1186/s12967-022-03795-9",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
     "year": 2022,
     "journal": "ESC Heart Failure",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.1002/ehf2.14003",
+    "url": "https://doi.org/10.1002/ehf2.14003",
+    "sources": [
+      "ORCID"
+    ]
   },
   {
     "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
     "year": 2021,
     "journal": "Frontiers in Oncology",
-    "type": "Article"
+    "type": "Article",
+    "doi": "10.3389/fonc.2021.659217",
+    "url": "https://doi.org/10.3389/fonc.2021.659217",
+    "sources": [
+      "ORCID"
+    ]
+  },
+  {
+    "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+    "year": 2020,
+    "journal": "International Journal of Ophthalmology",
+    "type": "Article",
+    "source": "ORCID",
+    "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+    "url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13"
   }
 ]
