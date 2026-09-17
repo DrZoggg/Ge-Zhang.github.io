@@ -639,7 +639,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1002/ehf2.14003
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study
 - Journal: Frontiers in Oncology
