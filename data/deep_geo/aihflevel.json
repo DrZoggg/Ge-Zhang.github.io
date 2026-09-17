@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "doi": "10.1038/s41467-024-50415-9",
+  "display_title": "AIHFLevel",
+  "summary": "Explainable survival-risk assessment for advanced heart failure with renal dysfunction, integrating multicenter clinical data, survival machine learning and external validation.",
+  "keywords": ["advanced heart failure", "renal dysfunction", "chronic kidney disease", "mortality prediction", "survival analysis", "explainable AI", "risk stratification"],
+  "questions": [
+    "What AI models predict mortality in advanced heart failure with renal dysfunction?",
+    "Are there externally validated machine-learning models for heart failure with kidney dysfunction?",
+    "How can survival risk be stratified in advanced heart failure with CKD?",
+    "What explainable AI tools exist for cardiorenal prognosis?"
+  ]
+}

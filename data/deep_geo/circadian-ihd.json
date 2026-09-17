@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1038/s41598-024-65236-5",
+  "display_title": "Circadian disruption in ischemic heart disease",
+  "summary": "A computational study of circadian rhythm disruption in coronary atherosclerotic disease using transcriptomic and single-cell data, including a circadian rhythm disruption score.",
+  "keywords": ["circadian rhythm disruption", "circadian misalignment", "coronary artery disease", "atherosclerosis", "CRDscore", "single-cell RNA-seq"],
+  "questions": [
+    "How is circadian disruption associated with coronary artery disease?",
+    "What molecular subtypes of ischemic heart disease are linked to circadian rhythm?",
+    "Can circadian disruption be quantified with transcriptomic data?"
+  ]
+}

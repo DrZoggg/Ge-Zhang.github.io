@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1021/acs.jproteome.4c00522",
+  "display_title": "Olink proteomics in DCM-HF",
+  "summary": "Plasma Olink proteomics for biomarker discovery and diagnosis in dilated cardiomyopathy with heart failure.",
+  "keywords": ["Olink proteomics", "dilated cardiomyopathy", "heart failure", "SPP1", "IGFBP7", "F11R", "CHI3L1", "PLAUR"],
+  "questions": [
+    "What Olink protein biomarkers are associated with dilated cardiomyopathy and heart failure?",
+    "Which plasma proteins correlate with DCM-HF severity?",
+    "What proteomic biomarkers may aid DCM-HF diagnosis?"
+  ]
+}

@@ -1,0 +1,88 @@
+name: Paper Control Center
+
+on:
+  workflow_dispatch:
+    inputs:
+      paper:
+        description: "DOI (recommended), exact slug, exact title, or unique title substring"
+        required: true
+        type: string
+      deep_geo:
+        description: "Deep GEO"
+        required: true
+        default: "no_change"
+        type: choice
+        options:
+          - no_change
+          - enable
+          - disable
+      featured:
+        description: "Homepage Featured"
+        required: true
+        default: "no_change"
+        type: choice
+        options:
+          - no_change
+          - add
+          - remove
+      featured_position:
+        description: "Featured position (1 = first; blank keeps/defaults to last)"
+        required: false
+        type: string
+      featured_summary:
+        description: "Optional Featured summary; blank reuses existing or safe metadata fallback"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publication-data-updates
+  cancel-in-progress: false
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply paper controls, build, and validate
+        id: control
+        env:
+          PAPER_INPUT: ${{ inputs.paper }}
+          DEEP_GEO_INPUT: ${{ inputs.deep_geo }}
+          FEATURED_INPUT: ${{ inputs.featured }}
+          FEATURED_POSITION_INPUT: ${{ inputs.featured_position }}
+          FEATURED_SUMMARY_INPUT: ${{ inputs.featured_summary }}
+        run: python scripts/paper_control.py
+
+      - name: Commit only real changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications_master.json data/featured_papers.json data/deep_geo_papers.json data/deep_geo
+          git add index.html publications.html publications.json publication_inventory.csv
+          git add paper_index.json sitemap.xml llms.txt llms-full.txt papers
+          if git diff --cached --quiet; then
+            echo "No effective change. No commit and no Pages deployment."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "- **Commit:** skipped (no effective change)" >> "$GITHUB_STEP_SUMMARY"
+            echo "- **Deployment:** skipped" >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Update paper presentation controls"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "- **Commit:** created" >> "$GITHUB_STEP_SUMMARY"
+            echo "- **Deployment:** triggered by the push to main" >> "$GITHUB_STEP_SUMMARY"
+          fi

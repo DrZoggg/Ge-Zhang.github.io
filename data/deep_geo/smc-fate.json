@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1186/s12967-022-03795-9",
+  "display_title": "SMC fate in atherosclerosis",
+  "summary": "An integrative single-cell and bulk-transcriptomic study of vascular smooth muscle cell fate decisions and molecular heterogeneity in atherosclerosis.",
+  "keywords": ["vascular smooth muscle cell", "phenotypic switching", "atherosclerosis", "single-cell genomics", "molecular subtype"],
+  "questions": [
+    "How do vascular smooth muscle cell states vary across atherosclerosis?",
+    "What single-cell studies characterize SMC phenotypic switching in plaques?",
+    "Can SMC fate signatures define atherosclerosis molecular subtypes?"
+  ]
+}

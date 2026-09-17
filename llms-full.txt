@@ -1,0 +1,660 @@
+# Ge Zhang Academic Hub — Full Publication Index
+
+ORCID: https://orcid.org/0000-0002-3116-3246
+
+## A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity
+- Journal: Clinical and Experimental Medicine
+- Year: 2026
+- Type: Article
+- DOI: 10.1007/s10238-026-02130-6
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s10238-026-02130-6.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s10238-026-02130-6.md
+- Deep GEO: no
+
+## A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine
+- Journal: Current Proteomics
+- Year: 2026
+- Type: Article
+- DOI: 10.1016/j.curpro.2025.100054
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-curpro-2025-100054.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-curpro-2025-100054.md
+- Deep GEO: no
+
+## Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study
+- Journal: Frontiers in Cardiovascular Medicine
+- Year: 2026
+- Type: Article
+- DOI: 10.3389/fcvm.2025.1724572
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fcvm-2025-1724572.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fcvm-2025-1724572.md
+- Deep GEO: no
+
+## Aspirin after PCI in Acute Coronary Syndromes
+- Journal: The New-England Medical Review and Journal
+- Year: 2026
+- Type: Article
+- DOI: 10.1056/nejmc2518964
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1056-nejmc2518964.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1056-nejmc2518964.md
+- Deep GEO: no
+
+## Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment
+- Journal: Med Research
+- Year: 2026
+- Type: Article
+- DOI: 10.1002/mdr2.70052
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.md
+- Deep GEO: no
+
+## Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study
+- Journal: BIO Integration
+- Year: 2026
+- Type: Article
+- DOI: 10.15212/bioi-2026-0017
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-15212-bioi-2026-0017.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-15212-bioi-2026-0017.md
+- Deep GEO: no
+
+## From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks
+- Journal: Advanced Genetics
+- Year: 2026
+- Type: Article
+- DOI: 10.1002/ggn2.202500053
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ggn2-202500053.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ggn2-202500053.md
+- Deep GEO: no
+
+## PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family
+- Journal: Human Mutation
+- Year: 2026
+- Type: Article
+- DOI: 10.1155/humu/5591097
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1155-humu-5591097.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1155-humu-5591097.md
+- Deep GEO: no
+
+## Real-world safety of aliskiren in primary hypertension: A cross-database study
+- Journal: PLOS One
+- Year: 2026
+- Type: Article
+- DOI: 10.1371/journal.pone.0346326
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1371-journal-pone-0346326.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1371-journal-pone-0346326.md
+- Deep GEO: no
+
+## System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer
+- Journal: npj Precision Oncology
+- Year: 2026
+- Type: Article
+- DOI: 10.1038/s41698-026-01699-1
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.md
+- Deep GEO: no
+
+## Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care
+- Journal: Med Research
+- Year: 2026
+- Type: Article
+- DOI: 10.1002/mdr2.70073
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70073.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70073.md
+- Deep GEO: no
+
+## Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis
+- Journal: Journal of Clinical Investigation
+- Year: 2026
+- Type: Article
+- DOI: 10.1172/jci194175
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.md
+- Deep GEO: no
+
+## A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy
+- Journal: Journal of Cellular and Molecular Medicine
+- Year: 2025
+- Type: Article
+- DOI: 10.1111/jcmm.70475
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70475.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70475.md
+- Deep GEO: no
+
+## ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis
+- Journal: iScience
+- Year: 2025
+- Type: Article
+- DOI: 10.1016/j.isci.2025.114320
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-isci-2025-114320.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-isci-2025-114320.md
+- Deep GEO: no
+
+## ABCA1 Acts as a Protective Modulator in Amyotrophic Lateral Sclerosis and Links to Metabolic Status
+- Journal: Preprint
+- Year: 2025
+- Type: Preprint
+- DOI: 10.2139/ssrn.5292589
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-5292589.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-5292589.md
+- Deep GEO: no
+
+## Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout
+- Journal: Frontiers in Nutrition
+- Year: 2025
+- Type: Article
+- DOI: 10.3389/fnut.2025.1658286
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fnut-2025-1658286.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fnut-2025-1658286.md
+- Deep GEO: no
+
+## Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States
+- Journal: Frontiers in Public Health
+- Year: 2025
+- Type: Article
+- DOI: 10.3389/fpubh.2025.1521372
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fpubh-2025-1521372.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fpubh-2025-1521372.md
+- Deep GEO: no
+
+## Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis
+- Journal: Oncology Research
+- Year: 2025
+- Type: Article
+- DOI: 10.32604/or.2025.059290
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-32604-or-2025-059290.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-32604-or-2025-059290.md
+- Deep GEO: no
+
+## Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm
+- Journal: Journal of Cellular and Molecular Medicine
+- Year: 2025
+- Type: Article
+- DOI: 10.1111/jcmm.70725
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70725.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70725.md
+- Deep GEO: no
+
+## Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair
+- Journal: Clinical Interventions in Aging
+- Year: 2025
+- Type: Article
+- DOI: 10.2147/cia.s493841
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-cia-s493841.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-cia-s493841.md
+- Deep GEO: no
+
+## Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis
+- Journal: Scientific Reports
+- Year: 2025
+- Type: Article
+- DOI: 10.1038/s41598-025-98859-3
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41598-025-98859-3.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41598-025-98859-3.md
+- Deep GEO: no
+
+## Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics
+- Journal: Journal of Inflammation Research
+- Year: 2025
+- Type: Article
+- DOI: 10.2147/jir.s495784
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-jir-s495784.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-jir-s495784.md
+- Deep GEO: no
+
+## Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm
+- Journal: Journal of Integrative Medicine
+- Year: 2025
+- Type: Article
+- DOI: 10.1016/j.joim.2025.06.003
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-joim-2025-06-003.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-joim-2025-06-003.md
+- Deep GEO: no
+
+## Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm
+- Journal: BMC Biology
+- Year: 2025
+- Type: Article
+- DOI: 10.1186/s12915-025-02400-x
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s12915-025-02400-x.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s12915-025-02400-x.md
+- Deep GEO: no
+
+## Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk
+- Journal: Life Conflux
+- Year: 2025
+- Type: Article
+- DOI: 10.71321/fy14v342
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-71321-fy14v342.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-71321-fy14v342.md
+- Deep GEO: no
+
+## Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions
+- Journal: Chemico-Biological Interactions
+- Year: 2025
+- Type: Article
+- DOI: 10.1016/j.cbi.2025.111421
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-cbi-2025-111421.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-cbi-2025-111421.md
+- Deep GEO: no
+
+## Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma
+- Journal: Journal for ImmunoTherapy of Cancer
+- Year: 2025
+- Type: Article
+- DOI: 10.1136/jitc-2024-010787
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.md
+- Deep GEO: yes
+
+## Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes
+- Journal: Med Research
+- Year: 2025
+- Type: Article
+- DOI: 10.1002/mdr2.70004
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70004.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70004.md
+- Deep GEO: no
+
+## Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models
+- Journal: JCO Precision Oncology
+- Year: 2025
+- Type: Article
+- DOI: 10.1200/po-24-00875
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00875.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00875.md
+- Deep GEO: no
+
+## Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis
+- Journal: Frontiers in Oncology
+- Year: 2025
+- Type: Article
+- DOI: 10.3389/fonc.2025.1538574
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2025-1538574.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2025-1538574.md
+- Deep GEO: no
+
+## Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay
+- Journal: Oral Diseases
+- Year: 2025
+- Type: Article
+- DOI: 10.1111/odi.70054
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-odi-70054.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-odi-70054.md
+- Deep GEO: no
+
+## Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy
+- Journal: International Journal of Nanomedicine
+- Year: 2025
+- Type: Article
+- DOI: 10.2147/ijn.s522157
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-ijn-s522157.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-ijn-s522157.md
+- Deep GEO: no
+
+## Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers
+- Journal: Journal for ImmunoTherapy of Cancer
+- Year: 2025
+- Type: Article
+- DOI: 10.1136/jitc-2024-010127
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.md
+- Deep GEO: yes
+
+## The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice
+- Journal: European Heart Journal
+- Year: 2025
+- Type: Article
+- DOI: 10.1093/eurheartj/ehaf523
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.md
+- Deep GEO: no
+
+## Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature
+- Journal: Environmental Toxicology
+- Year: 2024
+- Type: Article
+- DOI: 10.1002/tox.24284
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-tox-24284.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-tox-24284.md
+- Deep GEO: no
+
+## AI hybrid survival assessment for advanced heart failure patients with renal dysfunction
+- Journal: Nature Communications
+- Year: 2024
+- Type: Article
+- DOI: 10.1038/s41467-024-50415-9
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.md
+- Deep GEO: yes
+
+## An assessment system for clinical and biological interpretability in ulcerative colitis
+- Journal: Aging
+- Year: 2024
+- Type: Article
+- DOI: 10.18632/aging.205564
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-18632-aging-205564.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-18632-aging-205564.md
+- Deep GEO: no
+
+## Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study
+- Journal: JCO Precision Oncology
+- Year: 2024
+- Type: Article
+- DOI: 10.1200/po.24.00089
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.md
+- Deep GEO: no
+
+## Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension
+- Journal: Molecular Medicine
+- Year: 2024
+- Type: Article
+- DOI: 10.1186/s10020-024-00963-z
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s10020-024-00963-z.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s10020-024-00963-z.md
+- Deep GEO: no
+
+## Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders
+- Journal: Clinical Cardiology
+- Year: 2024
+- Type: Article
+- DOI: 10.1002/clc.70019
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-clc-70019.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-clc-70019.md
+- Deep GEO: no
+
+## Associations between magnesium depletion score and depression among individuals aged 20 to 60 years
+- Journal: Journal of Trace Elements in Medicine and Biology
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.jtemb.2024.127543
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-jtemb-2024-127543.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-jtemb-2024-127543.md
+- Deep GEO: no
+
+## Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study
+- Journal: Cardiovascular Innovations and Applications
+- Year: 2024
+- Type: Article
+- DOI: 10.15212/cvia.2024.0023
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-15212-cvia-2024-0023.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-15212-cvia-2024-0023.md
+- Deep GEO: no
+
+## Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature
+- Journal: Journal of Cellular and Molecular Medicine
+- Year: 2024
+- Type: Article
+- DOI: 10.1111/jcmm.18408
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-18408.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-18408.md
+- Deep GEO: no
+
+## Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies
+- Journal: Clinical and Experimental Medicine
+- Year: 2024
+- Type: Article
+- DOI: 10.1007/s10238-024-01439-4
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s10238-024-01439-4.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s10238-024-01439-4.md
+- Deep GEO: no
+
+## Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond
+- Journal: Molecular Cancer
+- Year: 2024
+- Type: Article
+- DOI: 10.1186/s12943-024-02047-2
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.md
+- Deep GEO: yes
+
+## Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure
+- Journal: Journal of Cellular and Molecular Medicine
+- Year: 2024
+- Type: Article
+- DOI: 10.1111/jcmm.70258
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70258.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-70258.md
+- Deep GEO: no
+
+## Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination
+- Journal: Cancer Letters
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.canlet.2024.217079
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.md
+- Deep GEO: yes
+
+## Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension
+- Journal: Respiratory Research
+- Year: 2024
+- Type: Article
+- DOI: 10.1186/s12931-024-02978-w
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s12931-024-02978-w.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1186-s12931-024-02978-w.md
+- Deep GEO: no
+
+## Identification of diagnostic signature and immune infiltration for ischemic cardiomyopathy based on cuproptosis-related genes through bioinformatics analysis and experimental validation
+- Journal: International Immunopharmacology
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.intimp.2024.112574
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-intimp-2024-112574.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-intimp-2024-112574.md
+- Deep GEO: no
+
+## Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments
+- Journal: Frontiers in Oncology
+- Year: 2024
+- Type: Article
+- DOI: 10.3389/fonc.2024.1425895
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2024-1425895.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2024-1425895.md
+- Deep GEO: no
+
+## Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease
+- Journal: Human Molecular Genetics
+- Year: 2024
+- Type: Article
+- DOI: 10.1093/hmg/ddae189
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-hmg-ddae189.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-hmg-ddae189.md
+- Deep GEO: no
+
+## Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)
+- Journal: Computer Methods and Programs in Biomedicine Update
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.cmpbup.2024.100164
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-cmpbup-2024-100164.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-cmpbup-2024-100164.md
+- Deep GEO: no
+
+## Molecular subtypes of ischemic heart disease based on circadian rhythm
+- Journal: Scientific Reports
+- Year: 2024
+- Type: Article
+- DOI: 10.1038/s41598-024-65236-5
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/circadian-ihd.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/circadian-ihd.md
+- Deep GEO: yes
+
+## N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer
+- Journal: Scientific Reports
+- Year: 2024
+- Type: Article
+- DOI: 10.1038/s41598-024-80885-2
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41598-024-80885-2.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41598-024-80885-2.md
+- Deep GEO: no
+
+## Omics-based molecular classifications empowering in precision oncology
+- Journal: Cellular Oncology
+- Year: 2024
+- Type: Article
+- DOI: 10.1007/s13402-023-00912-8
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s13402-023-00912-8.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1007-s13402-023-00912-8.md
+- Deep GEO: no
+
+## Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)
+- Journal: European Journal of Surgical Oncology
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.ejso.2024.108527
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-ejso-2024-108527.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-ejso-2024-108527.md
+- Deep GEO: no
+
+## Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure
+- Journal: Journal of Proteome Research
+- Year: 2024
+- Type: Article
+- DOI: 10.1021/acs.jproteome.4c00522
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/olink-dcm.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/olink-dcm.md
+- Deep GEO: yes
+
+## Proteomics appending a complementary dimension to precision oncotherapy
+- Journal: Computational and Structural Biotechnology Journal
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.csbj.2024.04.044
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-csbj-2024-04-044.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-csbj-2024-04-044.md
+- Deep GEO: no
+
+## Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology
+- Journal: The Journal of Prevention of Alzheimer's Disease
+- Year: 2024
+- Type: Article
+- DOI: 10.14283/jpad.2024.161
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-14283-jpad-2024-161.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-14283-jpad-2024-161.md
+- Deep GEO: no
+
+## The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?
+- Journal: Cancer Letters
+- Year: 2024
+- Type: Article
+- DOI: 10.1016/j.canlet.2024.217083
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-canlet-2024-217083.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-canlet-2024-217083.md
+- Deep GEO: no
+
+## Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study
+- Journal: Preprint
+- Year: 2024
+- Type: Preprint
+- DOI: 10.2139/ssrn.4857099
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-4857099.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-4857099.md
+- Deep GEO: no
+
+## TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients
+- Journal: Clinical Interventions in Aging
+- Year: 2024
+- Type: Article
+- DOI: 10.2147/cia.s462542
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-cia-s462542.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2147-cia-s462542.md
+- Deep GEO: no
+
+## Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm
+- Journal: Patent
+- Year: 2023
+- Type: Patent
+- DOI: Not available
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/work-3d25d7e32b86959b.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/work-3d25d7e32b86959b.md
+- Deep GEO: no
+
+## Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction
+- Journal: Preprint
+- Year: 2023
+- Type: Preprint
+- DOI: 10.2139/ssrn.4391582
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-4391582.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-2139-ssrn-4391582.md
+- Deep GEO: no
+
+## Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability
+- Journal: iScience
+- Year: 2023
+- Type: Article
+- DOI: 10.1016/j.isci.2023.107587
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.md
+- Deep GEO: yes
+
+## Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application
+- Journal: Journal of Magnesium and Alloys
+- Year: 2023
+- Type: Article
+- DOI: 10.1016/j.jma.2023.05.007
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-jma-2023-05-007.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1016-j-jma-2023-05-007.md
+- Deep GEO: no
+
+## Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure
+- Journal: Journal of Cellular and Molecular Medicine
+- Year: 2023
+- Type: Article
+- DOI: 10.1111/jcmm.17789
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-17789.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1111-jcmm-17789.md
+- Deep GEO: no
+
+## Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction
+- Journal: European Journal of Pharmacology
+- Year: 2023
+- Type: Article
+- DOI: 10.1016/j.ejphar.2023.175569
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.md
+- Deep GEO: yes
+
+## Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges
+- Journal: International Journal of Bioprinting
+- Year: 2023
+- Type: Article
+- DOI: 10.18063/ijb.740
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-18063-ijb-740.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-18063-ijb-740.md
+- Deep GEO: no
+
+## Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes
+- Journal: Journal of Translational Medicine
+- Year: 2022
+- Type: Article
+- DOI: 10.1186/s12967-022-03795-9
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.md
+- Deep GEO: yes
+
+## Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach
+- Journal: ESC Heart Failure
+- Year: 2022
+- Type: Article
+- DOI: 10.1002/ehf2.14003
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.md
+- Deep GEO: no
+
+## Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study
+- Journal: Frontiers in Oncology
+- Year: 2021
+- Type: Article
+- DOI: 10.3389/fonc.2021.659217
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2021-659217.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3389-fonc-2021-659217.md
+- Deep GEO: no
+
+## Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells
+- Journal: International Journal of Ophthalmology
+- Year: 2020
+- Type: Article
+- DOI: 10.3980/j.issn.1672-5123.2020.12.13
+- HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html
+- Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.md
+- Deep GEO: no

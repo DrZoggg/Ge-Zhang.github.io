@@ -91,6 +91,9 @@ def _sources(item, default_source=""):
 
 def normalize_item(item, default_source=""):
     rec = copy.deepcopy(item)
+    # Presentation state belongs to the dedicated controllers. External sync
+    # must never persist or resurrect legacy Featured flags in master metadata.
+    rec.pop("featured", None)
     detected_status, cleaned_title = title_status(rec.get("title", ""))
     rec["title"] = cleaned_title or "Untitled work"
     rec["journal"] = clean_text(rec.get("journal")) or "Unknown source"
@@ -163,7 +166,8 @@ def _merge_record(old, new):
     left, right = normalize_item(old), normalize_item(new)
     merged = copy.deepcopy(left)
 
-    # Preserve arbitrary/manual fields, including featured and slug.
+    # Preserve arbitrary/manual fields and stable slugs. Featured state is
+    # deliberately excluded by normalize_item().
     for key, value in right.items():
         if key not in merged or merged.get(key) in (None, "", [], 0, False):
             merged[key] = copy.deepcopy(value)
@@ -177,8 +181,6 @@ def _merge_record(old, new):
         merged["doi"] = norm_doi(right.get("doi"))
     if not merged.get("url") and right.get("url"):
         merged["url"] = right["url"]
-    if left.get("featured") or right.get("featured"):
-        merged["featured"] = True
     if left.get("slug") or right.get("slug"):
         merged["slug"] = left.get("slug") or right.get("slug")
     if is_withdrawn(left) or is_withdrawn(right):

@@ -17,5 +17,12 @@ Only works visible as **Everyone/Public** can be read from the public ORCID reco
 - `scripts/sync_crossref.py` — daily exact-ORCID DOI discovery
 - `scripts/sync_orcid.py` — one-click ORCID reconciliation
 - `scripts/build_publications.py` — rebuilds website publication outputs
+- `scripts/validate_site.py` — validates records, pages, controllers, and sitemap
+- `data/featured_papers.json` — homepage Featured source of truth
+- `data/deep_geo_papers.json` — Deep GEO source of truth
+- `.github/workflows/paper-control.yml` — no-code Paper Control Center
 - `.github/workflows/daily-publications.yml` — daily automation
 - `.github/workflows/manual-orcid-reconcile.yml` — manual ORCID refresh
+
+For no-code Deep GEO and Homepage Featured management, see
+`PAPER_CONTROL_GUIDE_CN.md` and run **Actions → Paper Control Center**.

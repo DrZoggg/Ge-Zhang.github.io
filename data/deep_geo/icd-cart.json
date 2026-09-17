@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1016/j.canlet.2024.217079",
+  "display_title": "Immunogenic cell death & CAR-T",
+  "summary": "A review of immunogenic cell death as a strategy to enhance CAR-T and cancer immunotherapy, including multiple regulated cell-death programs.",
+  "keywords": ["immunogenic cell death", "CAR-T", "DAMPs", "ferroptosis", "pyroptosis", "PANoptosis", "cancer immunotherapy"],
+  "questions": [
+    "How can immunogenic cell death enhance CAR-T therapy?",
+    "What regulated cell-death pathways can be combined with CAR-T in solid tumors?",
+    "How does ICD convert cold tumors into immunologically active tumors?"
+  ]
+}
