@@ -1,9 +1,10 @@
 {
   "crossref": {
-    "checked_at_utc": "2026-09-16T09:58:46.204181+00:00",
+    "checked_at_utc": "2026-09-17T06:11:04.631898+00:00",
     "records_returned": 7,
-    "new_records_added": 1,
-    "records_enriched": 6,
+    "new_records_added": 0,
+    "records_enriched": 0,
+    "duplicate_records_merged": 0,
     "orcid": "0000-0002-3116-3246"
   },
   "orcid": {
