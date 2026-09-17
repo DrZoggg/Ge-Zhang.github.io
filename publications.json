@@ -432,7 +432,7 @@
     ],
     "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.html",
     "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.md",
-    "deep_geo": true,
+    "deep_geo": false,
     "featured": true
   },
   {
@@ -755,7 +755,7 @@
     ],
     "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.html",
     "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.md",
-    "deep_geo": true,
+    "deep_geo": false,
     "featured": true
   },
   {

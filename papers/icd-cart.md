@@ -12,20 +12,6 @@ ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
-## Deep GEO context
-
-A review of immunogenic cell death as a strategy to enhance CAR-T and cancer immunotherapy, including multiple regulated cell-death programs.
-
-### Semantic keywords
-
-immunogenic cell death, CAR-T, DAMPs, ferroptosis, pyroptosis, PANoptosis, cancer immunotherapy
-
-### Questions this paper can answer
-
-- How can immunogenic cell death enhance CAR-T therapy?
-- What regulated cell-death pathways can be combined with CAR-T in solid tumors?
-- How does ICD convert cold tumors into immunologically active tumors?
-
 ## Links
 
 - DOI: https://doi.org/10.1016/j.canlet.2024.217079

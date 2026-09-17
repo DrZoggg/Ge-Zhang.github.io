@@ -243,7 +243,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1136/jitc-2024-010787
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/b4galt2.md
-- Deep GEO: yes
+- Deep GEO: no
 
 ## Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes
 - Journal: Med Research
@@ -423,7 +423,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1016/j.canlet.2024.217079
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.md
-- Deep GEO: yes
+- Deep GEO: no
 
 ## Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension
 - Journal: Respiratory Research

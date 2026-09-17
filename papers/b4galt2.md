@@ -12,20 +12,6 @@ ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
-## Deep GEO context
-
-A machine-learning post-translational-modification signature for lung adenocarcinoma prognosis and immunotherapy stratification, identifying B4GALT2 as an immune-exclusion-associated regulator.
-
-### Semantic keywords
-
-B4GALT2, immune exclusion, lung adenocarcinoma, anti-PD-1, post-translational modification, machine learning
-
-### Questions this paper can answer
-
-- What is the role of B4GALT2 in immune exclusion in lung adenocarcinoma?
-- Can post-translational-modification signatures predict LUAD immunotherapy response?
-- Which biomarkers link B4GALT2 to anti-PD-1 response?
-
 ## Links
 
 - DOI: https://doi.org/10.1136/jitc-2024-010787
