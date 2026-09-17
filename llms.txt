@@ -20,3 +20,4 @@
 - [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.html) — DOI: 10.1093/eurheartj/ehaf523
 - [Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.html) — DOI: 10.1002/mdr2.70052
 - [Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.html) — DOI: 10.1200/po.24.00089
+- [Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.html) — DOI: 10.1172/jci194175

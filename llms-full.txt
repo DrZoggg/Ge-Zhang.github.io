@@ -108,7 +108,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1172/jci194175
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy
 - Journal: Journal of Cellular and Molecular Medicine
