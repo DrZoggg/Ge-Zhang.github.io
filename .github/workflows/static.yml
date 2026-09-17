@@ -6,12 +6,7 @@ on:
 
   workflow_dispatch:
 
-  workflow_run:
-    workflows:
-      - "Daily publication discovery (Crossref + ORCID)"
-      - "Reconcile with ORCID public works"
-    types:
-      - completed
+  workflow_call:
 
 permissions:
   contents: read
@@ -24,8 +19,6 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -37,6 +30,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build website from source data
+        run: python scripts/build_publications.py
 
       - name: Prepare clean website files
         run: |

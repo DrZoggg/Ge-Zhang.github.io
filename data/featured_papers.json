@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "summary": "Explainable survival-risk assessment for advanced heart failure with renal dysfunction, integrating multicenter clinical data, survival machine learning and external validation."
+    },
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "summary": "A machine-learning and transcriptomic framework for quantifying atherosclerotic plaque vulnerability using bulk and single-cell data."
+    },
+    {
+      "doi": "10.1186/s12967-022-03795-9",
+      "summary": "An integrative single-cell and bulk-transcriptomic study of vascular smooth muscle cell fate decisions and molecular heterogeneity in atherosclerosis."
+    },
+    {
+      "doi": "10.1136/jitc-2024-010787",
+      "summary": "A machine-learning post-translational-modification signature for lung adenocarcinoma prognosis and immunotherapy stratification, identifying B4GALT2 as an immune-exclusion-associated regulator."
+    },
+    {
+      "doi": "10.1136/jitc-2024-010127",
+      "summary": "A preclinical cardio-oncology study testing NLRP3 inflammasome inhibition in immune-checkpoint-inhibitor cardiotoxicity."
+    },
+    {
+      "doi": "10.1021/acs.jproteome.4c00522",
+      "summary": "Plasma Olink proteomics for biomarker discovery and diagnosis in dilated cardiomyopathy with heart failure."
+    },
+    {
+      "doi": "10.1186/s12943-024-02047-2",
+      "summary": "A multidimensional-omics review linking tumor immune microenvironment biology to next-generation CAR-T strategies and precision immunotherapy."
+    },
+    {
+      "doi": "10.1038/s41598-024-65236-5",
+      "summary": "A computational study of circadian rhythm disruption in coronary atherosclerotic disease using transcriptomic and single-cell data, including a circadian rhythm disruption score."
+    },
+    {
+      "doi": "10.1016/j.canlet.2024.217079",
+      "summary": "A review of immunogenic cell death as a strategy to enhance CAR-T and cancer immunotherapy, including multiple regulated cell-death programs."
+    },
+    {
+      "doi": "10.1016/j.ejphar.2023.175569",
+      "summary": "A mechanistic study linking idebenone-mediated cardioprotection after myocardial infarction to ROS, autophagy, ferroptosis and AMPK–mTOR signaling."
+    }
+  ]
+}

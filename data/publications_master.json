@@ -295,7 +295,6 @@
     "journal": "Journal for ImmunoTherapy of Cancer",
     "type": "Article",
     "doi": "10.1136/jitc-2024-010787",
-    "featured": true,
     "slug": "b4galt2",
     "url": "https://doi.org/10.1136/jitc-2024-010787",
     "sources": [
@@ -365,7 +364,6 @@
     "journal": "Journal for ImmunoTherapy of Cancer",
     "type": "Article",
     "doi": "10.1136/jitc-2024-010127",
-    "featured": true,
     "slug": "nlrp3-ici",
     "url": "https://doi.org/10.1136/jitc-2024-010127",
     "sources": [
@@ -400,7 +398,6 @@
     "journal": "Nature Communications",
     "type": "Article",
     "doi": "10.1038/s41467-024-50415-9",
-    "featured": true,
     "slug": "aihflevel",
     "url": "https://doi.org/10.1038/s41467-024-50415-9",
     "sources": [
@@ -502,7 +499,6 @@
     "journal": "Molecular Cancer",
     "type": "Article",
     "doi": "10.1186/s12943-024-02047-2",
-    "featured": true,
     "slug": "time-cart",
     "url": "https://doi.org/10.1186/s12943-024-02047-2",
     "sources": [
@@ -526,7 +522,6 @@
     "journal": "Cancer Letters",
     "type": "Article",
     "doi": "10.1016/j.canlet.2024.217079",
-    "featured": true,
     "slug": "icd-cart",
     "url": "https://doi.org/10.1016/j.canlet.2024.217079",
     "sources": [
@@ -594,7 +589,6 @@
     "journal": "Scientific Reports",
     "type": "Article",
     "doi": "10.1038/s41598-024-65236-5",
-    "featured": true,
     "slug": "circadian-ihd",
     "url": "https://doi.org/10.1038/s41598-024-65236-5",
     "sources": [
@@ -640,7 +634,6 @@
     "journal": "Journal of Proteome Research",
     "type": "Article",
     "doi": "10.1021/acs.jproteome.4c00522",
-    "featured": true,
     "slug": "olink-dcm",
     "url": "https://doi.org/10.1021/acs.jproteome.4c00522",
     "sources": [
@@ -725,7 +718,6 @@
     "journal": "iScience",
     "type": "Article",
     "doi": "10.1016/j.isci.2023.107587",
-    "featured": true,
     "slug": "apvs",
     "url": "https://doi.org/10.1016/J.ISCI.2023.107587",
     "sources": [
@@ -760,7 +752,6 @@
     "journal": "European Journal of Pharmacology",
     "type": "Article",
     "doi": "10.1016/j.ejphar.2023.175569",
-    "featured": true,
     "slug": "idebenone-ferroptosis",
     "url": "https://doi.org/10.1016/j.ejphar.2023.175569",
     "sources": [
@@ -796,7 +787,6 @@
     "journal": "Journal of Translational Medicine",
     "type": "Article",
     "doi": "10.1186/s12967-022-03795-9",
-    "featured": true,
     "slug": "smc-fate",
     "url": "https://doi.org/10.1186/s12967-022-03795-9",
     "sources": [
