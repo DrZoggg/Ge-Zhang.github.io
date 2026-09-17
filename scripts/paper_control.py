@@ -28,6 +28,14 @@ STOPWORDS = {
 }
 
 
+class BatchValidationError(ValueError):
+    def __init__(self, failures, requested, resolved=0):
+        self.failures = failures
+        self.requested = requested
+        self.resolved = resolved
+        super().__init__("Batch validation failed; no files were changed.")
+
+
 def append_summary(text):
     path = os.environ.get("GITHUB_STEP_SUMMARY")
     if path:
@@ -78,6 +86,74 @@ def resolve_paper(query, master):
             "Paper title substring is ambiguous. Use a DOI or exact slug. Candidates:\n" + candidates
         )
     raise ValueError(f"No paper matched {query!r}. Use the DOI from Publications for the safest match.")
+
+
+def parse_paper_queries(raw, master):
+    """Parse newline-first input while preserving resolvable titles containing commas."""
+    lines = [line.strip() for line in str(raw or "").splitlines() if line.strip()]
+    if not lines:
+        raise ValueError(
+            "Paper is required. Enter a DOI, exact slug, exact title, or unique title substring."
+        )
+
+    expanded = []
+    for line in lines:
+        if "," not in line:
+            expanded.append(line)
+            continue
+        try:
+            resolve_paper(line, master)
+        except ValueError:
+            parts = [part.strip() for part in line.split(",") if part.strip()]
+            expanded.extend(parts or [line])
+        else:
+            expanded.append(line)
+
+    queries = []
+    seen = set()
+    for query in expanded:
+        key = query.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        queries.append(query)
+    return {
+        "queries": queries,
+        "batch_mode": len(expanded) > 1,
+        "input_duplicates": len(expanded) - len(queries),
+    }
+
+
+def resolve_papers(raw, master):
+    parsed = parse_paper_queries(raw, master)
+    failures = []
+    papers = []
+    seen_tokens = set()
+    target_duplicates = 0
+    for query in parsed["queries"]:
+        try:
+            paper = resolve_paper(query, master)
+        except ValueError as exc:
+            failures.append((query, str(exc)))
+            continue
+        if parsed["batch_mode"] and is_withdrawn(paper):
+            failures.append((query, "Withdrawn records are not valid batch targets."))
+            continue
+        token = publication_token(paper)
+        if token in seen_tokens:
+            target_duplicates += 1
+            continue
+        seen_tokens.add(token)
+        papers.append(paper)
+
+    if failures:
+        if parsed["batch_mode"]:
+            raise BatchValidationError(
+                failures, len(parsed["queries"]), resolved=len(papers)
+            )
+        raise ValueError(failures[0][1])
+    parsed.update({"papers": papers, "target_duplicates": target_duplicates})
+    return parsed
 
 
 def starter_keywords(title):
@@ -142,128 +218,202 @@ def run_control(args):
     master, _ = save_master(load_master())
     if ensure_public_slugs(master):
         master, _ = save_master(master)
-    paper = resolve_paper(args.paper, master)
-    token = publication_token(paper)
-    title = paper.get("title") or "Untitled work"
-    doi = norm_doi(paper.get("doi"))
-    slug = paper.get("slug") or ""
-    if is_withdrawn(paper) and (args.deep_geo == "enable" or args.featured == "add"):
+
+    resolved = resolve_papers(args.paper, master)
+    papers = resolved["papers"]
+    batch_mode = resolved["batch_mode"]
+    summary_input = str(args.featured_summary or "").strip()
+    position_input = str(args.featured_position or "").strip()
+    if batch_mode and (args.featured != "no_change" or position_input or summary_input):
+        raise BatchValidationError(
+            [
+                (
+                    "Homepage Featured",
+                    "Batch mode only supports Deep GEO. Set Homepage Featured to no_change "
+                    "and leave Featured position/summary blank.",
+                )
+            ],
+            len(resolved["queries"]),
+            resolved=len(papers),
+        )
+
+    paper = papers[0] if len(papers) == 1 else None
+    if paper and is_withdrawn(paper) and (
+        args.deep_geo == "enable" or args.featured == "add"
+    ):
         raise ValueError("Withdrawn records cannot be enabled for Deep GEO or added to Featured.")
 
     deep_entries = load_deep_geo()
     featured_entries = load_featured()
-    deep_before = token in {controller_token(entry) for entry in deep_entries}
-    featured_before_tokens = [controller_token(entry) for entry in featured_entries]
-    featured_before = token in featured_before_tokens
-    position_before = (
-        featured_before_tokens.index(token) + 1 if featured_before else None
-    )
+    deep_before_tokens = {controller_token(entry) for entry in deep_entries}
+    original_deep_tokens = set(deep_before_tokens)
     changed = False
     notes = []
+    enabled_count = 0
+    disabled_count = 0
+    noop_count = resolved["input_duplicates"] + resolved["target_duplicates"]
+    starters = []
 
     if args.deep_geo == "enable":
-        if not deep_before:
-            deep_entries.append(controller_reference(paper))
+        for target in papers:
+            token = publication_token(target)
+            content_path = deep_content_path(target)
+            if token not in deep_before_tokens:
+                deep_entries.append(controller_reference(target))
+                deep_before_tokens.add(token)
+                enabled_count += 1
+                changed = True
+            elif content_path.is_file():
+                noop_count += 1
+            if not content_path.is_file():
+                starters.append((target, content_path))
+                changed = True
+        if enabled_count:
+            save_deep_geo(deep_entries)
+        for target, content_path in starters:
+            create_safe_starter(target)
+            notes.append(
+                "Created conservative starter: "
+                f"{content_path.relative_to(DEEP_CONTENT_DIR.parent.parent)}"
+            )
+    elif args.deep_geo == "disable":
+        target_tokens = {publication_token(target) for target in papers}
+        disabled_count = len(target_tokens & deep_before_tokens)
+        noop_count += len(target_tokens - deep_before_tokens)
+        if disabled_count:
+            deep_entries = [
+                entry for entry in deep_entries
+                if controller_token(entry) not in target_tokens
+            ]
             save_deep_geo(deep_entries)
             changed = True
-        content_path = deep_content_path(paper)
-        if not content_path.is_file():
-            create_safe_starter(paper)
-            notes.append(f"Created conservative starter: {content_path.relative_to(DEEP_CONTENT_DIR.parent.parent)}")
-            changed = True
-    elif args.deep_geo == "disable" and deep_before:
-        deep_entries = [entry for entry in deep_entries if controller_token(entry) != token]
-        save_deep_geo(deep_entries)
-        changed = True
-
-    summary_input = str(args.featured_summary or "").strip()
-    featured_tokens = [controller_token(entry) for entry in featured_entries]
-    current_index = featured_tokens.index(token) if token in featured_tokens else None
-
-    if args.featured == "remove":
-        if current_index is not None:
-            featured_entries.pop(current_index)
-            save_featured(featured_entries)
-            changed = True
-    elif args.featured == "add":
-        if current_index is None:
-            summary = summary_input
-            if not summary:
-                content_path = deep_content_path(paper)
-                if content_path.is_file():
-                    summary = str(
-                        json.loads(content_path.read_text(encoding="utf-8")).get("summary") or ""
-                    ).strip()
-            if not summary:
-                summary = safe_fallback_summary(paper)
-            entry = {**controller_reference(paper), "summary": summary}
-            position, note = parse_position(args.featured_position, len(featured_entries) + 1)
-            position = position or len(featured_entries) + 1
-            featured_entries.insert(position - 1, entry)
-            if note:
-                notes.append(note)
-            save_featured(featured_entries)
-            changed = True
-            current_index = position - 1
-        else:
-            entry = featured_entries[current_index]
-            if summary_input and entry.get("summary", "") != summary_input:
-                entry["summary"] = summary_input
-                changed = True
-            position, note = parse_position(args.featured_position, len(featured_entries))
-            if position is not None and position != current_index + 1:
-                move_featured(featured_entries, current_index, position)
-                changed = True
-            if note:
-                notes.append(note)
-            if changed:
-                save_featured(featured_entries)
     else:
-        if (summary_input or str(args.featured_position or "").strip()) and current_index is None:
-            raise ValueError(
-                "This paper is not Featured. Choose Featured = add before setting its position or summary."
-            )
-        if current_index is not None:
-            entry = featured_entries[current_index]
-            local_changed = False
-            if summary_input and entry.get("summary", "") != summary_input:
-                entry["summary"] = summary_input
-                local_changed = True
-            position, note = parse_position(args.featured_position, len(featured_entries))
-            if position is not None and position != current_index + 1:
-                move_featured(featured_entries, current_index, position)
-                local_changed = True
-            if note:
-                notes.append(note)
-            if local_changed:
-                save_featured(featured_entries)
-                changed = True
+        noop_count += len(papers)
+
+    featured_before = False
+    position_before = None
+    if paper:
+        token = publication_token(paper)
+        featured_before_tokens = [controller_token(entry) for entry in featured_entries]
+        featured_before = token in featured_before_tokens
+        position_before = (
+            featured_before_tokens.index(token) + 1 if featured_before else None
+        )
+        current_index = (
+            featured_before_tokens.index(token) if featured_before else None
+        )
+        featured_changed = False
+
+        if args.featured == "remove":
+            if current_index is not None:
+                featured_entries.pop(current_index)
+                featured_changed = True
+        elif args.featured == "add":
+            if current_index is None:
+                summary = summary_input
+                if not summary:
+                    content_path = deep_content_path(paper)
+                    if content_path.is_file():
+                        summary = str(
+                            json.loads(content_path.read_text(encoding="utf-8")).get("summary") or ""
+                        ).strip()
+                if not summary:
+                    summary = safe_fallback_summary(paper)
+                entry = {**controller_reference(paper), "summary": summary}
+                position, note = parse_position(
+                    args.featured_position, len(featured_entries) + 1
+                )
+                position = position or len(featured_entries) + 1
+                featured_entries.insert(position - 1, entry)
+                current_index = position - 1
+                featured_changed = True
+                if note:
+                    notes.append(note)
+            else:
+                entry = featured_entries[current_index]
+                if summary_input and entry.get("summary", "") != summary_input:
+                    entry["summary"] = summary_input
+                    featured_changed = True
+                position, note = parse_position(
+                    args.featured_position, len(featured_entries)
+                )
+                if position is not None and position != current_index + 1:
+                    move_featured(featured_entries, current_index, position)
+                    featured_changed = True
+                if note:
+                    notes.append(note)
+        else:
+            if (summary_input or position_input) and current_index is None:
+                raise ValueError(
+                    "This paper is not Featured. Choose Featured = add before setting its position or summary."
+                )
+            if current_index is not None:
+                entry = featured_entries[current_index]
+                if summary_input and entry.get("summary", "") != summary_input:
+                    entry["summary"] = summary_input
+                    featured_changed = True
+                position, note = parse_position(
+                    args.featured_position, len(featured_entries)
+                )
+                if position is not None and position != current_index + 1:
+                    move_featured(featured_entries, current_index, position)
+                    featured_changed = True
+                if note:
+                    notes.append(note)
+
+        if featured_changed:
+            save_featured(featured_entries)
+            changed = True
 
     build_result = build_site()
     validation = validate_site()
-    deep_after = token in {controller_token(entry) for entry in load_deep_geo()}
-    final_featured = load_featured()
-    final_tokens = [controller_token(entry) for entry in final_featured]
-    featured_after = token in final_tokens
-    position_after = final_tokens.index(token) + 1 if featured_after else None
     output_value("changed", str(changed).lower())
-    output_value("slug", slug)
-    report = [
-        "# Paper Control Center",
-        "",
-        f"- **Title:** {title}",
-        f"- **DOI:** {doi or 'Not available'}",
-        f"- **Slug:** {slug}",
-        f"- **Deep GEO:** {'ON' if deep_before else 'OFF'} → {'ON' if deep_after else 'OFF'}",
-        f"- **Featured:** {'ON' if featured_before else 'OFF'} → {'ON' if featured_after else 'OFF'}",
-        f"- **Featured position:** {position_before or 'not featured'} → {position_after or 'not featured'}",
-        f"- **Public records:** {validation['public']}",
-        f"- **Master records:** {validation['master']}",
-        f"- **Withdrawn:** {validation['withdrawn']}",
-        f"- **Build:** PASS",
-        f"- **Validation:** PASS",
-        f"- **Repository change:** {'YES — commit and Pages deployment will follow' if changed else 'NO — no commit or deployment'}",
-    ]
+    if batch_mode:
+        report = [
+            "# Paper Control Center",
+            "",
+            "- **Batch mode:** yes",
+            f"- **Requested papers:** {len(resolved['queries'])}",
+            f"- **Resolved papers:** {len(papers)}",
+            f"- **Deep GEO enabled:** {enabled_count}",
+            f"- **Deep GEO disabled:** {disabled_count}",
+            f"- **Already enabled / disabled / no-op:** {noop_count}",
+            "- **Failed:** 0",
+            f"- **Public records:** {validation['public']}",
+            f"- **Master records:** {validation['master']}",
+            f"- **Withdrawn:** {validation['withdrawn']}",
+            "- **Build:** PASS",
+            "- **Validation:** PASS",
+            f"- **Repository change:** {'YES — commit and Pages deployment will follow' if changed else 'NO — no commit or deployment'}",
+        ]
+    else:
+        token = publication_token(paper)
+        title = paper.get("title") or "Untitled work"
+        doi = norm_doi(paper.get("doi"))
+        slug = paper.get("slug") or ""
+        deep_before = token in original_deep_tokens
+        deep_after = token in {controller_token(entry) for entry in load_deep_geo()}
+        final_featured = load_featured()
+        final_tokens = [controller_token(entry) for entry in final_featured]
+        featured_after = token in final_tokens
+        position_after = final_tokens.index(token) + 1 if featured_after else None
+        output_value("slug", slug)
+        report = [
+            "# Paper Control Center",
+            "",
+            f"- **Title:** {title}",
+            f"- **DOI:** {doi or 'Not available'}",
+            f"- **Slug:** {slug}",
+            f"- **Deep GEO:** {'ON' if deep_before else 'OFF'} → {'ON' if deep_after else 'OFF'}",
+            f"- **Featured:** {'ON' if featured_before else 'OFF'} → {'ON' if featured_after else 'OFF'}",
+            f"- **Featured position:** {position_before or 'not featured'} → {position_after or 'not featured'}",
+            f"- **Public records:** {validation['public']}",
+            f"- **Master records:** {validation['master']}",
+            f"- **Withdrawn:** {validation['withdrawn']}",
+            "- **Build:** PASS",
+            "- **Validation:** PASS",
+            f"- **Repository change:** {'YES — commit and Pages deployment will follow' if changed else 'NO — no commit or deployment'}",
+        ]
     if notes:
         report.extend(["", "## Notes", *[f"- {note}" for note in notes]])
     append_summary("\n".join(report))
@@ -297,8 +447,30 @@ def main():
     args = parser().parse_args()
     try:
         run_control(args)
+    except BatchValidationError as exc:
+        report = [
+            "# Paper Control Center",
+            "",
+            "- **Batch mode:** yes",
+            "- **Batch aborted:** yes",
+            f"- **Requested papers:** {exc.requested}",
+            f"- **Resolved papers:** {exc.resolved}",
+            f"- **Failed:** {len(exc.failures)}",
+            "- **Changed:** 0",
+            "- **Commit:** no",
+            "- **Deployment:** no",
+            "",
+            "## Failed inputs",
+            *[f"- `{query}` — {reason}" for query, reason in exc.failures],
+        ]
+        message = "\n".join(report)
+        output_value("changed", "false")
+        append_summary(message)
+        print(message, file=sys.stderr)
+        raise SystemExit(1)
     except Exception as exc:
         message = f"# Paper Control Center\n\n**FAILED:** {exc}"
+        output_value("changed", "false")
         append_summary(message)
         print(message, file=sys.stderr)
         raise SystemExit(1)
