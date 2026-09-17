@@ -297,7 +297,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1136/jitc-2024-010127
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.md
-- Deep GEO: yes
+- Deep GEO: no
 
 ## The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice
 - Journal: European Heart Journal

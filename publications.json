@@ -530,8 +530,8 @@
     ],
     "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.html",
     "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/nlrp3-ici.md",
-    "deep_geo": true,
-    "featured": true
+    "deep_geo": false,
+    "featured": false
   },
   {
     "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
