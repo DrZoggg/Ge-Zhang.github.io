@@ -4,6 +4,7 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
 
 from site_common import (
     LEGACY_DEEP_SLUGS,
@@ -30,6 +31,111 @@ def require(condition, message):
         raise ValidationError(message)
 
 
+def normalized_visible_text(value):
+    return re.sub(r"\s+", " ", html.unescape(str(value or ""))).strip()
+
+
+class ElementTextParser(HTMLParser):
+    """Collect decoded visible text from matching HTML elements."""
+
+    def __init__(self, tag, required_attributes=None):
+        super().__init__(convert_charrefs=True)
+        self.tag = tag.casefold()
+        self.required_attributes = required_attributes or {}
+        self.depth = 0
+        self.buffer = []
+        self.texts = []
+
+    def matches(self, tag, attributes):
+        if tag.casefold() != self.tag:
+            return False
+        attributes = {name.casefold(): (value or "") for name, value in attributes}
+        for name, expected in self.required_attributes.items():
+            actual = attributes.get(name.casefold(), "")
+            if name.casefold() == "class":
+                if expected not in actual.split():
+                    return False
+            elif actual != expected:
+                return False
+        return True
+
+    def handle_starttag(self, tag, attributes):
+        if self.depth:
+            self.depth += 1
+        elif self.matches(tag, attributes):
+            self.depth = 1
+            self.buffer = []
+
+    def handle_endtag(self, tag):
+        if not self.depth:
+            return
+        self.depth -= 1
+        if self.depth == 0:
+            self.texts.append(normalized_visible_text("".join(self.buffer)))
+            self.buffer = []
+
+    def handle_data(self, data):
+        if self.depth:
+            self.buffer.append(data)
+
+
+class VisibleTextParser(HTMLParser):
+    """Collect page text while excluding scripts and styles."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.hidden_depth = 0
+        self.parts = []
+
+    def handle_starttag(self, tag, attributes):
+        if tag.casefold() in {"script", "style"}:
+            self.hidden_depth += 1
+
+    def handle_endtag(self, tag):
+        if tag.casefold() in {"script", "style"} and self.hidden_depth:
+            self.hidden_depth -= 1
+
+    def handle_data(self, data):
+        if not self.hidden_depth:
+            self.parts.append(data)
+
+
+def element_texts(markup, tag, required_attributes=None):
+    parser = ElementTextParser(tag, required_attributes)
+    parser.feed(markup)
+    parser.close()
+    return parser.texts
+
+
+def visible_text(markup):
+    parser = VisibleTextParser()
+    parser.feed(markup)
+    parser.close()
+    return normalized_visible_text(" ".join(parser.parts))
+
+
+def validate_html_text_decoding(master):
+    pap_title = (
+        "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle "
+        "Glaucoma in a Chinese Family"
+    )
+    real_titles = [str(item.get("title") or "") for item in master]
+    require(pap_title in real_titles, "PAPPA2 title regression fixture is missing.")
+    apostrophe_titles = [title for title in real_titles if "'" in title]
+    require(apostrophe_titles, "ASCII-apostrophe title regression fixture is missing.")
+    regression_titles = [
+        pap_title,
+        apostrophe_titles[0],
+        'Synthetic A < B & "quoted" patient\'s title',
+    ]
+    for title in regression_titles:
+        serialized = f"<h1>{html.escape(title)}</h1>"
+        require(
+            element_texts(serialized, "h1") == [normalized_visible_text(title)],
+            f"HTML title decoding regression failed: {title!r}",
+        )
+
+
 def validate_site():
     config = load_site_config()
     master = load_master()
@@ -43,6 +149,7 @@ def validate_site():
     master_by_token = index_master(master)
     validate_controller_entries(featured, master_by_token, "Featured")
     validate_controller_entries(deep_geo, master_by_token, "Deep GEO")
+    validate_html_text_decoding(master)
 
     master_dois = [norm_doi(item.get("doi")) for item in master if norm_doi(item.get("doi"))]
     require(
@@ -118,7 +225,12 @@ def validate_site():
         canonical_urls.append(canonical)
         expected_url = f"{config['site_url']}/papers/{slug}.html"
         require(canonical == expected_url, f"Wrong canonical URL for {slug}.html.")
-        require(item.get("title", "") in page, f"Title missing from {slug}.html.")
+        h1_titles = element_texts(page, "h1")
+        require(len(h1_titles) == 1, f"{slug}.html must have exactly one h1 title.")
+        require(
+            h1_titles[0] == normalized_visible_text(item.get("title", "")),
+            f"Visible h1 title mismatch in {slug}.html.",
+        )
         require(config["orcid"] in page, f"ORCID anchor missing from {slug}.html.")
         require(expected_url in markdown, f"HTML URL missing from {slug}.md.")
         require(
@@ -133,6 +245,7 @@ def validate_site():
             content_path = deep_content_path(item)
             require(content_path.is_file(), f"Deep GEO content missing for {slug}.")
             content = json.loads(content_path.read_text(encoding="utf-8"))
+            page_text = visible_text(page)
             for value in [
                 content.get("summary"),
                 *(content.get("keywords") or []),
@@ -140,8 +253,7 @@ def validate_site():
             ]:
                 if str(value or "").strip():
                     require(
-                        html.escape(str(value), quote=False) in page
-                        or str(value) in page,
+                        normalized_visible_text(value) in page_text,
                         f"Deep GEO content lost from {slug}.html: {value!r}",
                     )
                     require(str(value) in markdown, f"Deep GEO content lost from {slug}.md.")
@@ -165,10 +277,22 @@ def validate_site():
         require(bool(item.get("featured")) == (token in featured_tokens), "Featured flag mismatch.")
 
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
-    featured_titles = [master_by_token[controller_token(entry)]["title"] for entry in featured]
-    positions = [index_html.find(title) for title in featured_titles]
-    require(all(position >= 0 for position in positions), "Featured title missing from homepage.")
-    require(positions == sorted(positions), "Homepage Featured order differs from controller.")
+    featured_titles = [
+        normalized_visible_text(master_by_token[controller_token(entry)]["title"])
+        for entry in featured
+    ]
+    featured_start = "<!-- FEATURED_PAPERS_START -->"
+    featured_end = "<!-- FEATURED_PAPERS_END -->"
+    require(
+        index_html.count(featured_start) == 1 and index_html.count(featured_end) == 1,
+        "Homepage Featured markers are missing or duplicated.",
+    )
+    featured_html = index_html.split(featured_start, 1)[1].split(featured_end, 1)[0]
+    rendered_featured_titles = element_texts(featured_html, "h3")
+    require(
+        rendered_featured_titles == featured_titles,
+        "Homepage Featured titles or order differ from controller.",
+    )
     require(
         index_html.count('<article class="card paper">') == len(featured),
         "Homepage Featured card count differs from controller.",
@@ -179,10 +303,15 @@ def validate_site():
         publications_html.count('data-paper-record="true"') == len(public_expected),
         "publications.html paper count differs from public master count.",
     )
-    require(
-        not any(item.get("title", "") in publications_html for item in withdrawn),
-        "Withdrawn title appears in publications.html.",
+    publication_title_regions = element_texts(
+        publications_html, "div", {"class": "pub-title"}
     )
+    for item in withdrawn:
+        withdrawn_title = normalized_visible_text(item.get("title", ""))
+        require(
+            not any(withdrawn_title in title for title in publication_title_regions),
+            "Withdrawn title appears in publications.html.",
+        )
 
     with (ROOT / "publication_inventory.csv").open(
         encoding="utf-8-sig", newline=""
