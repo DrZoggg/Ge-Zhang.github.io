@@ -12,6 +12,18 @@ ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
+## Deep GEO context
+
+A publication in European Heart Journal (2025) titled “The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice”.
+
+### Semantic keywords
+
+macrophage-derived, motor, protein, KIF13B, enhances, MERTK-mediated, efferocytosis, prevents, atherosclerosis, mice
+
+### Questions this paper can answer
+
+- What does this publication investigate regarding “The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice”?
+
 ## Links
 
 - DOI: https://doi.org/10.1093/eurheartj/ehaf523

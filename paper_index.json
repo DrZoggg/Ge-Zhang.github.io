@@ -372,8 +372,8 @@
       "doi": "10.1093/eurheartj/ehaf523",
       "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.html",
       "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.md",
-      "deep_geo": false,
-      "featured": false
+      "deep_geo": true,
+      "featured": true
     },
     {
       "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
