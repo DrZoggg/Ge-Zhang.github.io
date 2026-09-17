@@ -31,8 +31,12 @@ def require(condition, message):
         raise ValidationError(message)
 
 
-def normalized_visible_text(value):
-    return re.sub(r"\s+", " ", html.unescape(str(value or ""))).strip()
+def normalized_source_text(value):
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def normalized_parsed_text(value):
+    return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
 class ElementTextParser(HTMLParser):
@@ -71,7 +75,7 @@ class ElementTextParser(HTMLParser):
             return
         self.depth -= 1
         if self.depth == 0:
-            self.texts.append(normalized_visible_text("".join(self.buffer)))
+            self.texts.append(normalized_parsed_text("".join(self.buffer)))
             self.buffer = []
 
     def handle_data(self, data):
@@ -111,7 +115,7 @@ def visible_text(markup):
     parser = VisibleTextParser()
     parser.feed(markup)
     parser.close()
-    return normalized_visible_text(" ".join(parser.parts))
+    return normalized_parsed_text(" ".join(parser.parts))
 
 
 def validate_html_text_decoding(master):
@@ -131,8 +135,17 @@ def validate_html_text_decoding(master):
     for title in regression_titles:
         serialized = f"<h1>{html.escape(title)}</h1>"
         require(
-            element_texts(serialized, "h1") == [normalized_visible_text(title)],
+            element_texts(serialized, "h1") == [normalized_source_text(title)],
             f"HTML title decoding regression failed: {title!r}",
+        )
+    literal_entity_cases = [
+        ("<h1>A &amp;gt; B &amp;amp; C</h1>", "A &gt; B &amp; C"),
+        ("<h1>A &amp;amp;gt; B &amp;amp;amp; C</h1>", "A &amp;gt; B &amp;amp; C"),
+    ]
+    for serialized, parsed in literal_entity_cases:
+        require(
+            element_texts(serialized, "h1") == [parsed],
+            f"Literal HTML entity regression failed: {serialized!r}",
         )
 
 
@@ -228,7 +241,7 @@ def validate_site():
         h1_titles = element_texts(page, "h1")
         require(len(h1_titles) == 1, f"{slug}.html must have exactly one h1 title.")
         require(
-            h1_titles[0] == normalized_visible_text(item.get("title", "")),
+            h1_titles[0] == normalized_source_text(item.get("title", "")),
             f"Visible h1 title mismatch in {slug}.html.",
         )
         require(config["orcid"] in page, f"ORCID anchor missing from {slug}.html.")
@@ -253,7 +266,7 @@ def validate_site():
             ]:
                 if str(value or "").strip():
                     require(
-                        normalized_visible_text(value) in page_text,
+                        normalized_source_text(value) in page_text,
                         f"Deep GEO content lost from {slug}.html: {value!r}",
                     )
                     require(str(value) in markdown, f"Deep GEO content lost from {slug}.md.")
@@ -278,7 +291,7 @@ def validate_site():
 
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
     featured_titles = [
-        normalized_visible_text(master_by_token[controller_token(entry)]["title"])
+        normalized_source_text(master_by_token[controller_token(entry)]["title"])
         for entry in featured
     ]
     featured_start = "<!-- FEATURED_PAPERS_START -->"
@@ -307,7 +320,7 @@ def validate_site():
         publications_html, "div", {"class": "pub-title"}
     )
     for item in withdrawn:
-        withdrawn_title = normalized_visible_text(item.get("title", ""))
+        withdrawn_title = normalized_source_text(item.get("title", ""))
         require(
             not any(withdrawn_title in title for title in publication_title_regions),
             "Withdrawn title appears in publications.html.",
