@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       paper:
-        description: "DOI (recommended), exact slug, exact title, or unique title substring"
+        description: "One DOI / exact slug / exact title per line; comma-separated also accepted"
         required: true
         type: string
       deep_geo:
