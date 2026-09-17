@@ -611,8 +611,8 @@
     "slug": "doi-10-1200-po-24-00089",
     "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.html",
     "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.md",
-    "deep_geo": false,
-    "featured": false
+    "deep_geo": true,
+    "featured": true
   },
   {
     "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",

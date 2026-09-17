@@ -342,7 +342,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1200/po.24.00089
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension
 - Journal: Molecular Medicine
