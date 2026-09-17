@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: publication-data-updates
@@ -53,3 +55,12 @@ jobs:
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    uses: ./.github/workflows/static.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

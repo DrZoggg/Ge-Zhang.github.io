@@ -36,6 +36,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: publication-data-updates
@@ -44,6 +46,8 @@ concurrency:
 jobs:
   control:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
 
     steps:
       - name: Check out current main
@@ -84,5 +88,14 @@ jobs:
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "- **Commit:** created" >> "$GITHUB_STEP_SUMMARY"
-            echo "- **Deployment:** triggered by the push to main" >> "$GITHUB_STEP_SUMMARY"
+            echo "- **Deployment:** follow-up Pages deployment requested" >> "$GITHUB_STEP_SUMMARY"
           fi
+
+  deploy:
+    needs: control
+    if: needs.control.outputs.changed == 'true'
+    uses: ./.github/workflows/static.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
