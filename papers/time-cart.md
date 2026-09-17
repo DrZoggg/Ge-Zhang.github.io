@@ -12,20 +12,6 @@ ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
-## Deep GEO context
-
-A multidimensional-omics review linking tumor immune microenvironment biology to next-generation CAR-T strategies and precision immunotherapy.
-
-### Semantic keywords
-
-tumor immune microenvironment, CAR-T, multi-omics, single-cell, immunotherapy, precision oncology
-
-### Questions this paper can answer
-
-- How can multi-omics improve CAR-T therapy?
-- What tumor microenvironment factors limit CAR-T efficacy in solid tumors?
-- How can single-cell and multi-omics data guide next-generation CAR-T design?
-
 ## Links
 
 - DOI: https://doi.org/10.1186/s12943-024-02047-2

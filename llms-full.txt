@@ -405,7 +405,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1186/s12943-024-02047-2
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.md
-- Deep GEO: yes
+- Deep GEO: no
 
 ## Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure
 - Journal: Journal of Cellular and Molecular Medicine

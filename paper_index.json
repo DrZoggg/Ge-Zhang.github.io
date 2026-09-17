@@ -493,8 +493,8 @@
       "doi": "10.1186/s12943-024-02047-2",
       "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.html",
       "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/time-cart.md",
-      "deep_geo": true,
-      "featured": true
+      "deep_geo": false,
+      "featured": false
     },
     {
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
