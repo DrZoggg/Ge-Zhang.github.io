@@ -581,8 +581,8 @@
       "doi": "10.1038/s41598-024-65236-5",
       "paper_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/circadian-ihd.html",
       "markdown_url": "https://drzoggg.github.io/Ge-Zhang.github.io/papers/circadian-ihd.md",
-      "deep_geo": true,
-      "featured": true
+      "deep_geo": false,
+      "featured": false
     },
     {
       "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
