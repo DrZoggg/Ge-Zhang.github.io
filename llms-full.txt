@@ -90,7 +90,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1038/s41698-026-01699-1
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care
 - Journal: Med Research

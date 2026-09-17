@@ -18,3 +18,4 @@
 - [Molecular subtypes of ischemic heart disease based on circadian rhythm](https://drzoggg.github.io/Ge-Zhang.github.io/papers/circadian-ihd.html) — DOI: 10.1038/s41598-024-65236-5
 - [Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination](https://drzoggg.github.io/Ge-Zhang.github.io/papers/icd-cart.html) — DOI: 10.1016/j.canlet.2024.217079
 - [Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction](https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.html) — DOI: 10.1016/j.ejphar.2023.175569
+- [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
