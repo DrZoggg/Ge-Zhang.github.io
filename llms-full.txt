@@ -45,7 +45,7 @@ ORCID: https://orcid.org/0000-0002-3116-3246
 - DOI: 10.1002/mdr2.70052
 - HTML: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.html
 - Markdown: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study
 - Journal: BIO Integration

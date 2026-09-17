@@ -20,3 +20,4 @@
 - [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
 - [Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.html) — DOI: 10.1002/ehf2.14003
 - [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.html) — DOI: 10.1093/eurheartj/ehaf523
+- [Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.html) — DOI: 10.1002/mdr2.70052
