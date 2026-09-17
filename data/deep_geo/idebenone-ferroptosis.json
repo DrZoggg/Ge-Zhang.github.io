@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1016/j.ejphar.2023.175569",
+  "display_title": "Idebenone, ferroptosis & myocardial infarction",
+  "summary": "A mechanistic study linking idebenone-mediated cardioprotection after myocardial infarction to ROS, autophagy, ferroptosis and AMPK–mTOR signaling.",
+  "keywords": ["idebenone", "ferroptosis", "autophagy", "ROS", "AMPK", "mTOR", "myocardial infarction"],
+  "questions": [
+    "Does idebenone suppress ferroptosis after myocardial infarction?",
+    "How are ROS, autophagy and AMPK–mTOR linked in post-MI injury?",
+    "What mechanisms underlie idebenone cardioprotection?"
+  ]
+}

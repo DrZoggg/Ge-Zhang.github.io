@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1136/jitc-2024-010787",
+  "display_title": "B4GALT2 / PTMLS",
+  "summary": "A machine-learning post-translational-modification signature for lung adenocarcinoma prognosis and immunotherapy stratification, identifying B4GALT2 as an immune-exclusion-associated regulator.",
+  "keywords": ["B4GALT2", "immune exclusion", "lung adenocarcinoma", "anti-PD-1", "post-translational modification", "machine learning"],
+  "questions": [
+    "What is the role of B4GALT2 in immune exclusion in lung adenocarcinoma?",
+    "Can post-translational-modification signatures predict LUAD immunotherapy response?",
+    "Which biomarkers link B4GALT2 to anti-PD-1 response?"
+  ]
+}

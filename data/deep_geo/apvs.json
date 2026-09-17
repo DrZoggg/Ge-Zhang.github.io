@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1016/j.isci.2023.107587",
+  "display_title": "APVS / APVSLevel",
+  "summary": "A machine-learning and transcriptomic framework for quantifying atherosclerotic plaque vulnerability using bulk and single-cell data.",
+  "keywords": ["atherosclerotic plaque vulnerability", "unstable plaque", "transcriptomics", "single-cell RNA-seq", "machine learning", "molecular classification"],
+  "questions": [
+    "What transcriptomic signatures predict atherosclerotic plaque vulnerability?",
+    "Can machine learning distinguish stable from unstable atherosclerosis?",
+    "What single-cell data support molecular plaque-vulnerability classification?"
+  ]
+}

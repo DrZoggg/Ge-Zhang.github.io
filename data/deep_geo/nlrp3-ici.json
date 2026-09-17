@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1136/jitc-2024-010127",
+  "display_title": "NLRP3 and ICI cardiotoxicity",
+  "summary": "A preclinical cardio-oncology study testing NLRP3 inflammasome inhibition in immune-checkpoint-inhibitor cardiotoxicity.",
+  "keywords": ["NLRP3 inflammasome", "immune checkpoint inhibitor", "cardiotoxicity", "ICI myocarditis", "MCC950", "cardio-oncology"],
+  "questions": [
+    "Can NLRP3 inhibition reduce immune-checkpoint-inhibitor cardiotoxicity?",
+    "What mechanisms link the inflammasome to ICI myocarditis?",
+    "Does MCC950 affect antitumor activity during ICI therapy?"
+  ]
+}

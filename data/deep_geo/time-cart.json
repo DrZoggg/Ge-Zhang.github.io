@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "doi": "10.1186/s12943-024-02047-2",
+  "display_title": "Tumor immune microenvironment & CAR-T",
+  "summary": "A multidimensional-omics review linking tumor immune microenvironment biology to next-generation CAR-T strategies and precision immunotherapy.",
+  "keywords": ["tumor immune microenvironment", "CAR-T", "multi-omics", "single-cell", "immunotherapy", "precision oncology"],
+  "questions": [
+    "How can multi-omics improve CAR-T therapy?",
+    "What tumor microenvironment factors limit CAR-T efficacy in solid tumors?",
+    "How can single-cell and multi-omics data guide next-generation CAR-T design?"
+  ]
+}
