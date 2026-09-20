@@ -265,17 +265,30 @@ def update_homepage(index_html, config):
         raise ValueError("index.html must contain exactly one profile links block.")
 
     primary_affiliation = config["profile"]["affiliations"][0]["name"]
+    homepage_top_label = config["profile"]["homepage_top_label"].strip()
+    homepage_top_text = (
+        f"{homepage_top_label} · {primary_affiliation}"
+        if homepage_top_label
+        else primary_affiliation
+    )
+    index_html, affiliation_count = re.subn(
+        r'(<main class="wrap"><section class="hero"><div><div class="eyebrow">)'
+        r'.*?(</div>)',
+        lambda match: (
+            match.group(1) + html.escape(homepage_top_text) + match.group(2)
+        ),
+        index_html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if affiliation_count != 1:
+        raise ValueError("index.html must contain exactly one homepage affiliation label.")
+
     replacements = (
         (
             r'<a class="brand" href="index\.html">.*?</a>',
             f'<a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a>',
             "homepage brand",
-        ),
-        (
-            r'<div class="eyebrow">Cardiovascular research · .*?</div>',
-            '<div class="eyebrow">Cardiovascular research · '
-            f'{html.escape(primary_affiliation)}</div>',
-            "homepage affiliation",
         ),
         (
             r'<footer><div class="wrap">© .*? · Academic website · Updated 2026-09</div></footer>',
