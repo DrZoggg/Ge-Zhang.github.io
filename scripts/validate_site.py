@@ -26,6 +26,10 @@ class ValidationError(RuntimeError):
     pass
 
 
+CANONICAL_SITE_URL = "https://drgezhang.com"
+LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
+
+
 def require(condition, message):
     if not condition:
         raise ValidationError(message)
@@ -118,6 +122,35 @@ def visible_text(markup):
     return normalized_parsed_text(" ".join(parser.parts))
 
 
+def single_html_url(markup, pattern, label):
+    matches = re.findall(pattern, markup, flags=re.I)
+    require(len(matches) == 1, f"{label} must appear exactly once.")
+    return html.unescape(matches[0])
+
+
+def json_ld_objects(markup):
+    payloads = re.findall(
+        r'<script type="application/ld\+json">(.*?)</script>', markup, flags=re.I | re.S
+    )
+    return [json.loads(payload) for payload in payloads]
+
+
+def json_ld_object(markup, schema_type, label):
+    matches = [item for item in json_ld_objects(markup) if item.get("@type") == schema_type]
+    require(len(matches) == 1, f"{label} must contain exactly one {schema_type} JSON-LD object.")
+    return matches[0]
+
+
+def paper_json_ld_object(markup, label):
+    matches = [
+        item
+        for item in json_ld_objects(markup)
+        if item.get("@type") in {"ScholarlyArticle", "CreativeWork"}
+    ]
+    require(len(matches) == 1, f"{label} must contain exactly one paper JSON-LD object.")
+    return matches[0]
+
+
 def validate_html_text_decoding(master):
     pap_title = (
         "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle "
@@ -151,6 +184,10 @@ def validate_html_text_decoding(master):
 
 def validate_site():
     config = load_site_config()
+    require(
+        config["site_url"] == CANONICAL_SITE_URL,
+        f"Canonical site origin must be {CANONICAL_SITE_URL}.",
+    )
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
     withdrawn = [item for item in master if is_withdrawn(item)]
@@ -230,14 +267,27 @@ def validate_site():
         slug = item["slug"]
         page = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
         markdown = (PAPERS_DIR / f"{slug}.md").read_text(encoding="utf-8")
-        canonical_matches = re.findall(
-            r'<link rel="canonical" href="([^"]+)"', page, flags=re.I
+        canonical = single_html_url(
+            page,
+            r'<link rel="canonical" href="([^"]+)"',
+            f"{slug}.html canonical URL",
         )
-        require(len(canonical_matches) == 1, f"{slug}.html must have one canonical URL.")
-        canonical = html.unescape(canonical_matches[0])
         canonical_urls.append(canonical)
         expected_url = f"{config['site_url']}/papers/{slug}.html"
+        expected_markdown_url = f"{config['site_url']}/papers/{slug}.md"
         require(canonical == expected_url, f"Wrong canonical URL for {slug}.html.")
+        og_url = single_html_url(
+            page,
+            r'<meta property="og:url" content="([^"]+)"',
+            f"{slug}.html Open Graph URL",
+        )
+        require(og_url == expected_url, f"Wrong Open Graph URL for {slug}.html.")
+        schema = paper_json_ld_object(page, f"{slug}.html")
+        require(schema.get("url") == expected_url, f"Wrong Schema.org URL for {slug}.html.")
+        require(
+            schema.get("mainEntityOfPage") == expected_url,
+            f"Wrong Schema.org mainEntityOfPage for {slug}.html.",
+        )
         h1_titles = element_texts(page, "h1")
         require(len(h1_titles) == 1, f"{slug}.html must have exactly one h1 title.")
         require(
@@ -245,11 +295,20 @@ def validate_site():
             f"Visible h1 title mismatch in {slug}.html.",
         )
         require(config["orcid"] in page, f"ORCID anchor missing from {slug}.html.")
-        require(expected_url in markdown, f"HTML URL missing from {slug}.md.")
         require(
-            f"{config['site_url']}/papers/{slug}.md" in page,
+            f"Canonical page: {expected_url}" in markdown,
+            f"Canonical page URL missing from {slug}.md.",
+        )
+        require(
+            f"Markdown record: {expected_markdown_url}" in markdown,
+            f"Markdown record URL missing from {slug}.md.",
+        )
+        require(
+            expected_markdown_url in page,
             f"Markdown alternate missing from {slug}.html.",
         )
+        require(LEGACY_SITE_URL not in page, f"Legacy origin remains in {slug}.html.")
+        require(LEGACY_SITE_URL not in markdown, f"Legacy origin remains in {slug}.md.")
         doi = norm_doi(item.get("doi"))
         if doi:
             require(f"https://doi.org/{doi}" in page, f"DOI link missing from {slug}.html.")
@@ -288,8 +347,38 @@ def validate_site():
         token = publication_token(item)
         require(bool(item.get("deep_geo")) == (token in deep_tokens), "Deep GEO flag mismatch.")
         require(bool(item.get("featured")) == (token in featured_tokens), "Featured flag mismatch.")
+    expected_html_urls = {f"{config['site_url']}/papers/{slug}.html" for slug in slugs}
+    expected_markdown_urls = {f"{config['site_url']}/papers/{slug}.md" for slug in slugs}
+    for payload, label in ((public_json, "publications.json"), (paper_index, "paper_index.json")):
+        require(
+            {item.get("paper_url") for item in payload} == expected_html_urls,
+            f"{label} paper URLs do not match the canonical origin.",
+        )
+        require(
+            {item.get("markdown_url") for item in payload} == expected_markdown_urls,
+            f"{label} Markdown URLs do not match the canonical origin.",
+        )
 
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+    homepage_url = f"{config['site_url']}/"
+    require(
+        single_html_url(
+            index_html,
+            r'<link rel="canonical" href="([^"]+)"',
+            "Homepage canonical URL",
+        ) == homepage_url,
+        "Wrong homepage canonical URL.",
+    )
+    require(
+        single_html_url(
+            index_html,
+            r'<meta property="og:url" content="([^"]+)"',
+            "Homepage Open Graph URL",
+        ) == homepage_url,
+        "Wrong homepage Open Graph URL.",
+    )
+    homepage_schema = json_ld_object(index_html, "Person", "Homepage")
+    require(homepage_schema.get("url") == homepage_url, "Wrong homepage Schema.org URL.")
     featured_titles = [
         normalized_source_text(master_by_token[controller_token(entry)]["title"])
         for entry in featured
@@ -312,6 +401,28 @@ def validate_site():
     )
 
     publications_html = (ROOT / "publications.html").read_text(encoding="utf-8")
+    publications_url = f"{config['site_url']}/publications.html"
+    require(
+        single_html_url(
+            publications_html,
+            r'<link rel="canonical" href="([^"]+)"',
+            "Publications canonical URL",
+        ) == publications_url,
+        "Wrong publications canonical URL.",
+    )
+    require(
+        single_html_url(
+            publications_html,
+            r'<meta property="og:url" content="([^"]+)"',
+            "Publications Open Graph URL",
+        ) == publications_url,
+        "Wrong publications Open Graph URL.",
+    )
+    publications_schema = json_ld_object(publications_html, "ProfilePage", "Publications page")
+    require(
+        publications_schema.get("url") == publications_url,
+        "Wrong publications Schema.org URL.",
+    )
     require(
         publications_html.count('data-paper-record="true"') == len(public_expected),
         "publications.html paper count differs from public master count.",
@@ -338,6 +449,10 @@ def validate_site():
         "year", "title", "journal", "type", "doi", "paper_url", "deep_geo", "featured"
     }
     require(required_csv.issubset(csv_rows[0].keys()), "CSV required fields are missing.")
+    require(
+        {row["paper_url"] for row in csv_rows} == expected_html_urls,
+        "CSV paper URLs do not match the canonical origin.",
+    )
 
     tree = ET.parse(ROOT / "sitemap.xml")
     sitemap_urls = [
@@ -360,11 +475,38 @@ def validate_site():
             "Featured URL missing from sitemap.",
         )
 
+    robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+    require(
+        robots == f"User-agent: *\nAllow: /\nSitemap: {config['site_url']}/sitemap.xml\n",
+        "robots.txt does not use the canonical sitemap URL.",
+    )
+
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     llms_full = (ROOT / "llms-full.txt").read_text(encoding="utf-8")
+    for expected in (
+        f"{config['site_url']}/",
+        f"{config['site_url']}/publications.html",
+        f"{config['site_url']}/publications.json",
+        f"{config['site_url']}/paper_index.json",
+    ):
+        require(expected in llms, f"Canonical link missing from llms.txt: {expected}")
     require(f"{config['site_url']}/paper_index.json" in llms, "paper_index missing from llms.txt.")
     require(llms.count("](https://") >= len(deep_geo), "Deep GEO list incomplete in llms.txt.")
     require(llms_full.count("\n## ") == len(public_expected), "llms-full paper count mismatch.")
+    for expected in expected_html_urls | expected_markdown_urls:
+        require(expected in llms_full, f"Canonical paper link missing from llms-full.txt: {expected}")
+    require(LEGACY_SITE_URL not in llms, "Legacy origin remains in llms.txt.")
+    require(LEGACY_SITE_URL not in llms_full, "Legacy origin remains in llms-full.txt.")
+    require(LEGACY_SITE_URL not in robots, "Legacy origin remains in robots.txt.")
+    require(LEGACY_SITE_URL not in (ROOT / "sitemap.xml").read_text(encoding="utf-8"),
+            "Legacy origin remains in sitemap.xml.")
+    require(LEGACY_SITE_URL not in index_html, "Legacy origin remains in index.html.")
+    require(LEGACY_SITE_URL not in publications_html,
+            "Legacy origin remains in publications.html.")
+    require(LEGACY_SITE_URL not in json.dumps(public_json, ensure_ascii=False),
+            "Legacy origin remains in publications.json.")
+    require(LEGACY_SITE_URL not in json.dumps(paper_index_payload, ensure_ascii=False),
+            "Legacy origin remains in paper_index.json.")
     for item in withdrawn:
         require(item.get("title", "") not in llms_full, "Withdrawn title in llms-full.txt.")
 

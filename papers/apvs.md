@@ -4,8 +4,8 @@ Journal: iScience
 Year: 2023
 Type: Article
 DOI: 10.1016/j.isci.2023.107587
-Canonical page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.html
-Markdown record: https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.md
+Canonical page: https://drgezhang.com/papers/apvs.html
+Markdown record: https://drgezhang.com/papers/apvs.md
 ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
@@ -29,6 +29,6 @@ atherosclerotic plaque vulnerability, unstable plaque, transcriptomics, single-c
 ## Links
 
 - DOI: https://doi.org/10.1016/j.isci.2023.107587
-- HTML page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.html
+- HTML page: https://drgezhang.com/papers/apvs.html
 - Google Scholar query: https://scholar.google.com/scholar?q=%22Atherosclerotic%20plaque%20vulnerability%20quantification%20system%20for%20clinical%20and%20biological%20interpretability%22
 - ORCID: https://orcid.org/0000-0002-3116-3246

@@ -24,6 +24,8 @@ from sync_common import ROOT, is_withdrawn, load_master, norm_doi, save_master
 
 FEATURED_START = "<!-- FEATURED_PAPERS_START -->"
 FEATURED_END = "<!-- FEATURED_PAPERS_END -->"
+HOME_ORIGIN_START = "<!-- HOME_ORIGIN_START -->"
+HOME_ORIGIN_END = "<!-- HOME_ORIGIN_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 
 
@@ -37,6 +39,47 @@ def doi_url(doi):
 
 def absolute(site_root, relative):
     return f"{site_root}/{str(relative).lstrip('/')}"
+
+
+def update_homepage_origin(index_html, config):
+    homepage_url = f"{config['site_url']}/"
+    origin_block = (
+        f'{HOME_ORIGIN_START}\n'
+        f'<link rel="canonical" href="{html.escape(homepage_url, quote=True)}">\n'
+        f'<meta property="og:url" content="{html.escape(homepage_url, quote=True)}">\n'
+        f'{HOME_ORIGIN_END}'
+    )
+    if index_html.count(HOME_ORIGIN_START) == index_html.count(HOME_ORIGIN_END) == 1:
+        before, remainder = index_html.split(HOME_ORIGIN_START, 1)
+        _, after = remainder.split(HOME_ORIGIN_END, 1)
+        index_html = before + origin_block + after
+    elif HOME_ORIGIN_START not in index_html and HOME_ORIGIN_END not in index_html:
+        stylesheet = '<link rel="stylesheet" href="assets/style.css">'
+        if index_html.count(stylesheet) != 1:
+            raise ValueError("index.html must contain exactly one homepage stylesheet link.")
+        index_html = index_html.replace(stylesheet, origin_block + "\n" + stylesheet, 1)
+    else:
+        raise ValueError("index.html homepage origin markers are incomplete or duplicated.")
+
+    schema_pattern = re.compile(
+        r'(<script type="application/ld\+json">)(.*?)(</script>)', re.DOTALL
+    )
+    person_schema_count = 0
+
+    def update_schema(match):
+        nonlocal person_schema_count
+        payload = json.loads(match.group(2))
+        if payload.get("@type") != "Person":
+            return match.group(0)
+        person_schema_count += 1
+        payload["url"] = homepage_url
+        serialized = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+        return match.group(1) + serialized + match.group(3)
+
+    index_html = schema_pattern.sub(update_schema, index_html)
+    if person_schema_count != 1:
+        raise ValueError("index.html must contain exactly one Person JSON-LD object.")
+    return index_html
 
 
 def schema_type(publication):
@@ -327,6 +370,7 @@ def render_publications_page(items, config):
 <title>All Publications | Ge Zhang</title>
 <meta name="description" content="Publication record of Ge Zhang, using ORCID {html.escape(config["orcid"], quote=True)} as the identity anchor.">
 <link rel="canonical" href="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
+<meta property="og:url" content="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <header><nav><a class="brand" href="index.html">Ge Zhang</a><div class="navlinks">
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
@@ -527,6 +571,7 @@ def build_site():
         f'View all <span id="pubCount">{len(public_items)}</span> publications',
         index_html,
     )
+    index_html = update_homepage_origin(index_html, config)
     index_path.write_text(index_html, encoding="utf-8")
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
@@ -543,6 +588,12 @@ def build_site():
         + "\n</urlset>\n"
     )
     (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+    (ROOT / "robots.txt").write_text(
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Sitemap: {absolute(config['site_url'], 'sitemap.xml')}\n",
+        encoding="utf-8",
+    )
     result = {
         "master": len(master),
         "public": len(public_items),
