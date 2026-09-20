@@ -1,6 +1,9 @@
 # Ge Zhang Academic Hub — Full Publication Index
 
-ORCID: https://orcid.org/0000-0002-3116-3246
+- Researcher: Ge Zhang
+- Chinese name: 张格
+- Canonical person: https://drgezhang.com/#person
+- ORCID: https://orcid.org/0000-0002-3116-3246
 
 ## A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity
 - Journal: Clinical and Experimental Medicine

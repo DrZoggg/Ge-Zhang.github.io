@@ -1,12 +1,16 @@
 # Molecular subtypes of ischemic heart disease based on circadian rhythm
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Scientific Reports
 Year: 2024
 Type: Article
 DOI: 10.1038/s41598-024-65236-5
 Canonical page: https://drgezhang.com/papers/circadian-ihd.html
 Markdown record: https://drgezhang.com/papers/circadian-ihd.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

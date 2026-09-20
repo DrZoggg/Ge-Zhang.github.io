@@ -28,6 +28,10 @@ class ValidationError(RuntimeError):
 
 
 CANONICAL_SITE_URL = "https://drgezhang.com"
+CANONICAL_PERSON_ID = "https://drgezhang.com/#person"
+PRIMARY_RESEARCHER_NAME = "Ge Zhang"
+CHINESE_RESEARCHER_NAME = "张格"
+CANONICAL_ORCID = "0000-0002-3116-3246"
 LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
 
 
@@ -129,6 +133,39 @@ def single_html_url(markup, pattern, label):
     return html.unescape(matches[0])
 
 
+def single_meta_content(markup, name, label):
+    return single_html_url(
+        markup,
+        rf'<meta name="{re.escape(name)}" content="([^"]*)">',
+        label,
+    )
+
+
+def same_as_values(value):
+    if isinstance(value, list):
+        return value
+    return [value] if value else []
+
+
+def validate_researcher_reference(person, config, label):
+    require(isinstance(person, dict), f"{label} must be a Person object.")
+    require(person.get("@type") == "Person", f"{label} must use @type Person.")
+    require(person.get("@id") == config["person_id"], f"Wrong Person @id in {label}.")
+    require(person.get("name") == config["researcher_name"], f"Wrong Person name in {label}.")
+    alternate_names = person.get("alternateName") or []
+    if not isinstance(alternate_names, list):
+        alternate_names = [alternate_names]
+    require(
+        alternate_names == [config["researcher_name_zh"]],
+        f"alternateName in {label} must contain only the verified Chinese name.",
+    )
+    require(person.get("url") == f"{config['site_url']}/", f"Wrong Person URL in {label}.")
+    require(
+        f"https://orcid.org/{config['orcid']}" in same_as_values(person.get("sameAs")),
+        f"ORCID sameAs missing from {label}.",
+    )
+
+
 def json_ld_objects(markup):
     payloads = re.findall(
         r'<script type="application/ld\+json">(.*?)</script>', markup, flags=re.I | re.S
@@ -189,6 +226,19 @@ def validate_site():
         config["site_url"] == CANONICAL_SITE_URL,
         f"Canonical site origin must be {CANONICAL_SITE_URL}.",
     )
+    require(
+        config["researcher_name"] == PRIMARY_RESEARCHER_NAME,
+        f"Primary researcher name must be {PRIMARY_RESEARCHER_NAME}.",
+    )
+    require(
+        config["researcher_name_zh"] == CHINESE_RESEARCHER_NAME,
+        f"Chinese researcher name must be {CHINESE_RESEARCHER_NAME}.",
+    )
+    require(
+        config["person_id"] == CANONICAL_PERSON_ID,
+        f"Canonical Person @id must be {CANONICAL_PERSON_ID}.",
+    )
+    require(config["orcid"] == CANONICAL_ORCID, f"ORCID must be {CANONICAL_ORCID}.")
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
     withdrawn = [item for item in master if is_withdrawn(item)]
@@ -218,6 +268,16 @@ def validate_site():
     require(
         len(paper_index) == len(public_expected),
         f"paper_index count {len(paper_index)} != expected {len(public_expected)}.",
+    )
+    require(
+        paper_index_payload.get("researcher")
+        == {
+            "name": config["researcher_name"],
+            "alternateName": config["researcher_name_zh"],
+            "url": config["person_id"],
+            "orcid": config["orcid"],
+        },
+        "paper_index.json researcher identity is wrong.",
     )
     require(
         not any(is_withdrawn(item) for item in public_json),
@@ -289,6 +349,51 @@ def validate_site():
             schema.get("mainEntityOfPage") == expected_url,
             f"Wrong Schema.org mainEntityOfPage for {slug}.html.",
         )
+        expected_title = str(item.get("title") or "Untitled work")
+        expected_journal = str(item.get("journal") or "Unknown source")
+        require(schema.get("name") == expected_title, f"Schema.org name changed for {slug}.html.")
+        require(
+            schema.get("headline") == expected_title,
+            f"Schema.org headline changed for {slug}.html.",
+        )
+        author = schema.get("author")
+        validate_researcher_reference(author, config, f"{slug}.html author")
+        require(
+            author.get("sameAs") == f"https://orcid.org/{config['orcid']}",
+            f"Author sameAs must be the canonical ORCID URL in {slug}.html.",
+        )
+        require(
+            single_meta_content(page, "citation_title", f"{slug}.html citation_title")
+            == expected_title,
+            f"citation_title changed for {slug}.html.",
+        )
+        require(
+            single_meta_content(
+                page, "citation_journal_title", f"{slug}.html citation_journal_title"
+            )
+            == expected_journal,
+            f"citation_journal_title changed for {slug}.html.",
+        )
+        if item.get("journal"):
+            require(
+                schema.get("isPartOf", {}).get("name") == item["journal"],
+                f"Schema.org journal changed for {slug}.html.",
+            )
+        if item.get("year"):
+            expected_year = str(item["year"])
+            require(
+                single_meta_content(
+                    page,
+                    "citation_publication_date",
+                    f"{slug}.html citation_publication_date",
+                )
+                == expected_year,
+                f"citation_publication_date changed for {slug}.html.",
+            )
+            require(
+                schema.get("datePublished") == expected_year,
+                f"Schema.org publication year changed for {slug}.html.",
+            )
         h1_titles = element_texts(page, "h1")
         require(len(h1_titles) == 1, f"{slug}.html must have exactly one h1 title.")
         require(
@@ -304,6 +409,13 @@ def validate_site():
             f"Markdown record: {expected_markdown_url}" in markdown,
             f"Markdown record URL missing from {slug}.md.",
         )
+        for identity_line in (
+            f"Researcher: {config['researcher_name']}",
+            f"Chinese name: {config['researcher_name_zh']}",
+            f"ORCID identity anchor: https://orcid.org/{config['orcid']}",
+            f"Canonical researcher: {config['person_id']}",
+        ):
+            require(identity_line in markdown, f"Identity line missing from {slug}.md.")
         require(
             expected_markdown_url in page,
             f"Markdown alternate missing from {slug}.html.",
@@ -313,6 +425,19 @@ def validate_site():
         doi = norm_doi(item.get("doi"))
         if doi:
             require(f"https://doi.org/{doi}" in page, f"DOI link missing from {slug}.html.")
+            require(
+                single_meta_content(page, "citation_doi", f"{slug}.html citation_doi") == doi,
+                f"citation_doi changed for {slug}.html.",
+            )
+            require(
+                schema.get("identifier", {}).get("value") == doi,
+                f"Schema.org DOI changed for {slug}.html.",
+            )
+        else:
+            require(
+                not re.search(r'<meta name="citation_doi"\s', page),
+                f"Unexpected citation_doi in {slug}.html.",
+            )
         token = publication_token(item)
         if token in deep_tokens:
             content_path = deep_content_path(item)
@@ -378,8 +503,64 @@ def validate_site():
         ) == homepage_url,
         "Wrong homepage Open Graph URL.",
     )
-    homepage_schema = json_ld_object(index_html, "Person", "Homepage")
+    require(
+        f'<span class="name-zh" lang="zh-CN">{config["researcher_name_zh"]}</span>'
+        in index_html,
+        "Homepage must contain a visible zh-CN researcher name span.",
+    )
+    expected_homepage_title = (
+        f"{config['researcher_name']} ({config['researcher_name_zh']}) — "
+        "Cardiovascular AI, Multi-omics & Circadian Biology"
+    )
+    require(
+        element_texts(index_html, "title") == [expected_homepage_title],
+        "Homepage title does not use the canonical bilingual identity.",
+    )
+    expected_chinese_description = (
+        f"{config['researcher_name_zh']}（{config['researcher_name']}），"
+        "心血管医学与计算生物学研究者，研究方向包括人工智能、多组学、动脉粥样硬化、"
+        "心力衰竭与昼夜节律。"
+    )
+    require(
+        element_texts(
+            index_html,
+            "p",
+            {"class": "identity-zh", "lang": "zh-CN"},
+        )
+        == [expected_chinese_description],
+        "Homepage Chinese identity description is missing or changed.",
+    )
+    require(
+        config["researcher_name_zh"] in visible_text(index_html),
+        "Chinese researcher identity is not visible on the homepage.",
+    )
+    require(
+        f"{config['researcher_name']} ({config['researcher_name_zh']})"
+        in single_meta_content(index_html, "description", "Homepage meta description"),
+        "Bilingual researcher identity missing from homepage meta description.",
+    )
+    homepage_schema = json_ld_object(index_html, "ProfilePage", "Homepage")
     require(homepage_schema.get("url") == homepage_url, "Wrong homepage Schema.org URL.")
+    require(
+        homepage_schema.get("@id") == f"{config['site_url']}/#profile",
+        "Wrong homepage ProfilePage @id.",
+    )
+    homepage_person = homepage_schema.get("mainEntity")
+    validate_researcher_reference(homepage_person, config, "Homepage ProfilePage mainEntity")
+    require(
+        homepage_person.get("identifier") == f"https://orcid.org/{config['orcid']}",
+        "Homepage Person ORCID identifier is wrong.",
+    )
+    expected_profiles = {
+        f"https://orcid.org/{config['orcid']}",
+        config["google_scholar_url"],
+        config["researchgate_url"],
+        config["github_url"],
+    }
+    require(
+        set(same_as_values(homepage_person.get("sameAs"))) == expected_profiles,
+        "Homepage Person sameAs profiles do not match verified site configuration.",
+    )
     featured_titles = [
         normalized_source_text(master_by_token[controller_token(entry)]["title"])
         for entry in featured
@@ -423,6 +604,21 @@ def validate_site():
     require(
         publications_schema.get("url") == publications_url,
         "Wrong publications Schema.org URL.",
+    )
+    publications_person = publications_schema.get("mainEntity")
+    validate_researcher_reference(
+        publications_person,
+        config,
+        "Publications ProfilePage mainEntity",
+    )
+    require(
+        publications_person.get("sameAs") == f"https://orcid.org/{config['orcid']}",
+        "Publications Person sameAs must be the canonical ORCID URL.",
+    )
+    require(
+        f"{config['researcher_name']} ({config['researcher_name_zh']})"
+        in visible_text(publications_html),
+        "Bilingual researcher identity is not visible on publications.html.",
     )
     require(
         publications_html.count('data-paper-record="true"') == len(public_expected),
@@ -506,6 +702,18 @@ def validate_site():
 
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     llms_full = (ROOT / "llms-full.txt").read_text(encoding="utf-8")
+    identity_lines = (
+        f"- Researcher: {config['researcher_name']}",
+        f"- Chinese name: {config['researcher_name_zh']}",
+        f"- Canonical person: {config['person_id']}",
+        f"- ORCID: https://orcid.org/{config['orcid']}",
+    )
+    for identity_line in identity_lines:
+        require(identity_line in llms, f"Identity missing from llms.txt: {identity_line}")
+        require(
+            identity_line in llms_full,
+            f"Identity missing from llms-full.txt: {identity_line}",
+        )
     for expected in (
         f"{config['site_url']}/",
         f"{config['site_url']}/publications.html",

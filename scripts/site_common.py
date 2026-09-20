@@ -40,7 +40,13 @@ def write_json(path, payload):
 
 def load_site_config():
     config = read_json(SITE_CONFIG_PATH)
-    required = ("site_url", "researcher_name", "orcid")
+    required = (
+        "site_url",
+        "researcher_name",
+        "researcher_name_zh",
+        "person_id",
+        "orcid",
+    )
     missing = [key for key in required if not str(config.get(key) or "").strip()]
     if missing:
         raise ValueError("Missing site configuration: " + ", ".join(missing))

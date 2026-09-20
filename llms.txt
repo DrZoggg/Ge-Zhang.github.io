@@ -1,5 +1,8 @@
 # Ge Zhang Academic Hub
 
+- Researcher: Ge Zhang
+- Chinese name: 张格
+- Canonical person: https://drgezhang.com/#person
 - ORCID: https://orcid.org/0000-0002-3116-3246
 - Homepage: https://drgezhang.com/
 - All Publications: https://drgezhang.com/publications.html

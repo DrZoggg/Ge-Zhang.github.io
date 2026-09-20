@@ -1,12 +1,16 @@
 # Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Journal of Proteome Research
 Year: 2024
 Type: Article
 DOI: 10.1021/acs.jproteome.4c00522
 Canonical page: https://drgezhang.com/papers/olink-dcm.html
 Markdown record: https://drgezhang.com/papers/olink-dcm.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

@@ -1,12 +1,16 @@
 # Real-world safety of aliskiren in primary hypertension: A cross-database study
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: PLOS One
 Year: 2026
 Type: Article
 DOI: 10.1371/journal.pone.0346326
 Canonical page: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
 Markdown record: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

@@ -1,12 +1,16 @@
 # Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: iScience
 Year: 2023
 Type: Article
 DOI: 10.1016/j.isci.2023.107587
 Canonical page: https://drgezhang.com/papers/apvs.html
 Markdown record: https://drgezhang.com/papers/apvs.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

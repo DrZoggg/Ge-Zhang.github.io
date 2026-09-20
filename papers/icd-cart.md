@@ -1,12 +1,16 @@
 # Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Cancer Letters
 Year: 2024
 Type: Article
 DOI: 10.1016/j.canlet.2024.217079
 Canonical page: https://drgezhang.com/papers/icd-cart.html
 Markdown record: https://drgezhang.com/papers/icd-cart.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

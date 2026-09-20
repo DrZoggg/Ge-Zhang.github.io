@@ -1,12 +1,16 @@
 # Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Journal of Translational Medicine
 Year: 2022
 Type: Article
 DOI: 10.1186/s12967-022-03795-9
 Canonical page: https://drgezhang.com/papers/smc-fate.html
 Markdown record: https://drgezhang.com/papers/smc-fate.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

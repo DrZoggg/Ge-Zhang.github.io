@@ -1,12 +1,16 @@
 # AI hybrid survival assessment for advanced heart failure patients with renal dysfunction
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Nature Communications
 Year: 2024
 Type: Article
 DOI: 10.1038/s41467-024-50415-9
 Canonical page: https://drgezhang.com/papers/aihflevel.html
 Markdown record: https://drgezhang.com/papers/aihflevel.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 
