@@ -230,6 +230,46 @@ def validate_site():
         bool(str(profile.get("researcher_name_zh") or "").strip()),
         "Chinese researcher name is missing from profile_config.json.",
     )
+    biography = profile.get("biography")
+    require(
+        isinstance(biography, dict)
+        and isinstance(biography.get("en"), str)
+        and bool(biography["en"].strip()),
+        "profile_config.json biography.en must be non-empty.",
+    )
+    require(
+        isinstance(biography, dict)
+        and isinstance(biography.get("zh"), str)
+        and bool(biography["zh"].strip()),
+        "profile_config.json biography.zh must be non-empty.",
+    )
+    require(
+        isinstance(profile.get("affiliations"), list)
+        and bool(profile["affiliations"])
+        and isinstance(profile["affiliations"][0], dict)
+        and isinstance(profile["affiliations"][0].get("name"), str)
+        and bool(profile["affiliations"][0]["name"].strip()),
+        "profile_config.json primary affiliation must be non-empty.",
+    )
+    require(
+        isinstance(profile.get("research_areas"), list)
+        and bool(profile["research_areas"])
+        and all(
+            isinstance(value, str) and bool(value.strip())
+            for value in profile["research_areas"]
+        ),
+        "profile_config.json research_areas must be a non-empty array of non-empty strings.",
+    )
+    require(
+        isinstance(profile.get("description"), str)
+        and bool(profile["description"].strip()),
+        "profile_config.json description must be non-empty.",
+    )
+    require(
+        isinstance(profile.get("disambiguating_description"), str)
+        and bool(profile["disambiguating_description"].strip()),
+        "profile_config.json disambiguating_description must be non-empty.",
+    )
     require(
         bool(re.fullmatch(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]", profile.get("orcid", ""))),
         "profile_config.json ORCID must use the 0000-0000-0000-0000 format.",
