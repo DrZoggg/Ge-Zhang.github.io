@@ -4,6 +4,8 @@ import html
 import json
 import re
 import urllib.parse
+import xml.etree.ElementTree as ET
+from datetime import date, datetime, timezone
 
 from site_common import (
     DEEP_CONTENT_DIR,
@@ -27,6 +29,8 @@ FEATURED_END = "<!-- FEATURED_PAPERS_END -->"
 HOME_ORIGIN_START = "<!-- HOME_ORIGIN_START -->"
 HOME_ORIGIN_END = "<!-- HOME_ORIGIN_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
+SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
+SITEMAP_BASELINE_DATE = "2026-09-20"
 
 
 def scholar_url(title):
@@ -39,6 +43,49 @@ def doi_url(doi):
 
 def absolute(site_root, relative):
     return f"{site_root}/{str(relative).lstrip('/')}"
+
+
+def write_text_if_changed(path, content):
+    previous = path.read_text(encoding="utf-8") if path.is_file() else None
+    changed = previous != content
+    if changed:
+        path.write_text(content, encoding="utf-8")
+    return changed
+
+
+def load_sitemap_lastmods(path):
+    if not path.is_file():
+        return {}
+    try:
+        root = ET.parse(path).getroot()
+    except ET.ParseError as exc:
+        raise ValueError(f"Cannot preserve sitemap lastmod values: {exc}") from exc
+    result = {}
+    prefix = f"{{{SITEMAP_NAMESPACE}}}"
+    for entry in root.findall(f"{prefix}url"):
+        loc_node = entry.find(f"{prefix}loc")
+        if loc_node is None or not str(loc_node.text or "").strip():
+            raise ValueError("Cannot preserve sitemap lastmod values: sitemap entry lacks loc.")
+        url = str(loc_node.text).strip()
+        if url in result:
+            raise ValueError(f"Cannot preserve sitemap lastmod values: duplicate URL {url}")
+        lastmod_node = entry.find(f"{prefix}lastmod")
+        lastmod = str(lastmod_node.text or "").strip() if lastmod_node is not None else ""
+        if lastmod:
+            try:
+                parsed = date.fromisoformat(lastmod)
+            except ValueError as exc:
+                raise ValueError(f"Invalid existing sitemap lastmod for {url}: {lastmod}") from exc
+            if parsed.isoformat() != lastmod or parsed > datetime.now(timezone.utc).date():
+                raise ValueError(f"Invalid existing sitemap lastmod for {url}: {lastmod}")
+        result[url] = lastmod
+    return result
+
+
+def resolve_lastmod(url, changed, previous_lastmods, today):
+    if changed or url not in previous_lastmods:
+        return today
+    return previous_lastmods[url] or SITEMAP_BASELINE_DATE
 
 
 def update_homepage_origin(index_html, config):
@@ -481,6 +528,9 @@ def write_machine_indexes(items, deep_items, config):
 
 def build_site():
     config = load_site_config()
+    previous_lastmods = load_sitemap_lastmods(ROOT / "sitemap.xml")
+    today = datetime.now(timezone.utc).date().isoformat()
+    html_changed = {}
     master, _ = save_master(load_master())
     if ensure_public_slugs(master):
         master, _ = save_master(master)
@@ -511,11 +561,14 @@ def build_site():
     for item in public_items:
         token = publication_token(item)
         deep_content = load_deep_content(item) if token in deep_tokens else None
-        (PAPERS_DIR / f"{item['slug']}.html").write_text(
-            render_paper_html(item, config=config, deep_content=deep_content), encoding="utf-8"
+        paper_url = item["paper_url"]
+        html_changed[paper_url] = write_text_if_changed(
+            PAPERS_DIR / f"{item['slug']}.html",
+            render_paper_html(item, config=config, deep_content=deep_content),
         )
-        (PAPERS_DIR / f"{item['slug']}.md").write_text(
-            render_paper_markdown(item, config=config, deep_content=deep_content), encoding="utf-8"
+        write_text_if_changed(
+            PAPERS_DIR / f"{item['slug']}.md",
+            render_paper_markdown(item, config=config, deep_content=deep_content),
         )
     for path in list(PAPERS_DIR.glob("*.html")) + list(PAPERS_DIR.glob("*.md")):
         if path.stem not in expected_slugs and GENERATED_MARKER in path.read_text(
@@ -551,8 +604,9 @@ def build_site():
                     "featured": str(bool(item["featured"])).lower(),
                 }
             )
-    (ROOT / "publications.html").write_text(
-        render_publications_page(public_items, config), encoding="utf-8"
+    publications_url = absolute(config["site_url"], "publications.html")
+    html_changed[publications_url] = write_text_if_changed(
+        ROOT / "publications.html", render_publications_page(public_items, config)
     )
 
     index_path = ROOT / "index.html"
@@ -572,22 +626,33 @@ def build_site():
         index_html,
     )
     index_html = update_homepage_origin(index_html, config)
-    index_path.write_text(index_html, encoding="utf-8")
+    homepage_url = f"{config['site_url']}/"
+    html_changed[homepage_url] = write_text_if_changed(index_path, index_html)
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
     write_machine_indexes(public_items, deep_items, config)
     urls = [
-        f"{config['site_url']}/",
-        absolute(config["site_url"], "publications.html"),
+        homepage_url,
+        publications_url,
         *[item["paper_url"] for item in public_items],
     ]
+    lastmods = {
+        url: resolve_lastmod(url, html_changed[url], previous_lastmods, today)
+        for url in urls
+    }
     sitemap = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "\n".join(f"  <url><loc>{html.escape(url)}</loc></url>" for url in urls)
+        + "\n".join(
+            "  <url>\n"
+            f"    <loc>{html.escape(url)}</loc>\n"
+            f"    <lastmod>{lastmods[url]}</lastmod>\n"
+            "  </url>"
+            for url in urls
+        )
         + "\n</urlset>\n"
     )
-    (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+    write_text_if_changed(ROOT / "sitemap.xml", sitemap)
     (ROOT / "robots.txt").write_text(
         "User-agent: *\n"
         "Allow: /\n"
