@@ -23,6 +23,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.md
 - Deep GEO: no
 
+## A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo
+- Journal: Science China Chemistry
+- Year: 2026
+- Type: Article
+- DOI: 10.1007/s11426-026-3629-x
+- HTML: https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html
+- Markdown: https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.md
+- Deep GEO: no
+
 ## Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study
 - Journal: Frontiers in Cardiovascular Medicine
 - Year: 2026
