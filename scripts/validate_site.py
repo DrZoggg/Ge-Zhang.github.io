@@ -252,6 +252,12 @@ def validate_site():
         "profile_config.json primary affiliation must be non-empty.",
     )
     require(
+        "homepage_top_label" in profile
+        and isinstance(profile["homepage_top_label"], str)
+        and profile["homepage_top_label"] == profile["homepage_top_label"].strip(),
+        "profile_config.json homepage_top_label must be a trimmed string.",
+    )
+    require(
         isinstance(profile.get("research_areas"), list)
         and bool(profile["research_areas"])
         and all(
@@ -576,6 +582,22 @@ def validate_site():
             "Homepage Open Graph URL",
         ) == homepage_url,
         "Wrong homepage Open Graph URL.",
+    )
+    homepage_top_label = profile["homepage_top_label"]
+    expected_homepage_top = (
+        f"{homepage_top_label} · {profile['affiliations'][0]['name']}"
+        if homepage_top_label
+        else profile["affiliations"][0]["name"]
+    )
+    require(
+        single_html_url(
+            index_html,
+            r'<main class="wrap"><section class="hero"><div>'
+            r'<div class="eyebrow">([^<]*)</div>',
+            "Homepage top label",
+        )
+        == expected_homepage_top,
+        "Homepage top label does not match profile_config.json.",
     )
     require(
         f'<span class="name-zh" lang="zh-CN">{config["researcher_name_zh"]}</span>'

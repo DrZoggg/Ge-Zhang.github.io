@@ -95,6 +95,20 @@ def apply_updates(profile, args):
         updated["affiliations"][0]["name"] = affiliation
         changed_fields.append("primary_affiliation")
 
+    label_action = args.homepage_top_label_action
+    label_value = normalized_optional(args.homepage_top_label)
+    if label_action == "set":
+        if not label_value:
+            raise ValueError(
+                "homepage_top_label text is required when its action is set."
+            )
+        if updated["homepage_top_label"] != label_value:
+            updated["homepage_top_label"] = label_value
+            changed_fields.append("homepage_top_label")
+    elif label_action == "clear" and updated["homepage_top_label"]:
+        updated["homepage_top_label"] = ""
+        changed_fields.append("homepage_top_label")
+
     research_areas = parse_research_areas(args.research_areas)
     if research_areas is not None and updated["research_areas"] != research_areas:
         updated["research_areas"] = research_areas
@@ -167,6 +181,15 @@ def parser():
     result.add_argument(
         "--primary-affiliation",
         default=os.environ.get("PRIMARY_AFFILIATION_INPUT", ""),
+    )
+    result.add_argument(
+        "--homepage-top-label-action",
+        choices=("no_change", "set", "clear"),
+        default=os.environ.get("HOMEPAGE_TOP_LABEL_ACTION_INPUT", "no_change"),
+    )
+    result.add_argument(
+        "--homepage-top-label",
+        default=os.environ.get("HOMEPAGE_TOP_LABEL_INPUT", ""),
     )
     result.add_argument(
         "--research-areas", default=os.environ.get("RESEARCH_AREAS_INPUT", "")

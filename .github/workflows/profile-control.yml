@@ -15,6 +15,19 @@ on:
         description: "Primary affiliation (blank = no change)"
         required: false
         type: string
+      homepage_top_label_action:
+        description: "Homepage top label action"
+        required: true
+        default: "no_change"
+        type: choice
+        options:
+          - no_change
+          - set
+          - clear
+      homepage_top_label:
+        description: "Homepage top label text (used only when action = set)"
+        required: false
+        type: string
       research_areas:
         description: "Research areas, comma- or newline-separated (blank = no change)"
         required: false
@@ -60,6 +73,8 @@ jobs:
           BIOGRAPHY_EN_INPUT: ${{ inputs.biography_en }}
           BIOGRAPHY_ZH_INPUT: ${{ inputs.biography_zh }}
           PRIMARY_AFFILIATION_INPUT: ${{ inputs.primary_affiliation }}
+          HOMEPAGE_TOP_LABEL_ACTION_INPUT: ${{ inputs.homepage_top_label_action }}
+          HOMEPAGE_TOP_LABEL_INPUT: ${{ inputs.homepage_top_label }}
           RESEARCH_AREAS_INPUT: ${{ inputs.research_areas }}
           DESCRIPTION_INPUT: ${{ inputs.description }}
           DISAMBIGUATING_DESCRIPTION_INPUT: ${{ inputs.disambiguating_description }}

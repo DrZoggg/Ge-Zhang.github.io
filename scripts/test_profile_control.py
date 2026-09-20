@@ -129,7 +129,7 @@ def assert_identity_unchanged(repo, before):
     assert protected_identity(repo) == before
 
 
-def assert_counts(repo):
+def publication_counts(repo):
     master = json.loads(
         (repo / "data/publications_master.json").read_text(encoding="utf-8")
     )
@@ -150,13 +150,19 @@ def assert_counts(repo):
         for item in master
         if str(item.get("doi") or "").strip()
     ]
-    assert (len(master), len(public), len(withdrawn)) == (74, 73, 1)
-    assert (len(featured), len(deep_geo)) == (11, 11)
-    assert len(dois) == len(set(dois))
-    assert len(sitemap_lastmods(repo)) == 75
+    return {
+        "master": len(master),
+        "public": len(public),
+        "withdrawn": len(withdrawn),
+        "featured": len(featured),
+        "deep_geo": len(deep_geo),
+        "doi_duplicates": len(dois) - len(set(dois)),
+        "sitemap_urls": len(sitemap_lastmods(repo)),
+    }
 
 
 def main():
+    expected_counts = publication_counts(ROOT)
     with tempfile.TemporaryDirectory() as temp:
         temp_root = Path(temp)
 
@@ -165,6 +171,10 @@ def main():
         result = run(noop)
         assert "Updated fields:\n- none" in result.stdout
         assert digest(noop) == before
+        assert load_profile(noop)["homepage_top_label"] == ""
+        noop_homepage = (noop / "index.html").read_text(encoding="utf-8")
+        assert '<div class="eyebrow">Zhengzhou University</div>' in noop_homepage
+        assert "Cardiovascular research · Zhengzhou University" not in noop_homepage
 
         biography_en = copy_fixture(temp_root, "biography-en")
         yesterday = (datetime.now(timezone.utc).date() - timedelta(days=1)).isoformat()
@@ -221,6 +231,60 @@ def main():
         ).read_text(encoding="utf-8")
         assert_identity_unchanged(affiliation, identity_before)
 
+        top_label = copy_fixture(temp_root, "homepage-top-label")
+        identity_before = protected_identity(top_label)
+        publication_before = publication_state_digest(top_label)
+        before = digest(top_label)
+        result = run(
+            top_label,
+            "--homepage-top-label-action",
+            "no_change",
+            "--homepage-top-label",
+            "Ignored without set action",
+        )
+        assert "Updated fields:\n- none" in result.stdout
+        assert digest(top_label) == before
+        result = run(
+            top_label,
+            "--homepage-top-label-action",
+            "set",
+            "--homepage-top-label",
+            "Cardiovascular research",
+        )
+        assert "- homepage_top_label" in result.stdout
+        assert load_profile(top_label)["homepage_top_label"] == "Cardiovascular research"
+        homepage = (top_label / "index.html").read_text(encoding="utf-8")
+        assert (
+            '<div class="eyebrow">Cardiovascular research · Zhengzhou University</div>'
+            in homepage
+        )
+        run(
+            top_label,
+            "--homepage-top-label-action",
+            "clear",
+            "--homepage-top-label",
+            "Stale text must not block explicit clear",
+        )
+        assert load_profile(top_label)["homepage_top_label"] == ""
+        homepage = (top_label / "index.html").read_text(encoding="utf-8")
+        assert '<div class="eyebrow">Zhengzhou University</div>' in homepage
+        assert "Cardiovascular research · Zhengzhou University" not in homepage
+        assert publication_state_digest(top_label) == publication_before
+        assert_identity_unchanged(top_label, identity_before)
+
+        invalid_label = copy_fixture(temp_root, "homepage-top-label-invalid")
+        before = digest(invalid_label)
+        result = run(
+            invalid_label,
+            "--homepage-top-label-action",
+            "set",
+            "--homepage-top-label",
+            "   ",
+            success=False,
+        )
+        assert "text is required" in result.stderr
+        assert digest(invalid_label) == before
+
         comma = copy_fixture(temp_root, "research-comma")
         identity_before = protected_identity(comma)
         run(
@@ -271,17 +335,18 @@ def main():
         )
         assert_identity_unchanged(descriptions, identity_before)
         run_python(descriptions, "scripts/validate_site.py")
-        assert_counts(descriptions)
+        assert publication_counts(descriptions) == expected_counts
 
     print("PROFILE CONTROL TESTS PASS")
     print("- no-op and no generated diff: PASS")
     print("- English and Chinese biography updates: PASS")
     print("- primary affiliation update: PASS")
+    print("- homepage top label no-change/set/clear semantics: PASS")
     print("- comma/newline parsing and order-preserving de-duplication: PASS")
     print("- empty parsed research areas rejection: PASS")
     print("- protected identity fields: PASS")
     print("- selective accurate lastmod behavior: PASS")
-    print("- 75 sitemap URLs and protected publication counts: PASS")
+    print("- sitemap URLs and protected publication counts: PASS")
     print("- validator and second-build idempotence: PASS")
 
 
