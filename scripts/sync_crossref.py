@@ -1,8 +1,9 @@
 import json, urllib.parse, urllib.request
 from datetime import datetime, timezone
+from site_common import load_profile_config
 from sync_common import load_master, save_master, merge_items, norm_doi, ROOT
 
-ORCID = "0000-0002-3116-3246"
+ORCID = load_profile_config()["orcid"]
 params = {
     "filter": f"orcid:{ORCID}",
     "rows": "1000",

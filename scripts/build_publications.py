@@ -17,6 +17,7 @@ from site_common import (
     index_master,
     load_deep_geo,
     load_featured,
+    load_profile_config,
     load_site_config,
     publication_token,
     validate_controller_entries,
@@ -33,22 +34,6 @@ HOME_IDENTITY_END = "<!-- HOME_IDENTITY_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
-RESEARCH_DESCRIPTION = (
-    "Cardiovascular and computational biology researcher focused on artificial intelligence, "
-    "multi-omics, atherosclerosis, heart failure and circadian biology."
-)
-RESEARCH_TOPICS = [
-    "cardiovascular artificial intelligence",
-    "multimodal clinical data",
-    "multi-omics",
-    "atherosclerosis",
-    "vascular biology",
-    "heart failure",
-    "circadian biology",
-    "single-cell genomics",
-    "translational biomarkers",
-    "precision cardiovascular medicine",
-]
 
 
 def scholar_url(title):
@@ -64,7 +49,15 @@ def absolute(site_root, relative):
 
 
 def orcid_url(config):
-    return f"https://orcid.org/{config['orcid']}"
+    return config["profile"]["external_links"]["orcid"]
+
+
+def schema_affiliations(config):
+    affiliations = [
+        {"@type": "Organization", "name": item["name"]}
+        for item in config["profile"]["affiliations"]
+    ]
+    return affiliations[0] if len(affiliations) == 1 else affiliations
 
 
 def researcher_reference(config):
@@ -82,8 +75,8 @@ def homepage_profile_schema(config):
     researcher = researcher_reference(config)
     researcher.update(
         {
-            "givenName": "Ge",
-            "familyName": "Zhang",
+            "givenName": config["profile"]["given_name"],
+            "familyName": config["profile"]["family_name"],
             "identifier": orcid_url(config),
             "sameAs": [
                 orcid_url(config),
@@ -91,17 +84,12 @@ def homepage_profile_schema(config):
                 config["researchgate_url"],
                 config["github_url"],
             ],
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Zhengzhou University",
-            },
-            "description": RESEARCH_DESCRIPTION,
-            "disambiguatingDescription": (
-                f"{config['researcher_name']} ({config['researcher_name_zh']}), "
-                "cardiovascular and computational biology researcher; "
-                f"ORCID {config['orcid']}."
-            ),
-            "knowsAbout": RESEARCH_TOPICS,
+            "affiliation": schema_affiliations(config),
+            "description": config["profile"]["description"],
+            "disambiguatingDescription": config["profile"][
+                "disambiguating_description"
+            ],
+            "knowsAbout": config["profile"]["research_areas"],
         }
     )
     return {
@@ -233,9 +221,7 @@ def update_homepage(index_html, config):
         f'<span class="name-zh" lang="zh-CN">'
         f"{html.escape(config['researcher_name_zh'])}</span></h1>\n"
         f'<p class="identity-zh" lang="zh-CN">'
-        f"{html.escape(config['researcher_name_zh'])}（{html.escape(config['researcher_name'])}），"
-        "心血管医学与计算生物学研究者，研究方向包括人工智能、多组学、动脉粥样硬化、"
-        f"心力衰竭与昼夜节律。</p>\n{HOME_IDENTITY_END}"
+        f"{html.escape(config['profile']['biography']['zh'])}</p>\n{HOME_IDENTITY_END}"
     )
     if index_html.count(HOME_IDENTITY_START) == index_html.count(HOME_IDENTITY_END) == 1:
         before, remainder = index_html.split(HOME_IDENTITY_START, 1)
@@ -249,6 +235,62 @@ def update_homepage(index_html, config):
             raise ValueError("index.html must contain exactly one homepage h1.")
     else:
         raise ValueError("index.html homepage identity markers are incomplete or duplicated.")
+
+    index_html, biography_count = re.subn(
+        r'<p class="lead">.*?</p>',
+        f'<p class="lead">{html.escape(config["profile"]["biography"]["en"])}</p>',
+        index_html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if biography_count != 1:
+        raise ValueError("index.html must contain exactly one primary English biography.")
+
+    links = config["profile"]["external_links"]
+    profile_links = (
+        '<div class="buttons" id="profiles">'
+        f'<a class="btn primary" href="{links["google_scholar"]}">Google Scholar</a>'
+        f'<a class="btn" href="{links["researchgate"]}">ResearchGate</a>'
+        f'<a class="btn" href="{links["orcid"]}">ORCID</a>'
+        f'<a class="btn" href="{links["github"]}">GitHub</a></div>'
+    )
+    index_html, links_count = re.subn(
+        r'<div class="buttons" id="profiles">.*?</div>',
+        profile_links,
+        index_html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if links_count != 1:
+        raise ValueError("index.html must contain exactly one profile links block.")
+
+    primary_affiliation = config["profile"]["affiliations"][0]["name"]
+    replacements = (
+        (
+            r'<a class="brand" href="index\.html">.*?</a>',
+            f'<a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a>',
+            "homepage brand",
+        ),
+        (
+            r'<div class="eyebrow">Cardiovascular research · .*?</div>',
+            '<div class="eyebrow">Cardiovascular research · '
+            f'{html.escape(primary_affiliation)}</div>',
+            "homepage affiliation",
+        ),
+        (
+            r'<footer><div class="wrap">© .*? · Academic website · Updated 2026-09</div></footer>',
+            '<footer><div class="wrap">© '
+            f'{html.escape(config["researcher_name"])} · Academic website · Updated 2026-09'
+            '</div></footer>',
+            "homepage footer identity",
+        ),
+    )
+    for pattern, replacement, label in replacements:
+        index_html, replacement_count = re.subn(
+            pattern, replacement, index_html, count=1, flags=re.DOTALL
+        )
+        if replacement_count != 1:
+            raise ValueError(f"index.html must contain exactly one {label}.")
     return index_html
 
 
@@ -401,7 +443,7 @@ def render_paper_html(publication, *, config, deep_content=None):
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(str(title))} | Ge Zhang</title>
+<title>{html.escape(str(title))} | {html.escape(config["researcher_name"])}</title>
 <meta name="description" content="{html.escape(description, quote=True)}">
 <link rel="canonical" href="{html.escape(canonical, quote=True)}">
 <link rel="alternate" type="text/markdown" href="{html.escape(markdown_url, quote=True)}">
@@ -411,7 +453,7 @@ def render_paper_html(publication, *, config, deep_content=None):
 <meta property="og:url" content="{html.escape(canonical, quote=True)}">
 {chr(10).join(citation)}
 <link rel="stylesheet" href="../assets/style.css"></head><body>
-<header><nav><a class="brand" href="../index.html">Ge Zhang</a><div class="navlinks"><a href="../index.html#research">Research</a><a href="../publications.html">All publications</a><a href="../index.html#profiles">Profiles</a></div></nav></header>
+<header><nav><a class="brand" href="../index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks"><a href="../index.html#research">Research</a><a href="../publications.html">All publications</a><a href="../index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap">
 <section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">{html.escape(str(publication_type))} · {html.escape(str(year))} {deep_badge}</div>
@@ -423,7 +465,7 @@ def render_paper_html(publication, *, config, deep_content=None):
 <section><div class="notice"><strong>Author-controlled academic record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}; ORCID <a href="{html.escape(orcid_url(config), quote=True)}">{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as part of {html.escape(config["researcher_name"])}’s publication record. It does not replace the publisher version or assert a complete author list.</div></section>
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
-</main><footer><div class="wrap">© Ge Zhang · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
+</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
 </body></html>
 '''
 
@@ -455,8 +497,10 @@ def render_paper_markdown(publication, *, config, deep_content=None):
         "",
         "## About this record",
         "",
-        "This is an author-controlled publication record in the Ge Zhang Academic Hub. "
-        "It identifies this work as part of Ge Zhang’s publication record via ORCID; "
+        f"This is an author-controlled publication record in the {config['researcher_name']} "
+        "Academic Hub. "
+        f"It identifies this work as part of {config['researcher_name']}’s publication record "
+        "via ORCID; "
         "the publisher version remains the version of record.",
         "",
     ]
@@ -530,7 +574,7 @@ def render_publications_page(items, config):
     schema = {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
-        "name": "Ge Zhang — Publications",
+        "name": f"{config['researcher_name']} — Publications",
         "url": absolute(config["site_url"], "publications.html"),
         "mainEntity": researcher_reference(config),
         "hasPart": [paper_schema(item, item["paper_url"], config) for item in items],
@@ -543,7 +587,7 @@ def render_publications_page(items, config):
 <link rel="canonical" href="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
 <meta property="og:url" content="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
 <link rel="stylesheet" href="assets/style.css"></head><body>
-<header><nav><a class="brand" href="index.html">Ge Zhang</a><div class="navlinks">
+<header><nav><a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks">
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap"><section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">Publication record</div><h1 style="font-size:clamp(2.8rem,6vw,4.7rem)">Publications</h1>
@@ -557,7 +601,7 @@ def render_publications_page(items, config):
 const box=document.getElementById('pubSearch');box.addEventListener('input',()=>{{const q=box.value.toLowerCase().trim();document.querySelectorAll('.pub').forEach(x=>{{x.style.display=(!q||x.dataset.title.includes(q)||x.dataset.journal.includes(q))?'block':'none'}});document.querySelectorAll('.year-group').forEach(y=>{{y.style.display=[...y.querySelectorAll('.pub')].some(x=>x.style.display!=='none')?'block':'none'}})}})
 </script>
 <script type="application/ld+json">{safe_schema}</script>
-</main><footer><div class="wrap">© Ge Zhang · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer></body></html>
+</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer></body></html>
 '''
 
 
@@ -617,7 +661,7 @@ def write_machine_indexes(items, deep_items, config):
         json.dumps(paper_index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     short_lines = [
-        "# Ge Zhang Academic Hub",
+        f"# {config['researcher_name']} Academic Hub",
         "",
         f"- Researcher: {config['researcher_name']}",
         f"- Chinese name: {config['researcher_name_zh']}",
@@ -637,7 +681,7 @@ def write_machine_indexes(items, deep_items, config):
     short_lines.append("")
     (ROOT / "llms.txt").write_text("\n".join(short_lines), encoding="utf-8")
     full_lines = [
-        "# Ge Zhang Academic Hub — Full Publication Index",
+        f"# {config['researcher_name']} Academic Hub — Full Publication Index",
         "",
         f"- Researcher: {config['researcher_name']}",
         f"- Chinese name: {config['researcher_name_zh']}",
@@ -663,7 +707,8 @@ def write_machine_indexes(items, deep_items, config):
 
 
 def build_site():
-    config = load_site_config()
+    profile = load_profile_config()
+    config = load_site_config(profile)
     previous_lastmods = load_sitemap_lastmods(ROOT / "sitemap.xml")
     today = datetime.now(timezone.utc).date().isoformat()
     html_changed = {}

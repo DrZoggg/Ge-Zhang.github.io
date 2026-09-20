@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "researcher_name": "Ge Zhang",
+  "researcher_name_zh": "张格",
+  "given_name": "Ge",
+  "family_name": "Zhang",
+  "person_id": "https://drgezhang.com/#person",
+  "orcid": "0000-0002-3116-3246",
+  "affiliations": [
+    {
+      "name": "Zhengzhou University"
+    }
+  ],
+  "biography": {
+    "en": "Cardiovascular researcher focusing on artificial intelligence, multimodal clinical data, multi-omics, and circadian biology. My research spans basic, mechanistic, and translational cardiovascular science, with particular interests in explainable AI and clinical risk prediction, atherosclerosis and vascular biology, single-cell and multi-omics approaches, translational biomarker discovery, circadian disruption, heart failure, and precision cardiovascular medicine.",
+    "zh": "张格（Ge Zhang），心血管医学与计算生物学研究者，研究方向包括人工智能、多组学、动脉粥样硬化、心力衰竭与昼夜节律。"
+  },
+  "description": "Cardiovascular and computational biology researcher focused on artificial intelligence, multi-omics, atherosclerosis, heart failure and circadian biology.",
+  "disambiguating_description": "Ge Zhang (张格), cardiovascular and computational biology researcher; ORCID 0000-0002-3116-3246.",
+  "research_areas": [
+    "cardiovascular artificial intelligence",
+    "multimodal clinical data",
+    "multi-omics",
+    "atherosclerosis",
+    "vascular biology",
+    "heart failure",
+    "circadian biology",
+    "single-cell genomics",
+    "translational biomarkers",
+    "precision cardiovascular medicine"
+  ],
+  "external_links": {
+    "orcid": "https://orcid.org/0000-0002-3116-3246",
+    "google_scholar": "https://scholar.google.com.hk/citations?user=dNAcSlMAAAAJ&hl=zh-CN",
+    "researchgate": "https://www.researchgate.net/profile/Ge-Zhang-42/research",
+    "github": "https://github.com/DrZoggg"
+  }
+}
