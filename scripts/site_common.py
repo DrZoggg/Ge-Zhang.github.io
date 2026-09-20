@@ -7,6 +7,7 @@ from sync_common import ROOT, is_withdrawn, norm_doi, norm_title
 
 
 SITE_CONFIG_PATH = ROOT / "data" / "site_config.json"
+PROFILE_CONFIG_PATH = ROOT / "data" / "profile_config.json"
 FEATURED_PATH = ROOT / "data" / "featured_papers.json"
 DEEP_GEO_PATH = ROOT / "data" / "deep_geo_papers.json"
 DEEP_CONTENT_DIR = ROOT / "data" / "deep_geo"
@@ -38,19 +39,61 @@ def write_json(path, payload):
     )
 
 
-def load_site_config():
-    config = read_json(SITE_CONFIG_PATH)
+def load_profile_config():
+    profile = read_json(PROFILE_CONFIG_PATH)
     required = (
-        "site_url",
         "researcher_name",
         "researcher_name_zh",
+        "given_name",
+        "family_name",
         "person_id",
         "orcid",
+        "description",
+        "disambiguating_description",
     )
+    missing = [key for key in required if not str(profile.get(key) or "").strip()]
+    if missing:
+        raise ValueError("Missing profile configuration: " + ", ".join(missing))
+    for key in ("affiliations", "research_areas"):
+        if not isinstance(profile.get(key), list) or not profile[key]:
+            raise ValueError(f"Profile configuration {key!r} must be a non-empty array.")
+    biography = profile.get("biography")
+    if not isinstance(biography, dict) or not all(
+        str(biography.get(language) or "").strip() for language in ("en", "zh")
+    ):
+        raise ValueError("Profile configuration biography must contain en and zh text.")
+    external_links = profile.get("external_links")
+    required_links = ("orcid", "google_scholar", "researchgate", "github")
+    if not isinstance(external_links, dict) or not all(
+        str(external_links.get(key) or "").strip() for key in required_links
+    ):
+        raise ValueError(
+            "Profile configuration external_links must contain ORCID, Scholar, "
+            "ResearchGate and GitHub URLs."
+        )
+    return profile
+
+
+def load_site_config(profile=None):
+    config = read_json(SITE_CONFIG_PATH)
+    required = ("site_url",)
     missing = [key for key in required if not str(config.get(key) or "").strip()]
     if missing:
         raise ValueError("Missing site configuration: " + ", ".join(missing))
     config["site_url"] = str(config["site_url"]).rstrip("/")
+    profile = profile or load_profile_config()
+    config["profile"] = profile
+    config.update(
+        {
+            "researcher_name": profile["researcher_name"],
+            "researcher_name_zh": profile["researcher_name_zh"],
+            "person_id": profile["person_id"],
+            "orcid": profile["orcid"],
+            "google_scholar_url": profile["external_links"]["google_scholar"],
+            "researchgate_url": profile["external_links"]["researchgate"],
+            "github_url": profile["external_links"]["github"],
+        }
+    )
     return config
 
 

@@ -10,11 +10,14 @@ from html.parser import HTMLParser
 from site_common import (
     LEGACY_DEEP_SLUGS,
     PAPERS_DIR,
+    PROFILE_CONFIG_PATH,
+    SITE_CONFIG_PATH,
     controller_token,
     deep_content_path,
     index_master,
     load_deep_geo,
     load_featured,
+    load_profile_config,
     load_site_config,
     publication_token,
     validate_controller_entries,
@@ -28,10 +31,6 @@ class ValidationError(RuntimeError):
 
 
 CANONICAL_SITE_URL = "https://drgezhang.com"
-CANONICAL_PERSON_ID = "https://drgezhang.com/#person"
-PRIMARY_RESEARCHER_NAME = "Ge Zhang"
-CHINESE_RESEARCHER_NAME = "张格"
-CANONICAL_ORCID = "0000-0002-3116-3246"
 LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
 
 
@@ -221,24 +220,59 @@ def validate_html_text_decoding(master):
 
 
 def validate_site():
-    config = load_site_config()
+    require(PROFILE_CONFIG_PATH.is_file(), "data/profile_config.json is missing.")
+    profile = load_profile_config()
+    require(
+        bool(str(profile.get("researcher_name") or "").strip()),
+        "English researcher name is missing from profile_config.json.",
+    )
+    require(
+        bool(str(profile.get("researcher_name_zh") or "").strip()),
+        "Chinese researcher name is missing from profile_config.json.",
+    )
+    require(
+        bool(re.fullmatch(r"\d{4}-\d{4}-\d{4}-\d{3}[\dX]", profile.get("orcid", ""))),
+        "profile_config.json ORCID must use the 0000-0000-0000-0000 format.",
+    )
+    require(
+        profile["external_links"]["orcid"]
+        == f"https://orcid.org/{profile['orcid']}",
+        "profile_config.json ORCID URL does not match its ORCID value.",
+    )
+    require(
+        all(
+            isinstance(item, dict) and bool(str(item.get("name") or "").strip())
+            for item in profile["affiliations"]
+        ),
+        "profile_config.json affiliations must contain named organizations.",
+    )
+    require(
+        all(str(value).startswith("https://") for value in profile["external_links"].values()),
+        "profile_config.json external links must use HTTPS.",
+    )
+    site_config_payload = json.loads(SITE_CONFIG_PATH.read_text(encoding="utf-8"))
+    duplicated_profile_keys = {
+        "researcher_name",
+        "researcher_name_zh",
+        "person_id",
+        "orcid",
+        "google_scholar_url",
+        "researchgate_url",
+        "github_url",
+    }
+    require(
+        not duplicated_profile_keys.intersection(site_config_payload),
+        "Profile identity fields must only be stored in profile_config.json.",
+    )
+    config = load_site_config(profile)
     require(
         config["site_url"] == CANONICAL_SITE_URL,
         f"Canonical site origin must be {CANONICAL_SITE_URL}.",
     )
     require(
-        config["researcher_name"] == PRIMARY_RESEARCHER_NAME,
-        f"Primary researcher name must be {PRIMARY_RESEARCHER_NAME}.",
+        config["person_id"] == f"{config['site_url']}/#person",
+        "Canonical Person @id must use the site origin and #person fragment.",
     )
-    require(
-        config["researcher_name_zh"] == CHINESE_RESEARCHER_NAME,
-        f"Chinese researcher name must be {CHINESE_RESEARCHER_NAME}.",
-    )
-    require(
-        config["person_id"] == CANONICAL_PERSON_ID,
-        f"Canonical Person @id must be {CANONICAL_PERSON_ID}.",
-    )
-    require(config["orcid"] == CANONICAL_ORCID, f"ORCID must be {CANONICAL_ORCID}.")
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
     withdrawn = [item for item in master if is_withdrawn(item)]
@@ -516,19 +550,19 @@ def validate_site():
         element_texts(index_html, "title") == [expected_homepage_title],
         "Homepage title does not use the canonical bilingual identity.",
     )
-    expected_chinese_description = (
-        f"{config['researcher_name_zh']}（{config['researcher_name']}），"
-        "心血管医学与计算生物学研究者，研究方向包括人工智能、多组学、动脉粥样硬化、"
-        "心力衰竭与昼夜节律。"
-    )
     require(
         element_texts(
             index_html,
             "p",
             {"class": "identity-zh", "lang": "zh-CN"},
         )
-        == [expected_chinese_description],
+        == [profile["biography"]["zh"]],
         "Homepage Chinese identity description is missing or changed.",
+    )
+    require(
+        profile["biography"]["en"]
+        in element_texts(index_html, "p", {"class": "lead"}),
+        "Homepage English biography does not match profile_config.json.",
     )
     require(
         config["researcher_name_zh"] in visible_text(index_html),
@@ -551,16 +585,55 @@ def validate_site():
         homepage_person.get("identifier") == f"https://orcid.org/{config['orcid']}",
         "Homepage Person ORCID identifier is wrong.",
     )
+    require(
+        homepage_person.get("givenName") == profile["given_name"]
+        and homepage_person.get("familyName") == profile["family_name"],
+        "Homepage Person name components do not match profile_config.json.",
+    )
+    schema_organizations = [
+        {"@type": "Organization", "name": item["name"]}
+        for item in profile["affiliations"]
+    ]
+    expected_affiliation = (
+        schema_organizations[0] if len(schema_organizations) == 1 else schema_organizations
+    )
+    require(
+        homepage_person.get("affiliation") == expected_affiliation,
+        "Homepage Person affiliation does not match profile_config.json.",
+    )
+    require(
+        homepage_person.get("description") == profile["description"],
+        "Homepage Person description does not match profile_config.json.",
+    )
+    require(
+        homepage_person.get("disambiguatingDescription")
+        == profile["disambiguating_description"],
+        "Homepage Person disambiguatingDescription does not match profile_config.json.",
+    )
+    require(
+        homepage_person.get("knowsAbout") == profile["research_areas"],
+        "Homepage Person research areas do not match profile_config.json.",
+    )
     expected_profiles = {
-        f"https://orcid.org/{config['orcid']}",
-        config["google_scholar_url"],
-        config["researchgate_url"],
-        config["github_url"],
+        profile["external_links"]["orcid"],
+        profile["external_links"]["google_scholar"],
+        profile["external_links"]["researchgate"],
+        profile["external_links"]["github"],
     }
     require(
         set(same_as_values(homepage_person.get("sameAs"))) == expected_profiles,
         "Homepage Person sameAs profiles do not match verified site configuration.",
     )
+    for label, url in (
+        ("Google Scholar", profile["external_links"]["google_scholar"]),
+        ("ResearchGate", profile["external_links"]["researchgate"]),
+        ("ORCID", profile["external_links"]["orcid"]),
+        ("GitHub", profile["external_links"]["github"]),
+    ):
+        require(
+            f'href="{url}">{label}</a>' in index_html,
+            f"Homepage {label} link does not match profile_config.json.",
+        )
     featured_titles = [
         normalized_source_text(master_by_token[controller_token(entry)]["title"])
         for entry in featured
