@@ -4,6 +4,7 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 
 from site_common import (
@@ -455,9 +456,31 @@ def validate_site():
     )
 
     tree = ET.parse(ROOT / "sitemap.xml")
-    sitemap_urls = [
-        node.text for node in tree.getroot().iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
-    ]
+    sitemap_namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+    sitemap_entries = []
+    for entry in tree.getroot().findall(f"{sitemap_namespace}url"):
+        loc_nodes = entry.findall(f"{sitemap_namespace}loc")
+        lastmod_nodes = entry.findall(f"{sitemap_namespace}lastmod")
+        require(len(loc_nodes) == 1, "Each sitemap entry must have exactly one loc.")
+        require(len(lastmod_nodes) == 1, "Each sitemap entry must have exactly one lastmod.")
+        url = str(loc_nodes[0].text or "").strip()
+        lastmod = str(lastmod_nodes[0].text or "").strip()
+        require(bool(url), "Sitemap loc must not be empty.")
+        require(
+            bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod)),
+            f"Invalid sitemap lastmod format for {url}: {lastmod!r}",
+        )
+        try:
+            parsed_lastmod = date.fromisoformat(lastmod)
+        except ValueError as exc:
+            raise ValidationError(f"Invalid sitemap lastmod date for {url}: {lastmod}") from exc
+        require(parsed_lastmod.isoformat() == lastmod, f"Invalid sitemap lastmod for {url}.")
+        require(
+            parsed_lastmod <= datetime.now(timezone.utc).date(),
+            f"Future sitemap lastmod for {url}: {lastmod}",
+        )
+        sitemap_entries.append((url, lastmod))
+    sitemap_urls = [url for url, _ in sitemap_entries]
     expected_urls = [
         f"{config['site_url']}/",
         f"{config['site_url']}/publications.html",
