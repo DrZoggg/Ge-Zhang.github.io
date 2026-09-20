@@ -1,5 +1,11 @@
 {
   "version": 1,
+  "researcher": {
+    "name": "Ge Zhang",
+    "alternateName": "张格",
+    "url": "https://drgezhang.com/#person",
+    "orcid": "0000-0002-3116-3246"
+  },
   "papers": [
     {
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",

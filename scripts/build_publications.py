@@ -28,9 +28,27 @@ FEATURED_START = "<!-- FEATURED_PAPERS_START -->"
 FEATURED_END = "<!-- FEATURED_PAPERS_END -->"
 HOME_ORIGIN_START = "<!-- HOME_ORIGIN_START -->"
 HOME_ORIGIN_END = "<!-- HOME_ORIGIN_END -->"
+HOME_IDENTITY_START = "<!-- HOME_IDENTITY_START -->"
+HOME_IDENTITY_END = "<!-- HOME_IDENTITY_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
+RESEARCH_DESCRIPTION = (
+    "Cardiovascular and computational biology researcher focused on artificial intelligence, "
+    "multi-omics, atherosclerosis, heart failure and circadian biology."
+)
+RESEARCH_TOPICS = [
+    "cardiovascular artificial intelligence",
+    "multimodal clinical data",
+    "multi-omics",
+    "atherosclerosis",
+    "vascular biology",
+    "heart failure",
+    "circadian biology",
+    "single-cell genomics",
+    "translational biomarkers",
+    "precision cardiovascular medicine",
+]
 
 
 def scholar_url(title):
@@ -43,6 +61,60 @@ def doi_url(doi):
 
 def absolute(site_root, relative):
     return f"{site_root}/{str(relative).lstrip('/')}"
+
+
+def orcid_url(config):
+    return f"https://orcid.org/{config['orcid']}"
+
+
+def researcher_reference(config):
+    return {
+        "@type": "Person",
+        "@id": config["person_id"],
+        "name": config["researcher_name"],
+        "alternateName": [config["researcher_name_zh"]],
+        "url": f"{config['site_url']}/",
+        "sameAs": orcid_url(config),
+    }
+
+
+def homepage_profile_schema(config):
+    researcher = researcher_reference(config)
+    researcher.update(
+        {
+            "givenName": "Ge",
+            "familyName": "Zhang",
+            "identifier": orcid_url(config),
+            "sameAs": [
+                orcid_url(config),
+                config["google_scholar_url"],
+                config["researchgate_url"],
+                config["github_url"],
+            ],
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Zhengzhou University",
+            },
+            "description": RESEARCH_DESCRIPTION,
+            "disambiguatingDescription": (
+                f"{config['researcher_name']} ({config['researcher_name_zh']}), "
+                "cardiovascular and computational biology researcher; "
+                f"ORCID {config['orcid']}."
+            ),
+            "knowsAbout": RESEARCH_TOPICS,
+        }
+    )
+    return {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": f"{config['site_url']}/#profile",
+        "url": f"{config['site_url']}/",
+        "name": (
+            f"{config['researcher_name']} ({config['researcher_name_zh']}) "
+            "— Academic Profile"
+        ),
+        "mainEntity": researcher,
+    }
 
 
 def write_text_if_changed(path, content):
@@ -88,8 +160,35 @@ def resolve_lastmod(url, changed, previous_lastmods, today):
     return previous_lastmods[url] or SITEMAP_BASELINE_DATE
 
 
-def update_homepage_origin(index_html, config):
+def update_homepage(index_html, config):
     homepage_url = f"{config['site_url']}/"
+    bilingual_name = f"{config['researcher_name']} ({config['researcher_name_zh']})"
+    page_title = (
+        f"{bilingual_name} — Cardiovascular AI, Multi-omics & Circadian Biology"
+    )
+    meta_description = (
+        f"Academic profile of {bilingual_name}, a cardiovascular and computational biology "
+        "researcher working in artificial intelligence, multi-omics, atherosclerosis, heart "
+        f"failure and circadian biology. ORCID {config['orcid']}."
+    )
+    index_html, title_count = re.subn(
+        r"<title>.*?</title>",
+        f"<title>{html.escape(page_title)}</title>",
+        index_html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if title_count != 1:
+        raise ValueError("index.html must contain exactly one title element.")
+    index_html, description_count = re.subn(
+        r'<meta name="description" content="[^"]*">',
+        f'<meta name="description" content="{html.escape(meta_description, quote=True)}">',
+        index_html,
+        count=1,
+    )
+    if description_count != 1:
+        raise ValueError("index.html must contain exactly one meta description.")
+
     origin_block = (
         f'{HOME_ORIGIN_START}\n'
         f'<link rel="canonical" href="{html.escape(homepage_url, quote=True)}">\n'
@@ -111,21 +210,45 @@ def update_homepage_origin(index_html, config):
     schema_pattern = re.compile(
         r'(<script type="application/ld\+json">)(.*?)(</script>)', re.DOTALL
     )
-    person_schema_count = 0
+    profile_schema_count = 0
 
     def update_schema(match):
-        nonlocal person_schema_count
+        nonlocal profile_schema_count
         payload = json.loads(match.group(2))
-        if payload.get("@type") != "Person":
+        if payload.get("@type") not in {"Person", "ProfilePage"}:
             return match.group(0)
-        person_schema_count += 1
-        payload["url"] = homepage_url
-        serialized = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+        profile_schema_count += 1
+        serialized = json.dumps(
+            homepage_profile_schema(config), ensure_ascii=False
+        ).replace("</", "<\\/")
         return match.group(1) + serialized + match.group(3)
 
     index_html = schema_pattern.sub(update_schema, index_html)
-    if person_schema_count != 1:
-        raise ValueError("index.html must contain exactly one Person JSON-LD object.")
+    if profile_schema_count != 1:
+        raise ValueError("index.html must contain exactly one identity ProfilePage JSON-LD object.")
+
+    identity_block = (
+        f"{HOME_IDENTITY_START}\n"
+        f"<h1>{html.escape(config['researcher_name'])} "
+        f'<span class="name-zh" lang="zh-CN">'
+        f"{html.escape(config['researcher_name_zh'])}</span></h1>\n"
+        f'<p class="identity-zh" lang="zh-CN">'
+        f"{html.escape(config['researcher_name_zh'])}（{html.escape(config['researcher_name'])}），"
+        "心血管医学与计算生物学研究者，研究方向包括人工智能、多组学、动脉粥样硬化、"
+        f"心力衰竭与昼夜节律。</p>\n{HOME_IDENTITY_END}"
+    )
+    if index_html.count(HOME_IDENTITY_START) == index_html.count(HOME_IDENTITY_END) == 1:
+        before, remainder = index_html.split(HOME_IDENTITY_START, 1)
+        _, after = remainder.split(HOME_IDENTITY_END, 1)
+        index_html = before + identity_block + after
+    elif HOME_IDENTITY_START not in index_html and HOME_IDENTITY_END not in index_html:
+        index_html, heading_count = re.subn(
+            r"<h1>.*?</h1>", identity_block, index_html, count=1, flags=re.DOTALL
+        )
+        if heading_count != 1:
+            raise ValueError("index.html must contain exactly one homepage h1.")
+    else:
+        raise ValueError("index.html homepage identity markers are incomplete or duplicated.")
     return index_html
 
 
@@ -158,7 +281,7 @@ def load_deep_content(publication):
     return content
 
 
-def paper_schema(publication, paper_url):
+def paper_schema(publication, paper_url, config):
     title = publication.get("title") or "Untitled work"
     result = {
         "@context": "https://schema.org",
@@ -167,6 +290,7 @@ def paper_schema(publication, paper_url):
         "headline": title,
         "url": paper_url,
         "mainEntityOfPage": paper_url,
+        "author": researcher_reference(config),
     }
     if publication.get("year"):
         result["datePublished"] = str(publication["year"])
@@ -267,7 +391,7 @@ def render_paper_html(publication, *, config, deep_content=None):
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
     deep_html = render_deep_html(deep_content or {}) if deep_content is not None else ""
-    schema = paper_schema(publication, canonical)
+    schema = paper_schema(publication, canonical, config)
     if deep_content and deep_content.get("keywords"):
         schema["keywords"] = [
             str(x).strip() for x in deep_content["keywords"] if str(x).strip()
@@ -296,7 +420,7 @@ def render_paper_html(publication, *, config, deep_content=None):
 <div class="links">{' '.join(links)}</div>
 </div></section>
 {deep_html}
-<section><div class="notice"><strong>Author-controlled academic record for Ge Zhang.</strong> This page identifies the work as part of Ge Zhang’s publication record via ORCID <a href="https://orcid.org/{html.escape(config["orcid"], quote=True)}">{html.escape(config["orcid"])}</a>. It does not replace the publisher version or assert a complete author list.</div></section>
+<section><div class="notice"><strong>Author-controlled academic record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}; ORCID <a href="{html.escape(orcid_url(config), quote=True)}">{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as part of {html.escape(config["researcher_name"])}’s publication record. It does not replace the publisher version or assert a complete author list.</div></section>
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© Ge Zhang · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -317,13 +441,17 @@ def render_paper_markdown(publication, *, config, deep_content=None):
     lines = [
         f"# {title}",
         "",
+        f"Researcher: {config['researcher_name']}",
+        f"Chinese name: {config['researcher_name_zh']}",
+        f"ORCID identity anchor: {orcid_url(config)}",
+        f"Canonical researcher: {config['person_id']}",
+        "",
         f"Journal: {journal}",
         f"Year: {year}",
         f"Type: {publication_type}",
         f"DOI: {doi or 'Not available'}",
         f"Canonical page: {html_url}",
         f"Markdown record: {md_url}",
-        f"ORCID identity anchor: https://orcid.org/{config['orcid']}",
         "",
         "## About this record",
         "",
@@ -404,18 +532,14 @@ def render_publications_page(items, config):
         "@type": "ProfilePage",
         "name": "Ge Zhang — Publications",
         "url": absolute(config["site_url"], "publications.html"),
-        "mainEntity": {
-            "@type": "Person",
-            "name": config["researcher_name"],
-            "identifier": f"https://orcid.org/{config['orcid']}",
-        },
-        "hasPart": [paper_schema(item, item["paper_url"]) for item in items],
+        "mainEntity": researcher_reference(config),
+        "hasPart": [paper_schema(item, item["paper_url"], config) for item in items],
     }
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>All Publications | Ge Zhang</title>
-<meta name="description" content="Publication record of Ge Zhang, using ORCID {html.escape(config["orcid"], quote=True)} as the identity anchor.">
+<title>All Publications | {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])})</title>
+<meta name="description" content="Publication record of {html.escape(config["researcher_name"], quote=True)} ({html.escape(config["researcher_name_zh"], quote=True)}), using ORCID {html.escape(config["orcid"], quote=True)} as the identity anchor.">
 <link rel="canonical" href="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
 <meta property="og:url" content="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
 <link rel="stylesheet" href="assets/style.css"></head><body>
@@ -423,12 +547,12 @@ def render_publications_page(items, config):
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap"><section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">Publication record</div><h1 style="font-size:clamp(2.8rem,6vw,4.7rem)">Publications</h1>
-<p class="lead">This author-controlled record uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
+<p class="lead">This author-controlled publication record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
 <div class="card" style="margin-top:20px"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
 </div></section>
 <section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
 <div id="pubList">{''.join(sections)}</div></section>
-<section><div class="notice"><strong>Identity control:</strong> automated discovery uses the exact ORCID iD rather than the author name “Ge Zhang”, reducing same-name misattribution.</div></section>
+<section><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
 <script>
 const box=document.getElementById('pubSearch');box.addEventListener('input',()=>{{const q=box.value.toLowerCase().trim();document.querySelectorAll('.pub').forEach(x=>{{x.style.display=(!q||x.dataset.title.includes(q)||x.dataset.journal.includes(q))?'block':'none'}});document.querySelectorAll('.year-group').forEach(y=>{{y.style.display=[...y.querySelectorAll('.pub')].some(x=>x.style.display!=='none')?'block':'none'}})}})
 </script>
@@ -468,6 +592,12 @@ def render_featured_cards(featured_entries, master_by_token, deep_tokens):
 def write_machine_indexes(items, deep_items, config):
     paper_index = {
         "version": 1,
+        "researcher": {
+            "name": config["researcher_name"],
+            "alternateName": config["researcher_name_zh"],
+            "url": config["person_id"],
+            "orcid": config["orcid"],
+        },
         "papers": [
             {
                 "title": item.get("title"),
@@ -489,7 +619,10 @@ def write_machine_indexes(items, deep_items, config):
     short_lines = [
         "# Ge Zhang Academic Hub",
         "",
-        f"- ORCID: https://orcid.org/{config['orcid']}",
+        f"- Researcher: {config['researcher_name']}",
+        f"- Chinese name: {config['researcher_name_zh']}",
+        f"- Canonical person: {config['person_id']}",
+        f"- ORCID: {orcid_url(config)}",
         f"- Homepage: {config['site_url']}/",
         f"- All Publications: {config['site_url']}/publications.html",
         f"- Publications JSON: {config['site_url']}/publications.json",
@@ -506,7 +639,10 @@ def write_machine_indexes(items, deep_items, config):
     full_lines = [
         "# Ge Zhang Academic Hub — Full Publication Index",
         "",
-        f"ORCID: https://orcid.org/{config['orcid']}",
+        f"- Researcher: {config['researcher_name']}",
+        f"- Chinese name: {config['researcher_name_zh']}",
+        f"- Canonical person: {config['person_id']}",
+        f"- ORCID: {orcid_url(config)}",
         "",
     ]
     for item in items:
@@ -625,7 +761,7 @@ def build_site():
         f'View all <span id="pubCount">{len(public_items)}</span> publications',
         index_html,
     )
-    index_html = update_homepage_origin(index_html, config)
+    index_html = update_homepage(index_html, config)
     homepage_url = f"{config['site_url']}/"
     html_changed[homepage_url] = write_text_if_changed(index_path, index_html)
 

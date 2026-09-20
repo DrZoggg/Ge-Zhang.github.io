@@ -1,12 +1,16 @@
 # Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: European Journal of Pharmacology
 Year: 2023
 Type: Article
 DOI: 10.1016/j.ejphar.2023.175569
 Canonical page: https://drgezhang.com/papers/idebenone-ferroptosis.html
 Markdown record: https://drgezhang.com/papers/idebenone-ferroptosis.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

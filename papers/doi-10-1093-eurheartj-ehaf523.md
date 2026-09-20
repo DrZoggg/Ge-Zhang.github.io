@@ -1,12 +1,16 @@
 # The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: European Heart Journal
 Year: 2025
 Type: Article
 DOI: 10.1093/eurheartj/ehaf523
 Canonical page: https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html
 Markdown record: https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

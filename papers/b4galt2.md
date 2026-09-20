@@ -1,12 +1,16 @@
 # Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Journal for ImmunoTherapy of Cancer
 Year: 2025
 Type: Article
 DOI: 10.1136/jitc-2024-010787
 Canonical page: https://drgezhang.com/papers/b4galt2.html
 Markdown record: https://drgezhang.com/papers/b4galt2.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

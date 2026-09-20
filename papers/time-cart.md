@@ -1,12 +1,16 @@
 # Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Molecular Cancer
 Year: 2024
 Type: Article
 DOI: 10.1186/s12943-024-02047-2
 Canonical page: https://drgezhang.com/papers/time-cart.html
 Markdown record: https://drgezhang.com/papers/time-cart.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 

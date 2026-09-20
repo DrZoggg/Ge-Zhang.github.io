@@ -1,12 +1,16 @@
 # Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease
 
+Researcher: Ge Zhang
+Chinese name: 张格
+ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
+Canonical researcher: https://drgezhang.com/#person
+
 Journal: Human Molecular Genetics
 Year: 2024
 Type: Article
 DOI: 10.1093/hmg/ddae189
 Canonical page: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html
 Markdown record: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md
-ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
 
