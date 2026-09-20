@@ -4,8 +4,8 @@ Journal: Journal of Translational Medicine
 Year: 2022
 Type: Article
 DOI: 10.1186/s12967-022-03795-9
-Canonical page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.html
-Markdown record: https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.md
+Canonical page: https://drgezhang.com/papers/smc-fate.html
+Markdown record: https://drgezhang.com/papers/smc-fate.md
 ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
@@ -29,6 +29,6 @@ vascular smooth muscle cell, phenotypic switching, atherosclerosis, single-cell 
 ## Links
 
 - DOI: https://doi.org/10.1186/s12967-022-03795-9
-- HTML page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.html
+- HTML page: https://drgezhang.com/papers/smc-fate.html
 - Google Scholar query: https://scholar.google.com/scholar?q=%22Smooth%20muscle%20cell%20fate%20decisions%20decipher%20a%20high-resolution%20heterogeneity%20within%20atherosclerosis%20molecular%20subtypes%22
 - ORCID: https://orcid.org/0000-0002-3116-3246

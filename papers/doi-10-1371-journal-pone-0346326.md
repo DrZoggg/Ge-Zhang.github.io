@@ -4,8 +4,8 @@ Journal: PLOS One
 Year: 2026
 Type: Article
 DOI: 10.1371/journal.pone.0346326
-Canonical page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1371-journal-pone-0346326.html
-Markdown record: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1371-journal-pone-0346326.md
+Canonical page: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
+Markdown record: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md
 ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
@@ -15,6 +15,6 @@ This is an author-controlled publication record in the Ge Zhang Academic Hub. It
 ## Links
 
 - DOI: https://doi.org/10.1371/journal.pone.0346326
-- HTML page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1371-journal-pone-0346326.html
+- HTML page: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
 - Google Scholar query: https://scholar.google.com/scholar?q=%22Real-world%20safety%20of%20aliskiren%20in%20primary%20hypertension%3A%20A%20cross-database%20study%22
 - ORCID: https://orcid.org/0000-0002-3116-3246

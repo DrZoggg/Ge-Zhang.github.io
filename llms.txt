@@ -1,21 +1,21 @@
 # Ge Zhang Academic Hub
 
 - ORCID: https://orcid.org/0000-0002-3116-3246
-- Homepage: https://drzoggg.github.io/Ge-Zhang.github.io/
-- All Publications: https://drzoggg.github.io/Ge-Zhang.github.io/publications.html
-- Publications JSON: https://drzoggg.github.io/Ge-Zhang.github.io/publications.json
-- Paper index: https://drzoggg.github.io/Ge-Zhang.github.io/paper_index.json
+- Homepage: https://drgezhang.com/
+- All Publications: https://drgezhang.com/publications.html
+- Publications JSON: https://drgezhang.com/publications.json
+- Paper index: https://drgezhang.com/paper_index.json
 
 ## Deep GEO
 
-- [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.html) — DOI: 10.1038/s41467-024-50415-9
-- [Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability](https://drzoggg.github.io/Ge-Zhang.github.io/papers/apvs.html) — DOI: 10.1016/j.isci.2023.107587
-- [Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes](https://drzoggg.github.io/Ge-Zhang.github.io/papers/smc-fate.html) — DOI: 10.1186/s12967-022-03795-9
-- [Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure](https://drzoggg.github.io/Ge-Zhang.github.io/papers/olink-dcm.html) — DOI: 10.1021/acs.jproteome.4c00522
-- [Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction](https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.html) — DOI: 10.1016/j.ejphar.2023.175569
-- [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
-- [Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-ehf2-14003.html) — DOI: 10.1002/ehf2.14003
-- [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1093-eurheartj-ehaf523.html) — DOI: 10.1093/eurheartj/ehaf523
-- [Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1002-mdr2-70052.html) — DOI: 10.1002/mdr2.70052
-- [Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1200-po-24-00089.html) — DOI: 10.1200/po.24.00089
-- [Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis](https://drzoggg.github.io/Ge-Zhang.github.io/papers/doi-10-1172-jci194175.html) — DOI: 10.1172/jci194175
+- [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://drgezhang.com/papers/aihflevel.html) — DOI: 10.1038/s41467-024-50415-9
+- [Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability](https://drgezhang.com/papers/apvs.html) — DOI: 10.1016/j.isci.2023.107587
+- [Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes](https://drgezhang.com/papers/smc-fate.html) — DOI: 10.1186/s12967-022-03795-9
+- [Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure](https://drgezhang.com/papers/olink-dcm.html) — DOI: 10.1021/acs.jproteome.4c00522
+- [Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction](https://drgezhang.com/papers/idebenone-ferroptosis.html) — DOI: 10.1016/j.ejphar.2023.175569
+- [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
+- [Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach](https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html) — DOI: 10.1002/ehf2.14003
+- [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html) — DOI: 10.1093/eurheartj/ehaf523
+- [Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment](https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html) — DOI: 10.1002/mdr2.70052
+- [Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study](https://drgezhang.com/papers/doi-10-1200-po-24-00089.html) — DOI: 10.1200/po.24.00089
+- [Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis](https://drgezhang.com/papers/doi-10-1172-jci194175.html) — DOI: 10.1172/jci194175

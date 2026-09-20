@@ -4,8 +4,8 @@ Journal: European Journal of Pharmacology
 Year: 2023
 Type: Article
 DOI: 10.1016/j.ejphar.2023.175569
-Canonical page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.html
-Markdown record: https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.md
+Canonical page: https://drgezhang.com/papers/idebenone-ferroptosis.html
+Markdown record: https://drgezhang.com/papers/idebenone-ferroptosis.md
 ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
@@ -29,6 +29,6 @@ idebenone, ferroptosis, autophagy, ROS, AMPK, mTOR, myocardial infarction
 ## Links
 
 - DOI: https://doi.org/10.1016/j.ejphar.2023.175569
-- HTML page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/idebenone-ferroptosis.html
+- HTML page: https://drgezhang.com/papers/idebenone-ferroptosis.html
 - Google Scholar query: https://scholar.google.com/scholar?q=%22Idebenone%20attenuates%20ferroptosis%20by%20inhibiting%20excessive%20autophagy%20via%20the%20ROS-AMPK-mTOR%20pathway%20to%20preserve%20cardiac%20function%20after%20myocardial%20infarction%22
 - ORCID: https://orcid.org/0000-0002-3116-3246

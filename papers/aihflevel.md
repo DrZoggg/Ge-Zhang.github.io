@@ -4,8 +4,8 @@ Journal: Nature Communications
 Year: 2024
 Type: Article
 DOI: 10.1038/s41467-024-50415-9
-Canonical page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.html
-Markdown record: https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.md
+Canonical page: https://drgezhang.com/papers/aihflevel.html
+Markdown record: https://drgezhang.com/papers/aihflevel.md
 ORCID identity anchor: https://orcid.org/0000-0002-3116-3246
 
 ## About this record
@@ -30,6 +30,6 @@ advanced heart failure, renal dysfunction, chronic kidney disease, mortality pre
 ## Links
 
 - DOI: https://doi.org/10.1038/s41467-024-50415-9
-- HTML page: https://drzoggg.github.io/Ge-Zhang.github.io/papers/aihflevel.html
+- HTML page: https://drgezhang.com/papers/aihflevel.html
 - Google Scholar query: https://scholar.google.com/scholar?q=%22AI%20hybrid%20survival%20assessment%20for%20advanced%20heart%20failure%20patients%20with%20renal%20dysfunction%22
 - ORCID: https://orcid.org/0000-0002-3116-3246
