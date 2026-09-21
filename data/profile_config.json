@@ -12,6 +12,32 @@
     }
   ],
   "homepage_top_label": "AI FOR SCIENCE IN SYSTEMS MEDICINE",
+  "homepage_research": {
+    "label": "Research themes",
+    "heading": "Four connected directions",
+    "themes": [
+      {
+        "enabled": true,
+        "title": "AI & clinical risk prediction",
+        "description": "Explainable machine learning, multimodal clinical data, survival analysis and decision-support tools for cardiovascular disease."
+      },
+      {
+        "enabled": true,
+        "title": "Atherosclerosis & vascular biology",
+        "description": "Plaque vulnerability, vascular smooth muscle cell states, single-cell genomics and molecular heterogeneity."
+      },
+      {
+        "enabled": true,
+        "title": "Multi-omics & translational biomarkers",
+        "description": "Transcriptomics, proteomics, metabolomics and integrated systems biology for biomarker discovery and validation."
+      },
+      {
+        "enabled": true,
+        "title": "Circadian cardiovascular biology",
+        "description": "Circadian disruption, chronobiology, vascular inflammation and precision cardiovascular medicine."
+      }
+    ]
+  },
   "biography": {
     "en": "Ge Zhang is a clinician-scientist working at the intersection of AI for Science, systems medicine, and translational biomedicine. His research integrates explainable artificial intelligence, multimodal clinical data, and multi-omics profiling to resolve disease heterogeneity, uncover mechanistic determinants, and translate molecular signatures into clinically actionable knowledge across major chronic diseases. Cardiovascular disease, particularly atherosclerosis, represents a major disease context in his research, with specific interests in the vascular microenvironment, vascular smooth muscle cell plasticity, and circadian disruption. His work spans population-scale clinical modeling, multimodal and multi-omics integration, computational inference, mechanistic interrogation, and translational validation, establishing cross-scale links from molecular and cellular states to clinical phenotypes and disease outcomes.",
     "zh": "张格（Ge Zhang），临床医学与计算生物医学研究者，主要从事 AI for Science、系统医学与转化生物医学研究。其研究面向重大慢性疾病，融合可解释人工智能、多模态临床数据与多组学研究体系，旨在解析疾病异质性、识别关键机制驱动因素，并推动分子特征向具有临床意义的生物学认知与转化标志物延伸。 心血管疾病，尤其是动脉粥样硬化，是其重要疾病研究场景，重点关注动脉粥样硬化血管微环境、血管平滑肌细胞可塑性及昼夜节律紊乱。 其研究贯穿人群尺度临床建模、多模态与多组学整合、计算推断、机制解析与转化验证，致力于建立从分子与细胞状态到临床表型及疾病结局的跨尺度关联。"

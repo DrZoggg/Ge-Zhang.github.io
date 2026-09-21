@@ -163,6 +163,14 @@ def publication_counts(repo):
 
 def main():
     expected_counts = publication_counts(ROOT)
+    current_profile = load_profile(ROOT)
+    expected_top_label = current_profile["homepage_top_label"]
+    expected_affiliation = current_profile["affiliations"][0]["name"]
+    expected_top_text = (
+        f"{expected_top_label} · {expected_affiliation}"
+        if expected_top_label
+        else expected_affiliation
+    )
     with tempfile.TemporaryDirectory() as temp:
         temp_root = Path(temp)
 
@@ -171,10 +179,9 @@ def main():
         result = run(noop)
         assert "Updated fields:\n- none" in result.stdout
         assert digest(noop) == before
-        assert load_profile(noop)["homepage_top_label"] == ""
+        assert load_profile(noop)["homepage_top_label"] == expected_top_label
         noop_homepage = (noop / "index.html").read_text(encoding="utf-8")
-        assert '<div class="eyebrow">Zhengzhou University</div>' in noop_homepage
-        assert "Cardiovascular research · Zhengzhou University" not in noop_homepage
+        assert f'<div class="eyebrow">{expected_top_text}</div>' in noop_homepage
 
         biography_en = copy_fixture(temp_root, "biography-en")
         yesterday = (datetime.now(timezone.utc).date() - timedelta(days=1)).isoformat()
@@ -255,7 +262,7 @@ def main():
         assert load_profile(top_label)["homepage_top_label"] == "Cardiovascular research"
         homepage = (top_label / "index.html").read_text(encoding="utf-8")
         assert (
-            '<div class="eyebrow">Cardiovascular research · Zhengzhou University</div>'
+            f'<div class="eyebrow">Cardiovascular research · {expected_affiliation}</div>'
             in homepage
         )
         run(
@@ -267,8 +274,8 @@ def main():
         )
         assert load_profile(top_label)["homepage_top_label"] == ""
         homepage = (top_label / "index.html").read_text(encoding="utf-8")
-        assert '<div class="eyebrow">Zhengzhou University</div>' in homepage
-        assert "Cardiovascular research · Zhengzhou University" not in homepage
+        assert f'<div class="eyebrow">{expected_affiliation}</div>' in homepage
+        assert f"Cardiovascular research · {expected_affiliation}" not in homepage
         assert publication_state_digest(top_label) == publication_before
         assert_identity_unchanged(top_label, identity_before)
 

@@ -148,6 +148,28 @@ def resolve_lastmod(url, changed, previous_lastmods, today):
     return previous_lastmods[url] or SITEMAP_BASELINE_DATE
 
 
+def render_homepage_research(profile):
+    section = profile["homepage_research"]
+    cards = "".join(
+        "\n<div class=\"card\"><h3>"
+        + html.escape(theme["title"])
+        + "</h3><p>"
+        + html.escape(theme["description"])
+        + "</p></div>"
+        for theme in section["themes"]
+        if theme["enabled"]
+    )
+    return (
+        '<section id="research"><div class="eyebrow">'
+        + html.escape(section["label"])
+        + "</div><h2>"
+        + html.escape(section["heading"])
+        + '</h2><div class="grid themes">'
+        + cards
+        + "</div></section>"
+    )
+
+
 def update_homepage(index_html, config):
     homepage_url = f"{config['site_url']}/"
     bilingual_name = f"{config['researcher_name']} ({config['researcher_name_zh']})"
@@ -283,6 +305,16 @@ def update_homepage(index_html, config):
     )
     if affiliation_count != 1:
         raise ValueError("index.html must contain exactly one homepage affiliation label.")
+
+    index_html, research_count = re.subn(
+        r'<section id="research">.*?</section>',
+        lambda _: render_homepage_research(config["profile"]),
+        index_html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if research_count != 1:
+        raise ValueError("index.html must contain exactly one homepage research section.")
 
     replacements = (
         (
