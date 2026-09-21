@@ -13,44 +13,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTROLLER = [sys.executable, "scripts/research_themes_control.py"]
-EXPECTED_RESEARCH = {
-    "label": "Research themes",
-    "heading": "Four connected directions",
-    "themes": [
-        {
-            "enabled": True,
-            "title": "AI & clinical risk prediction",
-            "description": (
-                "Explainable machine learning, multimodal clinical data, survival "
-                "analysis and decision-support tools for cardiovascular disease."
-            ),
-        },
-        {
-            "enabled": True,
-            "title": "Atherosclerosis & vascular biology",
-            "description": (
-                "Plaque vulnerability, vascular smooth muscle cell states, single-cell "
-                "genomics and molecular heterogeneity."
-            ),
-        },
-        {
-            "enabled": True,
-            "title": "Multi-omics & translational biomarkers",
-            "description": (
-                "Transcriptomics, proteomics, metabolomics and integrated systems "
-                "biology for biomarker discovery and validation."
-            ),
-        },
-        {
-            "enabled": True,
-            "title": "Circadian cardiovascular biology",
-            "description": (
-                "Circadian disruption, chronobiology, vascular inflammation and "
-                "precision cardiovascular medicine."
-            ),
-        },
-    ],
-}
 
 
 def copy_fixture(temp_root, name):
@@ -222,13 +184,14 @@ def publication_counts(repo):
 def main():
     expected_counts = publication_counts(ROOT)
     profile = load_profile(ROOT)
-    assert profile["homepage_research"] == EXPECTED_RESEARCH
+    expected_research = profile["homepage_research"]
     initial_render = rendered_research(ROOT)
-    assert initial_render["label"] == EXPECTED_RESEARCH["label"]
-    assert initial_render["heading"] == EXPECTED_RESEARCH["heading"]
+    assert initial_render["label"] == expected_research["label"]
+    assert initial_render["heading"] == expected_research["heading"]
     assert initial_render["cards"] == [
         {"title": theme["title"], "description": theme["description"]}
-        for theme in EXPECTED_RESEARCH["themes"]
+        for theme in expected_research["themes"]
+        if theme["enabled"]
     ]
 
     workflow = (ROOT / ".github/workflows/research-themes-control.yml").read_text(

@@ -33,6 +33,7 @@ class ValidationError(RuntimeError):
 
 CANONICAL_SITE_URL = "https://drgezhang.com"
 LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
+INDEXNOW_CONFIG_PATH = ROOT / "data" / "indexnow_config.json"
 
 
 def require(condition, message):
@@ -316,6 +317,34 @@ def validate_site():
     require(
         config["site_url"] == CANONICAL_SITE_URL,
         f"Canonical site origin must be {CANONICAL_SITE_URL}.",
+    )
+    require(INDEXNOW_CONFIG_PATH.is_file(), "data/indexnow_config.json is missing.")
+    indexnow_config = json.loads(INDEXNOW_CONFIG_PATH.read_text(encoding="utf-8"))
+    require(
+        indexnow_config.get("enabled") is True,
+        "IndexNow notifications must be enabled.",
+    )
+    require(
+        indexnow_config.get("host") == "drgezhang.com",
+        "IndexNow host must be drgezhang.com.",
+    )
+    indexnow_key = indexnow_config.get("key")
+    require(
+        isinstance(indexnow_key, str)
+        and bool(re.fullmatch(r"[A-Za-z0-9-]{8,128}", indexnow_key)),
+        "IndexNow key must contain 8–128 letters, numbers, or dashes.",
+    )
+    expected_key_location = f"{CANONICAL_SITE_URL}/{indexnow_key}.txt"
+    require(
+        indexnow_config.get("key_location") == expected_key_location,
+        "IndexNow key_location must be the canonical HTTPS root key URL.",
+    )
+    indexnow_key_path = ROOT / f"{indexnow_key}.txt"
+    require(indexnow_key_path.is_file(), "IndexNow root key file is missing.")
+    indexnow_key_content = indexnow_key_path.read_text(encoding="utf-8")
+    require(
+        indexnow_key_content in {indexnow_key, indexnow_key + "\n"},
+        "IndexNow root key file content does not exactly match the configured key.",
     )
     require(
         config["person_id"] == f"{config['site_url']}/#person",
