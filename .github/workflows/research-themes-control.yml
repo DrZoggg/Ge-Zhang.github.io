@@ -1,0 +1,151 @@
+name: Research Themes Control Center
+
+on:
+  workflow_dispatch:
+    inputs:
+      section_label:
+        description: "Section label (blank = no change)"
+        required: false
+        type: string
+      section_heading:
+        description: "Section heading (blank = no change)"
+        required: false
+        type: string
+      theme_1_action:
+        description: "Theme 1 action"
+        required: true
+        default: "no_change"
+        type: choice
+        options: [no_change, enable, disable]
+      theme_1_title:
+        description: "Theme 1 title (blank = no change)"
+        required: false
+        type: string
+      theme_1_description:
+        description: "Theme 1 description (blank = no change)"
+        required: false
+        type: string
+      theme_2_action:
+        description: "Theme 2 action"
+        required: true
+        default: "no_change"
+        type: choice
+        options: [no_change, enable, disable]
+      theme_2_title:
+        description: "Theme 2 title (blank = no change)"
+        required: false
+        type: string
+      theme_2_description:
+        description: "Theme 2 description (blank = no change)"
+        required: false
+        type: string
+      theme_3_action:
+        description: "Theme 3 action"
+        required: true
+        default: "no_change"
+        type: choice
+        options: [no_change, enable, disable]
+      theme_3_title:
+        description: "Theme 3 title (blank = no change)"
+        required: false
+        type: string
+      theme_3_description:
+        description: "Theme 3 description (blank = no change)"
+        required: false
+        type: string
+      theme_4_action:
+        description: "Theme 4 action"
+        required: true
+        default: "no_change"
+        type: choice
+        options: [no_change, enable, disable]
+      theme_4_title:
+        description: "Theme 4 title (blank = no change)"
+        required: false
+        type: string
+      theme_4_description:
+        description: "Theme 4 description (blank = no change)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publication-data-updates
+  cancel-in-progress: false
+
+jobs:
+  control:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply research theme controls, build, and validate
+        env:
+          SECTION_LABEL_INPUT: ${{ inputs.section_label }}
+          SECTION_HEADING_INPUT: ${{ inputs.section_heading }}
+          THEME_1_ACTION_INPUT: ${{ inputs.theme_1_action }}
+          THEME_1_TITLE_INPUT: ${{ inputs.theme_1_title }}
+          THEME_1_DESCRIPTION_INPUT: ${{ inputs.theme_1_description }}
+          THEME_2_ACTION_INPUT: ${{ inputs.theme_2_action }}
+          THEME_2_TITLE_INPUT: ${{ inputs.theme_2_title }}
+          THEME_2_DESCRIPTION_INPUT: ${{ inputs.theme_2_description }}
+          THEME_3_ACTION_INPUT: ${{ inputs.theme_3_action }}
+          THEME_3_TITLE_INPUT: ${{ inputs.theme_3_title }}
+          THEME_3_DESCRIPTION_INPUT: ${{ inputs.theme_3_description }}
+          THEME_4_ACTION_INPUT: ${{ inputs.theme_4_action }}
+          THEME_4_TITLE_INPUT: ${{ inputs.theme_4_title }}
+          THEME_4_DESCRIPTION_INPUT: ${{ inputs.theme_4_description }}
+        run: python scripts/research_themes_control.py
+
+      - name: Commit only real changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/profile_config.json
+          git add index.html publications.html publications.json publication_inventory.csv
+          git add paper_index.json sitemap.xml robots.txt llms.txt llms-full.txt papers
+          if git diff --cached --quiet; then
+            echo "No effective change. No commit and no Pages deployment."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Commit:" >> "$GITHUB_STEP_SUMMARY"
+            echo "skipped" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Deployment:" >> "$GITHUB_STEP_SUMMARY"
+            echo "skipped" >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Update homepage research themes"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Commit:" >> "$GITHUB_STEP_SUMMARY"
+            echo "created" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Deployment:" >> "$GITHUB_STEP_SUMMARY"
+            echo "requested" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  deploy:
+    needs: control
+    if: needs.control.outputs.changed == 'true'
+    uses: ./.github/workflows/static.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

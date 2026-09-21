@@ -21,6 +21,7 @@ from site_common import (
     load_site_config,
     publication_token,
     validate_controller_entries,
+    validate_homepage_research,
     validate_slug,
 )
 from sync_common import ROOT, is_withdrawn, load_master, norm_doi
@@ -257,6 +258,7 @@ def validate_site():
         and profile["homepage_top_label"] == profile["homepage_top_label"].strip(),
         "profile_config.json homepage_top_label must be a trimmed string.",
     )
+    homepage_research = validate_homepage_research(profile)
     require(
         isinstance(profile.get("research_areas"), list)
         and bool(profile["research_areas"])
@@ -696,6 +698,42 @@ def validate_site():
             f'href="{url}">{label}</a>' in index_html,
             f"Homepage {label} link does not match profile_config.json.",
         )
+
+    research_sections = re.findall(
+        r'<section id="research">(.*?)</section>', index_html, flags=re.DOTALL
+    )
+    require(
+        len(research_sections) == 1,
+        "Homepage must contain exactly one generated research section.",
+    )
+    research_html = research_sections[0]
+    enabled_themes = [
+        theme for theme in homepage_research["themes"] if theme["enabled"]
+    ]
+    require(
+        element_texts(research_html, "div", {"class": "eyebrow"})
+        == [homepage_research["label"]],
+        "Homepage research label does not match profile_config.json.",
+    )
+    require(
+        element_texts(research_html, "h2") == [homepage_research["heading"]],
+        "Homepage research heading does not match profile_config.json.",
+    )
+    require(
+        element_texts(research_html, "h3")
+        == [theme["title"] for theme in enabled_themes],
+        "Homepage research theme titles or order differ from profile_config.json.",
+    )
+    require(
+        element_texts(research_html, "p")
+        == [theme["description"] for theme in enabled_themes],
+        "Homepage research theme descriptions differ from profile_config.json.",
+    )
+    require(
+        research_html.count('<div class="card">') == len(enabled_themes),
+        "Homepage research card count differs from profile_config.json.",
+    )
+
     featured_titles = [
         normalized_source_text(master_by_token[controller_token(entry)]["title"])
         for entry in featured

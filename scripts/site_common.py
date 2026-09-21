@@ -39,6 +39,70 @@ def write_json(path, payload):
     )
 
 
+def validate_homepage_research(profile):
+    section = profile.get("homepage_research")
+    if not isinstance(section, dict):
+        raise ValueError("Profile configuration homepage_research must be an object.")
+    for key in ("label", "heading"):
+        value = section.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(
+                f"Profile configuration homepage_research.{key} must be non-empty."
+            )
+        if value != value.strip():
+            raise ValueError(
+                f"Profile configuration homepage_research.{key} must be trimmed."
+            )
+
+    themes = section.get("themes")
+    if not isinstance(themes, list):
+        raise ValueError(
+            "Profile configuration homepage_research.themes must be an array."
+        )
+
+    enabled_titles = []
+    enabled_count = 0
+    for position, theme in enumerate(themes, start=1):
+        if not isinstance(theme, dict):
+            raise ValueError(f"Homepage research theme {position} must be an object.")
+        if not isinstance(theme.get("enabled"), bool):
+            raise ValueError(
+                f"Homepage research theme {position} enabled must be a boolean."
+            )
+        for key in ("title", "description"):
+            value = theme.get(key)
+            if not isinstance(value, str):
+                raise ValueError(
+                    f"Homepage research theme {position} {key} must be text."
+                )
+            if value != value.strip():
+                raise ValueError(
+                    f"Homepage research theme {position} {key} must be trimmed."
+                )
+        if not theme["enabled"]:
+            continue
+        enabled_count += 1
+        if not theme["title"]:
+            raise ValueError(
+                f"Enabled homepage research theme {position} title must be non-empty."
+            )
+        if not theme["description"]:
+            raise ValueError(
+                f"Enabled homepage research theme {position} description must be non-empty."
+            )
+        enabled_titles.append(theme["title"].casefold())
+
+    if not 2 <= enabled_count <= 6:
+        raise ValueError(
+            "Profile configuration homepage_research must contain 2–6 enabled themes."
+        )
+    if len(enabled_titles) != len(set(enabled_titles)):
+        raise ValueError(
+            "Enabled homepage research theme titles must be unique case-insensitively."
+        )
+    return section
+
+
 def load_profile_config():
     profile = read_json(PROFILE_CONFIG_PATH)
     required = (
@@ -71,6 +135,7 @@ def load_profile_config():
             "Profile configuration external_links must contain ORCID, Scholar, "
             "ResearchGate and GitHub URLs."
         )
+    validate_homepage_research(profile)
     return profile
 
 
