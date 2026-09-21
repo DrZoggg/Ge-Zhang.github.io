@@ -24,7 +24,14 @@ from site_common import (
     validate_homepage_research,
     validate_slug,
 )
-from sync_common import ROOT, is_withdrawn, load_master, norm_doi
+from sync_common import (
+    ROOT,
+    exact_name_match,
+    is_withdrawn,
+    load_master,
+    norm_doi,
+    normalize_authors,
+)
 
 
 class ValidationError(RuntimeError):
@@ -140,6 +147,17 @@ def single_meta_content(markup, name, label):
         rf'<meta name="{re.escape(name)}" content="([^"]*)">',
         label,
     )
+
+
+def meta_contents(markup, name):
+    return [
+        html.unescape(value)
+        for value in re.findall(
+            rf'<meta name="{re.escape(name)}" content="([^"]*)">',
+            markup,
+            flags=re.I,
+        )
+    ]
 
 
 def same_as_values(value):
@@ -372,6 +390,15 @@ def validate_site():
         all("featured" not in item for item in master),
         "Legacy Featured flags remain in master metadata.",
     )
+    for item in master:
+        if "authors" not in item:
+            continue
+        require(
+            isinstance(item["authors"], list)
+            and bool(item["authors"])
+            and item["authors"] == normalize_authors(item["authors"]),
+            f"Invalid authors list for {item.get('title')!r}.",
+        )
     require(
         len(public_json) == len(public_expected),
         f"publications.json count {len(public_json)} != expected {len(public_expected)}.",
@@ -435,6 +462,8 @@ def validate_site():
     public_by_token = {publication_token(item): item for item in public_expected}
     deep_tokens = {controller_token(entry) for entry in deep_geo}
     featured_tokens = {controller_token(entry) for entry in featured}
+    citation_author_pages = 0
+    schema_author_array_pages = 0
     for item in public_expected:
         slug = item["slug"]
         page = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
@@ -467,12 +496,50 @@ def validate_site():
             schema.get("headline") == expected_title,
             f"Schema.org headline changed for {slug}.html.",
         )
-        author = schema.get("author")
-        validate_researcher_reference(author, config, f"{slug}.html author")
+        expected_authors = normalize_authors(item.get("authors"))
+        citation_authors = meta_contents(page, "citation_author")
         require(
-            author.get("sameAs") == f"https://orcid.org/{config['orcid']}",
-            f"Author sameAs must be the canonical ORCID URL in {slug}.html.",
+            citation_authors == expected_authors,
+            f"citation_author order/content mismatch in {slug}.html.",
         )
+        author = schema.get("author")
+        if expected_authors:
+            citation_author_pages += 1
+            schema_author_array_pages += 1
+            require(isinstance(author, list), f"{slug}.html author must be an array.")
+            require(
+                len(author) == len(expected_authors),
+                f"Schema.org author count mismatch in {slug}.html.",
+            )
+            for expected_name, person in zip(expected_authors, author):
+                require(
+                    isinstance(person, dict)
+                    and person.get("@type") == "Person",
+                    f"Schema.org author order/content mismatch in {slug}.html.",
+                )
+                if exact_name_match(expected_name, config["researcher_name"]):
+                    validate_researcher_reference(
+                        person, config, f"{slug}.html author {expected_name!r}"
+                    )
+                    require(
+                        person.get("sameAs") == f"https://orcid.org/{config['orcid']}",
+                        f"Researcher ORCID mismatch in {slug}.html.",
+                    )
+                else:
+                    require(
+                        person == {"@type": "Person", "name": expected_name},
+                        f"Co-author inherited researcher identity in {slug}.html.",
+                    )
+        else:
+            require(
+                not citation_authors,
+                f"Unexpected citation_author in {slug}.html without master authors.",
+            )
+            validate_researcher_reference(author, config, f"{slug}.html author")
+            require(
+                author.get("sameAs") == f"https://orcid.org/{config['orcid']}",
+                f"Author sameAs must be the canonical ORCID URL in {slug}.html.",
+            )
         require(
             single_meta_content(page, "citation_title", f"{slug}.html citation_title")
             == expected_title,
@@ -953,6 +1020,8 @@ def validate_site():
         "markdown_pages": len(md_files),
         "sitemap_urls": len(sitemap_urls),
         "doi_duplicates": len(master_dois) - len(set(master_dois)),
+        "citation_author_pages": citation_author_pages,
+        "schema_author_array_pages": schema_author_array_pages,
     }
     print("VALIDATION PASS")
     print(json.dumps(result, ensure_ascii=False, indent=2))

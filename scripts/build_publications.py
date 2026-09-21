@@ -22,7 +22,15 @@ from site_common import (
     publication_token,
     validate_controller_entries,
 )
-from sync_common import ROOT, is_withdrawn, load_master, norm_doi, save_master
+from sync_common import (
+    ROOT,
+    exact_name_match,
+    is_withdrawn,
+    load_master,
+    norm_doi,
+    normalize_authors,
+    save_master,
+)
 
 
 FEATURED_START = "<!-- FEATURED_PAPERS_START -->"
@@ -370,6 +378,7 @@ def load_deep_content(publication):
 
 def paper_schema(publication, paper_url, config):
     title = publication.get("title") or "Untitled work"
+    authors = normalize_authors(publication.get("authors"))
     result = {
         "@context": "https://schema.org",
         "@type": schema_type(publication),
@@ -377,7 +386,16 @@ def paper_schema(publication, paper_url, config):
         "headline": title,
         "url": paper_url,
         "mainEntityOfPage": paper_url,
-        "author": researcher_reference(config),
+        "author": (
+            [
+                researcher_reference(config)
+                if exact_name_match(author, config["researcher_name"])
+                else {"@type": "Person", "name": author}
+                for author in authors
+            ]
+            if authors
+            else researcher_reference(config)
+        ),
     }
     if publication.get("year"):
         result["datePublished"] = str(publication["year"])
@@ -471,6 +489,10 @@ def render_paper_html(publication, *, config, deep_content=None):
         f'<meta name="citation_title" content="{html.escape(str(title), quote=True)}">',
         f'<meta name="citation_journal_title" content="{html.escape(str(journal), quote=True)}">',
     ]
+    citation.extend(
+        f'<meta name="citation_author" content="{html.escape(author, quote=True)}">'
+        for author in normalize_authors(publication.get("authors"))
+    )
     if publication.get("year"):
         citation.append(
             f'<meta name="citation_publication_date" content="{html.escape(str(publication["year"]), quote=True)}">'

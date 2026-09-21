@@ -62,6 +62,24 @@ def norm_title(value):
     return re.sub(r"\s+", " ", title).strip()
 
 
+def normalize_authors(value):
+    """Return a clean, ordered author list without inventing missing names."""
+    if not isinstance(value, list):
+        return []
+    authors = []
+    for raw in value:
+        author = clean_text(raw)
+        if author and author not in authors:
+            authors.append(author)
+    return authors
+
+
+def exact_name_match(value, expected):
+    """Match normalized full names exactly; this deliberately is not fuzzy."""
+    left, right = clean_text(value), clean_text(expected)
+    return bool(left and right and left.casefold() == right.casefold())
+
+
 def is_withdrawn(item):
     status = clean_text(item.get("status", "")).casefold()
     detected, _ = title_status(item.get("title", ""))
@@ -111,6 +129,13 @@ def normalize_item(item, default_source=""):
         rec["url"] = url
     else:
         rec.pop("url", None)
+
+    if "authors" in rec:
+        authors = normalize_authors(rec.get("authors"))
+        if authors:
+            rec["authors"] = authors
+        else:
+            rec.pop("authors", None)
 
     if detected_status == "withdrawn" or clean_text(rec.get("status")).casefold() == "withdrawn":
         rec["status"] = "withdrawn"
