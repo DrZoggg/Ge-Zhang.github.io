@@ -883,20 +883,28 @@ def render_deep_v2_html(content, related_papers):
             for key, value in model.items()
             if key not in {"final_predictors", "interpretability"}
         )
+        final_predictors = model.get("final_predictors") or []
+        interpretability = model.get("interpretability") or []
         predictors = "".join(
-            f"<li>{html.escape(item)}</li>" for item in model.get("final_predictors", [])
+            f"<li>{html.escape(item)}</li>" for item in final_predictors
         )
         interpretations = "".join(
-            f"<li>{html.escape(item)}</li>" for item in model.get("interpretability", [])
+            f"<li>{html.escape(item)}</li>" for item in interpretability
         )
         model_html = (
             "<h3>Model development</h3>"
             f'<dl class="paper-geo-v2__profile">{model_details}</dl>'
-            "<h3>Final predictor set</h3>"
-            f'<ol class="paper-geo-v2__compact-list">{predictors}</ol>'
-            "<h3>Interpretability</h3>"
-            f'<ul class="paper-geo-v2__compact-list">{interpretations}</ul>'
         )
+        if final_predictors:
+            model_html += (
+                "<h3>Final predictor set</h3>"
+                f'<ol class="paper-geo-v2__compact-list">{predictors}</ol>'
+            )
+        if interpretability:
+            model_html += (
+                "<h3>Interpretability</h3>"
+                f'<ul class="paper-geo-v2__compact-list">{interpretations}</ul>'
+            )
     additions = "".join(
         f"<li>{html.escape(item)}</li>" for item in content["what_this_adds"]
     )
@@ -1119,19 +1127,28 @@ def render_deep_v2_markdown(content, related_papers):
         for key, value in model.items():
             if key not in {"final_predictors", "interpretability"}:
                 parts.append(f"- {v2_label(key)}: {v2_value(value)}")
-        parts.extend(
-            [
-                "",
-                "### Final predictor set",
-                "",
-                *[f"{position}. {item}" for position, item in enumerate(model["final_predictors"], 1)],
-                "",
-                "### Interpretability",
-                "",
-                *[f"- {item}" for item in model["interpretability"]],
-                "",
-            ]
-        )
+        if model.get("final_predictors"):
+            parts.extend(
+                [
+                    "",
+                    "### Final predictor set",
+                    "",
+                    *[
+                        f"{position}. {item}"
+                        for position, item in enumerate(model["final_predictors"], 1)
+                    ],
+                ]
+            )
+        if model.get("interpretability"):
+            parts.extend(
+                [
+                    "",
+                    "### Interpretability",
+                    "",
+                    *[f"- {item}" for item in model["interpretability"]],
+                ]
+            )
+        parts.append("")
     parts.extend(
         [
             "## What This Study Adds",

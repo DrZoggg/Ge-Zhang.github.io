@@ -18,8 +18,10 @@ from site_common import (
 )
 from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import (
+    APVS_DOI,
     AIHFLEVEL_DOI,
     paper_json_ld_object,
+    validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
     validate_v2_inventory,
     validate_v2_rendered_page,
@@ -202,6 +204,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
     ]
     assert len(aihf_items) == 1
+    apvs_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == APVS_DOI
+    ]
+    assert len(apvs_items) == 1
 
     for publication, content in v2_items:
         page, markdown, schema = rendered_v2(
@@ -213,6 +219,14 @@ def run_tests():
             validate_aihflevel_v2_regression(content, publication, page)
             assert page == (PAPERS_DIR / "aihflevel.html").read_text(encoding="utf-8")
             assert markdown == (PAPERS_DIR / "aihflevel.md").read_text(encoding="utf-8")
+        elif norm_doi(publication.get("doi")) == APVS_DOI:
+            validate_apvs_v2_regression(content, publication, page)
+            assert "Final predictor set" not in page
+            assert "Interpretability" not in page
+            assert "### Final predictor set" not in markdown
+            assert "### Interpretability" not in markdown
+            assert page == (PAPERS_DIR / "apvs.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / "apvs.md").read_text(encoding="utf-8")
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

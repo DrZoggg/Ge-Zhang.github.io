@@ -1,12 +1,152 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1016/j.isci.2023.107587",
-  "display_title": "APVS / APVSLevel",
-  "summary": "A machine-learning and transcriptomic framework for quantifying atherosclerotic plaque vulnerability using bulk and single-cell data.",
-  "keywords": ["atherosclerotic plaque vulnerability", "unstable plaque", "transcriptomics", "single-cell RNA-seq", "machine learning", "molecular classification"],
-  "questions": [
-    "What transcriptomic signatures predict atherosclerotic plaque vulnerability?",
-    "Can machine learning distinguish stable from unstable atherosclerosis?",
-    "What single-cell data support molecular plaque-vulnerability classification?"
-  ]
+  "display_title": "APVS / APVSLevel: machine-learning and single-cell quantification of atherosclerotic plaque vulnerability",
+  "summary": "A multicohort transcriptomic and single-cell framework that derives a 14-gene machine-learning signature and APVSLevel system for classification, quantification, and biological interpretation of atherosclerotic plaque vulnerability.",
+  "research_question": "Can an integrative machine-learning and transcriptomic framework identify a robust molecular signature of atherosclerotic plaque vulnerability and quantify the transition from stable to unstable disease across bulk and single-cell resolution?",
+  "author_summary": "APVS is a transcriptome-based molecular signature developed to characterize atherosclerotic plaque vulnerability across multiple stages of coronary artery disease. The study integrated 22 bulk transcriptomic cohorts with two single-cell RNA-sequencing cohorts and used a nine-learner machine-learning framework to reduce 96 dysregulated co-expression pattern genes to a 14-gene atherosclerotic plaque vulnerability signature. The APVS classifier discriminated clinically and pathologically distinct states, including STEMI versus chronic coronary syndrome, advanced versus early atherosclerotic plaque, and ruptured versus stable plaque, across multiple independent datasets. To extend classification toward biological and clinical interpretation, the study developed APVSLevel, a continuous quantification system associated with coronary stenosis, major adverse cardiovascular events, plaque inflammatory activity, and cellular remodeling. Single-cell analyses linked higher APVSLevel to vulnerable plaque states, inflammatory macrophage programs, and altered macrophage-myofibroblast communication. These results support APVS/APVSLevel as a research framework for molecular characterization and risk stratification of plaque vulnerability; prospective clinical validation remains necessary before routine clinical use.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective multicohort computational systems biology study",
+    "evidence_type": "Bulk transcriptomics, single-cell RNA sequencing, machine learning, and clinical association analyses",
+    "population": "Atherosclerotic and coronary artery disease samples spanning stable and unstable clinical and pathological states",
+    "primary_endpoint": "Discrimination of atherosclerotic and coronary pathological states using the APVS classifier",
+    "secondary_endpoint": "Clinical and biological quantification of plaque vulnerability using APVSLevel",
+    "data_modalities": ["bulk transcriptomics", "single-cell RNA sequencing", "clinical outcomes", "coronary stenosis phenotypes"],
+    "external_validation": true,
+    "scale_metrics": [
+      {"label": "bulk transcriptomic cohorts", "value": "22"},
+      {"label": "bulk samples reported in Summary", "value": "2,235"},
+      {"label": "single-cell cohorts", "value": "2"},
+      {"label": "single-cell samples reported in Summary", "value": "14"},
+      {"label": "GSE159677 single-cell scale", "value": "43,964 cells from 3 atherosclerotic cores and 3 adjacent normal tissues"},
+      {"label": "GSE184073 single-cell scale", "value": "2,237 cells from plaques of 3 STEMI and 4 CCS patients"}
+    ],
+    "counting_note": "The publication reports 2,235 samples from 22 bulk cohorts and 14 samples from two single-cell cohorts in the Summary, while detailed single-cell analyses describe 3 atherosclerotic cores plus 3 adjacent normal tissues and plaques from 3 STEMI plus 4 CCS patients. These modality-specific counts are preserved as reported and are not combined into a derived unique-participant total."
+  },
+  "model_profile": {
+    "candidate_dcpgs": 96,
+    "algorithm_count": 9,
+    "learner_evaluation": "10-fold cross-validation with 100 repetitions",
+    "optimal_learners": ["random forest", "backpropagation neural network"],
+    "feature_selection": "Random-forest recursive feature elimination with Gini-based importance and 10-fold, 10-repeated cross-validation",
+    "signature_size": 14,
+    "classifier": "Backpropagation neural network",
+    "quantification_system": "APVSLevel",
+    "quantification_basis": "APVS expression profile combined with principal-coordinate information"
+  },
+  "key_findings": [
+    {"id": "KF1", "claim": "The integrative machine-learning program reduced 96 dysregulated co-expression pattern genes to a 14-gene APVS signature.", "context": "APVS generation and model selection across nine classical machine-learning learners", "evidence": [
+      {"label": "candidate DCPGs", "value": "96"},
+      {"label": "machine-learning learners", "value": "9"},
+      {"label": "selected APVS genes", "value": "14"},
+      {"label": "optimal learners", "value": "random forest and backpropagation neural network"},
+      {"label": "learner evaluation", "value": "10-fold cross-validation with 100 repetitions"},
+      {"label": "feature selection", "value": "RF-RFE with 10-fold, 10-repeated cross-validation"}],
+      "source_locator": "Results: Machine learning-based integrative program generates APVS; Fig. 2A-E; Methods: APVS generated from an integrative program"},
+    {"id": "KF2", "claim": "The APVS classifier showed strong discrimination across independent datasets spanning clinical and pathological atherosclerotic states.", "context": "Independent external validation of STEMI/CCS, plaque-stage, plaque-rupture, and STEMI/healthy comparisons", "evidence": [
+      {"label": "GSE59867 STEMI vs CCS AUC", "value": "0.985"},
+      {"label": "GSE62646 STEMI vs CCS AUC", "value": "0.997"},
+      {"label": "GSE28829 advanced vs early plaque AUC", "value": "0.952"},
+      {"label": "GSE41571 ruptured vs stable plaque AUC", "value": "0.972"},
+      {"label": "GSE48060 STEMI vs healthy AUC", "value": "0.871"},
+      {"label": "GSE60993 STEMI vs healthy AUC", "value": "0.916"},
+      {"label": "GSE141512 STEMI vs healthy AUC", "value": "1.000"}],
+      "source_locator": "Results: Robust performance of APVS-based classifier; Fig. S2B and Fig. 3A-B"},
+    {"id": "KF3", "claim": "Higher APVSLevel was associated with worse cardiovascular prognosis and greater coronary atherosclerotic severity.", "context": "Clinical interpretability analyses across MACE and coronary stenosis datasets", "evidence": [
+      {"label": "MACE association", "value": "HR 3.819; p<0.01"},
+      {"label": "high vs low APVSLevel MACE incidence", "value": "log-rank p<0.01"},
+      {"label": "APVSLevel vs coronary stenosis degree", "value": "p<0.001"},
+      {"label": "APVSLevel vs Duke CAD Index", "value": "p<0.01"}],
+      "source_locator": "Results: The clinical interpretability underlying APVSLevel; Fig. 4A-D and Fig. 4J"},
+    {"id": "KF4", "claim": "APVSLevel reproduced plaque-vulnerability differences at single-cell resolution.", "context": "Two single-cell RNA-sequencing cohorts comparing atherosclerotic core with adjacent normal tissue and vulnerable STEMI plaques with stable CCS plaques", "evidence": [
+      {"label": "GSE159677 cells", "value": "43,964"},
+      {"label": "atherosclerotic core vs adjacent normal APVSLevel", "value": "higher in atherosclerotic core; p<0.0001"},
+      {"label": "GSE184073 cells", "value": "2,237"},
+      {"label": "vulnerable STEMI vs stable CCS plaque APVSLevel", "value": "higher in vulnerable STEMI plaques; p<0.0001"}],
+      "source_locator": "Results: Single-cell resolution interpretation of the biological significance of APVSLevel; Fig. 7A-B and Fig. S13A"},
+    {"id": "KF5", "claim": "High plaque vulnerability was linked to inflammatory macrophage states and loss of plaque-stabilizing fibrotic macrophage phenotypes.", "context": "Single-cell macrophage-state analysis in vulnerable STEMI versus stable CCS plaques", "evidence": [
+      {"label": "CXCL3+/IL1B+ inflammatory macrophages", "value": "higher APVSLevel in STEMI plaques"},
+      {"label": "C1Q+ fibrotic macrophages", "value": "lower APVSLevel in STEMI plaques"},
+      {"label": "APVSLevel-high atherosclerotic core", "value": "more monocyte/macrophage and endothelial cells; fewer myofibroblast and SMC populations"}],
+      "source_locator": "Results: Single-cell resolution interpretation; Fig. 7C-E and Fig. S14"},
+    {"id": "KF6", "claim": "APVSLevel-high plaques showed a more inflammatory, procoagulant, and matrix-destabilizing molecular state, whereas APVSLevel-low plaques were relatively stromal-rich and fibrotic.", "context": "Bulk and single-cell pathway-level biological interpretation", "evidence": [
+      {"label": "APVSLevel-high pathways", "value": "coagulation cascade, collagen degradation, Notch signaling, TLR signaling"},
+      {"label": "APVSLevel-high cell programs", "value": "inflammatory response, granulocyte activation, macrophage M1 polarization"},
+      {"label": "APVSLevel-low phenotype", "value": "stromal-rich, fibroblast migration, fibrous content, relative immune suppression"},
+      {"label": "single-cell high-vulnerability programs", "value": "coagulation, hypoxia, TNF signaling, heme metabolism, oxidative stress, senescence, DNA damage"}],
+      "source_locator": "Results: The biological implications underlying APVSLevel; Fig. 5, Fig. S6-S8, Fig. 7E, and Fig. S14D-E"},
+    {"id": "KF7", "claim": "Plaque vulnerability was accompanied by remodeling of macrophage-myofibroblast communication networks.", "context": "CellChat and NicheNet analyses of APVSLevel-high versus APVSLevel-low atherosclerotic core states", "evidence": [
+      {"label": "pro-inflammatory signaling", "value": "MIF and VCAM strengthened in APVSLevel-high states"},
+      {"label": "profibrogenic signaling", "value": "SPP1 and FN1 reduced in APVSLevel-high states"},
+      {"label": "Mono/Mac-directed ligand-target axes", "value": "IL34/CTSK; IL6/SOCS3; AGT/SPP1; APOE/SPP1"},
+      {"label": "myofibroblast-directed ligand-target axes", "value": "CXCL2/CDKN1A; ADM/CCL2; NRG1/FOS; ITGB2/CCL2"}],
+      "source_locator": "Results: Intercellular crosstalk within the atherosclerotic core was remodeled by APVS; Fig. 7F-K and Fig. S15-S16"}
+  ],
+  "what_this_adds": [
+    "A molecular plaque-vulnerability framework derived from transcriptomic disease states rather than relying only on conventional epidemiological risk factors.",
+    "Cross-condition validation across STEMI versus CCS, advanced versus early plaque, ruptured versus stable plaque, and STEMI versus healthy comparisons.",
+    "A transition from binary classification with APVS to continuous biological and clinical quantification with APVSLevel.",
+    "Bulk-to-single-cell interpretation linking the same vulnerability framework to plaque microenvironment and cellular-state remodeling.",
+    "Mechanistic hypothesis generation through pathway, immune-landscape, and cell-cell communication analyses."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "APVS discriminates several studied coronary and plaque pathological states in retrospective transcriptomic datasets.",
+      "APVSLevel is associated with plaque vulnerability, coronary stenosis severity, and MACE risk in the studied cohorts.",
+      "APVSLevel-high states exhibit stronger inflammatory, immune, procoagulant, and plaque-destabilizing molecular programs.",
+      "Single-cell datasets support APVSLevel as a molecular descriptor of vulnerable plaque biology and cellular-state remodeling.",
+      "APVS/APVSLevel can serve as a research framework for molecular stratification and mechanistic exploration of atherosclerotic plaque vulnerability."
+    ],
+    "does_not_establish": [
+      "That APVS is a clinically approved diagnostic test for plaque vulnerability.",
+      "That the 14 APVS genes are causal drivers of plaque rupture.",
+      "That APVSLevel-guided treatment reduces myocardial infarction, mortality, or other clinical events.",
+      "That transcriptomic APVS/APVSLevel can replace coronary imaging, cardiac biomarkers, or standard clinical assessment.",
+      "That retrospective public-dataset validation is equivalent to prospective multicenter clinical validation.",
+      "That drug-response or signature-reversal analyses constitute therapeutic recommendations."
+    ]
+  },
+  "qa": [
+    {"question": "What is APVS?", "answer": "APVS is a 14-gene atherosclerotic plaque vulnerability signature derived from 96 dysregulated co-expression pattern genes using an integrative nine-learner machine-learning framework.", "evidence_refs": ["KF1"]},
+    {"question": "Can APVS distinguish STEMI from chronic coronary syndrome?", "answer": "Yes. The APVS classifier achieved AUCs of 0.985 in GSE59867 and 0.997 in GSE62646 for STEMI versus chronic coronary syndrome classification.", "evidence_refs": ["KF2"]},
+    {"question": "Can APVS distinguish ruptured from stable atherosclerotic plaques?", "answer": "Yes. In GSE41571, the APVS classifier achieved an AUC of 0.972 for ruptured versus stable plaque classification.", "evidence_refs": ["KF2"]},
+    {"question": "Can APVS distinguish advanced from early atherosclerotic plaques?", "answer": "Yes. In GSE28829, the APVS classifier achieved an AUC of 0.952 for advanced versus early-stage plaque classification.", "evidence_refs": ["KF2"]},
+    {"question": "What is APVSLevel?", "answer": "APVSLevel is a continuous molecular quantification system derived from the APVS expression profile and principal-coordinate information to represent atherosclerosis severity and plaque vulnerability.", "evidence_refs": ["KF3", "KF4"]},
+    {"question": "Is APVSLevel associated with cardiovascular outcomes and disease severity?", "answer": "Yes. Higher APVSLevel was associated with increased MACE risk (HR 3.819, p<0.01), greater coronary stenosis (p<0.001), and a higher Duke Coronary Artery Disease Index (p<0.01).", "evidence_refs": ["KF3"]},
+    {"question": "What single-cell states are associated with high atherosclerotic plaque vulnerability?", "answer": "Higher APVSLevel was associated with vulnerable plaque microenvironments enriched in inflammatory monocyte/macrophage programs, including CXCL3+/IL1B+ macrophage states, while C1Q+ fibrotic plaque-stabilizing macrophage phenotypes showed lower APVSLevel in STEMI plaques.", "evidence_refs": ["KF4", "KF5"]},
+    {"question": "Is APVS or APVSLevel ready to replace clinical plaque assessment?", "answer": "No. The evidence is primarily retrospective and transcriptomics-based. Prospective multicenter validation, direct comparison with established clinical biomarkers, and additional experimental validation are required before clinical translation."}
+  ],
+  "concepts": {
+    "conditions": ["atherosclerosis", "coronary artery disease", "acute myocardial infarction", "ST-elevation myocardial infarction", "chronic coronary syndrome", "acute coronary syndrome"],
+    "plaque_phenotypes": ["atherosclerotic plaque vulnerability", "stable plaque", "ruptured plaque", "early-stage plaque", "advanced plaque", "atherosclerotic core", "fibrous plaque"],
+    "outcomes": ["major adverse cardiovascular events", "coronary stenosis", "plaque rupture", "restenosis after PCI"],
+    "methods": ["machine learning", "random forest", "backpropagation neural network", "recursive feature elimination", "weighted gene co-expression network analysis", "principal coordinates analysis", "single-cell RNA sequencing", "gene set enrichment analysis", "gene set variation analysis", "DIRAC", "VissE", "xCell", "CellChat", "NicheNet", "Subclass Mapping"],
+    "models_tools": ["APVS", "APVS classifier", "APVSLevel"],
+    "cell_types": ["monocyte/macrophage", "vascular smooth muscle cell", "myofibroblast", "endothelial cell", "B cell", "plasma cell", "mast cell", "neutrophil", "foam cell"],
+    "pathways_processes": ["inflammation", "coagulation", "extracellular matrix degradation", "fibrosis", "oxidative stress", "cellular senescence", "DNA damage", "Notch signaling", "TLR signaling", "TNF signaling", "heme metabolism", "cholesterol homeostasis"],
+    "mechanistic_entities": ["CXCL3", "IL1B", "C1Q", "IL34", "CTSK", "IL6", "SOCS3", "AGT", "SPP1", "APOE", "CXCL2", "CDKN1A", "ADM", "CCL2", "NRG1", "FOS", "ITGB2", "FN1", "MIF", "VCAM"],
+    "datasets_cohorts": ["GSE59867", "GSE62646", "GSE28829", "GSE41571", "GSE48060", "GSE60993", "GSE141512", "GSE21545", "GSE159677", "GSE184073"]
+  },
+  "limitations": [
+    "The study was based predominantly on retrospective public high-throughput datasets.",
+    "Prospective multicenter studies are required to confirm the biological and clinical interpretability of APVSLevel.",
+    "The APVS classifier requires further direct comparison with established clinical biomarkers.",
+    "The functions of many APVS-related molecules remain incompletely established and require additional in vivo and in vitro validation.",
+    "Incomplete clinical and molecular traits in source datasets may obscure associations between APVS and some relevant factors."
+  ],
+  "related_papers": [
+    {"doi": "10.1186/s12967-022-03795-9", "relationship": "Complementary single-cell and transcriptomic evidence for vascular smooth-muscle-cell fate and molecular heterogeneity in atherosclerosis"},
+    {"doi": "10.1172/jci194175", "relationship": "Mechanistic evidence linking vascular smooth-muscle-cell KIF13B to inflammatory control and protection from atherosclerosis"},
+    {"doi": "10.1093/eurheartj/ehaf523", "relationship": "Mechanistic evidence linking macrophage KIF13B, MERTK-mediated efferocytosis, and plaque protection"},
+    {"doi": "10.1007/s11426-026-3629-x", "relationship": "Complementary in-vivo molecular imaging of atherosclerotic plaque redox state"}
+  ],
+  "provenance": {
+    "publisher_url": "https://www.cell.com/iscience/fulltext/S2589-0042(23)01664-4",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37664595/",
+    "pmcid": "PMC10470306",
+    "code_url": "https://github.com/DrZoggg/APVS",
+    "evidence_basis": "Version of record and PMC full text"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record."
 }

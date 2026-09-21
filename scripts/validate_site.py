@@ -11,6 +11,8 @@ from build_publications import (
     flatten_concepts,
     resolve_related_papers,
     validate_deep_v2_content,
+    v2_label,
+    v2_value,
 )
 from site_common import (
     LEGACY_DEEP_SLUGS,
@@ -47,6 +49,7 @@ CANONICAL_SITE_URL = "https://drgezhang.com"
 LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
 INDEXNOW_CONFIG_PATH = ROOT / "data" / "indexnow_config.json"
 AIHFLEVEL_DOI = "10.1038/s41467-024-50415-9"
+APVS_DOI = "10.1016/j.isci.2023.107587"
 
 
 def require(condition, message):
@@ -393,6 +396,20 @@ def validate_v2_rendered_page(
             f"{label} content lost from HTML: {value!r}",
         )
         require(value in markdown, f"{label} content lost from Markdown: {value!r}")
+    for key, value in (content.get("model_profile") or {}).items():
+        if key in {"final_predictors", "interpretability"}:
+            continue
+        rendered_label = v2_label(key)
+        rendered_value = v2_value(value)
+        require(
+            rendered_label in page_text
+            and normalized_source_text(rendered_value) in page_text,
+            f"{label} model profile lost from HTML: {key}",
+        )
+        require(
+            f"- {rendered_label}: {rendered_value}" in markdown,
+            f"{label} model profile lost from Markdown: {key}",
+        )
 
     concepts = flatten_concepts(content)
     require(
@@ -537,11 +554,89 @@ def validate_aihflevel_v2_regression(content, publication, page):
     )
 
 
+def validate_apvs_v2_regression(content, publication, page):
+    label = "APVS Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(norm_doi(content.get("doi")) == APVS_DOI, f"{label} DOI changed.")
+    require(
+        norm_doi(publication.get("doi")) == APVS_DOI,
+        f"{label} does not match its master record.",
+    )
+    require(
+        content["study_profile"].get("profile_type") == "multicohort_omics",
+        f"{label} profile type changed.",
+    )
+
+    model = content["model_profile"]
+    require(
+        {
+            "candidate_dcpgs": model.get("candidate_dcpgs"),
+            "algorithm_count": model.get("algorithm_count"),
+            "signature_size": model.get("signature_size"),
+        }
+        == {
+            "candidate_dcpgs": 96,
+            "algorithm_count": 9,
+            "signature_size": 14,
+        },
+        f"{label} model facts changed.",
+    )
+
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(
+        list(findings) == [f"KF{number}" for number in range(1, 8)],
+        f"{label} finding IDs changed.",
+    )
+    expected_external_auc = [
+        ("GSE59867 STEMI vs CCS AUC", "0.985"),
+        ("GSE62646 STEMI vs CCS AUC", "0.997"),
+        ("GSE28829 advanced vs early plaque AUC", "0.952"),
+        ("GSE41571 ruptured vs stable plaque AUC", "0.972"),
+        ("GSE48060 STEMI vs healthy AUC", "0.871"),
+        ("GSE60993 STEMI vs healthy AUC", "0.916"),
+        ("GSE141512 STEMI vs healthy AUC", "1.000"),
+    ]
+    require(
+        [
+            (item["label"], item["value"])
+            for item in findings["KF2"]["evidence"]
+        ]
+        == expected_external_auc,
+        f"{label} external AUC evidence changed.",
+    )
+    require(
+        ("MACE association", "HR 3.819; p<0.01")
+        in [
+            (item["label"], item["value"])
+            for item in findings["KF3"]["evidence"]
+        ],
+        f"{label} MACE hazard ratio changed.",
+    )
+    require(
+        [
+            (item["label"], item["value"])
+            for item in findings["KF4"]["evidence"]
+            if item["label"] in {"GSE159677 cells", "GSE184073 cells"}
+        ]
+        == [("GSE159677 cells", "43,964"), ("GSE184073 cells", "2,237")],
+        f"{label} single-cell counts changed.",
+    )
+    require(
+        "Final predictor set" not in element_texts(page, "h3")
+        and "Interpretability" not in element_texts(page, "h3"),
+        f"{label} renders empty optional model sections.",
+    )
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
         AIHFLEVEL_DOI in v2_dois,
         "AIHFLevel must remain a Paper GEO 2.0 Gold Standard page.",
+    )
+    require(
+        APVS_DOI in v2_dois,
+        "APVS must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
         len(v2_dois) == len(set(v2_dois)),
@@ -951,6 +1046,8 @@ def validate_site():
                 )
                 if content_doi == AIHFLEVEL_DOI:
                     validate_aihflevel_v2_regression(content, item, page)
+                elif content_doi == APVS_DOI:
+                    validate_apvs_v2_regression(content, item, page)
             else:
                 require(
                     content.get("version") == 1,
