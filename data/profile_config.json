@@ -18,23 +18,23 @@
     "themes": [
       {
         "enabled": true,
-        "title": "AI & clinical risk prediction",
-        "description": "Explainable machine learning, multimodal clinical data, survival analysis and decision-support tools for cardiovascular disease."
+        "title": "AI for Science & Multimodal Clinical Intelligence",
+        "description": "Explainable AI, multimodal clinical modeling, survival and longitudinal analysis, and decision-support frameworks for risk stratification and translational discovery across major chronic diseases."
       },
       {
         "enabled": true,
-        "title": "Atherosclerosis & vascular biology",
-        "description": "Plaque vulnerability, vascular smooth muscle cell states, single-cell genomics and molecular heterogeneity."
+        "title": "Multi-omics & Translational Discovery",
+        "description": "Integration of transcriptomic, proteomic, metabolomic, and single-cell data to resolve disease heterogeneity, prioritize mechanistic drivers, and advance biomarker translation."
       },
       {
         "enabled": true,
-        "title": "Multi-omics & translational biomarkers",
-        "description": "Transcriptomics, proteomics, metabolomics and integrated systems biology for biomarker discovery and validation."
+        "title": "Atherosclerosis & Vascular Systems Biology",
+        "description": "Plaque vulnerability, vascular microenvironment, vascular smooth muscle cell plasticity, single-cell states, and cross-scale mechanisms of vascular remodeling."
       },
       {
         "enabled": true,
-        "title": "Circadian cardiovascular biology",
-        "description": "Circadian disruption, chronobiology, vascular inflammation and precision cardiovascular medicine."
+        "title": "Circadian Disruption & Disease Biology",
+        "description": "Systems-level investigation of circadian disruption, chronobiology, and vascular inflammation, linking temporal dysregulation to molecular states, disease progression, and clinical phenotypes."
       }
     ]
   },
