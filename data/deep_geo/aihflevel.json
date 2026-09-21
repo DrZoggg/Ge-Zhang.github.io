@@ -6,6 +6,7 @@
   "research_question": "Can an explainable hybrid survival-learning framework provide accurate and externally validated mortality-risk stratification for patients with advanced heart failure and renal dysfunction?",
   "author_summary": "AIHFLevel is an explainable survival-risk assessment system developed for adults with advanced heart failure and renal dysfunction. The study analyzed 1,736 patients across an in-house multicenter CRCCD cohort and an independent BIDMC cohort. Within CRCCD, 93 routinely accessible clinical variables were screened, 46 candidate survival features entered a hybrid machine-learning framework, and 132 modeling schemes were systematically evaluated. The selected strategy combined Surv.gbm and Surv.Xgboost with hybrid filter-wrapper feature selection and produced a 12-predictor survival model. AIHFLevel showed strong time-dependent discrimination in internal validation and retained prognostic performance in 1,024 externally evaluated BIDMC patients. The framework also provides interpretable predictor contributions and three-state prognostic stratification. These results support AIHFLevel as a prognostic risk-assessment tool; prospective studies are still required to determine whether AIHFLevel-guided management improves clinical outcomes.",
   "study_profile": {
+    "profile_type": "clinical_cohort",
     "study_design": "Multicenter retrospective longitudinal cohort study",
     "evidence_type": "Human clinical prognostic modeling study",
     "unique_total_n": 1736,

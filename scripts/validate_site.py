@@ -252,13 +252,186 @@ def string_leaves(value):
         for item in value:
             yield from string_leaves(item)
     elif isinstance(value, dict):
-        for item in value.values():
+        for key, item in value.items():
+            if key == "profile_type":
+                continue
             yield from string_leaves(item)
 
 
-def validate_aihflevel_v2(content, publication, page, markdown, schema, public_by_doi, config):
-    label = "AIHFLevel Paper GEO 2.0"
+def validate_v2_rendered_page(
+    content, publication, page, markdown, schema, public_by_doi, config
+):
+    label = f"{publication.get('slug') or publication.get('title')} Paper GEO 2.0"
     validate_deep_v2_content(content, label)
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(
+        norm_doi(content.get("doi")) == norm_doi(publication.get("doi")),
+        f"{label} DOI does not match its master record.",
+    )
+
+    study = content["study_profile"]
+    profile_type = study["profile_type"]
+    findings = {item["id"]: item for item in content["key_findings"]}
+    for finding_id, finding in findings.items():
+        expected_occurrences = 2 if len(finding["evidence"]) > 1 else 1
+        require(
+            page.count(f'data-key-finding-id="{finding_id}"') == expected_occurrences,
+            f"{label} {finding_id} evidence rendering changed.",
+        )
+    require("<details" not in page.casefold(), f"{label} Q&A must remain ordinary HTML.")
+    require(
+        not any(item.get("@type") == "FAQPage" for item in json_ld_objects(page)),
+        f"{label} must not emit FAQPage schema.",
+    )
+
+    expected_authors = normalize_authors(publication.get("authors"))
+    require(
+        element_texts(page, "li", {"class": "paper-geo-v2__author"})
+        == expected_authors,
+        f"{label} visible full authors differ from master order.",
+    )
+    for position, author in enumerate(expected_authors, start=1):
+        require(
+            f"{position}. {author}" in markdown,
+            f"{label} Markdown author order differs from master.",
+        )
+
+    snapshot_heading = (
+        "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
+    )
+    expected_headings = [
+        "Full Authors",
+        snapshot_heading,
+        "Research Question",
+        "Author Evidence Summary",
+        "Key Findings",
+        "Study Design & Model Development",
+        "What This Study Adds",
+        "Evidence Scope",
+        "Q&A",
+        "Concepts & Entities",
+        "Related Research",
+        "Publication & Provenance",
+    ]
+    require(element_texts(page, "h2") == expected_headings, f"{label} section order changed.")
+    require(
+        page.index('class="paper-geo-v2__authors"')
+        < page.index('data-v2-section="evidence-snapshot"'),
+        f"{label} authors must precede the evidence snapshot.",
+    )
+    section_markers = [
+        "evidence-snapshot",
+        "research-question",
+        "author-summary",
+        "key-findings",
+        "study-design",
+        "what-this-adds",
+        "evidence-scope",
+        "qa",
+        "concepts",
+        "related-research",
+        "provenance",
+    ]
+    positions = [page.index(f'data-v2-section="{marker}"') for marker in section_markers]
+    require(positions == sorted(positions), f"{label} HTML section order changed.")
+    require(
+        page.index('class="paper-geo-v2__notice"') > positions[-1],
+        f"{label} evidence-page notice must follow provenance.",
+    )
+    require(
+        "does not replace the publisher version or assert a complete author list" not in page,
+        f"{label} retains the obsolete author-list notice.",
+    )
+
+    page_text = visible_text(page)
+    snapshot_markup = page.split(
+        'data-v2-section="evidence-snapshot"', 1
+    )[1].split('data-v2-section="research-question"', 1)[0]
+    study_markup = page.split('data-v2-section="study-design"', 1)[1].split(
+        'data-v2-section="what-this-adds"', 1
+    )[0]
+    if profile_type == "clinical_cohort":
+        require("Unique total" in snapshot_markup, f"{label} unique total is missing.")
+        require("Cohort hierarchy" in study_markup, f"{label} cohort hierarchy is missing.")
+        require(
+            f"n={study['unique_total_n']:,}" in snapshot_markup,
+            f"{label} unique total is not rendered in HTML.",
+        )
+        require(
+            str(study["unique_total_n"]) in markdown
+            or f"{study['unique_total_n']:,}" in markdown,
+            f"{label} unique total is not rendered in Markdown.",
+        )
+        for cohort in study["cohorts"]:
+            require(
+                f"{cohort['n']:,}" in visible_text(study_markup),
+                f"{label} cohort count is missing from HTML: {cohort['name']}",
+            )
+            require(
+                str(cohort["n"]) in markdown or f"{cohort['n']:,}" in markdown,
+                f"{label} cohort count is missing from Markdown: {cohort['name']}",
+            )
+    else:
+        require("Counting note" in snapshot_markup, f"{label} counting note is missing.")
+        require("### Counting note" in markdown, f"{label} Markdown counting note is missing.")
+        require(
+            "Unique total" not in study_markup and "Cohort hierarchy" not in study_markup,
+            f"{label} must not render a clinical cohort total or hierarchy.",
+        )
+        for metric in study["scale_metrics"]:
+            require(
+                metric["label"] in page_text and metric["value"] in page_text,
+                f"{label} evidence scale metric is missing from HTML.",
+            )
+            require(
+                metric["label"] in markdown and metric["value"] in markdown,
+                f"{label} evidence scale metric is missing from Markdown.",
+            )
+    for value in string_leaves(content):
+        require(
+            normalized_source_text(value) in page_text,
+            f"{label} content lost from HTML: {value!r}",
+        )
+        require(value in markdown, f"{label} content lost from Markdown: {value!r}")
+
+    concepts = flatten_concepts(content)
+    require(
+        len(concepts) == len({item.casefold() for item in concepts}),
+        f"{label} flattened concepts contain duplicates.",
+    )
+    require(schema.get("@type") == "ScholarlyArticle", f"{label} schema type changed.")
+    require(
+        schema.get("description") == content["author_summary"],
+        f"{label} JSON-LD description must equal author_summary.",
+    )
+    require(schema.get("keywords") == concepts, f"{label} JSON-LD keywords changed.")
+    require(
+        single_meta_content(page, "description", f"{label} meta description")
+        == content["summary"],
+        f"{label} meta description must use the short summary.",
+    )
+    require(
+        single_html_url(
+            page,
+            r'<meta property="og:description" content="([^"]*)">',
+            f"{label} Open Graph description",
+        )
+        == content["summary"],
+        f"{label} Open Graph description must use the short summary.",
+    )
+
+    related = resolve_related_papers(content, public_by_doi, config["site_url"])
+    for item in related:
+        require(item["url"] in page, f"{label} related canonical URL missing from HTML.")
+        require(item["url"] in markdown, f"{label} related canonical URL missing from Markdown.")
+        require(item["title"] in page_text, f"{label} related title missing from HTML.")
+    for key, value in content["provenance"].items():
+        if key.endswith("_url"):
+            require(value in page and value in markdown, f"{label} provenance URL missing: {value}")
+
+
+def validate_aihflevel_v2_regression(content, publication, page):
+    label = "AIHFLevel Paper GEO 2.0 Gold Standard"
     require(content.get("version") == 2, f"{label} must use version 2.")
     require(norm_doi(content.get("doi")) == AIHFLEVEL_DOI, f"{label} DOI changed.")
     require(
@@ -267,6 +440,10 @@ def validate_aihflevel_v2(content, publication, page, markdown, schema, public_b
     )
 
     study = content["study_profile"]
+    require(
+        study.get("profile_type") == "clinical_cohort",
+        f"{label} profile type changed.",
+    )
     require(study["unique_total_n"] == 1736, f"{label} unique total changed.")
     cohorts = {item["name"]: item for item in study["cohorts"]}
     require(
@@ -353,123 +530,23 @@ def validate_aihflevel_v2(content, publication, page, markdown, schema, public_b
             findings[finding_id]["source_locator"] == expected_locators[finding_id],
             f"{label} {finding_id} source locator changed.",
         )
-        if len(expected) > 1:
-            require(
-                page.count(f'data-key-finding-id="{finding_id}"') == 2,
-                f"{label} {finding_id} must render a semantic evidence table.",
-            )
-
-    finding_ids = set(findings)
     require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
-    for item in content["qa"]:
-        require(
-            set(item.get("evidence_refs", [])).issubset(finding_ids),
-            f"{label} Q&A references an unknown finding.",
-        )
-    require("<details" not in page.casefold(), f"{label} Q&A must remain ordinary HTML.")
     require(
-        not any(item.get("@type") == "FAQPage" for item in json_ld_objects(page)),
-        f"{label} must not emit FAQPage schema.",
+        element_texts(page, "h2")[1] == "Evidence Snapshot",
+        f"{label} evidence snapshot heading changed.",
     )
 
-    expected_authors = normalize_authors(publication.get("authors"))
-    require(
-        element_texts(page, "li", {"class": "paper-geo-v2__author"})
-        == expected_authors,
-        f"{label} visible full authors differ from master order.",
-    )
-    for position, author in enumerate(expected_authors, start=1):
-        require(
-            f"{position}. {author}" in markdown,
-            f"{label} Markdown author order differs from master.",
-        )
 
-    expected_headings = [
-        "Full Authors",
-        "Evidence Snapshot",
-        "Research Question",
-        "Author Evidence Summary",
-        "Key Findings",
-        "Study Design & Model Development",
-        "What This Study Adds",
-        "Evidence Scope",
-        "Q&A",
-        "Concepts & Entities",
-        "Related Research",
-        "Publication & Provenance",
-    ]
-    require(element_texts(page, "h2") == expected_headings, f"{label} section order changed.")
+def validate_v2_inventory(v2_dois):
+    require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
-        page.index('class="paper-geo-v2__authors"')
-        < page.index('data-v2-section="evidence-snapshot"'),
-        f"{label} authors must precede the evidence snapshot.",
-    )
-    section_markers = [
-        "evidence-snapshot",
-        "research-question",
-        "author-summary",
-        "key-findings",
-        "study-design",
-        "what-this-adds",
-        "evidence-scope",
-        "qa",
-        "concepts",
-        "related-research",
-        "provenance",
-    ]
-    positions = [page.index(f'data-v2-section="{marker}"') for marker in section_markers]
-    require(positions == sorted(positions), f"{label} HTML section order changed.")
-    require(
-        page.index('class="paper-geo-v2__notice"') > positions[-1],
-        f"{label} evidence-page notice must follow provenance.",
+        AIHFLEVEL_DOI in v2_dois,
+        "AIHFLevel must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
-        "does not replace the publisher version or assert a complete author list" not in page,
-        f"{label} retains the obsolete author-list notice.",
+        len(v2_dois) == len(set(v2_dois)),
+        "Paper GEO 2.0 DOI values must be unique.",
     )
-
-    page_text = visible_text(page)
-    for value in string_leaves(content):
-        require(
-            normalized_source_text(value) in page_text,
-            f"{label} content lost from HTML: {value!r}",
-        )
-        require(value in markdown, f"{label} content lost from Markdown: {value!r}")
-
-    concepts = flatten_concepts(content)
-    require(
-        len(concepts) == len({item.casefold() for item in concepts}),
-        f"{label} flattened concepts contain duplicates.",
-    )
-    require(schema.get("@type") == "ScholarlyArticle", f"{label} schema type changed.")
-    require(
-        schema.get("description") == content["author_summary"],
-        f"{label} JSON-LD description must equal author_summary.",
-    )
-    require(schema.get("keywords") == concepts, f"{label} JSON-LD keywords changed.")
-    require(
-        single_meta_content(page, "description", f"{label} meta description")
-        == content["summary"],
-        f"{label} meta description must use the short summary.",
-    )
-    require(
-        single_html_url(
-            page,
-            r'<meta property="og:description" content="([^"]*)">',
-            f"{label} Open Graph description",
-        )
-        == content["summary"],
-        f"{label} Open Graph description must use the short summary.",
-    )
-
-    related = resolve_related_papers(content, public_by_doi, config["site_url"])
-    for item in related:
-        require(item["url"] in page, f"{label} related canonical URL missing from HTML.")
-        require(item["url"] in markdown, f"{label} related canonical URL missing from Markdown.")
-        require(item["title"] in page_text, f"{label} related title missing from HTML.")
-    for key, value in content["provenance"].items():
-        if key.endswith("_url"):
-            require(value in page and value in markdown, f"{label} provenance URL missing: {value}")
 
 
 def validate_site():
@@ -861,8 +938,9 @@ def validate_site():
             require(content_path.is_file(), f"Deep GEO content missing for {slug}.")
             content = json.loads(content_path.read_text(encoding="utf-8"))
             if content.get("version") == 2:
-                v2_dois.append(norm_doi(content.get("doi")))
-                validate_aihflevel_v2(
+                content_doi = norm_doi(content.get("doi"))
+                v2_dois.append(content_doi)
+                validate_v2_rendered_page(
                     content,
                     item,
                     page,
@@ -871,6 +949,8 @@ def validate_site():
                     public_by_doi,
                     config,
                 )
+                if content_doi == AIHFLEVEL_DOI:
+                    validate_aihflevel_v2_regression(content, item, page)
             else:
                 require(
                     content.get("version") == 1,
@@ -899,10 +979,7 @@ def validate_site():
         len(canonical_urls) == len(set(canonical_urls)),
         "Paper canonical URLs are not unique.",
     )
-    require(
-        v2_dois == [AIHFLEVEL_DOI],
-        "AIHFLevel must be the only Paper GEO 2.0 pilot; all other Deep GEO pages must remain V1.",
-    )
+    validate_v2_inventory(v2_dois)
 
     require(
         {publication_token(item) for item in public_json}

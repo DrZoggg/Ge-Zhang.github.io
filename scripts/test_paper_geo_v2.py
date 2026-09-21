@@ -20,8 +20,13 @@ from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import (
     AIHFLEVEL_DOI,
     paper_json_ld_object,
-    validate_aihflevel_v2,
+    validate_aihflevel_v2_regression,
+    validate_v2_inventory,
+    validate_v2_rendered_page,
 )
+
+
+SYNTHETIC_DOI = "10.9999/paper-geo-v2-multicohort-fixture"
 
 
 def expect_value_error(callback, expected):
@@ -31,6 +36,129 @@ def expect_value_error(callback, expected):
         assert expected.casefold() in str(exc).casefold(), str(exc)
     else:
         raise AssertionError(f"Expected ValueError containing {expected!r}.")
+
+
+def synthetic_multicohort_fixture():
+    publication = {
+        "title": "Synthetic multicohort omics validation fixture",
+        "journal": "Synthetic Test Journal",
+        "year": 2099,
+        "type": "Article",
+        "doi": SYNTHETIC_DOI,
+        "slug": "synthetic-multicohort-v2",
+        "authors": ["Ge Zhang", "Synthetic Collaborator"],
+    }
+    content = {
+        "version": 2,
+        "doi": SYNTHETIC_DOI,
+        "display_title": "Synthetic multicohort omics framework fixture",
+        "summary": "Synthetic content used only to validate multicohort rendering.",
+        "research_question": "Can the V2 framework represent heterogeneous omics scales without deriving a participant total?",
+        "author_summary": "This synthetic fixture exercises multicohort omics validation and rendering without making a scientific claim.",
+        "study_profile": {
+            "profile_type": "multicohort_omics",
+            "study_design": "Synthetic multicohort integration fixture",
+            "evidence_type": "Synthetic test evidence",
+            "population": "Synthetic public omics datasets",
+            "primary_endpoint": "Framework validation",
+            "secondary_endpoint": "HTML and Markdown parity",
+            "data_modalities": [
+                "bulk transcriptomics",
+                "single-cell transcriptomics",
+            ],
+            "external_validation": False,
+            "scale_metrics": [
+                {"label": "bulk transcriptomic cohorts", "value": "22"},
+                {"label": "single-cell cohorts", "value": "2"},
+            ],
+            "counting_note": "Datasets, samples, specimens, and cells use different counting conventions; no unique participant total is derived.",
+        },
+        "key_findings": [
+            {
+                "id": "KF1",
+                "claim": "The synthetic profile preserves modality-specific scale metrics.",
+                "context": "This is a test-only claim about renderer behavior.",
+                "evidence": [
+                    {"label": "bulk transcriptomic cohorts", "value": "22"},
+                    {"label": "single-cell cohorts", "value": "2"},
+                ],
+                "source_locator": "Synthetic fixture: scale metrics",
+            }
+        ],
+        "what_this_adds": [
+            "A synthetic regression fixture for multicohort omics profiles."
+        ],
+        "evidence_scope": {
+            "supports": ["Validation of profile-specific rendering behavior."],
+            "does_not_establish": ["Any biomedical or clinical conclusion."],
+        },
+        "qa": [
+            {
+                "question": "Does the fixture derive a participant total?",
+                "answer": "No; it preserves modality-specific counting conventions.",
+                "evidence_refs": ["KF1"],
+            },
+            {
+                "question": "Does it include bulk transcriptomic scale?",
+                "answer": "Yes; the synthetic scale is twenty-two cohorts.",
+                "evidence_refs": ["KF1"],
+            },
+            {
+                "question": "Does it include single-cell scale?",
+                "answer": "Yes; the synthetic scale is two cohorts.",
+                "evidence_refs": ["KF1"],
+            },
+            {
+                "question": "Is this scientific evidence?",
+                "answer": "No; it is explicitly a software validation fixture.",
+            },
+        ],
+        "concepts": {
+            "methods": ["multicohort integration"],
+            "modalities": ["bulk transcriptomics", "single-cell transcriptomics"],
+        },
+        "limitations": ["All content in this fixture is synthetic."],
+        "related_papers": [
+            {
+                "doi": AIHFLEVEL_DOI,
+                "relationship": "Exact-DOI resolution regression target.",
+            }
+        ],
+        "provenance": {
+            "publisher_url": "https://example.org/synthetic-paper",
+            "code_url": "https://example.org/synthetic-code",
+            "evidence_basis": "Synthetic test-only fixture",
+        },
+        "evidence_page_notice": "Synthetic author-controlled evidence-page fixture. It exists only for framework testing.",
+    }
+    return publication, content
+
+
+def rendered_v2(publication, content, config, public_by_doi):
+    validate_deep_v2_content(content, f"{publication['slug']} test fixture")
+    page = render_paper_html(
+        publication,
+        config=config,
+        deep_content=content,
+        public_by_doi=public_by_doi,
+    )
+    markdown = render_paper_markdown(
+        publication,
+        config=config,
+        deep_content=content,
+        public_by_doi=public_by_doi,
+    )
+    schema = paper_json_ld_object(page, f"{publication['slug']} test page")
+    validate_v2_rendered_page(
+        content,
+        publication,
+        page,
+        markdown,
+        schema,
+        public_by_doi,
+        config,
+    )
+    return page, markdown, schema
 
 
 def run_tests():
@@ -44,9 +172,10 @@ def run_tests():
         if norm_doi(item.get("doi"))
     }
 
+    deep_entries = load_deep_geo()
     v1_count = 0
     v2_items = []
-    for entry in load_deep_geo():
+    for entry in deep_entries:
         publication = master_by_token[controller_token(entry)]
         content = load_deep_content(publication)
         if content["version"] == 2:
@@ -67,12 +196,25 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert v1_count == len(load_deep_geo()) - 1
-    assert len(v2_items) == 1
-    publication, content = v2_items[0]
-    assert norm_doi(publication["doi"]) == AIHFLEVEL_DOI
-    validate_deep_v2_content(content, "AIHFLevel test fixture")
+    assert v1_count + len(v2_items) == len(deep_entries)
+    assert len(v2_items) >= 1
+    aihf_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
+    ]
+    assert len(aihf_items) == 1
 
+    for publication, content in v2_items:
+        page, markdown, schema = rendered_v2(
+            publication, content, config, public_by_doi
+        )
+        assert schema["description"] == content["author_summary"]
+        assert schema["keywords"] == flatten_concepts(content)
+        if norm_doi(publication.get("doi")) == AIHFLEVEL_DOI:
+            validate_aihflevel_v2_regression(content, publication, page)
+            assert page == (PAPERS_DIR / "aihflevel.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / "aihflevel.md").read_text(encoding="utf-8")
+
+    publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])
     assert [item["doi"] for item in related] == [
         "10.2147/cia.s462542",
@@ -83,39 +225,22 @@ def run_tests():
         "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
     ]
 
-    page = render_paper_html(
-        publication,
-        config=config,
-        deep_content=content,
-        public_by_doi=public_by_doi,
+    synthetic_publication, synthetic = synthetic_multicohort_fixture()
+    synthetic_page, synthetic_markdown, synthetic_schema = rendered_v2(
+        synthetic_publication, synthetic, config, public_by_doi
     )
-    markdown = render_paper_markdown(
-        publication,
-        config=config,
-        deep_content=content,
-        public_by_doi=public_by_doi,
+    validate_v2_inventory(
+        [norm_doi(item[0]["doi"]) for item in v2_items] + [SYNTHETIC_DOI]
     )
-    schema = paper_json_ld_object(page, "AIHFLevel test page")
-    validate_aihflevel_v2(
-        content,
-        publication,
-        page,
-        markdown,
-        schema,
-        public_by_doi,
-        config,
-    )
-    assert schema["description"] == content["author_summary"]
-    assert schema["keywords"] == flatten_concepts(content)
-    assert page == (PAPERS_DIR / "aihflevel.html").read_text(encoding="utf-8")
-    assert markdown == (PAPERS_DIR / "aihflevel.md").read_text(encoding="utf-8")
-
-    bad_ref = copy.deepcopy(content)
-    bad_ref["qa"][0]["evidence_refs"] = ["KF999"]
-    expect_value_error(
-        lambda: validate_deep_v2_content(bad_ref, "bad Q&A"),
-        "real finding IDs",
-    )
+    assert "<h2>Evidence Scale</h2>" in synthetic_page
+    assert "<h3>Counting note</h3>" in synthetic_page
+    assert "Cohort hierarchy" not in synthetic_page
+    assert "Unique total" not in synthetic_page
+    assert "## Evidence Scale" in synthetic_markdown
+    assert "### Counting note" in synthetic_markdown
+    assert "### Cohort hierarchy" not in synthetic_markdown
+    assert synthetic_schema["description"] == synthetic["author_summary"]
+    assert synthetic_schema["keywords"] == flatten_concepts(synthetic)
 
     bad_hierarchy = copy.deepcopy(content)
     bad_hierarchy["study_profile"]["cohorts"][0]["n"] = 499
@@ -124,21 +249,60 @@ def run_tests():
         "child counts",
     )
 
-    bad_finding = copy.deepcopy(content)
-    bad_finding["key_findings"][0]["metric"] = "average C-index"
+    missing_metrics = copy.deepcopy(synthetic)
+    del missing_metrics["study_profile"]["scale_metrics"]
+    expect_value_error(
+        lambda: validate_deep_v2_content(missing_metrics, "missing metrics"),
+        "scale_metrics",
+    )
+
+    missing_counting_note = copy.deepcopy(synthetic)
+    del missing_counting_note["study_profile"]["counting_note"]
+    expect_value_error(
+        lambda: validate_deep_v2_content(
+            missing_counting_note, "missing counting note"
+        ),
+        "counting_note",
+    )
+
+    malformed_metric = copy.deepcopy(synthetic)
+    malformed_metric["study_profile"]["scale_metrics"][0]["unit"] = "cohorts"
+    expect_value_error(
+        lambda: validate_deep_v2_content(malformed_metric, "malformed metric"),
+        "only label and value",
+    )
+
+    duplicate_metric = copy.deepcopy(synthetic)
+    duplicate_metric["study_profile"]["scale_metrics"].append(
+        copy.deepcopy(duplicate_metric["study_profile"]["scale_metrics"][0])
+    )
+    expect_value_error(
+        lambda: validate_deep_v2_content(duplicate_metric, "duplicate metric"),
+        "duplicate items",
+    )
+
+    unknown_profile = copy.deepcopy(synthetic)
+    unknown_profile["study_profile"]["profile_type"] = "single_cell"
+    expect_value_error(
+        lambda: validate_deep_v2_content(unknown_profile, "unknown profile"),
+        "profile_type",
+    )
+
+    bad_ref = copy.deepcopy(synthetic)
+    bad_ref["qa"][0]["evidence_refs"] = ["KF999"]
+    expect_value_error(
+        lambda: validate_deep_v2_content(bad_ref, "bad Q&A"),
+        "real finding IDs",
+    )
+
+    bad_finding = copy.deepcopy(synthetic)
+    bad_finding["key_findings"][0]["metric"] = "synthetic metric"
     expect_value_error(
         lambda: validate_deep_v2_content(bad_finding, "bad finding"),
         "normalized V2 fields",
     )
 
-    bad_provenance = copy.deepcopy(content)
-    bad_provenance["provenance"]["publisher_url"] = "http://example.org/paper"
-    expect_value_error(
-        lambda: validate_deep_v2_content(bad_provenance, "bad provenance"),
-        "HTTPS URL",
-    )
-
-    bad_related = copy.deepcopy(content)
+    bad_related = copy.deepcopy(synthetic)
     bad_related["related_papers"][0]["doi"] = "10.9999/not-public"
     expect_value_error(
         lambda: resolve_related_papers(
@@ -147,8 +311,24 @@ def run_tests():
         "does not resolve",
     )
 
+    bad_provenance = copy.deepcopy(synthetic)
+    bad_provenance["provenance"]["publisher_url"] = "http://example.org/paper"
+    expect_value_error(
+        lambda: validate_deep_v2_content(bad_provenance, "bad provenance"),
+        "HTTPS URL",
+    )
+
     print("PAPER GEO V2 TESTS PASS")
-    print(json.dumps({"v1_pages": v1_count, "v2_pages": len(v2_items)}, indent=2))
+    print(
+        json.dumps(
+            {
+                "v1_pages": v1_count,
+                "v2_pages": len(v2_items),
+                "multicohort_synthetic": "pass",
+            },
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

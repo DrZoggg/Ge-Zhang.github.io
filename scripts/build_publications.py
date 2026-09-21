@@ -425,6 +425,14 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     study = content.get("study_profile")
     if not isinstance(study, dict):
         raise ValueError(f"{label} study_profile must be an object.")
+    profile_type = required_text(
+        study.get("profile_type"), f"{label} study_profile.profile_type"
+    )
+    if profile_type not in {"clinical_cohort", "multicohort_omics"}:
+        raise ValueError(
+            f"{label} study_profile.profile_type must be clinical_cohort or "
+            "multicohort_omics."
+        )
     for key in (
         "study_design",
         "evidence_type",
@@ -433,52 +441,91 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
         "secondary_endpoint",
     ):
         required_text(study.get(key), f"{label} study_profile.{key}")
-    unique_total = study.get("unique_total_n")
-    if not isinstance(unique_total, int) or unique_total <= 0:
-        raise ValueError(f"{label} study_profile.unique_total_n must be positive.")
     required_text_list(
         study.get("data_modalities"), f"{label} study_profile.data_modalities"
     )
     if not isinstance(study.get("external_validation"), bool):
         raise ValueError(f"{label} study_profile.external_validation must be boolean.")
-    cohorts = study.get("cohorts")
-    if not isinstance(cohorts, list) or not cohorts:
-        raise ValueError(f"{label} study_profile.cohorts must be a non-empty array.")
-    cohort_by_name = {}
-    for position, cohort in enumerate(cohorts, start=1):
-        if not isinstance(cohort, dict):
-            raise ValueError(f"{label} cohort {position} must be an object.")
-        name = required_text(cohort.get("name"), f"{label} cohort {position} name")
-        required_text(cohort.get("role"), f"{label} cohort {name} role")
-        if not isinstance(cohort.get("n"), int) or cohort["n"] <= 0:
-            raise ValueError(f"{label} cohort {name} n must be positive.")
-        if name.casefold() in cohort_by_name:
-            raise ValueError(f"{label} cohort names must be unique.")
-        cohort_by_name[name.casefold()] = cohort
-    for cohort in cohorts:
-        parent_name = cohort.get("subset_of")
-        if parent_name is not None:
-            parent_name = required_text(
-                parent_name, f"{label} cohort {cohort['name']} subset_of"
+    if profile_type == "clinical_cohort":
+        unique_total = study.get("unique_total_n")
+        if type(unique_total) is not int or unique_total <= 0:
+            raise ValueError(f"{label} study_profile.unique_total_n must be positive.")
+        cohorts = study.get("cohorts")
+        if not isinstance(cohorts, list) or not cohorts:
+            raise ValueError(f"{label} study_profile.cohorts must be a non-empty array.")
+        cohort_by_name = {}
+        for position, cohort in enumerate(cohorts, start=1):
+            if not isinstance(cohort, dict):
+                raise ValueError(f"{label} cohort {position} must be an object.")
+            name = required_text(cohort.get("name"), f"{label} cohort {position} name")
+            required_text(cohort.get("role"), f"{label} cohort {name} role")
+            if type(cohort.get("n")) is not int or cohort["n"] <= 0:
+                raise ValueError(f"{label} cohort {name} n must be positive.")
+            if name.casefold() in cohort_by_name:
+                raise ValueError(f"{label} cohort names must be unique.")
+            cohort_by_name[name.casefold()] = cohort
+        for cohort in cohorts:
+            parent_name = cohort.get("subset_of")
+            if parent_name is not None:
+                parent_name = required_text(
+                    parent_name, f"{label} cohort {cohort['name']} subset_of"
+                )
+                parent = cohort_by_name.get(parent_name.casefold())
+                if not parent or parent is cohort or cohort["n"] > parent["n"]:
+                    raise ValueError(f"{label} has an invalid cohort subset hierarchy.")
+                if cohort["name"] not in (parent.get("contains") or []):
+                    raise ValueError(f"{label} cohort contains/subset_of mismatch.")
+            contains = cohort.get("contains")
+            if contains is not None:
+                children = required_text_list(
+                    contains, f"{label} cohort {cohort['name']} contains"
+                )
+                resolved = [cohort_by_name.get(name.casefold()) for name in children]
+                if any(child is None for child in resolved):
+                    raise ValueError(f"{label} cohort contains an unknown child.")
+                if any(child.get("subset_of") != cohort["name"] for child in resolved):
+                    raise ValueError(f"{label} cohort contains/subset_of mismatch.")
+                if sum(child["n"] for child in resolved) != cohort["n"]:
+                    raise ValueError(f"{label} cohort child counts do not equal parent n.")
+        root_total = sum(
+            cohort["n"] for cohort in cohorts if not cohort.get("subset_of")
+        )
+        if root_total != unique_total:
+            raise ValueError(
+                f"{label} independent cohort counts do not equal unique_total_n."
             )
-            parent = cohort_by_name.get(parent_name.casefold())
-            if not parent or parent is cohort or cohort["n"] > parent["n"]:
-                raise ValueError(f"{label} has an invalid cohort subset hierarchy.")
-        contains = cohort.get("contains")
-        if contains is not None:
-            children = required_text_list(
-                contains, f"{label} cohort {cohort['name']} contains"
+    else:
+        scale_metrics = study.get("scale_metrics")
+        if not isinstance(scale_metrics, list) or not scale_metrics:
+            raise ValueError(
+                f"{label} study_profile.scale_metrics must be a non-empty array."
             )
-            resolved = [cohort_by_name.get(name.casefold()) for name in children]
-            if any(child is None for child in resolved):
-                raise ValueError(f"{label} cohort contains an unknown child.")
-            if any(child.get("subset_of") != cohort["name"] for child in resolved):
-                raise ValueError(f"{label} cohort contains/subset_of mismatch.")
-            if sum(child["n"] for child in resolved) != cohort["n"]:
-                raise ValueError(f"{label} cohort child counts do not equal parent n.")
-    root_total = sum(cohort["n"] for cohort in cohorts if not cohort.get("subset_of"))
-    if root_total != unique_total:
-        raise ValueError(f"{label} independent cohort counts do not equal unique_total_n.")
+        metric_pairs = []
+        for position, metric in enumerate(scale_metrics, start=1):
+            if not isinstance(metric, dict) or set(metric) != {"label", "value"}:
+                raise ValueError(
+                    f"{label} study_profile scale metric {position} must contain only "
+                    "label and value."
+                )
+            metric_pairs.append(
+                (
+                    required_text(
+                        metric.get("label"),
+                        f"{label} study_profile scale metric {position} label",
+                    ),
+                    required_text(
+                        metric.get("value"),
+                        f"{label} study_profile scale metric {position} value",
+                    ),
+                )
+            )
+        if len(metric_pairs) != len(set(metric_pairs)):
+            raise ValueError(
+                f"{label} study_profile.scale_metrics must not contain duplicate items."
+            )
+        required_text(
+            study.get("counting_note"), f"{label} study_profile.counting_note"
+        )
 
     model = content.get("model_profile")
     if model is not None and not isinstance(model, dict):
@@ -716,6 +763,8 @@ def v2_value(value):
 
 def v2_snapshot_items(content):
     study = content["study_profile"]
+    if study["profile_type"] == "multicohort_omics":
+        return [(item["label"], item["value"]) for item in study["scale_metrics"]]
     model = content.get("model_profile") or {}
     items = [("Unique total", f"n={study['unique_total_n']:,}")]
     for cohort in study["cohorts"]:
@@ -764,6 +813,7 @@ def render_v2_evidence_html(finding):
 
 def render_deep_v2_html(content, related_papers):
     study = content["study_profile"]
+    profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
     snapshot = "".join(
         '<div class="paper-geo-v2__evidence"><dt>'
@@ -807,19 +857,21 @@ def render_deep_v2_html(content, related_papers):
             )
         )
         + "</td></tr>"
-        for cohort in study["cohorts"]
+        for cohort in study.get("cohorts", [])
     )
+    study_detail_keys = [
+        "study_design",
+        "evidence_type",
+        "population",
+        "primary_endpoint",
+        "secondary_endpoint",
+        "external_validation",
+    ]
+    if profile_type == "clinical_cohort":
+        study_detail_keys.insert(2, "unique_total_n")
     study_details = "".join(
         f"<dt>{html.escape(v2_label(key))}</dt><dd>{html.escape(v2_value(study[key]))}</dd>"
-        for key in (
-            "study_design",
-            "evidence_type",
-            "unique_total_n",
-            "population",
-            "primary_endpoint",
-            "secondary_endpoint",
-            "external_validation",
-        )
+        for key in study_detail_keys
     )
     modalities = "".join(
         f"<li>{html.escape(item)}</li>" for item in study["data_modalities"]
@@ -922,12 +974,30 @@ def render_deep_v2_html(content, related_papers):
         if notice_rest
         else html.escape(notice)
     )
+    snapshot_heading = (
+        "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
+    )
+    counting_note_html = (
+        "<h3>Counting note</h3><p>"
+        + html.escape(study["counting_note"])
+        + "</p>"
+        if profile_type == "multicohort_omics"
+        else ""
+    )
+    cohort_html = (
+        '<h3>Cohort hierarchy</h3><div class="paper-geo-v2__table-wrap">'
+        '<table class="paper-geo-v2__table"><thead><tr><th scope="col">Cohort</th>'
+        '<th scope="col">Role</th><th scope="col">n</th><th scope="col">Relationship</th>'
+        f"</tr></thead><tbody>{cohort_rows}</tbody></table></div>"
+        if profile_type == "clinical_cohort"
+        else ""
+    )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
-<section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>Evidence Snapshot</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl></section>
+<section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
-<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>Study Design &amp; Model Development</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl><h3>Cohort hierarchy</h3><div class="paper-geo-v2__table-wrap"><table class="paper-geo-v2__table"><thead><tr><th scope="col">Cohort</th><th scope="col">Role</th><th scope="col">n</th><th scope="col">Relationship</th></tr></thead><tbody>{cohort_rows}</tbody></table></div><h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
+<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>Study Design &amp; Model Development</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>What This Study Adds</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
@@ -944,9 +1014,18 @@ def markdown_cell(value):
 
 def render_deep_v2_markdown(content, related_papers):
     study = content["study_profile"]
+    profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
+    snapshot_heading = (
+        "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
+    )
+    snapshot_tail = (
+        ["### Counting note", "", study["counting_note"], ""]
+        if profile_type == "multicohort_omics"
+        else []
+    )
     parts = [
-        "## Evidence Snapshot",
+        f"## {snapshot_heading}",
         "",
         f"**{content['display_title']}**",
         "",
@@ -959,6 +1038,7 @@ def render_deep_v2_markdown(content, related_papers):
             for label, value in v2_snapshot_items(content)
         ],
         "",
+        *snapshot_tail,
         "## Research Question",
         "",
         content["research_question"],
@@ -988,6 +1068,16 @@ def render_deep_v2_markdown(content, related_papers):
                 "",
             ]
         )
+    study_detail_keys = [
+        "study_design",
+        "evidence_type",
+        "population",
+        "primary_endpoint",
+        "secondary_endpoint",
+        "external_validation",
+    ]
+    if profile_type == "clinical_cohort":
+        study_detail_keys.insert(2, "unique_total_n")
     parts.extend(
         [
             "## Study Design & Model Development",
@@ -996,37 +1086,34 @@ def render_deep_v2_markdown(content, related_papers):
             "",
             *[
                 f"- {v2_label(key)}: {v2_value(study[key])}"
-                for key in (
-                    "study_design",
-                    "evidence_type",
-                    "unique_total_n",
-                    "population",
-                    "primary_endpoint",
-                    "secondary_endpoint",
-                    "external_validation",
-                )
+                for key in study_detail_keys
             ],
             "- Data modalities: " + ", ".join(study["data_modalities"]),
             "",
-            "### Cohort hierarchy",
-            "",
-            "| Cohort | Role | n | Relationship |",
-            "| --- | --- | ---: | --- |",
         ]
     )
-    for cohort in study["cohorts"]:
-        relationship = (
-            "Subset of " + cohort["subset_of"]
-            if cohort.get("subset_of")
-            else "Contains " + ", ".join(cohort["contains"])
-            if cohort.get("contains")
-            else "Independent cohort"
+    if profile_type == "clinical_cohort":
+        parts.extend(
+            [
+                "### Cohort hierarchy",
+                "",
+                "| Cohort | Role | n | Relationship |",
+                "| --- | --- | ---: | --- |",
+            ]
         )
-        parts.append(
-            f"| {markdown_cell(cohort['name'])} | {markdown_cell(cohort['role'])} | "
-            f"{cohort['n']} | {markdown_cell(relationship)} |"
-        )
-    parts.append("")
+        for cohort in study["cohorts"]:
+            relationship = (
+                "Subset of " + cohort["subset_of"]
+                if cohort.get("subset_of")
+                else "Contains " + ", ".join(cohort["contains"])
+                if cohort.get("contains")
+                else "Independent cohort"
+            )
+            parts.append(
+                f"| {markdown_cell(cohort['name'])} | {markdown_cell(cohort['role'])} | "
+                f"{cohort['n']} | {markdown_cell(relationship)} |"
+            )
+        parts.append("")
     if model:
         parts.extend(["### Model development", ""])
         for key, value in model.items():
