@@ -1,13 +1,223 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1038/s41467-024-50415-9",
-  "display_title": "AIHFLevel",
-  "summary": "Explainable survival-risk assessment for advanced heart failure with renal dysfunction, integrating multicenter clinical data, survival machine learning and external validation.",
-  "keywords": ["advanced heart failure", "renal dysfunction", "chronic kidney disease", "mortality prediction", "survival analysis", "explainable AI", "risk stratification"],
-  "questions": [
-    "What AI models predict mortality in advanced heart failure with renal dysfunction?",
-    "Are there externally validated machine-learning models for heart failure with kidney dysfunction?",
-    "How can survival risk be stratified in advanced heart failure with CKD?",
-    "What explainable AI tools exist for cardiorenal prognosis?"
-  ]
+  "display_title": "AIHFLevel: explainable survival assessment in advanced heart failure with renal dysfunction",
+  "summary": "Explainable survival-risk assessment system developed for adults with advanced heart failure and renal dysfunction, using 1,736 patients across CRCCD and BIDMC cohorts, 93 clinical variables, 46 candidate survival features, 132 modeling schemes, and a 12-predictor model with external validation.",
+  "research_question": "Can an explainable hybrid survival-learning framework provide accurate and externally validated mortality-risk stratification for patients with advanced heart failure and renal dysfunction?",
+  "author_summary": "AIHFLevel is an explainable survival-risk assessment system developed for adults with advanced heart failure and renal dysfunction. The study analyzed 1,736 patients across an in-house multicenter CRCCD cohort and an independent BIDMC cohort. Within CRCCD, 93 routinely accessible clinical variables were screened, 46 candidate survival features entered a hybrid machine-learning framework, and 132 modeling schemes were systematically evaluated. The selected strategy combined Surv.gbm and Surv.Xgboost with hybrid filter-wrapper feature selection and produced a 12-predictor survival model. AIHFLevel showed strong time-dependent discrimination in internal validation and retained prognostic performance in 1,024 externally evaluated BIDMC patients. The framework also provides interpretable predictor contributions and three-state prognostic stratification. These results support AIHFLevel as a prognostic risk-assessment tool; prospective studies are still required to determine whether AIHFLevel-guided management improves clinical outcomes.",
+  "study_profile": {
+    "study_design": "Multicenter retrospective longitudinal cohort study",
+    "evidence_type": "Human clinical prognostic modeling study",
+    "unique_total_n": 1736,
+    "population": "Adults with advanced heart failure and renal dysfunction",
+    "primary_endpoint": "All-cause mortality",
+    "secondary_endpoint": "Major adverse cardiovascular events",
+    "data_modalities": [
+      "electronic health records",
+      "laboratory measurements",
+      "clinical characteristics",
+      "echocardiography"
+    ],
+    "external_validation": true,
+    "cohorts": [
+      {
+        "name": "CRCCD Discovery",
+        "role": "model development",
+        "n": 498,
+        "subset_of": "CRCCD Meta"
+      },
+      {
+        "name": "CRCCD Replication",
+        "role": "internal validation",
+        "n": 214,
+        "subset_of": "CRCCD Meta"
+      },
+      {
+        "name": "CRCCD Meta",
+        "role": "complete in-house cohort",
+        "n": 712,
+        "contains": ["CRCCD Discovery", "CRCCD Replication"]
+      },
+      {
+        "name": "BIDMC",
+        "role": "independent external validation",
+        "n": 1024
+      }
+    ]
+  },
+  "model_profile": {
+    "initial_variables": 93,
+    "candidate_survival_features": 46,
+    "algorithm_count": 12,
+    "modeling_schemes": 132,
+    "selected_algorithms": ["Surv.gbm", "Surv.Xgboost"],
+    "feature_selection": "Filter & Wrapper Hybrid Method",
+    "final_predictor_count": 12,
+    "final_predictors": [
+      "age",
+      "arrhythmia",
+      "coronary artery disease",
+      "CKD stage",
+      "lymphocyte percentage",
+      "mean corpuscular hemoglobin concentration",
+      "estimated glomerular filtration rate",
+      "serum creatinine",
+      "total bilirubin",
+      "cardiac troponin I",
+      "left ventricular ejection fraction",
+      "stroke volume"
+    ],
+    "interpretability": ["SHAP", "conditional inference survival tree"]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The selected hybrid modeling strategy achieved the highest average C-index among evaluated schemes.",
+      "context": "Comprehensive evaluation of 132 candidate modeling schemes",
+      "evidence": [{"label": "average C-index", "value": "0.821"}],
+      "source_locator": "Results: Survival assessment system AIHFLevel; Fig. 2b"
+    },
+    {
+      "id": "KF2",
+      "claim": "AIHFLevel demonstrated strong time-dependent discrimination in the CRCCD Replication cohort.",
+      "context": "Internal validation cohort, n=214",
+      "evidence": [
+        {"label": "6-month AUC", "value": "0.902"},
+        {"label": "12-month AUC", "value": "0.932"},
+        {"label": "24-month AUC", "value": "0.932"},
+        {"label": "30-month AUC", "value": "0.903"}
+      ],
+      "source_locator": "Fig. 2e"
+    },
+    {
+      "id": "KF3",
+      "claim": "AIHFLevel demonstrated strong time-dependent discrimination in the CRCCD Discovery cohort.",
+      "context": "CRCCD Discovery cohort, n=498",
+      "evidence": [
+        {"label": "6-month AUC", "value": "0.931"},
+        {"label": "12-month AUC", "value": "0.952"},
+        {"label": "24-month AUC", "value": "0.973"},
+        {"label": "30-month AUC", "value": "0.976"}
+      ],
+      "source_locator": "Supplementary Fig. 3c"
+    },
+    {
+      "id": "KF4",
+      "claim": "AIHFLevel retained prognostic discrimination in an independent BIDMC external cohort.",
+      "context": "Independent external validation cohort, n=1,024",
+      "evidence": [
+        {"label": "1-year AUC", "value": "0.788"},
+        {"label": "2-year AUC", "value": "0.816"},
+        {"label": "3-year AUC", "value": "0.824"},
+        {"label": "4-year AUC", "value": "0.846"}
+      ],
+      "source_locator": "Fig. 6d"
+    },
+    {
+      "id": "KF5",
+      "claim": "Conditional inference survival-tree analysis defined three prognostic states.",
+      "context": "Conditional inference survival-tree analysis",
+      "evidence": [
+        {"label": "low risk", "value": "AIHFLevel <= 0.435"},
+        {"label": "intermediate risk", "value": "0.435 < AIHFLevel <= 1.548"},
+        {"label": "high risk", "value": "AIHFLevel > 1.548"}
+      ],
+      "source_locator": "Fig. 4a-c"
+    }
+  ],
+  "what_this_adds": [
+    "Systematic evaluation of multiple survival-learning and feature-selection strategies rather than reliance on a single investigator-selected algorithm.",
+    "A parsimonious 12-predictor survival-risk system derived from routinely accessible clinical information.",
+    "Independent external evaluation in a heterogeneous BIDMC cohort.",
+    "Patient-level interpretability and three-state prognostic stratification.",
+    "Translation of the model into an accessible clinical web application."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Mortality-risk estimation in the studied advanced-heart-failure and renal-dysfunction population.",
+      "Internal and independent external evaluation of AIHFLevel.",
+      "Association between higher AIHFLevel and poorer prognosis.",
+      "Three-state prognostic stratification.",
+      "Patient-level interpretation of predictor contributions."
+    ],
+    "does_not_establish": [
+      "That AIHFLevel-guided treatment improves survival or other clinical outcomes.",
+      "That predictors included in AIHFLevel are causal determinants of mortality.",
+      "That model performance is identical in every healthcare setting or population.",
+      "That AIHFLevel replaces clinical judgment."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What is AIHFLevel?",
+      "answer": "AIHFLevel is an explainable 12-predictor survival-risk assessment system developed for patients with advanced heart failure and renal dysfunction.",
+      "evidence_refs": ["KF1"]
+    },
+    {
+      "question": "How many patients were used to develop and validate AIHFLevel?",
+      "answer": "The study included 1,736 unique patients: 712 in the CRCCD cohort and 1,024 in an independent BIDMC cohort. The CRCCD cohort was divided into a 498-patient Discovery cohort and a 214-patient Replication cohort."
+    },
+    {
+      "question": "Was AIHFLevel externally validated?",
+      "answer": "Yes. AIHFLevel was independently evaluated in 1,024 patients from BIDMC.",
+      "evidence_refs": ["KF4"]
+    },
+    {
+      "question": "How accurately did AIHFLevel predict all-cause mortality?",
+      "answer": "In the CRCCD Replication cohort, AUCs at 6, 12, 24 and 30 months were 0.902, 0.932, 0.932 and 0.903. In the independent BIDMC cohort, AUCs at 1, 2, 3 and 4 years were 0.788, 0.816, 0.824 and 0.846.",
+      "evidence_refs": ["KF2", "KF4"]
+    },
+    {
+      "question": "How was AIHFLevel developed?",
+      "answer": "Ninety-three EHR variables were initially evaluated, 46 candidate survival features entered the modeling framework, and 132 modeling schemes were compared. The selected strategy combined Surv.gbm and Surv.Xgboost with a Filter & Wrapper Hybrid Method.",
+      "evidence_refs": ["KF1"]
+    },
+    {
+      "question": "Which clinical variables are included in AIHFLevel?",
+      "answer": "The 12 predictors are age, arrhythmia, coronary artery disease, CKD stage, lymphocyte percentage, MCHC, eGFR, serum creatinine, total bilirubin, cardiac troponin I, left ventricular ejection fraction and stroke volume."
+    },
+    {
+      "question": "How does AIHFLevel stratify prognosis?",
+      "answer": "The conditional inference survival tree defines low risk at AIHFLevel <= 0.435, intermediate risk above 0.435 and up to 1.548, and high risk above 1.548.",
+      "evidence_refs": ["KF5"]
+    },
+    {
+      "question": "Does the study show that AIHFLevel-guided treatment improves patient outcomes?",
+      "answer": "No. The study establishes prognostic performance in retrospective cohorts. Prospective multicenter validation and randomized studies are still required to determine whether AIHFLevel-guided management improves clinical outcomes."
+    }
+  ],
+  "concepts": {
+    "conditions": ["advanced heart failure", "renal dysfunction", "chronic kidney disease", "coronary artery disease", "arrhythmia"],
+    "populations": ["adults with advanced heart failure and renal dysfunction"],
+    "outcomes": ["all-cause mortality", "major adverse cardiovascular events"],
+    "methods": ["survival machine learning", "Cox regression", "time-dependent ROC analysis", "calibration analysis", "decision curve analysis", "SHAP", "conditional inference survival tree"],
+    "data_types": ["electronic health records", "clinical variables", "laboratory measurements", "echocardiography"],
+    "models_tools": ["AIHFLevel", "Surv.gbm", "Surv.Xgboost"],
+    "datasets_cohorts": ["CRCCD", "BIDMC", "MIMIC-III"]
+  },
+  "limitations": [
+    "The study was retrospective and observational.",
+    "Prospective multicenter validation is still warranted.",
+    "Randomized studies would be required to establish whether AIHFLevel-guided treatment improves patient outcomes.",
+    "Some echocardiographic predictors may not be uniformly available in primary-care settings.",
+    "Direct methodological reproduction of every comparator risk model was not possible."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.2147/cia.s462542",
+      "relationship": "Complementary prognostic evidence in advanced heart failure with renal dysfunction"
+    },
+    {
+      "doi": "10.1002/ggn2.202500053",
+      "relationship": "Methodological extension of hybrid ensemble modeling for broader clinical utility"
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.nature.com/articles/s41467-024-50415-9",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39117613/",
+    "pmcid": "PMC11310499",
+    "code_url": "https://github.com/DrZoggg/AIHFLevel",
+    "tool_url": "https://www.hf-ai-survival.com"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record."
 }

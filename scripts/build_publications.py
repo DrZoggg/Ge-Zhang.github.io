@@ -361,8 +361,9 @@ def load_deep_content(publication):
             f"Deep GEO is enabled for {publication.get('title')!r}, but {path.relative_to(ROOT)} is missing."
         )
     content = json.loads(path.read_text(encoding="utf-8"))
-    if content.get("version") != 1:
-        raise ValueError(f"{path.relative_to(ROOT)} must use version 1.")
+    version = content.get("version")
+    if version not in {1, 2}:
+        raise ValueError(f"{path.relative_to(ROOT)} must use version 1 or 2.")
     configured_doi = norm_doi(content.get("doi"))
     publication_doi = norm_doi(publication.get("doi"))
     if configured_doi and configured_doi != publication_doi:
@@ -370,10 +371,232 @@ def load_deep_content(publication):
             f"Deep GEO content DOI mismatch in {path.relative_to(ROOT)}: "
             f"{configured_doi} != {publication_doi}"
         )
-    for list_key in ("keywords", "questions"):
-        if content.get(list_key) is not None and not isinstance(content[list_key], list):
-            raise ValueError(f"{path.relative_to(ROOT)} field {list_key!r} must be an array.")
+    if version == 1:
+        for list_key in ("keywords", "questions"):
+            if content.get(list_key) is not None and not isinstance(content[list_key], list):
+                raise ValueError(
+                    f"{path.relative_to(ROOT)} field {list_key!r} must be an array."
+                )
+    else:
+        validate_deep_v2_content(content, path.relative_to(ROOT))
     return content
+
+
+def required_text(value, label):
+    if not isinstance(value, str) or not value.strip() or value != value.strip():
+        raise ValueError(f"{label} must be non-empty trimmed text.")
+    return value
+
+
+def required_text_list(value, label, *, minimum=1):
+    if not isinstance(value, list) or len(value) < minimum:
+        raise ValueError(f"{label} must be an array with at least {minimum} item(s).")
+    result = [required_text(item, f"{label} item") for item in value]
+    if len({item.casefold() for item in result}) != len(result):
+        raise ValueError(f"{label} must not contain duplicate items.")
+    return result
+
+
+def flatten_concepts(content):
+    concepts = content.get("concepts") or {}
+    flattened = []
+    seen = set()
+    for values in concepts.values():
+        for value in values:
+            text = str(value).strip()
+            key = text.casefold()
+            if text and key not in seen:
+                seen.add(key)
+                flattened.append(text)
+    return flattened
+
+
+def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
+    for key in (
+        "doi",
+        "display_title",
+        "summary",
+        "research_question",
+        "author_summary",
+        "evidence_page_notice",
+    ):
+        required_text(content.get(key), f"{label} {key}")
+
+    study = content.get("study_profile")
+    if not isinstance(study, dict):
+        raise ValueError(f"{label} study_profile must be an object.")
+    for key in (
+        "study_design",
+        "evidence_type",
+        "population",
+        "primary_endpoint",
+        "secondary_endpoint",
+    ):
+        required_text(study.get(key), f"{label} study_profile.{key}")
+    unique_total = study.get("unique_total_n")
+    if not isinstance(unique_total, int) or unique_total <= 0:
+        raise ValueError(f"{label} study_profile.unique_total_n must be positive.")
+    required_text_list(
+        study.get("data_modalities"), f"{label} study_profile.data_modalities"
+    )
+    if not isinstance(study.get("external_validation"), bool):
+        raise ValueError(f"{label} study_profile.external_validation must be boolean.")
+    cohorts = study.get("cohorts")
+    if not isinstance(cohorts, list) or not cohorts:
+        raise ValueError(f"{label} study_profile.cohorts must be a non-empty array.")
+    cohort_by_name = {}
+    for position, cohort in enumerate(cohorts, start=1):
+        if not isinstance(cohort, dict):
+            raise ValueError(f"{label} cohort {position} must be an object.")
+        name = required_text(cohort.get("name"), f"{label} cohort {position} name")
+        required_text(cohort.get("role"), f"{label} cohort {name} role")
+        if not isinstance(cohort.get("n"), int) or cohort["n"] <= 0:
+            raise ValueError(f"{label} cohort {name} n must be positive.")
+        if name.casefold() in cohort_by_name:
+            raise ValueError(f"{label} cohort names must be unique.")
+        cohort_by_name[name.casefold()] = cohort
+    for cohort in cohorts:
+        parent_name = cohort.get("subset_of")
+        if parent_name is not None:
+            parent_name = required_text(
+                parent_name, f"{label} cohort {cohort['name']} subset_of"
+            )
+            parent = cohort_by_name.get(parent_name.casefold())
+            if not parent or parent is cohort or cohort["n"] > parent["n"]:
+                raise ValueError(f"{label} has an invalid cohort subset hierarchy.")
+        contains = cohort.get("contains")
+        if contains is not None:
+            children = required_text_list(
+                contains, f"{label} cohort {cohort['name']} contains"
+            )
+            resolved = [cohort_by_name.get(name.casefold()) for name in children]
+            if any(child is None for child in resolved):
+                raise ValueError(f"{label} cohort contains an unknown child.")
+            if any(child.get("subset_of") != cohort["name"] for child in resolved):
+                raise ValueError(f"{label} cohort contains/subset_of mismatch.")
+            if sum(child["n"] for child in resolved) != cohort["n"]:
+                raise ValueError(f"{label} cohort child counts do not equal parent n.")
+    root_total = sum(cohort["n"] for cohort in cohorts if not cohort.get("subset_of"))
+    if root_total != unique_total:
+        raise ValueError(f"{label} independent cohort counts do not equal unique_total_n.")
+
+    model = content.get("model_profile")
+    if model is not None and not isinstance(model, dict):
+        raise ValueError(f"{label} model_profile must be an object when present.")
+
+    findings = content.get("key_findings")
+    if not isinstance(findings, list) or not findings:
+        raise ValueError(f"{label} key_findings must be a non-empty array.")
+    finding_ids = []
+    required_finding_keys = {"id", "claim", "context", "evidence", "source_locator"}
+    for position, finding in enumerate(findings, start=1):
+        if not isinstance(finding, dict) or set(finding) != required_finding_keys:
+            raise ValueError(
+                f"{label} key finding {position} must use only the normalized V2 fields."
+            )
+        finding_id = required_text(finding.get("id"), f"{label} key finding id")
+        if not re.fullmatch(r"KF[1-9][0-9]*", finding_id):
+            raise ValueError(f"{label} key finding IDs must use KF<number>.")
+        finding_ids.append(finding_id)
+        for key in ("claim", "context", "source_locator"):
+            required_text(finding.get(key), f"{label} {finding_id} {key}")
+        evidence = finding.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            raise ValueError(f"{label} {finding_id} evidence must be non-empty.")
+        pairs = []
+        for item in evidence:
+            if not isinstance(item, dict) or set(item) != {"label", "value"}:
+                raise ValueError(f"{label} {finding_id} evidence is not normalized.")
+            pair = (
+                required_text(item.get("label"), f"{label} {finding_id} evidence label"),
+                required_text(item.get("value"), f"{label} {finding_id} evidence value"),
+            )
+            pairs.append(pair)
+        if len(pairs) != len(set(pairs)):
+            raise ValueError(f"{label} {finding_id} contains duplicate evidence.")
+    if len(finding_ids) != len(set(finding_ids)):
+        raise ValueError(f"{label} key finding IDs must be unique.")
+
+    required_text_list(content.get("what_this_adds"), f"{label} what_this_adds")
+    scope = content.get("evidence_scope")
+    if not isinstance(scope, dict):
+        raise ValueError(f"{label} evidence_scope must be an object.")
+    for key in ("supports", "does_not_establish"):
+        required_text_list(scope.get(key), f"{label} evidence_scope.{key}")
+
+    qa = content.get("qa")
+    if not isinstance(qa, list) or not 4 <= len(qa) <= 8:
+        raise ValueError(f"{label} qa must contain 4–8 objects.")
+    seen_questions = set()
+    finding_id_set = set(finding_ids)
+    for position, item in enumerate(qa, start=1):
+        if not isinstance(item, dict):
+            raise ValueError(f"{label} Q&A {position} must be an object.")
+        question = required_text(item.get("question"), f"{label} Q&A {position} question")
+        required_text(item.get("answer"), f"{label} Q&A {position} answer")
+        if question.casefold() in seen_questions:
+            raise ValueError(f"{label} Q&A questions must be unique.")
+        seen_questions.add(question.casefold())
+        refs = item.get("evidence_refs", [])
+        if not isinstance(refs, list) or any(ref not in finding_id_set for ref in refs):
+            raise ValueError(f"{label} Q&A evidence_refs must reference real finding IDs.")
+        if len(refs) != len(set(refs)):
+            raise ValueError(f"{label} Q&A evidence_refs must be unique.")
+
+    concepts = content.get("concepts")
+    if not isinstance(concepts, dict) or not concepts:
+        raise ValueError(f"{label} concepts must be a non-empty categorized object.")
+    for category, values in concepts.items():
+        required_text(category, f"{label} concept category")
+        required_text_list(values, f"{label} concepts.{category}")
+    if not flatten_concepts(content):
+        raise ValueError(f"{label} concepts must contain scientific terms.")
+    required_text_list(content.get("limitations"), f"{label} limitations")
+
+    related = content.get("related_papers")
+    if not isinstance(related, list) or not related:
+        raise ValueError(f"{label} related_papers must be a non-empty array.")
+    related_dois = []
+    for position, item in enumerate(related, start=1):
+        if not isinstance(item, dict) or set(item) != {"doi", "relationship"}:
+            raise ValueError(f"{label} related paper {position} is invalid.")
+        doi = norm_doi(item.get("doi"))
+        if not doi:
+            raise ValueError(f"{label} related paper {position} DOI is invalid.")
+        required_text(item.get("relationship"), f"{label} related paper relationship")
+        related_dois.append(doi)
+    if len(related_dois) != len(set(related_dois)):
+        raise ValueError(f"{label} related paper DOIs must be unique.")
+
+    provenance = content.get("provenance")
+    if not isinstance(provenance, dict) or not provenance:
+        raise ValueError(f"{label} provenance must be a non-empty object.")
+    for key, value in provenance.items():
+        value = required_text(value, f"{label} provenance.{key}")
+        if key.endswith("_url"):
+            parsed = urllib.parse.urlparse(value)
+            if parsed.scheme != "https" or not parsed.netloc:
+                raise ValueError(f"{label} provenance.{key} must be an HTTPS URL.")
+
+
+def resolve_related_papers(content, public_by_doi, site_root):
+    resolved = []
+    current_doi = norm_doi(content.get("doi"))
+    for relationship in content.get("related_papers", []):
+        doi = norm_doi(relationship.get("doi"))
+        publication = (public_by_doi or {}).get(doi)
+        if doi == current_doi or publication is None:
+            raise ValueError(f"Related DOI {doi!r} does not resolve to another public paper.")
+        resolved.append(
+            {
+                "doi": doi,
+                "relationship": relationship["relationship"],
+                "title": publication.get("title") or "Untitled work",
+                "url": publication.get("paper_url")
+                or absolute(site_root, f"papers/{publication['slug']}.html"),
+            }
+        )
+    return resolved
 
 
 def paper_schema(publication, paper_url, config):
@@ -415,7 +638,7 @@ def paper_schema(publication, paper_url, config):
     return result
 
 
-def render_deep_html(content):
+def render_deep_v1_html(content):
     summary = str(content.get("summary") or "").strip()
     keywords = [str(x).strip() for x in content.get("keywords", []) if str(x).strip()]
     questions = [str(x).strip() for x in content.get("questions", []) if str(x).strip()]
@@ -440,7 +663,7 @@ def render_deep_html(content):
     return '<section><div class="grid">' + "".join(sections) + "</div></section>"
 
 
-def render_deep_markdown(content):
+def render_deep_v1_markdown(content):
     parts = []
     summary = str(content.get("summary") or "").strip()
     keywords = [str(x).strip() for x in content.get("keywords", []) if str(x).strip()]
@@ -458,7 +681,445 @@ def render_deep_markdown(content):
     return "\n".join(parts)
 
 
-def render_paper_html(publication, *, config, deep_content=None):
+def v2_label(key):
+    labels = {
+        "unique_total_n": "Unique total",
+        "initial_variables": "Initial predictors",
+        "candidate_survival_features": "Candidate survival features",
+        "algorithm_count": "Algorithms",
+        "modeling_schemes": "Modeling schemes",
+        "selected_algorithms": "Selected algorithms",
+        "feature_selection": "Feature selection",
+        "final_predictor_count": "Final predictors",
+        "final_predictors": "Final predictor set",
+        "external_validation": "External validation",
+        "models_tools": "Models & Tools",
+        "datasets_cohorts": "Datasets & Cohorts",
+        "publisher_url": "Publisher",
+        "pubmed_url": "PubMed",
+        "pmcid": "PMCID",
+        "code_url": "Code",
+        "tool_url": "Clinical tool",
+    }
+    return labels.get(key, key.replace("_", " ").title())
+
+
+def v2_value(value):
+    if isinstance(value, bool):
+        return "Yes" if value else "No"
+    if isinstance(value, int):
+        return f"{value:,}"
+    if isinstance(value, list):
+        return ", ".join(str(item) for item in value)
+    return str(value)
+
+
+def v2_snapshot_items(content):
+    study = content["study_profile"]
+    model = content.get("model_profile") or {}
+    items = [("Unique total", f"n={study['unique_total_n']:,}")]
+    for cohort in study["cohorts"]:
+        relation = f"; subset of {cohort['subset_of']}" if cohort.get("subset_of") else ""
+        items.append((cohort["name"], f"n={cohort['n']:,}{relation}"))
+    for key in (
+        "initial_variables",
+        "candidate_survival_features",
+        "algorithm_count",
+        "modeling_schemes",
+        "final_predictor_count",
+    ):
+        if key in model:
+            items.append((v2_label(key), v2_value(model[key])))
+    for finding in content["key_findings"]:
+        for evidence in finding["evidence"]:
+            if evidence["label"].casefold() == "average c-index":
+                items.append((evidence["label"], evidence["value"]))
+    return items
+
+
+def render_v2_evidence_html(finding):
+    evidence = finding["evidence"]
+    finding_id = html.escape(finding["id"], quote=True)
+    if len(evidence) > 1:
+        rows = "".join(
+            "<tr><th scope=\"row\">"
+            + html.escape(item["label"])
+            + "</th><td>"
+            + html.escape(item["value"])
+            + "</td></tr>"
+            for item in evidence
+        )
+        return (
+            f'<table class="paper-geo-v2__evidence-table" data-key-finding-id="{finding_id}">'
+            f"<caption>Evidence for {finding_id}</caption>"
+            "<thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Value</th></tr></thead>"
+            f"<tbody>{rows}</tbody></table>"
+        )
+    item = evidence[0]
+    return (
+        '<dl class="paper-geo-v2__single-evidence">'
+        f"<dt>{html.escape(item['label'])}</dt><dd>{html.escape(item['value'])}</dd></dl>"
+    )
+
+
+def render_deep_v2_html(content, related_papers):
+    study = content["study_profile"]
+    model = content.get("model_profile") or {}
+    snapshot = "".join(
+        '<div class="paper-geo-v2__evidence"><dt>'
+        + html.escape(label)
+        + "</dt><dd>"
+        + html.escape(value)
+        + "</dd></div>"
+        for label, value in v2_snapshot_items(content)
+    )
+    findings = "".join(
+        '<article class="paper-geo-v2__finding" data-key-finding-id="'
+        + html.escape(finding["id"], quote=True)
+        + '"><h3><span class="paper-geo-v2__finding-id">'
+        + html.escape(finding["id"])
+        + "</span> "
+        + html.escape(finding["claim"])
+        + '</h3><p class="paper-geo-v2__context">'
+        + html.escape(finding["context"])
+        + "</p>"
+        + render_v2_evidence_html(finding)
+        + '<p class="paper-geo-v2__source"><strong>Source locator:</strong> '
+        + html.escape(finding["source_locator"])
+        + "</p></article>"
+        for finding in content["key_findings"]
+    )
+    cohort_rows = "".join(
+        "<tr><th scope=\"row\">"
+        + html.escape(cohort["name"])
+        + "</th><td>"
+        + html.escape(cohort["role"])
+        + "</td><td>"
+        + f"{cohort['n']:,}"
+        + "</td><td>"
+        + html.escape(
+            (
+                "Subset of " + cohort["subset_of"]
+                if cohort.get("subset_of")
+                else "Contains " + ", ".join(cohort["contains"])
+                if cohort.get("contains")
+                else "Independent cohort"
+            )
+        )
+        + "</td></tr>"
+        for cohort in study["cohorts"]
+    )
+    study_details = "".join(
+        f"<dt>{html.escape(v2_label(key))}</dt><dd>{html.escape(v2_value(study[key]))}</dd>"
+        for key in (
+            "study_design",
+            "evidence_type",
+            "unique_total_n",
+            "population",
+            "primary_endpoint",
+            "secondary_endpoint",
+            "external_validation",
+        )
+    )
+    modalities = "".join(
+        f"<li>{html.escape(item)}</li>" for item in study["data_modalities"]
+    )
+    model_html = ""
+    if model:
+        model_details = "".join(
+            f"<dt>{html.escape(v2_label(key))}</dt><dd>{html.escape(v2_value(value))}</dd>"
+            for key, value in model.items()
+            if key not in {"final_predictors", "interpretability"}
+        )
+        predictors = "".join(
+            f"<li>{html.escape(item)}</li>" for item in model.get("final_predictors", [])
+        )
+        interpretations = "".join(
+            f"<li>{html.escape(item)}</li>" for item in model.get("interpretability", [])
+        )
+        model_html = (
+            "<h3>Model development</h3>"
+            f'<dl class="paper-geo-v2__profile">{model_details}</dl>'
+            "<h3>Final predictor set</h3>"
+            f'<ol class="paper-geo-v2__compact-list">{predictors}</ol>'
+            "<h3>Interpretability</h3>"
+            f'<ul class="paper-geo-v2__compact-list">{interpretations}</ul>'
+        )
+    additions = "".join(
+        f"<li>{html.escape(item)}</li>" for item in content["what_this_adds"]
+    )
+    scope = content["evidence_scope"]
+    supports = "".join(f"<li>{html.escape(item)}</li>" for item in scope["supports"])
+    does_not = "".join(
+        f"<li>{html.escape(item)}</li>" for item in scope["does_not_establish"]
+    )
+    limitations = "".join(
+        f"<li>{html.escape(item)}</li>" for item in content["limitations"]
+    )
+    qa = "".join(
+        '<article class="paper-geo-v2__qa"><h3>'
+        + html.escape(item["question"])
+        + "</h3><p>"
+        + html.escape(item["answer"])
+        + "</p>"
+        + (
+            '<p class="paper-geo-v2__refs"><strong>Evidence:</strong> '
+            + html.escape(", ".join(item["evidence_refs"]))
+            + "</p>"
+            if item.get("evidence_refs")
+            else ""
+        )
+        + "</article>"
+        for item in content["qa"]
+    )
+    concepts = "".join(
+        '<div class="paper-geo-v2__concept-group"><h3>'
+        + html.escape(v2_label(category))
+        + '</h3><div class="tags">'
+        + "".join(f'<span class="tag">{html.escape(item)}</span>' for item in values)
+        + "</div></div>"
+        for category, values in content["concepts"].items()
+    )
+    related = "".join(
+        '<li><a href="'
+        + html.escape(item["url"], quote=True)
+        + '">'
+        + html.escape(item["title"])
+        + "</a><br><span class=\"meta\">"
+        + html.escape(item["relationship"])
+        + " · DOI: "
+        + html.escape(item["doi"])
+        + "</span></li>"
+        for item in related_papers
+    )
+    provenance_rows = [
+        (
+            "DOI",
+            doi_url(content["doi"]),
+            doi_url(content["doi"]),
+        )
+    ]
+    for key, value in content["provenance"].items():
+        provenance_rows.append(
+            (v2_label(key), value if key.endswith("_url") else "", value)
+        )
+    provenance = "".join(
+        "<dt>"
+        + html.escape(label)
+        + "</dt><dd>"
+        + (
+            f'<a href="{html.escape(url, quote=True)}">{html.escape(value)}</a>'
+            if url
+            else html.escape(value)
+        )
+        + "</dd>"
+        for label, url, value in provenance_rows
+    )
+    notice = content["evidence_page_notice"]
+    notice_first, _, notice_rest = notice.partition(". ")
+    notice_html = (
+        f"<strong>{html.escape(notice_first)}.</strong> {html.escape(notice_rest)}"
+        if notice_rest
+        else html.escape(notice)
+    )
+    return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
+<section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>Evidence Snapshot</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl></section>
+<section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
+<section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
+<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
+<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>Study Design &amp; Model Development</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl><h3>Cohort hierarchy</h3><div class="paper-geo-v2__table-wrap"><table class="paper-geo-v2__table"><thead><tr><th scope="col">Cohort</th><th scope="col">Role</th><th scope="col">n</th><th scope="col">Relationship</th></tr></thead><tbody>{cohort_rows}</tbody></table></div><h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
+<section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>What This Study Adds</h2><ul>{additions}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
+<section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
+<section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="provenance"><h2>Publication &amp; Provenance</h2><dl class="paper-geo-v2__provenance">{provenance}</dl></section>
+<section class="paper-geo-v2__notice"><div class="notice">{notice_html}</div></section>
+</div>'''
+
+
+def markdown_cell(value):
+    return str(value).replace("|", "\\|").replace("\n", " ")
+
+
+def render_deep_v2_markdown(content, related_papers):
+    study = content["study_profile"]
+    model = content.get("model_profile") or {}
+    parts = [
+        "## Evidence Snapshot",
+        "",
+        f"**{content['display_title']}**",
+        "",
+        content["summary"],
+        "",
+        "| Evidence | Value |",
+        "| --- | --- |",
+        *[
+            f"| {markdown_cell(label)} | {markdown_cell(value)} |"
+            for label, value in v2_snapshot_items(content)
+        ],
+        "",
+        "## Research Question",
+        "",
+        content["research_question"],
+        "",
+        "## Author Evidence Summary",
+        "",
+        content["author_summary"],
+        "",
+        "## Key Findings",
+        "",
+    ]
+    for finding in content["key_findings"]:
+        parts.extend(
+            [
+                f"### {finding['id']}: {finding['claim']}",
+                "",
+                f"Context: {finding['context']}",
+                "",
+                "| Evidence | Value |",
+                "| --- | --- |",
+                *[
+                    f"| {markdown_cell(item['label'])} | {markdown_cell(item['value'])} |"
+                    for item in finding["evidence"]
+                ],
+                "",
+                f"Source locator: {finding['source_locator']}",
+                "",
+            ]
+        )
+    parts.extend(
+        [
+            "## Study Design & Model Development",
+            "",
+            "### Study profile",
+            "",
+            *[
+                f"- {v2_label(key)}: {v2_value(study[key])}"
+                for key in (
+                    "study_design",
+                    "evidence_type",
+                    "unique_total_n",
+                    "population",
+                    "primary_endpoint",
+                    "secondary_endpoint",
+                    "external_validation",
+                )
+            ],
+            "- Data modalities: " + ", ".join(study["data_modalities"]),
+            "",
+            "### Cohort hierarchy",
+            "",
+            "| Cohort | Role | n | Relationship |",
+            "| --- | --- | ---: | --- |",
+        ]
+    )
+    for cohort in study["cohorts"]:
+        relationship = (
+            "Subset of " + cohort["subset_of"]
+            if cohort.get("subset_of")
+            else "Contains " + ", ".join(cohort["contains"])
+            if cohort.get("contains")
+            else "Independent cohort"
+        )
+        parts.append(
+            f"| {markdown_cell(cohort['name'])} | {markdown_cell(cohort['role'])} | "
+            f"{cohort['n']} | {markdown_cell(relationship)} |"
+        )
+    parts.append("")
+    if model:
+        parts.extend(["### Model development", ""])
+        for key, value in model.items():
+            if key not in {"final_predictors", "interpretability"}:
+                parts.append(f"- {v2_label(key)}: {v2_value(value)}")
+        parts.extend(
+            [
+                "",
+                "### Final predictor set",
+                "",
+                *[f"{position}. {item}" for position, item in enumerate(model["final_predictors"], 1)],
+                "",
+                "### Interpretability",
+                "",
+                *[f"- {item}" for item in model["interpretability"]],
+                "",
+            ]
+        )
+    parts.extend(
+        [
+            "## What This Study Adds",
+            "",
+            *[f"- {item}" for item in content["what_this_adds"]],
+            "",
+            "## Evidence Scope",
+            "",
+            "### Supports",
+            "",
+            *[f"- {item}" for item in content["evidence_scope"]["supports"]],
+            "",
+            "### Does Not Establish",
+            "",
+            *[
+                f"- {item}"
+                for item in content["evidence_scope"]["does_not_establish"]
+            ],
+            "",
+            "### Limitations",
+            "",
+            *[f"- {item}" for item in content["limitations"]],
+            "",
+            "## Q&A",
+            "",
+        ]
+    )
+    for item in content["qa"]:
+        parts.extend([f"### {item['question']}", "", item["answer"], ""])
+        if item.get("evidence_refs"):
+            parts.extend(["Evidence: " + ", ".join(item["evidence_refs"]), ""])
+    parts.extend(["## Concepts & Entities", ""])
+    for category, values in content["concepts"].items():
+        parts.extend([f"### {v2_label(category)}", "", ", ".join(values), ""])
+    parts.extend(["## Related Research", ""])
+    for item in related_papers:
+        parts.extend(
+            [
+                f"- [{item['title']}]({item['url']}) — {item['relationship']} "
+                f"(DOI: {item['doi']})"
+            ]
+        )
+    parts.extend(
+        [
+            "",
+            "## Publication & Provenance",
+            "",
+            f"- DOI: {doi_url(content['doi'])}",
+            *[
+                f"- {v2_label(key)}: {value}"
+                for key, value in content["provenance"].items()
+            ],
+            "",
+            "## Evidence-page notice",
+            "",
+            content["evidence_page_notice"],
+            "",
+        ]
+    )
+    return "\n".join(parts)
+
+
+def render_deep_html(content, *, related_papers=None):
+    if content.get("version") == 2:
+        return render_deep_v2_html(content, related_papers or [])
+    return render_deep_v1_html(content)
+
+
+def render_deep_markdown(content, *, related_papers=None):
+    if content.get("version") == 2:
+        return render_deep_v2_markdown(content, related_papers or [])
+    return render_deep_v1_markdown(content)
+
+
+def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -468,6 +1129,10 @@ def render_paper_html(publication, *, config, deep_content=None):
     doi = norm_doi(publication.get("doi"))
     canonical = absolute(site_root, f"papers/{slug}.html")
     markdown_url = absolute(site_root, f"papers/{slug}.md")
+    is_v2 = bool(deep_content and deep_content.get("version") == 2)
+    related_papers = (
+        resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
+    )
     deep_summary = str((deep_content or {}).get("summary") or "").strip()
     description = deep_summary or (
         f"Author-controlled academic record for {title}, published in {journal} ({year})."
@@ -499,12 +1164,41 @@ def render_paper_html(publication, *, config, deep_content=None):
         )
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
-    deep_html = render_deep_html(deep_content or {}) if deep_content is not None else ""
+    authors = normalize_authors(publication.get("authors"))
+    v2_authors_html = ""
+    if is_v2:
+        author_items = "".join(
+            f'<li class="paper-geo-v2__author">{html.escape(author)}</li>'
+            for author in authors
+        )
+        v2_authors_html = (
+            '<div class="paper-geo-v2__authors"><h2>Full Authors</h2>'
+            f'<ol class="paper-geo-v2__author-list">{author_items}</ol></div>'
+        )
+    deep_html = (
+        render_deep_html(deep_content or {}, related_papers=related_papers)
+        if deep_content is not None
+        else ""
+    )
     schema = paper_schema(publication, canonical, config)
-    if deep_content and deep_content.get("keywords"):
+    if is_v2:
+        schema["description"] = deep_content["author_summary"]
+        schema["keywords"] = flatten_concepts(deep_content)
+    elif deep_content and deep_content.get("keywords"):
         schema["keywords"] = [
             str(x).strip() for x in deep_content["keywords"] if str(x).strip()
         ]
+    notice_html = ""
+    if not is_v2:
+        notice_html = (
+            f'<section><div class="notice"><strong>Author-controlled academic record for '
+            f'{html.escape(config["researcher_name"])} '
+            f'({html.escape(config["researcher_name_zh"])}; ORCID '
+            f'<a href="{html.escape(orcid_url(config), quote=True)}">'
+            f'{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as '
+            f'part of {html.escape(config["researcher_name"])}’s publication record. It does '
+            "not replace the publisher version or assert a complete author list.</div></section>"
+        )
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
     return f'''<!doctype html>
 {GENERATED_MARKER}
@@ -525,11 +1219,11 @@ def render_paper_html(publication, *, config, deep_content=None):
 <section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">{html.escape(str(publication_type))} · {html.escape(str(year))} {deep_badge}</div>
 <h1 style="font-size:clamp(2.2rem,5vw,4rem)">{html.escape(str(title))}</h1>
-<p class="lead">{html.escape(str(journal))}</p>
+<p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
 <div class="links">{' '.join(links)}</div>
 </div></section>
 {deep_html}
-<section><div class="notice"><strong>Author-controlled academic record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}; ORCID <a href="{html.escape(orcid_url(config), quote=True)}">{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as part of {html.escape(config["researcher_name"])}’s publication record. It does not replace the publisher version or assert a complete author list.</div></section>
+{notice_html}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -537,7 +1231,7 @@ def render_paper_html(publication, *, config, deep_content=None):
 '''
 
 
-def render_paper_markdown(publication, *, config, deep_content=None):
+def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -547,6 +1241,10 @@ def render_paper_markdown(publication, *, config, deep_content=None):
     doi = norm_doi(publication.get("doi"))
     html_url = absolute(site_root, f"papers/{slug}.html")
     md_url = absolute(site_root, f"papers/{slug}.md")
+    is_v2 = bool(deep_content and deep_content.get("version") == 2)
+    related_papers = (
+        resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
+    )
     lines = [
         f"# {title}",
         "",
@@ -562,17 +1260,36 @@ def render_paper_markdown(publication, *, config, deep_content=None):
         f"Canonical page: {html_url}",
         f"Markdown record: {md_url}",
         "",
-        "## About this record",
-        "",
-        f"This is an author-controlled publication record in the {config['researcher_name']} "
-        "Academic Hub. "
-        f"It identifies this work as part of {config['researcher_name']}’s publication record "
-        "via ORCID; "
-        "the publisher version remains the version of record.",
-        "",
     ]
+    if is_v2:
+        lines.extend(
+            [
+                "## Full Authors",
+                "",
+                *[
+                    f"{position}. {author}"
+                    for position, author in enumerate(
+                        normalize_authors(publication.get("authors")), start=1
+                    )
+                ],
+                "",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "## About this record",
+                "",
+                f"This is an author-controlled publication record in the {config['researcher_name']} "
+                "Academic Hub. "
+                f"It identifies this work as part of {config['researcher_name']}’s publication record "
+                "via ORCID; "
+                "the publisher version remains the version of record.",
+                "",
+            ]
+        )
     if deep_content is not None:
-        lines.append(render_deep_markdown(deep_content))
+        lines.append(render_deep_markdown(deep_content, related_papers=related_papers))
     lines.extend(
         [
             "## Links",
@@ -800,6 +1517,11 @@ def build_site():
         for publication in public_master
     ]
     public_by_token = {publication_token(item): item for item in public_items}
+    public_by_doi = {
+        norm_doi(item.get("doi")): item
+        for item in public_items
+        if norm_doi(item.get("doi"))
+    }
     expected_slugs = {item["slug"] for item in public_items}
     missing_legacy = sorted(set(LEGACY_DEEP_SLUGS) - expected_slugs)
     if missing_legacy:
@@ -812,11 +1534,21 @@ def build_site():
         paper_url = item["paper_url"]
         html_changed[paper_url] = write_text_if_changed(
             PAPERS_DIR / f"{item['slug']}.html",
-            render_paper_html(item, config=config, deep_content=deep_content),
+            render_paper_html(
+                item,
+                config=config,
+                deep_content=deep_content,
+                public_by_doi=public_by_doi,
+            ),
         )
         write_text_if_changed(
             PAPERS_DIR / f"{item['slug']}.md",
-            render_paper_markdown(item, config=config, deep_content=deep_content),
+            render_paper_markdown(
+                item,
+                config=config,
+                deep_content=deep_content,
+                public_by_doi=public_by_doi,
+            ),
         )
     for path in list(PAPERS_DIR.glob("*.html")) + list(PAPERS_DIR.glob("*.md")):
         if path.stem not in expected_slugs and GENERATED_MARKER in path.read_text(
