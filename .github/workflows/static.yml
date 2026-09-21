@@ -29,7 +29,8 @@ jobs:
       - name: Checkout latest website
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'push' && github.sha || 'main' }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -48,6 +49,8 @@ jobs:
           mkdir -p _site
           cp -R assets papers _site/
           cp index.html publications.html publications.json publication_inventory.csv paper_index.json robots.txt sitemap.xml llms.txt llms-full.txt 404.html _site/
+          INDEXNOW_KEY_FILE="$(python -c 'import json; config=json.load(open("data/indexnow_config.json", encoding="utf-8")); print(config["key"] + ".txt")')"
+          cp "$INDEXNOW_KEY_FILE" _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -60,3 +63,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Notify IndexNow of changed public HTML URLs
+        if: github.event_name == 'push'
+        env:
+          INDEXNOW_PREVIOUS_REF: ${{ github.event.before }}
+        run: python scripts/indexnow_submit.py --previous-ref "$INDEXNOW_PREVIOUS_REF"
