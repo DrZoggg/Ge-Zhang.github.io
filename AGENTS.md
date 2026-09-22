@@ -342,6 +342,34 @@ Do not automatically add:
 
 Only implement tooling that genuinely improves crawlability, retrievability, semantic clarity, evidence density, citation readiness, entity identity, provenance, or machine-readable scholarly structure.
 
+## Execution Speed
+
+For routine engineering tasks:
+
+- default to direct execution rather than extended planning;
+- do not narrate routine intermediate steps;
+- only interrupt the user when blocked, an invariant fails, or an approval is required;
+- avoid repeated repository scans;
+- fetch remote once at task start and recheck once immediately before delivery;
+- if direct Git HTTPS transport fails once with a connectivity error, switch immediately to an authenticated safe API transport rather than retrying the same route;
+- do not rerun tests whose result cannot materially affect the requested change;
+- prefer targeted validation over full regression for low-risk changes;
+- reuse verified source-of-truth supplied by Web Chat rather than researching it again.
+
+Validation:
+
+- only `AGENTS.md` may change
+- no site build or regression suite is required
+- run `git diff --check`
+- review the exact diff
+
+Commit:
+`docs: optimize Codex execution speed`
+
+Push to `main`.
+
+If Pages is automatically triggered by the push, only observe and report the result.
+
 ## Final Report
 
 Unless the task requests otherwise, keep the final report concise.
