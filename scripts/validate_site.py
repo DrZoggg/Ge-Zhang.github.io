@@ -158,6 +158,14 @@ def single_meta_content(markup, name, label):
     )
 
 
+def single_property_meta_content(markup, property_name, label):
+    return single_html_url(
+        markup,
+        rf'<meta property="{re.escape(property_name)}" content="([^"]*)">',
+        label,
+    )
+
+
 def meta_contents(markup, name):
     return [
         html.unescape(value)
@@ -1142,6 +1150,26 @@ def validate_site():
         f"{config['researcher_name']} ({config['researcher_name_zh']}) — "
         "Cardiovascular AI, Multi-omics & Circadian Biology"
     )
+    homepage_description = single_meta_content(
+        index_html, "description", "Homepage meta description"
+    )
+    require(
+        single_property_meta_content(index_html, "og:title", "Homepage Open Graph title")
+        == expected_homepage_title,
+        "Homepage Open Graph title must match the page title.",
+    )
+    require(
+        single_property_meta_content(
+            index_html, "og:description", "Homepage Open Graph description"
+        )
+        == homepage_description,
+        "Homepage Open Graph description must match the meta description.",
+    )
+    require(
+        single_property_meta_content(index_html, "og:type", "Homepage Open Graph type")
+        == "website",
+        "Homepage Open Graph type must be website.",
+    )
     require(
         element_texts(index_html, "title") == [expected_homepage_title],
         "Homepage title does not use the canonical bilingual identity.",
@@ -1219,6 +1247,19 @@ def validate_site():
     require(
         set(same_as_values(homepage_person.get("sameAs"))) == expected_profiles,
         "Homepage Person sameAs profiles do not match verified site configuration.",
+    )
+    website_schema = json_ld_object(index_html, "WebSite", "Homepage")
+    require(
+        website_schema
+        == {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": f"{config['site_url']}/#website",
+            "url": homepage_url,
+            "name": f"{config['researcher_name']} Academic Hub",
+            "creator": {"@id": config["person_id"]},
+        },
+        "Homepage WebSite schema does not match the stable site identity.",
     )
     for label, url in (
         ("Google Scholar", profile["external_links"]["google_scholar"]),
@@ -1304,6 +1345,36 @@ def validate_site():
             "Publications Open Graph URL",
         ) == publications_url,
         "Wrong publications Open Graph URL.",
+    )
+    expected_publications_title = (
+        f"All Publications | {config['researcher_name']} "
+        f"({config['researcher_name_zh']})"
+    )
+    publications_description = single_meta_content(
+        publications_html, "description", "Publications meta description"
+    )
+    require(
+        single_property_meta_content(
+            publications_html, "og:title", "Publications Open Graph title"
+        )
+        == expected_publications_title,
+        "Publications Open Graph title must match the page title.",
+    )
+    require(
+        single_property_meta_content(
+            publications_html,
+            "og:description",
+            "Publications Open Graph description",
+        )
+        == publications_description,
+        "Publications Open Graph description must match the meta description.",
+    )
+    require(
+        single_property_meta_content(
+            publications_html, "og:type", "Publications Open Graph type"
+        )
+        == "website",
+        "Publications Open Graph type must be website.",
     )
     publications_schema = json_ld_object(publications_html, "ProfilePage", "Publications page")
     require(
@@ -1407,6 +1478,13 @@ def validate_site():
 
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     llms_full = (ROOT / "llms-full.txt").read_text(encoding="utf-8")
+    require(
+        llms.startswith(
+            f"# {config['researcher_name']} Academic Hub\n\n"
+            "> An author-controlled academic evidence hub for verified publications and research pages.\n\n"
+        ),
+        "llms.txt must contain the approved description immediately after its H1.",
+    )
     identity_lines = (
         f"- Researcher: {config['researcher_name']}",
         f"- Chinese name: {config['researcher_name_zh']}",

@@ -1,5 +1,7 @@
 # Ge Zhang Academic Hub
 
+> An author-controlled academic evidence hub for verified publications and research pages.
+
 - Researcher: Ge Zhang
 - Chinese name: 张格
 - Canonical person: https://drgezhang.com/#person

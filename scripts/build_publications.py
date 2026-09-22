@@ -113,6 +113,17 @@ def homepage_profile_schema(config):
     }
 
 
+def homepage_website_schema(config):
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": f"{config['site_url']}/#website",
+        "url": f"{config['site_url']}/",
+        "name": f"{config['researcher_name']} Academic Hub",
+        "creator": {"@id": config["person_id"]},
+    }
+
+
 def write_text_if_changed(path, content):
     previous = path.read_text(encoding="utf-8") if path.is_file() else None
     changed = previous != content
@@ -210,6 +221,9 @@ def update_homepage(index_html, config):
     origin_block = (
         f'{HOME_ORIGIN_START}\n'
         f'<link rel="canonical" href="{html.escape(homepage_url, quote=True)}">\n'
+        f'<meta property="og:title" content="{html.escape(page_title, quote=True)}">\n'
+        f'<meta property="og:description" content="{html.escape(meta_description, quote=True)}">\n'
+        f'<meta property="og:type" content="website">\n'
         f'<meta property="og:url" content="{html.escape(homepage_url, quote=True)}">\n'
         f'{HOME_ORIGIN_END}'
     )
@@ -244,6 +258,35 @@ def update_homepage(index_html, config):
     index_html = schema_pattern.sub(update_schema, index_html)
     if profile_schema_count != 1:
         raise ValueError("index.html must contain exactly one identity ProfilePage JSON-LD object.")
+
+    website_schema = json.dumps(
+        homepage_website_schema(config), ensure_ascii=False
+    ).replace("</", "<\\/")
+    website_script = f'<script type="application/ld+json">{website_schema}</script>'
+    website_matches = [
+        match
+        for match in schema_pattern.finditer(index_html)
+        if json.loads(match.group(2)).get("@type") == "WebSite"
+    ]
+    if len(website_matches) == 1:
+        match = website_matches[0]
+        index_html = index_html[:match.start()] + website_script + index_html[match.end():]
+    elif not website_matches:
+        profile_matches = [
+            match
+            for match in schema_pattern.finditer(index_html)
+            if json.loads(match.group(2)).get("@type") == "ProfilePage"
+        ]
+        if len(profile_matches) != 1:
+            raise ValueError("index.html must contain exactly one ProfilePage JSON-LD object.")
+        insertion_point = profile_matches[0].end()
+        index_html = (
+            index_html[:insertion_point]
+            + website_script
+            + index_html[insertion_point:]
+        )
+    else:
+        raise ValueError("index.html must contain at most one WebSite JSON-LD object.")
 
     identity_block = (
         f"{HOME_IDENTITY_START}\n"
@@ -1468,12 +1511,25 @@ def render_publications_page(items, config):
         "hasPart": [paper_schema(item, item["paper_url"], config) for item in items],
     }
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
+    page_title = (
+        f"All Publications | {config['researcher_name']} "
+        f"({config['researcher_name_zh']})"
+    )
+    meta_description = (
+        f"Publication record of {config['researcher_name']} "
+        f"({config['researcher_name_zh']}), using ORCID {config['orcid']} "
+        "as the identity anchor."
+    )
+    publications_url = absolute(config["site_url"], "publications.html")
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>All Publications | {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])})</title>
-<meta name="description" content="Publication record of {html.escape(config["researcher_name"], quote=True)} ({html.escape(config["researcher_name_zh"], quote=True)}), using ORCID {html.escape(config["orcid"], quote=True)} as the identity anchor.">
-<link rel="canonical" href="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
-<meta property="og:url" content="{html.escape(absolute(config["site_url"], "publications.html"), quote=True)}">
+<title>{html.escape(page_title)}</title>
+<meta name="description" content="{html.escape(meta_description, quote=True)}">
+<link rel="canonical" href="{html.escape(publications_url, quote=True)}">
+<meta property="og:title" content="{html.escape(page_title, quote=True)}">
+<meta property="og:description" content="{html.escape(meta_description, quote=True)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{html.escape(publications_url, quote=True)}">
 <link rel="stylesheet" href="assets/style.css"></head><body>
 <header><nav><a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks">
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
@@ -1550,6 +1606,8 @@ def write_machine_indexes(items, deep_items, config):
     )
     short_lines = [
         f"# {config['researcher_name']} Academic Hub",
+        "",
+        "> An author-controlled academic evidence hub for verified publications and research pages.",
         "",
         f"- Researcher: {config['researcher_name']}",
         f"- Chinese name: {config['researcher_name_zh']}",
