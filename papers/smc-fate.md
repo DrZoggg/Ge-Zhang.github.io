@@ -150,7 +150,7 @@ Context: Pathway enrichment and inferred cell-landscape analyses
 
 Source locator: Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5G-I; Results: Assessment of multi-dimensional potential biological implications, Fig. 7A-G
 
-## Study Design & Model Development
+## Study Design & Analytical Framework
 
 ### Study profile
 
@@ -159,7 +159,7 @@ Source locator: Results: The molecular subtyping of atherosclerosis based on cel
 - Population: Human atherosclerosis and coronary artery disease samples spanning different degrees of coronary stenosis, stable coronary artery disease, and acute myocardial infarction, together with human coronary atherosclerotic plaque single-cell data
 - Primary Endpoint: Identification of SMC cell-fate-associated transcriptional programs and SCFDS-based molecular subtypes of atherosclerosis
 - Secondary Endpoint: Characterization of subtype biological programs, coronary stenosis associations, and cross-cohort expression-template reproducibility
-- External validation: Yes
+- External dataset evaluation: Yes
 - Data modalities: single-cell RNA sequencing, bulk transcriptomics, coronary stenosis phenotypes, clinical coronary disease states, pathway and cellular-microenvironment inference
 
 ## What This Study Adds

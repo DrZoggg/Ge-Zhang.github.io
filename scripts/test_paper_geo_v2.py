@@ -224,6 +224,27 @@ def run_tests():
     assert len(olink_items) == 1
     assert norm_doi(deep_entries[3].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
+    expected_production_labels = {
+        AIHFLEVEL_DOI: (
+            "Study Design & Model Development",
+            "External validation",
+        ),
+        APVS_DOI: (
+            "Study Design & Model Development",
+            "External dataset evaluation",
+        ),
+        SMC_FATE_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
+        ),
+        OLINK_DCM_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
+        ),
+    }
+    assert {norm_doi(item[0].get("doi")) for item in v2_items} == set(
+        expected_production_labels
+    )
 
     for publication, content in v2_items:
         page, markdown, schema = rendered_v2(
@@ -231,6 +252,26 @@ def run_tests():
         )
         assert schema["description"] == content["author_summary"]
         assert schema["keywords"] == flatten_concepts(content)
+        doi = norm_doi(publication.get("doi"))
+        expected_heading, expected_external_label = expected_production_labels[doi]
+        html_heading = expected_heading.replace("&", "&amp;")
+        assert f'data-v2-section="study-design"><h2>{html_heading}</h2>' in page
+        assert f"## {expected_heading}" in markdown
+        assert f"<dt>{expected_external_label}</dt><dd>Yes</dd>" in page
+        assert f"- {expected_external_label}: Yes" in markdown
+        unexpected_heading = (
+            "Study Design & Analytical Framework"
+            if "Model Development" in expected_heading
+            else "Study Design & Model Development"
+        )
+        unexpected_external_label = (
+            "External dataset evaluation"
+            if expected_external_label == "External validation"
+            else "External validation"
+        )
+        assert f"## {unexpected_heading}" not in markdown
+        assert f"<dt>{unexpected_external_label}</dt>" not in page
+        assert f"- {unexpected_external_label}:" not in markdown
         if norm_doi(publication.get("doi")) == AIHFLEVEL_DOI:
             validate_aihflevel_v2_regression(content, publication, page)
             assert page == (PAPERS_DIR / "aihflevel.html").read_text(encoding="utf-8")

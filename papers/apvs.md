@@ -161,7 +161,7 @@ Source locator: Results: Intercellular crosstalk within the atherosclerotic core
 - Population: Atherosclerotic and coronary artery disease samples spanning stable and unstable clinical and pathological states
 - Primary Endpoint: Discrimination of atherosclerotic and coronary pathological states using the APVS classifier
 - Secondary Endpoint: Clinical and biological quantification of plaque vulnerability using APVSLevel
-- External validation: Yes
+- External dataset evaluation: Yes
 - Data modalities: bulk transcriptomics, single-cell RNA sequencing, clinical outcomes, coronary stenosis phenotypes
 
 ### Model development

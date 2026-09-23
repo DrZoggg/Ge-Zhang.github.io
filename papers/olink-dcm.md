@@ -141,7 +141,7 @@ Context: Computational biological interpretation of the 13-protein differential-
 
 Source locator: Results 3.3: GO Enrichment Analysis of Target Genes of DCM-HF DEPs; Results 3.4: Protein-Protein Interaction Network Analysis of DEPs in DCM-HF; Fig. 3A-E; Fig. S2
 
-## Study Design & Model Development
+## Study Design & Analytical Framework
 
 ### Study profile
 
@@ -150,7 +150,7 @@ Source locator: Results 3.3: GO Enrichment Analysis of Target Genes of DCM-HF DE
 - Population: Locally recruited adults with dilated cardiomyopathy and heart failure (DCM-HF) and healthy controls, together with external human DCM and non-failing/control cardiac transcriptomic datasets
 - Primary Endpoint: Identification and independent plasma-assay replication of DCM-HF-associated protein biomarkers
 - Secondary Endpoint: Evaluation of diagnostic discrimination of the corresponding gene-expression panel across external cardiac transcriptomic datasets and biological/clinical contextualization of the differential-protein set
-- External validation: Yes
+- External dataset evaluation: Yes
 - Data modalities: targeted plasma proteomics, plasma ELISA, human cardiac transcriptomics, clinical phenotypes, functional enrichment and protein-interaction analysis
 
 ## What This Study Adds

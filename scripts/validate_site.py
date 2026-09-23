@@ -312,13 +312,33 @@ def validate_v2_rendered_page(
     snapshot_heading = (
         "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
     )
+    expected_study_heading = (
+        "Study Design & Model Development"
+        if content.get("model_profile")
+        else "Study Design & Analytical Framework"
+    )
+    unexpected_study_heading = (
+        "Study Design & Analytical Framework"
+        if content.get("model_profile")
+        else "Study Design & Model Development"
+    )
+    expected_external_label = (
+        "External validation"
+        if profile_type == "clinical_cohort"
+        else "External dataset evaluation"
+    )
+    unexpected_external_label = (
+        "External dataset evaluation"
+        if profile_type == "clinical_cohort"
+        else "External validation"
+    )
     expected_headings = [
         "Full Authors",
         snapshot_heading,
         "Research Question",
         "Author Evidence Summary",
         "Key Findings",
-        "Study Design & Model Development",
+        expected_study_heading,
         "What This Study Adds",
         "Evidence Scope",
         "Q&A",
@@ -363,6 +383,37 @@ def validate_v2_rendered_page(
     study_markup = page.split('data-v2-section="study-design"', 1)[1].split(
         'data-v2-section="what-this-adds"', 1
     )[0]
+    require(
+        f"## {expected_study_heading}" in markdown,
+        f"{label} Markdown study heading changed.",
+    )
+    require(
+        f"## {unexpected_study_heading}" not in markdown,
+        f"{label} Markdown renders a study heading for the wrong source semantics.",
+    )
+    study_labels = element_texts(study_markup, "dt")
+    require(
+        study_labels.count(expected_external_label) == 1,
+        f"{label} external evidence label changed.",
+    )
+    require(
+        unexpected_external_label not in study_labels,
+        f"{label} renders an external evidence label for the wrong profile type.",
+    )
+    external_value = v2_value(study["external_validation"])
+    require(
+        f"<dt>{expected_external_label}</dt><dd>{external_value}</dd>"
+        in study_markup,
+        f"{label} external evidence value changed.",
+    )
+    require(
+        f"- {expected_external_label}: {external_value}" in markdown,
+        f"{label} Markdown external evidence label changed.",
+    )
+    require(
+        f"- {unexpected_external_label}:" not in markdown,
+        f"{label} Markdown renders an external evidence label for the wrong profile type.",
+    )
     if profile_type == "clinical_cohort":
         require("Unique total" in snapshot_markup, f"{label} unique total is missing.")
         require("Cohort hierarchy" in study_markup, f"{label} cohort hierarchy is missing.")

@@ -794,6 +794,24 @@ def v2_label(key):
     return labels.get(key, key.replace("_", " ").title())
 
 
+def v2_study_heading(content):
+    return (
+        "Study Design & Model Development"
+        if content.get("model_profile")
+        else "Study Design & Analytical Framework"
+    )
+
+
+def v2_study_label(key, profile_type):
+    if key == "external_validation":
+        return (
+            "External validation"
+            if profile_type == "clinical_cohort"
+            else "External dataset evaluation"
+        )
+    return v2_label(key)
+
+
 def v2_value(value):
     if isinstance(value, bool):
         return "Yes" if value else "No"
@@ -913,7 +931,8 @@ def render_deep_v2_html(content, related_papers):
     if profile_type == "clinical_cohort":
         study_detail_keys.insert(2, "unique_total_n")
     study_details = "".join(
-        f"<dt>{html.escape(v2_label(key))}</dt><dd>{html.escape(v2_value(study[key]))}</dd>"
+        f"<dt>{html.escape(v2_study_label(key, profile_type))}</dt>"
+        f"<dd>{html.escape(v2_value(study[key]))}</dd>"
         for key in study_detail_keys
     )
     modalities = "".join(
@@ -1048,7 +1067,7 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
-<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>Study Design &amp; Model Development</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
+<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>What This Study Adds</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
@@ -1131,12 +1150,12 @@ def render_deep_v2_markdown(content, related_papers):
         study_detail_keys.insert(2, "unique_total_n")
     parts.extend(
         [
-            "## Study Design & Model Development",
+            f"## {v2_study_heading(content)}",
             "",
             "### Study profile",
             "",
             *[
-                f"- {v2_label(key)}: {v2_value(study[key])}"
+                f"- {v2_study_label(key, profile_type)}: {v2_value(study[key])}"
                 for key in study_detail_keys
             ],
             "- Data modalities: " + ", ".join(study["data_modalities"]),
