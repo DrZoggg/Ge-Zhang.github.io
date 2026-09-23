@@ -20,9 +20,11 @@ from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import (
     APVS_DOI,
     AIHFLEVEL_DOI,
+    SMC_FATE_DOI,
     paper_json_ld_object,
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
+    validate_smc_fate_v2_regression,
     validate_v2_inventory,
     validate_v2_rendered_page,
 )
@@ -208,6 +210,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == APVS_DOI
     ]
     assert len(apvs_items) == 1
+    smc_fate_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == SMC_FATE_DOI
+    ]
+    assert len(smc_fate_items) == 1
 
     for publication, content in v2_items:
         page, markdown, schema = rendered_v2(
@@ -227,6 +233,12 @@ def run_tests():
             assert "### Interpretability" not in markdown
             assert page == (PAPERS_DIR / "apvs.html").read_text(encoding="utf-8")
             assert markdown == (PAPERS_DIR / "apvs.md").read_text(encoding="utf-8")
+        elif norm_doi(publication.get("doi")) == SMC_FATE_DOI:
+            validate_smc_fate_v2_regression(content, publication, page)
+            assert page == (PAPERS_DIR / "smc-fate.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / "smc-fate.md").read_text(
+                encoding="utf-8"
+            )
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])
@@ -238,6 +250,26 @@ def run_tests():
         "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html",
         "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
     ]
+
+    smc_publication, smc_content = smc_fate_items[0]
+    related = resolve_related_papers(
+        smc_content, public_by_doi, config["site_url"]
+    )
+    assert [item["doi"] for item in related] == [
+        "10.1016/j.isci.2023.107587",
+        "10.1172/jci194175",
+        "10.1093/eurheartj/ehaf523",
+    ]
+    assert [item["url"] for item in related] == [
+        "https://drgezhang.com/papers/apvs.html",
+        "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+        "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+    ]
+    persisted_page = (PAPERS_DIR / "smc-fate.html").read_text(encoding="utf-8")
+    persisted_markdown = (PAPERS_DIR / "smc-fate.md").read_text(encoding="utf-8")
+    for item in related:
+        assert item["relationship"] in persisted_page
+        assert item["relationship"] in persisted_markdown
 
     synthetic_publication, synthetic = synthetic_multicohort_fixture()
     synthetic_page, synthetic_markdown, synthetic_schema = rendered_v2(

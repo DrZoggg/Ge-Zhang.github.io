@@ -50,6 +50,7 @@ LEGACY_SITE_URL = "https://drzoggg.github.io/Ge-Zhang.github.io"
 INDEXNOW_CONFIG_PATH = ROOT / "data" / "indexnow_config.json"
 AIHFLEVEL_DOI = "10.1038/s41467-024-50415-9"
 APVS_DOI = "10.1016/j.isci.2023.107587"
+SMC_FATE_DOI = "10.1186/s12967-022-03795-9"
 
 
 def require(condition, message):
@@ -636,6 +637,239 @@ def validate_apvs_v2_regression(content, publication, page):
     )
 
 
+def validate_smc_fate_v2_regression(content, publication, page):
+    label = "SMC fate Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(norm_doi(content.get("doi")) == SMC_FATE_DOI, f"{label} DOI changed.")
+    require(
+        norm_doi(publication.get("doi")) == SMC_FATE_DOI,
+        f"{label} does not match its master record.",
+    )
+    require(publication.get("slug") == "smc-fate", f"{label} slug changed.")
+    require(
+        single_html_url(
+            page,
+            r'<link rel="canonical" href="([^"]*)">',
+            f"{label} canonical URL",
+        )
+        == f"{CANONICAL_SITE_URL}/papers/smc-fate.html",
+        f"{label} canonical URL changed.",
+    )
+
+    study = content["study_profile"]
+    require(
+        study.get("profile_type") == "multicohort_omics",
+        f"{label} profile type changed.",
+    )
+    require("unique_total_n" not in study, f"{label} must not derive a unique total n.")
+    require("model_profile" not in content, f"{label} must not invent a model profile.")
+    expected_scale = {
+        "single-cell donors": "4 cardiac transplant recipients with diseased right-coronary-artery segments",
+        "single cells after quality control": "11,756",
+        "major plaque cell populations": "8",
+        "SMCs analyzed in depth": "5,419",
+        "SMC transcriptional clusters": "9",
+        "SMC pseudotime states": "5",
+        "SMC cell-fate leader genes": "1,072",
+        "Mfuzz temporal gene modules": "8",
+        "bulk transcriptomic scale reported in Abstract": "1,070 samples across six bulk cohorts",
+        "discovery cohort": "GSE20680; 195 blood-expression samples stratified by coronary stenosis severity",
+        "SCFDS molecular subtypes": "3",
+        "external NTP cohorts": "5",
+    }
+    require(
+        {item["label"]: item["value"] for item in study["scale_metrics"]}
+        == expected_scale,
+        f"{label} evidence scale changed.",
+    )
+    require(
+        study["counting_note"]
+        == "The article reports 1,070 bulk transcriptomic samples across six bulk cohorts in the Abstract, while the Methods states that 1,074 samples from seven independent public cohorts were enrolled and separately describes the four-donor single-cell dataset. Participants, longitudinal samples, bulk transcriptomic samples and single cells represent different counting units and are therefore preserved by modality rather than combined into a derived unique-participant total. The article also contains minor inconsistencies in cohort enumeration, so dataset-level provenance is reported explicitly.",
+        f"{label} counting note changed.",
+    )
+
+    findings = {item["id"]: item for item in content["key_findings"]}
+    expected_evidence = {
+        "KF1": [
+            ("single-cell donors", "4"),
+            ("post-QC plaque cells", "11,756"),
+            ("major plaque cell populations", "8"),
+            ("SMCs analyzed", "5,419"),
+            ("SMC clusters", "9"),
+        ],
+        "KF2": [
+            ("pseudotime states", "5"),
+            ("trajectory structure", "five cellular states separated at two key time points"),
+            ("early-state enrichment", "SMC4 and SMC6"),
+            ("intermediate high-plasticity enrichment", "SMC2, SMC5 and SMC7"),
+            ("terminal-state enrichment", "SMC1, SMC8 and SMC9"),
+            ("phenotypic trend", "contractile-like features declined; fibroblast-like markers increased through the middle-to-late trajectory before decreasing at the terminal end"),
+        ],
+        "KF3": [
+            ("SMC cell-fate leader genes", "1,072"),
+            ("Mfuzz temporal modules", "8"),
+            ("SCFDS modules", "Cluster 2 and Cluster 6, representing progressively upregulated and downregulated programs"),
+            ("upregulated SCFDS programs", "extracellular matrix, inflammatory response and TGF-beta-related processes"),
+            ("downregulated SCFDS programs", "vasculature development and AGE-RAGE-related processes"),
+        ],
+        "KF4": [
+            ("optimal subtype number", "3"),
+            ("C1", "DNA-damage repair type"),
+            ("C2", "immune-activated type"),
+            ("C3", "stromal-rich type"),
+            ("coronary stenosis association", "C2 showed greater stenosis severity and C3 lower severity; p<0.05 in the discovery analysis"),
+        ],
+        "KF5": [
+            ("template construction", "top 300 subtype-specific upregulated genes per subtype"),
+            ("external cohorts", "5"),
+            ("datasets shown in Fig. 6", "GSE20681, GSE21545, GSE59867, GSE62646 and GSE90074"),
+            ("validation type", "retrospective expression-template reproducibility across distinct platforms"),
+        ],
+        "KF6": [
+            ("C1 programs", "base-excision repair, DNA replication, nucleotide-excision repair and oxidative phosphorylation"),
+            ("C2 programs", "stronger immune and inflammatory activation with a more complex inflammatory lesion environment"),
+            ("C3 programs", "stromal/ECM metabolism, greater fibrous content and a relatively immune-suppressed microenvironment"),
+        ],
+    }
+    expected_locators = {
+        "KF1": "Results: The landscapes of human atherosclerotic plaques revealed by scRNA-seq analysis, Fig. 2A; Results: SMC lineages' phenotypic and functional heterogeneity, Fig. 3A-E",
+        "KF2": "Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4A-C",
+        "KF3": "Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4D-H; Additional file 3: Table S1; Additional file 4: Table S2",
+        "KF4": "Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5A-I; coronary stenosis comparison in Fig. 5E",
+        "KF5": "Results: Performance of SCFDS subtypes verified by nearest template prediction, Fig. 6B-C",
+        "KF6": "Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5G-I; Results: Assessment of multi-dimensional potential biological implications, Fig. 7A-G",
+    }
+    require(
+        list(findings) == [f"KF{number}" for number in range(1, 7)],
+        f"{label} finding IDs changed.",
+    )
+    for finding_id, expected in expected_evidence.items():
+        require(
+            [
+                (item["label"], item["value"])
+                for item in findings[finding_id]["evidence"]
+            ]
+            == expected,
+            f"{label} {finding_id} evidence changed.",
+        )
+        require(
+            findings[finding_id]["source_locator"] == expected_locators[finding_id],
+            f"{label} {finding_id} source locator changed.",
+        )
+
+    provenance = content["provenance"]
+    require(provenance.get("pmcid") == "PMC9724432", f"{label} PMCID changed.")
+    require(
+        provenance.get("external_cohorts")
+        == "GSE20681; GSE21545; GSE59867; GSE62646; GSE90074",
+        f"{label} external cohort provenance changed.",
+    )
+    require(
+        provenance.get("bulk_discovery")
+        == "GSE20680; 195 samples stratified by coronary stenosis. The article Methods describes these as PBMC samples, whereas the GEO accession describes whole-blood cell expression profiling.",
+        f"{label} discovery sample-type discrepancy changed.",
+    )
+    require(
+        provenance.get("source_note_counting")
+        == "The Abstract reports 1,070 bulk samples across six bulk cohorts, whereas the Methods states 1,074 samples across seven independent public cohorts while separately describing the four-donor single-cell dataset. Counts are preserved by modality and are not collapsed into a derived unique-participant total.",
+        f"{label} cohort-count discrepancy changed.",
+    )
+    require(
+        provenance.get("source_note_sample_type")
+        == "For GSE20680, the article Methods uses the term PBMC samples, whereas the NCBI GEO record describes whole-blood cell gene-expression profiling. This evidence page preserves the discrepancy rather than silently harmonizing the sample type.",
+        f"{label} GSE20680 sample-type provenance changed.",
+    )
+    require(
+        provenance.get("source_note_accession")
+        == "The Results narrative contains GSE26081 once, whereas Fig. 6 identifies GSE20681. NCBI GEO confirms GSE20681 as the PREDICT coronary artery disease dataset; GSE26081 is an unrelated breast-cancer ER-alpha dataset. This evidence page therefore uses GSE20681 while retaining the discrepancy in provenance.",
+        f"{label} external accession discrepancy changed.",
+    )
+    non_accession_note_text = string_leaves(
+        {
+            **{key: value for key, value in content.items() if key != "provenance"},
+            "provenance": {
+                key: value
+                for key, value in provenance.items()
+                if key != "source_note_accession"
+            },
+        }
+    )
+    require(
+        not any("GSE26081" in value for value in non_accession_note_text),
+        f"{label} uses GSE26081 outside the documented accession discrepancy.",
+    )
+    require(
+        provenance.get("supplementary_material")
+        == "Additional file 1: Figure S1, single-cell RNA-seq quality control; Additional file 2: Figure S2, plaque cell-type mapping; Additional file 3: Table S1, SMC cell-fate leader genes; Additional file 4: Table S2, Mfuzz gene modules",
+        f"{label} supplementary-material provenance changed.",
+    )
+
+    require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
+    valid_finding_ids = set(findings)
+    require(
+        all(
+            set(item.get("evidence_refs", [])).issubset(valid_finding_ids)
+            for item in content["qa"]
+        ),
+        f"{label} Q&A evidence references are invalid.",
+    )
+    stenosis_answer = next(
+        item["answer"]
+        for item in content["qa"]
+        if item["question"]
+        == "Which SCFDS subtype was associated with more severe coronary stenosis?"
+    )
+    require(
+        stenosis_answer
+        == "C2, the immune-activated subtype, showed greater coronary stenosis severity in the discovery analysis, whereas C3 showed lower severity. This was an association and does not establish that the subtype causes the difference in stenosis.",
+        f"{label} stenosis association scope changed.",
+    )
+    prospective_answer = next(
+        item["answer"]
+        for item in content["qa"]
+        if item["question"]
+        == "Has SCFDS been prospectively validated for clinical decision-making or treatment selection?"
+    )
+    require(
+        prospective_answer
+        == "No. The study was retrospective and primarily computational. The authors explicitly called for additional experimental validation and prospective multicenter studies before clinical relevance or treatment-guided utility can be established.",
+        f"{label} prospective-validation scope changed.",
+    )
+
+    require(
+        [norm_doi(item["doi"]) for item in content["related_papers"]]
+        == [
+            "10.1016/j.isci.2023.107587",
+            "10.1172/jci194175",
+            "10.1093/eurheartj/ehaf523",
+        ],
+        f"{label} related research changed.",
+    )
+    page_text = visible_text(page)
+    for item in content["related_papers"]:
+        require(
+            item["relationship"] in page_text,
+            f"{label} related relationship missing from HTML.",
+        )
+    required_scope_boundaries = [
+        "That pseudotime directly observes individual human SMCs transforming longitudinally within the same lesion.",
+        "That C1, C2 and C3 are prospectively validated clinical diagnostic or prognostic classes.",
+        "That C2 causes coronary stenosis progression or that C3 causally protects against plaque progression or clinical events.",
+        "That pathway enrichment or inferred cell-composition differences prove the underlying mechanisms.",
+        "That retrospective NTP reproducibility is equivalent to prospective multicenter clinical validation.",
+        "That SCFDS-guided treatment improves myocardial infarction, mortality or other clinical outcomes.",
+        "That the therapeutic hypotheses discussed by the authors constitute validated treatment recommendations.",
+    ]
+    require(
+        all(
+            boundary in content["evidence_scope"]["does_not_establish"]
+            and boundary in page_text
+            for boundary in required_scope_boundaries
+        ),
+        f"{label} scientific scope boundaries changed.",
+    )
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -645,6 +879,10 @@ def validate_v2_inventory(v2_dois):
     require(
         APVS_DOI in v2_dois,
         "APVS must remain a Paper GEO 2.0 Gold Standard page.",
+    )
+    require(
+        SMC_FATE_DOI in v2_dois,
+        "SMC fate must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
         len(v2_dois) == len(set(v2_dois)),
@@ -1056,6 +1294,8 @@ def validate_site():
                     validate_aihflevel_v2_regression(content, item, page)
                 elif content_doi == APVS_DOI:
                     validate_apvs_v2_regression(content, item, page)
+                elif content_doi == SMC_FATE_DOI:
+                    validate_smc_fate_v2_regression(content, item, page)
             else:
                 require(
                     content.get("version") == 1,
