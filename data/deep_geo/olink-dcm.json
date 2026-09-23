@@ -1,12 +1,453 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1021/acs.jproteome.4c00522",
-  "display_title": "Olink proteomics in DCM-HF",
-  "summary": "Plasma Olink proteomics for biomarker discovery and diagnosis in dilated cardiomyopathy with heart failure.",
-  "keywords": ["Olink proteomics", "dilated cardiomyopathy", "heart failure", "SPP1", "IGFBP7", "F11R", "CHI3L1", "PLAUR"],
-  "questions": [
-    "What Olink protein biomarkers are associated with dilated cardiomyopathy and heart failure?",
-    "Which plasma proteins correlate with DCM-HF severity?",
-    "What proteomic biomarkers may aid DCM-HF diagnosis?"
-  ]
+  "display_title": "Olink DCM-HF: targeted plasma proteomics, ELISA replication, and external cardiac transcriptomic evaluation",
+  "summary": "A targeted plasma-proteomics biomarker study that profiles 92 cardiovascular-related proteins in DCM-HF, prioritizes five candidate markers, replicates their plasma abundance with ELISA in an independent local cohort, and evaluates the corresponding five-gene expression panel across three external human cardiac transcriptomic datasets.",
+  "research_question": "Can targeted plasma proteomics identify DCM-HF-associated proteins that replicate in an independent plasma ELISA cohort and retain diagnostic discrimination as corresponding gene-expression markers across external human cardiac transcriptomic datasets?",
+  "author_summary": "This study used targeted plasma proteomics to identify DCM-HF-associated protein signals and then evaluated their reproducibility across an independent plasma assay and external cardiac transcriptomic datasets. Among 103 locally recruited participants, 38 individuals (20 DCM-HF and 18 healthy controls) formed the Olink discovery cohort, in which 92 cardiovascular-related proteins were profiled. Thirty-three proteins differed at p<0.05, and 13 showed marked higher abundance in DCM-HF, remained significant after FDR correction, and were all upregulated in the discovery analysis. Five candidates—SPP1, IGFBP7, F11R, CHI3L1 and PLAUR—were prioritized and subsequently measured by ELISA in an independent 65-participant plasma cohort (30 DCM-HF and 35 controls), where all five were higher in DCM-HF (P<0.001). The corresponding five-gene expression panel also showed diagnostic discrimination across three external human cardiac transcriptomic datasets, with combined AUCs of 0.959, 0.773 and 0.803. These findings support a cross-assay biomarker-discovery framework for DCM-HF, but they do not establish prospective disease prediction, clinically validated diagnostic utility, causal mechanisms, or treatment benefit.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Cross-sectional targeted plasma-proteomics biomarker discovery and validation study with external human cardiac transcriptomic evaluation",
+    "evidence_type": "Targeted plasma proteomics, independent plasma ELISA replication, cardiac transcriptomics, ROC analysis, clinical correlation analysis, functional enrichment, and protein-protein interaction analysis",
+    "population": "Locally recruited adults with dilated cardiomyopathy and heart failure (DCM-HF) and healthy controls, together with external human DCM and non-failing/control cardiac transcriptomic datasets",
+    "primary_endpoint": "Identification and independent plasma-assay replication of DCM-HF-associated protein biomarkers",
+    "secondary_endpoint": "Evaluation of diagnostic discrimination of the corresponding gene-expression panel across external cardiac transcriptomic datasets and biological/clinical contextualization of the differential-protein set",
+    "data_modalities": [
+      "targeted plasma proteomics",
+      "plasma ELISA",
+      "human cardiac transcriptomics",
+      "clinical phenotypes",
+      "functional enrichment and protein-interaction analysis"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "local participants",
+        "value": "103: 50 DCM-HF and 53 healthy controls"
+      },
+      {
+        "label": "Olink discovery cohort",
+        "value": "38 participants: 20 DCM-HF and 18 healthy controls"
+      },
+      {
+        "label": "Olink panel",
+        "value": "92 cardiovascular-related proteins"
+      },
+      {
+        "label": "proteins differing at p<0.05",
+        "value": "33"
+      },
+      {
+        "label": "focused differentially abundant proteins",
+        "value": "13; all higher in DCM-HF, P<0.001 in Results and significant after FDR correction"
+      },
+      {
+        "label": "prioritized candidate markers",
+        "value": "5: SPP1, IGFBP7, F11R, CHI3L1 and PLAUR"
+      },
+      {
+        "label": "independent ELISA cohort",
+        "value": "65 participants: 30 DCM-HF and 35 healthy controls"
+      },
+      {
+        "label": "external cardiac transcriptomic datasets",
+        "value": "3: GSE116250, GSE141910 and GSE165303"
+      },
+      {
+        "label": "combined five-gene AUCs",
+        "value": "0.959, 0.773 and 0.803, respectively"
+      },
+      {
+        "label": "external-evaluation modality",
+        "value": "human cardiac gene expression; not independent plasma proteomics"
+      }
+    ],
+    "counting_note": "The article reports 103 local participants across two separate cohorts: 38 participants in the Olink discovery cohort and 65 participants in the ELISA validation cohort. These local counts can be combined because the article explicitly reports 50 DCM-HF patients and 53 healthy controls overall. The three external GEO datasets are different evidence units: article-reported analyzed sample counts differ from native or independently documented dataset composition for several accessions. External dataset counts are therefore preserved as reported in provenance and are not aggregated into a derived external total n."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Targeted plasma proteomics identified a focused DCM-HF-associated protein signature.",
+      "context": "Olink Cardiovascular III profiling in the 38-participant discovery cohort",
+      "evidence": [
+        {
+          "label": "discovery cohort",
+          "value": "20 DCM-HF and 18 healthy controls"
+        },
+        {
+          "label": "proteins profiled",
+          "value": "92"
+        },
+        {
+          "label": "overall abundance direction",
+          "value": "75 higher and 17 lower in DCM-HF"
+        },
+        {
+          "label": "proteins at p<0.05",
+          "value": "33"
+        },
+        {
+          "label": "focused DEP set",
+          "value": "13 proteins; all higher in DCM-HF"
+        },
+        {
+          "label": "focused DEP significance",
+          "value": "P<0.001 in Results; remained significant after FDR correction"
+        },
+        {
+          "label": "Fig. 1D display threshold",
+          "value": "absolute logFC >0.5 and p<0.05"
+        }
+      ],
+      "source_locator": "Results 3.2: Identification of Cardiovascular-Related Biomarkers Using Olink; Fig. 1A-D; Fig. 2; Table S1"
+    },
+    {
+      "id": "KF2",
+      "claim": "Five candidate plasma markers were prioritized from the differential-protein set for focused validation.",
+      "context": "Candidate prioritization after Olink differential-abundance and bioinformatic analyses",
+      "evidence": [
+        {
+          "label": "prioritized markers",
+          "value": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR"
+        },
+        {
+          "label": "Methods selection description",
+          "value": "DEPs with at least 1.3-fold change and pivotal roles in KEGG pathways"
+        },
+        {
+          "label": "Results selection description",
+          "value": "selected based on the highest fold changes and bioinformatics analysis"
+        }
+      ],
+      "source_locator": "Methods 2.7: ELISA Validation in Plasma; Results 3.6: ELISA Validation of Differentially Expressed Proteins in DCM-HF Plasma"
+    },
+    {
+      "id": "KF3",
+      "claim": "The five prioritized plasma markers showed directionally consistent replication with ELISA in an independent local cohort.",
+      "context": "Independent plasma ELISA cohort using a second assay",
+      "evidence": [
+        {
+          "label": "ELISA cohort",
+          "value": "65 participants"
+        },
+        {
+          "label": "DCM-HF",
+          "value": "30"
+        },
+        {
+          "label": "healthy controls",
+          "value": "35"
+        },
+        {
+          "label": "markers",
+          "value": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR"
+        },
+        {
+          "label": "direction",
+          "value": "all five higher in DCM-HF"
+        },
+        {
+          "label": "reported group-comparison significance",
+          "value": "P<0.001"
+        }
+      ],
+      "source_locator": "Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; Table S5"
+    },
+    {
+      "id": "KF4",
+      "claim": "The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.",
+      "context": "Cross-dataset ROC evaluation of cardiac gene-expression markers rather than independent plasma-protein measurements",
+      "evidence": [
+        {
+          "label": "GSE116250 combined AUC",
+          "value": "0.959; 95% CI 0.905-0.996"
+        },
+        {
+          "label": "GSE141910 combined AUC",
+          "value": "0.773; 95% CI 0.719-0.820"
+        },
+        {
+          "label": "GSE165303 combined AUC",
+          "value": "0.803; 95% CI 0.706-0.888"
+        },
+        {
+          "label": "external modality",
+          "value": "human cardiac transcriptomics"
+        },
+        {
+          "label": "interpretation boundary",
+          "value": "diagnostic discrimination in existing datasets, not prospective incident-DCM prediction"
+        }
+      ],
+      "source_locator": "Methods 2.7-2.8; Results 3.6; Fig. 5A-C"
+    },
+    {
+      "id": "KF5",
+      "claim": "The differential-protein profile was associated with clinical measures of heart-failure severity and systemic physiology.",
+      "context": "Correlation analysis between DCM-HF-associated plasma proteins and clinical indicators",
+      "evidence": [
+        {
+          "label": "reported positive associations",
+          "value": "included CRP, LDL-C and NT-proBNP"
+        },
+        {
+          "label": "reported negative associations",
+          "value": "included albumin, eGFR and LVEF"
+        },
+        {
+          "label": "correlation-screening threshold",
+          "value": "r = 0.3 and p<0.05"
+        }
+      ],
+      "source_locator": "Results 3.5: Relationship between Differentially Expressed Proteins and DCM-HF; Table 2; Tables S2-S4; Fig. S3"
+    },
+    {
+      "id": "KF6",
+      "claim": "Functional-enrichment and protein-interaction analyses placed the DCM-HF-associated protein set within inflammatory, remodeling, adhesion, fibrinolytic, and related biological programs.",
+      "context": "Computational biological interpretation of the 13-protein differential-abundance set",
+      "evidence": [
+        {
+          "label": "GO interpretation",
+          "value": "biological regulation, cell migration/proliferation, platelet aggregation and multicellular regulation among reported processes"
+        },
+        {
+          "label": "PPI network",
+          "value": "12 of 13 target proteins retained after isolated targets were excluded"
+        },
+        {
+          "label": "STRING confidence cutoff",
+          "value": "900"
+        },
+        {
+          "label": "interconnected candidates",
+          "value": "included SPP1, PLAUR, F11R, CHI3L1, CCL15, CCL2 and CDH5"
+        },
+        {
+          "label": "evidence scope",
+          "value": "computational association and hypothesis generation, not mechanistic confirmation"
+        }
+      ],
+      "source_locator": "Results 3.3: GO Enrichment Analysis of Target Genes of DCM-HF DEPs; Results 3.4: Protein-Protein Interaction Network Analysis of DEPs in DCM-HF; Fig. 3A-E; Fig. S2"
+    }
+  ],
+  "what_this_adds": [
+    "Establishes a targeted plasma-proteomics discovery layer for DCM-HF by systematically evaluating 92 cardiovascular-related proteins rather than focusing on a single candidate biomarker.",
+    "Adds independent local plasma replication using ELISA in a separate participant cohort and a different assay platform.",
+    "Connects circulating-protein findings to corresponding gene-expression signals across three external human cardiac transcriptomic datasets while preserving the distinction between protein-level and transcript-level evidence.",
+    "Places the biomarker signals into clinical and biological context through correlation, functional-enrichment and protein-interaction analyses, generating hypotheses for larger validation and mechanistic studies."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "A predefined 92-protein cardiovascular Olink panel detected differential plasma protein abundance between the studied DCM-HF and healthy-control groups.",
+      "Thirteen proteins showed marked higher abundance in the Olink discovery analysis and remained significant after FDR correction.",
+      "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR showed directionally consistent higher plasma levels in an independent local ELISA cohort.",
+      "The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.",
+      "Several DCM-HF-associated plasma proteins were correlated with clinical indicators including NT-proBNP, LVEF, CRP and eGFR in the studied cohort.",
+      "Functional-enrichment and protein-interaction analyses provide biological hypotheses involving inflammatory, remodeling and related processes.",
+      "The five prioritized markers constitute candidates for larger biomarker-validation studies."
+    ],
+    "does_not_establish": [
+      "That the Olink analysis provides an unbiased whole-proteome survey; it used a predefined targeted cardiovascular panel.",
+      "That the 13 differentially abundant proteins cause DCM-HF or directly determine disease severity.",
+      "That SPP1, IGFBP7, F11R, CHI3L1 or PLAUR are clinically validated diagnostic tests for DCM-HF.",
+      "That external cardiac transcriptomic evaluation constitutes independent plasma-proteomic replication.",
+      "That ROC discrimination in existing case-control/transcriptomic datasets predicts who will develop DCM-HF prospectively.",
+      "That the five-marker panel has demonstrated incremental clinical utility over echocardiography, cardiac MRI, NT-proBNP, troponin, or standard diagnostic assessment.",
+      "That correlation, GO/KEGG enrichment or PPI-network analysis establishes a causal molecular mechanism.",
+      "That any of the identified proteins is a validated therapeutic target or that biomarker-guided treatment improves clinical outcomes.",
+      "That this publication generated original mouse-model evidence; the Methods and Results do not describe an animal experiment."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many participants were included in the DCM-HF Olink proteomics study?",
+      "answer": "The article reports 103 local participants: 50 DCM-HF patients and 53 healthy controls. Thirty-eight participants formed the Olink discovery cohort, and a separate 65 participants formed the ELISA validation cohort.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    },
+    {
+      "question": "How many proteins were profiled with Olink in DCM-HF?",
+      "answer": "The Olink Cardiovascular III panel measured 92 targeted cardiovascular-related plasma proteins in 20 DCM-HF patients and 18 healthy controls.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which plasma proteins were prioritized for validation?",
+      "answer": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR were prioritized from the differential-protein analysis for focused validation.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Were the five Olink biomarkers replicated with another plasma assay?",
+      "answer": "Yes. In an independent cohort of 30 DCM-HF patients and 35 healthy controls, ELISA showed higher plasma levels of SPP1, IGFBP7, F11R, CHI3L1 and PLAUR, with P<0.001 for the reported group comparisons.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Were the five plasma proteins independently validated in external proteomic cohorts?",
+      "answer": "No. The external GEO evidence came from human cardiac gene-expression datasets. It supports the corresponding five-gene transcriptomic signal rather than independent plasma-protein replication.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What diagnostic discrimination did the five-marker gene panel show in external datasets?",
+      "answer": "The combined five-gene AUCs were 0.959 in GSE116250, 0.773 in GSE141910 and 0.803 in GSE165303.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does this study show that these proteins predict future DCM-HF?",
+      "answer": "No. The study evaluated cross-sectional or case-control discrimination and external transcriptomic classification. It did not test incident DCM-HF prediction in a prospective longitudinal cohort.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Are SPP1, IGFBP7, F11R, CHI3L1 or PLAUR validated therapeutic targets for DCM-HF?",
+      "answer": "No. The study used association, enrichment and network analyses and did not experimentally test target inhibition, target activation, or biomarker-guided treatment. Therapeutic implications remain hypothesis-generating.",
+      "evidence_refs": [
+        "KF5",
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "dilated cardiomyopathy",
+      "DCM-HF",
+      "heart failure",
+      "chronic heart failure",
+      "ventricular systolic dysfunction"
+    ],
+    "biomarkers_proteins": [
+      "SPP1",
+      "osteopontin",
+      "IGFBP7",
+      "F11R",
+      "JAM-A",
+      "CHI3L1",
+      "YKL-40",
+      "PLAUR",
+      "uPAR",
+      "NT-proBNP",
+      "BLM hydrolase",
+      "CSTB",
+      "LGALS4",
+      "Galectin-4",
+      "CCL15",
+      "CDH5",
+      "CXCL16",
+      "SR-PSOX",
+      "CCL2"
+    ],
+    "clinical_phenotypes": [
+      "LVEF",
+      "NT-proBNP",
+      "CRP",
+      "eGFR",
+      "LDL-C",
+      "albumin",
+      "heart rate"
+    ],
+    "biological_processes": [
+      "inflammation",
+      "extracellular-matrix remodeling",
+      "fibrosis",
+      "cell adhesion",
+      "fibrinolysis",
+      "tissue repair",
+      "cell migration",
+      "cell proliferation",
+      "platelet aggregation",
+      "apoptosis-related programs"
+    ],
+    "data_types": [
+      "plasma targeted proteomics",
+      "plasma ELISA",
+      "human cardiac transcriptomics",
+      "clinical phenotypes"
+    ],
+    "assays_platforms": [
+      "Olink Cardiovascular III",
+      "proximity extension assay",
+      "Normalized Protein eXpression",
+      "NPX",
+      "ELISA"
+    ],
+    "methods": [
+      "OlinkAnalyze",
+      "false-discovery-rate correction",
+      "Pearson correlation",
+      "Gene Ontology",
+      "KEGG",
+      "STRING",
+      "Cytoscape",
+      "CytoHubba",
+      "NetworkAnalyst",
+      "binary logistic regression",
+      "ROC analysis"
+    ],
+    "external_datasets": [
+      "GSE116250",
+      "GSE141910",
+      "GSE165303"
+    ],
+    "evidence_concepts": [
+      "biomarker discovery",
+      "independent assay replication",
+      "diagnostic discrimination",
+      "cross-modality external evaluation",
+      "hypothesis-generating biological interpretation"
+    ]
+  },
+  "limitations": [
+    "The Olink discovery cohort was small, with 20 DCM-HF patients and 18 healthy controls.",
+    "The Olink assay was a predefined 92-protein cardiovascular panel rather than an unbiased whole-proteome measurement.",
+    "The local discovery and ELISA analyses were cross-sectional and do not establish prospective incident-disease prediction or longitudinal prognostic performance.",
+    "The external GEO evaluation used cardiac transcriptomic data rather than independent plasma-proteomic cohorts, so it supports corresponding gene-expression discrimination rather than direct protein-level replication.",
+    "Article-reported sample counts for the external GEO datasets differ from native or independently documented dataset composition, and the exact filtering logic is not fully specified.",
+    "Clinical correlations were exploratory and were not independently replicated for each protein-clinical-variable relationship.",
+    "GO/KEGG, STRING, Cytoscape and related analyses are computational and do not establish causal mechanisms or therapeutic efficacy.",
+    "The article reports ChiCTR2100051469, but publicly indexed registry information for that identifier appears to correspond to a different study; the linkage to this DCM-HF proteomics study is therefore unresolved.",
+    "Although the Introduction refers to human plasma and mouse models, the study Methods and Results do not describe an original animal experiment; mouse evidence discussed in the article derives from cited prior studies."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.2147/jir.s495784",
+      "relationship": "Applies a related targeted Olink plasma-proteomics strategy to acute myocardial infarction, providing a methodological parallel for cardiovascular biomarker discovery across a different disease phenotype."
+    },
+    {
+      "doi": "10.1111/jcmm.17789",
+      "relationship": "Extends circulating biomarker discovery in DCM-HF to the plasma-exosomal microRNA layer, complementing the plasma-protein evidence with a distinct extracellular RNA modality."
+    },
+    {
+      "doi": "10.1007/s10238-026-02130-6",
+      "relationship": "Extends DCM molecular characterization from circulating protein biomarkers toward transcriptomic network structure and immune/inflammatory disease heterogeneity, providing a systems-level complement to the Olink biomarker study."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00522",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39129220/",
+    "pmcid": "PMC11385702",
+    "doi_url": "https://doi.org/10.1021/acs.jproteome.4c00522",
+    "version_of_record": "Journal of Proteome Research, Volume 23, Issue 9, pages 4139-4150; published online 12 August 2024 and in issue 6 September 2024",
+    "license": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)",
+    "local_ethics": "The article reports Institutional Review Board approval from the Fourth Affiliated Hospital of Soochow University, approval 2022-KT-105.",
+    "article_reported_registration": "The article reports ChiCTR2100051469; this identifier is retained as article-reported provenance only because public registry indexing appears inconsistent with the DCM-HF proteomics study.",
+    "external_datasets": "GSE116250; GSE141910; GSE165303",
+    "supporting_material": "Table S1: all 92 Olink Cardiovascular III proteins; Tables S2-S4: correlation analyses; Table S5: raw ELISA validation data; Figure S1: study flowchart; Figure S2: NetworkAnalyst/PPI analysis; Figure S3: DEP-clinical-indicator correlation visualization",
+    "code_repository": "No dedicated article-specific code repository was identified in the reviewed version-of-record resources.",
+    "source_note_external_counts": "The article reports GSE116250 as 15 controls and 38 DCM, GSE141910 as 162 controls and 162 DCM, and GSE165303 as 48 controls and 74 DCM. Native or independently documented dataset composition differs: GSE116250 contains 14 non-failing, 37 DCM and 13 ischemic-cardiomyopathy samples; GSE141910 is documented as a 366-sample left-ventricular resource including 166 non-failing and 166 DCM samples plus HCM and PPCM; GSE165303 is a multi-assay heart-tissue series whose RNA-seq subset is independently documented as 51 non-failing and 50 DCM hearts. The exact filtering logic used to obtain the article-reported analyzed counts is not fully specified, so this evidence page preserves the discrepancy and does not aggregate an external total n.",
+    "source_note_registration": "The article reports ChiCTR2100051469. Publicly indexed information for that identifier describes a magnetocardiography/myocardial-ischemia diagnostic study rather than this DCM-HF proteomics study, so the registration linkage is treated as unresolved and should not be represented as a verified ClinicalTrial entity or trial sameAs link.",
+    "source_note_mouse_models": "The Introduction refers to exploring mechanisms in human plasma and mouse models, but the Methods and Results do not describe an original animal experiment in this publication. Mouse evidence discussed in the article derives from cited prior studies and is not treated as evidence generated by this study.",
+    "evidence_basis": "ACS version of record and Supporting Information, PubMed/PMC records, NCBI GEO records, and independently documented dataset composition used to audit provenance discrepancies"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record."
 }

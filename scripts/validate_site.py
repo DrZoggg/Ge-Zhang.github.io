@@ -51,6 +51,7 @@ INDEXNOW_CONFIG_PATH = ROOT / "data" / "indexnow_config.json"
 AIHFLEVEL_DOI = "10.1038/s41467-024-50415-9"
 APVS_DOI = "10.1016/j.isci.2023.107587"
 SMC_FATE_DOI = "10.1186/s12967-022-03795-9"
+OLINK_DCM_DOI = "10.1021/acs.jproteome.4c00522"
 
 
 def require(condition, message):
@@ -870,6 +871,186 @@ def validate_smc_fate_v2_regression(content, publication, page):
     )
 
 
+def validate_olink_dcm_v2_regression(content, publication, page):
+    label = "Olink DCM Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(norm_doi(content.get("doi")) == OLINK_DCM_DOI, f"{label} DOI changed.")
+    require(norm_doi(publication.get("doi")) == OLINK_DCM_DOI, f"{label} master DOI changed.")
+    require(publication.get("slug") == "olink-dcm", f"{label} slug changed.")
+    canonical = f"{CANONICAL_SITE_URL}/papers/olink-dcm.html"
+    require(
+        single_html_url(page, r'<link rel="canonical" href="([^"]*)">', f"{label} canonical URL")
+        == canonical,
+        f"{label} canonical URL changed.",
+    )
+
+    study = content["study_profile"]
+    require(study.get("profile_type") == "multicohort_omics", f"{label} profile changed.")
+    require("unique_total_n" not in study, f"{label} must not derive an external total n.")
+    require("model_profile" not in content, f"{label} must not invent a model.")
+    expected_scale = {
+        "local participants": "103: 50 DCM-HF and 53 healthy controls",
+        "Olink discovery cohort": "38 participants: 20 DCM-HF and 18 healthy controls",
+        "Olink panel": "92 cardiovascular-related proteins",
+        "proteins differing at p<0.05": "33",
+        "focused differentially abundant proteins": "13; all higher in DCM-HF, P<0.001 in Results and significant after FDR correction",
+        "prioritized candidate markers": "5: SPP1, IGFBP7, F11R, CHI3L1 and PLAUR",
+        "independent ELISA cohort": "65 participants: 30 DCM-HF and 35 healthy controls",
+        "external cardiac transcriptomic datasets": "3: GSE116250, GSE141910 and GSE165303",
+        "combined five-gene AUCs": "0.959, 0.773 and 0.803, respectively",
+        "external-evaluation modality": "human cardiac gene expression; not independent plasma proteomics",
+    }
+    require(
+        {item["label"]: item["value"] for item in study["scale_metrics"]}
+        == expected_scale,
+        f"{label} evidence scale or cohort separation changed.",
+    )
+    require(
+        "not aggregated into a derived external total n" in study["counting_note"]
+        and "38 participants in the Olink discovery cohort" in study["counting_note"]
+        and "65 participants in the ELISA validation cohort" in study["counting_note"],
+        f"{label} counting distinction changed.",
+    )
+
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(
+        list(findings) == [f"KF{number}" for number in range(1, 7)],
+        f"{label} finding IDs changed.",
+    )
+    require(
+        all(str(item["source_locator"]).strip() for item in findings.values()),
+        f"{label} source locator missing.",
+    )
+    evidence = {
+        finding_id: {item["label"]: item["value"] for item in finding["evidence"]}
+        for finding_id, finding in findings.items()
+    }
+    require(
+        evidence["KF1"] == {
+            "discovery cohort": "20 DCM-HF and 18 healthy controls",
+            "proteins profiled": "92",
+            "overall abundance direction": "75 higher and 17 lower in DCM-HF",
+            "proteins at p<0.05": "33",
+            "focused DEP set": "13 proteins; all higher in DCM-HF",
+            "focused DEP significance": "P<0.001 in Results; remained significant after FDR correction",
+            "Fig. 1D display threshold": "absolute logFC >0.5 and p<0.05",
+        },
+        f"{label} Olink discovery evidence changed.",
+    )
+    require(
+        evidence["KF2"] == {
+            "prioritized markers": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR",
+            "Methods selection description": "DEPs with at least 1.3-fold change and pivotal roles in KEGG pathways",
+            "Results selection description": "selected based on the highest fold changes and bioinformatics analysis",
+        },
+        f"{label} candidate-selection provenance changed.",
+    )
+    require(
+        evidence["KF3"] == {
+            "ELISA cohort": "65 participants",
+            "DCM-HF": "30",
+            "healthy controls": "35",
+            "markers": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR",
+            "direction": "all five higher in DCM-HF",
+            "reported group-comparison significance": "P<0.001",
+        },
+        f"{label} independent ELISA evidence changed.",
+    )
+    require(
+        evidence["KF4"] == {
+            "GSE116250 combined AUC": "0.959; 95% CI 0.905-0.996",
+            "GSE141910 combined AUC": "0.773; 95% CI 0.719-0.820",
+            "GSE165303 combined AUC": "0.803; 95% CI 0.706-0.888",
+            "external modality": "human cardiac transcriptomics",
+            "interpretation boundary": "diagnostic discrimination in existing datasets, not prospective incident-DCM prediction",
+        },
+        f"{label} external transcriptomic evidence changed.",
+    )
+    require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
+    require(
+        all(set(item.get("evidence_refs", [])).issubset(findings) for item in content["qa"]),
+        f"{label} Q&A finding references changed.",
+    )
+
+    provenance = content["provenance"]
+    require(provenance.get("pmcid") == "PMC11385702", f"{label} PMCID changed.")
+    require(
+        provenance.get("pubmed_url") == "https://pubmed.ncbi.nlm.nih.gov/39129220/",
+        f"{label} PMID changed.",
+    )
+    require(
+        provenance.get("version_of_record")
+        == "Journal of Proteome Research, Volume 23, Issue 9, pages 4139-4150; published online 12 August 2024 and in issue 6 September 2024",
+        f"{label} version of record changed.",
+    )
+    require("CC BY-NC-ND 4.0" in provenance.get("license", ""), f"{label} license changed.")
+    require("2022-KT-105" in provenance.get("local_ethics", ""), f"{label} ethics changed.")
+    require(
+        all(
+            item in provenance.get("supporting_material", "")
+            for item in ("Table S1", "Tables S2-S4", "Table S5")
+        )
+        and all(f"Figure S{number}" in provenance.get("supporting_material", "") for number in range(1, 4)),
+        f"{label} supporting-information provenance changed.",
+    )
+    require(
+        "No dedicated article-specific code repository" in provenance.get("code_repository", ""),
+        f"{label} code repository provenance changed.",
+    )
+    external_note = provenance.get("source_note_external_counts", "")
+    require(
+        all(
+            value in external_note
+            for value in (
+                "GSE116250 as 15 controls and 38 DCM",
+                "GSE141910 as 162 controls and 162 DCM",
+                "GSE165303 as 48 controls and 74 DCM",
+                "Native or independently documented dataset composition differs",
+                "exact filtering logic used to obtain the article-reported analyzed counts is not fully specified",
+                "does not aggregate an external total n",
+            )
+        ),
+        f"{label} external GEO count discrepancy changed.",
+    )
+    registration_note = provenance.get("source_note_registration", "")
+    require(
+        "ChiCTR2100051469" in registration_note
+        and "magnetocardiography/myocardial-ischemia" in registration_note
+        and "linkage is treated as unresolved" in registration_note,
+        f"{label} unresolved registration note changed.",
+    )
+    mouse_note = provenance.get("source_note_mouse_models", "")
+    require(
+        "Methods and Results do not describe an original animal experiment" in mouse_note
+        and "derives from cited prior studies" in mouse_note,
+        f"{label} mouse-model provenance note changed.",
+    )
+    require(
+        [norm_doi(item["doi"]) for item in content["related_papers"]]
+        == [
+            "10.2147/jir.s495784",
+            "10.1111/jcmm.17789",
+            "10.1007/s10238-026-02130-6",
+        ],
+        f"{label} related research changed.",
+    )
+    require(
+        not any(item.get("@type") == "ClinicalTrial" for item in json_ld_objects(page)),
+        f"{label} must not assert a verified ClinicalTrial.",
+    )
+    page_text = visible_text(page)
+    require(
+        "the corresponding five-gene expression panel" in page_text
+        and "not independent plasma proteomics" in page_text
+        and "not prospective incident-DCM prediction" in page_text,
+        f"{label} protein/gene or diagnostic scope changed.",
+    )
+    require(
+        all(item["relationship"] in page_text for item in content["related_papers"]),
+        f"{label} related-paper relationships missing from HTML.",
+    )
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -883,6 +1064,10 @@ def validate_v2_inventory(v2_dois):
     require(
         SMC_FATE_DOI in v2_dois,
         "SMC fate must remain a Paper GEO 2.0 Gold Standard page.",
+    )
+    require(
+        OLINK_DCM_DOI in v2_dois,
+        "Olink DCM must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
         len(v2_dois) == len(set(v2_dois)),
@@ -1296,6 +1481,8 @@ def validate_site():
                     validate_apvs_v2_regression(content, item, page)
                 elif content_doi == SMC_FATE_DOI:
                     validate_smc_fate_v2_regression(content, item, page)
+                elif content_doi == OLINK_DCM_DOI:
+                    validate_olink_dcm_v2_regression(content, item, page)
             else:
                 require(
                     content.get("version") == 1,

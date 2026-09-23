@@ -14,16 +14,20 @@ from site_common import (
     controller_token,
     index_master,
     load_deep_geo,
+    load_featured,
     load_site_config,
 )
 from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import (
     APVS_DOI,
     AIHFLEVEL_DOI,
+    OLINK_DCM_DOI,
     SMC_FATE_DOI,
+    json_ld_objects,
     paper_json_ld_object,
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
+    validate_olink_dcm_v2_regression,
     validate_smc_fate_v2_regression,
     validate_v2_inventory,
     validate_v2_rendered_page,
@@ -214,6 +218,12 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == SMC_FATE_DOI
     ]
     assert len(smc_fate_items) == 1
+    olink_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == OLINK_DCM_DOI
+    ]
+    assert len(olink_items) == 1
+    assert norm_doi(deep_entries[3].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
 
     for publication, content in v2_items:
         page, markdown, schema = rendered_v2(
@@ -239,6 +249,26 @@ def run_tests():
             assert markdown == (PAPERS_DIR / "smc-fate.md").read_text(
                 encoding="utf-8"
             )
+        elif norm_doi(publication.get("doi")) == OLINK_DCM_DOI:
+            validate_olink_dcm_v2_regression(content, publication, page)
+            assert publication["slug"] == "olink-dcm"
+            assert page == (PAPERS_DIR / "olink-dcm.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / "olink-dcm.md").read_text(encoding="utf-8")
+            assert not any(item.get("@type") == "ClinicalTrial" for item in json_ld_objects(page))
+            for scientific_guard in (
+                "38 participants: 20 DCM-HF and 18 healthy controls",
+                "65 participants: 30 DCM-HF and 35 healthy controls",
+                "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR",
+                "0.959; 95% CI 0.905-0.996",
+                "0.773; 95% CI 0.719-0.820",
+                "0.803; 95% CI 0.706-0.888",
+                "not independent plasma proteomics",
+                "not prospective incident-DCM prediction",
+                "linkage is treated as unresolved",
+                "Methods and Results do not describe an original animal experiment",
+            ):
+                assert scientific_guard in page
+                assert scientific_guard in markdown
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])
@@ -270,6 +300,43 @@ def run_tests():
     for item in related:
         assert item["relationship"] in persisted_page
         assert item["relationship"] in persisted_markdown
+
+    olink_publication, olink_content = olink_items[0]
+    assert olink_publication["slug"] == "olink-dcm"
+    assert olink_content["version"] == 2
+    assert norm_doi(olink_content["doi"]) == OLINK_DCM_DOI
+    assert olink_content["study_profile"]["profile_type"] == "multicohort_omics"
+    assert [item["id"] for item in olink_content["key_findings"]] == [
+        f"KF{number}" for number in range(1, 7)
+    ]
+    assert all(item["source_locator"].strip() for item in olink_content["key_findings"])
+    assert len(olink_content["qa"]) == 8
+    assert all(
+        set(item.get("evidence_refs", [])).issubset(
+            {finding["id"] for finding in olink_content["key_findings"]}
+        )
+        for item in olink_content["qa"]
+    )
+    assert "unique_total_n" not in olink_content["study_profile"]
+    assert "model_profile" not in olink_content
+    olink_related = resolve_related_papers(
+        olink_content, public_by_doi, config["site_url"]
+    )
+    assert [item["doi"] for item in olink_related] == [
+        "10.2147/jir.s495784",
+        "10.1111/jcmm.17789",
+        "10.1007/s10238-026-02130-6",
+    ]
+    assert [item["url"] for item in olink_related] == [
+        "https://drgezhang.com/papers/doi-10-2147-jir-s495784.html",
+        "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html",
+        "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html",
+    ]
+    olink_page = (PAPERS_DIR / "olink-dcm.html").read_text(encoding="utf-8")
+    olink_markdown = (PAPERS_DIR / "olink-dcm.md").read_text(encoding="utf-8")
+    for item in olink_related:
+        assert item["relationship"] in olink_page
+        assert item["relationship"] in olink_markdown
 
     synthetic_publication, synthetic = synthetic_multicohort_fixture()
     synthetic_page, synthetic_markdown, synthetic_schema = rendered_v2(
