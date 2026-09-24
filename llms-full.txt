@@ -21,7 +21,7 @@
 - DOI: 10.1016/j.curpro.2025.100054
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo
 - Journal: Science China Chemistry
@@ -30,7 +30,7 @@
 - DOI: 10.1007/s11426-026-3629-x
 - HTML: https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html
 - Markdown: https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study
 - Journal: Frontiers in Cardiovascular Medicine
@@ -39,7 +39,7 @@
 - DOI: 10.3389/fcvm.2025.1724572
 - HTML: https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Aspirin after PCI in Acute Coronary Syndromes
 - Journal: The New-England Medical Review and Journal
@@ -75,7 +75,7 @@
 - DOI: 10.1002/ggn2.202500053
 - HTML: https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family
 - Journal: Human Mutation
@@ -165,7 +165,7 @@
 - DOI: 10.3389/fpubh.2025.1521372
 - HTML: https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis
 - Journal: Oncology Research
@@ -183,7 +183,7 @@
 - DOI: 10.1111/jcmm.70725
 - HTML: https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-jcmm-70725.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair
 - Journal: Clinical Interventions in Aging
@@ -219,7 +219,7 @@
 - DOI: 10.1016/j.joim.2025.06.003
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm
 - Journal: BMC Biology
@@ -228,7 +228,7 @@
 - DOI: 10.1186/s12915-025-02400-x
 - HTML: https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html
 - Markdown: https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk
 - Journal: Life Conflux
@@ -237,7 +237,7 @@
 - DOI: 10.71321/fy14v342
 - HTML: https://drgezhang.com/papers/doi-10-71321-fy14v342.html
 - Markdown: https://drgezhang.com/papers/doi-10-71321-fy14v342.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions
 - Journal: Chemico-Biological Interactions
@@ -264,7 +264,7 @@
 - DOI: 10.1002/mdr2.70004
 - HTML: https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-mdr2-70004.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models
 - Journal: JCO Precision Oncology
@@ -300,7 +300,7 @@
 - DOI: 10.2147/ijn.s522157
 - HTML: https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html
 - Markdown: https://drgezhang.com/papers/doi-10-2147-ijn-s522157.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers
 - Journal: Journal for ImmunoTherapy of Cancer
@@ -309,7 +309,7 @@
 - DOI: 10.1136/jitc-2024-010127
 - HTML: https://drgezhang.com/papers/nlrp3-ici.html
 - Markdown: https://drgezhang.com/papers/nlrp3-ici.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice
 - Journal: European Heart Journal
@@ -345,7 +345,7 @@
 - DOI: 10.18632/aging.205564
 - HTML: https://drgezhang.com/papers/doi-10-18632-aging-205564.html
 - Markdown: https://drgezhang.com/papers/doi-10-18632-aging-205564.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study
 - Journal: JCO Precision Oncology
@@ -426,7 +426,7 @@
 - DOI: 10.1111/jcmm.70258
 - HTML: https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-jcmm-70258.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination
 - Journal: Cancer Letters
@@ -489,7 +489,7 @@
 - DOI: 10.1038/s41598-024-65236-5
 - HTML: https://drgezhang.com/papers/circadian-ihd.html
 - Markdown: https://drgezhang.com/papers/circadian-ihd.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer
 - Journal: Scientific Reports
@@ -615,7 +615,7 @@
 - DOI: 10.1111/jcmm.17789
 - HTML: https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-jcmm-17789.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction
 - Journal: European Journal of Pharmacology
@@ -660,7 +660,7 @@
 - DOI: 10.3389/fonc.2021.659217
 - HTML: https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells
 - Journal: International Journal of Ophthalmology

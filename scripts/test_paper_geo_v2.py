@@ -35,6 +35,36 @@ from validate_site import (
 
 
 SYNTHETIC_DOI = "10.9999/paper-geo-v2-multicohort-fixture"
+PRIORITY_STATUS = (
+    ("10.1038/s41467-024-50415-9", "v2"),
+    ("10.1038/s41698-026-01699-1", "v1"),
+    ("10.1016/j.isci.2023.107587", "v2"),
+    ("10.1186/s12967-022-03795-9", "v2"),
+    ("10.1002/ehf2.14003", "v1"),
+    ("10.1093/eurheartj/ehaf523", "v1"),
+    ("10.1002/mdr2.70052", "v1"),
+    ("10.1200/po.24.00089", "v1"),
+    ("10.1172/jci194175", "v1"),
+    ("10.1021/acs.jproteome.4c00522", "v2"),
+    ("10.1016/j.ejphar.2023.175569", "v1"),
+    ("10.1002/mdr2.70004", "pending"),
+    ("10.1111/jcmm.17789", "pending"),
+    ("10.1136/jitc-2024-010127", "v1"),
+    ("10.3389/fonc.2021.659217", "pending"),
+    ("10.18632/aging.205564", "pending"),
+    ("10.2147/ijn.s522157", "pending"),
+    ("10.1016/j.joim.2025.06.003", "pending"),
+    ("10.1111/jcmm.70258", "pending"),
+    ("10.1186/s12915-025-02400-x", "pending"),
+    ("10.3389/fcvm.2025.1724572", "pending"),
+    ("10.71321/fy14v342", "pending"),
+    ("10.1111/jcmm.70725", "pending"),
+    ("10.1038/s41598-024-65236-5", "v1"),
+    ("10.3389/fpubh.2025.1521372", "pending"),
+    ("10.1002/ggn2.202500053", "pending"),
+    ("10.1016/j.curpro.2025.100054", "pending"),
+    ("10.1007/s11426-026-3629-x", "pending"),
+)
 
 
 def expect_value_error(callback, expected):
@@ -181,11 +211,22 @@ def run_tests():
     }
 
     deep_entries = load_deep_geo()
+    featured_entries = load_featured()
+    expected_dois = [doi for doi, _ in PRIORITY_STATUS]
+    assert [norm_doi(entry["doi"]) for entry in featured_entries] == expected_dois
+    assert [norm_doi(entry["doi"]) for entry in deep_entries] == expected_dois
     v1_count = 0
     v2_items = []
-    for entry in deep_entries:
+    pending_count = 0
+    for entry, (expected_doi, expected_status) in zip(deep_entries, PRIORITY_STATUS):
         publication = master_by_token[controller_token(entry)]
+        assert norm_doi(publication["doi"]) == expected_doi
+        if expected_status == "pending":
+            assert load_deep_content(publication, allow_missing=True) is None
+            pending_count += 1
+            continue
         content = load_deep_content(publication)
+        assert f"v{content['version']}" == expected_status
         if content["version"] == 2:
             v2_items.append((publication, content))
             continue
@@ -204,7 +245,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert v1_count + len(v2_items) == len(deep_entries)
+    assert (len(v2_items), v1_count, pending_count) == (4, 9, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -222,7 +263,7 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == OLINK_DCM_DOI
     ]
     assert len(olink_items) == 1
-    assert norm_doi(deep_entries[3].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
         AIHFLEVEL_DOI: (
@@ -478,6 +519,7 @@ def run_tests():
             {
                 "v1_pages": v1_count,
                 "v2_pages": len(v2_items),
+                "pending_pages": pending_count,
                 "multicohort_synthetic": "pass",
             },
             indent=2,

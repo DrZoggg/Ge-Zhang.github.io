@@ -16,6 +16,20 @@ Markdown record: https://drgezhang.com/papers/nlrp3-ici.md
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
+## Deep GEO context
+
+A preclinical cardio-oncology study testing NLRP3 inflammasome inhibition in immune-checkpoint-inhibitor cardiotoxicity.
+
+### Semantic keywords
+
+NLRP3 inflammasome, immune checkpoint inhibitor, cardiotoxicity, ICI myocarditis, MCC950, cardio-oncology
+
+### Questions this paper can answer
+
+- Can NLRP3 inhibition reduce immune-checkpoint-inhibitor cardiotoxicity?
+- What mechanisms link the inflammasome to ICI myocarditis?
+- Does MCC950 affect antitumor activity during ICI therapy?
+
 ## Links
 
 - DOI: https://doi.org/10.1136/jitc-2024-010127

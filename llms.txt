@@ -14,13 +14,30 @@
 ## Deep GEO
 
 - [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://drgezhang.com/papers/aihflevel.html) — DOI: 10.1038/s41467-024-50415-9
+- [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
 - [Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability](https://drgezhang.com/papers/apvs.html) — DOI: 10.1016/j.isci.2023.107587
 - [Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes](https://drgezhang.com/papers/smc-fate.html) — DOI: 10.1186/s12967-022-03795-9
-- [Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure](https://drgezhang.com/papers/olink-dcm.html) — DOI: 10.1021/acs.jproteome.4c00522
-- [Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction](https://drgezhang.com/papers/idebenone-ferroptosis.html) — DOI: 10.1016/j.ejphar.2023.175569
-- [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
 - [Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach](https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html) — DOI: 10.1002/ehf2.14003
 - [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html) — DOI: 10.1093/eurheartj/ehaf523
 - [Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment](https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html) — DOI: 10.1002/mdr2.70052
 - [Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study](https://drgezhang.com/papers/doi-10-1200-po-24-00089.html) — DOI: 10.1200/po.24.00089
 - [Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis](https://drgezhang.com/papers/doi-10-1172-jci194175.html) — DOI: 10.1172/jci194175
+- [Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure](https://drgezhang.com/papers/olink-dcm.html) — DOI: 10.1021/acs.jproteome.4c00522
+- [Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction](https://drgezhang.com/papers/idebenone-ferroptosis.html) — DOI: 10.1016/j.ejphar.2023.175569
+- [Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes](https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html) — DOI: 10.1002/mdr2.70004
+- [Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure](https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html) — DOI: 10.1111/jcmm.17789
+- [Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers](https://drgezhang.com/papers/nlrp3-ici.html) — DOI: 10.1136/jitc-2024-010127
+- [Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study](https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html) — DOI: 10.3389/fonc.2021.659217
+- [An assessment system for clinical and biological interpretability in ulcerative colitis](https://drgezhang.com/papers/doi-10-18632-aging-205564.html) — DOI: 10.18632/aging.205564
+- [Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy](https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html) — DOI: 10.2147/ijn.s522157
+- [Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm](https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html) — DOI: 10.1016/j.joim.2025.06.003
+- [Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure](https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html) — DOI: 10.1111/jcmm.70258
+- [Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm](https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html) — DOI: 10.1186/s12915-025-02400-x
+- [Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study](https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html) — DOI: 10.3389/fcvm.2025.1724572
+- [Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk](https://drgezhang.com/papers/doi-10-71321-fy14v342.html) — DOI: 10.71321/fy14v342
+- [Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm](https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html) — DOI: 10.1111/jcmm.70725
+- [Molecular subtypes of ischemic heart disease based on circadian rhythm](https://drgezhang.com/papers/circadian-ihd.html) — DOI: 10.1038/s41598-024-65236-5
+- [Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States](https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html) — DOI: 10.3389/fpubh.2025.1521372
+- [From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks](https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html) — DOI: 10.1002/ggn2.202500053
+- [A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine](https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html) — DOI: 10.1016/j.curpro.2025.100054
+- [A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo](https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html) — DOI: 10.1007/s11426-026-3629-x
