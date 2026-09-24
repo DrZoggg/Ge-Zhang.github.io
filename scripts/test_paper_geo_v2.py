@@ -22,6 +22,7 @@ from validate_site import (
     APVS_DOI,
     AIHFLEVEL_DOI,
     CLOCKPROCRC_DOI,
+    KIF13B_MERTK_DOI,
     OLINK_DCM_DOI,
     SARS_COV2_HF_DOI,
     SMC_FATE_DOI,
@@ -31,6 +32,7 @@ from validate_site import (
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
     validate_clockprocrc_v2_regression,
+    validate_kif13b_mertk_v2_regression,
     validate_olink_dcm_v2_regression,
     validate_sars_cov2_hf_v2_regression,
     validate_smc_fate_v2_regression,
@@ -46,7 +48,7 @@ PRIORITY_STATUS = (
     ("10.1016/j.isci.2023.107587", "v2"),
     ("10.1186/s12967-022-03795-9", "v2"),
     ("10.1002/ehf2.14003", "v2"),
-    ("10.1093/eurheartj/ehaf523", "v1"),
+    ("10.1093/eurheartj/ehaf523", "v2"),
     ("10.1002/mdr2.70052", "v1"),
     ("10.1200/po.24.00089", "v1"),
     ("10.1172/jci194175", "v1"),
@@ -250,7 +252,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (6, 7, 15)
+    assert (len(v2_items), v1_count, pending_count) == (7, 6, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -276,6 +278,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == SARS_COV2_HF_DOI
     ]
     assert len(sars_cov2_hf_items) == 1
+    kif13b_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == KIF13B_MERTK_DOI
+    ]
+    assert len(kif13b_items) == 1
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
@@ -300,6 +306,10 @@ def run_tests():
             "External dataset evaluation",
         ),
         SARS_COV2_HF_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
+        ),
+        KIF13B_MERTK_DOI: (
             "Study Design & Analytical Framework",
             "External dataset evaluation",
         ),
@@ -416,6 +426,43 @@ def run_tests():
                 assert "Figure 1 typo" in str(exc)
             else:
                 raise AssertionError("Figure 1 typo became a scientific dataset.")
+        elif norm_doi(publication.get("doi")) == KIF13B_MERTK_DOI:
+            validate_kif13b_mertk_v2_regression(content, publication, page)
+            target = "doi-10-1093-eurheartj-ehaf523"
+            assert page == (PAPERS_DIR / f"{target}.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / f"{target}.md").read_text(encoding="utf-8")
+            for finding in content["key_findings"]:
+                assert finding["source_locator"] in page
+                assert finding["source_locator"] in markdown
+            for text in (
+                "one library per genotype", "CBL and CBLB are distinct genes",
+                "20 weeks of Western diet", "12 weeks of high-fat diet",
+                "does not unambiguously validate",
+            ):
+                assert text in page and text in markdown
+            for false_claim in (
+                "NX-1607 treats atherosclerosis patients.",
+                "NX-1607 Phase I atherosclerosis trial.",
+                "CBL and CBLB are the same gene.",
+                "Five independent scRNA libraries per genotype.",
+                "Macrophages were transplanted.",
+            ):
+                inflated = copy.deepcopy(content)
+                inflated["author_summary"] += " " + false_claim
+                try:
+                    validate_kif13b_mertk_v2_regression(inflated, publication, page)
+                except ValidationError as exc:
+                    assert "unsupported positive scientific claim" in str(exc)
+                else:
+                    raise AssertionError(f"Unsupported claim was accepted: {false_claim}")
+            wrong_target = copy.deepcopy(content)
+            wrong_target["provenance"]["nx_target_identity_note"] = "NX-1607 validates CBL."
+            try:
+                validate_kif13b_mertk_v2_regression(wrong_target, publication, page)
+            except ValidationError as exc:
+                assert "target identity" in str(exc)
+            else:
+                raise AssertionError("CBL/CBLB target-identity distinction was lost.")
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

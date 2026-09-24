@@ -55,6 +55,7 @@ SMC_FATE_DOI = "10.1186/s12967-022-03795-9"
 OLINK_DCM_DOI = "10.1021/acs.jproteome.4c00522"
 CLOCKPROCRC_DOI = "10.1038/s41698-026-01699-1"
 SARS_COV2_HF_DOI = "10.1002/ehf2.14003"
+KIF13B_MERTK_DOI = "10.1093/eurheartj/ehaf523"
 
 
 def require(condition, message):
@@ -1440,6 +1441,114 @@ def validate_sars_cov2_hf_v2_regression(content, publication, page):
     )
 
 
+def validate_kif13b_mertk_v2_regression(content, publication, page):
+    label = "KIF13B/MERTK Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} version changed.")
+    require(norm_doi(content.get("doi")) == KIF13B_MERTK_DOI
+            and norm_doi(publication.get("doi")) == KIF13B_MERTK_DOI,
+            f"{label} DOI changed.")
+    slug = "doi-10-1093-eurheartj-ehaf523"
+    require(publication.get("slug") == slug, f"{label} slug changed.")
+    require(single_html_url(page, r'<link rel="canonical" href="([^"]*)">',
+                            f"{label} canonical")
+            == f"{CANONICAL_SITE_URL}/papers/{slug}.html",
+            f"{label} canonical changed.")
+    study = content["study_profile"]
+    require(study["profile_type"] == "multicohort_omics"
+            and "mechanistic" in study["study_design"].casefold()
+            and "preclinical" in study["study_design"].casefold()
+            and "unique_total_n" not in study,
+            f"{label} study design or counting scope changed.")
+    metrics = {item["label"]: item["value"] for item in study["scale_metrics"]}
+    required_metrics = {
+        "GSE40231 arterial-wall samples": ("40 non-atherosclerotic", "40 atherosclerotic", "samples"),
+        "Human carotid lesion tissues": ("n=6", "n=6", "lesions"),
+        "Mouse plaque progression": ("12 or 20 weeks", "n=6"),
+        "Global Kif13b loss": ("12 weeks", "n=6"),
+        "Public single-cell GSE155513": ("n=1 single-cell library", "8-week", "26-week"),
+        "Study-generated aortic single-cell experiment": ("Five mice pooled into one single-cell library per genotype", "20 weeks", "12 weeks"),
+        "Public macrophage single-cell GSE215103": ("Apoe-deficient",),
+        "Myeloid conditional model": ("n=9", "n=6", "AAV8-PCSK9", "12 weeks"),
+        "Bone-marrow transplantation": ("n=6", "12 weeks"),
+        "BMDM transcriptomics": ("n=3 per group",),
+        "NX-1607 mouse intervention": ("20 weeks total", "5 mg/kg/day", "final 16 weeks", "n=6"),
+    }
+    require(all(label_key in metrics and all(needle in metrics[label_key] for needle in needles)
+                for label_key, needles in required_metrics.items())
+            and "not five independent libraries" in study["counting_note"],
+            f"{label} evidence scale or pooled-library semantics changed.")
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(list(findings) == [f"KF{i}" for i in range(1, 8)],
+            f"{label} finding inventory changed.")
+    evidence = {key: " ".join(item["label"] + " " + item["value"]
+                              for item in finding["evidence"])
+                for key, finding in findings.items()}
+    anchors = {
+        "KF1": ("GSE40231", "40 non-atherosclerotic", "40 atherosclerotic", "n=6"),
+        "KF2": ("n=6", "cholesterol and triglycerides increased", "twofold", "more than threefold", "Apoe"),
+        "KF3": ("GSE155513", "one single-cell library", "Five aortas were pooled", "14 clusters", "eight cell types", "Cd80", "Cd206", "Il1b", "Spp1", "GSE215103"),
+        "KF4": ("n=9", "n=6", "AAV8-PCSK9", "plasma-lipid", "donor marrow"),
+        "KF5": ("n=3", "n=5", "MERTK", "n=10", "restoration"),
+        "KF6": ("Mertk mRNA was unchanged", "40%", "16 hours", "MG132", "chloroquine", "ubiquitination", "ITCH", "CBL", "incomplete"),
+        "KF7": ("50 nM", "100 nM", "5 mg/kg/day", "final 16 weeks", "20 weeks", "n=6", "white blood cells and lymphocytes declined"),
+    }
+    require(all(all(needle in evidence[key] for needle in needles)
+                for key, needles in anchors.items()),
+            f"{label} required finding evidence changed.")
+    require(all("Results:" in item["source_locator"] and "Figure" in item["source_locator"]
+                and item["source_locator"] in page for item in findings.values()),
+            f"{label} source locators changed or are absent from HTML.")
+    scope = " ".join(content["evidence_scope"]["does_not_establish"])
+    require(all(term in scope.casefold() for term in ("human kif13b causality", "global ldlr-deficient",
+            "macrophage-exclusive", "five independent single-cell libraries",
+            "one definitive diet duration", "itch-to-cbl", "cblb", "human atherosclerosis")),
+            f"{label} evidence boundary changed.")
+    provenance = content["provenance"]
+    identity = provenance.get("nx_target_identity_note", "")
+    duration = provenance.get("scrna_duration_note", "")
+    require(provenance.get("pmid") == "40709729" and "pmcid" not in provenance
+            and all(token in provenance.get("source_material", "")
+                    for token in ("GSE40231", "GSE155513", "GSE215103", "S1–S7"))
+            and all(token in identity for token in ("article describes NX-1607 as a CBL inhibitor",
+                "CBL-B/CBLB inhibitor", "CBL and CBLB are distinct genes",
+                "does not unambiguously validate"))
+            and all(token in duration for token in ("20 weeks of Western diet",
+                "12 weeks of high-fat diet", "five mice", "one library per genotype", "discrepancy"))
+            and "advanced malignancies" in provenance.get("clinical_context_note", "")
+            and "not an atherosclerosis clinical trial" in provenance.get("clinical_context_note", ""),
+            f"{label} target identity, single-cell discrepancy or provenance changed.")
+    require(len(content["qa"]) == 8 and len(content["limitations"]) >= 11
+            and [norm_doi(item["doi"]) for item in content["related_papers"]]
+            == ["10.1172/jci194175", "10.1186/s12967-022-03795-9"],
+            f"{label} Q&A, limitations or related-paper scope changed.")
+    positive_fields = [content["summary"], content["author_summary"],
+        content["research_question"], *(item["claim"] for item in findings.values()),
+        *(item["context"] for item in findings.values()),
+        *(item["value"] for finding in findings.values() for item in finding["evidence"]),
+        *(item["value"] for item in study["scale_metrics"]),
+        *(item["answer"] for item in content["qa"])]
+    forbidden = ("prevents atherosclerosis in humans", "treats human atherosclerosis",
+        "clinically validated kif13b", "kif13b clinical efficacy", "nx-1607 clinically validated",
+        "nx-1607 treats atherosclerosis patients", "nx-1607 phase i atherosclerosis trial",
+        "nx-1607 approved for atherosclerosis", "proven human anti-atherosclerotic therapy",
+        "no adverse effects", "all kif13b models were lipid-independent",
+        "macrophage-exclusive knockout", "macrophages were transplanted",
+        "mertk transcriptionally regulated by kif13b", "kif13b transcriptionally activates mertk",
+        "itch-mediated cbl degradation conclusively proven", "cbl and cblb are the same gene",
+        "nx-1607 definitively proves the cbl mechanism", "80 independent participants",
+        "five independent scrna libraries", "n=5 biological replicate scrna libraries",
+        "gse155513 n=1 mouse", "reversed 20-week established advanced atherosclerosis")
+    for field in positive_fields:
+        for clause in re.split(r"(?<=[.!?])\s+|;\s+", field.casefold()):
+            if re.search(r"\b(no|not|never|without|did not|does not)\b", clause):
+                continue
+            require(not any(phrase in clause for phrase in forbidden),
+                    f"{label} contains an unsupported positive scientific claim.")
+    require(not any(item.get("@type") in {"FAQPage", "ClinicalTrial", "MedicalStudy", "Drug"}
+                    for item in json_ld_objects(page)),
+            f"{label} must not emit unsupported clinical or FAQ schema.")
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -1466,6 +1575,8 @@ def validate_v2_inventory(v2_dois):
         SARS_COV2_HF_DOI in v2_dois,
         "SARS-CoV-2/HF must remain a Paper GEO 2.0 Gold Standard page.",
     )
+    require(KIF13B_MERTK_DOI in v2_dois,
+            "KIF13B/MERTK must be a Paper GEO 2.0 Gold Standard page.")
     require(
         len(v2_dois) == len(set(v2_dois)),
         "Paper GEO 2.0 DOI values must be unique.",
@@ -1918,6 +2029,8 @@ def validate_site():
                     validate_clockprocrc_v2_regression(content, item, page)
                 elif content_doi == SARS_COV2_HF_DOI:
                     validate_sars_cov2_hf_v2_regression(content, item, page)
+                elif content_doi == KIF13B_MERTK_DOI:
+                    validate_kif13b_mertk_v2_regression(content, item, page)
             else:
                 paper_geo_statuses[token] = "v1"
                 require(
