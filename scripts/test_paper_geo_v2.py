@@ -23,13 +23,16 @@ from validate_site import (
     AIHFLEVEL_DOI,
     CLOCKPROCRC_DOI,
     OLINK_DCM_DOI,
+    SARS_COV2_HF_DOI,
     SMC_FATE_DOI,
+    ValidationError,
     json_ld_objects,
     paper_json_ld_object,
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
     validate_clockprocrc_v2_regression,
     validate_olink_dcm_v2_regression,
+    validate_sars_cov2_hf_v2_regression,
     validate_smc_fate_v2_regression,
     validate_v2_inventory,
     validate_v2_rendered_page,
@@ -42,7 +45,7 @@ PRIORITY_STATUS = (
     ("10.1038/s41698-026-01699-1", "v2"),
     ("10.1016/j.isci.2023.107587", "v2"),
     ("10.1186/s12967-022-03795-9", "v2"),
-    ("10.1002/ehf2.14003", "v1"),
+    ("10.1002/ehf2.14003", "v2"),
     ("10.1093/eurheartj/ehaf523", "v1"),
     ("10.1002/mdr2.70052", "v1"),
     ("10.1200/po.24.00089", "v1"),
@@ -247,7 +250,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (5, 8, 15)
+    assert (len(v2_items), v1_count, pending_count) == (6, 7, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -269,6 +272,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == CLOCKPROCRC_DOI
     ]
     assert len(clockprocrc_items) == 1
+    sars_cov2_hf_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == SARS_COV2_HF_DOI
+    ]
+    assert len(sars_cov2_hf_items) == 1
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
@@ -289,6 +296,10 @@ def run_tests():
             "External dataset evaluation",
         ),
         CLOCKPROCRC_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
+        ),
+        SARS_COV2_HF_DOI: (
             "Study Design & Analytical Framework",
             "External dataset evaluation",
         ),
@@ -372,6 +383,39 @@ def run_tests():
             for finding in content["key_findings"]:
                 assert finding["source_locator"] in page
                 assert finding["source_locator"] in markdown
+        elif norm_doi(publication.get("doi")) == SARS_COV2_HF_DOI:
+            validate_sars_cov2_hf_v2_regression(content, publication, page)
+            assert page == (
+                PAPERS_DIR / "doi-10-1002-ehf2-14003.html"
+            ).read_text(encoding="utf-8")
+            assert markdown == (
+                PAPERS_DIR / "doi-10-1002-ehf2-14003.md"
+            ).read_text(encoding="utf-8")
+            for finding in content["key_findings"]:
+                assert finding["source_locator"] in page
+                assert finding["source_locator"] in markdown
+            for false_claim in (
+                "The panel achieved 96% diagnostic accuracy.",
+                "AUC 0.96 established clinical diagnosis.",
+                "GSH treats COVID-19.",
+                "The study enrolled a COVID-HF cohort.",
+            ):
+                inflated = copy.deepcopy(content)
+                inflated["author_summary"] += " " + false_claim
+                try:
+                    validate_sars_cov2_hf_v2_regression(inflated, publication, page)
+                except ValidationError as exc:
+                    assert "unsupported positive scientific claim" in str(exc)
+                else:
+                    raise AssertionError(f"Unsupported claim was accepted: {false_claim}")
+            false_accession = copy.deepcopy(content)
+            false_accession["concepts"]["datasets"].append("GSE26687")
+            try:
+                validate_sars_cov2_hf_v2_regression(false_accession, publication, page)
+            except ValidationError as exc:
+                assert "Figure 1 typo" in str(exc)
+            else:
+                raise AssertionError("Figure 1 typo became a scientific dataset.")
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

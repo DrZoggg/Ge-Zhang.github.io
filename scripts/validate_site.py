@@ -54,6 +54,7 @@ APVS_DOI = "10.1016/j.isci.2023.107587"
 SMC_FATE_DOI = "10.1186/s12967-022-03795-9"
 OLINK_DCM_DOI = "10.1021/acs.jproteome.4c00522"
 CLOCKPROCRC_DOI = "10.1038/s41698-026-01699-1"
+SARS_COV2_HF_DOI = "10.1002/ehf2.14003"
 
 
 def require(condition, message):
@@ -1263,6 +1264,182 @@ def validate_clockprocrc_v2_regression(content, publication, page):
     )
 
 
+def validate_sars_cov2_hf_v2_regression(content, publication, page):
+    label = "SARS-CoV-2/HF Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(
+        norm_doi(content.get("doi")) == SARS_COV2_HF_DOI
+        and norm_doi(publication.get("doi")) == SARS_COV2_HF_DOI,
+        f"{label} DOI changed.",
+    )
+    require(
+        publication.get("slug") == "doi-10-1002-ehf2-14003",
+        f"{label} slug changed.",
+    )
+    require(
+        single_html_url(page, r'<link rel="canonical" href="([^"]*)">', f"{label} canonical")
+        == f"{CANONICAL_SITE_URL}/papers/doi-10-1002-ehf2-14003.html",
+        f"{label} canonical changed.",
+    )
+    study = content["study_profile"]
+    require(study["profile_type"] == "multicohort_omics", f"{label} profile changed.")
+    require("unique_total_n" not in study, f"{label} must not synthesize a total n.")
+    metrics = {item["label"]: item["value"] for item in study["scale_metrics"]}
+    require(
+        metrics.get("GSE147507 human lung-biopsy component")
+        == "2 independent uninfected donors and technical replicates from 1 deceased COVID-19 donor; the full GEO Series contains additional experimental systems"
+        and metrics.get("GSE164805 external COVID-19 PBMC samples")
+        == "10 COVID-19 (5 mild and 5 severe) and 5 healthy samples"
+        and metrics.get("GSE9128/GDS3115 external HF PBMC arrays")
+        == "8 HF pooled microarray samples and 3 pooled control microarray samples; not 11 independent participants"
+        and "7 T2DM HF, 12 non-T2DM HF and 5 controls" in metrics.get("GSE26887 formal LV tissue Series", "")
+        and "24 HF" in metrics.get("GSE9128 original participant population", "")
+        and "12 control individuals" in metrics.get("GSE9128 original participant population", ""),
+        f"{label} biological/sample/pooled-array counts changed.",
+    )
+    require(
+        "precise grouping" in study["counting_note"]
+        and "not asserted as the primary analytical contrast n" in study["counting_note"]
+        and "not interchangeable" in study["counting_note"],
+        f"{label} counting caveats changed.",
+    )
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(list(findings) == [f"KF{i}" for i in range(1, 7)], f"{label} finding IDs changed.")
+    require(
+        [item["source_locator"] for item in findings.values()] == [
+            "Results: Identification of shared transcriptomic signature between HF and COVID-19; Figure 1B-D",
+            "Results: Analysis of functional characteristics relevant to common pathogenesis; Figures 2-3; Supplementary Tables S1-S2",
+            "Results: Protein-protein interaction analysis; Figures 4-5; Supplementary Tables S3-S4",
+            "Results: Validation of hub genes performance in two independent cohorts; Figures 6-7",
+            "Results: Determination of regulatory signature and network; Figure 8A-B; Supplementary Figure S1",
+            "Results: Identification of candidate pharmacologic agents; Figure 8C; Discussion: Promising therapeutics",
+        ],
+        f"{label} source locators changed.",
+    )
+    evidence = {
+        key: {item["label"]: item["value"] for item in finding["evidence"]}
+        for key, finding in findings.items()
+    }
+    require(
+        evidence["KF1"]["DEG threshold"] == "|log2FC| > 1 and adjusted P < 0.05"
+        and (evidence["KF1"]["COVID-19 DEGs"], evidence["KF1"]["HF DEGs"]) == ("102", "253")
+        and evidence["KF1"]["shared genes"]
+        == "12: S100A8, ABCB1, S100A11, PTGS2 (COX2), LY96, XCL1, RORA, CCL11, CCL4, S100A12, BCL2 and AQP9",
+        f"{label} shared transcriptomic signature changed.",
+    )
+    require(
+        evidence["KF3"]["initial PPI network"] == "62 nodes and 655 edges"
+        and evidence["KF3"]["hub interaction network"] == "59 nodes and 649 edges"
+        and evidence["KF3"]["ten hub genes"]
+        == "TLR4, TLR2, CXCL8, IL10, STAT3, IL1B, TLR1, TP53, CCL20 and CXCL10"
+        and evidence["KF3"]["seven-algorithm core"] == "TLR4, TLR2, IL10 and STAT3"
+        and evidence["KF3"]["MCODE module 1"]
+        == "29 nodes, 381 edges, score 27.214; includes XCL1, CCL4 and CCL11"
+        and evidence["KF3"]["MCODE module 2"] == "23 nodes, 65 edges, score 11.818",
+        f"{label} PPI/network evidence changed.",
+    )
+    require(
+        evidence["KF4"]["final prioritized genes"] == "TLR4, TLR2, STAT3, IL1B and CXCL8"
+        and evidence["KF4"]["five-gene PCA first-two-component explained variance"]
+        == "COVID-19 96.0%; HF 93.2%; merged 89.9%"
+        and evidence["KF4"]["earlier ten-hub-gene PCA explained variance"]
+        == "COVID-19 88.5%; HF 90.0%"
+        and "not AUC, accuracy" in findings["KF4"]["context"]
+        and "P=0.006" in evidence["KF4"]["IL1B lung-tissue context"],
+        f"{label} PCA scope or external expression evidence changed.",
+    )
+    require(
+        evidence["KF5"]["TF network"] == "47 predicted TF targets, 59 nodes and 98 edges"
+        and evidence["KF5"]["TF-miRNA network"]
+        == "98 TFs, 137 miRNAs, 246 nodes and 310 edges"
+        and evidence["KF6"]["candidate compounds"]
+        == "muramyl dipeptide (MDP) and glutathione (GSH)"
+        and "not treatment-efficacy evidence" in evidence["KF6"]["evidence level"],
+        f"{label} regulatory or compound evidence changed.",
+    )
+    unsupported_scope = " ".join(content["evidence_scope"]["does_not_establish"])
+    require(
+        all(phrase in unsupported_scope for phrase in (
+            "Germline genetic correlation", "simultaneously affected by COVID-19 and HF",
+            "Prospective clinical validation", "diagnostic accuracy",
+            "gut microbiome dysbiosis", "circulating LPS", "Proteomic evidence",
+            "therapeutic efficacy of glutathione, muramyl dipeptide",
+        )),
+        f"{label} scientific scope boundaries changed.",
+    )
+    require(
+        len(content["qa"]) == 8
+        and all(set(item["evidence_refs"]).issubset(findings) for item in content["qa"])
+        and "not AUC, accuracy" in content["qa"][4]["answer"]
+        and "No treatment efficacy" in content["qa"][6]["answer"],
+        f"{label} Q&A scope changed.",
+    )
+    scientific_fields = {key: value for key, value in content.items()
+                         if key not in {"provenance", "limitations", "qa"}}
+    require(
+        "GSE26687" not in json.dumps(scientific_fields, ensure_ascii=False),
+        f"{label} must not use the Figure 1 typo as a scientific dataset.",
+    )
+    require(
+        "GSE26687" in content["qa"][7]["question"]
+        and "accession typo" in content["qa"][7]["answer"]
+        and "GSE26887" in content["qa"][7]["answer"]
+        and all("GSE26687" not in item["question"] + item["answer"]
+                for item in content["qa"][:7]),
+        f"{label} accession typo explanation changed.",
+    )
+    provenance = content["provenance"]
+    require(
+        provenance.get("pmid") == "35727093"
+        and provenance.get("pmcid") == "PMC9349450"
+        and "GSE26687" in provenance.get("accession_note", "")
+        and "GSE26887" in provenance.get("accession_note", "")
+        and "Supplementary Tables S1-S4" in provenance.get("supporting_material", "")
+        and "Supplementary Figure S1" in provenance.get("supporting_material", ""),
+        f"{label} publication or dataset provenance changed.",
+    )
+    require(
+        [norm_doi(item["doi"]) for item in content["related_papers"]]
+        == ["10.1038/s41467-024-50415-9"],
+        f"{label} related-paper identity changed.",
+    )
+    positive_fields = [
+        content["summary"], content["author_summary"], content["research_question"],
+        *(item["claim"] for item in content["key_findings"]),
+        *(item["context"] for item in content["key_findings"]),
+        *(evidence_item["value"] for item in content["key_findings"]
+          for evidence_item in item["evidence"]),
+        *(item["value"] for item in study["scale_metrics"]),
+        *(item["answer"] for item in content["qa"]),
+    ]
+    forbidden = (
+        "110 covid patients", "2 covid patients", "11 gse9128 participants",
+        "8 hf patients and 3 controls",
+        "covid-hf cohort", "covid-hf patients demonstrated",
+        "patients with both covid-19 and hf showed", "germline genetic correlation",
+        "genetic causality", "gwas evidence", "mendelian randomization evidence",
+        "proteomic study", "proteomic cohort", "auc 0.96", "96% diagnostic accuracy",
+        "96% accuracy", "clinically validated", "prospectively validated",
+        "lps biomarker validated", "gut microbiome was measured",
+        "gsh treats covid-19", "gsh treats heart failure", "mdp treats covid-19",
+        "mdp treats heart failure", "therapeutic efficacy was demonstrated",
+        "validated therapy",
+    )
+    for field in positive_fields:
+        for clause in re.split(r"(?<=[.!?])\s+|;\s+", field.casefold()):
+            if re.search(r"\b(no|not|never|without|did not|does not)\b", clause):
+                continue
+            require(
+                not any(phrase in clause for phrase in forbidden),
+                f"{label} contains an unsupported positive scientific claim.",
+            )
+    require(
+        not any(item.get("@type") in {"FAQPage", "ClinicalTrial", "MedicalStudy", "Drug"}
+                for item in json_ld_objects(page)),
+        f"{label} must not emit unsupported clinical or FAQ schema.",
+    )
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -1284,6 +1461,10 @@ def validate_v2_inventory(v2_dois):
     require(
         CLOCKPROCRC_DOI in v2_dois,
         "ClockProCRC must remain a Paper GEO 2.0 Gold Standard page.",
+    )
+    require(
+        SARS_COV2_HF_DOI in v2_dois,
+        "SARS-CoV-2/HF must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
         len(v2_dois) == len(set(v2_dois)),
@@ -1735,6 +1916,8 @@ def validate_site():
                     validate_olink_dcm_v2_regression(content, item, page)
                 elif content_doi == CLOCKPROCRC_DOI:
                     validate_clockprocrc_v2_regression(content, item, page)
+                elif content_doi == SARS_COV2_HF_DOI:
+                    validate_sars_cov2_hf_v2_regression(content, item, page)
             else:
                 paper_geo_statuses[token] = "v1"
                 require(

@@ -1,21 +1,232 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1002/ehf2.14003",
-  "display_title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
-  "summary": "A publication in ESC Heart Failure (2022) titled “Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach”.",
-  "keywords": [
-    "Uncovering",
-    "Genetic",
-    "Links",
-    "SARS-CoV-2",
-    "Infections",
-    "Heart",
-    "Failure",
-    "Co-Morbidity",
-    "Systems",
-    "Biology"
+  "display_title": "Shared COVID-19 and heart-failure transcriptomic signatures and inflammatory network hubs",
+  "summary": "A cross-disease transcriptomic systems-biology analysis of independently profiled COVID-19 and heart-failure datasets, identifying 12 shared genes and prioritizing inflammatory network hubs for further study.",
+  "research_question": "Which transcriptional signatures, inflammatory pathways, network hubs, and predicted regulatory or drug-target relationships are shared between independently profiled COVID-19 and heart-failure datasets, and do selected hub genes show consistent disease-associated expression patterns in external COVID-19 and HF datasets?",
+  "author_summary": "This cross-disease multi-dataset transcriptomic systems-biology study compared independently profiled COVID-19 and heart-failure (HF) datasets. At |log2FC| > 1 and adjusted P < 0.05, the authors reported 102 COVID-19 differentially expressed genes (DEGs), 253 HF DEGs, and 12 shared genes. Enrichment analyses highlighted inflammatory and innate-immune processes, including neutrophil and monocyte chemotaxis, Toll-like receptor, NF-κB, chemokine, interleukin-17, and cytokine-related signaling. Protein-interaction topology prioritized ten hub genes, with TLR4, TLR2, IL10, and STAT3 recurring across seven cytoHubba algorithms. External public PBMC expression datasets supported prioritization of TLR4, TLR2, STAT3, IL1B, and CXCL8; the reported 96.0%, 93.2%, and 89.9% are first-two-component PCA explained-variance values, not diagnostic performance. Database-derived TF/miRNA networks highlighted FOXC1, STAT3, NFKB1, miR-181, miR-520, and miR-143, while DSigDB drug-signature enrichment nominated muramyl dipeptide and glutathione as hypothesis-generating candidates. The study did not enroll a dedicated cohort with simultaneous COVID-19 and HF, establish germline genetic correlation or causality, prospectively validate a clinical signature, experimentally validate the predicted regulatory edges, directly measure gut microbiome or circulating LPS, perform proteomics, or demonstrate treatment efficacy for the candidate compounds.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Cross-disease analysis of independent public COVID-19 and HF transcriptomic datasets, followed by enrichment, protein-interaction and regulatory-network analyses, and external expression-dataset evaluation",
+    "evidence_type": "Public gene-expression differential-expression analysis, pathway enrichment, PPI topology, external PBMC expression evaluation, and computational TF/miRNA and drug-signature prioritization",
+    "population": "Separate human COVID-19 lung-tissue and PBMC datasets and HF cardiac-tissue and pooled PBMC datasets; no dedicated cohort of patients simultaneously affected by COVID-19 and HF",
+    "primary_endpoint": "Shared disease-associated expression signatures between independently profiled COVID-19 and HF datasets",
+    "secondary_endpoint": "Inflammatory pathway and network-hub prioritization, external expression-pattern evaluation, and hypothesis-generating regulatory and compound candidates",
+    "data_modalities": [
+      "lung-biopsy transcriptomics",
+      "left-ventricular cardiac-tissue transcriptomics",
+      "PBMC gene-expression microarrays, including pooled samples",
+      "functional and pathway enrichment",
+      "protein-protein-interaction network analysis",
+      "TF/miRNA network prediction",
+      "drug-signature enrichment"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "GSE147507 human lung-biopsy component",
+        "value": "2 independent uninfected donors and technical replicates from 1 deceased COVID-19 donor; the full GEO Series contains additional experimental systems"
+      },
+      {
+        "label": "GSE26887 formal LV tissue Series",
+        "value": "7 T2DM HF, 12 non-T2DM HF and 5 controls: 19 HF and 5 control cardiac-tissue samples (24 total); the exact article HF DEG contrast grouping is not explicit"
+      },
+      {
+        "label": "GSE164805 external COVID-19 PBMC samples",
+        "value": "10 COVID-19 (5 mild and 5 severe) and 5 healthy samples"
+      },
+      {
+        "label": "GSE9128/GDS3115 external HF PBMC arrays",
+        "value": "8 HF pooled microarray samples and 3 pooled control microarray samples; not 11 independent participants"
+      },
+      {
+        "label": "GSE9128 original participant population",
+        "value": "12 ischemic cardiomyopathy HF and 12 non-ischemic cardiomyopathy HF individuals (24 HF), plus 12 control individuals, pooled into 11 PBMC microarray samples"
+      },
+      {
+        "label": "differential-expression results",
+        "value": "102 COVID-19 DEGs, 253 HF DEGs and 12 shared genes at absolute log2FC > 1 and adjusted P < 0.05"
+      }
+    ],
+    "counting_note": "Dataset-level counts represent different biological and analytical units and are not summed into a synthetic participant total. GSE147507 contains multiple experimental systems; its human lung-biopsy component consists of two independent uninfected donors and technical replicates from one deceased COVID-19 donor. GSE26887 formally contains 19 HF and five control cardiac-tissue samples, but the precise grouping used for the article-reported 253 HF DEGs is not sufficiently specified in the accessible main text, so 24 is not asserted as the primary analytical contrast n. GSE164805 contains 10 COVID-19 and five healthy PBMC samples. GSE9128/GDS3115 contains 11 pooled PBMC microarray samples—eight HF pools and three control pools—derived from an original study population of 24 HF and 12 control individuals. Participants, pooled samples, technical replicates, and tissue samples are not interchangeable."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Independent COVID-19 and HF expression analyses yielded a 12-gene shared transcriptomic signature.",
+      "context": "Overlap was calculated across separately profiled disease datasets, not in a cohort of people with both COVID-19 and HF.",
+      "evidence": [
+        {"label": "DEG threshold", "value": "|log2FC| > 1 and adjusted P < 0.05"},
+        {"label": "COVID-19 DEGs", "value": "102"},
+        {"label": "HF DEGs", "value": "253"},
+        {"label": "shared genes", "value": "12: S100A8, ABCB1, S100A11, PTGS2 (COX2), LY96, XCL1, RORA, CCL11, CCL4, S100A12, BCL2 and AQP9"}
+      ],
+      "source_locator": "Results: Identification of shared transcriptomic signature between HF and COVID-19; Figure 1B-D"
+    },
+    {
+      "id": "KF2",
+      "claim": "Functional enrichment highlighted inflammatory and innate-immune pathways associated with the shared expression signals.",
+      "context": "Enrichment points to pathway associations; it does not demonstrate that these pathways causally mediate COVID-19–HF comorbidity.",
+      "evidence": [
+        {"label": "cellular processes", "value": "neutrophil chemotaxis and migration, monocyte chemotaxis, and inflammatory response"},
+        {"label": "molecular functions", "value": "chemokine activity, CCR chemokine receptor binding, RAGE receptor binding and Toll-like receptor binding"},
+        {"label": "signaling pathways", "value": "NF-κB-related and IL-17-related signaling, plus cytokine-cytokine receptor interaction"}
+      ],
+      "source_locator": "Results: Analysis of functional characteristics relevant to common pathogenesis; Figures 2-3; Supplementary Tables S1-S2"
+    },
+    {
+      "id": "KF3",
+      "claim": "PPI topology prioritized ten inflammatory hub genes and a four-gene core of TLR4, TLR2, IL10 and STAT3.",
+      "context": "Hub status reflects network centrality and algorithmic prioritization, not proof that these genes cause either disease.",
+      "evidence": [
+        {"label": "initial PPI network", "value": "62 nodes and 655 edges"},
+        {"label": "ten hub genes", "value": "TLR4, TLR2, CXCL8, IL10, STAT3, IL1B, TLR1, TP53, CCL20 and CXCL10"},
+        {"label": "hub interaction network", "value": "59 nodes and 649 edges"},
+        {"label": "seven-algorithm core", "value": "TLR4, TLR2, IL10 and STAT3"},
+        {"label": "MCODE module 1", "value": "29 nodes, 381 edges, score 27.214; includes XCL1, CCL4 and CCL11"},
+        {"label": "MCODE module 2", "value": "23 nodes, 65 edges, score 11.818"}
+      ],
+      "source_locator": "Results: Protein-protein interaction analysis; Figures 4-5; Supplementary Tables S3-S4"
+    },
+    {
+      "id": "KF4",
+      "claim": "External public PBMC expression datasets supported prioritization of TLR4, TLR2, STAT3, IL1B and CXCL8, with tissue-context nuance for IL1B.",
+      "context": "The PCA percentages describe variance explained by the first two components, not AUC, accuracy, sensitivity, specificity, or prospective diagnostic validation. IL1B was not uniformly upregulated across tissues.",
+      "evidence": [
+        {"label": "COVID-19 expression dataset", "value": "GSE164805: 10 COVID-19 and 5 healthy PBMC samples"},
+        {"label": "HF expression dataset", "value": "GSE9128/GDS3115: 8 HF pooled and 3 control pooled PBMC microarray samples"},
+        {"label": "final prioritized genes", "value": "TLR4, TLR2, STAT3, IL1B and CXCL8"},
+        {"label": "five-gene PCA first-two-component explained variance", "value": "COVID-19 96.0%; HF 93.2%; merged 89.9%"},
+        {"label": "earlier ten-hub-gene PCA explained variance", "value": "COVID-19 88.5%; HF 90.0%"},
+        {"label": "IL1B lung-tissue context", "value": "GSE147507 re-analysis showed increased IL1B in COVID-19 lung tissue (P=0.006), despite non-uniform PBMC patterns"}
+      ],
+      "source_locator": "Results: Validation of hub genes performance in two independent cohorts; Figures 6-7"
+    },
+    {
+      "id": "KF5",
+      "claim": "Database-derived networks nominated TF and miRNA candidates for subsequent experimental testing.",
+      "context": "These network edges are computational predictions, not experimentally confirmed upstream regulatory mechanisms.",
+      "evidence": [
+        {"label": "TF network", "value": "47 predicted TF targets, 59 nodes and 98 edges"},
+        {"label": "TF-miRNA network", "value": "98 TFs, 137 miRNAs, 246 nodes and 310 edges"},
+        {"label": "highlighted predicted TFs", "value": "FOXC1, STAT3 and NFKB1 (NF-κB1)"},
+        {"label": "highlighted predicted miRNAs", "value": "miR-181, miR-520 and miR-143"}
+      ],
+      "source_locator": "Results: Determination of regulatory signature and network; Figure 8A-B; Supplementary Figure S1"
+    },
+    {
+      "id": "KF6",
+      "claim": "Drug-signature enrichment nominated muramyl dipeptide and glutathione as hypothesis-generating compounds.",
+      "context": "DSigDB prioritization is an in-silico signal; no therapeutic efficacy was demonstrated for COVID-19, HF, or their co-occurrence.",
+      "evidence": [
+        {"label": "input genes", "value": "CXCL8, STAT3, IL1B, TLR4 and TLR2"},
+        {"label": "analysis resource", "value": "DSigDB drug-signature enrichment"},
+        {"label": "candidate compounds", "value": "muramyl dipeptide (MDP) and glutathione (GSH)"},
+        {"label": "evidence level", "value": "in-silico hypothesis generation, not treatment-efficacy evidence"}
+      ],
+      "source_locator": "Results: Identification of candidate pharmacologic agents; Figure 8C; Discussion: Promising therapeutics"
+    }
   ],
-  "questions": [
-    "What does this publication investigate regarding “Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach”?"
-  ]
+  "what_this_adds": [
+    "A hypothesis-generating cross-disease molecular map connecting independently observed COVID-19 and HF expression responses, without claiming a simultaneous-comorbidity cohort.",
+    "Convergence across DEG overlap, inflammatory enrichment, PPI topology, and external expression datasets toward TLR4, TLR2, STAT3, IL1B and CXCL8.",
+    "Computational TF/miRNA and drug-signature candidates for future experimental work, not validated mechanisms or therapies."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Shared transcriptional signals across independently profiled COVID-19 and HF datasets.",
+      "Inflammatory and innate-immune pathway enrichment and network prioritization of TLR-associated genes.",
+      "External public expression-dataset support for selected hub genes, with tissue-dependent IL1B interpretation.",
+      "Computational TF/miRNA and candidate-compound hypothesis generation.",
+      "Hypothesis generation around gut-heart and LPS biology, without direct measurement of microbiome or LPS."
+    ],
+    "does_not_establish": [
+      "Germline genetic correlation, inherited susceptibility, GWAS evidence, Mendelian randomization, or genetic causality.",
+      "A causal SARS-CoV-2-to-HF mechanism or findings from a dedicated cohort simultaneously affected by COVID-19 and HF.",
+      "Prospective clinical validation, diagnostic accuracy, or prognostic utility of a five-gene panel.",
+      "Experimentally demonstrated TF/miRNA regulation or direct measurement of gut microbiome dysbiosis, intestinal permeability, or circulating LPS.",
+      "Proteomic evidence or therapeutic efficacy of glutathione, muramyl dipeptide, or another intervention."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which datasets identified the shared COVID-19 and HF genes?",
+      "answer": "The comparison used independent COVID-19 and HF transcriptomic datasets, principally GSE147507 for the human COVID-19 lung component and GSE26887 for HF left-ventricular tissue. These were separate disease datasets, not samples from a simultaneous-comorbidity cohort.",
+      "evidence_refs": ["KF1"]
+    },
+    {
+      "question": "What were the 12 shared COVID-19 and HF genes?",
+      "answer": "S100A8, ABCB1, S100A11, PTGS2 (called COX2 in the article), LY96, XCL1, RORA, CCL11, CCL4, S100A12, BCL2 and AQP9 were shared at |log2FC| > 1 and adjusted P < 0.05 across the separate expression analyses.",
+      "evidence_refs": ["KF1"]
+    },
+    {
+      "question": "Which genes were prioritized as network hubs?",
+      "answer": "The PPI analysis prioritized TLR4, TLR2, CXCL8, IL10, STAT3, IL1B, TLR1, TP53, CCL20 and CXCL10; seven cytoHubba algorithms converged on TLR4, TLR2, IL10 and STAT3. Network centrality is not proof of causal disease drivers.",
+      "evidence_refs": ["KF3"]
+    },
+    {
+      "question": "Did the study analyze patients with both COVID-19 and HF, and what does ‘genetic links’ mean?",
+      "answer": "No dedicated cohort simultaneously affected by COVID-19 and HF was analyzed. In this paper, ‘genetic links’ refers to shared transcriptomic, gene-expression, molecular and predicted regulatory signatures across independent datasets, not germline genetic correlation, GWAS, Mendelian randomization or genetic causality.",
+      "evidence_refs": ["KF1", "KF3", "KF5"]
+    },
+    {
+      "question": "Was the five-gene signature clinically validated, and do 96.0% and 93.2% mean diagnostic accuracy?",
+      "answer": "No prospective clinical validation or diagnostic-accuracy study was reported. The 96.0% COVID-19 and 93.2% HF values, alongside 89.9% for merged data, are variance explained by the first two PCA components in the five-gene analysis; they are not AUC, accuracy, sensitivity or specificity.",
+      "evidence_refs": ["KF4"]
+    },
+    {
+      "question": "Did the study prove a gut-microbiome or circulating-LPS mechanism?",
+      "answer": "No. Gut-heart and LPS discussion is hypothesis-generating; stool microbiome composition, intestinal permeability and circulating LPS were not directly measured in this analysis.",
+      "evidence_refs": ["KF2", "KF5"]
+    },
+    {
+      "question": "Did glutathione or muramyl dipeptide treat COVID-19 or heart failure in this study?",
+      "answer": "No treatment efficacy was tested or demonstrated. Glutathione and muramyl dipeptide were DSigDB-prioritized in-silico drug-signature candidates based on five genes, requiring experimental and clinical evaluation before any therapeutic claim.",
+      "evidence_refs": ["KF6"]
+    },
+    {
+      "question": "Why does Figure 1 mention GSE26687, and which HF dataset was used?",
+      "answer": "GSE26687 in the Figure 1 caption appears to be an accession typo. The Methods and Results, together with the formal GEO identity, identify GSE26887 as the HF cardiac-tissue dataset; the apparent typo is recorded for provenance and is not treated as a second dataset.",
+      "evidence_refs": ["KF1"]
+    }
+  ],
+  "concepts": {
+    "conditions": ["COVID-19", "SARS-CoV-2 infection", "heart failure", "ischemic cardiomyopathy", "non-ischemic cardiomyopathy"],
+    "datasets": ["GSE147507", "GSE26887", "GSE164805", "GSE9128", "GDS3115"],
+    "methods": ["differential expression", "GO enrichment", "KEGG enrichment", "Reactome", "WikiPathways", "BioCarta", "Metascape", "PPI network analysis", "cytoHubba", "MCODE", "GeneMANIA", "ClueGO", "JASPAR", "RegNetwork", "DSigDB", "hierarchical clustering", "Spearman correlation", "principal component analysis"],
+    "modalities": ["lung-biopsy transcriptomics", "cardiac-tissue transcriptomics", "pooled PBMC microarrays"],
+    "molecular_entities": ["S100A8", "ABCB1", "S100A11", "PTGS2 (COX2)", "LY96", "XCL1", "RORA", "CCL11", "CCL4", "S100A12", "BCL2", "AQP9", "TLR4", "TLR2", "CXCL8", "IL10", "STAT3", "IL1B", "TLR1", "TP53", "CCL20", "CXCL10", "FOXC1", "NFKB1", "miR-181", "miR-520", "miR-143", "glutathione", "muramyl dipeptide"],
+    "biological_processes": ["Toll-like receptor signaling", "NF-κB signaling", "chemokine signaling", "cytokine signaling", "IL-17 signaling", "neutrophil chemotaxis", "monocyte chemotaxis", "inflammatory response", "response to lipopolysaccharide"],
+    "hypothesis_level_concepts": ["gut-heart axis", "gut microbiome dysbiosis", "microbial-product translocation", "lipopolysaccharide"]
+  },
+  "limitations": [
+    "Human evidence was assembled retrospectively from heterogeneous public expression datasets; no dedicated simultaneous COVID-19 and HF cohort or prospective clinical validation was reported.",
+    "Lung tissue, cardiac tissue, and PBMC samples and their experimental platforms are not directly interchangeable.",
+    "The GSE147507 human COVID-19 lung component had one deceased COVID-19 biological donor with technical replicates and two independent uninfected donors; total GEO Series entries are not a participant count.",
+    "GSE9128/GDS3115 evaluated 11 pooled PBMC microarray samples rather than 11 independent participants, although the original population comprised 24 HF and 12 control individuals.",
+    "The exact GSE26887 grouping that generated the article-reported 253 HF DEGs is not sufficiently explicit in the accessible main article; the formal Series contains 19 HF and five control cardiac-tissue samples.",
+    "PPI, TF/miRNA and drug-signature findings are computational or database-derived and lack direct causal perturbation validation.",
+    "Gut-microbiome composition, intestinal permeability and circulating LPS were not directly measured; gut-heart interpretation remains a hypothesis.",
+    "No proteomics, candidate-compound treatment experiment, or demonstrated therapeutic efficacy for glutathione or muramyl dipeptide was reported."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "This study maps shared molecular expression signatures relevant to heart failure across independent COVID-19 and HF datasets, whereas AIHFLevel evaluates patient-level survival risk in advanced HF using clinical data and survival machine learning; it does not validate the molecular candidates identified here."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://doi.org/10.1002/ehf2.14003",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35727093/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9349450/",
+    "pmid": "35727093",
+    "pmcid": "PMC9349450",
+    "version_of_record": "ESC Heart Failure (2022), peer-reviewed publication with DOI 10.1002/ehf2.14003; PMID 35727093 and PMCID PMC9349450.",
+    "datasets_cohorts": "Primary cross-disease analyses: GSE147507 COVID-19 lung component and GSE26887 HF left-ventricular tissue. External expression evaluation: GSE164805 COVID-19 PBMCs and GSE9128/GDS3115 pooled HF and control PBMC arrays.",
+    "supporting_material": "Supplementary Tables S1-S4 and Supplementary Figure S1.",
+    "evidence_basis": "The peer-reviewed article's Results, Methods, figures, supplementary-material references, and the stated formal GEO dataset identities provide the source locators; the analyses compare separate COVID-19 and HF datasets.",
+    "accession_note": "The Figure 1 caption contains an apparent GSE26687 accession typo; Methods and Results and the formal GEO identity establish GSE26887 as the HF dataset. GSE26687 is not treated as a second scientific dataset.",
+    "counting_note": "GSE147507 donor and technical-replicate counts, GSE26887 cardiac-tissue samples, GSE164805 PBMC samples, and GSE9128/GDS3115 pooled PBMC arrays have distinct units and are not added into a synthetic participant total."
+  },
+  "evidence_page_notice": "This evidence page summarizes a peer-reviewed publication and does not replace the publisher record. The shared expression signals, network candidates, and compound-enrichment hits are hypothesis-generating, not a clinically validated diagnostic panel or demonstrated treatment for COVID-19 or heart failure."
 }
