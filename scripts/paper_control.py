@@ -1,12 +1,10 @@
 import argparse
 import json
 import os
-import re
 import sys
 
 from build_publications import build_site
 from site_common import (
-    DEEP_CONTENT_DIR,
     controller_reference,
     controller_token,
     deep_content_path,
@@ -16,16 +14,9 @@ from site_common import (
     publication_token,
     save_deep_geo,
     save_featured,
-    write_json,
 )
 from sync_common import is_withdrawn, load_master, norm_doi, norm_title, save_master
 from validate_site import validate_site
-
-
-STOPWORDS = {
-    "a", "an", "and", "as", "at", "based", "by", "for", "from", "in", "into",
-    "of", "on", "or", "the", "through", "to", "using", "via", "with",
-}
 
 
 class BatchValidationError(ValueError):
@@ -156,37 +147,11 @@ def resolve_papers(raw, master):
     return parsed
 
 
-def starter_keywords(title):
-    words = re.findall(r"[A-Za-z0-9][A-Za-z0-9+-]*", str(title))
-    result = []
-    for word in words:
-        if word.casefold() in STOPWORDS or len(word) < 3:
-            continue
-        if word.casefold() not in {item.casefold() for item in result}:
-            result.append(word)
-        if len(result) == 10:
-            break
-    return result
-
-
 def safe_fallback_summary(publication):
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
     year = publication.get("year") or "n.d."
     return f'A publication in {journal} ({year}) titled “{title}”.'
-
-
-def create_safe_starter(publication):
-    title = publication.get("title") or "Untitled work"
-    payload = {
-        "version": 1,
-        **controller_reference(publication),
-        "display_title": title,
-        "summary": safe_fallback_summary(publication),
-        "keywords": starter_keywords(title),
-        "questions": [f"What does this publication investigate regarding “{title}”?"],
-    }
-    write_json(deep_content_path(publication), payload)
 
 
 def parse_position(raw, total):
@@ -252,30 +217,19 @@ def run_control(args):
     enabled_count = 0
     disabled_count = 0
     noop_count = resolved["input_duplicates"] + resolved["target_duplicates"]
-    starters = []
 
     if args.deep_geo == "enable":
         for target in papers:
             token = publication_token(target)
-            content_path = deep_content_path(target)
             if token not in deep_before_tokens:
                 deep_entries.append(controller_reference(target))
                 deep_before_tokens.add(token)
                 enabled_count += 1
                 changed = True
-            elif content_path.is_file():
+            else:
                 noop_count += 1
-            if not content_path.is_file():
-                starters.append((target, content_path))
-                changed = True
         if enabled_count:
             save_deep_geo(deep_entries)
-        for target, content_path in starters:
-            create_safe_starter(target)
-            notes.append(
-                "Created conservative starter: "
-                f"{content_path.relative_to(DEEP_CONTENT_DIR.parent.parent)}"
-            )
     elif args.deep_geo == "disable":
         target_tokens = {publication_token(target) for target in papers}
         disabled_count = len(target_tokens & deep_before_tokens)

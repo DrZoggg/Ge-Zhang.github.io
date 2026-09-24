@@ -111,11 +111,79 @@ def main():
 
         deep = copy_fixture(temp_root, "deep")
         single = disabled[0]
+        assert not (deep / "data/deep_geo" / f"{single['slug']}.json").exists()
         single_run = run(
             deep, "--paper", single["doi"], "--deep-geo", "enable"
         )
         assert "Deep GEO:** OFF → ON" in single_run.stdout
         assert token(single) in controller_tokens(deep, "deep_geo_papers.json")
+        assert not (deep / "data/deep_geo" / f"{single['slug']}.json").exists()
+        pending_html = (deep / "papers" / f"{single['slug']}.html").read_text(encoding="utf-8")
+        pending_md = (deep / "papers" / f"{single['slug']}.md").read_text(encoding="utf-8")
+        assert '<span class="badge">Deep GEO · Pending</span>' in pending_html
+        assert "## Deep GEO · Pending" in pending_md
+        notice = (
+            "Selected for Deep GEO evidence expansion. The evidence-oriented content "
+            "layer is pending scientific review. The publisher version remains the "
+            "version of record."
+        )
+        assert notice in pending_html and notice in pending_md
+        assert single["title"] in pending_html and single["title"] in pending_md
+        assert single["journal"] in pending_html and single["journal"] in pending_md
+        assert str(single["year"]) in pending_html and str(single["year"]) in pending_md
+        assert single["doi"] in pending_html and single["doi"] in pending_md
+        assert f'https://drgezhang.com/papers/{single["slug"]}.html' in pending_html
+        assert 'name="citation_title"' in pending_html
+        assert '"@type": "ScholarlyArticle"' in pending_html
+        assert "DOI / publisher" in pending_html and "Google Scholar search" in pending_html
+        for unreviewed in ("Deep GEO context", "Key Findings", "Questions this paper can answer"):
+            assert unreviewed not in pending_html and unreviewed not in pending_md
+        assert "What does this publication investigate" not in pending_md
+        public_record = next(
+            item for item in load(deep / "publications.json")
+            if item.get("doi") == single["doi"]
+        )
+        assert public_record["deep_geo"] is True
+        assert public_record["paper_geo_status"] == "pending"
+        paper_index_record = next(
+            item for item in load(deep / "paper_index.json")["papers"]
+            if item.get("doi") == single["doi"]
+        )
+        assert paper_index_record["paper_geo_status"] == "pending"
+        assert "Deep GEO · Pending" in (deep / "publications.html").read_text(
+            encoding="utf-8"
+        )
+        for item in enabled:
+            for suffix in ("html", "md"):
+                relative = Path("papers") / f"{item['slug']}.{suffix}"
+                assert (deep / relative).read_bytes() == (source / relative).read_bytes()
+
+        pending_featured = copy_fixture(temp_root, "pending_featured")
+        deep_controller = pending_featured / "data/deep_geo_papers.json"
+        deep_data = load(deep_controller)
+        deep_data["papers"].append({"doi": single["doi"]})
+        deep_controller.write_text(json.dumps(deep_data, indent=2) + "\n", encoding="utf-8")
+        featured_controller = pending_featured / "data/featured_papers.json"
+        featured_data = load(featured_controller)
+        featured_data["papers"].append({"doi": single["doi"]})
+        featured_controller.write_text(
+            json.dumps(featured_data, indent=2) + "\n", encoding="utf-8"
+        )
+        run_python(pending_featured, "scripts/build_publications.py")
+        run_python(pending_featured, "scripts/validate_site.py")
+        homepage = (pending_featured / "index.html").read_text(encoding="utf-8")
+        assert 'Deep GEO · Pending</span>' in homepage
+        assert single["title"] in homepage
+        assert f'A publication in {single["journal"]} ({single["year"]}) titled' in homepage
+        assert "What does this publication investigate" not in homepage
+        malformed_content = pending_featured / "data/deep_geo" / f"{single['slug']}.json"
+        malformed_content.write_text('{"version": 99}\n', encoding="utf-8")
+        malformed = subprocess.run(
+            ["python", "scripts/build_publications.py"],
+            cwd=pending_featured, text=True, capture_output=True,
+        )
+        assert malformed.returncode != 0
+        assert "must use version 1 or 2" in malformed.stderr
 
         comma_title = next(item for item in public if "," in item.get("title", ""))
         before_comma_title = digest(deep)
@@ -322,6 +390,7 @@ def main():
     print("- unknown/withdrawn/ambiguous transaction abort: PASS")
     print("- batch + Featured add/remove rejection: PASS")
     print("- Deep GEO content preservation and restore: PASS")
+    print("- Pending Deep GEO build, rendering, machine status, and strict existing-file validation: PASS")
     print("- single-paper Featured compatibility: PASS")
     print("- build, validator, and double-build stability: PASS")
 

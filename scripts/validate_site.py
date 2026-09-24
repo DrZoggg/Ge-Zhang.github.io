@@ -8,6 +8,7 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 
 from build_publications import (
+    PENDING_NOTICE,
     flatten_concepts,
     resolve_related_papers,
     validate_deep_v2_content,
@@ -1354,6 +1355,7 @@ def validate_site():
     }
     deep_tokens = {controller_token(entry) for entry in deep_geo}
     featured_tokens = {controller_token(entry) for entry in featured}
+    paper_geo_statuses = {}
     citation_author_pages = 0
     schema_author_array_pages = 0
     v2_dois = []
@@ -1512,9 +1514,42 @@ def validate_site():
         token = publication_token(item)
         if token in deep_tokens:
             content_path = deep_content_path(item)
-            require(content_path.is_file(), f"Deep GEO content missing for {slug}.")
-            content = json.loads(content_path.read_text(encoding="utf-8"))
-            if content.get("version") == 2:
+            has_content = content_path.is_file()
+            content = (
+                json.loads(content_path.read_text(encoding="utf-8"))
+                if has_content else None
+            )
+            if not has_content:
+                paper_geo_statuses[token] = "pending"
+                require(
+                    PENDING_NOTICE in visible_text(page),
+                    f"Pending notice missing from {slug}.html.",
+                )
+                require(
+                    PENDING_NOTICE in markdown,
+                    f"Pending notice missing from {slug}.md.",
+                )
+                require(
+                    '<span class="badge">Deep GEO · Pending</span>' in page,
+                    f"Pending badge missing from {slug}.html.",
+                )
+                require(
+                    "## Deep GEO · Pending" in markdown,
+                    f"Pending heading missing from {slug}.md.",
+                )
+                for unreviewed in (
+                    "Deep GEO context", "Key Findings", "Questions this paper can answer"
+                ):
+                    require(
+                        unreviewed not in page and unreviewed not in markdown,
+                        f"Unreviewed content appears on pending paper {slug}.",
+                    )
+                require(
+                    "description" not in schema and "keywords" not in schema,
+                    f"Pending paper {slug} claims reviewed evidence in structured data.",
+                )
+            elif content.get("version") == 2:
+                paper_geo_statuses[token] = "v2"
                 content_doi = norm_doi(content.get("doi"))
                 v2_dois.append(content_doi)
                 validate_v2_rendered_page(
@@ -1535,6 +1570,7 @@ def validate_site():
                 elif content_doi == OLINK_DCM_DOI:
                     validate_olink_dcm_v2_regression(content, item, page)
             else:
+                paper_geo_statuses[token] = "v1"
                 require(
                     content.get("version") == 1,
                     f"Unsupported Deep GEO content version for {slug}.",
@@ -1554,9 +1590,17 @@ def validate_site():
                             str(value) in markdown,
                             f"Deep GEO content lost from {slug}.md.",
                         )
+        else:
+            paper_geo_statuses[token] = "none"
         require(
-            ('<span class="badge">Deep GEO</span>' in page) == (token in deep_tokens),
+            ('<span class="badge">Deep GEO</span>' in page)
+            == (paper_geo_statuses[token] in {"v1", "v2"}),
             f"Deep GEO badge/state mismatch for {slug}.html.",
+        )
+        require(
+            ('<span class="badge">Deep GEO · Pending</span>' in page)
+            == (paper_geo_statuses[token] == "pending"),
+            f"Pending badge/state mismatch for {slug}.html.",
         )
     require(
         len(canonical_urls) == len(set(canonical_urls)),
@@ -1572,10 +1616,25 @@ def validate_site():
     for item in public_json:
         token = publication_token(item)
         require(bool(item.get("deep_geo")) == (token in deep_tokens), "Deep GEO flag mismatch.")
+        require(
+            item.get("paper_geo_status") == paper_geo_statuses[token],
+            "publications.json Paper GEO status mismatch.",
+        )
         require(bool(item.get("featured")) == (token in featured_tokens), "Featured flag mismatch.")
     expected_html_urls = {f"{config['site_url']}/papers/{slug}.html" for slug in slugs}
+    statuses_by_url = {
+        f"{config['site_url']}/papers/{item['slug']}.html": paper_geo_statuses[
+            publication_token(item)
+        ]
+        for item in public_expected
+    }
     expected_markdown_urls = {f"{config['site_url']}/papers/{slug}.md" for slug in slugs}
     for payload, label in ((public_json, "publications.json"), (paper_index, "paper_index.json")):
+        for item in payload:
+            require(
+                item.get("paper_geo_status") == statuses_by_url.get(item.get("paper_url")),
+                f"{label} Paper GEO status mismatch.",
+            )
         require(
             {item.get("paper_url") for item in payload} == expected_html_urls,
             f"{label} paper URLs do not match the canonical origin.",
@@ -1897,13 +1956,19 @@ def validate_site():
         f"CSV count {len(csv_rows)} != public count {len(public_expected)}.",
     )
     required_csv = {
-        "year", "title", "journal", "type", "doi", "paper_url", "deep_geo", "featured"
+        "year", "title", "journal", "type", "doi", "paper_url", "deep_geo",
+        "paper_geo_status", "featured",
     }
     require(required_csv.issubset(csv_rows[0].keys()), "CSV required fields are missing.")
     require(
         {row["paper_url"] for row in csv_rows} == expected_html_urls,
         "CSV paper URLs do not match the canonical origin.",
     )
+    for row in csv_rows:
+        require(
+            row["paper_geo_status"] == statuses_by_url[row["paper_url"]],
+            "CSV Paper GEO status mismatch.",
+        )
 
     tree = ET.parse(ROOT / "sitemap.xml")
     sitemap_namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"

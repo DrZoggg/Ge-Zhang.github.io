@@ -42,6 +42,11 @@ HOME_IDENTITY_END = "<!-- HOME_IDENTITY_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
+PENDING_NOTICE = (
+    "Selected for Deep GEO evidence expansion. The evidence-oriented content "
+    "layer is pending scientific review. The publisher version remains the "
+    "version of record."
+)
 
 
 def scholar_url(title):
@@ -397,9 +402,11 @@ def schema_type(publication):
     return "CreativeWork"
 
 
-def load_deep_content(publication):
+def load_deep_content(publication, *, allow_missing=False):
     path = deep_content_path(publication)
     if not path.is_file():
+        if allow_missing:
+            return None
         raise ValueError(
             f"Deep GEO is enabled for {publication.get('title')!r}, but {path.relative_to(ROOT)} is missing."
         )
@@ -1296,6 +1303,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     canonical = absolute(site_root, f"papers/{slug}.html")
     markdown_url = absolute(site_root, f"papers/{slug}.md")
     is_v2 = bool(deep_content and deep_content.get("version") == 2)
+    is_pending = publication.get("paper_geo_status") == "pending"
     related_papers = (
         resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
     )
@@ -1315,7 +1323,12 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     links.append(
         f'<a class="btn" href="{html.escape(scholar_url(title), quote=True)}">Google Scholar search</a>'
     )
-    deep_badge = '<span class="badge">Deep GEO</span>' if deep_content is not None else ""
+    if is_pending:
+        deep_badge = '<span class="badge">Deep GEO · Pending</span>'
+    elif deep_content is not None:
+        deep_badge = '<span class="badge">Deep GEO</span>'
+    else:
+        deep_badge = ""
     citation = [
         f'<meta name="citation_title" content="{html.escape(str(title), quote=True)}">',
         f'<meta name="citation_journal_title" content="{html.escape(str(journal), quote=True)}">',
@@ -1345,6 +1358,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         render_deep_html(deep_content or {}, related_papers=related_papers)
         if deep_content is not None
         else ""
+    )
+    pending_html = (
+        f'<section><div class="notice">{html.escape(PENDING_NOTICE)}</div></section>'
+        if is_pending else ""
     )
     schema = paper_schema(publication, canonical, config)
     if is_v2:
@@ -1388,7 +1405,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
 <div class="links">{' '.join(links)}</div>
 </div></section>
-{deep_html}
+{deep_html}{pending_html}
 {notice_html}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
@@ -1456,6 +1473,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         )
     if deep_content is not None:
         lines.append(render_deep_markdown(deep_content, related_papers=related_papers))
+    if publication.get("paper_geo_status") == "pending":
+        lines.extend(["## Deep GEO · Pending", "", PENDING_NOTICE, ""])
     lines.extend(
         [
             "## Links",
@@ -1470,7 +1489,7 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     return "\n".join(lines)
 
 
-def public_record(publication, *, config, deep_tokens, featured_tokens):
+def public_record(publication, *, config, deep_tokens, featured_tokens, deep_contents):
     item = copy.deepcopy(publication)
     item.pop("featured", None)
     token = publication_token(publication)
@@ -1478,6 +1497,13 @@ def public_record(publication, *, config, deep_tokens, featured_tokens):
     item["paper_url"] = absolute(config["site_url"], f"papers/{slug}.html")
     item["markdown_url"] = absolute(config["site_url"], f"papers/{slug}.md")
     item["deep_geo"] = token in deep_tokens
+    content = deep_contents.get(token)
+    if not item["deep_geo"]:
+        item["paper_geo_status"] = "none"
+    elif content is None:
+        item["paper_geo_status"] = "pending"
+    else:
+        item["paper_geo_status"] = "v2" if content["version"] == 2 else "v1"
     item["featured"] = token in featured_tokens
     return item
 
@@ -1496,7 +1522,11 @@ def render_publications_page(items, config):
             paper_url = f"papers/{publication['slug']}.html"
             links = [f'<a href="{html.escape(paper_url, quote=True)}">Paper page</a>']
             if publication["deep_geo"]:
-                links.append('<span class="badge">Deep GEO</span>')
+                badge = (
+                    "Deep GEO · Pending"
+                    if publication["paper_geo_status"] == "pending" else "Deep GEO"
+                )
+                links.append(f'<span class="badge">{badge}</span>')
             doi = norm_doi(publication.get("doi"))
             if doi:
                 links.append(f'<a href="{html.escape(doi_url(doi), quote=True)}">DOI</a>')
@@ -1568,25 +1598,31 @@ const box=document.getElementById('pubSearch');box.addEventListener('input',()=>
 '''
 
 
-def render_featured_cards(featured_entries, master_by_token, deep_tokens):
+def render_featured_cards(featured_entries, public_by_token, deep_contents):
     cards = []
     for entry in featured_entries:
         token = controller_token(entry)
-        publication = master_by_token[token]
+        publication = public_by_token[token]
         title = publication.get("title") or "Untitled work"
         journal = publication.get("journal") or "Unknown source"
         year = publication.get("year") or "n.d."
         page_url = f"papers/{publication['slug']}.html"
         summary = str(entry.get("summary") or "").strip()
-        if not summary and token in deep_tokens:
-            summary = str(load_deep_content(publication).get("summary") or "").strip()
+        if not summary and deep_contents.get(token):
+            summary = str(deep_contents[token].get("summary") or "").strip()
         if not summary:
             summary = f'A publication in {journal} ({year}) titled “{title}”.'
         links = [f'<a class="btn" href="{html.escape(page_url, quote=True)}">Research page</a>']
         doi = norm_doi(publication.get("doi"))
         if doi:
             links.append(f'<a class="btn" href="{html.escape(doi_url(doi), quote=True)}">DOI</a>')
-        badge = ' <span class="badge">Deep GEO</span>' if token in deep_tokens else ""
+        status = publication["paper_geo_status"]
+        if status == "pending":
+            badge = ' <span class="badge">Deep GEO · Pending</span>'
+        elif status in {"v1", "v2"}:
+            badge = ' <span class="badge">Deep GEO</span>'
+        else:
+            badge = ""
         cards.append(
             f'<article class="card paper"><div class="eyebrow">'
             f'{html.escape(str(journal))} · {html.escape(str(year))}{badge}</div>'
@@ -1615,6 +1651,7 @@ def write_machine_indexes(items, deep_items, config):
                 "paper_url": item["paper_url"],
                 "markdown_url": item["markdown_url"],
                 "deep_geo": item["deep_geo"],
+                "paper_geo_status": item["paper_geo_status"],
                 "featured": item["featured"],
             }
             for item in items
@@ -1688,12 +1725,18 @@ def build_site():
     featured_tokens = {controller_token(entry) for entry in featured_entries}
     deep_tokens = {controller_token(entry) for entry in deep_entries}
     public_master = [publication for publication in master if not is_withdrawn(publication)]
+    deep_contents = {
+        publication_token(publication): load_deep_content(publication, allow_missing=True)
+        for publication in public_master
+        if publication_token(publication) in deep_tokens
+    }
     public_items = [
         public_record(
             publication,
             config=config,
             deep_tokens=deep_tokens,
             featured_tokens=featured_tokens,
+            deep_contents=deep_contents,
         )
         for publication in public_master
     ]
@@ -1711,7 +1754,7 @@ def build_site():
     DEEP_CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     for item in public_items:
         token = publication_token(item)
-        deep_content = load_deep_content(item) if token in deep_tokens else None
+        deep_content = deep_contents.get(token)
         paper_url = item["paper_url"]
         html_changed[paper_url] = write_text_if_changed(
             PAPERS_DIR / f"{item['slug']}.html",
@@ -1747,7 +1790,7 @@ def build_site():
             handle,
             fieldnames=[
                 "year", "title", "journal", "type", "doi",
-                "paper_url", "deep_geo", "featured",
+                "paper_url", "deep_geo", "paper_geo_status", "featured",
             ],
             lineterminator="\n",
         )
@@ -1762,6 +1805,7 @@ def build_site():
                     "doi": item.get("doi") or "",
                     "paper_url": item["paper_url"],
                     "deep_geo": str(bool(item["deep_geo"])).lower(),
+                    "paper_geo_status": item["paper_geo_status"],
                     "featured": str(bool(item["featured"])).lower(),
                 }
             )
@@ -1778,7 +1822,7 @@ def build_site():
     _, after = remainder.split(FEATURED_END, 1)
     index_html = (
         before + FEATURED_START + "\n"
-        + render_featured_cards(featured_entries, master_by_token, deep_tokens)
+        + render_featured_cards(featured_entries, public_by_token, deep_contents)
         + "\n" + FEATURED_END + after
     )
     index_html = re.sub(
