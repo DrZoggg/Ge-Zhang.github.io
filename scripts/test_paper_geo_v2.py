@@ -21,12 +21,14 @@ from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import (
     APVS_DOI,
     AIHFLEVEL_DOI,
+    CLOCKPROCRC_DOI,
     OLINK_DCM_DOI,
     SMC_FATE_DOI,
     json_ld_objects,
     paper_json_ld_object,
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
+    validate_clockprocrc_v2_regression,
     validate_olink_dcm_v2_regression,
     validate_smc_fate_v2_regression,
     validate_v2_inventory,
@@ -37,7 +39,7 @@ from validate_site import (
 SYNTHETIC_DOI = "10.9999/paper-geo-v2-multicohort-fixture"
 PRIORITY_STATUS = (
     ("10.1038/s41467-024-50415-9", "v2"),
-    ("10.1038/s41698-026-01699-1", "v1"),
+    ("10.1038/s41698-026-01699-1", "v2"),
     ("10.1016/j.isci.2023.107587", "v2"),
     ("10.1186/s12967-022-03795-9", "v2"),
     ("10.1002/ehf2.14003", "v1"),
@@ -245,7 +247,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (4, 9, 15)
+    assert (len(v2_items), v1_count, pending_count) == (5, 8, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -263,6 +265,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == OLINK_DCM_DOI
     ]
     assert len(olink_items) == 1
+    clockprocrc_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == CLOCKPROCRC_DOI
+    ]
+    assert len(clockprocrc_items) == 1
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
@@ -279,6 +285,10 @@ def run_tests():
             "External dataset evaluation",
         ),
         OLINK_DCM_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
+        ),
+        CLOCKPROCRC_DOI: (
             "Study Design & Analytical Framework",
             "External dataset evaluation",
         ),
@@ -351,6 +361,17 @@ def run_tests():
             ):
                 assert scientific_guard in page
                 assert scientific_guard in markdown
+        elif norm_doi(publication.get("doi")) == CLOCKPROCRC_DOI:
+            validate_clockprocrc_v2_regression(content, publication, page)
+            assert page == (
+                PAPERS_DIR / "doi-10-1038-s41698-026-01699-1.html"
+            ).read_text(encoding="utf-8")
+            assert markdown == (
+                PAPERS_DIR / "doi-10-1038-s41698-026-01699-1.md"
+            ).read_text(encoding="utf-8")
+            for finding in content["key_findings"]:
+                assert finding["source_locator"] in page
+                assert finding["source_locator"] in markdown
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

@@ -53,6 +53,7 @@ AIHFLEVEL_DOI = "10.1038/s41467-024-50415-9"
 APVS_DOI = "10.1016/j.isci.2023.107587"
 SMC_FATE_DOI = "10.1186/s12967-022-03795-9"
 OLINK_DCM_DOI = "10.1021/acs.jproteome.4c00522"
+CLOCKPROCRC_DOI = "10.1038/s41698-026-01699-1"
 
 
 def require(condition, message):
@@ -1103,6 +1104,165 @@ def validate_olink_dcm_v2_regression(content, publication, page):
     )
 
 
+def validate_clockprocrc_v2_regression(content, publication, page):
+    label = "ClockProCRC Paper GEO 2.0 Gold Standard"
+    require(content.get("version") == 2, f"{label} must use version 2.")
+    require(
+        norm_doi(content.get("doi")) == CLOCKPROCRC_DOI
+        and norm_doi(publication.get("doi")) == CLOCKPROCRC_DOI,
+        f"{label} DOI changed.",
+    )
+    require(
+        publication.get("slug") == "doi-10-1038-s41698-026-01699-1",
+        f"{label} slug changed.",
+    )
+    require(
+        single_html_url(page, r'<link rel="canonical" href="([^"]*)">', f"{label} canonical URL")
+        == f"{CANONICAL_SITE_URL}/papers/{publication['slug']}.html",
+        f"{label} canonical URL changed.",
+    )
+    study = content["study_profile"]
+    require(study.get("profile_type") == "multicohort_omics", f"{label} profile changed.")
+    require("unique_total_n" not in study, f"{label} must not derive a participant total.")
+    metrics = {item["label"]: item["value"] for item in study["scale_metrics"]}
+    expected_metrics = {
+        "article-reported aggregate": "3,758 samples across 35 public GEO datasets",
+        "primary CRC single-cell cohort": "GSE166555; 25 tissue samples: 13 CRC and 12 normal mucosal samples",
+        "post-QC single cells": "94,683",
+        "initial colon circadian reference": "906 genes; maSigPro-derived temporal genes with FDR <0.01 and goodness-of-fit R² ≥0.7",
+        "circadian co-expression network": "9 modules after meta-cell network construction",
+        "CRC-associated CTD signature": "4 modules (M1, M3, M4 and M6), totaling 559 genes",
+        "ClockProCRC random-background model": "100 expression bins and 1,000 expression-matched random samplings",
+        "article-reported circadian robustness evaluation": "16 independent public datasets spanning human, mouse and non-human-primate circadian contexts",
+        "CRC cross-cohort robustness layer": ">1,400 CRC samples across 10 independent cohorts",
+        "functional CRC cell models": "HCT116 and SW480",
+    }
+    require(
+        all(metrics.get(key) == value for key, value in expected_metrics.items()),
+        f"{label} evidence scale changed.",
+    )
+    require(
+        "3,733 samples from 34 additional cohorts" in study["counting_note"]
+        and "not interpreted as 3,758 unique human participants" in study["counting_note"],
+        f"{label} sample/cell counting distinction changed.",
+    )
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(list(findings) == [f"KF{i}" for i in range(1, 7)], f"{label} findings changed.")
+    require(
+        all(item["source_locator"].strip() for item in findings.values()),
+        f"{label} source locator missing.",
+    )
+    evidence = {
+        key: {item["label"]: item["value"] for item in finding["evidence"]}
+        for key, finding in findings.items()
+    }
+    required_evidence = {
+        "KF2": {
+            "expression stratification": "100 expression bins",
+            "random-background sampling": "1,000 iterations with expression-matched feature selection",
+            "single-cell CRD grouping": "75th-percentile cutoff",
+            "bulk-RNA grouping": "cohort median commonly used",
+        },
+        "KF3": {
+            "survival cohort": "GSE17537, n=55",
+            "survival association": "higher ClockProCRC associated with lower overall-survival probability; log-rank P<0.01",
+            "RCS reference": "ClockProCRC 0.0197 corresponded to ln(HR)=0 / HR=1 in the displayed spline model",
+            "GSE68468 progression comparison": "P<0.0001",
+        },
+        "KF4": {"single-cell evaluation cohorts": "GSE200997 and GSE196964"},
+        "KF5": {
+            "genetic-algorithm iterations": "100",
+            "recurrent regulatory axes": "61",
+            "NFATC2→SYNE1 regulatory strength in CRC": "0.607; 95% CI 0.412-0.802",
+            "NFATC2→SYNE1 regulatory strength in normal mucosa": "-0.102; 95% CI -0.058-0.262",
+        },
+        "KF6": {
+            "cell models": "HCT116 and SW480",
+            "SYNE1 perturbation": "two specific siRNAs were used for knockdown",
+            "Transwell result": "SYNE1 knockdown reduced migration and invasion; 3 independent biological replicates with 4 random microscopic fields averaged per experiment",
+            "wound-healing result": "SYNE1 knockdown reduced migration",
+            "colony-formation result": "SYNE1 knockdown reduced colony formation in both cell lines",
+            "epithelial/mesenchymal markers": "E-cadherin and ZO-1 increased, while N-cadherin decreased after SYNE1 knockdown",
+            "CLOCK perturbation": "CLOCK knockdown increased ClockProCRC; melatonin treatment partially restored the molecular state",
+            "SYNE1 rhythmicity": "si-NC P=2.5×10^-4; si-CLOCK P=0.0704; si-CLOCK+melatonin P=3.4×10^-3",
+            "SYNE1 ROC scope": "AUC=0.915 for discriminating CLOCK-knockdown experimental conditions, not for diagnosing CRC in patients",
+            "melatonin condition": "0.1 mM for 24 h before RNA collection in the cell experiment",
+        },
+    }
+    require(
+        all(evidence[key].get(item) == value
+            for key, checks in required_evidence.items()
+            for item, value in checks.items()),
+        f"{label} reviewed quantitative evidence or assay scope changed.",
+    )
+    require(
+        len(content["qa"]) == 8
+        and all(set(item["evidence_refs"]).issubset(findings) for item in content["qa"]),
+        f"{label} Q&A evidence references changed.",
+    )
+    require(
+        [norm_doi(item["doi"]) for item in content["related_papers"]]
+        == ["10.1016/j.joim.2025.06.003", "10.71321/fy14v342",
+            "10.1038/s41598-024-65236-5", "10.1002/mdr2.70052"],
+        f"{label} related research changed.",
+    )
+    provenance = content["provenance"]
+    require(
+        set(provenance) == {
+            "publisher_url", "code_url", "datasets_cohorts", "evidence_basis",
+            "publication_status", "count_reconciliation", "accession_note",
+            "code_note", "score_gene_set_note", "locator_note",
+        } and "pmid" not in provenance and "pmcid" not in provenance,
+        f"{label} provenance fields changed.",
+    )
+    require(
+        "GSE200977" in provenance["accession_note"]
+        and "GSE200997" in provenance["accession_note"]
+        and "50 bins" in provenance["code_note"]
+        and "100 bins" in provenance["code_note"]
+        and "DiffCircadian.R" in provenance["code_note"]
+        and "associated code" in provenance["code_note"]
+        and "559 CTD genes" in provenance["score_gene_set_note"]
+        and "early peer-reviewed accepted version" in provenance["publication_status"]
+        and "Version of Record" in provenance["publication_status"],
+        f"{label} provenance discrepancies changed.",
+    )
+    scientific_fields = {key: value for key, value in content.items()
+                         if key not in {"provenance", "limitations"}}
+    scientific_text = json.dumps(scientific_fields, ensure_ascii=False).casefold()
+    require(
+        "gse200977" not in scientific_text,
+        f"{label} must not use the manuscript typo as a scientific accession.",
+    )
+    require(
+        not any(phrase in scientific_text for phrase in (
+            "3,758 unique participants", "94,683 participants",
+            "559-gene score", "559-gene clockprocrc", "genomic knockout",
+            "crispr knockout", "gene deletion", "transwell proliferation",
+            "crc diagnostic auc", "melatonin treats crc",
+            "prospectively clinically validated", "clinically validated therapeutic target",
+        )),
+        f"{label} contains an unsupported scientific or clinical interpretation.",
+    )
+    require(
+        "experimental conditions" in content["qa"][6]["answer"]
+        and "not to CRC diagnosis" in content["qa"][6]["answer"],
+        f"{label} Q&A misstates the SYNE1 AUC scope.",
+    )
+    page_text = visible_text(page)
+    require(
+        evidence["KF6"]["SYNE1 ROC scope"] in page_text
+        and "AUC=0.915 for diagnosing CRC" not in page_text
+        and "CRC diagnostic AUC=0.915" not in page_text,
+        f"{label} must not misstate the experimental AUC as CRC diagnosis.",
+    )
+    require(
+        not any(item.get("@type") in {"FAQPage", "ClinicalTrial", "MedicalStudy", "Drug"}
+                for item in json_ld_objects(page)),
+        f"{label} must not emit unsupported clinical or FAQ schema.",
+    )
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -1120,6 +1280,10 @@ def validate_v2_inventory(v2_dois):
     require(
         OLINK_DCM_DOI in v2_dois,
         "Olink DCM must remain a Paper GEO 2.0 Gold Standard page.",
+    )
+    require(
+        CLOCKPROCRC_DOI in v2_dois,
+        "ClockProCRC must remain a Paper GEO 2.0 Gold Standard page.",
     )
     require(
         len(v2_dois) == len(set(v2_dois)),
@@ -1569,6 +1733,8 @@ def validate_site():
                     validate_smc_fate_v2_regression(content, item, page)
                 elif content_doi == OLINK_DCM_DOI:
                     validate_olink_dcm_v2_regression(content, item, page)
+                elif content_doi == CLOCKPROCRC_DOI:
+                    validate_clockprocrc_v2_regression(content, item, page)
             else:
                 paper_geo_statuses[token] = "v1"
                 require(
