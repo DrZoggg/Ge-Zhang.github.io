@@ -7,6 +7,16 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 
+from citation_common import (
+    CITATIONS_DIR,
+    citation_files,
+    citation_record,
+    load_citation_metadata,
+    render_bibtex,
+    render_cite_html,
+    render_csl_json,
+    render_ris,
+)
 from site_common import (
     DEEP_CONTENT_DIR,
     LEGACY_DEEP_SLUGS,
@@ -1507,7 +1517,8 @@ def render_deep_markdown(content, *, related_papers=None):
     return render_deep_v1_markdown(content)
 
 
-def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None):
+def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
+                      citation_data=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -1554,11 +1565,33 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         for author in authors
     )
     if publication.get("year"):
-        citation.append(
-            f'<meta name="citation_publication_date" content="{html.escape(str(publication["year"]), quote=True)}">'
+        citation_date = (
+            citation_data["publication_date"].replace("-", "/")
+            if citation_data and citation_data.get("publication_date")
+            else str(publication["year"])
         )
+        citation.append(
+            f'<meta name="citation_publication_date" content="{html.escape(citation_date, quote=True)}">'
+        )
+        if citation_data and citation_data.get("publication_date"):
+            citation.append(
+                f'<meta name="citation_date" content="{html.escape(citation_date, quote=True)}">'
+            )
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
+    if citation_data:
+        for key, tag in (
+            ("volume", "citation_volume"), ("issue", "citation_issue"),
+            ("first_page", "citation_firstpage"),
+            ("last_page", "citation_lastpage"),
+            ("article_number", "citation_article_number"),
+            ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
+            ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
+        ):
+            if citation_data.get(key):
+                citation.append(
+                    f'<meta name="{tag}" content="{html.escape(citation_data[key], quote=True)}">'
+                )
     v2_authors_html = ""
     if is_v2:
         author_items = "".join(
@@ -1611,7 +1644,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <meta property="og:type" content="article">
 <meta property="og:url" content="{html.escape(canonical, quote=True)}">
 {chr(10).join(citation)}
-<link rel="stylesheet" href="../assets/style.css"></head><body>
+<link rel="stylesheet" href="../assets/style.css">{'<script defer src="../assets/citation.js"></script>' if citation_data else ''}</head><body>
 <header><nav><a class="brand" href="../index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks"><a href="../index.html#research">Research</a><a href="../publications.html">All publications</a><a href="../index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap">
 <section class="hero" style="grid-template-columns:1fr"><div>
@@ -1620,7 +1653,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
 <div class="links">{' '.join(links)}</div>
 </div></section>
-{deep_html}{pending_html}
+{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
 {notice_html}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
@@ -1940,6 +1973,7 @@ def build_site():
     featured_tokens = {controller_token(entry) for entry in featured_entries}
     deep_tokens = {controller_token(entry) for entry in deep_entries}
     public_master = [publication for publication in master if not is_withdrawn(publication)]
+    citation_metadata = load_citation_metadata(public_master)
     deep_contents = {
         publication_token(publication): load_deep_content(publication, allow_missing=True)
         for publication in public_master
@@ -1961,6 +1995,10 @@ def build_site():
         for item in public_items
         if norm_doi(item.get("doi"))
     }
+    citation_by_slug = {
+        item["slug"]: citation_record(item, citation_metadata, config["site_url"])
+        for item in public_items
+    }
     expected_slugs = {item["slug"] for item in public_items}
     missing_legacy = sorted(set(LEGACY_DEEP_SLUGS) - expected_slugs)
     if missing_legacy:
@@ -1978,6 +2016,7 @@ def build_site():
                 config=config,
                 deep_content=deep_content,
                 public_by_doi=public_by_doi,
+                citation_data=citation_by_slug[item["slug"]],
             ),
         )
         write_text_if_changed(
@@ -1989,6 +2028,24 @@ def build_site():
                 public_by_doi=public_by_doi,
             ),
         )
+    CITATIONS_DIR.mkdir(parents=True, exist_ok=True)
+    expected_citation_files = set()
+    for record in citation_by_slug.values():
+        if record is None:
+            continue
+        files = citation_files(record)
+        for name, render in (
+            (files["bib"], render_bibtex),
+            (files["ris"], render_ris),
+            (files["csl"], render_csl_json),
+        ):
+            expected_citation_files.add(name)
+            write_text_if_changed(CITATIONS_DIR / name, render(record))
+    unexpected_citation_files = {
+        path.name for path in CITATIONS_DIR.iterdir()
+    } - expected_citation_files
+    if unexpected_citation_files:
+        raise ValueError("Unexpected citation exports: " + ", ".join(sorted(unexpected_citation_files)))
     for path in list(PAPERS_DIR.glob("*.html")) + list(PAPERS_DIR.glob("*.md")):
         if path.stem not in expected_slugs and GENERATED_MARKER in path.read_text(
             encoding="utf-8", errors="ignore"

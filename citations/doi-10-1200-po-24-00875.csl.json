@@ -1,0 +1,32 @@
+{
+  "id": "doi-10-1200-po-24-00875",
+  "type": "article-journal",
+  "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
+  "author": [
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Shiqian Zhang"
+    },
+    {
+      "literal": "Haonan Zhang"
+    },
+    {
+      "literal": "Ruhao Wu"
+    },
+    {
+      "literal": "Haoze Zheng"
+    }
+  ],
+  "container-title": "JCO Precision Oncology",
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "DOI": "10.1200/po-24-00875",
+  "URL": "https://doi.org/10.1200/po-24-00875"
+}

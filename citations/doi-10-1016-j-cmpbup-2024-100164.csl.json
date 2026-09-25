@@ -1,0 +1,53 @@
+{
+  "id": "doi-10-1016-j-cmpbup-2024-100164",
+  "type": "article-journal",
+  "title": "Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)",
+  "author": [
+    {
+      "literal": "Teng Li"
+    },
+    {
+      "literal": "Xueke Li"
+    },
+    {
+      "literal": "Haoran XU"
+    },
+    {
+      "literal": "Yanyan Wang"
+    },
+    {
+      "literal": "Jingyu Ren"
+    },
+    {
+      "literal": "Shixiang Jing"
+    },
+    {
+      "literal": "Zichen Jin"
+    },
+    {
+      "literal": "Gang chen"
+    },
+    {
+      "literal": "Youyou Zhai"
+    },
+    {
+      "literal": "Zeyu Wu"
+    },
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Yuying Wang"
+    }
+  ],
+  "container-title": "Computer Methods and Programs in Biomedicine Update",
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.cmpbup.2024.100164",
+  "URL": "https://doi.org/10.1016/j.cmpbup.2024.100164"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "apvs",
+  "type": "article-journal",
+  "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
+  "author": [
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Xiaolin Cui"
+    },
+    {
+      "literal": "Zhen Qin"
+    },
+    {
+      "literal": "Zeyu Wang"
+    },
+    {
+      "literal": "Yongzheng Lu"
+    },
+    {
+      "literal": "Yanyan Xu"
+    },
+    {
+      "literal": "Shuai Xu"
+    },
+    {
+      "literal": "Laiyi Tang"
+    },
+    {
+      "literal": "Li Zhang"
+    },
+    {
+      "literal": "Gangqiong Liu"
+    },
+    {
+      "literal": "Xiaofang Wang"
+    },
+    {
+      "literal": "Jinying Zhang"
+    },
+    {
+      "literal": "Junnan Tang"
+    }
+  ],
+  "container-title": "iScience",
+  "issued": {
+    "date-parts": [
+      [
+        2023
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.isci.2023.107587",
+  "URL": "https://doi.org/10.1016/j.isci.2023.107587"
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "papers": {
+    "10.1002/mdr2.70052": {
+      "publication_date": "2026-01-05",
+      "volume": "2",
+      "issue": "2",
+      "first_page": "236",
+      "last_page": "279",
+      "issn": "2998-4963",
+      "eissn": "2998-4971",
+      "publisher": "Wiley",
+      "verified_sources": [
+        "https://doi.org/10.1002/mdr2.70052",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70052"
+      ]
+    }
+  }
+}

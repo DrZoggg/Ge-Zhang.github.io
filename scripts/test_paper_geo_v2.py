@@ -1,6 +1,7 @@
 import copy
 import json
 
+from citation_common import citation_record, load_citation_metadata
 from build_publications import (
     flatten_concepts,
     load_deep_content,
@@ -186,13 +187,14 @@ def synthetic_multicohort_fixture():
     return publication, content
 
 
-def rendered_v2(publication, content, config, public_by_doi):
+def rendered_v2(publication, content, config, public_by_doi, citation_data=None):
     validate_deep_v2_content(content, f"{publication['slug']} test fixture")
     page = render_paper_html(
         publication,
         config=config,
         deep_content=content,
         public_by_doi=public_by_doi,
+        citation_data=citation_data,
     )
     markdown = render_paper_markdown(
         publication,
@@ -223,6 +225,7 @@ def run_tests():
         for item in public
         if norm_doi(item.get("doi"))
     }
+    citation_metadata = load_citation_metadata(public)
 
     deep_entries = load_deep_geo()
     featured_entries = load_featured()
@@ -251,6 +254,7 @@ def run_tests():
             config=config,
             deep_content=content,
             public_by_doi=public_by_doi,
+            citation_data=citation_record(publication, citation_metadata, config["site_url"]),
         ) == (PAPERS_DIR / f"{publication['slug']}.html").read_text(encoding="utf-8")
         assert render_paper_markdown(
             publication,
@@ -343,7 +347,8 @@ def run_tests():
 
     for publication, content in v2_items:
         page, markdown, schema = rendered_v2(
-            publication, content, config, public_by_doi
+            publication, content, config, public_by_doi,
+            citation_record(publication, citation_metadata, config["site_url"]),
         )
         assert schema["description"] == content["author_summary"]
         assert schema["keywords"] == flatten_concepts(content)

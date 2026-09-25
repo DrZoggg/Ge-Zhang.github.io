@@ -1,0 +1,47 @@
+{
+  "id": "time-cart",
+  "type": "article-journal",
+  "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
+  "author": [
+    {
+      "literal": "Zhaokai Zhou"
+    },
+    {
+      "literal": "Jiahui Wang"
+    },
+    {
+      "literal": "Jiaojiao Wang"
+    },
+    {
+      "literal": "Shuai Yang"
+    },
+    {
+      "literal": "Ruizhi Wang"
+    },
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Zhengrui Li"
+    },
+    {
+      "literal": "Run Shi"
+    },
+    {
+      "literal": "Zhan Wang"
+    },
+    {
+      "literal": "Qiong Lu"
+    }
+  ],
+  "container-title": "Molecular Cancer",
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "DOI": "10.1186/s12943-024-02047-2",
+  "URL": "https://doi.org/10.1186/s12943-024-02047-2"
+}

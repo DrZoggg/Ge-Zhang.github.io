@@ -1,0 +1,35 @@
+{
+  "id": "doi-10-1002-tox-24284",
+  "type": "article-journal",
+  "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
+  "author": [
+    {
+      "literal": "Zhongyan Li"
+    },
+    {
+      "literal": "Shengbin Pei"
+    },
+    {
+      "literal": "Yanjuan Wang"
+    },
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Haoran Lin"
+    },
+    {
+      "literal": "Shiyang Dong"
+    }
+  ],
+  "container-title": "Environmental Toxicology",
+  "issued": {
+    "date-parts": [
+      [
+        2024
+      ]
+    ]
+  },
+  "DOI": "10.1002/tox.24284",
+  "URL": "https://doi.org/10.1002/tox.24284"
+}

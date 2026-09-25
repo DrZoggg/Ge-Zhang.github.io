@@ -7,6 +7,16 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 
+from citation_common import (
+    CITATIONS_DIR,
+    citation_files,
+    citation_plain_text,
+    citation_record,
+    load_citation_metadata,
+    render_bibtex,
+    render_csl_json,
+    render_ris,
+)
 from build_publications import (
     GA4_MEASUREMENT_ID,
     GA4_TAG,
@@ -368,6 +378,7 @@ def validate_v2_rendered_page(
     )
     expected_headings = [
         "Full Authors",
+        *(["Cite this paper"] if 'id="cite-this-paper"' in page else []),
         snapshot_heading,
         "Research Question",
         "Author Evidence Summary",
@@ -721,7 +732,7 @@ def validate_aihflevel_v2_regression(content, publication, page):
         )
     require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
     require(
-        element_texts(page, "h2")[1] == "Evidence Snapshot",
+        element_texts(page, "h2")[1 + ('id="cite-this-paper"' in page)] == "Evidence Snapshot",
         f"{label} evidence snapshot heading changed.",
     )
 
@@ -1950,6 +1961,72 @@ def validate_v2_inventory(v2_dois):
     )
 
 
+def validate_citations(publications, config):
+    enhancements = load_citation_metadata(publications)
+    require(CITATIONS_DIR.is_dir(), "Generated citations directory is missing.")
+    expected_names = set()
+    counts = {"eligible": 0, "skipped": 0, "bib": 0, "ris": 0, "csl": 0}
+    for publication in publications:
+        slug = validate_slug(publication["slug"])
+        page = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
+        record = citation_record(publication, enhancements, config["site_url"])
+        if record is None:
+            counts["skipped"] += 1
+            require('id="cite-this-paper"' not in page,
+                    f"Ineligible publication {slug} has a citation section.")
+            require("../assets/citation.js" not in page,
+                    f"Ineligible publication {slug} loads citation script.")
+            continue
+        counts["eligible"] += 1
+        require(page.count('id="cite-this-paper"') == 1,
+                f"Eligible publication {slug} must have one citation section.")
+        require(page.count("../assets/citation.js") == 1,
+                f"Eligible publication {slug} must load one local citation script.")
+        require(html.escape(citation_plain_text(record)) in page,
+                f"Plain citation differs from verified record for {slug}.")
+        require(f'href="{record["doi_url"]}"' in page,
+                f"Full DOI URL is missing from {slug} citation section.")
+        files = citation_files(record)
+        renderers = {"bib": render_bibtex, "ris": render_ris, "csl": render_csl_json}
+        for format_name, filename in files.items():
+            expected_names.add(filename)
+            counts[format_name] += 1
+            require(f'href="../citations/{filename}"' in page,
+                    f"Citation download link missing from {slug}.html: {filename}")
+            path = CITATIONS_DIR / filename
+            require(path.is_file(), f"Citation export missing: {filename}")
+            content = path.read_text(encoding="utf-8")
+            require(content == renderers[format_name](record),
+                    f"Citation export does not preserve source identity: {filename}")
+            if format_name == "csl":
+                csl = json.loads(content)
+                require(csl["DOI"] == record["doi"] and csl["title"] == record["title"]
+                        and [author["literal"] for author in csl["author"]] == record["authors"],
+                        f"CSL identity or author sequence mismatch: {filename}")
+        expected_date = record.get("publication_date", "").replace("-", "/") or str(record["year"])
+        require(meta_contents(page, "citation_publication_date") == [expected_date],
+                f"Highwire publication date mismatch for {slug}.")
+        if record.get("publication_date"):
+            require(meta_contents(page, "citation_date") == [expected_date],
+                    f"Highwire full date mismatch for {slug}.")
+        else:
+            require(not meta_contents(page, "citation_date"),
+                    f"Unverified full citation date for {slug}.")
+        for source, tag in (
+            ("volume", "citation_volume"), ("issue", "citation_issue"),
+            ("first_page", "citation_firstpage"), ("last_page", "citation_lastpage"),
+            ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
+            ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
+        ):
+            expected = [record[source]] if record.get(source) else []
+            require(meta_contents(page, tag) == expected,
+                    f"Highwire {tag} mismatch for {slug}.")
+    actual_names = {path.name for path in CITATIONS_DIR.iterdir()}
+    require(actual_names == expected_names,
+            f"Orphan/missing citation files: {sorted(actual_names ^ expected_names)}")
+    return counts
+
+
 def validate_site():
     require(PROFILE_CONFIG_PATH.is_file(), "data/profile_config.json is missing.")
     profile = load_profile_config()
@@ -2081,6 +2158,7 @@ def validate_site():
     )
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
+    citation_metadata = load_citation_metadata(public_expected)
     withdrawn = [item for item in master if is_withdrawn(item)]
     public_json = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
     paper_index_payload = json.loads((ROOT / "paper_index.json").read_text(encoding="utf-8"))
@@ -2285,13 +2363,19 @@ def validate_site():
             )
         if item.get("year"):
             expected_year = str(item["year"])
+            citation_data = citation_record(item, citation_metadata, config["site_url"])
+            expected_highwire_date = (
+                citation_data["publication_date"].replace("-", "/")
+                if citation_data and citation_data.get("publication_date")
+                else expected_year
+            )
             require(
                 single_meta_content(
                     page,
                     "citation_publication_date",
                     f"{slug}.html citation_publication_date",
                 )
-                == expected_year,
+                == expected_highwire_date,
                 f"citation_publication_date changed for {slug}.html.",
             )
             require(
@@ -2908,6 +2992,7 @@ def validate_site():
     for item in withdrawn:
         require(item.get("title", "") not in llms_full, "Withdrawn title in llms-full.txt.")
 
+    citation_counts = validate_citations(public_expected, config)
     result = {
         "master": len(master),
         "public": len(public_expected),
@@ -2921,6 +3006,7 @@ def validate_site():
         "citation_author_pages": citation_author_pages,
         "schema_author_array_pages": schema_author_array_pages,
         "paper_geo_v2_pages": len(v2_dois),
+        "citations": citation_counts,
     }
     print("VALIDATION PASS")
     print(json.dumps(result, ensure_ascii=False, indent=2))
