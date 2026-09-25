@@ -24,6 +24,7 @@ from validate_site import (
     CLOCKPROCRC_DOI,
     CIRCADIAN_REVIEW_DOI,
     KIF13B_MERTK_DOI,
+    KIF13B_VSMC_DOI,
     OLINK_DCM_DOI,
     SARS_COV2_HF_DOI,
     SMC_FATE_DOI,
@@ -35,11 +36,15 @@ from validate_site import (
     validate_clockprocrc_v2_regression,
     validate_circadian_review_v2_regression,
     validate_kif13b_mertk_v2_regression,
+    validate_kif13b_vsmc_v2_regression,
     validate_olink_dcm_v2_regression,
     validate_sars_cov2_hf_v2_regression,
     validate_smc_fate_v2_regression,
     validate_v2_inventory,
     validate_v2_rendered_page,
+    element_texts,
+    meta_contents,
+    visible_text,
 )
 
 
@@ -53,7 +58,7 @@ PRIORITY_STATUS = (
     ("10.1093/eurheartj/ehaf523", "v2"),
     ("10.1002/mdr2.70052", "v2"),
     ("10.1200/po.24.00089", "v1"),
-    ("10.1172/jci194175", "v1"),
+    ("10.1172/jci194175", "v2"),
     ("10.1021/acs.jproteome.4c00522", "v2"),
     ("10.1016/j.ejphar.2023.175569", "v1"),
     ("10.1002/mdr2.70004", "pending"),
@@ -254,7 +259,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (8, 5, 15)
+    assert (len(v2_items), v1_count, pending_count) == (9, 4, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -288,6 +293,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == CIRCADIAN_REVIEW_DOI
     ]
     assert len(review_items) == 1
+    jci_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == KIF13B_VSMC_DOI
+    ]
+    assert len(jci_items) == 1
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
@@ -322,6 +331,10 @@ def run_tests():
         CIRCADIAN_REVIEW_DOI: (
             "Review Design & Evidence Synthesis",
             None,
+        ),
+        KIF13B_VSMC_DOI: (
+            "Study Design & Analytical Framework",
+            "External dataset evaluation",
         ),
     }
     assert {norm_doi(item[0].get("doi")) for item in v2_items} == set(
@@ -520,6 +533,86 @@ def run_tests():
                 assert "provenance" in str(exc)
             else:
                 raise AssertionError("New-data inflation was accepted for the review.")
+        elif norm_doi(publication.get("doi")) == KIF13B_VSMC_DOI:
+            validate_kif13b_vsmc_v2_regression(content, publication, page)
+            target = "doi-10-1172-jci194175"
+            assert publication["title"] == content["display_title"]
+            assert publication["slug"] == target
+            assert page == (PAPERS_DIR / f"{target}.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / f"{target}.md").read_text(encoding="utf-8")
+            assert [item["id"] for item in content["key_findings"]] == [
+                f"KF{i}" for i in range(1, 8)
+            ]
+            assert len(content["qa"]) == 10
+            assert len(publication["authors"]) == 20
+            assert publication["authors"][4] == "Ge Zhang"
+            assert "researcher_author_positions" not in publication
+            assert element_texts(page, "li", {"class": "paper-geo-v2__author"}) == publication["authors"]
+            assert meta_contents(page, "citation_author") == publication["authors"]
+            markdown_authors = markdown.split("## Full Authors\n\n", 1)[1].split("\n\n## ", 1)[0]
+            assert markdown_authors.splitlines() == [
+                f"{position}. {name}"
+                for position, name in enumerate(publication["authors"], start=1)
+            ]
+            assert len(schema["author"]) == 20
+            assert [author["name"] for author in schema["author"]] == publication["authors"]
+            assert schema["author"][4]["@id"] == config["person_id"]
+            assert schema["author"][4]["sameAs"] == f"https://orcid.org/{config['orcid']}"
+            assert sum(author.get("@id") == config["person_id"]
+                       for author in schema["author"]) == 1
+            for section in (
+                "Research Question", "Author Evidence Summary", "Key Findings",
+                "Evidence Scale", "Study Design & Analytical Framework",
+                "What This Study Adds", "Evidence Scope", "Limitations",
+                "Q&A", "Concepts & Entities", "Related Research",
+                "Publication & Provenance",
+            ):
+                assert section.replace("&", "&amp;") in page and section in markdown
+            assert content["evidence_page_notice"] in visible_text(page)
+            assert content["evidence_page_notice"] in markdown
+            for finding in content["key_findings"]:
+                assert finding["source_locator"] in page
+                assert finding["source_locator"] in markdown
+            for phrase in (
+                "6 patients", "4 stable and 4 unstable", "stable n=19",
+                "unstable n=38", "87 human carotid plaques overall",
+                "n=8 per group", "five mice were pooled into one",
+                "20-week Western diet", "12-week Western diet",
+                "VSMC-Fib4", "VSMC-Fib1", "10 µM", "1 mg/kg/day",
+                "final 12 weeks", "n=6 per group",
+            ):
+                assert phrase in page and phrase in markdown
+            related = resolve_related_papers(content, public_by_doi, config["site_url"])
+            assert [item["doi"] for item in related] == [
+                "10.1093/eurheartj/ehaf523", "10.1186/s12967-022-03795-9"
+            ]
+            assert [item["url"] for item in related] == [
+                "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+                "https://drgezhang.com/papers/smc-fate.html",
+            ]
+            for item in related:
+                assert item["relationship"] in page and item["relationship"] in markdown
+            for false_claim in (
+                "Kenpaullone is a selective KLF4 inhibitor.",
+                "Kenpaullone has human treatment efficacy.",
+                "Five independent scRNA libraries were analyzed.",
+                "Prospective clinical validation was performed.",
+                "KIF13B directly binds KCTD10.",
+            ):
+                inflated = copy.deepcopy(content)
+                inflated["author_summary"] += " " + false_claim
+                try:
+                    validate_kif13b_vsmc_v2_regression(inflated, publication, page)
+                except ValidationError as exc:
+                    assert "unsupported positive scientific claim" in str(exc)
+                else:
+                    raise AssertionError(f"Unsupported JCI claim was accepted: {false_claim}")
+            excess_qa = copy.deepcopy(content)
+            excess_qa["qa"].append({"question": "Extra test question?", "answer": "Extra answer."})
+            expect_value_error(
+                lambda: validate_deep_v2_content(excess_qa, "extra JCI Q&A"),
+                "qa must contain",
+            )
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

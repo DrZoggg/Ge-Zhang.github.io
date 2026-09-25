@@ -60,6 +60,7 @@ CLOCKPROCRC_DOI = "10.1038/s41698-026-01699-1"
 SARS_COV2_HF_DOI = "10.1002/ehf2.14003"
 KIF13B_MERTK_DOI = "10.1093/eurheartj/ehaf523"
 CIRCADIAN_REVIEW_DOI = "10.1002/mdr2.70052"
+KIF13B_VSMC_DOI = "10.1172/jci194175"
 
 
 def require(condition, message):
@@ -1700,6 +1701,109 @@ def validate_circadian_review_v2_regression(content, publication, page):
             f"{label} must not emit clinical, dataset or FAQ schema.")
 
 
+def validate_kif13b_vsmc_v2_regression(content, publication, page):
+    label = "JCI KIF13B/VSMC Paper GEO 2.0"
+    slug = "doi-10-1172-jci194175"
+    title = ("Vascular smooth muscle cell-derived KIF13B inhibits "
+             "proinflammatory responses to protect against atherosclerosis")
+    require(content.get("version") == 2
+            and norm_doi(content.get("doi")) == KIF13B_VSMC_DOI
+            and norm_doi(publication.get("doi")) == KIF13B_VSMC_DOI
+            and content.get("display_title") == publication.get("title") == title
+            and publication.get("slug") == slug,
+            f"{label} identity changed.")
+    require(single_html_url(page, r'<link rel="canonical" href="([^"]*)">',
+                            f"{label} canonical")
+            == f"{CANONICAL_SITE_URL}/papers/{slug}.html",
+            f"{label} canonical changed.")
+    authors = publication_authors(publication)
+    require(len(authors) == 20 and authors[4] == "Ge Zhang"
+            and "researcher_author_positions" not in publication,
+            f"{label} author metadata changed.")
+    study = content["study_profile"]
+    require(study["profile_type"] == "multicohort_omics"
+            and "unique_total_n" not in study and "model_profile" not in content,
+            f"{label} evidence design or denominator scope changed.")
+    metrics = {item["label"]: item["value"] for item in study["scale_metrics"]}
+    anchors = {
+        "Local paired carotid CEA cohort": ("6 patients", "paired regions", "n=4 regions", "n=6 regions"),
+        "GSE120521": ("4 carotid endarterectomy patients", "4 stable", "4 unstable"),
+        "PXD062283": ("87 human carotid plaques overall", "stable n=19", "unstable n=38"),
+        "Human methylation evidence": ("Three independent", "not be summed"),
+        "Human spatial evidence": ("GSE274572", "no new participant count"),
+        "VSMC-specific PCSK9 mouse model": ("male", "20 weeks", "n=8 per group", "n=4 per group"),
+        "Mouse single-cell experiment": ("five mice were pooled into one", "per genotype", "20-week", "12-week"),
+        "Primary HASMC perturbation": ("n=3", "n=5", "n=6"),
+        "KLF4 and KCTD10 rescue": ("n=3", "n=10"),
+        "Kenpaullone intervention": ("10 µM", "1 mg/kg/day", "final 12 weeks", "20-week", "n=6 per group"),
+    }
+    require(set(metrics) == set(anchors)
+            and all(all(token in metrics[key] for token in tokens)
+                    for key, tokens in anchors.items())
+            and "not five independent single-cell libraries" in study["counting_note"]
+            and "not prospective clinical validation" in study["counting_note"],
+            f"{label} evidence denominators or counting boundaries changed.")
+    findings = content["key_findings"]
+    require([item["id"] for item in findings] == [f"KF{i}" for i in range(1, 8)]
+            and all(item["source_locator"] in page for item in findings),
+            f"{label} findings or source locators changed.")
+    require(all(term in findings[5]["context"] for term in (
+        "predictive", "KCTD10-KLF4 association", "remains unresolved"))
+            and all(term in findings[6]["context"] for term in (
+                "not established as a KLF4-selective drug", "preclinical",
+                "does not prove KLF4-selective pharmacology or human treatment efficacy")),
+            f"{label} mechanistic or Kenpaullone boundary changed.")
+    require(len(content["qa"]) == 10
+            and [norm_doi(item["doi"]) for item in content["related_papers"]]
+            == ["10.1093/eurheartj/ehaf523", "10.1186/s12967-022-03795-9"],
+            f"{label} Q&A or related-paper scope changed.")
+    provenance = content["provenance"]
+    require(provenance.get("pmid") == "41609725"
+            and provenance.get("pmcid") == "PMC12987658"
+            and all(token in provenance.get("scrna_note", "")
+                    for token in ("Five mice", "one single-cell library per genotype",
+                                  "20 weeks", "12 weeks", "discrepancy"))
+            and all(token in provenance.get("figure5_note", "")
+                    for token in ("VSMC-Fib4", "VSMC-Fib1", "does not over-resolve"))
+            and all(token in provenance.get("kenpaullone_note", "")
+                    for token in ("preclinical rescue", "CDK/GSK3β", "selectivity is not established")),
+            f"{label} provenance or source discrepancies changed.")
+    scope = " ".join(content["evidence_scope"]["does_not_establish"]).casefold()
+    require(all(token in scope for token in (
+        "causes plaque instability in humans", "proven therapeutic efficacy",
+        "selective for klf4", "five mice were pooled into one library",
+        "one definitive single-cell diet duration",
+        "mechanism by which kif13b regulates kctd10 abundance",
+        "only male mice")),
+        f"{label} evidence boundaries changed.")
+    require(any("Only male mice" in item for item in content["limitations"])
+            and any("VSMC-Fib4" in item and "VSMC-Fib1" in item
+                    for item in content["limitations"]),
+            f"{label} limitations changed.")
+    positive_fields = [
+        content["summary"], content["research_question"], content["author_summary"],
+        *(item["claim"] for item in findings),
+        *(item["context"] for item in findings),
+        *(evidence["value"] for finding in findings for evidence in finding["evidence"]),
+        *(item["answer"] for item in content["qa"]),
+    ]
+    forbidden = (
+        "selective klf4 inhibitor", "human treatment efficacy",
+        "five independent scrna libraries", "prospective clinical validation",
+        "kif13b methylation causes", "kif13b directly binds kctd10",
+        "lipid-independent in humans",
+    )
+    for field in positive_fields:
+        for clause in re.split(r"(?<=[.!?])\s+|;\s+", field.casefold()):
+            if re.search(r"\b(no|not|never|without|did not|does not)\b", clause):
+                continue
+            require(not any(phrase in clause for phrase in forbidden),
+                    f"{label} contains an unsupported positive scientific claim.")
+    require(not any(item.get("@type") in {"FAQPage", "ClinicalTrial", "MedicalStudy", "Drug"}
+                    for item in json_ld_objects(page)),
+            f"{label} must not emit unsupported clinical or FAQ schema.")
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -1730,6 +1834,8 @@ def validate_v2_inventory(v2_dois):
             "KIF13B/MERTK must be a Paper GEO 2.0 Gold Standard page.")
     require(CIRCADIAN_REVIEW_DOI in v2_dois,
             "Circadian review must be a Paper GEO 2.0 Gold Standard page.")
+    require(KIF13B_VSMC_DOI in v2_dois,
+            "JCI KIF13B/VSMC must be a Paper GEO 2.0 Gold Standard page.")
     require(
         len(v2_dois) == len(set(v2_dois)),
         "Paper GEO 2.0 DOI values must be unique.",
@@ -2194,6 +2300,8 @@ def validate_site():
                     validate_kif13b_mertk_v2_regression(content, item, page)
                 elif content_doi == CIRCADIAN_REVIEW_DOI:
                     validate_circadian_review_v2_regression(content, item, page)
+                elif content_doi == KIF13B_VSMC_DOI:
+                    validate_kif13b_vsmc_v2_regression(content, item, page)
             else:
                 paper_geo_statuses[token] = "v1"
                 require(

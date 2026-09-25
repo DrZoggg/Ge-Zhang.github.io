@@ -1,21 +1,415 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1172/jci194175",
   "display_title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
-  "summary": "A publication in Journal of Clinical Investigation (2026) titled “Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis”.",
-  "keywords": [
-    "Vascular",
-    "smooth",
-    "muscle",
-    "cell-derived",
-    "KIF13B",
-    "inhibits",
-    "proinflammatory",
-    "responses",
-    "protect",
-    "against"
+  "summary": "A mechanistic translational preclinical study combining associative human carotid-plaque evidence with mouse atherosclerosis genetics, pooled single-cell analysis, primary human aortic smooth-muscle-cell perturbation, biochemical rescue and preclinical pharmacology to investigate how KIF13B regulates VSMC state through KCTD10-dependent KLF4 turnover.",
+  "research_question": "Does VSMC-derived KIF13B regulate vascular smooth-muscle-cell phenotypic state and experimental plaque stability through KCTD10-dependent KLF4 turnover, and can reducing KLF4 activity rescue the consequences of KIF13B loss in experimental systems? Human plaque findings are associative; causal and intervention evidence is preclinical.",
+  "author_summary": "This study integrates paired human carotid endarterectomy plaque regions, independent public human transcriptomic, proteomic, methylation and spatial-transcriptomic evidence, VSMC-specific and global mouse Kif13b perturbation, aortic single-cell RNA sequencing, primary human aortic smooth-muscle-cell gain- and loss-of-function experiments, biochemical rescue and preclinical pharmacology. Human observations associate lower KIF13B, particularly in VSMCs, with advanced or unstable plaque features and lower collagen, but do not establish human causality. In male AAV8-PCSK9 mice, VSMC-specific Kif13b deletion increased lesion burden and adverse plaque-composition features without detected differences in plasma total cholesterol or triglycerides in the tested model. Pooled mouse single-cell analysis and primary HASMC perturbation linked KIF13B loss to reduced matrix/collagen programs and increased inflammatory VSMC programs. KLF4 knockdown rescued KIF13B-loss phenotypes in HASMCs. CHX/MG132, ubiquitination, co-immunoprecipitation and KCTD10-overexpression experiments support a model in which KIF13B maintains KCTD10 abundance and KCTD10 promotes KLF4 ubiquitination and proteasomal turnover; how KIF13B controls KCTD10 remains unresolved. Kenpaullone reduced KLF4 promoter activity/expression and rescued cellular and mouse phenotypes in this study, but this is preclinical proof-of-concept. Kenpaullone is not established as a KLF4-selective drug, and no human treatment efficacy was tested.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Mechanistic translational preclinical study integrating associative human plaque observations and public multi-omic datasets with causal mouse genetics, pooled single-cell RNA sequencing, primary HASMC perturbation, biochemical rescue and preclinical pharmacologic intervention.",
+    "evidence_type": "Associative human tissue and multi-omic evidence; causal mouse genetics; primary human VSMC perturbation; biochemical mechanism and rescue; preclinical pharmacologic rescue.",
+    "population": "Paired carotid endarterectomy plaque regions from 6 patients; independent public human plaque datasets; male mouse atherosclerosis models; primary human aortic smooth muscle cells. No treated human atherosclerosis cohort.",
+    "primary_endpoint": "Experimental atherosclerotic lesion burden, plaque-stability features and VSMC phenotypic remodeling across genetic models.",
+    "secondary_endpoint": "Collagen and extracellular-matrix programs, inflammatory cytokines, VSMC contractile function, KLF4 protein regulation, KCTD10-dependent ubiquitination and preclinical pharmacologic rescue.",
+    "data_modalities": [
+      "Paired human carotid plaque histology and protein analysis",
+      "Human plaque bulk RNA sequencing",
+      "Human plaque proteomics",
+      "Human plaque DNA methylation",
+      "Human plaque single-cell and spatial transcriptomic analysis",
+      "Mouse plaque histology and plasma phenotyping",
+      "Mouse aortic single-cell RNA sequencing",
+      "Primary HASMC gain- and loss-of-function assays",
+      "Protein stability, ubiquitination and co-immunoprecipitation assays",
+      "Genetic and preclinical pharmacologic rescue"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Local paired carotid CEA cohort",
+        "value": "6 patients. Each plaque supplied an advanced/culprit region and an adjacent upstream region from the same patient. Figure 1 reports scRNA analysis n=4 regions per condition and Western/histologic analyses n=6 regions per condition; these are paired regions, not 10 or 12 independent participants."
+      },
+      {
+        "label": "GSE120521",
+        "value": "4 carotid endarterectomy patients, each contributing paired stable and unstable plaque regions: 4 stable and 4 unstable RNA-seq samples."
+      },
+      {
+        "label": "PXD062283",
+        "value": "The ProteomeXchange repository contains 87 human carotid plaques overall; the JCI Figure 1 comparison uses stable n=19 and unstable n=38. Do not substitute the repository total for the study subset."
+      },
+      {
+        "label": "Human methylation evidence",
+        "value": "Three independent public methylation datasets were reanalyzed in the Supplement. Dataset-specific denominators must remain separate and must not be summed into a synthetic human cohort."
+      },
+      {
+        "label": "Human spatial evidence",
+        "value": "Public human plaque spatial-transcriptomic data associated with GSE274572 were reanalyzed for fibrous-cap VSMC states; no new participant count is inferred here."
+      },
+      {
+        "label": "VSMC-specific PCSK9 mouse model",
+        "value": "8-week-old male Kif13b floxed and Tagln-Cre Kif13b VSMC-KO mice received AAV8-PCSK9-D377Y and Western diet for 20 weeks; primary pathology, lipid and cytokine comparisons n=8 per group; aortic-ring assays n=4 per group."
+      },
+      {
+        "label": "Mouse single-cell experiment",
+        "value": "Ldlr-deficient versus Ldlr-deficient Kif13b-deficient mice; five mice were pooled into one aortic single-cell library per genotype. Figure 5/Results report 20-week Western diet, while downstream Figure 6/7 captions reference 12-week Western diet."
+      },
+      {
+        "label": "Primary HASMC perturbation",
+        "value": "KIF13B knockdown and overexpression under oxLDL were assessed with Western blot/ELISA biological replicates generally n=3; collagen-gel contraction used n=5 for knockdown and n=6 for overexpression."
+      },
+      {
+        "label": "KLF4 and KCTD10 rescue",
+        "value": "KLF4 dual-knockdown and KCTD10-overexpression biochemical and phenotypic rescue assays generally used n=3 independent biological replicates; selected immunofluorescence assays used n=10."
+      },
+      {
+        "label": "Kenpaullone intervention",
+        "value": "HASMC experiments used 10 µM Kenpaullone. Male PCSK9 mice received 1 mg/kg/day orally during the final 12 weeks of a 20-week Western-diet protocol; n=6 per group."
+      }
+    ],
+    "counting_note": "Human participants, paired plaque regions, public dataset samples, mice, pooled single-cell libraries and independent cell-culture replicates are different denominators and must not be summed. External human datasets provide cross-source corroboration, not prospective clinical validation. Five mice pooled into one library per genotype are not five independent single-cell libraries. Preserve the paper's figure-specific 20-week versus 12-week single-cell duration descriptions rather than harmonizing them."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Lower KIF13B was associated with more advanced or unstable human atherosclerotic plaque states, with prominent differences in VSMCs.",
+      "context": "These human tissue and public-dataset observations are associative and do not establish that changing KIF13B alters plaque outcomes in patients.",
+      "evidence": [
+        {
+          "label": "Local carotid plaques",
+          "value": "Six CEA patients contributed paired advanced and adjacent regions; Figure 1 reports lower KIF13B in advanced regions, with scRNA analysis n=4 per condition and protein/histologic analyses n=6 per condition."
+        },
+        {
+          "label": "GSE120521",
+          "value": "KIF13B mRNA was lower in unstable than stable regions from four paired carotid plaques: n=4 stable and n=4 unstable."
+        },
+        {
+          "label": "PXD062283",
+          "value": "KIF13B protein was lower in the JCI stable n=19 versus unstable n=38 plaque comparison."
+        },
+        {
+          "label": "Plaque matrix relationship",
+          "value": "Human plaque analysis showed lower VSMC KIF13B and lower collagen in advanced regions, with a positive association between VSMC KIF13B signal and collagen content."
+        },
+        {
+          "label": "Epigenetic evidence",
+          "value": "Supplementary public-dataset reanalysis associated higher KIF13B methylation with atherosclerotic versus control tissue and symptomatic versus asymptomatic plaque; this does not establish methylation as the cause of lower KIF13B."
+        }
+      ],
+      "source_locator": "Results: Decreased expression of KIF13B in VSMCs is linked to the progression of atherosclerosis in humans; Figure 1; Supplemental Figure 1; Methods: Human studies."
+    },
+    {
+      "id": "KF2",
+      "claim": "VSMC-specific Kif13b deletion worsened experimental atherosclerotic lesion and plaque-stability phenotypes in male AAV8-PCSK9 mice without detected differences in plasma total cholesterol or triglycerides in the tested model.",
+      "context": "This supports a causal VSMC contribution in this mouse model; it does not establish a universally lipid-independent mechanism in humans.",
+      "evidence": [
+        {
+          "label": "Model",
+          "value": "Male Kif13b floxed and VSMC-specific Kif13b-KO mice received AAV8-PCSK9-D377Y and Western diet for 20 weeks; major comparisons n=8 per group."
+        },
+        {
+          "label": "Plaque phenotype",
+          "value": "Kif13b loss increased aortic and aortic-root lesion burden, necrotic-core area, CD68-positive macrophage accumulation and TUNEL-positive cells, while reducing collagen and plaque-stability features."
+        },
+        {
+          "label": "Plasma lipids",
+          "value": "No detected genotype difference in plasma total cholesterol or triglycerides was reported in the primary Western-diet comparison."
+        },
+        {
+          "label": "Vascular function",
+          "value": "Phenylephrine-induced aortic-ring contraction was impaired with VSMC Kif13b loss; n=4 per group."
+        }
+      ],
+      "source_locator": "Results: Depletion of Kif13b in VSMCs exacerbates atherosclerosis in mice; Figure 2."
+    },
+    {
+      "id": "KF3",
+      "claim": "The pooled mouse aortic single-cell comparison linked KIF13B loss to a shift from matrix/collagen-associated VSMC-derived states toward inflammatory programs.",
+      "context": "Five mice were pooled into one library per genotype, limiting independent library-level replication. Figure captions also contain unresolved duration and cluster-label inconsistencies, so this page reports the robust program-level conclusion rather than over-resolving ambiguous subpanel labels.",
+      "evidence": [
+        {
+          "label": "Single-cell design",
+          "value": "Ldlr-deficient and Ldlr-deficient Kif13b-deficient aortas used five pooled mice to create one single-cell sample per genotype."
+        },
+        {
+          "label": "Cell-state programs",
+          "value": "KIF13B loss was associated with reduced extracellular-matrix/collagen programs and increased apoptosis/inflammatory programs, with fewer matrix-associated VSMC-Fib states and more inflammatory VSMC-Fib states."
+        },
+        {
+          "label": "Duration discrepancy",
+          "value": "Figure 5 and Results describe 20 weeks of Western diet; Figure 6 SCENIC and Figure 7 integrative captions reference 12 weeks. The discrepancy is retained rather than resolved."
+        },
+        {
+          "label": "Cluster-label discrepancy",
+          "value": "Results assign the inflammatory Ccl2/Il1b/Il6/Il18/Trap1 signal to VSMC-Fib4, while Figure 5K caption labels the panel VSMC-Fib1; no unqualified cluster-specific gene claim is made here."
+        }
+      ],
+      "source_locator": "Results: Inhibiting KIF13B promotes proinflammatory fibroblast-like VSMC transition; Figures 5-7."
+    },
+    {
+      "id": "KF4",
+      "claim": "KIF13B gain- and loss-of-function directly altered matrix, inflammatory and contractile phenotypes in primary human aortic smooth muscle cells under oxLDL.",
+      "context": "These are cell-autonomous in vitro perturbation experiments and do not demonstrate a patient treatment effect.",
+      "evidence": [
+        {
+          "label": "KIF13B knockdown",
+          "value": "Knockdown reduced TAGLN, collagen secretion and collagen-gel contraction while increasing fibroblast/inflammatory features; Western/ELISA assays generally n=3 and gel contraction n=5."
+        },
+        {
+          "label": "KIF13B overexpression",
+          "value": "Overexpression produced reciprocal matrix/contractile effects; Western/ELISA assays generally n=3 and gel contraction n=6."
+        }
+      ],
+      "source_locator": "Results: Inhibiting KIF13B promotes proinflammatory fibroblast-like VSMC transition; Figure 5L-Q and Supplemental Figure 3."
+    },
+    {
+      "id": "KF5",
+      "claim": "KLF4 functionally mediated KIF13B-loss-associated VSMC reprogramming in primary HASMC experiments.",
+      "context": "The rescue establishes a downstream functional relationship in this experimental system, not a causal human clinical mechanism.",
+      "evidence": [
+        {
+          "label": "KLF4 response",
+          "value": "KIF13B knockdown increased KLF4 protein, whereas KIF13B overexpression decreased it; Western blot n=3 and selected immunofluorescence n=10."
+        },
+        {
+          "label": "Genetic rescue",
+          "value": "Concomitant KLF4 knockdown rescued KIF13B-loss-associated reductions in collagen/matrix markers and increases in inflammatory factors; Western, qPCR and ELISA assays n=3."
+        }
+      ],
+      "source_locator": "Results: KLF4 mediates KIF13B-dependent proinflammatory VSMC reprogramming; Figure 6."
+    },
+    {
+      "id": "KF6",
+      "claim": "Proteostasis and rescue experiments support KCTD10-dependent KLF4 ubiquitination and proteasomal turnover downstream of KIF13B.",
+      "context": "Molecular docking was predictive, while KCTD10-KLF4 association, ubiquitination and rescue were experimentally evaluated. The upstream mechanism by which KIF13B maintains KCTD10 abundance remains unresolved.",
+      "evidence": [
+        {
+          "label": "KLF4 turnover",
+          "value": "CHX chase, MG132 and KLF4 ubiquitination assays showed that KIF13B knockdown stabilized KLF4 by attenuating proteasomal degradation; n=3 independent biological replicates."
+        },
+        {
+          "label": "KCTD10 identification",
+          "value": "Integrated mouse VSMC and human unstable/stable plaque transcriptomics nominated KCTD10 and SKP1; KIF13B perturbation altered KCTD10 rather than SKP1 in HASMC protein assays."
+        },
+        {
+          "label": "KCTD10-KLF4 mechanism",
+          "value": "Docking predicted interaction; co-IP supported KCTD10-KLF4 association, KCTD10 overexpression increased KLF4 ubiquitination and reduced KLF4 protein."
+        },
+        {
+          "label": "KCTD10 rescue",
+          "value": "KCTD10 overexpression reversed KIF13B-knockdown-associated KLF4 stabilization and rescued collagen/inflammatory phenotypes."
+        }
+      ],
+      "source_locator": "Results: KIF13B facilitates KCTD10-mediated ubiquitination and degradation of KLF4; Figures 7-8 and Supplemental Figure 4."
+    },
+    {
+      "id": "KF7",
+      "claim": "Kenpaullone reduced KLF4 promoter activity/expression and produced preclinical rescue of KIF13B-loss-associated cellular and mouse plaque phenotypes.",
+      "context": "Kenpaullone is not established as a KLF4-selective drug. Authoritative pharmacology sources describe it as an ATP-competitive CDK/GSK3β inhibitor. The rescue therefore supports preclinical pathway modulation but does not prove KLF4-selective pharmacology or human treatment efficacy.",
+      "evidence": [
+        {
+          "label": "Cell intervention",
+          "value": "Kenpaullone at 10 µM reduced KLF4 and rescued collagen/inflammatory phenotypes after KIF13B knockdown in HASMCs; n=3 biological replicates for key Western/ELISA assays."
+        },
+        {
+          "label": "Mouse intervention",
+          "value": "Male PCSK9 mice received oral Kenpaullone 1 mg/kg/day for the final 12 weeks of a 20-week Western-diet protocol; n=6 per group."
+        },
+        {
+          "label": "Mouse outcomes",
+          "value": "Kenpaullone reduced measured inflammatory cytokines, lesion burden, necrotic-core area, CD68-positive macrophages and TUNEL-positive cells and increased collagen."
+        },
+        {
+          "label": "Measured safety-related endpoints",
+          "value": "No detected changes were reported in measured body weight, plasma TC/TG or ALT/AST endpoints; these measurements do not establish general or human safety."
+        }
+      ],
+      "source_locator": "Results: Pharmacological inhibition of KLF4 with Kenpaullone alleviates atherosclerosis in mice; Figure 9 and Supplemental Figures 5-7."
+    }
   ],
-  "questions": [
-    "What does this publication investigate regarding “Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis”?"
-  ]
+  "what_this_adds": [
+    "Defines a VSMC-specific KIF13B role in atherosclerosis that is biologically distinct from the previously reported macrophage KIF13B-MERTK efferocytosis pathway.",
+    "Connects associative human plaque evidence with cell-specific mouse genetic causality without treating the human observations as causal.",
+    "Links KIF13B to VSMC matrix-versus-inflammatory phenotypic programs through functional KLF4 rescue.",
+    "Provides biochemical and rescue evidence for a KCTD10-KLF4 ubiquitination/proteasomal-turnover mechanism while leaving the upstream KIF13B-to-KCTD10 regulatory step unresolved.",
+    "Provides preclinical pharmacologic proof-of-concept with Kenpaullone while separating experimental rescue from drug selectivity, human efficacy and clinical safety."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Association between lower KIF13B and more advanced or unstable human atherosclerotic plaque features across local tissue and independent public datasets.",
+      "A causal contribution of VSMC Kif13b loss to measured atherosclerotic plaque phenotypes in the tested male mouse models.",
+      "Cell-autonomous effects of KIF13B gain and loss on matrix, inflammatory and contractile programs in primary HASMCs.",
+      "Functional placement of KLF4 downstream of KIF13B in HASMC perturbation and rescue experiments.",
+      "Evidence consistent with KCTD10-mediated KLF4 ubiquitination and proteasomal turnover downstream of KIF13B.",
+      "Preclinical cellular and mouse rescue after Kenpaullone exposure under the tested conditions."
+    ],
+    "does_not_establish": [
+      "That low KIF13B expression or KIF13B methylation causes plaque instability in humans.",
+      "That KIF13B, KCTD10, KLF4 or Kenpaullone has proven therapeutic efficacy or safety in patients with atherosclerosis.",
+      "That Kenpaullone is selective for KLF4 or that all Kenpaullone effects in this study are mediated specifically through KLF4.",
+      "A universal lipid-independent KIF13B mechanism in humans; the reported absence of TC/TG differences applies to the tested mouse comparison.",
+      "Independent replication of the study-generated single-cell comparison, because five mice were pooled into one library per genotype.",
+      "One definitive single-cell diet duration or one unambiguous cluster assignment for every Figure 5-7 subpanel where the article text and captions disagree.",
+      "The molecular mechanism by which KIF13B regulates KCTD10 abundance.",
+      "Generalization of the causal or pharmacologic mouse findings to females, because only male mice were used."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What is the human evidence linking KIF13B to atherosclerotic plaque severity?",
+      "answer": "Paired carotid endarterectomy tissue and independent human transcriptomic and proteomic datasets showed lower KIF13B in more advanced or unstable plaque states, with prominent VSMC differences and lower collagen in advanced local plaque regions. These are associative human observations and do not establish that manipulating KIF13B changes plaque outcomes in patients.",
+      "evidence_refs": ["KF1"]
+    },
+    {
+      "question": "Did VSMC-specific Kif13b deletion cause worse atherosclerosis in mice?",
+      "answer": "In the tested male AAV8-PCSK9 model, VSMC-specific Kif13b deletion increased lesion burden, necrotic core, macrophage accumulation and apoptotic-cell signal and reduced collagen/plaque-stability features. No genotype difference in measured plasma total cholesterol or triglycerides was detected in the primary comparison.",
+      "evidence_refs": ["KF2"]
+    },
+    {
+      "question": "What did the single-cell experiment show, and were there five independent replicates per genotype?",
+      "answer": "The pooled aortic single-cell comparison associated KIF13B loss with reduced matrix/collagen programs and increased inflammatory VSMC-derived programs. Five mice were pooled into one single-cell library per genotype, so the design does not provide five independent scRNA-seq libraries per group.",
+      "evidence_refs": ["KF3"]
+    },
+    {
+      "question": "Why does this page not assign one definitive diet duration to all single-cell analyses?",
+      "answer": "The Results and Figure 5 describe the generated aortic single-cell experiment after 20 weeks of Western diet, whereas Figure 6 SCENIC and Figure 7 integrative captions reference 12 weeks. The evidence page preserves this source discrepancy instead of silently harmonizing it.",
+      "evidence_refs": ["KF3"]
+    },
+    {
+      "question": "How does KIF13B affect primary human vascular smooth muscle cells?",
+      "answer": "Under oxLDL, KIF13B knockdown reduced contractile/matrix features, collagen secretion and collagen-gel contraction and increased inflammatory features, while KIF13B overexpression produced reciprocal effects. These are in vitro primary-HASMC perturbation data, not human treatment outcomes.",
+      "evidence_refs": ["KF4"]
+    },
+    {
+      "question": "Is KLF4 functionally downstream of KIF13B?",
+      "answer": "In primary HASMC experiments, KIF13B loss increased KLF4, and concomitant KLF4 knockdown rescued the collagen-suppressive and inflammatory phenotype caused by KIF13B knockdown. This supports a downstream functional relationship in the tested cell system.",
+      "evidence_refs": ["KF5"]
+    },
+    {
+      "question": "What evidence supports the KIF13B-KCTD10-KLF4 mechanism?",
+      "answer": "KIF13B knockdown stabilized KLF4 in CHX/proteasome experiments and reduced KLF4 ubiquitination. Integrated analyses nominated KCTD10, co-IP supported KCTD10-KLF4 association, KCTD10 increased KLF4 ubiquitination, and KCTD10 overexpression rescued KIF13B-loss phenotypes. The study does not resolve how KIF13B itself controls KCTD10 abundance.",
+      "evidence_refs": ["KF6"]
+    },
+    {
+      "question": "Does Kenpaullone prove that KLF4 is a clinically validated treatment target for atherosclerosis?",
+      "answer": "No. Kenpaullone reduced KLF4 promoter activity/expression and rescued cellular and mouse phenotypes in this study, but the experiments were preclinical. Kenpaullone is also a pharmacologically nonselective kinase inhibitor rather than an established KLF4-selective clinical drug, and no human atherosclerosis treatment efficacy or safety was tested.",
+      "evidence_refs": ["KF7"]
+    },
+    {
+      "question": "How does this JCI study differ from the European Heart Journal KIF13B study?",
+      "answer": "The JCI study focuses on vascular smooth muscle cells and a KIF13B-KCTD10-KLF4 mechanism controlling matrix/inflammatory VSMC states. The European Heart Journal study focuses on macrophage KIF13B, MERTK-dependent efferocytosis and an ITCH/CBL regulatory network. Together they describe distinct cell-type-specific KIF13B mechanisms in experimental atherosclerosis.",
+      "evidence_refs": ["KF1", "KF6"]
+    },
+    {
+      "question": "Which public datasets and repositories support this evidence page?",
+      "answer": "Key resources include study-generated mouse single-cell data GSE314838, human stable/unstable carotid plaque RNA-seq GSE120521, human plaque proteomics PXD062283, public spatial-transcriptomic evidence associated with GSE274572, the article's public methylation datasets, the JCI Supplemental Data, and the Supporting Data Values file.",
+      "evidence_refs": ["KF1", "KF3"]
+    }
+  ],
+  "concepts": {
+    "molecular_axis": [
+      "KIF13B",
+      "KCTD10",
+      "KLF4",
+      "CUL3-associated ubiquitin ligase",
+      "protein ubiquitination",
+      "proteasomal degradation"
+    ],
+    "vascular_cells_and_states": [
+      "vascular smooth muscle cell",
+      "VSMC phenotypic switching",
+      "VSMC-Fib",
+      "fibrous-cap VSMC",
+      "contractile VSMC",
+      "matrix-producing VSMC",
+      "proinflammatory fibroblast-like VSMC"
+    ],
+    "plaque_phenotypes": [
+      "atherosclerotic lesion burden",
+      "plaque stability",
+      "fibrous cap",
+      "collagen content",
+      "necrotic core",
+      "macrophage infiltration",
+      "apoptosis",
+      "vascular contractility"
+    ],
+    "experimental_models": [
+      "Tagln-Cre Kif13b VSMC-specific knockout",
+      "AAV8-PCSK9-D377Y",
+      "Ldlr-deficient mouse",
+      "Ldlr-deficient Kif13b-deficient mouse",
+      "Western diet",
+      "primary HASMC",
+      "oxLDL"
+    ],
+    "perturbations_and_rescue": [
+      "siKIF13B",
+      "KIF13B overexpression",
+      "siKLF4",
+      "KCTD10 overexpression",
+      "Kenpaullone",
+      "MG132",
+      "cycloheximide"
+    ],
+    "datasets_and_resources": [
+      "GSE314838",
+      "GSE120521",
+      "PXD062283",
+      "GSE274572",
+      "human plaque DNA methylation datasets",
+      "JCI Supporting Data Values"
+    ],
+    "disease_context": [
+      "atherosclerosis",
+      "atherosclerotic cardiovascular disease",
+      "carotid atherosclerotic plaque",
+      "advanced plaque",
+      "unstable plaque",
+      "plaque vulnerability"
+    ]
+  },
+  "limitations": [
+    "The local human cohort contained six carotid endarterectomy patients with paired within-plaque regions; human observations are associative and small-sample.",
+    "The local advanced-versus-adjacent classification was based on anatomical location and macroscopic surgical appearance rather than molecular or histopathological criteria.",
+    "Stable/unstable public datasets and local advanced/adjacent paired regions use different plaque definitions and should not be treated as interchangeable cohorts.",
+    "Human methylation observations are associative and do not establish that KIF13B hypermethylation causes KIF13B downregulation or plaque instability.",
+    "The PXD062283 repository contains 87 plaques overall, whereas the JCI stable/unstable comparison uses a subset of 19 and 38; repository size and analytical subset must not be conflated.",
+    "Five mice were pooled into one single-cell library per genotype, limiting independent biological replication at the single-cell library level.",
+    "Figure 5/Results report a 20-week Western-diet single-cell experiment, whereas downstream Figure 6/7 captions reference 12 weeks; this discrepancy is unresolved.",
+    "Results describe inflammatory genes in VSMC-Fib4 while the Figure 5K caption labels the panel VSMC-Fib1; the evidence page therefore avoids treating that subpanel label as unambiguous.",
+    "Only male mice were used, and sex was not analyzed as a biological variable.",
+    "Tagln-Cre targets smooth-muscle compartments beyond plaque VSMCs; reported intestine/bladder measurements do not establish general systemic safety of pathway targeting.",
+    "The study establishes KCTD10-dependent KLF4 ubiquitination/rescue evidence but does not identify the mechanism by which KIF13B regulates KCTD10 abundance.",
+    "Kenpaullone is pharmacologically nonselective; its rescue does not prove KLF4-selective target engagement or exclude contributions from other kinase targets.",
+    "Kenpaullone was evaluated only in cells and mice. No human atherosclerosis efficacy, dosing, pharmacokinetic or safety trial was performed."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1093/eurheartj/ehaf523",
+      "relationship": "Complementary cell-type-specific KIF13B study: the European Heart Journal paper examines macrophage KIF13B, MERTK-dependent efferocytosis and the ITCH/CBL regulatory network, whereas the present JCI paper examines VSMC KIF13B, KCTD10/KLF4 and matrix-versus-inflammatory VSMC states."
+    },
+    {
+      "doi": "10.1186/s12967-022-03795-9",
+      "relationship": "Related smooth-muscle-cell fate and atherosclerosis heterogeneity research that provides VSMC-state context but does not independently validate the KIF13B-KCTD10-KLF4 mechanism."
+    }
+  ],
+  "provenance": {
+    "doi": "10.1172/jci194175",
+    "pmid": "41609725",
+    "pmcid": "PMC12987658",
+    "publisher": "The Journal of Clinical Investigation",
+    "publisher_url": "https://www.jci.org/articles/view/194175",
+    "version_of_record": "J Clin Invest. 2026;136(6):e194175; In-Press Preview published 29 January 2026 and electronic publication in Volume 136 Issue 6 on 16 March 2026.",
+    "source_material": "JCI version of record, Supplemental Data, unedited blot/gel material, Supporting Data Values, GEO GSE314838, GEO GSE120521, ProteomeXchange PXD062283 and public human plaque omics resources used by the article.",
+    "data_availability": "Study-generated single-cell RNA-seq data are deposited as GSE314838. Values for all data points are supplied in the Supporting Data Values file.",
+    "counting_note": "Human participants, paired tissue regions, public dataset samples, mice, pooled single-cell libraries and cell-culture biological replicates are separate denominators; no overall total n is inferred.",
+    "human_sampling_note": "The local six-patient CEA study used paired advanced/culprit and adjacent upstream regions from the same plaque and patient; the anatomical classification was based on location and macroscopic surgical appearance.",
+    "proteomics_note": "PXD062283 contains 87 carotid plaques in the repository overall; the JCI Figure 1 comparison uses stable n=19 and unstable n=38.",
+    "scrna_note": "Five mice were pooled into one single-cell library per genotype. Figure 5/Results report 20 weeks of Western diet, while Figure 6/7 captions reference 12 weeks; the discrepancy is not resolved here.",
+    "figure5_note": "The Results attribute Ccl2/Il1b/Il6/Il18/Trap1 elevation to VSMC-Fib4, while the Figure 5K caption labels VSMC-Fib1; the evidence page does not over-resolve this inconsistency.",
+    "kenpaullone_note": "The article's screening and reporter experiments show Kenpaullone lowering KLF4 promoter activity/expression and producing preclinical rescue. External authoritative pharmacology identifies Kenpaullone as an ATP-competitive CDK/GSK3β inhibitor, so KLF4 selectivity is not established.",
+    "sex_note": "Only male mice were used; human clinical samples included both sexes, and sex was not analyzed as a biological variable."
+  },
+  "evidence_page_notice": "This evidence page separates associative human plaque observations from causal mouse, cell and biochemical experiments. Mouse single-cell data include pooled libraries and source-level duration/cluster-label inconsistencies that are preserved rather than silently harmonized. Kenpaullone results are preclinical and do not establish KLF4-selective pharmacology or human atherosclerosis efficacy. The JCI version of record remains the authoritative source."
 }

@@ -659,7 +659,11 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
         required_text_list(scope.get(key), f"{label} evidence_scope.{key}")
 
     qa = content.get("qa")
-    max_qa = 12 if profile_type == "narrative_review" else 8
+    max_qa = (
+        12 if profile_type == "narrative_review"
+        else 10 if profile_type == "multicohort_omics"
+        else 8
+    )
     if not isinstance(qa, list) or not 4 <= len(qa) <= max_qa:
         raise ValueError(f"{label} qa must contain 4–{max_qa} objects.")
     seen_questions = set()
