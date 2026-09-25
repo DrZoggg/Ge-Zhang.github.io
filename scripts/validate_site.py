@@ -8,6 +8,8 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 
 from build_publications import (
+    GA4_MEASUREMENT_ID,
+    GA4_TAG,
     PENDING_NOTICE,
     flatten_concepts,
     resolve_related_papers,
@@ -61,6 +63,33 @@ KIF13B_MERTK_DOI = "10.1093/eurheartj/ehaf523"
 def require(condition, message):
     if not condition:
         raise ValidationError(message)
+
+
+def validate_ga4_rendering(html_files):
+    require(GA4_MEASUREMENT_ID == "G-65LDZXWWQK", "GA4 measurement ID changed.")
+    for path in html_files:
+        page = path.read_text(encoding="utf-8")
+        head = (
+            page.split("<head>", 1)[1].split("</head>", 1)[0]
+            if page.count("<head>") == page.count("</head>") == 1
+            else ""
+        )
+        require(
+            head.count(GA4_TAG) == 1
+            and page.count("googletagmanager.com/gtag/js") == 1
+            and page.count("gtag('config'") == 1
+            and page.count(GA4_MEASUREMENT_ID) == 2,
+            f"GA4 tag missing, duplicated, or outside head: {path.name}.",
+        )
+    for path in [
+        *PAPERS_DIR.glob("*.md"),
+        ROOT / "publications.json",
+        ROOT / "paper_index.json",
+        ROOT / "sitemap.xml",
+        ROOT / "llms.txt",
+    ]:
+        require(GA4_MEASUREMENT_ID not in path.read_text(encoding="utf-8"),
+                f"GA4 tag leaked into non-HTML output: {path.name}.")
 
 
 def normalized_source_text(value):
@@ -1777,6 +1806,7 @@ def validate_site():
     require(len(slugs) == len(set(slugs)), "Public paper slugs are not unique.")
     html_files = sorted(PAPERS_DIR.glob("*.html"))
     md_files = sorted(PAPERS_DIR.glob("*.md"))
+    validate_ga4_rendering([ROOT / "index.html", ROOT / "publications.html", *html_files])
     require(
         len(html_files) == len(public_expected),
         f"HTML paper count {len(html_files)} != public count {len(public_expected)}.",

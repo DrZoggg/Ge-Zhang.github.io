@@ -42,6 +42,18 @@ HOME_IDENTITY_END = "<!-- HOME_IDENTITY_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
+GA4_MEASUREMENT_ID = "G-65LDZXWWQK"
+GA4_TAG = (
+    "<!-- Google tag (gtag.js) -->\n"
+    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>\n'
+    "<script>\n"
+    "  window.dataLayer = window.dataLayer || [];\n"
+    "  function gtag(){dataLayer.push(arguments);}\n"
+    "  gtag('js', new Date());\n"
+    f"  gtag('config', '{GA4_MEASUREMENT_ID}');\n"
+    "</script>\n"
+)
+GA4_INSERTION = "\n" + GA4_TAG
 PENDING_NOTICE = (
     "Selected for Deep GEO evidence expansion. The evidence-oriented content "
     "layer is pending scientific review. The publisher version remains the "
@@ -135,6 +147,25 @@ def write_text_if_changed(path, content):
     if changed:
         path.write_text(content, encoding="utf-8")
     return changed
+
+
+def with_ga4_tag(page):
+    if GA4_INSERTION in page:
+        if page.count(GA4_INSERTION) != 1:
+            raise ValueError("Google tag must occur exactly once in the HTML head.")
+        return page
+    if page.count("<head>") != 1:
+        raise ValueError("Google tag requires exactly one HTML head.")
+    return page.replace("<head>", "<head>" + GA4_INSERTION, 1)
+
+
+def write_public_html_if_changed(path, content):
+    previous = path.read_text(encoding="utf-8") if path.is_file() else None
+    content_changed = previous is None or (
+        previous.replace(GA4_INSERTION, "") != content.replace(GA4_INSERTION, "")
+    )
+    write_text_if_changed(path, content)
+    return content_changed
 
 
 def load_sitemap_lastmods(path):
@@ -392,7 +423,7 @@ def update_homepage(index_html, config):
         )
         if replacement_count != 1:
             raise ValueError(f"index.html must contain exactly one {label}.")
-    return index_html
+    return with_ga4_tag(index_html)
 
 
 def schema_type(publication):
@@ -1383,7 +1414,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             "not replace the publisher version or assert a complete author list.</div></section>"
         )
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
-    return f'''<!doctype html>
+    return with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1411,7 +1442,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
 </body></html>
-'''
+''')
 
 
 def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None):
@@ -1570,7 +1601,7 @@ def render_publications_page(items, config):
         "as the identity anchor."
     )
     publications_url = absolute(config["site_url"], "publications.html")
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
+    return with_ga4_tag(f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(page_title)}</title>
 <meta name="description" content="{html.escape(meta_description, quote=True)}">
@@ -1595,7 +1626,7 @@ const box=document.getElementById('pubSearch');box.addEventListener('input',()=>
 </script>
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer></body></html>
-'''
+''')
 
 
 def render_featured_cards(featured_entries, public_by_token, deep_contents):
@@ -1756,7 +1787,7 @@ def build_site():
         token = publication_token(item)
         deep_content = deep_contents.get(token)
         paper_url = item["paper_url"]
-        html_changed[paper_url] = write_text_if_changed(
+        html_changed[paper_url] = write_public_html_if_changed(
             PAPERS_DIR / f"{item['slug']}.html",
             render_paper_html(
                 item,
@@ -1810,7 +1841,7 @@ def build_site():
                 }
             )
     publications_url = absolute(config["site_url"], "publications.html")
-    html_changed[publications_url] = write_text_if_changed(
+    html_changed[publications_url] = write_public_html_if_changed(
         ROOT / "publications.html", render_publications_page(public_items, config)
     )
 
@@ -1832,7 +1863,7 @@ def build_site():
     )
     index_html = update_homepage(index_html, config)
     homepage_url = f"{config['site_url']}/"
-    html_changed[homepage_url] = write_text_if_changed(index_path, index_html)
+    html_changed[homepage_url] = write_public_html_if_changed(index_path, index_html)
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
     write_machine_indexes(public_items, deep_items, config)
