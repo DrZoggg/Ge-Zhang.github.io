@@ -83,10 +83,17 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        7,
+        25
       ]
     ]
   },
   "DOI": "10.1093/eurheartj/ehaf523",
-  "URL": "https://doi.org/10.1093/eurheartj/ehaf523"
+  "URL": "https://doi.org/10.1093/eurheartj/ehaf523",
+  "volume": "46",
+  "issue": "45",
+  "publisher": "Oxford University Press",
+  "page": "4969-4984",
+  "ISSN": "0195-668X"
 }

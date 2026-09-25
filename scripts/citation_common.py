@@ -241,6 +241,8 @@ def render_ris(record):
     ):
         if record.get(key):
             lines.append(f"{tag}  - {record[key]}")
+    if record.get("article_number"):
+        lines.append(f"C7  - {record['article_number']}")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",

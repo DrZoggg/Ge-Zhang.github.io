@@ -38,10 +38,17 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        8,
+        12
       ]
     ]
   },
   "DOI": "10.1021/acs.jproteome.4c00522",
-  "URL": "https://doi.org/10.1021/acs.jproteome.4c00522"
+  "URL": "https://doi.org/10.1021/acs.jproteome.4c00522",
+  "volume": "23",
+  "issue": "9",
+  "publisher": "American Chemical Society",
+  "page": "4139-4150",
+  "ISSN": "1535-3893"
 }

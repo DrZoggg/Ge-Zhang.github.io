@@ -2015,6 +2015,7 @@ def validate_citations(publications, config):
         for source, tag in (
             ("volume", "citation_volume"), ("issue", "citation_issue"),
             ("first_page", "citation_firstpage"), ("last_page", "citation_lastpage"),
+            ("article_number", "citation_article_number"),
             ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
             ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
         ):

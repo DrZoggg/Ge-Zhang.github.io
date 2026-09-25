@@ -68,10 +68,17 @@
   "issued": {
     "date-parts": [
       [
-        2026
+        2026,
+        1,
+        29
       ]
     ]
   },
   "DOI": "10.1172/jci194175",
-  "URL": "https://doi.org/10.1172/jci194175"
+  "URL": "https://doi.org/10.1172/jci194175",
+  "volume": "136",
+  "issue": "6",
+  "publisher": "American Society for Clinical Investigation",
+  "article-number": "e194175",
+  "ISSN": "0021-9738"
 }

@@ -1,6 +1,123 @@
 {
   "version": 1,
   "papers": {
+    "10.1038/s41467-024-50415-9": {
+      "publication_date": "2024-08-08",
+      "volume": "15",
+      "issue": "1",
+      "article_number": "6756",
+      "eissn": "2041-1723",
+      "pmid": "39117613",
+      "pmcid": "PMC11310499",
+      "verified_sources": [
+        "https://doi.org/10.1038/s41467-024-50415-9",
+        "https://www.nature.com/articles/s41467-024-50415-9",
+        "https://pubmed.ncbi.nlm.nih.gov/39117613/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/"
+      ]
+    },
+    "10.1038/s41698-026-01699-1": {
+      "publication_date": "2026-09-16",
+      "eissn": "2397-768X",
+      "verified_sources": [
+        "https://doi.org/10.1038/s41698-026-01699-1",
+        "https://www.nature.com/articles/s41698-026-01699-1"
+      ]
+    },
+    "10.1016/j.isci.2023.107587": {
+      "publication_date": "2023-08-09",
+      "volume": "26",
+      "issue": "9",
+      "article_number": "107587",
+      "eissn": "2589-0042",
+      "pmid": "37664595",
+      "pmcid": "PMC10470306",
+      "verified_sources": [
+        "https://doi.org/10.1016/j.isci.2023.107587",
+        "https://pubmed.ncbi.nlm.nih.gov/37664595/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/"
+      ]
+    },
+    "10.1186/s12967-022-03795-9": {
+      "publication_date": "2022-12-06",
+      "volume": "20",
+      "issue": "1",
+      "article_number": "568",
+      "eissn": "1479-5876",
+      "pmid": "36474294",
+      "pmcid": "PMC9724432",
+      "verified_sources": [
+        "https://doi.org/10.1186/s12967-022-03795-9",
+        "https://pubmed.ncbi.nlm.nih.gov/36474294/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9724432/"
+      ]
+    },
+    "10.1002/ehf2.14003": {
+      "publication_date": "2022-06-21",
+      "volume": "9",
+      "issue": "5",
+      "first_page": "2937",
+      "last_page": "2954",
+      "eissn": "2055-5822",
+      "pmid": "35727093",
+      "pmcid": "PMC9349450",
+      "publisher": "Wiley",
+      "verified_sources": [
+        "https://doi.org/10.1002/ehf2.14003",
+        "https://pubmed.ncbi.nlm.nih.gov/35727093/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9349450/"
+      ]
+    },
+    "10.1021/acs.jproteome.4c00522": {
+      "publication_date": "2024-08-12",
+      "volume": "23",
+      "issue": "9",
+      "first_page": "4139",
+      "last_page": "4150",
+      "issn": "1535-3893",
+      "eissn": "1535-3907",
+      "pmid": "39129220",
+      "pmcid": "PMC11385702",
+      "publisher": "American Chemical Society",
+      "verified_sources": [
+        "https://doi.org/10.1021/acs.jproteome.4c00522",
+        "https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00522",
+        "https://pubmed.ncbi.nlm.nih.gov/39129220/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11385702/"
+      ]
+    },
+    "10.1093/eurheartj/ehaf523": {
+      "publication_date": "2025-07-25",
+      "volume": "46",
+      "issue": "45",
+      "first_page": "4969",
+      "last_page": "4984",
+      "issn": "0195-668X",
+      "eissn": "1522-9645",
+      "pmid": "40709729",
+      "publisher": "Oxford University Press",
+      "verified_sources": [
+        "https://doi.org/10.1093/eurheartj/ehaf523",
+        "https://pubmed.ncbi.nlm.nih.gov/40709729/"
+      ]
+    },
+    "10.1172/jci194175": {
+      "publication_date": "2026-01-29",
+      "volume": "136",
+      "issue": "6",
+      "article_number": "e194175",
+      "issn": "0021-9738",
+      "eissn": "1558-8238",
+      "pmid": "41609725",
+      "pmcid": "PMC12987658",
+      "publisher": "American Society for Clinical Investigation",
+      "verified_sources": [
+        "https://doi.org/10.1172/JCI194175",
+        "https://www.jci.org/articles/view/194175",
+        "https://pubmed.ncbi.nlm.nih.gov/41609725/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12987658/"
+      ]
+    },
     "10.1002/mdr2.70052": {
       "publication_date": "2026-01-05",
       "volume": "2",
