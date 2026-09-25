@@ -62,15 +62,32 @@ def norm_title(value):
     return re.sub(r"\s+", " ", title).strip()
 
 
-def normalize_authors(value):
+def normalize_authors(value, *, preserve_duplicates=False):
     """Return a clean, ordered author list without inventing missing names."""
     if not isinstance(value, list):
         return []
     authors = []
     for raw in value:
         author = clean_text(raw)
-        if author and author not in authors:
+        if author and (preserve_duplicates or author not in authors):
             authors.append(author)
+    return authors
+
+
+def publication_authors(publication):
+    """Preserve same-name occurrences only with explicit researcher positions."""
+    positions = publication.get("researcher_author_positions")
+    authors = normalize_authors(
+        publication.get("authors"), preserve_duplicates=positions is not None
+    )
+    if positions is not None and (
+        not isinstance(positions, list)
+        or not positions
+        or any(type(position) is not int or not 1 <= position <= len(authors)
+               for position in positions)
+        or len(positions) != len(set(positions))
+    ):
+        raise ValueError("researcher_author_positions must be unique 1-based author positions.")
     return authors
 
 
@@ -130,8 +147,10 @@ def normalize_item(item, default_source=""):
     else:
         rec.pop("url", None)
 
+    if "researcher_author_positions" in rec and "authors" not in rec:
+        raise ValueError("researcher_author_positions requires authors.")
     if "authors" in rec:
-        authors = normalize_authors(rec.get("authors"))
+        authors = publication_authors(rec)
         if authors:
             rec["authors"] = authors
         else:

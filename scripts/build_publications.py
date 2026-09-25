@@ -28,7 +28,7 @@ from sync_common import (
     is_withdrawn,
     load_master,
     norm_doi,
-    normalize_authors,
+    publication_authors,
     save_master,
 )
 
@@ -736,7 +736,13 @@ def resolve_related_papers(content, public_by_doi, site_root):
 
 def paper_schema(publication, paper_url, config):
     title = publication.get("title") or "Untitled work"
-    authors = normalize_authors(publication.get("authors"))
+    authors = publication_authors(publication)
+    explicit_positions = publication.get("researcher_author_positions")
+    if explicit_positions is not None and any(
+        not exact_name_match(authors[position - 1], config["researcher_name"])
+        for position in explicit_positions
+    ):
+        raise ValueError("researcher_author_positions must identify the site's researcher.")
     result = {
         "@context": "https://schema.org",
         "@type": schema_type(publication),
@@ -747,9 +753,10 @@ def paper_schema(publication, paper_url, config):
         "author": (
             [
                 researcher_reference(config)
-                if exact_name_match(author, config["researcher_name"])
+                if (position in explicit_positions if explicit_positions is not None
+                    else exact_name_match(author, config["researcher_name"]))
                 else {"@type": "Person", "name": author}
-                for author in authors
+                for position, author in enumerate(authors, start=1)
             ]
             if authors
             else researcher_reference(config)
@@ -1343,6 +1350,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     publication_type = publication.get("type") or "Work"
     slug = publication["slug"]
     doi = norm_doi(publication.get("doi"))
+    authors = publication_authors(publication)
     canonical = absolute(site_root, f"papers/{slug}.html")
     markdown_url = absolute(site_root, f"papers/{slug}.md")
     is_v2 = bool(deep_content and deep_content.get("version") == 2)
@@ -1378,7 +1386,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     ]
     citation.extend(
         f'<meta name="citation_author" content="{html.escape(author, quote=True)}">'
-        for author in normalize_authors(publication.get("authors"))
+        for author in authors
     )
     if publication.get("year"):
         citation.append(
@@ -1386,7 +1394,6 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         )
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
-    authors = normalize_authors(publication.get("authors"))
     v2_authors_html = ""
     if is_v2:
         author_items = "".join(
@@ -1495,7 +1502,7 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
                 *[
                     f"{position}. {author}"
                     for position, author in enumerate(
-                        normalize_authors(publication.get("authors")), start=1
+                        publication_authors(publication), start=1
                     )
                 ],
                 "",

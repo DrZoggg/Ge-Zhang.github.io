@@ -41,7 +41,7 @@ from sync_common import (
     is_withdrawn,
     load_master,
     norm_doi,
-    normalize_authors,
+    publication_authors,
 )
 
 
@@ -332,7 +332,7 @@ def validate_v2_rendered_page(
         f"{label} must not emit FAQPage schema.",
     )
 
-    expected_authors = normalize_authors(publication.get("authors"))
+    expected_authors = publication_authors(publication)
     require(
         element_texts(page, "li", {"class": "paper-geo-v2__author"})
         == expected_authors,
@@ -1893,7 +1893,7 @@ def validate_site():
         require(
             isinstance(item["authors"], list)
             and bool(item["authors"])
-            and item["authors"] == normalize_authors(item["authors"]),
+            and item["authors"] == publication_authors(item),
             f"Invalid authors list for {item.get('title')!r}.",
         )
     require(
@@ -2001,7 +2001,7 @@ def validate_site():
             schema.get("headline") == expected_title,
             f"Schema.org headline changed for {slug}.html.",
         )
-        expected_authors = normalize_authors(item.get("authors"))
+        expected_authors = publication_authors(item)
         citation_authors = meta_contents(page, "citation_author")
         require(
             citation_authors == expected_authors,
@@ -2016,13 +2016,20 @@ def validate_site():
                 len(author) == len(expected_authors),
                 f"Schema.org author count mismatch in {slug}.html.",
             )
-            for expected_name, person in zip(expected_authors, author):
+            explicit_positions = item.get("researcher_author_positions")
+            for position, (expected_name, person) in enumerate(
+                zip(expected_authors, author), start=1
+            ):
                 require(
                     isinstance(person, dict)
                     and person.get("@type") == "Person",
                     f"Schema.org author order/content mismatch in {slug}.html.",
                 )
-                if exact_name_match(expected_name, config["researcher_name"]):
+                is_researcher = (
+                    position in explicit_positions if explicit_positions is not None
+                    else exact_name_match(expected_name, config["researcher_name"])
+                )
+                if is_researcher:
                     validate_researcher_reference(
                         person, config, f"{slug}.html author {expected_name!r}"
                     )
