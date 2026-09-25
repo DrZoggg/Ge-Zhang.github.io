@@ -498,6 +498,36 @@ def run_tests():
             assert page == (PAPERS_DIR / f"{target}.html").read_text(encoding="utf-8")
             assert markdown == (PAPERS_DIR / f"{target}.md").read_text(encoding="utf-8")
             assert len(content["qa"]) == 11
+            assert [item["id"] for item in content["key_findings"]] == [
+                f"KF{i}" for i in range(1, 9)
+            ]
+            pilot = content["citation_pilot"]
+            assert len(pilot["methodology_boundaries"]) == 6
+            assert len(pilot["evidence_matrix"]) == 8
+            assert len(pilot["selected_evidence_sources"]) == 6
+            for finding in content["key_findings"]:
+                assert page.count(f'id="{finding["id"].lower()}"') == 1
+            for anchor in (
+                "methodological-boundaries", "chronotherapy-evidence-matrix",
+                "selected-evidence-sources",
+            ):
+                assert page.count(f'id="{anchor}"') == 1
+            for row in pilot["evidence_matrix"]:
+                assert page.count(f'id="{row["id"]}"') == 1
+                assert row["intervention"] in markdown
+            for source in pilot["selected_evidence_sources"]:
+                url = f"https://doi.org/{source['doi']}"
+                assert page.count(f'href="{url}"') == 1
+                assert f"]({url})" in markdown
+                assert source["relationship"] in markdown
+            for heading in (
+                "Methodological & Translation Boundaries",
+                "Chronotherapy Evidence Matrix", "Selected Evidence Sources",
+            ):
+                assert f"## {heading}" in markdown
+            assert "<caption>Chronotherapy evidence levels and outcomes</caption>" in page
+            assert "not the complete reference list" in page
+            assert "not the complete reference list" in markdown
             for finding in content["key_findings"]:
                 assert finding["source_locator"] in page
                 assert finding["source_locator"] in markdown
@@ -533,6 +563,36 @@ def run_tests():
                 assert "provenance" in str(exc)
             else:
                 raise AssertionError("New-data inflation was accepted for the review.")
+            duplicate_row = copy.deepcopy(content)
+            duplicate_row["citation_pilot"]["evidence_matrix"][1]["id"] = (
+                duplicate_row["citation_pilot"]["evidence_matrix"][0]["id"]
+            )
+            expect_value_error(
+                lambda: validate_deep_v2_content(duplicate_row, "duplicate matrix row"),
+                "matrix row IDs must be unique",
+            )
+            duplicate_source = copy.deepcopy(content)
+            duplicate_source["citation_pilot"]["selected_evidence_sources"][1]["doi"] = (
+                duplicate_source["citation_pilot"]["selected_evidence_sources"][0]["doi"]
+            )
+            expect_value_error(
+                lambda: validate_deep_v2_content(duplicate_source, "duplicate source"),
+                "selected evidence DOIs must be unique",
+            )
+            bad_ref = copy.deepcopy(content)
+            bad_ref["citation_pilot"]["selected_evidence_sources"][0]["evidence_refs"] = ["KF999"]
+            expect_value_error(
+                lambda: validate_deep_v2_content(bad_ref, "bad citation reference"),
+                "must resolve to findings",
+            )
+            bad_doi = copy.deepcopy(content)
+            bad_doi["citation_pilot"]["selected_evidence_sources"][0]["doi"] = (
+                "10.1161/HYPERTENSIONAHA.114.04980"
+            )
+            expect_value_error(
+                lambda: validate_deep_v2_content(bad_doi, "unnormalized source DOI"),
+                "must be normalized and valid",
+            )
         elif norm_doi(publication.get("doi")) == KIF13B_VSMC_DOI:
             validate_kif13b_vsmc_v2_regression(content, publication, page)
             target = "doi-10-1172-jci194175"

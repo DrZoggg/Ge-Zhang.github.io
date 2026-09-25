@@ -11,6 +11,7 @@ from build_publications import (
     GA4_MEASUREMENT_ID,
     GA4_TAG,
     PENDING_NOTICE,
+    SELECTED_EVIDENCE_NOTICE,
     flatten_concepts,
     resolve_related_papers,
     validate_deep_v2_content,
@@ -302,7 +303,7 @@ def string_leaves(value):
             yield from string_leaves(item)
     elif isinstance(value, dict):
         for key, item in value.items():
-            if key == "profile_type":
+            if key in {"profile_type", "citation_pilot"}:
                 continue
             yield from string_leaves(item)
 
@@ -375,6 +376,11 @@ def validate_v2_rendered_page(
         "What This Review Adds" if profile_type == "narrative_review"
         else "What This Study Adds",
         "Evidence Scope",
+        *(
+            ["Methodological & Translation Boundaries",
+             "Chronotherapy Evidence Matrix", "Selected Evidence Sources"]
+            if content.get("citation_pilot") else []
+        ),
         "Q&A",
         "Concepts & Entities",
         "Related Research",
@@ -401,6 +407,18 @@ def validate_v2_rendered_page(
     ]
     positions = [page.index(f'data-v2-section="{marker}"') for marker in section_markers]
     require(positions == sorted(positions), f"{label} HTML section order changed.")
+    if content.get("citation_pilot"):
+        pilot_markers = ["boundaries", "matrix", "sources"]
+        pilot_positions = [
+            page.index(f'data-citation-pilot-section="{marker}"')
+            for marker in pilot_markers
+        ]
+        require(
+            positions[section_markers.index("evidence-scope")]
+            < pilot_positions[0] < pilot_positions[1] < pilot_positions[2]
+            < positions[section_markers.index("qa")],
+            f"{label} citation-pilot section order changed.",
+        )
     require(
         page.index('class="paper-geo-v2__notice"') > positions[-1],
         f"{label} evidence-page notice must follow provenance.",
@@ -549,6 +567,56 @@ def validate_v2_rendered_page(
     for key, value in content["provenance"].items():
         if key.endswith("_url"):
             require(value in page and value in markdown, f"{label} provenance URL missing: {value}")
+    if content.get("citation_pilot"):
+        validate_citation_pilot_rendering(content, page, markdown, label)
+
+
+def validate_citation_pilot_rendering(content, page, markdown, label):
+    pilot = content["citation_pilot"]
+    page_text = visible_text(page)
+    for finding in content["key_findings"]:
+        anchor = finding["id"].lower()
+        require(page.count(f'id="{anchor}"') == 1,
+                f"{label} must have exactly one permanent #{anchor} anchor.")
+    for anchor in (
+        "methodological-boundaries", "chronotherapy-evidence-matrix",
+        "selected-evidence-sources",
+    ):
+        require(page.count(f'id="{anchor}"') == 1,
+                f"{label} must have exactly one #{anchor} section anchor.")
+    for boundary in pilot["methodology_boundaries"]:
+        require(boundary in page_text and boundary in markdown,
+                f"{label} methodology boundary is missing from HTML or Markdown.")
+    matrix = page.split('id="chronotherapy-evidence-matrix"', 1)[1].split(
+        'id="selected-evidence-sources"', 1
+    )[0]
+    require(
+        "<table" in matrix and "<caption>" in matrix
+        and matrix.count('scope="col"') == 7
+        and matrix.count('scope="row"') == len(pilot["evidence_matrix"]),
+        f"{label} citation matrix must be a semantic table.",
+    )
+    for row in pilot["evidence_matrix"]:
+        require(page.count(f'id="{row["id"]}"') == 1,
+                f"{label} matrix row anchor {row['id']} is missing or duplicated.")
+        for key, value in row.items():
+            if key == "id":
+                continue
+            require(normalized_source_text(value) in page_text and value in markdown,
+                    f"{label} citation matrix {row['id']} lost {key}.")
+    require(SELECTED_EVIDENCE_NOTICE in page_text
+            and SELECTED_EVIDENCE_NOTICE in markdown,
+            f"{label} selected sources notice is missing.")
+    for source in pilot["selected_evidence_sources"]:
+        url = f"https://doi.org/{source['doi']}"
+        require(page.count(f'href="{url}"') == 1 and f"]({url})" in markdown,
+                f"{label} selected source DOI link is missing or duplicated: {url}.")
+        for value in (source["title"], source["relationship"]):
+            require(normalized_source_text(value) in page_text and value in markdown,
+                    f"{label} selected source content is missing.")
+        refs = ", ".join(source["evidence_refs"])
+        require(refs in page_text and refs in markdown,
+                f"{label} selected source evidence relationship is missing.")
 
 
 def validate_aihflevel_v2_regression(content, publication, page):
@@ -1625,7 +1693,7 @@ def validate_circadian_review_v2_regression(content, publication, page):
       and "no newly generated or newly analyzed dataset" in study["counting_note"],
       f"{label} review evidence scale or no-new-data guard changed.")
     findings = {item["id"]: item for item in content["key_findings"]}
-    require(list(findings) == [f"KF{i}" for i in range(1, 8)],
+    require(list(findings) == [f"KF{i}" for i in range(1, 9)],
             f"{label} finding inventory changed.")
     anchors = {
         "KF1": ("CLOCK-BMAL1", "PER/CRY", "REV-ERB/ROR"),
@@ -1635,6 +1703,8 @@ def validate_circadian_review_v2_regression(content, publication, page):
         "KF5": ("Preclinical", "time-dependent"),
         "KF6": ("heterogeneous", "universal optimal dosing time"),
         "KF7": ("methodological", "translational gaps"),
+        "KF8": ("mechanistic rhythmicity", "preclinical time-of-day efficacy",
+                "human surrogate effects", "hard cardiovascular outcomes"),
     }
     require(all(all(token.casefold() in findings[key]["claim"].casefold()
                     for token in tokens) for key, tokens in anchors.items()),
@@ -1651,6 +1721,7 @@ def validate_circadian_review_v2_regression(content, publication, page):
         "Section 7.1; Table 4.",
         "Section 7.2; Table 5.",
         "Sections 8.1-8.4.",
+        "Section 7.2; Table 5; Sections 8.1-8.4.",
     ]
     require([item["source_locator"] for item in findings.values()] == expected_locators
             and all(locator in page for locator in expected_locators),
@@ -1671,13 +1742,50 @@ def validate_circadian_review_v2_regression(content, publication, page):
             == ["10.1038/s41598-024-65236-5", "10.1186/s12967-022-03795-9",
                 "10.1093/eurheartj/ehaf523"],
             f"{label} Q&A or related-research scope changed.")
+    pilot = content.get("citation_pilot")
+    require(isinstance(pilot, dict)
+            and len(pilot["methodology_boundaries"]) == 6
+            and [row["id"] for row in pilot["evidence_matrix"]] == [
+                "evidence-rev-erb", "evidence-nlrp3", "evidence-aspirin",
+                "evidence-beta-blockers", "evidence-sglt2", "evidence-colchicine",
+                "evidence-antihypertensive-timing", "evidence-mra-arni",
+            ]
+            and [source["doi"] for source in pilot["selected_evidence_sources"]] == [
+                "10.1038/s42003-019-0595-z", "10.1016/j.jacc.2022.03.370",
+                "10.1161/hypertensionaha.114.04980", "10.1160/th-14-05-0453",
+                "10.1093/eurheartj/ehz754", "10.1001/jama.2025.4390",
+            ]
+            and all(content["qa"][index]["evidence_refs"] == ["KF6", "KF8"]
+                    for index in (6, 7, 8))
+            and content["qa"][5]["evidence_refs"] == ["KF5", "KF8"],
+            f"{label} citation-pilot inventory or claim relationships changed.")
+    require("not a systematic review" in pilot["methodology_boundaries"][0]
+            and "not a synthetic study count" in pilot["methodology_boundaries"][1]
+            and "not be converted directly" in pilot["methodology_boundaries"][3]
+            and "do not by themselves prove" in pilot["methodology_boundaries"][4]
+            and "does not support a universal bedtime-dosing recommendation"
+            in pilot["methodology_boundaries"][5],
+            f"{label} methodological boundaries changed.")
+    matrix = {row["id"]: row for row in pilot["evidence_matrix"]}
+    require("No human cardiovascular outcome validation"
+            in matrix["evidence-rev-erb"]["hard_outcome_status"]
+            and "ZT06 is not a human dosing recommendation"
+            in matrix["evidence-rev-erb"]["hard_outcome_status"]
+            and "MI/stroke reduction" in matrix["evidence-aspirin"]["hard_outcome_status"]
+            and "BedMed did not reproduce" in matrix[
+                "evidence-antihypertensive-timing"]["hard_outcome_status"],
+            f"{label} clinical outcome boundaries changed.")
     positive_fields = [content["summary"], content["research_question"],
         content["author_summary"], study["study_design"], study["evidence_type"],
         study["translation_scope"],
         *(finding["claim"] for finding in findings.values()),
         *(finding["context"] for finding in findings.values()),
         *(item["value"] for finding in findings.values() for item in finding["evidence"]),
-        *(item["answer"] for item in content["qa"])]
+        *(item["answer"] for item in content["qa"]),
+        *(row[key] for row in pilot["evidence_matrix"]
+          for key in ("rationale", "timing_tested", "evidence_level",
+                      "main_endpoint", "hard_outcome_status")),
+        *(source["relationship"] for source in pilot["selected_evidence_sources"])]
     forbidden = (
         "systematic review", "meta-analysis", "prospective validation",
         "retrospective cohort", "randomized chronotherapy trial performed",

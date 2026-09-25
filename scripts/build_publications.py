@@ -59,6 +59,11 @@ PENDING_NOTICE = (
     "layer is pending scientific review. The publisher version remains the "
     "version of record."
 )
+SELECTED_EVIDENCE_NOTICE = (
+    "These are selected evidence sources used to verify claims on this "
+    "author-controlled evidence page; they are not the complete reference list "
+    "of the published review."
+)
 
 
 def scholar_url(title):
@@ -716,6 +721,57 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
             parsed = urllib.parse.urlparse(value)
             if parsed.scheme != "https" or not parsed.netloc:
                 raise ValueError(f"{label} provenance.{key} must be an HTTPS URL.")
+    if "citation_pilot" in content:
+        validate_citation_pilot(content["citation_pilot"], set(finding_ids), label)
+
+
+def validate_citation_pilot(pilot, finding_ids, label):
+    prefix = f"{label} citation_pilot"
+    required = {"methodology_boundaries", "evidence_matrix", "selected_evidence_sources"}
+    if not isinstance(pilot, dict) or set(pilot) != required:
+        raise ValueError(f"{prefix} must contain only the three pilot structures.")
+    required_text_list(pilot["methodology_boundaries"], f"{prefix} methodology_boundaries")
+    rows = pilot["evidence_matrix"]
+    if not isinstance(rows, list) or not rows:
+        raise ValueError(f"{prefix} evidence_matrix must be a non-empty array.")
+    row_keys = {
+        "id", "intervention", "rationale", "timing_tested", "evidence_level",
+        "main_endpoint", "hard_outcome_status", "source_locator",
+    }
+    row_ids = []
+    for position, row in enumerate(rows, start=1):
+        if not isinstance(row, dict) or set(row) != row_keys:
+            raise ValueError(f"{prefix} matrix row {position} has invalid fields.")
+        row_id = required_text(row["id"], f"{prefix} matrix row ID")
+        if not re.fullmatch(r"evidence-[a-z0-9]+(?:-[a-z0-9]+)*", row_id):
+            raise ValueError(f"{prefix} matrix row {position} has an invalid anchor ID.")
+        row_ids.append(row_id)
+        for key in row_keys - {"id"}:
+            required_text(row[key], f"{prefix} matrix row {position} {key}")
+    if len(row_ids) != len(set(row_ids)):
+        raise ValueError(f"{prefix} matrix row IDs must be unique.")
+    sources = pilot["selected_evidence_sources"]
+    if not isinstance(sources, list) or not sources:
+        raise ValueError(f"{prefix} selected_evidence_sources must be a non-empty array.")
+    source_dois = []
+    for position, source in enumerate(sources, start=1):
+        if not isinstance(source, dict) or set(source) != {
+            "doi", "title", "relationship", "evidence_refs"
+        }:
+            raise ValueError(f"{prefix} source {position} has invalid fields.")
+        doi = required_text(source["doi"], f"{prefix} source {position} DOI")
+        if doi != norm_doi(doi) or not re.fullmatch(r"10\.\d{4,9}/\S+", doi):
+            raise ValueError(f"{prefix} source {position} DOI must be normalized and valid.")
+        source_dois.append(doi)
+        required_text(source["title"], f"{prefix} source {position} title")
+        required_text(source["relationship"], f"{prefix} source {position} relationship")
+        refs = required_text_list(
+            source["evidence_refs"], f"{prefix} source {position} evidence_refs"
+        )
+        if any(ref not in finding_ids for ref in refs):
+            raise ValueError(f"{prefix} source {position} evidence_refs must resolve to findings.")
+    if len(source_dois) != len(set(source_dois)):
+        raise ValueError(f"{prefix} selected evidence DOIs must be unique.")
 
 
 def resolve_related_papers(content, public_by_doi, site_root):
@@ -930,6 +986,59 @@ def render_v2_evidence_html(finding):
     )
 
 
+def render_citation_pilot_html(pilot):
+    columns = (
+        ("Intervention / drug class", "intervention"),
+        ("Rhythmic biological rationale", "rationale"),
+        ("Timing directly tested?", "timing_tested"),
+        ("Evidence level", "evidence_level"),
+        ("Main endpoint", "main_endpoint"),
+        ("Hard cardiovascular outcome status", "hard_outcome_status"),
+        ("Review locator", "source_locator"),
+    )
+    boundaries = "".join(
+        f"<li>{html.escape(item)}</li>" for item in pilot["methodology_boundaries"]
+    )
+    headers = "".join(f'<th scope="col">{html.escape(label)}</th>' for label, _ in columns)
+    rows = "".join(
+        "<tr>"
+        f'<th scope="row" id="{html.escape(row["id"], quote=True)}">'
+        f'{html.escape(row["intervention"])}</th>'
+        + "".join(
+            f"<td>{html.escape(row[key])}</td>" for _, key in columns[1:]
+        )
+        + "</tr>"
+        for row in pilot["evidence_matrix"]
+    )
+    sources = "".join(
+        "<li><strong>"
+        + html.escape(source["title"])
+        + "</strong><br><a href=\""
+        + html.escape(doi_url(source["doi"]), quote=True)
+        + "\">"
+        + html.escape(doi_url(source["doi"]))
+        + "</a><p>"
+        + html.escape(source["relationship"])
+        + "</p><p>Evidence: "
+        + html.escape(", ".join(source["evidence_refs"]))
+        + "</p></li>"
+        for source in pilot["selected_evidence_sources"]
+    )
+    return (
+        '<section class="paper-geo-v2__section" id="methodological-boundaries" '
+        'data-citation-pilot-section="boundaries"><h2>Methodological &amp; '
+        f'Translation Boundaries</h2><ol>{boundaries}</ol></section>'
+        '<section class="paper-geo-v2__section" id="chronotherapy-evidence-matrix" '
+        'data-citation-pilot-section="matrix"><h2>Chronotherapy Evidence Matrix</h2>'
+        '<div class="paper-geo-v2__table-wrap"><table class="paper-geo-v2__table">'
+        f'<caption>Chronotherapy evidence levels and outcomes</caption><thead><tr>{headers}'
+        f'</tr></thead><tbody>{rows}</tbody></table></div></section>'
+        '<section class="paper-geo-v2__section" id="selected-evidence-sources" '
+        'data-citation-pilot-section="sources"><h2>Selected Evidence Sources</h2>'
+        f'<p>{html.escape(SELECTED_EVIDENCE_NOTICE)}</p><ol>{sources}</ol></section>'
+    )
+
+
 def render_deep_v2_html(content, related_papers):
     study = content["study_profile"]
     profile_type = study["profile_type"]
@@ -945,6 +1054,10 @@ def render_deep_v2_html(content, related_papers):
     findings = "".join(
         '<article class="paper-geo-v2__finding" data-key-finding-id="'
         + html.escape(finding["id"], quote=True)
+        + (
+            '" id="' + html.escape(finding["id"].lower(), quote=True)
+            if content.get("citation_pilot") else ""
+        )
         + '"><h3><span class="paper-geo-v2__finding-id">'
         + html.escape(finding["id"])
         + "</span> "
@@ -1121,6 +1234,10 @@ def render_deep_v2_html(content, related_papers):
         if profile_type == "clinical_cohort"
         else ""
     )
+    pilot_html = (
+        render_citation_pilot_html(content["citation_pilot"])
+        if content.get("citation_pilot") else ""
+    )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
 <section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
@@ -1128,7 +1245,7 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{'Review profile' if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{'What This Review Adds' if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
-<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>
@@ -1139,6 +1256,49 @@ def render_deep_v2_html(content, related_papers):
 
 def markdown_cell(value):
     return str(value).replace("|", "\\|").replace("\n", " ")
+
+
+def render_citation_pilot_markdown(pilot):
+    columns = (
+        ("Intervention / drug class", "intervention"),
+        ("Rhythmic biological rationale", "rationale"),
+        ("Timing directly tested?", "timing_tested"),
+        ("Evidence level", "evidence_level"),
+        ("Main endpoint", "main_endpoint"),
+        ("Hard cardiovascular outcome status", "hard_outcome_status"),
+        ("Review locator", "source_locator"),
+    )
+    parts = [
+        "## Methodological & Translation Boundaries",
+        "",
+        *[
+            f"{position}. {item}"
+            for position, item in enumerate(pilot["methodology_boundaries"], start=1)
+        ],
+        "",
+        "## Chronotherapy Evidence Matrix",
+        "",
+        "| " + " | ".join(label for label, _ in columns) + " |",
+        "| " + " | ".join("---" for _ in columns) + " |",
+        *[
+            "| " + " | ".join(markdown_cell(row[key]) for _, key in columns) + " |"
+            for row in pilot["evidence_matrix"]
+        ],
+        "",
+        "## Selected Evidence Sources",
+        "",
+        SELECTED_EVIDENCE_NOTICE,
+        "",
+    ]
+    for position, source in enumerate(pilot["selected_evidence_sources"], start=1):
+        url = doi_url(source["doi"])
+        parts.extend([
+            f"{position}. **{source['title']}** — [{url}]({url})",
+            f"   Relationship: {source['relationship']}",
+            f"   Evidence: {', '.join(source['evidence_refs'])}",
+            "",
+        ])
+    return parts
 
 
 def render_deep_v2_markdown(content, related_papers):
@@ -1295,10 +1455,11 @@ def render_deep_v2_markdown(content, related_papers):
             "",
             *[f"- {item}" for item in content["limitations"]],
             "",
-            "## Q&A",
-            "",
         ]
     )
+    if content.get("citation_pilot"):
+        parts.extend(render_citation_pilot_markdown(content["citation_pilot"]))
+    parts.extend(["## Q&A", ""])
     for item in content["qa"]:
         parts.extend([f"### {item['question']}", "", item["answer"], ""])
         if item.get("evidence_refs"):

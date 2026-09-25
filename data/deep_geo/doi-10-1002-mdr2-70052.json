@@ -28,8 +28,139 @@
     {"id": "KF4", "claim": "Circadian disruption is reviewed in relation to atherosclerosis, stroke, ischemic heart disease/myocardial infarction and heart failure through overlapping inflammatory, endothelial, metabolic and oxidative-stress mechanisms.", "context": "Evidence strength and causality differ materially across disease, mechanism and model.", "evidence": [{"label": "Disease domains", "value": "The synthesis compares atherosclerosis, stroke, ischemic heart disease, myocardial infarction and heart failure rather than reporting one new cross-disease experiment."}], "source_locator": "Sections 6.1-6.4; Figures 6-8."},
     {"id": "KF5", "claim": "Preclinical studies provide a mechanistic rationale for time-dependent intervention targeting clock and inflammatory pathways.", "context": "This evidence is predominantly preclinical and must not be converted into human treatment-efficacy claims.", "evidence": [{"label": "Preclinical strategies", "value": "The review discusses REV-ERB agonists, NLRP3 inhibitors, NF-kB pathway modulation, CCR2/CCL2 and CXCL12/CXCR4 strategies."}], "source_locator": "Section 7.1; Table 4."},
     {"id": "KF6", "claim": "Clinical chronotherapy evidence is heterogeneous and does not define a universal optimal dosing time for most cardiovascular drugs.", "context": "Physiological timing effects and mechanistic rationale are not equivalent to proven reductions in clinical outcomes.", "evidence": [{"label": "Drug classes and timing", "value": "The review discusses aspirin, beta-blockers, melatonin, tPA, SGLT2 inhibitors, colchicine, ACEIs/ARBs, MRAs, ARNI and antihypertensive timing."}, {"label": "Conflicting trials", "value": "Hygia and related studies reported bedtime-dosing benefits, whereas BedMed did not reproduce a cardiovascular-event benefit."}], "source_locator": "Section 7.2; Table 5."},
-    {"id": "KF7", "claim": "The review identifies unresolved methodological and translational gaps that limit precision chronotherapy.", "context": "These gaps are part of the authors' discussion, not newly experimentally tested findings.", "evidence": [{"label": "Research gaps", "value": "Constitutive-versus-inducible knockout-model differences, immune-cell-subpopulation heterogeneity, insufficient spatiotemporal resolution of vascular-immune interactions and the need for high-quality circadian-aware clinical trials are highlighted."}], "source_locator": "Sections 8.1-8.4."}
+    {"id": "KF7", "claim": "The review identifies unresolved methodological and translational gaps that limit precision chronotherapy.", "context": "These gaps are part of the authors' discussion, not newly experimentally tested findings.", "evidence": [{"label": "Research gaps", "value": "Constitutive-versus-inducible knockout-model differences, immune-cell-subpopulation heterogeneity, insufficient spatiotemporal resolution of vascular-immune interactions and the need for high-quality circadian-aware clinical trials are highlighted."}], "source_locator": "Sections 8.1-8.4."},
+    {"id": "KF8", "claim": "Chronotherapy claims in this review require explicit separation of mechanistic rhythmicity, preclinical time-of-day efficacy, human surrogate effects and hard cardiovascular outcomes.", "context": "These evidence levels are not interchangeable. Human clinical timing evidence remains incomplete or conflicting for many cardiovascular therapies.", "evidence": [{"label": "Human timing evidence", "value": "Bedtime aspirin can alter morning platelet reactivity, but cardiovascular event reduction has not been established by a large randomized trial; SGLT2-inhibitor and colchicine timing remain insufficiently tested."}, {"label": "Outcome-level uncertainty", "value": "Antihypertensive bedtime-dosing studies have reported conflicting cardiovascular outcome results, including the Hygia and BedMed trials."}], "source_locator": "Section 7.2; Table 5; Sections 8.1-8.4."}
   ],
+  "citation_pilot": {
+    "methodology_boundaries": [
+      "This is a narrative evidence synthesis, not a systematic review or quantitative meta-analysis.",
+      "The 392 references are bibliography entries across heterogeneous evidence types, not a synthetic study count or sample size.",
+      "Mechanistic rhythmicity, animal chronopharmacology, human surrogate physiology and hard cardiovascular outcomes are different evidence levels.",
+      "Mouse Zeitgeber-time findings must not be converted directly into a human clock-time dosing prescription.",
+      "Changes in platelet activity, inflammatory biomarkers, blood pressure or other surrogate measures do not by themselves prove reductions in myocardial infarction, stroke or mortality.",
+      "Conflicting antihypertensive timing evidence remains conflicting; it does not support a universal bedtime-dosing recommendation."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-rev-erb",
+        "intervention": "REV-ERBα/β agonists — SR9009 / SR9011",
+        "rationale": "Circadian REV-ERB regulation of inflammatory signaling.",
+        "timing_tested": "Yes, in selected preclinical models",
+        "evidence_level": "Preclinical",
+        "main_endpoint": "NLRP3 / inflammatory signaling, MI/R injury, remodeling and cardiac function.",
+        "hard_outcome_status": "No human cardiovascular outcome validation; mouse ZT06 is not a human dosing recommendation.",
+        "source_locator": "Section 7.1.1; Table 4; reference 118."
+      },
+      {
+        "id": "evidence-nlrp3",
+        "intervention": "NLRP3 inhibitors — MCC950 and related compounds",
+        "rationale": "Circadian variation in inflammatory and inflammasome signaling.",
+        "timing_tested": "Limited / largely inferred from rhythmic biology",
+        "evidence_level": "Preclinical",
+        "main_endpoint": "Inflammation, myocardial injury, atherosclerosis and remodeling in experimental models.",
+        "hard_outcome_status": "No established human cardiovascular chronotherapy outcome.",
+        "source_locator": "Section 7.1.2; Table 4."
+      },
+      {
+        "id": "evidence-aspirin",
+        "intervention": "Aspirin",
+        "rationale": "Circadian variation in morning platelet reactivity.",
+        "timing_tested": "Yes",
+        "evidence_level": "Human randomized crossover / physiological evidence",
+        "main_endpoint": "Morning platelet reactivity and related physiological measures.",
+        "hard_outcome_status": "Overall MI/stroke reduction from bedtime dosing remains unproven.",
+        "source_locator": "Section 7.2; Table 5; references 368-370."
+      },
+      {
+        "id": "evidence-beta-blockers",
+        "intervention": "Beta-blockers",
+        "rationale": "Daily variation in heart rate, blood pressure and autonomic activity.",
+        "timing_tested": "Limited human evidence",
+        "evidence_level": "Clinical / pharmacological",
+        "main_endpoint": "Heart rate, blood pressure and autonomic effects.",
+        "hard_outcome_status": "No universal outcome-based timing recommendation.",
+        "source_locator": "Section 7.2; Table 5."
+      },
+      {
+        "id": "evidence-sglt2",
+        "intervention": "SGLT2 inhibitors",
+        "rationale": "Rhythm-integrated dosing remains a proposed rather than validated clinical strategy.",
+        "timing_tested": "No established rhythm-integrated clinical timing evidence",
+        "evidence_level": "Clinical efficacy established independent of chronotherapy",
+        "main_endpoint": "Heart-failure and cardiorenal outcomes.",
+        "hard_outcome_status": "Chronotherapy-specific benefit unknown.",
+        "source_locator": "Section 7.2; Table 5."
+      },
+      {
+        "id": "evidence-colchicine",
+        "intervention": "Colchicine",
+        "rationale": "Rhythmic inflammation is a proposed timing rationale.",
+        "timing_tested": "Not systematically evaluated",
+        "evidence_level": "Clinical cardiovascular efficacy, but timing evidence lacking",
+        "main_endpoint": "Coronary disease / post-MI inflammatory risk.",
+        "hard_outcome_status": "Chronotherapy-specific outcome benefit unknown.",
+        "source_locator": "Section 7.2; Table 5."
+      },
+      {
+        "id": "evidence-antihypertensive-timing",
+        "intervention": "RAAS inhibitors / antihypertensive timing",
+        "rationale": "Circadian variation in blood pressure.",
+        "timing_tested": "Yes",
+        "evidence_level": "Human randomized clinical evidence",
+        "main_endpoint": "Blood pressure and cardiovascular events.",
+        "hard_outcome_status": "Conflicting evidence; Hygia reported benefit whereas BedMed did not reproduce a cardiovascular-event benefit.",
+        "source_locator": "Section 7.2; Table 5; references 388-392."
+      },
+      {
+        "id": "evidence-mra-arni",
+        "intervention": "MRAs / ARNI",
+        "rationale": "A chronotherapy-specific timing rationale remains unvalidated.",
+        "timing_tested": "Insufficient or absent",
+        "evidence_level": "Clinical efficacy established for their usual indications; chronotherapy evidence limited",
+        "main_endpoint": "Heart-failure / remodeling outcomes.",
+        "hard_outcome_status": "No established chronotherapy-specific outcome advantage.",
+        "source_locator": "Section 7.2; Table 5."
+      }
+    ],
+    "selected_evidence_sources": [
+      {
+        "doi": "10.1038/s42003-019-0595-z",
+        "title": "SR9009 Administered for One Day After Myocardial Ischemia-Reperfusion Prevents Heart Failure in Mice by Targeting the Cardiac Inflammasome",
+        "relationship": "Direct preclinical evidence relevant to time-dependent REV-ERB agonist intervention after myocardial ischemia-reperfusion.",
+        "evidence_refs": ["KF5", "KF8"]
+      },
+      {
+        "doi": "10.1016/j.jacc.2022.03.370",
+        "title": "Disruption of Circadian Rhythms by Shift Work Exacerbates Reperfusion Injury in Myocardial Infarction",
+        "relationship": "Translational human and experimental evidence linking shift-work-associated circadian disruption with myocardial infarction injury and prognosis.",
+        "evidence_refs": ["KF4", "KF8"]
+      },
+      {
+        "doi": "10.1161/hypertensionaha.114.04980",
+        "title": "Time-Dependent Effects of Aspirin on Blood Pressure and Morning Platelet Reactivity: A Randomized Cross-Over Trial",
+        "relationship": "Human randomized crossover evidence for aspirin timing effects on physiological and platelet endpoints, not proof of reduced cardiovascular events.",
+        "evidence_refs": ["KF6", "KF8"]
+      },
+      {
+        "doi": "10.1160/th-14-05-0453",
+        "title": "Effect of Aspirin Intake at Bedtime Versus on Awakening on Circadian Rhythm of Platelet Reactivity. A Randomised Cross-Over Trial",
+        "relationship": "Human randomized crossover evidence supporting timing-dependent platelet-reactivity effects.",
+        "evidence_refs": ["KF6", "KF8"]
+      },
+      {
+        "doi": "10.1093/eurheartj/ehz754",
+        "title": "Bedtime Hypertension Treatment Improves Cardiovascular Risk Reduction: The Hygia Chronotherapy Trial",
+        "relationship": "Trial reporting cardiovascular benefit with bedtime antihypertensive dosing; retain the review's stated concerns regarding generalizability and conflicting subsequent evidence.",
+        "evidence_refs": ["KF6", "KF8"]
+      },
+      {
+        "doi": "10.1001/jama.2025.4390",
+        "title": "Antihypertensive Medication Timing and Cardiovascular Events and Death: The BedMed Randomized Clinical Trial",
+        "relationship": "Randomized clinical evidence that did not reproduce the cardiovascular-event benefit reported by Hygia.",
+        "evidence_refs": ["KF6", "KF8"]
+      }
+    ]
+  },
   "what_this_adds": [
     "Provides an integrated immunovascular framework linking molecular circadian clocks to inflammatory signaling, leukocyte trafficking and cardiovascular disease biology.",
     "Connects molecular mechanisms with disease-specific evidence across atherosclerosis, stroke, ischemic heart disease and heart failure.",
@@ -61,10 +192,10 @@
     {"question": "How does circadian disruption interact with NF-kB and NLRP3?", "answer": "The review links clock and redox regulation with pattern-recognition receptor, NF-kB and NLRP3 inflammatory signaling, cytokines and chemokines. The underlying models are heterogeneous and do not establish one complete causal pathway in humans.", "evidence_refs": ["KF1", "KF2"]},
     {"question": "Which immune cells show circadian trafficking or functional rhythms?", "answer": "Prior evidence discussed for neutrophils, monocytes/macrophages, lymphocytes and dendritic cells indicates rhythmic numbers, trafficking or function, with phase and mechanism varying across species and tissues.", "evidence_refs": ["KF3"]},
     {"question": "Which cardiovascular diseases are discussed?", "answer": "The review discusses atherosclerosis, stroke, ischemic heart disease and myocardial infarction, and heart failure, with hypertension considered in blood-pressure chronotherapy. Evidence strength differs across disease contexts.", "evidence_refs": ["KF4", "KF6"]},
-    {"question": "Does the review prove that REV-ERB agonists treat cardiovascular disease in humans?", "answer": "No. REV-ERB agonist chronotherapy is discussed as mechanistic and preclinical rationale, not demonstrated human cardiovascular treatment efficacy.", "evidence_refs": ["KF5"]},
-    {"question": "Should all antihypertensive medications be taken at bedtime?", "answer": "No. Clinical evidence conflicts: Hygia and related studies reported bedtime-dosing benefits, while BedMed did not reproduce a cardiovascular-event benefit. The review does not support a universal bedtime recommendation.", "evidence_refs": ["KF6"]},
-    {"question": "Does bedtime aspirin have proven myocardial infarction or stroke outcome benefit?", "answer": "No large randomized trial cited by this review directly establishes reduced overall myocardial infarction or stroke incidence from bedtime aspirin dosing; physiological timing effects do not prove event reduction.", "evidence_refs": ["KF6"]},
-    {"question": "Are SGLT2-inhibitor, colchicine, MRA or ARNI dosing times clinically established?", "answer": "No. The review discusses these drug classes, but does not establish clinically validated optimal timing or universal cardiovascular outcome benefits for them.", "evidence_refs": ["KF6"]},
+    {"question": "Does the review prove that REV-ERB agonists treat cardiovascular disease in humans?", "answer": "No. REV-ERB agonist chronotherapy is discussed as mechanistic and preclinical rationale, not demonstrated human cardiovascular treatment efficacy.", "evidence_refs": ["KF5", "KF8"]},
+    {"question": "Should all antihypertensive medications be taken at bedtime?", "answer": "No. Clinical evidence conflicts: Hygia and related studies reported bedtime-dosing benefits, while BedMed did not reproduce a cardiovascular-event benefit. The review does not support a universal bedtime recommendation.", "evidence_refs": ["KF6", "KF8"]},
+    {"question": "Does bedtime aspirin have proven myocardial infarction or stroke outcome benefit?", "answer": "No large randomized trial cited by this review directly establishes reduced overall myocardial infarction or stroke incidence from bedtime aspirin dosing; physiological timing effects do not prove event reduction.", "evidence_refs": ["KF6", "KF8"]},
+    {"question": "Are SGLT2-inhibitor, colchicine, MRA or ARNI dosing times clinically established?", "answer": "No. The review discusses these drug classes, but does not establish clinically validated optimal timing or universal cardiovascular outcome benefits for them.", "evidence_refs": ["KF6", "KF8"]},
     {"question": "Is this a systematic review or meta-analysis?", "answer": "No. The article reports no explicit systematic-search strategy, PRISMA study-selection workflow or quantitative meta-analysis; its 392 references are bibliography entries, not a systematic count of independent studies.", "evidence_refs": ["KF7"]},
     {"question": "What gaps remain before cardiovascular chronotherapy can become precision medicine?", "answer": "Constitutive-versus-inducible model differences, immune-subpopulation and spatiotemporal heterogeneity, individualized rhythm variation and high-quality circadian-aware clinical trials remain important gaps.", "evidence_refs": ["KF7"]}
   ],
