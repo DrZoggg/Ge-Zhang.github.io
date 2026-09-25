@@ -3,11 +3,14 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from unittest.mock import patch
 from xml.sax.saxutils import escape
 
 from indexnow_submit import (
     IndexNowError,
+    changed_public_html_paths,
     detect_changes,
+    detect_changes_with_html,
     load_config,
     parse_sitemap_text,
     process_entries,
@@ -19,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HOME = "https://drgezhang.com/"
 PUBLICATIONS = "https://drgezhang.com/publications.html"
 PAPER = "https://drgezhang.com/papers/indexnow-test.html"
+SECOND_PAPER = "https://drgezhang.com/papers/indexnow-test-two.html"
 
 
 def sitemap(entries):
@@ -176,6 +180,53 @@ def main():
     assert changes.updated == (HOME,)
     assert not changes.added and not changes.deleted
 
+    same_lastmod = parse_sitemap_text(
+        sitemap([(HOME, "2026-09-20"), (PAPER, "2026-09-20"),
+                 (SECOND_PAPER, "2026-09-20")]), config["host"]
+    )
+    changes = detect_changes_with_html(
+        same_lastmod, same_lastmod, ("papers/indexnow-test.html",)
+    )
+    assert changes.updated == (PAPER,)
+    assert not changes.added and not changes.deleted
+    changes = detect_changes_with_html(
+        same_lastmod, same_lastmod,
+        ("citations/indexnow-test.bib", "citations/indexnow-test.ris",
+         "citations/indexnow-test.csl.json", "assets/citation.js"),
+    )
+    assert not changes.urls
+    changes = detect_changes_with_html(
+        same_lastmod, same_lastmod,
+        ("scripts/build_publications.py", "papers/indexnow-test.html",
+         "papers/indexnow-test-two.html"),
+    )
+    assert changes.updated == tuple(sorted((PAPER, SECOND_PAPER)))
+    changes = detect_changes_with_html(
+        same_lastmod, same_lastmod,
+        ("papers/withdrawn.html", "404.html", "papers/noncanonical.html"),
+    )
+    assert not changes.urls
+    changes = detect_changes_with_html(
+        {HOME: "2026-09-20"}, {HOME: "2026-09-20", PAPER: "2026-09-20"},
+        ("papers/indexnow-test.html",),
+    )
+    assert changes.added == (PAPER,) and not changes.updated
+
+    with patch("indexnow_submit.subprocess.run") as git_diff:
+        git_diff.return_value = subprocess.CompletedProcess(
+            [], 0, b"papers/indexnow-test.html\0papers/indexnow-test-two.html\0", b""
+        )
+        assert changed_public_html_paths("previous-deployed") == tuple(sorted((
+            "papers/indexnow-test.html", "papers/indexnow-test-two.html"
+        )))
+        args = git_diff.call_args.args[0]
+        assert args[:2] == ["git", "diff"]
+        assert "--no-renames" in args and "--diff-filter=AM" in args
+        assert args[args.index("--diff-filter=AM") + 1:][:2] == [
+            "previous-deployed", "HEAD"
+        ]
+        assert args[-2:] == ["--", "*.html"]
+
     previous = parse_sitemap_text(
         sitemap([(HOME, "2026-09-20"), (PAPER, "2026-09-20")]),
         config["host"],
@@ -204,6 +255,12 @@ def main():
     )
     assert result["submitted"] is False and not calls
     assert not result["changes"].urls
+    result = process_entries(
+        config, same_lastmod, same_lastmod, submitter=reject_submission,
+        dry_run=True, changed_html_paths=("papers/indexnow-test.html",),
+    )
+    assert result["changes"].updated == (PAPER,)
+    assert result["submitted"] is False and not calls
 
     for rejected in (
         "https://example.com/page.html",
@@ -211,6 +268,8 @@ def main():
         "https://www.drgezhang.com/page.html",
         "https://drgezhang.com/paper_index.json",
         "https://drgezhang.com/page.html?preview=1",
+        "https://drgezhang.com/404.html",
+        "https://drgezhang.com/index.html",
     ):
         try:
             parse_sitemap_text(
@@ -268,6 +327,9 @@ def main():
     print("- config and stable root key file: PASS")
     print("- added URL detection: PASS")
     print("- updated-by-lastmod detection: PASS")
+    print("- updated-by-generated-HTML detection with unchanged lastmod: PASS")
+    print("- renderer changes and non-HTML false positives: PASS")
+    print("- withdrawn/non-sitemap HTML exclusion: PASS")
     print("- deleted URL detection: PASS")
     print("- unchanged URL no-op: PASS")
     print("- external and noncanonical URL rejection: PASS")

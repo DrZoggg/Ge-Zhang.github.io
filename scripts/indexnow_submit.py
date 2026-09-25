@@ -89,6 +89,7 @@ def validate_public_html_url(url, host):
         or parsed.netloc != host
         or parsed.query
         or parsed.fragment
+        or parsed.path in {"/404.html", "/index.html"}
         or (parsed.path != "/" and HTML_PATH_PATTERN.fullmatch(parsed.path) is None)
     ):
         raise IndexNowError(
@@ -134,19 +135,53 @@ def parse_sitemap_text(content, host, label="sitemap"):
 
 
 def detect_changes(previous, current):
+    return detect_changes_with_html(previous, current, ())
+
+
+def canonical_html_path(url):
+    path = urlsplit(url).path
+    return "index.html" if path == "/" else path.lstrip("/")
+
+
+def detect_changes_with_html(previous, current, changed_html_paths):
     previous_urls = set(previous)
     current_urls = set(current)
+    current_by_path = {
+        canonical_html_path(url): url for url in current_urls
+    }
+    changed_urls = {
+        current_by_path[path]
+        for path in changed_html_paths
+        if path in current_by_path and path != "404.html"
+    }
     return SitemapChanges(
         added=tuple(sorted(current_urls - previous_urls)),
         updated=tuple(
             sorted(
                 url
                 for url in previous_urls & current_urls
-                if previous[url] != current[url]
+                if previous[url] != current[url] or url in changed_urls
             )
         ),
         deleted=tuple(sorted(previous_urls - current_urls)),
     )
+
+
+def changed_public_html_paths(previous_ref):
+    result = subprocess.run(
+        [
+            "git", "diff", "--no-renames", "--name-only", "-z",
+            "--diff-filter=AM", previous_ref, "HEAD", "--", "*.html",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        diagnostic = re.sub(r"\s+", " ", result.stderr.decode("utf-8", errors="replace"))
+        raise IndexNowError(
+            f"Cannot diff public HTML from git ref {previous_ref!r}: {diagnostic.strip()[:300]}"
+        )
+    return tuple(sorted(set(result.stdout.decode("utf-8").rstrip("\0").split("\0")) - {""}))
 
 
 def sitemap_at_git_ref(ref):
@@ -209,8 +244,9 @@ def submit_urls(config, urls, opener=urllib.request.urlopen):
     return status
 
 
-def process_entries(config, previous, current, submitter=submit_urls, dry_run=False):
-    changes = detect_changes(previous, current)
+def process_entries(config, previous, current, submitter=submit_urls, dry_run=False,
+                    changed_html_paths=()):
+    changes = detect_changes_with_html(previous, current, changed_html_paths)
     print(
         "IndexNow URL changes: "
         f"added={len(changes.added)}, updated={len(changes.updated)}, "
@@ -249,7 +285,8 @@ def run_submission(
     previous = parse_sitemap_text(previous_text, config["host"], "previous sitemap")
     current = parse_sitemap_text(current_text, config["host"], "current sitemap")
     return process_entries(
-        config, previous, current, submitter=submitter, dry_run=dry_run
+        config, previous, current, submitter=submitter, dry_run=dry_run,
+        changed_html_paths=changed_public_html_paths(previous_ref),
     )
 
 
