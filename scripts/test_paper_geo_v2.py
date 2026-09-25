@@ -22,6 +22,7 @@ from validate_site import (
     APVS_DOI,
     AIHFLEVEL_DOI,
     CLOCKPROCRC_DOI,
+    CIRCADIAN_REVIEW_DOI,
     KIF13B_MERTK_DOI,
     OLINK_DCM_DOI,
     SARS_COV2_HF_DOI,
@@ -32,6 +33,7 @@ from validate_site import (
     validate_apvs_v2_regression,
     validate_aihflevel_v2_regression,
     validate_clockprocrc_v2_regression,
+    validate_circadian_review_v2_regression,
     validate_kif13b_mertk_v2_regression,
     validate_olink_dcm_v2_regression,
     validate_sars_cov2_hf_v2_regression,
@@ -49,7 +51,7 @@ PRIORITY_STATUS = (
     ("10.1186/s12967-022-03795-9", "v2"),
     ("10.1002/ehf2.14003", "v2"),
     ("10.1093/eurheartj/ehaf523", "v2"),
-    ("10.1002/mdr2.70052", "v1"),
+    ("10.1002/mdr2.70052", "v2"),
     ("10.1200/po.24.00089", "v1"),
     ("10.1172/jci194175", "v1"),
     ("10.1021/acs.jproteome.4c00522", "v2"),
@@ -252,7 +254,7 @@ def run_tests():
             public_by_doi=public_by_doi,
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (7, 6, 15)
+    assert (len(v2_items), v1_count, pending_count) == (8, 5, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -282,6 +284,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == KIF13B_MERTK_DOI
     ]
     assert len(kif13b_items) == 1
+    review_items = [
+        item for item in v2_items if norm_doi(item[0].get("doi")) == CIRCADIAN_REVIEW_DOI
+    ]
+    assert len(review_items) == 1
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
@@ -313,6 +319,10 @@ def run_tests():
             "Study Design & Analytical Framework",
             "External dataset evaluation",
         ),
+        CIRCADIAN_REVIEW_DOI: (
+            "Review Design & Evidence Synthesis",
+            None,
+        ),
     }
     assert {norm_doi(item[0].get("doi")) for item in v2_items} == set(
         expected_production_labels
@@ -329,8 +339,14 @@ def run_tests():
         html_heading = expected_heading.replace("&", "&amp;")
         assert f'data-v2-section="study-design"><h2>{html_heading}</h2>' in page
         assert f"## {expected_heading}" in markdown
-        assert f"<dt>{expected_external_label}</dt><dd>Yes</dd>" in page
-        assert f"- {expected_external_label}: Yes" in markdown
+        if expected_external_label is None:
+            assert "<h3>Review profile</h3>" in page
+            assert "<h3>Evidence domains</h3>" in page
+            assert "### Review profile" in markdown
+            assert "- Evidence domains:" in markdown
+        else:
+            assert f"<dt>{expected_external_label}</dt><dd>Yes</dd>" in page
+            assert f"- {expected_external_label}: Yes" in markdown
         unexpected_heading = (
             "Study Design & Analytical Framework"
             if "Model Development" in expected_heading
@@ -463,6 +479,47 @@ def run_tests():
                 assert "target identity" in str(exc)
             else:
                 raise AssertionError("CBL/CBLB target-identity distinction was lost.")
+        elif norm_doi(publication.get("doi")) == CIRCADIAN_REVIEW_DOI:
+            validate_circadian_review_v2_regression(content, publication, page)
+            target = "doi-10-1002-mdr2-70052"
+            assert page == (PAPERS_DIR / f"{target}.html").read_text(encoding="utf-8")
+            assert markdown == (PAPERS_DIR / f"{target}.md").read_text(encoding="utf-8")
+            assert len(content["qa"]) == 11
+            for finding in content["key_findings"]:
+                assert finding["source_locator"] in page
+                assert finding["source_locator"] in markdown
+            for phrase in (
+                "narrative Review Article", "392 bibliography entries",
+                "No new data were created or analyzed", "Hygia", "BedMed",
+                "does not support a universal bedtime recommendation",
+            ):
+                assert phrase in page and phrase in markdown
+            for false_claim in (
+                "This is a systematic review.",
+                "The article performed a meta-analysis.",
+                "REV-ERB agonists clinically proven for cardiovascular disease.",
+                "All antihypertensives should be taken at bedtime.",
+                "Bedtime aspirin prevents myocardial infarction.",
+                "SR9009 clinically effective.",
+                "The review enrolled 392 participants.",
+                "The bibliography contains 392 independent studies.",
+            ):
+                inflated = copy.deepcopy(content)
+                inflated["author_summary"] += " " + false_claim
+                try:
+                    validate_circadian_review_v2_regression(inflated, publication, page)
+                except ValidationError as exc:
+                    assert "unsupported positive scientific claim" in str(exc)
+                else:
+                    raise AssertionError(f"Unsupported review claim was accepted: {false_claim}")
+            false_data = copy.deepcopy(content)
+            false_data["provenance"]["data_availability"] = "New patient data were collected."
+            try:
+                validate_circadian_review_v2_regression(false_data, publication, page)
+            except ValidationError as exc:
+                assert "provenance" in str(exc)
+            else:
+                raise AssertionError("New-data inflation was accepted for the review.")
 
     publication, content = aihf_items[0]
     related = resolve_related_papers(content, public_by_doi, config["site_url"])

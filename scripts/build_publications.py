@@ -509,24 +509,30 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     profile_type = required_text(
         study.get("profile_type"), f"{label} study_profile.profile_type"
     )
-    if profile_type not in {"clinical_cohort", "multicohort_omics"}:
+    if profile_type not in {"clinical_cohort", "multicohort_omics", "narrative_review"}:
         raise ValueError(
-            f"{label} study_profile.profile_type must be clinical_cohort or "
-            "multicohort_omics."
+            f"{label} study_profile.profile_type must be clinical_cohort, "
+            "multicohort_omics, or narrative_review."
         )
-    for key in (
-        "study_design",
-        "evidence_type",
-        "population",
-        "primary_endpoint",
-        "secondary_endpoint",
-    ):
+    detail_keys = ["study_design", "evidence_type"]
+    if profile_type == "narrative_review":
+        detail_keys.append("translation_scope")
+        for key in ("evidence_domains", "diseases_covered"):
+            required_text_list(study.get(key), f"{label} study_profile.{key}")
+        if any(key in study for key in (
+            "population", "primary_endpoint", "secondary_endpoint",
+            "unique_total_n", "cohorts", "data_modalities", "external_validation",
+        )) or "model_profile" in content:
+            raise ValueError(f"{label} narrative_review must not invent cohort or model fields.")
+    else:
+        detail_keys.extend(("population", "primary_endpoint", "secondary_endpoint"))
+        required_text_list(
+            study.get("data_modalities"), f"{label} study_profile.data_modalities"
+        )
+        if not isinstance(study.get("external_validation"), bool):
+            raise ValueError(f"{label} study_profile.external_validation must be boolean.")
+    for key in detail_keys:
         required_text(study.get(key), f"{label} study_profile.{key}")
-    required_text_list(
-        study.get("data_modalities"), f"{label} study_profile.data_modalities"
-    )
-    if not isinstance(study.get("external_validation"), bool):
-        raise ValueError(f"{label} study_profile.external_validation must be boolean.")
     if profile_type == "clinical_cohort":
         unique_total = study.get("unique_total_n")
         if type(unique_total) is not int or unique_total <= 0:
@@ -653,8 +659,9 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
         required_text_list(scope.get(key), f"{label} evidence_scope.{key}")
 
     qa = content.get("qa")
-    if not isinstance(qa, list) or not 4 <= len(qa) <= 8:
-        raise ValueError(f"{label} qa must contain 4–8 objects.")
+    max_qa = 12 if profile_type == "narrative_review" else 8
+    if not isinstance(qa, list) or not 4 <= len(qa) <= max_qa:
+        raise ValueError(f"{label} qa must contain 4–{max_qa} objects.")
     seen_questions = set()
     finding_id_set = set(finding_ids)
     for position, item in enumerate(qa, start=1):
@@ -833,6 +840,8 @@ def v2_label(key):
 
 
 def v2_study_heading(content):
+    if content["study_profile"]["profile_type"] == "narrative_review":
+        return "Review Design & Evidence Synthesis"
     return (
         "Study Design & Model Development"
         if content.get("model_profile")
@@ -862,7 +871,7 @@ def v2_value(value):
 
 def v2_snapshot_items(content):
     study = content["study_profile"]
-    if study["profile_type"] == "multicohort_omics":
+    if study["profile_type"] != "clinical_cohort":
         return [(item["label"], item["value"]) for item in study["scale_metrics"]]
     model = content.get("model_profile") or {}
     items = [("Unique total", f"n={study['unique_total_n']:,}")]
@@ -958,14 +967,12 @@ def render_deep_v2_html(content, related_papers):
         + "</td></tr>"
         for cohort in study.get("cohorts", [])
     )
-    study_detail_keys = [
-        "study_design",
-        "evidence_type",
-        "population",
-        "primary_endpoint",
-        "secondary_endpoint",
-        "external_validation",
-    ]
+    study_detail_keys = (
+        ["study_design", "evidence_type", "diseases_covered", "translation_scope"]
+        if profile_type == "narrative_review"
+        else ["study_design", "evidence_type", "population", "primary_endpoint",
+              "secondary_endpoint", "external_validation"]
+    )
     if profile_type == "clinical_cohort":
         study_detail_keys.insert(2, "unique_total_n")
     study_details = "".join(
@@ -974,7 +981,9 @@ def render_deep_v2_html(content, related_papers):
         for key in study_detail_keys
     )
     modalities = "".join(
-        f"<li>{html.escape(item)}</li>" for item in study["data_modalities"]
+        f"<li>{html.escape(item)}</li>" for item in study[
+            "evidence_domains" if profile_type == "narrative_review" else "data_modalities"
+        ]
     )
     model_html = ""
     if model:
@@ -1083,13 +1092,14 @@ def render_deep_v2_html(content, related_papers):
         else html.escape(notice)
     )
     snapshot_heading = (
+        "Evidence Base" if profile_type == "narrative_review" else
         "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
     )
     counting_note_html = (
         "<h3>Counting note</h3><p>"
         + html.escape(study["counting_note"])
         + "</p>"
-        if profile_type == "multicohort_omics"
+        if profile_type != "clinical_cohort"
         else ""
     )
     cohort_html = (
@@ -1105,8 +1115,8 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
-<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>Study profile</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>Data modalities</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
-<section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>What This Study Adds</h2><ul>{additions}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{'Review profile' if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
+<section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{'What This Review Adds' if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
@@ -1125,11 +1135,12 @@ def render_deep_v2_markdown(content, related_papers):
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
     snapshot_heading = (
+        "Evidence Base" if profile_type == "narrative_review" else
         "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
     )
     snapshot_tail = (
         ["### Counting note", "", study["counting_note"], ""]
-        if profile_type == "multicohort_omics"
+        if profile_type != "clinical_cohort"
         else []
     )
     parts = [
@@ -1176,27 +1187,27 @@ def render_deep_v2_markdown(content, related_papers):
                 "",
             ]
         )
-    study_detail_keys = [
-        "study_design",
-        "evidence_type",
-        "population",
-        "primary_endpoint",
-        "secondary_endpoint",
-        "external_validation",
-    ]
+    study_detail_keys = (
+        ["study_design", "evidence_type", "diseases_covered", "translation_scope"]
+        if profile_type == "narrative_review"
+        else ["study_design", "evidence_type", "population", "primary_endpoint",
+              "secondary_endpoint", "external_validation"]
+    )
     if profile_type == "clinical_cohort":
         study_detail_keys.insert(2, "unique_total_n")
     parts.extend(
         [
             f"## {v2_study_heading(content)}",
             "",
-            "### Study profile",
+            "### Review profile" if profile_type == "narrative_review" else "### Study profile",
             "",
             *[
                 f"- {v2_study_label(key, profile_type)}: {v2_value(study[key])}"
                 for key in study_detail_keys
             ],
-            "- Data modalities: " + ", ".join(study["data_modalities"]),
+            ("- Evidence domains: " + ", ".join(study["evidence_domains"])
+             if profile_type == "narrative_review"
+             else "- Data modalities: " + ", ".join(study["data_modalities"])),
             "",
         ]
     )
@@ -1251,7 +1262,8 @@ def render_deep_v2_markdown(content, related_papers):
         parts.append("")
     parts.extend(
         [
-            "## What This Study Adds",
+            "## What This Review Adds" if profile_type == "narrative_review"
+            else "## What This Study Adds",
             "",
             *[f"- {item}" for item in content["what_this_adds"]],
             "",

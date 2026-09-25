@@ -15,6 +15,7 @@ from build_publications import (
     resolve_related_papers,
     validate_deep_v2_content,
     v2_label,
+    v2_study_heading,
     v2_value,
 )
 from site_common import (
@@ -58,6 +59,7 @@ OLINK_DCM_DOI = "10.1021/acs.jproteome.4c00522"
 CLOCKPROCRC_DOI = "10.1038/s41698-026-01699-1"
 SARS_COV2_HF_DOI = "10.1002/ehf2.14003"
 KIF13B_MERTK_DOI = "10.1093/eurheartj/ehaf523"
+CIRCADIAN_REVIEW_DOI = "10.1002/mdr2.70052"
 
 
 def require(condition, message):
@@ -343,13 +345,10 @@ def validate_v2_rendered_page(
         )
 
     snapshot_heading = (
+        "Evidence Base" if profile_type == "narrative_review" else
         "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
     )
-    expected_study_heading = (
-        "Study Design & Model Development"
-        if content.get("model_profile")
-        else "Study Design & Analytical Framework"
-    )
+    expected_study_heading = v2_study_heading(content)
     unexpected_study_heading = (
         "Study Design & Analytical Framework"
         if content.get("model_profile")
@@ -372,7 +371,8 @@ def validate_v2_rendered_page(
         "Author Evidence Summary",
         "Key Findings",
         expected_study_heading,
-        "What This Study Adds",
+        "What This Review Adds" if profile_type == "narrative_review"
+        else "What This Study Adds",
         "Evidence Scope",
         "Q&A",
         "Concepts & Entities",
@@ -425,28 +425,37 @@ def validate_v2_rendered_page(
         f"{label} Markdown renders a study heading for the wrong source semantics.",
     )
     study_labels = element_texts(study_markup, "dt")
-    require(
-        study_labels.count(expected_external_label) == 1,
-        f"{label} external evidence label changed.",
-    )
-    require(
-        unexpected_external_label not in study_labels,
-        f"{label} renders an external evidence label for the wrong profile type.",
-    )
-    external_value = v2_value(study["external_validation"])
-    require(
-        f"<dt>{expected_external_label}</dt><dd>{external_value}</dd>"
-        in study_markup,
-        f"{label} external evidence value changed.",
-    )
-    require(
-        f"- {expected_external_label}: {external_value}" in markdown,
-        f"{label} Markdown external evidence label changed.",
-    )
-    require(
-        f"- {unexpected_external_label}:" not in markdown,
-        f"{label} Markdown renders an external evidence label for the wrong profile type.",
-    )
+    if profile_type == "narrative_review":
+        require("External validation" not in study_labels
+                and "External dataset evaluation" not in study_labels
+                and "Evidence domains" in study_markup
+                and "Review profile" in study_markup
+                and "### Review profile" in markdown
+                and "- Evidence domains:" in markdown,
+                f"{label} must render review-specific labels without cohort labels.")
+    else:
+        require(
+            study_labels.count(expected_external_label) == 1,
+            f"{label} external evidence label changed.",
+        )
+        require(
+            unexpected_external_label not in study_labels,
+            f"{label} renders an external evidence label for the wrong profile type.",
+        )
+        external_value = v2_value(study["external_validation"])
+        require(
+            f"<dt>{expected_external_label}</dt><dd>{external_value}</dd>"
+            in study_markup,
+            f"{label} external evidence value changed.",
+        )
+        require(
+            f"- {expected_external_label}: {external_value}" in markdown,
+            f"{label} Markdown external evidence label changed.",
+        )
+        require(
+            f"- {unexpected_external_label}:" not in markdown,
+            f"{label} Markdown renders an external evidence label for the wrong profile type.",
+        )
     if profile_type == "clinical_cohort":
         require("Unique total" in snapshot_markup, f"{label} unique total is missing.")
         require("Cohort hierarchy" in study_markup, f"{label} cohort hierarchy is missing.")
@@ -1578,6 +1587,119 @@ def validate_kif13b_mertk_v2_regression(content, publication, page):
             f"{label} must not emit unsupported clinical or FAQ schema.")
 
 
+def validate_circadian_review_v2_regression(content, publication, page):
+    label = "Circadian cardiovascular narrative review Paper GEO 2.0"
+    require(content.get("version") == 2, f"{label} version changed.")
+    require(norm_doi(content.get("doi")) == CIRCADIAN_REVIEW_DOI
+            and norm_doi(publication.get("doi")) == CIRCADIAN_REVIEW_DOI,
+            f"{label} DOI changed.")
+    slug = "doi-10-1002-mdr2-70052"
+    require(publication.get("slug") == slug,
+            f"{label} slug changed.")
+    require(single_html_url(page, r'<link rel="canonical" href="([^"]*)">',
+                            f"{label} canonical")
+            == f"{CANONICAL_SITE_URL}/papers/{slug}.html",
+            f"{label} canonical changed.")
+    study = content["study_profile"]
+    require(study["profile_type"] == "narrative_review"
+            and "Narrative evidence synthesis" in study["study_design"]
+            and "no new dataset" in study["evidence_type"]
+            and "preclinical chronotherapy" in study["translation_scope"]
+            and "universal time-specific dosing" in study["translation_scope"],
+            f"{label} review identity or translation scope changed.")
+    require(not any(key in study for key in (
+        "unique_total_n", "population", "primary_endpoint", "secondary_endpoint",
+        "cohorts", "external_validation"))
+        and "model_profile" not in content,
+        f"{label} must not present a cohort or new model.")
+    metrics = {item["label"]: item["value"] for item in study["scale_metrics"]}
+    require(metrics == {
+        "Article type": "Review Article",
+        "Bibliography": "392 references",
+        "Tables": "5 synthesis tables",
+        "Figures": "9 figures",
+        "New data": "None created or analyzed",
+    } and "392 bibliography entries" in study["counting_note"]
+      and "not a systematic count" in study["counting_note"]
+      and "no newly generated or newly analyzed dataset" in study["counting_note"],
+      f"{label} review evidence scale or no-new-data guard changed.")
+    findings = {item["id"]: item for item in content["key_findings"]}
+    require(list(findings) == [f"KF{i}" for i in range(1, 8)],
+            f"{label} finding inventory changed.")
+    anchors = {
+        "KF1": ("CLOCK-BMAL1", "PER/CRY", "REV-ERB/ROR"),
+        "KF2": ("PRR", "NF-kB", "NLRP3"),
+        "KF3": ("neutrophils", "monocytes/macrophages", "lymphocytes", "dendritic cells"),
+        "KF4": ("atherosclerosis", "stroke", "ischemic heart disease", "heart failure"),
+        "KF5": ("Preclinical", "time-dependent"),
+        "KF6": ("heterogeneous", "universal optimal dosing time"),
+        "KF7": ("methodological", "translational gaps"),
+    }
+    require(all(all(token.casefold() in findings[key]["claim"].casefold()
+                    for token in tokens) for key, tokens in anchors.items()),
+            f"{label} evidence framework changed.")
+    require("Hygia" in " ".join(item["value"] for item in findings["KF6"]["evidence"])
+            and "BedMed" in " ".join(item["value"] for item in findings["KF6"]["evidence"])
+            and "not equivalent to proven reductions" in findings["KF6"]["context"],
+            f"{label} clinical timing conflict or evidence boundary changed.")
+    expected_locators = [
+        "Sections 2.1-2.4; Figures 1-2; Tables 1-2.",
+        "Sections 3-4; Figure 3; Table 3.",
+        "Section 5; Figures 4-5.",
+        "Sections 6.1-6.4; Figures 6-8.",
+        "Section 7.1; Table 4.",
+        "Section 7.2; Table 5.",
+        "Sections 8.1-8.4.",
+    ]
+    require([item["source_locator"] for item in findings.values()] == expected_locators
+            and all(locator in page for locator in expected_locators),
+            f"{label} source locators changed or are absent from HTML.")
+    provenance = content["provenance"]
+    require(provenance.get("article_type") == "Review Article"
+            and provenance.get("data_availability")
+            == "No new data were created or analyzed in this study."
+            and provenance.get("formal_structure")
+            == "Figures 1-9; Tables 1-5; references 1-392."
+            and not any(key in provenance for key in ("pmid", "pmcid", "trial_registration", "dataset_accession")),
+            f"{label} provenance changed or invented identifiers appeared.")
+    require(len(content["qa"]) == 11
+            and "Hygia" in content["qa"][6]["answer"]
+            and "BedMed" in content["qa"][6]["answer"]
+            and "universal bedtime recommendation" in content["qa"][6]["answer"]
+            and [norm_doi(item["doi"]) for item in content["related_papers"]]
+            == ["10.1038/s41598-024-65236-5", "10.1186/s12967-022-03795-9",
+                "10.1093/eurheartj/ehaf523"],
+            f"{label} Q&A or related-research scope changed.")
+    positive_fields = [content["summary"], content["research_question"],
+        content["author_summary"], study["study_design"], study["evidence_type"],
+        study["translation_scope"],
+        *(finding["claim"] for finding in findings.values()),
+        *(finding["context"] for finding in findings.values()),
+        *(item["value"] for finding in findings.values() for item in finding["evidence"]),
+        *(item["answer"] for item in content["qa"])]
+    forbidden = (
+        "systematic review", "meta-analysis", "prospective validation",
+        "retrospective cohort", "randomized chronotherapy trial performed",
+        "new patient cohort", "new experimental dataset", "pooled effect size",
+        "392 participants", "392 independent studies", "n=392 participants",
+        "rev-erb agonists clinically proven", "sr9009 clinically effective",
+        "all antihypertensives should be taken at bedtime",
+        "bedtime antihypertensive dosing reduces cardiovascular events universally",
+        "bedtime aspirin prevents", "sglt2 inhibitor timing is clinically established",
+        "colchicine timing is clinically established", "arni evening dosing is clinically proven",
+        "mra timing is clinically established", "nlrp3 chronotherapy is clinically validated",
+    )
+    for field in positive_fields:
+        for clause in re.split(r"(?<=[.!?])\s+|;\s+", field.casefold()):
+            if re.search(r"\b(no|not|never|without|did not|does not)\b", clause):
+                continue
+            require(not any(phrase in clause for phrase in forbidden),
+                    f"{label} contains an unsupported positive scientific claim.")
+    require(not any(item.get("@type") in {"FAQPage", "ClinicalTrial", "MedicalStudy", "Dataset"}
+                    for item in json_ld_objects(page)),
+            f"{label} must not emit clinical, dataset or FAQ schema.")
+
+
 def validate_v2_inventory(v2_dois):
     require(v2_dois, "At least one Paper GEO 2.0 page is required.")
     require(
@@ -1606,6 +1728,8 @@ def validate_v2_inventory(v2_dois):
     )
     require(KIF13B_MERTK_DOI in v2_dois,
             "KIF13B/MERTK must be a Paper GEO 2.0 Gold Standard page.")
+    require(CIRCADIAN_REVIEW_DOI in v2_dois,
+            "Circadian review must be a Paper GEO 2.0 Gold Standard page.")
     require(
         len(v2_dois) == len(set(v2_dois)),
         "Paper GEO 2.0 DOI values must be unique.",
@@ -2061,6 +2185,8 @@ def validate_site():
                     validate_sars_cov2_hf_v2_regression(content, item, page)
                 elif content_doi == KIF13B_MERTK_DOI:
                     validate_kif13b_mertk_v2_regression(content, item, page)
+                elif content_doi == CIRCADIAN_REVIEW_DOI:
+                    validate_circadian_review_v2_regression(content, item, page)
             else:
                 paper_geo_statuses[token] = "v1"
                 require(
