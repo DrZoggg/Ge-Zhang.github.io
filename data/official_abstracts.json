@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "papers": {
+    "10.1038/s41467-024-50415-9": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.nature.com/articles/s41467-024-50415-9",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Renal dysfunction (RD) often characterizes the worse course of patients with advanced heart failure (AHF). Many prognosis assessments are hindered by researcher biases, redundant predictors, and lack of clinical applicability. In this study, we enroll 1736 AHF/RD patients, including data from Henan Province Clinical Research Center for Cardiovascular Diseases (which encompasses 11 hospital subcenters), and Beth Israel Deaconess Medical Center. We developed an AI hybrid modeling framework, assembling 12 learners with different feature selection paradigms to expand modeling schemes. The optimized strategy is identified from 132 potential schemes to establish an explainable survival assessment system: AIHFLevel. The conditional inference survival tree determines a probability threshold for prognostic stratification. The evaluation confirmed the system’s robustness in discrimination, calibration, generalization, and clinical implications. AIHFLevel outperforms existing models, clinical features, and biomarkers. We also launch an open and user-friendly website www.hf-ai-survival.com, empowering healthcare professionals with enhanced tools for continuous risk monitoring and precise risk profiling."
+      }
+    },
+    "10.1038/s41698-026-01699-1": {
+      "source_type": "publisher",
+      "source_url": "https://www.nature.com/articles/s41698-026-01699-1",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Circadian rhythm disorders represent an abstract concept lacking standardized quantitative metrics. Existing circadian indicators, including traditional rhythm parameters and a limited set of clock gene or physiological biomarkers, are insufficient to robustly capture steady-state endogenous circadian homeostasis in complex disease contexts, thereby constraining quantitative assessment of circadian disruption and limiting its translational applicability. Chronic circadian rhythm disruption is associated with various diseases, including metabolic disorders and malignancies. However, the mechanisms by which circadian disruption influences tumor microenvironment formation and colorectal cancer progression remain incompletely understood. This study employs systems biology analysis to decipher the molecular characteristics of circadian rhythm disruption in colorectal cancer progression. We analyzed single-cell RNA sequencing data from 13 CRC tissue samples and 12 normal mucosal samples, combined with 3733 samples from 34 public batch RNA, microarray, and single-cell RNA sequencing cohorts. We developed and validated the ClockProCRC system, which detects and quantifies intrinsic circadian misalignment in CRC. The ClockProCRC score elucidates how circadian misalignment drives CRC progression trajectories, shapes clinical phenotypes, regulates disease manifestations, and reshapes the tumor microenvironment. SYNE1 gene was identified as a key mediator of circadian misalignment, promoting tumorigenesis by driving epithelial-like phenotypic conversion and demonstrating therapeutic potential in colorectal cancer management. This study establishes a foundation for integrating rhythmic information into clinical practice and advances circadian biology research in the field of CRC."
+      }
+    },
+    "10.1186/s12967-022-03795-9": {
+      "source_type": "version_of_record",
+      "source_url": "https://link.springer.com/article/10.1186/s12967-022-03795-9",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Mounting evidence has revealed the dynamic variations in the cellular status and phenotype of the smooth muscle cell (SMC) are vital for shaping the atherosclerotic plaque microenvironment and ultimately mapping onto heterogeneous clinical outcomes in coronary artery disease. Currently, the underlying clinical significance of SMC evolutions remains unexplored in atherosclerosis."
+          },
+          {
+            "label": "Methods",
+            "text": "The dissociated cells from diseased segments within the right coronary artery of four cardiac transplant recipients and 1070 bulk samples with atherosclerosis from six bulk cohorts were retrieved. Following the SMC fate trajectory reconstruction, the MOVICS algorithm integrating the nearest template prediction was used to develop a stable and robust molecular classification. Subsequently, multi-dimensional potential biological implications, molecular features, and cell landscape heterogeneity among distinct clusters were decoded."
+          },
+          {
+            "label": "Results",
+            "text": "We proposed an SMC cell fate decision signature (SCFDS)-based atherosclerosis stratification system and identified three SCFDS subtypes (C1–C3) with distinguishing features: (i) C1 (DNA-damage repair type), elevated base excision repair (BER), DNA replication, as well as oxidative phosphorylation status. (ii) C2 (immune-activated type), stronger immune activation, hyper-inflammatory state, the complex as well as varied lesion microenvironment, advanced stage, the most severe degree of coronary stenosis severity. (iii) C3 (stromal-rich type), abundant fibrous content, stronger ECM metabolism, immune-suppressed microenvironment."
+          },
+          {
+            "label": "Conclusions",
+            "text": "This study uncovered atherosclerosis complex cellular heterogeneity and a differentiated hierarchy of cell populations underlying SMC. The novel high-resolution stratification system could improve clinical outcomes and facilitate individualized management."
+          }
+        ]
+      }
+    },
+    "10.1172/jci194175": {
+      "source_type": "publisher",
+      "source_url": "https://www.jci.org/articles/view/194175",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Atherosclerotic cardiovascular disease (ASCVD) remains a leading cause of death worldwide, with plaque instability being a major culprit. Phenotypic switching of vascular smooth muscle cells (VSMCs) is a central event in atherosclerosis, driving both plaque progression and stability, yet the underlying mechanisms are incompletely understood, limiting drug development targeting this process. Kinesin family member 13B (KIF13B) has been implicated in vascular biology, but its function in VSMCs is unknown. Here, we demonstrate that VSMC-specific deletion of Kif13b in mice overexpressing proprotein convertase subtilisin/kexin type 9 (PCSK9) exacerbates lesion development and impairs plaque stability, characterized by thinner fibrous caps and increased inflammation. Mechanistically, we determined that KIF13B facilitated the ubiquitination and proteasomal degradation of Krüppel-like factor 4 (KLF4) through the potassium channel tetramerization domain–containing 10–dependent (KCTD10-dependent) pathway. This KIF13B/KCTD10 axis reduced KLF4 protein levels, thereby inhibiting the proinflammatory responses and fibroblast-like transition of VSMCs to preserve their contractile phenotype. Importantly, the adverse effects of Kif13b deficiency on atherogenesis were effectively rescued by the small-molecule KLF4 inhibitor Kenpaullone. Our results unveil a VSMC-specific atheroprotective role for KIF13B, define the KIF13B/KCTD10/KLF4 pathway as a key regulatory axis governing VSMC fate and plaque stability, and validate the therapeutic potential of KIF13B for treating advanced atherosclerosis."
+      }
+    }
+  }
+}

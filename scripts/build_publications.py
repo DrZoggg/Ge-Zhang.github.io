@@ -17,6 +17,7 @@ from citation_common import (
     render_csl_json,
     render_ris,
 )
+from official_abstracts import abstract_text, load_official_abstracts
 from site_common import (
     DEEP_CONTENT_DIR,
     LEGACY_DEEP_SLUGS,
@@ -1517,8 +1518,51 @@ def render_deep_markdown(content, *, related_papers=None):
     return render_deep_v1_markdown(content)
 
 
+def render_official_abstract_html(record, doi):
+    abstract = record["abstract"]
+    if abstract["type"] == "structured":
+        body = "".join(
+            f'<h3>{html.escape(section["label"])}</h3>'
+            f'<p>{html.escape(section["text"])}</p>'
+            for section in abstract["sections"]
+        )
+    else:
+        body = f'<p>{html.escape(abstract["text"])}</p>'
+    source = {
+        "version_of_record": "Version of Record",
+        "publisher": "publisher",
+        "pmc": "PMC",
+    }[record["source_type"]]
+    return (
+        '<section id="official-abstract" class="paper-geo-v2__section">'
+        f'<h2>Official Abstract</h2>{body}'
+        '<p class="paper-geo-v2__source">Text reproduced verbatim from '
+        f'{html.escape(source)} (<a href="{html.escape(record["source_url"], quote=True)}">source</a>); '
+        f'<a href="{html.escape(doi_url(doi), quote=True)}">DOI</a>; '
+        f'<a href="{html.escape(record["license_url"], quote=True)}">{html.escape(record["license"])}</a>.'
+        '</p></section>'
+    )
+
+
+def render_official_abstract_markdown(record, doi):
+    abstract = record["abstract"]
+    parts = ["## Official Abstract", ""]
+    if abstract["type"] == "structured":
+        for section in abstract["sections"]:
+            parts.extend([f"### {section['label']}", "", section["text"], ""])
+    else:
+        parts.extend([abstract["text"], ""])
+    source = {"version_of_record": "Version of Record", "publisher": "publisher", "pmc": "PMC"}[record["source_type"]]
+    parts.extend([
+        f"Text reproduced verbatim from {source} ([source]({record['source_url']})); "
+        f"[DOI]({doi_url(doi)}); [{record['license']}]({record['license_url']}).",
+        "",
+    ])
+    return "\n".join(parts)
+
+
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
-                      citation_data=None):
+                      citation_data=None, official_abstract=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -1579,6 +1623,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             )
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
+    if official_abstract:
+        citation.append(
+            f'<meta name="citation_abstract" content="{html.escape(abstract_text(official_abstract), quote=True)}">'
+        )
     if citation_data:
         for key, tag in (
             ("volume", "citation_volume"), ("issue", "citation_issue"),
@@ -1612,6 +1660,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         if is_pending else ""
     )
     schema = paper_schema(publication, canonical, config)
+    if official_abstract:
+        schema["abstract"] = abstract_text(official_abstract)
     if is_v2:
         schema["description"] = deep_content["author_summary"]
         schema["keywords"] = flatten_concepts(deep_content)
@@ -1653,7 +1703,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
 <div class="links">{' '.join(links)}</div>
 </div></section>
-{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
+{(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
 {notice_html}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
@@ -1662,7 +1712,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 ''')
 
 
-def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None):
+def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None,
+                          official_abstract=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -1720,7 +1771,11 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
             ]
         )
     if deep_content is not None:
+        if official_abstract:
+            lines.append(render_official_abstract_markdown(official_abstract, doi))
         lines.append(render_deep_markdown(deep_content, related_papers=related_papers))
+    elif official_abstract:
+        lines.append(render_official_abstract_markdown(official_abstract, doi))
     if publication.get("paper_geo_status") == "pending":
         lines.extend(["## Deep GEO · Pending", "", PENDING_NOTICE, ""])
     lines.extend(
@@ -1974,6 +2029,7 @@ def build_site():
     deep_tokens = {controller_token(entry) for entry in deep_entries}
     public_master = [publication for publication in master if not is_withdrawn(publication)]
     citation_metadata = load_citation_metadata(public_master)
+    official_abstracts = load_official_abstracts(public_master)
     deep_contents = {
         publication_token(publication): load_deep_content(publication, allow_missing=True)
         for publication in public_master
@@ -2017,6 +2073,7 @@ def build_site():
                 deep_content=deep_content,
                 public_by_doi=public_by_doi,
                 citation_data=citation_by_slug[item["slug"]],
+                official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
             ),
         )
         write_text_if_changed(
@@ -2026,6 +2083,7 @@ def build_site():
                 config=config,
                 deep_content=deep_content,
                 public_by_doi=public_by_doi,
+                official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
             ),
         )
     CITATIONS_DIR.mkdir(parents=True, exist_ok=True)

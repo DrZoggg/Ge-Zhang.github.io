@@ -29,6 +29,7 @@ from build_publications import (
     v2_study_heading,
     v2_value,
 )
+from official_abstracts import abstract_text, load_official_abstracts
 from site_common import (
     LEGACY_DEEP_SLUGS,
     PAPERS_DIR,
@@ -378,6 +379,7 @@ def validate_v2_rendered_page(
     )
     expected_headings = [
         "Full Authors",
+        *(["Official Abstract"] if 'id="official-abstract"' in page else []),
         *(["Cite this paper"] if 'id="cite-this-paper"' in page else []),
         snapshot_heading,
         "Research Question",
@@ -732,7 +734,8 @@ def validate_aihflevel_v2_regression(content, publication, page):
         )
     require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
     require(
-        element_texts(page, "h2")[1 + ('id="cite-this-paper"' in page)] == "Evidence Snapshot",
+        element_texts(page, "h2")[1 + ('id="official-abstract"' in page)
+                                  + ('id="cite-this-paper"' in page)] == "Evidence Snapshot",
         f"{label} evidence snapshot heading changed.",
     )
 
@@ -2160,6 +2163,7 @@ def validate_site():
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
     citation_metadata = load_citation_metadata(public_expected)
+    official_abstracts = load_official_abstracts(public_expected)
     withdrawn = [item for item in master if is_withdrawn(item)]
     public_json = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
     paper_index_payload = json.loads((ROOT / "paper_index.json").read_text(encoding="utf-8"))
@@ -2412,6 +2416,40 @@ def validate_site():
         require(LEGACY_SITE_URL not in page, f"Legacy origin remains in {slug}.html.")
         require(LEGACY_SITE_URL not in markdown, f"Legacy origin remains in {slug}.md.")
         doi = norm_doi(item.get("doi"))
+        official = official_abstracts.get(doi)
+        abstract_sections = re.findall(
+            r'<section id="official-abstract"[^>]*>.*?</section>', page, re.S
+        )
+        if official:
+            require(len(abstract_sections) == 1, f"Official abstract section invalid for {slug}.")
+            section = abstract_sections[0]
+            require("<h2>Official Abstract</h2>" in section,
+                    f"Official abstract heading missing for {slug}.")
+            expected = abstract_text(official)
+            require(meta_contents(page, "citation_abstract") == [expected]
+                    and schema.get("abstract") == expected,
+                    f"Official abstract metadata mismatch for {slug}.")
+            require(f"## Official Abstract\n" in markdown,
+                    f"Official abstract Markdown missing for {slug}.")
+            body = official["abstract"]
+            if body["type"] == "structured":
+                actual = re.findall(r'<h3>(.*?)</h3><p>(.*?)</p>', section, re.S)
+                wanted = [(part["label"], part["text"]) for part in body["sections"]]
+                require([(html.unescape(label), html.unescape(text)) for label, text in actual] == wanted,
+                        f"Official abstract visible sections changed for {slug}.")
+                for part in body["sections"]:
+                    require(f"### {part['label']}\n\n{part['text']}" in markdown,
+                            f"Official abstract Markdown section changed for {slug}.")
+            else:
+                require(f"<p>{html.escape(expected)}</p>" in section and expected in markdown,
+                        f"Official abstract visible text changed for {slug}.")
+            require(official["source_url"] in section and official["license_url"] in section
+                    and f"https://doi.org/{doi}" in section and "Text reproduced verbatim" in section,
+                    f"Official abstract attribution incomplete for {slug}.")
+        else:
+            require(not abstract_sections and not meta_contents(page, "citation_abstract")
+                    and "abstract" not in schema and "## Official Abstract" not in markdown,
+                    f"Unverified official abstract leaked into {slug}.")
         if doi:
             require(f"https://doi.org/{doi}" in page, f"DOI link missing from {slug}.html.")
             require(

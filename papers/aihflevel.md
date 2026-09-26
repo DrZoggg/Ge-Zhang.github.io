@@ -32,6 +32,12 @@ Markdown record: https://drgezhang.com/papers/aihflevel.md
 16. Ke Cheng
 17. Junnan Tang
 
+## Official Abstract
+
+Renal dysfunction (RD) often characterizes the worse course of patients with advanced heart failure (AHF). Many prognosis assessments are hindered by researcher biases, redundant predictors, and lack of clinical applicability. In this study, we enroll 1736 AHF/RD patients, including data from Henan Province Clinical Research Center for Cardiovascular Diseases (which encompasses 11 hospital subcenters), and Beth Israel Deaconess Medical Center. We developed an AI hybrid modeling framework, assembling 12 learners with different feature selection paradigms to expand modeling schemes. The optimized strategy is identified from 132 potential schemes to establish an explainable survival assessment system: AIHFLevel. The conditional inference survival tree determines a probability threshold for prognostic stratification. The evaluation confirmed the system’s robustness in discrimination, calibration, generalization, and clinical implications. AIHFLevel outperforms existing models, clinical features, and biomarkers. We also launch an open and user-friendly website www.hf-ai-survival.com, empowering healthcare professionals with enhanced tools for continuous risk monitoring and precise risk profiling.
+
+Text reproduced verbatim from Version of Record ([source](https://www.nature.com/articles/s41467-024-50415-9)); [DOI](https://doi.org/10.1038/s41467-024-50415-9); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
 ## Evidence Snapshot
 
 **AIHFLevel: explainable survival assessment in advanced heart failure with renal dysfunction**

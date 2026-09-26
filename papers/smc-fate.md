@@ -33,6 +33,26 @@ Markdown record: https://drgezhang.com/papers/smc-fate.md
 17. Junnan Tang
 18. Jinying Zhang
 
+## Official Abstract
+
+### Background
+
+Mounting evidence has revealed the dynamic variations in the cellular status and phenotype of the smooth muscle cell (SMC) are vital for shaping the atherosclerotic plaque microenvironment and ultimately mapping onto heterogeneous clinical outcomes in coronary artery disease. Currently, the underlying clinical significance of SMC evolutions remains unexplored in atherosclerosis.
+
+### Methods
+
+The dissociated cells from diseased segments within the right coronary artery of four cardiac transplant recipients and 1070 bulk samples with atherosclerosis from six bulk cohorts were retrieved. Following the SMC fate trajectory reconstruction, the MOVICS algorithm integrating the nearest template prediction was used to develop a stable and robust molecular classification. Subsequently, multi-dimensional potential biological implications, molecular features, and cell landscape heterogeneity among distinct clusters were decoded.
+
+### Results
+
+We proposed an SMC cell fate decision signature (SCFDS)-based atherosclerosis stratification system and identified three SCFDS subtypes (C1–C3) with distinguishing features: (i) C1 (DNA-damage repair type), elevated base excision repair (BER), DNA replication, as well as oxidative phosphorylation status. (ii) C2 (immune-activated type), stronger immune activation, hyper-inflammatory state, the complex as well as varied lesion microenvironment, advanced stage, the most severe degree of coronary stenosis severity. (iii) C3 (stromal-rich type), abundant fibrous content, stronger ECM metabolism, immune-suppressed microenvironment.
+
+### Conclusions
+
+This study uncovered atherosclerosis complex cellular heterogeneity and a differentiated hierarchy of cell populations underlying SMC. The novel high-resolution stratification system could improve clinical outcomes and facilitate individualized management.
+
+Text reproduced verbatim from Version of Record ([source](https://link.springer.com/article/10.1186/s12967-022-03795-9)); [DOI](https://doi.org/10.1186/s12967-022-03795-9); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
+
 ## Evidence Scale
 
 **SMC fate / SCFDS: single-cell fate reconstruction and molecular subtyping of atherosclerosis**
