@@ -28,6 +28,12 @@ Markdown record: https://drgezhang.com/papers/apvs.md
 12. Jinying Zhang
 13. Junnan Tang
 
+## Official Abstract
+
+Acute myocardial infarction dominates coronary artery disease mortality. Identifying bio-signatures for plaque destabilization and rupture is important for preventing the transition from coronary stability to instability and the occurrence of thrombosis events. This computational systems biology study enrolled 2,235 samples from 22 independent bulks cohorts and 14 samples from two single-cell cohorts. A machine-learning integrative program containing nine learners was developed to generate a warning classifier linked to atherosclerotic plaque vulnerability signature (APVS). The classifier displays the reliable performance and robustness for distinguishing ST-elevation myocardial infarction from chronic coronary syndrome at presentation, and revealed higher accuracy to 33 pathogenic biomarkers. We also developed an APVS-based quantification system (APVSLevel) for comprehensively quantifying atherosclerotic plaque vulnerability, empowering early-warning capabilities, and accurate assessment of atherosclerosis severity. It unraveled the multidimensional dysregulated mechanisms at high resolution. This study provides a potential tool for macro-level differential diagnosis and evaluation of subtle genetic pathological changes in atherosclerosis.
+
+Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/)); [DOI](https://doi.org/10.1016/j.isci.2023.107587); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
 ## Evidence Scale
 
 **APVS / APVSLevel: machine-learning and single-cell quantification of atherosclerotic plaque vulnerability**

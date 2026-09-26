@@ -18,11 +18,11 @@ SOURCES = {
     "10.1186/s12967-022-03795-9": ("link.springer.com", "/article/10.1186/s12967-022-03795-9"),
     "10.1002/ehf2.14003": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC9349450/"),
     "10.1172/jci194175": ("www.jci.org", "/articles/view/194175"),
+    "10.1021/acs.jproteome.4c00522": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11385702/"),
+    "10.1002/mdr2.70052": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70052"),
 }
 EXCLUDED = {
     "10.1093/eurheartj/ehaf523",
-    "10.1021/acs.jproteome.4c00522",
-    "10.1002/mdr2.70052",
 }
 
 

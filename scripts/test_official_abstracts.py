@@ -14,7 +14,7 @@ from validate_site import meta_contents, paper_json_ld_object
 def main():
     public = [item for item in load_master() if not is_withdrawn(item)]
     records = official_abstracts.load_official_abstracts(public)
-    assert len(records) == 4
+    assert len(records) == 8
     assert not set(records) & official_abstracts.EXCLUDED
     for item in public:
         doi = norm_doi(item.get("doi"))
@@ -28,9 +28,12 @@ def main():
             assert schema["abstract"] == text
             assert "## Official Abstract" in markdown
             if records[doi]["abstract"]["type"] == "structured":
-                assert [s["label"] for s in records[doi]["abstract"]["sections"]] == [
-                    "Background", "Methods", "Results", "Conclusions"
-                ]
+                expected_labels = (
+                    ["Aims", "Methods", "Results", "Conclusions"]
+                    if doi == "10.1002/ehf2.14003"
+                    else ["Background", "Methods", "Results", "Conclusions"]
+                )
+                assert [s["label"] for s in records[doi]["abstract"]["sections"]] == expected_labels
         else:
             assert 'id="official-abstract"' not in page
             assert not meta_contents(page, "citation_abstract")
@@ -42,7 +45,7 @@ def main():
         try:
             assert official_abstracts.load_official_abstracts(public) == {}
             for mutation in (
-                lambda payload: payload["papers"].update({"10.1002/mdr2.70052": next(iter(records.values()))}),
+                lambda payload: payload["papers"].update({"10.1093/eurheartj/ehaf523": next(iter(records.values()))}),
                 lambda payload: next(iter(payload["papers"].values())).update({"verbatim": False}),
                 lambda payload: next(iter(payload["papers"].values())).update({"license": "unknown"}),
                 lambda payload: next(iter(payload["papers"].values()))["abstract"].update({"text": ""}),
@@ -58,7 +61,7 @@ def main():
                     raise AssertionError("Invalid Official Abstract source accepted")
         finally:
             official_abstracts.PATH = original_path
-    print("OFFICIAL ABSTRACT TESTS PASS: four verified records; optional and invalid-source cases")
+    print("OFFICIAL ABSTRACT TESTS PASS: eight verified records; optional and invalid-source cases")
 
 
 if __name__ == "__main__":

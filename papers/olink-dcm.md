@@ -25,6 +25,12 @@ Markdown record: https://drgezhang.com/papers/olink-dcm.md
 9. Huimin Fan
 10. Yafeng Zhou
 
+## Official Abstract
+
+In this study, we utilized the Olink Cardiovascular III panel to compare the expression levels of 92 cardiovascular-related proteins between patients with dilated cardiomyopathy combined with heart failure (DCM-HF) (n = 20) and healthy normal people (Normal) (n = 18). The top five most significant proteins, including SPP1, IGFBP7, F11R, CHI3L1, and Plaur, were selected by Olink proteomics. These proteins were further validated using ELISA in plasma samples collected from an additional cohort. ELISA validation confirmed significant increases in SPP1, IGFBP7, F11R, CHI3L1, and Plaur in DCM-HF patients compared to healthy controls. GO and KEGG analysis indicated that NT-pro BNP, SPP1, IGFBP7, F11R, CHI3L1, Plaur, BLM hydrolase, CSTB, Gal-4, CCL15, CDH5, SR-PSOX, and CCL2 were associated with DCM-HF. Correlation analysis revealed that these 13 differentially expressed proteins have strong correlations with clinical indicators such as LVEF and NT-pro BNP, etc. Additionally, in the GEO–DCM data sets, the combined diagnostic value of these five core proteins AUC values of 0.959, 0.773, and 0.803, respectively indicating the predictive value of the five core proteins for DCM-HF. Our findings suggest that these proteins may be useful biomarkers for the diagnosis and prediction of DCM-HF, and further research is prompted to explore their potential as therapeutic targets.
+
+Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11385702/)); [DOI](https://doi.org/10.1021/acs.jproteome.4c00522); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
 ## Evidence Scale
 
 **Olink DCM-HF: targeted plasma proteomics, ELISA replication, and external cardiac transcriptomic evaluation**
