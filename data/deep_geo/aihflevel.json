@@ -220,5 +220,112 @@
     "code_url": "https://github.com/DrZoggg/AIHFLevel",
     "tool_url": "https://www.hf-ai-survival.com"
   },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which studies developed and externally validated machine-learning survival models for advanced heart failure with renal dysfunction?",
+        "supported_scope": "AIHFLevel was developed in the CRCCD cohort and independently evaluated in 1,024 BIDMC patients with advanced heart failure and renal dysfunction.",
+        "evidence_refs": [
+          "KF1",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What evidence supports time-dependent mortality discrimination by AIHFLevel?",
+        "supported_scope": "The study reports time-dependent discrimination in the CRCCD Replication cohort and independent BIDMC external cohort.",
+        "evidence_refs": [
+          "KF2",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How was hybrid model selection used to reduce reliance on one investigator-selected survival algorithm?",
+        "supported_scope": "The study systematically evaluated 132 modeling schemes using 12 learners and alternative feature-selection strategies before selecting the final approach.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Can an explainable clinical survival model provide patient-level prognostic stratification in advanced heart failure with renal dysfunction?",
+        "supported_scope": "The final 12-predictor framework included patient-level interpretation and a conditional-inference survival tree defining three prognostic states.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "AIHFLevel-guided treatment has been shown to improve survival or other clinical outcomes.",
+      "Prospective clinical utility has been established.",
+      "The 12 model predictors are causal determinants of mortality.",
+      "Model performance is guaranteed to generalize to every heart-failure population or healthcare setting.",
+      "AIHFLevel replaces clinician judgment."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-model-selection",
+        "component": "Model-selection framework",
+        "context": "CRCCD development framework",
+        "finding": "132 candidate modeling schemes were evaluated; the selected strategy combined Surv.gbm and Surv.Xgboost with hybrid filter-wrapper feature selection and achieved average C-index 0.821.",
+        "evidence_level": "Retrospective model development",
+        "scope": "Supports comparative model-selection performance, not treatment benefit.",
+        "source_locator": "Results: Survival assessment system AIHFLevel; Fig. 2b",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-crccd-replication",
+        "component": "Internal validation",
+        "context": "CRCCD Replication cohort, n=214",
+        "finding": "6/12/24/30-month AUCs were 0.902 / 0.932 / 0.932 / 0.903.",
+        "evidence_level": "Internal retrospective validation",
+        "scope": "Mortality-risk discrimination in the studied replication cohort.",
+        "source_locator": "Fig. 2e",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-crccd-discovery",
+        "component": "Development-cohort discrimination",
+        "context": "CRCCD Discovery cohort, n=498",
+        "finding": "6/12/24/30-month AUCs were 0.931 / 0.952 / 0.973 / 0.976.",
+        "evidence_level": "Retrospective development cohort",
+        "scope": "Performance within the development cohort.",
+        "source_locator": "Supplementary Fig. 3c",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-bidmc-external",
+        "component": "Independent external evaluation",
+        "context": "BIDMC cohort, n=1,024",
+        "finding": "1/2/3/4-year AUCs were 0.788 / 0.816 / 0.824 / 0.846.",
+        "evidence_level": "Independent retrospective external validation",
+        "scope": "External prognostic discrimination; not prospective utility.",
+        "source_locator": "Fig. 6d",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-risk-stratification",
+        "component": "Prognostic stratification",
+        "context": "Conditional inference survival-tree analysis",
+        "finding": "Low <=0.435; intermediate >0.435 to <=1.548; high >1.548.",
+        "evidence_level": "Retrospective prognostic stratification",
+        "scope": "Risk-group definition, not evidence of treatment-response benefit.",
+        "source_locator": "Fig. 4a-c",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
   "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record."
 }

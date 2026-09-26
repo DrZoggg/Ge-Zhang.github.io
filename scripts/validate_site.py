@@ -394,6 +394,11 @@ def validate_v2_rendered_page(
              "Chronotherapy Evidence Matrix", "Selected Evidence Sources"]
             if content.get("citation_pilot") else []
         ),
+        *(
+            ["When This Study Is Useful to Cite",
+             "What This Study Should Not Be Cited to Claim", "Evidence Matrix"]
+            if content.get("citation_layer") else []
+        ),
         "Q&A",
         "Concepts & Entities",
         "Related Research",
@@ -432,6 +437,39 @@ def validate_v2_rendered_page(
             < positions[section_markers.index("qa")],
             f"{label} citation-pilot section order changed.",
         )
+    if content.get("citation_layer"):
+        layer = content["citation_layer"]
+        layer_ids = ("citation-use-cases", "citation-boundaries", "evidence-matrix")
+        layer_positions = [page.index(f'id="{identifier}"') for identifier in layer_ids]
+        require(positions[section_markers.index("evidence-scope")]
+                < layer_positions[0] < layer_positions[1] < layer_positions[2]
+                < positions[section_markers.index("qa")],
+                f"{label} citation layer section order changed.")
+        for identifier in layer_ids:
+            require(page.count(f'id="{identifier}"') == 1
+                    and markdown.count(f'<a id="{identifier}"></a>') == 1,
+                    f"{label} citation layer anchor {identifier} changed.")
+        for finding in content["key_findings"]:
+            anchor = finding["id"].lower()
+            require(page.count(f'id="{anchor}"') == 1
+                    and markdown.count(f'<a id="{anchor}"></a>') == 1,
+                    f"{label} permanent KF anchor {anchor} changed.")
+        for row in layer["evidence_matrix"]:
+            anchor = row["id"]
+            require(page.count(f'id="{anchor}"') == 1
+                    and markdown.count(f'<a id="{anchor}"></a>') == 1,
+                    f"{label} matrix row anchor {anchor} changed.")
+            for key in ("component", "context", "finding", "evidence_level", "scope", "source_locator"):
+                require(html.escape(row[key]) in page and row[key] in markdown,
+                        f"{label} matrix {anchor} {key} differs across HTML and Markdown.")
+        for case in layer["citation_use_cases"]:
+            require(html.escape(case["query"]) in page and case["query"] in markdown
+                    and html.escape(case["supported_scope"]) in page
+                    and case["supported_scope"] in markdown,
+                    f"{label} citation use case {case['id']} differs across HTML and Markdown.")
+        for boundary in layer["not_appropriate_as_evidence_for"]:
+            require(html.escape(boundary) in page and boundary in markdown,
+                    f"{label} citation boundary differs across HTML and Markdown.")
     require(
         page.index('class="paper-geo-v2__notice"') > positions[-1],
         f"{label} evidence-page notice must follow provenance.",

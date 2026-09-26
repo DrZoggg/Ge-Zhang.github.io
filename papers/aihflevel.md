@@ -68,6 +68,7 @@ AIHFLevel is an explainable survival-risk assessment system developed for adults
 
 ## Key Findings
 
+<a id="kf1"></a>
 ### KF1: The selected hybrid modeling strategy achieved the highest average C-index among evaluated schemes.
 
 Context: Comprehensive evaluation of 132 candidate modeling schemes
@@ -78,6 +79,7 @@ Context: Comprehensive evaluation of 132 candidate modeling schemes
 
 Source locator: Results: Survival assessment system AIHFLevel; Fig. 2b
 
+<a id="kf2"></a>
 ### KF2: AIHFLevel demonstrated strong time-dependent discrimination in the CRCCD Replication cohort.
 
 Context: Internal validation cohort, n=214
@@ -91,6 +93,7 @@ Context: Internal validation cohort, n=214
 
 Source locator: Fig. 2e
 
+<a id="kf3"></a>
 ### KF3: AIHFLevel demonstrated strong time-dependent discrimination in the CRCCD Discovery cohort.
 
 Context: CRCCD Discovery cohort, n=498
@@ -104,6 +107,7 @@ Context: CRCCD Discovery cohort, n=498
 
 Source locator: Supplementary Fig. 3c
 
+<a id="kf4"></a>
 ### KF4: AIHFLevel retained prognostic discrimination in an independent BIDMC external cohort.
 
 Context: Independent external validation cohort, n=1,024
@@ -117,6 +121,7 @@ Context: Independent external validation cohort, n=1,024
 
 Source locator: Fig. 6d
 
+<a id="kf5"></a>
 ### KF5: Conditional inference survival-tree analysis defined three prognostic states.
 
 Context: Conditional inference survival-tree analysis
@@ -213,6 +218,95 @@ Source locator: Fig. 4a-c
 - Randomized studies would be required to establish whether AIHFLevel-guided treatment improves patient outcomes.
 - Some echocardiographic predictors may not be uniformly available in primary-care settings.
 - Direct methodological reproduction of every comparator risk model was not possible.
+
+<a id="citation-use-cases"></a>
+## When This Study Is Useful to Cite
+
+### CU1: Which studies developed and externally validated machine-learning survival models for advanced heart failure with renal dysfunction?
+
+AIHFLevel was developed in the CRCCD cohort and independently evaluated in 1,024 BIDMC patients with advanced heart failure and renal dysfunction.
+
+Evidence: [KF1](#kf1), [KF4](#kf4)
+
+### CU2: What evidence supports time-dependent mortality discrimination by AIHFLevel?
+
+The study reports time-dependent discrimination in the CRCCD Replication cohort and independent BIDMC external cohort.
+
+Evidence: [KF2](#kf2), [KF4](#kf4)
+
+### CU3: How was hybrid model selection used to reduce reliance on one investigator-selected survival algorithm?
+
+The study systematically evaluated 132 modeling schemes using 12 learners and alternative feature-selection strategies before selecting the final approach.
+
+Evidence: [KF1](#kf1)
+
+### CU4: Can an explainable clinical survival model provide patient-level prognostic stratification in advanced heart failure with renal dysfunction?
+
+The final 12-predictor framework included patient-level interpretation and a conditional-inference survival tree defining three prognostic states.
+
+Evidence: [KF5](#kf5)
+
+<a id="citation-boundaries"></a>
+## What This Study Should Not Be Cited to Claim
+
+- AIHFLevel-guided treatment has been shown to improve survival or other clinical outcomes.
+- Prospective clinical utility has been established.
+- The 12 model predictors are causal determinants of mortality.
+- Model performance is guaranteed to generalize to every heart-failure population or healthcare setting.
+- AIHFLevel replaces clinician judgment.
+
+<a id="evidence-matrix"></a>
+## Evidence Matrix
+
+<a id="evidence-model-selection"></a>
+### Model-selection framework
+
+- Context: CRCCD development framework
+- Finding: 132 candidate modeling schemes were evaluated; the selected strategy combined Surv.gbm and Surv.Xgboost with hybrid filter-wrapper feature selection and achieved average C-index 0.821.
+- Evidence Level: Retrospective model development
+- Scope: Supports comparative model-selection performance, not treatment benefit.
+- Source Locator: Results: Survival assessment system AIHFLevel; Fig. 2b
+- Evidence refs: [KF1](#kf1)
+
+<a id="evidence-crccd-replication"></a>
+### Internal validation
+
+- Context: CRCCD Replication cohort, n=214
+- Finding: 6/12/24/30-month AUCs were 0.902 / 0.932 / 0.932 / 0.903.
+- Evidence Level: Internal retrospective validation
+- Scope: Mortality-risk discrimination in the studied replication cohort.
+- Source Locator: Fig. 2e
+- Evidence refs: [KF2](#kf2)
+
+<a id="evidence-crccd-discovery"></a>
+### Development-cohort discrimination
+
+- Context: CRCCD Discovery cohort, n=498
+- Finding: 6/12/24/30-month AUCs were 0.931 / 0.952 / 0.973 / 0.976.
+- Evidence Level: Retrospective development cohort
+- Scope: Performance within the development cohort.
+- Source Locator: Supplementary Fig. 3c
+- Evidence refs: [KF3](#kf3)
+
+<a id="evidence-bidmc-external"></a>
+### Independent external evaluation
+
+- Context: BIDMC cohort, n=1,024
+- Finding: 1/2/3/4-year AUCs were 0.788 / 0.816 / 0.824 / 0.846.
+- Evidence Level: Independent retrospective external validation
+- Scope: External prognostic discrimination; not prospective utility.
+- Source Locator: Fig. 6d
+- Evidence refs: [KF4](#kf4)
+
+<a id="evidence-risk-stratification"></a>
+### Prognostic stratification
+
+- Context: Conditional inference survival-tree analysis
+- Finding: Low <=0.435; intermediate >0.435 to <=1.548; high >1.548.
+- Evidence Level: Retrospective prognostic stratification
+- Scope: Risk-group definition, not evidence of treatment-response benefit.
+- Source Locator: Fig. 4a-c
+- Evidence refs: [KF5](#kf5)
 
 ## Q&A
 

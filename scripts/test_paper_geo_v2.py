@@ -2,6 +2,7 @@ import copy
 import json
 
 from citation_common import citation_record, load_citation_metadata
+from official_abstracts import load_official_abstracts
 from build_publications import (
     flatten_concepts,
     load_deep_content,
@@ -187,7 +188,8 @@ def synthetic_multicohort_fixture():
     return publication, content
 
 
-def rendered_v2(publication, content, config, public_by_doi, citation_data=None):
+def rendered_v2(publication, content, config, public_by_doi, citation_data=None,
+                official_abstract=None):
     validate_deep_v2_content(content, f"{publication['slug']} test fixture")
     page = render_paper_html(
         publication,
@@ -195,12 +197,14 @@ def rendered_v2(publication, content, config, public_by_doi, citation_data=None)
         deep_content=content,
         public_by_doi=public_by_doi,
         citation_data=citation_data,
+        official_abstract=official_abstract,
     )
     markdown = render_paper_markdown(
         publication,
         config=config,
         deep_content=content,
         public_by_doi=public_by_doi,
+        official_abstract=official_abstract,
     )
     schema = paper_json_ld_object(page, f"{publication['slug']} test page")
     validate_v2_rendered_page(
@@ -226,6 +230,7 @@ def run_tests():
         if norm_doi(item.get("doi"))
     }
     citation_metadata = load_citation_metadata(public)
+    official_abstracts = load_official_abstracts(public)
 
     deep_entries = load_deep_geo()
     featured_entries = load_featured()
@@ -255,12 +260,14 @@ def run_tests():
             deep_content=content,
             public_by_doi=public_by_doi,
             citation_data=citation_record(publication, citation_metadata, config["site_url"]),
+            official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.html").read_text(encoding="utf-8")
         assert render_paper_markdown(
             publication,
             config=config,
             deep_content=content,
             public_by_doi=public_by_doi,
+            official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
     assert (len(v2_items), v1_count, pending_count) == (9, 4, 15)
@@ -349,6 +356,7 @@ def run_tests():
         page, markdown, schema = rendered_v2(
             publication, content, config, public_by_doi,
             citation_record(publication, citation_metadata, config["site_url"]),
+            official_abstracts.get(norm_doi(publication.get("doi"))),
         )
         assert schema["description"] == content["author_summary"]
         assert schema["keywords"] == flatten_concepts(content)

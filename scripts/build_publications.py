@@ -734,6 +734,44 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
                 raise ValueError(f"{label} provenance.{key} must be an HTTPS URL.")
     if "citation_pilot" in content:
         validate_citation_pilot(content["citation_pilot"], set(finding_ids), label)
+    if "citation_layer" in content:
+        validate_citation_layer(content["citation_layer"], content["key_findings"], label)
+
+
+def validate_citation_layer(layer, findings, label):
+    prefix = f"{label} citation_layer"
+    if not isinstance(layer, dict) or set(layer) != {
+        "citation_use_cases", "not_appropriate_as_evidence_for", "evidence_matrix"
+    }:
+        raise ValueError(f"{prefix} fields are invalid.")
+    finding_by_id = {finding["id"]: finding for finding in findings}
+    required_text_list(layer["not_appropriate_as_evidence_for"], f"{prefix} boundaries")
+    for collection, fields in (
+        ("citation_use_cases", {"id", "query", "supported_scope", "evidence_refs"}),
+        ("evidence_matrix", {"id", "component", "context", "finding", "evidence_level", "scope", "source_locator", "evidence_refs"}),
+    ):
+        rows = layer[collection]
+        if not isinstance(rows, list) or not rows:
+            raise ValueError(f"{prefix}.{collection} must be a non-empty array.")
+        ids = []
+        for row in rows:
+            if not isinstance(row, dict) or set(row) != fields:
+                raise ValueError(f"{prefix}.{collection} row fields are invalid.")
+            row_id = required_text(row["id"], f"{prefix} row ID")
+            if not re.fullmatch(r"CU[1-9][0-9]*" if collection == "citation_use_cases"
+                                else r"evidence-[a-z0-9]+(?:-[a-z0-9]+)*", row_id):
+                raise ValueError(f"{prefix} row ID is invalid.")
+            ids.append(row_id)
+            for key in fields - {"id", "evidence_refs"}:
+                required_text(row[key], f"{prefix} {row_id} {key}")
+            refs = row["evidence_refs"]
+            if (not isinstance(refs, list) or not refs or len(refs) != len(set(refs))
+                    or any(ref not in finding_by_id for ref in refs)):
+                raise ValueError(f"{prefix} {row_id} evidence_refs are invalid.")
+            if collection == "evidence_matrix" and len(refs) == 1 and row["source_locator"] != finding_by_id[refs[0]]["source_locator"]:
+                raise ValueError(f"{prefix} {row_id} source locator must match its KF.")
+        if len(ids) != len(set(ids)):
+            raise ValueError(f"{prefix}.{collection} IDs must be unique.")
 
 
 def validate_citation_pilot(pilot, finding_ids, label):
@@ -1007,6 +1045,8 @@ def render_citation_pilot_html(pilot):
         ("Hard cardiovascular outcome status", "hard_outcome_status"),
         ("Review locator", "source_locator"),
     )
+
+
     boundaries = "".join(
         f"<li>{html.escape(item)}</li>" for item in pilot["methodology_boundaries"]
     )
@@ -1050,6 +1090,44 @@ def render_citation_pilot_html(pilot):
     )
 
 
+def render_citation_layer_html(layer):
+    refs = lambda row: ", ".join(
+        f'<a href="#{html.escape(ref.lower(), quote=True)}">{html.escape(ref)}</a>'
+        for ref in row["evidence_refs"]
+    )
+    use_cases = "".join(
+        f'<li id="{html.escape(row["id"].lower(), quote=True)}"><strong>'
+        f'{html.escape(row["id"])}: {html.escape(row["query"])}</strong>'
+        f'<p>{html.escape(row["supported_scope"])}</p>'
+        f'<p>Evidence: {refs(row)}</p></li>'
+        for row in layer["citation_use_cases"]
+    )
+    boundaries = "".join(
+        f'<li>{html.escape(text)}</li>'
+        for text in layer["not_appropriate_as_evidence_for"]
+    )
+    columns = ("component", "context", "finding", "evidence_level", "scope", "source_locator")
+    headers = "".join(f'<th scope="col">{html.escape(v2_label(key))}</th>' for key in columns)
+    rows = "".join(
+        f'<tr id="{html.escape(row["id"], quote=True)}">'
+        f'<th scope="row">{html.escape(row["id"])}</th>'
+        + "".join(f'<td>{html.escape(row[key])}</td>' for key in columns)
+        + f'<td>{refs(row)}</td></tr>'
+        for row in layer["evidence_matrix"]
+    )
+    return (
+        '<section class="paper-geo-v2__section" id="citation-use-cases">'
+        f'<h2>When This Study Is Useful to Cite</h2><ol>{use_cases}</ol></section>'
+        '<section class="paper-geo-v2__section" id="citation-boundaries">'
+        f'<h2>What This Study Should Not Be Cited to Claim</h2><ul>{boundaries}</ul></section>'
+        '<section class="paper-geo-v2__section" id="evidence-matrix">'
+        '<h2>Evidence Matrix</h2><div class="paper-geo-v2__table-wrap">'
+        '<table class="paper-geo-v2__table"><thead><tr>'
+        f'<th scope="col">Row ID</th>{headers}<th scope="col">Evidence refs</th></tr></thead><tbody>{rows}</tbody>'
+        '</table></div></section>'
+    )
+
+
 def render_deep_v2_html(content, related_papers):
     study = content["study_profile"]
     profile_type = study["profile_type"]
@@ -1067,7 +1145,7 @@ def render_deep_v2_html(content, related_papers):
         + html.escape(finding["id"], quote=True)
         + (
             '" id="' + html.escape(finding["id"].lower(), quote=True)
-            if content.get("citation_pilot") else ""
+            if content.get("citation_pilot") or content.get("citation_layer") else ""
         )
         + '"><h3><span class="paper-geo-v2__finding-id">'
         + html.escape(finding["id"])
@@ -1249,6 +1327,10 @@ def render_deep_v2_html(content, related_papers):
         render_citation_pilot_html(content["citation_pilot"])
         if content.get("citation_pilot") else ""
     )
+    layer_html = (
+        render_citation_layer_html(content["citation_layer"])
+        if content.get("citation_layer") else ""
+    )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
 <section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
@@ -1256,7 +1338,7 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{'Review profile' if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{'What This Review Adds' if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
-<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}
+<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>
@@ -1312,6 +1394,35 @@ def render_citation_pilot_markdown(pilot):
     return parts
 
 
+def render_citation_layer_markdown(layer):
+    parts = [
+        '<a id="citation-use-cases"></a>',
+        "## When This Study Is Useful to Cite", "",
+    ]
+    for row in layer["citation_use_cases"]:
+        parts.extend([
+            f"### {row['id']}: {row['query']}", "",
+            row["supported_scope"], "",
+            "Evidence: " + ", ".join(f"[{ref}](#{ref.lower()})" for ref in row["evidence_refs"]),
+            "",
+        ])
+    parts.extend([
+        '<a id="citation-boundaries"></a>',
+        "## What This Study Should Not Be Cited to Claim", "",
+        *[f"- {boundary}" for boundary in layer["not_appropriate_as_evidence_for"]],
+        "", '<a id="evidence-matrix"></a>', "## Evidence Matrix", "",
+    ])
+    for row in layer["evidence_matrix"]:
+        parts.extend([f'<a id="{row["id"]}"></a>', f"### {row['component']}", ""])
+        for key in ("context", "finding", "evidence_level", "scope", "source_locator"):
+            parts.append(f"- {v2_label(key)}: {row[key]}")
+        parts.extend([
+            "- Evidence refs: " + ", ".join(f"[{ref}](#{ref.lower()})" for ref in row["evidence_refs"]),
+            "",
+        ])
+    return parts
+
+
 def render_deep_v2_markdown(content, related_papers):
     study = content["study_profile"]
     profile_type = study["profile_type"]
@@ -1354,6 +1465,7 @@ def render_deep_v2_markdown(content, related_papers):
     for finding in content["key_findings"]:
         parts.extend(
             [
+                *([f'<a id="{finding["id"].lower()}"></a>'] if content.get("citation_layer") else []),
                 f"### {finding['id']}: {finding['claim']}",
                 "",
                 f"Context: {finding['context']}",
@@ -1470,6 +1582,8 @@ def render_deep_v2_markdown(content, related_papers):
     )
     if content.get("citation_pilot"):
         parts.extend(render_citation_pilot_markdown(content["citation_pilot"]))
+    if content.get("citation_layer"):
+        parts.extend(render_citation_layer_markdown(content["citation_layer"]))
     parts.extend(["## Q&A", ""])
     for item in content["qa"]:
         parts.extend([f"### {item['question']}", "", item["answer"], ""])
