@@ -228,5 +228,133 @@
     "accession_note": "The Figure 1 caption contains an apparent GSE26687 accession typo; Methods and Results and the formal GEO identity establish GSE26887 as the HF dataset. GSE26687 is not treated as a second scientific dataset.",
     "counting_note": "GSE147507 donor and technical-replicate counts, GSE26887 cardiac-tissue samples, GSE164805 PBMC samples, and GSE9128/GDS3115 pooled PBMC arrays have distinct units and are not added into a synthetic participant total."
   },
+    "citation_layer": {
+      "citation_use_cases": [
+        {
+          "id": "CU1",
+          "query": "Which transcriptomic signatures were shared between independently profiled COVID-19 and heart-failure datasets?",
+          "supported_scope": "Separate COVID-19 and HF expression datasets yielded a shared 12-gene transcriptomic signature; there was no dedicated cohort with both conditions.",
+          "evidence_refs": [
+            "KF1"
+          ]
+        },
+        {
+          "id": "CU2",
+          "query": "Which inflammatory pathways were enriched across the shared COVID-HF expression signals?",
+          "supported_scope": "Enrichment highlighted inflammatory and innate-immune pathways in shared expression signals, without establishing a causal COVID-HF mechanism.",
+          "evidence_refs": [
+            "KF2"
+          ]
+        },
+        {
+          "id": "CU3",
+          "query": "Which network hub genes were prioritized and externally evaluated?",
+          "supported_scope": "PPI topology nominated inflammatory hubs and external PBMC expression datasets evaluated selected genes; PCA explained variance is not classification performance.",
+          "evidence_refs": [
+            "KF3",
+            "KF4"
+          ]
+        },
+        {
+          "id": "CU4",
+          "query": "Which predicted transcription-factor and miRNA regulatory networks were prioritized?",
+          "supported_scope": "Database-derived TF and miRNA networks nominated computational regulatory candidates, not experimentally confirmed edges.",
+          "evidence_refs": [
+            "KF5"
+          ]
+        },
+        {
+          "id": "CU5",
+          "query": "Which compounds were nominated by drug-signature enrichment?",
+          "supported_scope": "Drug-signature enrichment nominated muramyl dipeptide and glutathione as hypotheses; no therapeutic efficacy was demonstrated.",
+          "evidence_refs": [
+            "KF6"
+          ]
+        }
+      ],
+      "not_appropriate_as_evidence_for": [
+        "There was no dedicated cohort of patients simultaneously affected by COVID-19 and HF.",
+        "The paper's phrase genetic links refers to transcriptomic overlap, not GWAS, germline genetic correlation, Mendelian randomization or genetic causality.",
+        "PCA explained-variance percentages are not AUC, accuracy, sensitivity or specificity.",
+        "TF and miRNA network edges are computational predictions.",
+        "Microbiome and LPS mechanisms were not directly measured.",
+        "No proteomics was performed.",
+        "Candidate compounds are hypothesis-generating, not demonstrated therapies."
+      ],
+      "evidence_matrix": [
+        {
+          "id": "evidence-covid-hf-1",
+          "component": "KF1: Independent COVID-19 and HF expression analyses yielded a 12-gene shared transcriptomic signature.",
+          "context": "Overlap was calculated across separately profiled disease datasets, not in a cohort of people with both COVID-19 and HF.",
+          "finding": "Independent COVID-19 and HF expression analyses yielded a 12-gene shared transcriptomic signature. DEG threshold: |log2FC| > 1 and adjusted P < 0.05; COVID-19 DEGs: 102; HF DEGs: 253; shared genes: 12: S100A8, ABCB1, S100A11, PTGS2 (COX2), LY96, XCL1, RORA, CCL11, CCL4, S100A12, BCL2 and AQP9.",
+          "evidence_level": "Cross-dataset transcriptomic overlap",
+          "scope": "Overlap was calculated across separately profiled disease datasets, not in a cohort of people with both COVID-19 and HF.",
+          "source_locator": "Results: Identification of shared transcriptomic signature between HF and COVID-19; Figure 1B-D",
+          "evidence_refs": [
+            "KF1"
+          ]
+        },
+        {
+          "id": "evidence-covid-hf-2",
+          "component": "KF2: Functional enrichment highlighted inflammatory and innate-immune pathways associated with the shared expression signals.",
+          "context": "Enrichment points to pathway associations; it does not demonstrate that these pathways causally mediate COVID-19–HF comorbidity.",
+          "finding": "Functional enrichment highlighted inflammatory and innate-immune pathways associated with the shared expression signals. cellular processes: neutrophil chemotaxis and migration, monocyte chemotaxis, and inflammatory response; molecular functions: chemokine activity, CCR chemokine receptor binding, RAGE receptor binding and Toll-like receptor binding; signaling pathways: NF-κB-related and IL-17-related signaling, plus cytokine-cytokine receptor interaction.",
+          "evidence_level": "Computational pathway enrichment",
+          "scope": "Enrichment points to pathway associations; it does not demonstrate that these pathways causally mediate COVID-19–HF comorbidity.",
+          "source_locator": "Results: Analysis of functional characteristics relevant to common pathogenesis; Figures 2-3; Supplementary Tables S1-S2",
+          "evidence_refs": [
+            "KF2"
+          ]
+        },
+        {
+          "id": "evidence-covid-hf-3",
+          "component": "KF3: PPI topology prioritized ten inflammatory hub genes and a four-gene core of TLR4, TLR2, IL10 and STAT3.",
+          "context": "Hub status reflects network centrality and algorithmic prioritization, not proof that these genes cause either disease.",
+          "finding": "PPI topology prioritized ten inflammatory hub genes and a four-gene core of TLR4, TLR2, IL10 and STAT3. initial PPI network: 62 nodes and 655 edges; ten hub genes: TLR4, TLR2, CXCL8, IL10, STAT3, IL1B, TLR1, TP53, CCL20 and CXCL10; hub interaction network: 59 nodes and 649 edges; seven-algorithm core: TLR4, TLR2, IL10 and STAT3; MCODE module 1: 29 nodes, 381 edges, score 27.214; includes XCL1, CCL4 and CCL11; MCODE module 2: 23 nodes, 65 edges, score 11.818.",
+          "evidence_level": "Computational PPI network prioritization",
+          "scope": "Hub status reflects network centrality and algorithmic prioritization, not proof that these genes cause either disease.",
+          "source_locator": "Results: Protein-protein interaction analysis; Figures 4-5; Supplementary Tables S3-S4",
+          "evidence_refs": [
+            "KF3"
+          ]
+        },
+        {
+          "id": "evidence-covid-hf-4",
+          "component": "KF4: External public PBMC expression datasets supported prioritization of TLR4, TLR2, STAT3, IL1B and CXCL8, with tissue-context nuance for IL1B.",
+          "context": "The PCA percentages describe variance explained by the first two components, not AUC, accuracy, sensitivity, specificity, or prospective diagnostic validation. IL1B was not uniformly upregulated across tissues.",
+          "finding": "External public PBMC expression datasets supported prioritization of TLR4, TLR2, STAT3, IL1B and CXCL8, with tissue-context nuance for IL1B. COVID-19 expression dataset: GSE164805: 10 COVID-19 and 5 healthy PBMC samples; HF expression dataset: GSE9128/GDS3115: 8 HF pooled and 3 control pooled PBMC microarray samples; final prioritized genes: TLR4, TLR2, STAT3, IL1B and CXCL8; five-gene PCA first-two-component explained variance: COVID-19 96.0%; HF 93.2%; merged 89.9%; earlier ten-hub-gene PCA explained variance: COVID-19 88.5%; HF 90.0%; IL1B lung-tissue context: GSE147507 re-analysis showed increased IL1B in COVID-19 lung tissue (P=0.006), despite non-uniform PBMC patterns.",
+          "evidence_level": "External public PBMC expression evaluation",
+          "scope": "The PCA percentages describe variance explained by the first two components, not AUC, accuracy, sensitivity, specificity, or prospective diagnostic validation. IL1B was not uniformly upregulated across tissues.",
+          "source_locator": "Results: Validation of hub genes performance in two independent cohorts; Figures 6-7",
+          "evidence_refs": [
+            "KF4"
+          ]
+        },
+        {
+          "id": "evidence-covid-hf-5",
+          "component": "KF5: Database-derived networks nominated TF and miRNA candidates for subsequent experimental testing.",
+          "context": "These network edges are computational predictions, not experimentally confirmed upstream regulatory mechanisms.",
+          "finding": "Database-derived networks nominated TF and miRNA candidates for subsequent experimental testing. TF network: 47 predicted TF targets, 59 nodes and 98 edges; TF-miRNA network: 98 TFs, 137 miRNAs, 246 nodes and 310 edges; highlighted predicted TFs: FOXC1, STAT3 and NFKB1 (NF-κB1); highlighted predicted miRNAs: miR-181, miR-520 and miR-143.",
+          "evidence_level": "Computational TF and miRNA network prediction",
+          "scope": "These network edges are computational predictions, not experimentally confirmed upstream regulatory mechanisms.",
+          "source_locator": "Results: Determination of regulatory signature and network; Figure 8A-B; Supplementary Figure S1",
+          "evidence_refs": [
+            "KF5"
+          ]
+        },
+        {
+          "id": "evidence-covid-hf-6",
+          "component": "KF6: Drug-signature enrichment nominated muramyl dipeptide and glutathione as hypothesis-generating compounds.",
+          "context": "DSigDB prioritization is an in-silico signal; no therapeutic efficacy was demonstrated for COVID-19, HF, or their co-occurrence.",
+          "finding": "Drug-signature enrichment nominated muramyl dipeptide and glutathione as hypothesis-generating compounds. input genes: CXCL8, STAT3, IL1B, TLR4 and TLR2; analysis resource: DSigDB drug-signature enrichment; candidate compounds: muramyl dipeptide (MDP) and glutathione (GSH); evidence level: in-silico hypothesis generation, not treatment-efficacy evidence.",
+          "evidence_level": "In-silico drug-signature enrichment",
+          "scope": "DSigDB prioritization is an in-silico signal; no therapeutic efficacy was demonstrated for COVID-19, HF, or their co-occurrence.",
+          "source_locator": "Results: Identification of candidate pharmacologic agents; Figure 8C; Discussion: Promising therapeutics",
+          "evidence_refs": [
+            "KF6"
+          ]
+        }
+      ]
+    },
   "evidence_page_notice": "This evidence page summarizes a peer-reviewed publication and does not replace the publisher record. The shared expression signals, network candidates, and compound-enrichment hits are hypothesis-generating, not a clinically validated diagnostic panel or demonstrated treatment for COVID-19 or heart failure."
 }
