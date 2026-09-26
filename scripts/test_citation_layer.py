@@ -14,6 +14,8 @@ TARGETS = {
         "doi-10-1038-s41698-026-01699-1.json", 5, 6, 6
     ),
     "apvs": ("apvs.json", 5, 7, 7),
+    "doi-10-1093-eurheartj-ehaf523": ("doi-10-1093-eurheartj-ehaf523.json", 5, 7, 7),
+    "doi-10-1172-jci194175": ("doi-10-1172-jci194175.json", 5, 7, 7),
 }
 
 

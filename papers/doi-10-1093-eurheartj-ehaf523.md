@@ -74,6 +74,7 @@ The study combined associative human arterial and carotid-plaque observations wi
 
 ## Key Findings
 
+<a id="kf1"></a>
 ### KF1: KIF13B expression is lower in advanced human arterial and carotid lesions and in progressing mouse plaques.
 
 Context: Human findings are associative, not evidence that manipulating KIF13B changes human atherosclerosis.
@@ -86,6 +87,7 @@ Context: Human findings are associative, not evidence that manipulating KIF13B c
 
 Source locator: Results: The expression of KIF13B is negatively correlated with the progression of atherosclerosis in patients and mice; Figure 1 and Supplementary Figure S1.
 
+<a id="kf2"></a>
 ### KF2: Global Kif13b loss worsened experimental atherosclerosis in Ldlr-deficient mice, but circulating lipids also increased in that model.
 
 Context: The global Ldlr-deficient comparison does not isolate a lipid-independent mechanism; Apoe-background observations did not show the same lipid effect.
@@ -98,6 +100,7 @@ Context: The global Ldlr-deficient comparison does not isolate a lipid-independe
 
 Source locator: Results: Deletion of Kif13b in Ldlr−/− mice exacerbates atherosclerosis; Figure 2 and Supplementary Figure S2.
 
+<a id="kf3"></a>
 ### KF3: Single-cell and macrophage analyses implicated altered macrophage states with lower Kif13b during experimental atherosclerosis.
 
 Context: The study-generated aortic single-cell comparison pooled five mice into one library per genotype; Results and Figure 3E disagree on diet duration, so no single definitive duration is assigned.
@@ -110,6 +113,7 @@ Context: The study-generated aortic single-cell comparison pooled five mice into
 
 Source locator: Results: Kif13b deficiency primarily affects macrophage dynamics in mouse atherosclerosis; Figure 3.
 
+<a id="kf4"></a>
 ### KF4: Myeloid conditional deletion and Kif13b-deficient bone-marrow transfer worsened plaque phenotypes without corresponding plasma-lipid changes in their mouse models.
 
 Context: These results support a lipid-independent myeloid or hematopoietic contribution in the tested models, not a macrophage-exclusive or proven human causal effect.
@@ -121,6 +125,7 @@ Context: These results support a lipid-independent myeloid or hematopoietic cont
 
 Source locator: Results: Myeloid-specific deletion of Kif13b aggravates atherosclerosis in a lipid-independent manner; Figure 4 and Supplementary Figures S3–S4.
 
+<a id="kf5"></a>
 ### KF5: Kif13b-deficient macrophages had impaired efferocytosis and reduced MERTK protein; restoring MERTK in deficient BMDMs improved efferocytosis.
 
 Context: The genetic rescue was a macrophage cell experiment, not a demonstrated in vivo MERTK therapy or human rescue.
@@ -133,6 +138,7 @@ Context: The genetic rescue was a macrophage cell experiment, not a demonstrated
 
 Source locator: Results: Loss of Kif13b inhibits MERTK-mediated macrophage efferocytosis; Figure 5.
 
+<a id="kf6"></a>
 ### KF6: The KIF13B–ITCH–CBL–MERTK data support post-translational MERTK regulation, while the exact proposed ITCH-mediated CBL degradation step remains incompletely demonstrated.
 
 Context: CBL is the endogenous gene/protein investigated; CBLB is distinct. Unchanged Mertk mRNA argues against a transcriptional explanation of lower MERTK protein in this experiment.
@@ -146,6 +152,7 @@ Context: CBL is the endogenous gene/protein investigated; CBLB is distinct. Unch
 
 Source locator: Results: KIF13B decreases CBL-mediated ubiquitination of MERTK by interacting with itch in macrophages; Figure 6.
 
+<a id="kf7"></a>
 ### KF7: NX-1607 improved MERTK and efferocytosis phenotypes in macrophages and reduced atherosclerotic phenotypes in mice; its target identity does not unambiguously validate endogenous CBL.
 
 Context: The article calls NX-1607 a CBL inhibitor, while external authoritative drug-development sources identify it as a CBL-B/CBLB inhibitor; CBL and CBLB are distinct genes. These are preclinical rescue results, not human atherosclerosis treatment efficacy.
@@ -210,6 +217,137 @@ Source locator: Results: The CBL inhibitor NX-1607 effectively ameliorates ather
 - The article's CBL-inhibitor description of NX-1607 conflicts with external CBL-B/CBLB target identification, preventing unambiguous pharmacologic validation of endogenous CBL.
 - NX-1607 was tested preclinically during the final 16 of 20 Western-diet weeks, not as reversal after 20 weeks of established disease; no human atherosclerosis efficacy was assessed.
 - Mouse NX-1607 measurements found no reported ALT/AST liver-toxicity signal but did report lower white blood cells and lymphocytes, so safety is not established.
+
+<a id="citation-use-cases"></a>
+## When This Study Is Useful to Cite
+
+### CU1: What evidence links macrophage KIF13B to atherosclerosis?
+
+Human tissue associations and mouse genetic/single-cell experiments link lower KIF13B to atherosclerosis; human association is not human causality and pooled libraries are not independent mice.
+
+Evidence: [KF1](#kf1), [KF2](#kf2), [KF3](#kf3), [KF4](#kf4)
+
+### CU2: How does KIF13B regulate macrophage efferocytosis through MERTK?
+
+KIF13B-deficient macrophages showed impaired efferocytosis and reduced MERTK protein, while MERTK restoration improved efferocytosis in deficient BMDMs.
+
+Evidence: [KF5](#kf5)
+
+### CU3: What evidence supports post-translational regulation of MERTK by the KIF13B–ITCH–CBL network?
+
+Accepted protein-turnover and rescue evidence supports this model, but the exact proposed ITCH-mediated CBL degradation step remains incompletely demonstrated.
+
+Evidence: [KF6](#kf6)
+
+### CU4: Does myeloid KIF13B affect experimental atherosclerosis independently of plasma lipid changes?
+
+Myeloid conditional deletion and marrow-transfer phenotypes occurred without corresponding lipid changes in the tested mouse models; the global Ldlr knockout is lipid-confounded.
+
+Evidence: [KF2](#kf2), [KF4](#kf4)
+
+### CU5: What preclinical pharmacologic rescue evidence was reported for impaired KIF13B/MERTK efferocytosis?
+
+NX-1607 produced macrophage and mouse rescue in the reported experiments; evidence is preclinical and CBL versus CBLB target identity remains qualified.
+
+Evidence: [KF7](#kf7)
+
+<a id="citation-boundaries"></a>
+## What This Study Should Not Be Cited to Claim
+
+- Human tissue association is not human KIF13B causality or treatment efficacy.
+- The global Ldlr-deficient knockout model is confounded by increased circulating lipids.
+- Five pooled mice in one single-cell library are not five independent library replicates.
+- The exact proposed ITCH-mediated CBL degradation mechanism remains incompletely demonstrated.
+- CBL and CBLB are distinct and must not be conflated when interpreting NX-1607.
+- NX-1607 rescue is preclinical; no human atherosclerosis treatment efficacy was established.
+
+<a id="evidence-matrix"></a>
+## Evidence Matrix
+
+<a id="evidence-kif13b-1"></a>
+### KF1: KIF13B expression is lower in advanced human arterial and carotid lesions and in progressing mouse plaques.
+
+- Context: Human findings are associative, not evidence that manipulating KIF13B changes human atherosclerosis.
+- Finding: KIF13B expression is lower in advanced human arterial and carotid lesions and in progressing mouse plaques. GSE40231: 40 non-atherosclerotic and 40 atherosclerotic arterial-wall samples showed lower KIF13B in atherosclerotic tissue.; Human carotid tissue: Early n=6 and advanced n=6 lesions showed lower KIF13B protein in advanced plaques, with macrophage co-localization.; Mouse progression: Ldlr-deficient mice, n=6 per group, showed lower plaque KIF13B after 20 versus 12 weeks of Western diet..
+- Evidence Level: Human observational association
+- Scope: Human findings are associative, not evidence that manipulating KIF13B changes human atherosclerosis.
+- Source Locator: Results: The expression of KIF13B is negatively correlated with the progression of atherosclerosis in patients and mice; Figure 1 and Supplementary Figure S1.
+- Evidence refs: [KF1](#kf1)
+
+<a id="evidence-kif13b-2"></a>
+### KF2: Global Kif13b loss worsened experimental atherosclerosis in Ldlr-deficient mice, but circulating lipids also increased in that model.
+
+- Context: The global Ldlr-deficient comparison does not isolate a lipid-independent mechanism; Apoe-background observations did not show the same lipid effect.
+- Finding: Global Kif13b loss worsened experimental atherosclerosis in Ldlr-deficient mice, but circulating lipids also increased in that model. Ldlr model: After 12 weeks of Western diet, control versus global Kif13b-deficient Ldlr-deficient mice had n=6 mice per group; lesions and circulating total cholesterol and triglycerides increased with Kif13b loss.; Plaque phenotype: Necrotic-core area rose up to approximately twofold, CD68-positive macrophage infiltration more than threefold, and apoptotic-cell accumulation increased.; Apoe background: Worsened plaques were also reported in the Apoe-deficient background without the same circulating-lipid change..
+- Evidence Level: Preclinical experimental evidence
+- Scope: The global Ldlr-deficient comparison does not isolate a lipid-independent mechanism; Apoe-background observations did not show the same lipid effect.
+- Source Locator: Results: Deletion of Kif13b in Ldlr−/− mice exacerbates atherosclerosis; Figure 2 and Supplementary Figure S2.
+- Evidence refs: [KF2](#kf2)
+
+<a id="evidence-kif13b-3"></a>
+### KF3: Single-cell and macrophage analyses implicated altered macrophage states with lower Kif13b during experimental atherosclerosis.
+
+- Context: The study-generated aortic single-cell comparison pooled five mice into one library per genotype; Results and Figure 3E disagree on diet duration, so no single definitive duration is assigned.
+- Finding: Single-cell and macrophage analyses implicated altered macrophage states with lower Kif13b during experimental atherosclerosis. GSE155513: Figure 3 uses one single-cell library at each 8-week and 26-week high-fat-diet time point; macrophage abundance rose and Kif13b reduction was prominent in macrophages.; Study-generated single-cell: Five aortas were pooled per genotype into one library, yielding 14 clusters and eight cell types; Cd80-positive, Il1b-positive, Spp1-positive and Cd206-positive macrophage states were emphasized, with Kif13b loss associated with fewer Cd206-positive and more Il1b-positive and Spp1-positive states.; Independent observations: GSE215103 Apoe-deficient macrophage reanalysis and ox-LDL-treated BMDM and THP-1 experiments also showed lower KIF13B..
+- Evidence Level: Pooled single-cell or cellular experimental evidence
+- Scope: The study-generated aortic single-cell comparison pooled five mice into one library per genotype; Results and Figure 3E disagree on diet duration, so no single definitive duration is assigned.
+- Source Locator: Results: Kif13b deficiency primarily affects macrophage dynamics in mouse atherosclerosis; Figure 3.
+- Evidence refs: [KF3](#kf3)
+
+<a id="evidence-kif13b-4"></a>
+### KF4: Myeloid conditional deletion and Kif13b-deficient bone-marrow transfer worsened plaque phenotypes without corresponding plasma-lipid changes in their mouse models.
+
+- Context: These results support a lipid-independent myeloid or hematopoietic contribution in the tested models, not a macrophage-exclusive or proven human causal effect.
+- Finding: Myeloid conditional deletion and Kif13b-deficient bone-marrow transfer worsened plaque phenotypes without corresponding plasma-lipid changes in their mouse models. Lyz2-Cre model: Kif13b-floxed controls n=9 versus Lyz2-Cre;Kif13b-floxed mice n=6 after AAV8-PCSK9 and 12 weeks of Western diet; lesions, necrotic core, macrophages and apoptotic cells increased without material total-cholesterol, triglyceride or lipoprotein differences.; Bone-marrow transfer: Ldlr-deficient recipients of control versus Kif13b-deficient donor marrow, n=6 per group after 12 weeks of Western diet, showed worse plaque outcomes without plasma-lipid change..
+- Evidence Level: Preclinical experimental evidence
+- Scope: These results support a lipid-independent myeloid or hematopoietic contribution in the tested models, not a macrophage-exclusive or proven human causal effect.
+- Source Locator: Results: Myeloid-specific deletion of Kif13b aggravates atherosclerosis in a lipid-independent manner; Figure 4 and Supplementary Figures S3–S4.
+- Evidence refs: [KF4](#kf4)
+
+<a id="evidence-kif13b-5"></a>
+### KF5: Kif13b-deficient macrophages had impaired efferocytosis and reduced MERTK protein; restoring MERTK in deficient BMDMs improved efferocytosis.
+
+- Context: The genetic rescue was a macrophage cell experiment, not a demonstrated in vivo MERTK therapy or human rescue.
+- Finding: Kif13b-deficient macrophages had impaired efferocytosis and reduced MERTK protein; restoring MERTK in deficient BMDMs improved efferocytosis. Transcriptomics: Wild-type and knockout BMDM RNA-seq n=3 per group and apoptotic-cell co-incubation RNA-seq n=3 per group nominated efferocytosis pathways.; Functional phenotype: BMDM efferocytosis assays n=5 per group and MERTK immunofluorescence n=10 per group implicated lower MERTK among evaluated efferocytosis proteins; in vivo conditional and marrow-transfer models also had impaired efferocytosis.; MERTK restoration: MERTK restoration in Kif13b-deficient BMDMs improved efferocytosis; western blot n=3 per group and efferocytosis rescue n=10 per group..
+- Evidence Level: Preclinical experimental evidence
+- Scope: The genetic rescue was a macrophage cell experiment, not a demonstrated in vivo MERTK therapy or human rescue.
+- Source Locator: Results: Loss of Kif13b inhibits MERTK-mediated macrophage efferocytosis; Figure 5.
+- Evidence refs: [KF5](#kf5)
+
+<a id="evidence-kif13b-6"></a>
+### KF6: The KIF13B–ITCH–CBL–MERTK data support post-translational MERTK regulation, while the exact proposed ITCH-mediated CBL degradation step remains incompletely demonstrated.
+
+- Context: CBL is the endogenous gene/protein investigated; CBLB is distinct. Unchanged Mertk mRNA argues against a transcriptional explanation of lower MERTK protein in this experiment.
+- Finding: The KIF13B–ITCH–CBL–MERTK data support post-translational MERTK regulation, while the exact proposed ITCH-mediated CBL degradation step remains incompletely demonstrated. MERTK turnover: Mertk mRNA was unchanged in compared BMDMs n=3 per group; in THP-1 knockdown cells MERTK protein fell to about 40% at 16 hours of cycloheximide chase.; Protein mechanism: Proteasome inhibitor MG132 at 10 µM, but not chloroquine at 10 µM, blocked MERTK loss; MERTK ubiquitination and CBL protein increased with KIF13B loss.; ITCH interaction and rescue: KIF13B and ITCH co-immunoprecipitated, ITCH fell with KIF13B loss, and ITCH overexpression in deficient BMDMs reversed higher CBL and lower MERTK; direct proof of each proposed ITCH-to-CBL degradation step is incomplete.; Human association: Advanced human plaque tissues n=6 per group showed lower KIF13B, ITCH and MERTK and higher CBL; this is associative..
+- Evidence Level: Preclinical experimental evidence
+- Scope: CBL is the endogenous gene/protein investigated; CBLB is distinct. Unchanged Mertk mRNA argues against a transcriptional explanation of lower MERTK protein in this experiment.
+- Source Locator: Results: KIF13B decreases CBL-mediated ubiquitination of MERTK by interacting with itch in macrophages; Figure 6.
+- Evidence refs: [KF6](#kf6)
+
+<a id="evidence-kif13b-7"></a>
+### KF7: NX-1607 improved MERTK and efferocytosis phenotypes in macrophages and reduced atherosclerotic phenotypes in mice; its target identity does not unambiguously validate endogenous CBL.
+
+- Context: The article calls NX-1607 a CBL inhibitor, while external authoritative drug-development sources identify it as a CBL-B/CBLB inhibitor; CBL and CBLB are distinct genes. These are preclinical rescue results, not human atherosclerosis treatment efficacy.
+- Finding: NX-1607 improved MERTK and efferocytosis phenotypes in macrophages and reduced atherosclerotic phenotypes in mice; its target identity does not unambiguously validate endogenous CBL. Macrophage assays: NX-1607 at 50 nM increased MERTK in BMDMs; MERTK/CBL western blot n=3 per group, efferocytosis at DMSO, 50 and 100 nM n=10 per group, and 50 nM co-immunoprecipitation in three independent experiments were reported.; Mouse schedule and outcome: Ldlr-deficient and Kif13b-deficient Ldlr-deficient mice received 20 weeks total Western diet, with NX-1607 5 mg/kg/day only in the final 16 weeks, n=6 per group; plaque burden, necrotic core, macrophage and apoptotic-cell accumulation declined, and MERTK/efferocytosis increased without reported lipid change.; Safety and clinical boundary: ALT and AST showed no reported liver-toxicity signal in these mouse measurements, but white blood cells and lymphocytes declined; NCT05107674 is a Phase I advanced-malignancy trial, not an atherosclerosis trial..
+- Evidence Level: Preclinical experimental evidence
+- Scope: The article calls NX-1607 a CBL inhibitor, while external authoritative drug-development sources identify it as a CBL-B/CBLB inhibitor; CBL and CBLB are distinct genes. These are preclinical rescue results, not human atherosclerosis treatment efficacy.
+- Source Locator: Results: The CBL inhibitor NX-1607 effectively ameliorates atherosclerosis by enhancing macrophage efferocytosis; Figure 7 and Supplementary Figures S6–S7.
+- Evidence refs: [KF7](#kf7)
+
+<a id="research-cluster-kif13b-atherosclerosis"></a>
+## KIF13B Atherosclerosis Evidence Network
+
+Shared entity: KIF13B; relationship: complementary cell-type-specific mechanisms.
+
+These studies provide complementary cell-type-specific experimental evidence for KIF13B in atherosclerosis, not independent replication of one identical mechanism.
+
+| Paper | Cell context | Mechanistic axis | Human evidence | Causal evidence | Preclinical intervention | Clinical boundary |
+| --- | --- | --- | --- | --- | --- | --- |
+| [The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice](https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html) ([DOI](https://doi.org/10.1093/eurheartj/ehaf523)) | macrophage / myeloid; experimental atherosclerosis | KIF13B → ITCH / CBL-related post-translational regulation → MERTK → efferocytosis | Associative human arterial/plaque evidence only | Preclinical mouse/macrophage experiments | NX-1607 rescue in macrophages and mice | The article calls NX-1607 a CBL inhibitor, while accepted evidence preserves CBL versus CBLB target-identity ambiguity; no human atherosclerosis treatment efficacy. |
+| [Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis](https://drgezhang.com/papers/doi-10-1172-jci194175.html) ([DOI](https://doi.org/10.1172/jci194175)) | vascular smooth muscle cell; experimental atherosclerosis / plaque stability | KIF13B → KCTD10-dependent KLF4 ubiquitination/proteasomal turnover → matrix/inflammatory VSMC state | Associative human plaque evidence only | Preclinical mouse/HASMC experiments | Kenpaullone rescue in cells and mice | Kenpaullone is not established here as a KLF4-selective human therapeutic; no human treatment efficacy. |
+
+- Human plaque observations are associative, not proof that KIF13B manipulation improves human ASCVD outcomes.
+- Neither experimental compound is an established human atherosclerosis therapy.
 
 ## Q&A
 

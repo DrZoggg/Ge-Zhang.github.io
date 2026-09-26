@@ -377,6 +377,12 @@ def validate_v2_rendered_page(
         if profile_type == "clinical_cohort"
         else "External validation"
     )
+    cluster_id = content.get("research_cluster_id")
+    cluster_heading = None
+    if cluster_id:
+        clusters = json.loads((ROOT / "data/research_clusters.json").read_text(encoding="utf-8"))["clusters"]
+        require(cluster_id in clusters, f"{label} references an unknown research cluster.")
+        cluster_heading = clusters[cluster_id]["heading"]
     expected_headings = [
         "Full Authors",
         *(["Official Abstract"] if 'id="official-abstract"' in page else []),
@@ -399,6 +405,7 @@ def validate_v2_rendered_page(
              "What This Study Should Not Be Cited to Claim", "Evidence Matrix"]
             if content.get("citation_layer") else []
         ),
+        *([cluster_heading] if cluster_heading else []),
         "Q&A",
         "Concepts & Entities",
         "Related Research",
@@ -470,6 +477,11 @@ def validate_v2_rendered_page(
         for boundary in layer["not_appropriate_as_evidence_for"]:
             require(html.escape(boundary) in page and boundary in markdown,
                     f"{label} citation boundary differs across HTML and Markdown.")
+    if content.get("research_cluster_id"):
+        anchor = "research-cluster-" + content["research_cluster_id"]
+        require(page.count(f'id="{anchor}"') == 1
+                and markdown.count(f'<a id="{anchor}"></a>') == 1,
+                f"{label} research-cluster anchor changed.")
     require(
         page.index('class="paper-geo-v2__notice"') > positions[-1],
         f"{label} evidence-page notice must follow provenance.",
@@ -563,7 +575,10 @@ def validate_v2_rendered_page(
                 metric["label"] in markdown and metric["value"] in markdown,
                 f"{label} evidence scale metric is missing from Markdown.",
             )
-    for value in string_leaves(content):
+    # The optional cluster ID is a stable anchor, not visible prose.
+    visible_content = {key: value for key, value in content.items()
+                       if key != "research_cluster_id"}
+    for value in string_leaves(visible_content):
         require(
             normalized_source_text(value) in page_text,
             f"{label} content lost from HTML: {value!r}",

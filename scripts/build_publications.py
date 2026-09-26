@@ -774,6 +774,83 @@ def validate_citation_layer(layer, findings, label):
             raise ValueError(f"{prefix}.{collection} IDs must be unique.")
 
 
+def resolve_research_clusters(deep_contents, public_by_doi):
+    """Validate optional clusters against current public papers and accepted KFs."""
+    path = ROOT / "data" / "research_clusters.json"
+    if not path.is_file():
+        if any(content and content.get("research_cluster_id") for content in deep_contents.values()):
+            raise ValueError("Referenced research cluster file is missing.")
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("version") != 1 or not isinstance(data.get("clusters"), dict):
+        raise ValueError("Research clusters must use version 1 and a clusters object.")
+    content_by_doi = {
+        norm_doi(content["doi"]): content for content in deep_contents.values()
+        if content and content.get("version") == 2
+    }
+    referenced = set()
+    for cluster_id, cluster in data["clusters"].items():
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", cluster_id):
+            raise ValueError("Invalid research cluster ID.")
+        if set(cluster) != {"heading", "entity", "relationship_type", "synthesis", "boundaries", "members"}:
+            raise ValueError(f"Invalid research cluster fields: {cluster_id}.")
+        for field in ("heading", "entity", "relationship_type", "synthesis"):
+            required_text(cluster[field], f"{cluster_id}.{field}")
+        required_text_list(cluster["boundaries"], f"{cluster_id}.boundaries")
+        if not isinstance(cluster["members"], list) or len(cluster["members"]) < 2:
+            raise ValueError(f"{cluster_id} must have at least two members.")
+        resolved = []
+        for member in cluster["members"]:
+            fields = {"doi", "cell_context", "mechanistic_axis", "disease_context", "human_evidence", "causal_evidence", "preclinical_intervention", "clinical_boundary", "evidence_refs"}
+            if not isinstance(member, dict) or set(member) != fields:
+                raise ValueError(f"Invalid member fields in {cluster_id}.")
+            doi = norm_doi(member["doi"])
+            if doi != member["doi"] or doi not in content_by_doi or doi not in public_by_doi:
+                raise ValueError(f"Cluster member {doi} must be a canonical public Deep GEO V2 paper.")
+            content = content_by_doi[doi]
+            if content.get("research_cluster_id") != cluster_id:
+                raise ValueError(f"Cluster member {doi} does not reference {cluster_id}.")
+            for field in fields - {"doi", "evidence_refs"}:
+                required_text(member[field], f"{cluster_id}.{doi}.{field}")
+            refs = required_text_list(member["evidence_refs"], f"{cluster_id}.{doi}.evidence_refs")
+            finding_ids = {finding["id"] for finding in content["key_findings"]}
+            if not set(refs) <= finding_ids:
+                raise ValueError(f"Unknown evidence ref for cluster member {doi}.")
+            publication = public_by_doi[doi]
+            resolved.append({**member, "paper_url": publication["paper_url"], "title": publication["title"]})
+            referenced.add(doi)
+        if len({member["doi"] for member in resolved}) != len(resolved):
+            raise ValueError(f"Duplicate cluster member in {cluster_id}.")
+        for member in resolved:
+            content_by_doi[member["doi"]]["_research_cluster"] = {**cluster, "id": cluster_id, "members": resolved}
+    dangling = {doi for doi, content in content_by_doi.items() if content.get("research_cluster_id")} - referenced
+    if dangling:
+        raise ValueError(f"Unresolved research cluster member(s): {sorted(dangling)}")
+
+
+def with_research_cluster(content, public_by_doi):
+    """Resolve optional cluster links for a direct, standalone page render."""
+    cluster_id = content.get("research_cluster_id")
+    if not cluster_id or content.get("_research_cluster"):
+        return content
+    data = json.loads((ROOT / "data/research_clusters.json").read_text(encoding="utf-8"))
+    cluster = data["clusters"].get(cluster_id)
+    if cluster is None:
+        raise ValueError(f"Unknown research cluster: {cluster_id}.")
+    members = []
+    for member in cluster["members"]:
+        publication = (public_by_doi or {}).get(member["doi"])
+        if publication is None:
+            raise ValueError(f"Research cluster member is not public: {member['doi']}.")
+        paper_url = publication.get("paper_url") or absolute(
+            load_site_config()["site_url"], f"papers/{publication['slug']}.html"
+        )
+        members.append({**member, "paper_url": paper_url,
+                        "title": publication["title"]})
+    return {**content, "_research_cluster": {**cluster, "id": cluster_id,
+                                                "members": members}}
+
+
 def validate_citation_pilot(pilot, finding_ids, label):
     prefix = f"{label} citation_pilot"
     required = {"methodology_boundaries", "evidence_matrix", "selected_evidence_sources"}
@@ -1128,6 +1205,31 @@ def render_citation_layer_html(layer):
     )
 
 
+def render_research_cluster_html(cluster):
+    columns = ("cell_context", "mechanistic_axis", "human_evidence", "causal_evidence", "preclinical_intervention", "clinical_boundary")
+    rows = "".join(
+        '<tr><th scope="row"><a href="' + html.escape(member["paper_url"], quote=True)
+        + '">' + html.escape(member["title"]) + '</a><br><a href="'
+        + html.escape(doi_url(member["doi"]), quote=True) + '">'
+        + html.escape(member["doi"]) + '</a></th>'
+        + "".join(f'<td>{html.escape(member[key] + ("; " + member["disease_context"] if key == "cell_context" else ""))}</td>' for key in columns)
+        + '</tr>' for member in cluster["members"]
+    )
+    headers = "".join(f'<th scope="col">{html.escape(v2_label(key))}</th>' for key in columns)
+    boundaries = "".join(f'<li>{html.escape(item)}</li>' for item in cluster["boundaries"])
+    return (
+        '<section class="paper-geo-v2__section" id="research-cluster-'
+        + html.escape(cluster["id"], quote=True) + '"><h2>'
+        + html.escape(cluster["heading"]) + '</h2><p><strong>Shared entity: '
+        + html.escape(cluster["entity"]) + '</strong>; relationship: '
+        + html.escape(cluster["relationship_type"]) + '.</p><p>'
+        + html.escape(cluster["synthesis"]) + '</p><div class="paper-geo-v2__table-wrap">'
+        + '<table class="paper-geo-v2__table"><thead><tr><th scope="col">Paper</th>'
+        + headers + '</tr></thead><tbody>' + rows + '</tbody></table></div><ul>'
+        + boundaries + '</ul></section>'
+    )
+
+
 def render_deep_v2_html(content, related_papers):
     study = content["study_profile"]
     profile_type = study["profile_type"]
@@ -1331,6 +1433,10 @@ def render_deep_v2_html(content, related_papers):
         render_citation_layer_html(content["citation_layer"])
         if content.get("citation_layer") else ""
     )
+    cluster_html = (
+        render_research_cluster_html(content["_research_cluster"])
+        if content.get("_research_cluster") else ""
+    )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
 <section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
@@ -1338,7 +1444,7 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{'Review profile' if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{'What This Review Adds' if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
-<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}
+<section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}{cluster_html}
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>
@@ -1420,6 +1526,24 @@ def render_citation_layer_markdown(layer):
             "- Evidence refs: " + ", ".join(f"[{ref}](#{ref.lower()})" for ref in row["evidence_refs"]),
             "",
         ])
+    return parts
+
+
+def render_research_cluster_markdown(cluster):
+    parts = [
+        f'<a id="research-cluster-{cluster["id"]}"></a>',
+        f'## {cluster["heading"]}', "",
+        f'Shared entity: {cluster["entity"]}; relationship: {cluster["relationship_type"]}.', "",
+        cluster["synthesis"], "",
+        '| Paper | Cell context | Mechanistic axis | Human evidence | Causal evidence | Preclinical intervention | Clinical boundary |',
+        '| --- | --- | --- | --- | --- | --- | --- |',
+    ]
+    keys = ("cell_context", "mechanistic_axis", "human_evidence", "causal_evidence", "preclinical_intervention", "clinical_boundary")
+    for member in cluster["members"]:
+        paper = f'[{member["title"]}]({member["paper_url"]}) ([DOI]({doi_url(member["doi"])}))'
+        cells = [member[key] + ("; " + member["disease_context"] if key == "cell_context" else "") for key in keys]
+        parts.append('| ' + ' | '.join([markdown_cell(paper), *(markdown_cell(cell) for cell in cells)]) + ' |')
+    parts.extend(["", *[f'- {boundary}' for boundary in cluster["boundaries"]], ""])
     return parts
 
 
@@ -1584,6 +1708,8 @@ def render_deep_v2_markdown(content, related_papers):
         parts.extend(render_citation_pilot_markdown(content["citation_pilot"]))
     if content.get("citation_layer"):
         parts.extend(render_citation_layer_markdown(content["citation_layer"]))
+    if content.get("_research_cluster"):
+        parts.extend(render_research_cluster_markdown(content["_research_cluster"]))
     parts.extend(["## Q&A", ""])
     for item in content["qa"]:
         parts.extend([f"### {item['question']}", "", item["answer"], ""])
@@ -1692,6 +1818,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     related_papers = (
         resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
     )
+    if is_v2:
+        deep_content = with_research_cluster(deep_content, public_by_doi)
     deep_summary = str((deep_content or {}).get("summary") or "").strip()
     description = deep_summary or (
         f"Author-controlled academic record for {title}, published in {journal} ({year})."
@@ -1841,6 +1969,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     related_papers = (
         resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
     )
+    if is_v2:
+        deep_content = with_research_cluster(deep_content, public_by_doi)
     lines = [
         f"# {title}",
         "",
@@ -2165,6 +2295,7 @@ def build_site():
         for item in public_items
         if norm_doi(item.get("doi"))
     }
+    resolve_research_clusters(deep_contents, public_by_doi)
     citation_by_slug = {
         item["slug"]: citation_record(item, citation_metadata, config["site_url"])
         for item in public_items

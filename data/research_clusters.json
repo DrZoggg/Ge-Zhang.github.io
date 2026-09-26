@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "clusters": {
+    "kif13b-atherosclerosis": {
+      "heading": "KIF13B Atherosclerosis Evidence Network",
+      "entity": "KIF13B",
+      "relationship_type": "complementary cell-type-specific mechanisms",
+      "synthesis": "These studies provide complementary cell-type-specific experimental evidence for KIF13B in atherosclerosis, not independent replication of one identical mechanism.",
+      "boundaries": [
+        "Human plaque observations are associative, not proof that KIF13B manipulation improves human ASCVD outcomes.",
+        "Neither experimental compound is an established human atherosclerosis therapy."
+      ],
+      "members": [
+        {
+          "doi": "10.1093/eurheartj/ehaf523",
+          "cell_context": "macrophage / myeloid",
+          "mechanistic_axis": "KIF13B → ITCH / CBL-related post-translational regulation → MERTK → efferocytosis",
+          "disease_context": "experimental atherosclerosis",
+          "human_evidence": "Associative human arterial/plaque evidence only",
+          "causal_evidence": "Preclinical mouse/macrophage experiments",
+          "preclinical_intervention": "NX-1607 rescue in macrophages and mice",
+          "clinical_boundary": "The article calls NX-1607 a CBL inhibitor, while accepted evidence preserves CBL versus CBLB target-identity ambiguity; no human atherosclerosis treatment efficacy.",
+          "evidence_refs": ["KF1", "KF4", "KF5", "KF6", "KF7"]
+        },
+        {
+          "doi": "10.1172/jci194175",
+          "cell_context": "vascular smooth muscle cell",
+          "mechanistic_axis": "KIF13B → KCTD10-dependent KLF4 ubiquitination/proteasomal turnover → matrix/inflammatory VSMC state",
+          "disease_context": "experimental atherosclerosis / plaque stability",
+          "human_evidence": "Associative human plaque evidence only",
+          "causal_evidence": "Preclinical mouse/HASMC experiments",
+          "preclinical_intervention": "Kenpaullone rescue in cells and mice",
+          "clinical_boundary": "Kenpaullone is not established here as a KLF4-selective human therapeutic; no human treatment efficacy.",
+          "evidence_refs": ["KF1", "KF2", "KF3", "KF4", "KF5", "KF6", "KF7"]
+        }
+      ]
+    }
+  }
+}
