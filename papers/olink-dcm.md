@@ -64,6 +64,7 @@ This study used targeted plasma proteomics to identify DCM-HF-associated protein
 
 ## Key Findings
 
+<a id="kf1"></a>
 ### KF1: Targeted plasma proteomics identified a focused DCM-HF-associated protein signature.
 
 Context: Olink Cardiovascular III profiling in the 38-participant discovery cohort
@@ -80,6 +81,7 @@ Context: Olink Cardiovascular III profiling in the 38-participant discovery coho
 
 Source locator: Results 3.2: Identification of Cardiovascular-Related Biomarkers Using Olink; Fig. 1A-D; Fig. 2; Table S1
 
+<a id="kf2"></a>
 ### KF2: Five candidate plasma markers were prioritized from the differential-protein set for focused validation.
 
 Context: Candidate prioritization after Olink differential-abundance and bioinformatic analyses
@@ -92,6 +94,7 @@ Context: Candidate prioritization after Olink differential-abundance and bioinfo
 
 Source locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6: ELISA Validation of Differentially Expressed Proteins in DCM-HF Plasma
 
+<a id="kf3"></a>
 ### KF3: The five prioritized plasma markers showed directionally consistent replication with ELISA in an independent local cohort.
 
 Context: Independent plasma ELISA cohort using a second assay
@@ -107,6 +110,7 @@ Context: Independent plasma ELISA cohort using a second assay
 
 Source locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; Table S5
 
+<a id="kf4"></a>
 ### KF4: The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.
 
 Context: Cross-dataset ROC evaluation of cardiac gene-expression markers rather than independent plasma-protein measurements
@@ -121,6 +125,7 @@ Context: Cross-dataset ROC evaluation of cardiac gene-expression markers rather 
 
 Source locator: Methods 2.7-2.8; Results 3.6; Fig. 5A-C
 
+<a id="kf5"></a>
 ### KF5: The differential-protein profile was associated with clinical measures of heart-failure severity and systemic physiology.
 
 Context: Correlation analysis between DCM-HF-associated plasma proteins and clinical indicators
@@ -133,6 +138,7 @@ Context: Correlation analysis between DCM-HF-associated plasma proteins and clin
 
 Source locator: Results 3.5: Relationship between Differentially Expressed Proteins and DCM-HF; Table 2; Tables S2-S4; Fig. S3
 
+<a id="kf6"></a>
 ### KF6: Functional-enrichment and protein-interaction analyses placed the DCM-HF-associated protein set within inflammatory, remodeling, adhesion, fibrinolytic, and related biological programs.
 
 Context: Computational biological interpretation of the 13-protein differential-abundance set
@@ -201,6 +207,112 @@ Source locator: Results 3.3: GO Enrichment Analysis of Target Genes of DCM-HF DE
 - GO/KEGG, STRING, Cytoscape and related analyses are computational and do not establish causal mechanisms or therapeutic efficacy.
 - The article reports ChiCTR2100051469, but publicly indexed registry information for that identifier appears to correspond to a different study; the linkage to this DCM-HF proteomics study is therefore unresolved.
 - Although the Introduction refers to human plasma and mouse models, the study Methods and Results do not describe an original animal experiment; mouse evidence discussed in the article derives from cited prior studies.
+
+<a id="citation-use-cases"></a>
+## When This Study Is Useful to Cite
+
+### CU1: What targeted plasma proteomics evidence identifies candidate biomarkers for DCM-HF?
+
+A targeted Olink cardiovascular panel identified a DCM-HF-associated differential-protein set and prioritized five candidate plasma markers; this is not an unbiased whole-proteome discovery.
+
+Evidence: [KF1](#kf1), [KF2](#kf2)
+
+### CU2: Were the prioritized DCM-HF plasma proteins replicated using an independent assay and cohort?
+
+The five prioritized plasma markers showed directionally consistent replication by ELISA in an independent local plasma cohort.
+
+Evidence: [KF3](#kf3)
+
+### CU3: How did the five-marker panel perform across external human cardiac transcriptomic datasets?
+
+Five corresponding gene-expression markers discriminated cases in three external human cardiac transcriptomic datasets; these are not independent plasma-proteomic replications.
+
+Evidence: [KF4](#kf4)
+
+### CU4: Which clinical measures were associated with the DCM-HF protein profile?
+
+The differential-protein profile was correlated with clinical measures of heart-failure severity and systemic physiology; correlations are not causal or prospective prediction.
+
+Evidence: [KF5](#kf5)
+
+### CU5: What biological pathways and interaction networks were associated with the DCM-HF differential-protein set?
+
+Functional enrichment and protein-interaction analysis associated the differential proteins with inflammatory, remodeling, adhesion, fibrinolytic and related programs; these are computational associations.
+
+Evidence: [KF6](#kf6)
+
+<a id="citation-boundaries"></a>
+## What This Study Should Not Be Cited to Claim
+
+- A targeted 92-protein panel is not an unbiased whole-proteome survey.
+- Candidate plasma biomarkers are not clinically validated diagnostic tests.
+- ELISA replication is independent plasma-protein evidence, distinct from external GEO transcriptomic evaluation.
+- Retrospective ROC discrimination is not prospective incident prediction.
+- Correlation, enrichment and protein-interaction networks do not establish causal mechanism.
+- No validated therapeutic target or treatment efficacy was established.
+
+<a id="evidence-matrix"></a>
+## Evidence Matrix
+
+<a id="evidence-olink-dcm-1"></a>
+### KF1: Targeted plasma proteomics identified a focused DCM-HF-associated protein signature.
+
+- Context: Olink Cardiovascular III profiling in the 38-participant discovery cohort
+- Finding: Targeted plasma proteomics identified a focused DCM-HF-associated protein signature. discovery cohort: 20 DCM-HF and 18 healthy controls; proteins profiled: 92; overall abundance direction: 75 higher and 17 lower in DCM-HF; proteins at p<0.05: 33; focused DEP set: 13 proteins; all higher in DCM-HF; focused DEP significance: P<0.001 in Results; remained significant after FDR correction; Fig. 1D display threshold: absolute logFC >0.5 and p<0.05.
+- Evidence Level: Targeted plasma proteomics
+- Scope: Olink Cardiovascular III profiling in the 38-participant discovery cohort
+- Source Locator: Results 3.2: Identification of Cardiovascular-Related Biomarkers Using Olink; Fig. 1A-D; Fig. 2; Table S1
+- Evidence refs: [KF1](#kf1)
+
+<a id="evidence-olink-dcm-2"></a>
+### KF2: Five candidate plasma markers were prioritized from the differential-protein set for focused validation.
+
+- Context: Candidate prioritization after Olink differential-abundance and bioinformatic analyses
+- Finding: Five candidate plasma markers were prioritized from the differential-protein set for focused validation. prioritized markers: SPP1, IGFBP7, F11R, CHI3L1 and PLAUR; Methods selection description: DEPs with at least 1.3-fold change and pivotal roles in KEGG pathways; Results selection description: selected based on the highest fold changes and bioinformatics analysis.
+- Evidence Level: Candidate biomarker prioritization
+- Scope: Candidate prioritization after Olink differential-abundance and bioinformatic analyses
+- Source Locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6: ELISA Validation of Differentially Expressed Proteins in DCM-HF Plasma
+- Evidence refs: [KF2](#kf2)
+
+<a id="evidence-olink-dcm-3"></a>
+### KF3: The five prioritized plasma markers showed directionally consistent replication with ELISA in an independent local cohort.
+
+- Context: Independent plasma ELISA cohort using a second assay
+- Finding: The five prioritized plasma markers showed directionally consistent replication with ELISA in an independent local cohort. ELISA cohort: 65 participants; DCM-HF: 30; healthy controls: 35; markers: SPP1, IGFBP7, F11R, CHI3L1 and PLAUR; direction: all five higher in DCM-HF; reported group-comparison significance: P<0.001.
+- Evidence Level: Independent plasma ELISA replication
+- Scope: Independent plasma ELISA cohort using a second assay
+- Source Locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; Table S5
+- Evidence refs: [KF3](#kf3)
+
+<a id="evidence-olink-dcm-4"></a>
+### KF4: The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.
+
+- Context: Cross-dataset ROC evaluation of cardiac gene-expression markers rather than independent plasma-protein measurements
+- Finding: The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets. GSE116250 combined AUC: 0.959; 95% CI 0.905-0.996; GSE141910 combined AUC: 0.773; 95% CI 0.719-0.820; GSE165303 combined AUC: 0.803; 95% CI 0.706-0.888; external modality: human cardiac transcriptomics; interpretation boundary: diagnostic discrimination in existing datasets, not prospective incident-DCM prediction.
+- Evidence Level: External retrospective cardiac transcriptomic evaluation
+- Scope: Cross-dataset ROC evaluation of cardiac gene-expression markers rather than independent plasma-protein measurements
+- Source Locator: Methods 2.7-2.8; Results 3.6; Fig. 5A-C
+- Evidence refs: [KF4](#kf4)
+
+<a id="evidence-olink-dcm-5"></a>
+### KF5: The differential-protein profile was associated with clinical measures of heart-failure severity and systemic physiology.
+
+- Context: Correlation analysis between DCM-HF-associated plasma proteins and clinical indicators
+- Finding: The differential-protein profile was associated with clinical measures of heart-failure severity and systemic physiology. reported positive associations: included CRP, LDL-C and NT-proBNP; reported negative associations: included albumin, eGFR and LVEF; correlation-screening threshold: r = 0.3 and p<0.05.
+- Evidence Level: Clinical correlation analysis
+- Scope: Correlation analysis between DCM-HF-associated plasma proteins and clinical indicators
+- Source Locator: Results 3.5: Relationship between Differentially Expressed Proteins and DCM-HF; Table 2; Tables S2-S4; Fig. S3
+- Evidence refs: [KF5](#kf5)
+
+<a id="evidence-olink-dcm-6"></a>
+### KF6: Functional-enrichment and protein-interaction analyses placed the DCM-HF-associated protein set within inflammatory, remodeling, adhesion, fibrinolytic, and related biological programs.
+
+- Context: Computational biological interpretation of the 13-protein differential-abundance set
+- Finding: Functional-enrichment and protein-interaction analyses placed the DCM-HF-associated protein set within inflammatory, remodeling, adhesion, fibrinolytic, and related biological programs. GO interpretation: biological regulation, cell migration/proliferation, platelet aggregation and multicellular regulation among reported processes; PPI network: 12 of 13 target proteins retained after isolated targets were excluded; STRING confidence cutoff: 900; interconnected candidates: included SPP1, PLAUR, F11R, CHI3L1, CCL15, CCL2 and CDH5; evidence scope: computational association and hypothesis generation, not mechanistic confirmation.
+- Evidence Level: Computational enrichment and interaction analysis
+- Scope: Computational biological interpretation of the 13-protein differential-abundance set
+- Source Locator: Results 3.3: GO Enrichment Analysis of Target Genes of DCM-HF DEPs; Results 3.4: Protein-Protein Interaction Network Analysis of DEPs in DCM-HF; Fig. 3A-E; Fig. S2
+- Evidence refs: [KF6](#kf6)
 
 ## Q&A
 
