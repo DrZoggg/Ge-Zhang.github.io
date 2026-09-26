@@ -490,5 +490,135 @@
     "score_gene_set_note": "The manuscript distinguishes a 906-gene colon circadian reference from a 559-gene CTD network signature. In the reviewed Methods text, the ClockProCRC scoring procedure is described using circadian rhythm disorder genes (CRGs); it does not explicitly state that the 559 CTD genes are the final scoring input. These gene-set roles are therefore kept separate.",
     "locator_note": "Where Results prose and figure legends disagree on panel labels or assay wording, the evidence page uses the experimental Methods plus the figure legend to define the assay and cites the broader Results/Figure block rather than propagating an ambiguous panel reference."
   },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How can transcriptomic data be used to quantify endogenous circadian misalignment in colorectal cancer?",
+        "supported_scope": "ClockProCRC uses expression-matched background correction with 100 expression bins and 1,000 random samplings to quantify transcriptomic circadian dysregulation.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What multicohort and single-cell evidence links circadian misalignment with colorectal-cancer progression?",
+        "supported_scope": "The study integrates a primary 25-sample / 94,683-cell single-cell cohort with multiple public cohorts and reports associations between higher ClockProCRC values and CRC progression-related states.",
+        "evidence_refs": [
+          "KF1",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Was ClockProCRC evaluated across independent circadian perturbation datasets and species?",
+        "supported_scope": "The article reports evaluation across 16 independent public datasets spanning human, mouse and non-human-primate circadian contexts.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which candidate regulator of circadian dysregulation in CRC was prioritized and functionally tested?",
+        "supported_scope": "Gene-regulatory-network analyses prioritized the NFATC2-SYNE1 axis, and SYNE1 perturbation was functionally examined in HCT116 and SW480 cells.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "How are ClockProCRC-defined circadian states related to colorectal-cancer tumor-microenvironment composition and signaling?",
+        "supported_scope": "Single-cell analyses associated ClockProCRC states with differing epithelial, plasma-cell, fibroblast, endothelial and intercellular communication patterns.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Prospective clinical diagnostic utility of ClockProCRC.",
+      "Prospective prognostic utility.",
+      "Circadian misalignment has been proven to cause human CRC.",
+      "Human therapeutic efficacy of targeting SYNE1.",
+      "Clinical efficacy of melatonin therapy.",
+      "Direct equivalence of mouse Zeitgeber time to human dosing time.",
+      "The article-reported 3,758 samples represent 3,758 unique human participants."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-clockprocrc-derivation",
+        "component": "Circadian framework derivation",
+        "context": "GSE10644-derived circadian reference mapped into the GSE166555 CRC single-cell cohort, followed by KNN meta-cell aggregation and high-dimensional co-expression analysis",
+        "finding": "A CRC-focused circadian transcriptional architecture was derived from a 906-gene colon circadian reference and a 94,683-cell single-cell framework. primary tissue samples: 13 CRC and 12 normal mucosal samples; post-QC cells: 94,683; cellular structure: 19 clusters; 9 major cell types; initial circadian reference: 906 genes; FDR <0.01 and R² ≥0.7 in the source temporal analysis; meta-cell sparsity setting: K=50 gave the reported optimal sparsity reduction; co-expression modules: 9; selected CRC-associated modules: M1, M3, M4 and M6; CTD signature: 559 genes across the four selected modules.",
+        "evidence_level": "Public single-cell / systems-biology derivation",
+        "scope": "Cell counts are not participant counts.",
+        "source_locator": "Results: single-cell CRC landscape and high-dimensional circadian co-expression network, Fig. 1A-I and Supplementary Fig. 2; Methods: Single-cell RNA sequencing, Bulk RNA sequencing, and microarray chip cohort processing; Expression of the circadian gene set in the colorectum; High-dimensional co-expression network analysis; Supplementary Tables 2-3",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-score-construction",
+        "component": "ClockProCRC scoring and circadian robustness",
+        "context": "ClockProCRC development and cross-species circadian robustness evaluation",
+        "finding": "ClockProCRC used expression-matched random-background correction and tracked circadian perturbation across multiple independent human and animal datasets. expression stratification: 100 expression bins; random-background sampling: 1,000 iterations with expression-matched feature selection; single-cell CRD grouping: 75th-percentile cutoff; bulk-RNA grouping: cohort median commonly used; article-reported robustness datasets: 16 independent public datasets; cross-species phase alignment: mouse Zeitgeber time shifted by 12 h before alignment with human/primate rhythms; interpretation: higher ClockProCRC values represented greater endogenous circadian dysregulation in the article's framework; score gene-set scope: The scoring Methods refers to circadian rhythm disorder genes (CRGs). The evidence page does not assume that the separate 559-gene CTD network signature is identical to the final ClockProCRC score input..",
+        "evidence_level": "Computational scoring and cross-species public-dataset evaluation",
+        "scope": "Circadian perturbation robustness, not human dosing-time equivalence.",
+        "source_locator": "Results: ClockProCRC score detection and quantification of endogenous circadian disorder states, Fig. 2B-I and Supplementary Fig. 3A; Methods: Development of ClockProCRC scoring system; Detection of the biological clock rhythm of the ClockProCRC score; Assessment of Cross-species Rhythmic Module Concordance",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-clinical-association",
+        "component": "Clinical/progression association",
+        "context": "Clinical-association and cross-cohort evaluation of ClockProCRC",
+        "finding": "Higher ClockProCRC values were associated with CRC progression-related states and poorer survival in the analyzed retrospective/public cohorts. survival cohort: GSE17537, n=55; survival association: higher ClockProCRC associated with lower overall-survival probability; log-rank P<0.01; RCS reference: ClockProCRC 0.0197 corresponded to ln(HR)=0 / HR=1 in the displayed spline model; progression trajectory: scores increased across normal mucosa → adenoma/polyp → high/severe dysplasia → CRC → colorectal liver metastasis; GSE68468 progression comparison: P<0.0001; multi-cohort robustness: >1,400 CRC samples across 10 independent cohorts.",
+        "evidence_level": "Retrospective/public cohort association",
+        "scope": "Association is not prospective clinical utility.",
+        "source_locator": "Results: Analysis of clinical significance of ClockProCRC score, Fig. 3A-I; Methods: Analysis of the evaluation and clinical correlation of circadian rhythm disorder scores",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-single-cell-state",
+        "component": "Tumor-microenvironment state",
+        "context": "Single-cell analysis in GSE200997 and GSE196964 using ClockProCRC state assignment, Ro/e enrichment and NICHES signaling analysis",
+        "finding": "ClockProCRC-defined circadian states were associated with distinct single-cell composition and intercellular-communication patterns in CRC. single-cell evaluation cohorts: GSE200997 and GSE196964; intensified-CRD enrichment pattern: epithelial and plasma-cell populations were preferentially enriched in higher-disruption states; more stable-rhythm pattern: fibroblast and endothelial populations were preferentially enriched in lower-disruption/stable states; communication pattern: higher-disruption states showed stronger epithelial/plasma interaction weights and altered pathway-level cell-cell signaling; pathway pattern: progression from alleviate to intensify states was associated with reduced apoptotic-pathway activity and increased pro-inflammatory communication.",
+        "evidence_level": "Single-cell association",
+        "scope": "Single-cell state association, not a causal human mechanism.",
+        "source_locator": "Results: Dissecting the circadian rhythm disorder of colorectal cancer from single-cell resolution, Fig. 4A-G and Supplementary Fig. 3C-E; Methods: Single-cell RNA data analysis; NICHES ligand-receptor signaling analysis",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-syne1-network",
+        "component": "NFATC2-SYNE1 regulatory prioritization",
+        "context": "Dysregsig-based gene-regulatory-network analysis of CTD genes followed by cross-dataset SYNE1 contextualization",
+        "finding": "Gene-regulatory-network analysis prioritized SYNE1 within a CRC-associated circadian dysregulation axis, with NFATC2-SYNE1 regulation differing between CRC and normal mucosa. genetic-algorithm iterations: 100; recurrent regulatory axes: 61; NFATC2→SYNE1 regulatory strength in CRC: 0.607; 95% CI 0.412-0.802; NFATC2→SYNE1 regulatory strength in normal mucosa: -0.102; 95% CI -0.058-0.262; circadian context: SYNE1 showed time-dependent or perturbation-associated expression changes across independent circadian datasets including GSE43073, GSE35026, GSE56931 and GSE30411; metastasis-associated expression: SYNE1 expression was higher in colorectal liver metastasis than primary CRC in the reported analyses (Wilcoxon P=0.035 and P=0.048).",
+        "evidence_level": "Computational regulatory-network inference plus cross-dataset context",
+        "scope": "Does not establish a human therapeutic target.",
+        "source_locator": "Results: Key circadian and night regulatory genes screening and their effects on circadian rhythm disorder in colorectal cancer, Fig. 5A-G and Supplementary Figs. 3F, 4A-E, 5F-G; Methods: Construction of the circadian rhythm gene regulation network (GRN)",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-syne1-functional",
+        "component": "SYNE1/CLOCK functional perturbation",
+        "context": "HCT116 and SW480 CRC-cell experiments using SYNE1 or CLOCK siRNA, cell-line RNA sequencing, qRT-PCR, functional assays and melatonin rescue conditions",
+        "finding": "SYNE1 and CLOCK perturbation experiments linked the computational circadian state to CRC-cell migration, invasion, proliferation-associated phenotypes and epithelial/mesenchymal marker changes. cell models: HCT116 and SW480; SYNE1 perturbation: two specific siRNAs were used for knockdown; Transwell result: SYNE1 knockdown reduced migration and invasion; 3 independent biological replicates with 4 random microscopic fields averaged per experiment; wound-healing result: SYNE1 knockdown reduced migration; colony-formation result: SYNE1 knockdown reduced colony formation in both cell lines; epithelial/mesenchymal markers: E-cadherin and ZO-1 increased, while N-cadherin decreased after SYNE1 knockdown; CLOCK perturbation: CLOCK knockdown increased ClockProCRC; melatonin treatment partially restored the molecular state; SYNE1 rhythmicity: si-NC P=2.5×10^-4; si-CLOCK P=0.0704; si-CLOCK+melatonin P=3.4×10^-3; SYNE1 ROC scope: AUC=0.915 for discriminating CLOCK-knockdown experimental conditions, not for diagnosing CRC in patients; melatonin condition: 0.1 mM for 24 h before RNA collection in the cell experiment.",
+        "evidence_level": "In-vitro functional evidence",
+        "scope": "No in-vivo or human treatment-efficacy conclusion.",
+        "source_locator": "Results: SYNE1 functional and circadian-perturbation experiments, Fig. 6A-N and related supplementary figures; Methods: Cell lines; Cell transfection with siRNA and plasmids; Bulk RNA-seq; qRT-PCR; Transwell assay and scratch assay; Western blot analysis; Cell cloning formation experiment",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  },
   "evidence_page_notice": "Author-controlled evidence summary based on the publisher article and revised accepted manuscript. It does not replace the publisher version. Springer Nature currently labels the article as an early peer-reviewed version subject to further editing; this evidence page should be rechecked against the final Version of Record when it becomes available."
 }
