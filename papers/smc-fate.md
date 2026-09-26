@@ -88,6 +88,7 @@ This study integrated human coronary-plaque single-cell RNA sequencing with mult
 
 ## Key Findings
 
+<a id="kf1"></a>
 ### KF1: Human atherosclerotic plaques showed substantial vascular smooth muscle cell transcriptional heterogeneity.
 
 Context: Single-cell profiling of diseased right-coronary-artery segments from four human donors
@@ -102,6 +103,7 @@ Context: Single-cell profiling of diseased right-coronary-artery segments from f
 
 Source locator: Results: The landscapes of human atherosclerotic plaques revealed by scRNA-seq analysis, Fig. 2A; Results: SMC lineages' phenotypic and functional heterogeneity, Fig. 3A-E
 
+<a id="kf2"></a>
 ### KF2: Pseudotime analysis organized plaque SMCs into a structured differentiation trajectory with distinct early, intermediate, and terminal state distributions.
 
 Context: Monocle2 reconstruction of SMC state relationships
@@ -117,6 +119,7 @@ Context: Monocle2 reconstruction of SMC state relationships
 
 Source locator: Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4A-C
 
+<a id="kf3"></a>
 ### KF3: SMC state-associated genes were distilled into the SMC cell fate decision signature (SCFDS).
 
 Context: Integration of trajectory-ordering genes, state-associated genes, variable SMC genes, and temporal expression modules
@@ -131,6 +134,7 @@ Context: Integration of trajectory-ordering genes, state-associated genes, varia
 
 Source locator: Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4D-H; Additional file 3: Table S1; Additional file 4: Table S2
 
+<a id="kf4"></a>
 ### KF4: SCFDS-based analysis separated atherosclerosis into three molecular subtypes with distinct biology and different coronary stenosis patterns.
 
 Context: Consensus molecular subtyping in the discovery bulk transcriptomic cohort
@@ -145,6 +149,7 @@ Context: Consensus molecular subtyping in the discovery bulk transcriptomic coho
 
 Source locator: Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5A-I; coronary stenosis comparison in Fig. 5E
 
+<a id="kf5"></a>
 ### KF5: The three-subtype expression taxonomy was reproduced across five independent retrospective external transcriptomic cohorts using nearest-template prediction.
 
 Context: Cross-cohort evaluation of subtype-specific expression templates
@@ -158,6 +163,7 @@ Context: Cross-cohort evaluation of subtype-specific expression templates
 
 Source locator: Results: Performance of SCFDS subtypes verified by nearest template prediction, Fig. 6B-C
 
+<a id="kf6"></a>
 ### KF6: The three SCFDS subtypes were associated with distinct molecular and plaque-microenvironment programs.
 
 Context: Pathway enrichment and inferred cell-landscape analyses
@@ -221,6 +227,118 @@ Source locator: Results: The molecular subtyping of atherosclerosis based on cel
 - NTP validation demonstrates retrospective expression-template reproducibility rather than prospective diagnostic, prognostic or treatment-predictive performance.
 - Pathway enrichment, xCell and related computational inference generate biological hypotheses but do not establish causal mechanisms.
 - The article contains inconsistencies in sample/cohort enumeration and one external-cohort accession identifier; counts and dataset provenance should therefore be preserved explicitly rather than silently reconciled.
+
+<a id="citation-use-cases"></a>
+## When This Study Is Useful to Cite
+
+### CU1: What single-cell evidence demonstrates VSMC heterogeneity in human atherosclerotic plaque?
+
+Single-cell profiling of diseased human coronary segments identified diverse VSMC transcriptional states; computational clusters are not fixed clinical lineages.
+
+Evidence: [KF1](#kf1)
+
+### CU2: How were vascular smooth-muscle-cell state transitions reconstructed in atherosclerosis?
+
+Monocle2 pseudotime organized SMC states into an inferred differentiation trajectory; it was not a longitudinal observation of individual cells changing state.
+
+Evidence: [KF2](#kf2)
+
+### CU3: How was the SMC cell fate decision signature, SCFDS, derived?
+
+The SCFDS integrated accepted trajectory-ordering, state-associated and variable SMC genes with temporal expression modules; signature genes are not all causal regulators.
+
+Evidence: [KF3](#kf3)
+
+### CU4: Can SMC fate-associated transcription define molecular subtypes of atherosclerosis?
+
+SCFDS-based consensus analysis separated the discovery cohort into three molecular subtypes with biological and coronary-stenosis associations, not prospectively validated clinical classes.
+
+Evidence: [KF4](#kf4)
+
+### CU5: Were SCFDS subtype templates reproduced across independent transcriptomic cohorts?
+
+Nearest-template prediction reproduced expression subtype templates across five independent retrospective transcriptomic cohorts, not prospective multicenter validation.
+
+Evidence: [KF5](#kf5)
+
+### CU6: What biological programs distinguish the SCFDS molecular subtypes?
+
+Pathway enrichment and inferred cell-landscape analyses associated the three subtypes with distinct biological and plaque-microenvironment programs.
+
+Evidence: [KF6](#kf6)
+
+<a id="citation-boundaries"></a>
+## What This Study Should Not Be Cited to Claim
+
+- Pseudotime is not direct longitudinal observation of one cell changing state.
+- Computational clusters do not establish fixed clinical cell lineages.
+- The 1,072 SCFDS genes are not all proven causal regulators.
+- C1/C2/C3 are not prospectively validated clinical classes; stenosis associations are not causal.
+- Nearest-template reproducibility is not prospective multicenter validation.
+- SCFDS-guided treatment benefit is not established.
+
+<a id="evidence-matrix"></a>
+## Evidence Matrix
+
+<a id="evidence-smc-fate-1"></a>
+### KF1: Human atherosclerotic plaques showed substantial vascular smooth muscle cell transcriptional heterogeneity.
+
+- Context: Single-cell profiling of diseased right-coronary-artery segments from four human donors
+- Finding: Human atherosclerotic plaques showed substantial vascular smooth muscle cell transcriptional heterogeneity. single-cell donors: 4; post-QC plaque cells: 11,756; major plaque cell populations: 8; SMCs analyzed: 5,419; SMC clusters: 9.
+- Evidence Level: Human plaque single-cell observation
+- Scope: Single-cell profiling of diseased right-coronary-artery segments from four human donors
+- Source Locator: Results: The landscapes of human atherosclerotic plaques revealed by scRNA-seq analysis, Fig. 2A; Results: SMC lineages' phenotypic and functional heterogeneity, Fig. 3A-E
+- Evidence refs: [KF1](#kf1)
+
+<a id="evidence-smc-fate-2"></a>
+### KF2: Pseudotime analysis organized plaque SMCs into a structured differentiation trajectory with distinct early, intermediate, and terminal state distributions.
+
+- Context: Monocle2 reconstruction of SMC state relationships
+- Finding: Pseudotime analysis organized plaque SMCs into a structured differentiation trajectory with distinct early, intermediate, and terminal state distributions. pseudotime states: 5; trajectory structure: five cellular states separated at two key time points; early-state enrichment: SMC4 and SMC6; intermediate high-plasticity enrichment: SMC2, SMC5 and SMC7; terminal-state enrichment: SMC1, SMC8 and SMC9; phenotypic trend: contractile-like features declined; fibroblast-like markers increased through the middle-to-late trajectory before decreasing at the terminal end.
+- Evidence Level: Computational pseudotime inference
+- Scope: Monocle2 reconstruction of SMC state relationships
+- Source Locator: Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4A-C
+- Evidence refs: [KF2](#kf2)
+
+<a id="evidence-smc-fate-3"></a>
+### KF3: SMC state-associated genes were distilled into the SMC cell fate decision signature (SCFDS).
+
+- Context: Integration of trajectory-ordering genes, state-associated genes, variable SMC genes, and temporal expression modules
+- Finding: SMC state-associated genes were distilled into the SMC cell fate decision signature (SCFDS). SMC cell-fate leader genes: 1,072; Mfuzz temporal modules: 8; SCFDS modules: Cluster 2 and Cluster 6, representing progressively upregulated and downregulated programs; upregulated SCFDS programs: extracellular matrix, inflammatory response and TGF-beta-related processes; downregulated SCFDS programs: vasculature development and AGE-RAGE-related processes.
+- Evidence Level: Signature derivation from transcriptomic data
+- Scope: Integration of trajectory-ordering genes, state-associated genes, variable SMC genes, and temporal expression modules
+- Source Locator: Results: Trajectory reconstruction revealed SMC cell fate decisions, Fig. 4D-H; Additional file 3: Table S1; Additional file 4: Table S2
+- Evidence refs: [KF3](#kf3)
+
+<a id="evidence-smc-fate-4"></a>
+### KF4: SCFDS-based analysis separated atherosclerosis into three molecular subtypes with distinct biology and different coronary stenosis patterns.
+
+- Context: Consensus molecular subtyping in the discovery bulk transcriptomic cohort
+- Finding: SCFDS-based analysis separated atherosclerosis into three molecular subtypes with distinct biology and different coronary stenosis patterns. optimal subtype number: 3; C1: DNA-damage repair type; C2: immune-activated type; C3: stromal-rich type; coronary stenosis association: C2 showed greater stenosis severity and C3 lower severity; p<0.05 in the discovery analysis.
+- Evidence Level: Retrospective molecular subtyping
+- Scope: Consensus molecular subtyping in the discovery bulk transcriptomic cohort
+- Source Locator: Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5A-I; coronary stenosis comparison in Fig. 5E
+- Evidence refs: [KF4](#kf4)
+
+<a id="evidence-smc-fate-5"></a>
+### KF5: The three-subtype expression taxonomy was reproduced across five independent retrospective external transcriptomic cohorts using nearest-template prediction.
+
+- Context: Cross-cohort evaluation of subtype-specific expression templates
+- Finding: The three-subtype expression taxonomy was reproduced across five independent retrospective external transcriptomic cohorts using nearest-template prediction. template construction: top 300 subtype-specific upregulated genes per subtype; external cohorts: 5; datasets shown in Fig. 6: GSE20681, GSE21545, GSE59867, GSE62646 and GSE90074; validation type: retrospective expression-template reproducibility across distinct platforms.
+- Evidence Level: Retrospective external transcriptomic replication
+- Scope: Cross-cohort evaluation of subtype-specific expression templates
+- Source Locator: Results: Performance of SCFDS subtypes verified by nearest template prediction, Fig. 6B-C
+- Evidence refs: [KF5](#kf5)
+
+<a id="evidence-smc-fate-6"></a>
+### KF6: The three SCFDS subtypes were associated with distinct molecular and plaque-microenvironment programs.
+
+- Context: Pathway enrichment and inferred cell-landscape analyses
+- Finding: The three SCFDS subtypes were associated with distinct molecular and plaque-microenvironment programs. C1 programs: base-excision repair, DNA replication, nucleotide-excision repair and oxidative phosphorylation; C2 programs: stronger immune and inflammatory activation with a more complex inflammatory lesion environment; C3 programs: stromal/ECM metabolism, greater fibrous content and a relatively immune-suppressed microenvironment.
+- Evidence Level: Computational pathway and cell-landscape association
+- Scope: Pathway enrichment and inferred cell-landscape analyses
+- Source Locator: Results: The molecular subtyping of atherosclerosis based on cell fate decision signature, Fig. 5G-I; Results: Assessment of multi-dimensional potential biological implications, Fig. 7A-G
+- Evidence refs: [KF6](#kf6)
 
 ## Q&A
 

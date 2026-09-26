@@ -17,6 +17,7 @@ TARGETS = {
     "doi-10-1093-eurheartj-ehaf523": ("doi-10-1093-eurheartj-ehaf523.json", 5, 7, 7),
     "doi-10-1172-jci194175": ("doi-10-1172-jci194175.json", 5, 7, 7),
     "olink-dcm": ("olink-dcm.json", 5, 6, 6),
+    "smc-fate": ("smc-fate.json", 6, 6, 6),
 }
 
 
