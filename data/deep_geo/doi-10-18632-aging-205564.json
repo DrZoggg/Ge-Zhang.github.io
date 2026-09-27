@@ -1,0 +1,423 @@
+{
+  "doi": "10.18632/aging.205564",
+  "summary": "A retrospective human-expression study developed a UC-versus-control classifier, evaluated it across external bulk datasets and added a separate UCRScore interpretation layer. Classification is not future-onset prediction; the reported single-cell extension has an unresolved accession-provenance mismatch.",
+  "research_question": "How were a gene-expression classifier and a separate interpretability score developed for ulcerative colitis, and which findings are supported by external bulk datasets versus unresolved source provenance?",
+  "author_summary": "This research study developed a human gene-expression classifier for UC-versus-control discrimination, evaluated it across external bulk-expression datasets and introduced a separate UCRScore interpretation layer. Case–control classification is not prediction of future disease onset or prospective clinical utility. The reported single-cell extension has an accession-provenance mismatch that remains unresolved in the source review; it is not included as independently verified single-cell validation.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "external_validation": true,
+    "study_design": "Retrospective public-expression analysis with external dataset evaluation",
+    "evidence_type": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+    "population": "Human UC/control bulk-expression samples; the article's single-cell extension is separately qualified",
+    "primary_endpoint": "UC-versus-control expression classification",
+    "secondary_endpoint": "Score-associated biological patterns and computational hypotheses",
+    "data_modalities": [
+      "bulk expression",
+      "machine learning",
+      "PCoA-based interpretation",
+      "network and signature-matching analysis",
+      "article-reported single-cell analysis with unresolved accession provenance"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Article-reported human expression scale",
+        "value": "606 expression samples from 10 datasets; not participant-level deduplicated unique individuals"
+      },
+      {
+        "label": "GSE87466 model-construction meta-cohort",
+        "value": "21 control and 87 UC expression samples"
+      },
+      {
+        "label": "External classifier datasets",
+        "value": "5 human bulk-expression datasets"
+      },
+      {
+        "label": "Single-cell extension",
+        "value": "Article-reported; source provenance unresolved; not included in a verified human sample total"
+      }
+    ],
+    "counting_note": "The reported 606 expression samples are not 606 independently deduplicated participants across datasets. External evaluation refers only to the five human bulk-expression classifier datasets, not prospective clinical validation or resolved single-cell provenance. The single-cell extension is separately article-reported, and its cells or samples are not added to a verified human total."
+  },
+  "key_findings": [
+    {
+      "claim": "The article reported 606 human expression samples from 10 datasets; GSE87466 was the model-construction meta-cohort with 87 UC and 21 control expression samples and a random 7:3 split.",
+      "context": "Expression-sample counts are not a cross-cohort total of unique patients. Exact training/testing counts are not inferred from the split, and case–control classification is not prediction of future disease onset.",
+      "source_locator": "Materials and Methods: Data acquisition and collection; UCRGs generated from interactive learning",
+      "evidence": [
+        {
+          "label": "article reported expression samples",
+          "value": "606"
+        },
+        {
+          "label": "datasets",
+          "value": "10"
+        },
+        {
+          "label": "model construction meta cohort",
+          "value": "GSE87466"
+        },
+        {
+          "label": "UC expression samples",
+          "value": "87"
+        },
+        {
+          "label": "control expression samples",
+          "value": "21"
+        },
+        {
+          "label": "random split",
+          "value": "7:3; exact training/testing counts not inferred"
+        }
+      ],
+      "id": "KF1"
+    },
+    {
+      "claim": "The study considered 746 candidate genes and eight learners, applied RF-RFE and named a final 12-gene UCRG panel for a backpropagation neural-network classifier.",
+      "context": "The Fig. 3E legend separately states that error was minimized with 14 variables. That statement does not silently replace the named final 12-gene panel with a 14-gene model, and the panel is not proof that all 12 genes are causal drivers.",
+      "source_locator": "Results: Machine learning-based diagnostic models and generated UCRGs; Fig. 3D-E",
+      "evidence": [
+        {
+          "label": "candidate genes",
+          "value": "746"
+        },
+        {
+          "label": "learners",
+          "value": "8"
+        },
+        {
+          "label": "feature selection",
+          "value": "RF-RFE"
+        },
+        {
+          "label": "named final UCRG panel",
+          "value": "12 genes"
+        },
+        {
+          "label": "Fig 3E legend",
+          "value": "Minimum error at 14 variables; distinct from the named final panel"
+        },
+        {
+          "label": "final classifier",
+          "value": "Backpropagation neural network"
+        }
+      ],
+      "id": "KF2"
+    },
+    {
+      "claim": "Results reported external UC-versus-control AUCs of 0.930 for GSE47908, 0.942 for GSE59071, 0.934 for GSE75214, 0.988 for GSE92415 and 1.000 for GSE14580.",
+      "context": "These are article-reported external bulk-expression discrimination results, not independent prospective clinical effectiveness. No individually unresolved confidence intervals or clinical thresholds are supplied, and AUC 1.000 does not mean universally perfect diagnosis.",
+      "source_locator": "Results: Robust performance of UCRGs-based diagnostic model; Fig. 4D-H",
+      "evidence": [
+        {
+          "label": "GSE47908 AUC",
+          "value": "0.930"
+        },
+        {
+          "label": "GSE59071 AUC",
+          "value": "0.942"
+        },
+        {
+          "label": "GSE75214 AUC",
+          "value": "0.934"
+        },
+        {
+          "label": "GSE92415 AUC",
+          "value": "0.988"
+        },
+        {
+          "label": "GSE14580 AUC",
+          "value": "1.000"
+        }
+      ],
+      "id": "KF3"
+    },
+    {
+      "claim": "UCRScore used PCoA-related expression information, while DNB analysis showed a higher critical signal in the inactive group.",
+      "context": "The classifier, UCRScore and DNB are different analytical layers. An executable score is not reconstructed from the incompletely rendered formula, and group comparisons do not establish longitudinal prediction of an individual disease transition.",
+      "source_locator": "Materials and Methods: Establishment of UCRScore; Results: Dynamic changes analysis and DNB analysis",
+      "evidence": [
+        {
+          "label": "interpretability score",
+          "value": "UCRScore using PCoA-related expression information"
+        },
+        {
+          "label": "DNB observation",
+          "value": "Higher critical signal in the inactive group"
+        }
+      ],
+      "id": "KF4"
+    },
+    {
+      "claim": "CMap/eXtreme-Sum signature matching nominated five candidate compounds.",
+      "context": "These are computational drug-signature hypotheses. Clinical drug efficacy was not established in this study, and no doses or treatment recommendations are provided.",
+      "source_locator": "Results: Construction of global regulatory landscape and therapeutic discovery; Fig. 6C",
+      "evidence": [
+        {
+          "label": "candidate compounds",
+          "value": "5"
+        },
+        {
+          "label": "method",
+          "value": "CMap/eXtreme-Sum signature matching"
+        }
+      ],
+      "id": "KF5"
+    },
+    {
+      "claim": "The article described three single-cell samples, 10,101 cells and seven populations and cited GSE182272; the source review found that this accession describes mouse tissue-resident memory CD8+ T-cell RNA-seq with CAPvsColl and LCMV/P14 T-cell experiments, not direct confirmation of the described UC extension.",
+      "context": "The article report and GEO record remain unmatched. No replacement accession, specific cause of the mismatch or research-misconduct inference is established, and this is not verified human or mouse UC single-cell validation.",
+      "source_locator": "Materials and Methods: Single-cell characteristics analysis; Results: Elucidating the biological significance of UCRScore through single-cell resolution; NCBI GEO GSE182272",
+      "evidence": [
+        {
+          "label": "article reported samples",
+          "value": "3"
+        },
+        {
+          "label": "article reported cells",
+          "value": "10,101"
+        },
+        {
+          "label": "article reported populations",
+          "value": "7"
+        },
+        {
+          "label": "cited accession",
+          "value": "GSE182272"
+        },
+        {
+          "label": "source record",
+          "value": "Mouse tissue-resident memory CD8+ T-cell RNA-seq; CAPvsColl and LCMV/P14 T-cell experiments"
+        },
+        {
+          "label": "verification status",
+          "value": "Article-reported UC extension; source provenance unresolved"
+        }
+      ],
+      "id": "KF6"
+    }
+  ],
+  "what_this_adds": [
+    "Separates a gene-expression classifier, a distinct interpretability score and computational hypothesis generation.",
+    "Retains the reported cross-dataset discrimination with explicit scope and unresolved-source boundaries."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Retrospective human UC-versus-control expression classification.",
+      "Article-reported external bulk-dataset discrimination.",
+      "Computational interpretation and hypothesis generation, with the single-cell provenance issue kept unresolved."
+    ],
+    "does_not_establish": [
+      "Prospective diagnostic utility or prediction of individual future disease onset.",
+      "Causal roles for all 12 selected genes.",
+      "Clinical efficacy of nominated compounds.",
+      "UC single-cell validation from an independently verified matching source."
+    ]
+  },
+  "limitations": [
+    "Participant independence across cohorts has not been established by raw-data deduplication.",
+    "The final 12-gene panel and the Fig. 3E 14-variable minimum-error statement must remain distinct.",
+    "External model evaluation cannot exclude every preprocessing or feature-selection bias.",
+    "The score formula was not independently reconstructed in this review.",
+    "The GSE182272 accession-provenance mismatch remains unresolved.",
+    "The models were not rerun and the complete supplementary data were not audited in this batch."
+  ],
+  "concepts": {
+    "disease": [
+      "ulcerative colitis"
+    ],
+    "entities": [
+      "UCRGs",
+      "UCRScore"
+    ],
+    "methods": [
+      "RF-RFE",
+      "neural-network classification",
+      "PCoA",
+      "CMap",
+      "DNB"
+    ],
+    "evidence": [
+      "retrospective expression classification",
+      "external dataset evaluation"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "relationship": "Related expression-signature methodology in a different disease; not shared validation, an identical score or a combined clinical test."
+    }
+  ],
+  "provenance": {
+    "publication_url": "https://www.aging-us.com/article/205564/text",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38372705/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10929837/",
+    "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182272",
+    "data_source_note": "This accession is linked to document the unresolved source mismatch, not as a verified download location for the reported UC single-cell analysis.",
+    "review_basis": "Published main text and selected figure legends plus the cited GEO record. No raw-data reanalysis or independent reconstruction of the score."
+  },
+  "version": 2,
+  "display_title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
+  "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Reported findings and independently unresolved source details are distinguished.",
+  "qa": [
+    {
+      "question": "What samples and modeling split were reported?",
+      "answer": "The article reported 606 human expression samples from 10 datasets; GSE87466 was the model-construction meta-cohort with 87 UC and 21 control expression samples and a random 7:3 split. Expression-sample counts are not a cross-cohort total of unique patients. Exact training/testing counts are not inferred from the split, and case–control classification is not prediction of future disease onset.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Is the reported classifier based on 12 or 14 genes?",
+      "answer": "The study considered 746 candidate genes and eight learners, applied RF-RFE and named a final 12-gene UCRG panel for a backpropagation neural-network classifier. The Fig. 3E legend separately states that error was minimized with 14 variables. That statement does not silently replace the named final 12-gene panel with a 14-gene model, and the panel is not proof that all 12 genes are causal drivers.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What external discrimination was reported?",
+      "answer": "Results reported external UC-versus-control AUCs of 0.930 for GSE47908, 0.942 for GSE59071, 0.934 for GSE75214, 0.988 for GSE92415 and 1.000 for GSE14580. These are article-reported external bulk-expression discrimination results, not independent prospective clinical effectiveness. No individually unresolved confidence intervals or clinical thresholds are supplied, and AUC 1.000 does not mean universally perfect diagnosis.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Are the classifier, UCRScore and DNB interchangeable?",
+      "answer": "UCRScore used PCoA-related expression information, while DNB analysis showed a higher critical signal in the inactive group. The classifier, UCRScore and DNB are different analytical layers. An executable score is not reconstructed from the incompletely rendered formula, and group comparisons do not establish longitudinal prediction of an individual disease transition.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Were the nominated compounds experimentally shown to treat UC?",
+      "answer": "CMap/eXtreme-Sum signature matching nominated five candidate compounds. These are computational drug-signature hypotheses. Clinical drug efficacy was not established in this study, and no doses or treatment recommendations are provided.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Can the single-cell extension be verified from the cited accession?",
+      "answer": "The article described three single-cell samples, 10,101 cells and seven populations and cited GSE182272; the source review found that this accession describes mouse tissue-resident memory CD8+ T-cell RNA-seq with CAPvsColl and LCMV/P14 T-cell experiments, not direct confirmation of the described UC extension. The article report and GEO record remain unmatched. No replacement accession, specific cause of the mismatch or research-misconduct inference is established, and this is not verified human or mouse UC single-cell validation.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    }
+  ],
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which studies externally evaluated gene-expression classifiers for UC?",
+        "supported_scope": "This retrospective expression study reported 606 samples across 10 datasets and a GSE87466 construction meta-cohort of 87 UC and 21 controls. Results reported external AUCs of 0.930, 0.942, 0.934, 0.988 and 1.000 for GSE47908, GSE59071, GSE75214, GSE92415 and GSE14580, respectively. Sample counts are not deduplicated patient counts, and external case–control discrimination is not future-onset prediction or prospective clinical utility.",
+        "evidence_refs": [
+          "KF1",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How were feature selection and a neural classifier combined?",
+        "supported_scope": "The study considered 746 candidate genes and eight learners, used RF-RFE and named a final 12-gene UCRG panel for a backpropagation neural-network classifier. The Fig. 3E statement about minimum error at 14 variables is retained separately, without renaming the panel or asserting causal effects of all selected genes.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What does expression-score interpretation add beyond classification?",
+        "supported_scope": "UCRScore uses PCoA-related expression information, and the DNB analysis reported a higher critical signal in the inactive group. These are distinct interpretation layers, not interchangeable classifiers; the formula is not reconstructed here and the group comparison is not individual longitudinal prediction.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What limitations apply to drug-signature and single-cell interpretation?",
+        "supported_scope": "The five CMap/eXtreme-Sum candidates are signature-matching hypotheses, not established treatments. The article-reported three samples, 10,101 cells and seven populations cannot be verified as the described UC extension from GSE182272, whose record concerns mouse tissue-resident memory CD8+ T-cell experiments. The source mismatch remains unresolved; no substitute accession or misconduct judgment is supplied.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Prospective diagnostic utility or prediction of individual future disease onset.",
+      "Causal roles for all 12 selected genes.",
+      "Clinical efficacy of nominated compounds.",
+      "UC single-cell validation from an independently verified matching source."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-uc-1",
+        "component": "Human data design",
+        "context": "Expression-sample counts are not a cross-cohort total of unique patients. Exact training/testing counts are not inferred from the split, and case–control classification is not prediction of future disease onset.",
+        "finding": "The article reported 606 human expression samples from 10 datasets; GSE87466 was the model-construction meta-cohort with 87 UC and 21 control expression samples and a random 7:3 split.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Supports an expression-sample design and case–control analysis, not a deduplicated participant total or incident-disease prediction.",
+        "source_locator": "Materials and Methods: Data acquisition and collection; UCRGs generated from interactive learning",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-uc-2",
+        "component": "Gene panel and classifier",
+        "context": "The Fig. 3E legend separately states that error was minimized with 14 variables. That statement does not silently replace the named final 12-gene panel with a 14-gene model, and the panel is not proof that all 12 genes are causal drivers.",
+        "finding": "The study considered 746 candidate genes and eight learners, applied RF-RFE and named a final 12-gene UCRG panel for a backpropagation neural-network classifier.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Retains the named panel and the distinct figure-legend statement without causal-gene claims.",
+        "source_locator": "Results: Machine learning-based diagnostic models and generated UCRGs; Fig. 3D-E",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-uc-3",
+        "component": "External discrimination",
+        "context": "These are article-reported external bulk-expression discrimination results, not independent prospective clinical effectiveness. No individually unresolved confidence intervals or clinical thresholds are supplied, and AUC 1.000 does not mean universally perfect diagnosis.",
+        "finding": "Results reported external UC-versus-control AUCs of 0.930 for GSE47908, 0.942 for GSE59071, 0.934 for GSE75214, 0.988 for GSE92415 and 1.000 for GSE14580.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Supports reported external dataset discrimination only, not universal accuracy or prospective clinical utility.",
+        "source_locator": "Results: Robust performance of UCRGs-based diagnostic model; Fig. 4D-H",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-uc-4",
+        "component": "Interpretability score",
+        "context": "The classifier, UCRScore and DNB are different analytical layers. An executable score is not reconstructed from the incompletely rendered formula, and group comparisons do not establish longitudinal prediction of an individual disease transition.",
+        "finding": "UCRScore used PCoA-related expression information, while DNB analysis showed a higher critical signal in the inactive group.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Supports separate computational interpretation, not a reconstructed executable score or longitudinal prediction.",
+        "source_locator": "Materials and Methods: Establishment of UCRScore; Results: Dynamic changes analysis and DNB analysis",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-uc-5",
+        "component": "Drug-signature hypotheses",
+        "context": "These are computational drug-signature hypotheses. Clinical drug efficacy was not established in this study, and no doses or treatment recommendations are provided.",
+        "finding": "CMap/eXtreme-Sum signature matching nominated five candidate compounds.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Supports hypothesis generation, not established clinical treatment efficacy.",
+        "source_locator": "Results: Construction of global regulatory landscape and therapeutic discovery; Fig. 6C",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-uc-6",
+        "component": "Single-cell provenance qualification",
+        "context": "The article report and GEO record remain unmatched. No replacement accession, specific cause of the mismatch or research-misconduct inference is established, and this is not verified human or mouse UC single-cell validation.",
+        "finding": "The article described three single-cell samples, 10,101 cells and seven populations and cited GSE182272; the source review found that this accession describes mouse tissue-resident memory CD8+ T-cell RNA-seq with CAPvsColl and LCMV/P14 T-cell experiments, not direct confirmation of the described UC extension.",
+        "evidence_level": "Human molecular classification and computational interpretation, with an unresolved provenance issue in the reported single-cell extension",
+        "scope": "Documents an unresolved accession mismatch, not verified UC single-cell validation or its cause.",
+        "source_locator": "Materials and Methods: Single-cell characteristics analysis; Results: Elucidating the biological significance of UCRScore through single-cell resolution; NCBI GEO GSE182272",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
+}
