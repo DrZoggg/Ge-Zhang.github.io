@@ -13,6 +13,7 @@ LICENSE_URLS = {
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
 SOURCES = {
+    "10.1002/ggn2.202500053": ("advanced.onlinelibrary.wiley.com", "/doi/full/10.1002/ggn2.202500053"),
     "10.18632/aging.205564": ("www.aging-us.com", "/article/205564/text"),
     '10.3389/fcvm.2025.1724572': ('www.frontiersin.org', '/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full'),
     '10.3389/fpubh.2025.1521372': ('www.frontiersin.org', '/journals/public-health/articles/10.3389/fpubh.2025.1521372/full'),

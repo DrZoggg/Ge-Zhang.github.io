@@ -1,0 +1,287 @@
+{
+  "version": 2,
+  "doi": "10.1002/ggn2.202500053",
+  "display_title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
+  "summary": "This methodological Perspective argues for context-sensitive learner integration, evaluation across independent cohorts and cautious interpretation of feature attribution. Its deployment discussion identifies requirements for future clinical translation rather than reporting a newly validated model.",
+  "research_question": "Which methodological principles should guide the design, evaluation and interpretation of clinical AI ensembles?",
+  "author_summary": "The Perspective connects clinical AI design to the practical demands of evaluating and interpreting ensemble models. It advocates combining complementary learners according to the clinical setting and selecting models through aggregate evaluation across independent cohorts. Its discussion of SHAP emphasizes that feature attributions depend on data distributions and should be considered alongside sensitivity analysis and calibration. Distribution shift, computational resources, standardization and clinical workflow integration frame the translation agenda. On this evidence page, these arguments support methodological choices and limitations discussions; performance estimates and empirical validation claims belong to the cited primary studies, not to this Perspective.",
+  "evidence_page_notice": "This evidence page describes a Perspective. Key Arguments summarize the authors' methodological proposals and narrative discussion, not new experimental findings. Cited studies remain prior evidence; citation-use guidance is this site's interpretation of appropriate scope.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "perspective",
+    "study_design": "Methodological Perspective on clinical AI hybrid ensemble frameworks; not an empirical validation report for a newly developed model.",
+    "evidence_type": "Methodological proposal and narrative synthesis; no new empirical evaluation reported in this article.",
+    "evidence_domains": [
+      "Complementary learner integration",
+      "Independent multi-cohort evaluation",
+      "Distribution-dependent feature attribution",
+      "Deployment and clinical workflow constraints"
+    ],
+    "diseases_covered": [
+      "Cardiovascular disease (discussion context)",
+      "Oncology (discussion context)",
+      "Chronic-disease applications (discussion context)"
+    ],
+    "translation_scope": "Design and evaluation principles for future clinical AI development; cross-disease utility and patient benefit require empirical testing rather than being established by this Perspective.",
+    "scale_metrics": [
+      {
+        "label": "Article format",
+        "value": "Perspective"
+      },
+      {
+        "label": "Evidence basis",
+        "value": "Narrative argument and discussion of cited prior research"
+      },
+      {
+        "label": "Empirical evaluation reported in this article",
+        "value": "No new empirical evaluation reported"
+      }
+    ],
+    "counting_note": "No new empirical evaluation is reported in this article. Application examples are cited prior studies, not new participant cohorts; their sample sizes are not pooled into a synthetic total."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Choose complementary learners in relation to the clinical context rather than pursuing a single algorithm as universally optimal.",
+      "context": "The authors frame learner combination as a methodological design choice for clinical AI.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Learner integration"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Methodological proposal"
+        }
+      ],
+      "source_locator": "Section 4.1"
+    },
+    {
+      "id": "KF2",
+      "claim": "Evaluate and select models using aggregate evidence across independent cohorts.",
+      "context": "The Perspective recommends an evaluation strategy; it does not report executing these independent-cohort validations.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Multi-cohort evaluation"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Methodological proposal"
+        }
+      ],
+      "source_locator": "Section 4.2"
+    },
+    {
+      "id": "KF3",
+      "claim": "Interpret SHAP attributions as distribution-dependent and examine them alongside sensitivity analysis and calibration.",
+      "context": "The authors discuss robustness and interpretation constraints of feature attribution rather than identifying stable causal properties.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Attribution robustness"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Methodological proposal"
+        }
+      ],
+      "source_locator": "Sections 4.3 and 6"
+    },
+    {
+      "id": "KF4",
+      "claim": "Account for distribution shift, computational resources, standardization and clinical workflows when planning translation.",
+      "context": "These constraints define a future translation agenda rather than demonstrated clinical benefits.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Deployment constraints"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Methodological proposal"
+        }
+      ],
+      "source_locator": "Sections 6-7"
+    }
+  ],
+  "what_this_adds": [
+    "A connected design argument linking complementary learners, independent-cohort evaluation and interpretable outputs.",
+    "An explicit distinction between attribution robustness and causal interpretation.",
+    "A translation agenda that places evaluation and clinical workflow alongside model design."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Cite for a context-sensitive ensemble design rationale, not as an original comparison proving that a particular ensemble outperforms alternatives.",
+      "Cite when planning independent-cohort evaluation and model selection; obtain actual validation results from the relevant empirical studies.",
+      "Cite for methodological caution about attribution robustness; SHAP values are not evidence that a feature causally changes an outcome.",
+      "Cite for resource, evaluation and workflow considerations in a translation plan, not as proof of improved patient outcomes."
+    ],
+    "does_not_establish": [
+      "A newly developed model with completed clinical validation or demonstrated cross-disease generalization.",
+      "Original AUC, C-index, ablation or treatment-effect estimates generated in this Perspective.",
+      "Stable causal mechanisms inferred from SHAP feature attributions.",
+      "Proven patient-outcome improvement, clinical guideline status or regulatory approval."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What design rationale supports combining complementary learners in a clinical AI ensemble?",
+      "answer": "Choose complementary learners in relation to the clinical context rather than pursuing a single algorithm as universally optimal. The authors frame learner combination as a methodological design choice for clinical AI.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How does the AI ensemble Perspective propose evaluating and selecting models across independent cohorts?",
+      "answer": "Evaluate and select models using aggregate evidence across independent cohorts. The Perspective recommends an evaluation strategy; it does not report executing these independent-cohort validations.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Why should clinical AI feature attribution be considered alongside sensitivity analysis and calibration?",
+      "answer": "Interpret SHAP attributions as distribution-dependent and examine them alongside sensitivity analysis and calibration. The authors discuss robustness and interpretation constraints of feature attribution rather than identifying stable causal properties.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Which deployment constraints does the AI ensemble Perspective identify for clinical translation?",
+      "answer": "Account for distribution shift, computational resources, standardization and clinical workflows when planning translation. These constraints define a future translation agenda rather than demonstrated clinical benefits.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "methods": [
+      "Complementary learner integration",
+      "Independent multi-cohort evaluation",
+      "Distribution-dependent feature attribution",
+      "Deployment and clinical workflow constraints"
+    ],
+    "clinical_contexts": [
+      "Cardiovascular disease (discussion context)",
+      "Oncology (discussion context)",
+      "Chronic-disease applications (discussion context)"
+    ]
+  },
+  "limitations": [
+    "This is a methodological Perspective, not a systematic review or meta-analysis with a reported systematic search protocol.",
+    "Claims about samples and model performance in cited applications require the corresponding primary studies; those studies were not all independently re-audited for this page.",
+    "Proposed independent-cohort evaluation, attribution robustness checks and deployment principles still require empirical implementation and assessment."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Cited prior application study (reference 1) in the Perspective. Consult the original study for its samples and model performance; it is not a new validation performed by this Perspective."
+    },
+    {
+      "doi": "10.1200/po.24.00089",
+      "relationship": "Cited prior application study (reference 2) in the Perspective. Consult the original study for its samples and model performance; it is not a new validation performed by this Perspective."
+    },
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "relationship": "Cited prior application study (reference 3) in the Perspective. Consult the original study for its samples and model performance; it is not a new validation performed by this Perspective."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/ggn2.202500053",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13093795/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42016906/",
+    "review_basis": "Publisher/PMC narrative text; cited primary studies were not all independently re-audited in this page review."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What design rationale supports combining complementary learners in a clinical AI ensemble?",
+        "supported_scope": "Cite for a context-sensitive ensemble design rationale, not as an original comparison proving that a particular ensemble outperforms alternatives.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How does the AI ensemble Perspective propose evaluating and selecting models across independent cohorts?",
+        "supported_scope": "Cite when planning independent-cohort evaluation and model selection; obtain actual validation results from the relevant empirical studies.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Why should clinical AI feature attribution be considered alongside sensitivity analysis and calibration?",
+        "supported_scope": "Cite for methodological caution about attribution robustness; SHAP values are not evidence that a feature causally changes an outcome.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which deployment constraints does the AI ensemble Perspective identify for clinical translation?",
+        "supported_scope": "Cite for resource, evaluation and workflow considerations in a translation plan, not as proof of improved patient outcomes.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A newly developed model with completed clinical validation or demonstrated cross-disease generalization.",
+      "Original AUC, C-index, ablation or treatment-effect estimates generated in this Perspective.",
+      "Stable causal mechanisms inferred from SHAP feature attributions.",
+      "Proven patient-outcome improvement, clinical guideline status or regulatory approval."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-ai-ensemble-1",
+        "component": "Learner integration",
+        "context": "The authors frame learner combination as a methodological design choice for clinical AI.",
+        "finding": "Choose complementary learners in relation to the clinical context rather than pursuing a single algorithm as universally optimal.",
+        "evidence_level": "Methodological proposal",
+        "scope": "Cite for a context-sensitive ensemble design rationale, not as an original comparison proving that a particular ensemble outperforms alternatives.",
+        "source_locator": "Section 4.1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-ai-ensemble-2",
+        "component": "Multi-cohort evaluation",
+        "context": "The Perspective recommends an evaluation strategy; it does not report executing these independent-cohort validations.",
+        "finding": "Evaluate and select models using aggregate evidence across independent cohorts.",
+        "evidence_level": "Methodological proposal",
+        "scope": "Cite when planning independent-cohort evaluation and model selection; obtain actual validation results from the relevant empirical studies.",
+        "source_locator": "Section 4.2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-ai-ensemble-3",
+        "component": "Attribution robustness",
+        "context": "The authors discuss robustness and interpretation constraints of feature attribution rather than identifying stable causal properties.",
+        "finding": "Interpret SHAP attributions as distribution-dependent and examine them alongside sensitivity analysis and calibration.",
+        "evidence_level": "Methodological proposal",
+        "scope": "Cite for methodological caution about attribution robustness; SHAP values are not evidence that a feature causally changes an outcome.",
+        "source_locator": "Sections 4.3 and 6",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-ai-ensemble-4",
+        "component": "Deployment constraints",
+        "context": "These constraints define a future translation agenda rather than demonstrated clinical benefits.",
+        "finding": "Account for distribution shift, computational resources, standardization and clinical workflows when planning translation.",
+        "evidence_level": "Methodological proposal",
+        "scope": "Cite for resource, evaluation and workflow considerations in a translation plan, not as proof of improved patient outcomes.",
+        "source_locator": "Sections 6-7",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}

@@ -77,7 +77,7 @@ PRIORITY_STATUS = (
     ("10.1111/jcmm.70725", "v2"),
     ("10.1038/s41598-024-65236-5", "v2"),
     ("10.3389/fpubh.2025.1521372", "v2"),
-    ("10.1002/ggn2.202500053", "pending"),
+    ("10.1002/ggn2.202500053", "v2"),
     ("10.1016/j.curpro.2025.100054", "pending"),
     ("10.1007/s11426-026-3629-x", "pending"),
 )
@@ -270,7 +270,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (24, 0, 4)
+    assert (len(v2_items), v1_count, pending_count) == (25, 0, 3)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -311,6 +311,7 @@ def run_tests():
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.1002/ggn2.202500053": ("Article Scope & Approach", None),
         "10.18632/aging.205564": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1016/j.ejphar.2023.175569": ("How the Study Was Done", "External dataset evaluation"),
         "10.3389/fcvm.2025.1724572": ("Study Design & Analytical Framework", "External validation"),
@@ -381,9 +382,10 @@ def run_tests():
         assert f'data-v2-section="study-design"><h2>{html_heading}</h2>' in page
         assert f"## {expected_heading}" in markdown
         if expected_external_label is None:
-            assert "<h3>Review profile</h3>" in page
+            profile_label = "Article profile" if content["study_profile"].get("narrative_genre") else "Review profile"
+            assert f"<h3>{profile_label}</h3>" in page
             assert "<h3>Evidence domains</h3>" in page
-            assert "### Review profile" in markdown
+            assert f"### {profile_label}" in markdown
             assert "- Evidence domains:" in markdown
         else:
             external_value = "Yes" if content["study_profile"]["external_validation"] else "No"
