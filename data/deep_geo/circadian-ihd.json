@@ -1,12 +1,419 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1038/s41598-024-65236-5",
-  "display_title": "Circadian disruption in ischemic heart disease",
-  "summary": "A computational study of circadian rhythm disruption in coronary atherosclerotic disease using transcriptomic and single-cell data, including a circadian rhythm disruption score.",
-  "keywords": ["circadian rhythm disruption", "circadian misalignment", "coronary artery disease", "atherosclerosis", "CRDscore", "single-cell RNA-seq"],
-  "questions": [
-    "How is circadian disruption associated with coronary artery disease?",
-    "What molecular subtypes of ischemic heart disease are linked to circadian rhythm?",
-    "Can circadian disruption be quantified with transcriptomic data?"
-  ]
+  "display_title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
+  "summary": "Transcriptomic CRDscore and coronary-disease subtype analysis, with explicit qualification of repeated samples and reference-dataset identity.",
+  "research_question": "Can circadian-related expression patterns define reproducible molecular subtypes of coronary disease, without treating an expression score as a direct measurement of each patient's physiological circadian rhythm?",
+  "author_summary": "This computational study connects single-cell expression structure with bulk transcriptomic subtyping. Its contribution is a research framework for expression-associated heterogeneity, not an established circadian diagnostic test or treatment-selection rule. Repeated sampling and the identity of one cited reference dataset require explicit qualification.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective public single-cell and bulk transcriptomic analysis",
+    "evidence_type": "Expression-based subtyping, computational annotation and external template evaluation",
+    "population": "Public coronary-disease-related samples and separately analyzed reference datasets",
+    "primary_endpoint": "Expression-defined CRDscore and molecular subtype structure",
+    "secondary_endpoint": "External subtype assignment and associated immune/functional annotations",
+    "data_modalities": [
+      "single-cell RNA sequencing",
+      "bulk expression arrays",
+      "co-expression networks",
+      "NTP",
+      "computational enrichment and cell-type estimates"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "GSE184073 analyzed samples",
+        "value": "2 samples"
+      },
+      {
+        "label": "GSE184073 post-QC cells",
+        "value": "2,237 cells"
+      },
+      {
+        "label": "GSE59867 expression samples",
+        "value": "436 samples, not 436 independent patients"
+      },
+      {
+        "label": "GSE59867 original design",
+        "value": "Repeated follow-up of 111 STEMI patients and 46 stable CAD controls"
+      },
+      {
+        "label": "GSE20680 article-reported samples",
+        "value": "195"
+      },
+      {
+        "label": "GSE20681 article-reported samples",
+        "value": "198"
+      },
+      {
+        "label": "GSE43292 article-reported samples",
+        "value": "64"
+      },
+      {
+        "label": "GSE62646 article-reported samples",
+        "value": "98"
+      }
+    ],
+    "counting_note": "GSE184073 cells are not independent patients. GSE59867 contains repeated follow-up of 111 STEMI patients and 46 stable CAD controls; its 436 expression samples are not 436 independent patients. Follow-up represents post-infarction recovery time points, not 24-hour circadian monitoring of the same individual. External dataset counts are article-reported samples and are not summed into a deduplicated participant total. External validation means retrospective expression-template evaluation, not prospective clinical utility. GSE70049 is a Danio rerio setb morphant expression experiment, not a verified mouse circadian perturbation."
+  },
+  "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Source-specific counting and interpretation limits are retained.",
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease.",
+      "context": "GSE184073 single-cell expression analysis.",
+      "evidence": [
+        {
+          "label": "Post-QC cells",
+          "value": "2,237"
+        },
+        {
+          "label": "Analyzed samples",
+          "value": "2"
+        },
+        {
+          "label": "Non-grey modules",
+          "value": "8"
+        }
+      ],
+      "source_locator": "Results: Construction of WGCNA network in scRNA-seq dataset; Fig. 1"
+    },
+    {
+      "id": "KF2",
+      "claim": "CRDscore was constructed as a research score from target-gene expression and a random background.",
+      "context": "Single-cell and bulk expression scoring.",
+      "evidence": [
+        {
+          "label": "Formula",
+          "value": "CRDscore = Srandom - SCADCRgenes"
+        },
+        {
+          "label": "Random features",
+          "value": "1,000"
+        },
+        {
+          "label": "Single-cell cutoff",
+          "value": "75th percentile"
+        },
+        {
+          "label": "Bulk cutoff",
+          "value": "Median"
+        }
+      ],
+      "source_locator": "Methods: Calculation of CRDscore based on circadian-related genes"
+    },
+    {
+      "id": "KF3",
+      "claim": "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification.",
+      "context": "Identity of a cited reference expression dataset.",
+      "evidence": [
+        {
+          "label": "GSE70049 organism",
+          "value": "Danio rerio"
+        },
+        {
+          "label": "GSE70049 experiment",
+          "value": "setb morphant expression experiment"
+        }
+      ],
+      "source_locator": "Methods: Data processing; NCBI GEO GSE70049 record"
+    },
+    {
+      "id": "KF4",
+      "claim": "Expression-based subtyping of GSE59867 yielded four groups.",
+      "context": "Discovery expression-sample assignment.",
+      "evidence": [
+        {
+          "label": "Type1 samples",
+          "value": "124"
+        },
+        {
+          "label": "Type2 samples",
+          "value": "93"
+        },
+        {
+          "label": "Type3 samples",
+          "value": "87"
+        },
+        {
+          "label": "Type4 samples",
+          "value": "132"
+        },
+        {
+          "label": "Total expression samples",
+          "value": "436"
+        }
+      ],
+      "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4"
+    },
+    {
+      "id": "KF5",
+      "claim": "NTP was used to evaluate subtype assignment in four external expression datasets.",
+      "context": "External expression-template evaluation.",
+      "evidence": [
+        {
+          "label": "Datasets",
+          "value": "GSE20680; GSE20681; GSE43292; GSE62646"
+        }
+      ],
+      "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Fig. 4"
+    },
+    {
+      "id": "KF6",
+      "claim": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics.",
+      "context": "Subtype-associated expression and computational annotations.",
+      "evidence": [
+        {
+          "label": "Contractile markers",
+          "value": "Lower expression"
+        },
+        {
+          "label": "Immune and collagen pathways",
+          "value": "Associated enrichment differences"
+        }
+      ],
+      "source_locator": "Results: functional and immune microenvironment analyses; Figs. 5-6"
+    }
+  ],
+  "what_this_adds": [
+    "Links single-cell networks with bulk expression subtyping.",
+    "Provides a research expression-score construction.",
+    "Retains external template evaluation with its applicable evidence scope."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease.",
+      "CRDscore was constructed as a research score from target-gene expression and a random background.",
+      "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification.",
+      "Expression-based subtyping of GSE59867 yielded four groups.",
+      "NTP was used to evaluate subtype assignment in four external expression datasets.",
+      "Type2 showed higher CRDscore and immune-inflammatory expression characteristics."
+    ],
+    "does_not_establish": [
+      "Direct measurement of physiological circadian phase, amplitude or period.",
+      "A discovery cohort of 436 independent patients.",
+      "Verification that all cited reference experiments are mouse circadian interventions.",
+      "Prospectively validated clinical risk prediction or clinical utility.",
+      "Benefit from treatment or chronotherapy.",
+      "An independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What single-cell evidence underlies this coronary expression framework?",
+      "answer": "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease. Post-QC cells: 2,237; Analyzed samples: 2; Non-grey modules: 8. Cells are not independent patients; two analyzed samples do not establish population-level robustness.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What does CRDscore measure, and what does it not directly measure?",
+      "answer": "CRDscore was constructed as a research score from target-gene expression and a random background. Formula: CRDscore = Srandom - SCADCRgenes; Random features: 1,000; Single-cell cutoff: 75th percentile; Bulk cutoff: Median. The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Are all cited reference datasets verified mouse circadian experiments?",
+      "answer": "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification. GSE70049 organism: Danio rerio; GSE70049 experiment: setb morphant expression experiment. The evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does the discovery dataset represent 436 independent patients?",
+      "answer": "Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436. These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What kind of external validation was performed?",
+      "answer": "NTP was used to evaluate subtype assignment in four external expression datasets. Datasets: GSE20680; GSE20681; GSE43292; GSE62646. External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Do subtype-associated immune patterns establish treatment benefit?",
+      "answer": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics. Contractile markers: Lower expression; Immune and collagen pathways: Associated enrichment differences. Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease": [
+      "coronary artery disease",
+      "ischemic heart disease"
+    ],
+    "methods": [
+      "single-cell RNA sequencing",
+      "co-expression network",
+      "NTP"
+    ],
+    "entities": [
+      "CRDscore",
+      "CADCR genes"
+    ],
+    "evidence": [
+      "transcriptomic subtyping",
+      "repeated measurements"
+    ]
+  },
+  "limitations": [
+    "GSE184073 cells are not independent patients. GSE59867 contains repeated follow-up of 111 STEMI patients and 46 stable CAD controls; its 436 expression samples are not 436 independent patients. Follow-up represents post-infarction recovery time points, not 24-hour circadian monitoring of the same individual. External dataset counts are article-reported samples and are not summed into a deduplicated participant total. External validation means retrospective expression-template evaluation, not prospective clinical utility. GSE70049 is a Danio rerio setb morphant expression experiment, not a verified mouse circadian perturbation.",
+    "Cells are not independent patients; two analyzed samples do not establish population-level robustness.",
+    "The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+    "The evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred.",
+    "These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
+    "External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+    "Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+    "Direct measurement of physiological circadian phase, amplitude or period.",
+    "A discovery cohort of 436 independent patients.",
+    "Verification that all cited reference experiments are mouse circadian interventions.",
+    "Prospectively validated clinical risk prediction or clinical utility.",
+    "Benefit from treatment or chronotherapy.",
+    "An independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "relationship": "Related coronary transcriptomic and single-cell evidence with a different research objective; the studies do not validate each other's models."
+    },
+    {
+      "doi": "10.1038/s41698-026-01699-1",
+      "relationship": "Circadian-related expression scoring in a different disease; this does not establish identical gene sets, formula implementation or shared clinical validation."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1038/s41598-024-65236-5",
+    "publisher_url": "https://www.nature.com/articles/s41598-024-65236-5",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38898215/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11187219/",
+    "gse59867_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867",
+    "gse70049_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70049",
+    "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which coronary-disease studies combined single-cell networks with a circadian-related expression score?",
+        "supported_scope": "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease. Post-QC cells: 2,237; Analyzed samples: 2; Non-grey modules: 8. Cells are not independent patients; two analyzed samples do not establish population-level robustness. CRDscore was constructed as a research score from target-gene expression and a random background. Formula: CRDscore = Srandom - SCADCRgenes; Random features: 1,000; Single-cell cutoff: 75th percentile; Bulk cutoff: Median. The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What evidence supports expression-defined coronary-disease subtypes?",
+        "supported_scope": "Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436. These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses. NTP was used to evaluate subtype assignment in four external expression datasets. Datasets: GSE20680; GSE20681; GSE43292; GSE62646. External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What counting and dataset-identity cautions apply to CRDscore evidence?",
+        "supported_scope": "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification. GSE70049 organism: Danio rerio; GSE70049 experiment: setb morphant expression experiment. The evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred. Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436. These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
+        "evidence_refs": [
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "How are coronary expression subtypes associated with immune and contractile programs?",
+        "supported_scope": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics. Contractile markers: Lower expression; Immune and collagen pathways: Associated enrichment differences. Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Direct measurement of physiological circadian phase, amplitude or period.",
+      "A discovery cohort of 436 independent patients.",
+      "Verification that all cited reference experiments are mouse circadian interventions.",
+      "Prospectively validated clinical risk prediction or clinical utility.",
+      "Benefit from treatment or chronotherapy.",
+      "An independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-ihd-1",
+        "component": "Single-cell co-expression foundation",
+        "context": "GSE184073 single-cell expression analysis.",
+        "finding": "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease. Post-QC cells: 2,237; Analyzed samples: 2; Non-grey modules: 8",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Cells are not independent patients; two analyzed samples do not establish population-level robustness.",
+        "source_locator": "Results: Construction of WGCNA network in scRNA-seq dataset; Fig. 1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-ihd-2",
+        "component": "CRDscore construction",
+        "context": "Single-cell and bulk expression scoring.",
+        "finding": "CRDscore was constructed as a research score from target-gene expression and a random background. Formula: CRDscore = Srandom - SCADCRgenes; Random features: 1,000; Single-cell cutoff: 75th percentile; Bulk cutoff: Median",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+        "source_locator": "Methods: Calculation of CRDscore based on circadian-related genes",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-ihd-3",
+        "component": "Reference-dataset qualification",
+        "context": "Identity of a cited reference expression dataset.",
+        "finding": "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification. GSE70049 organism: Danio rerio; GSE70049 experiment: setb morphant expression experiment",
+        "evidence_level": "Reference-record identity qualification",
+        "scope": "The evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred.",
+        "source_locator": "Methods: Data processing; NCBI GEO GSE70049 record",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-ihd-4",
+        "component": "Discovery subtyping",
+        "context": "Discovery expression-sample assignment.",
+        "finding": "Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
+        "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-ihd-5",
+        "component": "External template assignment",
+        "context": "External expression-template evaluation.",
+        "finding": "NTP was used to evaluate subtype assignment in four external expression datasets. Datasets: GSE20680; GSE20681; GSE43292; GSE62646",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+        "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Fig. 4",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-ihd-6",
+        "component": "Immune and functional context",
+        "context": "Subtype-associated expression and computational annotations.",
+        "finding": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics. Contractile markers: Lower expression; Immune and collagen pathways: Associated enrichment differences",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+        "source_locator": "Results: functional and immune microenvironment analyses; Figs. 5-6",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
 }
