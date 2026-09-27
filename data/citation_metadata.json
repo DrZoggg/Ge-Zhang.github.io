@@ -349,6 +349,20 @@
       "verified_sources": [
         "https://link.springer.com/article/10.1007/s11426-026-3629-x"
       ]
+    },
+    "10.1002/ggn2.202500053": {
+      "publication_date": "2026-03-16",
+      "volume": "7",
+      "issue": "1",
+      "article_number": "e00053",
+      "eissn": "2641-6573",
+      "pmid": "42016906",
+      "pmcid": "PMC13093795",
+      "verified_sources": [
+        "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/ggn2.202500053",
+        "https://pubmed.ncbi.nlm.nih.gov/42016906/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13093795/"
+      ]
     }
   }
 }

@@ -29,16 +29,25 @@
     },
     {
       "literal": "Shaotong Pei"
+    },
+    {
+      "literal": "Ge Zhang"
     }
   ],
   "container-title": "Advanced Genetics",
   "issued": {
     "date-parts": [
       [
-        2026
+        2026,
+        3,
+        16
       ]
     ]
   },
   "DOI": "10.1002/ggn2.202500053",
-  "URL": "https://doi.org/10.1002/ggn2.202500053"
+  "URL": "https://doi.org/10.1002/ggn2.202500053",
+  "volume": "7",
+  "issue": "1",
+  "number": "e00053",
+  "ISSN": "2641-6573"
 }
