@@ -1,0 +1,372 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.joim.2025.06.003",
+  "display_title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
+  "summary": "HCCcrds-related subtype analysis separates expression, retrospective outcome associations and external template assessment.",
+  "research_question": "Can a circadian-related expression framework distinguish HCC subtypes with reproducible molecular features and retrospective outcome associations?",
+  "author_summary": "This study provides a transcriptomic framework for HCC heterogeneity. The relevant evidence is subtype association and cross-dataset evaluation, not demonstrated clinical benefit from score-guided treatment. Reference circadian experiments and HCC patient cohorts serve different analytical roles.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Public single-cell and bulk transcriptomic integration with retrospective subtype evaluation",
+    "evidence_type": "Human molecular association and cross-dataset classification analysis",
+    "population": "HCC expression cohorts, with separate circadian reference experiments",
+    "primary_endpoint": "HCCcrds-associated molecular subtype structure",
+    "secondary_endpoint": "Retrospective outcome associations and computational biological annotations",
+    "data_modalities": [
+      "single-cell RNA sequencing",
+      "bulk transcriptomics",
+      "co-expression analysis",
+      "LRA clustering/NTP",
+      "immune deconvolution"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "TCGA-LIHC",
+        "value": "369 samples in the reported analysis"
+      },
+      {
+        "label": "GSE149614 analyzed cells",
+        "value": "11,383 cells"
+      },
+      {
+        "label": "External datasets",
+        "value": "5 datasets with different analytical roles"
+      }
+    ],
+    "counting_note": "Cell counts, candidate genes, HCC cohort samples and separate circadian reference experiments are different units. No complete unique-participant total is inferred. The five external datasets have different analytical uses: the four Fig. 5A and four Fig. 5B sets overlap but are not identical and must not be added as eight independent cohorts. External validation means retrospective cross-dataset expression/classification evaluation, not prospective clinical utility or direct physiological rhythm measurement in HCC patients."
+  },
+  "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Source-specific counting and interpretation limits are retained.",
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Single-cell modules supplied the HCCcrds gene set.",
+      "context": "GSE149614 single-cell module analysis.",
+      "evidence": [
+        {
+          "label": "Analyzed cells",
+          "value": "11,383"
+        },
+        {
+          "label": "Genes from modules M2/M4/M5",
+          "value": "562"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.1; Fig. 2"
+    },
+    {
+      "id": "KF2",
+      "claim": "The score was evaluated in separate clock, feeding and sleep-reference data.",
+      "context": "Circadian reference experiments analyzed separately from HCC cohorts.",
+      "evidence": [
+        {
+          "label": "Reference datasets",
+          "value": "GSE10045; GSE150381; GSE39445"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.2; Fig. 3"
+    },
+    {
+      "id": "KF3",
+      "claim": "TCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H.",
+      "context": "Retrospective TCGA-LIHC subtype and outcome analysis.",
+      "evidence": [
+        {
+          "label": "TCGA-LIHC n",
+          "value": "369"
+        },
+        {
+          "label": "Subtypes",
+          "value": "CS-H; CS-L; CS-M"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.3-3.4; Fig. 4"
+    },
+    {
+      "id": "KF4",
+      "claim": "External subtype and survival analyses used overlapping but different cohort sets.",
+      "context": "External analyses reported in Fig. 5A and Fig. 5B.",
+      "evidence": [
+        {
+          "label": "Fig. 5A datasets",
+          "value": "ICGC_LIRI; GSE14520; GSE54236; GSE104580"
+        },
+        {
+          "label": "Fig. 5B datasets",
+          "value": "ICGC_LIRI; GSE14520; GSE54236; GSE27150"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.5; Fig. 5 legend"
+    },
+    {
+      "id": "KF5",
+      "claim": "Subtypes differed in proliferation/metabolic programs and inferred immune characteristics.",
+      "context": "Expression-based functional and immune analyses.",
+      "evidence": [
+        {
+          "label": "Analyses",
+          "value": "Expression enrichment; CIBERSORT; IPS"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.6-3.7; Fig. 6"
+    },
+    {
+      "id": "KF6",
+      "claim": "NNMT and MARCKSL1 were among subtype-associated candidate genes.",
+      "context": "Candidate-gene expression and network prioritization.",
+      "evidence": [
+        {
+          "label": "Evidence",
+          "value": "Expression correlation and network prioritization"
+        }
+      ],
+      "source_locator": "Author-deposited full text: Results 3.8; Table 2; final PubMed abstract"
+    }
+  ],
+  "what_this_adds": [
+    "Provides an HCC expression-subtyping framework.",
+    "Distinguishes external subtype assignment from outcome analysis.",
+    "Identifies candidate markers and functional annotations within the stated evidence limits."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Single-cell modules supplied the HCCcrds gene set.",
+      "The score was evaluated in separate clock, feeding and sleep-reference data.",
+      "TCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H.",
+      "External subtype and survival analyses used overlapping but different cohort sets.",
+      "Subtypes differed in proliferation/metabolic programs and inferred immune characteristics.",
+      "NNMT and MARCKSL1 were among subtype-associated candidate genes."
+    ],
+    "does_not_establish": [
+      "Prospective diagnostic or prognostic clinical utility.",
+      "Direct individual measurement of physiological circadian phase or amplitude.",
+      "Circadian disruption as a demonstrated cause of cancer.",
+      "Clinical benefit from score-guided treatment.",
+      "IPS as measured response in patients receiving immunotherapy.",
+      "Therapeutic validation of the candidate genes.",
+      "Completed page-by-page equivalence checking between the author-deposited text and final typeset version.",
+      "Unprovided AUCs, hazard ratios, participant totals or additional omics modalities."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How was the HCCcrds gene framework derived?",
+      "answer": "Single-cell modules supplied the HCCcrds gene set. Analyzed cells: 11,383; Genes from modules M2/M4/M5: 562. Cells and candidate genes are not patient counts or demonstrated causal regulators.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What role did the circadian reference datasets play?",
+      "answer": "The score was evaluated in separate clock, feeding and sleep-reference data. Reference datasets: GSE10045; GSE150381; GSE39445. Reference-experiment evaluation does not mean HCC patients underwent longitudinal physiological circadian measurements.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which HCC subtypes were associated with clinical outcomes?",
+      "answer": "TCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H. TCGA-LIHC n: 369; Subtypes: CS-H; CS-L; CS-M. Association does not establish that circadian disruption causes liver cancer or constitute a validated clinical decision rule.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Were external classification and survival analyses performed in identical cohorts?",
+      "answer": "External subtype and survival analyses used overlapping but different cohort sets. Fig. 5A datasets: ICGC_LIRI; GSE14520; GSE54236; GSE104580; Fig. 5B datasets: ICGC_LIRI; GSE14520; GSE54236; GSE27150. Do not claim that all five cohorts validated survival, or add the two four-cohort analyses as eight independent cohorts.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Do the immune analyses demonstrate immunotherapy benefit?",
+      "answer": "Subtypes differed in proliferation/metabolic programs and inferred immune characteristics. Analyses: Expression enrichment; CIBERSORT; IPS. IPS and immune deconvolution are not an observed immunotherapy-response trial.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What evidence supports the nominated molecular markers?",
+      "answer": "NNMT and MARCKSL1 were among subtype-associated candidate genes. Evidence: Expression correlation and network prioritization. This evidence synthesis does not claim independent causal intervention or therapeutic validation of these genes.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease": [
+      "hepatocellular carcinoma"
+    ],
+    "entities": [
+      "HCCcrds",
+      "NNMT",
+      "MARCKSL1"
+    ],
+    "methods": [
+      "transcriptomic subtyping",
+      "LRA clustering",
+      "NTP",
+      "immune deconvolution"
+    ],
+    "evidence": [
+      "retrospective outcome association"
+    ]
+  },
+  "limitations": [
+    "Cell counts, candidate genes, HCC cohort samples and separate circadian reference experiments are different units. No complete unique-participant total is inferred. The five external datasets have different analytical uses: the four Fig. 5A and four Fig. 5B sets overlap but are not identical and must not be added as eight independent cohorts. External validation means retrospective cross-dataset expression/classification evaluation, not prospective clinical utility or direct physiological rhythm measurement in HCC patients.",
+    "Cells and candidate genes are not patient counts or demonstrated causal regulators.",
+    "Reference-experiment evaluation does not mean HCC patients underwent longitudinal physiological circadian measurements.",
+    "Association does not establish that circadian disruption causes liver cancer or constitute a validated clinical decision rule.",
+    "Do not claim that all five cohorts validated survival, or add the two four-cohort analyses as eight independent cohorts.",
+    "IPS and immune deconvolution are not an observed immunotherapy-response trial.",
+    "This evidence synthesis does not claim independent causal intervention or therapeutic validation of these genes.",
+    "Prospective diagnostic or prognostic clinical utility.",
+    "Direct individual measurement of physiological circadian phase or amplitude.",
+    "Circadian disruption as a demonstrated cause of cancer.",
+    "Clinical benefit from score-guided treatment.",
+    "IPS as measured response in patients receiving immunotherapy.",
+    "Therapeutic validation of the candidate genes.",
+    "Completed page-by-page equivalence checking between the author-deposited text and final typeset version.",
+    "Unprovided AUCs, hazard ratios, participant totals or additional omics modalities.",
+    "Bibliographic identity was checked against the final PubMed/publisher record. Detailed evidence locators refer to the author-deposited full text; final typeset figure-level equivalence was not independently re-established."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41698-026-01699-1",
+      "relationship": "Circadian-related expression research in another cancer; this is not the same score or shared clinical validation."
+    },
+    {
+      "doi": "10.1038/s41598-024-65236-5",
+      "relationship": "Expression-scoring and subtyping methods in a different disease; the studies do not validate one another."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1016/j.joim.2025.06.003",
+    "publisher_url": "https://www.sciencedirect.com/science/article/abs/pii/S2095496425000834",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40581550/",
+    "author_deposited_full_text": "https://www.researchgate.net/publication/392697303_Integrated-omics_analysis_defines_subtypes_of_hepatocellular_carcinoma_based_on_circadian_rhythm",
+    "source_version": "Bibliographic identity was checked against the final PubMed/publisher record. Detailed evidence locators refer to the author-deposited full text; final typeset figure-level equivalence was not independently re-established.",
+    "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which HCC studies derived circadian-related subtypes from transcriptomic data?",
+        "supported_scope": "Single-cell modules supplied the HCCcrds gene set. Analyzed cells: 11,383; Genes from modules M2/M4/M5: 562. Cells and candidate genes are not patient counts or demonstrated causal regulators. TCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H. TCGA-LIHC n: 369; Subtypes: CS-H; CS-L; CS-M. Association does not establish that circadian disruption causes liver cancer or constitute a validated clinical decision rule.",
+        "evidence_refs": [
+          "KF1",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How was a tumor-associated expression score evaluated in external circadian reference data?",
+        "supported_scope": "The score was evaluated in separate clock, feeding and sleep-reference data. Reference datasets: GSE10045; GSE150381; GSE39445. Reference-experiment evaluation does not mean HCC patients underwent longitudinal physiological circadian measurements.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What cross-cohort evidence supports HCC circadian-related subtype classification?",
+        "supported_scope": "External subtype and survival analyses used overlapping but different cohort sets. Fig. 5A datasets: ICGC_LIRI; GSE14520; GSE54236; GSE104580; Fig. 5B datasets: ICGC_LIRI; GSE14520; GSE54236; GSE27150. Do not claim that all five cohorts validated survival, or add the two four-cohort analyses as eight independent cohorts.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which immune and candidate-marker associations characterize HCCcrds subtypes?",
+        "supported_scope": "Subtypes differed in proliferation/metabolic programs and inferred immune characteristics. Analyses: Expression enrichment; CIBERSORT; IPS. IPS and immune deconvolution are not an observed immunotherapy-response trial. NNMT and MARCKSL1 were among subtype-associated candidate genes. Evidence: Expression correlation and network prioritization. This evidence synthesis does not claim independent causal intervention or therapeutic validation of these genes.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Prospective diagnostic or prognostic clinical utility.",
+      "Direct individual measurement of physiological circadian phase or amplitude.",
+      "Circadian disruption as a demonstrated cause of cancer.",
+      "Clinical benefit from score-guided treatment.",
+      "IPS as measured response in patients receiving immunotherapy.",
+      "Therapeutic validation of the candidate genes.",
+      "Completed page-by-page equivalence checking between the author-deposited text and final typeset version.",
+      "Unprovided AUCs, hazard ratios, participant totals or additional omics modalities."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-hcc-1",
+        "component": "Score derivation",
+        "context": "GSE149614 single-cell module analysis.",
+        "finding": "Single-cell modules supplied the HCCcrds gene set. Analyzed cells: 11,383; Genes from modules M2/M4/M5: 562",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Cells and candidate genes are not patient counts or demonstrated causal regulators.",
+        "source_locator": "Author-deposited full text: Results 3.1; Fig. 2",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-hcc-2",
+        "component": "Circadian reference evaluation",
+        "context": "Circadian reference experiments analyzed separately from HCC cohorts.",
+        "finding": "The score was evaluated in separate clock, feeding and sleep-reference data. Reference datasets: GSE10045; GSE150381; GSE39445",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Reference-experiment evaluation does not mean HCC patients underwent longitudinal physiological circadian measurements.",
+        "source_locator": "Author-deposited full text: Results 3.2; Fig. 3",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-hcc-3",
+        "component": "Clinical subtype association",
+        "context": "Retrospective TCGA-LIHC subtype and outcome analysis.",
+        "finding": "TCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H. TCGA-LIHC n: 369; Subtypes: CS-H; CS-L; CS-M",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Association does not establish that circadian disruption causes liver cancer or constitute a validated clinical decision rule.",
+        "source_locator": "Author-deposited full text: Results 3.3-3.4; Fig. 4",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-hcc-4",
+        "component": "Different external evaluation sets",
+        "context": "External analyses reported in Fig. 5A and Fig. 5B.",
+        "finding": "External subtype and survival analyses used overlapping but different cohort sets. Fig. 5A datasets: ICGC_LIRI; GSE14520; GSE54236; GSE104580; Fig. 5B datasets: ICGC_LIRI; GSE14520; GSE54236; GSE27150",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Do not claim that all five cohorts validated survival, or add the two four-cohort analyses as eight independent cohorts.",
+        "source_locator": "Author-deposited full text: Results 3.5; Fig. 5 legend",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-hcc-5",
+        "component": "Functional and immune associations",
+        "context": "Expression-based functional and immune analyses.",
+        "finding": "Subtypes differed in proliferation/metabolic programs and inferred immune characteristics. Analyses: Expression enrichment; CIBERSORT; IPS",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "IPS and immune deconvolution are not an observed immunotherapy-response trial.",
+        "source_locator": "Author-deposited full text: Results 3.6-3.7; Fig. 6",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-hcc-6",
+        "component": "Candidate marker interpretation",
+        "context": "Candidate-gene expression and network prioritization.",
+        "finding": "NNMT and MARCKSL1 were among subtype-associated candidate genes. Evidence: Expression correlation and network prioritization",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "This evidence synthesis does not claim independent causal intervention or therapeutic validation of these genes.",
+        "source_locator": "Author-deposited full text: Results 3.8; Table 2; final PubMed abstract",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
+}
