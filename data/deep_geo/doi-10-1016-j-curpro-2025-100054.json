@@ -1,0 +1,276 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.curpro.2025.100054",
+  "display_title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
+  "summary": "This Correspondence discusses a research agenda connecting multimodal biological interpretation with patient-specific simulation in cardiovascular medicine. It sets out design and translation requirements without reporting a newly built, clinically validated digital twin system.",
+  "research_question": "How can multimodal AI support cardiovascular mechanism research and updateable patient-specific digital models?",
+  "author_summary": "The Correspondence outlines two linked directions for cardiovascular AI: investigating disease mechanisms and developing patient-specific digital twins. It discusses combining imaging and molecular information to generate network and disease-subtyping hypotheses, then considers updateable physiological models, image-to-mesh workflows and treatment-scenario simulation. Longitudinal data, computational capacity, prospective evaluation, privacy and governance are presented as requirements for translation. This page organizes those narrative arguments for research planning and methodological citation. The cited empirical examples remain evidence from other works; cross-modal integration does not itself establish causation, and simulated treatment scenarios are not observed therapeutic effects in patients.",
+  "evidence_page_notice": "This evidence page describes a Correspondence. Key Arguments summarize the authors' methodological proposals and narrative discussion, not new experimental findings. Cited studies remain prior evidence; citation-use guidance is this site's interpretation of appropriate scope.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Correspondence providing a narrative discussion of research directions and translation requirements; not a report of a newly built and clinically validated digital twin system.",
+    "evidence_type": "Methodological proposal and narrative synthesis; no new empirical evaluation reported in this article.",
+    "evidence_domains": [
+      "Cardiovascular mechanism research",
+      "Cross-modal imaging and molecular interpretation",
+      "Patient-specific physiological simulation",
+      "Longitudinal evaluation and governance"
+    ],
+    "diseases_covered": [
+      "Cardiovascular disease (discussion context)"
+    ],
+    "translation_scope": "A research agenda for multimodal interpretation and updateable patient-specific models; proposed simulations and future evaluations are distinct from demonstrated human treatment effects.",
+    "scale_metrics": [
+      {
+        "label": "Article format",
+        "value": "Correspondence"
+      },
+      {
+        "label": "Evidence basis",
+        "value": "Narrative argument and discussion of cited prior research"
+      },
+      {
+        "label": "Empirical evaluation reported in this article",
+        "value": "No new empirical evaluation reported"
+      }
+    ],
+    "counting_note": "No new empirical evaluation is reported in this article. Cited examples and their cohorts are not a new combined study population, and no synthetic sample total is assigned."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Develop multimodal AI along two directions: mechanism-oriented research and individualized digital twins.",
+      "context": "The authors propose complementary research directions rather than introduce a clinically validated digital twin product.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Research agenda"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Narrative synthesis"
+        }
+      ],
+      "source_locator": "Sections 1-2"
+    },
+    {
+      "id": "KF2",
+      "claim": "Integrate imaging and molecular information to formulate network and disease-subtyping hypotheses.",
+      "context": "Data integration and cited empirical examples are discussed as a basis for interpretation, not as new causal experiments in this Correspondence.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Cross-modal biological interpretation"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Narrative synthesis"
+        }
+      ],
+      "source_locator": "Sections 2.1-2.2"
+    },
+    {
+      "id": "KF3",
+      "claim": "Explore updateable physiological models, image-to-mesh workflows and treatment-scenario simulation.",
+      "context": "The simulation discussion concerns model design and possible scenarios, not observed human treatment effects.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Patient-specific simulation"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Narrative synthesis"
+        }
+      ],
+      "source_locator": "Section 3"
+    },
+    {
+      "id": "KF4",
+      "claim": "Address longitudinal data, computational resources, prospective evaluation, privacy and governance before clinical translation.",
+      "context": "These are stated development and evaluation requirements, not completed prospective clinical validation.",
+      "evidence": [
+        {
+          "label": "Argument topic",
+          "value": "Translation requirements"
+        },
+        {
+          "label": "Evidence basis",
+          "value": "Narrative synthesis"
+        }
+      ],
+      "source_locator": "Sections 4.1-4.3"
+    }
+  ],
+  "what_this_adds": [
+    "A paired agenda for mechanism-oriented interpretation and patient-specific digital models.",
+    "A connection between cross-modal hypothesis generation and physiological scenario modeling.",
+    "Translation requirements that include prospective evaluation, privacy and governance."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Cite for framing a cardiovascular AI research agenda around mechanistic questions and individualized digital modeling, not for product validation.",
+      "Cite for the methodological rationale of cross-modal hypothesis generation; causal claims require suitable primary experimental evidence.",
+      "Cite as design background for physiological modeling and scenario simulation, not as evidence that a drug, surgery or commercial digital twin improves outcomes.",
+      "Cite when discussing evaluation, data stewardship and implementation requirements; prospective benefit remains a question for future empirical assessment."
+    ],
+    "does_not_establish": [
+      "A newly developed, validated therapeutic digital twin or completed prospective clinical validation in this Correspondence.",
+      "Causation established by combining imaging and molecular data alone.",
+      "Observed human treatment effects or randomized clinical-trial evidence inferred from simulation.",
+      "Proven efficacy of a drug, surgery or commercial digital twin product, patient-outcome improvement, guideline status or regulatory approval."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which research directions does the cardiovascular AI Correspondence propose for multimodal models?",
+      "answer": "Develop multimodal AI along two directions: mechanism-oriented research and individualized digital twins. The authors propose complementary research directions rather than introduce a clinically validated digital twin product.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How can imaging and molecular information support cardiovascular network and disease-subtyping hypotheses?",
+      "answer": "Integrate imaging and molecular information to formulate network and disease-subtyping hypotheses. Data integration and cited empirical examples are discussed as a basis for interpretation, not as new causal experiments in this Correspondence.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What modeling approaches does the cardiovascular AI Correspondence discuss for patient-specific simulation?",
+      "answer": "Explore updateable physiological models, image-to-mesh workflows and treatment-scenario simulation. The simulation discussion concerns model design and possible scenarios, not observed human treatment effects.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What requirements does the cardiovascular AI Correspondence identify for translating patient-specific models?",
+      "answer": "Address longitudinal data, computational resources, prospective evaluation, privacy and governance before clinical translation. These are stated development and evaluation requirements, not completed prospective clinical validation.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "methods": [
+      "Cardiovascular mechanism research",
+      "Cross-modal imaging and molecular interpretation",
+      "Patient-specific physiological simulation",
+      "Longitudinal evaluation and governance"
+    ],
+    "clinical_contexts": [
+      "Cardiovascular disease (discussion context)"
+    ]
+  },
+  "limitations": [
+    "This Correspondence is a narrative discussion, not a systematic review or meta-analysis with a reported systematic search protocol.",
+    "The cited empirical examples were not comprehensively revalidated for this page and should be checked in their primary sources.",
+    "The author-deposited full article supports narrative locators; every word was not compared with the current ScienceDirect full text.",
+    "Proposed mechanistic hypotheses and simulation strategies require appropriate empirical and prospective evaluation before clinical benefit can be claimed."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1002/ggn2.202500053",
+      "relationship": "Site-curated thematic association: the Perspective addresses ensemble methodology, while this Correspondence addresses cardiovascular multimodal interpretation and simulation. This is not a claim that the Correspondence formally cites the Perspective or independently validates the same model."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S1570164625000542",
+    "author_full_text_url": "https://www.researchgate.net/publication/400065376_A_Multimodal_artificial_intelligence_framework_for_mechanistic_discovery_and_digital_twin_construction_in_cardiovascular_medicine",
+    "review_basis": "Publisher identity and article genre were checked separately. The narrative text was reviewed from the author-deposited full article; the cited empirical examples were not comprehensively revalidated.",
+    "source_version": "Narrative locators refer to the author-deposited full article; no claim is made that every word was compared with the current ScienceDirect full text."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which research directions does the cardiovascular AI Correspondence propose for multimodal models?",
+        "supported_scope": "Cite for framing a cardiovascular AI research agenda around mechanistic questions and individualized digital modeling, not for product validation.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How can imaging and molecular information support cardiovascular network and disease-subtyping hypotheses?",
+        "supported_scope": "Cite for the methodological rationale of cross-modal hypothesis generation; causal claims require suitable primary experimental evidence.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What modeling approaches does the cardiovascular AI Correspondence discuss for patient-specific simulation?",
+        "supported_scope": "Cite as design background for physiological modeling and scenario simulation, not as evidence that a drug, surgery or commercial digital twin improves outcomes.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What requirements does the cardiovascular AI Correspondence identify for translating patient-specific models?",
+        "supported_scope": "Cite when discussing evaluation, data stewardship and implementation requirements; prospective benefit remains a question for future empirical assessment.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A newly developed, validated therapeutic digital twin or completed prospective clinical validation in this Correspondence.",
+      "Causation established by combining imaging and molecular data alone.",
+      "Observed human treatment effects or randomized clinical-trial evidence inferred from simulation.",
+      "Proven efficacy of a drug, surgery or commercial digital twin product, patient-outcome improvement, guideline status or regulatory approval."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-cardiovascular-ai-1",
+        "component": "Research agenda",
+        "context": "The authors propose complementary research directions rather than introduce a clinically validated digital twin product.",
+        "finding": "Develop multimodal AI along two directions: mechanism-oriented research and individualized digital twins.",
+        "evidence_level": "Narrative synthesis",
+        "scope": "Cite for framing a cardiovascular AI research agenda around mechanistic questions and individualized digital modeling, not for product validation.",
+        "source_locator": "Sections 1-2",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-cardiovascular-ai-2",
+        "component": "Cross-modal biological interpretation",
+        "context": "Data integration and cited empirical examples are discussed as a basis for interpretation, not as new causal experiments in this Correspondence.",
+        "finding": "Integrate imaging and molecular information to formulate network and disease-subtyping hypotheses.",
+        "evidence_level": "Narrative synthesis",
+        "scope": "Cite for the methodological rationale of cross-modal hypothesis generation; causal claims require suitable primary experimental evidence.",
+        "source_locator": "Sections 2.1-2.2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-cardiovascular-ai-3",
+        "component": "Patient-specific simulation",
+        "context": "The simulation discussion concerns model design and possible scenarios, not observed human treatment effects.",
+        "finding": "Explore updateable physiological models, image-to-mesh workflows and treatment-scenario simulation.",
+        "evidence_level": "Narrative synthesis",
+        "scope": "Cite as design background for physiological modeling and scenario simulation, not as evidence that a drug, surgery or commercial digital twin improves outcomes.",
+        "source_locator": "Section 3",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-cardiovascular-ai-4",
+        "component": "Translation requirements",
+        "context": "These are stated development and evaluation requirements, not completed prospective clinical validation.",
+        "finding": "Address longitudinal data, computational resources, prospective evaluation, privacy and governance before clinical translation.",
+        "evidence_level": "Narrative synthesis",
+        "scope": "Cite when discussing evaluation, data stewardship and implementation requirements; prospective benefit remains a question for future empirical assessment.",
+        "source_locator": "Sections 4.1-4.3",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}
