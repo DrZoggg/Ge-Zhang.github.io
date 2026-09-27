@@ -167,7 +167,7 @@
     {
       "id": "KF5",
       "claim": "Conditional-inference analysis separated patients into three prognostic risk states.",
-      "context": "Reported retrospective risk-state thresholds and group counts.",
+      "context": "The Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients.",
       "evidence": [
         {
           "label": "low",
@@ -182,7 +182,7 @@
           "value": "> 5.55"
         },
         {
-          "label": "Replication low/intermediate/high counts",
+          "label": "Article-reported Replication low/intermediate/high counts (sum 107; cohort 116; unresolved denominator discrepancy)",
           "value": "68 / 20 / 19"
         },
         {
@@ -194,7 +194,7 @@
           "value": "P < 0.001 in Replication and Meta"
         }
       ],
-      "source_locator": "Results: Clinical Prognostic Stratification of RAP-AIscore; Fig. 4A-E"
+      "source_locator": "Results: Interpretability and Clinical Stratification of RAP-AIscore; Fig. 4A-E"
     },
     {
       "id": "KF6",
@@ -320,7 +320,8 @@
     "The two-center study and independent external evaluation were retrospective.",
     "Prospective clinical utility and survival benefit from model-guided management were not established.",
     "External 1-year discrimination was modest, with AUC 0.587.",
-    "Generalizability to all hospitals and RAP populations was not established."
+    "Generalizability to all hospitals and RAP populations was not established.",
+    "The Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients."
   ],
   "related_papers": [
     {
@@ -374,7 +375,7 @@
       {
         "id": "CU5",
         "query": "How did RAP-AIscore define low, intermediate and high postoperative prognostic states?",
-        "supported_scope": "Conditional-inference analysis separated patients into three prognostic risk states. Reported retrospective risk-state thresholds and group counts.",
+        "supported_scope": "Conditional-inference analysis separated patients into three prognostic risk states. The Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients.",
         "evidence_refs": [
           "KF5"
         ]
@@ -447,11 +448,11 @@
       {
         "id": "evidence-rap-aiscore-5",
         "component": "KF5",
-        "context": "Reported retrospective risk-state thresholds and group counts.",
-        "finding": "Conditional-inference analysis separated patients into three prognostic risk states. low: RAP-AIscore <= 2.394; intermediate: > 2.394 to <= 5.55; high: > 5.55; Replication low/intermediate/high counts: 68 / 20 / 19; Meta low/intermediate/high counts: 258 / 60 / 66; three-state discrimination: P < 0.001 in Replication and Meta",
+        "context": "The Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients.",
+        "finding": "Conditional-inference analysis separated patients into three prognostic risk states. low: RAP-AIscore <= 2.394; intermediate: > 2.394 to <= 5.55; high: > 5.55; Article-reported Replication low/intermediate/high counts (sum 107; cohort 116; unresolved denominator discrepancy): 68 / 20 / 19; Meta low/intermediate/high counts: 258 / 60 / 66; three-state discrimination: P < 0.001 in Replication and Meta",
         "evidence_level": "Retrospective survival modeling",
-        "scope": "Reported retrospective risk-state thresholds and group counts.",
-        "source_locator": "Results: Clinical Prognostic Stratification of RAP-AIscore; Fig. 4A-E",
+        "scope": "The Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients.",
+        "source_locator": "Results: Interpretability and Clinical Stratification of RAP-AIscore; Fig. 4A-E",
         "evidence_refs": [
           "KF5"
         ]

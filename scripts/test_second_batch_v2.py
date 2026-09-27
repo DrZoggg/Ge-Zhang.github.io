@@ -36,6 +36,30 @@ def main():
     assert model["final_predictors"] == ["pTNM", "ROM", "CEA", "Ns", "PostCEA", "Ts", "CA199", "HLP", "Postchem", "Minutes"]
     assert [item["value"] for item in rap["key_findings"][5]["evidence"][:3]] == ["0.587", "0.754", "0.810"]
     assert "pmcid" not in rap["provenance"]
+    clarification = (
+        "The Results text reports Replication low/intermediate/high counts of 68/20/19, "
+        "which sum to 107 and do not reconcile with the stated Replication cohort size of 116. "
+        "These subgroup counts are retained as article-reported values; the denominator "
+        "discrepancy is unresolved and must not be interpreted as documented exclusions "
+        "or a complete partition of all 116 patients."
+    )
+    kf5 = next(item for item in rap["key_findings"] if item["id"] == "KF5")
+    row = next(item for item in rap["citation_layer"]["evidence_matrix"]
+               if item["id"] == "evidence-rap-aiscore-5")
+    cu5 = next(item for item in rap["citation_layer"]["citation_use_cases"] if item["id"] == "CU5")
+    label = "Article-reported Replication low/intermediate/high counts (sum 107; cohort 116; unresolved denominator discrepancy)"
+    assert kf5["evidence"][3] == {"label": label, "value": "68 / 20 / 19"}
+    assert sum(int(value) for value in kf5["evidence"][3]["value"].split(" / ")) == 107
+    assert kf5["context"] == row["context"] == row["scope"] == clarification
+    assert clarification in rap["limitations"] and clarification in cu5["supported_scope"]
+    assert label + ": 68 / 20 / 19" in row["finding"]
+    assert kf5["source_locator"] == row["source_locator"] == (
+        "Results: Interpretability and Clinical Stratification of RAP-AIscore; Fig. 4A-E"
+    )
+    for extension in ("html", "md"):
+        rendered = (ROOT / "papers" / f"doi-10-1200-po-24-00089.{extension}").read_text(encoding="utf-8")
+        assert clarification in rendered
+        assert label in rendered and "68 / 20 / 19" in rendered
     aaa = load("doi-10-1186-s12915-025-02400-x")
     counts(aaa, 7)
     assert aaa["study_profile"]["profile_type"] == "multicohort_omics"
