@@ -14,7 +14,9 @@ from validate_site import meta_contents, paper_json_ld_object
 def main():
     public = [item for item in load_master() if not is_withdrawn(item)]
     records = official_abstracts.load_official_abstracts(public)
-    assert len(records) == 13
+    assert len(records) == 15
+    assert "10.1016/j.joim.2025.06.003" not in records
+    assert "10.71321/fy14v342" not in records
     assert "10.1111/jcmm.70725" not in records
     assert "10.1200/po.24.00089" not in records
     assert not set(records) & official_abstracts.EXCLUDED
@@ -68,7 +70,7 @@ def main():
                     raise AssertionError("Invalid Official Abstract source accepted")
         finally:
             official_abstracts.PATH = original_path
-    print("OFFICIAL ABSTRACT TESTS PASS: thirteen verified records; JCO excluded; AAA EV deferred; optional and invalid-source cases")
+    print("OFFICIAL ABSTRACT TESTS PASS: fifteen records; JCO excluded; AAA EV/HCC deferred; LUAD unchanged; optional and invalid-source cases")
 
 
 if __name__ == "__main__":

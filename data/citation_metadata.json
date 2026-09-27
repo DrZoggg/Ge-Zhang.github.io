@@ -241,6 +241,47 @@
         "https://pubmed.ncbi.nlm.nih.gov/40755464/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315914/"
       ]
+    },
+    "10.1038/s41598-024-65236-5": {
+      "publication_date": "2024-06-19",
+      "volume": "14",
+      "issue": "1",
+      "article_number": "14155",
+      "eissn": "2045-2322",
+      "pmid": "38898215",
+      "pmcid": "PMC11187219",
+      "verified_sources": [
+        "https://www.nature.com/articles/s41598-024-65236-5",
+        "https://pubmed.ncbi.nlm.nih.gov/38898215/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11187219/"
+      ]
+    },
+    "10.1016/j.joim.2025.06.003": {
+      "publication_date": "2025-06-14",
+      "volume": "23",
+      "issue": "4",
+      "first_page": "445",
+      "last_page": "456",
+      "pmid": "40581550",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/40581550/",
+        "https://www.sciencedirect.com/science/article/abs/pii/S2095496425000834"
+      ]
+    },
+    "10.1002/mdr2.70004": {
+      "publication_date": "2025-04-29",
+      "volume": "1",
+      "issue": "1",
+      "first_page": "10",
+      "last_page": "31",
+      "issn": "2998-4963",
+      "eissn": "2998-4971",
+      "publisher": "Wiley",
+      "verified_sources": [
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70004",
+        "https://onlinelibrary.wiley.com/doi/pdf/10.1002/mdr2.70004",
+        "https://doaj.org/toc/2998-4971"
+      ]
     }
   }
 }

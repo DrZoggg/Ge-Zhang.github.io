@@ -13,6 +13,8 @@ LICENSE_URLS = {
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
 SOURCES = {
+    "10.1038/s41598-024-65236-5": ("www.nature.com", "/articles/s41598-024-65236-5"),
+    "10.1002/mdr2.70004": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70004"),
     "10.1111/jcmm.17789": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10339102/"),
     "10.1111/jcmm.70258": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11668728/"),
     "10.2147/ijn.s522157": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12315914/"),

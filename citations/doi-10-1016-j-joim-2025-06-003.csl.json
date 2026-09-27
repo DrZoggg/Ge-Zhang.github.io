@@ -41,10 +41,15 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        6,
+        14
       ]
     ]
   },
   "DOI": "10.1016/j.joim.2025.06.003",
-  "URL": "https://doi.org/10.1016/j.joim.2025.06.003"
+  "URL": "https://doi.org/10.1016/j.joim.2025.06.003",
+  "volume": "23",
+  "issue": "4",
+  "page": "445-456"
 }

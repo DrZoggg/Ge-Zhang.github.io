@@ -224,6 +224,28 @@
           }
         ]
       }
+    },
+    "10.1038/s41598-024-65236-5": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.nature.com/articles/s41598-024-65236-5",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Coronary atherosclerotic heart disease (CAD) is among the most prevalent chronic diseases globally. Circadian rhythm disruption (CRD) is closely associated with the progression of various diseases. However, the precise role of CRD in the development of CAD remains to be elucidated. The Circadian rhythm disruption score (CRDscore) was employed to quantitatively assess the level of CRD in CAD samples. Our investigation revealed a significant association between high CRDscore and adverse prognosis in CAD patients, along with a substantial correlation with CAD progression. Remarkably distinct CRDscore distributions were also identified among various subtypes. In summary, we have pioneered the revelation of the relationship between CRD and CAD at the single-cell level and established reliable markers for the development, treatment, and prognosis of CAD. A deeper understanding of these mechanisms may offer new possibilities for incorporating \"the therapy of coronary heart disease based circadian rhythm\" into personalized medical treatment regimens."
+      }
+    },
+    "10.1002/mdr2.70004": {
+      "source_type": "version_of_record",
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70004",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "The progression of differentiated thyroid carcinoma (DTC) poses significant clinical challenges, especially in determining the optimal time for intervention. To capture early signals of disease progression, we employed an optimized dynamic network biomarker (DNB) method—a systems biology approach that detects abrupt molecular changes indicating a critical transition signal. This analysis revealed that Stage II marks a critical transition in the disease trajectory. We further developed a scoring system called TCPSLevel (Thyroid Carcinoma Progression Signature Level), which quantifies individual progression risk based on gene expression profiles. TCPSLevel showed strong associations with clinical features and prognosis across multiple datasets. Our ensemble consensus clustering approach uncovered three robust DTC molecular subtypes, which demonstrated distinct clinical outcomes, immune microenvironments, regulatory landscapes, and therapeutic agents. A clinically applicable classifier (miniPC) was constructed using machine learning to facilitate subtype prediction. We also identified ASPH as a key regulator driving progression and validated its expression and function experimentally. Together, these findings offer new insights and practical tools for early risk assessment and personalized management of thyroid cancer."
+      }
     }
   }
 }

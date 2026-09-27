@@ -19,6 +19,9 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    "10.1038/s41598-024-65236-5": {"publication_date":"2024-06-19","volume":"14","issue":"1","article_number":"14155","eissn":"2045-2322","pmid":"38898215","pmcid":"PMC11187219"},
+    "10.1016/j.joim.2025.06.003": {"publication_date":"2025-06-14","volume":"23","issue":"4","first_page":"445","last_page":"456","pmid":"40581550"},
+    "10.1002/mdr2.70004": {"publication_date":"2025-04-29","volume":"1","issue":"1","first_page":"10","last_page":"31","issn":"2998-4963","eissn":"2998-4971","publisher":"Wiley"},
     "10.1111/jcmm.17789": {"publication_date":"2023-05-27","volume":"27","issue":"14","first_page":"1988","last_page":"2003","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"37243441","pmcid":"PMC10339102"},
     "10.1111/jcmm.70258": {"publication_date":"2024-12-24","volume":"28","issue":"24","article_number":"e70258","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"39719688","pmcid":"PMC11668728"},
     "10.1111/jcmm.70725": {"publication_date":"2025-08-06","volume":"29","issue":"15","article_number":"e70725","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"40770945","pmcid":"PMC12328994"},

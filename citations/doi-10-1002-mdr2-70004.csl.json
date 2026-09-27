@@ -71,10 +71,17 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        4,
+        29
       ]
     ]
   },
   "DOI": "10.1002/mdr2.70004",
-  "URL": "https://doi.org/10.1002/mdr2.70004"
+  "URL": "https://doi.org/10.1002/mdr2.70004",
+  "volume": "1",
+  "issue": "1",
+  "publisher": "Wiley",
+  "page": "10-31",
+  "ISSN": "2998-4963"
 }
