@@ -1,0 +1,349 @@
+{
+  "doi": "10.3389/fpubh.2025.1521372",
+  "summary": "A secondary linked-mortality analysis relates self-reported sleep to mortality in a complex-survey population with hyperuricemia. Associations and the fitted turning point are epidemiological estimates, not a survival-improving sleep prescription; sleep-trouble findings do not cover every diagnosed sleep disorder.",
+  "research_question": "How are self-reported sleep duration and sleep trouble associated with linked all-cause mortality among the analyzed NHANES participants with hyperuricemia?",
+  "author_summary": "This secondary linked-mortality analysis examines self-reported sleep in a complex-survey population. The reported associations and fitted turning point are epidemiological estimates, not proof that prescribing a precise sleep duration improves survival. The sleep-trouble result should not be generalized to every diagnosed sleep disorder.",
+  "study_profile": {
+    "study_design": "Observational secondary analysis of NHANES with mortality follow-up",
+    "evidence_type": "Survey-weighted human exposure–mortality association",
+    "population": "NHANES participants with hyperuricemia in the analytic sample",
+    "primary_endpoint": "All-cause mortality",
+    "secondary_endpoint": "Nonlinear sleep-duration and sleep-trouble associations with the same outcome",
+    "data_modalities": [
+      "self-reported sleep",
+      "survey covariates",
+      "serum uric acid",
+      "linked mortality"
+    ],
+    "unique_total_n": 5837,
+    "cohorts": [
+      {
+        "name": "NHANES linked-mortality analytic cohort",
+        "role": "analytic sample with hyperuricemia",
+        "n": 5837
+      }
+    ],
+    "profile_type": "clinical_cohort",
+    "external_validation": false
+  },
+  "key_findings": [
+    {
+      "claim": "The NHANES 2007–2018 analytic sample included 5,837 participants and 906 deaths, with a mean follow-up of 6.5 years and survey-weighted Cox analysis.",
+      "context": "Raw participant counts and survey-weighted percentages are different quantities and must not be directly substituted for one another.",
+      "evidence": [
+        {
+          "label": "NHANES cycles",
+          "value": "2007–2018"
+        },
+        {
+          "label": "analytic participants",
+          "value": "5,837"
+        },
+        {
+          "label": "deaths",
+          "value": "906"
+        },
+        {
+          "label": "mean follow up",
+          "value": "6.5 years"
+        },
+        {
+          "label": "analysis",
+          "value": "Survey-weighted Cox"
+        }
+      ],
+      "source_locator": "Methods 2.1 and 2.6; Results 3.1",
+      "id": "KF1"
+    },
+    {
+      "claim": "In fully adjusted Model 3, short sleep (<7 h versus 7–9 h) was associated with all-cause mortality at HR 1.25 (95% CI 1.04–1.51).",
+      "context": "This is an observational association, not a randomized intervention that shortens or extends sleep.",
+      "evidence": [
+        {
+          "label": "comparison",
+          "value": "<7 h versus 7–9 h"
+        },
+        {
+          "label": "model",
+          "value": "Fully adjusted Model 3"
+        },
+        {
+          "label": "hazard ratio",
+          "value": "1.25"
+        },
+        {
+          "label": "reported 95 percent CI",
+          "value": "1.04–1.51"
+        }
+      ],
+      "source_locator": "Results 3.2; Table 2",
+      "id": "KF2"
+    },
+    {
+      "claim": "In Model 3, long sleep (>9 h versus 7–9 h) was associated with all-cause mortality at HR 1.50 (95% CI 1.10–2.04).",
+      "context": "The relative hazard is not an absolute-risk estimate or an individual prognosis.",
+      "evidence": [
+        {
+          "label": "comparison",
+          "value": ">9 h versus 7–9 h"
+        },
+        {
+          "label": "model",
+          "value": "Model 3"
+        },
+        {
+          "label": "hazard ratio",
+          "value": "1.50"
+        },
+        {
+          "label": "reported 95 percent CI",
+          "value": "1.10–2.04"
+        }
+      ],
+      "source_locator": "Results 3.2; Table 2",
+      "id": "KF3"
+    },
+    {
+      "claim": "Self-reported sleep trouble did not show a statistically significant association with mortality in Model 3: HR 1.04 (95% CI 0.87–1.25), P=0.651.",
+      "context": "This result for one self-reported indicator does not prove that all sleep disorders have no effect on mortality.",
+      "evidence": [
+        {
+          "label": "exposure",
+          "value": "Self-reported sleep trouble"
+        },
+        {
+          "label": "model",
+          "value": "Model 3"
+        },
+        {
+          "label": "hazard ratio",
+          "value": "1.04"
+        },
+        {
+          "label": "reported 95 percent CI",
+          "value": "0.87–1.25"
+        },
+        {
+          "label": "P",
+          "value": "0.651"
+        }
+      ],
+      "source_locator": "Results 3.2; Table 2",
+      "id": "KF4"
+    },
+    {
+      "claim": "Restricted cubic splines showed nonlinearity (P<0.001), with an estimated sleep-duration turning point of 7.23 h.",
+      "context": "The turning point is a model estimate from this dataset, not an intervention-validated sleep prescription or a precise target for every individual.",
+      "evidence": [
+        {
+          "label": "RCS nonlinearity P",
+          "value": "<0.001"
+        },
+        {
+          "label": "estimated turning point",
+          "value": "7.23 h"
+        }
+      ],
+      "source_locator": "Results 3.3; Fig. 2; Table 3",
+      "id": "KF5"
+    }
+  ],
+  "what_this_adds": [
+    "Sleep-duration and mortality association evidence in a population with hyperuricemia.",
+    "A distinction between sleep duration and the self-reported sleep-trouble indicator.",
+    "Explicit interpretation boundaries for the nonlinear sleep-duration estimate."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Survey-weighted associations of self-reported sleep duration with all-cause mortality in the analyzed population.",
+      "A separate sleep-trouble estimate and a dataset-derived nonlinear turning point."
+    ],
+    "does_not_establish": [
+      "That 7.23 h is a precise personal target for everyone.",
+      "That extending or shortening sleep has been proven to reduce deaths.",
+      "A clinical prediction model or absence of risk from all sleep disorders."
+    ]
+  },
+  "limitations": [
+    "Self-reported exposure and a single baseline assessment limit exposure characterization.",
+    "Residual confounding and reverse causation remain possible.",
+    "Complex-survey weighting must be retained; raw counts and weighted percentages are not interchangeable.",
+    "The data-derived turning point is non-causal and not an intervention-validated target.",
+    "Self-reported sleep duration is not a direct circadian-rhythm measurement."
+  ],
+  "concepts": {
+    "population": [
+      "NHANES",
+      "hyperuricemia"
+    ],
+    "exposure": [
+      "sleep duration",
+      "self-reported sleep trouble"
+    ],
+    "outcome": [
+      "all-cause mortality"
+    ],
+    "methods": [
+      "survey-weighted Cox regression",
+      "restricted cubic splines"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.3389/fcvm.2025.1724572",
+      "relationship": "Related observational exposure–outcome research in another population; different exposures and endpoints, not independent replication."
+    }
+  ],
+  "version": 2,
+  "display_title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
+  "evidence_page_notice": "Author-controlled evidence synthesis, separate from the published abstract and not a replacement for the version of record. Study design, analysis denominators and unresolved reporting differences are retained.",
+  "qa": [
+    {
+      "question": "What design, sample and mortality follow-up were used?",
+      "answer": "The NHANES 2007–2018 analytic sample included 5,837 participants and 906 deaths, with a mean follow-up of 6.5 years and survey-weighted Cox analysis. Raw participant counts and survey-weighted percentages are different quantities and must not be directly substituted for one another.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How was short sleep associated with mortality?",
+      "answer": "In fully adjusted Model 3, short sleep (<7 h versus 7–9 h) was associated with all-cause mortality at HR 1.25 (95% CI 1.04–1.51). This is an observational association, not a randomized intervention that shortens or extends sleep.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How was long sleep associated with mortality?",
+      "answer": "In Model 3, long sleep (>9 h versus 7–9 h) was associated with all-cause mortality at HR 1.50 (95% CI 1.10–2.04). The relative hazard is not an absolute-risk estimate or an individual prognosis.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What did the sleep-trouble analysis show?",
+      "answer": "Self-reported sleep trouble did not show a statistically significant association with mortality in Model 3: HR 1.04 (95% CI 0.87–1.25), P=0.651. This result for one self-reported indicator does not prove that all sleep disorders have no effect on mortality.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Should 7.23 hours be interpreted as a prescribed individual target?",
+      "answer": "Restricted cubic splines showed nonlinearity (P<0.001), with an estimated sleep-duration turning point of 7.23 h. The turning point is a model estimate from this dataset, not an intervention-validated sleep prescription or a precise target for every individual.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What mortality evidence relates sleep duration to hyperuricemia?",
+        "supported_scope": "In 5,837 NHANES participants with hyperuricemia, with 906 deaths and mean follow-up of 6.5 years, Model 3 associations were HR 1.25 (95% CI 1.04–1.51) for <7 h and HR 1.50 (95% CI 1.10–2.04) for >9 h versus 7–9 h. These survey-weighted associations are not intervention effects or individual absolute-risk estimates.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What does survey-weighted NHANES analysis contribute?",
+        "supported_scope": "The 2007–2018 linked-mortality analytic sample comprised 5,837 participants and 906 deaths with mean follow-up of 6.5 years. Survey-weighted Cox analysis does not make raw counts interchangeable with weighted percentages.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Was self-reported sleep trouble independently associated with mortality?",
+        "supported_scope": "Model 3 gave HR 1.04 (95% CI 0.87–1.25), P=0.651, without a statistically significant association for the self-reported indicator. This cannot be generalized to all diagnosed sleep disorders.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What nonlinear sleep-duration pattern was estimated?",
+        "supported_scope": "Restricted cubic splines gave nonlinearity P<0.001 and an estimated turning point of 7.23 h. This dataset-specific model estimate is not an intervention-validated prescription.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "That 7.23 h is a precise personal target for everyone.",
+      "That extending or shortening sleep has been proven to reduce deaths.",
+      "A clinical prediction model or absence of risk from all sleep disorders."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-sleep-hua-1",
+        "component": "Survey-weighted analytic population and mortality follow-up",
+        "context": "Raw participant counts and survey-weighted percentages are different quantities and must not be directly substituted for one another.",
+        "finding": "The NHANES 2007–2018 analytic sample included 5,837 participants and 906 deaths, with a mean follow-up of 6.5 years and survey-weighted Cox analysis.",
+        "evidence_level": "Survey-weighted human exposure–mortality association",
+        "scope": "Describes a complex-survey analytic sample; raw counts are not survey-weighted percentages.",
+        "source_locator": "Methods 2.1 and 2.6; Results 3.1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-sleep-hua-2",
+        "component": "Short-sleep mortality association",
+        "context": "This is an observational association, not a randomized intervention that shortens or extends sleep.",
+        "finding": "In fully adjusted Model 3, short sleep (<7 h versus 7–9 h) was associated with all-cause mortality at HR 1.25 (95% CI 1.04–1.51).",
+        "evidence_level": "Survey-weighted human exposure–mortality association",
+        "scope": "Supports an adjusted short-sleep association, not benefit from changing sleep duration.",
+        "source_locator": "Results 3.2; Table 2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-sleep-hua-3",
+        "component": "Long-sleep mortality association",
+        "context": "The relative hazard is not an absolute-risk estimate or an individual prognosis.",
+        "finding": "In Model 3, long sleep (>9 h versus 7–9 h) was associated with all-cause mortality at HR 1.50 (95% CI 1.10–2.04).",
+        "evidence_level": "Survey-weighted human exposure–mortality association",
+        "scope": "Supports an adjusted long-sleep relative hazard, not an individual absolute risk or prognosis.",
+        "source_locator": "Results 3.2; Table 2",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-sleep-hua-4",
+        "component": "Self-reported sleep-trouble association",
+        "context": "This result for one self-reported indicator does not prove that all sleep disorders have no effect on mortality.",
+        "finding": "Self-reported sleep trouble did not show a statistically significant association with mortality in Model 3: HR 1.04 (95% CI 0.87–1.25), P=0.651.",
+        "evidence_level": "Survey-weighted human exposure–mortality association",
+        "scope": "Applies only to the studied self-reported indicator, not the safety of all sleep disorders.",
+        "source_locator": "Results 3.2; Table 2",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-sleep-hua-5",
+        "component": "Nonlinear sleep-duration estimate",
+        "context": "The turning point is a model estimate from this dataset, not an intervention-validated sleep prescription or a precise target for every individual.",
+        "finding": "Restricted cubic splines showed nonlinearity (P<0.001), with an estimated sleep-duration turning point of 7.23 h.",
+        "evidence_level": "Survey-weighted human exposure–mortality association",
+        "scope": "Supports a data-derived turning point, not a prescribed personal sleep target.",
+        "source_locator": "Results 3.3; Fig. 2; Table 3",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "publication_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1521372/full",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40206179/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979105/",
+    "review_basis": "Selected findings checked against published main text, readable tables and publication records. No participant-level reanalysis or comprehensive supplementary-data audit was performed.",
+    "data_url": "https://www.cdc.gov/nchs/nhanes/index.htm"
+  }
+}
