@@ -59,7 +59,7 @@ PRIORITY_STATUS = (
     ("10.1002/ehf2.14003", "v2"),
     ("10.1093/eurheartj/ehaf523", "v2"),
     ("10.1002/mdr2.70052", "v2"),
-    ("10.1200/po.24.00089", "v1"),
+    ("10.1200/po.24.00089", "v2"),
     ("10.1172/jci194175", "v2"),
     ("10.1021/acs.jproteome.4c00522", "v2"),
     ("10.1016/j.ejphar.2023.175569", "v1"),
@@ -270,7 +270,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (9, 4, 15)
+    assert (len(v2_items), v1_count, pending_count) == (10, 3, 15)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -311,6 +311,7 @@ def run_tests():
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.1200/po.24.00089": ("Study Design & Model Development", "External validation"),
         AIHFLEVEL_DOI: (
             "Study Design & Model Development",
             "External validation",

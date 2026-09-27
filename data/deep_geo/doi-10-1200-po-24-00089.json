@@ -1,21 +1,473 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1200/po.24.00089",
   "display_title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
-  "summary": "A publication in JCO Precision Oncology (2024) titled “Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study”.",
-  "keywords": [
-    "Artificial",
-    "Intelligence",
-    "Hybrid",
-    "Survival",
-    "Assessment",
-    "System",
-    "Robot-Assisted",
-    "Proctectomy",
-    "Retrospective",
-    "Cohort"
+  "summary": "RAP-AIscore is an interpretable postoperative overall-survival model developed in a retrospective two-center study of 506 patients undergoing robot-assisted proctectomy, with internal validation and independent retrospective SYEMH evaluation.",
+  "research_question": "Can a systematically selected hybrid survival-machine-learning framework provide interpretable and externally validated postoperative overall-survival risk stratification for patients with rectal cancer undergoing robot-assisted proctectomy?",
+  "author_summary": "This retrospective two-center study evaluated 506 unique patients undergoing robot-assisted proctectomy for rectal cancer. The NSCVRCS Meta cohort included 384 patients divided into development and internal-validation subsets; an independent SYEMH cohort included 122 patients. A comparison of 132 candidate survival-modeling schemes selected Surv.coxboost + Surv.aorsf and yielded an interpretable model with 10 predictors. RAP-AIscore showed internal time-dependent survival discrimination and separated patients into three prognostic states. Independent SYEMH evaluation was retrospective: its 1-year AUC was 0.587, with 2- and 3-year AUCs of 0.754 and 0.810. Prospective clinical utility and improved survival from model-guided care remain unestablished.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Double-center retrospective cohort study with internal and independent external validation",
+    "evidence_type": "Human postoperative prognostic survival-modeling study",
+    "unique_total_n": 506,
+    "population": "Patients with rectal cancer undergoing robot-assisted proctectomy",
+    "primary_endpoint": "In-hospital and post-discharge overall survival",
+    "secondary_endpoint": "Postoperative prognostic risk stratification and time-dependent survival discrimination",
+    "data_modalities": [
+      "electronic health records",
+      "clinical and laboratory variables",
+      "operative and pathologic characteristics",
+      "longitudinal survival outcomes"
+    ],
+    "external_validation": true,
+    "cohorts": [
+      {
+        "name": "NSCVRCS Discovery",
+        "role": "model development",
+        "n": 268,
+        "subset_of": "NSCVRCS Meta"
+      },
+      {
+        "name": "NSCVRCS Replication",
+        "role": "internal validation",
+        "n": 116,
+        "subset_of": "NSCVRCS Meta"
+      },
+      {
+        "name": "NSCVRCS Meta",
+        "role": "complete in-house/modeling cohort",
+        "n": 384,
+        "contains": [
+          "NSCVRCS Discovery",
+          "NSCVRCS Replication"
+        ]
+      },
+      {
+        "name": "SYEMH",
+        "role": "independent external validation",
+        "n": 122
+      }
+    ]
+  },
+  "model_profile": {
+    "initial_variables": 53,
+    "algorithm_count": 12,
+    "modeling_schemes": 132,
+    "selected_algorithms": [
+      "Surv.coxboost",
+      "Surv.aorsf"
+    ],
+    "feature_selection": "Filter + sequential-forward-floating wrapper feature selection maximizing Harrell C-index",
+    "final_predictor_count": 10,
+    "final_predictors": [
+      "pTNM",
+      "ROM",
+      "CEA",
+      "Ns",
+      "PostCEA",
+      "Ts",
+      "CA199",
+      "HLP",
+      "Postchem",
+      "Minutes"
+    ],
+    "validation_strategy": [
+      "10 repetitions of 10-fold cross-validation",
+      "Monte Carlo cross-validation: 100 iterations, sampling rate 0.7",
+      "bootstrap: 1,000 iterations, sampling rate 0.7"
+    ],
+    "interpretability": [
+      "SHAP",
+      "nomogram",
+      "conditional inference tree",
+      "t-SNE risk-state visualization"
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study constructed RAP-AIscore using a systematic comparison of 132 candidate survival-modeling schemes in a double-center retrospective cohort.",
+      "context": "506 unique RAP patients; NSCVRCS Meta n=384 plus independent SYEMH n=122. Discovery and Replication are subsets of Meta and must not be counted twice.",
+      "evidence": [
+        {
+          "label": "total unique patients",
+          "value": "506"
+        },
+        {
+          "label": "NSCVRCS Meta",
+          "value": "384"
+        },
+        {
+          "label": "Discovery",
+          "value": "268"
+        },
+        {
+          "label": "Replication",
+          "value": "116"
+        },
+        {
+          "label": "SYEMH",
+          "value": "122"
+        },
+        {
+          "label": "modeling schemes",
+          "value": "132"
+        }
+      ],
+      "source_locator": "Abstract: Methods; Methods: Data Sources and Study Population; Results: Outcome and Treatment of Missing Values"
+    },
+    {
+      "id": "KF2",
+      "claim": "The selected Surv.coxboost + Surv.aorsf hybrid scheme achieved the highest average C-index among the 132 evaluated schemes.",
+      "context": "Systematic retrospective comparison of candidate survival-modeling schemes.",
+      "evidence": [
+        {
+          "label": "average C-index",
+          "value": "0.833"
+        }
+      ],
+      "source_locator": "Results: Comprehensive Development of AI-Hybrid Score System; Fig. 2B-D"
+    },
+    {
+      "id": "KF3",
+      "claim": "RAP-AIscore showed time-dependent postoperative overall-survival discrimination in the internal NSCVRCS cohorts.",
+      "context": "Retrospective internal development and validation; Meta contains the Discovery and Replication subsets.",
+      "evidence": [
+        {
+          "label": "Replication 12/36/60/72-month AUCs",
+          "value": "0.851 / 0.849 / 0.902 / 0.915"
+        },
+        {
+          "label": "Meta 12/36/60/72-month AUCs",
+          "value": "0.911 / 0.924 / 0.931 / 0.948"
+        },
+        {
+          "label": "Discovery 12/36/60/72-month AUCs",
+          "value": "0.927 / 0.960 / 0.949 / 0.962"
+        }
+      ],
+      "source_locator": "Results: The Predictive Value of RAP-AIscore System; Fig. 2E-H; Data Supplement Fig. S6"
+    },
+    {
+      "id": "KF4",
+      "claim": "The final interpretable RAP-AIscore used 10 accessible predictors.",
+      "context": "Predictive model variables; their inclusion does not establish causal effects on mortality.",
+      "evidence": [
+        {
+          "label": "predictor count",
+          "value": "10"
+        },
+        {
+          "label": "predictors",
+          "value": "pTNM, ROM, CEA, Ns, PostCEA, Ts, CA199, HLP, Postchem, Minutes"
+        }
+      ],
+      "source_locator": "Fig. 3C-D; Data Supplement Table S5"
+    },
+    {
+      "id": "KF5",
+      "claim": "Conditional-inference analysis separated patients into three prognostic risk states.",
+      "context": "Reported retrospective risk-state thresholds and group counts.",
+      "evidence": [
+        {
+          "label": "low",
+          "value": "RAP-AIscore <= 2.394"
+        },
+        {
+          "label": "intermediate",
+          "value": "> 2.394 to <= 5.55"
+        },
+        {
+          "label": "high",
+          "value": "> 5.55"
+        },
+        {
+          "label": "Replication low/intermediate/high counts",
+          "value": "68 / 20 / 19"
+        },
+        {
+          "label": "Meta low/intermediate/high counts",
+          "value": "258 / 60 / 66"
+        },
+        {
+          "label": "three-state discrimination",
+          "value": "P < 0.001 in Replication and Meta"
+        }
+      ],
+      "source_locator": "Results: Clinical Prognostic Stratification of RAP-AIscore; Fig. 4A-E"
+    },
+    {
+      "id": "KF6",
+      "claim": "RAP-AIscore retained prognostic discrimination in the independent SYEMH external cohort, although early external discrimination was modest.",
+      "context": "Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+      "evidence": [
+        {
+          "label": "1-year AUC",
+          "value": "0.587"
+        },
+        {
+          "label": "2-year AUC",
+          "value": "0.754"
+        },
+        {
+          "label": "3-year AUC",
+          "value": "0.810"
+        },
+        {
+          "label": "high-vs-low survival",
+          "value": "P < 0.0001"
+        },
+        {
+          "label": "three-state discrimination",
+          "value": "P < 0.001"
+        }
+      ],
+      "source_locator": "Results: Extension to External Cohort From the RAP-AIscore; Fig. 5A-J"
+    }
   ],
-  "questions": [
-    "What does this publication investigate regarding “Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study”?"
-  ]
+  "what_this_adds": [
+    "Retrospective development of an interpretable survival model for patients undergoing robot-assisted proctectomy.",
+    "Systematic comparison of hybrid survival-modeling schemes.",
+    "Internal time-dependent discrimination and independent retrospective external evaluation.",
+    "Three-state postoperative prognostic stratification."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Retrospective development of an interpretable RAP-specific survival model.",
+      "Systematic hybrid model selection.",
+      "Internal time-dependent survival discrimination.",
+      "Independent retrospective external evaluation, with modest 1-year AUC of 0.587.",
+      "Three-state prognostic stratification."
+    ],
+    "does_not_establish": [
+      "Prospective clinical utility.",
+      "Improved survival from RAP-AIscore-guided care or treatment efficacy.",
+      "Causal effects of the 10 predictors.",
+      "Universal generalizability to all RAP populations or settings.",
+      "Replacement of clinician judgment or pathologic staging."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What population was RAP-AIscore developed for?",
+      "answer": "Patients with rectal cancer undergoing robot-assisted proctectomy; the study modeled postoperative overall survival retrospectively.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How many independent patients and cohorts were studied?",
+      "answer": "There were 506 unique patients: 384 in NSCVRCS Meta and 122 in independent SYEMH. NSCVRCS Discovery n=268 and Replication n=116 are subsets of Meta, not additional patients.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How were 132 modeling schemes compared?",
+      "answer": "The study systematically compared candidate survival-modeling schemes and selected Surv.coxboost + Surv.aorsf, which achieved the highest average C-index, 0.833.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "What performance was observed internally?",
+      "answer": "At 12/36/60/72 months, AUCs were 0.851/0.849/0.902/0.915 in Replication, 0.911/0.924/0.931/0.948 in Meta, and 0.927/0.960/0.949/0.962 in Discovery. These are retrospective time-dependent discrimination results.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What happened in independent SYEMH validation?",
+      "answer": "In the independent retrospective cohort, 1-/2-/3-year AUCs were 0.587/0.754/0.810. Early discrimination was modest. High-versus-low survival differed at P < 0.0001 and three-state discrimination at P < 0.001.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Does RAP-AIscore have proven prospective clinical benefit?",
+      "answer": "No. The retrospective model-development, internal-validation and external-evaluation findings do not establish prospective clinical utility or survival benefit from model-guided care.",
+      "evidence_refs": [
+        "KF1",
+        "KF3",
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "rectal cancer"
+    ],
+    "procedures": [
+      "robot-assisted proctectomy"
+    ],
+    "methods": [
+      "survival machine learning",
+      "hybrid model selection",
+      "SHAP",
+      "conditional inference tree"
+    ],
+    "outcomes": [
+      "overall survival",
+      "postoperative risk stratification"
+    ],
+    "validation": [
+      "internal validation",
+      "independent external validation"
+    ]
+  },
+  "limitations": [
+    "The two-center study and independent external evaluation were retrospective.",
+    "Prospective clinical utility and survival benefit from model-guided management were not established.",
+    "External 1-year discrimination was modest, with AUC 0.587.",
+    "Generalizability to all hospitals and RAP populations was not established."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Related hybrid survival-machine-learning framework developed by the same research program in a different clinical population; AIHFLevel addresses advanced heart failure with renal dysfunction, whereas RAP-AIscore addresses postoperative survival after robot-assisted proctectomy. The models do not validate one another."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1200/po.24.00089",
+    "publisher_url": "https://ascopubs.org/doi/10.1200/PO.24.00089",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39432882/"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which studies developed and externally evaluated survival models specifically for patients undergoing robot-assisted proctectomy?",
+        "supported_scope": "The study constructed RAP-AIscore using a systematic comparison of 132 candidate survival-modeling schemes in a double-center retrospective cohort. 506 unique RAP patients; NSCVRCS Meta n=384 plus independent SYEMH n=122. Discovery and Replication are subsets of Meta and must not be counted twice. RAP-AIscore retained prognostic discrimination in the independent SYEMH external cohort, although early external discrimination was modest. Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+        "evidence_refs": [
+          "KF1",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How can systematic hybrid model selection be applied to postoperative survival prediction?",
+        "supported_scope": "The study constructed RAP-AIscore using a systematic comparison of 132 candidate survival-modeling schemes in a double-center retrospective cohort. 506 unique RAP patients; NSCVRCS Meta n=384 plus independent SYEMH n=122. Discovery and Replication are subsets of Meta and must not be counted twice. The selected Surv.coxboost + Surv.aorsf hybrid scheme achieved the highest average C-index among the 132 evaluated schemes. Systematic retrospective comparison of candidate survival-modeling schemes.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What evidence supports time-dependent survival discrimination by RAP-AIscore?",
+        "supported_scope": "RAP-AIscore showed time-dependent postoperative overall-survival discrimination in the internal NSCVRCS cohorts. Retrospective internal development and validation; Meta contains the Discovery and Replication subsets. RAP-AIscore retained prognostic discrimination in the independent SYEMH external cohort, although early external discrimination was modest. Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+        "evidence_refs": [
+          "KF3",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which clinical variables were incorporated into the interpretable 10-predictor RAP-AIscore?",
+        "supported_scope": "The final interpretable RAP-AIscore used 10 accessible predictors. Predictive model variables; their inclusion does not establish causal effects on mortality.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "How did RAP-AIscore define low, intermediate and high postoperative prognostic states?",
+        "supported_scope": "Conditional-inference analysis separated patients into three prognostic risk states. Reported retrospective risk-state thresholds and group counts.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "Was RAP-AIscore independently externally validated?",
+        "supported_scope": "RAP-AIscore retained prognostic discrimination in the independent SYEMH external cohort, although early external discrimination was modest. Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "RAP-AIscore-guided management improves patient survival.",
+      "Prospective clinical utility has been established.",
+      "The 10 predictors are causal determinants of mortality.",
+      "Performance generalizes to every hospital or population.",
+      "RAP-AIscore replaces standard clinical or pathological assessment."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-rap-aiscore-1",
+        "component": "KF1",
+        "context": "506 unique RAP patients; NSCVRCS Meta n=384 plus independent SYEMH n=122. Discovery and Replication are subsets of Meta and must not be counted twice.",
+        "finding": "The study constructed RAP-AIscore using a systematic comparison of 132 candidate survival-modeling schemes in a double-center retrospective cohort. total unique patients: 506; NSCVRCS Meta: 384; Discovery: 268; Replication: 116; SYEMH: 122; modeling schemes: 132",
+        "evidence_level": "Retrospective survival modeling",
+        "scope": "506 unique RAP patients; NSCVRCS Meta n=384 plus independent SYEMH n=122. Discovery and Replication are subsets of Meta and must not be counted twice.",
+        "source_locator": "Abstract: Methods; Methods: Data Sources and Study Population; Results: Outcome and Treatment of Missing Values",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-rap-aiscore-2",
+        "component": "KF2",
+        "context": "Systematic retrospective comparison of candidate survival-modeling schemes.",
+        "finding": "The selected Surv.coxboost + Surv.aorsf hybrid scheme achieved the highest average C-index among the 132 evaluated schemes. average C-index: 0.833",
+        "evidence_level": "Retrospective survival modeling",
+        "scope": "Systematic retrospective comparison of candidate survival-modeling schemes.",
+        "source_locator": "Results: Comprehensive Development of AI-Hybrid Score System; Fig. 2B-D",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-rap-aiscore-3",
+        "component": "KF3",
+        "context": "Retrospective internal development and validation; Meta contains the Discovery and Replication subsets.",
+        "finding": "RAP-AIscore showed time-dependent postoperative overall-survival discrimination in the internal NSCVRCS cohorts. Replication 12/36/60/72-month AUCs: 0.851 / 0.849 / 0.902 / 0.915; Meta 12/36/60/72-month AUCs: 0.911 / 0.924 / 0.931 / 0.948; Discovery 12/36/60/72-month AUCs: 0.927 / 0.960 / 0.949 / 0.962",
+        "evidence_level": "Retrospective survival modeling",
+        "scope": "Retrospective internal development and validation; Meta contains the Discovery and Replication subsets.",
+        "source_locator": "Results: The Predictive Value of RAP-AIscore System; Fig. 2E-H; Data Supplement Fig. S6",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-rap-aiscore-4",
+        "component": "KF4",
+        "context": "Predictive model variables; their inclusion does not establish causal effects on mortality.",
+        "finding": "The final interpretable RAP-AIscore used 10 accessible predictors. predictor count: 10; predictors: pTNM, ROM, CEA, Ns, PostCEA, Ts, CA199, HLP, Postchem, Minutes",
+        "evidence_level": "Retrospective survival modeling",
+        "scope": "Predictive model variables; their inclusion does not establish causal effects on mortality.",
+        "source_locator": "Fig. 3C-D; Data Supplement Table S5",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-rap-aiscore-5",
+        "component": "KF5",
+        "context": "Reported retrospective risk-state thresholds and group counts.",
+        "finding": "Conditional-inference analysis separated patients into three prognostic risk states. low: RAP-AIscore <= 2.394; intermediate: > 2.394 to <= 5.55; high: > 5.55; Replication low/intermediate/high counts: 68 / 20 / 19; Meta low/intermediate/high counts: 258 / 60 / 66; three-state discrimination: P < 0.001 in Replication and Meta",
+        "evidence_level": "Retrospective survival modeling",
+        "scope": "Reported retrospective risk-state thresholds and group counts.",
+        "source_locator": "Results: Clinical Prognostic Stratification of RAP-AIscore; Fig. 4A-E",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-rap-aiscore-6",
+        "component": "KF6",
+        "context": "Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+        "finding": "RAP-AIscore retained prognostic discrimination in the independent SYEMH external cohort, although early external discrimination was modest. 1-year AUC: 0.587; 2-year AUC: 0.754; 3-year AUC: 0.810; high-vs-low survival: P < 0.0001; three-state discrimination: P < 0.001",
+        "evidence_level": "Independent retrospective external evaluation",
+        "scope": "Independent retrospective SYEMH evaluation, n=122; external 1-year AUC was 0.587.",
+        "source_locator": "Results: Extension to External Cohort From the RAP-AIscore; Fig. 5A-J",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
 }

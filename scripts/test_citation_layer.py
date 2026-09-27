@@ -9,6 +9,7 @@ from sync_common import ROOT
 
 
 TARGETS = {
+    "doi-10-1200-po-24-00089": ("doi-10-1200-po-24-00089.json", 6, 6, 6),
     "aihflevel": ("aihflevel.json", 4, 5, 5),
     "doi-10-1038-s41698-026-01699-1": (
         "doi-10-1038-s41698-026-01699-1.json", 5, 6, 6
