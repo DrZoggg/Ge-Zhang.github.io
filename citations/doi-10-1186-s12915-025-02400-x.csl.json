@@ -59,10 +59,17 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        9,
+        26
       ]
     ]
   },
   "DOI": "10.1186/s12915-025-02400-x",
-  "URL": "https://doi.org/10.1186/s12915-025-02400-x"
+  "URL": "https://doi.org/10.1186/s12915-025-02400-x",
+  "volume": "23",
+  "issue": "1",
+  "publisher": "BioMed Central",
+  "article-number": "280",
+  "ISSN": "1741-7007"
 }

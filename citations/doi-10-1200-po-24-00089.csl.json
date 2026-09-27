@@ -56,10 +56,16 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        10,
+        21
       ]
     ]
   },
   "DOI": "10.1200/po.24.00089",
-  "URL": "https://doi.org/10.1200/po.24.00089"
+  "URL": "https://doi.org/10.1200/po.24.00089",
+  "volume": "8",
+  "publisher": "American Society of Clinical Oncology",
+  "article-number": "e2400089",
+  "ISSN": "2473-4284"
 }

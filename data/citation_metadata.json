@@ -131,6 +131,48 @@
         "https://doi.org/10.1002/mdr2.70052",
         "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70052"
       ]
+    },
+    "10.1200/po.24.00089": {
+      "publication_date": "2024-10-21",
+      "volume": "8",
+      "article_number": "e2400089",
+      "eissn": "2473-4284",
+      "pmid": "39432882",
+      "publisher": "American Society of Clinical Oncology",
+      "verified_sources": [
+        "https://ascopubs.org/doi/10.1200/PO.24.00089",
+        "https://pubmed.ncbi.nlm.nih.gov/39432882/"
+      ]
+    },
+    "10.1186/s12915-025-02400-x": {
+      "publication_date": "2025-09-26",
+      "volume": "23",
+      "issue": "1",
+      "article_number": "280",
+      "eissn": "1741-7007",
+      "pmid": "41013440",
+      "pmcid": "PMC12465141",
+      "publisher": "BioMed Central",
+      "verified_sources": [
+        "https://link.springer.com/article/10.1186/s12915-025-02400-x",
+        "https://pubmed.ncbi.nlm.nih.gov/41013440/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12465141/"
+      ]
+    },
+    "10.1136/jitc-2024-010127": {
+      "publication_date": "2025-01-07",
+      "volume": "13",
+      "issue": "1",
+      "article_number": "e010127",
+      "eissn": "2051-1426",
+      "pmid": "39773567",
+      "pmcid": "PMC11749606",
+      "publisher": "BMJ",
+      "verified_sources": [
+        "https://jitc.bmj.com/content/13/1/e010127",
+        "https://pubmed.ncbi.nlm.nih.gov/39773567/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/"
+      ]
     }
   }
 }

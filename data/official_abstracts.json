@@ -122,6 +122,58 @@
         "type": "unstructured",
         "text": "Circadian rhythms orchestrate cardiovascular physiology by regulating immune and inflammatory pathways. Disruption of these rhythms profoundly alters vascular homeostasis, thereby promoting the onset and progression of cardiovascular diseases (CVD). Evidence from experimental and clinical studies demonstrates that circadian misalignment aggravates myocardial infarction, stroke, and hypertension by enhancing oxidative stress, dysregulating immune cell function, and activating inflammasomes. At the cellular level, macrophages and neutrophils exhibit rhythmic metabolic and inflammatory activities driven by circadian transcriptional networks such as the CLOCK‐BMAL1 complex, PER/CRY repressors, and secondary loops involving REV‐ERBα and RORγ. Epigenetic regulators including p300, THRAP3, and SRC‐2 further refine this temporal control of vascular inflammation. Disruption of these oscillatory systems increases NADPH oxidase activity, elevates reactive oxygen species (ROS) production, and activates NF‐κB signaling, leading to endothelial dysfunction and vascular injury. Given these temporal dynamics, chronotherapy, defined as the strategic timing of medication administration to synchronize with endogenous biological rhythms, emerges as a crucial determinant for cardiovascular therapeutic efficacy. Chronotherapeutic strategies, including pharmacological targeting of circadian regulators such as REV‐ERBα agonists, hold promise for mitigating vascular inflammation and improving cardiovascular outcomes. This review summarizes current evidence linking circadian rhythm disruption to immunoinflammatory mechanisms in cardiovascular disease and highlights novel avenues for time‐based therapeutic interventions."
       }
+    },
+    "10.1186/s12915-025-02400-x": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12465141/",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Abdominal aortic aneurysm (AAA) is typically an asymptomatic disease closely associated with immune mechanisms. A deep understanding of cellular responses within AAA tissues, particularly the molecular changes in T-cell populations, is critical for disease diagnosis and treatment. However, the specific mechanisms inducing T-lymphocyte fate imbalance in AAA remain to be elucidated."
+          },
+          {
+            "label": "Results",
+            "text": "The analysis revealed the core mechanisms driving T-lymphocyte fate imbalance in AAA. We successfully established a comprehensive regulatory map encompassing T-cell infiltration regulatory features, critical transcription factors, and dysregulated immune signaling pathways. Machine learning algorithms identified transcription factors FOSB and JUNB as key biomarkers. Validation across multiple independent datasets and clinical samples confirmed the feasibility and accuracy of FOSB and JUNB as clinical diagnostic biomarkers for AAA."
+          },
+          {
+            "label": "Conclusions",
+            "text": "Through the analysis of single-cell and bulk data, hallmarks of human AAA cellular landscape and T-cell comprehensive developmental relationships were recapitulated. This study identified important roles of T-cell and the molecular mechanisms for the dynamic T-cell infiltrating process, which could characterize disease status and landscape of human AAA microenvironment. Using the deep learning algorithms, FOSB and JUNB were demonstrated as pivotal biomarkers of AAA, together with screening the potential pharmacologic agents targeting T-cell polarization. Taken together, this expands the current understanding of AAA pathogenesis and may provide a feasible immune-targeted therapeutic strategy."
+          }
+        ]
+      }
+    },
+    "10.1136/jitc-2024-010127": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/",
+      "license": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Immune checkpoint inhibitors (ICIs) have revolutionized the treatment of many malignant tumors. However, ICI-induced hyper-immune activation causes cardiotoxicity. Traditional treatments such as glucocorticoids and immunosuppressants have limited effectiveness and may even accelerate tumor growth. This study aimed to identify approaches that effectively reduce cardiotoxicity and simultaneously preserve or enhance the antitumor immunity of ICI therapy."
+          },
+          {
+            "label": "Methods",
+            "text": "ICI injection in melanoma-bearing C57BL/6J female mice was used to simulate cardiotoxicity in patients with tumor undergoing immune therapy. MCC950 was used to block nod-like receptor protein 3 (NLRP3) inflammasome activity. Echocardiography, immunofluorescence, flow cytometry, and reverse transcription quantitative polymerase chain reaction were used to assess cardiac function, immune cell populations, and inflammatory factor levels. Bulk and single-cell RNA sequencing was used to detect the changes in cardiac transcriptome and immunological network."
+          },
+          {
+            "label": "Results",
+            "text": "NLRP3 inhibition reduced inflammatory response and improved cardiac function. Notably, NLRP3 inhibition also resulted in a pronounced suppression of tumor growth. Single-cell RNA sequencing elucidated that MCC950 treatment reduced the cardiac infiltration of pathogenic macrophages, cytotoxic T cells, activated T cells, and their production of inflammatory cytokines, while enhancing the presence of reparative macrophages and naive T cells. In addition, MCC950 attenuated cardiotoxicity induced by dual programmed cell death protein 1 (PD-1) and cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) immunotherapy and promoted tumor regression, and showed efficacy in treating established cardiotoxicity."
+          },
+          {
+            "label": "Conclusions",
+            "text": "Our findings provide a promising clinical approach for preventing and treating cardiotoxicity induced by ICIs, dissociating the antitumor efficacy of ICI-based therapies from their cardiotoxic side effects."
+          }
+        ]
+      }
     }
   }
 }

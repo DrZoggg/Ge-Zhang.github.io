@@ -53,10 +53,17 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        1,
+        7
       ]
     ]
   },
   "DOI": "10.1136/jitc-2024-010127",
-  "URL": "https://doi.org/10.1136/jitc-2024-010127"
+  "URL": "https://doi.org/10.1136/jitc-2024-010127",
+  "volume": "13",
+  "issue": "1",
+  "publisher": "BMJ",
+  "article-number": "e010127",
+  "ISSN": "2051-1426"
 }

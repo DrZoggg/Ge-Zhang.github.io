@@ -8,10 +8,13 @@ from sync_common import ROOT, is_withdrawn, norm_doi
 
 PATH = ROOT / "data" / "official_abstracts.json"
 LICENSE_URLS = {
+    "CC-BY-NC-4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
     "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
 SOURCES = {
+    "10.1186/s12915-025-02400-x": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12465141/"),
+    "10.1136/jitc-2024-010127": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11749606/"),
     "10.1038/s41467-024-50415-9": ("www.nature.com", "/articles/s41467-024-50415-9"),
     "10.1038/s41698-026-01699-1": ("www.nature.com", "/articles/s41698-026-01699-1"),
     "10.1016/j.isci.2023.107587": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10470306/"),
@@ -22,6 +25,7 @@ SOURCES = {
     "10.1002/mdr2.70052": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70052"),
 }
 EXCLUDED = {
+    "10.1200/po.24.00089",
     "10.1093/eurheartj/ehaf523",
 }
 
@@ -81,4 +85,10 @@ def load_official_abstracts(publications):
                 raise ValueError("SMC-fate official abstract section order changed.")
             if doi == "10.1002/ehf2.14003" and [s["label"] for s in sections] != ["Aims", "Methods", "Results", "Conclusions"]:
                 raise ValueError("COVID-HF official abstract section order changed.")
+            expected = {
+                "10.1186/s12915-025-02400-x": ["Background", "Results", "Conclusions"],
+                "10.1136/jitc-2024-010127": ["Background", "Methods", "Results", "Conclusions"],
+            }.get(doi)
+            if expected and [s["label"] for s in sections] != expected:
+                raise ValueError(f"Official abstract section order changed for {doi}.")
     return papers

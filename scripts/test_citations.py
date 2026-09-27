@@ -19,6 +19,9 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    "10.1200/po.24.00089": {"publication_date":"2024-10-21","volume":"8","article_number":"e2400089","eissn":"2473-4284","pmid":"39432882","publisher":"American Society of Clinical Oncology"},
+    "10.1186/s12915-025-02400-x": {"publication_date":"2025-09-26","volume":"23","issue":"1","article_number":"280","eissn":"1741-7007","pmid":"41013440","pmcid":"PMC12465141","publisher":"BioMed Central"},
+    "10.1136/jitc-2024-010127": {"publication_date":"2025-01-07","volume":"13","issue":"1","article_number":"e010127","eissn":"2051-1426","pmid":"39773567","pmcid":"PMC11749606","publisher":"BMJ"},
     "10.1038/s41467-024-50415-9": {
         "publication_date": "2024-08-08", "volume": "15", "issue": "1",
         "article_number": "6756", "eissn": "2041-1723",
