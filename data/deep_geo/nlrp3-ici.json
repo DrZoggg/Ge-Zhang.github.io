@@ -1,12 +1,484 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1136/jitc-2024-010127",
-  "display_title": "NLRP3 and ICI cardiotoxicity",
-  "summary": "A preclinical cardio-oncology study testing NLRP3 inflammasome inhibition in immune-checkpoint-inhibitor cardiotoxicity.",
-  "keywords": ["NLRP3 inflammasome", "immune checkpoint inhibitor", "cardiotoxicity", "ICI myocarditis", "MCC950", "cardio-oncology"],
-  "questions": [
-    "Can NLRP3 inhibition reduce immune-checkpoint-inhibitor cardiotoxicity?",
-    "What mechanisms link the inflammasome to ICI myocarditis?",
-    "Does MCC950 affect antitumor activity during ICI therapy?"
-  ]
+  "display_title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
+  "summary": "A preclinical multimodal study evaluates MCC950 in B16F10-bearing mouse models of ICI-associated cardiac injury, combining cardiac and tumor phenotyping with immune profiling and supportive public human PBMC association data.",
+  "research_question": "Does NLRP3 inflammasome inhibition mitigate immune-checkpoint-inhibitor cardiac injury while reshaping cardiac immune-cell states and preserving or enhancing antitumor activity in the tested preclinical melanoma models?",
+  "author_summary": "The study tested NLRP3 inhibition with MCC950 in female C57BL/6J mice bearing B16F10 melanoma during anti-PD-1 or dual anti-PD-1 plus anti-CTLA-4 treatment. Cardiac biomarkers, echocardiography, histology, immune profiling and transcriptomics supported preclinical effects on cardiac injury and inflammatory states. Cardiac single-cell analysis comprised 68,058 cells from a pooled design with six hearts per sample; these cells are not independent mouse replicates. MCC950 altered macrophage and T-cell states, and the experiments included macrophage depletion, a dual-ICI comparison with n=8 per group, and a mouse treatment-after-injury protocol. Public GSE180045 human PBMC data supplied supportive NLRP3/IL1B associations only. Cardiac and tumor effects in these mouse models do not establish human treatment efficacy, safety or approved clinical use.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Controlled preclinical intervention study integrating tumor-bearing mouse models, cardiac phenotyping, bulk RNA sequencing, single-cell RNA sequencing, flow cytometry, histology and supportive public human PBMC single-cell data",
+    "evidence_type": "Preclinical mechanistic and pharmacologic intervention evidence with supportive public human single-cell association",
+    "population": "Female C57BL/6J mice with B16F10 melanoma and ICI-induced cardiac injury; supportive public human PBMC single-cell data from GSE180045",
+    "primary_endpoint": "Experimental cardiac injury and cardiac functional phenotypes under ICI treatment with or without NLRP3 inhibition",
+    "secondary_endpoint": "Tumor growth, cardiac immune-cell states, inflammatory signaling and immune-cell communication",
+    "data_modalities": [
+      "echocardiography",
+      "plasma cardiac biomarkers",
+      "histology and immunofluorescence",
+      "flow cytometry",
+      "RT-qPCR and Western blotting",
+      "bulk RNA sequencing",
+      "cardiac single-cell RNA sequencing",
+      "public human PBMC single-cell RNA sequencing"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "Mouse model",
+        "value": "B16F10-bearing female C57BL/6J mice"
+      },
+      {
+        "label": "ICI interventions",
+        "value": "anti-PD-1 and anti-PD-1 + anti-CTLA-4"
+      },
+      {
+        "label": "NLRP3 inhibitor",
+        "value": "MCC950"
+      },
+      {
+        "label": "Cardiac scRNA-seq",
+        "value": "68,058 cells"
+      },
+      {
+        "label": "scRNA biological design",
+        "value": "Six hearts per sample / pooled design"
+      },
+      {
+        "label": "Single-cell structure",
+        "value": "14 clusters / 8 immune classes"
+      },
+      {
+        "label": "Dual-ICI experiment",
+        "value": "n=8 per group"
+      }
+    ],
+    "counting_note": "Sample sizes differ by experiment and assay. Pooled cardiac scRNA cells are not independent mouse replicates, and cell counts must not be treated as biological replicate counts. GSE180045 is public supportive human association data, not a human treatment cohort or independent validation of MCC950 efficacy. No synthetic total n is created."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Anti-PD-1 cardiac injury was accompanied by NLRP3/IL1B activation in the mouse model, with supportive human PBMC associations.",
+      "context": "B16F10-bearing mouse anti-PD-1 model plus GSE180045 public human PBMC single-cell analysis; human findings are associations only.",
+      "evidence": [
+        {
+          "label": "mouse evidence",
+          "value": "Anti-PD-1 cardiac injury and NLRP3/IL1B activation"
+        },
+        {
+          "label": "human GSE180045 evidence",
+          "value": "NLRP3/IL1B expression patterns in monocytes/neutrophils and association with ICI use/myocarditis; no human intervention"
+        }
+      ],
+      "source_locator": "Fig. 1; Supplementary Fig. 1"
+    },
+    {
+      "id": "KF2",
+      "claim": "MCC950 mitigated cardiac injury in the tested anti-PD-1 mouse model.",
+      "context": "Preclinical cardiac phenotyping under the reported experimental conditions.",
+      "evidence": [
+        {
+          "label": "cardiac readouts",
+          "value": "cTnT and echocardiography"
+        },
+        {
+          "label": "tissue and immune readouts",
+          "value": "Cardiac immune infiltration, apoptosis and fibrosis"
+        },
+        {
+          "label": "molecular readouts",
+          "value": "Inflammatory and chemokine expression"
+        }
+      ],
+      "source_locator": "Fig. 2"
+    },
+    {
+      "id": "KF3",
+      "claim": "MCC950 altered tumor and immune phenotypes in the B16F10 mouse melanoma model and, under the reported conditions, combination with anti-PD-1 reduced tumor burden.",
+      "context": "Tumor findings are preclinical and do not establish human cancer efficacy.",
+      "evidence": [
+        {
+          "label": "model",
+          "value": "B16F10 mouse melanoma"
+        },
+        {
+          "label": "reported combination outcome",
+          "value": "MCC950 with anti-PD-1 reduced tumor burden under the reported conditions"
+        },
+        {
+          "label": "associated observations",
+          "value": "Altered tumor and immune phenotypes"
+        }
+      ],
+      "source_locator": "Fig. 3"
+    },
+    {
+      "id": "KF4",
+      "claim": "Cardiac scRNA-seq identified treatment-associated remodeling of immune states.",
+      "context": "Six hearts per sample were pooled; 68,058 cells do not represent independent biological replicates.",
+      "evidence": [
+        {
+          "label": "cells",
+          "value": "68,058"
+        },
+        {
+          "label": "clusters",
+          "value": "14"
+        },
+        {
+          "label": "immune classes",
+          "value": "8"
+        },
+        {
+          "label": "Macrophages1",
+          "value": "Pathogenic/M1-like"
+        },
+        {
+          "label": "Macrophages2",
+          "value": "Reparative/M2-like; Mertk-Mrc1 high"
+        },
+        {
+          "label": "Macrophages3",
+          "value": "Inflammatory; Nlrp3-Il1b-Tnfrsf1b high"
+        },
+        {
+          "label": "Macrophages4",
+          "value": "Early/proliferative"
+        },
+        {
+          "label": "treatment-associated states",
+          "value": "Anti-PD-1 increased Macrophages1/3; MCC950 reduced them and increased Macrophages2"
+        }
+      ],
+      "source_locator": "Fig. 4; Supplementary Fig. 4"
+    },
+    {
+      "id": "KF5",
+      "claim": "Intercellular communication and macrophage-depletion experiments supported a macrophage/T-cell inflammatory network in the mouse model.",
+      "context": "Mechanism-supporting preclinical evidence; it does not definitively attribute all effects to one canonical NLRP3 pathway.",
+      "evidence": [
+        {
+          "label": "communication",
+          "value": "TNF/CXCL/CCL communication changes"
+        },
+        {
+          "label": "macrophage depletion",
+          "value": "Clodronate macrophage-depletion effects supported the macrophage/T-cell inflammatory network"
+        }
+      ],
+      "source_locator": "Fig. 5; Supplementary Figs. 5-6"
+    },
+    {
+      "id": "KF6",
+      "claim": "MCC950 mitigated cardiac phenotypes during dual anti-PD-1 + anti-CTLA-4 therapy in the tested B16F10 mouse model and was associated with reduced tumor burden.",
+      "context": "Preclinical dual-ICI experiment; no human cardiac or antitumor treatment efficacy is established.",
+      "evidence": [
+        {
+          "label": "dual-ICI experiment",
+          "value": "n=8/group"
+        },
+        {
+          "label": "cardiac and tumor observations",
+          "value": "Mitigated cardiac phenotypes and reduced tumor burden in the tested B16F10 model"
+        }
+      ],
+      "source_locator": "Fig. 6"
+    },
+    {
+      "id": "KF7",
+      "claim": "MCC950 was evaluated after cardiac injury had already been established in a mouse anti-PD-1 protocol and ameliorated the reported echocardiographic impairment.",
+      "context": "Mouse treatment-after-injury experiment; this is not clinical treatment of established ICI myocarditis.",
+      "evidence": [
+        {
+          "label": "experimental timing",
+          "value": "MCC950 after established cardiac injury in a mouse anti-PD-1 protocol"
+        },
+        {
+          "label": "reported outcome",
+          "value": "Ameliorated echocardiographic impairment"
+        }
+      ],
+      "source_locator": "Supplementary Fig. 7"
+    }
+  ],
+  "what_this_adds": [
+    "Experimental evidence for NLRP3 involvement in ICI-associated cardiac injury in tested mouse models.",
+    "Multimodal preclinical evaluation of MCC950 cardiac and tumor phenotypes.",
+    "Cardiac macrophage/T-cell state profiling and mechanism-supporting depletion experiments.",
+    "Dual-ICI and mouse treatment-after-injury experiments, alongside supportive human PBMC associations."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Experimental NLRP3 involvement in ICI-associated cardiac injury in the tested mouse models.",
+      "Preclinical cardiac effects of MCC950.",
+      "Cardiac macrophage/T-cell state remodeling.",
+      "Preclinical dual-ICI experiments.",
+      "Supportive human PBMC single-cell association.",
+      "A preclinical mouse treatment-after-injury experiment."
+    ],
+    "does_not_establish": [
+      "MCC950 efficacy in human ICI myocarditis or cardiotoxicity.",
+      "Safety in humans or approved clinical use.",
+      "Human antitumor efficacy or universal effects across tumor models.",
+      "Clinical efficacy of combining MCC950 with ICIs.",
+      "Independent biological replication from each of the 68,058 scRNA cells.",
+      "Definitive attribution of all effects to one canonical NLRP3 pathway."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What model was used to study ICI cardiotoxicity?",
+      "answer": "B16F10-bearing female C57BL/6J mice were studied under anti-PD-1 treatment; the study also included a dual anti-PD-1 plus anti-CTLA-4 experiment. Human GSE180045 data provided supportive associations.",
+      "evidence_refs": [
+        "KF1",
+        "KF6"
+      ]
+    },
+    {
+      "question": "What cardiac effects were observed after MCC950 in mice?",
+      "answer": "The tested anti-PD-1 mouse experiments reported mitigation of cardiac injury across cTnT, echocardiography, immune infiltration, apoptosis, fibrosis and inflammatory/chemokine readouts.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What does the human GSE180045 analysis contribute?",
+      "answer": "Public human PBMC single-cell data show supportive NLRP3/IL1B patterns in monocytes/neutrophils associated with ICI use/myocarditis. These are associations, not a human MCC950 intervention or efficacy-validation cohort.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What did cardiac scRNA-seq show?",
+      "answer": "The analysis described 68,058 cells, 14 clusters and eight immune classes. Anti-PD-1 increased Macrophages1/3, while MCC950 reduced them and increased reparative Macrophages2. Six hearts per sample were pooled; cells are not independent mice.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What did macrophage depletion contribute mechanistically?",
+      "answer": "Clodronate depletion effects and TNF/CXCL/CCL communication changes supported a macrophage/T-cell inflammatory network in the mouse model, without definitively assigning every effect to one canonical NLRP3 pathway.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What happened in the dual-ICI mouse experiment?",
+      "answer": "With n=8 per group, MCC950 mitigated cardiac phenotypes during anti-PD-1 plus anti-CTLA-4 treatment and was associated with reduced tumor burden in the tested B16F10 model.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Does this study establish MCC950 as a human treatment?",
+      "answer": "No. The intervention, tumor and treatment-after-injury findings are preclinical. The latter was a mouse treatment-after-injury experiment with ameliorated echocardiographic impairment, and does not establish human efficacy, safety or approved use.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "immune checkpoint inhibitor cardiotoxicity",
+      "cardio-oncology"
+    ],
+    "immune_mechanisms": [
+      "NLRP3 inflammasome",
+      "macrophages",
+      "CD8 T cells",
+      "IL1B"
+    ],
+    "interventions": [
+      "MCC950",
+      "anti-PD-1",
+      "anti-CTLA-4"
+    ],
+    "models_methods": [
+      "B16F10 melanoma",
+      "cardiac single-cell RNA sequencing",
+      "bulk RNA sequencing",
+      "flow cytometry",
+      "echocardiography"
+    ]
+  },
+  "limitations": [
+    "The intervention evidence comes from tested preclinical melanoma models, with no human interventional cohort.",
+    "The paper notes that ICI dose/frequency may exceed typical clinical dosing and calls for additional tumor models and clinical evaluation.",
+    "Pooled cardiac single-cell samples limit interpretation of cell counts as biological replication.",
+    "GSE180045 provides supportive human association, not independent validation of MCC950 treatment efficacy.",
+    "The findings do not definitively attribute all effects to one canonical NLRP3 pathway."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1002/ehf2.14003",
+      "relationship": "Related cardiovascular inflammatory/transcriptomic research, but using a cross-disease computational human-dataset framework rather than the present preclinical cardio-oncology intervention model; this is not direct replication."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1136/jitc-2024-010127",
+    "publisher_url": "https://jitc.bmj.com/content/13/1/e010127",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39773567/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What preclinical evidence implicates NLRP3 in ICI-associated cardiac injury?",
+        "supported_scope": "Anti-PD-1 cardiac injury was accompanied by NLRP3/IL1B activation in the mouse model, with supportive human PBMC associations. B16F10-bearing mouse anti-PD-1 model plus GSE180045 public human PBMC single-cell analysis; human findings are associations only. MCC950 mitigated cardiac injury in the tested anti-PD-1 mouse model. Preclinical cardiac phenotyping under the reported experimental conditions.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What evidence supports MCC950-mediated cardiac protection in an anti-PD-1 mouse model?",
+        "supported_scope": "MCC950 mitigated cardiac injury in the tested anti-PD-1 mouse model. Preclinical cardiac phenotyping under the reported experimental conditions.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How did NLRP3 inhibition affect cardiac macrophage and T-cell states?",
+        "supported_scope": "Cardiac scRNA-seq identified treatment-associated remodeling of immune states. Six hearts per sample were pooled; 68,058 cells do not represent independent biological replicates. Intercellular communication and macrophage-depletion experiments supported a macrophage/T-cell inflammatory network in the mouse model. Mechanism-supporting preclinical evidence; it does not definitively attribute all effects to one canonical NLRP3 pathway.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What single-cell evidence describes cardiac immune remodeling during anti-PD-1 treatment with MCC950?",
+        "supported_scope": "Cardiac scRNA-seq identified treatment-associated remodeling of immune states. Six hearts per sample were pooled; 68,058 cells do not represent independent biological replicates.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "What preclinical evidence was reported during combined anti-PD-1 and anti-CTLA-4 therapy?",
+        "supported_scope": "MCC950 mitigated cardiac phenotypes during dual anti-PD-1 + anti-CTLA-4 therapy in the tested B16F10 mouse model and was associated with reduced tumor burden. Preclinical dual-ICI experiment; no human cardiac or antitumor treatment efficacy is established.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "Was NLRP3 inhibition evaluated after cardiac injury was already established?",
+        "supported_scope": "MCC950 was evaluated after cardiac injury had already been established in a mouse anti-PD-1 protocol and ameliorated the reported echocardiographic impairment. Mouse treatment-after-injury experiment; this is not clinical treatment of established ICI myocarditis.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU7",
+        "query": "What human evidence is included in this otherwise preclinical study?",
+        "supported_scope": "Anti-PD-1 cardiac injury was accompanied by NLRP3/IL1B activation in the mouse model, with supportive human PBMC associations. B16F10-bearing mouse anti-PD-1 model plus GSE180045 public human PBMC single-cell analysis; human findings are associations only.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A human interventional cohort was studied.",
+      "GSE180045 establishes human treatment efficacy; it supplies association only.",
+      "MCC950 efficacy has been established beyond preclinical models.",
+      "B16F10 tumor findings establish human antitumor efficacy.",
+      "Pooled scRNA cells are independent biological replicates.",
+      "An approved human treatment or human safety profile has been established."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-nlrp3-ici-1",
+        "component": "KF1",
+        "context": "B16F10-bearing mouse anti-PD-1 model plus GSE180045 public human PBMC single-cell analysis; human findings are associations only.",
+        "finding": "Anti-PD-1 cardiac injury was accompanied by NLRP3/IL1B activation in the mouse model, with supportive human PBMC associations. mouse evidence: Anti-PD-1 cardiac injury and NLRP3/IL1B activation; human GSE180045 evidence: NLRP3/IL1B expression patterns in monocytes/neutrophils and association with ICI use/myocarditis; no human intervention",
+        "evidence_level": "Mouse experimental evidence and supportive human association",
+        "scope": "B16F10-bearing mouse anti-PD-1 model plus GSE180045 public human PBMC single-cell analysis; human findings are associations only.",
+        "source_locator": "Fig. 1; Supplementary Fig. 1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-2",
+        "component": "KF2",
+        "context": "Preclinical cardiac phenotyping under the reported experimental conditions.",
+        "finding": "MCC950 mitigated cardiac injury in the tested anti-PD-1 mouse model. cardiac readouts: cTnT and echocardiography; tissue and immune readouts: Cardiac immune infiltration, apoptosis and fibrosis; molecular readouts: Inflammatory and chemokine expression",
+        "evidence_level": "Preclinical mouse experimental evidence",
+        "scope": "Preclinical cardiac phenotyping under the reported experimental conditions.",
+        "source_locator": "Fig. 2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-3",
+        "component": "KF3",
+        "context": "Tumor findings are preclinical and do not establish human cancer efficacy.",
+        "finding": "MCC950 altered tumor and immune phenotypes in the B16F10 mouse melanoma model and, under the reported conditions, combination with anti-PD-1 reduced tumor burden. model: B16F10 mouse melanoma; reported combination outcome: MCC950 with anti-PD-1 reduced tumor burden under the reported conditions; associated observations: Altered tumor and immune phenotypes",
+        "evidence_level": "Preclinical mouse experimental evidence",
+        "scope": "Tumor findings are preclinical and do not establish human cancer efficacy.",
+        "source_locator": "Fig. 3",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-4",
+        "component": "KF4",
+        "context": "Six hearts per sample were pooled; 68,058 cells do not represent independent biological replicates.",
+        "finding": "Cardiac scRNA-seq identified treatment-associated remodeling of immune states. cells: 68,058; clusters: 14; immune classes: 8; Macrophages1: Pathogenic/M1-like; Macrophages2: Reparative/M2-like; Mertk-Mrc1 high; Macrophages3: Inflammatory; Nlrp3-Il1b-Tnfrsf1b high; Macrophages4: Early/proliferative; treatment-associated states: Anti-PD-1 increased Macrophages1/3; MCC950 reduced them and increased Macrophages2",
+        "evidence_level": "Pooled mouse cardiac single-cell analysis",
+        "scope": "Six hearts per sample were pooled; 68,058 cells do not represent independent biological replicates.",
+        "source_locator": "Fig. 4; Supplementary Fig. 4",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-5",
+        "component": "KF5",
+        "context": "Mechanism-supporting preclinical evidence; it does not definitively attribute all effects to one canonical NLRP3 pathway.",
+        "finding": "Intercellular communication and macrophage-depletion experiments supported a macrophage/T-cell inflammatory network in the mouse model. communication: TNF/CXCL/CCL communication changes; macrophage depletion: Clodronate macrophage-depletion effects supported the macrophage/T-cell inflammatory network",
+        "evidence_level": "Preclinical mouse experimental evidence",
+        "scope": "Mechanism-supporting preclinical evidence; it does not definitively attribute all effects to one canonical NLRP3 pathway.",
+        "source_locator": "Fig. 5; Supplementary Figs. 5-6",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-6",
+        "component": "KF6",
+        "context": "Preclinical dual-ICI experiment; no human cardiac or antitumor treatment efficacy is established.",
+        "finding": "MCC950 mitigated cardiac phenotypes during dual anti-PD-1 + anti-CTLA-4 therapy in the tested B16F10 mouse model and was associated with reduced tumor burden. dual-ICI experiment: n=8/group; cardiac and tumor observations: Mitigated cardiac phenotypes and reduced tumor burden in the tested B16F10 model",
+        "evidence_level": "Preclinical mouse experimental evidence",
+        "scope": "Preclinical dual-ICI experiment; no human cardiac or antitumor treatment efficacy is established.",
+        "source_locator": "Fig. 6",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-nlrp3-ici-7",
+        "component": "KF7",
+        "context": "Mouse treatment-after-injury experiment; this is not clinical treatment of established ICI myocarditis.",
+        "finding": "MCC950 was evaluated after cardiac injury had already been established in a mouse anti-PD-1 protocol and ameliorated the reported echocardiographic impairment. experimental timing: MCC950 after established cardiac injury in a mouse anti-PD-1 protocol; reported outcome: Ameliorated echocardiographic impairment",
+        "evidence_level": "Preclinical mouse experimental evidence",
+        "scope": "Mouse treatment-after-injury experiment; this is not clinical treatment of established ICI myocarditis.",
+        "source_locator": "Supplementary Fig. 7",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
 }

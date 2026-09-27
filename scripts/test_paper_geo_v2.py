@@ -65,7 +65,7 @@ PRIORITY_STATUS = (
     ("10.1016/j.ejphar.2023.175569", "v1"),
     ("10.1002/mdr2.70004", "pending"),
     ("10.1111/jcmm.17789", "pending"),
-    ("10.1136/jitc-2024-010127", "v1"),
+    ("10.1136/jitc-2024-010127", "v2"),
     ("10.3389/fonc.2021.659217", "pending"),
     ("10.18632/aging.205564", "pending"),
     ("10.2147/ijn.s522157", "pending"),
@@ -270,7 +270,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (11, 3, 14)
+    assert (len(v2_items), v1_count, pending_count) == (12, 2, 14)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -311,6 +311,7 @@ def run_tests():
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.1136/jitc-2024-010127": ("How the Study Was Done", "External dataset evaluation"),
         "10.1186/s12915-025-02400-x": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1200/po.24.00089": ("Study Design & Model Development", "External validation"),
         AIHFLEVEL_DOI: (
@@ -373,8 +374,9 @@ def run_tests():
             assert "### Review profile" in markdown
             assert "- Evidence domains:" in markdown
         else:
-            assert f"<dt>{expected_external_label}</dt><dd>Yes</dd>" in page
-            assert f"- {expected_external_label}: Yes" in markdown
+            external_value = "Yes" if content["study_profile"]["external_validation"] else "No"
+            assert f"<dt>{expected_external_label}</dt><dd>{external_value}</dd>" in page
+            assert f"- {expected_external_label}: {external_value}" in markdown
         unexpected_heading = (
             "Study Design & Analytical Framework"
             if "Model Development" in expected_heading
@@ -773,6 +775,28 @@ def run_tests():
     assert "### Cohort hierarchy" not in synthetic_markdown
     assert synthetic_schema["description"] == synthetic["author_summary"]
     assert synthetic_schema["keywords"] == flatten_concepts(synthetic)
+
+    preclinical = copy.deepcopy(synthetic)
+    preclinical["study_profile"]["profile_type"] = "preclinical_multimodal"
+    preclinical["study_profile"]["external_validation"] = False
+    preclinical_page, preclinical_markdown, _ = rendered_v2(
+        synthetic_publication, preclinical, config, public_by_doi
+    )
+    assert "<h2>Evidence Scale</h2>" in preclinical_page
+    assert "<h2>How the Study Was Done</h2>" in preclinical_page
+    assert "## How the Study Was Done" in preclinical_markdown
+    assert "Cohort hierarchy" not in preclinical_page
+    assert "Unique total" not in preclinical_page
+    for field in ("study_design", "evidence_type", "population", "primary_endpoint",
+                  "secondary_endpoint", "data_modalities", "external_validation",
+                  "scale_metrics", "counting_note"):
+        missing = copy.deepcopy(preclinical)
+        del missing["study_profile"][field]
+        expect_value_error(lambda: validate_deep_v2_content(missing), field)
+    for field, value in (("unique_total_n", 100), ("cohorts", [])):
+        invalid = copy.deepcopy(preclinical)
+        invalid["study_profile"][field] = value
+        expect_value_error(lambda: validate_deep_v2_content(invalid), "synthetic cohort total")
 
     bad_hierarchy = copy.deepcopy(content)
     bad_hierarchy["study_profile"]["cohorts"][0]["n"] = 499

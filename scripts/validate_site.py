@@ -362,6 +362,9 @@ def validate_v2_rendered_page(
         "Evidence Snapshot" if profile_type == "clinical_cohort" else "Evidence Scale"
     )
     expected_study_heading = v2_study_heading(content)
+    if profile_type == "preclinical_multimodal":
+        require("unique_total_n" not in study and "cohorts" not in study,
+                f"{label} must preserve distinct preclinical assay scales.")
     unexpected_study_heading = (
         "Study Design & Analytical Framework"
         if content.get("model_profile")

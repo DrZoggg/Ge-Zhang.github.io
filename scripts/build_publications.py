@@ -525,11 +525,13 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     profile_type = required_text(
         study.get("profile_type"), f"{label} study_profile.profile_type"
     )
-    if profile_type not in {"clinical_cohort", "multicohort_omics", "narrative_review"}:
+    if profile_type not in {"clinical_cohort", "multicohort_omics", "narrative_review", "preclinical_multimodal"}:
         raise ValueError(
             f"{label} study_profile.profile_type must be clinical_cohort, "
-            "multicohort_omics, or narrative_review."
+            "multicohort_omics, narrative_review, or preclinical_multimodal."
         )
+    if profile_type == "preclinical_multimodal" and any(key in study for key in ("unique_total_n", "cohorts")):
+        raise ValueError(f"{label} preclinical_multimodal must use scale_metrics, not a synthetic cohort total.")
     detail_keys = ["study_design", "evidence_type"]
     if profile_type == "narrative_review":
         detail_keys.append("translation_scope")
@@ -1035,6 +1037,8 @@ def v2_label(key):
 def v2_study_heading(content):
     if content["study_profile"]["profile_type"] == "narrative_review":
         return "Review Design & Evidence Synthesis"
+    if content["study_profile"]["profile_type"] == "preclinical_multimodal":
+        return "How the Study Was Done"
     return (
         "Study Design & Model Development"
         if content.get("model_profile")

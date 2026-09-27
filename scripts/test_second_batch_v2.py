@@ -45,7 +45,16 @@ def main():
         "0.911 / 0.917 / 0.926 / 0.955", "0.982 / 0.911 / 0.893 / 0.857", "0.956 / 0.887 / 0.506 / 0.514",
     ]
     assert "5 AAA and 4 controls" in aaa["limitations"][0]
-    print("SECOND BATCH V2 TESTS PASS: RAP-AIscore and AAA supplied counts, predictors and evidence levels")
+    nlrp3 = load("nlrp3-ici")
+    counts(nlrp3, 7)
+    assert nlrp3["study_profile"]["profile_type"] == "preclinical_multimodal"
+    assert nlrp3["study_profile"]["external_validation"] is False
+    assert "unique_total_n" not in nlrp3["study_profile"]
+    assert "tested preclinical melanoma models" in nlrp3["research_question"]
+    assert [item["value"] for item in nlrp3["key_findings"][3]["evidence"][:3]] == ["68,058", "14", "8"]
+    assert nlrp3["key_findings"][5]["evidence"][0]["value"] == "n=8/group"
+    assert "Mouse treatment-after-injury experiment" in nlrp3["key_findings"][6]["context"]
+    print("SECOND BATCH V2 TESTS PASS: RAP-AIscore, AAA and NLRP3 supplied counts and evidence levels")
 
 
 if __name__ == "__main__":
