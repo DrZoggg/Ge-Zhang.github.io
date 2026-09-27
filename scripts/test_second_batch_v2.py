@@ -36,7 +36,16 @@ def main():
     assert model["final_predictors"] == ["pTNM", "ROM", "CEA", "Ns", "PostCEA", "Ts", "CA199", "HLP", "Postchem", "Minutes"]
     assert [item["value"] for item in rap["key_findings"][5]["evidence"][:3]] == ["0.587", "0.754", "0.810"]
     assert "pmcid" not in rap["provenance"]
-    print("SECOND BATCH V2 TESTS PASS: RAP-AIscore supplied counts, predictors and external performance")
+    aaa = load("doi-10-1186-s12915-025-02400-x")
+    counts(aaa, 7)
+    assert aaa["study_profile"]["profile_type"] == "multicohort_omics"
+    assert "unique_total_n" not in aaa["study_profile"]
+    assert [item["value"] for item in aaa["key_findings"][3]["evidence"]] == ["968", "437", "375", "374", "50 genes"]
+    assert [item["value"] for item in aaa["key_findings"][4]["evidence"]][1:] == [
+        "0.911 / 0.917 / 0.926 / 0.955", "0.982 / 0.911 / 0.893 / 0.857", "0.956 / 0.887 / 0.506 / 0.514",
+    ]
+    assert "5 AAA and 4 controls" in aaa["limitations"][0]
+    print("SECOND BATCH V2 TESTS PASS: RAP-AIscore and AAA supplied counts, predictors and evidence levels")
 
 
 if __name__ == "__main__":
