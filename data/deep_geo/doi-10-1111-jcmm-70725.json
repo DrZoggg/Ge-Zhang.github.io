@@ -1,0 +1,433 @@
+{
+  "version": 2,
+  "doi": "10.1111/jcmm.70725",
+  "display_title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
+  "summary": "A two-center exploratory study profiled 92 circulating EV-associated proteins in AAA and evaluated five candidates by Western blot and ELISA. External sample size, assay-dependent expression differences and wide ROC uncertainty are retained explicitly.",
+  "research_question": "Can targeted circulating extracellular-vesicle protein profiling identify AAA-associated candidates that merit external assay evaluation, and how consistent are their signals across Western blot, ELISA and ROC analyses?",
+  "author_summary": "This two-center human study enrolled 18 AAA patients and 9 healthy controls: 10 cases and 5 controls in the in-house cohort, and 8 cases and 4 controls in the external cohort. A targeted Olink proximity-extension workflow assessed 92 EV-associated proteins and prioritized five candidates. External Western blot and ELISA did not show uniformly concordant findings: MCP-1 direction differed between the two reported analyses, and Neurturin was not significant by Western blot but lower by ELISA. The article reports single-marker ROC AUCs from 0.760 to 0.900 in the small external comparison, with wide confidence intervals. Different passages also describe venous plasma, serum EVs and intraoperative aortic blood; those specimen descriptions are not silently treated as one validated routine blood-screening protocol. The evidence is exploratory biomarker association and external assay assessment, not prospective AAA detection, rupture prediction or a therapeutic target validation.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Two-center human AAA case-control targeted EV protein profiling with external Western blot and ELISA evaluation",
+    "evidence_type": "Exploratory human protein association and small external assay/ROC evaluation",
+    "population": "AAA patients and healthy controls in an in-house cohort and an external hospital cohort",
+    "primary_endpoint": "AAA-associated differences in targeted circulating EV protein measurements",
+    "secondary_endpoint": "Cross-assay candidate evaluation, single-marker ROC discrimination and computational pathway/network interpretation",
+    "counting_note": "The reported enrollment is consistent with (10+8) AAA patients and (5+4) controls. Protein measurements and repeated assays are not new participants. No independence from participants in other publications is inferred. External validation means assay and ROC assessment in 8 cases and 4 controls, not a prospective screening study. Specimen and isolation descriptions differ between source sections.",
+    "external_validation": true,
+    "data_modalities": [
+      "circulating extracellular-vesicle preparation and characterization",
+      "targeted 92-protein Olink proximity extension assay",
+      "external Western blot",
+      "external ELISA",
+      "ROC analysis",
+      "pathway and PPI analysis"
+    ],
+    "scale_metrics": [
+      {
+        "label": "In-house cohort",
+        "value": "10 AAA patients; 5 healthy controls"
+      },
+      {
+        "label": "External cohort",
+        "value": "8 AAA patients; 4 healthy controls"
+      },
+      {
+        "label": "Article-reported enrollment across both cohorts",
+        "value": "18 AAA patients and 9 healthy controls"
+      },
+      {
+        "label": "Targeted protein panel",
+        "value": "92 proteins"
+      },
+      {
+        "label": "Candidate proteins evaluated externally",
+        "value": "5"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study combined a 15-person in-house comparison with a 12-person external comparison.",
+      "context": "Two-center human case-control evidence; no longitudinal prediction of incident AAA or rupture.",
+      "source_locator": "Abstract; Methods 2.1; Results 3.4; Fig. 6",
+      "evidence": [
+        {
+          "label": "In-house AAA / controls",
+          "value": "10 / 5"
+        },
+        {
+          "label": "External AAA / controls",
+          "value": "8 / 4"
+        },
+        {
+          "label": "Article-reported total AAA / controls",
+          "value": "18 / 9"
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "Circulating vesicle preparations were characterized by particle morphology, size and protein markers.",
+      "context": "The source describes venous plasma, serum EVs and intraoperative aortic blood in different sections; a single standardized peripheral-blood screening workflow is not assumed.",
+      "source_locator": "Methods 2.2-2.7 and 2.9; Results 3.1; Figs. 1-2",
+      "evidence": [
+        {
+          "label": "AAA vesicle median diameter",
+          "value": "85.18 nm"
+        },
+        {
+          "label": "Marker findings",
+          "value": "TSG101, ALIX and CD9 detected; Calnexin not detected"
+        },
+        {
+          "label": "Isolation reporting",
+          "value": "ExoQuick in Methods 2.3; ultracentrifugation in the external-validation Methods 2.9"
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "A targeted 92-protein profiling workflow prioritized five differentially expressed candidate proteins.",
+      "context": "Olink targeted-panel measurements are not an unbiased whole proteome or direct evidence of a causal protein pathway.",
+      "source_locator": "Methods 2.7-2.8; Results 3.2-3.4; Figs. 3-4",
+      "evidence": [
+        {
+          "label": "Analyzed protein panel",
+          "value": "92 proteins"
+        },
+        {
+          "label": "Reported differential set",
+          "value": "5 proteins: 3 upregulated and 2 downregulated"
+        },
+        {
+          "label": "Candidate names",
+          "value": "IL-4, IL-6, MCP-1, Neurturin and Oncostatin-M"
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "External Western blot and ELISA findings were assay-dependent rather than uniformly concordant for all five candidates.",
+      "context": "The evidence is reported without inventing a reconciled expression direction or a technical explanation for the discrepancy. The ELISA prose uses the term tumour suppressor-M; Oncostatin-M naming here follows the five-analyte list and Fig. 6 labels, not an additional measured protein.",
+      "source_locator": "Results 3.4; Fig. 6A-C; Discussion",
+      "evidence": [
+        {
+          "label": "External sample",
+          "value": "8 AAA patients; 4 healthy controls"
+        },
+        {
+          "label": "Western blot",
+          "value": "IL-4, IL-6, MCP-1 and Oncostatin-M higher; Neurturin not statistically significant"
+        },
+        {
+          "label": "ELISA",
+          "value": "IL-4, IL-6 and Oncostatin-M higher; MCP-1 and Neurturin lower"
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "The article reports single-protein ROC discrimination in the small external comparison.",
+      "context": "AUCs are mapped in the explicit candidate order in the Abstract/Results; they are not a five-protein combined model or prospective diagnostic performance.",
+      "source_locator": "Abstract; Results 3.4; Fig. 6D",
+      "evidence": [
+        {
+          "label": "IL-4 AUC",
+          "value": "0.760"
+        },
+        {
+          "label": "IL-6 AUC",
+          "value": "0.840"
+        },
+        {
+          "label": "MCP-1 AUC",
+          "value": "0.800"
+        },
+        {
+          "label": "Neurturin AUC",
+          "value": "0.840"
+        },
+        {
+          "label": "Oncostatin-M AUC",
+          "value": "0.900"
+        },
+        {
+          "label": "Precision qualification",
+          "value": "Wide confidence intervals; the reported interval for AUC 0.760 is 0.486-1.000"
+        }
+      ]
+    },
+    {
+      "id": "KF6",
+      "claim": "Enrichment and network analyses associated the protein candidates with inflammatory and signaling contexts.",
+      "context": "These associations annotate the observed protein set and do not demonstrate experimentally manipulated pathways.",
+      "source_locator": "Methods 2.8; Results 3.3; Fig. 5",
+      "evidence": [
+        {
+          "label": "Reported contexts",
+          "value": "Cellular response to cytokines, inflammatory response, chemokine signaling, AP-1 and glucocorticoid-receptor pathways"
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "A circulating EV-associated targeted-protein view of human AAA.",
+    "External Western blot and ELISA evaluation of five candidate proteins with the cross-assay differences retained.",
+    "Small-sample, single-marker ROC evidence with explicit uncertainty and no claim of a prospective screening tool."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "AAA-associated targeted EV protein differences in the studied human samples.",
+      "Two-center enrollment and small external assay assessment.",
+      "Article-reported single-marker ROC discrimination with uncertainty.",
+      "Computational inflammatory/pathway interpretation of the candidate set."
+    ],
+    "does_not_establish": [
+      "A whole-proteome survey or equivalence to unfractionated plasma protein profiling.",
+      "Concordant directional validation of every candidate across Western blot and ELISA.",
+      "A validated five-protein combined diagnostic model.",
+      "Prospective incident-AAA, rupture or mortality prediction.",
+      "An established routine peripheral-venous blood screening protocol across all source descriptions.",
+      "Causal pathway regulation or a therapeutically validated protein target."
+    ]
+  },
+  "limitations": [
+    "The external cohort contains 8 cases and 4 controls; ROC confidence intervals are wide, including 0.486-1.000 for the reported AUC of 0.760.",
+    "MCP-1 and Neurturin do not have uniformly concordant Western blot and ELISA results. No cause of these differences is established by this evidence page.",
+    "Venous-plasma, serum-EV and intraoperative-aortic-blood descriptions appear in different sections, and isolation methods differ between discovery and external-validation descriptions.",
+    "The targeted 92-protein panel does not establish an unbiased circulating proteome.",
+    "Case-control ROC discrimination and pathway enrichment do not establish prospective prediction, clinical screening utility or causality."
+  ],
+  "qa": [
+    {
+      "question": "How many participants were studied?",
+      "answer": "The article reports 18 AAA patients and 9 controls: 10/5 in-house and 8/4 external. These numbers describe the two reported cohorts, not additional participants per assay.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Was this unbiased plasma proteomics?",
+      "answer": "No. The study examined an isolated circulating vesicle-associated fraction with a targeted 92-protein Olink panel. Specimen wording also differs between source sections.",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Which proteins were prioritized?",
+      "answer": "IL-4, IL-6, MCP-1, Neurturin and Oncostatin-M. They are candidate biomarkers in the analyzed samples, not approved diagnostic markers.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Did all five proteins replicate consistently in external assays?",
+      "answer": "No. Western blot and ELISA differed for MCP-1 direction and Neurturin significance/direction. The evidence should be cited as assay-dependent external evaluation, not uniformly concordant validation.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What ROC performance was reported?",
+      "answer": "In the article-listed order IL-4, IL-6, MCP-1, Neurturin and Oncostatin-M, AUCs were 0.760, 0.840, 0.800, 0.840 and 0.900. The external group was small and confidence intervals were wide. These are single-marker comparisons, not a combined five-protein model.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does the study prove that these proteins predict rupture or are treatment targets?",
+      "answer": "No. It reports association, small external assay/ROC comparisons and computational annotations, not prospective rupture prediction or therapeutic target validation.",
+      "evidence_refs": [
+        "KF4",
+        "KF5",
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease": [
+      "abdominal aortic aneurysm"
+    ],
+    "specimen": [
+      "circulating extracellular vesicles",
+      "EV-associated proteins"
+    ],
+    "methods": [
+      "Olink proximity extension assay",
+      "Western blot",
+      "ELISA",
+      "ROC analysis"
+    ],
+    "entities": [
+      "IL-4",
+      "IL-6",
+      "MCP-1 / CCL2",
+      "Neurturin / NRTN",
+      "Oncostatin-M / OSM"
+    ],
+    "evidence": [
+      "case-control biomarker discovery",
+      "external assay evaluation",
+      "assay-dependent replication"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.1186/s12915-025-02400-x",
+      "relationship": "Complementary human AAA research on T-cell transcriptomic states and candidate markers. This study instead examines circulating EV-associated proteins; the different molecular layers are not independent replication of the same mechanism."
+    },
+    {
+      "doi": "10.1021/acs.jproteome.4c00522",
+      "relationship": "Related targeted Olink biomarker work in DCM-HF. Disease, specimen fraction and validation context differ, so the studies do not validate one another."
+    },
+    {
+      "doi": "10.1111/jcmm.17789",
+      "relationship": "Related circulating vesicle molecular-profiling work in cardiovascular disease, examining miRNA rather than proteins and DCM-HF rather than AAA."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1111/jcmm.70725",
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/jcmm.70725",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40770945/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12328994/",
+    "review_basis": "Published main text, tables and figure legends at the cited primary sources. No independent reanalysis of participant-level data; unresolved reporting differences are identified in the evidence scope.",
+    "data_availability": "The published data-availability statement restricts public release for participant-privacy reasons and permits access requests to the corresponding authors. No public dataset accession or code repository is inferred."
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. The evidence synthesis below is distinct from the published abstract and does not replace the version of record. Reported inconsistencies are qualified rather than silently corrected.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which human studies profiled circulating EV proteins in AAA?",
+        "supported_scope": "This two-center study enrolled 18 AAA patients and 9 controls across discovery and external-assay phases.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What specimen and isolation caveats apply to AAA EV protein profiling?",
+        "supported_scope": "Characterization supports the vesicle preparation, but source sections differ in blood compartment and isolation descriptions.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which targeted EV protein candidates were prioritized for AAA?",
+        "supported_scope": "A 92-protein panel prioritized IL-4, IL-6, MCP-1, Neurturin and Oncostatin-M.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Were AAA EV protein signals concordant across Western blot and ELISA?",
+        "supported_scope": "No: MCP-1 direction and Neurturin findings differed, so the study provides qualified cross-assay evidence.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "What diagnostic discrimination was reported for individual AAA EV protein candidates?",
+        "supported_scope": "Single-marker AUCs range from 0.760 to 0.900 in a small external case-control comparison; no combined model or prospective screening benefit is established.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "What inflammatory contexts were associated with the AAA EV protein set?",
+        "supported_scope": "Enrichment and network analyses implicated cytokine, chemokine, AP-1 and glucocorticoid-receptor contexts as computational annotations.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A whole-proteome survey or equivalence to unfractionated plasma protein profiling.",
+      "Concordant directional validation of every candidate across Western blot and ELISA.",
+      "A validated five-protein combined diagnostic model.",
+      "Prospective incident-AAA, rupture or mortality prediction.",
+      "An established routine peripheral-venous blood screening protocol across all source descriptions.",
+      "Causal pathway regulation or a therapeutically validated protein target."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-aaa-ev-cohorts",
+        "component": "Two-center human design",
+        "context": "In-house and external case-control samples",
+        "evidence_level": "Human observational study",
+        "scope": "No incident-disease or rupture prediction.",
+        "evidence_refs": [
+          "KF1"
+        ],
+        "source_locator": "Abstract; Methods 2.1; Results 3.4; Fig. 6",
+        "finding": "The study combined a 15-person in-house comparison with a 12-person external comparison. In-house AAA / controls: 10 / 5; External AAA / controls: 8 / 4; Article-reported total AAA / controls: 18 / 9"
+      },
+      {
+        "id": "evidence-aaa-ev-specimen",
+        "component": "Vesicle and specimen characterization",
+        "context": "Circulating EV-associated fraction",
+        "evidence_level": "Experimental specimen characterization",
+        "scope": "Not a harmonized routine peripheral-blood screening protocol.",
+        "evidence_refs": [
+          "KF2"
+        ],
+        "source_locator": "Methods 2.2-2.7 and 2.9; Results 3.1; Figs. 1-2",
+        "finding": "Circulating vesicle preparations were characterized by particle morphology, size and protein markers. AAA vesicle median diameter: 85.18 nm; Marker findings: TSG101, ALIX and CD9 detected; Calnexin not detected; Isolation reporting: ExoQuick in Methods 2.3; ultracentrifugation in the external-validation Methods 2.9"
+      },
+      {
+        "id": "evidence-aaa-ev-protein-screen",
+        "component": "Targeted candidate discovery",
+        "context": "92 Olink protein measurements",
+        "evidence_level": "Targeted human protein association",
+        "scope": "Not unbiased proteomics or a causal pathway experiment.",
+        "evidence_refs": [
+          "KF3"
+        ],
+        "source_locator": "Methods 2.7-2.8; Results 3.2-3.4; Figs. 3-4",
+        "finding": "A targeted 92-protein profiling workflow prioritized five differentially expressed candidate proteins. Analyzed protein panel: 92 proteins; Reported differential set: 5 proteins: 3 upregulated and 2 downregulated; Candidate names: IL-4, IL-6, MCP-1, Neurturin and Oncostatin-M"
+      },
+      {
+        "id": "evidence-aaa-ev-assay-comparison",
+        "component": "Cross-assay external evaluation",
+        "context": "8 AAA cases and 4 controls; Oncostatin-M naming follows the candidate list and Fig. 6 labels.",
+        "evidence_level": "External assay evidence with discordance",
+        "scope": "Do not claim uniform validation of all five candidates.",
+        "evidence_refs": [
+          "KF4"
+        ],
+        "source_locator": "Results 3.4; Fig. 6A-C; Discussion",
+        "finding": "External Western blot and ELISA findings were assay-dependent rather than uniformly concordant for all five candidates. External sample: 8 AAA patients; 4 healthy controls; Western blot: IL-4, IL-6, MCP-1 and Oncostatin-M higher; Neurturin not statistically significant; ELISA: IL-4, IL-6 and Oncostatin-M higher; MCP-1 and Neurturin lower"
+      },
+      {
+        "id": "evidence-aaa-ev-roc",
+        "component": "Single-marker ROC evidence",
+        "context": "Small external case-control comparison",
+        "evidence_level": "Exploratory diagnostic discrimination",
+        "scope": "No combined panel model, prospective validation or rupture prediction.",
+        "evidence_refs": [
+          "KF5"
+        ],
+        "source_locator": "Abstract; Results 3.4; Fig. 6D",
+        "finding": "The article reports single-protein ROC discrimination in the small external comparison. IL-4 AUC: 0.760; IL-6 AUC: 0.840; MCP-1 AUC: 0.800; Neurturin AUC: 0.840; Oncostatin-M AUC: 0.900; Precision qualification: Wide confidence intervals; the reported interval for AUC 0.760 is 0.486-1.000"
+      },
+      {
+        "id": "evidence-aaa-ev-pathways",
+        "component": "Protein-set functional interpretation",
+        "context": "Predicted network/enrichment analysis",
+        "evidence_level": "Computational enrichment",
+        "scope": "Annotations are not validated therapeutic targets.",
+        "evidence_refs": [
+          "KF6"
+        ],
+        "source_locator": "Methods 2.8; Results 3.3; Fig. 5",
+        "finding": "Enrichment and network analyses associated the protein candidates with inflammatory and signaling contexts. Reported contexts: Cellular response to cytokines, inflammatory response, chemokine signaling, AP-1 and glucocorticoid-receptor pathways"
+      }
+    ]
+  }
+}
