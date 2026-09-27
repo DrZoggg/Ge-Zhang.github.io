@@ -62,12 +62,12 @@ PRIORITY_STATUS = (
     ("10.1200/po.24.00089", "v2"),
     ("10.1172/jci194175", "v2"),
     ("10.1021/acs.jproteome.4c00522", "v2"),
-    ("10.1016/j.ejphar.2023.175569", "v1"),
+    ("10.1016/j.ejphar.2023.175569", "v2"),
     ("10.1002/mdr2.70004", "v2"),
     ("10.1111/jcmm.17789", "v2"),
     ("10.1136/jitc-2024-010127", "v2"),
     ("10.3389/fonc.2021.659217", "v2"),
-    ("10.18632/aging.205564", "pending"),
+    ("10.18632/aging.205564", "v2"),
     ("10.2147/ijn.s522157", "v2"),
     ("10.1016/j.joim.2025.06.003", "v2"),
     ("10.1111/jcmm.70258", "v2"),
@@ -270,7 +270,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (22, 1, 5)
+    assert (len(v2_items), v1_count, pending_count) == (24, 0, 4)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -311,6 +311,8 @@ def run_tests():
     assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.18632/aging.205564": ("Study Design & Analytical Framework", "External dataset evaluation"),
+        "10.1016/j.ejphar.2023.175569": ("How the Study Was Done", "External dataset evaluation"),
         "10.3389/fcvm.2025.1724572": ("Study Design & Analytical Framework", "External validation"),
         "10.3389/fpubh.2025.1521372": ("Study Design & Analytical Framework", "External validation"),
         "10.3389/fonc.2021.659217": ("Study Design & Analytical Framework", "External validation"),

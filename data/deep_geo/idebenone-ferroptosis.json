@@ -1,12 +1,413 @@
 {
-  "version": 1,
   "doi": "10.1016/j.ejphar.2023.175569",
-  "display_title": "Idebenone, ferroptosis & myocardial infarction",
-  "summary": "A mechanistic study linking idebenone-mediated cardioprotection after myocardial infarction to ROS, autophagy, ferroptosis and AMPK–mTOR signaling.",
-  "keywords": ["idebenone", "ferroptosis", "autophagy", "ROS", "AMPK", "mTOR", "myocardial infarction"],
-  "questions": [
-    "Does idebenone suppress ferroptosis after myocardial infarction?",
-    "How are ROS, autophagy and AMPK–mTOR linked in post-MI injury?",
-    "What mechanisms underlie idebenone cardioprotection?"
-  ]
+  "summary": "H9c2 injury models, pharmacologic pathway probes and LAD-ligation mouse experiments provide preclinical functional and mechanism-supporting evidence for idebenone. The animal regimen included pretreatment; these findings do not establish post-infarction-only rescue treatment or human MI efficacy, safety or approval.",
+  "research_question": "What cellular and mouse evidence supports idebenone-associated reduction of ferroptotic injury, and how does pretreatment timing limit translation to post-infarction clinical treatment?",
+  "author_summary": "This preclinical study used H9c2 injury models, pharmacologic pathway probes and LAD-ligation mouse experiments. Oxidative-injury, ferroptosis and autophagy readouts are distinguished from cardiac-function readouts. The animal regimen included dosing before surgery and is not evidence for treatment initiated only after infarction. The findings do not establish human myocardial-infarction efficacy, safety or an approved clinical indication.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "external_validation": false,
+    "study_design": "Cellular and mouse intervention study with pharmacologic pathway probes",
+    "evidence_type": "Preclinical functional and mechanism-supporting evidence",
+    "population": "H9c2 cellular models and experimental myocardial-infarction mice",
+    "primary_endpoint": "Experimental cell injury and mouse cardiac function",
+    "secondary_endpoint": "Ferroptosis/autophagy-associated and histological readouts",
+    "data_modalities": [
+      "cell viability",
+      "oxidative/iron/lipid-peroxidation assays",
+      "protein and autophagy readouts",
+      "mouse echocardiography",
+      "histology"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Cellular systems",
+        "value": "H9c2 H2O2/RSL3 experimental systems"
+      },
+      {
+        "label": "Three main mouse groups",
+        "value": "sham+vehicle; MI+vehicle; MI+idebenone"
+      },
+      {
+        "label": "Fig. 8 echocardiography/histology",
+        "value": "Reported n=5"
+      },
+      {
+        "label": "Cell/protein experiments",
+        "value": "Reported n varies by assay; not summed into a total animal count"
+      }
+    ],
+    "counting_note": "Figure-level n is the reported unit for the corresponding experiment, not a study-wide deduplicated total. Cells, technical readouts and animals cannot be added together. This synthesis focuses on the reviewed core cellular and animal experiments; public-omics background analyses are not human drug-validation cohorts."
+  },
+  "key_findings": [
+    {
+      "claim": "Idebenone pretreatment reduced reported H2O2-associated injury in H9c2 cells, assessed using cell viability, ROS and lipid-peroxidation readouts.",
+      "context": "H2O2-associated cell death is not exclusively ferroptosis, and these observations do not exclude other protective actions.",
+      "source_locator": "Author-deposited full text: Results 3.1-3.2; Figs. 1-2",
+      "evidence": [
+        {
+          "label": "experimental system",
+          "value": "H9c2 H2O2-associated injury"
+        },
+        {
+          "label": "intervention timing",
+          "value": "Idebenone pretreatment"
+        },
+        {
+          "label": "readouts",
+          "value": "Cell viability; ROS; lipid peroxidation"
+        }
+      ],
+      "id": "KF1"
+    },
+    {
+      "claim": "RSL3 experiments, ferroptosis-related interventions and GPX4/FTH1/FPN1 readouts supported ferroptosis involvement; DFO/ferrostatin-1-related controls were described in the text.",
+      "context": "This is experimental mechanistic support. Marker changes do not by themselves establish a complete, specific causal chain.",
+      "source_locator": "Author-deposited full text: Results 3.2 and 3.5; Figs. 2 and 7",
+      "evidence": [
+        {
+          "label": "experimental probe",
+          "value": "RSL3"
+        },
+        {
+          "label": "protein readouts",
+          "value": "GPX4; FTH1; FPN1"
+        },
+        {
+          "label": "related controls",
+          "value": "DFO; ferrostatin-1"
+        }
+      ],
+      "id": "KF2"
+    },
+    {
+      "claim": "Metformin/rapamycin experiments and AMPK-mTOR-related readouts supported the proposed pathway, alongside LC3/p62 and autophagy-associated observations.",
+      "context": "Pharmacologic perturbations are not complete gene-specific validation. These results do not imply that all ferroptosis depends on autophagy.",
+      "source_locator": "Author-deposited full text: Results 3.3-3.5; Figs. 3-7",
+      "evidence": [
+        {
+          "label": "pharmacologic probes",
+          "value": "Metformin; rapamycin"
+        },
+        {
+          "label": "pathway readouts",
+          "value": "p-AMPK/AMPK; p-mTOR/mTOR"
+        },
+        {
+          "label": "autophagy associated readouts",
+          "value": "LC3; p62"
+        }
+      ],
+      "id": "KF3"
+    },
+    {
+      "claim": "The LAD-ligation model used three main groups—sham+vehicle, MI+vehicle and MI+idebenone—with dosing 24 h and 2 h before surgery followed by continued dosing and short- and longer-term observations.",
+      "context": "This is a pretreatment-containing perioperative regimen, not a validated rescue regimen initiated exclusively after myocardial infarction. No dose recommendation or cross-species conversion is supplied.",
+      "source_locator": "Author-deposited full text: Methods 2.11-2.12; Results 3.6; Fig. 8A",
+      "evidence": [
+        {
+          "label": "model",
+          "value": "LAD ligation"
+        },
+        {
+          "label": "main groups",
+          "value": "sham+vehicle; MI+vehicle; MI+idebenone"
+        },
+        {
+          "label": "preoperative dosing",
+          "value": "24 h and 2 h before surgery"
+        },
+        {
+          "label": "subsequent dosing",
+          "value": "Continued after surgery"
+        },
+        {
+          "label": "observation windows",
+          "value": "Short-term and longer-term"
+        }
+      ],
+      "id": "KF4"
+    },
+    {
+      "claim": "At four weeks, Results reported EF of 21.82% in MI and 33.76% in MI+idebenone, with Fig. 8 reporting n=5; histological/fibrosis readouts also improved qualitatively.",
+      "context": "The percentages are EF values themselves, not relative percentage improvements. Mouse cardiac-function and histological observations do not establish human survival benefit or clinical utility.",
+      "source_locator": "Author-deposited full text: Results 3.6; Fig. 8B-F",
+      "evidence": [
+        {
+          "label": "timepoint",
+          "value": "4 weeks"
+        },
+        {
+          "label": "MI EF",
+          "value": "21.82%"
+        },
+        {
+          "label": "MI plus idebenone EF",
+          "value": "33.76%"
+        },
+        {
+          "label": "Fig 8 reported n",
+          "value": "5"
+        },
+        {
+          "label": "histology fibrosis",
+          "value": "Qualitatively improved readouts"
+        }
+      ],
+      "id": "KF5"
+    },
+    {
+      "claim": "Myocardial oxidative, iron-handling and autophagy-associated readouts changed with intervention, including ROS/MDA/Fe2+, GPX4/FTH1/FPN1, LC3/p62 and tissue observations.",
+      "context": "Readouts from different timepoints and materials cannot be treated as one continuous causal chain in a patient. Ambiguous fold-change wording is not recalculated into new effect sizes, and these tissue findings are not human clinical efficacy evidence.",
+      "source_locator": "Author-deposited full text: Results 3.7-3.8; Figs. 9-10",
+      "evidence": [
+        {
+          "label": "oxidative iron readouts",
+          "value": "ROS; MDA; Fe2+"
+        },
+        {
+          "label": "protein readouts",
+          "value": "GPX4; FTH1; FPN1"
+        },
+        {
+          "label": "autophagy tissue readouts",
+          "value": "LC3; p62; tissue observations"
+        }
+      ],
+      "id": "KF6"
+    }
+  ],
+  "what_this_adds": [
+    "Links cellular and animal experimental observations while retaining their different evidence levels.",
+    "Makes the pretreatment-containing intervention timing explicit.",
+    "Separates functional outcomes from mechanistic support."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Protective observations under the specified cellular conditions.",
+      "Experimental support for mechanism involvement.",
+      "Mouse cardiac-function and tissue readouts under a regimen that includes preoperative dosing."
+    ],
+    "does_not_establish": [
+      "Human MI efficacy, safety or an approved MI indication.",
+      "Clinical rescue efficacy when treatment begins only after myocardial infarction.",
+      "That all autophagy should be inhibited or all cell death is ferroptosis.",
+      "Complete exclusion of other protective mechanisms or direct drug binding to AMPK or mTOR.",
+      "Human survival benefit inferred from mouse EF changes."
+    ]
+  },
+  "limitations": [
+    "Evidence is cellular and animal, not proof of human MI efficacy, safety or an approved MI indication; background use in other diseases is not an MI indication.",
+    "Preoperative dosing limits extrapolation to treatment begun only after infarction.",
+    "Pharmacologic and marker-based support does not show that all autophagy should be suppressed, that all cell death is ferroptosis or that other mechanisms are excluded.",
+    "The experiments do not establish direct idebenone binding to AMPK or mTOR.",
+    "EF percentages are measured functional values, not relative survival gains or clinical utility estimates.",
+    "Detailed findings are attributed to the DOI-bearing author-deposited full text; not every PDF image or supplementary dataset was independently reviewed.",
+    "An open-license label on ResearchGate alone is not treated as publisher-abstract reuse authorization; no Official Abstract is copied in this batch."
+  ],
+  "concepts": {
+    "disease_model": [
+      "experimental myocardial infarction"
+    ],
+    "intervention": [
+      "idebenone"
+    ],
+    "processes": [
+      "ferroptosis",
+      "autophagy",
+      "oxidative injury"
+    ],
+    "entities": [
+      "AMPK",
+      "mTOR",
+      "GPX4"
+    ],
+    "evidence": [
+      "pretreatment-containing animal intervention",
+      "cellular pharmacology"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.1136/jitc-2024-010127",
+      "relationship": "Complementary preclinical cardiac-injury research; different injury model and intervention, not direct replication."
+    },
+    {
+      "doi": "10.2147/ijn.s522157",
+      "relationship": "Another cell/animal cardiac-injury intervention study; different cargo, carrier and cell-death questions. Do not conflate ferroptosis with cuproptosis."
+    }
+  ],
+  "provenance": {
+    "publication_url": "https://www.sciencedirect.com/science/article/pii/S0014299923000808",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36740037/",
+    "doi_url": "https://doi.org/10.1016/j.ejphar.2023.175569",
+    "author_deposited_url": "https://www.researchgate.net/publication/368265058_Idebenone_attenuates_ferroptosis_by_inhibiting_excessive_autophagy_via_the_ROS-AMPK-mTOR_pathway_to_preserve_cardiac_function_after_myocardial_infarction",
+    "review_basis": "Identity checked against PubMed and the publisher record in the supplied source review. Experimental details are attributed to Results and figure legends in the DOI-bearing author-deposited full text; not all PDF images or supplementary data were independently reviewed.",
+    "data_availability": "Data available on request according to the publisher record."
+  },
+  "version": 2,
+  "display_title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
+  "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Reported findings and independently unresolved source details are distinguished.",
+  "qa": [
+    {
+      "question": "What cellular injury model was used?",
+      "answer": "Idebenone pretreatment reduced reported H2O2-associated injury in H9c2 cells, assessed using cell viability, ROS and lipid-peroxidation readouts. H2O2-associated cell death is not exclusively ferroptosis, and these observations do not exclude other protective actions.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What evidence specifically addresses ferroptosis?",
+      "answer": "RSL3 experiments, ferroptosis-related interventions and GPX4/FTH1/FPN1 readouts supported ferroptosis involvement; DFO/ferrostatin-1-related controls were described in the text. This is experimental mechanistic support. Marker changes do not by themselves establish a complete, specific causal chain.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How strong is the proposed autophagy/AMPK-mTOR pathway evidence?",
+      "answer": "Metformin/rapamycin experiments and AMPK-mTOR-related readouts supported the proposed pathway, alongside LC3/p62 and autophagy-associated observations. Pharmacologic perturbations are not complete gene-specific validation. These results do not imply that all ferroptosis depends on autophagy.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was idebenone started only after myocardial infarction?",
+      "answer": "The LAD-ligation model used three main groups—sham+vehicle, MI+vehicle and MI+idebenone—with dosing 24 h and 2 h before surgery followed by continued dosing and short- and longer-term observations. This is a pretreatment-containing perioperative regimen, not a validated rescue regimen initiated exclusively after myocardial infarction. No dose recommendation or cross-species conversion is supplied.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What mouse cardiac-function result was reported?",
+      "answer": "At four weeks, Results reported EF of 21.82% in MI and 33.76% in MI+idebenone, with Fig. 8 reporting n=5; histological/fibrosis readouts also improved qualitatively. The percentages are EF values themselves, not relative percentage improvements. Mouse cardiac-function and histological observations do not establish human survival benefit or clinical utility.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Do myocardial molecular changes establish human clinical efficacy?",
+      "answer": "Myocardial oxidative, iron-handling and autophagy-associated readouts changed with intervention, including ROS/MDA/Fe2+, GPX4/FTH1/FPN1, LC3/p62 and tissue observations. Readouts from different timepoints and materials cannot be treated as one continuous causal chain in a patient. Ambiguous fold-change wording is not recalculated into new effect sizes, and these tissue findings are not human clinical efficacy evidence.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    }
+  ],
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What preclinical studies link idebenone to ferroptotic cardiac injury?",
+        "supported_scope": "H9c2 H2O2-injury experiments reported pretreatment-associated improvements in viability, ROS and lipid-peroxidation readouts. RSL3, GPX4/FTH1/FPN1 and DFO/ferrostatin-1-related controls support ferroptosis involvement, without making all oxidative cell death exclusively ferroptotic or establishing a complete specific causal chain.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What pharmacological evidence connects autophagy and AMPK-mTOR?",
+        "supported_scope": "Metformin/rapamycin experiments, p-AMPK/AMPK and p-mTOR/mTOR readouts, and LC3/p62 observations support the proposed pathway. Pharmacologic perturbations do not replace full gene-specific validation or imply that every instance of ferroptosis requires autophagy.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How does pretreatment timing affect interpretation of cardioprotection?",
+        "supported_scope": "The LAD-ligation regimen included idebenone 24 h and 2 h before surgery, then continued dosing; it was not exclusively post-infarction initiation. Four-week EF was reported as 21.82% for MI and 33.76% for MI+idebenone, with Fig. 8 n=5 and qualitative histological/fibrosis improvement. These are EF values in a pretreatment-containing mouse experiment, not relative survival improvements or proven clinical rescue efficacy.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What myocardial readouts accompany the experimental functional effect?",
+        "supported_scope": "Myocardial ROS/MDA/Fe2+, GPX4/FTH1/FPN1, LC3/p62 and tissue observations changed with intervention. Different materials and timepoints do not form a verified continuous causal chain in an individual patient; no new effect sizes are recalculated from ambiguous fold-change wording.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Human MI efficacy, safety or an approved MI indication.",
+      "Clinical rescue efficacy when treatment begins only after myocardial infarction.",
+      "That all autophagy should be inhibited or all cell death is ferroptosis.",
+      "Complete exclusion of other protective mechanisms or direct drug binding to AMPK or mTOR.",
+      "Human survival benefit inferred from mouse EF changes."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-idebenone-1",
+        "component": "Oxidative cellular injury",
+        "context": "H2O2-associated cell death is not exclusively ferroptosis, and these observations do not exclude other protective actions.",
+        "finding": "Idebenone pretreatment reduced reported H2O2-associated injury in H9c2 cells, assessed using cell viability, ROS and lipid-peroxidation readouts.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Supports protection under the stated cellular conditions, not exclusive ferroptotic death or exclusion of other actions.",
+        "source_locator": "Author-deposited full text: Results 3.1-3.2; Figs. 1-2",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-idebenone-2",
+        "component": "Ferroptosis-focused cellular evidence",
+        "context": "This is experimental mechanistic support. Marker changes do not by themselves establish a complete, specific causal chain.",
+        "finding": "RSL3 experiments, ferroptosis-related interventions and GPX4/FTH1/FPN1 readouts supported ferroptosis involvement; DFO/ferrostatin-1-related controls were described in the text.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Supports experimental mechanism involvement, not a fully specific causal chain from marker changes.",
+        "source_locator": "Author-deposited full text: Results 3.2 and 3.5; Figs. 2 and 7",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-idebenone-3",
+        "component": "Autophagy/pathway probes",
+        "context": "Pharmacologic perturbations are not complete gene-specific validation. These results do not imply that all ferroptosis depends on autophagy.",
+        "finding": "Metformin/rapamycin experiments and AMPK-mTOR-related readouts supported the proposed pathway, alongside LC3/p62 and autophagy-associated observations.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Supports pharmacologic pathway involvement, not complete genetic validation or universal autophagy dependence.",
+        "source_locator": "Author-deposited full text: Results 3.3-3.5; Figs. 3-7",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-idebenone-4",
+        "component": "Animal timing and comparison",
+        "context": "This is a pretreatment-containing perioperative regimen, not a validated rescue regimen initiated exclusively after myocardial infarction. No dose recommendation or cross-species conversion is supplied.",
+        "finding": "The LAD-ligation model used three main groups—sham+vehicle, MI+vehicle and MI+idebenone—with dosing 24 h and 2 h before surgery followed by continued dosing and short- and longer-term observations.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Applies to pretreatment-containing perioperative dosing, not post-infarction-only clinical rescue.",
+        "source_locator": "Author-deposited full text: Methods 2.11-2.12; Results 3.6; Fig. 8A",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-idebenone-5",
+        "component": "Cardiac function and histology",
+        "context": "The percentages are EF values themselves, not relative percentage improvements. Mouse cardiac-function and histological observations do not establish human survival benefit or clinical utility.",
+        "finding": "At four weeks, Results reported EF of 21.82% in MI and 33.76% in MI+idebenone, with Fig. 8 reporting n=5; histological/fibrosis readouts also improved qualitatively.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Supports mouse functional observations, not relative survival improvement or human benefit.",
+        "source_locator": "Author-deposited full text: Results 3.6; Fig. 8B-F",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-idebenone-6",
+        "component": "Myocardial molecular readouts",
+        "context": "Readouts from different timepoints and materials cannot be treated as one continuous causal chain in a patient. Ambiguous fold-change wording is not recalculated into new effect sizes, and these tissue findings are not human clinical efficacy evidence.",
+        "finding": "Myocardial oxidative, iron-handling and autophagy-associated readouts changed with intervention, including ROS/MDA/Fe2+, GPX4/FTH1/FPN1, LC3/p62 and tissue observations.",
+        "evidence_level": "Preclinical functional and mechanism-supporting evidence",
+        "scope": "Supports tissue-level molecular observations without combining different materials into a human causal chain.",
+        "source_locator": "Author-deposited full text: Results 3.7-3.8; Figs. 9-10",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
 }
