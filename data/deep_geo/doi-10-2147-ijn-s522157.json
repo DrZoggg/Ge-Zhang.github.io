@@ -1,0 +1,438 @@
+{
+  "version": 2,
+  "doi": "10.2147/ijn.s522157",
+  "display_title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
+  "summary": "A preclinical study evaluated peptide-functionalized miR-185-5p-inhibitor liposomes in DOX-injured cells and mice, with formulation, biodistribution, cardiac phenotyping and cell-death-associated readouts. No human therapeutic efficacy was established.",
+  "research_question": "In the tested doxorubicin-associated cardiac injury models, does delivery of a miR-185-5p inhibitor in peptide-functionalized liposomes alter cardiac function, injury and cell-death-associated readouts?",
+  "author_summary": "This preclinical investigation assessed miR-185-5p-inhibitor-loaded liposomes in doxorubicin (DOX)-injured H9C2 cells, human iPSC-derived cardiomyocytes in vitro and male C57BL/6 mouse models. The delivery vehicle is a peptide-functionalized liposome, not a clinical infusion of patient-derived exosomes. Loaded particles had a reported DLS diameter of 172.35 ± 0.8 nm and encapsulation efficiency of 98.0 ± 1.2%; TEM and DLS size measurements represent different measurement contexts. Mouse experiments reported greater cardiac fluorescence with the targeting peptide and improvements in echocardiographic and histological readouts. Cell experiments assessed apoptosis- and cuproptosis-associated proteins and other injury signals. These findings support the tested preclinical delivery strategy; they do not establish human efficacy, human safety, a general DCM therapy or complete pathway-specific causality. Abstract-only survival/percentage claims and unresolved protocol-reporting details are not promoted into independently verified quantitative key findings.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Preclinical formulation and intervention study using DOX-associated cellular and mouse cardiac injury models",
+    "evidence_type": "Preclinical delivery, cardiac-phenotyping and cell-injury-associated evidence",
+    "population": "H9C2 cells, human iPSC-derived cardiomyocytes in vitro and male C57BL/6 mice under the reported DOX-associated injury conditions",
+    "primary_endpoint": "Experimental cardiac function and myocardial injury readouts after the liposomal intervention",
+    "secondary_endpoint": "Formulation characteristics, biodistribution, fibrosis, cell-death-associated markers and limited tolerability readouts",
+    "counting_note": "Sample sizes are assay-specific and are not added across figures to create a unique animal total. Cells, wells, technical measurements and animals are different units. Human iPSC-derived cardiomyocytes are an in-vitro system, not treated patients. This article is connected to earlier human expression research but does not contain an external human treatment-validation cohort.",
+    "external_validation": false,
+    "data_modalities": [
+      "liposome formulation and particle characterization",
+      "fluorescence biodistribution imaging",
+      "mouse echocardiography",
+      "histology",
+      "Western blot and cell-injury assays",
+      "short-term organ histology and biochemical testing"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Experimental systems",
+        "value": "H9C2 cells; human iPSC-derived cardiomyocytes in vitro; male C57BL/6 mice"
+      },
+      {
+        "label": "Main mouse comparison groups",
+        "value": "Control; DOX; empty liposome plus DOX; loaded liposome plus DOX"
+      },
+      {
+        "label": "Fig. 3 cardiac-function sample label",
+        "value": "n=10, as reported for the figure"
+      },
+      {
+        "label": "Fig. 2 sample label",
+        "value": "n=6 per group for the reported experiments"
+      },
+      {
+        "label": "Fig. 4 cell-experiment sample label",
+        "value": "n=3 per group, not participants"
+      },
+      {
+        "label": "Loaded-particle DLS diameter",
+        "value": "172.35 ± 0.8 nm"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study characterized miR-185-5p-inhibitor-loaded liposomes functionalized with the reported heart-targeting peptide.",
+      "context": "The carrier is a liposomal formulation; the candidate miRNA relationship to previous exosomal profiling does not make this an exosome-transfusion experiment.",
+      "source_locator": "Methods: Lipo@miR-185-5p Inhibitor Preparation; Result and Discussion: Physicochemical Characterization of the Lipo@miR-185-5p Inhibitor Complex; Fig. 1",
+      "evidence": [
+        {
+          "label": "Targeting peptide",
+          "value": "APWHLSSQYSRT"
+        },
+        {
+          "label": "Loaded-particle DLS diameter",
+          "value": "172.35 ± 0.8 nm"
+        },
+        {
+          "label": "Encapsulation efficiency",
+          "value": "98.0 ± 1.2%"
+        },
+        {
+          "label": "Reported release",
+          "value": "Approximately 80% at 48 hours"
+        },
+        {
+          "label": "Size-method distinction",
+          "value": "TEM describes approximately 100 nm; DLS reports hydrodynamic size"
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "Peptide-functionalized liposomes produced greater cardiac fluorescence than the non-targeted comparator in the tested mouse biodistribution experiment.",
+      "context": "Fluorescence localization supports distribution of the labeled preparation, not exclusive cardiac delivery or a directly quantified intact-drug tissue dose.",
+      "source_locator": "Methods: Biodistribution of Liposome@CY5.5-Encapsulated miR-185-5p Inhibitor by in vivo Imaging System; Fig. 2A",
+      "evidence": [
+        {
+          "label": "Comparators",
+          "value": "Lipo-HT versus Lipo-V"
+        },
+        {
+          "label": "Imaging times",
+          "value": "2, 8, 12 and 24 hours"
+        },
+        {
+          "label": "Reported pattern",
+          "value": "Greater cardiac fluorescence with the targeting peptide, especially at 8 and 12 hours"
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "The loaded formulation improved reported echocardiographic readouts in the DOX-associated mouse cardiac injury model.",
+      "context": "Animal intervention evidence only. Abstract percentage-change wording is not converted into absolute percentage-point effects.",
+      "source_locator": "Result and Discussion: Therapeutic Efficacy of Lipo@miR-185-5p Inhibitor with Targeting Peptide in DCM Mouse Model; Fig. 3A-B",
+      "evidence": [
+        {
+          "label": "Main groups",
+          "value": "Control, DOX, empty liposome plus DOX, loaded liposome plus DOX"
+        },
+        {
+          "label": "Reported direction",
+          "value": "Higher EF/FS and reduced LVEDD/LVESD compared with DOX injury under the tested conditions"
+        },
+        {
+          "label": "Fig. 3 sample label",
+          "value": "n=10"
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "Histological observations supported reduced myocardial injury and fibrosis in the treated mouse group.",
+      "context": "Preclinical histological endpoints, not measured human survival benefit.",
+      "source_locator": "Result and Discussion: Therapeutic Efficacy of Lipo@miR-185-5p Inhibitor with Targeting Peptide in DCM Mouse Model; Fig. 3C-D",
+      "evidence": [
+        {
+          "label": "Assays",
+          "value": "H&E and Masson staining"
+        },
+        {
+          "label": "Reported direction",
+          "value": "Improved myocardial tissue appearance and less fibrosis under the tested conditions"
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "The intervention altered apoptosis- and cuproptosis-associated readouts in DOX-injured cellular systems.",
+      "context": "H9C2 and human iPSC-derived cardiomyocyte experiments are in vitro. Marker changes alone do not establish every step of a miR-185-5p-specific causal pathway.",
+      "source_locator": "Result and Discussion: Lipo@miR-185-5p Inhibitor Effectively Ameliorates DCM by Reducing Apoptosis and Copper-Induced Cell Death; Fig. 4",
+      "evidence": [
+        {
+          "label": "Experimental systems",
+          "value": "H9C2 and iPSC-derived cardiomyocytes"
+        },
+        {
+          "label": "Apoptosis-associated proteins",
+          "value": "Lower BAX and cleaved caspase-3; higher BCL-2 in reported comparisons"
+        },
+        {
+          "label": "Cuproptosis-associated proteins",
+          "value": "Lower DLAT, DLST and FDX1 in reported comparisons"
+        },
+        {
+          "label": "Fig. 4 sample label",
+          "value": "n=3 per group"
+        }
+      ]
+    },
+    {
+      "id": "KF6",
+      "claim": "The tested formulation underwent limited organ-histology and biochemical tolerability assessment.",
+      "context": "Absence of detected abnormalities at the reported observations is not a clinical safety determination or a complete chronic-toxicity evaluation.",
+      "source_locator": "Result and Discussion: Evaluation of Significant Accumulation and Distribution of Heart-Targeted Liposomes in the Heart Following Tail Vein Injection; Fig. 2B-C",
+      "evidence": [
+        {
+          "label": "Readouts",
+          "value": "Major-organ histology and biochemical testing"
+        },
+        {
+          "label": "Interpretation",
+          "value": "No evident toxicity signal reported within the tested conditions"
+        },
+        {
+          "label": "Fig. 2 sample label",
+          "value": "n=6 per group"
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "A peptide-functionalized liposomal delivery approach for a miR-185-5p inhibitory payload.",
+    "Preclinical biodistribution and cardiac-function/histology evaluation in DOX-associated injury models.",
+    "Cell-injury-associated molecular readouts and limited experimental tolerability assessment, with explicit separation from human treatment evidence."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Formulation characterization and labeled-preparation biodistribution in the tested experiments.",
+      "Improvement in reported cardiac function and histology in the DOX-associated mouse model.",
+      "Changes in cell-death-associated readouts in H9C2 and iPSC-derived cardiomyocyte experiments.",
+      "Limited tolerability observations within the tested settings."
+    ],
+    "does_not_establish": [
+      "Human treatment efficacy, clinical safety or approval of the liposomal miR-185-5p intervention.",
+      "A universally effective therapy for all etiologies of dilated cardiomyopathy.",
+      "Exosome infusion or clinical transplantation of patient-derived vesicles.",
+      "Exclusive cardiac targeting or an intact-drug tissue dose inferred solely from fluorescence.",
+      "Complete miRNA-target/pathway-specific causality from marker changes alone.",
+      "An independently verified quantitative survival advantage or harmonized percentage-effect estimate from the abstract alone."
+    ]
+  },
+  "limitations": [
+    "The experimental disease model is DOX-associated injury; generalization to other causes of human DCM is unestablished.",
+    "The main text and abstract differ in quantitative presentation; abstract-only survival language and percentage effects are not elevated to independently verified key findings.",
+    "The printed animal-model dosing description requires source/author clarification before experimental reproduction; no corrected dose or protocol recommendation is supplied.",
+    "Human iPSC-derived cells, cultured-cell replicates and assay-specific mouse n values are not interchangeable biological units.",
+    "Fluorescence targeting, marker changes and limited organ testing do not establish clinical biodistribution, complete causal mechanism or human safety."
+  ],
+  "qa": [
+    {
+      "question": "Is this a human DCM treatment trial?",
+      "answer": "No. It uses DOX-injured cell systems and mouse models. Human iPSC-derived cardiomyocytes remain an in-vitro system, not treated patients.",
+      "evidence_refs": [
+        "KF3",
+        "KF5"
+      ]
+    },
+    {
+      "question": "What is being delivered: exosomes or liposomes?",
+      "answer": "The experimental carrier is a peptide-functionalized liposome carrying a miR-185-5p inhibitory payload. The exosome-related title and earlier expression work should not be read as a clinical exosome infusion.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How were the particles characterized?",
+      "answer": "The loaded formulation had a DLS diameter of 172.35 ± 0.8 nm, encapsulation efficiency of 98.0 ± 1.2% and approximately 80% release at 48 hours. TEM describes approximately 100-nm morphology; that is not the same measurement as hydrodynamic size.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What evidence supports cardiac targeting?",
+      "answer": "The targeting-peptide preparation showed greater cardiac fluorescence than the non-targeted preparation in the reported mouse comparison. Fluorescence does not by itself quantify an intact active-drug dose or establish exclusive heart delivery.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What cardiac and cellular outcomes were reported?",
+      "answer": "Mouse echocardiography and histology showed favorable changes under the tested conditions, and cell experiments showed changes in apoptosis- and cuproptosis-associated proteins. These are preclinical readouts, not human outcomes.",
+      "evidence_refs": [
+        "KF3",
+        "KF4",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does the article establish safety or a survival benefit in people?",
+      "answer": "No. Its tolerability testing is limited and experimental. Abstract-only survival and percentage claims are not treated here as independently verified key outcomes, and no human treatment cohort is present.",
+      "evidence_refs": [
+        "KF3",
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease_and_model": [
+      "doxorubicin-associated cardiotoxicity",
+      "experimental DCM-like cardiac dysfunction"
+    ],
+    "delivery": [
+      "liposome",
+      "cardiac-targeting peptide",
+      "miR-185-5p inhibitor"
+    ],
+    "experimental_systems": [
+      "H9C2 cells",
+      "iPSC-derived cardiomyocytes",
+      "C57BL/6 mice"
+    ],
+    "readouts": [
+      "echocardiography",
+      "myocardial fibrosis",
+      "apoptosis-associated markers",
+      "cuproptosis-associated markers"
+    ],
+    "evidence": [
+      "preclinical intervention",
+      "in-vitro evidence",
+      "experimental tolerability"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.1111/jcmm.17789",
+      "relationship": "Earlier human DCM-HF plasma exosomal miRNA profiling, cited as reference 10 by the liposomal study. Its miR-185-5p evidence is discovery-stage association/network prioritization, not an externally qRT-PCR-validated causal finding or a human intervention."
+    },
+    {
+      "doi": "10.1136/jitc-2024-010127",
+      "relationship": "Related preclinical cardio-oncology intervention research on NLRP3/ICI cardiac injury. The injury agents, interventions and mechanistic questions differ; the studies are not direct replication of one treatment effect."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.2147/ijn.s522157",
+    "publisher_url": "https://www.tandfonline.com/doi/abs/10.2147/IJN.S522157",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40755464/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315914/",
+    "review_basis": "Published main text, tables and figure legends at the cited primary sources. No independent reanalysis of participant-level data; unresolved reporting differences are identified in the evidence scope.",
+    "data_availability": "The article states that datasets are available from the corresponding author on reasonable request. No public dataset accession or code repository was verified. Selected quantitative claims are anchored to main-text/figure descriptions; a complete raw-data or supplementary-protocol audit was not performed."
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. The evidence synthesis below is distinct from the published abstract and does not replace the version of record. Reported inconsistencies are qualified rather than silently corrected.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What preclinical delivery system was used for miR-185-5p inhibition in DOX-associated cardiac injury?",
+        "supported_scope": "A peptide-functionalized liposomal formulation was characterized; this is not a human exosome-treatment study.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What evidence supports heart-directed distribution of the liposomal preparation?",
+        "supported_scope": "Mouse fluorescence comparisons favored the targeting-peptide preparation, within the limits of a labeled-preparation distribution assay.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Did the miR-185-5p formulation alter cardiac function in mice?",
+        "supported_scope": "The study reports favorable echocardiographic changes in a DOX-associated mouse model, not a human efficacy result.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What histological evidence accompanied the mouse cardiac response?",
+        "supported_scope": "H&E and Masson observations supported reduced tissue injury and fibrosis under the tested conditions.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "Which cell-death-associated readouts were measured after the liposomal intervention?",
+        "supported_scope": "H9C2 and iPSC-derived cardiomyocyte experiments measured apoptosis- and cuproptosis-associated proteins; pathway specificity is not fully established.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "What safety evidence is available for the targeted miRNA formulation?",
+        "supported_scope": "The paper reports limited preclinical organ-histology and biochemical observations; human safety is unestablished.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Human treatment efficacy, clinical safety or approval of the liposomal miR-185-5p intervention.",
+      "A universally effective therapy for all etiologies of dilated cardiomyopathy.",
+      "Exosome infusion or clinical transplantation of patient-derived vesicles.",
+      "Exclusive cardiac targeting or an intact-drug tissue dose inferred solely from fluorescence.",
+      "Complete miRNA-target/pathway-specific causality from marker changes alone.",
+      "An independently verified quantitative survival advantage or harmonized percentage-effect estimate from the abstract alone."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-mir185-formulation",
+        "component": "Formulation and measurement context",
+        "context": "Peptide-functionalized liposomes",
+        "evidence_level": "Preclinical formulation characterization",
+        "scope": "TEM and DLS sizes are method-specific; no claim of exosome infusion.",
+        "evidence_refs": [
+          "KF1"
+        ],
+        "source_locator": "Methods: Lipo@miR-185-5p Inhibitor Preparation; Result and Discussion: Physicochemical Characterization of the Lipo@miR-185-5p Inhibitor Complex; Fig. 1",
+        "finding": "The study characterized miR-185-5p-inhibitor-loaded liposomes functionalized with the reported heart-targeting peptide. Targeting peptide: APWHLSSQYSRT; Loaded-particle DLS diameter: 172.35 ± 0.8 nm; Encapsulation efficiency: 98.0 ± 1.2%; Reported release: Approximately 80% at 48 hours; Size-method distinction: TEM describes approximately 100 nm; DLS reports hydrodynamic size"
+      },
+      {
+        "id": "evidence-mir185-biodistribution",
+        "component": "Labeled-preparation biodistribution",
+        "context": "Lipo-HT versus Lipo-V in mice",
+        "evidence_level": "Preclinical imaging evidence",
+        "scope": "Fluorescence is not a quantitative intact-drug dose or exclusive cardiac targeting.",
+        "evidence_refs": [
+          "KF2"
+        ],
+        "source_locator": "Methods: Biodistribution of Liposome@CY5.5-Encapsulated miR-185-5p Inhibitor by in vivo Imaging System; Fig. 2A",
+        "finding": "Peptide-functionalized liposomes produced greater cardiac fluorescence than the non-targeted comparator in the tested mouse biodistribution experiment. Comparators: Lipo-HT versus Lipo-V; Imaging times: 2, 8, 12 and 24 hours; Reported pattern: Greater cardiac fluorescence with the targeting peptide, especially at 8 and 12 hours"
+      },
+      {
+        "id": "evidence-mir185-cardiac-function",
+        "component": "Mouse cardiac function",
+        "context": "DOX-associated injury; Fig. 3 n=10",
+        "evidence_level": "Animal intervention evidence",
+        "scope": "No human efficacy or abstract-percentage reinterpretation.",
+        "evidence_refs": [
+          "KF3"
+        ],
+        "source_locator": "Result and Discussion: Therapeutic Efficacy of Lipo@miR-185-5p Inhibitor with Targeting Peptide in DCM Mouse Model; Fig. 3A-B",
+        "finding": "The loaded formulation improved reported echocardiographic readouts in the DOX-associated mouse cardiac injury model. Main groups: Control, DOX, empty liposome plus DOX, loaded liposome plus DOX; Reported direction: Higher EF/FS and reduced LVEDD/LVESD compared with DOX injury under the tested conditions; Fig. 3 sample label: n=10"
+      },
+      {
+        "id": "evidence-mir185-histology",
+        "component": "Myocardial injury and fibrosis",
+        "context": "Mouse tissue histology",
+        "evidence_level": "Preclinical histological evidence",
+        "scope": "Not a demonstrated clinical or independently quantified survival benefit.",
+        "evidence_refs": [
+          "KF4"
+        ],
+        "source_locator": "Result and Discussion: Therapeutic Efficacy of Lipo@miR-185-5p Inhibitor with Targeting Peptide in DCM Mouse Model; Fig. 3C-D",
+        "finding": "Histological observations supported reduced myocardial injury and fibrosis in the treated mouse group. Assays: H&E and Masson staining; Reported direction: Improved myocardial tissue appearance and less fibrosis under the tested conditions"
+      },
+      {
+        "id": "evidence-mir185-cell-response",
+        "component": "Cell-death-associated readouts",
+        "context": "H9C2/iPSC-derived cells; Fig. 4 n=3/group",
+        "evidence_level": "In-vitro functional and marker evidence",
+        "scope": "Human-derived cells are not a human trial; markers alone do not prove complete pathway specificity.",
+        "evidence_refs": [
+          "KF5"
+        ],
+        "source_locator": "Result and Discussion: Lipo@miR-185-5p Inhibitor Effectively Ameliorates DCM by Reducing Apoptosis and Copper-Induced Cell Death; Fig. 4",
+        "finding": "The intervention altered apoptosis- and cuproptosis-associated readouts in DOX-injured cellular systems. Experimental systems: H9C2 and iPSC-derived cardiomyocytes; Apoptosis-associated proteins: Lower BAX and cleaved caspase-3; higher BCL-2 in reported comparisons; Cuproptosis-associated proteins: Lower DLAT, DLST and FDX1 in reported comparisons; Fig. 4 sample label: n=3 per group"
+      },
+      {
+        "id": "evidence-mir185-tolerability",
+        "component": "Limited experimental tolerability",
+        "context": "Organ/biochemistry observations; Fig. 2 n=6/group",
+        "evidence_level": "Preclinical tolerability assessment",
+        "scope": "No established human safety or complete long-term toxicity assessment.",
+        "evidence_refs": [
+          "KF6"
+        ],
+        "source_locator": "Result and Discussion: Evaluation of Significant Accumulation and Distribution of Heart-Targeted Liposomes in the Heart Following Tail Vein Injection; Fig. 2B-C",
+        "finding": "The tested formulation underwent limited organ-histology and biochemical tolerability assessment. Readouts: Major-organ histology and biochemical testing; Interpretation: No evident toxicity signal reported within the tested conditions; Fig. 2 sample label: n=6 per group"
+      }
+    ]
+  }
+}

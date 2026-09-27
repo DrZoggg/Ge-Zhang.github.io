@@ -9,6 +9,10 @@ from sync_common import ROOT
 
 
 TARGETS = {
+    "doi-10-1111-jcmm-17789": ("doi-10-1111-jcmm-17789.json", 6, 6, 6),
+    "doi-10-1111-jcmm-70258": ("doi-10-1111-jcmm-70258.json", 6, 6, 6),
+    "doi-10-1111-jcmm-70725": ("doi-10-1111-jcmm-70725.json", 6, 6, 6),
+    "doi-10-2147-ijn-s522157": ("doi-10-2147-ijn-s522157.json", 6, 6, 6),
     "nlrp3-ici": ("nlrp3-ici.json", 7, 7, 7),
     "doi-10-1186-s12915-025-02400-x": ("doi-10-1186-s12915-025-02400-x.json", 7, 7, 7),
     "doi-10-1200-po-24-00089": ("doi-10-1200-po-24-00089.json", 6, 6, 6),
