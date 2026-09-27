@@ -302,6 +302,17 @@
           }
         ]
       }
+    },
+    "10.18632/aging.205564": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.aging-us.com/article/205564/text",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Ulcerative colitis (UC) is a serious inflammatory bowel disease (IBD) with high morbidity and mortality worldwide. As the traditional diagnostic techniques have various limitations in the practice and diagnosis of early ulcerative colitis, it is necessary to develop new diagnostic models from molecular biology to supplement the existing methods.\n\nIn this study, we developed a machine learning-based synthesis to construct an artificial intelligence diagnostic model for ulcerative colitis, and the correctness of the model is verified using an external independent dataset. According to the significantly expressed genes related to the occurrence of UC in the model, an unsupervised quantitative ulcerative colitis related score (UCRScore) based on principal coordinate analysis was established.\n\nThe UCRScore is not only highly generalizable across UC bulk cohorts at different stages, but also highly generalizable across single-cell datasets, with the same effect in terms of cell numbers, activation pathways and mechanisms. As an important role of screening genes in disease occurrence, based on connectivity map analysis, 5 potential targeting molecular compounds were identified, which can be used as an additional supplement to the therapeutic of UC.\n\nOverall, this study provides a potential tool for differential diagnosis and assessment of bio-pathological changes in UC at the macroscopic level, providing an opportunity to optimize the diagnosis and treatment of UC."
+      }
     }
   }
 }

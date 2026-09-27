@@ -20,6 +20,9 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    '10.18632/aging.205564': {'publication_date': '2024-02-16', 'volume': '16', 'issue': '4', 'first_page': '3856', 'last_page': '3879', 'eissn': '1945-4589', 'pmid': '38372705', 'pmcid': 'PMC10929837'},
+    '10.1016/j.ejphar.2023.175569': {'publication_date': '2023-02-03', 'volume': '943', 'article_number': '175569', 'pmid': '36740037'},
+    '10.1007/s11426-026-3629-x': {'publication_date': '2026-09-15'},
     '10.3389/fcvm.2025.1724572': {'publication_date': '2026-01-05', 'volume': '12', 'article_number': '1724572', 'pmid': '41561117', 'pmcid': 'PMC12813168'},
     '10.3389/fpubh.2025.1521372': {'publication_date': '2025-03-26', 'volume': '13', 'article_number': '1521372', 'pmid': '40206179', 'pmcid': 'PMC11979105'},
     '10.3389/fonc.2021.659217': {'publication_date': '2021-05-03', 'volume': '11', 'article_number': '659217', 'pmid': '34012920', 'pmcid': 'PMC8126718'},

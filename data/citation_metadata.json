@@ -318,6 +318,37 @@
         "https://pubmed.ncbi.nlm.nih.gov/34012920/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC8126718/"
       ]
+    },
+    "10.18632/aging.205564": {
+      "publication_date": "2024-02-16",
+      "volume": "16",
+      "issue": "4",
+      "first_page": "3856",
+      "last_page": "3879",
+      "eissn": "1945-4589",
+      "pmid": "38372705",
+      "pmcid": "PMC10929837",
+      "verified_sources": [
+        "https://www.aging-us.com/article/205564/text",
+        "https://pubmed.ncbi.nlm.nih.gov/38372705/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10929837/"
+      ]
+    },
+    "10.1016/j.ejphar.2023.175569": {
+      "publication_date": "2023-02-03",
+      "volume": "943",
+      "article_number": "175569",
+      "pmid": "36740037",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/36740037/",
+        "https://www.sciencedirect.com/science/article/pii/S0014299923000808"
+      ]
+    },
+    "10.1007/s11426-026-3629-x": {
+      "publication_date": "2026-09-15",
+      "verified_sources": [
+        "https://link.springer.com/article/10.1007/s11426-026-3629-x"
+      ]
     }
   }
 }

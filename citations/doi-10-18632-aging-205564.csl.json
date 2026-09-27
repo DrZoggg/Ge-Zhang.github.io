@@ -47,10 +47,16 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        2,
+        16
       ]
     ]
   },
   "DOI": "10.18632/aging.205564",
-  "URL": "https://doi.org/10.18632/aging.205564"
+  "URL": "https://doi.org/10.18632/aging.205564",
+  "volume": "16",
+  "issue": "4",
+  "page": "3856-3879",
+  "ISSN": "1945-4589"
 }
