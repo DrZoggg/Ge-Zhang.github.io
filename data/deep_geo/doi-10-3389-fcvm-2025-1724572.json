@@ -1,0 +1,322 @@
+{
+  "doi": "10.3389/fcvm.2025.1724572",
+  "summary": "Baseline multisystem biomarkers were associated with subsequent cardiovascular events in an observational analysis. Adjusted associations and statistical mediation do not establish prevention by lowering the score or an inflammatory marker, or a validated clinical prediction model.",
+  "research_question": "How is biomarker-defined allostatic load associated with incident cardiovascular disease, and what statistical mediation is attributed to inflammatory markers in the analyzed UK Biobank cohort?",
+  "author_summary": "This observational analysis relates baseline multisystem biomarkers to subsequent cardiovascular events. Its adjusted associations and mediation estimates inform epidemiological hypotheses; they do not demonstrate that lowering the score or an inflammatory marker prevents events. It is not a validated clinical prediction model.",
+  "study_profile": {
+    "study_design": "Prospective cohort association analysis using UK Biobank data",
+    "evidence_type": "Human observational exposure–outcome and exploratory mediation evidence",
+    "population": "Adults without cardiovascular disease at baseline in the analytic cohort",
+    "primary_endpoint": "Incident CVD defined by the study's linked-record ascertainment",
+    "secondary_endpoint": "Exploratory exposure-response and mediation analyses of that outcome; not a separately established interventional benefit endpoint",
+    "data_modalities": [
+      "baseline biomarkers",
+      "questionnaire covariates",
+      "linked hospital/mortality outcomes"
+    ],
+    "unique_total_n": 205504,
+    "cohorts": [
+      {
+        "name": "UK Biobank analytic cohort",
+        "role": "analytic population without cardiovascular disease at baseline",
+        "n": 205504
+      }
+    ],
+    "profile_type": "clinical_cohort",
+    "external_validation": false
+  },
+  "key_findings": [
+    {
+      "claim": "The analytic cohort comprised 205,504 participants and 18,542 incident CVD events during an article-reported 13-year follow-up period.",
+      "context": "The analytic sample is not the entire UK Biobank recruitment population. The reported 13-year period is not described here as a mean or median follow-up.",
+      "evidence": [
+        {
+          "label": "analytic participants",
+          "value": "205,504"
+        },
+        {
+          "label": "incident CVD events",
+          "value": "18,542"
+        },
+        {
+          "label": "article reported follow up period",
+          "value": "13 years"
+        }
+      ],
+      "source_locator": "Results: Baseline characteristics; Fig. 1",
+      "id": "KF1"
+    },
+    {
+      "claim": "Allostatic load was operationalized using 12 baseline biomarkers with quartile-based risk scoring and a score range of 0–12.",
+      "context": "HDL and IGF-1 used the low-value risk direction. This biomarker score is not a direct measurement of psychological stress, a neuroendocrine response or an inflammatory intervention.",
+      "evidence": [
+        {
+          "label": "baseline biomarkers",
+          "value": "12"
+        },
+        {
+          "label": "score range",
+          "value": "0–12"
+        },
+        {
+          "label": "risk scoring",
+          "value": "Quartile-based; low-value direction for HDL and IGF-1"
+        }
+      ],
+      "source_locator": "Methods: Assessment of allostatic load",
+      "id": "KF2"
+    },
+    {
+      "claim": "In adjusted Model 3, AL ≥6 versus AL = 0 was associated with incident CVD at HR 2.15 (95% CI 1.99–2.33).",
+      "context": "AL = 0 is the reference group. This relative hazard association is not a 115% absolute-risk increase or a treatment effect.",
+      "evidence": [
+        {
+          "label": "comparison",
+          "value": "AL ≥6 versus AL = 0"
+        },
+        {
+          "label": "model",
+          "value": "Model 3"
+        },
+        {
+          "label": "hazard ratio",
+          "value": "2.15"
+        },
+        {
+          "label": "reported 95 percent CI",
+          "value": "1.99–2.33"
+        }
+      ],
+      "source_locator": "Results: Associations of AL with CVD; Fig. 2A",
+      "id": "KF3"
+    },
+    {
+      "claim": "The AL–CVD association was nonlinear, and the main text reported directionally similar results after excluding events in the first three years after baseline.",
+      "context": "No additional precise hazard ratios from supplementary tables are supplied here, and this sensitivity analysis does not fully exclude reverse causation.",
+      "evidence": [
+        {
+          "label": "nonlinearity P",
+          "value": "<0.001"
+        },
+        {
+          "label": "sensitivity exclusion",
+          "value": "Events in the first 3 years after baseline"
+        }
+      ],
+      "source_locator": "Results: Associations of AL with CVD; Fig. 2B",
+      "id": "KF4"
+    },
+    {
+      "claim": "Eight candidate mediators entered the correlation analysis; the neutrophil-count mediation estimate was 4.73%.",
+      "context": "This is model-based decomposition using baseline indicators, not a proven causal pathway or evidence that lowering neutrophils or an inflammatory marker prevents CVD.",
+      "evidence": [
+        {
+          "label": "candidate mediators",
+          "value": "8"
+        },
+        {
+          "label": "neutrophil count mediation estimate",
+          "value": "4.73%"
+        }
+      ],
+      "source_locator": "Results: Mediation analyses of inflammatory factor on associations of AL with CVD; Fig. 4E",
+      "id": "KF5"
+    }
+  ],
+  "what_this_adds": [
+    "Population-level exposure–outcome association evidence for biomarker-defined AL and incident CVD.",
+    "A nonlinear exposure-response description with a specified sensitivity analysis.",
+    "An explicitly qualified statistical inflammatory-mediation estimate."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Observational population-level associations between biomarker-defined AL and incident CVD.",
+      "Nonlinearity and exploratory statistical mediation within the analyzed cohort."
+    ],
+    "does_not_establish": [
+      "A causal prevention mechanism or efficacy of anti-inflammatory drugs.",
+      "A prospectively validated individual clinical prediction tool.",
+      "Validated benefits of a stress-management intervention."
+    ]
+  },
+  "limitations": [
+    "Observational design does not establish causality; residual confounding remains possible.",
+    "Missing-data selection limits interpretation of the analytic sample.",
+    "Baseline AL and mediator measurements limit temporal interpretation of mediation.",
+    "Population-specific thresholds may not transfer to other populations."
+  ],
+  "concepts": {
+    "population": [
+      "UK Biobank"
+    ],
+    "exposure": [
+      "allostatic load",
+      "multisystem biomarkers"
+    ],
+    "outcome": [
+      "incident cardiovascular disease"
+    ],
+    "methods": [
+      "Cox regression",
+      "restricted cubic splines",
+      "mediation analysis"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.3389/fpubh.2025.1521372",
+      "relationship": "Both examine human exposure–outcome associations, but use different cohorts, exposures and endpoints; neither validates the other's estimates."
+    }
+  ],
+  "version": 2,
+  "display_title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
+  "evidence_page_notice": "Author-controlled evidence synthesis, separate from the published abstract and not a replacement for the version of record. Study design, analysis denominators and unresolved reporting differences are retained.",
+  "qa": [
+    {
+      "question": "Which population and incident outcomes were analyzed?",
+      "answer": "The analytic cohort comprised 205,504 participants and 18,542 incident CVD events during an article-reported 13-year follow-up period. The analytic sample is not the entire UK Biobank recruitment population. The reported 13-year period is not described here as a mean or median follow-up.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What does the allostatic-load score represent?",
+      "answer": "Allostatic load was operationalized using 12 baseline biomarkers with quartile-based risk scoring and a score range of 0–12. HDL and IGF-1 used the low-value risk direction. This biomarker score is not a direct measurement of psychological stress, a neuroendocrine response or an inflammatory intervention.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What was the adjusted high-versus-zero AL association?",
+      "answer": "In adjusted Model 3, AL ≥6 versus AL = 0 was associated with incident CVD at HR 2.15 (95% CI 1.99–2.33). AL = 0 is the reference group. This relative hazard association is not a 115% absolute-risk increase or a treatment effect.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What do the nonlinear and sensitivity analyses add?",
+      "answer": "The AL–CVD association was nonlinear, and the main text reported directionally similar results after excluding events in the first three years after baseline. No additional precise hazard ratios from supplementary tables are supplied here, and this sensitivity analysis does not fully exclude reverse causation.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does the mediation estimate establish prevention by lowering neutrophils?",
+      "answer": "Eight candidate mediators entered the correlation analysis; the neutrophil-count mediation estimate was 4.73%. This is model-based decomposition using baseline indicators, not a proven causal pathway or evidence that lowering neutrophils or an inflammatory marker prevents CVD.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What prospective cohort evidence links allostatic load to incident CVD?",
+        "supported_scope": "An analytic cohort of 205,504 participants had 18,542 incident CVD events during the article-reported 13-year period; Model 3 compared AL ≥6 with AL = 0 at HR 2.15 (95% CI 1.99–2.33). These are observational relative-hazard findings, not a treatment effect.",
+        "evidence_refs": [
+          "KF1",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How was a multisystem biomarker AL score operationalized?",
+        "supported_scope": "Twelve baseline biomarkers formed a 0–12 score using quartile-based risk scoring, with the low-value direction for HDL and IGF-1. It is not a direct psychological-stress measure or an intervention.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Was the AL–CVD association nonlinear and examined in sensitivity analyses?",
+        "supported_scope": "Nonlinearity P<0.001 and directionally similar results after excluding first-three-year events were reported in the main text. This does not fully exclude reverse causation.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What statistical inflammatory mediation was reported?",
+        "supported_scope": "Among eight candidate mediators in the correlation analysis, the neutrophil-count mediation estimate was 4.73%. Baseline model decomposition does not establish a causal pathway or drug benefit.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A causal prevention mechanism or efficacy of anti-inflammatory drugs.",
+      "A prospectively validated individual clinical prediction tool.",
+      "Validated benefits of a stress-management intervention."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-al-1",
+        "component": "Analytic population and incident cardiovascular outcomes",
+        "context": "The analytic sample is not the entire UK Biobank recruitment population. The reported 13-year period is not described here as a mean or median follow-up.",
+        "finding": "The analytic cohort comprised 205,504 participants and 18,542 incident CVD events during an article-reported 13-year follow-up period.",
+        "evidence_level": "Human observational exposure–outcome and exploratory mediation evidence",
+        "scope": "Describes the analytic population and reported follow-up period, not all recruited UK Biobank participants.",
+        "source_locator": "Results: Baseline characteristics; Fig. 1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-al-2",
+        "component": "Multisystem biomarker exposure scoring",
+        "context": "HDL and IGF-1 used the low-value risk direction. This biomarker score is not a direct measurement of psychological stress, a neuroendocrine response or an inflammatory intervention.",
+        "finding": "Allostatic load was operationalized using 12 baseline biomarkers with quartile-based risk scoring and a score range of 0–12.",
+        "evidence_level": "Human observational exposure–outcome and exploratory mediation evidence",
+        "scope": "Defines the biomarker exposure; it does not validate a psychological-stress measurement or an intervention.",
+        "source_locator": "Methods: Assessment of allostatic load",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-al-3",
+        "component": "Adjusted high-versus-zero allostatic-load association",
+        "context": "AL = 0 is the reference group. This relative hazard association is not a 115% absolute-risk increase or a treatment effect.",
+        "finding": "In adjusted Model 3, AL ≥6 versus AL = 0 was associated with incident CVD at HR 2.15 (95% CI 1.99–2.33).",
+        "evidence_level": "Human observational exposure–outcome and exploratory mediation evidence",
+        "scope": "Supports an adjusted relative-hazard association only, not absolute-risk change or treatment efficacy.",
+        "source_locator": "Results: Associations of AL with CVD; Fig. 2A",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-al-4",
+        "component": "Exposure-response nonlinearity and sensitivity analysis",
+        "context": "No additional precise hazard ratios from supplementary tables are supplied here, and this sensitivity analysis does not fully exclude reverse causation.",
+        "finding": "The AL–CVD association was nonlinear, and the main text reported directionally similar results after excluding events in the first three years after baseline.",
+        "evidence_level": "Human observational exposure–outcome and exploratory mediation evidence",
+        "scope": "Supports a nonlinear association and a specified sensitivity check, without eliminating reverse causation.",
+        "source_locator": "Results: Associations of AL with CVD; Fig. 2B",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-al-5",
+        "component": "Neutrophil-count statistical mediation",
+        "context": "This is model-based decomposition using baseline indicators, not a proven causal pathway or evidence that lowering neutrophils or an inflammatory marker prevents CVD.",
+        "finding": "Eight candidate mediators entered the correlation analysis; the neutrophil-count mediation estimate was 4.73%.",
+        "evidence_level": "Human observational exposure–outcome and exploratory mediation evidence",
+        "scope": "Supports exploratory statistical mediation, not causal prevention or anti-inflammatory drug efficacy.",
+        "source_locator": "Results: Mediation analyses of inflammatory factor on associations of AL with CVD; Fig. 4E",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "publication_url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41561117/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12813168/",
+    "review_basis": "Selected findings checked against published main text, readable tables and publication records. No participant-level reanalysis or comprehensive supplementary-data audit was performed.",
+    "data_availability": "UK Biobank resource; access is governed by its application process."
+  }
+}
