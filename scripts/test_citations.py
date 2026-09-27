@@ -11,6 +11,7 @@ from citation_common import (
     citation_record,
     citation_skip_reason,
     load_citation_metadata,
+    render_csl_json,
 )
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import is_withdrawn, load_master, norm_doi, publication_authors
@@ -132,14 +133,36 @@ def run_tests():
             number = expected["article_number"]
             assert f"eid = {{{number}}}" in bib_text
             assert f"C7  - {number}" in ris_text
-            assert csl_data["article-number"] == number
+            assert csl_data["number"] == number
+            assert isinstance(csl_data["number"], str)
+            assert "page" not in csl_data
             assert "SP  - " not in ris_text and "EP  - " not in ris_text
+        else:
+            assert "number" not in csl_data
+        assert "article-number" not in csl_data
+        assert csl_data.get("issue") == expected.get("issue")
         if "first_page" in expected:
             pages = f"{expected['first_page']}--{expected['last_page']}"
             assert f"pages = {{{pages}}}" in bib_text
             assert f"SP  - {expected['first_page']}" in ris_text
             assert f"EP  - {expected['last_page']}" in ris_text
             assert csl_data["page"] == pages.replace("--", "-")
+    for publication in public:
+        current = citation_record(publication, enhancements, config["site_url"])
+        if current is None:
+            continue
+        data = json.loads(render_csl_json(current))
+        assert isinstance(data, dict) and "article-number" not in data
+        assert data.get("issue") == current.get("issue")
+        if current.get("article_number") and not current.get("first_page"):
+            assert data["number"] == current["article_number"]
+            without_number = copy.deepcopy(current)
+            without_number.pop("article_number")
+            assert {key: value for key, value in data.items() if key != "number"} == (
+                json.loads(render_csl_json(without_number))
+            )
+        else:
+            assert "number" not in data
     eligible = sum(not citation_skip_reason(item) for item in public)
     assert validate_citations(public, config) == {
         "eligible": eligible, "skipped": len(public) - eligible,

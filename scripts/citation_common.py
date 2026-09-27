@@ -276,7 +276,7 @@ def render_csl_json(record):
             "-" + record["last_page"] if record.get("last_page") else ""
         )
     elif record.get("article_number"):
-        result["article-number"] = record["article_number"]
+        result["number"] = record["article_number"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"
