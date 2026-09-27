@@ -363,6 +363,15 @@
         "https://pubmed.ncbi.nlm.nih.gov/42016906/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC13093795/"
       ]
+    },
+    "10.1016/j.curpro.2025.100054": {
+      "volume": "22",
+      "issue": "5",
+      "article_number": "100054",
+      "verified_sources": [
+        "https://www.sciencedirect.com/science/article/pii/S1570164625000542",
+        "https://www.keaipublishing.com/en/journals/current-proteomics/most-downloaded-articles/"
+      ]
     }
   }
 }

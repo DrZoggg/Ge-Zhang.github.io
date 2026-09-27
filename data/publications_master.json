@@ -23,27 +23,6 @@
     ]
   },
   {
-    "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
-    "year": 2026,
-    "journal": "Current Proteomics",
-    "type": "Article",
-    "doi": "10.1016/j.curpro.2025.100054",
-    "url": "https://doi.org/10.1016/j.curpro.2025.100054",
-    "sources": [
-      "ORCID"
-    ],
-    "slug": "doi-10-1016-j-curpro-2025-100054",
-    "authors": [
-      "Ge Zhang",
-      "Jiashen Xu",
-      "Zenglei Zhang",
-      "Chaoyang Yu",
-      "Kaisaierjiang Kadier",
-      "Di Lu",
-      "Mingxuan Duan"
-    ]
-  },
-  {
     "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
     "journal": "Science China Chemistry",
     "year": 2026,
@@ -363,6 +342,31 @@
       "Junnan Tang",
       "Erdan Dong",
       "Xunde Xian"
+    ]
+  },
+  {
+    "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
+    "year": 2025,
+    "journal": "Current Proteomics",
+    "type": "Article",
+    "doi": "10.1016/j.curpro.2025.100054",
+    "url": "https://doi.org/10.1016/j.curpro.2025.100054",
+    "sources": [
+      "ORCID"
+    ],
+    "slug": "doi-10-1016-j-curpro-2025-100054",
+    "authors": [
+      "Ge Zhang",
+      "Jiashen Xu",
+      "Zenglei Zhang",
+      "Chaoyang Yu",
+      "Kaisaierjiang Kadier",
+      "Di Lu",
+      "Mingxuan Duan",
+      "Ge Zhang"
+    ],
+    "researcher_author_positions": [
+      1
     ]
   },
   {

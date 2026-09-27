@@ -23,16 +23,22 @@
     },
     {
       "literal": "Mingxuan Duan"
+    },
+    {
+      "literal": "Ge Zhang"
     }
   ],
   "container-title": "Current Proteomics",
   "issued": {
     "date-parts": [
       [
-        2026
+        2025
       ]
     ]
   },
   "DOI": "10.1016/j.curpro.2025.100054",
-  "URL": "https://doi.org/10.1016/j.curpro.2025.100054"
+  "URL": "https://doi.org/10.1016/j.curpro.2025.100054",
+  "volume": "22",
+  "issue": "5",
+  "number": "100054"
 }

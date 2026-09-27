@@ -15,6 +15,7 @@ from validate_site import element_texts, paper_json_ld_object
 
 # Publisher-verified author positions supplied in the identity-closure contract.
 VERIFIED_IDENTITIES = {
+    '10.1016/j.curpro.2025.100054': {'authors': ['Ge Zhang', 'Jiashen Xu', 'Zenglei Zhang', 'Chaoyang Yu', 'Kaisaierjiang Kadier', 'Di Lu', 'Mingxuan Duan', 'Ge Zhang'], 'positions': [1], 'year': 2025, 'slug': 'doi-10-1016-j-curpro-2025-100054', 'date_parts': [2025], 'volume': '22', 'issue': '5', 'number': '100054'},
     '10.1002/ggn2.202500053': {'authors': ['Haonan Zhang', 'Ge Zhang', 'Chaoyang Yu', 'Ruhao Wu', 'Shiqian Zhang', 'Xufeng Huang', 'Yingxue Yuan', 'Yaxin Chen', 'Shaotong Pei', 'Ge Zhang'], 'positions': [10], 'year': 2026, 'slug': 'doi-10-1002-ggn2-202500053', 'date_parts': [2026, 3, 16], 'volume': '7', 'issue': '1', 'number': 'e00053'},
 }
 

@@ -20,6 +20,7 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    '10.1016/j.curpro.2025.100054': {'volume': '22', 'issue': '5', 'article_number': '100054'},
     '10.1002/ggn2.202500053': {'publication_date': '2026-03-16', 'volume': '7', 'issue': '1', 'article_number': 'e00053', 'eissn': '2641-6573', 'pmid': '42016906', 'pmcid': 'PMC13093795'},
     '10.18632/aging.205564': {'publication_date': '2024-02-16', 'volume': '16', 'issue': '4', 'first_page': '3856', 'last_page': '3879', 'eissn': '1945-4589', 'pmid': '38372705', 'pmcid': 'PMC10929837'},
     '10.1016/j.ejphar.2023.175569': {'publication_date': '2023-02-03', 'volume': '943', 'article_number': '175569', 'pmid': '36740037'},
@@ -120,7 +121,7 @@ def run_tests():
         slug = publication["slug"]
         markup = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
         assert meta_contents(markup, "citation_publication_date") == [
-            expected["publication_date"].replace("-", "/")
+            expected.get("publication_date", str(publication["year"])).replace("-", "/")
         ]
         for key, tag in (
             ("volume", "citation_volume"), ("issue", "citation_issue"),
