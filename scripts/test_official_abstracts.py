@@ -14,7 +14,7 @@ from validate_site import meta_contents, paper_json_ld_object
 def main():
     public = [item for item in load_master() if not is_withdrawn(item)]
     records = official_abstracts.load_official_abstracts(public)
-    assert len(records) == 15
+    assert len(records) == 17
     assert "10.1016/j.joim.2025.06.003" not in records
     assert "10.71321/fy14v342" not in records
     assert "10.1111/jcmm.70725" not in records
@@ -33,6 +33,11 @@ def main():
             assert "## Official Abstract" in markdown
             if records[doi]["abstract"]["type"] == "structured":
                 expected_labels = (
+                    ["Background", "Methods", "Results", "Conclusion"]
+                    if doi == "10.3389/fcvm.2025.1724572"
+                    else ["Objectives", "Materials and methods", "Results", "Conclusion"]
+                    if doi == "10.3389/fpubh.2025.1521372"
+                    else
                     ["Purpose", "Methods", "Results", "Conclusion"]
                     if doi == "10.2147/ijn.s522157"
                     else
@@ -70,7 +75,7 @@ def main():
                     raise AssertionError("Invalid Official Abstract source accepted")
         finally:
             official_abstracts.PATH = original_path
-    print("OFFICIAL ABSTRACT TESTS PASS: fifteen records; JCO excluded; AAA EV/HCC deferred; LUAD unchanged; optional and invalid-source cases")
+    print("OFFICIAL ABSTRACT TESTS PASS: seventeen records; JCO excluded; AAA EV/HCC deferred; LUAD unchanged; optional and invalid-source cases")
 
 
 if __name__ == "__main__":

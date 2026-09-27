@@ -20,6 +20,10 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    '10.3389/fcvm.2025.1724572': {'publication_date': '2026-01-05', 'volume': '12', 'article_number': '1724572', 'pmid': '41561117', 'pmcid': 'PMC12813168'},
+    '10.3389/fpubh.2025.1521372': {'publication_date': '2025-03-26', 'volume': '13', 'article_number': '1521372', 'pmid': '40206179', 'pmcid': 'PMC11979105'},
+    '10.3389/fonc.2021.659217': {'publication_date': '2021-05-03', 'volume': '11', 'article_number': '659217', 'pmid': '34012920', 'pmcid': 'PMC8126718'},
+
     "10.1038/s41598-024-65236-5": {"publication_date":"2024-06-19","volume":"14","issue":"1","article_number":"14155","eissn":"2045-2322","pmid":"38898215","pmcid":"PMC11187219"},
     "10.1016/j.joim.2025.06.003": {"publication_date":"2025-06-14","volume":"23","issue":"4","first_page":"445","last_page":"456","pmid":"40581550"},
     "10.1002/mdr2.70004": {"publication_date":"2025-04-29","volume":"1","issue":"1","first_page":"10","last_page":"31","issn":"2998-4963","eissn":"2998-4971","publisher":"Wiley"},

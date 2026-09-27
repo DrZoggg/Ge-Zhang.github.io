@@ -282,6 +282,42 @@
         "https://onlinelibrary.wiley.com/doi/pdf/10.1002/mdr2.70004",
         "https://doaj.org/toc/2998-4971"
       ]
+    },
+    "10.3389/fcvm.2025.1724572": {
+      "publication_date": "2026-01-05",
+      "volume": "12",
+      "article_number": "1724572",
+      "pmid": "41561117",
+      "pmcid": "PMC12813168",
+      "verified_sources": [
+        "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full",
+        "https://pubmed.ncbi.nlm.nih.gov/41561117/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12813168/"
+      ]
+    },
+    "10.3389/fpubh.2025.1521372": {
+      "publication_date": "2025-03-26",
+      "volume": "13",
+      "article_number": "1521372",
+      "pmid": "40206179",
+      "pmcid": "PMC11979105",
+      "verified_sources": [
+        "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1521372/full",
+        "https://pubmed.ncbi.nlm.nih.gov/40206179/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979105/"
+      ]
+    },
+    "10.3389/fonc.2021.659217": {
+      "publication_date": "2021-05-03",
+      "volume": "11",
+      "article_number": "659217",
+      "pmid": "34012920",
+      "pmcid": "PMC8126718",
+      "verified_sources": [
+        "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full",
+        "https://pubmed.ncbi.nlm.nih.gov/34012920/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8126718/"
+      ]
     }
   }
 }

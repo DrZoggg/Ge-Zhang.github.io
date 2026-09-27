@@ -246,6 +246,62 @@
         "type": "unstructured",
         "text": "The progression of differentiated thyroid carcinoma (DTC) poses significant clinical challenges, especially in determining the optimal time for intervention. To capture early signals of disease progression, we employed an optimized dynamic network biomarker (DNB) method—a systems biology approach that detects abrupt molecular changes indicating a critical transition signal. This analysis revealed that Stage II marks a critical transition in the disease trajectory. We further developed a scoring system called TCPSLevel (Thyroid Carcinoma Progression Signature Level), which quantifies individual progression risk based on gene expression profiles. TCPSLevel showed strong associations with clinical features and prognosis across multiple datasets. Our ensemble consensus clustering approach uncovered three robust DTC molecular subtypes, which demonstrated distinct clinical outcomes, immune microenvironments, regulatory landscapes, and therapeutic agents. A clinically applicable classifier (miniPC) was constructed using machine learning to facilitate subtype prediction. We also identified ASPH as a key regulator driving progression and validated its expression and function experimentally. Together, these findings offer new insights and practical tools for early risk assessment and personalized management of thyroid cancer."
       }
+    },
+    "10.3389/fcvm.2025.1724572": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Allostatic load (AL) captures multisystem dysregulation that accrues with chronic stress and may shape cardiovascular disease (CVD) risk through neuroendocrine and immune pathways. Robust population-scale evidence clarifying the exposure-response pattern and the extent of inflammatory mediation remains limited."
+          },
+          {
+            "label": "Methods",
+            "text": "In the UK Biobank, we analyzed 205,504 adults free of CVD at baseline from 502,366 recruited. An AL score was assembled from 12 routinely measured biomarkers. Incident CVD was ascertained via linkage to hospital and mortality records. We estimated adjusted hazard ratios (HRs) using Cox models and assessed nonlinearity with restricted cubic splines; robustness was evaluated in prespecified subgroups and sensitivity analyses. We also investigated the role of the mediating effect of inflammatory factors in the AL-CVD relationship."
+          },
+          {
+            "label": "Results",
+            "text": "Higher AL tracked with progressively greater CVD risk in a graded, non-linear pattern. Relative to AL = 0, AL> = 6 was associated with HR 2.15 (95% CI 1.99–2.33). Eight inflammatory markers met retention criteria for mediation; neutrophil count mediated 4.73% of the AL-CVD association. Group contrasts across AL tertiles indicated Cohen's d near 0.5 for several markers, largest for no-AL vs. high-AL."
+          },
+          {
+            "label": "Conclusion",
+            "text": "Elevated AL is linked to higher incident CVD with a non-linear exposure-response, and neutrophil-centric inflammation accounts for a measurable portion of the association. These findings support integrating stress-biology constructs and inflammatory profiling into cardiovascular risk assessment and prevention frameworks."
+          }
+        ]
+      }
+    },
+    "10.3389/fpubh.2025.1521372": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1521372/full",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Objectives",
+            "text": "Despite the crucial role of sleep quality in hyperuricemia onset and progression, there is limited evidence on sleep interventions to improve outcomes for hyperuricemic individuals. This study aims to investigate the effects of sleep duration and sleep difficulties on all-cause mortality in this population."
+          },
+          {
+            "label": "Materials and methods",
+            "text": "We conducted a secondary analysis of the National Health and Nutrition Examination Survey (NHANES) data from 2007 to 2018, including 5,837 participants. We employed weighted multivariable Cox proportional hazard models to evaluate the independent predictive value of sleep duration and trouble for all-cause mortality. Restricted cubic splines and segmented Cox proportional hazard models were used to examine threshold effects."
+          },
+          {
+            "label": "Results",
+            "text": "During a mean follow-up of 6.5 years, 906 participants experienced all-cause mortality. After adjusting for confounders, both short (< 7 h; HR = 1.25; 95%CI: 1.04, 1.51; p = 0.018) and long (>9 h; HR = 1.50; 95%CI: 1.10, 2.04; p = 0.011) sleep durations were associated with increased all-cause mortality. The threshold analysis identified an optimal sleep duration of 7.23 h, and when sleep duration was below 7.23 h, it was inversely related to mortality (HR: 0.879; 95% CI: 0.788, 0.981; p = 0.022). Conversely, when sleep duration exceeded 7.23 h, it was positively associated with mortality (HR: 1.187; 95% CI: 1.066, 1.320; p = 0.002)."
+          },
+          {
+            "label": "Conclusion",
+            "text": "Sleep duration is U-shapedly associated with all-cause mortality among individuals with hyperuricemia in the United States. However sleep trouble was not associated with all-cause mortality. Maintaining optimal sleep duration helps improve the prognostic survival rates of those with hyperuricemia."
+          }
+        ]
+      }
     }
   }
 }

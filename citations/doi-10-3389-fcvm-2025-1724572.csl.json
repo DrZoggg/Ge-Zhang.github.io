@@ -50,10 +50,14 @@
   "issued": {
     "date-parts": [
       [
-        2026
+        2026,
+        1,
+        5
       ]
     ]
   },
   "DOI": "10.3389/fcvm.2025.1724572",
-  "URL": "https://doi.org/10.3389/fcvm.2025.1724572"
+  "URL": "https://doi.org/10.3389/fcvm.2025.1724572",
+  "volume": "12",
+  "number": "1724572"
 }

@@ -13,6 +13,9 @@ LICENSE_URLS = {
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
 SOURCES = {
+    '10.3389/fcvm.2025.1724572': ('www.frontiersin.org', '/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full'),
+    '10.3389/fpubh.2025.1521372': ('www.frontiersin.org', '/journals/public-health/articles/10.3389/fpubh.2025.1521372/full'),
+
     "10.1038/s41598-024-65236-5": ("www.nature.com", "/articles/s41598-024-65236-5"),
     "10.1002/mdr2.70004": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70004"),
     "10.1111/jcmm.17789": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10339102/"),
