@@ -19,6 +19,10 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    "10.1111/jcmm.17789": {"publication_date":"2023-05-27","volume":"27","issue":"14","first_page":"1988","last_page":"2003","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"37243441","pmcid":"PMC10339102"},
+    "10.1111/jcmm.70258": {"publication_date":"2024-12-24","volume":"28","issue":"24","article_number":"e70258","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"39719688","pmcid":"PMC11668728"},
+    "10.1111/jcmm.70725": {"publication_date":"2025-08-06","volume":"29","issue":"15","article_number":"e70725","issn":"1582-1838","eissn":"1582-4934","publisher":"Wiley","pmid":"40770945","pmcid":"PMC12328994"},
+    "10.2147/ijn.s522157": {"publication_date":"2025-07-28","volume":"20","first_page":"9407","last_page":"9425","eissn":"1178-2013","publisher":"Dove Medical Press","pmid":"40755464","pmcid":"PMC12315914"},
     "10.1200/po.24.00089": {"publication_date":"2024-10-21","volume":"8","article_number":"e2400089","eissn":"2473-4284","pmid":"39432882","publisher":"American Society of Clinical Oncology"},
     "10.1186/s12915-025-02400-x": {"publication_date":"2025-09-26","volume":"23","issue":"1","article_number":"280","eissn":"1741-7007","pmid":"41013440","pmcid":"PMC12465141","publisher":"BioMed Central"},
     "10.1136/jitc-2024-010127": {"publication_date":"2025-01-07","volume":"13","issue":"1","article_number":"e010127","eissn":"2051-1426","pmid":"39773567","pmcid":"PMC11749606","publisher":"BMJ"},

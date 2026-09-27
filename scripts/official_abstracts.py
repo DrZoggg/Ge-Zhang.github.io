@@ -13,6 +13,9 @@ LICENSE_URLS = {
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
 SOURCES = {
+    "10.1111/jcmm.17789": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10339102/"),
+    "10.1111/jcmm.70258": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11668728/"),
+    "10.2147/ijn.s522157": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12315914/"),
     "10.1186/s12915-025-02400-x": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12465141/"),
     "10.1136/jitc-2024-010127": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11749606/"),
     "10.1038/s41467-024-50415-9": ("www.nature.com", "/articles/s41467-024-50415-9"),
@@ -86,6 +89,7 @@ def load_official_abstracts(publications):
             if doi == "10.1002/ehf2.14003" and [s["label"] for s in sections] != ["Aims", "Methods", "Results", "Conclusions"]:
                 raise ValueError("COVID-HF official abstract section order changed.")
             expected = {
+                "10.2147/ijn.s522157": ["Purpose", "Methods", "Results", "Conclusion"],
                 "10.1186/s12915-025-02400-x": ["Background", "Results", "Conclusions"],
                 "10.1136/jitc-2024-010127": ["Background", "Methods", "Results", "Conclusions"],
             }.get(doi)

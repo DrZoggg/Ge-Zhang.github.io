@@ -59,10 +59,17 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        12,
+        24
       ]
     ]
   },
   "DOI": "10.1111/jcmm.70258",
-  "URL": "https://doi.org/10.1111/jcmm.70258"
+  "URL": "https://doi.org/10.1111/jcmm.70258",
+  "volume": "28",
+  "issue": "24",
+  "publisher": "Wiley",
+  "article-number": "e70258",
+  "ISSN": "1582-1838"
 }

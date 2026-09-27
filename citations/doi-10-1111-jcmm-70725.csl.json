@@ -77,10 +77,17 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        8,
+        6
       ]
     ]
   },
   "DOI": "10.1111/jcmm.70725",
-  "URL": "https://doi.org/10.1111/jcmm.70725"
+  "URL": "https://doi.org/10.1111/jcmm.70725",
+  "volume": "29",
+  "issue": "15",
+  "publisher": "Wiley",
+  "article-number": "e70725",
+  "ISSN": "1582-1838"
 }

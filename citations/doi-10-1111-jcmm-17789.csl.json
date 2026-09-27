@@ -41,10 +41,17 @@
   "issued": {
     "date-parts": [
       [
-        2023
+        2023,
+        5,
+        27
       ]
     ]
   },
   "DOI": "10.1111/jcmm.17789",
-  "URL": "https://doi.org/10.1111/jcmm.17789"
+  "URL": "https://doi.org/10.1111/jcmm.17789",
+  "volume": "27",
+  "issue": "14",
+  "publisher": "Wiley",
+  "page": "1988-2003",
+  "ISSN": "1582-1838"
 }

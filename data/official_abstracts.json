@@ -174,6 +174,56 @@
           }
         ]
       }
+    },
+    "10.1111/jcmm.17789": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10339102/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "As one of the most prevalent heritable cardiovascular diseases, dilated cardiomyopathy (DCM) induces cardiac insufficiency and dysfunction. Although genetic mutation has been identified one of the causes of DCM, the usage of genetic biomarkers such as RNAs for DCM early diagnosis is still being overlooked. In addition, the alternation of RNAs could reflect the progression of the diseases, as an indicator for the prognosis of patients. Therefore, it is beneficial to develop genetic based diagnostic tool for DCM. RNAs are often unstable within circulatory system, leading to the infeasibility for clinical application. Recently discovered exosomal miRNAs have the stability that is then need for diagnostic purpose. Hence, fully understanding of the exosomal miRNA within DCM patients is vital for clinical translation. In this study, we employed the next generation sequencing based on the plasma exosomal miRNAs to comprehensively characterize the miRNAs expression in plasma exosomes from DCM patients exhibiting chronic heart failure (CHF) compared to healthy individuals. A complex landscape of differential miRNAs and target genes in DCM with CHF patients were identified. More importantly, we discovered that 92 differentially expressed miRNAs in DCM patients undergoing CHF were correlated with several enriched pathways, including oxytocin signalling pathway, circadian entrainment, hippo signalling pathway‐multiple species, ras signalling pathway and morphine addiction. This study reveals the miRNA expression profiles in plasma exosomes in DCM patients with CHF, and further reveal their potential roles in the pathogenesis of it, presenting a new direction for clinical diagnosis and management of DCM patients with CHF."
+      }
+    },
+    "10.1111/jcmm.70258": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668728/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Dilated cardiomyopathy (DCM), a form of non‐ischaemic myocardial disease, is characterised by structural and functional cardiac abnormalities. As defined by the World Health Organisation, DCM constitutes a significant cardiac pathology, leading to increased morbidity and mortality due to complications such as heart failure and arrhythmias. The diagnostic process for DCM predominantly employs echocardiography and MRI, with biomarkers like NT‐pro BNP and troponin providing supportive, yet non‐specific, evidence. Exosomes, small extracellular vesicles, play a critical role in intercellular communications by transferring biomolecules including lipids, proteins, messenger RNA (mRNA) and non‐coding RNA (ncRNA) to target cells, thereby influencing key cellular processes such as proliferation, differentiation, apoptosis, angiogenesis and immune modulation. Within the ncRNA category, circular RNAs (circRNAs) are notable for their cellular specificity and evolutionary conservation and are often implicated in the regulatory mechanisms underlying DCM and heart failure. This investigation employed next‐generation sequencing technology to analyse plasma exosomal circRNA profiles in DCM patients with chronic heart failure (CHF), compared to healthy controls. The analysis revealed distinct circRNA expression patterns, identifying 49 uniquely expressed circRNAs in the DCM cohort with CHF. These circRNAs were associated with several critical biological pathways, including the sequestration of extracellular ligands from receptors, N‐acetyltransferase activity, histone acetyltransferase activity and endocytic vesicle membrane composition. The findings of this study provide valuable insights into the pathophysiological mechanisms of DCM and offer evidence for improving clinical diagnostic methodologies."
+      }
+    },
+    "10.2147/ijn.s522157": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12315914/",
+      "license": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Purpose",
+            "text": "Dilated cardiomyopathy (DCM) is a prevalent form of heart failure with limited therapeutic options. This study explores a novel treatment strategy involving the delivery of exosome-derived miRNA-185-5p inhibitors encapsulated in liposomes, aiming to target cardiac tissue and alleviate myocardial apoptosis and cuproptosis in DCM."
+          },
+          {
+            "label": "Methods",
+            "text": "The miRNA-185-5p inhibitor, identified in our previous study and extracted from exosomes, was encapsulated in liposomes functionalized with a cardiac-targeting peptide. This system was used in both in vitro and in vivo models of DCM induced by doxorubicin (DOX). We evaluated the effects of this treatment on cardiac function, apoptosis, cuproptosis, oxidative stress, and fibrosis using echocardiography, histological analysis, Western blotting, and biochemical assays."
+          },
+          {
+            "label": "Results",
+            "text": "In vitro experiments demonstrated that the Lipo@miR-185-5p inhibitor markedly attenuated apoptosis and cuproptosis in H9C2 cells and iPSC-derived cardiomyocytes, with a 42.6% reduction in apoptotic cell rates and over 50% downregulation of cuproptosis-related markers (both P < 0.01). In vivo, the targeted liposomal formulation significantly improved cardiac function in DOX-induced DCM mice, as evidenced by a 27.3% increase in left ventricular ejection fraction (LVEF) and a 36.5% reduction in myocardial fibrosis area (P < 0.01), along with enhanced survival. These findings underscore the therapeutic potential of this targeted delivery strategy for the treatment of dilated cardiomyopathy."
+          },
+          {
+            "label": "Conclusion",
+            "text": "Lipo@miR-185-5p inhibitor, utilizing exosome-derived miRNA and targeted liposomal delivery, effectively alleviates DCM-induced myocardial dysfunction. This approach represents a promising therapeutic strategy for cardiovascular diseases by targeting specific molecular mechanisms involved in heart failure."
+          }
+        ]
+      }
     }
   }
 }

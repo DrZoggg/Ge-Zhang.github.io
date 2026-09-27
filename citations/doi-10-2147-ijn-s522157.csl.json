@@ -56,10 +56,16 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        7,
+        28
       ]
     ]
   },
   "DOI": "10.2147/ijn.s522157",
-  "URL": "https://doi.org/10.2147/ijn.s522157"
+  "URL": "https://doi.org/10.2147/ijn.s522157",
+  "volume": "20",
+  "publisher": "Dove Medical Press",
+  "page": "9407-9425",
+  "ISSN": "1178-2013"
 }
