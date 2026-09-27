@@ -530,6 +530,11 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
             f"{label} study_profile.profile_type must be clinical_cohort, "
             "multicohort_omics, narrative_review, or preclinical_multimodal."
         )
+    if "narrative_genre" in study and (
+        profile_type != "narrative_review"
+        or study["narrative_genre"] not in ("perspective", "correspondence")
+    ):
+        raise ValueError(f"{label} narrative_genre requires narrative_review and perspective or correspondence.")
     if profile_type == "preclinical_multimodal" and any(key in study for key in ("unique_total_n", "cohorts")):
         raise ValueError(f"{label} preclinical_multimodal must use scale_metrics, not a synthetic cohort total.")
     detail_keys = ["study_design", "evidence_type"]
@@ -1034,9 +1039,25 @@ def v2_label(key):
     return labels.get(key, key.replace("_", " ").title())
 
 
+def v2_article_label(content, label):
+    """Opt-in narrative wording; absent genre preserves every legacy label."""
+    study = (content or {}).get("study_profile", {})
+    if (study.get("profile_type") == "narrative_review"
+            and study.get("narrative_genre") in ("perspective", "correspondence")):
+        return {
+            "Key Findings": "Key Arguments",
+            "Review profile": "Article profile",
+            "What This Review Adds": "What This Article Adds",
+            "Review Design & Evidence Synthesis": "Article Scope & Approach",
+            "When This Study Is Useful to Cite": "When This Article Is Useful to Cite",
+            "What This Study Should Not Be Cited to Claim": "What This Article Should Not Be Cited to Claim",
+        }.get(label, label)
+    return label
+
+
 def v2_study_heading(content):
     if content["study_profile"]["profile_type"] == "narrative_review":
-        return "Review Design & Evidence Synthesis"
+        return v2_article_label(content, "Review Design & Evidence Synthesis")
     if content["study_profile"]["profile_type"] == "preclinical_multimodal":
         return "How the Study Was Done"
     return (
@@ -1171,7 +1192,7 @@ def render_citation_pilot_html(pilot):
     )
 
 
-def render_citation_layer_html(layer):
+def render_citation_layer_html(layer, content=None):
     refs = lambda row: ", ".join(
         f'<a href="#{html.escape(ref.lower(), quote=True)}">{html.escape(ref)}</a>'
         for ref in row["evidence_refs"]
@@ -1198,9 +1219,9 @@ def render_citation_layer_html(layer):
     )
     return (
         '<section class="paper-geo-v2__section" id="citation-use-cases">'
-        f'<h2>When This Study Is Useful to Cite</h2><ol>{use_cases}</ol></section>'
+        f'<h2>{v2_article_label(content, "When This Study Is Useful to Cite")}</h2><ol>{use_cases}</ol></section>'
         '<section class="paper-geo-v2__section" id="citation-boundaries">'
-        f'<h2>What This Study Should Not Be Cited to Claim</h2><ul>{boundaries}</ul></section>'
+        f'<h2>{v2_article_label(content, "What This Study Should Not Be Cited to Claim")}</h2><ul>{boundaries}</ul></section>'
         '<section class="paper-geo-v2__section" id="evidence-matrix">'
         '<h2>Evidence Matrix</h2><div class="paper-geo-v2__table-wrap">'
         '<table class="paper-geo-v2__table"><thead><tr>'
@@ -1434,7 +1455,7 @@ def render_deep_v2_html(content, related_papers):
         if content.get("citation_pilot") else ""
     )
     layer_html = (
-        render_citation_layer_html(content["citation_layer"])
+        render_citation_layer_html(content["citation_layer"], content)
         if content.get("citation_layer") else ""
     )
     cluster_html = (
@@ -1445,9 +1466,9 @@ def render_deep_v2_html(content, related_papers):
 <section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
 <section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
-<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>Key Findings</h2><div class="paper-geo-v2__findings">{findings}</div></section>
-<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{'Review profile' if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
-<section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{'What This Review Adds' if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
+<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>{v2_article_label(content, "Key Findings")}</h2><div class="paper-geo-v2__findings">{findings}</div></section>
+<section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{v2_article_label(content, 'Review profile') if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
+<section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{v2_article_label(content, 'What This Review Adds') if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}{cluster_html}
 <section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
@@ -1504,10 +1525,10 @@ def render_citation_pilot_markdown(pilot):
     return parts
 
 
-def render_citation_layer_markdown(layer):
+def render_citation_layer_markdown(layer, content=None):
     parts = [
         '<a id="citation-use-cases"></a>',
-        "## When This Study Is Useful to Cite", "",
+        "## " + v2_article_label(content, "When This Study Is Useful to Cite"), "",
     ]
     for row in layer["citation_use_cases"]:
         parts.extend([
@@ -1518,7 +1539,7 @@ def render_citation_layer_markdown(layer):
         ])
     parts.extend([
         '<a id="citation-boundaries"></a>',
-        "## What This Study Should Not Be Cited to Claim", "",
+        "## " + v2_article_label(content, "What This Study Should Not Be Cited to Claim"), "",
         *[f"- {boundary}" for boundary in layer["not_appropriate_as_evidence_for"]],
         "", '<a id="evidence-matrix"></a>', "## Evidence Matrix", "",
     ])
@@ -1587,7 +1608,7 @@ def render_deep_v2_markdown(content, related_papers):
         "",
         content["author_summary"],
         "",
-        "## Key Findings",
+        "## " + v2_article_label(content, "Key Findings"),
         "",
     ]
     for finding in content["key_findings"]:
@@ -1621,7 +1642,7 @@ def render_deep_v2_markdown(content, related_papers):
         [
             f"## {v2_study_heading(content)}",
             "",
-            "### Review profile" if profile_type == "narrative_review" else "### Study profile",
+            "### " + v2_article_label(content, "Review profile") if profile_type == "narrative_review" else "### Study profile",
             "",
             *[
                 f"- {v2_study_label(key, profile_type)}: {v2_value(study[key])}"
@@ -1684,7 +1705,7 @@ def render_deep_v2_markdown(content, related_papers):
         parts.append("")
     parts.extend(
         [
-            "## What This Review Adds" if profile_type == "narrative_review"
+            "## " + v2_article_label(content, "What This Review Adds") if profile_type == "narrative_review"
             else "## What This Study Adds",
             "",
             *[f"- {item}" for item in content["what_this_adds"]],
@@ -1711,7 +1732,7 @@ def render_deep_v2_markdown(content, related_papers):
     if content.get("citation_pilot"):
         parts.extend(render_citation_pilot_markdown(content["citation_pilot"]))
     if content.get("citation_layer"):
-        parts.extend(render_citation_layer_markdown(content["citation_layer"]))
+        parts.extend(render_citation_layer_markdown(content["citation_layer"], content))
     if content.get("_research_cluster"):
         parts.extend(render_research_cluster_markdown(content["_research_cluster"]))
     parts.extend(["## Q&A", ""])

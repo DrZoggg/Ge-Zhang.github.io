@@ -26,6 +26,7 @@ from build_publications import (
     resolve_related_papers,
     validate_deep_v2_content,
     v2_label,
+    v2_article_label,
     v2_study_heading,
     v2_value,
 )
@@ -314,7 +315,7 @@ def string_leaves(value):
             yield from string_leaves(item)
     elif isinstance(value, dict):
         for key, item in value.items():
-            if key in {"profile_type", "citation_pilot"}:
+            if key in {"profile_type", "narrative_genre", "citation_pilot"}:
                 continue
             yield from string_leaves(item)
 
@@ -393,9 +394,9 @@ def validate_v2_rendered_page(
         snapshot_heading,
         "Research Question",
         "Author Evidence Summary",
-        "Key Findings",
+        v2_article_label(content, "Key Findings"),
         expected_study_heading,
-        "What This Review Adds" if profile_type == "narrative_review"
+        v2_article_label(content, "What This Review Adds") if profile_type == "narrative_review"
         else "What This Study Adds",
         "Evidence Scope",
         *(
@@ -404,8 +405,8 @@ def validate_v2_rendered_page(
             if content.get("citation_pilot") else []
         ),
         *(
-            ["When This Study Is Useful to Cite",
-             "What This Study Should Not Be Cited to Claim", "Evidence Matrix"]
+            [v2_article_label(content, "When This Study Is Useful to Cite"),
+             v2_article_label(content, "What This Study Should Not Be Cited to Claim"), "Evidence Matrix"]
             if content.get("citation_layer") else []
         ),
         *([cluster_heading] if cluster_heading else []),
@@ -514,8 +515,8 @@ def validate_v2_rendered_page(
         require("External validation" not in study_labels
                 and "External dataset evaluation" not in study_labels
                 and "Evidence domains" in study_markup
-                and "Review profile" in study_markup
-                and "### Review profile" in markdown
+                and v2_article_label(content, "Review profile") in study_markup
+                and "### " + v2_article_label(content, "Review profile") in markdown
                 and "- Evidence domains:" in markdown,
                 f"{label} must render review-specific labels without cohort labels.")
     else:
