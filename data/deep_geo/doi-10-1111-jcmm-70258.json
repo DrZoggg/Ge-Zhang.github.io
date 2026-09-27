@@ -1,0 +1,423 @@
+{
+  "version": 2,
+  "doi": "10.1111/jcmm.70258",
+  "display_title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
+  "summary": "Exploratory plasma exosomal circRNA profiling in DCM-HF reports 49 differential circRNAs and a small external qRT-PCR evaluation. The evidence page explicitly distinguishes the Methods microarray platform from sequencing terminology elsewhere in the article.",
+  "research_question": "What plasma exosomal circRNA expression differences and predicted regulatory relationships were reported in DCM with heart failure, and how far does the small external assay evaluation support them?",
+  "author_summary": "The article compares DCM-HF and healthy plasma vesicle-associated RNA, with a discovery group of 3 patients and 5 controls and an external group of 6 patients and 4 controls. It reports 49 differential circRNAs, 27 upregulated and 22 downregulated, and computational enrichment and interaction analyses. A material platform-reporting difference is retained: Methods 2.7 describes the LC Human ceRNA Array V1.0 microarray, whereas the abstract and other passages call the work next-generation or ceRNA sequencing. This evidence page therefore uses expression profiling without treating the assay as definitively verified RNA sequencing. Results 3.7 and Fig. 5 describe nine externally assessed circRNAs; Methods 2.9 lists ten. Expression-profile differences in these small groups are exploratory evidence, not a prospectively validated DCM diagnostic test or proof of a causal circRNA mechanism.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Small human case-control plasma vesicle RNA profiling with an external qRT-PCR comparison",
+    "evidence_type": "Exploratory human expression association, predicted regulatory networks and external assay evaluation",
+    "population": "DCM with chronic heart failure and healthy controls",
+    "primary_endpoint": "Between-group plasma exosomal circRNA expression differences",
+    "secondary_endpoint": "Predicted targets/pathways and external hub-circRNA expression-profile assessment",
+    "counting_note": "Discovery and external assay sample counts are reported separately; no participant-level deduplicated total is inferred. qRT-PCR technical replicates and circRNA/network counts are not additional participants. Nine is the Results/Fig. 5 panel count, while Methods lists ten. External validation denotes expression-assay follow-up, not prospective clinical validation.",
+    "external_validation": true,
+    "data_modalities": [
+      "plasma vesicle characterization",
+      "ceRNA microarray as described in Methods 2.7; sequencing terminology elsewhere is inconsistent",
+      "external qRT-PCR",
+      "target and PPI network prediction",
+      "enrichment and PCoA"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Discovery participants",
+        "value": "3 DCM patients and 5 healthy controls"
+      },
+      {
+        "label": "External assay participants",
+        "value": "6 DCM patients and 4 healthy controls"
+      },
+      {
+        "label": "Detected circRNAs",
+        "value": "865"
+      },
+      {
+        "label": "Final differential circRNAs",
+        "value": "49: 27 upregulated and 22 downregulated"
+      },
+      {
+        "label": "Results/Fig. 5 external panel",
+        "value": "9 circRNAs; Methods lists 10"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study describes a small discovery comparison and an external assay phase, but its platform terminology is internally inconsistent.",
+      "context": "Methods specifies a microarray; sequencing labels elsewhere are not silently converted into a harmonized RNA-seq claim.",
+      "source_locator": "Methods 2.1 and 2.7; Fig. 1A; Results 3.7",
+      "evidence": [
+        {
+          "label": "Discovery participants",
+          "value": "3 DCM; 5 healthy controls"
+        },
+        {
+          "label": "External participants",
+          "value": "6 DCM; 4 healthy controls"
+        },
+        {
+          "label": "Methods 2.7 platform",
+          "value": "LC Human ceRNA Array V1.0 (Agilent array workflow)"
+        },
+        {
+          "label": "Reporting difference",
+          "value": "Abstract and other passages use sequencing terminology"
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "Plasma vesicle preparations were characterized by morphology, particle sizing and vesicle-marker readouts.",
+      "context": "Characterization supports the studied vesicle preparation, not exclusive exosomal or cardiac tissue origin.",
+      "source_locator": "Results 3.1; Fig. 1B-E",
+      "evidence": [
+        {
+          "label": "Median diameter reported",
+          "value": "82 nm in DCM; 77 nm in controls"
+        },
+        {
+          "label": "Fig. 1 marker findings",
+          "value": "CD9 and CD63 detected; Calnexin not detected"
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "The final reported circRNA screen identified 49 differential features.",
+      "context": "The circRNA-specific Results/Fig. 2 screen is reported without assuming that generic lncRNA/mRNA thresholds in Methods describe the same analysis.",
+      "source_locator": "Results 3.2; Table 1; Fig. 2B-C",
+      "evidence": [
+        {
+          "label": "Detected circRNAs",
+          "value": "865"
+        },
+        {
+          "label": "Final differential set",
+          "value": "49"
+        },
+        {
+          "label": "Upregulated / downregulated",
+          "value": "27 / 22"
+        },
+        {
+          "label": "Final reported screen",
+          "value": "Absolute log2 fold change >0.5 and P<0.05"
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "Predicted circRNA-target relationships were associated with functional and pathway annotations.",
+      "context": "Computational enrichment is not a direct assay of circRNA-mediated function.",
+      "source_locator": "Methods 2.8 and 2.10; Results 3.3-3.5; Fig. 3",
+      "evidence": [
+        {
+          "label": "Candidate target genes used in the analysis",
+          "value": "25"
+        },
+        {
+          "label": "Reported functional examples",
+          "value": "Extracellular ligand sequestration, acetyltransferase-related activity and endocytic vesicle membrane annotations"
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "Interaction-network analyses nominated gene relationships, with unresolved differences in reported network and hub counts.",
+      "context": "Results 3.6, Fig. 4 and Table 2 do not support one unambiguously reconciled hub-gene total.",
+      "source_locator": "Results 3.6; Fig. 4; Table 2",
+      "evidence": [
+        {
+          "label": "Analysis",
+          "value": "Predicted target/PPI networks"
+        },
+        {
+          "label": "Count qualification",
+          "value": "Results describes a 38-node network and 25 hubs; Fig. 4 calls 38 genes hubs"
+        },
+        {
+          "label": "Table qualification",
+          "value": "Table 2 is headed degree >5 but also lists degrees <=5"
+        }
+      ]
+    },
+    {
+      "id": "KF6",
+      "claim": "Results and figure legends describe external qRT-PCR assessment of nine circRNAs and group-profile differences.",
+      "context": "Methods lists ten candidates, whereas Results 3.7 and Fig. 5 describe nine; this is a reporting difference, not a silently corrected count.",
+      "source_locator": "Methods 2.9; Results 3.7; Fig. 5",
+      "evidence": [
+        {
+          "label": "External participants",
+          "value": "6 DCM patients; 4 healthy controls"
+        },
+        {
+          "label": "Panel described in Results/Fig. 5",
+          "value": "9 circRNAs"
+        },
+        {
+          "label": "Additional readouts",
+          "value": "Euclidean expression distance and PCoA"
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "A DCM-HF plasma vesicle-associated circRNA expression comparison complementary to miRNA profiling.",
+    "An article-reported 49-feature differential circRNA set and computational target/pathway hypotheses.",
+    "Small external qRT-PCR follow-up presented together with the relevant platform, count and naming limitations."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Exploratory circRNA expression differences in the analyzed DCM-HF and healthy samples.",
+      "A reported final set of 49 differential circRNAs.",
+      "Computational target, PPI and pathway prioritization.",
+      "An external qRT-PCR comparison of the panel described in Results and Fig. 5."
+    ],
+    "does_not_establish": [
+      "A definitively verified RNA-sequencing platform across all source descriptions.",
+      "A fully reconciled network hub count or a ten-circRNA validation result.",
+      "Direct biochemical circRNA-miRNA-target binding or a causal DCM mechanism.",
+      "Prospective diagnostic sensitivity, specificity, AUC or clinical utility.",
+      "Cardiac tissue origin of every circulating vesicle-associated circRNA.",
+      "Clinical treatment efficacy from the identified circRNA candidates."
+    ]
+  },
+  "limitations": [
+    "The discovery (3 versus 5) and external (6 versus 4) groups are small.",
+    "Methods 2.7 describes a ceRNA microarray, while the abstract and other passages describe sequencing; neither description is silently erased.",
+    "The Results/Fig. 5 nine-circRNA panel differs from the ten candidates listed in Methods 2.9.",
+    "Results 3.6, Fig. 4 and Table 2 contain differing node/hub descriptions; no corrected hub total is invented.",
+    "The source uses the name hsa-circ-76,771 in some passages and hsa-circ-0076771 in Table 1. These are not silently assigned an authoritative database identity.",
+    "Expression differences and predicted networks do not establish prospective diagnostic utility, tissue of origin or a causal mechanism."
+  ],
+  "qa": [
+    {
+      "question": "Was this DCM circRNA study performed by sequencing or microarray?",
+      "answer": "Methods 2.7 explicitly describes an LC Human ceRNA Array V1.0 microarray, but the abstract and other passages use sequencing terminology. The discrepancy is unresolved; the evidence summary calls it expression profiling.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How large were the human discovery and assay groups?",
+      "answer": "The discovery comparison is 3 DCM patients versus 5 controls; the external comparison is 6 versus 4. The phases are not converted into an independently deduplicated total.",
+      "evidence_refs": [
+        "KF1",
+        "KF6"
+      ]
+    },
+    {
+      "question": "How many differential circRNAs were reported?",
+      "answer": "The final Results/Fig. 2 set contains 49 circRNAs, 27 upregulated and 22 downregulated, among 865 detected circRNAs.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What do the functional analyses establish?",
+      "answer": "They provide predicted target and pathway relationships. They do not demonstrate direct binding, target regulation or causal function in human DCM.",
+      "evidence_refs": [
+        "KF4",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Were nine or ten circRNAs evaluated externally?",
+      "answer": "Results 3.7 and Fig. 5 describe nine, while Methods 2.9 lists ten. The website preserves the Results count with the discrepancy stated explicitly.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Does external expression-profile separation make this a validated diagnostic test?",
+      "answer": "No. The small external assay group and expression-distance/PCoA separation do not establish prospective diagnostic performance or clinical utility.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease": [
+      "dilated cardiomyopathy",
+      "chronic heart failure"
+    ],
+    "specimen": [
+      "plasma extracellular vesicles",
+      "exosomal circRNAs"
+    ],
+    "methods": [
+      "ceRNA microarray",
+      "qRT-PCR",
+      "target prediction",
+      "protein-protein interaction network",
+      "PCoA"
+    ],
+    "entities": [
+      "circRNA",
+      "CD9",
+      "CD63"
+    ],
+    "evidence": [
+      "case-control expression profiling",
+      "external assay evaluation"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.1111/jcmm.17789",
+      "relationship": "Complementary plasma exosomal miRNA profiling in DCM-HF; the RNA classes and assay descriptions differ, and cohort independence across these papers has not been established."
+    },
+    {
+      "doi": "10.1021/acs.jproteome.4c00522",
+      "relationship": "Related DCM-HF plasma biomarker research using targeted protein profiling, rather than vesicle circRNA profiling. The studies do not validate a combined diagnostic assay."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1111/jcmm.70258",
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/jcmm.70258",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39719688/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668728/",
+    "review_basis": "Published main text, tables and figure legends at the cited primary sources. No independent reanalysis of participant-level data; unresolved reporting differences are identified in the evidence scope.",
+    "data_availability": "The article provides data-availability statements but no stable study-specific accession was verified from the reviewed text. No GEO accession or code repository is invented."
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. The evidence synthesis below is distinct from the published abstract and does not replace the version of record. Reported inconsistencies are qualified rather than silently corrected.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which study examined plasma exosomal circRNAs in DCM-HF?",
+        "supported_scope": "A small discovery and external-assay study reported expression differences, with an explicit microarray-versus-sequencing reporting discrepancy.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How were DCM circRNA vesicle preparations characterized?",
+        "supported_scope": "The paper reports particle morphology, 82/77-nm median sizes and CD9/CD63/Calnexin readouts in Results/Fig. 1.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which differential circRNA landscape was associated with DCM-HF?",
+        "supported_scope": "The final screen reports 49 circRNAs: 27 up and 22 down.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What candidate functions were associated with DCM vesicle circRNAs?",
+        "supported_scope": "Computational target and enrichment analyses nominate acetyltransferase and vesicle-related contexts, not established mechanisms.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "Can the circRNA interaction network be used as validated mechanistic evidence?",
+        "supported_scope": "It is a predicted network; its hub-count descriptions are also inconsistent across Results, the figure and Table 2.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "What independent assay evidence exists for DCM exosomal circRNA candidates?",
+        "supported_scope": "Results/Fig. 5 describe nine candidates tested in 6 DCM patients and 4 controls, while Methods lists ten.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A definitively verified RNA-sequencing platform across all source descriptions.",
+      "A fully reconciled network hub count or a ten-circRNA validation result.",
+      "Direct biochemical circRNA-miRNA-target binding or a causal DCM mechanism.",
+      "Prospective diagnostic sensitivity, specificity, AUC or clinical utility.",
+      "Cardiac tissue origin of every circulating vesicle-associated circRNA.",
+      "Clinical treatment efficacy from the identified circRNA candidates."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-dcm-circrna-platform",
+        "component": "Study design and platform provenance",
+        "context": "Discovery and external assay phases",
+        "evidence_level": "Human observational profiling",
+        "scope": "Platform identity is not silently harmonized.",
+        "evidence_refs": [
+          "KF1"
+        ],
+        "source_locator": "Methods 2.1 and 2.7; Fig. 1A; Results 3.7",
+        "finding": "The study describes a small discovery comparison and an external assay phase, but its platform terminology is internally inconsistent. Discovery participants: 3 DCM; 5 healthy controls; External participants: 6 DCM; 4 healthy controls; Methods 2.7 platform: LC Human ceRNA Array V1.0 (Agilent array workflow); Reporting difference: Abstract and other passages use sequencing terminology"
+      },
+      {
+        "id": "evidence-dcm-circrna-vesicles",
+        "component": "Vesicle characterization",
+        "context": "Plasma vesicle preparation",
+        "evidence_level": "Specimen characterization",
+        "scope": "No claim of uniquely cardiac or exclusively endosomal origin.",
+        "evidence_refs": [
+          "KF2"
+        ],
+        "source_locator": "Results 3.1; Fig. 1B-E",
+        "finding": "Plasma vesicle preparations were characterized by morphology, particle sizing and vesicle-marker readouts. Median diameter reported: 82 nm in DCM; 77 nm in controls; Fig. 1 marker findings: CD9 and CD63 detected; Calnexin not detected"
+      },
+      {
+        "id": "evidence-dcm-circrna-screen",
+        "component": "Differential expression screen",
+        "context": "865 detected circRNAs",
+        "evidence_level": "Exploratory human association",
+        "scope": "A differential-expression threshold is not a diagnostic cutoff.",
+        "evidence_refs": [
+          "KF3"
+        ],
+        "source_locator": "Results 3.2; Table 1; Fig. 2B-C",
+        "finding": "The final reported circRNA screen identified 49 differential features. Detected circRNAs: 865; Final differential set: 49; Upregulated / downregulated: 27 / 22; Final reported screen: Absolute log2 fold change >0.5 and P<0.05"
+      },
+      {
+        "id": "evidence-dcm-circrna-pathways",
+        "component": "Predicted targets and functions",
+        "context": "25 candidate target genes in the reported analysis",
+        "evidence_level": "Computational enrichment",
+        "scope": "No experimentally demonstrated circRNA mechanism.",
+        "evidence_refs": [
+          "KF4"
+        ],
+        "source_locator": "Methods 2.8 and 2.10; Results 3.3-3.5; Fig. 3",
+        "finding": "Predicted circRNA-target relationships were associated with functional and pathway annotations. Candidate target genes used in the analysis: 25; Reported functional examples: Extracellular ligand sequestration, acetyltransferase-related activity and endocytic vesicle membrane annotations"
+      },
+      {
+        "id": "evidence-dcm-circrna-network",
+        "component": "Network interpretation and reporting limits",
+        "context": "Results 3.6, Fig. 4 and Table 2",
+        "evidence_level": "Computational network inference",
+        "scope": "Do not advertise a precisely reconciled or experimentally validated network.",
+        "evidence_refs": [
+          "KF5"
+        ],
+        "source_locator": "Results 3.6; Fig. 4; Table 2",
+        "finding": "Interaction-network analyses nominated gene relationships, with unresolved differences in reported network and hub counts. Analysis: Predicted target/PPI networks; Count qualification: Results describes a 38-node network and 25 hubs; Fig. 4 calls 38 genes hubs; Table qualification: Table 2 is headed degree >5 but also lists degrees <=5"
+      },
+      {
+        "id": "evidence-dcm-circrna-qpcr",
+        "component": "External candidate expression assessment",
+        "context": "6 DCM and 4 healthy samples",
+        "evidence_level": "Small external assay evaluation",
+        "scope": "No prospective diagnostic utility or invented ROC performance.",
+        "evidence_refs": [
+          "KF6"
+        ],
+        "source_locator": "Methods 2.9; Results 3.7; Fig. 5",
+        "finding": "Results and figure legends describe external qRT-PCR assessment of nine circRNAs and group-profile differences. External participants: 6 DCM patients; 4 healthy controls; Panel described in Results/Fig. 5: 9 circRNAs; Additional readouts: Euclidean expression distance and PCoA"
+      }
+    ]
+  }
+}
