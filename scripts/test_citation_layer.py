@@ -9,6 +9,9 @@ from sync_common import ROOT
 
 
 TARGETS = {
+    "circadian-ihd": ("circadian-ihd.json", 4, 6, 6),
+    "doi-10-1016-j-joim-2025-06-003": ("doi-10-1016-j-joim-2025-06-003.json", 4, 6, 6),
+    "doi-10-1002-mdr2-70004": ("doi-10-1002-mdr2-70004.json", 5, 7, 7),
     "doi-10-1111-jcmm-17789": ("doi-10-1111-jcmm-17789.json", 6, 6, 6),
     "doi-10-1111-jcmm-70258": ("doi-10-1111-jcmm-70258.json", 6, 6, 6),
     "doi-10-1111-jcmm-70725": ("doi-10-1111-jcmm-70725.json", 6, 6, 6),

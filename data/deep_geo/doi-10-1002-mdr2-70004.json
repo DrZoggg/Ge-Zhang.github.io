@@ -1,0 +1,464 @@
+{
+  "version": 2,
+  "doi": "10.1002/mdr2.70004",
+  "display_title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
+  "summary": "Stage-associated DNB analysis, TCPSLevel, a compact subtype classifier and ASPH follow-up are presented as distinct evidence layers.",
+  "research_question": "Can stage-associated transcriptional networks support thyroid-cancer subtyping and nominate experimentally assessable progression-related candidates?",
+  "author_summary": "The study connects stage-associated computational analysis with subtype classification and experimental candidate assessment. A stage-ordered network signal is not direct observation of an individual patient's future transition. Human tissue associations, cell perturbation and computational therapeutic hypotheses are presented separately.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Public bulk/single-cell analysis with human tissue assessment and cell experiments",
+    "evidence_type": "Retrospective molecular subtyping with experimental candidate follow-up",
+    "population": "Thyroid-cancer datasets and tissue specimens, with separate cultured-cell experiments",
+    "primary_endpoint": "DNB-associated expression structure and molecular subtype assignment",
+    "secondary_endpoint": "Retrospective outcome associations and ASPH-related experimental readouts",
+    "data_modalities": [
+      "bulk transcriptomics",
+      "single-cell RNA sequencing",
+      "network/classifier analysis",
+      "human immunohistochemistry",
+      "in-vitro gene perturbation"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "GEO microarray cohorts",
+        "value": "21 cohorts, plus TCGA"
+      },
+      {
+        "label": "TCGA count in Methods",
+        "value": "544"
+      },
+      {
+        "label": "TCGA count in GRN analysis",
+        "value": "484"
+      },
+      {
+        "label": "scRNA cells in Methods",
+        "value": "17,709"
+      },
+      {
+        "label": "scRNA cells in Results",
+        "value": "17,518"
+      },
+      {
+        "label": "Reported single-cell donors",
+        "value": "1"
+      },
+      {
+        "label": "Human tissue specimens",
+        "value": "48 tumor and 48 adjacent specimens"
+      }
+    ],
+    "counting_note": "TCGA counts of 544 in Methods and 484 in GRN analysis describe different reported analytical stages; no reason for excluding the numerical difference is inferred. Methods reports 17,709 cells and Results 17,518, without a reconstructed QC-exclusion process. One reported donor is not a large participant cohort; 48 tumor and 48 adjacent specimens do not mean 96 independent patients. Cohorts, cells, paired specimens and cultured-cell experiments are not added into a unique-participant total. External validation means retrospective expression-template/classifier evaluation, not prospective clinical utility."
+  },
+  "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Source-specific counting and interpretation limits are retained.",
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Stage II had the highest reported network instability signal.",
+      "context": "Stage-associated cross-sectional network analysis.",
+      "evidence": [
+        {
+          "label": "DNB genes",
+          "value": "36"
+        }
+      ],
+      "source_locator": "Methods 2.2; Results 3.1; Fig. 1"
+    },
+    {
+      "id": "KF2",
+      "claim": "TCPSLevel was associated with clinical and outcome differences.",
+      "context": "Expression-score construction and retrospective association.",
+      "evidence": [
+        {
+          "label": "Expression bins",
+          "value": "100"
+        },
+        {
+          "label": "Background samplings",
+          "value": "1,000"
+        },
+        {
+          "label": "Reported survival cutoff",
+          "value": "0.4"
+        }
+      ],
+      "source_locator": "Methods 2.4; Results 3.2; Fig. 2"
+    },
+    {
+      "id": "KF3",
+      "claim": "The ensemble analysis yielded three molecular subtypes.",
+      "context": "Consensus framework selection and external NTP evaluation.",
+      "evidence": [
+        {
+          "label": "Candidate combinations",
+          "value": "20"
+        },
+        {
+          "label": "Selected combination",
+          "value": "CV-PAM"
+        },
+        {
+          "label": "Reported external NTP datasets",
+          "value": "6"
+        }
+      ],
+      "source_locator": "Methods 2.6-2.7; Results 3.3; Fig. 3"
+    },
+    {
+      "id": "KF4",
+      "claim": "miniPC classified the consensus subtype labels using a compact gene set.",
+      "context": "Gene selection and external subtype-classifier evaluation.",
+      "evidence": [
+        {
+          "label": "Candidate genes",
+          "value": "296"
+        },
+        {
+          "label": "Final genes",
+          "value": "12"
+        },
+        {
+          "label": "Final classifier",
+          "value": "Neural network"
+        },
+        {
+          "label": "External classifier cohorts",
+          "value": "5"
+        }
+      ],
+      "source_locator": "Methods 2.8; Results 3.4; Fig. 4"
+    },
+    {
+      "id": "KF5",
+      "claim": "Single-cell analysis localized expression patterns across cellular compartments.",
+      "context": "Single-donor single-cell analysis with separately reported Methods and Results counts.",
+      "evidence": [
+        {
+          "label": "Reported donors",
+          "value": "1"
+        },
+        {
+          "label": "Cells in Methods",
+          "value": "17,709"
+        },
+        {
+          "label": "Cells in Results",
+          "value": "17,518"
+        },
+        {
+          "label": "Annotated populations",
+          "value": "7"
+        }
+      ],
+      "source_locator": "Methods 2.1.1 and 2.3; Results 3.7; Fig. 5K-N"
+    },
+    {
+      "id": "KF6",
+      "claim": "ASPH was evaluated in human tissues and through TPC-1 silencing.",
+      "context": "Human tissue association and separate cultured-cell perturbation.",
+      "evidence": [
+        {
+          "label": "Tumor specimens",
+          "value": "48"
+        },
+        {
+          "label": "Adjacent specimens",
+          "value": "48"
+        },
+        {
+          "label": "TPC-1 silencing",
+          "value": "Reduced proliferation and migration"
+        }
+      ],
+      "source_locator": "Methods: tissue and cell experiments; Results 3.6 and 3.8; Fig. 6"
+    },
+    {
+      "id": "KF7",
+      "claim": "IPS and CMap supplied candidate immune/drug-response hypotheses.",
+      "context": "Computational treatment-related hypothesis generation.",
+      "evidence": [
+        {
+          "label": "Evidence",
+          "value": "Computational scoring and signature matching"
+        }
+      ],
+      "source_locator": "Methods 2.10 and 2.20; Results 3.5; Discussion"
+    }
+  ],
+  "what_this_adds": [
+    "Connects stage-associated network analysis with molecular subtyping.",
+    "Distinguishes subtype discovery from subtype-classifier evaluation.",
+    "Separates human tissue, cultured-cell and computational drug-hypothesis evidence."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Stage II had the highest reported network instability signal.",
+      "TCPSLevel was associated with clinical and outcome differences.",
+      "The ensemble analysis yielded three molecular subtypes.",
+      "miniPC classified the consensus subtype labels using a compact gene set.",
+      "Single-cell analysis localized expression patterns across cellular compartments.",
+      "ASPH was evaluated in human tissues and through TPC-1 silencing.",
+      "IPS and CMap supplied candidate immune/drug-response hypotheses."
+    ],
+    "does_not_establish": [
+      "Longitudinal prediction of an individual patient's transition time.",
+      "Clinical intervention benefit.",
+      "miniPC as an established survival model rather than a subtype classifier.",
+      "Cell counts as patient counts or paired-specimen counts as independent participants.",
+      "Complete demonstration of direct ASCL2 regulation or binding.",
+      "Clinical efficacy of CMap-nominated compounds.",
+      "Classification of this study as a physiological circadian-rhythm experiment.",
+      "Resolution of all Methods/Results counts or accession differences."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What does the Stage II DNB signal establish?",
+      "answer": "Stage II had the highest reported network instability signal. DNB genes: 36. Cross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Is TCPSLevel already a clinically validated prospective risk tool?",
+      "answer": "TCPSLevel was associated with clinical and outcome differences. Expression bins: 100; Background samplings: 1,000; Reported survival cutoff: 0.4. The reported cutoff is not a cross-cohort locked clinical threshold. Grouping rules used in other analyses are not automatically equivalent.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How were the thyroid molecular subtypes evaluated externally?",
+      "answer": "The ensemble analysis yielded three molecular subtypes. Candidate combinations: 20; Selected combination: CV-PAM; Reported external NTP datasets: 6. Methods 2.6 prints GSE333630 whereas other locations use GSE33630. These are not silently rewritten as a fully verified accession inventory.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does miniPC classify subtypes or directly prove improved survival?",
+      "answer": "miniPC classified the consensus subtype labels using a compact gene set. Candidate genes: 296; Final genes: 12; Final classifier: Neural network; External classifier cohorts: 5. This is subtype classification, not prospective individual survival-benefit validation. Unverified figure-only accuracy or AUC values are not reconstructed.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How many independent donors support the single-cell analysis?",
+      "answer": "Single-cell analysis localized expression patterns across cellular compartments. Reported donors: 1; Cells in Methods: 17,709; Cells in Results: 17,518; Annotated populations: 7. A single donor and a large cell count do not establish large-population replication. No explanation for the count difference is invented.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What human and experimental evidence supports ASPH?",
+      "answer": "ASPH was evaluated in human tissues and through TPC-1 silencing. Tumor specimens: 48; Adjacent specimens: 48; TPC-1 silencing: Reduced proliferation and migration. Paired tissues are not 96 independent patients. ASCL2-ASPH network inference is not direct binding validation, and cell effects do not establish human targeted-treatment efficacy.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Were CMap-nominated compounds shown to benefit patients?",
+      "answer": "IPS and CMap supplied candidate immune/drug-response hypotheses. Evidence: Computational scoring and signature matching. Predicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease": [
+      "differentiated thyroid carcinoma"
+    ],
+    "entities": [
+      "DNB",
+      "TCPSLevel",
+      "miniPC",
+      "ASPH",
+      "ASCL2"
+    ],
+    "methods": [
+      "network analysis",
+      "consensus clustering",
+      "NTP",
+      "subtype classification"
+    ],
+    "evidence": [
+      "tissue association",
+      "in-vitro perturbation"
+    ]
+  },
+  "limitations": [
+    "TCGA counts of 544 in Methods and 484 in GRN analysis describe different reported analytical stages; no reason for excluding the numerical difference is inferred. Methods reports 17,709 cells and Results 17,518, without a reconstructed QC-exclusion process. One reported donor is not a large participant cohort; 48 tumor and 48 adjacent specimens do not mean 96 independent patients. Cohorts, cells, paired specimens and cultured-cell experiments are not added into a unique-participant total. External validation means retrospective expression-template/classifier evaluation, not prospective clinical utility.",
+    "Cross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time.",
+    "The reported cutoff is not a cross-cohort locked clinical threshold. Grouping rules used in other analyses are not automatically equivalent.",
+    "Methods 2.6 prints GSE333630 whereas other locations use GSE33630. These are not silently rewritten as a fully verified accession inventory.",
+    "This is subtype classification, not prospective individual survival-benefit validation. Unverified figure-only accuracy or AUC values are not reconstructed.",
+    "A single donor and a large cell count do not establish large-population replication. No explanation for the count difference is invented.",
+    "Paired tissues are not 96 independent patients. ASCL2-ASPH network inference is not direct binding validation, and cell effects do not establish human targeted-treatment efficacy.",
+    "Predicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.",
+    "Longitudinal prediction of an individual patient's transition time.",
+    "Clinical intervention benefit.",
+    "miniPC as an established survival model rather than a subtype classifier.",
+    "Cell counts as patient counts or paired-specimen counts as independent participants.",
+    "Complete demonstration of direct ASCL2 regulation or binding.",
+    "Clinical efficacy of CMap-nominated compounds.",
+    "Classification of this study as a physiological circadian-rhythm experiment.",
+    "Resolution of all Methods/Results counts or accession differences."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1186/s12967-022-03795-9",
+      "relationship": "Expression-state and subtyping methods in a different disease, not the same mechanism or participant population."
+    },
+    {
+      "doi": "10.1186/s12915-025-02400-x",
+      "relationship": "Single-cell/transcriptomic stratification in another study; this is not independent replication of an ASPH mechanism."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1002/mdr2.70004",
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70004",
+    "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which thyroid studies applied dynamic network biomarkers to stage-associated expression?",
+        "supported_scope": "Stage II had the highest reported network instability signal. DNB genes: 36. Cross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time. TCPSLevel was associated with clinical and outcome differences. Expression bins: 100; Background samplings: 1,000; Reported survival cutoff: 0.4. The reported cutoff is not a cross-cohort locked clinical threshold. Grouping rules used in other analyses are not automatically equivalent.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What evidence supports ensemble thyroid-cancer molecular subtyping?",
+        "supported_scope": "The ensemble analysis yielded three molecular subtypes. Candidate combinations: 20; Selected combination: CV-PAM; Reported external NTP datasets: 6. Methods 2.6 prints GSE333630 whereas other locations use GSE33630. These are not silently rewritten as a fully verified accession inventory.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How was a compact classifier developed for consensus thyroid subtypes?",
+        "supported_scope": "miniPC classified the consensus subtype labels using a compact gene set. Candidate genes: 296; Final genes: 12; Final classifier: Neural network; External classifier cohorts: 5. This is subtype classification, not prospective individual survival-benefit validation. Unverified figure-only accuracy or AUC values are not reconstructed.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What evidence distinguishes ASPH expression association from experimental perturbation?",
+        "supported_scope": "Single-cell analysis localized expression patterns across cellular compartments. Reported donors: 1; Cells in Methods: 17,709; Cells in Results: 17,518; Annotated populations: 7. A single donor and a large cell count do not establish large-population replication. No explanation for the count difference is invented. ASPH was evaluated in human tissues and through TPC-1 silencing. Tumor specimens: 48; Adjacent specimens: 48; TPC-1 silencing: Reduced proliferation and migration. Paired tissues are not 96 independent patients. ASCL2-ASPH network inference is not direct binding validation, and cell effects do not establish human targeted-treatment efficacy.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "What computational rather than clinical therapeutic hypotheses were generated?",
+        "supported_scope": "IPS and CMap supplied candidate immune/drug-response hypotheses. Evidence: Computational scoring and signature matching. Predicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Longitudinal prediction of an individual patient's transition time.",
+      "Clinical intervention benefit.",
+      "miniPC as an established survival model rather than a subtype classifier.",
+      "Cell counts as patient counts or paired-specimen counts as independent participants.",
+      "Complete demonstration of direct ASCL2 regulation or binding.",
+      "Clinical efficacy of CMap-nominated compounds.",
+      "Classification of this study as a physiological circadian-rhythm experiment.",
+      "Resolution of all Methods/Results counts or accession differences."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-thyroid-1",
+        "component": "Stage-associated DNB inference",
+        "context": "Stage-associated cross-sectional network analysis.",
+        "finding": "Stage II had the highest reported network instability signal. DNB genes: 36",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Cross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time.",
+        "source_locator": "Methods 2.2; Results 3.1; Fig. 1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-2",
+        "component": "TCPSLevel construction and association",
+        "context": "Expression-score construction and retrospective association.",
+        "finding": "TCPSLevel was associated with clinical and outcome differences. Expression bins: 100; Background samplings: 1,000; Reported survival cutoff: 0.4",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "The reported cutoff is not a cross-cohort locked clinical threshold. Grouping rules used in other analyses are not automatically equivalent.",
+        "source_locator": "Methods 2.4; Results 3.2; Fig. 2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-3",
+        "component": "Consensus subtype framework",
+        "context": "Consensus framework selection and external NTP evaluation.",
+        "finding": "The ensemble analysis yielded three molecular subtypes. Candidate combinations: 20; Selected combination: CV-PAM; Reported external NTP datasets: 6",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Methods 2.6 prints GSE333630 whereas other locations use GSE33630. These are not silently rewritten as a fully verified accession inventory.",
+        "source_locator": "Methods 2.6-2.7; Results 3.3; Fig. 3",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-4",
+        "component": "miniPC subtype classifier",
+        "context": "Gene selection and external subtype-classifier evaluation.",
+        "finding": "miniPC classified the consensus subtype labels using a compact gene set. Candidate genes: 296; Final genes: 12; Final classifier: Neural network; External classifier cohorts: 5",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "This is subtype classification, not prospective individual survival-benefit validation. Unverified figure-only accuracy or AUC values are not reconstructed.",
+        "source_locator": "Methods 2.8; Results 3.4; Fig. 4",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-5",
+        "component": "Single-cell context",
+        "context": "Single-donor single-cell analysis with separately reported Methods and Results counts.",
+        "finding": "Single-cell analysis localized expression patterns across cellular compartments. Reported donors: 1; Cells in Methods: 17,709; Cells in Results: 17,518; Annotated populations: 7",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "A single donor and a large cell count do not establish large-population replication. No explanation for the count difference is invented.",
+        "source_locator": "Methods 2.1.1 and 2.3; Results 3.7; Fig. 5K-N",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-6",
+        "component": "ASPH experimental follow-up",
+        "context": "Human tissue association and separate cultured-cell perturbation.",
+        "finding": "ASPH was evaluated in human tissues and through TPC-1 silencing. Tumor specimens: 48; Adjacent specimens: 48; TPC-1 silencing: Reduced proliferation and migration",
+        "evidence_level": "Human tissue association and in-vitro perturbation",
+        "scope": "Paired tissues are not 96 independent patients. ASCL2-ASPH network inference is not direct binding validation, and cell effects do not establish human targeted-treatment efficacy.",
+        "source_locator": "Methods: tissue and cell experiments; Results 3.6 and 3.8; Fig. 6",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-thyroid-7",
+        "component": "Computational therapeutic hypotheses",
+        "context": "Computational treatment-related hypothesis generation.",
+        "finding": "IPS and CMap supplied candidate immune/drug-response hypotheses. Evidence: Computational scoring and signature matching",
+        "evidence_level": "Retrospective expression and computational evidence",
+        "scope": "Predicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.",
+        "source_locator": "Methods 2.10 and 2.20; Results 3.5; Discussion",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}
