@@ -329,6 +329,13 @@ def validate_v2_rendered_page(
 ):
     # Validate the original scientific sections exactly; separately validate all
     # explicitly marked new controls/payloads with validate_evidence.
+    guide_nav = evidence_presentation.guide_navigation(content['doi'])
+    require(page.count('id="related-evidence-guide"') == bool(guide_nav),
+            'Unexpected/missing guide backlink scope')
+    if guide_nav:
+        require(page.count(guide_nav) == 1, 'Guide navigation content/link changed')
+        require(page.index('data-v2-section="related-research"') < page.index(guide_nav)
+                < page.index('data-v2-section="provenance"'), 'Guide navigation location changed')
     page = without_evidence_ui(page)
     label = f"{publication.get('slug') or publication.get('title')} Paper GEO 2.0"
     validate_deep_v2_content(content, label)

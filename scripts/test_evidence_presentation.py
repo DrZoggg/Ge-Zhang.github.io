@@ -5,7 +5,7 @@ import re
 import subprocess
 import unittest
 from html.parser import HTMLParser
-from evidence_presentation import PILOT_DOIS, STYLESHEET, enabled
+from evidence_presentation import PILOT_DOIS, STYLESHEET, enabled, guide_navigation
 from sync_common import ROOT, load_master
 
 BASE = '72075bc52098e0fab8a22bd33828e15601fe6c6a'
@@ -48,6 +48,11 @@ class Contract(HTMLParser):
 
 
 def validate_pair(before, after, doi):
+    navigation = guide_navigation(doi)
+    if navigation:
+        if after.count(navigation) != 1:raise ValueError('Missing/changed/duplicated guide navigation')
+        after = after.replace(navigation, '', 1)
+    if 'id="related-evidence-guide"' in after:raise ValueError('Unfounded guide navigation')
     if not enabled(doi):
         if before!=after:raise ValueError('Non-allowlist page changed')
         return
@@ -107,6 +112,13 @@ class PresentationTests(unittest.TestCase):
         validate_css((ROOT/'assets/evidence-presentation.css').read_text(encoding='utf-8'))
         for bad in ['html,body{overflow-x:hidden}', 'body {overflow:clip}']:
             with self.assertRaises(ValueError):validate_css(bad)
+    def test_guide_navigation_source_mapping(self):
+        expected = {'10.1021/acs.jproteome.4c00522','10.1111/jcmm.17789','10.1111/jcmm.70258'}
+        self.assertEqual({p['doi'].lower() for p in load_master() if guide_navigation(p.get('doi',''))}, expected)
+        self.reject(self.after.replace('related-evidence-guide', 'unexpected-guide', 1))
+        self.reject(self.after + guide_navigation(self.doi))
+        with self.assertRaises(ValueError):
+            validate_pair('original', 'original' + guide_navigation(self.doi), '10.1016/j.isci.2023.107587')
 
 
 if __name__=='__main__':unittest.main()

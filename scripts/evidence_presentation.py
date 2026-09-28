@@ -3,11 +3,25 @@ import html
 import json
 from html.parser import HTMLParser
 from sync_common import ROOT
+from evidence_discovery import ui
+import research_guides
 
 PILOT_DOIS = frozenset(('10.1021/acs.jproteome.4c00522', '10.1111/jcmm.17789',
                         '10.1186/s12915-025-02400-x', '10.1038/s41467-024-50415-9',
                         '10.1186/s12967-022-03795-9', '10.1136/jitc-2024-010127'))
 STYLESHEET = '<link rel="stylesheet" href="../assets/evidence-presentation.css">'
+
+
+def guide_navigation(doi):
+    """Only the existing guide's declared source studies receive a static backlink."""
+    guide = research_guides.load()
+    if doi.lower() not in {row['source_doi'].lower() for row in guide['studies']}:
+        return ''
+    return ui('<aside class="evidence-guide-navigation" aria-labelledby="related-evidence-guide">'
+              '<h2 id="related-evidence-guide">Related evidence guide</h2><p><a href="'
+              + research_guides.URL + '">' + html.escape(guide['title']) + '</a></p>'
+              '<p>Compare the specimens, molecular layers and evaluation designs of these selected studies. '
+              'This guide is not a systematic review or a jointly validated diagnostic panel.</p></aside>')
 
 
 def enabled(doi):
