@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 from evidence_presentation import PILOT_DOIS, STYLESHEET, enabled
 from sync_common import ROOT, load_master
 
-BASE = 'bd4b7d80a2c45b4911078df37d71d262494f6e27'
+BASE = '72075bc52098e0fab8a22bd33828e15601fe6c6a'
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 
 
@@ -99,7 +99,7 @@ class PresentationTests(unittest.TestCase):
         self.reject(self.after.replace('not prospective incident-DCM prediction','prospective incident-DCM prediction',1))
     def test_duplicate_kf_anchor(self):self.reject(self.after.replace('id="kf2"','id="kf1"',1))
     def test_nonallowlist_change(self):
-        with self.assertRaisesRegex(ValueError,'Non-allowlist'):validate_pair('original','changed','10.1038/s41467-024-50415-9')
+        with self.assertRaisesRegex(ValueError,'Non-allowlist'):validate_pair('original','changed','10.1016/j.isci.2023.107587')
     def test_citation_or_copy_payload_change(self):
         self.reject(self.after.replace('Plain citation','Changed citation',1))
         self.reject(self.after.replace('"finding_id": "KF1"','"finding_id": "KF9"',1))

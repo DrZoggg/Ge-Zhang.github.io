@@ -812,7 +812,8 @@ def validate_aihflevel_v2_regression(content, publication, page):
     require(len(content["qa"]) == 8, f"{label} Q&A count changed.")
     require(
         element_texts(page, "h2")[1 + ('id="official-abstract"' in page)
-                                  + ('id="cite-this-paper"' in page)] == "Evidence Snapshot",
+                                  + ('id="cite-this-paper"' in page)
+                                  + 2 * (evidence_presentation.STYLESHEET in page)] == "Evidence Snapshot",
         f"{label} evidence snapshot heading changed.",
     )
 
