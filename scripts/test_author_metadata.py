@@ -121,6 +121,43 @@ def run_verified_identity_tests():
     print(f'VERIFIED IDENTITY TESTS PASS: {len(VERIFIED_IDENTITIES)} records; isolated ORCID/Crossref preservation; {negatives} negative fixtures')
 
 
+def run_luad_affiliation_marker_test():
+    """Only the verified name token is corrected; the author-version dispute stays open."""
+    doi = "10.71321/fy14v342"
+    expected = [
+        "Ruhao Wu", "Kaisaierjiang Kadier", "Shuai Xu", "Peiyu Yuan",
+        "Yu Yang", "Pengyuan Xu", "Xufeng Huang", "Shujing Zhou",
+        "Song-Bin Guo", "Haonan Zhang", "Shiqian Zhang", "Chaoyang Yu",
+        "Teng Li", "Ge Zhang",
+    ]
+    target = next(item for item in load_master() if item.get("doi") == doi)
+    assert target["authors"] == publication_authors(target) == expected
+    assert "researcher_author_positions" not in target
+    # A stale incoming marker must not overwrite the existing verified author list.
+    incoming = copy.deepcopy(target)
+    incoming["authors"][1] = "Kaisaierjiang Kadier3"
+    for source in ("ORCID:isolated-fixture", "Crossref:isolated-fixture"):
+        merged, added, _, duplicates = merge_items([copy.deepcopy(target)], [incoming], source)
+        assert added == duplicates == 0 and merged[0]["authors"] == expected
+        assert "researcher_author_positions" not in merged[0]
+    # This fix must not become a generic trailing-digit stripping rule.
+    assert normalize_authors(["Kaisaierjiang Kadier3"]) == ["Kaisaierjiang Kadier3"]
+    slug = target["slug"]
+    page = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
+    assert [html.unescape(v) for v in re.findall(r'<meta name="citation_author" content="([^"]*)">', page)] == expected
+    config = load_site_config()
+    assert_identity_schema(paper_json_ld_object(page, slug)["author"], {"authors": expected, "positions": [14]}, config)
+    citation_dir = PAPERS_DIR.parent / "citations"
+    bib = (citation_dir / f"{slug}.bib").read_text(encoding="utf-8")
+    ris = (citation_dir / f"{slug}.ris").read_text(encoding="utf-8")
+    csl = json.loads((citation_dir / f"{slug}.csl.json").read_text(encoding="utf-8"))
+    assert re.search(r'^  author = \{(.*)\},$', bib, re.M).group(1).split(" and ") == expected
+    assert [line[6:] for line in ris.splitlines() if line.startswith("AU  - ")] == expected
+    assert [author["literal"] for author in csl["author"]] == expected
+    assert csl["DOI"] == doi
+    print("LUAD NAME FIXTURE PASS: 14 positions preserved; site Person remains at 14; stale incoming marker rejected without external sync")
+
+
 def run_tests():
     parsed = crossref_author_names(
         [
@@ -220,6 +257,7 @@ def run_tests():
     assert sum(person.get("@id") == config["person_id"] for person in schema_authors) == 1
 
     run_verified_identity_tests()
+    run_luad_affiliation_marker_test()
     print("AUTHOR METADATA TESTS PASS")
 
 
