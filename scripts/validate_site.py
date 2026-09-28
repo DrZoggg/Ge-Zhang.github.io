@@ -33,6 +33,7 @@ from build_publications import (
 from official_abstracts import abstract_text, load_official_abstracts
 from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
+import research_guides
 from site_common import (
     LEGACY_DEEP_SLUGS,
     PAPERS_DIR,
@@ -3026,9 +3027,11 @@ def validate_site():
         f"{config['site_url']}/",
         f"{config['site_url']}/publications.html",
         *[f"{config['site_url']}/papers/{slug}.html" for slug in slugs],
+        research_guides.URL,
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")
     require(set(sitemap_urls) == set(expected_urls), "Sitemap URLs do not match public pages.")
+    research_guides.validate(ROOT)
     for item in withdrawn:
         slug = str(item.get("slug") or "")
         require(not slug or not any(slug in url for url in sitemap_urls), "Withdrawn in sitemap.")

@@ -84,7 +84,7 @@ def search_corpus(root, items, contents):
                     raise ValueError(f'Search text not visibly present: {p["slug"]}/{category}: {text}')
             if anchor and f'id="{anchor}"' not in page:
                 anchor = ''
-            documents.append({'id': len(documents), 'doi': p.get('doi', ''), 'title': p['title'],
+            documents.append({'id': len(documents), 'result_kind': 'paper', 'doi': p.get('doi', ''), 'title': p['title'],
                               'category': category, 'text': '\n'.join(texts),
                               'url': url + ('#' + anchor if anchor else ''), 'limitation': limitation})
         add('Title', [p['title']])
@@ -108,4 +108,6 @@ def search_corpus(root, items, contents):
         add('Evidence scope — supports', c['evidence_scope']['supports'], 'ev-scope')
         add('Limitations — does not establish', c['evidence_scope']['does_not_establish'], 'ev-scope', True)
         add('Limitations', c['limitations'], 'ev-scope', True)
+    from research_guides import search_documents
+    documents.extend(search_documents(root, len(documents)))
     return {'version': 1, 'description': 'Visible public text for local text-relevance search; no generated answers or evidence-strength ranking.', 'documents': documents}

@@ -4,7 +4,7 @@
   const normalize = (value) => String(value).normalize('NFKC').replace(/\s+/gu, ' ').trim().toLowerCase();
   const doiOf = (value) => normalize(value).replace(/^(?:https?:\/\/(?:dx\.)?doi\.org\/|doi:\s*)/u, '');
   function createEngine(MiniSearch, data) {
-    const index = new MiniSearch({fields: ['text'], storeFields: ['title', 'doi', 'url', 'category', 'text', 'limitation'],
+    const index = new MiniSearch({fields: ['text'], storeFields: ['title', 'doi', 'url', 'category', 'text', 'limitation', 'result_kind'],
       processTerm: normalize, searchOptions: {fuzzy: false, prefix: false, combineWith: 'AND'}});
     index.addAll(data.documents);
     return (query) => {
@@ -51,13 +51,14 @@
       const engine = await load();
       if (current !== sequence) return;
       const hits = engine(query);
-      // Keep the most relevant matched section for each paper; all static records stay visible.
+      // Keep the most relevant matched section for each paper/guide; static records stay visible.
       const seen = new Set();
       const papers = hits.filter(hit => { if (seen.has(hit.doi || hit.title)) return false; seen.add(hit.doi || hit.title); return true; });
-      status.textContent = papers.length ? `${papers.length} papers — text relevance, not evidence strength.` : 'No matching publications. No answer is generated. The complete list remains below.';
+      status.textContent = papers.length ? `${papers.length} results — text relevance, not evidence strength.` : 'No matching results. No answer is generated. The complete list remains below.';
       papers.forEach(hit => {
         const card = node('article', ''); card.className = 'evidence-search-result';
         const heading = node('h3', ''); const link = node('a', hit.title); link.href = hit.url; heading.append(link); card.append(heading);
+        card.append(node('p', hit.result_kind === 'guide' ? 'Guide — selected evidence comparison; not a research article.' : 'Paper'));
         card.append(node('p', (hit.limitation ? 'LIMITATION / DOES NOT ESTABLISH — not an affirmative conclusion. ' : '') + 'Matched section: ' + hit.category));
         // Preserve full matched field; do not turn a truncated denial into a positive snippet.
         const excerpt = node('p', hit.text); excerpt.className = 'evidence-search-excerpt'; card.append(excerpt);

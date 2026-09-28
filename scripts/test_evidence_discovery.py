@@ -14,7 +14,9 @@ def check():
     content = {p.get('doi',''): load_deep_content(p, allow_missing=True) for p in public if p['deep_geo']}
     data = json.loads((ROOT / 'assets/evidence-search.json').read_text(encoding='utf-8'))
     assert data == search_corpus(ROOT, public, content)
-    assert len({d['url'].split('#')[0] for d in data['documents']}) == len(public)
+    assert len({d['url'].split('#')[0] for d in data['documents'] if d['result_kind']=='paper'}) == len(public)
+    guides = [d for d in data['documents'] if d['result_kind']=='guide']
+    assert len({d['url'].split('#')[0] for d in guides}) == 1 and all(d['doi']=='' for d in guides)
     for d in data['documents']:
         u = urlsplit(d['url'])
         page = (ROOT / u.path.lstrip('/')).read_text(encoding='utf-8')

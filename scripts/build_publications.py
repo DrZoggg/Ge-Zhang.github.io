@@ -19,6 +19,7 @@ from citation_common import (
 )
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
+import research_guides
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
     DEEP_CONTENT_DIR,
@@ -2165,7 +2166,7 @@ def render_publications_page(items, config):
 <p class="lead">This author-controlled publication record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
 <div class="card" style="margin-top:20px"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
 </div></section>
-{navigation_html(ROOT, items)}<section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
+{navigation_html(ROOT, items)}{ui(research_guides.navigation())}<section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
 {ui('<p>Search title, journal, DOI, authors and visible scientific evidence. Text relevance is not evidence strength.</p><p id="evidenceSearchStatus" role="status" aria-live="polite">Browse the complete publication list below, or search visible evidence text.</p><div id="evidenceResults"></div>')}
 <div id="pubList">{''.join(sections)}</div></section>
 <section><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
@@ -2432,6 +2433,7 @@ def build_site():
                 }
             )
     publications_url = absolute(config["site_url"], "publications.html")
+    html_changed[research_guides.URL] = research_guides.build(ROOT)
     write_text_if_changed(
         ROOT / "assets/evidence-search.json",
         json.dumps(search_corpus(ROOT, public_items, {
@@ -2468,6 +2470,7 @@ def build_site():
         homepage_url,
         publications_url,
         *[item["paper_url"] for item in public_items],
+        research_guides.URL,
     ]
     lastmods = {
         url: resolve_lastmod(url, html_changed[url], previous_lastmods, today)

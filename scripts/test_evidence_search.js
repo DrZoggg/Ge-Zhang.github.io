@@ -16,6 +16,9 @@ assert(search('Nature Communications').some(x => x.category === 'Journal'));
 assert.equal(search('gpx5zz').length, 0); // fuzzy disabled
 assert.equal(search('<script>alert("injection")</script>xxxx').length, 0);
 assert(search('prospectively validated early diagnostic').some(x => x.limitation && x.category.includes('Limitations')));
-assert.equal(new Set(corpus.documents.map(x => x.url.split('#')[0])).size, 74);
+assert.equal(new Set(corpus.documents.filter(x => x.result_kind === 'paper').map(x => x.url.split('#')[0])).size, 74);
+assert(search('DCM-HF circulating biomarkers').some(x => x.result_kind === 'guide' && x.doi === ''));
+assert(search('10.1021/acs.jproteome.4c00522').every(x => x.result_kind === 'paper'));
+assert(search('complete discovery participant count').some(x => x.result_kind === 'guide' && x.limitation));
 assert(!corpus.documents.some(x => x.category === 'Official Abstract'));
 console.log('SEARCH PASS: official MiniSearch GPX4, MCC950, DOI, case/Unicode, title/journal, no result, limitations; 74 public records');

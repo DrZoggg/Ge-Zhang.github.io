@@ -170,5 +170,34 @@ def validate(root=ROOT):
     return {'guides': 1, 'sources': 3, 'source_KFs': 11}
 
 
-if __name__ == '__main__':
-    build(); print('GUIDE PASS:', validate())
+def navigation():
+    data = load()
+    return '<section id="selected-evidence-guides"><h2>Selected evidence guides</h2><p><a href="' + URL + '">' + html.escape(data['title']) + '</a></p><p>' + html.escape(data['scope']) + '</p></section>'
+
+
+def search_documents(root, start):
+    from evidence_discovery import visible_text
+    data = load(root)
+    page = (root/'research'/(SLUG+'.html')).read_text(encoding='utf-8')
+    visible = visible_text(page)
+    docs = []
+    def add(category, text, anchor='', limitation=False):
+        require(text in visible, 'Guide search field is not visibly present')
+        require(not anchor or 'id="'+anchor+'"' in page, 'Guide search anchor missing')
+        docs.append({'id': start+len(docs), 'result_kind':'guide', 'doi':'', 'title':data['title'],
+                     'category':category, 'text':text, 'url':URL+('#'+anchor if anchor else ''), 'limitation':limitation})
+    for key in ['title','question','answer','scope','closing']:
+        add(key.title(), data[key], 'scope' if key=='scope' else '', key=='scope')
+    for row in data['studies']:
+        add('Study', row['label'])
+        for key, label in FIELDS:
+            if key in row: add(label, row[key], limitation=key=='boundary')
+    for i, section in enumerate(data['sections']+data['qa']):
+        add('Question', section['heading'], 'question-'+str(i+1))
+        add('Comparison' if i<3 else 'Q&A', section['text'], 'question-'+str(i+1), i in (1,2,4,5))
+    return docs
+
+
+if __name__ == "__main__":
+    build()
+    print('GUIDE PASS:', validate())
