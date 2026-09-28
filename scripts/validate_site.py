@@ -2910,7 +2910,7 @@ def validate_site():
         "Homepage Featured titles or order differ from controller.",
     )
     require(
-        index_html.count('<article class="card paper">') == len(featured),
+        len(re.findall(r'<article class="card paper"(?: data-geo-status="(?:none|pending|v1|v2)")?>', index_html)) == len(featured),
         "Homepage Featured card count differs from controller.",
     )
 

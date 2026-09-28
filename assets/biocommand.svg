@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 500" fill="none">
+  <defs>
+    <radialGradient id="halo"><stop stop-color="#52ddd3" stop-opacity=".17"/><stop offset="1" stop-color="#52ddd3" stop-opacity="0"/></radialGradient>
+    <linearGradient id="strand" x1="215" y1="70" x2="410" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#96fff0"/><stop offset=".55" stop-color="#48c9ce"/><stop offset="1" stop-color="#f18b7e"/></linearGradient>
+  </defs>
+  <circle cx="310" cy="250" r="230" fill="url(#halo)"/>
+  <g stroke="#55c9c8">
+    <circle cx="310" cy="250" r="206" stroke-opacity=".25"/>
+    <circle cx="310" cy="250" r="194" stroke-opacity=".45" stroke-dasharray="1 14" stroke-width="7"/>
+    <circle cx="310" cy="250" r="174" stroke-opacity=".22"/>
+    <path d="M160 162A174 174 0 0 1 437 132M470 319A174 174 0 0 1 223 401" stroke-width="3" stroke-opacity=".65"/>
+    <path d="M310 20V61M310 439V480M80 250H119M501 250H540" stroke-opacity=".7"/>
+    <path d="M42 120H128L170 160M452 352L492 391H581M129 410H194M418 85H552" stroke-opacity=".45"/>
+  </g>
+  <g stroke="#65ded9" stroke-opacity=".35"><path d="M260 78H360M229 96H391M218 114H402M223 132H397M240 150H380M270 168H350M294 186H326M278 204H342M247 222H373M226 240H394M218 258H402M225 276H395M245 294H375M275 312H345M294 330H326M277 348H343M246 366H374M225 384H395M221 402H399M242 420H378"/></g>
+  <path d="M260 78C132 153 432 159 325 217S172 279 279 315S452 385 378 420" stroke="url(#strand)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M360 78C488 153 188 159 295 217S448 279 341 315S168 385 242 420" stroke="#f18b7e" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 12"/>
+  <g fill="#8befeb"><circle cx="260" cy="78" r="6"/><circle cx="222" cy="119" r="5"/><circle cx="292" cy="176" r="4"/><circle cx="325" cy="217" r="6"/><circle cx="242" cy="261" r="5"/><circle cx="279" cy="315" r="5"/><circle cx="378" cy="372" r="6"/><circle cx="378" cy="420" r="5"/><circle cx="128" cy="120" r="3"/><circle cx="492" cy="391" r="3"/></g>
+  <g stroke="#ef8175" stroke-width="3"><path d="M102 65H128M102 65V91M518 409V435H492"/></g>
+</svg>

@@ -2144,6 +2144,8 @@ def render_publications_page(items, config):
             publication_type = publication.get("type") or "Work"
             paper_url = f"papers/{publication['slug']}.html"
             links = [f'<a href="{html.escape(paper_url, quote=True)}">Paper page</a>']
+            if publication["featured"]:
+                links.append('<span class="badge badge-featured">Featured</span>')
             if publication["deep_geo"]:
                 badge = (
                     "Deep GEO · Pending"
@@ -2162,6 +2164,7 @@ def render_publications_page(items, config):
             )
             rows.append(
                 f'<article class="pub" data-paper-record="true" '
+                f'data-geo-status="{publication["paper_geo_status"]}" '
                 f'data-title="{html.escape(str(title).lower(), quote=True)}" '
                 f'data-journal="{html.escape(str(journal).lower(), quote=True)}">'
                 f'<div class="pub-title"><a href="{html.escape(paper_url, quote=True)}">'
@@ -2246,7 +2249,7 @@ def render_featured_cards(featured_entries, public_by_token, deep_contents):
         else:
             badge = ""
         cards.append(
-            f'<article class="card paper"><div class="eyebrow">'
+            f'<article class="card paper" data-geo-status="{status}"><div class="eyebrow">'
             f'{html.escape(str(journal))} · {html.escape(str(year))}{badge}</div>'
             f'<h3><a href="{html.escape(page_url, quote=True)}">{html.escape(str(title))}</a></h3>'
             f'<p>{html.escape(summary)}</p><div class="links">{" ".join(links)}</div></article>'
