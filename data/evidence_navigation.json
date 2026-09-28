@@ -1,0 +1,10 @@
+[
+  {"doi":"10.1038/s41467-024-50415-9","anchor":"cu1","question":"Which studies developed and externally validated machine-learning survival models for advanced heart failure with renal dysfunction?"},
+  {"doi":"10.1016/j.isci.2023.107587","anchor":"cu1","question":"What transcriptomic machine-learning signatures have been developed to characterize atherosclerotic plaque vulnerability?"},
+  {"doi":"10.1002/mdr2.70052","anchor":"kf1","question":"Which circadian clock components are central to cardiovascular immune regulation?"},
+  {"doi":"10.1111/jcmm.17789","anchor":"cu1","question":"Which studies profiled plasma exosomal miRNAs in DCM with chronic heart failure?"},
+  {"doi":"10.1111/jcmm.70725","anchor":"cu1","question":"Which human studies profiled circulating EV proteins in AAA?"},
+  {"doi":"10.1186/s12915-025-02400-x","anchor":"cu1","question":"What evidence describes human AAA T-cell heterogeneity at single-cell resolution?"},
+  {"doi":"10.1021/acs.jproteome.4c00522","anchor":"cu1","question":"What targeted plasma proteomics evidence identifies candidate biomarkers for DCM-HF?"},
+  {"doi":"10.1186/s12967-022-03795-9","anchor":"cu1","question":"What single-cell evidence demonstrates VSMC heterogeneity in human atherosclerotic plaque?"}
+]

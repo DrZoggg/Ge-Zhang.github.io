@@ -18,6 +18,7 @@ from citation_common import (
     render_ris,
 )
 from official_abstracts import abstract_text, load_official_abstracts
+from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
 from site_common import (
     DEEP_CONTENT_DIR,
     LEGACY_DEEP_SLUGS,
@@ -178,7 +179,8 @@ def with_ga4_tag(page):
 def write_public_html_if_changed(path, content):
     previous = path.read_text(encoding="utf-8") if path.is_file() else None
     content_changed = previous is None or (
-        previous.replace(GA4_INSERTION, "") != content.replace(GA4_INSERTION, "")
+        without_evidence_ui(previous.replace(GA4_INSERTION, ""))
+        != without_evidence_ui(content.replace(GA4_INSERTION, ""))
     )
     write_text_if_changed(path, content)
     return content_changed
@@ -2151,7 +2153,7 @@ def render_publications_page(items, config):
 <meta property="og:description" content="{html.escape(meta_description, quote=True)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{html.escape(publications_url, quote=True)}">
-<link rel="stylesheet" href="assets/style.css"></head><body>
+<link rel="stylesheet" href="assets/style.css">{ui('<link rel="stylesheet" href="assets/evidence.css"><script defer src="assets/evidence-search.js"></script>')}</head><body>
 <header><nav><a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks">
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap"><section class="hero" style="grid-template-columns:1fr"><div>
@@ -2159,12 +2161,11 @@ def render_publications_page(items, config):
 <p class="lead">This author-controlled publication record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
 <div class="card" style="margin-top:20px"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
 </div></section>
-<section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
+{navigation_html(ROOT, items)}<section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
+{ui('<p>Search title, journal, DOI, authors and visible scientific evidence. Text relevance is not evidence strength.</p><p id="evidenceSearchStatus" role="status" aria-live="polite">Browse the complete publication list below, or search visible evidence text.</p><div id="evidenceResults"></div>')}
 <div id="pubList">{''.join(sections)}</div></section>
 <section><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
-<script>
-const box=document.getElementById('pubSearch');box.addEventListener('input',()=>{{const q=box.value.toLowerCase().trim();document.querySelectorAll('.pub').forEach(x=>{{x.style.display=(!q||x.dataset.title.includes(q)||x.dataset.journal.includes(q))?'block':'none'}});document.querySelectorAll('.year-group').forEach(y=>{{y.style.display=[...y.querySelectorAll('.pub')].some(x=>x.style.display!=='none')?'block':'none'}})}})
-</script>
+
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer></body></html>
 ''')
@@ -2410,6 +2411,12 @@ def build_site():
                 }
             )
     publications_url = absolute(config["site_url"], "publications.html")
+    write_text_if_changed(
+        ROOT / "assets/evidence-search.json",
+        json.dumps(search_corpus(ROOT, public_items, {
+            norm_doi(content["doi"]): content for content in deep_contents.values() if content
+        }), ensure_ascii=False, indent=2) + "\n",
+    )
     html_changed[publications_url] = write_public_html_if_changed(
         ROOT / "publications.html", render_publications_page(public_items, config)
     )

@@ -1,0 +1,21 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.join(__dirname, '..');
+const MiniSearch = require(path.join(root, 'assets/vendor/minisearch-7.2.0/minisearch.js'));
+const {createEngine} = require(path.join(root, 'assets/evidence-search.js'));
+const corpus = JSON.parse(fs.readFileSync(path.join(root, 'assets/evidence-search.json'), 'utf8'));
+const search = createEngine(MiniSearch, corpus);
+assert(search('GPX4').some(x => x.doi === '10.1016/j.ejphar.2023.175569'));
+assert(search('MCC950').some(x => x.doi === '10.1136/jitc-2024-010127'));
+assert.equal(search(' HTTPS://DOI.ORG/10.1002/MDR2.70052 ')[0].doi, '10.1002/mdr2.70052');
+assert.equal(search('10.1002/mdr2.999999').length, 0);
+assert(search('ＣＬＯＣＫ').length > 0);
+assert(search(corpus.documents.find(x => x.category === 'Title').text).some(x => x.category === 'Title'));
+assert(search('Nature Communications').some(x => x.category === 'Journal'));
+assert.equal(search('gpx5zz').length, 0); // fuzzy disabled
+assert.equal(search('<script>alert("injection")</script>xxxx').length, 0);
+assert(search('prospectively validated early diagnostic').some(x => x.limitation && x.category.includes('Limitations')));
+assert.equal(new Set(corpus.documents.map(x => x.url.split('#')[0])).size, 74);
+assert(!corpus.documents.some(x => x.category === 'Official Abstract'));
+console.log('SEARCH PASS: official MiniSearch GPX4, MCC950, DOI, case/Unicode, title/journal, no result, limitations; 74 public records');

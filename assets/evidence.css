@@ -1,0 +1,4 @@
+.evidence-search-result { border:1px solid var(--line,#d9dfe7); border-radius:12px; padding:1rem; margin:1rem 0; }
+.evidence-search-excerpt { white-space:pre-wrap; }
+#scientific-questions li { margin-block:1rem; }
+#scientific-questions li p { font-size:.9rem; margin:.3rem 0; }
