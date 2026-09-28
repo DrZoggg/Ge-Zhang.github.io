@@ -24,5 +24,7 @@ section{padding:40px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(
 .paper-geo-v2__finding{min-width:0;overflow-wrap:anywhere}
 /* Long source URLs must wrap without setting the provenance grid minimum. */
 .paper-geo-v2__provenance>*{min-width:0;overflow-wrap:anywhere}
+/* Keep long reference links within the selected evidence source component. */
+.paper-geo-v2__section[data-citation-pilot-section="sources"] a{overflow-wrap:anywhere}
 footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 46px;color:var(--muted);font-size:.9rem}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.themes{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.grid,.themes,.paper-geo-v2__scope,.paper-geo-v2__concepts{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.hero{padding-top:45px}.paper-geo-v2__profile,.paper-geo-v2__provenance{grid-template-columns:1fr}.paper-geo-v2__compact-list{columns:1}}
