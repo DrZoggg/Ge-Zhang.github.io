@@ -1,0 +1,89 @@
+{
+  "slug": "dcm-hf-circulating-biomarkers",
+  "created": "2026-09-28",
+  "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
+  "question": "Which studies provide human DCM-HF biomarker evidence from plasma proteins and extracellular-vesicle RNA, and what type of evaluation does each study report?",
+  "scope": "This is a selective guide to three publications in this research program, chosen for their shared DCM-HF context and different circulating analytes. It is not a systematic review, a head-to-head comparison, a pooled analysis, or a clinical recommendation.",
+  "answer": "These studies address complementary molecular layers rather than one jointly validated test. The protein study includes an independent plasma ELISA comparison and separate cardiac transcriptomic evaluation. The RNA studies evaluate vesicle-associated expression patterns with small external qRT-PCR comparisons. The specimen, assay and evaluation unit determine which claim each article can support.",
+  "studies": [
+    {
+      "id": "protein",
+      "label": "Targeted plasma proteins",
+      "source_doi": "10.1021/acs.jproteome.4c00522",
+      "source_json": "data/deep_geo/olink-dcm.json",
+      "source_fingerprint": "6b02e7712b4c7f059e3c90710b02379be535fc4c59633c95dd9a52b953909ac7",
+      "evidence_refs": ["KF1", "KF2", "KF3", "KF4"],
+      "discovery": "Plasma; Olink Cardiovascular III; 92 proteins in 20 DCM-HF participants and 18 controls.",
+      "follow_up": "Independent plasma ELISA in 30 DCM-HF participants and 35 controls.",
+      "candidates": "SPP1, IGFBP7, F11R, CHI3L1, PLAUR.",
+      "additional": "The corresponding gene-expression panel was assessed in three external cardiac transcriptomic datasets.",
+      "use": "Targeted plasma-protein discovery and cross-assay follow-up.",
+      "boundary": "Cardiac transcriptomic evaluation is not independent plasma-proteomic replication and does not establish prospective clinical utility."
+    },
+    {
+      "id": "mirna",
+      "label": "Vesicle-associated miRNA",
+      "source_doi": "10.1111/jcmm.17789",
+      "source_json": "data/deep_geo/doi-10-1111-jcmm-17789.json",
+      "source_fingerprint": "c63371f7a06660b94e4809fa46db70d6919f60715fcbe5cbf68365f5acbf92db",
+      "evidence_refs": ["KF1", "KF3", "KF5", "KF6"],
+      "discovery": "Plasma vesicle-associated miRNA expression profiling. The reported final differential set contains 92 features.",
+      "follow_up": "10 selected miRNAs assessed by qRT-PCR in 10 DCM patients and 6 controls.",
+      "use": "Exploratory circulating miRNA profiling and small external expression-assay evaluation.",
+      "boundary": "The reviewed evidence does not establish a complete discovery participant count or a prospectively validated clinical test. miR-185-5p is not part of the listed 10-miRNA external assay panel."
+    },
+    {
+      "id": "circrna",
+      "label": "Vesicle-associated circRNA",
+      "source_doi": "10.1111/jcmm.70258",
+      "source_json": "data/deep_geo/doi-10-1111-jcmm-70258.json",
+      "source_fingerprint": "6352d5288c1f96ebd2b9dcf64a6fa4b56c1ff0bbc88e01c20ef0f5a07015621b",
+      "evidence_refs": ["KF1", "KF3", "KF6"],
+      "discovery": "Plasma vesicle-associated circRNA expression profiling; 3 DCM patients and 5 controls; 49 reported differential circRNAs.",
+      "follow_up": "External qRT-PCR comparison in 6 DCM patients and 4 controls. Results/Fig.5 describes nine candidates; Methods lists ten.",
+      "use": "Exploratory circRNA expression profiling and qualified external expression-assay follow-up.",
+      "boundary": "Methods specifies a ceRNA microarray while other passages use sequencing terminology. Preserve that difference. No prospective diagnostic utility is established."
+    }
+  ],
+  "sections": [
+    {
+      "heading": "What does “validation” mean here?",
+      "text": "An independent plasma ELISA comparison checks selected protein signals using another assay and participant group. Cardiac transcriptomic evaluation examines a different specimen and molecular measurement. External qRT-PCR checks selected RNA expression signals in a separate sample group. These are distinct forms of evaluation, not interchangeable proof of clinical utility.",
+      "refs": {"protein": ["KF3", "KF4"], "mirna": ["KF5"], "circrna": ["KF6"]}
+    },
+    {
+      "heading": "Can these studies be combined into one diagnostic panel?",
+      "label": "Guide-level synthesis",
+      "text": "A combined protein-miRNA-circRNA diagnostic panel is not established by the evidence summarized here. The studies should not be treated as a shared multimodal training/validation cohort. Cross-publication participant overlap has not been independently resolved in this guide, so no deduplicated cross-study total is supplied.",
+      "refs": {"protein": ["KF1", "KF3", "KF4"], "mirna": ["KF1", "KF5"], "circrna": ["KF1", "KF6"]}
+    },
+    {
+      "heading": "Can their performance be ranked?",
+      "text": "This guide does not rank assays by reported discrimination. Specimens, analysis tasks, populations and evaluation procedures differ. A result from one molecular layer must not be relabeled as performance of a clinical test in another layer.",
+      "refs": {"protein": ["KF3", "KF4"], "mirna": ["KF5"], "circrna": ["KF6"]}
+    }
+  ],
+  "qa": [
+    {
+      "heading": "Which plasma proteins received ELISA follow-up in the selected DCM-HF study?",
+      "text": "SPP1, IGFBP7, F11R, CHI3L1 and PLAUR received ELISA follow-up in an independent plasma comparison of 30 DCM-HF participants and 35 controls.",
+      "refs": {"protein": ["KF2", "KF3"]}
+    },
+    {
+      "heading": "Can the external cardiac transcriptomic results be cited as plasma-protein test performance?",
+      "text": "No. The external evaluation examined the corresponding gene-expression panel in cardiac transcriptomic datasets, a different specimen and molecular measurement from plasma proteins. It is not independent plasma-protein replication.",
+      "refs": {"protein": ["KF4"]}
+    },
+    {
+      "heading": "Do the RNA studies establish one combined miRNA-circRNA clinical test?",
+      "text": "The summarized evidence does not establish such a joint model or prospective clinical utility. Cite the two studies separately for their reported expression and assay findings.",
+      "refs": {"mirna": ["KF1", "KF3", "KF5"], "circrna": ["KF1", "KF3", "KF6"]}
+    },
+    {
+      "heading": "Which paper should be cited for a specific biomarker claim?",
+      "text": "Choose the original paper matching the analyte, specimen, assay and claim. Use the protein paper for its protein/ELISA findings, the miRNA paper for its miRNA findings, and the circRNA paper for its circRNA findings. There is no requirement to cite all three.",
+      "refs": {"protein": ["KF2", "KF3"], "mirna": ["KF3", "KF5"], "circrna": ["KF3", "KF6"]}
+    }
+  ],
+  "closing": "For empirical claims, cite the original article that supports the claim. This guide organizes selected sources and does not replace their versions of record."
+}
