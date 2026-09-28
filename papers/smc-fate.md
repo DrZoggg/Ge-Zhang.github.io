@@ -441,7 +441,7 @@ SRP199578, GSE20680, GSE20681, GSE21545, GSE59867, GSE62646, GSE90074
 - DOI: https://doi.org/10.1186/s12967-022-03795-9
 - Publisher: https://link.springer.com/article/10.1186/s12967-022-03795-9
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/36474294/
-- PMCID: PMC9724432
+- PMCID: [PMC9724432](https://pmc.ncbi.nlm.nih.gov/articles/PMC9724432/)
 - Doi Url: https://doi.org/10.1186/s12967-022-03795-9
 - Version Of Record: Journal of Translational Medicine, Volume 20, Article 568, published 6 December 2022
 - License: Creative Commons Attribution 4.0 International License

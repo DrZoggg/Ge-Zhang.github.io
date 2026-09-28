@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 
 from citation_common import (
+    CITATION_METADATA_PATH,
     CITATIONS_DIR,
     citation_files,
     citation_record,
@@ -1260,7 +1261,42 @@ def render_research_cluster_html(cluster):
     )
 
 
-def render_deep_v2_html(content, related_papers, *, early_summary=False):
+def verified_pmc_provenance(publication, content, citation_data=None):
+    """Link an existing public V2 ID only when both reviewed sources agree."""
+    if not content or content.get("version") != 2 or is_withdrawn(publication):
+        return ""
+    doi = norm_doi(publication.get("doi"))
+    provenance = content.get("provenance", {})
+    pmcid = provenance.get("pmcid", "")
+    if (not doi or doi != norm_doi(content.get("doi"))
+            or not isinstance(pmcid, str) or not re.fullmatch(r"PMC[1-9]\d*", pmcid)):
+        return ""
+    if citation_data is None:
+        citation_data = json.loads(CITATION_METADATA_PATH.read_text(encoding="utf-8"))["papers"].get(doi, {})
+    if citation_data.get("pmcid") != pmcid:
+        return ""
+    destination = f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/"
+
+    def same_source(value):
+        if not isinstance(value, str):
+            return False
+        try:
+            url = urllib.parse.urlsplit(value)
+            return (url.scheme == "https" and url.hostname == "pmc.ncbi.nlm.nih.gov"
+                    and url.netloc == "pmc.ncbi.nlm.nih.gov"
+                    and url.path.rstrip("/") == f"/articles/{pmcid}"
+                    and not url.query and not url.fragment
+                    and value in (destination, destination.rstrip("/")))
+        except ValueError:
+            return False
+
+    existing = [v for k, v in provenance.items() if k.endswith("_url")]
+    if any(same_source(v) for v in existing):
+        return ""  # An equivalent provenance link is already rendered.
+    return destination if any(same_source(v) for v in citation_data.get("verified_sources", []) + existing) else ""
+
+
+def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url=""):
     study = content["study_profile"]
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
@@ -1415,7 +1451,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False):
     ]
     for key, value in content["provenance"].items():
         provenance_rows.append(
-            (v2_label(key), value if key.endswith("_url") else "", value)
+            (v2_label(key), value if key.endswith("_url") else pmc_url if key == "pmcid" else "", value)
         )
     provenance = "".join(
         "<dt>"
@@ -1575,7 +1611,7 @@ def render_research_cluster_markdown(cluster):
     return parts
 
 
-def render_deep_v2_markdown(content, related_papers):
+def render_deep_v2_markdown(content, related_papers, *, pmc_url=""):
     study = content["study_profile"]
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
@@ -1761,7 +1797,7 @@ def render_deep_v2_markdown(content, related_papers):
             "",
             f"- DOI: {doi_url(content['doi'])}",
             *[
-                f"- {v2_label(key)}: {value}"
+                f"- {v2_label(key)}: " + (f"[{value}]({pmc_url})" if key == "pmcid" and pmc_url else value)
                 for key, value in content["provenance"].items()
             ],
             "",
@@ -1774,15 +1810,15 @@ def render_deep_v2_markdown(content, related_papers):
     return "\n".join(parts)
 
 
-def render_deep_html(content, *, related_papers=None, early_summary=False):
+def render_deep_html(content, *, related_papers=None, early_summary=False, pmc_url=""):
     if content.get("version") == 2:
-        return render_deep_v2_html(content, related_papers or [], early_summary=early_summary)
+        return render_deep_v2_html(content, related_papers or [], early_summary=early_summary, pmc_url=pmc_url)
     return render_deep_v1_html(content)
 
 
-def render_deep_markdown(content, *, related_papers=None):
+def render_deep_markdown(content, *, related_papers=None, pmc_url=""):
     if content.get("version") == 2:
-        return render_deep_v2_markdown(content, related_papers or [])
+        return render_deep_v2_markdown(content, related_papers or [], pmc_url=pmc_url)
     return render_deep_v1_markdown(content)
 
 
@@ -1924,7 +1960,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             f'<ol class="paper-geo-v2__author-list">{author_items}</ol></div>'
         )
     deep_html = (
-        render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot)
+        render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot,
+                         pmc_url=verified_pmc_provenance(publication, deep_content, citation_data))
         if deep_content is not None
         else ""
     )
@@ -2054,7 +2091,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     if deep_content is not None:
         if official_abstract:
             lines.append(render_official_abstract_markdown(official_abstract, doi))
-        lines.append(render_deep_markdown(deep_content, related_papers=related_papers))
+        lines.append(render_deep_markdown(deep_content, related_papers=related_papers,
+                                         pmc_url=verified_pmc_provenance(publication, deep_content)))
     elif official_abstract:
         lines.append(render_official_abstract_markdown(official_abstract, doi))
     if publication.get("paper_geo_status") == "pending":

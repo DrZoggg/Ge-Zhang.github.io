@@ -10,6 +10,32 @@ from sync_common import ROOT, load_master
 
 BASE = '72075bc52098e0fab8a22bd33828e15601fe6c6a'
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
+# Independently reviewed R2 fixtures; not a production PMCID data source.
+PMC_LINKS = {
+    '10.1038/s41467-024-50415-9': 'PMC11310499',
+    '10.1021/acs.jproteome.4c00522': 'PMC11385702',
+    '10.1186/s12967-022-03795-9': 'PMC9724432',
+    '10.1016/j.isci.2023.107587': 'PMC10470306',
+    '10.1172/jci194175': 'PMC12987658',
+}
+
+
+def without_approved_pmc_link(before, after, doi):
+    pmcid = PMC_LINKS.get(doi)
+    if not pmcid:
+        return after
+    url = f'https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/'
+    plain = f'<dt>PMCID</dt><dd>{pmcid}</dd>'
+    linked = f'<dt>PMCID</dt><dd><a href="{url}">{pmcid}</a></dd>'
+    pattern = r'(<section[^>]* data-v2-section="provenance">)(.*?)(</section>)'
+    old = list(re.finditer(pattern, before, re.S))
+    new = list(re.finditer(pattern, after, re.S))
+    if len(old) != 1 or len(new) != 1 or old[0][2].count(plain) != 1:
+        raise ValueError('Missing original PMCID provenance fixture')
+    if new[0][2] != old[0][2].replace(plain, linked, 1):
+        raise ValueError('Missing/changed/moved/duplicated PMC provenance link')
+    # Remove only this independently checked wrapper, in this exact section.
+    return after[:new[0].start(2)] + new[0][2].replace(linked, plain, 1) + after[new[0].end(2):]
 
 
 class Contract(HTMLParser):
@@ -48,6 +74,7 @@ class Contract(HTMLParser):
 
 
 def validate_pair(before, after, doi):
+    after = without_approved_pmc_link(before, after, doi)
     navigation = guide_navigation(doi)
     if navigation:
         if after.count(navigation) != 1:raise ValueError('Missing/changed/duplicated guide navigation')
@@ -104,7 +131,10 @@ class PresentationTests(unittest.TestCase):
         self.reject(self.after.replace('not prospective incident-DCM prediction','prospective incident-DCM prediction',1))
     def test_duplicate_kf_anchor(self):self.reject(self.after.replace('id="kf2"','id="kf1"',1))
     def test_nonallowlist_change(self):
-        with self.assertRaisesRegex(ValueError,'Non-allowlist'):validate_pair('original','changed','10.1016/j.isci.2023.107587')
+        before=baseline('papers/apvs.html')
+        after=(ROOT/'papers/apvs.html').read_text(encoding='utf-8')
+        with self.assertRaisesRegex(ValueError,'Non-allowlist'):
+            validate_pair(before,after.replace('</main>','<p>Unauthorized change</p></main>',1),'10.1016/j.isci.2023.107587')
     def test_citation_or_copy_payload_change(self):
         self.reject(self.after.replace('Plain citation','Changed citation',1))
         self.reject(self.after.replace('"finding_id": "KF1"','"finding_id": "KF9"',1))

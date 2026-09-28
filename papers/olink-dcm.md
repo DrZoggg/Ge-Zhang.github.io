@@ -413,7 +413,7 @@ biomarker discovery, independent assay replication, diagnostic discrimination, c
 - DOI: https://doi.org/10.1021/acs.jproteome.4c00522
 - Publisher: https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00522
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/39129220/
-- PMCID: PMC11385702
+- PMCID: [PMC11385702](https://pmc.ncbi.nlm.nih.gov/articles/PMC11385702/)
 - Doi Url: https://doi.org/10.1021/acs.jproteome.4c00522
 - Version Of Record: Journal of Proteome Research, Volume 23, Issue 9, pages 4139-4150; published online 12 August 2024 and in issue 6 September 2024
 - License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)

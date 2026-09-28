@@ -438,7 +438,7 @@ GSE59867, GSE62646, GSE28829, GSE41571, GSE48060, GSE60993, GSE141512, GSE21545,
 - DOI: https://doi.org/10.1016/j.isci.2023.107587
 - Publisher: https://www.cell.com/iscience/fulltext/S2589-0042(23)01664-4
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/37664595/
-- PMCID: PMC10470306
+- PMCID: [PMC10470306](https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/)
 - Code: https://github.com/DrZoggg/APVS
 - Evidence Basis: Version of record and PMC full text
 
