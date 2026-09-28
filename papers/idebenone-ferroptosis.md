@@ -31,6 +31,12 @@ Markdown record: https://drgezhang.com/papers/idebenone-ferroptosis.md
 15. Jinying Zhang
 16. Junnan Tang
 
+## Official Abstract
+
+Cardiovascular diseases (CVDs) are the leading causes of mortality worldwide. As a type of CVDs, myocardial infarction (MI) induces ischemia hypoxia, which leads to excessive reactive oxygen species (ROS), resulting in multiple cell deaths and contributing to the subsequent development of heart failure or premature death. Recent evidence indicates that ROS-induced lipid peroxidation promotes autophagy and ferroptosis, leading to the loss of healthy myocardium and resulting in the dysfunction of cardiac tissue. Theoretically, cardiac function would be preserved after MI by inhibiting autophagy and ferroptosis. As an analog of coenzyme Q10 (CoQ10) and a clinically approved drug, idebenone would be used to inhibit ferroptosis and preserve cardiac function due to its capacity to improve mitochondrial physiology with antioxidant and anti-inflammatory properties. Here, we confirmed that the addition of idebenone inhibited H2O2-induced and RSL3-induced ferroptosis. Furthermore, the ROS-AMPK-mTOR pathway axis was identified as the signaling pathway that idebenone stimulated to prevent excessive autophagy and consequent ferroptosis. In the MI animal model, idebenone demonstrated a cardioprotective role by regulating ROS-dependent autophagy and inhibiting ferroptosis, which paves the way for the future clinical translation of idebenone in MI management.
+
+Text reproduced verbatim from PubMed indexed abstract ([source](https://pubmed.ncbi.nlm.nih.gov/36740037/)); [DOI](https://doi.org/10.1016/j.ejphar.2023.175569); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
+
 ## Evidence Scale
 
 **Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction**

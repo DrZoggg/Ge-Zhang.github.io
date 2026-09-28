@@ -1,0 +1,67 @@
+{
+  "baseline_sha": "27209412a9f81b38a64fc30b05c37e411bf25831",
+  "baseline_dois": [
+    "10.1038/s41467-024-50415-9",
+    "10.1038/s41698-026-01699-1",
+    "10.1186/s12967-022-03795-9",
+    "10.1172/jci194175",
+    "10.1016/j.isci.2023.107587",
+    "10.1002/ehf2.14003",
+    "10.1021/acs.jproteome.4c00522",
+    "10.1002/mdr2.70052",
+    "10.1186/s12915-025-02400-x",
+    "10.1136/jitc-2024-010127",
+    "10.1111/jcmm.17789",
+    "10.1111/jcmm.70258",
+    "10.2147/ijn.s522157",
+    "10.1038/s41598-024-65236-5",
+    "10.1002/mdr2.70004",
+    "10.3389/fcvm.2025.1724572",
+    "10.3389/fpubh.2025.1521372",
+    "10.18632/aging.205564",
+    "10.1002/ggn2.202500053"
+  ],
+  "baseline_records_sha256": "64fc9a64665257ffc47889fe59cc4a40e3bbeb19dcfe539bae5f92d959b2750f",
+  "papers": {
+    "10.3389/fonc.2021.659217": {
+      "slug": "doi-10-3389-fonc-2021-659217",
+      "record_sha256": "0826e86c70fe008cba3c6794f4892add95cb8c9214c1411fe8b373426610790f",
+      "text_sha256": "0031d3ad5762a11ff1b8c95fd7f5425b2d8277b25264b70fc1a22da1f9d9ea11",
+      "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full",
+      "source_sha256": "97ff5b63c653ab0004767fa22970e7063b5d4a2dc0f934ac7135e84bdd4b80e9",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "HTML entities decoded; inline italic boundaries joined with one space; whitespace strip; original punctuation/numbers/wording kept"
+    },
+    "10.1111/jcmm.70725": {
+      "slug": "doi-10-1111-jcmm-70725",
+      "record_sha256": "ce457877b43b3ed6ea4279ab58514f3bfa92e7563b0110daa5bb37c6c61831ed",
+      "text_sha256": "cea6c7972f88c53c12c4192388213bd16f4634789a6f6bcc0fdc2a116fe2379c",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12328994/",
+      "source_sha256": "dff71eac329349cde9742da33e039cc8f2cb60b0c09bbb331e76f2f66fa68964",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "XML entities decoded; whitespace collapsed only; original Unicode dashes/wording/punctuation retained"
+    },
+    "10.1093/eurheartj/ehaf523": {
+      "slug": "doi-10-1093-eurheartj-ehaf523",
+      "record_sha256": "5e9910f2dfc8122da46e0e0db59e8bca2ba212f53979f8988d2fa88f5d8e4e79",
+      "text_sha256": "fcda7220fe14abfe9b17b0149c08542e0e6a46bc2715848cd555e500d1d4da52",
+      "source_url": "https://academic.oup.com/eurheartj/article/46/45/4969/8212255",
+      "source_sha256": "1d2a79678dcd0864f15bca43d20f2bdef0e9ab79b1510465139d8bc3941bd8ac",
+      "license": "OUP-AUTHOR-ABSTRACT-REUSE",
+      "license_url": "https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy",
+      "normalization": "HTML entities decoded; inline emphasis removed and superscripts flattened without inserted spaces; whitespace collapsed only"
+    },
+    "10.1016/j.ejphar.2023.175569": {
+      "slug": "idebenone-ferroptosis",
+      "record_sha256": "6713bbe27edb4b1dec13d8697a672db6a5c062d1c049916713fd1d2216e17c11",
+      "text_sha256": "29d4ed1de0700069dc09f6961d6b752a585da9b715994711701533a611ae4357",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36740037/",
+      "source_sha256": "572dbb5edaba4d8d53ad46cd7cd892e8fb1a33f502d01f5e65090873dc16c68c",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "XML entities decoded; subscript markup flattened H2O2 without added spaces; whitespace collapsed only"
+    }
+  }
+}

@@ -40,6 +40,26 @@ Markdown record: https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.md
 24. Dongyu Zhao
 25. Xunde Xian
 
+## Official Abstract
+
+### Background and Aims
+
+Atherosclerosis is a chronic inflammatory disorder with high morbidity and mortality rates worldwide. Emerging evidence has reported that kinesin family member 13B (KIF13B), a crucial motor protein, integrates hepatic lipid metabolism and inflammatory response to protect liver disease. However, the relationship between KIF13B and atherosclerosis remains unknown. The present study aimed to elucidate the specific role of KIF13B in atherosclerosis and its potential therapeutic significance.
+
+### Methods
+
+The investigation first assessed the relationship between the expression levels of KIF13B and the progression of atherosclerosis in human cohort data and carotid plaques from patients. Subsequently, the authors generated Kif13b knockout (Kif13b−/−) mice on low-density lipoprotein receptor (Ldlr)-deficient background (Ldlr−/−) to obtain double knockouts (Kif13b−/−;Ldlr−/−) and myeloid-specific Kif13b knockout mice (Lyz2 Cre;Kif13bf/f) with adeno-associated virus 8 (AAV8)-mediated overexpression of proprotein convertase subtilisin/kexin type 9 (PCSK9). Moreover, Ldlr−/− mice received bone marrow transplants from either Kif13b−/−;Ldlr−/− or Ldlr−/− mice and were fed a Western diet (WD) for 12 weeks.
+
+### Results
+
+KIF13B expression was significantly reduced in patients with atherosclerosis and negatively associated with the severity of atherosclerotic progress in WD-fed Ldlr−/− mice. In contrast to Kif13b−/−;Ldlr−/− mice showing a significant increase in plasma total cholesterol and more atherosclerosis lesions compared with the corresponding control mice, depletion of myeloid-derived Kif13b and bone marrow transplantation with macrophages lacking Kif13b both did not alter plasma lipid levels but elicited the larger atherosclerotic plaques with increased macrophage infiltration and more apoptotic cells. In vitro studies showed that upon oxidized low-density lipoprotein treatment, macrophages with Kif13b deficiency also display significantly increased cholesterol accumulation and impaired efferocytosis with reduced MER proto-oncogene, tyrosine kinase (MERTK) expression. Mechanistic study revealed that loss of Kif13b decreased the expression of Itchy E3 ubiquitin protein ligase (ITCH), leading to accelerated ubiquitination and degradation of MERTK mediated by Casitas B-lineage lymphoma (CBL) in macrophages. Moreover, oral administration of NX-1607, a CBL antagonist, significantly reversed the reduction of MERTK protein level and defective efferocytosis, ultimately protecting against atherosclerotic development caused by Kif13b deficiency in vivo.
+
+### Conclusions
+
+The study results revealed that KIF13B is a crucial modulator responsible for maintaining proper macrophage efferocytosis to prevent atherosclerotic development through KIF13B/ITCH/CBL/MERTK axis, suggesting that KIF13B will be a potential therapeutic target for the treatment of atherosclerosis in future clinical trials.
+
+Text reproduced verbatim from publisher ([source](https://academic.oup.com/eurheartj/article/46/45/4969/8212255)); [DOI](https://doi.org/10.1093/eurheartj/ehaf523); [OUP-AUTHOR-ABSTRACT-REUSE](https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy).
+
 ## Evidence Scale
 
 **The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice**

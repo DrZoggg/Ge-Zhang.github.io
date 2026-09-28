@@ -12,6 +12,16 @@ LICENSE_URLS = {
     "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     "CC-BY-NC-ND-4.0": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
 }
+# EHJ author reuse permits this article's abstract/citation, not its full text.
+# This permission is article-specific and must not authorize other sources.
+DOI_LICENSE_URLS = {
+    "10.1016/j.ejphar.2023.175569": {
+        "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    },
+    "10.1093/eurheartj/ehaf523": {
+        "OUP-AUTHOR-ABSTRACT-REUSE": "https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy",
+    },
+}
 SOURCES = {
     "10.1002/ggn2.202500053": ("advanced.onlinelibrary.wiley.com", "/doi/full/10.1002/ggn2.202500053"),
     "10.18632/aging.205564": ("www.aging-us.com", "/article/205564/text"),
@@ -33,10 +43,13 @@ SOURCES = {
     "10.1172/jci194175": ("www.jci.org", "/articles/view/194175"),
     "10.1021/acs.jproteome.4c00522": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11385702/"),
     "10.1002/mdr2.70052": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70052"),
+    "10.3389/fonc.2021.659217": ("www.frontiersin.org", "/journals/oncology/articles/10.3389/fonc.2021.659217/full"),
+    "10.1111/jcmm.70725": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12328994/"),
+    "10.1093/eurheartj/ehaf523": ("academic.oup.com", "/eurheartj/article/46/45/4969/8212255"),
+    "10.1016/j.ejphar.2023.175569": ("pubmed.ncbi.nlm.nih.gov", "/36740037/"),
 }
 EXCLUDED = {
     "10.1200/po.24.00089",
-    "10.1093/eurheartj/ehaf523",
 }
 
 
@@ -66,12 +79,17 @@ def load_official_abstracts(publications):
         required = {"source_type", "source_url", "license", "license_url", "verbatim", "abstract"}
         if not isinstance(record, dict) or set(record) != required:
             raise ValueError(f"Official abstract fields invalid for {doi}.")
-        if record["source_type"] not in {"version_of_record", "publisher", "pmc"}:
+        # This indexed abstract is permitted only with its exact DOI/PMID and
+        # independently verified article-specific publisher CC BY grant.
+        source_types = ({"pubmed"} if doi == "10.1016/j.ejphar.2023.175569"
+                        else {"version_of_record", "publisher", "pmc"})
+        if record["source_type"] not in source_types:
             raise ValueError(f"Official abstract source type invalid for {doi}.")
         parsed = urlparse(record["source_url"])
         if (parsed.scheme, parsed.netloc, parsed.path) != ("https", *SOURCES[doi]) or parsed.query or parsed.fragment:
             raise ValueError(f"Official abstract source URL invalid for {doi}.")
-        if record["license"] not in LICENSE_URLS or record["license_url"] != LICENSE_URLS[record["license"]]:
+        permitted_licenses = DOI_LICENSE_URLS.get(doi, LICENSE_URLS)
+        if record["license"] not in permitted_licenses or record["license_url"] != permitted_licenses[record["license"]]:
             raise ValueError(f"Official abstract license invalid for {doi}.")
         if record["verbatim"] is not True:
             raise ValueError(f"Official abstract must be verbatim for {doi}.")

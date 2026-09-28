@@ -324,6 +324,84 @@
         "type": "unstructured",
         "text": "Artificial intelligence (AI) has advanced predictive modeling in medicine, yet many models remain disease-specific and difficult to generalize across clinical settings. Key challenges include the trade-off between interpretability and accuracy, reliance on single algorithms, limited external validation, and biased feature importance estimation.\n\nIn this Perspective, we discuss how methodological advances in computational sciences, including automated machine learning (AutoML) and neural architecture search (NAS), reveal a gap between automated hybrid systems and current clinical modeling practices.\n\nTo address these challenges, we outline a principled artificial intelligence hybrid ensemble framework based on three design principles: integration of diverse learners, consensus-driven validation across independent cohorts, and transparent feature attribution using Shapley Additive exPlanations (SHAP). This framework emphasizes methodological robustness, interpretability, and cross-disease applicability to support the translation of artificial intelligence models into clinical practice."
       }
+    },
+    "10.3389/fonc.2021.659217": {
+      "source_type": "publisher",
+      "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Purpose",
+            "text": "As a novel small-molecule vascular endothelial growth factor receptor-2 tyrosine kinase inhibitor (VEGFR2-TKI), Methylsulfonic apatinib (apatinib) exhibits a specific antitumor effect in various solid tumors via inhibition of angiogenesis. The present study was performed to evaluate the clinical efficacy and safety of apatinib in the treatment of advanced cholangiocarcinoma after failed gemcitabine-based chemotherapy."
+          },
+          {
+            "label": "Patients and Methods",
+            "text": "This was a prospective open-label phase II trial (NCT03521219). A total of 32 patients, in whom gemcitabine-based first-line chemotherapy for advanced intrahepatic cholangiocarcinoma had failed, were consecutively enrolled in a prospective, open, exploratory, and single-center clinical trial from November 2017 to November 2018. They were treated with apatinib mesylate second-line monotherapy (orally, 500 mg per day for a cycle of 28 days) until progressive disease or unacceptable toxicity. Using Response Evaluation Criteria in Solid Tumor version 1.1 (RECIST 1.1) and the Common Terminology Criteria for Adverse Events version 4.0 (NCI-CTCAE 4.0), the efficacy and adverse were evaluated, respectively. Kaplan-Meier method was used for survival analysis."
+          },
+          {
+            "label": "Results",
+            "text": "Twenty-six patients were enrolled in full analysis set. At the end of follow-up, two patients were lost to follow-up, 24 of 26 patients in FAS were included in efficacy analyses. For the efficacy analysis set, the objective response rate (ORR) was 20.8% [95% confidence interval (CI): 9.24–40.47%] and the disease control rate (DCR) was 62.5% (95% CI: 112.86–387.14 days). One patient (4%) showed complete response (CR), 4 patients (17%) showed partial response (PR), 10 patients (41.7%) stable disease (SD), and 9 patients (37.5%) had progressive disease (PD). Meanwhile, apatinib therapy achieved the median progression-free survival PFS was 95 days (95% CI: 79.70–154.34 days), and the median OS was 250 days (95% CI: 112.86–387.14 days). Furthermore, univariate analysis revealed that age and tumor’s anatomic location significantly affected PFS (P < 0.05). The most common clinically adverse events (AEs) included myelosuppression (69.2%), hypertension (57.7%), proteinuria (46.2%). The AEs were mild, mainly in grade 1 or 2, and no toxicity-induced death occurred."
+          },
+          {
+            "label": "Conclusion",
+            "text": "Apatinib monotherapy is an effective and promising regimen for treating patients with advanced cholangiocarcinoma who experienced failure of gemcitabine-based chemotherapy."
+          }
+        ]
+      }
+    },
+    "10.1111/jcmm.70725": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12328994/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Abdominal aortic aneurysm (AAA) is the most prevalent and lethal form of arterial aneurysm, frequently manifesting asymptomatically until a catastrophic rupture occurs. While various diagnostic imaging tools and several potential biomarkers have been explored for the purpose of early AAA screening, the usage of liquid biopsy such as extracellular vesicles (EVs)‐carried protein for the early diagnosis of AAA is still being overlooked. In this study, we enrolled 18 AAA patients and nine healthy normal controls, including data from the National Drug Clinical Trial Organisation—Vascular Surgery (NDCTO) (in‐house cohort) and the Second Clinical Medical College, Jinan University (Shenzhen People's Hospital) (external cohort). We employed Olink's proximity extension assay (PEA) technology based on the plasma EV proteins and first comprehensively characterised the proteomics landscape in circulating EV underlying AAA disease development. A complex profile of differential EV proteins and EV protein–protein interactions network in AAA patients was identified. The differentially expressed EV proteins in AAA patients were found to be significantly associated with several enriched pathways, including the cellular response to cytokine stimuli, inflammatory response, and the regulation of the glucocorticoid receptor (GR) pathway. Moreover, five hub proteins were identified as being of particular significance: these were Interleukin‐4, Interleukin‐6, MCP‐1, Neurturin, and Oncostatin‐M. The Olink proteomics technique was utilised in order to identify these proteins. The significance of these proteins was further validated through Western blotting and enzyme‐linked immunosorbent assay (ELISA) in the external cohort. The five EV proteins displayed reliable performance and robustness for distinguishing AAA from healthy people, revealing high accuracy with AUC values of 0.760, 0.840, 0.800, 0.840, and 0.900, respectively. The present study has revealed the plasma EV proteins landscape within AAA and further uncovered their potential roles in the pathogenesis of the disease. This presents a new direction for clinical diagnosis and management of AAA. Consequently, these five EV proteins have the potential to serve as useful biomarkers for the diagnosis and prediction of AAA. Further research is warranted to explore their potential as therapeutic targets."
+      }
+    },
+    "10.1093/eurheartj/ehaf523": {
+      "source_type": "publisher",
+      "source_url": "https://academic.oup.com/eurheartj/article/46/45/4969/8212255",
+      "license": "OUP-AUTHOR-ABSTRACT-REUSE",
+      "license_url": "https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background and Aims",
+            "text": "Atherosclerosis is a chronic inflammatory disorder with high morbidity and mortality rates worldwide. Emerging evidence has reported that kinesin family member 13B (KIF13B), a crucial motor protein, integrates hepatic lipid metabolism and inflammatory response to protect liver disease. However, the relationship between KIF13B and atherosclerosis remains unknown. The present study aimed to elucidate the specific role of KIF13B in atherosclerosis and its potential therapeutic significance."
+          },
+          {
+            "label": "Methods",
+            "text": "The investigation first assessed the relationship between the expression levels of KIF13B and the progression of atherosclerosis in human cohort data and carotid plaques from patients. Subsequently, the authors generated Kif13b knockout (Kif13b−/−) mice on low-density lipoprotein receptor (Ldlr)-deficient background (Ldlr−/−) to obtain double knockouts (Kif13b−/−;Ldlr−/−) and myeloid-specific Kif13b knockout mice (Lyz2 Cre;Kif13bf/f) with adeno-associated virus 8 (AAV8)-mediated overexpression of proprotein convertase subtilisin/kexin type 9 (PCSK9). Moreover, Ldlr−/− mice received bone marrow transplants from either Kif13b−/−;Ldlr−/− or Ldlr−/− mice and were fed a Western diet (WD) for 12 weeks."
+          },
+          {
+            "label": "Results",
+            "text": "KIF13B expression was significantly reduced in patients with atherosclerosis and negatively associated with the severity of atherosclerotic progress in WD-fed Ldlr−/− mice. In contrast to Kif13b−/−;Ldlr−/− mice showing a significant increase in plasma total cholesterol and more atherosclerosis lesions compared with the corresponding control mice, depletion of myeloid-derived Kif13b and bone marrow transplantation with macrophages lacking Kif13b both did not alter plasma lipid levels but elicited the larger atherosclerotic plaques with increased macrophage infiltration and more apoptotic cells. In vitro studies showed that upon oxidized low-density lipoprotein treatment, macrophages with Kif13b deficiency also display significantly increased cholesterol accumulation and impaired efferocytosis with reduced MER proto-oncogene, tyrosine kinase (MERTK) expression. Mechanistic study revealed that loss of Kif13b decreased the expression of Itchy E3 ubiquitin protein ligase (ITCH), leading to accelerated ubiquitination and degradation of MERTK mediated by Casitas B-lineage lymphoma (CBL) in macrophages. Moreover, oral administration of NX-1607, a CBL antagonist, significantly reversed the reduction of MERTK protein level and defective efferocytosis, ultimately protecting against atherosclerotic development caused by Kif13b deficiency in vivo."
+          },
+          {
+            "label": "Conclusions",
+            "text": "The study results revealed that KIF13B is a crucial modulator responsible for maintaining proper macrophage efferocytosis to prevent atherosclerotic development through KIF13B/ITCH/CBL/MERTK axis, suggesting that KIF13B will be a potential therapeutic target for the treatment of atherosclerosis in future clinical trials."
+          }
+        ]
+      }
+    },
+    "10.1016/j.ejphar.2023.175569": {
+      "source_type": "pubmed",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36740037/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Cardiovascular diseases (CVDs) are the leading causes of mortality worldwide. As a type of CVDs, myocardial infarction (MI) induces ischemia hypoxia, which leads to excessive reactive oxygen species (ROS), resulting in multiple cell deaths and contributing to the subsequent development of heart failure or premature death. Recent evidence indicates that ROS-induced lipid peroxidation promotes autophagy and ferroptosis, leading to the loss of healthy myocardium and resulting in the dysfunction of cardiac tissue. Theoretically, cardiac function would be preserved after MI by inhibiting autophagy and ferroptosis. As an analog of coenzyme Q10 (CoQ10) and a clinically approved drug, idebenone would be used to inhibit ferroptosis and preserve cardiac function due to its capacity to improve mitochondrial physiology with antioxidant and anti-inflammatory properties. Here, we confirmed that the addition of idebenone inhibited H2O2-induced and RSL3-induced ferroptosis. Furthermore, the ROS-AMPK-mTOR pathway axis was identified as the signaling pathway that idebenone stimulated to prevent excessive autophagy and consequent ferroptosis. In the MI animal model, idebenone demonstrated a cardioprotective role by regulating ROS-dependent autophagy and inhibiting ferroptosis, which paves the way for the future clinical translation of idebenone in MI management."
+      }
     }
   }
 }

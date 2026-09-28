@@ -1836,6 +1836,7 @@ def render_official_abstract_html(record, doi):
         "version_of_record": "Version of Record",
         "publisher": "publisher",
         "pmc": "PMC",
+        "pubmed": "PubMed indexed abstract",
     }[record["source_type"]]
     return (
         '<section id="official-abstract" class="paper-geo-v2__section">'
@@ -1856,7 +1857,7 @@ def render_official_abstract_markdown(record, doi):
             parts.extend([f"### {section['label']}", "", section["text"], ""])
     else:
         parts.extend([abstract["text"], ""])
-    source = {"version_of_record": "Version of Record", "publisher": "publisher", "pmc": "PMC"}[record["source_type"]]
+    source = {"version_of_record": "Version of Record", "publisher": "publisher", "pmc": "PMC", "pubmed": "PubMed indexed abstract"}[record["source_type"]]
     parts.extend([
         f"Text reproduced verbatim from {source} ([source]({record['source_url']})); "
         f"[DOI]({doi_url(doi)}); [{record['license']}]({record['license_url']}).",
