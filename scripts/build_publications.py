@@ -19,7 +19,7 @@ from citation_common import (
 )
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
-from evidence_reuse import enhance_html, navigation
+from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
     DEEP_CONTENT_DIR,
     LEGACY_DEEP_SLUGS,
@@ -1953,6 +1953,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
     if is_v2:
         deep_html = enhance_html(deep_html, publication, deep_content, canonical)
+        deep_html += export_html(publication, deep_content)
     return with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
@@ -2325,6 +2326,23 @@ def build_site():
         if norm_doi(item.get("doi"))
     }
     resolve_research_clusters(deep_contents, public_by_doi)
+    evidence_dir = ROOT / "assets/evidence"
+    evidence_dir.mkdir(parents=True, exist_ok=True)
+    expected_evidence_files = set()
+    for item in public_items:
+        content = deep_contents.get(publication_token(item))
+        if content and content.get("version") == 2:
+            name = item["slug"] + ".csv"
+            expected_evidence_files.add(name)
+            # newline='' is required for deterministic standard-library CSV bytes on Windows.
+            payload = render_csv(item, content, item["paper_url"]).encode("utf-8")
+            target = evidence_dir / name
+            if not target.exists() or target.read_bytes() != payload:
+                target.write_bytes(payload)
+    stale = {p.name for p in evidence_dir.glob("*.csv")} - expected_evidence_files
+    if stale:
+        raise ValueError("Unexpected evidence exports (review membership before removal): " + ", ".join(sorted(stale)))
+    write_text_if_changed(evidence_dir / "README.md", "# Study-level evidence exports\n\n" + EXPORT_NOTICE + "\n\n" + CSV_SAFETY + "\n\nList fields are canonical JSON strings. scientific_source_sha256 is a deterministic scientific JSON fingerprint, not a deployment timestamp.\n")
     citation_by_slug = {
         item["slug"]: citation_record(item, citation_metadata, config["site_url"])
         for item in public_items

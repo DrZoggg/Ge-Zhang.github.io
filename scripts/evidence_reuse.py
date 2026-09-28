@@ -1,8 +1,67 @@
 """Source-preserving evidence actions, shared by HTML controls and exports."""
 import html
+import csv
+import hashlib
+import io
 import json
 import re
 from evidence_discovery import ui
+
+EXPORT_NOTICE = ('Study-level author-maintained evidence summary. '
+                 'Not participant-level data and not a ready-to-pool meta-analysis dataset. '
+                 'For formal citation, use the original article DOI.')
+CSV_SAFETY = ('Formula safety: cells starting with =, +, -, @ (after leading whitespace), '
+              'or tab/CR/LF are prefixed with an apostrophe. Treat all cells as text; '
+              'remove only that safety prefix when recovering the original string.')
+CSV_FIELDS = ['doi','paper_title','canonical_paper_url','finding_url','finding_id','record_kind',
+              'study_design','evidence_type','claim','context','reported_evidence','source_locator',
+              'scope_does_not_establish','limitations','single_finding_matrix_scope',
+              'scientific_source_sha256','export_notice','csv_safety']
+
+
+def csv_safe(value):
+    value = str(value)
+    if value.startswith(('\t','\r','\n')) or value.lstrip().startswith(('=','+','-','@')):
+        return "'" + value
+    return value
+
+
+def canonical_json(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+
+
+def evidence_rows(publication, content, canonical):
+    # Runtime-only resolved related-research helpers are not scientific source fields.
+    source = {k:v for k,v in content.items() if not k.startswith('_')}
+    fingerprint = hashlib.sha256(canonical_json(source).encode('utf-8')).hexdigest()
+    for f in content['key_findings']:
+        yield {'doi':content['doi'],'paper_title':publication['title'],'canonical_paper_url':canonical,
+               'finding_url':canonical+'#'+f['id'].lower(),'finding_id':f['id'],
+               'record_kind':'argument' if is_argument(content) else 'finding',
+               'study_design':content['study_profile']['study_design'],
+               'evidence_type':content['study_profile']['evidence_type'],
+               'claim':f['claim'],'context':f['context'],'reported_evidence':canonical_json(f['evidence']),
+               'source_locator':f['source_locator'],
+               'scope_does_not_establish':canonical_json(content['evidence_scope']['does_not_establish']),
+               'limitations':canonical_json(content['limitations']),
+               'single_finding_matrix_scope':canonical_json([r['scope'] for r in content.get('citation_layer',{}).get('evidence_matrix',[]) if r.get('evidence_refs')==[f['id']]]),
+               'scientific_source_sha256':fingerprint,'export_notice':EXPORT_NOTICE,'csv_safety':CSV_SAFETY}
+
+
+def render_csv(publication, content, canonical):
+    stream = io.StringIO(newline='')
+    writer = csv.DictWriter(stream,fieldnames=CSV_FIELDS,lineterminator='\n')
+    writer.writeheader()
+    for row in evidence_rows(publication,content,canonical):
+        writer.writerow({k:csv_safe(v) for k,v in row.items()})
+    return stream.getvalue()
+
+
+def export_html(publication, content):
+    return ui('<section class="evidence-export"><h2>Study-level evidence table</h2><p>'+EXPORT_NOTICE+'</p>'
+              '<a download data-evidence-export="'+html.escape(content['doi'],quote=True)+'" href="../assets/evidence/'
+              +html.escape(publication['slug'],quote=True)+'.csv">Download study-level evidence CSV (UTF-8)</a>'
+              '<p>'+CSV_SAFETY+'</p></section>')
 
 
 def is_argument(content):

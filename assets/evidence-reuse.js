@@ -31,4 +31,9 @@
       } finally { button.disabled = false; }
     });
   });
+  document.querySelectorAll('a[data-evidence-export]').forEach(link => {
+    link.addEventListener('click', () => {
+      track('evidence_export', link.dataset.evidenceExport, {citation_format: 'evidence_csv'});
+    });
+  });
 })();

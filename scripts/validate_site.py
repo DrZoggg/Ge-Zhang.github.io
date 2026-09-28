@@ -31,6 +31,8 @@ from build_publications import (
     v2_value,
 )
 from official_abstracts import abstract_text, load_official_abstracts
+from validate_evidence import validate_evidence
+from evidence_discovery import without_evidence_ui
 from site_common import (
     LEGACY_DEEP_SLUGS,
     PAPERS_DIR,
@@ -323,6 +325,9 @@ def string_leaves(value):
 def validate_v2_rendered_page(
     content, publication, page, markdown, schema, public_by_doi, config
 ):
+    # Validate the original scientific sections exactly; separately validate all
+    # explicitly marked new controls/payloads with validate_evidence.
+    page = without_evidence_ui(page)
     label = f"{publication.get('slug') or publication.get('title')} Paper GEO 2.0"
     validate_deep_v2_content(content, label)
     require(content.get("version") == 2, f"{label} must use version 2.")
@@ -3089,6 +3094,12 @@ def validate_site():
         require(item.get("title", "") not in llms_full, "Withdrawn title in llms-full.txt.")
 
     citation_counts = validate_citations(public_expected, config)
+    discovery_public = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
+    discovery_contents = {
+        p["doi"]: json.loads(deep_content_path(p).read_text(encoding="utf-8"))
+        for p in discovery_public if p.get("paper_geo_status") == "v2"
+    }
+    evidence_counts = validate_evidence(ROOT, discovery_public, discovery_contents)
     result = {
         "master": len(master),
         "public": len(public_expected),
@@ -3103,6 +3114,7 @@ def validate_site():
         "schema_author_array_pages": schema_author_array_pages,
         "paper_geo_v2_pages": len(v2_dois),
         "citations": citation_counts,
+        "evidence_reuse": evidence_counts,
     }
     print("VALIDATION PASS")
     print(json.dumps(result, ensure_ascii=False, indent=2))
