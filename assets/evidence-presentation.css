@@ -4,3 +4,8 @@
 .hero .paper-geo-v2__authors{margin:14px 0}
 #official-abstract{margin-top:12px}
 @media(max-width:680px){.hero{padding-top:24px}}
+/* Long provenance URLs must not set the grid track's minimum width. */
+.paper-geo-v2__profile>*,.paper-geo-v2__provenance>*{min-width:0;overflow-wrap:anywhere}
+/* Keep narrow finding cards and their label/value tables inside the grid. */
+.paper-geo-v2__finding{min-width:0;overflow-wrap:anywhere}
+#cite-this-paper{overflow-wrap:anywhere}

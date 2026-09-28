@@ -1,6 +1,7 @@
 """Pilot-only layout and exact content contracts; no extractor dependencies."""
 import collections
 import json
+import re
 import subprocess
 import unittest
 from html.parser import HTMLParser
@@ -64,6 +65,12 @@ def validate_pair(before, after, doi):
 def baseline(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT).decode('utf-8')
 
 
+def validate_css(css):
+    for selector, declarations in re.findall(r'([^{}]+)\{([^{}]*)\}', css):
+        if re.search(r'\b(?:html|body)\b', selector) and re.search(r'overflow(?:-x)?\s*:\s*(?:hidden|clip)', declarations):
+            raise ValueError('Whole-page overflow masking is not a repair')
+
+
 class PresentationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -96,6 +103,10 @@ class PresentationTests(unittest.TestCase):
     def test_citation_or_copy_payload_change(self):
         self.reject(self.after.replace('Plain citation','Changed citation',1))
         self.reject(self.after.replace('"finding_id": "KF1"','"finding_id": "KF9"',1))
+    def test_no_page_overflow_masking(self):
+        validate_css((ROOT/'assets/evidence-presentation.css').read_text(encoding='utf-8'))
+        for bad in ['html,body{overflow-x:hidden}', 'body {overflow:clip}']:
+            with self.assertRaises(ValueError):validate_css(bad)
 
 
 if __name__=='__main__':unittest.main()
