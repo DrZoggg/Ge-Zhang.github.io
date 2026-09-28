@@ -19,6 +19,7 @@ from citation_common import (
 )
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
+from evidence_reuse import enhance_html, navigation
 from site_common import (
     DEEP_CONTENT_DIR,
     LEGACY_DEEP_SLUGS,
@@ -1950,6 +1951,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             "not replace the publisher version or assert a complete author list.</div></section>"
         )
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
+    if is_v2:
+        deep_html = enhance_html(deep_html, publication, deep_content, canonical)
     return with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
@@ -1963,14 +1966,14 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <meta property="og:type" content="article">
 <meta property="og:url" content="{html.escape(canonical, quote=True)}">
 {chr(10).join(citation)}
-<link rel="stylesheet" href="../assets/style.css">{'<script defer src="../assets/citation.js"></script>' if citation_data else ''}</head><body>
+<link rel="stylesheet" href="../assets/style.css">{'<script defer src="../assets/citation.js"></script>' if citation_data else ''}{ui('<link rel="stylesheet" href="../assets/evidence.css"><script defer src="../assets/evidence-reuse.js"></script>') if is_v2 else ''}</head><body>
 <header><nav><a class="brand" href="../index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks"><a href="../index.html#research">Research</a><a href="../publications.html">All publications</a><a href="../index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap">
 <section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">{html.escape(str(publication_type))} · {html.escape(str(year))} {deep_badge}</div>
 <h1 style="font-size:clamp(2.2rem,5vw,4rem)">{html.escape(str(title))}</h1>
 <p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
-<div class="links">{' '.join(links)}</div>
+<div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
 {(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
 {notice_html}

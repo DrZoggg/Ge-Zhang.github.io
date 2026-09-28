@@ -2,3 +2,8 @@
 .evidence-search-excerpt { white-space:pre-wrap; }
 #scientific-questions li { margin-block:1rem; }
 #scientific-questions li p { font-size:.9rem; margin:.3rem 0; }
+.evidence-navigation { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:.6rem; margin-top:1rem; }
+.evidence-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; padding-block:.75rem; }
+.evidence-actions button { font:inherit; cursor:pointer; padding:.4rem .7rem; }
+.evidence-copy-status { font-size:.9rem; }
+.evidence-copy-fallback { width:100%; min-height:16rem; white-space:pre-wrap; font:inherit; }

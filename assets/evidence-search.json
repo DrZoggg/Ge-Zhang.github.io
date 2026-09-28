@@ -125,7 +125,7 @@
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
       "category": "Evidence summary",
       "text": "Baseline multisystem biomarkers were associated with subsequent cardiovascular events in an observational analysis. Adjusted associations and statistical mediation do not establish prevention by lowering the score or an inflammatory marker, or a validated clinical prediction model.\nThis observational analysis relates baseline multisystem biomarkers to subsequent cardiovascular events. Its adjusted associations and mediation estimates inform epidemiological hypotheses; they do not demonstrate that lowering the score or an inflammatory marker prevents events. It is not a validated clinical prediction model.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#ev-summary",
       "limitation": false
     },
     {
@@ -269,7 +269,7 @@
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
       "category": "Evidence scope — supports",
       "text": "Observational population-level associations between biomarker-defined AL and incident CVD.\nNonlinearity and exploratory statistical mediation within the analyzed cohort.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#ev-scope",
       "limitation": false
     },
     {
@@ -278,7 +278,7 @@
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
       "category": "Limitations — does not establish",
       "text": "A causal prevention mechanism or efficacy of anti-inflammatory drugs.\nA prospectively validated individual clinical prediction tool.\nValidated benefits of a stress-management intervention.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#ev-scope",
       "limitation": true
     },
     {
@@ -287,7 +287,7 @@
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
       "category": "Limitations",
       "text": "Observational design does not establish causality; residual confounding remains possible.\nMissing-data selection limits interpretation of the analytic sample.\nBaseline AL and mediator measurements limit temporal interpretation of mediation.\nPopulation-specific thresholds may not transfer to other populations.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#ev-scope",
       "limitation": true
     },
     {
@@ -359,7 +359,7 @@
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
       "category": "Evidence summary",
       "text": "Narrative review of circadian immune-vascular mechanisms across cardiovascular disease, distinguishing preclinical chronotherapy rationale from heterogeneous and unresolved clinical timing evidence; no new data were created or analyzed.\nThis narrative review synthesizes experimental, mechanistic, epidemiological and clinical literature linking the circadian clock to cardiovascular immune and inflammatory biology. It organizes evidence around the CLOCK-BMAL1 transcriptional network, PER/CRY feedback, REV-ERB/ROR regulation, redox-sensitive signaling, NF-kB and NLRP3 inflammasome activity, cytokine and chemokine rhythms, and time-dependent immune-cell trafficking. These mechanisms are discussed across atherosclerosis, stroke, ischemic heart disease and heart failure. The review further evaluates preclinical chronotherapeutic strategies targeting clock and inflammatory pathways and contrasts them with a more limited and heterogeneous clinical evidence base. It does not report new experimental or clinical data, perform a meta-analysis, establish a universal cardiovascular dosing schedule, or demonstrate clinical efficacy for experimental clock-targeting compounds.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#ev-summary",
       "limitation": false
     },
     {
@@ -548,7 +548,7 @@
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
       "category": "Evidence scope — supports",
       "text": "Prior evidence links circadian clock networks with immune and vascular processes, inflammatory and redox pathways.\nImmune-cell number, trafficking and functional state can vary with circadian timing across experimental contexts.\nExperimental circadian disruption can alter cardiovascular inflammatory phenotypes, while cardiovascular physiology and events exhibit time-of-day patterns.\nPreclinical evidence provides a mechanistic rationale for chronotherapy; some cardiovascular drugs show dosing-time-dependent physiological effects.\nClinical chronotherapy remains an active and unresolved translational field.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#ev-scope",
       "limitation": false
     },
     {
@@ -557,7 +557,7 @@
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
       "category": "Limitations — does not establish",
       "text": "A new patient cohort, new experimental data or a newly analyzed dataset.\nA systematic review, meta-analysis or pooled quantitative effect size.\nOne universally causal circadian pathway across all cardiovascular diseases.\nHuman cardiovascular treatment efficacy of REV-ERB agonists or time-targeted NLRP3 or NF-kB inhibition.\nUniversal superiority of bedtime antihypertensive dosing or a dosing schedule suitable for every patient.\nReduced myocardial infarction or stroke outcomes from bedtime aspirin.\nEstablished optimal dosing for SGLT2 inhibitors, colchicine, mineralocorticoid receptor antagonists or ARNI.\nA guideline-level recommendation to change cardiovascular medication timing.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#ev-scope",
       "limitation": true
     },
     {
@@ -566,7 +566,7 @@
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
       "category": "Limitations",
       "text": "This is a narrative, non-systematic evidence synthesis with no new dataset or pooled effect estimate.\nSpecies, tissues, disease models and evidence levels are heterogeneous; causal animal or cell findings cannot automatically be generalized to human cardiovascular disease.\nConstitutive and inducible clock-gene knockout models may yield different findings.\nTreatment-timing evidence is uneven across cardiovascular drug classes and many proposed chronotherapy windows remain theoretical or preclinical.\nClinical antihypertensive timing evidence is conflicting, including Hygia-versus-BedMed differences.\nNo universal dosing recommendation is established; high-quality circadian-aware randomized clinical trials are needed.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#ev-scope",
       "limitation": true
     },
     {
@@ -656,7 +656,7 @@
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
       "category": "Evidence summary",
       "text": "This methodological Perspective argues for context-sensitive learner integration, evaluation across independent cohorts and cautious interpretation of feature attribution. Its deployment discussion identifies requirements for future clinical translation rather than reporting a newly validated model.\nThe Perspective connects clinical AI design to the practical demands of evaluating and interpreting ensemble models. It advocates combining complementary learners according to the clinical setting and selecting models through aggregate evaluation across independent cohorts. Its discussion of SHAP emphasizes that feature attributions depend on data distributions and should be considered alongside sensitivity analysis and calibration. Distribution shift, computational resources, standardization and clinical workflow integration frame the translation agenda. On this evidence page, these arguments support methodological choices and limitations discussions; performance estimates and empirical validation claims belong to the cited primary studies, not to this Perspective.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#ev-summary",
       "limitation": false
     },
     {
@@ -782,7 +782,7 @@
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
       "category": "Evidence scope — supports",
       "text": "Cite for a context-sensitive ensemble design rationale, not as an original comparison proving that a particular ensemble outperforms alternatives.\nCite when planning independent-cohort evaluation and model selection; obtain actual validation results from the relevant empirical studies.\nCite for methodological caution about attribution robustness; SHAP values are not evidence that a feature causally changes an outcome.\nCite for resource, evaluation and workflow considerations in a translation plan, not as proof of improved patient outcomes.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#ev-scope",
       "limitation": false
     },
     {
@@ -791,7 +791,7 @@
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
       "category": "Limitations — does not establish",
       "text": "A newly developed model with completed clinical validation or demonstrated cross-disease generalization.\nOriginal AUC, C-index, ablation or treatment-effect estimates generated in this Perspective.\nStable causal mechanisms inferred from SHAP feature attributions.\nProven patient-outcome improvement, clinical guideline status or regulatory approval.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#ev-scope",
       "limitation": true
     },
     {
@@ -800,7 +800,7 @@
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
       "category": "Limitations",
       "text": "This is a methodological Perspective, not a systematic review or meta-analysis with a reported systematic search protocol.\nClaims about samples and model performance in cited applications require the corresponding primary studies; those studies were not all independently re-audited for this page.\nProposed independent-cohort evaluation, attribution robustness checks and deployment principles still require empirical implementation and assessment.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#ev-scope",
       "limitation": true
     },
     {
@@ -926,7 +926,7 @@
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
       "category": "Evidence summary",
       "text": "A multicohort systems-biology study integrating 35 public GEO datasets, a 94,683-cell colorectal-cancer single-cell framework, cross-species circadian perturbation analyses, clinical/transcriptomic cohort evaluation, and CRC-cell experiments to develop ClockProCRC, characterize circadian-misalignment states in colorectal cancer, and prioritize SYNE1 as a functionally tested candidate regulator.\nThis study developed ClockProCRC as a transcriptomic framework for quantifying endogenous circadian misalignment in colorectal cancer (CRC). The article reports 3,758 samples across 35 public GEO datasets overall. Its primary GSE166555 single-cell cohort comprised 13 CRC tissue samples and 12 normal mucosal samples, yielding 94,683 cells after quality control. A 906-gene colon circadian reference was projected into the CRC single-cell data, followed by KNN meta-cell aggregation and high-dimensional co-expression analysis. Nine circadian modules were identified; four CRC-associated modules (M1, M3, M4 and M6) contributed a 559-gene circadian transcriptional-driver signature. ClockProCRC used expression-matched random-background correction with 100 expression bins and 1,000 random samplings and was evaluated across multiple human, mouse and non-human-primate circadian perturbation datasets. Higher ClockProCRC values were associated with CRC progression, worse survival in the analyzed retrospective cohort, and distinct single-cell microenvironmental states. Gene-regulatory-network analysis prioritized the NFATC2-SYNE1 axis, and SYNE1 silencing in HCT116 and SW480 cells reduced migration, invasion and colony formation while shifting epithelial/mesenchymal marker expression. CLOCK and SYNE1 perturbation experiments further linked ClockProCRC-defined circadian disruption to SYNE1 rhythmicity, with partial molecular restoration after melatonin treatment. The study supports a systems-level circadian framework and an experimentally testable SYNE1 hypothesis, but it does not establish prospective clinical utility, treatment efficacy, or in-vivo therapeutic validation.",
-      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-summary",
       "limitation": false
     },
     {
@@ -1115,7 +1115,7 @@
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
       "category": "Evidence scope — supports",
       "text": "The article defines a 906-gene colon circadian reference and derives CRC-associated circadian co-expression structure from a 94,683-cell single-cell dataset.\nClockProCRC uses expression-matched random-background correction and varies in expected directions across multiple experimentally or behaviorally perturbed circadian datasets.\nHigher ClockProCRC values are associated with CRC progression-related states and poorer overall survival in the analyzed retrospective/public cohorts.\nClockProCRC-defined states are associated with distinct CRC single-cell composition and intercellular-communication patterns.\nSYNE1 is prioritized by gene-regulatory-network analysis and shows circadian perturbation-associated expression/rhythmicity changes across independent datasets.\nSYNE1 knockdown in HCT116 and SW480 cells reduces migration, invasion and colony formation and shifts E-cadherin, ZO-1 and N-cadherin expression.\nCLOCK knockdown and melatonin rescue conditions alter ClockProCRC and SYNE1 rhythmicity in CRC-cell experiments.",
-      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
       "limitation": false
     },
     {
@@ -1124,7 +1124,7 @@
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
       "category": "Limitations — does not establish",
       "text": "That ClockProCRC has been prospectively validated in a multicenter clinical cohort.\nThat ClockProCRC is a clinically approved diagnostic, prognostic, screening or treatment-selection test.\nThat the cohort-specific median or single-cell 75th-percentile grouping rules define a universal clinical cutoff.\nThat higher ClockProCRC causally drives CRC progression in humans; most clinical and tumor-microenvironment evidence is observational or retrospective.\nThat ClockProCRC adds incremental clinical utility over established CRC staging, molecular markers or treatment-response assessment.\nThat SYNE1 is a validated therapeutic target in patients with CRC.\nThat SYNE1 inhibition improves tumor control, metastasis or survival in vivo; the study reports cell-line perturbation but no SYNE1-directed animal efficacy experiment.\nThat melatonin treatment is effective for CRC patients; melatonin was used as a molecular rescue condition in cell experiments.\nThat AUC=0.915 represents CRC diagnosis or patient-level prediction; it refers to discrimination of CLOCK-knockdown experimental conditions by SYNE1 expression.\nThat single-cell ligand-receptor and pathway analyses prove causal tumor-microenvironment remodeling.",
-      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
       "limitation": true
     },
     {
@@ -1133,7 +1133,7 @@
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
       "category": "Limitations",
       "text": "Most human clinical evidence derives from retrospective/public transcriptomic datasets rather than a prospectively enrolled multicenter clinical validation cohort.\nThe study integrates heterogeneous evidence units across human, mouse and non-human-primate datasets; sample, tissue, cohort and cell counts are not interchangeable.\nClockProCRC grouping uses data-context-specific thresholds (75th percentile for single-cell analyses and commonly the cohort median for bulk cohorts), not a universal clinical cutoff.\nThe manuscript distinguishes the 906-gene colon circadian reference from the 559-gene four-module CTD signature. The ClockProCRC scoring Methods refers to circadian rhythm disorder genes (CRGs), so this evidence page does not infer that the 559 CTD genes are identical to the final score-input gene set.\nThe Results text contains the accession GSE200977, whereas the Methods and Figure 4 legend identify the CRC single-cell cohort as GSE200997; the evidence page uses GSE200997 and records the Results-text accession as a manuscript typo.\nThe manuscript contains several wording/locator inconsistencies, including knockdown described once as knockout, Transwell language that conflates proliferation with migration/invasion, and a scratch-assay timing inconsistency; the evidence page follows the experimental Methods and figure legends.\nThe public ClockProCRC GitHub repository is an associated code resource but does not exactly mirror the accepted manuscript: the README reports an earlier 32-cohort/3,075-sample configuration, the current scoring script defaults to 50 bins rather than the manuscript's 100 bins, and DiffCircadian.R contains a placeholder scoring function.\nSYNE1 functional evidence is in vitro; no SYNE1-directed animal efficacy experiment or human therapeutic study is reported.\nThe publisher currently labels the article as an early peer-reviewed accepted version that may undergo further editing before the final Version of Record.",
-      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
       "limitation": true
     },
     {
@@ -1223,7 +1223,7 @@
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
       "category": "Evidence summary",
       "text": "A mechanistic translational preclinical study combining associative human carotid-plaque evidence with mouse atherosclerosis genetics, pooled single-cell analysis, primary human aortic smooth-muscle-cell perturbation, biochemical rescue and preclinical pharmacology to investigate how KIF13B regulates VSMC state through KCTD10-dependent KLF4 turnover.\nThis study integrates paired human carotid endarterectomy plaque regions, independent public human transcriptomic, proteomic, methylation and spatial-transcriptomic evidence, VSMC-specific and global mouse Kif13b perturbation, aortic single-cell RNA sequencing, primary human aortic smooth-muscle-cell gain- and loss-of-function experiments, biochemical rescue and preclinical pharmacology. Human observations associate lower KIF13B, particularly in VSMCs, with advanced or unstable plaque features and lower collagen, but do not establish human causality. In male AAV8-PCSK9 mice, VSMC-specific Kif13b deletion increased lesion burden and adverse plaque-composition features without detected differences in plasma total cholesterol or triglycerides in the tested model. Pooled mouse single-cell analysis and primary HASMC perturbation linked KIF13B loss to reduced matrix/collagen programs and increased inflammatory VSMC programs. KLF4 knockdown rescued KIF13B-loss phenotypes in HASMCs. CHX/MG132, ubiquitination, co-immunoprecipitation and KCTD10-overexpression experiments support a model in which KIF13B maintains KCTD10 abundance and KCTD10 promotes KLF4 ubiquitination and proteasomal turnover; how KIF13B controls KCTD10 remains unresolved. Kenpaullone reduced KLF4 promoter activity/expression and rescued cellular and mouse phenotypes in this study, but this is preclinical proof-of-concept. Kenpaullone is not established as a KLF4-selective drug, and no human treatment efficacy was tested.",
-      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-summary",
       "limitation": false
     },
     {
@@ -1439,7 +1439,7 @@
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
       "category": "Evidence scope — supports",
       "text": "Association between lower KIF13B and more advanced or unstable human atherosclerotic plaque features across local tissue and independent public datasets.\nA causal contribution of VSMC Kif13b loss to measured atherosclerotic plaque phenotypes in the tested male mouse models.\nCell-autonomous effects of KIF13B gain and loss on matrix, inflammatory and contractile programs in primary HASMCs.\nFunctional placement of KLF4 downstream of KIF13B in HASMC perturbation and rescue experiments.\nEvidence consistent with KCTD10-mediated KLF4 ubiquitination and proteasomal turnover downstream of KIF13B.\nPreclinical cellular and mouse rescue after Kenpaullone exposure under the tested conditions.",
-      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-scope",
       "limitation": false
     },
     {
@@ -1448,7 +1448,7 @@
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
       "category": "Limitations — does not establish",
       "text": "That low KIF13B expression or KIF13B methylation causes plaque instability in humans.\nThat KIF13B, KCTD10, KLF4 or Kenpaullone has proven therapeutic efficacy or safety in patients with atherosclerosis.\nThat Kenpaullone is selective for KLF4 or that all Kenpaullone effects in this study are mediated specifically through KLF4.\nA universal lipid-independent KIF13B mechanism in humans; the reported absence of TC/TG differences applies to the tested mouse comparison.\nIndependent replication of the study-generated single-cell comparison, because five mice were pooled into one library per genotype.\nOne definitive single-cell diet duration or one unambiguous cluster assignment for every Figure 5-7 subpanel where the article text and captions disagree.\nThe molecular mechanism by which KIF13B regulates KCTD10 abundance.\nGeneralization of the causal or pharmacologic mouse findings to females, because only male mice were used.",
-      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-scope",
       "limitation": true
     },
     {
@@ -1457,7 +1457,7 @@
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
       "category": "Limitations",
       "text": "The local human cohort contained six carotid endarterectomy patients with paired within-plaque regions; human observations are associative and small-sample.\nThe local advanced-versus-adjacent classification was based on anatomical location and macroscopic surgical appearance rather than molecular or histopathological criteria.\nStable/unstable public datasets and local advanced/adjacent paired regions use different plaque definitions and should not be treated as interchangeable cohorts.\nHuman methylation observations are associative and do not establish that KIF13B hypermethylation causes KIF13B downregulation or plaque instability.\nThe PXD062283 repository contains 87 plaques overall, whereas the JCI stable/unstable comparison uses a subset of 19 and 38; repository size and analytical subset must not be conflated.\nFive mice were pooled into one single-cell library per genotype, limiting independent biological replication at the single-cell library level.\nFigure 5/Results report a 20-week Western-diet single-cell experiment, whereas downstream Figure 6/7 captions reference 12 weeks; this discrepancy is unresolved.\nResults describe inflammatory genes in VSMC-Fib4 while the Figure 5K caption labels the panel VSMC-Fib1; the evidence page therefore avoids treating that subpanel label as unambiguous.\nOnly male mice were used, and sex was not analyzed as a biological variable.\nTagln-Cre targets smooth-muscle compartments beyond plaque VSMCs; reported intestine/bladder measurements do not establish general systemic safety of pathway targeting.\nThe study establishes KCTD10-dependent KLF4 ubiquitination/rescue evidence but does not identify the mechanism by which KIF13B regulates KCTD10 abundance.\nKenpaullone is pharmacologically nonselective; its rescue does not prove KLF4-selective target engagement or exclude contributions from other kinase targets.\nKenpaullone was evaluated only in cells and mice. No human atherosclerosis efficacy, dosing, pharmacokinetic or safety trial was performed.",
-      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-scope",
       "limitation": true
     },
     {
@@ -1511,7 +1511,7 @@
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
       "category": "Evidence summary",
       "text": "This Correspondence discusses a research agenda connecting multimodal biological interpretation with patient-specific simulation in cardiovascular medicine. It sets out design and translation requirements without reporting a newly built, clinically validated digital twin system.\nThe Correspondence outlines two linked directions for cardiovascular AI: investigating disease mechanisms and developing patient-specific digital twins. It discusses combining imaging and molecular information to generate network and disease-subtyping hypotheses, then considers updateable physiological models, image-to-mesh workflows and treatment-scenario simulation. Longitudinal data, computational capacity, prospective evaluation, privacy and governance are presented as requirements for translation. This page organizes those narrative arguments for research planning and methodological citation. The cited empirical examples remain evidence from other works; cross-modal integration does not itself establish causation, and simulated treatment scenarios are not observed therapeutic effects in patients.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#ev-summary",
       "limitation": false
     },
     {
@@ -1637,7 +1637,7 @@
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
       "category": "Evidence scope — supports",
       "text": "Cite for framing a cardiovascular AI research agenda around mechanistic questions and individualized digital modeling, not for product validation.\nCite for the methodological rationale of cross-modal hypothesis generation; causal claims require suitable primary experimental evidence.\nCite as design background for physiological modeling and scenario simulation, not as evidence that a drug, surgery or commercial digital twin improves outcomes.\nCite when discussing evaluation, data stewardship and implementation requirements; prospective benefit remains a question for future empirical assessment.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#ev-scope",
       "limitation": false
     },
     {
@@ -1646,7 +1646,7 @@
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
       "category": "Limitations — does not establish",
       "text": "A newly developed, validated therapeutic digital twin or completed prospective clinical validation in this Correspondence.\nCausation established by combining imaging and molecular data alone.\nObserved human treatment effects or randomized clinical-trial evidence inferred from simulation.\nProven efficacy of a drug, surgery or commercial digital twin product, patient-outcome improvement, guideline status or regulatory approval.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#ev-scope",
       "limitation": true
     },
     {
@@ -1655,7 +1655,7 @@
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
       "category": "Limitations",
       "text": "This Correspondence is a narrative discussion, not a systematic review or meta-analysis with a reported systematic search protocol.\nThe cited empirical examples were not comprehensively revalidated for this page and should be checked in their primary sources.\nThe author-deposited full article supports narrative locators; every word was not compared with the current ScienceDirect full text.\nProposed mechanistic hypotheses and simulation strategies require appropriate empirical and prospective evaluation before clinical benefit can be claimed.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#ev-scope",
       "limitation": true
     },
     {
@@ -1853,7 +1853,7 @@
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
       "category": "Evidence summary",
       "text": "A secondary linked-mortality analysis relates self-reported sleep to mortality in a complex-survey population with hyperuricemia. Associations and the fitted turning point are epidemiological estimates, not a survival-improving sleep prescription; sleep-trouble findings do not cover every diagnosed sleep disorder.\nThis secondary linked-mortality analysis examines self-reported sleep in a complex-survey population. The reported associations and fitted turning point are epidemiological estimates, not proof that prescribing a precise sleep duration improves survival. The sleep-trouble result should not be generalized to every diagnosed sleep disorder.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#ev-summary",
       "limitation": false
     },
     {
@@ -1997,7 +1997,7 @@
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
       "category": "Evidence scope — supports",
       "text": "Survey-weighted associations of self-reported sleep duration with all-cause mortality in the analyzed population.\nA separate sleep-trouble estimate and a dataset-derived nonlinear turning point.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#ev-scope",
       "limitation": false
     },
     {
@@ -2006,7 +2006,7 @@
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
       "category": "Limitations — does not establish",
       "text": "That 7.23 h is a precise personal target for everyone.\nThat extending or shortening sleep has been proven to reduce deaths.\nA clinical prediction model or absence of risk from all sleep disorders.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#ev-scope",
       "limitation": true
     },
     {
@@ -2015,7 +2015,7 @@
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
       "category": "Limitations",
       "text": "Self-reported exposure and a single baseline assessment limit exposure characterization.\nResidual confounding and reverse causation remain possible.\nComplex-survey weighting must be retained; raw counts and weighted percentages are not interchangeable.\nThe data-derived turning point is non-causal and not an intervention-validated target.\nSelf-reported sleep duration is not a direct circadian-rhythm measurement.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#ev-scope",
       "limitation": true
     },
     {
@@ -2105,7 +2105,7 @@
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
       "category": "Evidence summary",
       "text": "A two-center exploratory study profiled 92 circulating EV-associated proteins in AAA and evaluated five candidates by Western blot and ELISA. External sample size, assay-dependent expression differences and wide ROC uncertainty are retained explicitly.\nThis two-center human study enrolled 18 AAA patients and 9 healthy controls: 10 cases and 5 controls in the in-house cohort, and 8 cases and 4 controls in the external cohort. A targeted Olink proximity-extension workflow assessed 92 EV-associated proteins and prioritized five candidates. External Western blot and ELISA did not show uniformly concordant findings: MCP-1 direction differed between the two reported analyses, and Neurturin was not significant by Western blot but lower by ELISA. The article reports single-marker ROC AUCs from 0.760 to 0.900 in the small external comparison, with wide confidence intervals. Different passages also describe venous plasma, serum EVs and intraoperative aortic blood; those specimen descriptions are not silently treated as one validated routine blood-screening protocol. The evidence is exploratory biomarker association and external assay assessment, not prospective AAA detection, rupture prediction or a therapeutic target validation.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#ev-summary",
       "limitation": false
     },
     {
@@ -2285,7 +2285,7 @@
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
       "category": "Evidence scope — supports",
       "text": "AAA-associated targeted EV protein differences in the studied human samples.\nTwo-center enrollment and small external assay assessment.\nArticle-reported single-marker ROC discrimination with uncertainty.\nComputational inflammatory/pathway interpretation of the candidate set.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#ev-scope",
       "limitation": false
     },
     {
@@ -2294,7 +2294,7 @@
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
       "category": "Limitations — does not establish",
       "text": "A whole-proteome survey or equivalence to unfractionated plasma protein profiling.\nConcordant directional validation of every candidate across Western blot and ELISA.\nA validated five-protein combined diagnostic model.\nProspective incident-AAA, rupture or mortality prediction.\nAn established routine peripheral-venous blood screening protocol across all source descriptions.\nCausal pathway regulation or a therapeutically validated protein target.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#ev-scope",
       "limitation": true
     },
     {
@@ -2303,7 +2303,7 @@
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
       "category": "Limitations",
       "text": "The external cohort contains 8 cases and 4 controls; ROC confidence intervals are wide, including 0.486-1.000 for the reported AUC of 0.760.\nMCP-1 and Neurturin do not have uniformly concordant Western blot and ELISA results. No cause of these differences is established by this evidence page.\nVenous-plasma, serum-EV and intraoperative-aortic-blood descriptions appear in different sections, and isolation methods differ between discovery and external-validation descriptions.\nThe targeted 92-protein panel does not establish an unbiased circulating proteome.\nCase-control ROC discrimination and pathway enrichment do not establish prospective prediction, clinical screening utility or causality.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#ev-scope",
       "limitation": true
     },
     {
@@ -2465,7 +2465,7 @@
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
       "category": "Evidence summary",
       "text": "HCCcrds-related subtype analysis separates expression, retrospective outcome associations and external template assessment.\nThis study provides a transcriptomic framework for HCC heterogeneity. The relevant evidence is subtype association and cross-dataset evaluation, not demonstrated clinical benefit from score-guided treatment. Reference circadian experiments and HCC patient cohorts serve different analytical roles.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#ev-summary",
       "limitation": false
     },
     {
@@ -2627,7 +2627,7 @@
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
       "category": "Evidence scope — supports",
       "text": "Single-cell modules supplied the HCCcrds gene set.\nThe score was evaluated in separate clock, feeding and sleep-reference data.\nTCGA-LIHC analysis identified CS-H, CS-L and CS-M, with poorer outcomes associated with CS-H.\nExternal subtype and survival analyses used overlapping but different cohort sets.\nSubtypes differed in proliferation/metabolic programs and inferred immune characteristics.\nNNMT and MARCKSL1 were among subtype-associated candidate genes.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#ev-scope",
       "limitation": false
     },
     {
@@ -2636,7 +2636,7 @@
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
       "category": "Limitations — does not establish",
       "text": "Prospective diagnostic or prognostic clinical utility.\nDirect individual measurement of physiological circadian phase or amplitude.\nCircadian disruption as a demonstrated cause of cancer.\nClinical benefit from score-guided treatment.\nIPS as measured response in patients receiving immunotherapy.\nTherapeutic validation of the candidate genes.\nCompleted page-by-page equivalence checking between the author-deposited text and final typeset version.\nUnprovided AUCs, hazard ratios, participant totals or additional omics modalities.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#ev-scope",
       "limitation": true
     },
     {
@@ -2645,7 +2645,7 @@
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
       "category": "Limitations",
       "text": "Cell counts, candidate genes, HCC cohort samples and separate circadian reference experiments are different units. No complete unique-participant total is inferred. The five external datasets have different analytical uses: the four Fig. 5A and four Fig. 5B sets overlap but are not identical and must not be added as eight independent cohorts. External validation means retrospective cross-dataset expression/classification evaluation, not prospective clinical utility or direct physiological rhythm measurement in HCC patients.\nCells and candidate genes are not patient counts or demonstrated causal regulators.\nReference-experiment evaluation does not mean HCC patients underwent longitudinal physiological circadian measurements.\nAssociation does not establish that circadian disruption causes liver cancer or constitute a validated clinical decision rule.\nDo not claim that all five cohorts validated survival, or add the two four-cohort analyses as eight independent cohorts.\nIPS and immune deconvolution are not an observed immunotherapy-response trial.\nThis evidence synthesis does not claim independent causal intervention or therapeutic validation of these genes.\nProspective diagnostic or prognostic clinical utility.\nDirect individual measurement of physiological circadian phase or amplitude.\nCircadian disruption as a demonstrated cause of cancer.\nClinical benefit from score-guided treatment.\nIPS as measured response in patients receiving immunotherapy.\nTherapeutic validation of the candidate genes.\nCompleted page-by-page equivalence checking between the author-deposited text and final typeset version.\nUnprovided AUCs, hazard ratios, participant totals or additional omics modalities.\nBibliographic identity was checked against the final PubMed/publisher record. Detailed evidence locators refer to the author-deposited full text; final typeset figure-level equivalence was not independently re-established.",
-      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#ev-scope",
       "limitation": true
     },
     {
@@ -2699,7 +2699,7 @@
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
       "category": "Evidence summary",
       "text": "Integrated human single-cell and bulk transcriptomic analyses describe AAA-associated T-cell state heterogeneity, derive TIRS and evaluate candidate biomarkers in public datasets and small independent human samples, with supportive mouse expression evidence.\nThe study combined human AAA single-cell profiles, public bulk transcriptomic cohorts and independent clinical samples to describe T-cell heterogeneity and infer transcriptional state relationships. Four aneurysmal aortic samples yielded 7,343 post-QC cells, including 3,841 T cells assigned to eight phenotypes. Monocle inferred a branching trajectory; it did not directly follow individual cells over time. Integrative gene-set analysis derived a 50-gene TIRS, and LASSO plus SVM-RFE prioritized FOSB, JUNB, CST7 and TBC1D4. Marker discrimination varied across public cohorts and was evaluated in small independent aortic-wall samples (5 AAA, 4 controls) and peripheral blood (24 AAA, 15 controls). BAPN + AngII mouse experiments provided supportive FOSB/JUNB expression evidence. These findings support transcriptomic associations and candidate-marker evaluation, while prospective diagnostic utility, human causal mechanisms and treatment benefit remain unestablished.",
-      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html",
+      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#ev-summary",
       "limitation": false
     },
     {
@@ -2906,7 +2906,7 @@
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
       "category": "Evidence scope — supports",
       "text": "Human AAA single-cell T-cell heterogeneity.\nInferred T-cell transcriptional state and fate structure.\nMulticohort AAA-associated transcriptomic patterns and TIRS derivation.\nFOSB/JUNB/CST7/TBC1D4 marker discrimination in the analyzed datasets.\nSmall independent in-house human validation, including aortic wall n=5 AAA and n=4 controls.\nSupportive mouse expression evidence.",
-      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html",
+      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#ev-scope",
       "limitation": false
     },
     {
@@ -2915,7 +2915,7 @@
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
       "category": "Limitations — does not establish",
       "text": "Pseudotime as directly observed longitudinal cell fate.\n7,343 cells as 7,343 participants.\nFOSB/JUNB as established causal drivers of human AAA.\nProspective diagnostic performance or approved standalone clinical tests.\nPredicted pharmacologic agents as effective AAA therapy.\nMouse expression evidence as human treatment evidence.",
-      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html",
+      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#ev-scope",
       "limitation": true
     },
     {
@@ -2924,7 +2924,7 @@
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
       "category": "Limitations",
       "text": "The in-house aortic-wall sample size was small: 5 AAA and 4 controls.\nPseudotime is an inferred transcriptional ordering, not direct longitudinal lineage observation.\nCandidate-marker discrimination does not establish prospective clinical diagnostic performance.\nMouse expression observations do not establish human causal mechanisms or therapeutic benefit.",
-      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html",
+      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#ev-scope",
       "limitation": true
     },
     {
@@ -3086,7 +3086,7 @@
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
       "category": "Evidence summary",
       "text": "Stage-associated DNB analysis, TCPSLevel, a compact subtype classifier and ASPH follow-up are presented as distinct evidence layers.\nThe study connects stage-associated computational analysis with subtype classification and experimental candidate assessment. A stage-ordered network signal is not direct observation of an individual patient's future transition. Human tissue associations, cell perturbation and computational therapeutic hypotheses are presented separately.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#ev-summary",
       "limitation": false
     },
     {
@@ -3275,7 +3275,7 @@
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
       "category": "Evidence scope — supports",
       "text": "Stage II had the highest reported network instability signal.\nTCPSLevel was associated with clinical and outcome differences.\nThe ensemble analysis yielded three molecular subtypes.\nminiPC classified the consensus subtype labels using a compact gene set.\nSingle-cell analysis localized expression patterns across cellular compartments.\nASPH was evaluated in human tissues and through TPC-1 silencing.\nIPS and CMap supplied candidate immune/drug-response hypotheses.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#ev-scope",
       "limitation": false
     },
     {
@@ -3284,7 +3284,7 @@
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
       "category": "Limitations — does not establish",
       "text": "Longitudinal prediction of an individual patient's transition time.\nClinical intervention benefit.\nminiPC as an established survival model rather than a subtype classifier.\nCell counts as patient counts or paired-specimen counts as independent participants.\nComplete demonstration of direct ASCL2 regulation or binding.\nClinical efficacy of CMap-nominated compounds.\nClassification of this study as a physiological circadian-rhythm experiment.\nResolution of all Methods/Results counts or accession differences.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#ev-scope",
       "limitation": true
     },
     {
@@ -3293,7 +3293,7 @@
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
       "category": "Limitations",
       "text": "TCGA counts of 544 in Methods and 484 in GRN analysis describe different reported analytical stages; no reason for excluding the numerical difference is inferred. Methods reports 17,709 cells and Results 17,518, without a reconstructed QC-exclusion process. One reported donor is not a large participant cohort; 48 tumor and 48 adjacent specimens do not mean 96 independent patients. Cohorts, cells, paired specimens and cultured-cell experiments are not added into a unique-participant total. External validation means retrospective expression-template/classifier evaluation, not prospective clinical utility.\nCross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time.\nThe reported cutoff is not a cross-cohort locked clinical threshold. Grouping rules used in other analyses are not automatically equivalent.\nMethods 2.6 prints GSE333630 whereas other locations use GSE33630. These are not silently rewritten as a fully verified accession inventory.\nThis is subtype classification, not prospective individual survival-benefit validation. Unverified figure-only accuracy or AUC values are not reconstructed.\nA single donor and a large cell count do not establish large-population replication. No explanation for the count difference is invented.\nPaired tissues are not 96 independent patients. ASCL2-ASPH network inference is not direct binding validation, and cell effects do not establish human targeted-treatment efficacy.\nPredicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.\nLongitudinal prediction of an individual patient's transition time.\nClinical intervention benefit.\nminiPC as an established survival model rather than a subtype classifier.\nCell counts as patient counts or paired-specimen counts as independent participants.\nComplete demonstration of direct ASCL2 regulation or binding.\nClinical efficacy of CMap-nominated compounds.\nClassification of this study as a physiological circadian-rhythm experiment.\nResolution of all Methods/Results counts or accession differences.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#ev-scope",
       "limitation": true
     },
     {
@@ -3455,7 +3455,7 @@
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
       "category": "Evidence summary",
       "text": "A preclinical study evaluated peptide-functionalized miR-185-5p-inhibitor liposomes in DOX-injured cells and mice, with formulation, biodistribution, cardiac phenotyping and cell-death-associated readouts. No human therapeutic efficacy was established.\nThis preclinical investigation assessed miR-185-5p-inhibitor-loaded liposomes in doxorubicin (DOX)-injured H9C2 cells, human iPSC-derived cardiomyocytes in vitro and male C57BL/6 mouse models. The delivery vehicle is a peptide-functionalized liposome, not a clinical infusion of patient-derived exosomes. Loaded particles had a reported DLS diameter of 172.35 ± 0.8 nm and encapsulation efficiency of 98.0 ± 1.2%; TEM and DLS size measurements represent different measurement contexts. Mouse experiments reported greater cardiac fluorescence with the targeting peptide and improvements in echocardiographic and histological readouts. Cell experiments assessed apoptosis- and cuproptosis-associated proteins and other injury signals. These findings support the tested preclinical delivery strategy; they do not establish human efficacy, human safety, a general DCM therapy or complete pathway-specific causality. Abstract-only survival/percentage claims and unresolved protocol-reporting details are not promoted into independently verified quantitative key findings.",
-      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html",
+      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#ev-summary",
       "limitation": false
     },
     {
@@ -3635,7 +3635,7 @@
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
       "category": "Evidence scope — supports",
       "text": "Formulation characterization and labeled-preparation biodistribution in the tested experiments.\nImprovement in reported cardiac function and histology in the DOX-associated mouse model.\nChanges in cell-death-associated readouts in H9C2 and iPSC-derived cardiomyocyte experiments.\nLimited tolerability observations within the tested settings.",
-      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html",
+      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#ev-scope",
       "limitation": false
     },
     {
@@ -3644,7 +3644,7 @@
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
       "category": "Limitations — does not establish",
       "text": "Human treatment efficacy, clinical safety or approval of the liposomal miR-185-5p intervention.\nA universally effective therapy for all etiologies of dilated cardiomyopathy.\nExosome infusion or clinical transplantation of patient-derived vesicles.\nExclusive cardiac targeting or an intact-drug tissue dose inferred solely from fluorescence.\nComplete miRNA-target/pathway-specific causality from marker changes alone.\nAn independently verified quantitative survival advantage or harmonized percentage-effect estimate from the abstract alone.",
-      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html",
+      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#ev-scope",
       "limitation": true
     },
     {
@@ -3653,7 +3653,7 @@
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
       "category": "Limitations",
       "text": "The experimental disease model is DOX-associated injury; generalization to other causes of human DCM is unestablished.\nThe main text and abstract differ in quantitative presentation; abstract-only survival language and percentage effects are not elevated to independently verified key findings.\nThe printed animal-model dosing description requires source/author clarification before experimental reproduction; no corrected dose or protocol recommendation is supplied.\nHuman iPSC-derived cells, cultured-cell replicates and assay-specific mouse n values are not interchangeable biological units.\nFluorescence targeting, marker changes and limited organ testing do not establish clinical biodistribution, complete causal mechanism or human safety.",
-      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html",
+      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#ev-scope",
       "limitation": true
     },
     {
@@ -3707,7 +3707,7 @@
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
       "category": "Evidence summary",
       "text": "A preclinical multimodal study evaluates MCC950 in B16F10-bearing mouse models of ICI-associated cardiac injury, combining cardiac and tumor phenotyping with immune profiling and supportive public human PBMC association data.\nThe study tested NLRP3 inhibition with MCC950 in female C57BL/6J mice bearing B16F10 melanoma during anti-PD-1 or dual anti-PD-1 plus anti-CTLA-4 treatment. Cardiac biomarkers, echocardiography, histology, immune profiling and transcriptomics supported preclinical effects on cardiac injury and inflammatory states. Cardiac single-cell analysis comprised 68,058 cells from a pooled design with six hearts per sample; these cells are not independent mouse replicates. MCC950 altered macrophage and T-cell states, and the experiments included macrophage depletion, a dual-ICI comparison with n=8 per group, and a mouse treatment-after-injury protocol. Public GSE180045 human PBMC data supplied supportive NLRP3/IL1B associations only. Cardiac and tumor effects in these mouse models do not establish human treatment efficacy, safety or approved clinical use.",
-      "url": "https://drgezhang.com/papers/nlrp3-ici.html",
+      "url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-summary",
       "limitation": false
     },
     {
@@ -3914,7 +3914,7 @@
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
       "category": "Evidence scope — supports",
       "text": "Experimental NLRP3 involvement in ICI-associated cardiac injury in the tested mouse models.\nPreclinical cardiac effects of MCC950.\nCardiac macrophage/T-cell state remodeling.\nPreclinical dual-ICI experiments.\nSupportive human PBMC single-cell association.\nA preclinical mouse treatment-after-injury experiment.",
-      "url": "https://drgezhang.com/papers/nlrp3-ici.html",
+      "url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
       "limitation": false
     },
     {
@@ -3923,7 +3923,7 @@
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
       "category": "Limitations — does not establish",
       "text": "MCC950 efficacy in human ICI myocarditis or cardiotoxicity.\nSafety in humans or approved clinical use.\nHuman antitumor efficacy or universal effects across tumor models.\nClinical efficacy of combining MCC950 with ICIs.\nIndependent biological replication from each of the 68,058 scRNA cells.\nDefinitive attribution of all effects to one canonical NLRP3 pathway.",
-      "url": "https://drgezhang.com/papers/nlrp3-ici.html",
+      "url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
       "limitation": true
     },
     {
@@ -3932,7 +3932,7 @@
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
       "category": "Limitations",
       "text": "The intervention evidence comes from tested preclinical melanoma models, with no human interventional cohort.\nThe paper notes that ICI dose/frequency may exceed typical clinical dosing and calls for additional tumor models and clinical evaluation.\nPooled cardiac single-cell samples limit interpretation of cell counts as biological replication.\nGSE180045 provides supportive human association, not independent validation of MCC950 treatment efficacy.\nThe findings do not definitively attribute all effects to one canonical NLRP3 pathway.",
-      "url": "https://drgezhang.com/papers/nlrp3-ici.html",
+      "url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
       "limitation": true
     },
     {
@@ -3986,7 +3986,7 @@
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
       "category": "Evidence summary",
       "text": "A mechanistic translational preclinical study linking myeloid KIF13B to MERTK-dependent efferocytosis and experimental plaque protection, with associative human tissue evidence and article-reported NX-1607 rescue in cells and mice.\nThe study combined associative human arterial and carotid-plaque observations with mouse atherosclerosis genetics, public and study-generated single-cell/transcriptomic analyses, macrophage experiments, genetic rescue and preclinical pharmacologic intervention. KIF13B expression was lower in advanced human arterial/plaque tissue and progressing mouse plaques. Global Kif13b loss worsened atherosclerosis in Ldlr-deficient mice but increased circulating lipids in that model. Myeloid-specific deletion and Kif13b-deficient bone-marrow transplantation worsened lesion burden, necrotic cores, macrophage and apoptotic-cell accumulation without corresponding plasma-lipid changes, supporting a local myeloid/hematopoietic contribution in mice. Kif13b-deficient macrophages showed impaired efferocytosis and lower MERTK protein; restoring MERTK in deficient BMDMs improved efferocytosis. Unchanged Mertk mRNA, reduced MERTK protein stability, proteasome dependence, increased MERTK ubiquitination, KIF13B/ITCH interaction and ITCH/CBL/MERTK rescue results support a post-translational regulatory model, although the exact proposed ITCH-mediated CBL degradation step remains incompletely demonstrated. The article reported that NX-1607 improved MERTK/efferocytosis phenotypes in macrophages and reduced atherosclerotic phenotypes in mice. The article describes NX-1607 as a CBL inhibitor, whereas external authoritative drug-development sources identify it as a CBL-B/CBLB inhibitor; CBL and CBLB are distinct genes. Thus NX-1607 is reported as preclinical pharmacologic rescue, not unambiguous target validation of endogenous CBL. No human atherosclerosis treatment efficacy was tested.",
-      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#ev-summary",
       "limitation": false
     },
     {
@@ -4184,7 +4184,7 @@
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
       "category": "Evidence scope — supports",
       "text": "Association between lower KIF13B and advanced human arterial or carotid-plaque tissue, and progression in mouse plaque observations.\nCausal worsening of mouse plaque phenotypes after global, myeloid or hematopoietic Kif13b perturbation within their respective experimental models.\nA myeloid or hematopoietic contribution without corresponding plasma-lipid differences in conditional and transplantation models, separate from the lipid increase in global Ldlr-deficient knockout mice.\nReduced MERTK protein and efferocytosis after Kif13b loss and improvement of BMDM efferocytosis following MERTK restoration.\nEvidence consistent with post-translational ITCH/CBL/MERTK regulation and article-reported NX-1607 rescue in macrophages and mice.",
-      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#ev-scope",
       "limitation": false
     },
     {
@@ -4193,7 +4193,7 @@
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
       "category": "Limitations — does not establish",
       "text": "Human KIF13B causality, prediction of clinical outcomes or human atherosclerosis treatment efficacy.\nThat the global Ldlr-deficient knockout plaque phenotype is lipid independent.\nMacrophage-exclusive effects of Lyz2-Cre deletion or bone-marrow transplantation, or five independent single-cell libraries from five pooled mice.\nOne definitive diet duration for the study-generated pooled aortic single-cell comparison, because Results and Figure 3E disagree.\nThat MERTK restoration is an effective in vivo or human therapy, or that every proposed ITCH-to-CBL ubiquitination and degradation step has been directly resolved.\nThat NX-1607 reverses 20 weeks of established disease, has proven human atherosclerosis benefit, or unequivocally validates endogenous CBL rather than the distinct CBLB target described by external sources.",
-      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#ev-scope",
       "limitation": true
     },
     {
@@ -4202,7 +4202,7 @@
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
       "category": "Limitations",
       "text": "Human arterial-wall and carotid-plaque results are associative tissue observations with small carotid groups, not causal human intervention evidence.\nThe global Kif13b-deficient Ldlr model had higher circulating cholesterol and triglycerides, limiting attribution of its plaque phenotype solely to local plaque biology.\nLyz2-Cre targets myeloid lineages and donor-marrow transplantation changes hematopoietic compartments; neither isolates macrophages exclusively.\nStudy-generated single-cell data pooled five mice to one library per genotype, limiting independent biological replication at the library level.\nThe Results and Figure 3E give discordant 20-week Western-diet and 12-week high-fat-diet descriptions for the pooled aortic single-cell experiment.\nGSE155513 Figure 3 time points use one single-cell library each; sample and library counts must not be conflated.\nMERTK restoration rescue was demonstrated in Kif13b-deficient BMDMs, not as an in vivo MERTK treatment.\nThe exact ITCH-mediated CBL ubiquitination/degradation step in the proposed network remains incompletely demonstrated; MERTK regulation is not fully assigned to one mechanism.\nThe article's CBL-inhibitor description of NX-1607 conflicts with external CBL-B/CBLB target identification, preventing unambiguous pharmacologic validation of endogenous CBL.\nNX-1607 was tested preclinically during the final 16 of 20 Western-diet weeks, not as reversal after 20 weeks of established disease; no human atherosclerosis efficacy was assessed.\nMouse NX-1607 measurements found no reported ALT/AST liver-toxicity signal but did report lower white blood cells and lymphocytes, so safety is not established.",
-      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#ev-scope",
       "limitation": true
     },
     {
@@ -4292,7 +4292,7 @@
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
       "category": "Evidence summary",
       "text": "Explainable survival-risk assessment system developed for adults with advanced heart failure and renal dysfunction, using 1,736 patients across CRCCD and BIDMC cohorts, 93 clinical variables, 46 candidate survival features, 132 modeling schemes, and a 12-predictor model with external validation.\nAIHFLevel is an explainable survival-risk assessment system developed for adults with advanced heart failure and renal dysfunction. The study analyzed 1,736 patients across an in-house multicenter CRCCD cohort and an independent BIDMC cohort. Within CRCCD, 93 routinely accessible clinical variables were screened, 46 candidate survival features entered a hybrid machine-learning framework, and 132 modeling schemes were systematically evaluated. The selected strategy combined Surv.gbm and Surv.Xgboost with hybrid filter-wrapper feature selection and produced a 12-predictor survival model. AIHFLevel showed strong time-dependent discrimination in internal validation and retained prognostic performance in 1,024 externally evaluated BIDMC patients. The framework also provides interpretable predictor contributions and three-state prognostic stratification. These results support AIHFLevel as a prognostic risk-assessment tool; prospective studies are still required to determine whether AIHFLevel-guided management improves clinical outcomes.",
-      "url": "https://drgezhang.com/papers/aihflevel.html",
+      "url": "https://drgezhang.com/papers/aihflevel.html#ev-summary",
       "limitation": false
     },
     {
@@ -4463,7 +4463,7 @@
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
       "category": "Evidence scope — supports",
       "text": "Mortality-risk estimation in the studied advanced-heart-failure and renal-dysfunction population.\nInternal and independent external evaluation of AIHFLevel.\nAssociation between higher AIHFLevel and poorer prognosis.\nThree-state prognostic stratification.\nPatient-level interpretation of predictor contributions.",
-      "url": "https://drgezhang.com/papers/aihflevel.html",
+      "url": "https://drgezhang.com/papers/aihflevel.html#ev-scope",
       "limitation": false
     },
     {
@@ -4472,7 +4472,7 @@
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
       "category": "Limitations — does not establish",
       "text": "That AIHFLevel-guided treatment improves survival or other clinical outcomes.\nThat predictors included in AIHFLevel are causal determinants of mortality.\nThat model performance is identical in every healthcare setting or population.\nThat AIHFLevel replaces clinical judgment.",
-      "url": "https://drgezhang.com/papers/aihflevel.html",
+      "url": "https://drgezhang.com/papers/aihflevel.html#ev-scope",
       "limitation": true
     },
     {
@@ -4481,7 +4481,7 @@
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
       "category": "Limitations",
       "text": "The study was retrospective and observational.\nProspective multicenter validation is still warranted.\nRandomized studies would be required to establish whether AIHFLevel-guided treatment improves patient outcomes.\nSome echocardiographic predictors may not be uniformly available in primary-care settings.\nDirect methodological reproduction of every comparator risk model was not possible.",
-      "url": "https://drgezhang.com/papers/aihflevel.html",
+      "url": "https://drgezhang.com/papers/aihflevel.html#ev-scope",
       "limitation": true
     },
     {
@@ -4535,7 +4535,7 @@
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
       "category": "Evidence summary",
       "text": "A retrospective human-expression study developed a UC-versus-control classifier, evaluated it across external bulk datasets and added a separate UCRScore interpretation layer. Classification is not future-onset prediction; the reported single-cell extension has an unresolved accession-provenance mismatch.\nThis research study developed a human gene-expression classifier for UC-versus-control discrimination, evaluated it across external bulk-expression datasets and introduced a separate UCRScore interpretation layer. Case–control classification is not prediction of future disease onset or prospective clinical utility. The reported single-cell extension has an accession-provenance mismatch that remains unresolved in the source review; it is not included as independently verified single-cell validation.",
-      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html",
+      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#ev-summary",
       "limitation": false
     },
     {
@@ -4697,7 +4697,7 @@
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
       "category": "Evidence scope — supports",
       "text": "Retrospective human UC-versus-control expression classification.\nArticle-reported external bulk-dataset discrimination.\nComputational interpretation and hypothesis generation, with the single-cell provenance issue kept unresolved.",
-      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html",
+      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#ev-scope",
       "limitation": false
     },
     {
@@ -4706,7 +4706,7 @@
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
       "category": "Limitations — does not establish",
       "text": "Prospective diagnostic utility or prediction of individual future disease onset.\nCausal roles for all 12 selected genes.\nClinical efficacy of nominated compounds.\nUC single-cell validation from an independently verified matching source.",
-      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html",
+      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#ev-scope",
       "limitation": true
     },
     {
@@ -4715,7 +4715,7 @@
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
       "category": "Limitations",
       "text": "Participant independence across cohorts has not been established by raw-data deduplication.\nThe final 12-gene panel and the Fig. 3E 14-variable minimum-error statement must remain distinct.\nExternal model evaluation cannot exclude every preprocessing or feature-selection bias.\nThe score formula was not independently reconstructed in this review.\nThe GSE182272 accession-provenance mismatch remains unresolved.\nThe models were not rerun and the complete supplementary data were not audited in this batch.",
-      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html",
+      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#ev-scope",
       "limitation": true
     },
     {
@@ -4769,7 +4769,7 @@
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
       "category": "Evidence summary",
       "text": "RAP-AIscore is an interpretable postoperative overall-survival model developed in a retrospective two-center study of 506 patients undergoing robot-assisted proctectomy, with internal validation and independent retrospective SYEMH evaluation.\nThis retrospective two-center study evaluated 506 unique patients undergoing robot-assisted proctectomy for rectal cancer. The NSCVRCS Meta cohort included 384 patients divided into development and internal-validation subsets; an independent SYEMH cohort included 122 patients. A comparison of 132 candidate survival-modeling schemes selected Surv.coxboost + Surv.aorsf and yielded an interpretable model with 10 predictors. RAP-AIscore showed internal time-dependent survival discrimination and separated patients into three prognostic states. Independent SYEMH evaluation was retrospective: its 1-year AUC was 0.587, with 2- and 3-year AUCs of 0.754 and 0.810. Prospective clinical utility and improved survival from model-guided care remain unestablished.",
-      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html",
+      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#ev-summary",
       "limitation": false
     },
     {
@@ -4949,7 +4949,7 @@
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
       "category": "Evidence scope — supports",
       "text": "Retrospective development of an interpretable RAP-specific survival model.\nSystematic hybrid model selection.\nInternal time-dependent survival discrimination.\nIndependent retrospective external evaluation, with modest 1-year AUC of 0.587.\nThree-state prognostic stratification.",
-      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html",
+      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#ev-scope",
       "limitation": false
     },
     {
@@ -4958,7 +4958,7 @@
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
       "category": "Limitations — does not establish",
       "text": "Prospective clinical utility.\nImproved survival from RAP-AIscore-guided care or treatment efficacy.\nCausal effects of the 10 predictors.\nUniversal generalizability to all RAP populations or settings.\nReplacement of clinician judgment or pathologic staging.",
-      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html",
+      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#ev-scope",
       "limitation": true
     },
     {
@@ -4967,7 +4967,7 @@
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
       "category": "Limitations",
       "text": "The two-center study and independent external evaluation were retrospective.\nProspective clinical utility and survival benefit from model-guided management were not established.\nExternal 1-year discrimination was modest, with AUC 0.587.\nGeneralizability to all hospitals and RAP populations was not established.\nThe Results text reports Replication low/intermediate/high counts of 68/20/19, which sum to 107 and do not reconcile with the stated Replication cohort size of 116. These subgroup counts are retained as article-reported values; the denominator discrepancy is unresolved and must not be interpreted as documented exclusions or a complete partition of all 116 patients.",
-      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html",
+      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#ev-scope",
       "limitation": true
     },
     {
@@ -5273,7 +5273,7 @@
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
       "category": "Evidence summary",
       "text": "Exploratory plasma exosomal circRNA profiling in DCM-HF reports 49 differential circRNAs and a small external qRT-PCR evaluation. The evidence page explicitly distinguishes the Methods microarray platform from sequencing terminology elsewhere in the article.\nThe article compares DCM-HF and healthy plasma vesicle-associated RNA, with a discovery group of 3 patients and 5 controls and an external group of 6 patients and 4 controls. It reports 49 differential circRNAs, 27 upregulated and 22 downregulated, and computational enrichment and interaction analyses. A material platform-reporting difference is retained: Methods 2.7 describes the LC Human ceRNA Array V1.0 microarray, whereas the abstract and other passages call the work next-generation or ceRNA sequencing. This evidence page therefore uses expression profiling without treating the assay as definitively verified RNA sequencing. Results 3.7 and Fig. 5 describe nine externally assessed circRNAs; Methods 2.9 lists ten. Expression-profile differences in these small groups are exploratory evidence, not a prospectively validated DCM diagnostic test or proof of a causal circRNA mechanism.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#ev-summary",
       "limitation": false
     },
     {
@@ -5453,7 +5453,7 @@
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
       "category": "Evidence scope — supports",
       "text": "Exploratory circRNA expression differences in the analyzed DCM-HF and healthy samples.\nA reported final set of 49 differential circRNAs.\nComputational target, PPI and pathway prioritization.\nAn external qRT-PCR comparison of the panel described in Results and Fig. 5.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#ev-scope",
       "limitation": false
     },
     {
@@ -5462,7 +5462,7 @@
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
       "category": "Limitations — does not establish",
       "text": "A definitively verified RNA-sequencing platform across all source descriptions.\nA fully reconciled network hub count or a ten-circRNA validation result.\nDirect biochemical circRNA-miRNA-target binding or a causal DCM mechanism.\nProspective diagnostic sensitivity, specificity, AUC or clinical utility.\nCardiac tissue origin of every circulating vesicle-associated circRNA.\nClinical treatment efficacy from the identified circRNA candidates.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#ev-scope",
       "limitation": true
     },
     {
@@ -5471,7 +5471,7 @@
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
       "category": "Limitations",
       "text": "The discovery (3 versus 5) and external (6 versus 4) groups are small.\nMethods 2.7 describes a ceRNA microarray, while the abstract and other passages describe sequencing; neither description is silently erased.\nThe Results/Fig. 5 nine-circRNA panel differs from the ten candidates listed in Methods 2.9.\nResults 3.6, Fig. 4 and Table 2 contain differing node/hub descriptions; no corrected hub total is invented.\nThe source uses the name hsa-circ-76,771 in some passages and hsa-circ-0076771 in Table 1. These are not silently assigned an authoritative database identity.\nExpression differences and predicted networks do not establish prospective diagnostic utility, tissue of origin or a causal mechanism.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#ev-scope",
       "limitation": true
     },
     {
@@ -5741,7 +5741,7 @@
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
       "category": "Evidence summary",
       "text": "Transcriptomic CRDscore and coronary-disease subtype analysis, with explicit qualification of repeated samples and reference-dataset identity.\nThis computational study connects single-cell expression structure with bulk transcriptomic subtyping. Its contribution is a research framework for expression-associated heterogeneity, not an established circadian diagnostic test or treatment-selection rule. Repeated sampling and the identity of one cited reference dataset require explicit qualification.",
-      "url": "https://drgezhang.com/papers/circadian-ihd.html",
+      "url": "https://drgezhang.com/papers/circadian-ihd.html#ev-summary",
       "limitation": false
     },
     {
@@ -5903,7 +5903,7 @@
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
       "category": "Evidence scope — supports",
       "text": "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease.\nCRDscore was constructed as a research score from target-gene expression and a random background.\nThe article reports external reference-data evaluation, but the use of GSE70049 requires qualification.\nExpression-based subtyping of GSE59867 yielded four groups.\nNTP was used to evaluate subtype assignment in four external expression datasets.\nType2 showed higher CRDscore and immune-inflammatory expression characteristics.",
-      "url": "https://drgezhang.com/papers/circadian-ihd.html",
+      "url": "https://drgezhang.com/papers/circadian-ihd.html#ev-scope",
       "limitation": false
     },
     {
@@ -5912,7 +5912,7 @@
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
       "category": "Limitations — does not establish",
       "text": "Direct measurement of physiological circadian phase, amplitude or period.\nA discovery cohort of 436 independent patients.\nVerification that all cited reference experiments are mouse circadian interventions.\nProspectively validated clinical risk prediction or clinical utility.\nBenefit from treatment or chronotherapy.\nAn independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model.",
-      "url": "https://drgezhang.com/papers/circadian-ihd.html",
+      "url": "https://drgezhang.com/papers/circadian-ihd.html#ev-scope",
       "limitation": true
     },
     {
@@ -5921,7 +5921,7 @@
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
       "category": "Limitations",
       "text": "GSE184073 cells are not independent patients. GSE59867 contains repeated follow-up of 111 STEMI patients and 46 stable CAD controls; its 436 expression samples are not 436 independent patients. Follow-up represents post-infarction recovery time points, not 24-hour circadian monitoring of the same individual. External dataset counts are article-reported samples and are not summed into a deduplicated participant total. External validation means retrospective expression-template evaluation, not prospective clinical utility. GSE70049 is a Danio rerio setb morphant expression experiment, not a verified mouse circadian perturbation.\nCells are not independent patients; two analyzed samples do not establish population-level robustness.\nThe score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.\nThe evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred.\nThese are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.\nExternal expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.\nComputational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.\nDirect measurement of physiological circadian phase, amplitude or period.\nA discovery cohort of 436 independent patients.\nVerification that all cited reference experiments are mouse circadian interventions.\nProspectively validated clinical risk prediction or clinical utility.\nBenefit from treatment or chronotherapy.\nAn independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model.",
-      "url": "https://drgezhang.com/papers/circadian-ihd.html",
+      "url": "https://drgezhang.com/papers/circadian-ihd.html#ev-scope",
       "limitation": true
     },
     {
@@ -6083,7 +6083,7 @@
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
       "category": "Evidence summary",
       "text": "A targeted plasma-proteomics biomarker study that profiles 92 cardiovascular-related proteins in DCM-HF, prioritizes five candidate markers, replicates their plasma abundance with ELISA in an independent local cohort, and evaluates the corresponding five-gene expression panel across three external human cardiac transcriptomic datasets.\nThis study used targeted plasma proteomics to identify DCM-HF-associated protein signals and then evaluated their reproducibility across an independent plasma assay and external cardiac transcriptomic datasets. Among 103 locally recruited participants, 38 individuals (20 DCM-HF and 18 healthy controls) formed the Olink discovery cohort, in which 92 cardiovascular-related proteins were profiled. Thirty-three proteins differed at p<0.05, and 13 showed marked higher abundance in DCM-HF, remained significant after FDR correction, and were all upregulated in the discovery analysis. Five candidates—SPP1, IGFBP7, F11R, CHI3L1 and PLAUR—were prioritized and subsequently measured by ELISA in an independent 65-participant plasma cohort (30 DCM-HF and 35 controls), where all five were higher in DCM-HF (P<0.001). The corresponding five-gene expression panel also showed diagnostic discrimination across three external human cardiac transcriptomic datasets, with combined AUCs of 0.959, 0.773 and 0.803. These findings support a cross-assay biomarker-discovery framework for DCM-HF, but they do not establish prospective disease prediction, clinically validated diagnostic utility, causal mechanisms, or treatment benefit.",
-      "url": "https://drgezhang.com/papers/olink-dcm.html",
+      "url": "https://drgezhang.com/papers/olink-dcm.html#ev-summary",
       "limitation": false
     },
     {
@@ -6272,7 +6272,7 @@
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
       "category": "Evidence scope — supports",
       "text": "A predefined 92-protein cardiovascular Olink panel detected differential plasma protein abundance between the studied DCM-HF and healthy-control groups.\nThirteen proteins showed marked higher abundance in the Olink discovery analysis and remained significant after FDR correction.\nSPP1, IGFBP7, F11R, CHI3L1 and PLAUR showed directionally consistent higher plasma levels in an independent local ELISA cohort.\nThe corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.\nSeveral DCM-HF-associated plasma proteins were correlated with clinical indicators including NT-proBNP, LVEF, CRP and eGFR in the studied cohort.\nFunctional-enrichment and protein-interaction analyses provide biological hypotheses involving inflammatory, remodeling and related processes.\nThe five prioritized markers constitute candidates for larger biomarker-validation studies.",
-      "url": "https://drgezhang.com/papers/olink-dcm.html",
+      "url": "https://drgezhang.com/papers/olink-dcm.html#ev-scope",
       "limitation": false
     },
     {
@@ -6281,7 +6281,7 @@
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
       "category": "Limitations — does not establish",
       "text": "That the Olink analysis provides an unbiased whole-proteome survey; it used a predefined targeted cardiovascular panel.\nThat the 13 differentially abundant proteins cause DCM-HF or directly determine disease severity.\nThat SPP1, IGFBP7, F11R, CHI3L1 or PLAUR are clinically validated diagnostic tests for DCM-HF.\nThat external cardiac transcriptomic evaluation constitutes independent plasma-proteomic replication.\nThat ROC discrimination in existing case-control/transcriptomic datasets predicts who will develop DCM-HF prospectively.\nThat the five-marker panel has demonstrated incremental clinical utility over echocardiography, cardiac MRI, NT-proBNP, troponin, or standard diagnostic assessment.\nThat correlation, GO/KEGG enrichment or PPI-network analysis establishes a causal molecular mechanism.\nThat any of the identified proteins is a validated therapeutic target or that biomarker-guided treatment improves clinical outcomes.\nThat this publication generated original mouse-model evidence; the Methods and Results do not describe an animal experiment.",
-      "url": "https://drgezhang.com/papers/olink-dcm.html",
+      "url": "https://drgezhang.com/papers/olink-dcm.html#ev-scope",
       "limitation": true
     },
     {
@@ -6290,7 +6290,7 @@
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
       "category": "Limitations",
       "text": "The Olink discovery cohort was small, with 20 DCM-HF patients and 18 healthy controls.\nThe Olink assay was a predefined 92-protein cardiovascular panel rather than an unbiased whole-proteome measurement.\nThe local discovery and ELISA analyses were cross-sectional and do not establish prospective incident-disease prediction or longitudinal prognostic performance.\nThe external GEO evaluation used cardiac transcriptomic data rather than independent plasma-proteomic cohorts, so it supports corresponding gene-expression discrimination rather than direct protein-level replication.\nArticle-reported sample counts for the external GEO datasets differ from native or independently documented dataset composition, and the exact filtering logic is not fully specified.\nClinical correlations were exploratory and were not independently replicated for each protein-clinical-variable relationship.\nGO/KEGG, STRING, Cytoscape and related analyses are computational and do not establish causal mechanisms or therapeutic efficacy.\nThe article reports ChiCTR2100051469, but publicly indexed registry information for that identifier appears to correspond to a different study; the linkage to this DCM-HF proteomics study is therefore unresolved.\nAlthough the Introduction refers to human plasma and mouse models, the study Methods and Results do not describe an original animal experiment; mouse evidence discussed in the article derives from cited prior studies.",
-      "url": "https://drgezhang.com/papers/olink-dcm.html",
+      "url": "https://drgezhang.com/papers/olink-dcm.html#ev-scope",
       "limitation": true
     },
     {
@@ -6578,7 +6578,7 @@
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
       "category": "Evidence summary",
       "text": "A multicohort transcriptomic and single-cell framework that derives a 14-gene machine-learning signature and APVSLevel system for classification, quantification, and biological interpretation of atherosclerotic plaque vulnerability.\nAPVS is a transcriptome-based molecular signature developed to characterize atherosclerotic plaque vulnerability across multiple stages of coronary artery disease. The study integrated 22 bulk transcriptomic cohorts with two single-cell RNA-sequencing cohorts and used a nine-learner machine-learning framework to reduce 96 dysregulated co-expression pattern genes to a 14-gene atherosclerotic plaque vulnerability signature. The APVS classifier discriminated clinically and pathologically distinct states, including STEMI versus chronic coronary syndrome, advanced versus early atherosclerotic plaque, and ruptured versus stable plaque, across multiple independent datasets. To extend classification toward biological and clinical interpretation, the study developed APVSLevel, a continuous quantification system associated with coronary stenosis, major adverse cardiovascular events, plaque inflammatory activity, and cellular remodeling. Single-cell analyses linked higher APVSLevel to vulnerable plaque states, inflammatory macrophage programs, and altered macrophage-myofibroblast communication. These results support APVS/APVSLevel as a research framework for molecular characterization and risk stratification of plaque vulnerability; prospective clinical validation remains necessary before routine clinical use.",
-      "url": "https://drgezhang.com/papers/apvs.html",
+      "url": "https://drgezhang.com/papers/apvs.html#ev-summary",
       "limitation": false
     },
     {
@@ -6776,7 +6776,7 @@
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
       "category": "Evidence scope — supports",
       "text": "APVS discriminates several studied coronary and plaque pathological states in retrospective transcriptomic datasets.\nAPVSLevel is associated with plaque vulnerability, coronary stenosis severity, and MACE risk in the studied cohorts.\nAPVSLevel-high states exhibit stronger inflammatory, immune, procoagulant, and plaque-destabilizing molecular programs.\nSingle-cell datasets support APVSLevel as a molecular descriptor of vulnerable plaque biology and cellular-state remodeling.\nAPVS/APVSLevel can serve as a research framework for molecular stratification and mechanistic exploration of atherosclerotic plaque vulnerability.",
-      "url": "https://drgezhang.com/papers/apvs.html",
+      "url": "https://drgezhang.com/papers/apvs.html#ev-scope",
       "limitation": false
     },
     {
@@ -6785,7 +6785,7 @@
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
       "category": "Limitations — does not establish",
       "text": "That APVS is a clinically approved diagnostic test for plaque vulnerability.\nThat the 14 APVS genes are causal drivers of plaque rupture.\nThat APVSLevel-guided treatment reduces myocardial infarction, mortality, or other clinical events.\nThat transcriptomic APVS/APVSLevel can replace coronary imaging, cardiac biomarkers, or standard clinical assessment.\nThat retrospective public-dataset validation is equivalent to prospective multicenter clinical validation.\nThat drug-response or signature-reversal analyses constitute therapeutic recommendations.",
-      "url": "https://drgezhang.com/papers/apvs.html",
+      "url": "https://drgezhang.com/papers/apvs.html#ev-scope",
       "limitation": true
     },
     {
@@ -6794,7 +6794,7 @@
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
       "category": "Limitations",
       "text": "The study was based predominantly on retrospective public high-throughput datasets.\nProspective multicenter studies are required to confirm the biological and clinical interpretability of APVSLevel.\nThe APVS classifier requires further direct comparison with established clinical biomarkers.\nThe functions of many APVS-related molecules remain incompletely established and require additional in vivo and in vitro validation.\nIncomplete clinical and molecular traits in source datasets may obscure associations between APVS and some relevant factors.",
-      "url": "https://drgezhang.com/papers/apvs.html",
+      "url": "https://drgezhang.com/papers/apvs.html#ev-scope",
       "limitation": true
     },
     {
@@ -6884,7 +6884,7 @@
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
       "category": "Evidence summary",
       "text": "Human plasma exosomal miRNA profiling in DCM with chronic heart failure identified an article-reported 92-feature differential set, computational target networks and external qRT-PCR assessment of 10 hub miRNAs in 10 patients and 6 controls.\nThis human case-control molecular-profiling study used plasma vesicle preparations, small-RNA sequencing, target prediction and external qRT-PCR to investigate DCM with chronic heart failure. The Results report 92 differentially expressed miRNA features, comprising 48 upregulated and 44 downregulated features under the stated screening thresholds. Computational enrichment and network analyses provide biological hypotheses rather than directly measured target regulation. Ten selected hub miRNAs were assessed in an external group of 10 patients and 6 healthy controls, with expression-profile separation reported. The discovery participant count was not reliably established from the reviewed text and is not reconstructed here. miR-185-5p appears in the discovery table and predicted network, but not in the listed 10-miRNA external qRT-PCR panel. The evidence supports exploratory circulating-RNA associations and assay follow-up, not an early-detection test, prospective prognosis or a human causal mechanism.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#ev-summary",
       "limitation": false
     },
     {
@@ -7064,7 +7064,7 @@
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
       "category": "Evidence scope — supports",
       "text": "DCM-HF-associated plasma exosomal miRNA expression differences in the studied samples.\nAn article-reported 92-feature screen and computational miRNA-target/pathway prioritization.\nSmall external qRT-PCR evaluation of a selected 10-miRNA panel.\nDiscovery-stage inclusion of hsa-miR-185-5p with the Table 1 values reported above.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#ev-scope",
       "limitation": false
     },
     {
@@ -7073,7 +7073,7 @@
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
       "category": "Limitations — does not establish",
       "text": "A prospectively validated early diagnostic test or prognostic model for DCM.\nCausation of human DCM by the differential miRNAs or their predicted targets.\nExternal qRT-PCR validation of miR-185-5p in this article.\nDirect biochemical binding for every predicted miRNA-mRNA interaction.\nCardiac-cell origin or exclusive exosomal origin of every measured circulating RNA.\nAn effective miRNA-directed treatment in humans.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#ev-scope",
       "limitation": true
     },
     {
@@ -7082,7 +7082,7 @@
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
       "category": "Limitations",
       "text": "The discovery participant count is not reliably established from the reviewed text; no synthetic total is supplied.\nThe final Results screen uses absolute logFC >0.5, while Fig. 3A prints >0.05. P-value and FDR statements are not assumed to establish the same feature-wise threshold.\nMethods 2.9 includes an abdominal-aortic-wall/mRNA extraction passage inconsistent with the surrounding plasma-exosomal-miRNA assay description; this is retained as a reporting limitation, not reinterpreted as a myocardial tissue experiment.\nExternal evaluation is small (10 cases and 6 controls), and multivariate separation is not prospective diagnostic validation.\nSome feature labels retain homolog/isomiR-style naming in the source; the complete feature set is not relabeled as uniquely verified canonical human mature miRNAs.",
-      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#ev-scope",
       "limitation": true
     },
     {
@@ -7136,7 +7136,7 @@
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
       "category": "Evidence summary",
       "text": "H9c2 injury models, pharmacologic pathway probes and LAD-ligation mouse experiments provide preclinical functional and mechanism-supporting evidence for idebenone. The animal regimen included pretreatment; these findings do not establish post-infarction-only rescue treatment or human MI efficacy, safety or approval.\nThis preclinical study used H9c2 injury models, pharmacologic pathway probes and LAD-ligation mouse experiments. Oxidative-injury, ferroptosis and autophagy readouts are distinguished from cardiac-function readouts. The animal regimen included dosing before surgery and is not evidence for treatment initiated only after infarction. The findings do not establish human myocardial-infarction efficacy, safety or an approved clinical indication.",
-      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html",
+      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#ev-summary",
       "limitation": false
     },
     {
@@ -7298,7 +7298,7 @@
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
       "category": "Evidence scope — supports",
       "text": "Protective observations under the specified cellular conditions.\nExperimental support for mechanism involvement.\nMouse cardiac-function and tissue readouts under a regimen that includes preoperative dosing.",
-      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html",
+      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#ev-scope",
       "limitation": false
     },
     {
@@ -7307,7 +7307,7 @@
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
       "category": "Limitations — does not establish",
       "text": "Human MI efficacy, safety or an approved MI indication.\nClinical rescue efficacy when treatment begins only after myocardial infarction.\nThat all autophagy should be inhibited or all cell death is ferroptosis.\nComplete exclusion of other protective mechanisms or direct drug binding to AMPK or mTOR.\nHuman survival benefit inferred from mouse EF changes.",
-      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html",
+      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#ev-scope",
       "limitation": true
     },
     {
@@ -7316,7 +7316,7 @@
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
       "category": "Limitations",
       "text": "Evidence is cellular and animal, not proof of human MI efficacy, safety or an approved MI indication; background use in other diseases is not an MI indication.\nPreoperative dosing limits extrapolation to treatment begun only after infarction.\nPharmacologic and marker-based support does not show that all autophagy should be suppressed, that all cell death is ferroptosis or that other mechanisms are excluded.\nThe experiments do not establish direct idebenone binding to AMPK or mTOR.\nEF percentages are measured functional values, not relative survival gains or clinical utility estimates.\nDetailed findings are attributed to the DOI-bearing author-deposited full text; not every PDF image or supplementary dataset was independently reviewed.\nAn open-license label on ResearchGate alone is not treated as publisher-abstract reuse authorization; no Official Abstract is copied in this batch.",
-      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html",
+      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#ev-scope",
       "limitation": true
     },
     {
@@ -7406,7 +7406,7 @@
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
       "category": "Evidence summary",
       "text": "An integrative human single-cell and multicohort transcriptomic study that reconstructs vascular smooth muscle cell fate states, derives the SMC cell fate decision signature (SCFDS), and uses it to define three biologically distinct retrospective molecular subtypes of atherosclerosis.\nThis study integrated human coronary-plaque single-cell RNA sequencing with multicohort bulk transcriptomics to examine whether vascular smooth muscle cell (SMC) differentiation states could explain molecular heterogeneity across atherosclerosis. In plaque single-cell data from four donors, 11,756 post-QC cells included 5,419 SMCs that were resolved into nine transcriptionally heterogeneous SMC clusters. Pseudotime analysis organized these SMCs into five computational differentiation states and yielded 1,072 cell-fate leader genes, from which eight temporal gene modules were identified and progression-associated modules were used to construct the SMC cell fate decision signature (SCFDS). When projected into bulk transcriptomic data, SCFDS supported three molecular subtypes with distinct biological profiles: C1, enriched for DNA-repair and replication programs; C2, characterized by immune and inflammatory activation and greater coronary stenosis severity; and C3, characterized by stromal and extracellular-matrix programs and lower stenosis severity in the discovery analysis. Nearest-template prediction reproduced the subtype expression structure across five external cohorts. These findings support a retrospective molecular framework linking SMC state-associated transcriptional programs with inter-individual atherosclerosis heterogeneity, but they do not establish prospective clinical utility, treatment benefit, or causal effects of SCFDS on clinical outcomes.",
-      "url": "https://drgezhang.com/papers/smc-fate.html",
+      "url": "https://drgezhang.com/papers/smc-fate.html#ev-summary",
       "limitation": false
     },
     {
@@ -7604,7 +7604,7 @@
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
       "category": "Evidence scope — supports",
       "text": "Human coronary atherosclerotic plaques contain substantial transcriptional heterogeneity among vascular smooth muscle cells.\nThe analyzed SMC transcriptomes can be computationally organized into a pseudotime trajectory with five states and distinct cluster distributions.\nA 1,072-gene fate-leader set and temporal expression modules summarize SMC state-associated transcriptional programs in these data.\nSCFDS-based analysis identified three retrospective molecular subtypes with distinct DNA-repair, inflammatory/immune and stromal/ECM-associated profiles.\nC2 was associated with greater coronary stenosis severity and C3 with lower severity in the discovery analysis.\nThe three-subtype expression-template structure was reproducible across five independent retrospective transcriptomic cohorts.\nSCFDS can serve as a research framework for studying SMC-related molecular heterogeneity in atherosclerosis.",
-      "url": "https://drgezhang.com/papers/smc-fate.html",
+      "url": "https://drgezhang.com/papers/smc-fate.html#ev-scope",
       "limitation": false
     },
     {
@@ -7613,7 +7613,7 @@
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
       "category": "Limitations — does not establish",
       "text": "That the nine SMC clusters are fixed biological lineages or clinically defined cell types.\nThat pseudotime directly observes individual human SMCs transforming longitudinally within the same lesion.\nThat all 1,072 fate-leader genes causally regulate SMC fate.\nThat C1, C2 and C3 are prospectively validated clinical diagnostic or prognostic classes.\nThat C2 causes coronary stenosis progression or that C3 causally protects against plaque progression or clinical events.\nThat pathway enrichment or inferred cell-composition differences prove the underlying mechanisms.\nThat retrospective NTP reproducibility is equivalent to prospective multicenter clinical validation.\nThat SCFDS-guided treatment improves myocardial infarction, mortality or other clinical outcomes.\nThat the therapeutic hypotheses discussed by the authors constitute validated treatment recommendations.",
-      "url": "https://drgezhang.com/papers/smc-fate.html",
+      "url": "https://drgezhang.com/papers/smc-fate.html#ev-scope",
       "limitation": true
     },
     {
@@ -7622,7 +7622,7 @@
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
       "category": "Limitations",
       "text": "The study was primarily computational and cannot fully recapitulate the diversity of developmental states or directly demonstrate longitudinal SMC lineage transitions in human plaques.\nThe plaque single-cell analysis was based on four human donors, limiting direct generalization of cell-state frequencies.\nAll samples used for subtype analyses were retrospective; prospective multicenter clinical validation was not performed.\nNTP validation demonstrates retrospective expression-template reproducibility rather than prospective diagnostic, prognostic or treatment-predictive performance.\nPathway enrichment, xCell and related computational inference generate biological hypotheses but do not establish causal mechanisms.\nThe article contains inconsistencies in sample/cohort enumeration and one external-cohort accession identifier; counts and dataset provenance should therefore be preserved explicitly rather than silently reconciled.",
-      "url": "https://drgezhang.com/papers/smc-fate.html",
+      "url": "https://drgezhang.com/papers/smc-fate.html#ev-scope",
       "limitation": true
     },
     {
@@ -7676,7 +7676,7 @@
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
       "category": "Evidence summary",
       "text": "A cross-disease transcriptomic systems-biology analysis of independently profiled COVID-19 and heart-failure datasets, identifying 12 shared genes and prioritizing inflammatory network hubs for further study.\nThis cross-disease multi-dataset transcriptomic systems-biology study compared independently profiled COVID-19 and heart-failure (HF) datasets. At |log2FC| > 1 and adjusted P < 0.05, the authors reported 102 COVID-19 differentially expressed genes (DEGs), 253 HF DEGs, and 12 shared genes. Enrichment analyses highlighted inflammatory and innate-immune processes, including neutrophil and monocyte chemotaxis, Toll-like receptor, NF-κB, chemokine, interleukin-17, and cytokine-related signaling. Protein-interaction topology prioritized ten hub genes, with TLR4, TLR2, IL10, and STAT3 recurring across seven cytoHubba algorithms. External public PBMC expression datasets supported prioritization of TLR4, TLR2, STAT3, IL1B, and CXCL8; the reported 96.0%, 93.2%, and 89.9% are first-two-component PCA explained-variance values, not diagnostic performance. Database-derived TF/miRNA networks highlighted FOXC1, STAT3, NFKB1, miR-181, miR-520, and miR-143, while DSigDB drug-signature enrichment nominated muramyl dipeptide and glutathione as hypothesis-generating candidates. The study did not enroll a dedicated cohort with simultaneous COVID-19 and HF, establish germline genetic correlation or causality, prospectively validate a clinical signature, experimentally validate the predicted regulatory edges, directly measure gut microbiome or circulating LPS, perform proteomics, or demonstrate treatment efficacy for the candidate compounds.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#ev-summary",
       "limitation": false
     },
     {
@@ -7865,7 +7865,7 @@
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
       "category": "Evidence scope — supports",
       "text": "Shared transcriptional signals across independently profiled COVID-19 and HF datasets.\nInflammatory and innate-immune pathway enrichment and network prioritization of TLR-associated genes.\nExternal public expression-dataset support for selected hub genes, with tissue-dependent IL1B interpretation.\nComputational TF/miRNA and candidate-compound hypothesis generation.\nHypothesis generation around gut-heart and LPS biology, without direct measurement of microbiome or LPS.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#ev-scope",
       "limitation": false
     },
     {
@@ -7874,7 +7874,7 @@
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
       "category": "Limitations — does not establish",
       "text": "Germline genetic correlation, inherited susceptibility, GWAS evidence, Mendelian randomization, or genetic causality.\nA causal SARS-CoV-2-to-HF mechanism or findings from a dedicated cohort simultaneously affected by COVID-19 and HF.\nProspective clinical validation, diagnostic accuracy, or prognostic utility of a five-gene panel.\nExperimentally demonstrated TF/miRNA regulation or direct measurement of gut microbiome dysbiosis, intestinal permeability, or circulating LPS.\nProteomic evidence or therapeutic efficacy of glutathione, muramyl dipeptide, or another intervention.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#ev-scope",
       "limitation": true
     },
     {
@@ -7883,7 +7883,7 @@
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
       "category": "Limitations",
       "text": "Human evidence was assembled retrospectively from heterogeneous public expression datasets; no dedicated simultaneous COVID-19 and HF cohort or prospective clinical validation was reported.\nLung tissue, cardiac tissue, and PBMC samples and their experimental platforms are not directly interchangeable.\nThe GSE147507 human COVID-19 lung component had one deceased COVID-19 biological donor with technical replicates and two independent uninfected donors; total GEO Series entries are not a participant count.\nGSE9128/GDS3115 evaluated 11 pooled PBMC microarray samples rather than 11 independent participants, although the original population comprised 24 HF and 12 control individuals.\nThe exact GSE26887 grouping that generated the article-reported 253 HF DEGs is not sufficiently explicit in the accessible main article; the formal Series contains 19 HF and five control cardiac-tissue samples.\nPPI, TF/miRNA and drug-signature findings are computational or database-derived and lack direct causal perturbation validation.\nGut-microbiome composition, intestinal permeability and circulating LPS were not directly measured; gut-heart interpretation remains a hypothesis.\nNo proteomics, candidate-compound treatment experiment, or demonstrated therapeutic efficacy for glutathione or muramyl dipeptide was reported.",
-      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#ev-scope",
       "limitation": true
     },
     {
@@ -7937,7 +7937,7 @@
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
       "category": "Evidence summary",
       "text": "A small prospective single-arm study reported apatinib tumor-response, survival and toxicity observations. Enrollment, safety and efficacy denominators differ; the activity signal and descriptive safety findings do not establish comparative superiority or a general treatment recommendation.\nThis is human prospective treatment evidence from a small single-arm study, not a randomized comparison. Enrolled, treated and efficacy populations differ. Reported responses and adverse events support a clinical activity signal and descriptive safety assessment, but do not establish superiority or a general treatment recommendation.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#ev-summary",
       "limitation": false
     },
     {
@@ -8063,7 +8063,7 @@
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
       "category": "Evidence scope — supports",
       "text": "Descriptive tumor-response, survival and safety observations in this small prospective single-arm study.\nSeparate enrollment, safety and efficacy denominators with explicit attribution of the Results DCR interval.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#ev-scope",
       "limitation": false
     },
     {
@@ -8072,7 +8072,7 @@
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
       "category": "Limitations — does not establish",
       "text": "Superiority or a causal comparative survival benefit without a randomized concurrent control.\nA general clinical treatment recommendation, corrected dosing or current guideline status.\nAn anatomic-subgroup superiority claim or a newly corrected set of published estimates.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#ev-scope",
       "limitation": true
     },
     {
@@ -8081,7 +8081,7 @@
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
       "category": "Limitations",
       "text": "The study is small, single-center and single-arm, with no randomized concurrent control.\nEnrollment, FAS/safety and efficacy use different, overlapping analysis denominators.\nReporting note: the abstract DCR interval uses a survival-day interval. This page uses the Results-reported percentage interval with explicit attribution; it does not recompute or replace published confidence intervals.\nReporting note: the abstract describes an intrahepatic-only population, whereas the body includes extrahepatic patients; the evidence page therefore uses advanced cholangiocarcinoma.\nAdditional reporting differences concern anatomic-subgroup counts/significance and some adverse-event percentages. No subgroup-superiority claim or newly corrected numbers are generated from those differences.\nNo clinical drug recommendation, corrected dose or current guideline status is supplied.\nOfficial Abstract addition is deferred in this batch because of the identified population and DCR-interval reporting issues, not a determination that copyright prohibits it.",
-      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#ev-scope",
       "limitation": true
     },
     {
