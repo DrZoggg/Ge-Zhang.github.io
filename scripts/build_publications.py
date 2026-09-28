@@ -20,6 +20,7 @@ from citation_common import (
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
 import research_guides
+import evidence_presentation
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
     DEEP_CONTENT_DIR,
@@ -1259,7 +1260,7 @@ def render_research_cluster_html(cluster):
     )
 
 
-def render_deep_v2_html(content, related_papers):
+def render_deep_v2_html(content, related_papers, *, early_summary=False):
     study = content["study_profile"]
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
@@ -1468,9 +1469,7 @@ def render_deep_v2_html(content, related_papers):
     )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
 <section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
-<section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>{html.escape(content["research_question"])}</p></section>
-<section class="paper-geo-v2__section" data-v2-section="author-summary"><h2>Author Evidence Summary</h2><p>{html.escape(content["author_summary"])}</p></section>
-<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>{v2_article_label(content, "Key Findings")}</h2><div class="paper-geo-v2__findings">{findings}</div></section>
+{'' if early_summary else evidence_presentation.question_summary(content)}<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>{v2_article_label(content, "Key Findings")}</h2><div class="paper-geo-v2__findings">{findings}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{v2_article_label(content, 'Review profile') if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{v2_article_label(content, 'What This Review Adds') if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}{cluster_html}
@@ -1775,9 +1774,9 @@ def render_deep_v2_markdown(content, related_papers):
     return "\n".join(parts)
 
 
-def render_deep_html(content, *, related_papers=None):
+def render_deep_html(content, *, related_papers=None, early_summary=False):
     if content.get("version") == 2:
-        return render_deep_v2_html(content, related_papers or [])
+        return render_deep_v2_html(content, related_papers or [], early_summary=early_summary)
     return render_deep_v1_html(content)
 
 
@@ -1831,7 +1830,7 @@ def render_official_abstract_markdown(record, doi):
 
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
-                      citation_data=None, official_abstract=None):
+                      citation_data=None, official_abstract=None, presentation=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -1843,6 +1842,9 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     canonical = absolute(site_root, f"papers/{slug}.html")
     markdown_url = absolute(site_root, f"papers/{slug}.md")
     is_v2 = bool(deep_content and deep_content.get("version") == 2)
+    pilot = is_v2 and (evidence_presentation.enabled(doi) if presentation is None else presentation)
+    if pilot and (not evidence_presentation.enabled(doi) or not official_abstract):
+        raise ValueError('Scholarly-first requires an allowlisted V2 with its Official Abstract')
     is_pending = publication.get("paper_geo_status") == "pending"
     related_papers = (
         resolve_related_papers(deep_content, public_by_doi, site_root) if is_v2 else []
@@ -1922,7 +1924,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             f'<ol class="paper-geo-v2__author-list">{author_items}</ol></div>'
         )
     deep_html = (
-        render_deep_html(deep_content or {}, related_papers=related_papers)
+        render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot)
         if deep_content is not None
         else ""
     )
@@ -1955,6 +1957,9 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     if is_v2:
         deep_html = enhance_html(deep_html, publication, deep_content, canonical)
         deep_html += export_html(publication, deep_content)
+    if pilot:
+        deep_html = evidence_presentation.finding_sections(deep_html)
+    early_html = evidence_presentation.question_summary(deep_content, anchor=True) if pilot else ''
     return with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
@@ -1968,20 +1973,20 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <meta property="og:type" content="article">
 <meta property="og:url" content="{html.escape(canonical, quote=True)}">
 {chr(10).join(citation)}
-<link rel="stylesheet" href="../assets/style.css">{'<script defer src="../assets/citation.js"></script>' if citation_data else ''}{ui('<link rel="stylesheet" href="../assets/evidence.css"><script defer src="../assets/evidence-reuse.js"></script>') if is_v2 else ''}</head><body>
+<link rel="stylesheet" href="../assets/style.css">{'<script defer src="../assets/citation.js"></script>' if citation_data else ''}{ui('<link rel="stylesheet" href="../assets/evidence.css"><script defer src="../assets/evidence-reuse.js"></script>') if is_v2 else ''}{evidence_presentation.STYLESHEET if pilot else ''}</head><body>
 <header><nav><a class="brand" href="../index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks"><a href="../index.html#research">Research</a><a href="../publications.html">All publications</a><a href="../index.html#profiles">Profiles</a></div></nav></header>
-<main class="wrap">
+<main class="wrap">{'<article>' if pilot else ''}
 <section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">{html.escape(str(publication_type))} · {html.escape(str(year))} {deep_badge}</div>
 <h1 style="font-size:clamp(2.2rem,5vw,4rem)">{html.escape(str(title))}</h1>
 <p class="lead">{html.escape(str(journal))}</p>{v2_authors_html}
 <div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
-{(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
+{(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{early_html}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
 {notice_html}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
-</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
+{'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
 </body></html>
 ''')
 
