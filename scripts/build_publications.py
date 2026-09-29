@@ -2205,18 +2205,19 @@ def render_publications_page(items, config):
 <meta property="og:description" content="{html.escape(meta_description, quote=True)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{html.escape(publications_url, quote=True)}">
-<link rel="stylesheet" href="assets/style.css">{ui('<link rel="stylesheet" href="assets/evidence.css"><script defer src="assets/evidence-search.js"></script>')}</head><body>
+<link rel="stylesheet" href="assets/style.css"><script defer src="assets/biocommand.js"></script>{ui('<link rel="stylesheet" href="assets/evidence.css"><script defer src="assets/evidence-search.js"></script>')}</head><body class="publications">
 <header><nav><a class="brand" href="index.html">{html.escape(config["researcher_name"])}</a><div class="navlinks">
 <a href="index.html#research">Research</a><a href="publications.html">All publications</a><a href="index.html#profiles">Profiles</a></div></nav></header>
 <main class="wrap"><section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">Publication record</div><h1 style="font-size:clamp(2.8rem,6vw,4.7rem)">Publications</h1>
 <p class="lead">This author-controlled publication record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
-<div class="card" style="margin-top:20px"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
+<div class="publication-count"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
 </div></section>
-{navigation_html(ROOT, items)}{ui(research_guides.navigation())}<section><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
+<section class="publication-search"><label for="pubSearch">Search publications and evidence</label><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
 {ui('<p>Search title, journal, DOI, authors and visible scientific evidence. Text relevance is not evidence strength.</p><p id="evidenceSearchStatus" role="status" aria-live="polite">Browse the complete publication list below, or search visible evidence text.</p><div id="evidenceResults"></div>')}
-<div id="pubList">{''.join(sections)}</div></section>
-<section><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
+<nav class="publication-shortcuts" aria-label="Publication browsing"><a href="#pubList">Browse all records</a><a href="#scientific-questions">Scientific questions</a></nav></section>
+<aside class="publication-discovery">{navigation_html(ROOT, items)}{ui(research_guides.navigation())}</aside><section class="publication-records"><div id="pubList">{''.join(sections)}</div></section>
+<section class="identity-note"><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
 
 <script type="application/ld+json">{safe_schema}</script>
 </main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer></body></html>
