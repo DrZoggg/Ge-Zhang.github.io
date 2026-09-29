@@ -1,4 +1,4 @@
-/* BioCommand progressive decoration. Scientific content is never hidden or loaded here. */
+/* Luminous Lab progressive decoration. Scientific content is never hidden or loaded here. */
 (() => {
   'use strict';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -27,22 +27,18 @@
     resetPointer();
     if (control) control.hidden = reduce.matches || !scene || !scene.animate;
     if (reduce.matches || !scene || !scene.animate) return;
-    const q = s => scene.querySelector(s);
-    animate(q('.scene-field'), [{opacity: .4}, {opacity: 1}], {duration: 450});
-    animate(document.querySelector('.home h1'), [{opacity: .8, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 650, delay: 80});
-    animate(q('.scene-paths'), [{strokeDasharray: '1100', strokeDashoffset: '1100'}, {strokeDasharray: '1100', strokeDashoffset: '0'}], {duration: 1000, delay: 200, fill: 'backwards'});
-    animate(q('.scene-nodes'), [{opacity: .4}, {opacity: 1}], {duration: 650, delay: 400});
-    animate(document.querySelector('.bio-entry'), [{opacity: .86, transform: 'translateY(4px)'}, {opacity: 1, transform: 'none'}], {duration: 560, delay: 540});
+    const art = scene.querySelector('img');
+    animate(art, [{opacity: .75}, {opacity: 1}], {duration: 1100});
+    animate(document.querySelector('.home h1'), [{opacity: .85, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 850, delay: 80});
+    animate(document.querySelector('.bio-entry'), [{opacity: .9, transform: 'translateY(4px)'}, {opacity: 1, transform: 'none'}], {duration: 700, delay: 320});
     if (pointer.matches) {
-      animate(q('.scene-orbit'), [{transform: 'rotate(-3deg)'}, {transform: 'rotate(3deg)'}], {duration: 24000, iterations: Infinity, direction: 'alternate'}, true);
-      animate(q('.scene-tissue'), [{opacity: .7}, {opacity: 1}], {duration: 18000, iterations: Infinity, direction: 'alternate'}, true);
+      animate(scene.querySelector('.optical-sheen'), [{opacity: .2, transform: 'translateX(-3%)'}, {opacity: .7, transform: 'translateX(3%)'}], {duration: 28000, iterations: Infinity, direction: 'alternate'}, true);
     }
-    animate(q('.scene-focus'), [{opacity: .6}, {opacity: 1}], {duration: 24000, iterations: Infinity, direction: 'alternate'}, true);
+    animate(art, [{transform: 'translateY(0)'}, {transform: 'translateY(7px)'}], {duration: 24000, iterations: Infinity, direction: 'alternate'}, true);
     if (paused) animations.filter(a => !ambient.includes(a)).forEach(a => a.finish());
     sync();
   }
   if (scene) {
-    scene.querySelector('.scene-orbit').style.transformOrigin = '352px 320px';
     const frame = scene.closest('.bio-visual');
     frame.addEventListener('pointerenter', () => { bounds = frame.getBoundingClientRect(); });
     frame.addEventListener('pointermove', event => {
@@ -76,5 +72,6 @@
   pointer.addEventListener('change', start);
   document.addEventListener('visibilitychange', sync);
   window.addEventListener('pagehide', () => { animations.forEach(a => a.cancel()); resetPointer(); });
+  window.addEventListener('pageshow', event => { if (event.persisted) start(); });
   start();
 })();

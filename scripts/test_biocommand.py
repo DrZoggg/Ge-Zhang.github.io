@@ -29,10 +29,15 @@ class BioCommandTests(unittest.TestCase):
 
     def test_decorative_scene_and_pause_control(self):
         nodes = Nodes((ROOT / 'index.html').read_text(encoding='utf-8')).nodes
-        scenes = [a for tag, a in nodes if tag == 'svg' and a.get('class') == 'bio-scene']
+        scenes = [a for tag, a in nodes if tag == 'div' and a.get('class') == 'bio-scene']
         self.assertEqual(len(scenes), 1)
         self.assertEqual(scenes[0]['aria-hidden'], 'true')
-        self.assertEqual(scenes[0]['focusable'], 'false')
+        art = [a for tag, a in nodes if tag == 'img' and a.get('src') == 'assets/luminous-membrane.png']
+        self.assertEqual(len(art), 1)
+        self.assertEqual(art[0]['alt'], '')
+        self.assertEqual((art[0]['width'], art[0]['height']), ('1586', '992'))
+        self.assertEqual(art[0]['fetchpriority'], 'high')
+        self.assertTrue((ROOT / art[0]['src']).is_file())
         controls = [a for tag, a in nodes if tag == 'button' and a.get('class') == 'motion-toggle']
         self.assertEqual(len(controls), 1)
         self.assertIn('hidden', controls[0])  # no dead no-JS control
@@ -58,6 +63,14 @@ class BioCommandTests(unittest.TestCase):
                 self.assertNotRegex(declarations, r'overflow(?:-x)?\s*:\s*(?:hidden|clip)')
         self.assertIn('@media(prefers-reduced-motion:reduce)', css)
         self.assertIn('.featured-intro{position:static}', css)
+
+    def test_single_light_token_set_and_no_dark_theme(self):
+        css = (ROOT / 'assets/style.css').read_text(encoding='utf-8')
+        self.assertEqual(css.count(':root{'), 1)
+        self.assertIn('color-scheme:light', css)
+        self.assertIn('--bg:#f8fbfa', css)
+        self.assertNotIn('prefers-color-scheme:dark', css)
+        self.assertNotIn('backdrop-filter', css)
 
 
 if __name__ == '__main__':
