@@ -261,6 +261,11 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
 }
 @media(max-width:400px){.navlinks{gap:0 12px}.navlinks a{font-size:.74rem}.bio-entry .btn{font-size:.77rem;padding-inline:10px}}
 @media(forced-colors:active){.bio-scene{opacity:.35}.btn,.card,.pub,.motion-toggle{border:1px solid CanvasText}}
+.question-index{display:grid;gap:24px;padding-bottom:48px;max-width:900px}
+.question-index .card{padding:28px;overflow-wrap:anywhere}
+.question-index h2{font-size:clamp(1.15rem,2.3vw,1.5rem);line-height:1.4}
+.question-index .links{flex-wrap:wrap;gap:12px 24px}
+.paper-authors{line-height:1.7;max-width:85ch;overflow-wrap:anywhere}
 @media print{
  body,main.wrap,.home main.wrap{background:white;color:black;box-shadow:none}
  header,footer,.bio-visual,.bio-entry{display:none}

@@ -5,6 +5,9 @@
 - Canonical person: https://drgezhang.com/#person
 - ORCID: https://orcid.org/0000-0002-3116-3246
 
+- Scientific Question Index: https://drgezhang.com/research/questions.html
+- Questions JSON: https://drgezhang.com/research/questions.json
+
 ## A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity
 - Journal: Clinical and Experimental Medicine
 - Year: 2026

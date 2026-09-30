@@ -27,6 +27,15 @@ class StagedGuideTests(unittest.TestCase):
         (self.stage/'research'/(SLUG+'.md')).unlink()
         with self.assertRaisesRegex(ValueError,'Missing staged guide'): validate_staged(self.stage)
 
+    def test_question_payload_drift(self):
+        (self.stage/'research/questions.json').write_text('{}',encoding='utf-8')
+        with self.assertRaisesRegex(ValueError,'Staged question index differs'):validate_staged(self.stage)
+
+    def test_missing_question_answer_anchor(self):
+        p=self.stage/'papers/doi-10-1038-s41698-026-01699-1.html'
+        p.write_text(p.read_text(encoding='utf-8').replace('id="qa-4"','id="removed"'),encoding='utf-8')
+        with self.assertRaisesRegex(ValueError,'question anchor'):validate_staged(self.stage)
+
     def test_missing_anchor(self):
         p=self.stage/'papers/olink-dcm.html'
         p.write_text(p.read_text(encoding='utf-8').replace('id="kf3"','id="removed"'),encoding='utf-8')

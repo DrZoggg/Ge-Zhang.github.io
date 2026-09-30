@@ -41,7 +41,19 @@ def validate_staged(stage, source=ROOT):
         u=urlsplit(url)
         target=stage/(u.path.lstrip('/') or 'index.html')
         require(target.is_file(), 'Sitemap URL has no staged file: '+url)
-    require({p.name for p in (stage/'research').iterdir()}=={SLUG+'.html',SLUG+'.md'}, 'Unexpected staged research inventory')
+    require({p.name for p in (stage/'research').iterdir()}=={SLUG+'.html',SLUG+'.md','questions.html','questions.json'}, 'Unexpected staged research inventory')
+    for name in ('questions.html','questions.json'):
+        require((stage/'research'/name).read_bytes()==(source/'research'/name).read_bytes(), 'Staged question index differs: '+name)
+    questions=Links();questions.feed((stage/'research/questions.html').read_text(encoding='utf-8'))
+    for href in questions.links:
+        u=urlsplit(urljoin('https://drgezhang.com/research/questions.html',href))
+        if u.netloc!='drgezhang.com':continue
+        target=(stage/unquote(u.path).lstrip('/')).resolve()
+        require(target.is_relative_to(stage) and target.is_file(),'Missing/unsafe staged question target: '+href)
+        if u.fragment:
+            linked=Links();linked.feed(target.read_text(encoding='utf-8'))
+            require(u.fragment in linked.ids,'Missing staged question anchor: '+href)
+    require(urls.count('https://drgezhang.com/research/questions.html')==1,'Question index must occur once in sitemap')
     return {'guides':1,'same_site_links_checked':sum(urlsplit(urljoin(URL,h)).netloc=='drgezhang.com' for h in parser.links),'sitemap_urls':len(urls)}
 
 

@@ -124,6 +124,7 @@ def render(data, sources):
     page = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n'
     page += '<title>' + esc(data['title']) + '</title><meta name="description" content="' + esc(data['scope'], quote=True) + '">\n'
     page += '<link rel="canonical" href="' + URL + '"><link rel="alternate" type="text/markdown" href="' + URL[:-5] + '.md">\n'
+    page += '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n'
     for prop, value in [('og:type', 'website'), ('og:title', data['title']), ('og:description', data['scope']), ('og:url', URL)]:
         page += '<meta property="' + prop + '" content="' + esc(value, quote=True) + '">\n'
     page += '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'

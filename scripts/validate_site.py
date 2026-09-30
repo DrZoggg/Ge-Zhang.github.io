@@ -428,6 +428,7 @@ def validate_v2_rendered_page(
         "Concepts & Entities",
         "Related Research",
         "Publication & Provenance",
+        *(["Verify publication identity"] if 'id="scholarly-records"' in page else []),
     ]
     pilot = evidence_presentation.STYLESHEET in page
     if pilot:
@@ -2108,6 +2109,8 @@ def validate_citations(publications, config):
             ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
         ):
             expected = [record[source]] if record.get(source) else []
+            if source == 'issn' and not expected and record.get('eissn'):
+                expected = [record['eissn']]
             require(meta_contents(page, tag) == expected,
                     f"Highwire {tag} mismatch for {slug}.")
     actual_names = {path.name for path in CITATIONS_DIR.iterdir()}
@@ -3050,6 +3053,7 @@ def validate_site():
         f"{config['site_url']}/publications.html",
         *[f"{config['site_url']}/papers/{slug}.html" for slug in slugs],
         research_guides.URL,
+        f"{config['site_url']}/research/questions.html",
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")
     require(set(sitemap_urls) == set(expected_urls), "Sitemap URLs do not match public pages.")
@@ -3120,12 +3124,15 @@ def validate_site():
 
     citation_counts = validate_citations(public_expected, config)
     discovery_public = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
+    from scholarly_discovery import validate_generated
+    scholarly_counts = validate_generated(discovery_public, config)
     discovery_contents = {
         p["doi"]: json.loads(deep_content_path(p).read_text(encoding="utf-8"))
         for p in discovery_public if p.get("paper_geo_status") == "v2"
     }
     evidence_counts = validate_evidence(ROOT, discovery_public, discovery_contents)
     result = {
+        "scholarly_discovery": scholarly_counts,
         "master": len(master),
         "public": len(public_expected),
         "withdrawn": len(withdrawn),

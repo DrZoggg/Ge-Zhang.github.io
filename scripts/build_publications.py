@@ -12,6 +12,7 @@ from citation_common import (
     CITATIONS_DIR,
     citation_files,
     citation_record,
+    citation_skip_reason,
     load_citation_metadata,
     render_bibtex,
     render_cite_html,
@@ -21,6 +22,7 @@ from citation_common import (
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
 import research_guides
+import scholarly_discovery
 import evidence_presentation
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
@@ -171,6 +173,9 @@ def write_text_if_changed(path, content):
 
 
 def with_ga4_tag(page):
+    favicon = '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">'
+    if favicon not in page:
+        page = page.replace('</head>', favicon + '</head>', 1)
     if GA4_INSERTION in page:
         if page.count(GA4_INSERTION) != 1:
             raise ValueError("Google tag must occur exactly once in the HTML head.")
@@ -1407,7 +1412,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
         f"<li>{html.escape(item)}</li>" for item in content["limitations"]
     )
     qa = "".join(
-        '<article class="paper-geo-v2__qa"><h3>'
+        f'<article class="paper-geo-v2__qa" id="qa-{position}"><h3>'
         + html.escape(item["question"])
         + "</h3><p>"
         + html.escape(item["answer"])
@@ -1420,7 +1425,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
             else ""
         )
         + "</article>"
-        for item in content["qa"]
+        for position, item in enumerate(content["qa"], 1)
     )
     concepts = "".join(
         '<div class="paper-geo-v2__concept-group"><h3>'
@@ -1509,7 +1514,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{v2_article_label(content, 'Review profile') if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{v2_article_label(content, 'What This Review Adds') if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
 <section class="paper-geo-v2__section" data-v2-section="evidence-scope"><h2>Evidence Scope</h2><div class="paper-geo-v2__scope"><div><h3>Supports</h3><ul>{supports}</ul></div><div><h3>Does Not Establish</h3><ul>{does_not}</ul></div></div><h3>Limitations</h3><ul>{limitations}</ul></section>{pilot_html}{layer_html}{cluster_html}
-<section class="paper-geo-v2__section" data-v2-section="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
+<section class="paper-geo-v2__section" data-v2-section="qa" id="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>{evidence_presentation.guide_navigation(content['doi'])}
 <section class="paper-geo-v2__section" data-v2-section="provenance"><h2>Publication &amp; Provenance</h2><dl class="paper-geo-v2__provenance">{provenance}</dl></section>
@@ -1867,7 +1872,7 @@ def render_official_abstract_markdown(record, doi):
 
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
-                      citation_data=None, official_abstract=None, presentation=None):
+                      citation_data=None, official_abstract=None, presentation=None, identifiers=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -1904,6 +1909,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     links.append(
         f'<a class="btn" href="{html.escape(scholar_url(title), quote=True)}">Google Scholar search</a>'
     )
+    if citation_data:
+        links.append('<a class="btn" href="#cite-this-paper">Cite</a>')
     if is_pending:
         deep_badge = '<span class="badge">Deep GEO · Pending</span>'
     elif deep_content is not None:
@@ -1950,6 +1957,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
                 citation.append(
                     f'<meta name="{tag}" content="{html.escape(citation_data[key], quote=True)}">'
                 )
+        if citation_data.get('eissn') and not citation_data.get('issn'):
+            citation.append(f'<meta name="citation_issn" content="{html.escape(citation_data["eissn"], quote=True)}">')
     v2_authors_html = ""
     if is_v2:
         author_items = "".join(
@@ -1960,6 +1969,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             '<div class="paper-geo-v2__authors"><h2>Full Authors</h2>'
             f'<ol class="paper-geo-v2__author-list">{author_items}</ol></div>'
         )
+    elif authors:
+        v2_authors_html = '<p class="paper-authors">' + html.escape('; '.join(authors)) + '</p>'
     deep_html = (
         render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot,
                          pmc_url=verified_pmc_provenance(publication, deep_content, citation_data))
@@ -1971,6 +1982,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         if is_pending else ""
     )
     schema = paper_schema(publication, canonical, config)
+    if identifiers:
+        schema['sameAs'] = list(dict.fromkeys([doi_url(doi)] + [url for _, url in scholarly_discovery.identity_links(identifiers)]))
     if official_abstract:
         schema["abstract"] = abstract_text(official_abstract)
     if is_v2:
@@ -2006,6 +2019,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <meta name="description" content="{html.escape(description, quote=True)}">
 <link rel="canonical" href="{html.escape(canonical, quote=True)}">
 <link rel="alternate" type="text/markdown" href="{html.escape(markdown_url, quote=True)}">
+{scholarly_discovery.citation_head(citation_data)}
 <meta property="og:title" content="{html.escape(str(title), quote=True)}">
 <meta property="og:description" content="{html.escape(description, quote=True)}">
 <meta property="og:type" content="article">
@@ -2021,7 +2035,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
 {(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{early_html}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
-{notice_html}
+{notice_html}{scholarly_discovery.identifier_html(identifiers)}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 {'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -2144,6 +2158,8 @@ def render_publications_page(items, config):
             publication_type = publication.get("type") or "Work"
             paper_url = f"papers/{publication['slug']}.html"
             links = [f'<a href="{html.escape(paper_url, quote=True)}">Paper page</a>']
+            if not citation_skip_reason(publication):
+                links.append(f'<a href="{html.escape(paper_url, quote=True)}#cite-this-paper">Cite</a>')
             if publication["featured"]:
                 links.append('<span class="badge badge-featured">Featured</span>')
             if publication["deep_geo"]:
@@ -2215,7 +2231,7 @@ def render_publications_page(items, config):
 </div></section>
 <section class="publication-search"><label for="pubSearch">Search publications and evidence</label><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
 {ui('<p>Search title, journal, DOI, authors and visible scientific evidence. Text relevance is not evidence strength.</p><p id="evidenceSearchStatus" role="status" aria-live="polite">Browse the complete publication list below, or search visible evidence text.</p><div id="evidenceResults"></div>')}
-<nav class="publication-shortcuts" aria-label="Publication browsing"><a href="#pubList">Browse all records</a><a href="#scientific-questions">Scientific questions</a></nav></section>
+<nav class="publication-shortcuts" aria-label="Publication browsing"><a href="#pubList">Browse all records</a><a href="research/questions.html">Scientific Question Index</a><a href="#scientific-questions">Selected questions</a></nav></section>
 <aside class="publication-discovery">{navigation_html(ROOT, items)}{ui(research_guides.navigation())}</aside><section class="publication-records"><div id="pubList">{''.join(sections)}</div></section>
 <section class="identity-note"><div class="notice"><strong>Identity control:</strong> automated discovery links {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) to the exact ORCID iD rather than relying on the author name alone, reducing same-name misattribution.</div></section>
 
@@ -2258,9 +2274,9 @@ def render_featured_cards(featured_entries, public_by_token, deep_contents):
     return '<div class="grid">' + "".join(cards) + "</div>"
 
 
-def write_machine_indexes(items, deep_items, config):
+def write_machine_indexes(items, deep_items, config, discovery_fields):
     paper_index = {
-        "version": 1,
+        "version": 2,
         "researcher": {
             "name": config["researcher_name"],
             "alternateName": config["researcher_name_zh"],
@@ -2279,6 +2295,7 @@ def write_machine_indexes(items, deep_items, config):
                 "deep_geo": item["deep_geo"],
                 "paper_geo_status": item["paper_geo_status"],
                 "featured": item["featured"],
+                **discovery_fields[item['slug']],
             }
             for item in items
         ],
@@ -2299,6 +2316,8 @@ def write_machine_indexes(items, deep_items, config):
         f"- All Publications: {config['site_url']}/publications.html",
         f"- Publications JSON: {config['site_url']}/publications.json",
         f"- Paper index: {config['site_url']}/paper_index.json",
+        f"- Scientific Question Index: {config['site_url']}/research/questions.html",
+        f"- Questions JSON: {config['site_url']}/research/questions.json",
         "",
         "## Deep GEO",
         "",
@@ -2317,6 +2336,8 @@ def write_machine_indexes(items, deep_items, config):
         f"- ORCID: {orcid_url(config)}",
         "",
     ]
+    full_lines.extend([f"- Scientific Question Index: {config['site_url']}/research/questions.html",
+                       f"- Questions JSON: {config['site_url']}/research/questions.json", ""])
     for item in items:
         full_lines.extend(
             [
@@ -2396,6 +2417,13 @@ def build_site():
         item["slug"]: citation_record(item, citation_metadata, config["site_url"])
         for item in public_items
     }
+    scholarly_ids = scholarly_discovery.load_identifiers(public_items, citation_metadata)
+    discovery_fields = {
+        item['slug']: scholarly_discovery.index_fields(
+            item, citation_by_slug[item['slug']], deep_contents.get(publication_token(item)),
+            official_abstracts.get(norm_doi(item.get('doi'))), config['site_url'], scholarly_ids.get(norm_doi(item.get('doi'))))
+        for item in public_items
+    }
     expected_slugs = {item["slug"] for item in public_items}
     missing_legacy = sorted(set(LEGACY_DEEP_SLUGS) - expected_slugs)
     if missing_legacy:
@@ -2415,6 +2443,7 @@ def build_site():
                 public_by_doi=public_by_doi,
                 citation_data=citation_by_slug[item["slug"]],
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
+                identifiers=scholarly_ids.get(norm_doi(item.get('doi'))),
             ),
         )
         write_text_if_changed(
@@ -2482,6 +2511,15 @@ def build_site():
             )
     publications_url = absolute(config["site_url"], "publications.html")
     html_changed[research_guides.URL] = research_guides.build(ROOT)
+    question_rows = scholarly_discovery.question_records(public_items, {
+        norm_doi(c['doi']): c for c in deep_contents.values() if c
+    }, discovery_fields)
+    question_url = absolute(config['site_url'], scholarly_discovery.QUESTION_PATH)
+    html_changed[question_url] = write_public_html_if_changed(
+        ROOT / scholarly_discovery.QUESTION_PATH,
+        with_ga4_tag(scholarly_discovery.render_questions(question_rows, config)))
+    write_text_if_changed(ROOT / scholarly_discovery.QUESTION_JSON_PATH,
+                         json.dumps({'version': 1, 'questions': question_rows}, ensure_ascii=False, indent=2) + '\n')
     write_text_if_changed(
         ROOT / "assets/evidence-search.json",
         json.dumps(search_corpus(ROOT, public_items, {
@@ -2513,12 +2551,13 @@ def build_site():
     html_changed[homepage_url] = write_public_html_if_changed(index_path, index_html)
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
-    write_machine_indexes(public_items, deep_items, config)
+    write_machine_indexes(public_items, deep_items, config, discovery_fields)
     urls = [
         homepage_url,
         publications_url,
         *[item["paper_url"] for item in public_items],
         research_guides.URL,
+        question_url,
     ]
     lastmods = {
         url: resolve_lastmod(url, html_changed[url], previous_lastmods, today)

@@ -215,7 +215,7 @@ def render_bibtex(record):
         if record.get("last_page"):
             pages += "--" + record["last_page"]
         fields.append(("pages", pages))
-    elif record.get("article_number"):
+    if record.get("article_number"):
         fields.append(("eid", record["article_number"]))
     fields.extend([("doi", record["doi"]), ("url", record["doi_url"])])
     if record.get("issn") or record.get("eissn"):
@@ -275,7 +275,7 @@ def render_csl_json(record):
         result["page"] = record["first_page"] + (
             "-" + record["last_page"] if record.get("last_page") else ""
         )
-    elif record.get("article_number"):
+    if record.get("article_number"):
         result["number"] = record["article_number"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]

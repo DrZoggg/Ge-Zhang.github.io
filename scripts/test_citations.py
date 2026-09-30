@@ -12,6 +12,8 @@ from citation_common import (
     citation_skip_reason,
     load_citation_metadata,
     render_csl_json,
+    render_bibtex,
+    render_ris,
 )
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import is_withdrawn, load_master, norm_doi, publication_authors
@@ -100,7 +102,35 @@ def reject_metadata(public, papers):
     raise AssertionError(f"Invalid citation metadata was accepted: {papers}")
 
 
+def test_locator_and_unicode_edges():
+    # Test-only metadata: independent pagination/e-location, never fake pages.
+    base = dict(id='synthetic-edge', type='Article', title='Synthetic UTF-8 α test',
+                authors=['Élodie Müller', '张格'] + [f'Author {i}' for i in range(30)],
+                journal='Synthetic Journal', year=2026, publication_date='2026-01-02',
+                doi='10.9999/synthetic-edge', doi_url='https://doi.org/10.9999/synthetic-edge',
+                volume='7', issue='2')
+    for pages, number in [(False, True), (True, False), (True, True), (False, False)]:
+        record = dict(base)
+        if pages: record.update(first_page='1', last_page='9')
+        if number: record['article_number'] = 'e42'
+        bib, ris = render_bibtex(record), render_ris(record)
+        csl = json.loads(render_csl_json(record))
+        assert ('pages = {1--9}' in bib) == pages
+        assert ('eid = {e42}' in bib) == number
+        assert ('SP  - 1' in ris and 'EP  - 9' in ris) == pages
+        assert ('C7  - e42' in ris) == number
+        assert csl.get('page') == ('1-9' if pages else None)
+        assert csl.get('number') == ('e42' if number else None)
+        assert csl['issue'] == '2' and csl['issued']['date-parts'] == [[2026, 1, 2]]
+        assert csl['DOI'] == record['doi'] and csl['title'] == record['title']
+        assert [a['literal'] for a in csl['author']] == record['authors']
+        assert [line[6:] for line in ris.splitlines() if line.startswith('AU  - ')] == record['authors']
+        assert ' and '.join(record['authors']) in bib
+        for text in (bib, ris, render_csl_json(record)): assert text.encode('utf-8').decode('utf-8') == text
+
+
 def run_tests():
+    test_locator_and_unicode_edges()
     master = load_master()
     public = [item for item in master if not is_withdrawn(item)]
     withdrawn = [item for item in master if is_withdrawn(item)]
@@ -130,7 +160,8 @@ def run_tests():
             ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
             ("pmid", "citation_pmid"), ("publisher", "citation_publisher"),
         ):
-            assert meta_contents(markup, tag) == ([expected[key]] if key in expected else [])
+            value = expected.get(key) or (expected.get('eissn') if key == 'issn' else None)
+            assert meta_contents(markup, tag) == ([value] if value else [])
         export = citation_files(priority)
         bib_text = (CITATIONS_DIR / export["bib"]).read_text(encoding="utf-8")
         ris_text = (CITATIONS_DIR / export["ris"]).read_text(encoding="utf-8")
@@ -163,7 +194,7 @@ def run_tests():
         data = json.loads(render_csl_json(current))
         assert isinstance(data, dict) and "article-number" not in data
         assert data.get("issue") == current.get("issue")
-        if current.get("article_number") and not current.get("first_page"):
+        if current.get("article_number"):
             assert data["number"] == current["article_number"]
             without_number = copy.deepcopy(current)
             without_number.pop("article_number")

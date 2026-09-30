@@ -12,6 +12,7 @@ from build_publications import (
     validate_deep_v2_content,
 )
 from site_common import (
+    ROOT,
     PAPERS_DIR,
     controller_token,
     index_master,
@@ -198,6 +199,7 @@ def rendered_v2(publication, content, config, public_by_doi, citation_data=None,
         public_by_doi=public_by_doi,
         citation_data=citation_data,
         official_abstract=official_abstract,
+        identifiers=json.loads((ROOT / 'data/scholarly_identifiers.json').read_text(encoding='utf-8'))['papers'].get(norm_doi(publication.get('doi'))),
     )
     markdown = render_paper_markdown(
         publication,

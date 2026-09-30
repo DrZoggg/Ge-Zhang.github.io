@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "description": "One existing reviewed question per V2 work. Mapping questions are reused verbatim; qa_index is one-based. No new scientific prose.",
+  "papers": {
+    "10.3389/fcvm.2025.1724572": {"qa_index": 2},
+    "10.1002/mdr2.70052": {"navigation": true},
+    "10.1002/ggn2.202500053": {"qa_index": 1},
+    "10.1038/s41698-026-01699-1": {"qa_index": 4},
+    "10.1172/jci194175": {"qa_index": 1},
+    "10.1016/j.curpro.2025.100054": {"qa_index": 1},
+    "10.3389/fpubh.2025.1521372": {"qa_index": 2},
+    "10.1111/jcmm.70725": {"navigation": true},
+    "10.1016/j.joim.2025.06.003": {"qa_index": 3},
+    "10.1186/s12915-025-02400-x": {"navigation": true},
+    "10.1002/mdr2.70004": {"qa_index": 3},
+    "10.2147/ijn.s522157": {"qa_index": 1},
+    "10.1136/jitc-2024-010127": {"qa_index": 1},
+    "10.1093/eurheartj/ehaf523": {"qa_index": 1},
+    "10.1038/s41467-024-50415-9": {"navigation": true},
+    "10.18632/aging.205564": {"qa_index": 5},
+    "10.1200/po.24.00089": {"qa_index": 1},
+    "10.1111/jcmm.70258": {"qa_index": 1},
+    "10.1038/s41598-024-65236-5": {"qa_index": 1},
+    "10.1021/acs.jproteome.4c00522": {"navigation": true},
+    "10.1016/j.isci.2023.107587": {"navigation": true},
+    "10.1111/jcmm.17789": {"navigation": true},
+    "10.1016/j.ejphar.2023.175569": {"qa_index": 4},
+    "10.1186/s12967-022-03795-9": {"navigation": true},
+    "10.1002/ehf2.14003": {"qa_index": 4},
+    "10.3389/fonc.2021.659217": {"qa_index": 3}
+  }
+}

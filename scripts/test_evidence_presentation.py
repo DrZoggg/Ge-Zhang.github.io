@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 from evidence_presentation import PILOT_DOIS, STYLESHEET, enabled, guide_navigation
 from sync_common import ROOT, load_master
 from test_abstract_additions import without_approved_abstract
+from discovery_test_contract import without_discovery_additions
 
 BASE = '72075bc52098e0fab8a22bd33828e15601fe6c6a'
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
@@ -75,6 +76,7 @@ class Contract(HTMLParser):
 
 
 def validate_pair(before, after, doi):
+    after = without_discovery_additions(before, after, doi)
     after = without_approved_abstract(before, after, doi)
     after = without_approved_pmc_link(before, after, doi)
     navigation = guide_navigation(doi)

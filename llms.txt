@@ -10,6 +10,8 @@
 - All Publications: https://drgezhang.com/publications.html
 - Publications JSON: https://drgezhang.com/publications.json
 - Paper index: https://drgezhang.com/paper_index.json
+- Scientific Question Index: https://drgezhang.com/research/questions.html
+- Questions JSON: https://drgezhang.com/research/questions.json
 
 ## Deep GEO
 

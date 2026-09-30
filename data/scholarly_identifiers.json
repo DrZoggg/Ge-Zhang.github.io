@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "papers": {
+    "10.1007/s11426-026-3629-x": {
+      "openalex_id": "https://openalex.org/W7213462447",
+      "publisher_url": "https://link.springer.com/10.1007/s11426-026-3629-x",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.1007%2Fs11426-026-3629-x",
+        "https://api.crossref.org/works/10.1007%2Fs11426-026-3629-x"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fcvm.2025.1724572": {
+      "pmid": "41561117",
+      "pmcid": "PMC12813168",
+      "openalex_id": "https://openalex.org/W7118161489",
+      "semantic_scholar_id": "7132b34d133ea0c141f302082266df4c73f16c74",
+      "publisher_url": "https://www.frontiersin.org/articles/10.3389/fcvm.2025.1724572/full",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.3389%2Ffcvm.2025.1724572%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.3389%2Ffcvm.2025.1724572",
+        "https://api.semanticscholar.org/graph/v1/paper/DOI:10.3389%2Ffcvm.2025.1724572?fields=paperId%2CexternalIds%2Ctitle%2Curl%2Cyear",
+        "https://api.crossref.org/works/10.3389%2Ffcvm.2025.1724572"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/mdr2.70052": {
+      "openalex_id": "https://openalex.org/W7118162173",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1002/mdr2.70052",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.1002%2Fmdr2.70052",
+        "https://api.crossref.org/works/10.1002%2Fmdr2.70052"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/ggn2.202500053": {
+      "pmid": "42016906",
+      "pmcid": "PMC13093795",
+      "openalex_id": "https://openalex.org/W7138422367",
+      "publisher_url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/ggn2.202500053",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1002%2Fggn2.202500053%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1002%2Fggn2.202500053",
+        "https://api.crossref.org/works/10.1002%2Fggn2.202500053"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1038/s41698-026-01699-1": {
+      "openalex_id": "https://openalex.org/W7213428234",
+      "publisher_url": "https://www.nature.com/articles/s41698-026-01699-1",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.1038%2Fs41698-026-01699-1",
+        "https://api.crossref.org/works/10.1038%2Fs41698-026-01699-1"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1172/jci194175": {
+      "pmid": "41609725",
+      "pmcid": "PMC12987658",
+      "openalex_id": "https://openalex.org/W7126096260",
+      "semantic_scholar_id": "fba34c8c12b4f065c86b0206c47e0dbb77aa9189",
+      "publisher_url": "https://www.jci.org/articles/view/194175",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1172%2Fjci194175%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1172%2Fjci194175",
+        "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1172%2Fjci194175?fields=paperId%2CexternalIds%2Ctitle%2Curl%2Cyear",
+        "https://api.crossref.org/works/10.1172%2Fjci194175"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.curpro.2025.100054": {
+      "openalex_id": "https://openalex.org/W7124225163",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S1570164625000542",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.curpro.2025.100054",
+        "https://api.crossref.org/works/10.1016%2Fj.curpro.2025.100054"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fpubh.2025.1521372": {
+      "pmid": "40206179",
+      "pmcid": "PMC11979105",
+      "openalex_id": "https://openalex.org/W4408873216",
+      "publisher_url": "https://www.frontiersin.org/articles/10.3389/fpubh.2025.1521372/full",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.3389%2Ffpubh.2025.1521372%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.3389%2Ffpubh.2025.1521372",
+        "https://api.crossref.org/works/10.3389%2Ffpubh.2025.1521372"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/jcmm.70725": {
+      "pmid": "40770945",
+      "pmcid": "PMC12328994",
+      "openalex_id": "https://openalex.org/W4413035878",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.70725",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1111%2Fjcmm.70725%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1111%2Fjcmm.70725",
+        "https://api.crossref.org/works/10.1111%2Fjcmm.70725"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.joim.2025.06.003": {
+      "pmid": "40581550",
+      "openalex_id": "https://openalex.org/W4411301913",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S2095496425000834",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.joim.2025.06.003%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.joim.2025.06.003",
+        "https://api.crossref.org/works/10.1016%2Fj.joim.2025.06.003"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1186/s12915-025-02400-x": {
+      "pmid": "41013440",
+      "pmcid": "PMC12465141",
+      "openalex_id": "https://openalex.org/W4414554387",
+      "publisher_url": "https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-025-02400-x",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1186%2Fs12915-025-02400-x%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1186%2Fs12915-025-02400-x",
+        "https://api.crossref.org/works/10.1186%2Fs12915-025-02400-x"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.71321/fy14v342": {
+      "openalex_id": "https://openalex.org/W4413040871",
+      "publisher_url": "https://ojs.lifeconfluxpress.com/index.php/lifeconflux/article/view/fy14v342",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.71321%2Ffy14v342",
+        "https://api.crossref.org/works/10.71321%2Ffy14v342"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/mdr2.70004": {
+      "openalex_id": "https://openalex.org/W4409920743",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1002/mdr2.70004",
+      "verified_sources": [
+        "https://api.openalex.org/works/https://doi.org/10.1002%2Fmdr2.70004",
+        "https://api.crossref.org/works/10.1002%2Fmdr2.70004"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.2147/ijn.s522157": {
+      "pmid": "40755464",
+      "pmcid": "PMC12315914",
+      "openalex_id": "https://openalex.org/W4412693526",
+      "publisher_url": "https://www.dovepress.com/targeted-delivery-of-exosome-derived-mirna-185-5p-inhibitor-via-liposo-peer-reviewed-fulltext-article-IJN",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.2147%2Fijn.s522157%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.2147%2Fijn.s522157",
+        "https://api.crossref.org/works/10.2147%2Fijn.s522157"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1136/jitc-2024-010127": {
+      "pmid": "39773567",
+      "pmcid": "PMC11749606",
+      "openalex_id": "https://openalex.org/W4406138946",
+      "semantic_scholar_id": "2bdb863a81db853554f58622268f6eb9394387f8",
+      "publisher_url": "https://jitc.bmj.com/lookup/doi/10.1136/jitc-2024-010127",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1136%2Fjitc-2024-010127%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1136%2Fjitc-2024-010127",
+        "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1136%2Fjitc-2024-010127?fields=paperId%2CexternalIds%2Ctitle%2Curl%2Cyear",
+        "https://api.crossref.org/works/10.1136%2Fjitc-2024-010127"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1093/eurheartj/ehaf523": {
+      "pmid": "40709729",
+      "openalex_id": "https://openalex.org/W4412654976",
+      "publisher_url": "https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf523/8212255",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1093%2Feurheartj%2Fehaf523%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1093%2Feurheartj%2Fehaf523",
+        "https://api.crossref.org/works/10.1093%2Feurheartj%2Fehaf523"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1038/s41467-024-50415-9": {
+      "pmid": "39117613",
+      "pmcid": "PMC11310499",
+      "openalex_id": "https://openalex.org/W4401424168",
+      "publisher_url": "https://www.nature.com/articles/s41467-024-50415-9",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41467-024-50415-9%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1038%2Fs41467-024-50415-9",
+        "https://api.crossref.org/works/10.1038%2Fs41467-024-50415-9"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.18632/aging.205564": {
+      "pmid": "38372705",
+      "pmcid": "PMC10929837",
+      "openalex_id": "https://openalex.org/W4391874266",
+      "publisher_url": "https://www.aging-us.com/lookup/doi/10.18632/aging.205564",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.18632%2Faging.205564%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.18632%2Faging.205564",
+        "https://api.crossref.org/works/10.18632%2Faging.205564"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1200/po.24.00089": {
+      "pmid": "39432882",
+      "openalex_id": "https://openalex.org/W4403588641",
+      "publisher_url": "https://ascopubs.org/doi/10.1200/PO.24.00089",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1200%2Fpo.24.00089%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1200%2Fpo.24.00089",
+        "https://api.crossref.org/works/10.1200%2Fpo.24.00089"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/jcmm.70258": {
+      "pmid": "39719688",
+      "pmcid": "PMC11668728",
+      "openalex_id": "https://openalex.org/W4405765544",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.70258",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1111%2Fjcmm.70258%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1111%2Fjcmm.70258",
+        "https://api.crossref.org/works/10.1111%2Fjcmm.70258"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1038/s41598-024-65236-5": {
+      "pmid": "38898215",
+      "pmcid": "PMC11187219",
+      "openalex_id": "https://openalex.org/W4399807103",
+      "publisher_url": "https://www.nature.com/articles/s41598-024-65236-5",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41598-024-65236-5%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1038%2Fs41598-024-65236-5",
+        "https://api.crossref.org/works/10.1038%2Fs41598-024-65236-5"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1021/acs.jproteome.4c00522": {
+      "pmid": "39129220",
+      "pmcid": "PMC11385702",
+      "openalex_id": "https://openalex.org/W4401499749",
+      "publisher_url": "https://pubs.acs.org/doi/10.1021/acs.jproteome.4c00522",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1021%2Facs.jproteome.4c00522%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1021%2Facs.jproteome.4c00522",
+        "https://api.crossref.org/works/10.1021%2Facs.jproteome.4c00522"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.isci.2023.107587": {
+      "pmid": "37664595",
+      "pmcid": "PMC10470306",
+      "openalex_id": "https://openalex.org/W4385707803",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S2589004223016644",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.isci.2023.107587%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.isci.2023.107587",
+        "https://api.crossref.org/works/10.1016%2Fj.isci.2023.107587"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/jcmm.17789": {
+      "pmid": "37243441",
+      "pmcid": "PMC10339102",
+      "openalex_id": "https://openalex.org/W4378516912",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.17789",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1111%2Fjcmm.17789%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1111%2Fjcmm.17789",
+        "https://api.crossref.org/works/10.1111%2Fjcmm.17789"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.ejphar.2023.175569": {
+      "pmid": "36740037",
+      "openalex_id": "https://openalex.org/W4319160269",
+      "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S0014299923000808",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.ejphar.2023.175569%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1016%2Fj.ejphar.2023.175569",
+        "https://api.crossref.org/works/10.1016%2Fj.ejphar.2023.175569"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1186/s12967-022-03795-9": {
+      "pmid": "36474294",
+      "pmcid": "PMC9724432",
+      "openalex_id": "https://openalex.org/W4311633514",
+      "publisher_url": "https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-022-03795-9",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1186%2Fs12967-022-03795-9%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1186%2Fs12967-022-03795-9",
+        "https://api.crossref.org/works/10.1186%2Fs12967-022-03795-9"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/ehf2.14003": {
+      "pmid": "35727093",
+      "pmcid": "PMC9349450",
+      "openalex_id": "https://openalex.org/W4283273503",
+      "publisher_url": "https://academic.oup.com/eschf/article/9/5/2937/8323023",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1002%2Fehf2.14003%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.1002%2Fehf2.14003",
+        "https://api.crossref.org/works/10.1002%2Fehf2.14003"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fonc.2021.659217": {
+      "pmid": "34012920",
+      "pmcid": "PMC8126718",
+      "openalex_id": "https://openalex.org/W3158276903",
+      "publisher_url": "https://www.frontiersin.org/articles/10.3389/fonc.2021.659217/full",
+      "verified_sources": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.3389%2Ffonc.2021.659217%22&format=json&pageSize=10&resultType=core",
+        "https://api.openalex.org/works/https://doi.org/10.3389%2Ffonc.2021.659217",
+        "https://api.crossref.org/works/10.3389%2Ffonc.2021.659217"
+      ],
+      "verified_at": "2026-09-30"
+    }
+  }
+}
