@@ -19,13 +19,13 @@ def load_identifiers(items, metadata, root=ROOT):
     payload = json.loads((root / 'data/scholarly_identifiers.json').read_text(encoding='utf-8'))
     if payload.get('version') != 1 or set(payload) != {'version', 'papers'}:
         raise ValueError('Unsupported scholarly identifier contract')
-    allowed = {p['doi'] for p in items if p.get('deep_geo')}
+    allowed = {p['doi'] for p in items if p.get('doi')}
     patterns = {'pmid': r'[1-9]\d*', 'pmcid': r'PMC[1-9]\d*',
                 'openalex_id': r'https://openalex.org/W[1-9]\d*',
                 'semantic_scholar_id': r'[0-9a-f]{40}'}
     for doi, row in payload['papers'].items():
         if doi not in allowed or set(row) - (set(patterns) | {'publisher_url','verified_sources','verified_at'}):
-            raise ValueError('Unrecognized or non-priority scholarly identity')
+            raise ValueError('Unrecognized or non-public scholarly identity')
         for key, pattern in patterns.items():
             if key in row and not re.fullmatch(pattern, row[key]):
                 raise ValueError('Invalid scholarly identifier: ' + key)
@@ -37,6 +37,53 @@ def load_identifiers(items, metadata, root=ROOT):
             if urlparse(url).scheme != 'https' or not urlparse(url).netloc:
                 raise ValueError('Unsafe scholarly source URL')
     return payload['papers']
+
+
+def reviewed_backlinks(items, contents):
+    """Expose existing directed relationships for V2 works with no incoming edge.
+
+    This is navigation to the author's reviewed relation, not a reversed
+    scientific claim or evidence of a formal article-to-article citation.
+    """
+    public = {p['doi']: p for p in items if p.get('doi')}
+    v2 = {doi: c for doi, c in contents.items() if c and c.get('version') == 2}
+    incoming = {r['doi'] for c in v2.values() for r in c.get('related_papers', [])}
+    result = {}
+    for item in items:
+        doi = item.get('doi')
+        if doi not in v2 or doi in incoming:
+            continue
+        for relation in v2[doi].get('related_papers', []):
+            target = relation['doi']
+            if target not in public or target == doi:
+                continue
+            result.setdefault(target, []).append({
+                'source_doi': doi, 'title': item['title'],
+                'url': item['paper_url'], 'relationship': relation['relationship'],
+            })
+    return result
+
+
+def backlink_html(rows):
+    if not rows:
+        return ''
+    escape = html.escape
+    links = ''.join(
+        '<li><a href="' + escape(r['url'], quote=True) + '">' + escape(r['title'])
+        + '</a><p><strong>Relationship stated on that evidence page:</strong> '
+        + escape(r['relationship']) + '</p></li>' for r in rows)
+    return ('<aside id="reviewed-backlinks" aria-label="Existing research relationships">'
+            '<p><strong>Explore an existing research relationship</strong></p>'
+            '<p>The following author-maintained evidence pages already list this work in their Related Research section. '
+            'This navigation does not establish a formal citation or shared validation.</p><ul>'
+            + links + '</ul></aside>')
+
+
+def validate_backlink_html(page, rows):
+    expected = backlink_html(rows)
+    actual = re.findall(r'<aside\b[^>]*\bid="reviewed-backlinks"[^>]*>.*?</aside>', page, re.S)
+    if actual != ([expected] if expected else []) or page.count('id="reviewed-backlinks"') != len(actual):
+        raise ValueError('Reviewed relationship navigation differs from approved sources')
 
 
 def identity_links(row):
@@ -175,11 +222,14 @@ def validate_generated(items, config, root=ROOT):
         record = citation_record(item, metadata, config['site_url'])
         fields[item['slug']] = index_fields(item, record, content, abstracts.get(item.get('doi')), config['site_url'], identities.get(item.get('doi')))
     index = json.loads((root / 'paper_index.json').read_text(encoding='utf-8'))
+    backlinks = reviewed_backlinks(items, contents)
     if index.get('version') != 2 or len(index['papers']) != len(items):
         raise ValueError('Machine discovery index version/inventory mismatch')
     for item, indexed in zip(items,index['papers']):
         if indexed['paper_url'] != item['paper_url'] or any(indexed.get(k) != v for k,v in fields[item['slug']].items()):
             raise ValueError('Machine discovery field drift: ' + item['slug'])
+        page = (root / 'papers' / (item['slug'] + '.html')).read_text(encoding='utf-8')
+        validate_backlink_html(page, backlinks.get(item.get('doi')))
     expected = question_records(items, contents, fields, root)
     actual = json.loads((root / QUESTION_JSON_PATH).read_text(encoding='utf-8'))
     if actual != {'version':1,'questions':expected}:
@@ -190,4 +240,5 @@ def validate_generated(items, config, root=ROOT):
         target = (root / 'papers' / (slug + '.html')).read_text(encoding='utf-8')
         if target.count('id="'+anchor+'"') != 1 or html.escape(row['answer_url'],quote=True) not in page:
             raise ValueError('Missing or ambiguous scientific question route')
-    return {'question_routes':len(expected),'identity_records':len(identities)}
+    return {'question_routes':len(expected),'identity_records':len(identities),
+            'reviewed_backlink_edges':sum(len(rows) for rows in backlinks.values())}

@@ -320,6 +320,416 @@
         "https://api.crossref.org/works/10.3389%2Ffonc.2021.659217"
       ],
       "verified_at": "2026-09-30"
+    },
+    "10.1007/s10238-026-02130-6": {
+      "openalex_id": "https://openalex.org/W7151618557",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7151618557",
+        "https://europepmc.org/article/MED/41945162"
+      ],
+      "pmid": "41945162",
+      "pmcid": "PMC13342204",
+      "verified_at": "2026-09-30"
+    },
+    "10.1056/nejmc2518964": {
+      "openalex_id": "https://openalex.org/W7133488087",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7133488087"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.15212/bioi-2026-0017": {
+      "openalex_id": "https://openalex.org/W7164867760",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7164867760"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1155/humu/5591097": {
+      "openalex_id": "https://openalex.org/W7154461818",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7154461818",
+        "https://europepmc.org/article/MED/41993134"
+      ],
+      "pmid": "41993134",
+      "pmcid": "PMC13080692",
+      "verified_at": "2026-09-30"
+    },
+    "10.1371/journal.pone.0346326": {
+      "openalex_id": "https://openalex.org/W7148844109",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7148844109",
+        "https://europepmc.org/article/MED/41931483"
+      ],
+      "pmid": "41931483",
+      "pmcid": "PMC13048407",
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/mdr2.70073": {
+      "openalex_id": "https://openalex.org/W7163366492",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7163366492"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/jcmm.70475": {
+      "openalex_id": "https://openalex.org/W4408377359",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4408377359",
+        "https://europepmc.org/article/MED/40070032"
+      ],
+      "pmid": "40070032",
+      "pmcid": "PMC11897062",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.isci.2025.114320": {
+      "openalex_id": "https://openalex.org/W4416971849",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4416971849",
+        "https://europepmc.org/article/MED/41602910"
+      ],
+      "pmid": "41602910",
+      "pmcid": "PMC12834111",
+      "verified_at": "2026-09-30"
+    },
+    "10.2139/ssrn.5292589": {
+      "openalex_id": "https://openalex.org/W4411401198",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4411401198"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fnut.2025.1658286": {
+      "openalex_id": "https://openalex.org/W4414439421",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4414439421",
+        "https://europepmc.org/article/MED/41064288"
+      ],
+      "pmid": "41064288",
+      "pmcid": "PMC12501789",
+      "verified_at": "2026-09-30"
+    },
+    "10.32604/or.2025.059290": {
+      "openalex_id": "https://openalex.org/W4407614715",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4407614715",
+        "https://europepmc.org/article/MED/40486880"
+      ],
+      "pmid": "40486880",
+      "pmcid": "PMC12144630",
+      "verified_at": "2026-09-30"
+    },
+    "10.2147/cia.s493841": {
+      "openalex_id": "https://openalex.org/W4416776237",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4416776237",
+        "https://europepmc.org/article/MED/41347210"
+      ],
+      "pmid": "41347210",
+      "pmcid": "PMC12673264",
+      "verified_at": "2026-09-30"
+    },
+    "10.1038/s41598-025-98859-3": {
+      "openalex_id": "https://openalex.org/W4410166236",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4410166236",
+        "https://europepmc.org/article/MED/40335605"
+      ],
+      "pmid": "40335605",
+      "pmcid": "PMC12059082",
+      "verified_at": "2026-09-30"
+    },
+    "10.2147/jir.s495784": {
+      "openalex_id": "https://openalex.org/W4407810609",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4407810609",
+        "https://europepmc.org/article/MED/40013238"
+      ],
+      "pmid": "40013238",
+      "pmcid": "PMC11863793",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.cbi.2025.111421": {
+      "openalex_id": "https://openalex.org/W4407731417",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4407731417",
+        "https://europepmc.org/article/MED/39984109"
+      ],
+      "pmid": "39984109",
+      "verified_at": "2026-09-30"
+    },
+    "10.1136/jitc-2024-010787": {
+      "openalex_id": "https://openalex.org/W4407984543",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4407984543",
+        "https://europepmc.org/article/MED/40010763"
+      ],
+      "pmid": "40010763",
+      "pmcid": "PMC11865799",
+      "verified_at": "2026-09-30"
+    },
+    "10.1200/po-24-00875": {
+      "openalex_id": "https://openalex.org/W4406202665",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4406202665",
+        "https://europepmc.org/article/MED/39787464"
+      ],
+      "pmid": "39787464",
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fonc.2025.1538574": {
+      "openalex_id": "https://openalex.org/W4413303258",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4413303258",
+        "https://europepmc.org/article/MED/40904511"
+      ],
+      "pmid": "40904511",
+      "pmcid": "PMC12401915",
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/odi.70054": {
+      "openalex_id": "https://openalex.org/W4413270071",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4413270071",
+        "https://europepmc.org/article/MED/40818111"
+      ],
+      "pmid": "40818111",
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/tox.24284": {
+      "openalex_id": "https://openalex.org/W4394621029",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4394621029",
+        "https://europepmc.org/article/MED/38591820"
+      ],
+      "pmid": "38591820",
+      "verified_at": "2026-09-30"
+    },
+    "10.1186/s10020-024-00963-z": {
+      "openalex_id": "https://openalex.org/W4403785027",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4403785027",
+        "https://europepmc.org/article/MED/39462326"
+      ],
+      "pmid": "39462326",
+      "pmcid": "PMC11513636",
+      "verified_at": "2026-09-30"
+    },
+    "10.1002/clc.70019": {
+      "openalex_id": "https://openalex.org/W4402780523",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4402780523",
+        "https://europepmc.org/article/MED/39314085"
+      ],
+      "pmid": "39314085",
+      "pmcid": "PMC11420513",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.jtemb.2024.127543": {
+      "openalex_id": "https://openalex.org/W4403267871",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4403267871",
+        "https://europepmc.org/article/MED/39406123"
+      ],
+      "pmid": "39406123",
+      "verified_at": "2026-09-30"
+    },
+    "10.15212/cvia.2024.0023": {
+      "openalex_id": "https://openalex.org/W4394787832",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4394787832"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1111/jcmm.18408": {
+      "openalex_id": "https://openalex.org/W4399330698",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4399330698",
+        "https://europepmc.org/article/MED/38837585"
+      ],
+      "pmid": "38837585",
+      "pmcid": "PMC11149493",
+      "verified_at": "2026-09-30"
+    },
+    "10.1007/s10238-024-01439-4": {
+      "openalex_id": "https://openalex.org/W4400980865",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4400980865",
+        "https://europepmc.org/article/MED/39052154"
+      ],
+      "pmid": "39052154",
+      "pmcid": "PMC11272744",
+      "verified_at": "2026-09-30"
+    },
+    "10.1186/s12943-024-02047-2": {
+      "openalex_id": "https://openalex.org/W4400057543",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4400057543",
+        "https://europepmc.org/article/MED/38918817"
+      ],
+      "pmid": "38918817",
+      "pmcid": "PMC11201788",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.canlet.2024.217079": {
+      "openalex_id": "https://openalex.org/W4399998575",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4399998575",
+        "https://europepmc.org/article/MED/38936505"
+      ],
+      "pmid": "38936505",
+      "verified_at": "2026-09-30"
+    },
+    "10.1186/s12931-024-02978-w": {
+      "openalex_id": "https://openalex.org/W4403276445",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4403276445",
+        "https://europepmc.org/article/MED/39385167"
+      ],
+      "pmid": "39385167",
+      "pmcid": "PMC11465917",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.intimp.2024.112574": {
+      "openalex_id": "https://openalex.org/W4400381768",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4400381768",
+        "https://europepmc.org/article/MED/38971104"
+      ],
+      "pmid": "38971104",
+      "verified_at": "2026-09-30"
+    },
+    "10.3389/fonc.2024.1425895": {
+      "openalex_id": "https://openalex.org/W4402658033",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4402658033",
+        "https://europepmc.org/article/MED/39364312"
+      ],
+      "pmid": "39364312",
+      "pmcid": "PMC11446723",
+      "verified_at": "2026-09-30"
+    },
+    "10.1093/hmg/ddae189": {
+      "openalex_id": "https://openalex.org/W4405558741",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4405558741",
+        "https://europepmc.org/article/MED/39690817"
+      ],
+      "pmid": "39690817",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.cmpbup.2024.100164": {
+      "openalex_id": "https://openalex.org/W4402525843",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4402525843"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1038/s41598-024-80885-2": {
+      "openalex_id": "https://openalex.org/W4405842054",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4405842054",
+        "https://europepmc.org/article/MED/39730571"
+      ],
+      "pmid": "39730571",
+      "pmcid": "PMC11680768",
+      "verified_at": "2026-09-30"
+    },
+    "10.1007/s13402-023-00912-8": {
+      "openalex_id": "https://openalex.org/W4391403718",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4391403718",
+        "https://europepmc.org/article/MED/38294647"
+      ],
+      "pmid": "38294647",
+      "pmcid": "PMC12974067",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.ejso.2024.108527": {
+      "openalex_id": "https://openalex.org/W4400190725",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4400190725",
+        "https://europepmc.org/article/MED/38968857"
+      ],
+      "pmid": "38968857",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.csbj.2024.04.044": {
+      "openalex_id": "https://openalex.org/W4394989780",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4394989780",
+        "https://europepmc.org/article/MED/38689716"
+      ],
+      "pmid": "38689716",
+      "pmcid": "PMC11058087",
+      "verified_at": "2026-09-30"
+    },
+    "10.14283/jpad.2024.161": {
+      "openalex_id": "https://openalex.org/W4401955037",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4401955037",
+        "https://europepmc.org/article/MED/39559883"
+      ],
+      "pmid": "39559883",
+      "pmcid": "PMC11573866",
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.canlet.2024.217083": {
+      "openalex_id": "https://openalex.org/W4399986411",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4399986411",
+        "https://europepmc.org/article/MED/38925363"
+      ],
+      "pmid": "38925363",
+      "verified_at": "2026-09-30"
+    },
+    "10.2139/ssrn.4857099": {
+      "openalex_id": "https://openalex.org/W4399480127",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4399480127"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.2147/cia.s462542": {
+      "openalex_id": "https://openalex.org/W4396222788",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4396222788",
+        "https://europepmc.org/article/MED/38706634"
+      ],
+      "pmid": "38706634",
+      "pmcid": "PMC11068055",
+      "verified_at": "2026-09-30"
+    },
+    "10.2139/ssrn.4391582": {
+      "openalex_id": "https://openalex.org/W4328007711",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4328007711"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.1016/j.jma.2023.05.007": {
+      "openalex_id": "https://openalex.org/W4382243369",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4382243369"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "10.18063/ijb.740": {
+      "openalex_id": "https://openalex.org/W4380872576",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4380872576",
+        "https://europepmc.org/article/MED/37323481"
+      ],
+      "pmid": "37323481",
+      "pmcid": "PMC10261152",
+      "verified_at": "2026-09-30"
+    },
+    "10.3980/j.issn.1672-5123.2020.12.13": {
+      "openalex_id": "https://openalex.org/W4399062302",
+      "verified_sources": [
+        "https://api.openalex.org/works/W4399062302"
+      ],
+      "verified_at": "2026-09-30"
     }
   }
 }

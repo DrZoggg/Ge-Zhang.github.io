@@ -192,6 +192,10 @@ def synthetic_multicohort_fixture():
 def rendered_v2(publication, content, config, public_by_doi, citation_data=None,
                 official_abstract=None):
     validate_deep_v2_content(content, f"{publication['slug']} test fixture")
+    from scholarly_discovery import reviewed_backlinks
+    public_items = json.loads((ROOT / 'publications.json').read_text(encoding='utf-8'))
+    approved_contents = {p['doi']: json.loads((ROOT / 'data/deep_geo' / (p['slug'] + '.json')).read_text(encoding='utf-8'))
+                         for p in public_items if p.get('paper_geo_status') == 'v2'}
     page = render_paper_html(
         publication,
         config=config,
@@ -200,6 +204,7 @@ def rendered_v2(publication, content, config, public_by_doi, citation_data=None,
         citation_data=citation_data,
         official_abstract=official_abstract,
         identifiers=json.loads((ROOT / 'data/scholarly_identifiers.json').read_text(encoding='utf-8'))['papers'].get(norm_doi(publication.get('doi'))),
+        reviewed_backlinks=reviewed_backlinks(public_items, approved_contents).get(norm_doi(publication.get('doi'))),
     )
     markdown = render_paper_markdown(
         publication,

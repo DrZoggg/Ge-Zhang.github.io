@@ -44,7 +44,16 @@ def without_discovery_additions(before, after, doi):
             new=f'<article class="paper-geo-v2__qa" id="qa-{i}">'
             if after.count(new)!=1: raise ValueError('Missing/changed Q&A answer target')
             after=after.replace(new,'<article class="paper-geo-v2__qa">',1)
-    from scholarly_discovery import identifier_html, identity_links
+    from scholarly_discovery import identifier_html, identity_links, reviewed_backlinks, backlink_html, validate_backlink_html
+    contents = {}
+    for p in publications:
+        path = ROOT / 'data/deep_geo' / (p['slug'] + '.json')
+        if p.get('deep_geo') and path.exists():
+            contents[p['doi']] = json.loads(path.read_text(encoding='utf-8'))
+    rows = reviewed_backlinks(publications, contents).get(doi)
+    validate_backlink_html(after, rows)
+    if rows:
+        remove_once(backlink_html(rows))
     row=json.loads((ROOT/'data/scholarly_identifiers.json').read_text(encoding='utf-8'))['papers'].get(doi)
     if row:
         remove_once(identifier_html(row))

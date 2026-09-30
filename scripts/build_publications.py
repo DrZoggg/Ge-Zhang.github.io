@@ -1872,7 +1872,8 @@ def render_official_abstract_markdown(record, doi):
 
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
-                      citation_data=None, official_abstract=None, presentation=None, identifiers=None):
+                      citation_data=None, official_abstract=None, presentation=None, identifiers=None,
+                      reviewed_backlinks=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2035,7 +2036,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
 {(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{early_html}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
-{notice_html}{scholarly_discovery.identifier_html(identifiers)}
+{notice_html}{scholarly_discovery.identifier_html(identifiers)}{scholarly_discovery.backlink_html(reviewed_backlinks)}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 {'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -2418,6 +2419,9 @@ def build_site():
         for item in public_items
     }
     scholarly_ids = scholarly_discovery.load_identifiers(public_items, citation_metadata)
+    reviewed_backlinks = scholarly_discovery.reviewed_backlinks(public_items, {
+        norm_doi(c['doi']): c for c in deep_contents.values() if c
+    })
     discovery_fields = {
         item['slug']: scholarly_discovery.index_fields(
             item, citation_by_slug[item['slug']], deep_contents.get(publication_token(item)),
@@ -2444,6 +2448,7 @@ def build_site():
                 citation_data=citation_by_slug[item["slug"]],
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
                 identifiers=scholarly_ids.get(norm_doi(item.get('doi'))),
+                reviewed_backlinks=reviewed_backlinks.get(norm_doi(item.get('doi'))),
             ),
         )
         write_text_if_changed(
