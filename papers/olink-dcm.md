@@ -31,6 +31,39 @@ In this study, we utilized the Olink Cardiovascular III panel to compare the exp
 
 Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11385702/)); [DOI](https://doi.org/10.1021/acs.jproteome.4c00522); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Cardiovascular biomarker research
+- Dilated cardiomyopathy and heart failure
+
+### Review topics
+
+- Blood protein biomarkers in cardiomyopathy
+- Targeted proteomics for biomarker discovery
+
+### Scientific role
+
+Targeted plasma-protein discovery with local ELISA replication and separate cardiac gene-expression evaluation in DCM-HF.
+
+### Evidence position
+
+Human cross-sectional candidate-biomarker study; tissue-transcriptomic evaluation is not plasma-proteomic replication, and prospective clinical utility is not established.
+
+### Related concepts
+
+- Circulating protein candidates
+- Cross-assay biomarker evaluation
+
+### Possible citation contexts
+
+- Background: circulating molecular biomarkers in dilated cardiomyopathy with heart failure.
+- Methods: targeted protein panels and orthogonal assay evaluation, with plasma and cardiac-tissue evidence kept separate.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **Olink DCM-HF: targeted plasma proteomics, ELISA replication, and external cardiac transcriptomic evaluation**

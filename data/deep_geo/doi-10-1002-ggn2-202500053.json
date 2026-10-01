@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Clinical artificial intelligence methodology",
+      "Translational model-evaluation research"
+    ],
+    "review_topics": [
+      "Clinical ensemble design and evaluation",
+      "Interpretation and generalization of clinical AI"
+    ],
+    "scientific_role": "Methodological Perspective on complementary learners, independent-cohort evaluation and robust interpretation of clinical AI ensembles.",
+    "evidence_position": "Perspective with narrative methodological argument and no new empirical evaluation; not a newly validated model, causal attribution result or demonstrated patient benefit.",
+    "related_concepts": [
+      "Ensemble-to-clinical-workflow design",
+      "Attribution-versus-causation distinction"
+    ],
+    "citation_contexts": [
+      "Methods background: evaluation and interpretation requirements for clinical AI ensembles.",
+      "Research planning: independent-cohort assessment and implementation constraints, cited as a Perspective rather than empirical validation."
+    ]
+  },
   "doi": "10.1002/ggn2.202500053",
   "display_title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
   "summary": "This methodological Perspective argues for context-sensitive learner integration, evaluation across independent cohorts and cautious interpretation of feature attribution. Its deployment discussion identifies requirements for future clinical translation rather than reporting a newly validated model.",

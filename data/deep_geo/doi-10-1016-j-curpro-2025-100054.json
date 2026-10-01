@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Artificial intelligence in cardiovascular medicine",
+      "Patient-specific modeling research"
+    ],
+    "review_topics": [
+      "Multimodal AI for cardiovascular mechanism research",
+      "Digital modeling and prospective evaluation requirements"
+    ],
+    "scientific_role": "Correspondence outlining a research agenda for cross-modal interpretation and updateable patient-specific physiological models.",
+    "evidence_position": "Correspondence with narrative synthesis and no new empirical evaluation; not a built, clinically validated therapeutic digital twin or observed human treatment effect.",
+    "related_concepts": [
+      "Mechanism-oriented cross-modal hypotheses",
+      "Simulation-versus-observed-effect distinction"
+    ],
+    "citation_contexts": [
+      "Methods background: multimodal interpretation and patient-specific cardiovascular modeling.",
+      "Research planning: prospective evaluation and governance of digital models, not product validation or treatment efficacy."
+    ]
+  },
   "doi": "10.1016/j.curpro.2025.100054",
   "display_title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
   "summary": "This Correspondence discusses a research agenda connecting multimodal biological interpretation with patient-specific simulation in cardiovascular medicine. It sets out design and translation requirements without reporting a newly built, clinically validated digital twin system.",

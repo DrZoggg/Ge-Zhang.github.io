@@ -207,6 +207,26 @@
     }
   ],
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Biliary tract oncology",
+      "Early-phase cancer treatment evidence"
+    ],
+    "review_topics": [
+      "Cholangiocarcinoma after chemotherapy failure",
+      "Single-arm phase II activity and toxicity reporting"
+    ],
+    "scientific_role": "Prospective single-arm description of apatinib activity and toxicity after gemcitabine-based treatment failure in advanced cholangiocarcinoma.",
+    "evidence_position": "Human single-center phase II observations without a randomized concurrent control; not comparative superiority, causal survival benefit or a current treatment recommendation.",
+    "related_concepts": [
+      "Non-comparative oncology evidence",
+      "Response-denominator interpretation"
+    ],
+    "citation_contexts": [
+      "Evidence synthesis: early-phase treatment studies in previously treated advanced cholangiocarcinoma.",
+      "Methods: denominator-explicit interpretation of response and safety in single-arm oncology trials."
+    ]
+  },
   "display_title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
   "evidence_page_notice": "Author-controlled evidence synthesis, separate from the published abstract and not a replacement for the version of record. Study design, analysis denominators and unresolved reporting differences are retained.",
   "qa": [

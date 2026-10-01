@@ -8,6 +8,7 @@ import html
 import json
 from pathlib import Path
 from sync_common import ROOT, is_withdrawn
+from paper_discovery import scientific_content
 
 SLUG = 'dcm-hf-circulating-biomarkers'
 URL = 'https://drgezhang.com/research/' + SLUG + '.html'
@@ -45,7 +46,7 @@ def resolve(data, root=ROOT, master=None):
         require(path.resolve().is_relative_to((root / 'data/deep_geo').resolve()), 'Unsafe scientific source path')
         c = json.loads(path.read_text(encoding='utf-8'))
         require(c['doi'] == doi and c['version'] == 2, 'Source identity/version mismatch')
-        require(fingerprint(c) == row['source_fingerprint'], 'Scientific source changed: re-review guide before publishing')
+        require(fingerprint(scientific_content(c)) == row['source_fingerprint'], 'Scientific source changed: re-review guide before publishing')
         p = public[doi]
         url = 'https://drgezhang.com/papers/' + p['slug'] + '.html'
         page = (root / 'papers' / (p['slug'] + '.html')).read_text(encoding='utf-8')

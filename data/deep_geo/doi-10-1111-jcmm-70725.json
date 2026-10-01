@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Vascular biomarker research",
+      "Extracellular-vesicle protein research"
+    ],
+    "review_topics": [
+      "Blood-based biomarker candidates in abdominal aortic aneurysm",
+      "Targeted circulating EV proteomics"
+    ],
+    "scientific_role": "Two-center targeted circulating EV protein profiling in human AAA with small external cross-assay evaluation.",
+    "evidence_position": "Exploratory human case-control evidence with assay discordance and ROC uncertainty; not whole-proteome discovery, a combined validated diagnostic model or prospective rupture prediction.",
+    "related_concepts": [
+      "Vesicle-associated protein candidates",
+      "Cross-assay concordance assessment"
+    ],
+    "citation_contexts": [
+      "Background: circulating extracellular vesicles in aortic aneurysm biomarker research.",
+      "Evidence synthesis: targeted EV protein candidates in human AAA, retaining small-sample uncertainty and distinguishing external assay results."
+    ]
+  },
   "doi": "10.1111/jcmm.70725",
   "display_title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
   "summary": "A two-center exploratory study profiled 92 circulating EV-associated proteins in AAA and evaluated five candidates by Western blot and ELISA. External sample size, assay-dependent expression differences and wide ROC uncertainty are retained explicitly.",

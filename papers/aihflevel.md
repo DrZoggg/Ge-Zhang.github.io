@@ -38,6 +38,39 @@ Renal dysfunction (RD) often characterizes the worse course of patients with adv
 
 Text reproduced verbatim from Version of Record ([source](https://www.nature.com/articles/s41467-024-50415-9)); [DOI](https://doi.org/10.1038/s41467-024-50415-9); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Artificial intelligence in cardiovascular medicine
+- Heart failure research
+
+### Review topics
+
+- Heart failure risk prediction
+- Cardiorenal prognostic stratification
+
+### Scientific role
+
+Explainable survival machine-learning framework for advanced heart failure with renal dysfunction.
+
+### Evidence position
+
+Retrospective human prognostic modeling with independent external evaluation; prediction, not demonstrated benefit from model-guided care.
+
+### Related concepts
+
+- Cardiorenal prognosis
+- Explainable prognostic modeling
+
+### Possible citation contexts
+
+- Methods: interpretable AI approaches to heart failure prognosis.
+- Evidence synthesis: externally evaluated mortality-risk models, with the advanced-heart-failure and renal-dysfunction population stated.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Snapshot
 
 **AIHFLevel: explainable survival assessment in advanced heart failure with renal dysfunction**

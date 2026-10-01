@@ -24,6 +24,7 @@ from evidence_discovery import navigation_html, search_corpus, ui, without_evide
 import research_guides
 import scholarly_discovery
 import evidence_presentation
+import paper_discovery
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
     DEEP_CONTENT_DIR,
@@ -754,6 +755,8 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
         validate_citation_pilot(content["citation_pilot"], set(finding_ids), label)
     if "citation_layer" in content:
         validate_citation_layer(content["citation_layer"], content["key_findings"], label)
+    if "discovery_layer" in content:
+        paper_discovery.validate_layer(content["discovery_layer"], f"{label} discovery_layer")
 
 
 def validate_citation_layer(layer, findings, label):
@@ -1509,7 +1512,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
         if content.get("_research_cluster") else ""
     )
     return f'''<div class="paper-geo-v2" data-paper-geo-version="2">
-<section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
+{paper_discovery.render_html(content)}<section class="paper-geo-v2__section" data-v2-section="evidence-snapshot"><h2>{snapshot_heading}</h2><p><strong>{html.escape(content["display_title"])}</strong></p><p>{html.escape(content["summary"])}</p><dl class="paper-geo-v2__evidence-grid">{snapshot}</dl>{counting_note_html}</section>
 {'' if early_summary else evidence_presentation.question_summary(content)}<section class="paper-geo-v2__section" data-v2-section="key-findings"><h2>{v2_article_label(content, "Key Findings")}</h2><div class="paper-geo-v2__findings">{findings}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="study-design"><h2>{html.escape(v2_study_heading(content))}</h2><h3>{v2_article_label(content, 'Review profile') if profile_type == 'narrative_review' else 'Study profile'}</h3><dl class="paper-geo-v2__profile">{study_details}</dl>{cohort_html}<h3>{'Evidence domains' if profile_type == 'narrative_review' else 'Data modalities'}</h3><ul class="paper-geo-v2__compact-list">{modalities}</ul>{model_html}</section>
 <section class="paper-geo-v2__section" data-v2-section="what-this-adds"><h2>{v2_article_label(content, 'What This Review Adds') if profile_type == 'narrative_review' else 'What This Study Adds'}</h2><ul>{additions}</ul></section>
@@ -1630,6 +1633,7 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url=""):
         else []
     )
     parts = [
+        *paper_discovery.render_markdown(content),
         f"## {snapshot_heading}",
         "",
         f"**{content['display_title']}**",

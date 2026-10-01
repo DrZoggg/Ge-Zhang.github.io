@@ -34,6 +34,39 @@ Acute myocardial infarction dominates coronary artery disease mortality. Identif
 
 Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/)); [DOI](https://doi.org/10.1016/j.isci.2023.107587); [CC-BY-NC-ND-4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Atherosclerosis research
+- Computational cardiovascular medicine
+
+### Review topics
+
+- Molecular assessment of plaque vulnerability
+- Transcriptomic characterization of coronary disease
+
+### Scientific role
+
+Transcriptomic machine-learning framework connecting plaque-vulnerability signatures with bulk and single-cell biological interpretation.
+
+### Evidence position
+
+Retrospective multicohort human expression analysis; a research framework, not an approved diagnostic test or demonstrated treatment benefit.
+
+### Related concepts
+
+- Molecular plaque stratification
+- Bulk-to-single-cell interpretation
+
+### Possible citation contexts
+
+- Methods: computational approaches to molecular plaque assessment.
+- Evidence synthesis: plaque-vulnerability expression signatures and their cellular context, without replacing coronary imaging or clinical assessment.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **APVS / APVSLevel: machine-learning and single-cell quantification of atherosclerotic plaque vulnerability**

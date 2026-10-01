@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cardio-oncology",
+      "Cardiac drug-delivery research"
+    ],
+    "review_topics": [
+      "Anthracycline-associated cardiac injury",
+      "Liposomal delivery of inhibitory microRNA payloads"
+    ],
+    "scientific_role": "Peptide-functionalized liposomal miR-185-5p inhibitor delivery evaluated in doxorubicin-associated cellular and mouse injury models.",
+    "evidence_position": "Preclinical formulation, biodistribution and intervention evidence; not exosome infusion, human DCM treatment efficacy or established clinical safety.",
+    "related_concepts": [
+      "Inhibitory RNA delivery",
+      "Delivery-to-functional-outcome evaluation"
+    ],
+    "citation_contexts": [
+      "Background: experimental approaches to chemotherapy-associated cardiac injury.",
+      "Methods: liposomal RNA delivery and preclinical cardiac readouts, distinct from human circulating-vesicle biomarker profiling."
+    ]
+  },
   "doi": "10.2147/ijn.s522157",
   "display_title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
   "summary": "A preclinical study evaluated peptide-functionalized miR-185-5p-inhibitor liposomes in DOX-injured cells and mice, with formulation, biodistribution, cardiac phenotyping and cell-death-associated readouts. No human therapeutic efficacy was established.",

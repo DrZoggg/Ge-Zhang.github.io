@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Extracellular-vesicle biomarker research",
+      "Dilated cardiomyopathy and heart failure"
+    ],
+    "review_topics": [
+      "Circulating RNA biomarkers in cardiomyopathy",
+      "Human plasma exosomal microRNA profiling"
+    ],
+    "scientific_role": "Exploratory human DCM-HF plasma exosomal microRNA profiling with small external expression-assay follow-up.",
+    "evidence_position": "Human case-control biomarker evidence; not prospective diagnosis, therapeutic RNA delivery or external miR-185-5p validation in this article.",
+    "related_concepts": [
+      "Vesicle-associated RNA candidates",
+      "Discovery versus assay follow-up"
+    ],
+    "citation_contexts": [
+      "Background: extracellular vesicles as sources of candidate heart-failure biomarkers.",
+      "Evidence synthesis: human circulating microRNA expression studies in DCM-HF, separate from preclinical miRNA interventions."
+    ]
+  },
   "doi": "10.1111/jcmm.17789",
   "display_title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
   "summary": "Human plasma exosomal miRNA profiling in DCM with chronic heart failure identified an article-reported 92-feature differential set, computational target networks and external qRT-PCR assessment of 10 hub miRNAs in 10 patients and 6 controls.",

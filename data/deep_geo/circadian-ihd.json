@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Coronary disease systems biology",
+      "Circadian-related cardiovascular research"
+    ],
+    "review_topics": [
+      "Molecular heterogeneity in ischemic heart disease",
+      "Expression-based coronary disease subtyping"
+    ],
+    "scientific_role": "Single-cell network and bulk-expression integration for circadian-related coronary disease scores and research subtypes.",
+    "evidence_position": "Retrospective transcriptomics with external template evaluation; expression scores are not physiological circadian measurements, validated mortality models or chronotherapy evidence.",
+    "related_concepts": [
+      "Circadian-related molecular stratification",
+      "Expression-versus-physiological rhythm distinction"
+    ],
+    "citation_contexts": [
+      "Background: circadian-related expression programs in coronary disease.",
+      "Methods: single-cell-to-bulk expression subtyping, retaining repeated-sample and outcome-model boundaries."
+    ]
+  },
   "doi": "10.1038/s41598-024-65236-5",
   "display_title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
   "summary": "Transcriptomic CRDscore and coronary-disease subtype analysis, with explicit qualification of repeated samples and reference-dataset identity.",

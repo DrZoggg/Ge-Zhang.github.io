@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Aortic aneurysm immunobiology",
+      "Single-cell vascular research"
+    ],
+    "review_topics": [
+      "T-cell heterogeneity in abdominal aortic aneurysm",
+      "Immune-cell-linked molecular markers in human vascular disease"
+    ],
+    "scientific_role": "Human AAA T-cell state description integrated with bulk-expression marker analysis and independent human-sample assessment.",
+    "evidence_position": "Human single-cell and bulk transcriptomics with small clinical-sample evaluation and supportive mouse expression; inferred states are not longitudinal fate tracing or proven therapy.",
+    "related_concepts": [
+      "T-cell state imbalance",
+      "Cell-state-to-marker integration"
+    ],
+    "citation_contexts": [
+      "Background: adaptive immune heterogeneity in abdominal aortic aneurysm.",
+      "Methods: integration of human single-cell immune states with bulk-expression markers, without causal or therapeutic inference from predicted agents."
+    ]
+  },
   "doi": "10.1186/s12915-025-02400-x",
   "display_title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
   "summary": "Integrated human single-cell and bulk transcriptomic analyses describe AAA-associated T-cell state heterogeneity, derive TIRS and evaluate candidate biomarkers in public datasets and small independent human samples, with supportive mouse expression evidence.",

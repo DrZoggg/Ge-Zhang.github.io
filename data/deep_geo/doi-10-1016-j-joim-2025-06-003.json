@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cancer systems biology",
+      "Hepatocellular carcinoma molecular research"
+    ],
+    "review_topics": [
+      "Circadian-related cancer heterogeneity",
+      "Transcriptomic subtypes and retrospective outcomes"
+    ],
+    "scientific_role": "Circadian-related HCC expression-subtyping framework with external subtype evaluation and retrospective outcome associations.",
+    "evidence_position": "Public single-cell and bulk transcriptomics; not direct patient circadian monitoring, proven circadian causation, measured immunotherapy response or prospective clinical utility.",
+    "related_concepts": [
+      "Expression-based tumor stratification",
+      "Subtype-versus-treatment-response distinction"
+    ],
+    "citation_contexts": [
+      "Background: circadian-related expression heterogeneity in liver cancer.",
+      "Methods: integrated transcriptomic subtyping and external subtype assignment, with outcome associations separated from treatment effects."
+    ]
+  },
   "doi": "10.1016/j.joim.2025.06.003",
   "display_title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
   "summary": "HCCcrds-related subtype analysis separates expression, retrospective outcome associations and external template assessment.",

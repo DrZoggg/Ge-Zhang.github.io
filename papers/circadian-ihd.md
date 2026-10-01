@@ -37,6 +37,39 @@ Coronary atherosclerotic heart disease (CAD) is among the most prevalent chronic
 
 Text reproduced verbatim from Version of Record ([source](https://www.nature.com/articles/s41598-024-65236-5)); [DOI](https://doi.org/10.1038/s41598-024-65236-5); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Coronary disease systems biology
+- Circadian-related cardiovascular research
+
+### Review topics
+
+- Molecular heterogeneity in ischemic heart disease
+- Expression-based coronary disease subtyping
+
+### Scientific role
+
+Single-cell network and bulk-expression integration for circadian-related coronary disease scores and research subtypes.
+
+### Evidence position
+
+Retrospective transcriptomics with external template evaluation; expression scores are not physiological circadian measurements, validated mortality models or chronotherapy evidence.
+
+### Related concepts
+
+- Circadian-related molecular stratification
+- Expression-versus-physiological rhythm distinction
+
+### Possible citation contexts
+
+- Background: circadian-related expression programs in coronary disease.
+- Methods: single-cell-to-bulk expression subtyping, retaining repeated-sample and outcome-model boundaries.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **Molecular subtypes of ischemic heart disease based on circadian rhythm**

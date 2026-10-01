@@ -50,6 +50,39 @@ Our findings provide a promising clinical approach for preventing and treating c
 
 Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/)); [DOI](https://doi.org/10.1136/jitc-2024-010127); [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Cardio-oncology
+- Immune-mediated cardiac injury
+
+### Review topics
+
+- Immune-checkpoint-inhibitor cardiotoxicity
+- Inflammasome-related cardiac immune states
+
+### Scientific role
+
+Preclinical NLRP3-inhibition study examining cardiac injury, immune-cell states and tumor outcomes in tested ICI-treated mouse models.
+
+### Evidence position
+
+Controlled preclinical mouse interventions and immune profiling, with supportive human PBMC associations; not human MCC950 efficacy, safety or approved clinical use.
+
+### Related concepts
+
+- Cardiac immune-state remodeling
+- Cardiac and antitumor endpoint separation
+
+### Possible citation contexts
+
+- Background: inflammatory mechanisms in checkpoint-inhibitor cardiac injury.
+- Experimental evidence: NLRP3 pathway modulation in tested tumor-bearing models, without generalizing antitumor or cardiac benefit to patients.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers**

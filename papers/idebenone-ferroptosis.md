@@ -37,6 +37,39 @@ Cardiovascular diseases (CVDs) are the leading causes of mortality worldwide. As
 
 Text reproduced verbatim from PubMed indexed abstract ([source](https://pubmed.ncbi.nlm.nih.gov/36740037/)); [DOI](https://doi.org/10.1016/j.ejphar.2023.175569); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Myocardial injury research
+- Regulated cell death in cardiovascular disease
+
+### Review topics
+
+- Ferroptosis and autophagy in myocardial infarction
+- Preclinical cardioprotection and intervention timing
+
+### Scientific role
+
+Cellular and mouse intervention study of idebenone-associated myocardial injury reduction and pathway-related evidence.
+
+### Evidence position
+
+Preclinical experiments with pretreatment-containing regimens; not evidence of post-infarction-only clinical rescue, human safety or human survival benefit.
+
+### Related concepts
+
+- Redox-related cardiac injury
+- Pretreatment-to-clinical translation
+
+### Possible citation contexts
+
+- Background: regulated cell-death processes in myocardial injury.
+- Experimental evidence: ferroptosis- and autophagy-related cardioprotection, with dosing timing and alternative mechanisms retained.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction**

@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Circadian biology in cancer",
+      "Colorectal cancer systems biology"
+    ],
+    "review_topics": [
+      "Circadian disruption and tumor heterogeneity",
+      "Transcriptomic scoring of tumor-microenvironment states"
+    ],
+    "scientific_role": "Integrative circadian-associated expression scoring with single-cell tumor interpretation and experimental follow-up of candidate regulators.",
+    "evidence_position": "Public multicohort transcriptomics, retrospective clinical associations and colorectal-cancer cell perturbations; not prospective clinical validation or proven patient treatment efficacy.",
+    "related_concepts": [
+      "Circadian-associated tumor states",
+      "Expression-based circadian scoring"
+    ],
+    "citation_contexts": [
+      "Background: links between circadian dysregulation and colorectal-cancer heterogeneity.",
+      "Methods: systems-level expression scoring and experimental follow-up, distinguished from clinical chronotherapy."
+    ]
+  },
   "doi": "10.1038/s41698-026-01699-1",
   "display_title": "ClockProCRC: multicohort and single-cell quantification of circadian misalignment in colorectal cancer",
   "summary": "A multicohort systems-biology study integrating 35 public GEO datasets, a 94,683-cell colorectal-cancer single-cell framework, cross-species circadian perturbation analyses, clinical/transcriptomic cohort evaluation, and CRC-cell experiments to develop ClockProCRC, characterize circadian-misalignment states in colorectal cancer, and prioritize SYNE1 as a functionally tested candidate regulator.",

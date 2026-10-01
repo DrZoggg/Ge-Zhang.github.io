@@ -36,6 +36,17 @@ def without_discovery_additions(before, after, doi):
     if item['paper_geo_status'] != 'v2' and item.get('authors'):
         remove_once('<p class="paper-authors">'+html.escape('; '.join(publication_authors(item)))+'</p>')
     if item['paper_geo_status'] == 'v2':
+        from paper_discovery import render_html
+        path = ROOT / 'data/deep_geo' / (item['slug'] + '.json')
+        content = json.loads(path.read_text(encoding='utf-8'))
+        if content.get('discovery_layer'):
+            block = render_html(content)
+            if after.count('data-discovery-layer="1"') != 1:
+                raise ValueError('Missing/duplicated paper discovery context')
+            if after.index(block) > after.index('data-v2-section="evidence-snapshot"'):
+                raise ValueError('Moved paper discovery context')
+            # Remove only the exact reviewed addition; all previous negatives still apply.
+            remove_once(block)
         opening = '<section class="paper-geo-v2__section" data-v2-section="qa"'
         if after.count(opening+' id="qa">') != 1: raise ValueError('Missing Q&A navigation target')
         after=after.replace(opening+' id="qa">',opening+'>',1)

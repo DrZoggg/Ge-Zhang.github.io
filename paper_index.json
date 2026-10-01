@@ -80,7 +80,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fcvm-2025-1724572.csv",
       "question_count": 5,
-      "concept_count": 7
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular epidemiology",
+          "Multisystem stress-biomarker research"
+        ],
+        "review_topics": [
+          "Allostatic load and cardiovascular disease",
+          "Inflammatory markers in exposure-outcome associations"
+        ],
+        "scientific_role": "Population cohort analysis of biomarker-defined allostatic load, incident cardiovascular events and statistical inflammatory mediation.",
+        "evidence_position": "Observational prospective cohort associations; statistical mediation is not an established causal prevention mechanism or validated stress-management intervention.",
+        "related_concepts": [
+          "Multisystem biomarker burden",
+          "Statistical-versus-causal mediation"
+        ],
+        "citation_contexts": [
+          "Background: cumulative physiological burden and incident cardiovascular disease.",
+          "Evidence synthesis: population-level allostatic-load associations, without claiming benefit from lowering the score or prescribing anti-inflammatory treatment."
+        ]
+      }
     },
     {
       "title": "Aspirin after PCI in Acute Coronary Syndromes",
@@ -130,7 +150,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-mdr2-70052.csv",
       "question_count": 11,
-      "concept_count": 55
+      "concept_count": 55,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular chronobiology",
+          "Immune-vascular regulation"
+        ],
+        "review_topics": [
+          "Circadian rhythms and vascular inflammation",
+          "Cardiovascular chronotherapy evidence and translation"
+        ],
+        "scientific_role": "Narrative synthesis connecting molecular clocks, immune regulation, vascular inflammation and cardiovascular treatment-timing research.",
+        "evidence_position": "Narrative review of heterogeneous mechanistic, preclinical and clinical sources; not a systematic review, new experiment or universal medication-timing recommendation.",
+        "related_concepts": [
+          "Chronoimmunology",
+          "Treatment-timing evidence boundaries"
+        ],
+        "citation_contexts": [
+          "Background: circadian organization of cardiovascular immune and inflammatory biology.",
+          "Evidence synthesis: distinctions between mechanistic chronotherapy rationale and unsettled clinical timing evidence."
+        ]
+      }
     },
     {
       "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
@@ -180,7 +220,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-ggn2-202500053.csv",
       "question_count": 4,
-      "concept_count": 7
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Clinical artificial intelligence methodology",
+          "Translational model-evaluation research"
+        ],
+        "review_topics": [
+          "Clinical ensemble design and evaluation",
+          "Interpretation and generalization of clinical AI"
+        ],
+        "scientific_role": "Methodological Perspective on complementary learners, independent-cohort evaluation and robust interpretation of clinical AI ensembles.",
+        "evidence_position": "Perspective with narrative methodological argument and no new empirical evaluation; not a newly validated model, causal attribution result or demonstrated patient benefit.",
+        "related_concepts": [
+          "Ensemble-to-clinical-workflow design",
+          "Attribution-versus-causation distinction"
+        ],
+        "citation_contexts": [
+          "Methods background: evaluation and interpretation requirements for clinical AI ensembles.",
+          "Research planning: independent-cohort assessment and implementation constraints, cited as a Perspective rather than empirical validation."
+        ]
+      }
     },
     {
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -255,7 +315,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1038-s41698-026-01699-1.csv",
       "question_count": 8,
-      "concept_count": 45
+      "concept_count": 45,
+      "discovery_layer": {
+        "field_entry": [
+          "Circadian biology in cancer",
+          "Colorectal cancer systems biology"
+        ],
+        "review_topics": [
+          "Circadian disruption and tumor heterogeneity",
+          "Transcriptomic scoring of tumor-microenvironment states"
+        ],
+        "scientific_role": "Integrative circadian-associated expression scoring with single-cell tumor interpretation and experimental follow-up of candidate regulators.",
+        "evidence_position": "Public multicohort transcriptomics, retrospective clinical associations and colorectal-cancer cell perturbations; not prospective clinical validation or proven patient treatment efficacy.",
+        "related_concepts": [
+          "Circadian-associated tumor states",
+          "Expression-based circadian scoring"
+        ],
+        "citation_contexts": [
+          "Background: links between circadian dysregulation and colorectal-cancer heterogeneity.",
+          "Methods: systems-level expression scoring and experimental follow-up, distinguished from clinical chronotherapy."
+        ]
+      }
     },
     {
       "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
@@ -305,7 +385,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1172-jci194175.csv",
       "question_count": 10,
-      "concept_count": 47
+      "concept_count": 47,
+      "discovery_layer": {
+        "field_entry": [
+          "Atherosclerosis research",
+          "Vascular smooth muscle biology"
+        ],
+        "review_topics": [
+          "Smooth muscle cell phenotypic remodeling",
+          "Experimental regulation of plaque stability"
+        ],
+        "scientific_role": "VSMC-specific KIF13B mechanism study linking inflammatory and matrix-associated states to KCTD10-dependent KLF4 turnover.",
+        "evidence_position": "Associative human plaque observations plus causal mouse, cell and biochemical experiments; intervention evidence is preclinical, not proven human therapy.",
+        "related_concepts": [
+          "Smooth muscle proteostasis",
+          "Inflammatory versus matrix-associated VSMC states"
+        ],
+        "citation_contexts": [
+          "Background: cell-specific regulation of atherosclerotic plaque remodeling.",
+          "Mechanistic evidence: experimental VSMC state regulation, distinct from macrophage KIF13B-mediated efferocytosis."
+        ]
+      }
     },
     {
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
@@ -330,7 +430,27 @@
       "official_abstract_available": false,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-curpro-2025-100054.csv",
       "question_count": 4,
-      "concept_count": 5
+      "concept_count": 5,
+      "discovery_layer": {
+        "field_entry": [
+          "Artificial intelligence in cardiovascular medicine",
+          "Patient-specific modeling research"
+        ],
+        "review_topics": [
+          "Multimodal AI for cardiovascular mechanism research",
+          "Digital modeling and prospective evaluation requirements"
+        ],
+        "scientific_role": "Correspondence outlining a research agenda for cross-modal interpretation and updateable patient-specific physiological models.",
+        "evidence_position": "Correspondence with narrative synthesis and no new empirical evaluation; not a built, clinically validated therapeutic digital twin or observed human treatment effect.",
+        "related_concepts": [
+          "Mechanism-oriented cross-modal hypotheses",
+          "Simulation-versus-observed-effect distinction"
+        ],
+        "citation_contexts": [
+          "Methods background: multimodal interpretation and patient-specific cardiovascular modeling.",
+          "Research planning: prospective evaluation and governance of digital models, not product validation or treatment efficacy."
+        ]
+      }
     },
     {
       "title": "A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy",
@@ -455,7 +575,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fpubh-2025-1521372.csv",
       "question_count": 5,
-      "concept_count": 7
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Sleep epidemiology",
+          "Chronic-disease population research"
+        ],
+        "review_topics": [
+          "Sleep duration and mortality",
+          "Sleep-related associations in adults with hyperuricemia"
+        ],
+        "scientific_role": "Survey-weighted NHANES linked-mortality analysis of self-reported sleep in the studied hyperuricemia population.",
+        "evidence_position": "Observational secondary human population analysis; associations and nonlinear estimates are not evidence that changing sleep duration reduces mortality or defines a personal sleep target.",
+        "related_concepts": [
+          "Population-specific sleep associations",
+          "Duration-versus-sleep-trouble distinction"
+        ],
+        "citation_contexts": [
+          "Background: sleep and mortality in metabolically defined adult populations.",
+          "Evidence synthesis: observational sleep-duration and sleep-trouble results, with hyperuricemia and self-report scope stated."
+        ]
+      }
     },
     {
       "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
@@ -505,7 +645,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jcmm-70725.csv",
       "question_count": 6,
-      "concept_count": 15
+      "concept_count": 15,
+      "discovery_layer": {
+        "field_entry": [
+          "Vascular biomarker research",
+          "Extracellular-vesicle protein research"
+        ],
+        "review_topics": [
+          "Blood-based biomarker candidates in abdominal aortic aneurysm",
+          "Targeted circulating EV proteomics"
+        ],
+        "scientific_role": "Two-center targeted circulating EV protein profiling in human AAA with small external cross-assay evaluation.",
+        "evidence_position": "Exploratory human case-control evidence with assay discordance and ROC uncertainty; not whole-proteome discovery, a combined validated diagnostic model or prospective rupture prediction.",
+        "related_concepts": [
+          "Vesicle-associated protein candidates",
+          "Cross-assay concordance assessment"
+        ],
+        "citation_contexts": [
+          "Background: circulating extracellular vesicles in aortic aneurysm biomarker research.",
+          "Evidence synthesis: targeted EV protein candidates in human AAA, retaining small-sample uncertainty and distinguishing external assay results."
+        ]
+      }
     },
     {
       "title": "Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair",
@@ -605,7 +765,27 @@
       "official_abstract_available": false,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-joim-2025-06-003.csv",
       "question_count": 6,
-      "concept_count": 9
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cancer systems biology",
+          "Hepatocellular carcinoma molecular research"
+        ],
+        "review_topics": [
+          "Circadian-related cancer heterogeneity",
+          "Transcriptomic subtypes and retrospective outcomes"
+        ],
+        "scientific_role": "Circadian-related HCC expression-subtyping framework with external subtype evaluation and retrospective outcome associations.",
+        "evidence_position": "Public single-cell and bulk transcriptomics; not direct patient circadian monitoring, proven circadian causation, measured immunotherapy response or prospective clinical utility.",
+        "related_concepts": [
+          "Expression-based tumor stratification",
+          "Subtype-versus-treatment-response distinction"
+        ],
+        "citation_contexts": [
+          "Background: circadian-related expression heterogeneity in liver cancer.",
+          "Methods: integrated transcriptomic subtyping and external subtype assignment, with outcome associations separated from treatment effects."
+        ]
+      }
     },
     {
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
@@ -630,7 +810,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1186-s12915-025-02400-x.csv",
       "question_count": 7,
-      "concept_count": 14
+      "concept_count": 14,
+      "discovery_layer": {
+        "field_entry": [
+          "Aortic aneurysm immunobiology",
+          "Single-cell vascular research"
+        ],
+        "review_topics": [
+          "T-cell heterogeneity in abdominal aortic aneurysm",
+          "Immune-cell-linked molecular markers in human vascular disease"
+        ],
+        "scientific_role": "Human AAA T-cell state description integrated with bulk-expression marker analysis and independent human-sample assessment.",
+        "evidence_position": "Human single-cell and bulk transcriptomics with small clinical-sample evaluation and supportive mouse expression; inferred states are not longitudinal fate tracing or proven therapy.",
+        "related_concepts": [
+          "T-cell state imbalance",
+          "Cell-state-to-marker integration"
+        ],
+        "citation_contexts": [
+          "Background: adaptive immune heterogeneity in abdominal aortic aneurysm.",
+          "Methods: integration of human single-cell immune states with bulk-expression markers, without causal or therapeutic inference from predicted agents."
+        ]
+      }
     },
     {
       "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
@@ -730,7 +930,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-mdr2-70004.csv",
       "question_count": 7,
-      "concept_count": 12
+      "concept_count": 12,
+      "discovery_layer": {
+        "field_entry": [
+          "Cancer systems biology",
+          "Thyroid cancer molecular research"
+        ],
+        "review_topics": [
+          "Molecular heterogeneity and cancer subtyping",
+          "Expression-network analysis of disease progression"
+        ],
+        "scientific_role": "Stage-associated network and molecular-subtype analysis with external classifier evaluation and separate ASPH tissue and cell follow-up.",
+        "evidence_position": "Public transcriptomics, human tissue observations and cell experiments; not physiological circadian measurement, individual transition-time prediction or clinical drug efficacy.",
+        "related_concepts": [
+          "Network-based cancer subtyping",
+          "Classifier versus outcome evidence"
+        ],
+        "citation_contexts": [
+          "Methods: expression-network approaches to thyroid-cancer heterogeneity.",
+          "Evidence synthesis: computational subtype characterization alongside candidate experimental follow-up, without treating a subtype classifier as a survival model."
+        ]
+      }
     },
     {
       "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
@@ -830,7 +1050,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-2147-ijn-s522157.csv",
       "question_count": 6,
-      "concept_count": 15
+      "concept_count": 15,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardio-oncology",
+          "Cardiac drug-delivery research"
+        ],
+        "review_topics": [
+          "Anthracycline-associated cardiac injury",
+          "Liposomal delivery of inhibitory microRNA payloads"
+        ],
+        "scientific_role": "Peptide-functionalized liposomal miR-185-5p inhibitor delivery evaluated in doxorubicin-associated cellular and mouse injury models.",
+        "evidence_position": "Preclinical formulation, biodistribution and intervention evidence; not exosome infusion, human DCM treatment efficacy or established clinical safety.",
+        "related_concepts": [
+          "Inhibitory RNA delivery",
+          "Delivery-to-functional-outcome evaluation"
+        ],
+        "citation_contexts": [
+          "Background: experimental approaches to chemotherapy-associated cardiac injury.",
+          "Methods: liposomal RNA delivery and preclinical cardiac readouts, distinct from human circulating-vesicle biomarker profiling."
+        ]
+      }
     },
     {
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
@@ -855,7 +1095,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/nlrp3-ici.csv",
       "question_count": 7,
-      "concept_count": 14
+      "concept_count": 14,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardio-oncology",
+          "Immune-mediated cardiac injury"
+        ],
+        "review_topics": [
+          "Immune-checkpoint-inhibitor cardiotoxicity",
+          "Inflammasome-related cardiac immune states"
+        ],
+        "scientific_role": "Preclinical NLRP3-inhibition study examining cardiac injury, immune-cell states and tumor outcomes in tested ICI-treated mouse models.",
+        "evidence_position": "Controlled preclinical mouse interventions and immune profiling, with supportive human PBMC associations; not human MCC950 efficacy, safety or approved clinical use.",
+        "related_concepts": [
+          "Cardiac immune-state remodeling",
+          "Cardiac and antitumor endpoint separation"
+        ],
+        "citation_contexts": [
+          "Background: inflammatory mechanisms in checkpoint-inhibitor cardiac injury.",
+          "Experimental evidence: NLRP3 pathway modulation in tested tumor-bearing models, without generalizing antitumor or cardiac benefit to patients."
+        ]
+      }
     },
     {
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
@@ -880,7 +1140,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1093-eurheartj-ehaf523.csv",
       "question_count": 8,
-      "concept_count": 42
+      "concept_count": 42,
+      "discovery_layer": {
+        "field_entry": [
+          "Atherosclerosis research",
+          "Innate immune vascular biology"
+        ],
+        "review_topics": [
+          "Macrophage efferocytosis in plaque",
+          "Post-translational control of apoptotic-cell clearance"
+        ],
+        "scientific_role": "Macrophage KIF13B mechanism study connecting MERTK regulation, efferocytosis and experimental atherosclerosis.",
+        "evidence_position": "Mouse and macrophage perturbation and rescue experiments with associative human plaque observations; preclinical plaque protection, not proven human treatment efficacy.",
+        "related_concepts": [
+          "Myeloid plaque biology",
+          "Efferocytosis-regulatory mechanisms"
+        ],
+        "citation_contexts": [
+          "Background: defective apoptotic-cell clearance in atherosclerosis.",
+          "Mechanistic evidence: experimental regulation of macrophage efferocytosis, distinct from VSMC KIF13B state remodeling."
+        ]
+      }
     },
     {
       "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
@@ -930,7 +1210,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/aihflevel.csv",
       "question_count": 8,
-      "concept_count": 25
+      "concept_count": 25,
+      "discovery_layer": {
+        "field_entry": [
+          "Artificial intelligence in cardiovascular medicine",
+          "Heart failure research"
+        ],
+        "review_topics": [
+          "Heart failure risk prediction",
+          "Cardiorenal prognostic stratification"
+        ],
+        "scientific_role": "Explainable survival machine-learning framework for advanced heart failure with renal dysfunction.",
+        "evidence_position": "Retrospective human prognostic modeling with independent external evaluation; prediction, not demonstrated benefit from model-guided care.",
+        "related_concepts": [
+          "Cardiorenal prognosis",
+          "Explainable prognostic modeling"
+        ],
+        "citation_contexts": [
+          "Methods: interpretable AI approaches to heart failure prognosis.",
+          "Evidence synthesis: externally evaluated mortality-risk models, with the advanced-heart-failure and renal-dysfunction population stated."
+        ]
+      }
     },
     {
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
@@ -955,7 +1255,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-18632-aging-205564.csv",
       "question_count": 6,
-      "concept_count": 10
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Inflammatory bowel disease molecular research",
+          "Computational disease characterization"
+        ],
+        "review_topics": [
+          "Gene-expression approaches to ulcerative colitis",
+          "Classifier evaluation and biological interpretation"
+        ],
+        "scientific_role": "Retrospective gene-expression classifier and separate interpretability-score analysis for ulcerative colitis.",
+        "evidence_position": "Public bulk-expression analysis with external dataset evaluation; the single-cell source remains unresolved, and prospective diagnostic or clinical drug utility is not established.",
+        "related_concepts": [
+          "Cross-dataset expression classification",
+          "Classifier-versus-interpretability distinction"
+        ],
+        "citation_contexts": [
+          "Methods: computational expression-based characterization of inflammatory bowel disease.",
+          "Evidence synthesis: retrospective ulcerative-colitis classification results, retaining unresolved single-cell provenance and non-causal gene interpretation."
+        ]
+      }
     },
     {
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
@@ -980,7 +1300,27 @@
       "official_abstract_available": false,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1200-po-24-00089.csv",
       "question_count": 6,
-      "concept_count": 10
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Artificial intelligence in oncology",
+          "Rectal cancer prognosis"
+        ],
+        "review_topics": [
+          "Machine learning for postoperative survival",
+          "Interpretable cancer risk stratification"
+        ],
+        "scientific_role": "Interpretable survival-modeling framework for rectal-cancer patients after robot-assisted proctectomy.",
+        "evidence_position": "Two-center retrospective human prognostic modeling with external evaluation; not prospective clinical utility or a causal survival advantage of robotic surgery.",
+        "related_concepts": [
+          "Postoperative prognostic modeling",
+          "Externally evaluated survival models"
+        ],
+        "citation_contexts": [
+          "Methods: interpretable AI for postoperative oncology prognosis.",
+          "Evidence synthesis: survival models in the robot-assisted rectal-cancer surgery population, retaining external-performance limitations."
+        ]
+      }
     },
     {
       "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
@@ -1180,7 +1520,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jcmm-70258.csv",
       "question_count": 6,
-      "concept_count": 14
+      "concept_count": 14,
+      "discovery_layer": {
+        "field_entry": [
+          "Extracellular-vesicle biomarker research",
+          "Dilated cardiomyopathy and heart failure"
+        ],
+        "review_topics": [
+          "Circulating RNA biomarkers in cardiomyopathy",
+          "Plasma vesicle-associated circular RNA profiling"
+        ],
+        "scientific_role": "Small human DCM-HF plasma vesicle circRNA expression study with predicted regulatory relationships and external assay follow-up.",
+        "evidence_position": "Human case-control profiling with small qRT-PCR evaluation; platform and naming discrepancies remain, and predicted networks are not demonstrated binding or clinical diagnostic utility.",
+        "related_concepts": [
+          "Vesicle-associated circular RNA candidates",
+          "Expression profiling versus regulatory inference"
+        ],
+        "citation_contexts": [
+          "Background: complementary circulating RNA classes in cardiomyopathy biomarker research.",
+          "Evidence synthesis: DCM-HF vesicle-associated circRNA candidates, retaining the unresolved platform, count and naming limitations."
+        ]
+      }
     },
     {
       "title": "Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination",
@@ -1355,7 +1715,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/circadian-ihd.csv",
       "question_count": 6,
-      "concept_count": 9
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Coronary disease systems biology",
+          "Circadian-related cardiovascular research"
+        ],
+        "review_topics": [
+          "Molecular heterogeneity in ischemic heart disease",
+          "Expression-based coronary disease subtyping"
+        ],
+        "scientific_role": "Single-cell network and bulk-expression integration for circadian-related coronary disease scores and research subtypes.",
+        "evidence_position": "Retrospective transcriptomics with external template evaluation; expression scores are not physiological circadian measurements, validated mortality models or chronotherapy evidence.",
+        "related_concepts": [
+          "Circadian-related molecular stratification",
+          "Expression-versus-physiological rhythm distinction"
+        ],
+        "citation_contexts": [
+          "Background: circadian-related expression programs in coronary disease.",
+          "Methods: single-cell-to-bulk expression subtyping, retaining repeated-sample and outcome-model boundaries."
+        ]
+      }
     },
     {
       "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
@@ -1455,7 +1835,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/olink-dcm.csv",
       "question_count": 8,
-      "concept_count": 69
+      "concept_count": 69,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular biomarker research",
+          "Dilated cardiomyopathy and heart failure"
+        ],
+        "review_topics": [
+          "Blood protein biomarkers in cardiomyopathy",
+          "Targeted proteomics for biomarker discovery"
+        ],
+        "scientific_role": "Targeted plasma-protein discovery with local ELISA replication and separate cardiac gene-expression evaluation in DCM-HF.",
+        "evidence_position": "Human cross-sectional candidate-biomarker study; tissue-transcriptomic evaluation is not plasma-proteomic replication, and prospective clinical utility is not established.",
+        "related_concepts": [
+          "Circulating protein candidates",
+          "Cross-assay biomarker evaluation"
+        ],
+        "citation_contexts": [
+          "Background: circulating molecular biomarkers in dilated cardiomyopathy with heart failure.",
+          "Methods: targeted protein panels and orthogonal assay evaluation, with plasma and cardiac-tissue evidence kept separate."
+        ]
+      }
     },
     {
       "title": "Proteomics appending a complementary dimension to precision oncotherapy",
@@ -1655,7 +2055,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/apvs.csv",
       "question_count": 8,
-      "concept_count": 86
+      "concept_count": 86,
+      "discovery_layer": {
+        "field_entry": [
+          "Atherosclerosis research",
+          "Computational cardiovascular medicine"
+        ],
+        "review_topics": [
+          "Molecular assessment of plaque vulnerability",
+          "Transcriptomic characterization of coronary disease"
+        ],
+        "scientific_role": "Transcriptomic machine-learning framework connecting plaque-vulnerability signatures with bulk and single-cell biological interpretation.",
+        "evidence_position": "Retrospective multicohort human expression analysis; a research framework, not an approved diagnostic test or demonstrated treatment benefit.",
+        "related_concepts": [
+          "Molecular plaque stratification",
+          "Bulk-to-single-cell interpretation"
+        ],
+        "citation_contexts": [
+          "Methods: computational approaches to molecular plaque assessment.",
+          "Evidence synthesis: plaque-vulnerability expression signatures and their cellular context, without replacing coronary imaging or clinical assessment."
+        ]
+      }
     },
     {
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -1705,7 +2125,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jcmm-17789.csv",
       "question_count": 6,
-      "concept_count": 13
+      "concept_count": 13,
+      "discovery_layer": {
+        "field_entry": [
+          "Extracellular-vesicle biomarker research",
+          "Dilated cardiomyopathy and heart failure"
+        ],
+        "review_topics": [
+          "Circulating RNA biomarkers in cardiomyopathy",
+          "Human plasma exosomal microRNA profiling"
+        ],
+        "scientific_role": "Exploratory human DCM-HF plasma exosomal microRNA profiling with small external expression-assay follow-up.",
+        "evidence_position": "Human case-control biomarker evidence; not prospective diagnosis, therapeutic RNA delivery or external miR-185-5p validation in this article.",
+        "related_concepts": [
+          "Vesicle-associated RNA candidates",
+          "Discovery versus assay follow-up"
+        ],
+        "citation_contexts": [
+          "Background: extracellular vesicles as sources of candidate heart-failure biomarkers.",
+          "Evidence synthesis: human circulating microRNA expression studies in DCM-HF, separate from preclinical miRNA interventions."
+        ]
+      }
     },
     {
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -1730,7 +2170,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/idebenone-ferroptosis.csv",
       "question_count": 6,
-      "concept_count": 10
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Myocardial injury research",
+          "Regulated cell death in cardiovascular disease"
+        ],
+        "review_topics": [
+          "Ferroptosis and autophagy in myocardial infarction",
+          "Preclinical cardioprotection and intervention timing"
+        ],
+        "scientific_role": "Cellular and mouse intervention study of idebenone-associated myocardial injury reduction and pathway-related evidence.",
+        "evidence_position": "Preclinical experiments with pretreatment-containing regimens; not evidence of post-infarction-only clinical rescue, human safety or human survival benefit.",
+        "related_concepts": [
+          "Redox-related cardiac injury",
+          "Pretreatment-to-clinical translation"
+        ],
+        "citation_contexts": [
+          "Background: regulated cell-death processes in myocardial injury.",
+          "Experimental evidence: ferroptosis- and autophagy-related cardioprotection, with dosing timing and alternative mechanisms retained."
+        ]
+      }
     },
     {
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -1780,7 +2240,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/smc-fate.csv",
       "question_count": 8,
-      "concept_count": 66
+      "concept_count": 66,
+      "discovery_layer": {
+        "field_entry": [
+          "Vascular biology",
+          "Single-cell atherosclerosis research"
+        ],
+        "review_topics": [
+          "Smooth muscle cell heterogeneity in human plaque",
+          "Cell-state programs and molecular disease subtypes"
+        ],
+        "scientific_role": "Human plaque single-cell state reconstruction linked to multicohort transcriptomic subtyping of atherosclerosis.",
+        "evidence_position": "Retrospective human transcriptomics and computational pseudotime; inferred state relationships, not direct longitudinal lineage tracing or subtype-guided treatment evidence.",
+        "related_concepts": [
+          "Smooth muscle cell plasticity research",
+          "Cell-state-to-subtype integration"
+        ],
+        "citation_contexts": [
+          "Background: cellular heterogeneity and smooth muscle cell remodeling in atherosclerosis.",
+          "Methods: integration of human plaque single-cell programs with bulk-expression subtypes, retaining the pseudotime limitation."
+        ]
+      }
     },
     {
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -1805,7 +2285,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-ehf2-14003.csv",
       "question_count": 8,
-      "concept_count": 73
+      "concept_count": 73,
+      "discovery_layer": {
+        "field_entry": [
+          "Inflammation in cardiovascular disease",
+          "Cross-disease systems biology"
+        ],
+        "review_topics": [
+          "COVID-19 and heart failure inflammatory biology",
+          "Shared disease-associated expression programs"
+        ],
+        "scientific_role": "Comparison of independently sampled COVID-19 and heart-failure transcriptomes for shared inflammatory and regulatory hypotheses.",
+        "evidence_position": "Public expression datasets analyzed separately across diseases; not a dedicated comorbid cohort, germline genetic evidence or demonstrated infection-to-heart-failure causality.",
+        "related_concepts": [
+          "Cross-disease inflammatory signatures",
+          "Transcriptomic hypothesis generation"
+        ],
+        "citation_contexts": [
+          "Background: molecular overlap between infection-related and heart-failure inflammation.",
+          "Methods: cross-disease expression and network analysis, without inferring genetic causality or treatment efficacy."
+        ]
+      }
     },
     {
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -1830,7 +2330,27 @@
       "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fonc-2021-659217.csv",
       "question_count": 4,
-      "concept_count": 9
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Biliary tract oncology",
+          "Early-phase cancer treatment evidence"
+        ],
+        "review_topics": [
+          "Cholangiocarcinoma after chemotherapy failure",
+          "Single-arm phase II activity and toxicity reporting"
+        ],
+        "scientific_role": "Prospective single-arm description of apatinib activity and toxicity after gemcitabine-based treatment failure in advanced cholangiocarcinoma.",
+        "evidence_position": "Human single-center phase II observations without a randomized concurrent control; not comparative superiority, causal survival benefit or a current treatment recommendation.",
+        "related_concepts": [
+          "Non-comparative oncology evidence",
+          "Response-denominator interpretation"
+        ],
+        "citation_contexts": [
+          "Evidence synthesis: early-phase treatment studies in previously treated advanced cholangiocarcinoma.",
+          "Methods: denominator-explicit interpretation of response and safety in single-arm oncology trials."
+        ]
+      }
     },
     {
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",

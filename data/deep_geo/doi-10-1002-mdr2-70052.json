@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular chronobiology",
+      "Immune-vascular regulation"
+    ],
+    "review_topics": [
+      "Circadian rhythms and vascular inflammation",
+      "Cardiovascular chronotherapy evidence and translation"
+    ],
+    "scientific_role": "Narrative synthesis connecting molecular clocks, immune regulation, vascular inflammation and cardiovascular treatment-timing research.",
+    "evidence_position": "Narrative review of heterogeneous mechanistic, preclinical and clinical sources; not a systematic review, new experiment or universal medication-timing recommendation.",
+    "related_concepts": [
+      "Chronoimmunology",
+      "Treatment-timing evidence boundaries"
+    ],
+    "citation_contexts": [
+      "Background: circadian organization of cardiovascular immune and inflammatory biology.",
+      "Evidence synthesis: distinctions between mechanistic chronotherapy rationale and unsettled clinical timing evidence."
+    ]
+  },
   "doi": "10.1002/mdr2.70052",
   "display_title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
   "summary": "Narrative review of circadian immune-vascular mechanisms across cardiovascular disease, distinguishing preclinical chronotherapy rationale from heterogeneous and unresolved clinical timing evidence; no new data were created or analyzed.",

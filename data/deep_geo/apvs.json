@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Atherosclerosis research",
+      "Computational cardiovascular medicine"
+    ],
+    "review_topics": [
+      "Molecular assessment of plaque vulnerability",
+      "Transcriptomic characterization of coronary disease"
+    ],
+    "scientific_role": "Transcriptomic machine-learning framework connecting plaque-vulnerability signatures with bulk and single-cell biological interpretation.",
+    "evidence_position": "Retrospective multicohort human expression analysis; a research framework, not an approved diagnostic test or demonstrated treatment benefit.",
+    "related_concepts": [
+      "Molecular plaque stratification",
+      "Bulk-to-single-cell interpretation"
+    ],
+    "citation_contexts": [
+      "Methods: computational approaches to molecular plaque assessment.",
+      "Evidence synthesis: plaque-vulnerability expression signatures and their cellular context, without replacing coronary imaging or clinical assessment."
+    ]
+  },
   "doi": "10.1016/j.isci.2023.107587",
   "display_title": "APVS / APVSLevel: machine-learning and single-cell quantification of atherosclerotic plaque vulnerability",
   "summary": "A multicohort transcriptomic and single-cell framework that derives a 14-gene machine-learning signature and APVSLevel system for classification, quantification, and biological interpretation of atherosclerotic plaque vulnerability.",

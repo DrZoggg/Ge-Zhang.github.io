@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Vascular biology",
+      "Single-cell atherosclerosis research"
+    ],
+    "review_topics": [
+      "Smooth muscle cell heterogeneity in human plaque",
+      "Cell-state programs and molecular disease subtypes"
+    ],
+    "scientific_role": "Human plaque single-cell state reconstruction linked to multicohort transcriptomic subtyping of atherosclerosis.",
+    "evidence_position": "Retrospective human transcriptomics and computational pseudotime; inferred state relationships, not direct longitudinal lineage tracing or subtype-guided treatment evidence.",
+    "related_concepts": [
+      "Smooth muscle cell plasticity research",
+      "Cell-state-to-subtype integration"
+    ],
+    "citation_contexts": [
+      "Background: cellular heterogeneity and smooth muscle cell remodeling in atherosclerosis.",
+      "Methods: integration of human plaque single-cell programs with bulk-expression subtypes, retaining the pseudotime limitation."
+    ]
+  },
   "doi": "10.1186/s12967-022-03795-9",
   "display_title": "SMC fate / SCFDS: single-cell fate reconstruction and molecular subtyping of atherosclerosis",
   "summary": "An integrative human single-cell and multicohort transcriptomic study that reconstructs vascular smooth muscle cell fate states, derives the SMC cell fate decision signature (SCFDS), and uses it to define three biologically distinct retrospective molecular subtypes of atherosclerosis.",

@@ -53,6 +53,39 @@ This study uncovered atherosclerosis complex cellular heterogeneity and a differ
 
 Text reproduced verbatim from Version of Record ([source](https://link.springer.com/article/10.1186/s12967-022-03795-9)); [DOI](https://doi.org/10.1186/s12967-022-03795-9); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Vascular biology
+- Single-cell atherosclerosis research
+
+### Review topics
+
+- Smooth muscle cell heterogeneity in human plaque
+- Cell-state programs and molecular disease subtypes
+
+### Scientific role
+
+Human plaque single-cell state reconstruction linked to multicohort transcriptomic subtyping of atherosclerosis.
+
+### Evidence position
+
+Retrospective human transcriptomics and computational pseudotime; inferred state relationships, not direct longitudinal lineage tracing or subtype-guided treatment evidence.
+
+### Related concepts
+
+- Smooth muscle cell plasticity research
+- Cell-state-to-subtype integration
+
+### Possible citation contexts
+
+- Background: cellular heterogeneity and smooth muscle cell remodeling in atherosclerosis.
+- Methods: integration of human plaque single-cell programs with bulk-expression subtypes, retaining the pseudotime limitation.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **SMC fate / SCFDS: single-cell fate reconstruction and molecular subtyping of atherosclerosis**

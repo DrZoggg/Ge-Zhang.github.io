@@ -9361,6 +9361,266 @@
       "text": "Choose the original paper matching the analyte, specimen, assay and claim. Use the protein paper for its protein/ELISA findings, the miRNA paper for its miRNA findings, and the circRNA paper for its circRNA findings. There is no requirement to cite all three.",
       "url": "https://drgezhang.com/research/dcm-hf-circulating-biomarkers.html#question-7",
       "limitation": false
+    },
+    {
+      "id": 936,
+      "result_kind": "paper",
+      "doi": "10.3389/fcvm.2025.1724572",
+      "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
+      "category": "Research & review context",
+      "text": "Cardiovascular epidemiology\nMultisystem stress-biomarker research\nAllostatic load and cardiovascular disease\nInflammatory markers in exposure-outcome associations\nPopulation cohort analysis of biomarker-defined allostatic load, incident cardiovascular events and statistical inflammatory mediation.\nObservational prospective cohort associations; statistical mediation is not an established causal prevention mechanism or validated stress-management intervention.\nMultisystem biomarker burden\nStatistical-versus-causal mediation\nBackground: cumulative physiological burden and incident cardiovascular disease.\nEvidence synthesis: population-level allostatic-load associations, without claiming benefit from lowering the score or prescribing anti-inflammatory treatment.",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 937,
+      "result_kind": "paper",
+      "doi": "10.1002/mdr2.70052",
+      "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
+      "category": "Research & review context",
+      "text": "Cardiovascular chronobiology\nImmune-vascular regulation\nCircadian rhythms and vascular inflammation\nCardiovascular chronotherapy evidence and translation\nNarrative synthesis connecting molecular clocks, immune regulation, vascular inflammation and cardiovascular treatment-timing research.\nNarrative review of heterogeneous mechanistic, preclinical and clinical sources; not a systematic review, new experiment or universal medication-timing recommendation.\nChronoimmunology\nTreatment-timing evidence boundaries\nBackground: circadian organization of cardiovascular immune and inflammatory biology.\nEvidence synthesis: distinctions between mechanistic chronotherapy rationale and unsettled clinical timing evidence.",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 938,
+      "result_kind": "paper",
+      "doi": "10.1002/ggn2.202500053",
+      "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
+      "category": "Research & review context",
+      "text": "Clinical artificial intelligence methodology\nTranslational model-evaluation research\nClinical ensemble design and evaluation\nInterpretation and generalization of clinical AI\nMethodological Perspective on complementary learners, independent-cohort evaluation and robust interpretation of clinical AI ensembles.\nPerspective with narrative methodological argument and no new empirical evaluation; not a newly validated model, causal attribution result or demonstrated patient benefit.\nEnsemble-to-clinical-workflow design\nAttribution-versus-causation distinction\nMethods background: evaluation and interpretation requirements for clinical AI ensembles.\nResearch planning: independent-cohort assessment and implementation constraints, cited as a Perspective rather than empirical validation.",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 939,
+      "result_kind": "paper",
+      "doi": "10.1038/s41698-026-01699-1",
+      "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
+      "category": "Research & review context",
+      "text": "Circadian biology in cancer\nColorectal cancer systems biology\nCircadian disruption and tumor heterogeneity\nTranscriptomic scoring of tumor-microenvironment states\nIntegrative circadian-associated expression scoring with single-cell tumor interpretation and experimental follow-up of candidate regulators.\nPublic multicohort transcriptomics, retrospective clinical associations and colorectal-cancer cell perturbations; not prospective clinical validation or proven patient treatment efficacy.\nCircadian-associated tumor states\nExpression-based circadian scoring\nBackground: links between circadian dysregulation and colorectal-cancer heterogeneity.\nMethods: systems-level expression scoring and experimental follow-up, distinguished from clinical chronotherapy.",
+      "url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 940,
+      "result_kind": "paper",
+      "doi": "10.1172/jci194175",
+      "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
+      "category": "Research & review context",
+      "text": "Atherosclerosis research\nVascular smooth muscle biology\nSmooth muscle cell phenotypic remodeling\nExperimental regulation of plaque stability\nVSMC-specific KIF13B mechanism study linking inflammatory and matrix-associated states to KCTD10-dependent KLF4 turnover.\nAssociative human plaque observations plus causal mouse, cell and biochemical experiments; intervention evidence is preclinical, not proven human therapy.\nSmooth muscle proteostasis\nInflammatory versus matrix-associated VSMC states\nBackground: cell-specific regulation of atherosclerotic plaque remodeling.\nMechanistic evidence: experimental VSMC state regulation, distinct from macrophage KIF13B-mediated efferocytosis.",
+      "url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 941,
+      "result_kind": "paper",
+      "doi": "10.1016/j.curpro.2025.100054",
+      "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
+      "category": "Research & review context",
+      "text": "Artificial intelligence in cardiovascular medicine\nPatient-specific modeling research\nMultimodal AI for cardiovascular mechanism research\nDigital modeling and prospective evaluation requirements\nCorrespondence outlining a research agenda for cross-modal interpretation and updateable patient-specific physiological models.\nCorrespondence with narrative synthesis and no new empirical evaluation; not a built, clinically validated therapeutic digital twin or observed human treatment effect.\nMechanism-oriented cross-modal hypotheses\nSimulation-versus-observed-effect distinction\nMethods background: multimodal interpretation and patient-specific cardiovascular modeling.\nResearch planning: prospective evaluation and governance of digital models, not product validation or treatment efficacy.",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 942,
+      "result_kind": "paper",
+      "doi": "10.3389/fpubh.2025.1521372",
+      "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
+      "category": "Research & review context",
+      "text": "Sleep epidemiology\nChronic-disease population research\nSleep duration and mortality\nSleep-related associations in adults with hyperuricemia\nSurvey-weighted NHANES linked-mortality analysis of self-reported sleep in the studied hyperuricemia population.\nObservational secondary human population analysis; associations and nonlinear estimates are not evidence that changing sleep duration reduces mortality or defines a personal sleep target.\nPopulation-specific sleep associations\nDuration-versus-sleep-trouble distinction\nBackground: sleep and mortality in metabolically defined adult populations.\nEvidence synthesis: observational sleep-duration and sleep-trouble results, with hyperuricemia and self-report scope stated.",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 943,
+      "result_kind": "paper",
+      "doi": "10.1111/jcmm.70725",
+      "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
+      "category": "Research & review context",
+      "text": "Vascular biomarker research\nExtracellular-vesicle protein research\nBlood-based biomarker candidates in abdominal aortic aneurysm\nTargeted circulating EV proteomics\nTwo-center targeted circulating EV protein profiling in human AAA with small external cross-assay evaluation.\nExploratory human case-control evidence with assay discordance and ROC uncertainty; not whole-proteome discovery, a combined validated diagnostic model or prospective rupture prediction.\nVesicle-associated protein candidates\nCross-assay concordance assessment\nBackground: circulating extracellular vesicles in aortic aneurysm biomarker research.\nEvidence synthesis: targeted EV protein candidates in human AAA, retaining small-sample uncertainty and distinguishing external assay results.",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 944,
+      "result_kind": "paper",
+      "doi": "10.1016/j.joim.2025.06.003",
+      "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
+      "category": "Research & review context",
+      "text": "Cancer systems biology\nHepatocellular carcinoma molecular research\nCircadian-related cancer heterogeneity\nTranscriptomic subtypes and retrospective outcomes\nCircadian-related HCC expression-subtyping framework with external subtype evaluation and retrospective outcome associations.\nPublic single-cell and bulk transcriptomics; not direct patient circadian monitoring, proven circadian causation, measured immunotherapy response or prospective clinical utility.\nExpression-based tumor stratification\nSubtype-versus-treatment-response distinction\nBackground: circadian-related expression heterogeneity in liver cancer.\nMethods: integrated transcriptomic subtyping and external subtype assignment, with outcome associations separated from treatment effects.",
+      "url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 945,
+      "result_kind": "paper",
+      "doi": "10.1186/s12915-025-02400-x",
+      "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
+      "category": "Research & review context",
+      "text": "Aortic aneurysm immunobiology\nSingle-cell vascular research\nT-cell heterogeneity in abdominal aortic aneurysm\nImmune-cell-linked molecular markers in human vascular disease\nHuman AAA T-cell state description integrated with bulk-expression marker analysis and independent human-sample assessment.\nHuman single-cell and bulk transcriptomics with small clinical-sample evaluation and supportive mouse expression; inferred states are not longitudinal fate tracing or proven therapy.\nT-cell state imbalance\nCell-state-to-marker integration\nBackground: adaptive immune heterogeneity in abdominal aortic aneurysm.\nMethods: integration of human single-cell immune states with bulk-expression markers, without causal or therapeutic inference from predicted agents.",
+      "url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 946,
+      "result_kind": "paper",
+      "doi": "10.1002/mdr2.70004",
+      "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
+      "category": "Research & review context",
+      "text": "Cancer systems biology\nThyroid cancer molecular research\nMolecular heterogeneity and cancer subtyping\nExpression-network analysis of disease progression\nStage-associated network and molecular-subtype analysis with external classifier evaluation and separate ASPH tissue and cell follow-up.\nPublic transcriptomics, human tissue observations and cell experiments; not physiological circadian measurement, individual transition-time prediction or clinical drug efficacy.\nNetwork-based cancer subtyping\nClassifier versus outcome evidence\nMethods: expression-network approaches to thyroid-cancer heterogeneity.\nEvidence synthesis: computational subtype characterization alongside candidate experimental follow-up, without treating a subtype classifier as a survival model.",
+      "url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 947,
+      "result_kind": "paper",
+      "doi": "10.2147/ijn.s522157",
+      "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
+      "category": "Research & review context",
+      "text": "Cardio-oncology\nCardiac drug-delivery research\nAnthracycline-associated cardiac injury\nLiposomal delivery of inhibitory microRNA payloads\nPeptide-functionalized liposomal miR-185-5p inhibitor delivery evaluated in doxorubicin-associated cellular and mouse injury models.\nPreclinical formulation, biodistribution and intervention evidence; not exosome infusion, human DCM treatment efficacy or established clinical safety.\nInhibitory RNA delivery\nDelivery-to-functional-outcome evaluation\nBackground: experimental approaches to chemotherapy-associated cardiac injury.\nMethods: liposomal RNA delivery and preclinical cardiac readouts, distinct from human circulating-vesicle biomarker profiling.",
+      "url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 948,
+      "result_kind": "paper",
+      "doi": "10.1136/jitc-2024-010127",
+      "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
+      "category": "Research & review context",
+      "text": "Cardio-oncology\nImmune-mediated cardiac injury\nImmune-checkpoint-inhibitor cardiotoxicity\nInflammasome-related cardiac immune states\nPreclinical NLRP3-inhibition study examining cardiac injury, immune-cell states and tumor outcomes in tested ICI-treated mouse models.\nControlled preclinical mouse interventions and immune profiling, with supportive human PBMC associations; not human MCC950 efficacy, safety or approved clinical use.\nCardiac immune-state remodeling\nCardiac and antitumor endpoint separation\nBackground: inflammatory mechanisms in checkpoint-inhibitor cardiac injury.\nExperimental evidence: NLRP3 pathway modulation in tested tumor-bearing models, without generalizing antitumor or cardiac benefit to patients.",
+      "url": "https://drgezhang.com/papers/nlrp3-ici.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 949,
+      "result_kind": "paper",
+      "doi": "10.1093/eurheartj/ehaf523",
+      "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
+      "category": "Research & review context",
+      "text": "Atherosclerosis research\nInnate immune vascular biology\nMacrophage efferocytosis in plaque\nPost-translational control of apoptotic-cell clearance\nMacrophage KIF13B mechanism study connecting MERTK regulation, efferocytosis and experimental atherosclerosis.\nMouse and macrophage perturbation and rescue experiments with associative human plaque observations; preclinical plaque protection, not proven human treatment efficacy.\nMyeloid plaque biology\nEfferocytosis-regulatory mechanisms\nBackground: defective apoptotic-cell clearance in atherosclerosis.\nMechanistic evidence: experimental regulation of macrophage efferocytosis, distinct from VSMC KIF13B state remodeling.",
+      "url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 950,
+      "result_kind": "paper",
+      "doi": "10.1038/s41467-024-50415-9",
+      "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
+      "category": "Research & review context",
+      "text": "Artificial intelligence in cardiovascular medicine\nHeart failure research\nHeart failure risk prediction\nCardiorenal prognostic stratification\nExplainable survival machine-learning framework for advanced heart failure with renal dysfunction.\nRetrospective human prognostic modeling with independent external evaluation; prediction, not demonstrated benefit from model-guided care.\nCardiorenal prognosis\nExplainable prognostic modeling\nMethods: interpretable AI approaches to heart failure prognosis.\nEvidence synthesis: externally evaluated mortality-risk models, with the advanced-heart-failure and renal-dysfunction population stated.",
+      "url": "https://drgezhang.com/papers/aihflevel.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 951,
+      "result_kind": "paper",
+      "doi": "10.18632/aging.205564",
+      "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
+      "category": "Research & review context",
+      "text": "Inflammatory bowel disease molecular research\nComputational disease characterization\nGene-expression approaches to ulcerative colitis\nClassifier evaluation and biological interpretation\nRetrospective gene-expression classifier and separate interpretability-score analysis for ulcerative colitis.\nPublic bulk-expression analysis with external dataset evaluation; the single-cell source remains unresolved, and prospective diagnostic or clinical drug utility is not established.\nCross-dataset expression classification\nClassifier-versus-interpretability distinction\nMethods: computational expression-based characterization of inflammatory bowel disease.\nEvidence synthesis: retrospective ulcerative-colitis classification results, retaining unresolved single-cell provenance and non-causal gene interpretation.",
+      "url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 952,
+      "result_kind": "paper",
+      "doi": "10.1200/po.24.00089",
+      "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
+      "category": "Research & review context",
+      "text": "Artificial intelligence in oncology\nRectal cancer prognosis\nMachine learning for postoperative survival\nInterpretable cancer risk stratification\nInterpretable survival-modeling framework for rectal-cancer patients after robot-assisted proctectomy.\nTwo-center retrospective human prognostic modeling with external evaluation; not prospective clinical utility or a causal survival advantage of robotic surgery.\nPostoperative prognostic modeling\nExternally evaluated survival models\nMethods: interpretable AI for postoperative oncology prognosis.\nEvidence synthesis: survival models in the robot-assisted rectal-cancer surgery population, retaining external-performance limitations.",
+      "url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 953,
+      "result_kind": "paper",
+      "doi": "10.1111/jcmm.70258",
+      "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
+      "category": "Research & review context",
+      "text": "Extracellular-vesicle biomarker research\nDilated cardiomyopathy and heart failure\nCirculating RNA biomarkers in cardiomyopathy\nPlasma vesicle-associated circular RNA profiling\nSmall human DCM-HF plasma vesicle circRNA expression study with predicted regulatory relationships and external assay follow-up.\nHuman case-control profiling with small qRT-PCR evaluation; platform and naming discrepancies remain, and predicted networks are not demonstrated binding or clinical diagnostic utility.\nVesicle-associated circular RNA candidates\nExpression profiling versus regulatory inference\nBackground: complementary circulating RNA classes in cardiomyopathy biomarker research.\nEvidence synthesis: DCM-HF vesicle-associated circRNA candidates, retaining the unresolved platform, count and naming limitations.",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 954,
+      "result_kind": "paper",
+      "doi": "10.1038/s41598-024-65236-5",
+      "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
+      "category": "Research & review context",
+      "text": "Coronary disease systems biology\nCircadian-related cardiovascular research\nMolecular heterogeneity in ischemic heart disease\nExpression-based coronary disease subtyping\nSingle-cell network and bulk-expression integration for circadian-related coronary disease scores and research subtypes.\nRetrospective transcriptomics with external template evaluation; expression scores are not physiological circadian measurements, validated mortality models or chronotherapy evidence.\nCircadian-related molecular stratification\nExpression-versus-physiological rhythm distinction\nBackground: circadian-related expression programs in coronary disease.\nMethods: single-cell-to-bulk expression subtyping, retaining repeated-sample and outcome-model boundaries.",
+      "url": "https://drgezhang.com/papers/circadian-ihd.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 955,
+      "result_kind": "paper",
+      "doi": "10.1021/acs.jproteome.4c00522",
+      "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
+      "category": "Research & review context",
+      "text": "Cardiovascular biomarker research\nDilated cardiomyopathy and heart failure\nBlood protein biomarkers in cardiomyopathy\nTargeted proteomics for biomarker discovery\nTargeted plasma-protein discovery with local ELISA replication and separate cardiac gene-expression evaluation in DCM-HF.\nHuman cross-sectional candidate-biomarker study; tissue-transcriptomic evaluation is not plasma-proteomic replication, and prospective clinical utility is not established.\nCirculating protein candidates\nCross-assay biomarker evaluation\nBackground: circulating molecular biomarkers in dilated cardiomyopathy with heart failure.\nMethods: targeted protein panels and orthogonal assay evaluation, with plasma and cardiac-tissue evidence kept separate.",
+      "url": "https://drgezhang.com/papers/olink-dcm.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 956,
+      "result_kind": "paper",
+      "doi": "10.1016/j.isci.2023.107587",
+      "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
+      "category": "Research & review context",
+      "text": "Atherosclerosis research\nComputational cardiovascular medicine\nMolecular assessment of plaque vulnerability\nTranscriptomic characterization of coronary disease\nTranscriptomic machine-learning framework connecting plaque-vulnerability signatures with bulk and single-cell biological interpretation.\nRetrospective multicohort human expression analysis; a research framework, not an approved diagnostic test or demonstrated treatment benefit.\nMolecular plaque stratification\nBulk-to-single-cell interpretation\nMethods: computational approaches to molecular plaque assessment.\nEvidence synthesis: plaque-vulnerability expression signatures and their cellular context, without replacing coronary imaging or clinical assessment.",
+      "url": "https://drgezhang.com/papers/apvs.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 957,
+      "result_kind": "paper",
+      "doi": "10.1111/jcmm.17789",
+      "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
+      "category": "Research & review context",
+      "text": "Extracellular-vesicle biomarker research\nDilated cardiomyopathy and heart failure\nCirculating RNA biomarkers in cardiomyopathy\nHuman plasma exosomal microRNA profiling\nExploratory human DCM-HF plasma exosomal microRNA profiling with small external expression-assay follow-up.\nHuman case-control biomarker evidence; not prospective diagnosis, therapeutic RNA delivery or external miR-185-5p validation in this article.\nVesicle-associated RNA candidates\nDiscovery versus assay follow-up\nBackground: extracellular vesicles as sources of candidate heart-failure biomarkers.\nEvidence synthesis: human circulating microRNA expression studies in DCM-HF, separate from preclinical miRNA interventions.",
+      "url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 958,
+      "result_kind": "paper",
+      "doi": "10.1016/j.ejphar.2023.175569",
+      "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
+      "category": "Research & review context",
+      "text": "Myocardial injury research\nRegulated cell death in cardiovascular disease\nFerroptosis and autophagy in myocardial infarction\nPreclinical cardioprotection and intervention timing\nCellular and mouse intervention study of idebenone-associated myocardial injury reduction and pathway-related evidence.\nPreclinical experiments with pretreatment-containing regimens; not evidence of post-infarction-only clinical rescue, human safety or human survival benefit.\nRedox-related cardiac injury\nPretreatment-to-clinical translation\nBackground: regulated cell-death processes in myocardial injury.\nExperimental evidence: ferroptosis- and autophagy-related cardioprotection, with dosing timing and alternative mechanisms retained.",
+      "url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 959,
+      "result_kind": "paper",
+      "doi": "10.1186/s12967-022-03795-9",
+      "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
+      "category": "Research & review context",
+      "text": "Vascular biology\nSingle-cell atherosclerosis research\nSmooth muscle cell heterogeneity in human plaque\nCell-state programs and molecular disease subtypes\nHuman plaque single-cell state reconstruction linked to multicohort transcriptomic subtyping of atherosclerosis.\nRetrospective human transcriptomics and computational pseudotime; inferred state relationships, not direct longitudinal lineage tracing or subtype-guided treatment evidence.\nSmooth muscle cell plasticity research\nCell-state-to-subtype integration\nBackground: cellular heterogeneity and smooth muscle cell remodeling in atherosclerosis.\nMethods: integration of human plaque single-cell programs with bulk-expression subtypes, retaining the pseudotime limitation.",
+      "url": "https://drgezhang.com/papers/smc-fate.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 960,
+      "result_kind": "paper",
+      "doi": "10.1002/ehf2.14003",
+      "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
+      "category": "Research & review context",
+      "text": "Inflammation in cardiovascular disease\nCross-disease systems biology\nCOVID-19 and heart failure inflammatory biology\nShared disease-associated expression programs\nComparison of independently sampled COVID-19 and heart-failure transcriptomes for shared inflammatory and regulatory hypotheses.\nPublic expression datasets analyzed separately across diseases; not a dedicated comorbid cohort, germline genetic evidence or demonstrated infection-to-heart-failure causality.\nCross-disease inflammatory signatures\nTranscriptomic hypothesis generation\nBackground: molecular overlap between infection-related and heart-failure inflammation.\nMethods: cross-disease expression and network analysis, without inferring genetic causality or treatment efficacy.",
+      "url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 961,
+      "result_kind": "paper",
+      "doi": "10.3389/fonc.2021.659217",
+      "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
+      "category": "Research & review context",
+      "text": "Biliary tract oncology\nEarly-phase cancer treatment evidence\nCholangiocarcinoma after chemotherapy failure\nSingle-arm phase II activity and toxicity reporting\nProspective single-arm description of apatinib activity and toxicity after gemcitabine-based treatment failure in advanced cholangiocarcinoma.\nHuman single-center phase II observations without a randomized concurrent control; not comparative superiority, causal survival benefit or a current treatment recommendation.\nNon-comparative oncology evidence\nResponse-denominator interpretation\nEvidence synthesis: early-phase treatment studies in previously treated advanced cholangiocarcinoma.\nMethods: denominator-explicit interpretation of response and safety in single-arm oncology trials.",
+      "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#paper-discovery",
+      "limitation": false
     }
   ]
 }

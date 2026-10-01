@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Artificial intelligence in oncology",
+      "Rectal cancer prognosis"
+    ],
+    "review_topics": [
+      "Machine learning for postoperative survival",
+      "Interpretable cancer risk stratification"
+    ],
+    "scientific_role": "Interpretable survival-modeling framework for rectal-cancer patients after robot-assisted proctectomy.",
+    "evidence_position": "Two-center retrospective human prognostic modeling with external evaluation; not prospective clinical utility or a causal survival advantage of robotic surgery.",
+    "related_concepts": [
+      "Postoperative prognostic modeling",
+      "Externally evaluated survival models"
+    ],
+    "citation_contexts": [
+      "Methods: interpretable AI for postoperative oncology prognosis.",
+      "Evidence synthesis: survival models in the robot-assisted rectal-cancer surgery population, retaining external-performance limitations."
+    ]
+  },
   "doi": "10.1200/po.24.00089",
   "display_title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
   "summary": "RAP-AIscore is an interpretable postoperative overall-survival model developed in a retrospective two-center study of 506 patients undergoing robot-assisted proctectomy, with internal validation and independent retrospective SYEMH evaluation.",

@@ -132,6 +132,7 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
         'evidence_csv_url': f'{site_url}/assets/evidence/{item["slug"]}.csv' if v2 else None,
         'question_count': len(v2['qa']) if v2 else 0,
         'concept_count': sum(len(values) for values in v2['concepts'].values()) if v2 else 0,
+        **({'discovery_layer': content['discovery_layer']} if v2 and content.get('discovery_layer') else {}),
     }
 
 
@@ -172,6 +173,10 @@ def question_records(items, contents, fields, root=ROOT):
                 'citation_bibtex_url': fields[item['slug']]['citation_bibtex_url'],
                 'citation_ris_url': fields[item['slug']]['citation_ris_url'],
                 'citation_csl_json_url': fields[item['slug']]['citation_csl_json_url'],
+                **({'field_entry': content['discovery_layer']['field_entry'],
+                    'review_topics': content['discovery_layer']['review_topics'],
+                    'discovery_url': item['paper_url'] + '#paper-discovery'}
+                   if content.get('discovery_layer') else {}),
         })
     return rows
 
@@ -182,8 +187,16 @@ def render_questions(rows, config):
     for row in rows:
         citation = (f'<a href="{escape(row["paper_url"], quote=True)}#cite-this-paper">Cite</a>'
                     if row['citation_csl_json_url'] else '')
+        context = ''
+        if row.get('field_entry'):
+            from evidence_discovery import ui
+            context = ui('<p class="meta">Research fields: ' + escape('; '.join(row['field_entry']))
+                         + '</p><p><strong>Review topics:</strong> ' + escape('; '.join(row['review_topics']))
+                         + '</p><p><a href="' + escape(row['discovery_url'], quote=True)
+                         + '">Research &amp; review context</a></p>')
         cards.append(
             f'<article class="card" id="{escape(row["id"], quote=True)}">'
+            + context +
             f'<h2><a href="{escape(row["answer_url"], quote=True)}">{escape(row["question"])}</a></h2>'
             f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row["profile_type"].replace("_", " "))}</p>'
             f'<p><strong>Does not establish:</strong> {escape(row["evidence_scope"])}</p>'

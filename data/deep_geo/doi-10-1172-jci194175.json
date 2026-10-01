@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Atherosclerosis research",
+      "Vascular smooth muscle biology"
+    ],
+    "review_topics": [
+      "Smooth muscle cell phenotypic remodeling",
+      "Experimental regulation of plaque stability"
+    ],
+    "scientific_role": "VSMC-specific KIF13B mechanism study linking inflammatory and matrix-associated states to KCTD10-dependent KLF4 turnover.",
+    "evidence_position": "Associative human plaque observations plus causal mouse, cell and biochemical experiments; intervention evidence is preclinical, not proven human therapy.",
+    "related_concepts": [
+      "Smooth muscle proteostasis",
+      "Inflammatory versus matrix-associated VSMC states"
+    ],
+    "citation_contexts": [
+      "Background: cell-specific regulation of atherosclerotic plaque remodeling.",
+      "Mechanistic evidence: experimental VSMC state regulation, distinct from macrophage KIF13B-mediated efferocytosis."
+    ]
+  },
   "doi": "10.1172/jci194175",
   "display_title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
   "summary": "A mechanistic translational preclinical study combining associative human carotid-plaque evidence with mouse atherosclerosis genetics, pooled single-cell analysis, primary human aortic smooth-muscle-cell perturbation, biochemical rescue and preclinical pharmacology to investigate how KIF13B regulates VSMC state through KCTD10-dependent KLF4 turnover.",

@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cancer systems biology",
+      "Thyroid cancer molecular research"
+    ],
+    "review_topics": [
+      "Molecular heterogeneity and cancer subtyping",
+      "Expression-network analysis of disease progression"
+    ],
+    "scientific_role": "Stage-associated network and molecular-subtype analysis with external classifier evaluation and separate ASPH tissue and cell follow-up.",
+    "evidence_position": "Public transcriptomics, human tissue observations and cell experiments; not physiological circadian measurement, individual transition-time prediction or clinical drug efficacy.",
+    "related_concepts": [
+      "Network-based cancer subtyping",
+      "Classifier versus outcome evidence"
+    ],
+    "citation_contexts": [
+      "Methods: expression-network approaches to thyroid-cancer heterogeneity.",
+      "Evidence synthesis: computational subtype characterization alongside candidate experimental follow-up, without treating a subtype classifier as a survival model."
+    ]
+  },
   "doi": "10.1002/mdr2.70004",
   "display_title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
   "summary": "Stage-associated DNB analysis, TCPSLevel, a compact subtype classifier and ASPH follow-up are presented as distinct evidence layers.",

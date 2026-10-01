@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Inflammation in cardiovascular disease",
+      "Cross-disease systems biology"
+    ],
+    "review_topics": [
+      "COVID-19 and heart failure inflammatory biology",
+      "Shared disease-associated expression programs"
+    ],
+    "scientific_role": "Comparison of independently sampled COVID-19 and heart-failure transcriptomes for shared inflammatory and regulatory hypotheses.",
+    "evidence_position": "Public expression datasets analyzed separately across diseases; not a dedicated comorbid cohort, germline genetic evidence or demonstrated infection-to-heart-failure causality.",
+    "related_concepts": [
+      "Cross-disease inflammatory signatures",
+      "Transcriptomic hypothesis generation"
+    ],
+    "citation_contexts": [
+      "Background: molecular overlap between infection-related and heart-failure inflammation.",
+      "Methods: cross-disease expression and network analysis, without inferring genetic causality or treatment efficacy."
+    ]
+  },
   "doi": "10.1002/ehf2.14003",
   "display_title": "Shared COVID-19 and heart-failure transcriptomic signatures and inflammatory network hubs",
   "summary": "A cross-disease transcriptomic systems-biology analysis of independently profiled COVID-19 and heart-failure datasets, identifying 12 shared genes and prioritizing inflammatory network hubs for further study.",

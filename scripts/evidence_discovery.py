@@ -43,9 +43,9 @@ class VisibleText(HTMLParser):
             self.parts.append(data)
 
 
-def visible_text(page):
+def visible_text(page, *, include_navigation=False):
     parser = VisibleText()
-    parser.feed(without_evidence_ui(page))
+    parser.feed(page if include_navigation else without_evidence_ui(page))
     return '\n'.join(parser.parts)
 
 
@@ -70,11 +70,12 @@ def navigation_html(root, items):
 def search_corpus(root, items, contents):
     """Each document is a visible field/section, preserving negative-field context."""
     documents = []
+    discovery_documents = []
     for p in items:
         url = p['paper_url']
         page = (root / 'papers' / (p['slug'] + '.html')).read_text(encoding='utf-8')
-        visible = visible_text(page)
-        def add(category, texts, anchor='', limitation=False):
+        visible = visible_text(page, include_navigation=True)
+        def add(category, texts, anchor='', limitation=False, destination=None):
             texts = [str(t) for t in texts if t]
             # Authors may not be visibly rendered on metadata-incomplete records.
             if not texts:
@@ -84,7 +85,8 @@ def search_corpus(root, items, contents):
                     raise ValueError(f'Search text not visibly present: {p["slug"]}/{category}: {text}')
             if anchor and f'id="{anchor}"' not in page:
                 anchor = ''
-            documents.append({'id': len(documents), 'result_kind': 'paper', 'doi': p.get('doi', ''), 'title': p['title'],
+            target = documents if destination is None else destination
+            target.append({'id': len(target), 'result_kind': 'paper', 'doi': p.get('doi', ''), 'title': p['title'],
                               'category': category, 'text': '\n'.join(texts),
                               'url': url + ('#' + anchor if anchor else ''), 'limitation': limitation})
         add('Title', [p['title']])
@@ -94,6 +96,11 @@ def search_corpus(root, items, contents):
         c = contents.get(p.get('doi', '').lower())
         if not c or c.get('version') != 2:
             continue
+        if c.get('discovery_layer'):
+            from paper_discovery import search_text
+            # One coherent, qualified document; no independent evidence ranking.
+            add('Research & review context', search_text(c['discovery_layer']).split('\n'),
+                'paper-discovery', destination=discovery_documents)
         add('Research question', [c['research_question']])
         add('Evidence summary', [c['summary'], c['author_summary']], 'ev-summary')
         add('Concepts', [s for values in c.get('concepts', {}).values() for s in values])
@@ -110,4 +117,8 @@ def search_corpus(root, items, contents):
         add('Limitations', c['limitations'], 'ev-scope', True)
     from research_guides import search_documents
     documents.extend(search_documents(root, len(documents)))
+    # Append navigation after existing evidence/guide records: preserve their IDs.
+    for document in discovery_documents:
+        document['id'] = len(documents)
+        documents.append(document)
     return {'version': 1, 'description': 'Visible public text for local text-relevance search; no generated answers or evidence-strength ranking.', 'documents': documents}

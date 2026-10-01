@@ -6,6 +6,7 @@ import io
 import json
 import re
 from evidence_discovery import ui
+from paper_discovery import scientific_content
 
 EXPORT_NOTICE = ('Study-level author-maintained evidence summary. '
                  'Not participant-level data and not a ready-to-pool meta-analysis dataset. '
@@ -32,7 +33,7 @@ def canonical_json(value):
 
 def evidence_rows(publication, content, canonical):
     # Runtime-only resolved related-research helpers are not scientific source fields.
-    source = {k:v for k,v in content.items() if not k.startswith('_')}
+    source = scientific_content({k:v for k,v in content.items() if not k.startswith('_')})
     fingerprint = hashlib.sha256(canonical_json(source).encode('utf-8')).hexdigest()
     for f in content['key_findings']:
         yield {'doi':content['doi'],'paper_title':publication['title'],'canonical_paper_url':canonical,

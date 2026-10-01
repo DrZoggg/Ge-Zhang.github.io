@@ -24,7 +24,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fcvm-2025-1724572.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fcvm-2025-1724572.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fcvm-2025-1724572.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fcvm-2025-1724572.csl.json",
+      "field_entry": [
+        "Cardiovascular epidemiology",
+        "Multisystem stress-biomarker research"
+      ],
+      "review_topics": [
+        "Allostatic load and cardiovascular disease",
+        "Inflammatory markers in exposure-outcome associations"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#paper-discovery"
     },
     {
       "id": "doi-10-1002-mdr2-70052",
@@ -97,7 +106,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70052.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70052.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70052.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70052.csl.json",
+      "field_entry": [
+        "Cardiovascular chronobiology",
+        "Immune-vascular regulation"
+      ],
+      "review_topics": [
+        "Circadian rhythms and vascular inflammation",
+        "Cardiovascular chronotherapy evidence and translation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#paper-discovery"
     },
     {
       "id": "doi-10-1002-ggn2-202500053",
@@ -122,7 +140,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-ggn2-202500053.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-ggn2-202500053.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ggn2-202500053.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ggn2-202500053.csl.json",
+      "field_entry": [
+        "Clinical artificial intelligence methodology",
+        "Translational model-evaluation research"
+      ],
+      "review_topics": [
+        "Clinical ensemble design and evaluation",
+        "Interpretation and generalization of clinical AI"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#paper-discovery"
     },
     {
       "id": "doi-10-1038-s41698-026-01699-1",
@@ -185,7 +212,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1038-s41698-026-01699-1.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1038-s41698-026-01699-1.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1038-s41698-026-01699-1.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1038-s41698-026-01699-1.csl.json",
+      "field_entry": [
+        "Circadian biology in cancer",
+        "Colorectal cancer systems biology"
+      ],
+      "review_topics": [
+        "Circadian disruption and tumor heterogeneity",
+        "Transcriptomic scoring of tumor-microenvironment states"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#paper-discovery"
     },
     {
       "id": "doi-10-1172-jci194175",
@@ -250,7 +286,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1172-jci194175.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1172-jci194175.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1172-jci194175.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1172-jci194175.csl.json",
+      "field_entry": [
+        "Atherosclerosis research",
+        "Vascular smooth muscle biology"
+      ],
+      "review_topics": [
+        "Smooth muscle cell phenotypic remodeling",
+        "Experimental regulation of plaque stability"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#paper-discovery"
     },
     {
       "id": "doi-10-1016-j-curpro-2025-100054",
@@ -273,7 +318,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-curpro-2025-100054.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-curpro-2025-100054.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-curpro-2025-100054.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-curpro-2025-100054.csl.json",
+      "field_entry": [
+        "Artificial intelligence in cardiovascular medicine",
+        "Patient-specific modeling research"
+      ],
+      "review_topics": [
+        "Multimodal AI for cardiovascular mechanism research",
+        "Digital modeling and prospective evaluation requirements"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#paper-discovery"
     },
     {
       "id": "doi-10-3389-fpubh-2025-1521372",
@@ -298,7 +352,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fpubh-2025-1521372.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fpubh-2025-1521372.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fpubh-2025-1521372.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fpubh-2025-1521372.csl.json",
+      "field_entry": [
+        "Sleep epidemiology",
+        "Chronic-disease population research"
+      ],
+      "review_topics": [
+        "Sleep duration and mortality",
+        "Sleep-related associations in adults with hyperuricemia"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-70725",
@@ -331,7 +394,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70725.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70725.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70725.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70725.csl.json",
+      "field_entry": [
+        "Vascular biomarker research",
+        "Extracellular-vesicle protein research"
+      ],
+      "review_topics": [
+        "Blood-based biomarker candidates in abdominal aortic aneurysm",
+        "Targeted circulating EV proteomics"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#paper-discovery"
     },
     {
       "id": "doi-10-1016-j-joim-2025-06-003",
@@ -358,7 +430,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-joim-2025-06-003.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-joim-2025-06-003.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-joim-2025-06-003.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-joim-2025-06-003.csl.json",
+      "field_entry": [
+        "Cancer systems biology",
+        "Hepatocellular carcinoma molecular research"
+      ],
+      "review_topics": [
+        "Circadian-related cancer heterogeneity",
+        "Transcriptomic subtypes and retrospective outcomes"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#paper-discovery"
     },
     {
       "id": "doi-10-1186-s12915-025-02400-x",
@@ -390,7 +471,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1186-s12915-025-02400-x.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1186-s12915-025-02400-x.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1186-s12915-025-02400-x.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1186-s12915-025-02400-x.csl.json",
+      "field_entry": [
+        "Aortic aneurysm immunobiology",
+        "Single-cell vascular research"
+      ],
+      "review_topics": [
+        "T-cell heterogeneity in abdominal aortic aneurysm",
+        "Immune-cell-linked molecular markers in human vascular disease"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#paper-discovery"
     },
     {
       "id": "doi-10-1002-mdr2-70004",
@@ -420,7 +510,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70004.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70004.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70004.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-mdr2-70004.csl.json",
+      "field_entry": [
+        "Cancer systems biology",
+        "Thyroid cancer molecular research"
+      ],
+      "review_topics": [
+        "Molecular heterogeneity and cancer subtyping",
+        "Expression-network analysis of disease progression"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#paper-discovery"
     },
     {
       "id": "doi-10-2147-ijn-s522157",
@@ -453,7 +552,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-2147-ijn-s522157.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-2147-ijn-s522157.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-2147-ijn-s522157.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-2147-ijn-s522157.csl.json",
+      "field_entry": [
+        "Cardio-oncology",
+        "Cardiac drug-delivery research"
+      ],
+      "review_topics": [
+        "Anthracycline-associated cardiac injury",
+        "Liposomal delivery of inhibitory microRNA payloads"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#paper-discovery"
     },
     {
       "id": "nlrp3-ici",
@@ -485,7 +593,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/nlrp3-ici.bib",
       "citation_ris_url": "https://drgezhang.com/citations/nlrp3-ici.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/nlrp3-ici.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/nlrp3-ici.csl.json",
+      "field_entry": [
+        "Cardio-oncology",
+        "Immune-mediated cardiac injury"
+      ],
+      "review_topics": [
+        "Immune-checkpoint-inhibitor cardiotoxicity",
+        "Inflammasome-related cardiac immune states"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/nlrp3-ici.html#paper-discovery"
     },
     {
       "id": "doi-10-1093-eurheartj-ehaf523",
@@ -545,7 +662,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1093-eurheartj-ehaf523.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1093-eurheartj-ehaf523.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1093-eurheartj-ehaf523.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1093-eurheartj-ehaf523.csl.json",
+      "field_entry": [
+        "Atherosclerosis research",
+        "Innate immune vascular biology"
+      ],
+      "review_topics": [
+        "Macrophage efferocytosis in plaque",
+        "Post-translational control of apoptotic-cell clearance"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#paper-discovery"
     },
     {
       "id": "aihflevel",
@@ -588,7 +714,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/aihflevel.bib",
       "citation_ris_url": "https://drgezhang.com/citations/aihflevel.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/aihflevel.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/aihflevel.csl.json",
+      "field_entry": [
+        "Artificial intelligence in cardiovascular medicine",
+        "Heart failure research"
+      ],
+      "review_topics": [
+        "Heart failure risk prediction",
+        "Cardiorenal prognostic stratification"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/aihflevel.html#paper-discovery"
     },
     {
       "id": "doi-10-18632-aging-205564",
@@ -616,7 +751,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-18632-aging-205564.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-18632-aging-205564.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-18632-aging-205564.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-18632-aging-205564.csl.json",
+      "field_entry": [
+        "Inflammatory bowel disease molecular research",
+        "Computational disease characterization"
+      ],
+      "review_topics": [
+        "Gene-expression approaches to ulcerative colitis",
+        "Classifier evaluation and biological interpretation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#paper-discovery"
     },
     {
       "id": "doi-10-1200-po-24-00089",
@@ -644,7 +788,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00089.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00089.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00089.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00089.csl.json",
+      "field_entry": [
+        "Artificial intelligence in oncology",
+        "Rectal cancer prognosis"
+      ],
+      "review_topics": [
+        "Machine learning for postoperative survival",
+        "Interpretable cancer risk stratification"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-70258",
@@ -676,7 +829,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70258.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70258.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70258.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-70258.csl.json",
+      "field_entry": [
+        "Extracellular-vesicle biomarker research",
+        "Dilated cardiomyopathy and heart failure"
+      ],
+      "review_topics": [
+        "Circulating RNA biomarkers in cardiomyopathy",
+        "Plasma vesicle-associated circular RNA profiling"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#paper-discovery"
     },
     {
       "id": "circadian-ihd",
@@ -703,7 +865,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/circadian-ihd.bib",
       "citation_ris_url": "https://drgezhang.com/citations/circadian-ihd.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/circadian-ihd.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/circadian-ihd.csl.json",
+      "field_entry": [
+        "Coronary disease systems biology",
+        "Circadian-related cardiovascular research"
+      ],
+      "review_topics": [
+        "Molecular heterogeneity in ischemic heart disease",
+        "Expression-based coronary disease subtyping"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/circadian-ihd.html#paper-discovery"
     },
     {
       "id": "olink-dcm",
@@ -790,7 +961,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/olink-dcm.bib",
       "citation_ris_url": "https://drgezhang.com/citations/olink-dcm.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/olink-dcm.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/olink-dcm.csl.json",
+      "field_entry": [
+        "Cardiovascular biomarker research",
+        "Dilated cardiomyopathy and heart failure"
+      ],
+      "review_topics": [
+        "Blood protein biomarkers in cardiomyopathy",
+        "Targeted proteomics for biomarker discovery"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/olink-dcm.html#paper-discovery"
     },
     {
       "id": "apvs",
@@ -894,7 +1074,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/apvs.bib",
       "citation_ris_url": "https://drgezhang.com/citations/apvs.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/apvs.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/apvs.csl.json",
+      "field_entry": [
+        "Atherosclerosis research",
+        "Computational cardiovascular medicine"
+      ],
+      "review_topics": [
+        "Molecular assessment of plaque vulnerability",
+        "Transcriptomic characterization of coronary disease"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/apvs.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-17789",
@@ -925,7 +1114,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-17789.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-17789.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-17789.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-17789.csl.json",
+      "field_entry": [
+        "Extracellular-vesicle biomarker research",
+        "Dilated cardiomyopathy and heart failure"
+      ],
+      "review_topics": [
+        "Circulating RNA biomarkers in cardiomyopathy",
+        "Human plasma exosomal microRNA profiling"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-17789.html#paper-discovery"
     },
     {
       "id": "idebenone-ferroptosis",
@@ -953,7 +1151,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/idebenone-ferroptosis.bib",
       "citation_ris_url": "https://drgezhang.com/citations/idebenone-ferroptosis.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/idebenone-ferroptosis.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/idebenone-ferroptosis.csl.json",
+      "field_entry": [
+        "Myocardial injury research",
+        "Regulated cell death in cardiovascular disease"
+      ],
+      "review_topics": [
+        "Ferroptosis and autophagy in myocardial infarction",
+        "Preclinical cardioprotection and intervention timing"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#paper-discovery"
     },
     {
       "id": "smc-fate",
@@ -1037,7 +1244,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/smc-fate.bib",
       "citation_ris_url": "https://drgezhang.com/citations/smc-fate.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/smc-fate.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/smc-fate.csl.json",
+      "field_entry": [
+        "Vascular biology",
+        "Single-cell atherosclerosis research"
+      ],
+      "review_topics": [
+        "Smooth muscle cell heterogeneity in human plaque",
+        "Cell-state programs and molecular disease subtypes"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/smc-fate.html#paper-discovery"
     },
     {
       "id": "doi-10-1002-ehf2-14003",
@@ -1128,7 +1344,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-ehf2-14003.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-ehf2-14003.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ehf2-14003.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ehf2-14003.csl.json",
+      "field_entry": [
+        "Inflammation in cardiovascular disease",
+        "Cross-disease systems biology"
+      ],
+      "review_topics": [
+        "COVID-19 and heart failure inflammatory biology",
+        "Shared disease-associated expression programs"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#paper-discovery"
     },
     {
       "id": "doi-10-3389-fonc-2021-659217",
@@ -1155,7 +1380,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2021-659217.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2021-659217.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2021-659217.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2021-659217.csl.json",
+      "field_entry": [
+        "Biliary tract oncology",
+        "Early-phase cancer treatment evidence"
+      ],
+      "review_topics": [
+        "Cholangiocarcinoma after chemotherapy failure",
+        "Single-arm phase II activity and toxicity reporting"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#paper-discovery"
     }
   ]
 }

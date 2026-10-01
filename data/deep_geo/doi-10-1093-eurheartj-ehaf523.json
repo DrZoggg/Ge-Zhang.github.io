@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Atherosclerosis research",
+      "Innate immune vascular biology"
+    ],
+    "review_topics": [
+      "Macrophage efferocytosis in plaque",
+      "Post-translational control of apoptotic-cell clearance"
+    ],
+    "scientific_role": "Macrophage KIF13B mechanism study connecting MERTK regulation, efferocytosis and experimental atherosclerosis.",
+    "evidence_position": "Mouse and macrophage perturbation and rescue experiments with associative human plaque observations; preclinical plaque protection, not proven human treatment efficacy.",
+    "related_concepts": [
+      "Myeloid plaque biology",
+      "Efferocytosis-regulatory mechanisms"
+    ],
+    "citation_contexts": [
+      "Background: defective apoptotic-cell clearance in atherosclerosis.",
+      "Mechanistic evidence: experimental regulation of macrophage efferocytosis, distinct from VSMC KIF13B state remodeling."
+    ]
+  },
   "doi": "10.1093/eurheartj/ehaf523",
   "display_title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
   "summary": "A mechanistic translational preclinical study linking myeloid KIF13B to MERTK-dependent efferocytosis and experimental plaque protection, with associative human tissue evidence and article-reported NX-1607 rescue in cells and mice.",

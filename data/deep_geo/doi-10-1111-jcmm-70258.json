@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Extracellular-vesicle biomarker research",
+      "Dilated cardiomyopathy and heart failure"
+    ],
+    "review_topics": [
+      "Circulating RNA biomarkers in cardiomyopathy",
+      "Plasma vesicle-associated circular RNA profiling"
+    ],
+    "scientific_role": "Small human DCM-HF plasma vesicle circRNA expression study with predicted regulatory relationships and external assay follow-up.",
+    "evidence_position": "Human case-control profiling with small qRT-PCR evaluation; platform and naming discrepancies remain, and predicted networks are not demonstrated binding or clinical diagnostic utility.",
+    "related_concepts": [
+      "Vesicle-associated circular RNA candidates",
+      "Expression profiling versus regulatory inference"
+    ],
+    "citation_contexts": [
+      "Background: complementary circulating RNA classes in cardiomyopathy biomarker research.",
+      "Evidence synthesis: DCM-HF vesicle-associated circRNA candidates, retaining the unresolved platform, count and naming limitations."
+    ]
+  },
   "doi": "10.1111/jcmm.70258",
   "display_title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
   "summary": "Exploratory plasma exosomal circRNA profiling in DCM-HF reports 49 differential circRNAs and a small external qRT-PCR evaluation. The evidence page explicitly distinguishes the Methods microarray platform from sequencing terminology elsewhere in the article.",

@@ -35,6 +35,7 @@ from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
 import research_guides
 import evidence_presentation
+import paper_discovery
 from site_common import (
     LEGACY_DEEP_SLUGS,
     PAPERS_DIR,
@@ -336,6 +337,7 @@ def validate_v2_rendered_page(
         require(page.count(guide_nav) == 1, 'Guide navigation content/link changed')
         require(page.index('data-v2-section="related-research"') < page.index(guide_nav)
                 < page.index('data-v2-section="provenance"'), 'Guide navigation location changed')
+    raw_page = page
     page = without_evidence_ui(page)
     label = f"{publication.get('slug') or publication.get('title')} Paper GEO 2.0"
     validate_deep_v2_content(content, label)
@@ -431,6 +433,16 @@ def validate_v2_rendered_page(
         *(["Verify publication identity"] if 'id="scholarly-records"' in page else []),
     ]
     pilot = evidence_presentation.STYLESHEET in page
+    if content.get('discovery_layer'):
+        expected_discovery = paper_discovery.render_html(content)
+        require(raw_page.count(expected_discovery) == 1 and raw_page.count('data-discovery-layer="1"') == 1,
+                f"{label} discovery context must match the visible source exactly once.")
+        require(raw_page.index('id="paper-discovery"') < raw_page.index('data-v2-section="evidence-snapshot"'),
+                f"{label} discovery context must precede detailed evidence.")
+        require('\n'.join(paper_discovery.render_markdown(content)) in markdown,
+                f"{label} discovery context lost from Markdown.")
+    else:
+        require('data-discovery-layer=' not in raw_page, f"{label} has unsourced discovery context.")
     if pilot:
         require(evidence_presentation.enabled(content['doi']), f"{label} is outside presentation allowlist.")
         require('id="official-abstract"' in page, f"{label} pilot requires Official Abstract.")
@@ -607,9 +619,10 @@ def validate_v2_rendered_page(
                 metric["label"] in markdown and metric["value"] in markdown,
                 f"{label} evidence scale metric is missing from Markdown.",
             )
-    # The optional cluster ID is a stable anchor, not visible prose.
+    # Cluster ID is an anchor. Discovery navigation is checked exactly above,
+    # before UI normalization; every original scientific field stays in this loop.
     visible_content = {key: value for key, value in content.items()
-                       if key != "research_cluster_id"}
+                       if key not in {"research_cluster_id", "discovery_layer"}}
     for value in string_leaves(visible_content):
         require(
             normalized_source_text(value) in page_text,
@@ -821,6 +834,7 @@ def validate_aihflevel_v2_regression(content, publication, page):
     require(
         element_texts(page, "h2")[1 + ('id="official-abstract"' in page)
                                   + ('id="cite-this-paper"' in page)
+                                  + ('data-discovery-layer="1"' in page)
                                   + 2 * (evidence_presentation.STYLESHEET in page)] == "Evidence Snapshot",
         f"{label} evidence snapshot heading changed.",
     )

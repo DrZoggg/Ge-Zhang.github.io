@@ -15,6 +15,7 @@ import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 
 from build_publications import validate_deep_v2_content
+from paper_discovery import scientific_content
 from official_abstracts import EXCLUDED, load_official_abstracts
 from site_common import PAPERS_DIR, index_master, load_site_config
 from sync_common import ROOT, is_withdrawn, load_master, norm_doi, publication_authors
@@ -46,7 +47,7 @@ COMPONENTS = {
 
 
 def digest(content):
-    return hashlib.sha256(json.dumps(content, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    return hashlib.sha256(json.dumps(scientific_content(content), ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
 def baseline(path):

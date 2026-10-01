@@ -60,6 +60,39 @@ The study results revealed that KIF13B is a crucial modulator responsible for ma
 
 Text reproduced verbatim from publisher ([source](https://academic.oup.com/eurheartj/article/46/45/4969/8212255)); [DOI](https://doi.org/10.1093/eurheartj/ehaf523); [OUP-AUTHOR-ABSTRACT-REUSE](https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy).
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Atherosclerosis research
+- Innate immune vascular biology
+
+### Review topics
+
+- Macrophage efferocytosis in plaque
+- Post-translational control of apoptotic-cell clearance
+
+### Scientific role
+
+Macrophage KIF13B mechanism study connecting MERTK regulation, efferocytosis and experimental atherosclerosis.
+
+### Evidence position
+
+Mouse and macrophage perturbation and rescue experiments with associative human plaque observations; preclinical plaque protection, not proven human treatment efficacy.
+
+### Related concepts
+
+- Myeloid plaque biology
+- Efferocytosis-regulatory mechanisms
+
+### Possible citation contexts
+
+- Background: defective apoptotic-cell clearance in atherosclerosis.
+- Mechanistic evidence: experimental regulation of macrophage efferocytosis, distinct from VSMC KIF13B state remodeling.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Scale
 
 **The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice**

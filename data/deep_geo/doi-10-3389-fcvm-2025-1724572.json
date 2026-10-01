@@ -169,6 +169,26 @@
     }
   ],
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular epidemiology",
+      "Multisystem stress-biomarker research"
+    ],
+    "review_topics": [
+      "Allostatic load and cardiovascular disease",
+      "Inflammatory markers in exposure-outcome associations"
+    ],
+    "scientific_role": "Population cohort analysis of biomarker-defined allostatic load, incident cardiovascular events and statistical inflammatory mediation.",
+    "evidence_position": "Observational prospective cohort associations; statistical mediation is not an established causal prevention mechanism or validated stress-management intervention.",
+    "related_concepts": [
+      "Multisystem biomarker burden",
+      "Statistical-versus-causal mediation"
+    ],
+    "citation_contexts": [
+      "Background: cumulative physiological burden and incident cardiovascular disease.",
+      "Evidence synthesis: population-level allostatic-load associations, without claiming benefit from lowering the score or prescribing anti-inflammatory treatment."
+    ]
+  },
   "display_title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
   "evidence_page_notice": "Author-controlled evidence synthesis, separate from the published abstract and not a replacement for the version of record. Study design, analysis denominators and unresolved reporting differences are retained.",
   "qa": [

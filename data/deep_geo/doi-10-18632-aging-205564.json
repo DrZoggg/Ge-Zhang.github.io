@@ -256,6 +256,26 @@
     "review_basis": "Published main text and selected figure legends plus the cited GEO record. No raw-data reanalysis or independent reconstruction of the score."
   },
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Inflammatory bowel disease molecular research",
+      "Computational disease characterization"
+    ],
+    "review_topics": [
+      "Gene-expression approaches to ulcerative colitis",
+      "Classifier evaluation and biological interpretation"
+    ],
+    "scientific_role": "Retrospective gene-expression classifier and separate interpretability-score analysis for ulcerative colitis.",
+    "evidence_position": "Public bulk-expression analysis with external dataset evaluation; the single-cell source remains unresolved, and prospective diagnostic or clinical drug utility is not established.",
+    "related_concepts": [
+      "Cross-dataset expression classification",
+      "Classifier-versus-interpretability distinction"
+    ],
+    "citation_contexts": [
+      "Methods: computational expression-based characterization of inflammatory bowel disease.",
+      "Evidence synthesis: retrospective ulcerative-colitis classification results, retaining unresolved single-cell provenance and non-causal gene interpretation."
+    ]
+  },
   "display_title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
   "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Reported findings and independently unresolved source details are distinguished.",
   "qa": [

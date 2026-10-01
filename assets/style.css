@@ -99,6 +99,13 @@ footer .wrap{padding-inline:32px}
 .paper-geo-v2__concept-group .tags{margin-top:8px}
 .paper-geo-v2__related{display:grid;gap:10px}
 .paper-geo-v2__notice{padding-top:40px}
+/* Supplementary review routing: balanced columns, never newspaper-style lists. */
+.paper-discovery__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px;margin:0 0 24px}
+.paper-discovery__grid>div{min-width:0}
+.paper-discovery__grid dt{font-size:.88rem;font-weight:600;color:var(--muted)}
+.paper-discovery__grid dd{margin:6px 0 0;line-height:1.8;overflow-wrap:break-word}
+.paper-discovery__list{margin:0;padding-left:1.2em}
+.paper-discovery__list li+li{margin-top:6px}
 .paper-geo-v2__section[data-citation-pilot-section="sources"] a{overflow-wrap:anywhere}
 .evidence-navigation{display:flex;flex-wrap:wrap;flex-direction:row;align-items:center;max-width:none;padding:12px 0;border-top:1px solid var(--line);font-size:.9rem}
 .evidence-navigation a{display:inline-flex;align-items:center;min-height:44px}
@@ -239,6 +246,7 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
  .home #featured>.buttons{padding-inline:0}
  .grid,.paper-geo-v2__scope,.paper-geo-v2__concepts,.paper-geo-v2__profile,.paper-geo-v2__provenance{grid-template-columns:minmax(0,1fr)}
  .paper-geo-v2__compact-list{columns:1}
+ .paper-discovery__grid{grid-template-columns:minmax(0,1fr);gap:22px}
  .paper-geo-v2__finding,.paper-geo-v2__qa{padding:18px}
  .paper-geo-v2__table th,.paper-geo-v2__table td{padding:8px}
  .paper-geo-v2__author-list{gap:6px 18px}

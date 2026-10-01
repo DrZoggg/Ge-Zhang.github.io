@@ -1,5 +1,25 @@
 {
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Cardio-oncology",
+      "Immune-mediated cardiac injury"
+    ],
+    "review_topics": [
+      "Immune-checkpoint-inhibitor cardiotoxicity",
+      "Inflammasome-related cardiac immune states"
+    ],
+    "scientific_role": "Preclinical NLRP3-inhibition study examining cardiac injury, immune-cell states and tumor outcomes in tested ICI-treated mouse models.",
+    "evidence_position": "Controlled preclinical mouse interventions and immune profiling, with supportive human PBMC associations; not human MCC950 efficacy, safety or approved clinical use.",
+    "related_concepts": [
+      "Cardiac immune-state remodeling",
+      "Cardiac and antitumor endpoint separation"
+    ],
+    "citation_contexts": [
+      "Background: inflammatory mechanisms in checkpoint-inhibitor cardiac injury.",
+      "Experimental evidence: NLRP3 pathway modulation in tested tumor-bearing models, without generalizing antitumor or cardiac benefit to patients."
+    ]
+  },
   "doi": "10.1136/jitc-2024-010127",
   "display_title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
   "summary": "A preclinical multimodal study evaluates MCC950 in B16F10-bearing mouse models of ICI-associated cardiac injury, combining cardiac and tumor phenotyping with immune profiling and supportive public human PBMC association data.",

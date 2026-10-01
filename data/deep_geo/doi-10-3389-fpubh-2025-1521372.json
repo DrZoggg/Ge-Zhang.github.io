@@ -195,6 +195,26 @@
     }
   ],
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Sleep epidemiology",
+      "Chronic-disease population research"
+    ],
+    "review_topics": [
+      "Sleep duration and mortality",
+      "Sleep-related associations in adults with hyperuricemia"
+    ],
+    "scientific_role": "Survey-weighted NHANES linked-mortality analysis of self-reported sleep in the studied hyperuricemia population.",
+    "evidence_position": "Observational secondary human population analysis; associations and nonlinear estimates are not evidence that changing sleep duration reduces mortality or defines a personal sleep target.",
+    "related_concepts": [
+      "Population-specific sleep associations",
+      "Duration-versus-sleep-trouble distinction"
+    ],
+    "citation_contexts": [
+      "Background: sleep and mortality in metabolically defined adult populations.",
+      "Evidence synthesis: observational sleep-duration and sleep-trouble results, with hyperuricemia and self-report scope stated."
+    ]
+  },
   "display_title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
   "evidence_page_notice": "Author-controlled evidence synthesis, separate from the published abstract and not a replacement for the version of record. Study design, analysis denominators and unresolved reporting differences are retained.",
   "qa": [

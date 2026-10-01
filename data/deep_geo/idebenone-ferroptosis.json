@@ -245,6 +245,26 @@
     "data_availability": "Data available on request according to the publisher record."
   },
   "version": 2,
+  "discovery_layer": {
+    "field_entry": [
+      "Myocardial injury research",
+      "Regulated cell death in cardiovascular disease"
+    ],
+    "review_topics": [
+      "Ferroptosis and autophagy in myocardial infarction",
+      "Preclinical cardioprotection and intervention timing"
+    ],
+    "scientific_role": "Cellular and mouse intervention study of idebenone-associated myocardial injury reduction and pathway-related evidence.",
+    "evidence_position": "Preclinical experiments with pretreatment-containing regimens; not evidence of post-infarction-only clinical rescue, human safety or human survival benefit.",
+    "related_concepts": [
+      "Redox-related cardiac injury",
+      "Pretreatment-to-clinical translation"
+    ],
+    "citation_contexts": [
+      "Background: regulated cell-death processes in myocardial injury.",
+      "Experimental evidence: ferroptosis- and autophagy-related cardioprotection, with dosing timing and alternative mechanisms retained."
+    ]
+  },
   "display_title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
   "evidence_page_notice": "Author-controlled evidence synthesis, distinct from the published abstract and not a replacement for the version of record. Reported findings and independently unresolved source details are distinguished.",
   "qa": [
