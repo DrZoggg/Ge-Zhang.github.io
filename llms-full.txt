@@ -98,6 +98,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.md
 - Deep GEO: yes
 
+## The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study
+- Journal: Journal of Diabetes Investigation
+- Year: 2026
+- Type: Article
+- DOI: 10.1111/jdi.70462
+- HTML: https://drgezhang.com/papers/doi-10-1111-jdi-70462.html
+- Markdown: https://drgezhang.com/papers/doi-10-1111-jdi-70462.md
+- Deep GEO: no
+
 ## Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care
 - Journal: Med Research
 - Year: 2026

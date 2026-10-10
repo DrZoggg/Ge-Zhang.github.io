@@ -1,12 +1,12 @@
 {
   "crossref": {
-    "checked_at_utc": "2026-09-21T09:07:49.699446+00:00",
-    "records_returned": 7,
-    "new_records_added": 0,
-    "records_enriched": 72,
+    "checked_at_utc": "2026-10-10T07:13:26.051017+00:00",
+    "records_returned": 8,
+    "new_records_added": 1,
+    "records_enriched": 0,
     "duplicate_records_merged": 0,
-    "author_backfill_candidates": 67,
-    "authors_backfilled": 65,
+    "author_backfill_candidates": 2,
+    "authors_backfilled": 0,
     "authors_unavailable": 2,
     "orcid": "0000-0002-3116-3246"
   },

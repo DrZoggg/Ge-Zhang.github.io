@@ -313,6 +313,33 @@
     "featured": true
   },
   {
+    "title": "The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study",
+    "journal": "Journal of Diabetes Investigation",
+    "year": 2026,
+    "doi": "10.1111/jdi.70462",
+    "url": "https://doi.org/10.1111/jdi.70462",
+    "type": "Article",
+    "authors": [
+      "Zhonghua Sun",
+      "Aikeliyaer Ainiwaer",
+      "Yameng Xu",
+      "Ge Zhang",
+      "Xiangyu Sun",
+      "Xinliang Peng",
+      "Yuanhui Dai",
+      "Kaisaierjiang Kadier"
+    ],
+    "sources": [
+      "Crossref:ORCID"
+    ],
+    "slug": "doi-10-1111-jdi-70462",
+    "paper_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.html",
+    "markdown_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.md",
+    "deep_geo": false,
+    "paper_geo_status": "none",
+    "featured": false
+  },
+  {
     "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
     "year": 2026,
     "journal": "Med Research",
