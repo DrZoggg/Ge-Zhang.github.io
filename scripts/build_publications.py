@@ -456,7 +456,7 @@ def update_homepage(index_html, config):
 
 def schema_type(publication):
     publication_type = str(publication.get("type") or "").casefold()
-    if publication_type in {"article", "review", "journal article"}:
+    if publication_type in {"article", "review", "journal article", "letter"}:
         return "ScholarlyArticle"
     return "CreativeWork"
 
@@ -2081,7 +2081,7 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         f"Markdown record: {md_url}",
         "",
     ]
-    if is_v2:
+    if is_v2 or (publication_type == "Letter" and publication_authors(publication)):
         lines.extend(
             [
                 "## Full Authors",
@@ -2095,7 +2095,7 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
                 "",
             ]
         )
-    else:
+    if not is_v2:
         lines.extend(
             [
                 "## About this record",

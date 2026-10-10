@@ -20,6 +20,7 @@ ENHANCEMENT_FIELDS = {
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
+JOURNAL_PUBLICATION_TYPES = {"Article", "Letter"}
 
 
 def _unique_pairs(pairs):
@@ -104,7 +105,7 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
 
 
 def citation_skip_reason(publication):
-    if publication.get("type") not in {"Article", "Preprint"}:
+    if publication.get("type") not in JOURNAL_PUBLICATION_TYPES | {"Preprint"}:
         return f"unsupported type: {publication.get('type') or 'missing'}"
     missing = [
         key for key in ("title", "journal", "year", "doi", "authors")
@@ -198,7 +199,7 @@ def _bib_text(value):
 
 
 def render_bibtex(record):
-    kind = "article" if record["type"] == "Article" else "misc"
+    kind = "article" if record["type"] in JOURNAL_PUBLICATION_TYPES else "misc"
     fields = [
         ("title", record["title"]),
         ("author", " and ".join(record["authors"])),
@@ -225,7 +226,7 @@ def render_bibtex(record):
 
 
 def render_ris(record):
-    lines = ["TY  - JOUR" if record["type"] == "Article" else "TY  - GEN"]
+    lines = ["TY  - JOUR" if record["type"] in JOURNAL_PUBLICATION_TYPES else "TY  - GEN"]
     lines.extend(f"AU  - {author}" for author in record["authors"])
     lines.extend([
         f"TI  - {record['title']}",
@@ -258,7 +259,7 @@ def render_csl_json(record):
         issued = [int(part) for part in record["publication_date"].split("-")]
     result = {
         "id": record["id"],
-        "type": "article-journal" if record["type"] == "Article" else "manuscript",
+        "type": "article-journal" if record["type"] in JOURNAL_PUBLICATION_TYPES else "manuscript",
         "title": record["title"],
         "author": [{"literal": name} for name in record["authors"]],
         "container-title": record["journal"],
