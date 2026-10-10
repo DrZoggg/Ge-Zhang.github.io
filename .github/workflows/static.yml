@@ -7,6 +7,17 @@ on:
   workflow_dispatch:
 
   workflow_call:
+    inputs:
+      deployment_sha:
+        description: Exact website commit produced by the caller
+        required: false
+        type: string
+        default: ''
+      previous_sha:
+        description: Website commit before the caller's content update
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -29,7 +40,7 @@ jobs:
       - name: Checkout latest website
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'push' && github.sha || 'main' }}
+          ref: ${{ inputs.deployment_sha || (github.event_name == 'push' && github.sha) || 'main' }}
           fetch-depth: 0
 
       - name: Set up Python
@@ -71,7 +82,7 @@ jobs:
         uses: actions/deploy-pages@v5
 
       - name: Notify IndexNow of changed public HTML URLs
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || inputs.previous_sha != ''
         env:
-          INDEXNOW_PREVIOUS_REF: ${{ github.event.before }}
+          INDEXNOW_PREVIOUS_REF: ${{ inputs.previous_sha || github.event.before }}
         run: python scripts/indexnow_submit.py --previous-ref "$INDEXNOW_PREVIOUS_REF"

@@ -305,8 +305,14 @@ def main():
     deploy_position = workflow.index("uses: actions/deploy-pages@v5")
     indexnow_position = workflow.index("python scripts/indexnow_submit.py")
     assert deploy_position < indexnow_position
-    assert "if: github.event_name == 'push'" in workflow
-    assert "INDEXNOW_PREVIOUS_REF: ${{ github.event.before }}" in workflow
+    assert "if: github.event_name == 'push' || inputs.previous_sha != ''" in workflow
+    assert "INDEXNOW_PREVIOUS_REF: ${{ inputs.previous_sha || github.event.before }}" in workflow
+    assert "ref: ${{ inputs.deployment_sha || (github.event_name == 'push' && github.sha) || 'main' }}" in workflow
+    for caller, job in [("daily-publications.yml", "sync"), ("manual-orcid-reconcile.yml", "reconcile")]:
+        caller_text = (ROOT / ".github/workflows" / caller).read_text(encoding="utf-8")
+        assert caller_text.index('PREVIOUS_SHA="$(git rev-parse HEAD)"') < caller_text.index('git commit -m')
+        assert f"previous_sha: ${{{{ needs.{job}.outputs.previous_sha }}}}" in caller_text
+        assert f"deployment_sha: ${{{{ needs.{job}.outputs.deployment_sha }}}}" in caller_text
     assert "fetch-depth: 0" in workflow
 
     counts_before = publication_counts()

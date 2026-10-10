@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
+      previous_sha: ${{ steps.commit.outputs.previous_sha }}
+      deployment_sha: ${{ steps.commit.outputs.deployment_sha }}
 
     steps:
       - name: Check out website
@@ -42,6 +44,7 @@ jobs:
       - name: Commit changes when needed
         id: commit
         run: |
+          PREVIOUS_SHA="$(git rev-parse HEAD)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/publications_master.json publications.json publications.html publication_inventory.csv
@@ -55,12 +58,17 @@ jobs:
             git commit -m "Reconcile publication database with ORCID"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "previous_sha=$PREVIOUS_SHA" >> "$GITHUB_OUTPUT"
+            echo "deployment_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           fi
 
   deploy:
     needs: reconcile
     if: needs.reconcile.outputs.changed == 'true'
     uses: ./.github/workflows/static.yml
+    with:
+      previous_sha: ${{ needs.reconcile.outputs.previous_sha }}
+      deployment_sha: ${{ needs.reconcile.outputs.deployment_sha }}
     permissions:
       contents: read
       pages: write
