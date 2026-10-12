@@ -1,0 +1,315 @@
+{
+  "source_pr15_sha": "06e331f44be099443506027228bca61776efe42b",
+  "byte_convention": "Original committed UTF-8/LF Git blobs; no Windows checkout conversion.",
+  "archive_location": "Local production-release-20261012-evidence/archived-pr15; originals also remain reachable at source_pr15_sha in Git history.",
+  "retained": 16,
+  "archived": 35,
+  "files": [
+    {
+      "path": "reports/orcid-reconciliation-20261012/.gitignore",
+      "original_git_lf_sha256": "2b36fc5de1c76385583cb5ac35af23eb776fcdcb9d2b37a2fe0335fc90616925",
+      "bytes": 149,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/DELIVERY.md",
+      "original_git_lf_sha256": "5d9c256a6f0e9141a45ef56cb2bb6f58ca2700a141ba736cfe5d69a4e138ea52",
+      "bytes": 8184,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/IDEMPOTENCE.json",
+      "original_git_lf_sha256": "4ad638cf91f664ef0cc73754d0c69e6bd67f11f6a1d40fa5296a2d885d8b0aa2",
+      "bytes": 77,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/ORCID_SITE_PENDING.csv",
+      "original_git_lf_sha256": "de6c688804818b60350cbef0112edf71d1f570a12675f7d0d7a33d9d8309b6df",
+      "bytes": 353,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/ORCID_SITE_RECONCILIATION.csv",
+      "original_git_lf_sha256": "5c9f70e45ec196f8205e6f62fdcf1cd744187a3380e60caf462cc5724b69f9f8",
+      "bytes": 41078,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/ORCID_SITE_SUMMARY.md",
+      "original_git_lf_sha256": "5e1de831d1b6cb3c858015682dee1ed1fc519aff06e54d5ca6fda8de00d1516d",
+      "bytes": 5466,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/PR14_INTEGRATION_ACCEPTANCE.json",
+      "original_git_lf_sha256": "654c516c13b78d02278773c574cd77d8a55d3b9eeb5261306a75d7d6d9e4df59",
+      "bytes": 556,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/VISUAL_ACCEPTANCE.json",
+      "original_git_lf_sha256": "b3b1ddd26ff55cf50f8ba24a0be2643b93d3f624ba0c0672431e2d23dae7d4d6",
+      "bytes": 1756,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/acceptance.json",
+      "original_git_lf_sha256": "2736e6c963357c1167b20d50bdb2f3b9722e170b924c5baa466fb743055c6fc8",
+      "bytes": 2698,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/audit_orcid.py",
+      "original_git_lf_sha256": "40b8e43d3a595f94a0bbd3d56efa970a135de6e2ce83dad509a6312f13e6d6d3",
+      "bytes": 21194,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/baseline-build.log",
+      "original_git_lf_sha256": "6c08e5df11bfa4a1a5ce915bacaf9701599661c34b9b9e8e46aef285570c88ef",
+      "bytes": 98,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/baseline-file-sha256.json",
+      "original_git_lf_sha256": "4da4ab09c6fd2ec5f66dfd29c3814878e6b4c0ff69a36321e14249360b50ffc9",
+      "bytes": 58968,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/baseline-validate.log",
+      "original_git_lf_sha256": "efa8730a95d71959245521197d6ccc8ba4ead7dfbfa1d01ddf38f42e672d944c",
+      "bytes": 587,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/build.log",
+      "original_git_lf_sha256": "97f53ebb83324733ea3608a82fc168b0b66db74c53432ef4a63304680f066357",
+      "bytes": 98,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/check_idempotence.py",
+      "original_git_lf_sha256": "a5bd9757b1935accbd7bdda4d960ad0d00407c283a8408fc9d3499082279d1b0",
+      "bytes": 1191,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/citations.log",
+      "original_git_lf_sha256": "86d8d7990f5733cce0d22e08a3dd786d67180d1f41cb1245f80a4c29a515d154",
+      "bytes": 168,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/crossref-orcid-discovery.raw.json",
+      "original_git_lf_sha256": "978378de6c0867016acc0455b6a0df0dd3e62ce67d539645a517a6f7164e53c3",
+      "bytes": 38069,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/crossref-requests.json",
+      "original_git_lf_sha256": "fac137bac5d0fe2d1b1a11227e7a8cbedcc1d7a7dfa8f311f0ca6e662de58d20",
+      "bytes": 460,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/jdi-crossref-request.json",
+      "original_git_lf_sha256": "ffe7bf299856bb295b56cc00c787417590a8844a22ddec5eb52dc5e03985a5df",
+      "bytes": 124,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/jdi-crossref.json",
+      "original_git_lf_sha256": "bcc3f4443beef539d07272b9c668c8775bf5d94ee02b76cd1df29dfbea63fe01",
+      "bytes": 23760,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/medicine/MEDICINE_GOLD_STANDARD.json",
+      "original_git_lf_sha256": "2ebcd8435f66c0fe475846a071cad921c0e0d985694e3af28c0709cb951cfa5e",
+      "bytes": 2968,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/medicine/crossref-medicine.raw.json",
+      "original_git_lf_sha256": "4f058b43bacc49b5afb38c51642b3fd8f480a106a3686ea137b239d1479a2131",
+      "bytes": 11907,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-doi-reconciliation.csv",
+      "original_git_lf_sha256": "73b8528d1202ced76abfc2c6203fed4f7d443ace0e43f71d30591c61d068902b",
+      "bytes": 23906,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-duplicates.json",
+      "original_git_lf_sha256": "840fa4c32c3f9787c1f6d8af22188ef1e1f442b232629e4eefb2279f7caa6a8d",
+      "bytes": 3070,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-jdi-229332015.raw.json",
+      "original_git_lf_sha256": "9271d98a1b5dfd07f3551f94038b561ce84d9b2a7e2a40caa58635c51fc3e2cd",
+      "bytes": 3981,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-jdi-229332015.request.json",
+      "original_git_lf_sha256": "88e5d726a0c2f902089eeda137cf71e40887ef65ecb03d7b835a98ea324649f5",
+      "bytes": 240,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-medicine-discovery-229598708.raw.json",
+      "original_git_lf_sha256": "5c6332b2fa1a85fdcd9f5753c411d8eab700e0838cfb82498decec22abea8cb5",
+      "bytes": 6245,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-medicine-discovery-229598708.request.json",
+      "original_git_lf_sha256": "e4adc77f529d6b8a84da0640d7f48ce0b650ac8783a6a3c084258d76588b2d6c",
+      "bytes": 240,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-reconciliation-summary.json",
+      "original_git_lf_sha256": "ac45c0959fc93ca566f2489380c9b06b8cd4e8baae8ef24519b379e0fc2b4b9e",
+      "bytes": 1852,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-reconciliation.md",
+      "original_git_lf_sha256": "5e1de831d1b6cb3c858015682dee1ed1fc519aff06e54d5ca6fda8de00d1516d",
+      "bytes": 5466,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-science-228363030.raw.json",
+      "original_git_lf_sha256": "b1e1d9f43a2c3e3ee6f92eef1187fc73d71826367253d18c6ca22eb81eaa39bf",
+      "bytes": 3675,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-science-228363030.request.json",
+      "original_git_lf_sha256": "37d553a698251cb6849ac29a8bd17297e54bf8a5ed42fb642e090b37813de583",
+      "bytes": 240,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-website-only.csv",
+      "original_git_lf_sha256": "2aa58a68b9e9fbf329aa992a367c16286a06b51c416ecedb4507ef8583cb97df",
+      "bytes": 262,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-website-only.json",
+      "original_git_lf_sha256": "91cf9f94d6512456ed902d7bcb568cfb6c868560c59c85649bedecb60ca08e23",
+      "bytes": 278,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-withdrawn.csv",
+      "original_git_lf_sha256": "43b3aaa8e5967d7cb7ed98157aac4c0e86f21763761ebf31ea463170fc65cca8",
+      "bytes": 366,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/orcid-works-public.request.json",
+      "original_git_lf_sha256": "7628f86918692bee699ed551fbe420c1c7e124e8077ea6c1fc93fb2b42c71c85",
+      "bytes": 499,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/pr14-integration.log",
+      "original_git_lf_sha256": "91e530a78d093db64ed850ef3ac747c12ba8a67a43ade06bbf741632574c1c4c",
+      "bytes": 686,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/prepare_records.py",
+      "original_git_lf_sha256": "a2d54a1e8b113330e56c5d190671263192987088c7df8087c4c2d619953fe293",
+      "bytes": 9046,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/render_review.cjs",
+      "original_git_lf_sha256": "53ef21509cddc19457f871dfc0ba1bc3f0e0064fb32b413b31afddc44051b2e5",
+      "bytes": 2780,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/MANIFEST.json",
+      "original_git_lf_sha256": "11e0870d8f9c311385395a303256983d2a60c8c2cff66f6daf52c570bf9d36d4",
+      "bytes": 993,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/SCIENCE_GOLD_STANDARD.json",
+      "original_git_lf_sha256": "b134dd02b1e2f8177f8e6ded275fd08cf70cea5f0aa05f6ba016713b9442c298",
+      "bytes": 11130,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/SCIENCE_V2_READY.json",
+      "original_git_lf_sha256": "ff93dc81e2c7e8a6e8ee573b4529f4ac2b96b42dbcef607d5b4e1a5b310f869e",
+      "bytes": 15591,
+      "disposition": "ACTIVATE_DATA_AND_ARCHIVE_ORIGINAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/crossref-science.json",
+      "original_git_lf_sha256": "66ab1a6899303ffc4ae84739cce108acf8ab41e4d625e45785bbdd461ed08e81",
+      "bytes": 3482,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/europepmc.json",
+      "original_git_lf_sha256": "3da3ccbd8a28550f56d36812cde4cdb811fa43290dbc7201b0e83f235a584b10",
+      "bytes": 2844,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/publisher-search-observation.json",
+      "original_git_lf_sha256": "beacfc2f04666c84b8b6fff8746e611f54e1f6d6c3fc0b2d857c0d7a59d25385",
+      "bytes": 814,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/science/pubmed.xml",
+      "original_git_lf_sha256": "81461cb83826133e404251967c1e32a2ad935b4fbe69e6f26ca35af4b9e0034b",
+      "bytes": 3251,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/snapshots/orcid-works-20261012T070800Z.raw.json",
+      "original_git_lf_sha256": "b1cf6a92f747cb96dcdc6e2f991a88b383f80d9988fe4c06482e0d57c1f142b9",
+      "bytes": 299098,
+      "disposition": "KEEP_REPO"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/validate.log",
+      "original_git_lf_sha256": "17f33dde7555470df43f1f5a1dd65d4074c0cc6796a62097813fb7e9c86b8d79",
+      "bytes": 587,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/verify_delivery.py",
+      "original_git_lf_sha256": "d0430e30696ee87cffef2e0adbb1cd2ac11db7a55671086beef525bdaac0fa14",
+      "bytes": 12460,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/verify_existing_citations.py",
+      "original_git_lf_sha256": "5294014d11febbaba5232b637be8450c72a6c71f67192f229e705c851dc2a74f",
+      "bytes": 1171,
+      "disposition": "ARCHIVE_LOCAL"
+    },
+    {
+      "path": "reports/orcid-reconciliation-20261012/verify_pr14_integration.py",
+      "original_git_lf_sha256": "a69db78813c803a0fe52dd139e6f29026b241797ce796fa715aca4cb835f66a4",
+      "bytes": 4546,
+      "disposition": "ARCHIVE_LOCAL"
+    }
+  ]
+}

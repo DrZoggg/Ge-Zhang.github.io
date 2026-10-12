@@ -3,8 +3,8 @@
   "verification_date": "2026-10-12",
   "doi": "10.1126/science.aek9583",
   "identity_status": "verified",
-  "paper_geo_v2_status": "full_text_content_ready_pending_pr14",
-  "formal_v2_completed": false,
+  "paper_geo_v2_status": "complete_full_text_verified",
+  "formal_v2_completed": true,
   "identity": {
     "title": "Recording results from single-patient trials",
     "journal": "Science",
@@ -148,10 +148,10 @@
     "create_identity_record_and_page": true,
     "selected_research_position": 0,
     "deep_geo_position": 0,
-    "create_full_text_based_v2_json": false,
-    "citation_support_dependency": "Science BibTeX/RIS/CSL and enhanced Highwire/JSON-LD remain pending the unmerged PR #14; V2 activation is also deferred because main's Letter schema type fails the V2 validator. A full-text-reviewed candidate is retained as SCIENCE_V2_READY.json. No renderer code is copied.",
+    "create_full_text_based_v2_json": true,
+    "citation_support_dependency": "Resolved: PR #14 merged; shared Letter renderer reused, Correspondence support added.",
     "full_text_v2_candidate_created": true,
-    "candidate_location": "SCIENCE_V2_READY.json"
+    "candidate_location": "data/deep_geo/doi-10-1126-science-aek9583.json"
   },
   "source_manifest": [
     {
@@ -194,5 +194,10 @@
     }
   ],
   "full_text_review_completed": true,
-  "publication_blocker": "Current main emits CreativeWork for Letter, failing the V2 ScholarlyArticle requirement. Reuse the existing fix from unmerged PR #14."
+  "publication_blocker": null,
+  "release_verification": {
+    "review": "Independent review of all five paragraphs and three reference contexts: PASS",
+    "pr14_merge_sha": "e6081a2f2912983bb2f0105aef6932959161019d",
+    "review_date": "2026-10-12"
+  }
 }

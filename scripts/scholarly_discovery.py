@@ -167,6 +167,7 @@ def question_records(items, contents, fields, root=ROOT):
                 'source': source,
                 'profile_type': content['study_profile']['profile_type'],
                 'narrative_genre': content['study_profile'].get('narrative_genre'),
+                **({'publication_type': item['type']} if item.get('type') == 'Letter' else {}),
                 'evidence_scope': content['evidence_scope']['does_not_establish'][0],
                 'evidence_scope_kind': 'does_not_establish',
                 'concepts': [v for values in content['concepts'].values() for v in values],
@@ -198,7 +199,7 @@ def render_questions(rows, config):
             f'<article class="card" id="{escape(row["id"], quote=True)}">'
             + context +
             f'<h2><a href="{escape(row["answer_url"], quote=True)}">{escape(row["question"])}</a></h2>'
-            f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row["profile_type"].replace("_", " "))}</p>'
+            f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row.get("publication_type") or row["profile_type"].replace("_", " "))}</p>'
             f'<p><strong>Does not establish:</strong> {escape(row["evidence_scope"])}</p>'
             f'<p class="links"><a href="https://doi.org/{escape(row["doi"], quote=True)}">Original article DOI</a>'
             f' {citation}</p></article>')

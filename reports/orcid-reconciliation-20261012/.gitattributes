@@ -1,0 +1,5 @@
+# Preserve the exact public-response bytes used by the source hash manifests.
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+science/*.xml text eol=lf

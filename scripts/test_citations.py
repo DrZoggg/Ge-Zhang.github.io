@@ -22,6 +22,20 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    "10.1126/science.aek9583": {
+        "publication_date": "2026-10-01", "volume": "394", "issue": "6819",
+        "first_page": "38", "last_page": "39", "pmid": "42821669",
+    },
+    "10.1016/j.medd.2026.100004": {
+        "publication_date": "2026-09-22", "article_number": "100004",
+        "issn": "3117-9282", "publisher": "Elsevier BV",
+    },
+    "10.1056/nejmc2518964": {
+        "publication_date": "2026-03-05", "journal_abbrev": "N Engl J Med",
+        "volume": "394", "issue": "10", "first_page": "1035", "last_page": "1036",
+        "issn": "0028-4793", "eissn": "1533-4406",
+        "publisher": "Massachusetts Medical Society", "pmid": "41780015",
+    },
     '10.1016/j.curpro.2025.100054': {'volume': '22', 'issue': '5', 'article_number': '100054'},
     '10.1002/ggn2.202500053': {'publication_date': '2026-03-16', 'volume': '7', 'issue': '1', 'article_number': 'e00053', 'eissn': '2641-6573', 'pmid': '42016906', 'pmcid': 'PMC13093795'},
     '10.18632/aging.205564': {'publication_date': '2024-02-16', 'volume': '16', 'issue': '4', 'first_page': '3856', 'last_page': '3879', 'eissn': '1945-4589', 'pmid': '38372705', 'pmcid': 'PMC10929837'},

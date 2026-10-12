@@ -1,6 +1,23 @@
 {
   "version": 1,
   "papers": {
+    "10.1056/nejmc2518964": {
+      "publication_date": "2026-03-05",
+      "journal_abbrev": "N Engl J Med",
+      "volume": "394",
+      "issue": "10",
+      "first_page": "1035",
+      "last_page": "1036",
+      "issn": "0028-4793",
+      "eissn": "1533-4406",
+      "publisher": "Massachusetts Medical Society",
+      "pmid": "41780015",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/41780015/",
+        "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=41780015&retmode=xml",
+        "https://api.crossref.org/works/10.1056/NEJMc2518964"
+      ]
+    },
     "10.1038/s41467-024-50415-9": {
       "publication_date": "2024-08-08",
       "volume": "15",

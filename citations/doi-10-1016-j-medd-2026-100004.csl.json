@@ -1,0 +1,71 @@
+{
+  "id": "doi-10-1016-j-medd-2026-100004",
+  "type": "article-journal",
+  "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+  "author": [
+    {
+      "literal": "Yahui Han"
+    },
+    {
+      "literal": "Qiang Li"
+    },
+    {
+      "literal": "Taiqi Zhao"
+    },
+    {
+      "literal": "Shanshan Cai"
+    },
+    {
+      "literal": "Biyun Li"
+    },
+    {
+      "literal": "Kaisaierjiang Kadier"
+    },
+    {
+      "literal": "Tianshu Gu"
+    },
+    {
+      "literal": "Zhonghua Sun"
+    },
+    {
+      "literal": "Pengyuan Xu"
+    },
+    {
+      "literal": "Dezhi Liu"
+    },
+    {
+      "literal": "Moyan Li"
+    },
+    {
+      "literal": "Xufeng Huang"
+    },
+    {
+      "literal": "Qian Guo"
+    },
+    {
+      "literal": "Yuan Cheng"
+    },
+    {
+      "literal": "Honglin Zheng"
+    },
+    {
+      "literal": "Ge Zhang"
+    }
+  ],
+  "container-title": "Medicine Discovery",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        9,
+        22
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.medd.2026.100004",
+  "URL": "https://doi.org/10.1016/j.medd.2026.100004",
+  "publisher": "Elsevier BV",
+  "number": "100004",
+  "genre": "Correspondence",
+  "ISSN": "3117-9282"
+}

@@ -106,6 +106,7 @@ def refresh():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--refresh", action="store_true")
+    parser.add_argument("--expanded", action="store_true", help="Also regenerate redundant detailed audit working files.")
     parser.add_argument("--baseline", default=BASELINE)
     args = parser.parse_args()
     args.baseline = subprocess.check_output(
@@ -114,6 +115,8 @@ def main():
         refresh()
     request = json.loads((OUT / "orcid-works-public.request.json").read_text("utf-8"))
     raw = (OUT / request.get("immutable_snapshot", "orcid-works-public.raw.json")).read_bytes()
+    if request.get("sha256") and hashlib.sha256(raw).hexdigest() != request["sha256"]:
+        raise ValueError("ORCID source response bytes do not match the request manifest; restore the original LF source blob.")
     payload = json.loads(raw)
     before_master, master_sha = get_baseline("data/publications_master.json", args.baseline)
     before_index, index_sha = get_baseline("paper_index.json", args.baseline)
@@ -222,17 +225,17 @@ def main():
         "missing_after_count": len(missing_after), "missing_after_dois": missing_after,
         "scope_note": "DOI identity reconciliation only. Publisher article type, authorship, and formal full-text/V2 verification are separate editorial checks. ORCID journal-article does not establish Article versus Letter.",
     }
-    save_csv("orcid-doi-reconciliation.csv", rows, list(rows[0]))
-    save_json("orcid-group-reconciliation.json", details)
-    save_json("orcid-duplicates.json", duplicate_report)
-    save_json("orcid-website-only.json", website_only)
-    save_csv("orcid-website-only.csv", [{
-        "doi": r.get("doi", ""), "title": r.get("title", ""),
-        "type": r.get("type", ""), "slug": r.get("slug", ""),
-        "action": "Preserve; absent from current public ORCID snapshot.",
-    } for r in website_only], ["doi", "title", "type", "slug", "action"])
-    save_csv("orcid-withdrawn.csv", withdrawn_rows, ["doi", "title", "in_orcid", "baseline_master_count", "baseline_index_count", "current_master_count", "current_index_count", "action"])
-    save_json("orcid-reconciliation-summary.json", summary)
+    if args.expanded:
+        save_csv("orcid-doi-reconciliation.csv", rows, list(rows[0]))
+        save_json("orcid-group-reconciliation.json", details)
+        save_json("orcid-duplicates.json", duplicate_report)
+        save_json("orcid-website-only.json", website_only)
+        save_csv("orcid-website-only.csv", [{
+            "doi": r.get("doi", ""), "title": r.get("title", ""),
+            "type": r.get("type", ""), "slug": r.get("slug", ""),
+            "action": "Preserve; absent from current public ORCID snapshot.",
+        } for r in website_only], ["doi", "title", "type", "slug", "action"])
+        save_csv("orcid-withdrawn.csv", withdrawn_rows, ["doi", "title", "in_orcid", "baseline_master_count", "baseline_index_count", "current_master_count", "current_index_count", "action"])
     category = {
         "present-master-and-index": "PRESENT_BOTH",
         "missing-master-and-index": "ORCID_ONLY_MISSING_ON_SITE",
@@ -248,7 +251,7 @@ def main():
                 "current_category": "AMBIGUOUS_OR_DUPLICATE" if row["ambiguity"] else category[row["current_status"]],
                 "decision_basis": "Exact normalized self DOI in complete live public ORCID group, baseline/current master and paper index.",
                 "identity_verification": "VERIFIED_PUBLISHER_PUBMED_CROSSREF_FULL_TEXT" if doi == "10.1126/science.aek9583" else "VERIFIED_PUBLISHER_CORRECTED_PROOF_CROSSREF" if doi == "10.1016/j.medd.2026.100004" else "EXISTING_RECORD_PRESERVED",
-                "action": "ADD_VERIFIED_OMISSION" if added else "PRESERVE_WITHDRAWN_EXCLUSION" if row["withdrawn"] else "PRESERVE_EXISTING",
+                "action": "ADD_VERIFIED_OMISSION" if added else "CORRECT_IDENTITY_VIA_PR14" if doi == "10.1056/nejmc2518964" else "PRESERVE_WITHDRAWN_EXCLUSION" if row["withdrawn"] else "PRESERVE_EXISTING",
                 "verification_sources": "science/SCIENCE_GOLD_STANDARD.json" if doi == "10.1126/science.aek9583" else "medicine/MEDICINE_GOLD_STANDARD.json" if doi == "10.1016/j.medd.2026.100004" else f"https://doi.org/{doi}"}
         all_rows.append(item)
     for record in website_only:
@@ -266,6 +269,9 @@ def main():
                    science_formal_v2_completed=json.loads((OUT / "science/SCIENCE_GOLD_STANDARD.json").read_text("utf-8"))["formal_v2_completed"],
                    selected_count=len(json.loads((ROOT / "data/featured_papers.json").read_text("utf-8"))["papers"]),
                    deep_geo_count=len(json.loads((ROOT / "data/deep_geo_papers.json").read_text("utf-8"))["papers"]))
+    from citation_common import citation_skip_reason
+    summary["pending_citation_capability_record_count"] = sum(bool(citation_skip_reason(r)) for r in after_master if r.get("doi") in {"10.1126/science.aek9583", "10.1016/j.medd.2026.100004"})
+    summary["doi_duplicates"] = {key: value for key, value in duplicate_report.items() if key != "multiple_summaries_same_group_are_not_duplicate_publications"}
     save_json("orcid-reconciliation-summary.json", summary)
     note = f"""# Complete public ORCID reconciliation
 
@@ -286,27 +292,28 @@ The two baseline omissions are `10.1126/science.aek9583` and `10.1016/j.medd.202
 
 The baseline master includes one withdrawn preprint (`10.21203/rs.3.rs-3395716/v1`), which is in ORCID but deliberately excluded from the public index. One existing no-DOI Patent is absent from this public ORCID snapshot and must be preserved. Thus the baseline contains 76 master records (75 with DOI and one Patent), 75 public index records, and 75 ORCID DOI matches in master (74 in the public index).
 
-`orcid-doi-reconciliation.csv` has one row per work group and preserves all source names and put-codes. The timestamped snapshot named in `orcid-works-public.request.json` is the complete unmodified response and retains all 107 summaries, group external identifiers and source identities. `audit_orcid.py` can regenerate an expanded `orcid-group-reconciliation.json` locally; redundant working copies are excluded from Git. `orcid-duplicates.json` separates repeated source summaries within groups from actual duplicate DOIs. `orcid-website-only.*` and `orcid-withdrawn.csv` document the two preservation cases.
+`ORCID_SITE_RECONCILIATION.csv` has one row per public group plus the SITE_ONLY preservation case and preserves all source names and put-codes. The timestamped snapshot named in `orcid-works-public.request.json` is the complete unmodified response and retains all 107 summaries, group external identifiers and source identities. Its original byte hash is checked before use. `audit_orcid.py --expanded` can regenerate detailed working files locally; redundant copies and old execution logs are archived outside the repository, with original Git LF hashes and historical commit linkage in `ARCHIVE_MANIFEST.json`.
 
 Targeted official `/work` responses additionally verify the three requested identities. Science's publisher-supplied AAAS record identifies Ge Zhang as first author with ORCID `0000-0002-3116-3246`. The Medicine Discovery self-entered record lists 16 authors with Ge Zhang last; the publisher corrected proof independently confirms the complete authors, Correspondence subtype (p. 5) and corresponding-author footnote (p. 6). JDI's record lists eight authors with Ge Zhang fourth; its existing master identity is unchanged.
 
 ## Final evidence and dependency status
 
-- Science: complete local publisher print pages 38-39 were visually reviewed, excluding adjacent Letters. The five arguments, five Q&A items, citation-use boundaries and evidence matrix in `science/SCIENCE_V2_READY.json` have exact paragraph locators and pass the existing content validator. Formal published V2 completed: **{summary['science_formal_v2_completed']}**. Current main's Letter schema is CreativeWork, which fails the V2 ScholarlyArticle requirement; activate the reviewed candidate only after reusing PR #14's existing fix. The identity page remains pending. No n=1 dataset or treatment effect was manufactured.
+- Science: complete local publisher print pages 38-39 were visually reviewed again, excluding adjacent Letters. The five arguments, five Q&A items, citation-use boundaries and evidence matrix are activated without scientific changes at `data/deep_geo/doi-10-1126-science-aek9583.json`, with exact paragraph locators. Formal V2 completed: **{summary['science_formal_v2_completed']}**. PR #14's existing Letter renderer is reused; the public page has ScholarlyArticle schema and complete citations. No n=1 dataset or treatment effect was manufactured.
 - Medicine Discovery: verified Correspondence; identity page only, with no automatic Selected/Deep GEO membership. Corrected-proof pagination is not used as a journal page range; volume and issue remain unassigned.
 - Truly missing before: {len(missing_before)}; added: {summary['added_missing_dois_count']}; missing after: {len(missing_after)}; identity/type records awaiting verification: {summary['pending_identity_or_type_verification_count']}.
 - Selected Research: {summary['selected_count']}; Deep GEO: {summary['deep_geo_count']}. Science is first independently in both; all old entries and summaries are preserved.
 - `ORCID_SITE_RECONCILIATION.csv` contains all {len(groups)} public groups plus the preserved SITE_ONLY patent; `ORCID_SITE_PENDING.csv` contains only unresolved rows.
-- Citation capability dependencies are separate from scientific verification. Main does not support Letter/Correspondence citation exports. Science relies on unmerged PR #14; Medicine requires a small Correspondence extension to the shared renderer after #14. No duplicate renderer has been implemented here. See `acceptance.json` for exact deferred fields; do not count them as passed.
+- Citation capability dependencies are resolved: PR #14 is merged and the shared renderer now supports Correspondence. Both new works have BibTeX, RIS, CSL-JSON and full Markdown authors; genre is preserved. Pending citation-capability records: {summary['pending_citation_capability_record_count']}. See the focused publication-release regression and final release acceptance; no duplicate renderer was implemented.
 - Public source PDFs/page images stay outside this repository. Gold Standard records retain version descriptions, source hashes, explicit reference context and locators.
 
 ## Why daily Crossref discovery omitted these works
 
-The live Crossref ORCID-filter query returns eight works and includes JDI, but does not include either new DOI. Both DOI-specific Crossref deposits exist and list authors, without an author ORCID field for this researcher. An ORCID public work group can be author-added or publisher-supplied independently of Crossref author-ORCID registration. The observed discovery gap is therefore established; an API indexing delay is not established. `crossref-orcid-discovery.raw.json`, `crossref-requests.json` and the DOI-specific deposits preserve the evidence.
+The original live Crossref ORCID-filter query returned eight works and included JDI, but did not include either new DOI. Both DOI-specific Crossref deposits existed and listed authors, without an author ORCID field for this researcher. An ORCID public work group can be author-added or publisher-supplied independently of Crossref author-ORCID registration. The observed discovery gap is established for that captured audit; an API indexing delay is not established. Historical raw query/request files are preserved in the local archive and original PR #15 commit, and DOI-specific deposits remain in the compact evidence record.
 
 A separate follow-up could periodically reconcile public ORCID self-DOIs into a reviewable branch, protecting existing types, identity fields and selection controllers. It should have a read-only audit mode, idempotent DOI normalization and regression cases for same-name authors, withdrawn records and generic journal-article types. No stable synchronization or automation code was changed in this publication PR.
 """
-    (OUT / "orcid-reconciliation.md").write_text(note, encoding="utf-8")
+    if args.expanded:
+        (OUT / "orcid-reconciliation.md").write_text(note, encoding="utf-8")
     (OUT / "ORCID_SITE_SUMMARY.md").write_text(note, encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 

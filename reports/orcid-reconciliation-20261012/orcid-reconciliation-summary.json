@@ -38,7 +38,15 @@
   "missing_after_dois": [],
   "scope_note": "DOI identity reconciliation only. Publisher article type, authorship, and formal full-text/V2 verification are separate editorial checks. ORCID journal-article does not establish Article versus Letter.",
   "pending_identity_or_type_verification_count": 0,
-  "science_formal_v2_completed": false,
+  "science_formal_v2_completed": true,
   "selected_count": 29,
-  "deep_geo_count": 29
+  "deep_geo_count": 29,
+  "pending_citation_capability_record_count": 0,
+  "doi_duplicates": {
+    "baseline_master_duplicate_dois": {},
+    "baseline_index_duplicate_dois": {},
+    "current_master_duplicate_dois": {},
+    "current_index_duplicate_dois": {},
+    "orcid_dois_in_multiple_groups": {}
+  }
 }

@@ -20,6 +20,7 @@ ENHANCEMENT_FIELDS = {
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
+JOURNAL_PUBLICATION_TYPES = {"Article", "Letter", "Correspondence"}
 
 
 def _unique_pairs(pairs):
@@ -104,7 +105,7 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
 
 
 def citation_skip_reason(publication):
-    if publication.get("type") not in {"Article", "Preprint"}:
+    if publication.get("type") not in JOURNAL_PUBLICATION_TYPES | {"Preprint"}:
         return f"unsupported type: {publication.get('type') or 'missing'}"
     missing = [
         key for key in ("title", "journal", "year", "doi", "authors")
@@ -164,6 +165,8 @@ def citation_plain_text(record):
                 publication += f"–{record['last_page']}"
         elif record.get("article_number"):
             publication += f":{record['article_number']}"
+    elif record.get("article_number"):
+        publication += f"; article {record['article_number']}"
     publication += "."
     return f"{authors}. {record['title']}. {publication} {record['doi_url']}"
 
@@ -198,7 +201,7 @@ def _bib_text(value):
 
 
 def render_bibtex(record):
-    kind = "article" if record["type"] == "Article" else "misc"
+    kind = "article" if record["type"] in JOURNAL_PUBLICATION_TYPES else "misc"
     fields = [
         ("title", record["title"]),
         ("author", " and ".join(record["authors"])),
@@ -217,6 +220,8 @@ def render_bibtex(record):
         fields.append(("pages", pages))
     if record.get("article_number"):
         fields.append(("eid", record["article_number"]))
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        fields.append(("note", record["type"]))
     fields.extend([("doi", record["doi"]), ("url", record["doi_url"])])
     if record.get("issn") or record.get("eissn"):
         fields.append(("issn", record.get("issn") or record["eissn"]))
@@ -225,7 +230,7 @@ def render_bibtex(record):
 
 
 def render_ris(record):
-    lines = ["TY  - JOUR" if record["type"] == "Article" else "TY  - GEN"]
+    lines = ["TY  - JOUR" if record["type"] in JOURNAL_PUBLICATION_TYPES else "TY  - GEN"]
     lines.extend(f"AU  - {author}" for author in record["authors"])
     lines.extend([
         f"TI  - {record['title']}",
@@ -243,6 +248,8 @@ def render_ris(record):
             lines.append(f"{tag}  - {record[key]}")
     if record.get("article_number"):
         lines.append(f"C7  - {record['article_number']}")
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        lines.append(f"M3  - {record['type']}")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",
@@ -258,7 +265,7 @@ def render_csl_json(record):
         issued = [int(part) for part in record["publication_date"].split("-")]
     result = {
         "id": record["id"],
-        "type": "article-journal" if record["type"] == "Article" else "manuscript",
+        "type": "article-journal" if record["type"] in JOURNAL_PUBLICATION_TYPES else "manuscript",
         "title": record["title"],
         "author": [{"literal": name} for name in record["authors"]],
         "container-title": record["journal"],
@@ -277,6 +284,8 @@ def render_csl_json(record):
         )
     if record.get("article_number"):
         result["number"] = record["article_number"]
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        result["genre"] = record["type"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"
