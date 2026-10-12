@@ -81,7 +81,7 @@ PRIORITY_STATUS = (
     ("10.3389/fpubh.2025.1521372", "v2"),
     ("10.1002/ggn2.202500053", "v2"),
     ("10.1016/j.curpro.2025.100054", "v2"),
-    ("10.1007/s11426-026-3629-x", "pending"),
+    ("10.1007/s11426-026-3629-x", "v2"),
 )
 
 
@@ -278,7 +278,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (27, 0, 2)
+    assert (len(v2_items), v1_count, pending_count) == (28, 0, 1)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -324,6 +324,7 @@ def run_tests():
         "10.1002/ggn2.202500053": ("Article Scope & Approach", None),
         "10.18632/aging.205564": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1016/j.ejphar.2023.175569": ("How the Study Was Done", "External dataset evaluation"),
+        "10.1007/s11426-026-3629-x": ("How the Study Was Done", "External dataset evaluation"),
         "10.3389/fcvm.2025.1724572": ("Study Design & Analytical Framework", "External validation"),
         "10.3389/fpubh.2025.1521372": ("Study Design & Analytical Framework", "External validation"),
         "10.3389/fonc.2021.659217": ("Study Design & Analytical Framework", "External validation"),

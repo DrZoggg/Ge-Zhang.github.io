@@ -41,7 +41,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.md",
       "deep_geo": true,
-      "paper_geo_status": "pending",
+      "paper_geo_status": "v2",
       "featured": true,
       "doi_url": "https://doi.org/10.1007/s11426-026-3629-x",
       "publisher_url": "https://link.springer.com/10.1007/s11426-026-3629-x",
@@ -53,9 +53,30 @@
       "openalex_id": "https://openalex.org/W7213462447",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1007-s11426-026-3629-x.csv",
+      "question_count": 8,
+      "concept_count": 19,
+      "discovery_layer": {
+        "field_entry": [
+          "Atherosclerosis molecular imaging",
+          "Reversible photoacoustic probe research"
+        ],
+        "review_topics": [
+          "Redox-responsive optical probes",
+          "Experimental plaque inflammation imaging"
+        ],
+        "scientific_role": "Chemical probe and small animal-model evaluation connecting reversible solution response with relative aortic-region PA readouts.",
+        "evidence_position": "Preclinical chemistry, solution sensing, mouse imaging and tissue observations; no clinical diagnostic or treatment validation.",
+        "related_concepts": [
+          "Superoxide/GSH-responsive signaling",
+          "Probe response versus analyte concentration",
+          "Inflammatory challenge and relative imaging readouts"
+        ],
+        "citation_contexts": [
+          "Methods: a 740 nm reversible solution PA response and the stated small-animal acquisition protocol.",
+          "Results: relative PA signal and accompanying tissue observations under LPS/dexamethasone conditions; no human efficacy or safety claim."
+        ]
+      }
     },
     {
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",

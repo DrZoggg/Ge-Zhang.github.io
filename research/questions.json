@@ -2,6 +2,52 @@
   "version": 1,
   "questions": [
     {
+      "id": "doi-10-1007-s11426-026-3629-x",
+      "question": "What quantitative PA calibration was reported?",
+      "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
+      "doi": "10.1007/s11426-026-3629-x",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html#qa-3",
+      "source": "data/deep_geo/doi-10-1007-s11426-026-3629-x.json#/qa/2/question",
+      "profile_type": "preclinical_multimodal",
+      "narrative_genre": null,
+      "evidence_scope": "Absolute superoxide concentration in living plaques or a validated dual-wavelength PA ratio.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "ReP",
+        "BODIPY",
+        "catechol redox response",
+        "superoxide anion",
+        "glutathione",
+        "hydrophilic peptide",
+        "photoacoustic intensity at 740 nm",
+        "DLS hydrodynamic diameter",
+        "solution calibration",
+        "aortic-region ROI",
+        "lung wet-to-dry ratio",
+        "ApoE-deficient mouse",
+        "high-fat diet",
+        "LPS",
+        "dexamethasone",
+        "atherosclerosis",
+        "CD68",
+        "caspase-3",
+        "collagen staining"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1007-s11426-026-3629-x.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1007-s11426-026-3629-x.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1007-s11426-026-3629-x.csl.json",
+      "field_entry": [
+        "Atherosclerosis molecular imaging",
+        "Reversible photoacoustic probe research"
+      ],
+      "review_topics": [
+        "Redox-responsive optical probes",
+        "Experimental plaque inflammation imaging"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html#paper-discovery"
+    },
+    {
       "id": "doi-10-3389-fcvm-2025-1724572",
       "question": "What does the allostatic-load score represent?",
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
