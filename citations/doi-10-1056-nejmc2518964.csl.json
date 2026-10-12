@@ -1,0 +1,33 @@
+{
+  "id": "doi-10-1056-nejmc2518964",
+  "type": "article-journal",
+  "title": "Aspirin after PCI in Acute Coronary Syndromes",
+  "author": [
+    {
+      "literal": "Mengyao Li"
+    },
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Xiaozhu Liu"
+    }
+  ],
+  "container-title": "New England Journal of Medicine",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        3,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1056/nejmc2518964",
+  "URL": "https://doi.org/10.1056/nejmc2518964",
+  "volume": "394",
+  "issue": "10",
+  "publisher": "Massachusetts Medical Society",
+  "page": "1035-1036",
+  "ISSN": "0028-4793"
+}

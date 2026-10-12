@@ -92,14 +92,20 @@
   {
     "title": "Aspirin after PCI in Acute Coronary Syndromes",
     "year": 2026,
-    "journal": "The New-England Medical Review and Journal",
-    "type": "Article",
+    "journal": "New England Journal of Medicine",
+    "type": "Letter",
     "doi": "10.1056/nejmc2518964",
     "url": "https://doi.org/10.1056/nejmc2518964",
     "sources": [
-      "ORCID"
+      "ORCID",
+      "PubMed:41780015"
     ],
     "slug": "doi-10-1056-nejmc2518964",
+    "authors": [
+      "Mengyao Li",
+      "Ge Zhang",
+      "Xiaozhu Liu"
+    ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.md",
     "deep_geo": false,

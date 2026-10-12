@@ -36,9 +36,9 @@
 - Deep GEO: yes
 
 ## Aspirin after PCI in Acute Coronary Syndromes
-- Journal: The New-England Medical Review and Journal
+- Journal: New England Journal of Medicine
 - Year: 2026
-- Type: Article
+- Type: Letter
 - DOI: 10.1056/nejmc2518964
 - HTML: https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html
 - Markdown: https://drgezhang.com/papers/doi-10-1056-nejmc2518964.md
