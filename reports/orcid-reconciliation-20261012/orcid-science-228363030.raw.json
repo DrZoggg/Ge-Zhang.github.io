@@ -1,0 +1,142 @@
+{
+  "created-date" : {
+    "value" : 1790814380029
+  },
+  "last-modified-date" : {
+    "value" : 1790814380029
+  },
+  "source" : {
+    "source-orcid" : null,
+    "source-client-id" : {
+      "uri" : "https://orcid.org/client/0000-0003-1003-360X",
+      "path" : "0000-0003-1003-360X",
+      "host" : "orcid.org"
+    },
+    "source-name" : {
+      "value" : "AAAS - Science"
+    },
+    "assertion-origin-orcid" : null,
+    "assertion-origin-client-id" : null,
+    "assertion-origin-name" : null
+  },
+  "put-code" : 228363030,
+  "path" : "/0000-0002-3116-3246/work/228363030",
+  "title" : {
+    "title" : {
+      "value" : "Recording results from single-patient trials"
+    },
+    "subtitle" : null,
+    "translated-title" : null
+  },
+  "journal-title" : {
+    "value" : "Science"
+  },
+  "short-description" : null,
+  "citation" : null,
+  "type" : "journal-article",
+  "publication-date" : {
+    "year" : {
+      "value" : "2026"
+    },
+    "month" : {
+      "value" : "10"
+    },
+    "day" : {
+      "value" : "01"
+    }
+  },
+  "external-ids" : {
+    "external-id" : [ {
+      "external-id-type" : "doi",
+      "external-id-value" : "10.1126/science.aek9583",
+      "external-id-normalized" : {
+        "value" : "10.1126/science.aek9583",
+        "transient" : true
+      },
+      "external-id-normalized-error" : null,
+      "external-id-url" : {
+        "value" : "https://doi.org/10.1126/science.aek9583"
+      },
+      "external-id-relationship" : "self"
+    } ]
+  },
+  "url" : {
+    "value" : "https://www.science.org/doi/10.1126/science.aek9583"
+  },
+  "contributors" : {
+    "contributor" : [ {
+      "contributor-orcid" : {
+        "uri" : "https://orcid.org/0000-0002-3116-3246",
+        "path" : "0000-0002-3116-3246",
+        "host" : "orcid.org"
+      },
+      "credit-name" : {
+        "value" : "Ge  Zhang"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : "first",
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : {
+        "uri" : "https://orcid.org/0009-0004-1954-4187",
+        "path" : "0009-0004-1954-4187",
+        "host" : "orcid.org"
+      },
+      "credit-name" : {
+        "value" : "Taiqi  Zhao"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : "additional",
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : {
+        "uri" : "https://orcid.org/0009-0003-3159-0234",
+        "path" : "0009-0003-3159-0234",
+        "host" : "orcid.org"
+      },
+      "credit-name" : {
+        "value" : "Qiang  Li"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : "additional",
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : {
+        "uri" : "https://orcid.org/0000-0003-2689-9897",
+        "path" : "0000-0003-2689-9897",
+        "host" : "orcid.org"
+      },
+      "credit-name" : {
+        "value" : "Honglin  Zheng"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : "additional",
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : {
+        "uri" : "https://orcid.org/0000-0002-0537-8008",
+        "path" : "0000-0002-0537-8008",
+        "host" : "orcid.org"
+      },
+      "credit-name" : {
+        "value" : "Teng  Li"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : "additional",
+        "contributor-role" : "author"
+      }
+    } ]
+  },
+  "language-code" : null,
+  "country" : null,
+  "visibility" : "public"
+}

@@ -1,0 +1,4 @@
+# Regenerable expansions of the tracked timestamped public source snapshot.
+orcid-works-public.raw.json
+orcid-group-reconciliation.json
+__pycache__/

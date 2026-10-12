@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "verification_date": "2026-10-12",
+  "doi": "10.1126/science.aek9583",
+  "identity_status": "verified",
+  "paper_geo_v2_status": "full_text_content_ready_pending_pr14",
+  "formal_v2_completed": false,
+  "identity": {
+    "title": "Recording results from single-patient trials",
+    "journal": "Science",
+    "article_type": "Letter",
+    "date_published": "2026-10-01",
+    "volume": "394",
+    "issue": "6819",
+    "pages": "38-39",
+    "pmid": "42821669",
+    "authors": [
+      "Ge Zhang",
+      "Honglin Zheng",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Teng Li"
+    ],
+    "doi_url": "https://doi.org/10.1126/science.aek9583",
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aek9583",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42821669/"
+  },
+  "verified_content_scope": {
+    "permitted_public_summary": "This Science Letter argues that public trial registries and preclinical publications should retain a current, linked account of directly related human protocols and major outcomes in individualized genetic therapies. It proposes reporting practices, rather than presenting a new clinical trial or establishing treatment causality.",
+    "summary_basis": "Complete published Letter, print pp. 38-39, reviewed column by column.",
+    "verified_full_text_claims": [
+      {
+        "id": "KF1",
+        "claim": "Keep directly related human protocols and major outcomes current in public registries.",
+        "context": "The opening paragraph contrasts the previously reported human outcome with the registry and preclinical publication as described by the Letter. This is an attributed reporting-gap example, not an independently reconstructed clinical investigation.",
+        "locator": "Print p. 38, right column, Letter paragraph 1"
+      },
+      {
+        "id": "KF2",
+        "claim": "Treat a current public record as consequential when an individual outcome may be the available human evidence.",
+        "context": "The authors explain why families, clinicians, ethics committees and other researchers may rely on a registry when considering continued human testing and emerging risks.",
+        "locator": "Print p. 38, right column, paragraph 2, continuing at p. 39, left column"
+      },
+      {
+        "id": "KF3",
+        "claim": "Distinguish safety reporting to oversight bodies from the publicly accessible account of translation.",
+        "context": "Safety reports, registries and journal articles serve different purposes and update on different schedules; a report reaching regulators or ethics committees does not by itself ensure that public records are current.",
+        "locator": "Print p. 39, left column, Letter paragraph 3"
+      },
+      {
+        "id": "KF4",
+        "claim": "Coordinate protocol disclosure, serious-outcome reporting, cross-links and dated publication updates.",
+        "context": "The authors propose disclosure of directly related human protocols before preclinical paper acceptance, registry fields for treatment-emergent deaths and life-threatening events, separation of event occurrence from suspected or confirmed causality, cross-links between records, and dated notices after publication.",
+        "locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context"
+      },
+      {
+        "id": "KF5",
+        "claim": "Use public notices to preserve the human experience without assigning blame or settling causality.",
+        "context": "The concluding paragraph sets an explicit boundary: the reporting proposals connect claims of clinical promise to subsequent human experience, while leaving causal and responsibility determinations unresolved.",
+        "locator": "Print p. 39, left column, Letter paragraph 5, immediately before the author line"
+      }
+    ],
+    "full_text_argument_locators": [
+      "Print p. 38, right column, Letter paragraph 1",
+      "Print p. 38, right column, paragraph 2, continuing at p. 39, left column",
+      "Print p. 39, left column, Letter paragraph 3",
+      "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context",
+      "Print p. 39, left column, Letter paragraph 5, immediately before the author line"
+    ],
+    "sample_size": null,
+    "trial_outcomes": null,
+    "treatment_effects": null,
+    "interpretation_boundary": "Narrative reporting and governance argument, not a newly conducted n=1 clinical trial. No sample size, treatment effect, clinical performance estimate, blame or causal determination is assigned. The case and preclinical evidence are attributed to prior sources; adjacent Letters are excluded."
+  },
+  "source_checks": [
+    {
+      "source": "Crossref REST API",
+      "url": "https://api.crossref.org/works/10.1126/science.aek9583",
+      "status": "retrieved_http_200",
+      "snapshot": "crossref-science.json",
+      "locators": [
+        "message.DOI",
+        "message.title[0]",
+        "message.author[0:5]",
+        "message.published-print.date-parts[0]",
+        "message.volume",
+        "message.issue",
+        "message.page"
+      ],
+      "notes": "Crossref journal-article is a generic registration type, not an assertion that this is original research. No abstract and no author ORCID fields were supplied in this response."
+    },
+    {
+      "source": "PubMed / NCBI EFetch",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=42821669&retmode=xml",
+      "status": "retrieved_http_200",
+      "snapshot": "pubmed.xml",
+      "locators": [
+        "PubmedArticle/MedlineCitation/PMID",
+        "Article/ArticleTitle",
+        "Article/AuthorList",
+        "Article/PublicationTypeList/PublicationType[@UI='D016422']",
+        "Article/ArticleDate[@DateType='Electronic']",
+        "Article/Journal/JournalIssue",
+        "Article/Pagination",
+        "PubmedData/ArticleIdList"
+      ],
+      "notes": "Letter; author list CompleteYN=Y contains all five authors. PubMed title adds a terminal period only. No abstract element exists."
+    },
+    {
+      "source": "Publisher public landing-page indexed content",
+      "url": "https://spj.science.org/doi/abs/10.1126/science.aek9583?af=R",
+      "status": "web_search_index_readable_direct_fetch_403",
+      "snapshot": "publisher-search-observation.json",
+      "locators": [
+        "article header: Letter, title, journal, 1 Oct 2026, Vol 394 Issue 6819, pp. 38-39, DOI",
+        "Information & Authors > Authors > Affiliations",
+        "Access the full article"
+      ],
+      "notes": "The publisher content marks No access. Visible references do not establish the Letter's arguments."
+    },
+    {
+      "source": "Europe PMC REST API",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42821669%20AND%20SRC:MED&format=json&resultType=core",
+      "status": "retrieved_http_200",
+      "snapshot": "europepmc.json",
+      "locators": [
+        "resultList.result[0].pubTypeList.pubType",
+        "resultList.result[0].fullTextUrlList",
+        "resultList.result[0].isOpenAccess",
+        "resultList.result[0].inPMC",
+        "resultList.result[0].inEPMC",
+        "resultList.result[0].hasPDF",
+        "resultList.result[0].authMan"
+      ],
+      "notes": "Subscription required; isOpenAccess=N; inPMC=N; inEPMC=N; hasPDF=N; authMan=N. These flags describe this index and do not prove that no legal manuscript exists elsewhere."
+    }
+  ],
+  "full_text_access": {
+    "status": "obtained_complete_local_publisher_print_pages",
+    "public_web_access": "Publisher landing page is bibliographically readable; direct full-text access returned 403.",
+    "review_basis": "Complete Letter reviewed in local publisher print-page images for pages 38-39; exact title, all five authors, DOI, print date and references matched to PubMed, Crossref and publisher identity. Only this Letter's columns were used.",
+    "source_version": "Published print pages, Science 394(6819):38-39, 1 October 2026. Page-image download watermark identifies science.org via Shanghai Jiao Tong University on 2 October 2026. Source hashes and paragraph locators are retained in SCIENCE_GOLD_STANDARD.json; the copyrighted full pages are not redistributed by this site.",
+    "page_image_scope": "Science print p. 38 right column from this Letter's heading; p. 39 left column through its DOI and reference list.",
+    "entire_letter_reviewed": true,
+    "source_protection": "Local full-page copies remain outside the public repository; only original paraphrases, identity facts, hashes and locators are delivered."
+  },
+  "engineering_disposition": {
+    "create_identity_record_and_page": true,
+    "selected_research_position": 0,
+    "deep_geo_position": 0,
+    "create_full_text_based_v2_json": false,
+    "citation_support_dependency": "Science BibTeX/RIS/CSL and enhanced Highwire/JSON-LD remain pending the unmerged PR #14; V2 activation is also deferred because main's Letter schema type fails the V2 validator. A full-text-reviewed candidate is retained as SCIENCE_V2_READY.json. No renderer code is copied.",
+    "full_text_v2_candidate_created": true,
+    "candidate_location": "SCIENCE_V2_READY.json"
+  },
+  "source_manifest": [
+    {
+      "file": "science-page-1.png",
+      "sha256": "55d4f5d3b88b7270c4810e6acb331cb979857bbb9c38c7eee8c75c2ec58f728f",
+      "bytes": 912637,
+      "locator": "Print p. 38, right column",
+      "version": "Publisher print-page image",
+      "redistributed": false
+    },
+    {
+      "file": "science-page-2.png",
+      "sha256": "e7b4f1a580d75e51aa44773c0d3ab2d5fc3d1bda0ec920fe7822cd3864ded562",
+      "bytes": 655553,
+      "locator": "Print p. 39, left column",
+      "version": "Publisher print-page image",
+      "redistributed": false
+    }
+  ],
+  "reference_context_review": [
+    {
+      "number": 1,
+      "source": "ClinicalTrials.gov NCT06860672",
+      "context": "Opening reporting-gap example; no assertion that the registry still has the same status today.",
+      "locator": "p. 38 paragraph 1; p. 39 reference 1",
+      "url": "https://clinicaltrials.gov/study/NCT06860672"
+    },
+    {
+      "number": 2,
+      "source": "K. Yang et al., Nature 651, 785 (2026)",
+      "context": "Preclinical-publication context cited in the opening paragraph; no results or experiments imported into this Letter's evidence profile.",
+      "locator": "p. 38 paragraph 1; p. 39 reference 2"
+    },
+    {
+      "number": 3,
+      "source": "WHO Trial Registration Data Set, version 1.3.1",
+      "context": "Context for separating serious-event occurrence from causal assessment. WHO item 23 defines adverse events as events that may or may not be caused by the intervention.",
+      "locator": "p. 39 paragraph 4; reference 3; WHO item 23",
+      "url": "https://www.who.int/tools/clinical-trials-registry-platform/network/who-data-set"
+    }
+  ],
+  "full_text_review_completed": true,
+  "publication_blocker": "Current main emits CreativeWork for Letter, failing the V2 ScholarlyArticle requirement. Reuse the existing fix from unmerged PR #14."
+}

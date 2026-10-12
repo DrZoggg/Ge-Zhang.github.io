@@ -1,0 +1,152 @@
+{
+  "created-date" : {
+    "value" : 1791553228126
+  },
+  "last-modified-date" : {
+    "value" : 1791553228126
+  },
+  "source" : {
+    "source-orcid" : null,
+    "source-client-id" : {
+      "uri" : "https://orcid.org/client/0000-0001-9884-1913",
+      "path" : "0000-0001-9884-1913",
+      "host" : "orcid.org"
+    },
+    "source-name" : {
+      "value" : "Crossref"
+    },
+    "assertion-origin-orcid" : null,
+    "assertion-origin-client-id" : null,
+    "assertion-origin-name" : null
+  },
+  "put-code" : 229332015,
+  "path" : "/0000-0002-3116-3246/work/229332015",
+  "title" : {
+    "title" : {
+      "value" : "The cholesterol, high‐density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new‐onset cardiovascular‐liver‐metabolic multimorbidity: A prospective cohort study"
+    },
+    "subtitle" : null,
+    "translated-title" : null
+  },
+  "journal-title" : {
+    "value" : "Journal of Diabetes Investigation"
+  },
+  "short-description" : null,
+  "citation" : null,
+  "type" : "journal-article",
+  "publication-date" : {
+    "year" : {
+      "value" : "2026"
+    },
+    "month" : {
+      "value" : "10"
+    },
+    "day" : {
+      "value" : "09"
+    }
+  },
+  "external-ids" : {
+    "external-id" : [ {
+      "external-id-type" : "doi",
+      "external-id-value" : "10.1111/jdi.70462",
+      "external-id-normalized" : {
+        "value" : "10.1111/jdi.70462",
+        "transient" : true
+      },
+      "external-id-normalized-error" : null,
+      "external-id-url" : {
+        "value" : "https://doi.org/10.1111/jdi.70462"
+      },
+      "external-id-relationship" : "self"
+    } ]
+  },
+  "url" : {
+    "value" : "https://doi.org/10.1111/jdi.70462"
+  },
+  "contributors" : {
+    "contributor" : [ {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Zhonghua Sun"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Aikeliyaer Ainiwaer"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Yameng Xu"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Ge Zhang"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Xiangyu Sun"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Xinliang Peng"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Yuanhui Dai"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    }, {
+      "contributor-orcid" : null,
+      "credit-name" : {
+        "value" : "Kaisaierjiang Kadier"
+      },
+      "contributor-email" : null,
+      "contributor-attributes" : {
+        "contributor-sequence" : null,
+        "contributor-role" : "author"
+      }
+    } ]
+  },
+  "language-code" : null,
+  "country" : null,
+  "visibility" : "public"
+}

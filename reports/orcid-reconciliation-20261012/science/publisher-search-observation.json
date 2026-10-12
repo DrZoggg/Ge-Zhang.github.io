@@ -1,0 +1,19 @@
+{
+  "observation_date": "2026-10-12",
+  "source_url": "https://spj.science.org/doi/abs/10.1126/science.aek9583?af=R",
+  "retrieval_method": "Official publisher content surfaced by live web search for exact DOI and title; direct fetch was denied with HTTP 403.",
+  "observation_kind": "structured transcription of bibliographic facts and access status; not a full HTML snapshot",
+  "title": "Recording results from single-patient trials",
+  "type_label": "Letter",
+  "journal": "Science",
+  "date": "2026-10-01",
+  "volume": "394",
+  "issue": "6819",
+  "pages": "38-39",
+  "doi": "10.1126/science.aek9583",
+  "authors": ["Ge Zhang", "Honglin Zheng", "Qiang Li", "Taiqi Zhao", "Teng Li"],
+  "access_label": "No access",
+  "body_obtained": false,
+  "references_visible": true,
+  "reference_context_verified": false
+}

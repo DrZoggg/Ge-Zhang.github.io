@@ -1,0 +1,33 @@
+Built 77 public paper pages from 78 unique master records; Featured=29, Deep GEO=29, withdrawn=1.
+
+VALIDATION PASS
+{
+  "scholarly_discovery": {
+    "question_routes": 27,
+    "identity_records": 75,
+    "reviewed_backlink_edges": 8
+  },
+  "master": 78,
+  "public": 77,
+  "withdrawn": 1,
+  "featured": 29,
+  "deep_geo": 29,
+  "html_pages": 77,
+  "markdown_pages": 77,
+  "sitemap_urls": 81,
+  "doi_duplicates": 0,
+  "citation_author_pages": 75,
+  "schema_author_array_pages": 75,
+  "paper_geo_v2_pages": 27,
+  "citations": {
+    "eligible": 74,
+    "skipped": 3,
+    "bib": 74,
+    "ris": 74,
+    "csl": 74
+  },
+  "evidence_reuse": {
+    "csv_files": 27,
+    "search_sections": 994
+  }
+}

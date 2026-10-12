@@ -1,0 +1,31 @@
+VALIDATION PASS
+{
+  "scholarly_discovery": {
+    "question_routes": 26,
+    "identity_records": 75,
+    "reviewed_backlink_edges": 7
+  },
+  "master": 78,
+  "public": 77,
+  "withdrawn": 1,
+  "featured": 29,
+  "deep_geo": 29,
+  "html_pages": 77,
+  "markdown_pages": 77,
+  "sitemap_urls": 81,
+  "doi_duplicates": 0,
+  "citation_author_pages": 74,
+  "schema_author_array_pages": 74,
+  "paper_geo_v2_pages": 26,
+  "citations": {
+    "eligible": 72,
+    "skipped": 5,
+    "bib": 72,
+    "ris": 72,
+    "csl": 72
+  },
+  "evidence_reuse": {
+    "csv_files": 26,
+    "search_sections": 972
+  }
+}

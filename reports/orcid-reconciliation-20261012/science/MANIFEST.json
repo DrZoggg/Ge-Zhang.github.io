@@ -1,0 +1,35 @@
+{
+  "verification_date": "2026-10-12",
+  "files": [
+    {
+      "file": "crossref-science.json",
+      "bytes": 3482,
+      "sha256": "66ab1a6899303ffc4ae84739cce108acf8ab41e4d625e45785bbdd461ed08e81"
+    },
+    {
+      "file": "europepmc.json",
+      "bytes": 2844,
+      "sha256": "3da3ccbd8a28550f56d36812cde4cdb811fa43290dbc7201b0e83f235a584b10"
+    },
+    {
+      "file": "publisher-search-observation.json",
+      "bytes": 814,
+      "sha256": "beacfc2f04666c84b8b6fff8746e611f54e1f6d6c3fc0b2d857c0d7a59d25385"
+    },
+    {
+      "file": "pubmed.xml",
+      "bytes": 3251,
+      "sha256": "81461cb83826133e404251967c1e32a2ad935b4fbe69e6f26ca35af4b9e0034b"
+    },
+    {
+      "file": "SCIENCE_GOLD_STANDARD.json",
+      "bytes": 11328,
+      "sha256": "68810a92b8a5b1719ec57592f417bcd897417682bdda5eb91482b8d4860af6d4"
+    },
+    {
+      "file": "SCIENCE_V2_READY.json",
+      "bytes": 15591,
+      "sha256": "ff93dc81e2c7e8a6e8ee573b4529f4ac2b96b42dbcef607d5b4e1a5b310f869e"
+    }
+  ]
+}

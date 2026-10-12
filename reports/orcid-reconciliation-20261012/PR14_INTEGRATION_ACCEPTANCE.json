@@ -1,0 +1,12 @@
+{
+  "pr14_head_sha": "eca81a3f5600cf523c6dc5663f70ca30dab863fc",
+  "integration_only": true,
+  "existing_pr14_records_preserved": 76,
+  "production_renderer_changed": false,
+  "build": "PASS",
+  "validate_site": "PASS",
+  "science_v2_html_markdown_schema_authors_citation_exports": "PASS",
+  "science_evidence_csv": "PASS",
+  "medicine_correspondence_exports": "DEFERRED_SHARED_TYPE_SUPPORT",
+  "disposition": "Verification only. Activate Science's reviewed V2 after PR #14 is merged and rerun on latest main; current independent Draft remains pending."
+}

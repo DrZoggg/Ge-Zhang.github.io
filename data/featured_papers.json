@@ -2,6 +2,10 @@
   "version": 1,
   "papers": [
     {
+      "doi": "10.1126/science.aek9583",
+      "summary": "Science Letter proposing current, linked public records of human protocols and major outcomes in individualized genetic therapy research; reporting proposals, not a new clinical trial."
+    },
+    {
       "doi": "10.1038/s41467-024-50415-9",
       "summary": "Explainable survival-risk assessment for advanced heart failure with renal dysfunction, integrating multicenter clinical data, survival machine learning and external validation."
     },

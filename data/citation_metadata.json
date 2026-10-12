@@ -372,6 +372,32 @@
         "https://www.sciencedirect.com/science/article/pii/S1570164625000542",
         "https://www.keaipublishing.com/en/journals/current-proteomics/most-downloaded-articles/"
       ]
+    },
+    "10.1126/science.aek9583": {
+      "publication_date": "2026-10-01",
+      "volume": "394",
+      "issue": "6819",
+      "first_page": "38",
+      "last_page": "39",
+      "pmid": "42821669",
+      "verified_sources": [
+        "https://doi.org/10.1126/science.aek9583",
+        "https://pubmed.ncbi.nlm.nih.gov/42821669/",
+        "https://spj.science.org/doi/abs/10.1126/science.aek9583?af=R",
+        "https://api.crossref.org/works/10.1126/science.aek9583"
+      ]
+    },
+    "10.1016/j.medd.2026.100004": {
+      "publication_date": "2026-09-22",
+      "article_number": "100004",
+      "issn": "3117-9282",
+      "publisher": "Elsevier BV",
+      "verified_sources": [
+        "https://api.crossref.org/works/10.1016/j.medd.2026.100004",
+        "https://www.keaipublishing.com/en/journals/medicine-discovery/most-downloaded-articles/",
+        "https://www.keaipublishing.com/en/journals/medicine-discovery/recent-articles/",
+        "https://www.sciencedirect.com/science/article/pii/S3117928226000044"
+      ]
     }
   }
 }
