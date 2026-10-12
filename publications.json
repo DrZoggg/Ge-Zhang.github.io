@@ -221,6 +221,43 @@
     "featured": true
   },
   {
+    "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+    "journal": "Medicine Discovery",
+    "year": 2026,
+    "doi": "10.1016/j.medd.2026.100004",
+    "authors": [
+      "Yahui Han",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Shanshan Cai",
+      "Biyun Li",
+      "Kaisaierjiang Kadier",
+      "Tianshu Gu",
+      "Zhonghua Sun",
+      "Pengyuan Xu",
+      "Dezhi Liu",
+      "Moyan Li",
+      "Xufeng Huang",
+      "Qian Guo",
+      "Yuan Cheng",
+      "Honglin Zheng",
+      "Ge Zhang"
+    ],
+    "url": "https://doi.org/10.1016/j.medd.2026.100004",
+    "type": "Correspondence",
+    "sources": [
+      "ORCID",
+      "Crossref:DOI",
+      "Publisher"
+    ],
+    "slug": "doi-10-1016-j-medd-2026-100004",
+    "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html",
+    "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.md",
+    "deep_geo": false,
+    "paper_geo_status": "none",
+    "featured": false
+  },
+  {
     "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
     "year": 2026,
     "journal": "Human Mutation",
@@ -283,6 +320,33 @@
     "deep_geo": false,
     "paper_geo_status": "none",
     "featured": false
+  },
+  {
+    "title": "Recording results from single-patient trials",
+    "journal": "Science",
+    "year": 2026,
+    "doi": "10.1126/science.aek9583",
+    "url": "https://doi.org/10.1126/science.aek9583",
+    "type": "Letter",
+    "authors": [
+      "Ge Zhang",
+      "Honglin Zheng",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Teng Li"
+    ],
+    "sources": [
+      "ORCID",
+      "Crossref:DOI",
+      "PubMed",
+      "Publisher"
+    ],
+    "slug": "doi-10-1126-science-aek9583",
+    "paper_url": "https://drgezhang.com/papers/doi-10-1126-science-aek9583.html",
+    "markdown_url": "https://drgezhang.com/papers/doi-10-1126-science-aek9583.md",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
+    "featured": true
   },
   {
     "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",

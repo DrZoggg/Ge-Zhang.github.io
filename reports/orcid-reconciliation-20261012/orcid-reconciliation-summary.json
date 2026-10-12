@@ -1,0 +1,52 @@
+{
+  "orcid": "0000-0002-3116-3246",
+  "baseline_commit": "75040ff3b04c0a5151889b1793bc69a03a590037",
+  "retrieved_at_utc": "2026-10-12T07:07:58.055141+00:00",
+  "endpoint": "https://pub.orcid.org/v3.0/0000-0002-3116-3246/works",
+  "http_status": 200,
+  "snapshot_sha256": "b1cf6a92f747cb96dcdc6e2f991a88b383f80d9988fe4c06482e0d57c1f142b9",
+  "baseline_master_sha256": "2e61a86b1c79287e16324fdb1c2216d8de66e6a52294bf6f5aedb44d0ff85acd",
+  "baseline_paper_index_sha256": "2a847cbd6f3bcc7519fecdab383392b7a7fb286ea66e31a5f698753f388084db",
+  "public_work_groups": 77,
+  "public_work_summaries": 107,
+  "unique_orcid_self_dois": 77,
+  "baseline_master_records": 76,
+  "baseline_master_records_with_doi": 75,
+  "baseline_master_records_without_doi": 1,
+  "baseline_paper_index_records": 75,
+  "orcid_dois_in_baseline_master": 75,
+  "orcid_dois_in_baseline_paper_index": 74,
+  "truly_missing_before_count": 2,
+  "truly_missing_before_dois": [
+    "10.1016/j.medd.2026.100004",
+    "10.1126/science.aek9583"
+  ],
+  "website_only_before_count": 1,
+  "withdrawn_in_master_count": 1,
+  "doi_identity_ambiguous_group_count": 0,
+  "doi_identity_ambiguous_groups": [],
+  "current_master_records": 78,
+  "current_paper_index_records": 77,
+  "orcid_dois_in_current_master": 77,
+  "orcid_dois_in_current_paper_index": 76,
+  "added_missing_dois_count": 2,
+  "added_missing_dois": [
+    "10.1016/j.medd.2026.100004",
+    "10.1126/science.aek9583"
+  ],
+  "missing_after_count": 0,
+  "missing_after_dois": [],
+  "scope_note": "DOI identity reconciliation only. Publisher article type, authorship, and formal full-text/V2 verification are separate editorial checks. ORCID journal-article does not establish Article versus Letter.",
+  "pending_identity_or_type_verification_count": 0,
+  "science_formal_v2_completed": true,
+  "selected_count": 29,
+  "deep_geo_count": 29,
+  "pending_citation_capability_record_count": 0,
+  "doi_duplicates": {
+    "baseline_master_duplicate_dois": {},
+    "baseline_index_duplicate_dois": {},
+    "current_master_duplicate_dois": {},
+    "current_index_duplicate_dois": {},
+    "orcid_dois_in_multiple_groups": {}
+  }
+}

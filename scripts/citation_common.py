@@ -20,7 +20,7 @@ ENHANCEMENT_FIELDS = {
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
-JOURNAL_PUBLICATION_TYPES = {"Article", "Letter"}
+JOURNAL_PUBLICATION_TYPES = {"Article", "Letter", "Correspondence"}
 
 
 def _unique_pairs(pairs):
@@ -165,6 +165,8 @@ def citation_plain_text(record):
                 publication += f"–{record['last_page']}"
         elif record.get("article_number"):
             publication += f":{record['article_number']}"
+    elif record.get("article_number"):
+        publication += f"; article {record['article_number']}"
     publication += "."
     return f"{authors}. {record['title']}. {publication} {record['doi_url']}"
 
@@ -218,6 +220,8 @@ def render_bibtex(record):
         fields.append(("pages", pages))
     if record.get("article_number"):
         fields.append(("eid", record["article_number"]))
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        fields.append(("note", record["type"]))
     fields.extend([("doi", record["doi"]), ("url", record["doi_url"])])
     if record.get("issn") or record.get("eissn"):
         fields.append(("issn", record.get("issn") or record["eissn"]))
@@ -244,6 +248,8 @@ def render_ris(record):
             lines.append(f"{tag}  - {record[key]}")
     if record.get("article_number"):
         lines.append(f"C7  - {record['article_number']}")
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        lines.append(f"M3  - {record['type']}")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",
@@ -278,6 +284,8 @@ def render_csl_json(record):
         )
     if record.get("article_number"):
         result["number"] = record["article_number"]
+    if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
+        result["genre"] = record["type"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"

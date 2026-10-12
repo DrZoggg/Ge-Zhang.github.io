@@ -22,6 +22,14 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 PRIORITY_FIELDS = {
+    "10.1126/science.aek9583": {
+        "publication_date": "2026-10-01", "volume": "394", "issue": "6819",
+        "first_page": "38", "last_page": "39", "pmid": "42821669",
+    },
+    "10.1016/j.medd.2026.100004": {
+        "publication_date": "2026-09-22", "article_number": "100004",
+        "issn": "3117-9282", "publisher": "Elsevier BV",
+    },
     "10.1056/nejmc2518964": {
         "publication_date": "2026-03-05", "journal_abbrev": "N Engl J Med",
         "volume": "394", "issue": "10", "first_page": "1035", "last_page": "1036",

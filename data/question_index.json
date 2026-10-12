@@ -2,6 +2,7 @@
   "version": 1,
   "description": "One existing reviewed question per V2 work. Mapping questions are reused verbatim; qa_index is one-based. No new scientific prose.",
   "papers": {
+    "10.1126/science.aek9583": {"qa_index": 1},
     "10.3389/fcvm.2025.1724572": {"qa_index": 2},
     "10.1002/mdr2.70052": {"navigation": true},
     "10.1002/ggn2.202500053": {"qa_index": 1},

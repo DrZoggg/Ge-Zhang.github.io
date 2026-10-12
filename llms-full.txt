@@ -71,6 +71,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.md
 - Deep GEO: yes
 
+## Multimodal AI for cardiovascular care must learn when not to predict
+- Journal: Medicine Discovery
+- Year: 2026
+- Type: Correspondence
+- DOI: 10.1016/j.medd.2026.100004
+- HTML: https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html
+- Markdown: https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.md
+- Deep GEO: no
+
 ## PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family
 - Journal: Human Mutation
 - Year: 2026
@@ -88,6 +97,15 @@
 - HTML: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
 - Markdown: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md
 - Deep GEO: no
+
+## Recording results from single-patient trials
+- Journal: Science
+- Year: 2026
+- Type: Letter
+- DOI: 10.1126/science.aek9583
+- HTML: https://drgezhang.com/papers/doi-10-1126-science-aek9583.html
+- Markdown: https://drgezhang.com/papers/doi-10-1126-science-aek9583.md
+- Deep GEO: yes
 
 ## System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer
 - Journal: npj Precision Oncology

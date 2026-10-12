@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "doi": "10.1126/science.aek9583",
+  "display_title": "Recording results from single-patient trials",
+  "summary": "This Science Letter argues that public trial registries and preclinical publications should retain a current, linked account of directly related human protocols and major outcomes in individualized genetic therapies. It proposes reporting practices, rather than presenting a new clinical trial or establishing treatment causality.",
+  "research_question": "How should public records preserve major human outcomes when individualized genetic therapy research involves a single patient?",
+  "author_summary": "The Letter responds to previously reported individualized base-editing research and a public registry entry that, according to the Letter, remained out of date after the reported participant death. The authors argue that an individual outcome may constitute the available human evidence in a single-patient study, making a current public record important to families, clinicians, ethics committees and other researchers. They distinguish confidential or regulatory safety reporting from public trial registries and journal publications. Their proposals include disclosure of directly related human protocols in preclinical submissions, updating those disclosures before acceptance, recording treatment-emergent deaths and life-threatening events separately from causal assessment, linking preclinical papers with trial records, and adding dated notices when major human outcomes occur after publication. These are the Letter's reporting and governance arguments, not a newly conducted experiment, demonstrated clinical benefit or determination of responsibility.",
+  "evidence_page_notice": "This page describes a Letter. Key Arguments and Q&A summarize the complete published Letter on print pages 38-39. The reported case and cited preclinical research belong to other sources. No clinical sample size, treatment effect or causal conclusion is assigned to this Letter.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Science Letter presenting a reporting and governance argument using a previously reported case and three cited sources; no new clinical trial or systematic evidence synthesis.",
+    "evidence_type": "Author argument and reporting proposals in a published Letter, with contextual references to prior reporting, a trial registry, preclinical research and WHO registration standards.",
+    "evidence_domains": ["Public clinical trial records", "Preclinical-to-human research disclosure", "Major human outcome reporting", "Individualized genetic therapy governance"],
+    "diseases_covered": ["Individualized genetic therapies (discussion context)"],
+    "translation_scope": "Public documentation and linkage of translational research records; the Letter does not test a therapy or quantify whether its proposed reporting practices improve patient outcomes.",
+    "scale_metrics": [
+      {"label": "Publication genre", "value": "Letter"},
+      {"label": "Evidence basis", "value": "Narrative argument and contextual citations"},
+      {"label": "New empirical evaluation", "value": "None reported in this Letter"}
+    ],
+    "counting_note": "Single-patient describes the research context discussed in the Letter. It is not an observed n=1 dataset produced by these authors; no sample total is assigned."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Keep directly related human protocols and major outcomes current in public registries.",
+      "context": "The opening paragraph contrasts the previously reported human outcome with the registry and preclinical publication as described by the Letter. This is an attributed reporting-gap example, not an independently reconstructed clinical investigation.",
+      "evidence": [{"label": "Argument", "value": "Preserve the public translational record"}],
+      "source_locator": "Print p. 38, right column, Letter paragraph 1"
+    },
+    {
+      "id": "KF2",
+      "claim": "Treat a current public record as consequential when an individual outcome may be the available human evidence.",
+      "context": "The authors explain why families, clinicians, ethics committees and other researchers may rely on a registry when considering continued human testing and emerging risks.",
+      "evidence": [{"label": "Argument", "value": "Single-patient evidence visibility"}],
+      "source_locator": "Print p. 38, right column, paragraph 2, continuing at p. 39, left column"
+    },
+    {
+      "id": "KF3",
+      "claim": "Distinguish safety reporting to oversight bodies from the publicly accessible account of translation.",
+      "context": "Safety reports, registries and journal articles serve different purposes and update on different schedules; a report reaching regulators or ethics committees does not by itself ensure that public records are current.",
+      "evidence": [{"label": "Argument", "value": "Different reporting channels and schedules"}],
+      "source_locator": "Print p. 39, left column, Letter paragraph 3"
+    },
+    {
+      "id": "KF4",
+      "claim": "Coordinate protocol disclosure, serious-outcome reporting, cross-links and dated publication updates.",
+      "context": "The authors propose disclosure of directly related human protocols before preclinical paper acceptance, registry fields for treatment-emergent deaths and life-threatening events, separation of event occurrence from suspected or confirmed causality, cross-links between records, and dated notices after publication.",
+      "evidence": [{"label": "Argument", "value": "Proposed public reporting practices"}],
+      "source_locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context"
+    },
+    {
+      "id": "KF5",
+      "claim": "Use public notices to preserve the human experience without assigning blame or settling causality.",
+      "context": "The concluding paragraph sets an explicit boundary: the reporting proposals connect claims of clinical promise to subsequent human experience, while leaving causal and responsibility determinations unresolved.",
+      "evidence": [{"label": "Boundary", "value": "Reporting is distinct from causal attribution"}],
+      "source_locator": "Print p. 39, left column, Letter paragraph 5, immediately before the author line"
+    }
+  ],
+  "what_this_adds": [
+    "A reporting argument tailored to individualized research where a public entry can represent the available human experience.",
+    "A proposed connection between preclinical manuscripts, human protocols, registry updates and later publication notices.",
+    "An explicit distinction between documenting serious events and determining causality or responsibility."
+  ],
+  "evidence_scope": {
+    "supports": ["Citation of the authors' rationale for current, linked public records in individualized genetic therapy research.", "Discussion of proposed disclosure and serious-outcome reporting practices.", "The distinction between event occurrence, causal assessment and responsibility."],
+    "does_not_establish": ["A new clinical trial or a clinical dataset generated by the Letter's authors.", "The safety, efficacy or causal effect of an individualized genetic therapy.", "A quantitative reduction in reporting gaps or improved patient outcomes from the proposals.", "An independent adjudication of the reported case, blame or legal responsibility."]
+  },
+  "qa": [
+    {"question": "What public-record problem does this Science Letter address?", "answer": "The authors describe a gap between a previously reported human outcome and the registry or preclinical publication, and argue that directly related human protocols and major outcomes should remain visible in current public records. The case is contextual evidence from other sources, not a new study in this Letter.", "evidence_refs": ["KF1"]},
+    {"question": "Why can an outdated registry matter in single-patient research?", "answer": "An individual outcome may be the available human evidence. The Letter argues that families, clinicians, ethics committees and other researchers can rely on the public entry when judging continued testing and emerging risks.", "evidence_refs": ["KF2"]},
+    {"question": "Does reporting to regulators ensure that the public record is updated?", "answer": "The Letter distinguishes safety reports, trial registries and journal articles because their purposes and update schedules differ. Clinical information reaching an oversight body can still be absent from the public account of translation.", "evidence_refs": ["KF3"]},
+    {"question": "Which changes do the authors propose for registries and preclinical papers?", "answer": "They propose disclosure and updating of directly related human protocols before preclinical manuscript acceptance, reporting of treatment-emergent deaths and life-threatening events separately from causal assessment, links between preclinical papers and trial records, and dated notices for major later human outcomes.", "evidence_refs": ["KF4"]},
+    {"question": "Does this Letter establish treatment causality or assign responsibility?", "answer": "No. Its conclusion explicitly separates documenting subsequent human experience from assigning blame or settling causality. Its proposals concern reporting and governance, with no new clinical experiment or quantified treatment effect.", "evidence_refs": ["KF5"]}
+  ],
+  "concepts": {
+    "research_governance": ["Public trial registry", "Human protocol disclosure", "Translational record linkage", "Dated publication notice"],
+    "evidence_boundaries": ["Single-patient research context", "Treatment-emergent event reporting", "Event occurrence versus causality"]
+  },
+  "limitations": [
+    "The Letter is a narrative argument, not an original clinical study, systematic review or evaluation of its proposed reporting practices.",
+    "The reported case and registry situation are attributed to the Letter and its cited sources; this page does not independently reconstruct the case or assert that the registry still has the same status today.",
+    "The cited preclinical paper is contextual prior research; its experiments and results are not evidence newly produced by this Letter.",
+    "Clinical effectiveness, causal attribution and legal responsibility require evidence beyond the Letter.",
+    "The complete Letter was reviewed from local publisher print-page images. Those pages include neighboring Letters, which were excluded from this evidence layer."
+  ],
+  "related_papers": [{"doi": "10.1016/j.medd.2026.100004", "relationship": "Site-curated editorial connection: both publications discuss the limits of clinical evidence and how it should inform practice. This is a thematic link, not a claim that the Science Letter cites the Medicine Discovery Correspondence."}],
+  "provenance": {
+    "publisher_url": "https://www.science.org/doi/10.1126/science.aek9583",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42821669/",
+    "review_basis": "Complete Letter reviewed in local publisher print-page images for pages 38-39; exact title, all five authors, DOI, print date and references matched to PubMed, Crossref and publisher identity. Only this Letter's columns were used.",
+    "source_version": "Published print pages, Science 394(6819):38-39, 1 October 2026. Page-image download watermark identifies science.org via Shanghai Jiao Tong University on 2 October 2026. Source hashes and paragraph locators are retained in SCIENCE_GOLD_STANDARD.json; the copyrighted full pages are not redistributed by this site."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {"id": "CU1", "query": "Why should individualized genetic therapy research retain current public human-outcome records?", "supported_scope": "Cite the Letter's reporting rationale and the consequences of limited human evidence, with the discussed case attributed to prior sources.", "evidence_refs": ["KF1", "KF2"]},
+      {"id": "CU2", "query": "Which reporting practices does the Letter propose for preclinical-to-human research?", "supported_scope": "Cite the proposed disclosure, registry, linking and notice practices; implementation effectiveness was not measured.", "evidence_refs": ["KF3", "KF4"]},
+      {"id": "CU3", "query": "How does the Letter distinguish outcome documentation from causal attribution?", "supported_scope": "Cite its explicit reporting boundary, without treating the Letter as a safety or responsibility adjudication.", "evidence_refs": ["KF5"]}
+    ],
+    "not_appropriate_as_evidence_for": ["A new n=1 clinical trial conducted by these authors.", "Treatment efficacy, quantified safety or a causal determination about the reported death.", "Demonstrated improvement from a registry intervention or an established legal obligation.", "Arguments contained in the neighboring Letters on the same print pages."],
+    "evidence_matrix": [
+      {"id": "evidence-science-records", "component": "Current public records", "context": "Reported registry-publication gap, attributed to the Letter and its cited sources.", "finding": "Keep directly related human protocols and major outcomes current in public registries.", "evidence_level": "Letter argument", "scope": "Reporting rationale, not an independent clinical investigation.", "source_locator": "Print p. 38, right column, Letter paragraph 1", "evidence_refs": ["KF1"]},
+      {"id": "evidence-science-visibility", "component": "Human evidence visibility", "context": "Readers may rely on the public entry when only an individual outcome is available.", "finding": "Treat a current public record as consequential when an individual outcome may be the available human evidence.", "evidence_level": "Letter argument", "scope": "Evidence visibility, not a new cohort or clinical sample.", "source_locator": "Print p. 38, right column, paragraph 2, continuing at p. 39, left column", "evidence_refs": ["KF2"]},
+      {"id": "evidence-science-channels", "component": "Reporting channels", "context": "Oversight reports and public records can update on different schedules.", "finding": "Distinguish safety reporting to oversight bodies from the publicly accessible account of translation.", "evidence_level": "Letter argument", "scope": "Reporting-channel distinction, not a quantified audit.", "source_locator": "Print p. 39, left column, Letter paragraph 3", "evidence_refs": ["KF3"]},
+      {"id": "evidence-science-proposals", "component": "Coordinated updates", "context": "Proposals connect protocol disclosure, serious outcomes, registry links and later notices.", "finding": "Coordinate protocol disclosure, serious-outcome reporting, cross-links and dated publication updates.", "evidence_level": "Letter proposal", "scope": "Proposed practices, not tested effectiveness or treatment causality.", "source_locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context", "evidence_refs": ["KF4"]},
+      {"id": "evidence-science-boundary", "component": "Causality boundary", "context": "The conclusion sets limits on what public notices establish.", "finding": "Use public notices to preserve the human experience without assigning blame or settling causality.", "evidence_level": "Explicit Letter boundary", "scope": "Documentation of experience, not adjudication.", "source_locator": "Print p. 39, left column, Letter paragraph 5, immediately before the author line", "evidence_refs": ["KF5"]}
+    ]
+  }
+}

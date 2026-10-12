@@ -1,0 +1,11 @@
+{
+  "url": "https://pub.orcid.org/v3.0/0000-0002-3116-3246/works",
+  "requested_at_utc": "2026-10-12T07:07:58.055141+00:00",
+  "accept": "application/vnd.orcid+json",
+  "authenticated": false,
+  "status": 200,
+  "final_url": "https://pub.orcid.org/v3.0/0000-0002-3116-3246/works",
+  "content_type": "application/vnd.orcid+json;charset=UTF-8",
+  "immutable_snapshot": "snapshots/orcid-works-20261012T070800Z.raw.json",
+  "sha256": "b1cf6a92f747cb96dcdc6e2f991a88b383f80d9988fe4c06482e0d57c1f142b9"
+}

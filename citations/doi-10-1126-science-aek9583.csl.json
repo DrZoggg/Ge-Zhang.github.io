@@ -1,0 +1,38 @@
+{
+  "id": "doi-10-1126-science-aek9583",
+  "type": "article-journal",
+  "title": "Recording results from single-patient trials",
+  "author": [
+    {
+      "literal": "Ge Zhang"
+    },
+    {
+      "literal": "Honglin Zheng"
+    },
+    {
+      "literal": "Qiang Li"
+    },
+    {
+      "literal": "Taiqi Zhao"
+    },
+    {
+      "literal": "Teng Li"
+    }
+  ],
+  "container-title": "Science",
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        10,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1126/science.aek9583",
+  "URL": "https://doi.org/10.1126/science.aek9583",
+  "volume": "394",
+  "issue": "6819",
+  "page": "38-39",
+  "genre": "Letter"
+}

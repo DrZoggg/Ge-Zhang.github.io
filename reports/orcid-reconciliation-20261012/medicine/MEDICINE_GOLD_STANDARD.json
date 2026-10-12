@@ -1,0 +1,79 @@
+{
+  "doi": "10.1016/j.medd.2026.100004",
+  "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+  "journal": "Medicine Discovery",
+  "year": 2026,
+  "date_published_online": "2026-09-22",
+  "date_published_online_source": "https://www.keaipublishing.com/en/journals/medicine-discovery/most-downloaded-articles/",
+  "date_published_print": "2026-09",
+  "article_number": "100004",
+  "volume": null,
+  "issue": null,
+  "publisher": "Elsevier BV",
+  "issn": "3117-9282",
+  "pii": "S3117928226000044",
+  "authors": [
+    "Yahui Han",
+    "Qiang Li",
+    "Taiqi Zhao",
+    "Shanshan Cai",
+    "Biyun Li",
+    "Kaisaierjiang Kadier",
+    "Tianshu Gu",
+    "Zhonghua Sun",
+    "Pengyuan Xu",
+    "Dezhi Liu",
+    "Moyan Li",
+    "Xufeng Huang",
+    "Qian Guo",
+    "Yuan Cheng",
+    "Honglin Zheng",
+    "Ge Zhang"
+  ],
+  "ge_zhang_author_position": 16,
+  "author_count": 16,
+  "corresponding_author": true,
+  "equal_contribution": {
+    "authors": [
+      "Yahui Han",
+      "Qiang Li"
+    ],
+    "ge_zhang": false
+  },
+  "article_type": "Correspondence",
+  "article_type_status": "verified_publisher_corrected_proof",
+  "crossref_type": "journal-article",
+  "crossref_content_type": "simple-article",
+  "metadata_status": "identity_and_author_order_verified",
+  "full_text_status": "local_publisher_corrected_proof_verified",
+  "official_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
+  "doi_url": "https://doi.org/10.1016/j.medd.2026.100004",
+  "sources": [
+    "https://api.crossref.org/works/10.1016/j.medd.2026.100004",
+    "https://www.keaipublishing.com/en/journals/medicine-discovery/most-downloaded-articles/",
+    "https://www.keaipublishing.com/en/journals/medicine-discovery/recent-articles/"
+  ],
+  "verified_on": "2026-10-12",
+  "warnings": [
+    "Volume and issue remain unassigned in the corrected proof and absent from Crossref.",
+    "Internal PDF pages 1-6 are proof pagination, not a journal page range.",
+    "No new dataset or predictive performance result is reported by this Correspondence."
+  ],
+  "source_checks": {
+    "article_subtype": "Publisher corrected proof p. 5, Acknowledgements explicitly identifies Correspondence.",
+    "authors_and_roles": "Publisher corrected proof p. 6, complete author list and * Corresponding authors footnote.",
+    "data_scope": "Publisher corrected proof p. 5, Data availability states no data used.",
+    "doi_and_version": "Publisher corrected proof p. 1 DOI; embedded PDF Subject identifies Corrected Proof, 100004.",
+    "online_date": "KeAi official most-downloaded article entry, Available online 22 September 2026."
+  },
+  "source_manifest": [
+    {
+      "file": "1-s2.0-S3117928226000044-main (1).pdf",
+      "sha256": "094e9617861bacdba0ff20bb21916454e4d3f04a30e0694908727cd68cf2ffad",
+      "bytes": 2409750,
+      "locator": "PDF pp. 1, 5, 6",
+      "version": "Elsevier publisher corrected proof",
+      "redistributed": false
+    }
+  ]
+}

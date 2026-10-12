@@ -186,6 +186,38 @@
     ]
   },
   {
+    "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+    "journal": "Medicine Discovery",
+    "year": 2026,
+    "doi": "10.1016/j.medd.2026.100004",
+    "authors": [
+      "Yahui Han",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Shanshan Cai",
+      "Biyun Li",
+      "Kaisaierjiang Kadier",
+      "Tianshu Gu",
+      "Zhonghua Sun",
+      "Pengyuan Xu",
+      "Dezhi Liu",
+      "Moyan Li",
+      "Xufeng Huang",
+      "Qian Guo",
+      "Yuan Cheng",
+      "Honglin Zheng",
+      "Ge Zhang"
+    ],
+    "url": "https://doi.org/10.1016/j.medd.2026.100004",
+    "type": "Correspondence",
+    "sources": [
+      "ORCID",
+      "Crossref:DOI",
+      "Publisher"
+    ],
+    "slug": "doi-10-1016-j-medd-2026-100004"
+  },
+  {
     "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
     "year": 2026,
     "journal": "Human Mutation",
@@ -238,6 +270,28 @@
       "Xingli Xu",
       "Jinchuan Lai"
     ]
+  },
+  {
+    "title": "Recording results from single-patient trials",
+    "journal": "Science",
+    "year": 2026,
+    "doi": "10.1126/science.aek9583",
+    "url": "https://doi.org/10.1126/science.aek9583",
+    "type": "Letter",
+    "authors": [
+      "Ge Zhang",
+      "Honglin Zheng",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Teng Li"
+    ],
+    "sources": [
+      "ORCID",
+      "Crossref:DOI",
+      "PubMed",
+      "Publisher"
+    ],
+    "slug": "doi-10-1126-science-aek9583"
   },
   {
     "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",

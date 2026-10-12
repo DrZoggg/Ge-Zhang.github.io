@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://drgezhang.com/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-12</lastmod>
   </url>
   <url>
     <loc>https://drgezhang.com/publications.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-12</lastmod>
   </url>
   <url>
     <loc>https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html</loc>
@@ -37,12 +37,20 @@
     <lastmod>2026-09-30</lastmod>
   </url>
   <url>
+    <loc>https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
     <loc>https://drgezhang.com/papers/doi-10-1155-humu-5591097.html</loc>
     <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html</loc>
     <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://drgezhang.com/papers/doi-10-1126-science-aek9583.html</loc>
+    <lastmod>2026-10-12</lastmod>
   </url>
   <url>
     <loc>https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html</loc>
@@ -314,6 +322,6 @@
   </url>
   <url>
     <loc>https://drgezhang.com/research/questions.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-12</lastmod>
   </url>
 </urlset>

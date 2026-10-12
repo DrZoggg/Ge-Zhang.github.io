@@ -53,6 +53,7 @@ from validate_site import (
 
 SYNTHETIC_DOI = "10.9999/paper-geo-v2-multicohort-fixture"
 PRIORITY_STATUS = (
+    ("10.1126/science.aek9583", "v2"),
     ("10.1038/s41467-024-50415-9", "v2"),
     ("10.1038/s41698-026-01699-1", "v2"),
     ("10.1016/j.isci.2023.107587", "v2"),
@@ -277,7 +278,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (26, 0, 2)
+    assert (len(v2_items), v1_count, pending_count) == (27, 0, 2)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -315,9 +316,10 @@ def run_tests():
         item for item in v2_items if norm_doi(item[0].get("doi")) == KIF13B_VSMC_DOI
     ]
     assert len(jci_items) == 1
-    assert norm_doi(deep_entries[9].get("doi")) == OLINK_DCM_DOI
-    assert norm_doi(load_featured()[9].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(deep_entries[10].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(load_featured()[10].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.1126/science.aek9583": ("Article Scope & Approach", None),
         "10.1016/j.curpro.2025.100054": ("Article Scope & Approach", None),
         "10.1002/ggn2.202500053": ("Article Scope & Approach", None),
         "10.18632/aging.205564": ("Study Design & Analytical Framework", "External dataset evaluation"),

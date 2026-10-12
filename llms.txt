@@ -15,6 +15,7 @@
 
 ## Deep GEO
 
+- [Recording results from single-patient trials](https://drgezhang.com/papers/doi-10-1126-science-aek9583.html) — DOI: 10.1126/science.aek9583
 - [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://drgezhang.com/papers/aihflevel.html) — DOI: 10.1038/s41467-024-50415-9
 - [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html) — DOI: 10.1038/s41698-026-01699-1
 - [Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability](https://drgezhang.com/papers/apvs.html) — DOI: 10.1016/j.isci.2023.107587
