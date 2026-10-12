@@ -24,6 +24,9 @@ SCIENCE = "10.1126/science.aek9583"
 MEDICINE = "10.1016/j.medd.2026.100004"
 JDI = "10.1111/jdi.70462"
 AIHF = "10.1038/s41467-024-50415-9"
+# Reviewed B-only promotion; A remains Pending with its existing identity.
+B_V2 = "10.1007/s11426-026-3629-x"
+B_CARD = "papers/doi-10-1007-s11426-026-3629-x.html"
 SCIENCE_SHA256 = "ff93dc81e2c7e8a6e8ee573b4529f4ac2b96b42dbcef607d5b4e1a5b310f869e"
 IDENTITIES = {
     SCIENCE: {
@@ -206,9 +209,16 @@ class PublicationReleaseTests(unittest.TestCase):
         cards = featured_cards(read("index.html"))
         self.assertEqual(cards[0][0], f'papers/{IDENTITIES[SCIENCE]["slug"]}.html')
         self.assertEqual(cards[1][0], "papers/aihflevel.html")
-        self.assertEqual(cards[1:], featured_cards(baseline("index.html")))
-        # Existing scientific payloads remain unchanged, including pending records.
+        # B's empty controller summary falls back to its reviewed Deep summary.
+        # All other existing card links, titles and summaries remain protected.
+        self.assertEqual(
+            [card for card in cards[1:] if card[0] != B_CARD],
+            [card for card in featured_cards(baseline("index.html")) if card[0] != B_CARD],
+        )
+        # B's new source is frozen independently by test_pending_b_v2.py.
         for entry in json.loads(baseline("data/deep_geo_papers.json"))["papers"]:
+            if entry["doi"] == B_V2:
+                continue
             slug = self.by_doi[entry["doi"]]["slug"]
             path = f"data/deep_geo/{slug}.json"
             if (ROOT / path).exists():
@@ -230,8 +240,8 @@ class PublicationReleaseTests(unittest.TestCase):
         self.assertEqual(len(exports["publications"]), 77)
         old_v2 = {p["doi"] for p in self.old_index if p["paper_geo_status"] == "v2"}
         v2 = {p["doi"] for p in self.index if p["paper_geo_status"] == "v2"}
-        self.assertEqual(v2, old_v2 | {SCIENCE})
-        self.assertEqual(len(v2), 27)
+        self.assertEqual(v2, old_v2 | {SCIENCE, B_V2})
+        self.assertEqual(len(v2), 28)
         current = {p["doi"]: p for p in self.index if p.get("doi")}
         for old in self.old_index:
             if old.get("doi"):

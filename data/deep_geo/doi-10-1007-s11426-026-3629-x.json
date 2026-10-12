@@ -1,0 +1,604 @@
+{
+  "version": 2,
+  "doi": "10.1007/s11426-026-3629-x",
+  "display_title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
+  "summary": "A BODIPY-peptide redox probe was evaluated in solution and a small atherosclerosis mouse experiment, using reversible PA intensity changes at 740 nm and accompanying histology. The evidence supports the tested preclinical imaging approach, without human diagnostic, treatment or safety validation.",
+  "research_question": "Can a reversibly redox-responsive BODIPY-peptide probe generate interpretable PA signal changes under controlled superoxide/GSH conditions and track aortic-region changes after LPS challenge and dexamethasone treatment in atherosclerotic mice?",
+  "author_summary": "The study synthesizes ReP from a BODIPY precursor and a hydrophilic peptide, retaining catechol-based redox-responsive sites. Solution spectroscopy and calculations support the authors' oxidation/reduction interpretation; superoxide increases PA signal and GSH decreases it. The reported aqueous hydrodynamic size is approximately 69 nm for ReP versus 378 nm for the precursor. At 740 nm, displayed PA calibrations have R-squared values of 0.977 for superoxide and 0.982 for GSH, and three alternating response cycles are shown. The animal comparison uses male ApoE-/- mice after 16 weeks of high-fat feeding, with n=3 per main group. The aortic-region PA signal is higher after an intranasal LPS challenge and lower after the reported dexamethasone regimen. Lung wet/dry measurements and CD68, caspase-3 and collagen staining provide accompanying tissue observations. These are chemical and animal results: the study contains no cell-culture validation or human clinical cohort, does not give an absolute in vivo superoxide calibration, and does not establish clinical plaque-risk prediction, dexamethasone benefit in patients or human probe safety.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Chemical probe synthesis and solution characterization followed by a small experimental atherosclerosis mouse comparison with LPS challenge and dexamethasone intervention",
+    "evidence_type": "Solution optical/PA response, computational mechanism support, relative mouse PA imaging and ex vivo tissue observations",
+    "population": "Controlled chemical solutions; male ApoE-/- mice with diet-induced atherosclerosis; a separate C57BL/6 mouse organ-histology evaluation described in the text. No cell-culture or human cohort is reported.",
+    "primary_endpoint": "PA intensity at 740 nm in controlled solution measurements and an aortic-region ROI in mice",
+    "secondary_endpoint": "Aqueous dispersion and DLS, reversible response cycles, selectivity panel, lung wet/dry ratio, plaque staining and limited short-term tolerability observations",
+    "external_validation": false,
+    "data_modalities": [
+      "UV-Vis-NIR spectroscopy",
+      "solution PA spectra and 740 nm intensity",
+      "DLS",
+      "MS and proton/carbon NMR",
+      "DFT molecular-orbital calculations",
+      "mouse PA imaging",
+      "lung wet/dry measurements",
+      "H&E and plaque CD68/caspase-3/Masson staining"
+    ],
+    "counting_note": "The supplementary methods state n=3 per main AS group. DLS has three independent measurements, not three animals. Repeated imaging days and sections do not create additional animals; S7 and tolerability counts are not independently specified. No total human or unique-animal n is assigned.",
+    "scale_metrics": [
+      {
+        "label": "Main AS sample label",
+        "value": "n=3 per group"
+      },
+      {
+        "label": "Main AS model",
+        "value": "Male ApoE-/- mice; high-fat diet for 16 weeks"
+      },
+      {
+        "label": "Chemical DLS replication",
+        "value": "Three independent measurements at 10 micromolar and 25 degrees C"
+      },
+      {
+        "label": "Signal acquisition wavelength",
+        "value": "740 nm"
+      },
+      {
+        "label": "Reversible solution cycles",
+        "value": "Three"
+      },
+      {
+        "label": "Main animal imaging days",
+        "value": "Days 2 and 8"
+      },
+      {
+        "label": "Additional sequence",
+        "value": "Days 0, 1 and 4, Fig. S7; separate n not given"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "ReP combines a BODIPY scaffold, a hydrophilic peptide segment and catechol-based redox-responsive sites; the authors attribute its reversible optical response to oxidation by superoxide and reduction by GSH.",
+      "context": "The response mechanism is supported by the depicted molecular transformation, solution spectra and molecular-orbital calculations. It is not a demonstrated intracellular signaling pathway or proof of superoxide-specific causal biology in patients.",
+      "source_locator": "Main PDF pp. 2-3, Results 3.1, Fig. 1a-d; official supplement PDF pp. 2-3, Spectroscopic Measurements and DFT Calculations; pp. 5-6, Figs. S1-S4.",
+      "evidence": [
+        {
+          "label": "Hydrophilic peptide",
+          "value": "N-acetyl-Ala-Ala-Pro-Val-COOH"
+        },
+        {
+          "label": "Native absorption maximum",
+          "value": "Approximately 660 nm"
+        },
+        {
+          "label": "Oxidation-related absorption change",
+          "value": "Decrease over 550-680 nm and increase over 680-800 nm; GSH reverses the spectral changes"
+        },
+        {
+          "label": "Maximum PA signal increase region",
+          "value": "730-750 nm"
+        },
+        {
+          "label": "Calculated HOMO/LUMO gaps",
+          "value": "Approximately 2.0 eV for ReP and 1.7 eV for oxidized ReP"
+        },
+        {
+          "label": "Mechanistic assignment boundary",
+          "value": "The authors assign catechol oxidation/reduction; native-probe MS/NMR and DFT are not independent in vivo chemical-product identification"
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "Peptide-modified ReP had greater aqueous compatibility and a smaller reported hydrodynamic size than the BODIPY-NO2 precursor under the tested conditions.",
+      "context": "DLS characterizes aqueous particles or aggregates. The reported hydrodynamic diameters are not the dimensions of a single molecule, and this comparison does not establish pharmacokinetic behavior or exclusive plaque targeting.",
+      "source_locator": "Main PDF p. 3, Results 3.2, Fig. 2b-g; official supplement PDF p. 2, Dynamic Light Scattering.",
+      "evidence": [
+        {
+          "label": "Precursor DLS diameter",
+          "value": "Approximately 378 nm"
+        },
+        {
+          "label": "ReP DLS diameter",
+          "value": "Approximately 69 nm"
+        },
+        {
+          "label": "DLS conditions",
+          "value": "10 micromolar aqueous preparations at 25 degrees C; three independent measurements"
+        },
+        {
+          "label": "Fig. 2f-g spectroscopy comparison",
+          "value": "5 micromolar precursor versus 5 micromolar ReP under matched superoxide stimulation"
+        },
+        {
+          "label": "Interpretation",
+          "value": "Improved aqueous dispersion and optical responsiveness in this comparison, not human delivery validation"
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "Solution measurements showed concentration-dependent PA signal enhancement with superoxide and attenuation with GSH at 740 nm.",
+      "context": "These calibrations quantify signal relationships under the reported solution conditions. The absorption-titration range and the PA calibration range differ; neither is an absolute superoxide-concentration calibration for plaques in vivo.",
+      "source_locator": "Main PDF pp. 3-4, Results 3.3, Fig. 3b-g; official supplement PDF p. 2, Spectroscopic Measurements; p. 7, Figs. S5-S6.",
+      "evidence": [
+        {
+          "label": "Signal metric",
+          "value": "PA intensity at 740 nm; no validated two-wavelength ratio is defined for these displayed calibrations"
+        },
+        {
+          "label": "ReP for absorption titration",
+          "value": "10 micromolar"
+        },
+        {
+          "label": "Superoxide absorption titration",
+          "value": "0-125 micromolar"
+        },
+        {
+          "label": "Superoxide PA calibration shown",
+          "value": "0, 12.5, 25, 50 and 80 micromolar; R-squared = 0.977"
+        },
+        {
+          "label": "GSH PA calibration shown",
+          "value": "0, 50, 100, 200 and 300 micromolar; R-squared = 0.982"
+        },
+        {
+          "label": "Solution preparation",
+          "value": "DMSO stocks diluted in PBS at pH 7.4; KO2 in dry DMSO as the superoxide source and fresh GSH in PBS"
+        },
+        {
+          "label": "Reporting boundary",
+          "value": "Calibration replication, detection limit and exact slope are not supplied for these panels"
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "The PA signal switched in three alternating superoxide/GSH cycles, and superoxide produced a greater response than the tested alternative reactive species.",
+      "context": "Reversibility and selectivity were assessed in solution. This finite interferent panel does not establish selectivity against every biological reaction or prove that all in vivo signal differences are solely caused by superoxide.",
+      "source_locator": "Main PDF p. 4, Results 3.3, Fig. 3h-j; official supplement PDF p. 2, Spectroscopic Measurements.",
+      "evidence": [
+        {
+          "label": "Alternating response cycles",
+          "value": "Three"
+        },
+        {
+          "label": "Readout wavelength",
+          "value": "740 nm"
+        },
+        {
+          "label": "Fig. 3j reactive-species challenge",
+          "value": "80 micromolar, as stated in the figure caption"
+        },
+        {
+          "label": "Tested alternative species",
+          "value": "The panel includes peroxynitrite, hydroxyl radical, hypochlorous acid and hydrogen peroxide; superoxide shows the pronounced enhancement"
+        },
+        {
+          "label": "Response direction",
+          "value": "Superoxide increases PA signal; subsequent GSH decreases it"
+        },
+        {
+          "label": "Scope",
+          "value": "Solution redox switching and the reported selectivity panel"
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "In a small ApoE-deficient atherosclerosis mouse experiment, the aortic PA signal was higher after LPS challenge and lower after the subsequent dexamethasone regimen.",
+      "context": "The comparison concerns relative PA intensity in an aortic region of interest. The AS-only control is an atherosclerotic baseline, not a healthy human comparator; the study does not establish absolute intraplaque superoxide concentration, clinical benefit or event prediction.",
+      "source_locator": "Main PDF pp. 5-6, Results 3.4, Fig. 4a-c; official supplement PDF p. 3, Animal Model and In Vivo Imaging; p. 8, Fig. S7.",
+      "evidence": [
+        {
+          "label": "Main animal model",
+          "value": "Male ApoE-/- mice started at eight weeks; high-fat diet for 16 weeks"
+        },
+        {
+          "label": "Main comparisons",
+          "value": "AS + PBS; AS + LPS; AS + LPS + dexamethasone"
+        },
+        {
+          "label": "Main group size",
+          "value": "n=3 per group, reported in the supplementary methods"
+        },
+        {
+          "label": "Inflammatory challenge",
+          "value": "LPS 50 micrograms in 50 microliters PBS intranasally on days 0 and 1"
+        },
+        {
+          "label": "Anti-inflammatory regimen",
+          "value": "Dexamethasone 2 mg/kg/day intraperitoneally from day 2 to day 8"
+        },
+        {
+          "label": "Probe administration",
+          "value": "ReP 300 microliters at 200 micromolar in PBS via tail vein"
+        },
+        {
+          "label": "Main acquisition",
+          "value": "Pre-/post-probe PA imaging on days 2 and 8; 740 nm; aortic-region ROI"
+        },
+        {
+          "label": "Additional longitudinal sequence",
+          "value": "Fig. S7 displays days 0, 1 and 4; its separate sample count and cohort relationship are not reported"
+        },
+        {
+          "label": "Observed pattern",
+          "value": "LPS-challenged groups have greater day-2 post-probe signal; the DEX group has a lower day-8 signal than AS + LPS; no exact numerical effect size is reconstructed from bars"
+        }
+      ]
+    },
+    {
+      "id": "KF6",
+      "claim": "Lung and plaque histology accompanied the imaging findings: LPS was associated with pulmonary edema and altered plaque composition, while the dexamethasone group showed a different staining pattern.",
+      "context": "Lung wet/dry ratio and plaque staining are experimental tissue readouts. Fig. 6 supplies displayed percentages without per-animal dispersion or a statistical test; these do not demonstrate prevented plaque rupture or reduced human cardiovascular events.",
+      "source_locator": "Main PDF pp. 6-7, Results 3.5-3.6, Figs. 5a-d and 6a-b; official supplement PDF p. 3, animal grouping.",
+      "evidence": [
+        {
+          "label": "Lung comparison",
+          "value": "Higher wet/dry ratio in AS + LPS and lower ratio in AS + LPS + DEX; lung dry-weight differences labeled not significant"
+        },
+        {
+          "label": "Fig. 5 sample/statistical presentation",
+          "value": "N=3, mean +/- SD; caption thresholds: *p<0.05, **p<0.01, ***p<0.001; no exact p values are supplied"
+        },
+        {
+          "label": "Fig. 6 CD68-positive percentages",
+          "value": "Group 1: 24.898%; Group 2: 38.095%; Group 3: 23.285%"
+        },
+        {
+          "label": "Fig. 6 caspase-3-positive percentages",
+          "value": "Group 1: 25%; Group 2: 37.3%; Group 3: 33.7%"
+        },
+        {
+          "label": "Fig. 6 collagen/Masson percentages",
+          "value": "Group 1: 47.9%; Group 2: 34.3%; Group 3: 62.2%"
+        },
+        {
+          "label": "Fig. 6 quantitative boundary",
+          "value": "Displayed figure annotations only; no uncertainty intervals, per-animal values or inferential significance are specified"
+        }
+      ]
+    },
+    {
+      "id": "KF7",
+      "claim": "The study reports limited short-term mouse tolerability observations after ReP administration, using body-weight monitoring and major-organ histology.",
+      "context": "These descriptive observations are narrower than an established biosafety profile. They do not supply a chronic toxicity program, a human safety study or a supported repeated-dose safety margin.",
+      "source_locator": "Main PDF pp. 7-8, Results 3.6; official supplement PDF p. 8, Figs. S8-S9.",
+      "evidence": [
+        {
+          "label": "Reported follow-up",
+          "value": "Seven days in the Fig. S8 caption"
+        },
+        {
+          "label": "Comparison",
+          "value": "ReP versus PBS"
+        },
+        {
+          "label": "Organ histology",
+          "value": "Heart, liver, spleen, lung and kidney; main text specifies C57BL/6 mice for this evaluation"
+        },
+        {
+          "label": "Reported observations",
+          "value": "The authors report no significant body-weight difference and no apparent histopathological injury under the assessed conditions"
+        },
+        {
+          "label": "Unreported details",
+          "value": "Independent tolerability sample count, exact statistical test and long-term toxicity outcomes are not provided"
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "A linked chemical-to-animal evaluation of a BODIPY-peptide probe designed for reversible redox-sensitive photoacoustic imaging.",
+    "Solution concentration-response relationships and three switching cycles, reported separately from relative aortic-region signal measurements.",
+    "A small experimental comparison of the probe response during inflammatory challenge and an anti-inflammatory regimen, accompanied by lung and plaque tissue readouts.",
+    "Explicit separation of reported experimental imaging results from absolute in vivo analyte quantification, rupture prediction, human therapeutic efficacy and established safety."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The reported solution response to superoxide/GSH, bounded by the stated solvent, concentrations, wavelength and interferent panel.",
+      "Relative aortic-region PA signal differences in the stated small ApoE-/- mouse comparison.",
+      "The displayed ex vivo lung and plaque staining observations and limited short-term tolerability observations."
+    ],
+    "does_not_establish": [
+      "Absolute superoxide concentration in living plaques or a validated dual-wavelength PA ratio.",
+      "Clinical sensitivity, specificity, risk discrimination, prediction of plaque rupture or reduced cardiovascular events.",
+      "Human treatment efficacy of dexamethasone or clinical safety, regulatory approval or routine applicability of ReP.",
+      "A universal biological selectivity claim or complete causal demonstration of every proposed lung-to-plaque mechanism."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What experimental systems were actually studied?",
+      "answer": "Controlled chemical solutions and mice were studied. The main atherosclerosis model uses male ApoE-/- mice after 16 weeks of high-fat feeding; the study does not report a cell-culture validation experiment or a human cohort.",
+      "evidence_refs": [
+        "KF3",
+        "KF5",
+        "KF7"
+      ]
+    },
+    {
+      "question": "How does ReP respond to superoxide and glutathione?",
+      "answer": "The authors assign the optical switching to catechol-based oxidation by superoxide and reduction by GSH. Superoxide increases the 740 nm PA response and GSH attenuates it; three alternating cycles are shown in solution.",
+      "evidence_refs": [
+        "KF1",
+        "KF4"
+      ]
+    },
+    {
+      "question": "What quantitative PA calibration was reported?",
+      "answer": "The displayed superoxide PA calibration spans 0 to 80 micromolar and has R-squared 0.977. The GSH panel spans 0 to 300 micromolar and has R-squared 0.982. The separate superoxide absorption titration extends to 125 micromolar; the ranges must not be conflated.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was an absolute or ratiometric plaque redox measurement validated?",
+      "answer": "The displayed animal metric is relative PA intensity in an aortic-region ROI at 740 nm. Although introductory text uses ratiometric language, the figures do not define a validated two-wavelength ratio or convert animal signal into an absolute plaque superoxide concentration.",
+      "evidence_refs": [
+        "KF3",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which inflammatory and treatment conditions were tested in mice?",
+      "answer": "The main groups are AS plus PBS, AS plus LPS, and AS plus LPS followed by dexamethasone, with n=3 per group. LPS is 50 micrograms in 50 microliters PBS intranasally on days 0 and 1. Dexamethasone is 2 mg/kg/day intraperitoneally from day 2 to day 8; ReP is 300 microliters at 200 micromolar via tail vein.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What did histology add to the imaging comparison?",
+      "answer": "Lung wet/dry measurements and H&E support the pulmonary-inflammatory model. Plaque CD68, caspase-3 and Masson staining show group differences; the Fig. 6 percentages are descriptive annotations without supplied per-animal uncertainty or inferential tests.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Does the study show fewer ruptures or clinical treatment benefit?",
+      "answer": "No rupture-prevention or human cardiovascular-event trial is reported. PA signal and tissue staining in these mouse groups do not establish dexamethasone benefit in patients, clinical diagnostic performance or event prediction.",
+      "evidence_refs": [
+        "KF5",
+        "KF6"
+      ]
+    },
+    {
+      "question": "What safety conclusion can be supported?",
+      "answer": "The authors report seven-day body-weight observations and major-organ histology in mice. The independent tolerability n is not supplied; these descriptive results do not establish chronic, repeated-dose or human safety.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "Probe and chemistry": [
+      "ReP",
+      "BODIPY",
+      "catechol redox response",
+      "superoxide anion",
+      "glutathione",
+      "hydrophilic peptide"
+    ],
+    "Measurements": [
+      "photoacoustic intensity at 740 nm",
+      "DLS hydrodynamic diameter",
+      "solution calibration",
+      "aortic-region ROI",
+      "lung wet-to-dry ratio"
+    ],
+    "Experimental context": [
+      "ApoE-deficient mouse",
+      "high-fat diet",
+      "LPS",
+      "dexamethasone",
+      "atherosclerosis",
+      "CD68",
+      "caspase-3",
+      "collagen staining"
+    ]
+  },
+  "limitations": [
+    "The evidence consists of chemical solution experiments and mouse imaging/histology. No cell-culture validation, human participants or clinical diagnostic-validation cohort is reported.",
+    "The main AS comparison has n=3 mice per group. Assay-specific measurements, repeated imaging days, tissue sections and the additional S7 sequence must not be summed into a synthetic unique animal total.",
+    "The PA calibration and in vivo result panels use intensity at 740 nm. Although introductory text uses the term ratiometric, a validated two-wavelength normalization ratio is not specified for the displayed experiments.",
+    "In vivo signals are relative aortic-region observations, not measured absolute superoxide concentrations. Probe distribution, tissue optical properties and endogenous signal are not eliminated as potential contributors by a universal biological-specificity test.",
+    "Solution selectivity applies to the reported 80 micromolar challenge panel. It does not establish complete selectivity in all tissues, across all reductants, or under every biological condition.",
+    "The figures supply calibration R-squared values but no explicit PA-calibration replicate count, limit of detection, limit of quantification, exact regression slope or calibration uncertainty. No values are reconstructed from plotted bars.",
+    "Fig. 6 heatmap percentages have no stated per-animal dispersion or statistical test. They are descriptive annotations, not independently calculated means, confidence intervals or significance claims.",
+    "Random assignment is described in the supplement; blinding, allocation concealment and an a priori sample-size calculation are not reported in the available text.",
+    "LPS/dexamethasone intervention supports experimental group contrasts; it does not independently prove every step of the proposed lung-to-systemic-oxidative-stress-to-plaque cascade, prevent rupture or demonstrate patient benefit.",
+    "Short-term body-weight and organ-histology observations have an unreported independent sample count and do not establish chronic, repeated-dose or human safety.",
+    "Supplementary affiliation/equal-contribution formatting differs from the final main-PDF author footnotes. Full author order, title, DOI and publication date agree between the main PDF, publisher and Crossref; the main version of record governs identity.",
+    "Supplementary synthetic-route temperature labeling differs from the prose description. That synthesis-temperature detail is not promoted into the evidence summary, and no unsupported protocol reconciliation is made."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "relationship": "Site-curated topic connection to atherosclerotic plaque assessment. That paper uses transcriptomic and machine-learning analysis; it is not a chemical PA probe calibration or a direct replication of ReP."
+    },
+    {
+      "doi": "10.1093/eurheartj/ehaf523",
+      "relationship": "Site-curated connection to experimental macrophage and plaque biology. Its efferocytosis experiments address a different mechanistic question and do not validate ReP selectivity or human imaging performance."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://link.springer.com/article/10.1007/s11426-026-3629-x",
+    "doi_url": "https://doi.org/10.1007/s11426-026-3629-x",
+    "supplement_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs11426-026-3629-x/MediaObjects/11426_2026_3629_MOESM1_ESM.pdf",
+    "crossref_url": "https://api.crossref.org/works/10.1007/s11426-026-3629-x",
+    "review_date": "2026-10-12",
+    "review_basis": "All nine main-PDF pages and nine official supplementary-PDF pages reviewed with text extraction and rendered page images; main title, author order, DOI and publication date checked against official publisher and Crossref.",
+    "local_full_text_sha256": "d294321dccefb82a0c35f415b5439aada49cb6adfee3fd76a95ac80c102fa1ca",
+    "official_supplement_sha256": "c43ac693c93e177020bf13533c7b4e7af731ae28cacfe664ecbfa094691dfd46",
+    "quantitative_rule": "Only exact text and figure annotations are reported; no bar-height digitization, reconstructed p values, synthetic animal total or human extrapolation."
+  },
+  "evidence_page_notice": "This page summarizes chemical and mouse experiments from the complete paper and official supplement. PA signal calibration in solution is distinct from relative in vivo imaging. Histology and short-term tolerability are bounded experimental observations; human diagnostic performance, therapeutic benefit and safety remain unestablished.",
+  "discovery_layer": {
+    "field_entry": [
+      "Atherosclerosis molecular imaging",
+      "Reversible photoacoustic probe research"
+    ],
+    "review_topics": [
+      "Redox-responsive optical probes",
+      "Experimental plaque inflammation imaging"
+    ],
+    "scientific_role": "Chemical probe and small animal-model evaluation connecting reversible solution response with relative aortic-region PA readouts.",
+    "evidence_position": "Preclinical chemistry, solution sensing, mouse imaging and tissue observations; no clinical diagnostic or treatment validation.",
+    "related_concepts": [
+      "Superoxide/GSH-responsive signaling",
+      "Probe response versus analyte concentration",
+      "Inflammatory challenge and relative imaging readouts"
+    ],
+    "citation_contexts": [
+      "Methods: a 740 nm reversible solution PA response and the stated small-animal acquisition protocol.",
+      "Results: relative PA signal and accompanying tissue observations under LPS/dexamethasone conditions; no human efficacy or safety claim."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What chemical design supports reversible ReP photoacoustic signaling?",
+        "supported_scope": "Cite the scaffold, solution spectra and bounded authors' redox-mechanism assignment, without asserting independently confirmed intracellular causality.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What solution calibration and reversible behavior were reported?",
+        "supported_scope": "Cite the displayed 740 nm PA calibration ranges/R-squared and three cycles, keeping absorption and PA ranges distinct.",
+        "evidence_refs": [
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How was the inflammatory mouse imaging comparison conducted?",
+        "supported_scope": "Cite the supplementary animal protocol, n=3 per main group, probe dose and acquisition schedule.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What did the probe signal do after LPS challenge and dexamethasone?",
+        "supported_scope": "Cite bounded relative aortic-region PA differences in this experimental model, rather than absolute plaque concentrations or patient benefit.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "What tissue observations accompanied the probe imaging?",
+        "supported_scope": "Cite lung measurements and plaque-staining annotations with their reported statistical or descriptive limits.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "What tolerability evidence is available for ReP?",
+        "supported_scope": "Cite limited short-term mouse weight and organ-histology observations, not an established chronic or human safety profile.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Absolute superoxide concentration in living plaques or a validated dual-wavelength PA ratio.",
+      "Clinical sensitivity, specificity, risk discrimination, prediction of plaque rupture or reduced cardiovascular events.",
+      "Human treatment efficacy of dexamethasone or clinical safety, regulatory approval or routine applicability of ReP.",
+      "A universal biological selectivity claim or complete causal demonstration of every proposed lung-to-plaque mechanism."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-rep-1",
+        "component": "ReP combines a BODIPY scaffold, a hydrophilic peptide segment and catechol-based redox-responsive sites; the authors attribute its reversible optical response to oxidation by superoxide and reduction by GSH.",
+        "context": "The response mechanism is supported by the depicted molecular transformation, solution spectra and molecular-orbital calculations. It is not a demonstrated intracellular signaling pathway or proof of superoxide-specific causal biology in patients.",
+        "finding": "Hydrophilic peptide: N-acetyl-Ala-Ala-Pro-Val-COOH; Native absorption maximum: Approximately 660 nm; Oxidation-related absorption change: Decrease over 550-680 nm and increase over 680-800 nm; GSH reverses the spectral changes; Maximum PA signal increase region: 730-750 nm; Calculated HOMO/LUMO gaps: Approximately 2.0 eV for ReP and 1.7 eV for oxidized ReP; Mechanistic assignment boundary: The authors assign catechol oxidation/reduction; native-probe MS/NMR and DFT are not independent in vivo chemical-product identification",
+        "evidence_level": "Chemical solution experiment / computational support",
+        "scope": "The response mechanism is supported by the depicted molecular transformation, solution spectra and molecular-orbital calculations. It is not a demonstrated intracellular signaling pathway or proof of superoxide-specific causal biology in patients.",
+        "source_locator": "Main PDF pp. 2-3, Results 3.1, Fig. 1a-d; official supplement PDF pp. 2-3, Spectroscopic Measurements and DFT Calculations; pp. 5-6, Figs. S1-S4.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-rep-2",
+        "component": "Peptide-modified ReP had greater aqueous compatibility and a smaller reported hydrodynamic size than the BODIPY-NO2 precursor under the tested conditions.",
+        "context": "DLS characterizes aqueous particles or aggregates. The reported hydrodynamic diameters are not the dimensions of a single molecule, and this comparison does not establish pharmacokinetic behavior or exclusive plaque targeting.",
+        "finding": "Precursor DLS diameter: Approximately 378 nm; ReP DLS diameter: Approximately 69 nm; DLS conditions: 10 micromolar aqueous preparations at 25 degrees C; three independent measurements; Fig. 2f-g spectroscopy comparison: 5 micromolar precursor versus 5 micromolar ReP under matched superoxide stimulation; Interpretation: Improved aqueous dispersion and optical responsiveness in this comparison, not human delivery validation",
+        "evidence_level": "Chemical solution experiment / computational support",
+        "scope": "DLS characterizes aqueous particles or aggregates. The reported hydrodynamic diameters are not the dimensions of a single molecule, and this comparison does not establish pharmacokinetic behavior or exclusive plaque targeting.",
+        "source_locator": "Main PDF p. 3, Results 3.2, Fig. 2b-g; official supplement PDF p. 2, Dynamic Light Scattering.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-rep-3",
+        "component": "Solution measurements showed concentration-dependent PA signal enhancement with superoxide and attenuation with GSH at 740 nm.",
+        "context": "These calibrations quantify signal relationships under the reported solution conditions. The absorption-titration range and the PA calibration range differ; neither is an absolute superoxide-concentration calibration for plaques in vivo.",
+        "finding": "Signal metric: PA intensity at 740 nm; no validated two-wavelength ratio is defined for these displayed calibrations; ReP for absorption titration: 10 micromolar; Superoxide absorption titration: 0-125 micromolar; Superoxide PA calibration shown: 0, 12.5, 25, 50 and 80 micromolar; R-squared = 0.977; GSH PA calibration shown: 0, 50, 100, 200 and 300 micromolar; R-squared = 0.982; Solution preparation: DMSO stocks diluted in PBS at pH 7.4; KO2 in dry DMSO as the superoxide source and fresh GSH in PBS; Reporting boundary: Calibration replication, detection limit and exact slope are not supplied for these panels",
+        "evidence_level": "Chemical solution experiment / computational support",
+        "scope": "These calibrations quantify signal relationships under the reported solution conditions. The absorption-titration range and the PA calibration range differ; neither is an absolute superoxide-concentration calibration for plaques in vivo.",
+        "source_locator": "Main PDF pp. 3-4, Results 3.3, Fig. 3b-g; official supplement PDF p. 2, Spectroscopic Measurements; p. 7, Figs. S5-S6.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-rep-4",
+        "component": "The PA signal switched in three alternating superoxide/GSH cycles, and superoxide produced a greater response than the tested alternative reactive species.",
+        "context": "Reversibility and selectivity were assessed in solution. This finite interferent panel does not establish selectivity against every biological reaction or prove that all in vivo signal differences are solely caused by superoxide.",
+        "finding": "Alternating response cycles: Three; Readout wavelength: 740 nm; Fig. 3j reactive-species challenge: 80 micromolar, as stated in the figure caption; Tested alternative species: The panel includes peroxynitrite, hydroxyl radical, hypochlorous acid and hydrogen peroxide; superoxide shows the pronounced enhancement; Response direction: Superoxide increases PA signal; subsequent GSH decreases it; Scope: Solution redox switching and the reported selectivity panel",
+        "evidence_level": "Chemical solution experiment / computational support",
+        "scope": "Reversibility and selectivity were assessed in solution. This finite interferent panel does not establish selectivity against every biological reaction or prove that all in vivo signal differences are solely caused by superoxide.",
+        "source_locator": "Main PDF p. 4, Results 3.3, Fig. 3h-j; official supplement PDF p. 2, Spectroscopic Measurements.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-rep-5",
+        "component": "In a small ApoE-deficient atherosclerosis mouse experiment, the aortic PA signal was higher after LPS challenge and lower after the subsequent dexamethasone regimen.",
+        "context": "The comparison concerns relative PA intensity in an aortic region of interest. The AS-only control is an atherosclerotic baseline, not a healthy human comparator; the study does not establish absolute intraplaque superoxide concentration, clinical benefit or event prediction.",
+        "finding": "Main animal model: Male ApoE-/- mice started at eight weeks; high-fat diet for 16 weeks; Main comparisons: AS + PBS; AS + LPS; AS + LPS + dexamethasone; Main group size: n=3 per group, reported in the supplementary methods; Inflammatory challenge: LPS 50 micrograms in 50 microliters PBS intranasally on days 0 and 1; Anti-inflammatory regimen: Dexamethasone 2 mg/kg/day intraperitoneally from day 2 to day 8; Probe administration: ReP 300 microliters at 200 micromolar in PBS via tail vein; Main acquisition: Pre-/post-probe PA imaging on days 2 and 8; 740 nm; aortic-region ROI; Additional longitudinal sequence: Fig. S7 displays days 0, 1 and 4; its separate sample count and cohort relationship are not reported; Observed pattern: LPS-challenged groups have greater day-2 post-probe signal; the DEX group has a lower day-8 signal than AS + LPS; no exact numerical effect size is reconstructed from bars",
+        "evidence_level": "Small animal imaging and tissue observations",
+        "scope": "The comparison concerns relative PA intensity in an aortic region of interest. The AS-only control is an atherosclerotic baseline, not a healthy human comparator; the study does not establish absolute intraplaque superoxide concentration, clinical benefit or event prediction.",
+        "source_locator": "Main PDF pp. 5-6, Results 3.4, Fig. 4a-c; official supplement PDF p. 3, Animal Model and In Vivo Imaging; p. 8, Fig. S7.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-rep-6",
+        "component": "Lung and plaque histology accompanied the imaging findings: LPS was associated with pulmonary edema and altered plaque composition, while the dexamethasone group showed a different staining pattern.",
+        "context": "Lung wet/dry ratio and plaque staining are experimental tissue readouts. Fig. 6 supplies displayed percentages without per-animal dispersion or a statistical test; these do not demonstrate prevented plaque rupture or reduced human cardiovascular events.",
+        "finding": "Lung comparison: Higher wet/dry ratio in AS + LPS and lower ratio in AS + LPS + DEX; lung dry-weight differences labeled not significant; Fig. 5 sample/statistical presentation: N=3, mean +/- SD; caption thresholds: *p<0.05, **p<0.01, ***p<0.001; no exact p values are supplied; Fig. 6 CD68-positive percentages: Group 1: 24.898%; Group 2: 38.095%; Group 3: 23.285%; Fig. 6 caspase-3-positive percentages: Group 1: 25%; Group 2: 37.3%; Group 3: 33.7%; Fig. 6 collagen/Masson percentages: Group 1: 47.9%; Group 2: 34.3%; Group 3: 62.2%; Fig. 6 quantitative boundary: Displayed figure annotations only; no uncertainty intervals, per-animal values or inferential significance are specified",
+        "evidence_level": "Small animal imaging and tissue observations",
+        "scope": "Lung wet/dry ratio and plaque staining are experimental tissue readouts. Fig. 6 supplies displayed percentages without per-animal dispersion or a statistical test; these do not demonstrate prevented plaque rupture or reduced human cardiovascular events.",
+        "source_locator": "Main PDF pp. 6-7, Results 3.5-3.6, Figs. 5a-d and 6a-b; official supplement PDF p. 3, animal grouping.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-rep-7",
+        "component": "The study reports limited short-term mouse tolerability observations after ReP administration, using body-weight monitoring and major-organ histology.",
+        "context": "These descriptive observations are narrower than an established biosafety profile. They do not supply a chronic toxicity program, a human safety study or a supported repeated-dose safety margin.",
+        "finding": "Reported follow-up: Seven days in the Fig. S8 caption; Comparison: ReP versus PBS; Organ histology: Heart, liver, spleen, lung and kidney; main text specifies C57BL/6 mice for this evaluation; Reported observations: The authors report no significant body-weight difference and no apparent histopathological injury under the assessed conditions; Unreported details: Independent tolerability sample count, exact statistical test and long-term toxicity outcomes are not provided",
+        "evidence_level": "Descriptive short-term mouse tolerability",
+        "scope": "These descriptive observations are narrower than an established biosafety profile. They do not supply a chronic toxicity program, a human safety study or a supported repeated-dose safety margin.",
+        "source_locator": "Main PDF pp. 7-8, Results 3.6; official supplement PDF p. 8, Figs. S8-S9.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}
