@@ -106,5 +106,26 @@
       {"id": "evidence-science-proposals", "component": "Coordinated updates", "context": "Proposals connect protocol disclosure, serious outcomes, registry links and later notices.", "finding": "Coordinate protocol disclosure, serious-outcome reporting, cross-links and dated publication updates.", "evidence_level": "Letter proposal", "scope": "Proposed practices, not tested effectiveness or treatment causality.", "source_locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context", "evidence_refs": ["KF4"]},
       {"id": "evidence-science-boundary", "component": "Causality boundary", "context": "The conclusion sets limits on what public notices establish.", "finding": "Use public notices to preserve the human experience without assigning blame or settling causality.", "evidence_level": "Explicit Letter boundary", "scope": "Documentation of experience, not adjudication.", "source_locator": "Print p. 39, left column, Letter paragraph 5, immediately before the author line", "evidence_refs": ["KF5"]}
     ]
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Individualized genetic therapy research",
+      "Clinical trial registration and reporting"
+    ],
+    "review_topics": [
+      "Reporting major human outcomes in individualized genetic therapies",
+      "Linking preclinical publications and human trial records"
+    ],
+    "scientific_role": "A Science Letter proposing more current, connected public records of major human outcomes in individualized genetic therapy research.",
+    "evidence_position": "Published reporting and research-governance argument; no new empirical clinical trial, treatment-effect estimate or causal adjudication.",
+    "related_concepts": [
+      "Public trial registry transparency",
+      "Treatment-emergent event reporting",
+      "Event occurrence versus causal attribution"
+    ],
+    "citation_contexts": [
+      "Reviews discussing transparent reporting of serious outcomes in highly individualized genetic therapies.",
+      "Research governance discussions on linking preclinical publications, human protocols, trial registries and dated updates without conflating event reporting with causality."
+    ]
   }
 }

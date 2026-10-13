@@ -1,0 +1,602 @@
+{
+  "version": 2,
+  "doi": "10.71321/fy14v342",
+  "display_title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
+  "summary": "A retrospective public-cohort transcriptomic study identified three circadian-related LUAD clusters and examined outcome, pathway, genomic and immune associations. External template assessment and computational treatment hypotheses are separated from prospective clinical utility. Scientific content follows the official-linked PDF; bibliographic conflicts remain IDENTITY_REVIEW_REQUIRED.",
+  "research_question": "Can circadian-related tumor expression distinguish LUAD molecular clusters with cross-cohort patterns and different retrospective biological and outcome associations?",
+  "author_summary": "The study applies NMF to 2091 reported CRD-related gene entries in TCGA-LUAD and assesses template-based cluster assignment in six named GEO cohorts. Their seven input counts sum to 2090, without participant-level deduplication. C2 generally shows more favorable survival and lipid-metabolic/circadian-related enrichment; C1 shows proliferation and genomic-alteration features, while C3 combines inferred infiltration with suppressive and heterogeneous profiles. Checkpoint expression, TIS, SubMap and cell-line-derived drug predictions generate hypotheses rather than measured subtype-directed treatment benefit. The abstract separately reports 79 immunotherapy records whose allocation remains unresolved. A 151-signature comparison reports TCGA-internal C-index values, with incomplete model attribution and no external performance claim. This supports retrospective molecular classification and association, not direct clock measurement, causal mechanisms or prospective clinical utility. The scientific PDF and retained site bibliographic identity are described separately in Provenance.",
+  "evidence_page_notice": "Scientific evidence synthesis based on the official-linked 16-author PDF, distinct from its abstract. The current 14-author site bibliographic record is preserved. Official authorship, date and pagination conflicts remain IDENTITY_REVIEW_REQUIRED; publishing this scientific V2 does not claim they are resolved.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective public bulk-transcriptomic classification, external NTP assignment and outcome/annotation analysis, with separate computational treatment-response hypotheses",
+    "evidence_type": "Human tumor-expression associations and cross-cohort assessment; genomic/immune annotations and computational drug/response prediction",
+    "population": "Public LUAD tumor-expression cohorts; separately reported immunotherapy reference records with unresolved composition. No prospective subtype-guided trial or new single-cell experiment.",
+    "primary_endpoint": "Expression-defined C1/C2/C3 cluster structure and cross-cohort template assignment",
+    "secondary_endpoint": "Retrospective survival, pathway, genomic and inferred immune differences; computational treatment hypotheses and within-TCGA signature comparisons",
+    "data_modalities": [
+      "Bulk tumor transcriptomics",
+      "Retrospective survival and clinical annotations",
+      "Somatic mutation and GISTIC copy-number annotations",
+      "GSVA/GSEA pathway scores",
+      "Bulk-expression immune inference",
+      "TIS and SubMap expression similarity",
+      "Cell-line-based drug-response prediction"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "TCGA-LUAD reported input",
+        "value": "497 cohort records"
+      },
+      {
+        "label": "GSE72094 reported input",
+        "value": "442 cohort records"
+      },
+      {
+        "label": "GSE68465 reported input",
+        "value": "462 cohort records"
+      },
+      {
+        "label": "GSE50081 reported input",
+        "value": "127 cohort records"
+      },
+      {
+        "label": "GSE42127 reported input",
+        "value": "133 cohort records"
+      },
+      {
+        "label": "GSE41271 reported input",
+        "value": "183 cohort records"
+      },
+      {
+        "label": "GSE31210 reported input",
+        "value": "246 cohort records"
+      },
+      {
+        "label": "Reported LUAD input arithmetic",
+        "value": "2090 across seven listed cohorts; not a deduplicated participant total"
+      },
+      {
+        "label": "Separate immunotherapy abstract count",
+        "value": "79 records; split and overlap unresolved"
+      },
+      {
+        "label": "CRD-related gene list",
+        "value": "2091 entries reported"
+      },
+      {
+        "label": "Expression clusters",
+        "value": "Three: C1, C2 and C3"
+      },
+      {
+        "label": "External NTP assessment",
+        "value": "Six named GEO cohorts; retrospective and confidence-filtered"
+      }
+    ],
+    "counting_note": "The seven LUAD input counts sum arithmetically to 2090. Participant-level disjointness is not established; filtered classification/survival and genomic subsets have their own denominators. The 79 immunotherapy records are a separate abstract-reported reference count, not added to claim a unique total. External validation here means retrospective template assignment and outcome association, not prospective clinical utility or treatment-response validation."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Retrospective transcriptomic analysis selected three CRD-expression clusters in TCGA-LUAD and assessed transfer of template features to six GEO cohorts.",
+      "context": "Retrospective public-cohort classification. Seven reported LUAD input counts sum to 2090 without participant-level proof of disjointness. NTP confidence filtering and incomplete clinical information affect downstream denominators; external template assessment is not prospective clinical validation.",
+      "source_locator": "PDF p. 3 / print p. 16, Method: Data acquisition and procession and Development and validation of CRD-related subtypes; PDF p. 4 / print p. 17, Results: Identification and Validation; PDF p. 5 / print p. 18, actual NMF and template-feature panels; official Supplementary Fig. S1 and Table S1. Results say five external cohorts but name six GEO accessions.",
+      "evidence": [
+        {
+          "label": "Reported CRD-related gene entries",
+          "value": "2091"
+        },
+        {
+          "label": "TCGA-LUAD input records",
+          "value": "497"
+        },
+        {
+          "label": "Expression clusters",
+          "value": "3"
+        },
+        {
+          "label": "Named external GEO cohorts",
+          "value": "GSE72094; GSE68465; GSE50081; GSE42127; GSE41271; GSE31210"
+        },
+        {
+          "label": "Candidate NMF ranks",
+          "value": "2-7"
+        },
+        {
+          "label": "Iterations stated in Methods",
+          "value": "100"
+        },
+        {
+          "label": "NMF method",
+          "value": "lee"
+        },
+        {
+          "label": "NTP confidence handling",
+          "value": "FDR <0.05; text says records with FDR >0.05 excluded"
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "The clusters had different observed survival patterns, with C2 generally more favorable and C1 generally less favorable in the reported analyses.",
+      "context": "Kaplan-Meier comparisons describe outcome associations. C2 generally has more favorable survival and C1 generally less favorable survival, but the GSE42127 plot does not show the same ranking throughout. These are not treatment effects or a calibrated clinical risk rule.",
+      "source_locator": "PDF p. 4 / print p. 17, Identification and Validation Results; PDF p. 5 / print p. 18, actual TCGA Kaplan-Meier panel C; PDF p. 8 / print p. 21, actual proportions and survival panels A-F, despite the Figure 3 functional-enrichment caption; official Supplementary Fig. S2A (GSE50081).",
+      "evidence": [
+        {
+          "label": "Displayed TCGA log-rank P",
+          "value": "0.0062"
+        },
+        {
+          "label": "Displayed GSE50081 log-rank P",
+          "value": "0.00991"
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "The inferred functional patterns distinguish proliferation-related C1, lipid-metabolic C2 and immune-associated C3.",
+      "context": "GSVA/GSEA and pathway annotations are computed from bulk tumor expression. They do not directly measure individual circadian phase, sleep behavior or metabolic flux, and do not establish circadian disruption as the cause of the phenotypes.",
+      "source_locator": "PDF p. 4 / print p. 17, Method: Exploring specific biological characteristics; PDF p. 7 / print p. 20, Results: Underlying biological functional processes; PDF p. 6 / print p. 19, actual enrichment heatmap and GSEA plots, despite the Figure 2 proportions/survival caption; official Supplementary Fig. S2B.",
+      "evidence": [
+        {
+          "label": "C1 expression features",
+          "value": "Cell cycle, DNA replication and E2F-related enrichment"
+        },
+        {
+          "label": "C2 expression features",
+          "value": "Lipid-metabolic and circadian sleep-wake gene-set enrichment"
+        },
+        {
+          "label": "C3 expression features",
+          "value": "Cytokine, chemokine, complement and other immune-related expression enrichment"
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "TCGA annotation analyses associated C1 with greater mutation and copy-number-alteration burdens.",
+      "context": "TCGA mutation and CNV annotations are associated with the expression-defined clusters. They do not demonstrate that clock disruption caused TP53 changes, genomic instability, proliferation or immune escape. Genomic-data availability need not equal expression-input n.",
+      "source_locator": "PDF p. 4 / print p. 17, Method: Somatic mutation and copy number variation analysis; PDF p. 7 / print p. 20, Results: Genomic alterations; PDF p. 9 / print p. 22, actual mutation waterfall and CNV panels (Figure 4); official Supplementary Fig. S2C.",
+      "evidence": [
+        {
+          "label": "Genomic analyses",
+          "value": "Somatic mutation, GISTIC-based focal/arm CNV, FGA/FGG/FGL and inferred stemness"
+        },
+        {
+          "label": "Genes emphasized in Results",
+          "value": "TP53; TTN"
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "C3 showed stronger inferred immune infiltration together with immune-suppressive expression features and higher inferred intratumor heterogeneity.",
+      "context": "Bulk-expression inference and genomic/immune scores describe associations. Greater infiltration can coexist with suppression. These analyses do not directly enumerate cells, prove immune-escape mechanisms or constitute single-cell validation.",
+      "source_locator": "PDF p. 4 / print p. 17, Method: Depicting distinct immune landscape; PDF p. 7 / print p. 20, Results: Immune infiltration and immune escape landscape; PDF p. 10 / print p. 23, actual immune-score, HLA and heterogeneity panels (Figure 5); official Supplementary Fig. S2D and Table S2.",
+      "evidence": [
+        {
+          "label": "Immune inference",
+          "value": "28 ssGSEA subsets; additional expression-inference methods"
+        },
+        {
+          "label": "Additional immune algorithms",
+          "value": "ESTIMATE; TIMER; quanTIseq; MCP-counter; EPIC; xCell"
+        },
+        {
+          "label": "Immune/heterogeneity annotations",
+          "value": "IPS, S score, HLA expression and external annotation signatures"
+        }
+      ]
+    },
+    {
+      "id": "KF6",
+      "claim": "Checkpoint-expression, TIS and SubMap results generated an immunotherapy-response hypothesis for C3.",
+      "context": "Checkpoint expression, TIS and SubMap provide indirect response hypotheses. The abstract separately reports 79 reference records, but their split, second cohort identity, tumor composition and participant overlap remain unresolved. No prospective LUAD subtype-guided treatment effect is established.",
+      "source_locator": "PDF p. 2 / print p. 15, Abstract Methods (79-record statement); PDF p. 4 / print p. 17, immunotherapy Methods; PDF p. 7 / print p. 20, Results: The assessment of response to immunotherapy; PDF p. 11 / print p. 24, actual checkpoint, TIS and SubMap panels A-C; PDF p. 13 / print p. 26, Data availability.",
+      "evidence": [
+        {
+          "label": "Immune-checkpoint panel",
+          "value": "27"
+        },
+        {
+          "label": "TIS inflammatory gene count",
+          "value": "18"
+        },
+        {
+          "label": "Immunotherapy reference scope",
+          "value": "Two reference cohorts, 79 records as reported in Abstract; specific split unverified"
+        },
+        {
+          "label": "SubMap analysis",
+          "value": "Expression similarity to responders; nominal and Bonferroni-adjusted SubMap p values"
+        },
+        {
+          "label": "Separate abstract count",
+          "value": "79 immunotherapy records; not combined with the seven LUAD input counts"
+        }
+      ]
+    },
+    {
+      "id": "KF7",
+      "claim": "Cell-line-based computational drug-response estimates were associated with subtype and remain treatment hypotheses.",
+      "context": "The reported pRRophetic/CTRP/PRISM drug-response estimates are computational. Their axes say estimated AUC while the text calls the endpoint IC50; the text names prednisone while the supplement names prednisolone. No exact IC50 or clinical drug recommendation is inferred.",
+      "source_locator": "PDF p. 7 / print p. 20, Results: Potential drug development; PDF p. 11 / print p. 24, actual drug-response panels under label D, although the caption assigns drugs to D/E; official Supplementary Fig. S2E-F; PDF pp. 12-13 / print pp. 25-26, Discussion limitations.",
+      "evidence": [
+        {
+          "label": "Drug-prediction method reported",
+          "value": "pRRophetic using CTRP and PRISM sensitivity data"
+        },
+        {
+          "label": "Main displayed drug axes",
+          "value": "Estimated AUC of docetaxel; Estimated AUC of dexamethasone"
+        },
+        {
+          "label": "Supplementary displayed drug axes",
+          "value": "Estimated AUC of paclitaxel; Estimated AUC of prednisolone"
+        }
+      ]
+    },
+    {
+      "id": "KF8",
+      "claim": "The article reports an exploratory comparison of 151 existing prognostic signatures within TCGA subtypes.",
+      "context": "Risk scores were recalculated and candidate signatures compared within the same TCGA data. These best-candidate C-index values are exploratory within-cohort discrimination, not external performance or prospective utility. The Chen EG (2017) attribution remains unresolved because reference 41 does not clearly identify the claimed prognostic model.",
+      "source_locator": "PDF p. 4 / print p. 17, Method: Personalized management for distinct subtypes; PDF p. 12 / print p. 25, Clinical delicacy management and Discussion; PDF p. 11 / print p. 24, actual C-index comparison under panel E (text/caption refer to F, but no F panel is displayed); PDF p. 15 / print p. 28, references 41-42.",
+      "evidence": [
+        {
+          "label": "Candidate prognostic signatures",
+          "value": "151"
+        },
+        {
+          "label": "Article-reported C1 C-index",
+          "value": "0.741"
+        },
+        {
+          "label": "Article-reported C2 C-index",
+          "value": "0.698"
+        },
+        {
+          "label": "Article-reported C3 C-index",
+          "value": "0.796"
+        },
+        {
+          "label": "Reported model labels",
+          "value": "Chen EG (2017) for C1/C2; Ma B (2020) for C3, as attributed by this article"
+        },
+        {
+          "label": "Source-attribution boundary",
+          "value": "The Discussion names 21-gene and 16-gene models, but their exact source-to-model mapping is not independently established here; reference 41 is a DGCR5/miR-1180 paper"
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "Three circadian-related LUAD expression clusters with external template assessment.",
+    "A combined description of retrospective outcome, pathway, genomic and inferred immune differences.",
+    "Treatment and signature-comparison hypotheses with explicit computed-versus-clinical evidence boundaries.",
+    "Source-specific counting and locators that retain figure-caption and bibliographic-version discrepancies."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Retrospective LUAD expression clustering and cross-cohort NTP assessment under the reported confidence filtering.",
+      "Reported outcome, pathway, genomic and inferred immune associations for expression-defined clusters.",
+      "Computational treatment hypotheses and article-reported within-TCGA signature comparisons, with source gaps retained."
+    ],
+    "does_not_establish": [
+      "A prospective subtype-guided clinical trial, treatment benefit or clinical decision rule.",
+      "Direct measurement of patient circadian phase, sleep behavior or causal circadian mechanisms.",
+      "Immunotherapy response rates, benefit probabilities or chemotherapy/corticosteroid recommendations for the subtypes.",
+      "A deduplicated unique-patient total spanning LUAD and immunotherapy datasets.",
+      "Externally validated best-signature performance, calibration, decision benefit or resolved Chen EG model attribution.",
+      "Resolved author order, dates or pagination across the conflicting official bibliographic records."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which cohorts contribute the reported LUAD input count?",
+      "answer": "The counts are TCGA-LUAD 497, GSE72094 442, GSE68465 462, GSE50081 127, GSE42127 133, GSE41271 183 and GSE31210 246. Their arithmetic sum is 2090, without participant-level deduplication. The separate 79 immunotherapy records are not added.",
+      "evidence_refs": [
+        "KF1",
+        "KF6"
+      ]
+    },
+    {
+      "question": "How were the subtypes developed and assessed across cohorts?",
+      "answer": "NMF selected three TCGA clusters from the reported 2091 CRD-related gene entries. NTP assessed template assignment in the six named GEO cohorts with confidence filtering. Results say five cohorts while listing six; this remains retrospective expression assessment.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What survival pattern was reported for C1, C2 and C3?",
+      "answer": "C2 generally had more favorable survival and C1 generally less favorable survival. Cohort-specific plots do not establish identical ranking everywhere. The TCGA log-rank P of 0.0062 is an association result, not a treatment effect or validated decision rule.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Do circadian-related expression differences directly measure a patient clock?",
+      "answer": "No direct circadian-phase, sleep or metabolic-flux measurement is reported. Enrichment associates C1 with proliferation, C2 with lipid-metabolic and circadian sleep-wake gene sets, and C3 with immune programs; it does not establish circadian causation.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What genomic features were associated with the clusters?",
+      "answer": "TCGA annotation analyses associated C1 with greater mutation and copy-number-alteration burdens. These comparisons and inferred stemness scores do not show that clock disruption caused TP53 changes, genomic instability or immune escape.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Why can C3 show high infiltration and a suppressive immune profile?",
+      "answer": "Expression-based analyses report higher infiltration together with lower IPS, higher S-score and higher inferred heterogeneity for C3. Cell abundance and function are different questions; bulk scores do not directly prove suppressive cellular mechanisms.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Did the study establish immunotherapy benefit for C3 patients?",
+      "answer": "Checkpoint expression, TIS and SubMap similarity support a response hypothesis. The separately reported 79 reference records are incompletely resolved by cohort and diagnosis, and no prospective subtype-guided response or benefit evaluation is reported.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What can be concluded from predicted drug-sensitivity differences?",
+      "answer": "Computed displays suggest subtype-associated drug-response metrics. Their axes label estimated AUC while text says IC50, and steroid naming differs between text and supplement. They do not justify clinical chemotherapy or corticosteroid recommendations.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "How should the 151-signature C-index comparison be interpreted?",
+      "answer": "The article reports TCGA-internal C-index values 0.741 for C1 and 0.698 for C2 under Chen EG (2017), and 0.796 for C3 under Ma B (2020). These are retrospective candidate-selection results, with unresolved exact Chen-model attribution and no established external performance or clinical utility.",
+      "evidence_refs": [
+        "KF8"
+      ]
+    }
+  ],
+  "concepts": {
+    "Molecular classification": [
+      "Circadian-related tumor expression",
+      "LUAD heterogeneity",
+      "NMF clusters",
+      "Nearest template prediction"
+    ],
+    "Associated features": [
+      "Proliferation enrichment",
+      "Lipid-metabolic pathways",
+      "Somatic mutation",
+      "Copy-number alteration",
+      "Inferred immune infiltration"
+    ],
+    "Evidence boundaries": [
+      "Retrospective survival association",
+      "TIS",
+      "SubMap",
+      "Predicted drug response",
+      "Within-cohort C-index comparison"
+    ]
+  },
+  "limitations": [
+    "Retrospective and largely computational evidence; no prospective subtype-guided treatment trial or direct patient circadian-physiology experiment is reported.",
+    "The seven LUAD input counts sum arithmetically to 2090. Participant-level disjointness is not established, and the separately reported 79 immunotherapy records are not added to claim a unique total.",
+    "NTP confidence filtering and incomplete clinical information alter analysis denominators. The input cohort counts are not every downstream survival, genomic or prediction denominator.",
+    "Validation Results say five external cohorts while naming six GEO accessions. Six named cohorts are described; accession differences alone do not prove patient disjointness.",
+    "The adopted PDF swaps Figure 2/3 captions relative to visual content: PDF p. 6 / print p. 19 is enrichment; PDF p. 8 / print p. 21 is proportions/survival. Locators identify actual page and content.",
+    "Template-feature heatmap labels conflict with referenced cohort names: one says GSE64865 and another says GSE42127 where its caption says GSE41271. Their identity is not repaired by guess.",
+    "The 79 immunotherapy reference records lack a verified cohort split, adequately identified second source, tumor-histology breakdown and overlap crosswalk. Data availability cites references 60/61 absent from the supplied list ending at 52.",
+    "TIS, checkpoint expression and SubMap are indirect predictions or similarity analyses, not actual response rates, benefit probabilities or a recommendation to give immunotherapy to C3 patients.",
+    "Drug text/axis IC50 versus estimated-AUC and prednisone versus prednisolone discrepancies are retained. Predicted sensitivity does not establish clinical chemotherapy or corticosteroid benefit.",
+    "The 151-signature comparison ranks recalculated candidates within TCGA. The reported best C-index values do not establish external validation, calibration, decision benefit or resolved Chen EG model attribution.",
+    "Supplementary legends mention S3/S4 silhouette and survival analyses, but the supplied official ZIP contains only S1/S2 images. Their unavailable adjusted hazard ratios, confidence intervals and independent prognostic claims are not supplied.",
+    "Table S1 contains 2091 listed entries including apparent spreadsheet date-conversion tokens. They are not corrected or used to assert an independently reproduced clean gene signature.",
+    "IDENTITY_REVIEW_REQUIRED: scientific synthesis adopts the official-linked 16-author PDF, 2025-06-30 and print pages 14-28. Current 14-author site bibliographic metadata is preserved; authorship/order, publisher dates and e137 versus print pagination remain unresolved."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.joim.2025.06.003",
+      "relationship": "Site-curated thematic connection to another circadian-related cancer expression-subtyping study. Its HCC cohorts do not validate LUAD clusters, shared patients or treatment benefit."
+    },
+    {
+      "doi": "10.1038/s41698-026-01699-1",
+      "relationship": "Site-curated connection to circadian-related colorectal cancer systems biology. Its experiments address a different disease and are not evidence newly produced by this LUAD study."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.lifeconflux.com/10.71321/fy14v342/",
+    "publisher_ojs_url": "https://ojs.lifeconfluxpress.com/index.php/lifeconflux/article/view/fy14v342",
+    "official_pdf_url": "https://ojs.lifeconfluxpress.com/index.php/lifeconflux/article/download/fy14v342/Download",
+    "crossref_url": "https://api.crossref.org/works/10.71321/fy14v342",
+    "supplement_url": "https://www.lifeconflux.com/static/Papers/2025_Volume1_Issue3/4/Supplementary%20Material.zip",
+    "source_version": "Scientific synthesis adopts the official OJS-linked PDF marked vor in Crossref, byte-identical to the supplied 15-page PDF. SHA-256: 80b8e8c5e22ac793661e01123bdddcf42ae02f9503bb55acaaa26369b021c776. It prints 2025-06-30, Life Conflux 1(3):14-28; PDF pages and actual visual content govern evidence locators.",
+    "review_basis": "The complete PDF and available official S1/S2 figures and Tables S1/S2 were previously reviewed. This release rechecked cohort/validation wording, the 151-signature Methods/Results and actual swapped Figure 2/3 images, reusing retained source hashes and audits.",
+    "identity_status": "IDENTITY_REVIEW_REQUIRED. Scientific V2 is published independently of unresolved official bibliographic identity; current site master/citation authors, date fields, DOI, slug and canonical are preserved.",
+    "author_version_conflict": "The adopted PDF has 16 authors: Ruhao Wu, Teng Li, Kaisaierjiang Kadier, Pengyuan Xu, Peiyu Yuan, Tinglan Fu, Yu Yang, Xufeng Huang, Zhou Shujing, Zhengrui Li, Pengpeng Zhang, Song-Bin Guo, Haonan Zhang, Shiqian Zhang, Chaoyang Yu, Ge Zhang. OJS/Crossref have 14 including Shuai Xu and omitting Tinglan Fu, Zhengrui Li and Pengpeng Zhang. The other publisher main byline has 16 but Teng Li fifteenth. This evidence layer does not select a definitive author order.",
+    "date_pagination_conflict": "PDF/full-text history/Crossref online date: 2025-06-30. OJS display/citation date: 2025-10-20; DC issued: 2025-06-15. PDF pages: 14-28; OJS/Crossref: e137. These source-version observations do not replace retained site citation metadata.",
+    "figure_locator_rule": "PDF p. 6 / print p. 19 is enrichment with a Figure 2 survival caption; PDF p. 8 / print p. 21 is proportions/survival with a Figure 3 enrichment caption. PDF p. 11 / print p. 24 has drug panels D and signature panels E; text/caption instead refer to signature F. Locators specify actual page/content.",
+    "prediction_boundary": "TIS, SubMap and drug outputs are indirect/computational. The 151-signature C-index values are exploratory within-TCGA comparisons; exact Chen-model attribution remains unresolved. No result is promoted to demonstrated clinical treatment effectiveness.",
+    "source_protection": "Full PDFs, page images, raw publisher snapshots and detailed audits remain outside the public repository. The evidence layer contains original paraphrases, source hashes, source-specific limits and locators."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Lung adenocarcinoma molecular research",
+      "Cancer transcriptomic systems biology"
+    ],
+    "review_topics": [
+      "Circadian-related expression subtypes in LUAD",
+      "Retrospective subtype associations and treatment-response hypotheses"
+    ],
+    "scientific_role": "A public-cohort LUAD expression-classification study with external template assessment, biological associations and computational treatment hypotheses.",
+    "evidence_position": "Retrospective expression and annotation evidence; not direct rhythm measurement, prospective subtype-guided treatment utility or externally validated best-model performance.",
+    "related_concepts": [
+      "Molecular heterogeneity",
+      "Cross-cohort template assignment",
+      "Association versus clinical utility"
+    ],
+    "citation_contexts": [
+      "Reviews of circadian-related cancer expression heterogeneity and retrospective molecular-subtype associations.",
+      "Methods discussions separating template transfer, outcome association, immune/drug prediction and within-cohort model comparison from clinical validation."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What supports the proposed LUAD expression clusters across cohorts?",
+        "supported_scope": "Cite retrospective NMF/NTP and reported input counts, with confidence filtering and no unique-patient total.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How do outcomes differ across the expression-defined clusters?",
+        "supported_scope": "Cite observed cohort-specific survival and within-TCGA comparisons, without prospective performance or treatment-effect claims.",
+        "evidence_refs": [
+          "KF2",
+          "KF8"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which biological and genomic associations characterize the clusters?",
+        "supported_scope": "Cite enrichment and annotation patterns, without causal clock, metabolic-flux or mutation mechanisms.",
+        "evidence_refs": [
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What immune features were inferred for C3?",
+        "supported_scope": "Cite bulk-expression and heterogeneity scores, not directly measured immune function or causal escape.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "How were immunotherapy-response hypotheses generated?",
+        "supported_scope": "Cite checkpoint, TIS and SubMap inference with unresolved reference composition and no response-benefit validation.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "What is the evidence boundary for predicted drug sensitivity?",
+        "supported_scope": "Cite computational hypotheses while retaining endpoint/compound discrepancies and excluding clinical recommendations.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A prospective subtype-guided clinical trial, treatment benefit or clinical decision rule.",
+      "Direct measurement of patient circadian phase, sleep behavior or causal circadian mechanisms.",
+      "Immunotherapy response rates, benefit probabilities or chemotherapy/corticosteroid recommendations for the subtypes.",
+      "A deduplicated unique-patient total spanning LUAD and immunotherapy datasets.",
+      "Externally validated best-signature performance, calibration, decision benefit or resolved Chen EG model attribution.",
+      "Resolved author order, dates or pagination across the conflicting official bibliographic records."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-luad-1",
+        "component": "Classification and external assignment",
+        "context": "Retrospective public-cohort classification. Seven reported LUAD input counts sum to 2090 without participant-level proof of disjointness. NTP confidence filtering and incomplete clinical information affect downstream denominators; external template assessment is not prospective clinical validation.",
+        "finding": "Reported CRD-related gene entries: 2091; TCGA-LUAD input records: 497; Expression clusters: 3; Named external GEO cohorts: GSE72094; GSE68465; GSE50081; GSE42127; GSE41271; GSE31210; Candidate NMF ranks: 2-7; Iterations stated in Methods: 100; NMF method: lee; NTP confidence handling: FDR <0.05; text says records with FDR >0.05 excluded",
+        "evidence_level": "Retrospective expression/annotation analysis",
+        "scope": "Retrospective transcriptomic analysis selected three CRD-expression clusters in TCGA-LUAD and assessed transfer of template features to six GEO cohorts. Retrospective public-cohort classification. Seven reported LUAD input counts sum to 2090 without participant-level proof of disjointness. NTP confidence filtering and incomplete clinical information affect downstream denominators; external template assessment is not prospective clinical validation.",
+        "source_locator": "PDF p. 3 / print p. 16, Method: Data acquisition and procession and Development and validation of CRD-related subtypes; PDF p. 4 / print p. 17, Results: Identification and Validation; PDF p. 5 / print p. 18, actual NMF and template-feature panels; official Supplementary Fig. S1 and Table S1. Results say five external cohorts but name six GEO accessions.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-luad-2",
+        "component": "Retrospective outcome patterns",
+        "context": "Kaplan-Meier comparisons describe outcome associations. C2 generally has more favorable survival and C1 generally less favorable survival, but the GSE42127 plot does not show the same ranking throughout. These are not treatment effects or a calibrated clinical risk rule.",
+        "finding": "Displayed TCGA log-rank P: 0.0062; Displayed GSE50081 log-rank P: 0.00991",
+        "evidence_level": "Retrospective expression/annotation analysis",
+        "scope": "The clusters had different observed survival patterns, with C2 generally more favorable and C1 generally less favorable in the reported analyses. Kaplan-Meier comparisons describe outcome associations. C2 generally has more favorable survival and C1 generally less favorable survival, but the GSE42127 plot does not show the same ranking throughout. These are not treatment effects or a calibrated clinical risk rule.",
+        "source_locator": "PDF p. 4 / print p. 17, Identification and Validation Results; PDF p. 5 / print p. 18, actual TCGA Kaplan-Meier panel C; PDF p. 8 / print p. 21, actual proportions and survival panels A-F, despite the Figure 3 functional-enrichment caption; official Supplementary Fig. S2A (GSE50081).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-luad-3",
+        "component": "Expression pathway associations",
+        "context": "GSVA/GSEA and pathway annotations are computed from bulk tumor expression. They do not directly measure individual circadian phase, sleep behavior or metabolic flux, and do not establish circadian disruption as the cause of the phenotypes.",
+        "finding": "C1 expression features: Cell cycle, DNA replication and E2F-related enrichment; C2 expression features: Lipid-metabolic and circadian sleep-wake gene-set enrichment; C3 expression features: Cytokine, chemokine, complement and other immune-related expression enrichment",
+        "evidence_level": "Retrospective expression/annotation analysis",
+        "scope": "The inferred functional patterns distinguish proliferation-related C1, lipid-metabolic C2 and immune-associated C3. GSVA/GSEA and pathway annotations are computed from bulk tumor expression. They do not directly measure individual circadian phase, sleep behavior or metabolic flux, and do not establish circadian disruption as the cause of the phenotypes.",
+        "source_locator": "PDF p. 4 / print p. 17, Method: Exploring specific biological characteristics; PDF p. 7 / print p. 20, Results: Underlying biological functional processes; PDF p. 6 / print p. 19, actual enrichment heatmap and GSEA plots, despite the Figure 2 proportions/survival caption; official Supplementary Fig. S2B.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-luad-4",
+        "component": "Genomic annotation associations",
+        "context": "TCGA mutation and CNV annotations are associated with the expression-defined clusters. They do not demonstrate that clock disruption caused TP53 changes, genomic instability, proliferation or immune escape. Genomic-data availability need not equal expression-input n.",
+        "finding": "Genomic analyses: Somatic mutation, GISTIC-based focal/arm CNV, FGA/FGG/FGL and inferred stemness; Genes emphasized in Results: TP53; TTN",
+        "evidence_level": "Retrospective expression/annotation analysis",
+        "scope": "TCGA annotation analyses associated C1 with greater mutation and copy-number-alteration burdens. TCGA mutation and CNV annotations are associated with the expression-defined clusters. They do not demonstrate that clock disruption caused TP53 changes, genomic instability, proliferation or immune escape. Genomic-data availability need not equal expression-input n.",
+        "source_locator": "PDF p. 4 / print p. 17, Method: Somatic mutation and copy number variation analysis; PDF p. 7 / print p. 20, Results: Genomic alterations; PDF p. 9 / print p. 22, actual mutation waterfall and CNV panels (Figure 4); official Supplementary Fig. S2C.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-luad-5",
+        "component": "Inferred immune landscape",
+        "context": "Bulk-expression inference and genomic/immune scores describe associations. Greater infiltration can coexist with suppression. These analyses do not directly enumerate cells, prove immune-escape mechanisms or constitute single-cell validation.",
+        "finding": "Immune inference: 28 ssGSEA subsets; additional expression-inference methods; Additional immune algorithms: ESTIMATE; TIMER; quanTIseq; MCP-counter; EPIC; xCell; Immune/heterogeneity annotations: IPS, S score, HLA expression and external annotation signatures",
+        "evidence_level": "Retrospective expression/annotation analysis",
+        "scope": "C3 showed stronger inferred immune infiltration together with immune-suppressive expression features and higher inferred intratumor heterogeneity. Bulk-expression inference and genomic/immune scores describe associations. Greater infiltration can coexist with suppression. These analyses do not directly enumerate cells, prove immune-escape mechanisms or constitute single-cell validation.",
+        "source_locator": "PDF p. 4 / print p. 17, Method: Depicting distinct immune landscape; PDF p. 7 / print p. 20, Results: Immune infiltration and immune escape landscape; PDF p. 10 / print p. 23, actual immune-score, HLA and heterogeneity panels (Figure 5); official Supplementary Fig. S2D and Table S2.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-luad-6",
+        "component": "Indirect immunotherapy hypotheses",
+        "context": "Checkpoint expression, TIS and SubMap provide indirect response hypotheses. The abstract separately reports 79 reference records, but their split, second cohort identity, tumor composition and participant overlap remain unresolved. No prospective LUAD subtype-guided treatment effect is established.",
+        "finding": "Immune-checkpoint panel: 27; TIS inflammatory gene count: 18; Immunotherapy reference scope: Two reference cohorts, 79 records as reported in Abstract; specific split unverified; SubMap analysis: Expression similarity to responders; nominal and Bonferroni-adjusted SubMap p values; Separate abstract count: 79 immunotherapy records; not combined with the seven LUAD input counts",
+        "evidence_level": "Computational hypothesis",
+        "scope": "Checkpoint-expression, TIS and SubMap results generated an immunotherapy-response hypothesis for C3. Checkpoint expression, TIS and SubMap provide indirect response hypotheses. The abstract separately reports 79 reference records, but their split, second cohort identity, tumor composition and participant overlap remain unresolved. No prospective LUAD subtype-guided treatment effect is established.",
+        "source_locator": "PDF p. 2 / print p. 15, Abstract Methods (79-record statement); PDF p. 4 / print p. 17, immunotherapy Methods; PDF p. 7 / print p. 20, Results: The assessment of response to immunotherapy; PDF p. 11 / print p. 24, actual checkpoint, TIS and SubMap panels A-C; PDF p. 13 / print p. 26, Data availability.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-luad-7",
+        "component": "Predicted drug-response hypotheses",
+        "context": "The reported pRRophetic/CTRP/PRISM drug-response estimates are computational. Their axes say estimated AUC while the text calls the endpoint IC50; the text names prednisone while the supplement names prednisolone. No exact IC50 or clinical drug recommendation is inferred.",
+        "finding": "Drug-prediction method reported: pRRophetic using CTRP and PRISM sensitivity data; Main displayed drug axes: Estimated AUC of docetaxel; Estimated AUC of dexamethasone; Supplementary displayed drug axes: Estimated AUC of paclitaxel; Estimated AUC of prednisolone",
+        "evidence_level": "Computational hypothesis",
+        "scope": "Cell-line-based computational drug-response estimates were associated with subtype and remain treatment hypotheses. The reported pRRophetic/CTRP/PRISM drug-response estimates are computational. Their axes say estimated AUC while the text calls the endpoint IC50; the text names prednisone while the supplement names prednisolone. No exact IC50 or clinical drug recommendation is inferred.",
+        "source_locator": "PDF p. 7 / print p. 20, Results: Potential drug development; PDF p. 11 / print p. 24, actual drug-response panels under label D, although the caption assigns drugs to D/E; official Supplementary Fig. S2E-F; PDF pp. 12-13 / print pp. 25-26, Discussion limitations.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      },
+      {
+        "id": "evidence-luad-8",
+        "component": "Within-TCGA signature comparison",
+        "context": "Risk scores were recalculated and candidate signatures compared within the same TCGA data. These best-candidate C-index values are exploratory within-cohort discrimination, not external performance or prospective utility. The Chen EG (2017) attribution remains unresolved because reference 41 does not clearly identify the claimed prognostic model.",
+        "finding": "Candidate prognostic signatures: 151; Article-reported C1 C-index: 0.741; Article-reported C2 C-index: 0.698; Article-reported C3 C-index: 0.796; Reported model labels: Chen EG (2017) for C1/C2; Ma B (2020) for C3, as attributed by this article; Source-attribution boundary: The Discussion names 21-gene and 16-gene models, but their exact source-to-model mapping is not independently established here; reference 41 is a DGCR5/miR-1180 paper",
+        "evidence_level": "Exploratory within-cohort comparison",
+        "scope": "The article reports an exploratory comparison of 151 existing prognostic signatures within TCGA subtypes. Risk scores were recalculated and candidate signatures compared within the same TCGA data. These best-candidate C-index values are exploratory within-cohort discrimination, not external performance or prospective utility. The Chen EG (2017) attribution remains unresolved because reference 41 does not clearly identify the claimed prognostic model.",
+        "source_locator": "PDF p. 4 / print p. 17, Method: Personalized management for distinct subtypes; PDF p. 12 / print p. 25, Clinical delicacy management and Discussion; PDF p. 11 / print p. 24, actual C-index comparison under panel E (text/caption refer to F, but no F panel is displayed); PDF p. 15 / print p. 28, references 41-42.",
+        "evidence_refs": [
+          "KF8"
+        ]
+      }
+    ]
+  }
+}

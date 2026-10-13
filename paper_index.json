@@ -361,7 +361,28 @@
       "official_abstract_available": false,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1126-science-aek9583.csv",
       "question_count": 5,
-      "concept_count": 7
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Individualized genetic therapy research",
+          "Clinical trial registration and reporting"
+        ],
+        "review_topics": [
+          "Reporting major human outcomes in individualized genetic therapies",
+          "Linking preclinical publications and human trial records"
+        ],
+        "scientific_role": "A Science Letter proposing more current, connected public records of major human outcomes in individualized genetic therapy research.",
+        "evidence_position": "Published reporting and research-governance argument; no new empirical clinical trial, treatment-effect estimate or causal adjudication.",
+        "related_concepts": [
+          "Public trial registry transparency",
+          "Treatment-emergent event reporting",
+          "Event occurrence versus causal attribution"
+        ],
+        "citation_contexts": [
+          "Reviews discussing transparent reporting of serious outcomes in highly individualized genetic therapies.",
+          "Research governance discussions on linking preclinical publications, human protocols, trial registries and dated updates without conflating event reporting with causality."
+        ]
+      }
     },
     {
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
@@ -937,7 +958,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.md",
       "deep_geo": true,
-      "paper_geo_status": "pending",
+      "paper_geo_status": "v2",
       "featured": true,
       "doi_url": "https://doi.org/10.71321/fy14v342",
       "publisher_url": "https://ojs.lifeconfluxpress.com/index.php/lifeconflux/article/view/fy14v342",
@@ -949,9 +970,30 @@
       "openalex_id": "https://openalex.org/W4413040871",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-71321-fy14v342.csv",
+      "question_count": 9,
+      "concept_count": 14,
+      "discovery_layer": {
+        "field_entry": [
+          "Lung adenocarcinoma molecular research",
+          "Cancer transcriptomic systems biology"
+        ],
+        "review_topics": [
+          "Circadian-related expression subtypes in LUAD",
+          "Retrospective subtype associations and treatment-response hypotheses"
+        ],
+        "scientific_role": "A public-cohort LUAD expression-classification study with external template assessment, biological associations and computational treatment hypotheses.",
+        "evidence_position": "Retrospective expression and annotation evidence; not direct rhythm measurement, prospective subtype-guided treatment utility or externally validated best-model performance.",
+        "related_concepts": [
+          "Molecular heterogeneity",
+          "Cross-cohort template assignment",
+          "Association versus clinical utility"
+        ],
+        "citation_contexts": [
+          "Reviews of circadian-related cancer expression heterogeneity and retrospective molecular-subtype associations.",
+          "Methods discussions separating template transfer, outcome association, immune/drug prediction and within-cohort model comparison from clinical validation."
+        ]
+      }
     },
     {
       "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",

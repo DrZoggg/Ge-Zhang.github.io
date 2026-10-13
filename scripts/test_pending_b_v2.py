@@ -1,6 +1,6 @@
-"""B-only V2 regression from the independently reviewed publisher/supplement source.
+"""Frozen B-source regression with authorized LUAD/context additions.
 No builds, network requests, external approval dependencies, or writes.
-A remains Pending with its existing identity; this is an engineering contract.
+LUAD publication metadata stays unchanged; science-only V2 may disclose a version conflict.
 """
 import hashlib
 import html
@@ -11,10 +11,12 @@ from build_publications import validate_deep_v2_content
 from citation_common import citation_record, load_citation_metadata, render_bibtex, render_ris, render_csl_json
 from site_common import load_site_config
 from sync_common import ROOT
+from paper_discovery import scientific_content
 from validate_site import meta_contents, paper_json_ld_object, validate_v2_rendered_page
 
 BASE = "1a3e000969d98f873eee3f6fd7043dffa92c1366"
 A, B = "10.71321/fy14v342", "10.1007/s11426-026-3629-x"
+SCIENCE = "10.1126/science.aek9583"
 SLUG = "doi-10-1007-s11426-026-3629-x"
 # Fill only from the independent, final source review; never derive from mutated fixtures.
 # Frozen UTF-8/LF bytes. The 41,554-byte candidate has 604 CRLF pairs:
@@ -65,9 +67,9 @@ def main():
     now = json.loads(read("paper_index.json"))["papers"]
     prior_v2 = {p["doi"] for p in before if p["paper_geo_status"] == "v2"}
     assert len(prior_v2) == 27 and len(before) == len(now) == 77
-    assert {p["doi"] for p in now if p["paper_geo_status"] == "v2"} == prior_v2 | {B}
-    assert {p["doi"] for p in now if p["paper_geo_status"] == "pending"} == {A}
-    assert not (ROOT / "data/deep_geo/doi-10-71321-fy14v342.json").exists()
+    assert {p["doi"] for p in now if p["paper_geo_status"] == "v2"} == prior_v2 | {A, B}
+    assert not {p["doi"] for p in now if p["paper_geo_status"] == "pending"}
+    assert (ROOT / "data/deep_geo/doi-10-71321-fy14v342.json").is_file()
     current_by_doi = {p.get("doi") or p["paper_url"]: p for p in now}
     for p in before:
         new = current_by_doi[p.get("doi") or p["paper_url"]]
@@ -77,21 +79,25 @@ def main():
     assert len({p["doi"] for p in now if p.get("doi")}) == sum(bool(p.get("doi")) for p in now)
     paths = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", BASE, "--", "data", "citations", ".github"], cwd=ROOT).decode().splitlines()
     for path in paths:
-        if path != "data/question_index.json":
+        if path == "data/deep_geo/doi-10-1126-science-aek9583.json":
+            assert scientific_content(json.loads(read(path))) == old(path)
+        elif path != "data/question_index.json":
             unchanged(path)
     for doi in prior_v2 | {A}:
         slug = by_doi[doi]["slug"]
         for suffix in ["html", "md"]:
-            unchanged(f"papers/{slug}.{suffix}")
+            if doi not in {A, SCIENCE}:
+                unchanged(f"papers/{slug}.{suffix}")
         if doi in prior_v2:
             unchanged(f"assets/evidence/{slug}.csv")
     old_cards, new_cards = cards(old_bytes("index.html").decode()), cards(read("index.html"))
     target_link = f'href="papers/{SLUG}.html"'
+    allowed_links = {target_link, 'href="papers/doi-10-71321-fy14v342.html"'}
     assert len(old_cards) == len(new_cards) == 29
-    assert [c for c in old_cards if target_link not in c] == [c for c in new_cards if target_link not in c], "Other 28 Selected cards changed"
+    assert [c for c in old_cards if not any(link in c for link in allowed_links)] == [c for c in new_cards if not any(link in c for link in allowed_links)], "Other 27 Selected cards changed"
     assert [re.search(r'<h3><a href="([^"]+)', c)[1] for c in old_cards] == [re.search(r'<h3><a href="([^"]+)', c)[1] for c in new_cards]
     q_before, q_now = old("data/question_index.json"), json.loads(read("data/question_index.json"))
-    assert set(q_now["papers"]) == set(q_before["papers"]) | {B} and A not in q_now["papers"]
+    assert set(q_now["papers"]) == set(q_before["papers"]) | {A, B}
     assert q_now["papers"][B] == {"qa_index": 3}
     assert all(q_now["papers"][doi] == v for doi, v in q_before["papers"].items())
     assert {k:v for k,v in q_now.items() if k != "papers"} == {k:v for k,v in q_before.items() if k != "papers"}
@@ -127,11 +133,18 @@ def main():
         assert read(f"citations/{SLUG}.{suffix}") == render(record)
         assert f'../citations/{SLUG}.{suffix}' in markup
     questions = json.loads(read("research/questions.json"))["questions"]
-    assert [q for q in questions if q["doi"] != B] == old("research/questions.json")["questions"]
+    original_rows = []
+    for q in questions:
+        if q["doi"] in {A, B}:
+            continue
+        if q["doi"] == SCIENCE:
+            q = {k:v for k,v in q.items() if k not in {"field_entry", "review_topics", "discovery_url"}}
+        original_rows.append(q)
+    assert original_rows == old("research/questions.json")["questions"]
     assert len([q for q in questions if q["doi"] == B]) == 1
     question = next(q for q in questions if q["doi"] == B)
     assert question["question"] == content["qa"][2]["question"] and question["answer_url"].endswith("#qa-3")
-    print("B V2 PASS: 28 V2 / A Pending; 27 prior evidence sources, identities and other 28 cards frozen")
+    print("B SOURCE PASS: 29 V2; LUAD/Science additions allowed, all other prior evidence/identity/cards frozen")
 
 if __name__ == "__main__":
     main()
