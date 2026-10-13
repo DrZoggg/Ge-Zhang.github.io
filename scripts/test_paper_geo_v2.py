@@ -75,7 +75,7 @@ PRIORITY_STATUS = (
     ("10.1111/jcmm.70258", "v2"),
     ("10.1186/s12915-025-02400-x", "v2"),
     ("10.3389/fcvm.2025.1724572", "v2"),
-    ("10.71321/fy14v342", "pending"),
+    ("10.71321/fy14v342", "v2"),
     ("10.1111/jcmm.70725", "v2"),
     ("10.1038/s41598-024-65236-5", "v2"),
     ("10.3389/fpubh.2025.1521372", "v2"),
@@ -278,7 +278,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (28, 0, 1)
+    assert (len(v2_items), v1_count, pending_count) == (29, 0, 0)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -319,6 +319,7 @@ def run_tests():
     assert norm_doi(deep_entries[10].get("doi")) == OLINK_DCM_DOI
     assert norm_doi(load_featured()[10].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.71321/fy14v342": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1126/science.aek9583": ("Article Scope & Approach", None),
         "10.1016/j.curpro.2025.100054": ("Article Scope & Approach", None),
         "10.1002/ggn2.202500053": ("Article Scope & Approach", None),

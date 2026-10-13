@@ -3145,7 +3145,10 @@ def validate_site():
         for p in discovery_public if p.get("paper_geo_status") == "v2"
     }
     evidence_counts = validate_evidence(ROOT, discovery_public, discovery_contents)
+    from v2_coverage import validate_v2_coverage
+    coverage_counts = validate_v2_coverage(discovery_public, discovery_contents, ROOT)
     result = {
+        "v2_module_coverage": coverage_counts,
         "scholarly_discovery": scholarly_counts,
         "master": len(master),
         "public": len(public_expected),

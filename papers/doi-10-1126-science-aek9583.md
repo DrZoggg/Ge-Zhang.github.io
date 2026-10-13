@@ -20,6 +20,40 @@ Markdown record: https://drgezhang.com/papers/doi-10-1126-science-aek9583.md
 4. Taiqi Zhao
 5. Teng Li
 
+<a id="paper-discovery"></a>
+## Research & review context
+
+### Research fields
+
+- Individualized genetic therapy research
+- Clinical trial registration and reporting
+
+### Review topics
+
+- Reporting major human outcomes in individualized genetic therapies
+- Linking preclinical publications and human trial records
+
+### Scientific role
+
+A Science Letter proposing more current, connected public records of major human outcomes in individualized genetic therapy research.
+
+### Evidence position
+
+Published reporting and research-governance argument; no new empirical clinical trial, treatment-effect estimate or causal adjudication.
+
+### Related concepts
+
+- Public trial registry transparency
+- Treatment-emergent event reporting
+- Event occurrence versus causal attribution
+
+### Possible citation contexts
+
+- Reviews discussing transparent reporting of serious outcomes in highly individualized genetic therapies.
+- Research governance discussions on linking preclinical publications, human protocols, trial registries and dated updates without conflating event reporting with causality.
+
+Possible literature-review contexts, not evidence of existing citations. Read the findings and Evidence Scope before citing the original article.
+
 ## Evidence Base
 
 **Recording results from single-patient trials**

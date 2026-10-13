@@ -14,6 +14,7 @@ from citation_common import (
     render_bibtex, render_csl_json, render_ris,
 )
 from site_common import load_deep_geo, load_featured, load_site_config
+from paper_discovery import scientific_content
 from sync_common import ROOT, is_withdrawn, load_master, norm_doi
 from validate_site import meta_contents, paper_json_ld_object, validate_v2_rendered_page
 
@@ -24,10 +25,14 @@ SCIENCE = "10.1126/science.aek9583"
 MEDICINE = "10.1016/j.medd.2026.100004"
 JDI = "10.1111/jdi.70462"
 AIHF = "10.1038/s41467-024-50415-9"
-# Reviewed B-only promotion; A remains Pending with its existing identity.
+# Reviewed B and LUAD science upgrades retain their existing publication identities.
 B_V2 = "10.1007/s11426-026-3629-x"
 B_CARD = "papers/doi-10-1007-s11426-026-3629-x.html"
-SCIENCE_SHA256 = "ff93dc81e2c7e8a6e8ee573b4529f4ac2b96b42dbcef607d5b4e1a5b310f869e"
+A_V2 = "10.71321/fy14v342"
+A_CARD = "papers/doi-10-71321-fy14v342.html"
+# Independent canonical-JSON hash of every original Science scientific field.
+# Only the separately validated discovery_layer is excluded from this hash.
+SCIENCE_SHA256 = "0c835e717897ccffe79b2c7928efa5f56b1d559bbb2d92ac1df6fa848c585faa"
 IDENTITIES = {
     SCIENCE: {
         "slug": "doi-10-1126-science-aek9583",
@@ -98,8 +103,10 @@ class PublicationReleaseTests(unittest.TestCase):
 
     def test_verified_science_v2_and_rendered_evidence(self):
         path = ROOT / "data/deep_geo" / (IDENTITIES[SCIENCE]["slug"] + ".json")
-        # Ignore checkout newline conversion, but freeze the reviewed content bytes.
-        self.assertEqual(hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest(), SCIENCE_SHA256)
+        # Freeze original scientific fields while allowing the reviewed context.
+        source = scientific_content(json.loads(path.read_text(encoding="utf-8")))
+        frozen = json.dumps(source, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        self.assertEqual(hashlib.sha256(frozen).hexdigest(), SCIENCE_SHA256)
         content = self.content
         validate_deep_v2_content(content, IDENTITIES[SCIENCE]["slug"])
         self.assertEqual(content["doi"], SCIENCE)
@@ -209,15 +216,15 @@ class PublicationReleaseTests(unittest.TestCase):
         cards = featured_cards(read("index.html"))
         self.assertEqual(cards[0][0], f'papers/{IDENTITIES[SCIENCE]["slug"]}.html')
         self.assertEqual(cards[1][0], "papers/aihflevel.html")
-        # B's empty controller summary falls back to its reviewed Deep summary.
+        # A/B empty controller summaries fall back to their reviewed Deep summaries.
         # All other existing card links, titles and summaries remain protected.
         self.assertEqual(
-            [card for card in cards[1:] if card[0] != B_CARD],
-            [card for card in featured_cards(baseline("index.html")) if card[0] != B_CARD],
+            [card for card in cards[1:] if card[0] not in {A_CARD, B_CARD}],
+            [card for card in featured_cards(baseline("index.html")) if card[0] not in {A_CARD, B_CARD}],
         )
-        # B's new source is frozen independently by test_pending_b_v2.py.
+        # New A/B sources are covered independently; all earlier sources remain frozen.
         for entry in json.loads(baseline("data/deep_geo_papers.json"))["papers"]:
-            if entry["doi"] == B_V2:
+            if entry["doi"] in {A_V2, B_V2}:
                 continue
             slug = self.by_doi[entry["doi"]]["slug"]
             path = f"data/deep_geo/{slug}.json"
@@ -240,8 +247,8 @@ class PublicationReleaseTests(unittest.TestCase):
         self.assertEqual(len(exports["publications"]), 77)
         old_v2 = {p["doi"] for p in self.old_index if p["paper_geo_status"] == "v2"}
         v2 = {p["doi"] for p in self.index if p["paper_geo_status"] == "v2"}
-        self.assertEqual(v2, old_v2 | {SCIENCE, B_V2})
-        self.assertEqual(len(v2), 28)
+        self.assertEqual(v2, old_v2 | {SCIENCE, A_V2, B_V2})
+        self.assertEqual(len(v2), 29)
         current = {p["doi"]: p for p in self.index if p.get("doi")}
         for old in self.old_index:
             if old.get("doi"):

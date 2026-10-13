@@ -221,7 +221,16 @@
       ],
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1126-science-aek9583.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1126-science-aek9583.ris",
-      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1126-science-aek9583.csl.json"
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1126-science-aek9583.csl.json",
+      "field_entry": [
+        "Individualized genetic therapy research",
+        "Clinical trial registration and reporting"
+      ],
+      "review_topics": [
+        "Reporting major human outcomes in individualized genetic therapies",
+        "Linking preclinical publications and human trial records"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1126-science-aek9583.html#paper-discovery"
     },
     {
       "id": "doi-10-1038-s41698-026-01699-1",
@@ -553,6 +562,47 @@
         "Immune-cell-linked molecular markers in human vascular disease"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1186-s12915-025-02400-x.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-71321-fy14v342",
+      "question": "Which cohorts contribute the reported LUAD input count?",
+      "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
+      "doi": "10.71321/fy14v342",
+      "paper_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#qa-1",
+      "source": "data/deep_geo/doi-10-71321-fy14v342.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "A prospective subtype-guided clinical trial, treatment benefit or clinical decision rule.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Circadian-related tumor expression",
+        "LUAD heterogeneity",
+        "NMF clusters",
+        "Nearest template prediction",
+        "Proliferation enrichment",
+        "Lipid-metabolic pathways",
+        "Somatic mutation",
+        "Copy-number alteration",
+        "Inferred immune infiltration",
+        "Retrospective survival association",
+        "TIS",
+        "SubMap",
+        "Predicted drug response",
+        "Within-cohort C-index comparison"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-71321-fy14v342.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-71321-fy14v342.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-71321-fy14v342.csl.json",
+      "field_entry": [
+        "Lung adenocarcinoma molecular research",
+        "Cancer transcriptomic systems biology"
+      ],
+      "review_topics": [
+        "Circadian-related expression subtypes in LUAD",
+        "Retrospective subtype associations and treatment-response hypotheses"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#paper-discovery"
     },
     {
       "id": "doi-10-1002-mdr2-70004",
