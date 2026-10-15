@@ -83,6 +83,7 @@ def paper_sets(repo):
     disabled = [
         item for item in public
         if item.get("doi") and token(item) not in deep_tokens
+        and not (repo / "data/deep_geo" / f"{item['slug']}.json").exists()
     ]
     nonfeatured = [
         item for item in public

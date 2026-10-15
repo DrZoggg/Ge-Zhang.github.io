@@ -231,7 +231,9 @@ def validate_generated(items, config, root=ROOT):
     fields = {}
     for item in items:
         path = root / 'data/deep_geo' / (item['slug'] + '.json')
-        content = json.loads(path.read_text(encoding='utf-8')) if item.get('deep_geo') and path.exists() else None
+        content = json.loads(path.read_text(encoding='utf-8')) if path.exists() else None
+        if content and not item.get('deep_geo') and content.get('version') == 1:
+            content = None
         if content: contents[item['doi']] = content
         record = citation_record(item, metadata, config['site_url'])
         fields[item['slug']] = index_fields(item, record, content, abstracts.get(item.get('doi')), config['site_url'], identities.get(item.get('doi')))

@@ -402,6 +402,108 @@
         "type": "unstructured",
         "text": "Cardiovascular diseases (CVDs) are the leading causes of mortality worldwide. As a type of CVDs, myocardial infarction (MI) induces ischemia hypoxia, which leads to excessive reactive oxygen species (ROS), resulting in multiple cell deaths and contributing to the subsequent development of heart failure or premature death. Recent evidence indicates that ROS-induced lipid peroxidation promotes autophagy and ferroptosis, leading to the loss of healthy myocardium and resulting in the dysfunction of cardiac tissue. Theoretically, cardiac function would be preserved after MI by inhibiting autophagy and ferroptosis. As an analog of coenzyme Q10 (CoQ10) and a clinically approved drug, idebenone would be used to inhibit ferroptosis and preserve cardiac function due to its capacity to improve mitochondrial physiology with antioxidant and anti-inflammatory properties. Here, we confirmed that the addition of idebenone inhibited H2O2-induced and RSL3-induced ferroptosis. Furthermore, the ROS-AMPK-mTOR pathway axis was identified as the signaling pathway that idebenone stimulated to prevent excessive autophagy and consequent ferroptosis. In the MI animal model, idebenone demonstrated a cardioprotective role by regulating ROS-dependent autophagy and inhibiting ferroptosis, which paves the way for the future clinical translation of idebenone in MI management."
       }
+    },
+    "10.2147/cia.s462542": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/",
+      "license": "CC-BY-NC-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/3.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "The triglyceride-glucose (TYG) index is a novel and reliable marker reflecting insulin resistance. Its predictive ability for cardiovascular disease onset and prognosis has been confirmed. However, for advanced chronic heart failure (acHF) patients, the prognostic value of TYG is challenged due to the often accompanying renal dysfunction (RD). Therefore, this study focuses on patients with aHF accompanied by RD to investigate the predictive value of the TYG index for their prognosis."
+          },
+          {
+            "label": "Methods and Results",
+            "text": "717 acHF with RD patients were included. The acHF diagnosis was based on the 2021 ESC criteria for acHF. RD was defined as the eGFR < 90 mL/(min/1.73 m 2 ). Patients were divided into two groups based on their TYG index values. The primary endpoint was major adverse cardiovascular events (MACEs), and the secondary endpoints is all-cause mortality (ACM). The follow-up duration was 21.58 (17.98–25.39) months. The optimal cutoff values for predicting MACEs and ACM were determined using ROC curves. Hazard factors for MACEs and ACM were revealed through univariate and multivariate COX regression analyses. According to the univariate COX regression analysis, high TyG index was identified as a risk factor for MACEs (hazard ratio = 5.198; 95% confidence interval [CI], 3.702–7.298; P < 0.001) and ACM (hazard ratio = 4.461; 95% CI, 2.962–6.718; P < 0.001). The multivariate COX regression analysis showed that patients in the high TyG group experienced 440.2% MACEs risk increase (95% CI, 3.771–7.739; P < 0.001) and 406.2% ACM risk increase (95% CI, 3.268–7.839; P < 0.001). Kaplan-Meier survival analysis revealed that patients with high TyG index levels had an elevated risk of experiencing MACEs and ACM within 30 months."
+          },
+          {
+            "label": "Conclusion",
+            "text": "This study found that patients with high TYG index had an increased risk of MACEs and ACM, and the TYG index can serve as an independent predictor for prognosis."
+          }
+        ]
+      }
+    },
+    "10.1186/s10020-024-00963-z": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11513636/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Pulmonary arterial hypertension (PAH) is a progressive and rapidly fatal disease with an intricate etiology. Identifying biomarkers for early PAH lesions based on the exploration of subtle biological processes is significant for timely diagnosis and treatment. In the present study, nine distinct cell populations identified based on gene expression profiles revealed high heterogeneity in cell composition ratio, biological function, distribution preference, and communication patterns in PAH. Notably, compared to other cells, endothelial cells (ECs) showed prominent variation in multiple perspectives. Further analysis demonstrated the endothelial-to-mesenchymal transition (EndMT) in ECs and identified a subgroup exhibiting a contrasting phenotype. Based on these findings, a machine-learning integrated program consisting of nine learners was developed to create a PAH Endothelial-to-mesenchymal transition Signature (PETS). This study identified cell populations underlying EndMT and furnished a potential tool that might be valuable for PAH diagnosis and new precise therapies."
+      }
+    },
+    "10.1111/jdi.70462": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13651581/",
+      "license": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Cardiovascular‐liver‐metabolic multimorbidity (CLMM), defined as the co‐occurrence of at least two of cardiovascular disease, type 2 diabetes, and metabolic dysfunction‐associated steatotic liver disease, is an increasing health burden. We evaluated the cholesterol, high‐density lipoprotein, and glucose (CHG) index and its obesity‐ and inflammation‐derived variants for predicting incident CLMM."
+          },
+          {
+            "label": "Methods",
+            "text": "This prospective cohort included 6,534 adults aged ≥45 years from the China Health and Retirement Longitudinal Study. CHG, eight obesity‐derived indices, and CHG‐CRP were assessed, with the triglyceride‐glucose index and TG/HDL‐C ratio as comparators. Associations with incident CLMM were evaluated using logistic regression, restricted cubic splines, and threshold analysis. Predictive performance was compared using receiver operating characteristic analysis, the integrated discrimination improvement (IDI), and the net reclassification improvement (NRI), with additional joint‐effect, interaction, subgroup, and sensitivity analyses."
+          },
+          {
+            "label": "Results",
+            "text": "At the 2015 follow‐up, 406 participants (6.2%) met the criteria for CLMM. Higher CHG was linearly associated with incident CLMM (highest vs lowest quartile: OR 1.64, 95% confidence interval [CI] 1.22–2.22). Obesity‐derived variants showed stronger associations, particularly CHG‐BMI (OR 3.13, 95% CI 2.21–4.43), which also had the highest discrimination (AUC 0.643, 95% CI 0.616–0.669) and continuous NRI (34.08%). Participants with both high CHG and high BMI had the greatest CLMM risk (OR 2.59, 95% CI 1.94–3.51). Results were robust in sensitivity analyses."
+          },
+          {
+            "label": "Conclusions",
+            "text": "The CHG index and its obesity‐derived variants, particularly CHG‐BMI, are accessible and inexpensive candidate metabolic markers for predicting new‐onset CLMM. CHG‐BMI showed the highest apparent discrimination among the evaluated indices, although its AUC was modest. External population validation is needed."
+          }
+        ]
+      }
+    },
+    "10.15212/bioi-2026-0017": {
+      "source_type": "version_of_record",
+      "source_url": "https://bio-integration.org/10-15212-bioi-2026-0017/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "Insulin resistance (IR) and chronic kidney disease (CKD) are independent risk factors for cardiovascular disease (CVD). The triglyceride-glucose (TyG) index is recognized as a convenient marker for IR, while the estimated glomerular filtration rate based on both creatinine and cystatin C (eGFRcr-cys) is commonly used to evaluate kidney function. Therefore, the TyG:eGFRcr-cys ratio is introduced with the aim of obtaining a more effective predictor for CVD risk."
+          },
+          {
+            "label": "Method",
+            "text": "This prospective cohort analysis included 261,865 UK Biobank participants with available information. Cox proportional hazards models were used to evaluate the associations of TyG, eGFRcr-cys, and the TyG:eGFRcr-cys ratio with incident CVD. Restricted cubic splines for model fitting with three knots placed at the 10th, 50th, 90th percentiles were used to determine the non-linear relationship between the TyG:eGFRcr-cys ratio and CVD. Furthermore, subgroup and sensitivity analyses were performed to illustrate the disparate associations across diverse groups and to reinforce the conclusions drawn, respectively. An independent single-center clinical cohort was assembled from the First Affiliated Hospital of Zhengzhou University for external validation by enrolling consecutive patients between 2018 and 2020 with baseline TyG index and eGFRcr-cys measurements and up to 4 years of follow-up. External validation with major adverse cardiovascular events was further performed as the outcome and observed consistent dose–response associations and robust risk stratification for the TyG:eGFRcr-cys ratio."
+          },
+          {
+            "label": "Result",
+            "text": "Following extensive covariate adjustment, the hazard ratios [HRs] (95% confidence intervals [CIs]) for total CVD across increasing quartiles of the TyG:eGFRcr-cys ratio, with the lowest quartile (Q1) as the reference, were 1.15 (1.10–1.21) for Q2 versus Q1, 1.17 (1.12–1.23) for Q3 versus Q1, and 1.24 (1.18–1.30) for Q4 versus Q1, respectively, for the TyG:eGFRcr-cys ratio. In addition, each standard deviation increase in the TyG:eGFRcr-cys ratio was associated with a higher risk of CVD, coronary heart disease, and stroke, corresponding to estimated increases of 249% [HR, 3.49; 95% CI, 2.94–4.15], 250% [HR, 3.50; 95% CI, 2.92–4.20], and 165% [HR, 2.65; 95% CI, 1.80–3.90], respectively, in the fully adjusted models. The non-linear relationship between the TyG:eGFRcr-cys ratio and CVD (P-value for the overall model < 0.001 and P-value for the non-linear model < 0.001) indicated that the CVD risk increased as the TyG:eGFRcr-cys ratio increased. Subgroup analysis results suggested that these associations were more pronounced in White individuals and females."
+          },
+          {
+            "label": "Conclusion",
+            "text": "As the TyG:eGFRcr-cys ratio increased, the risk of CVD also increased with a higher likelihood in females and White individuals."
+          }
+        ]
+      }
+    },
+    "10.18063/ijb.740": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10261152/",
+      "license": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "The coronary artery bypass grafting is a main treatment for restoring the blood supply to the ischemic site by bypassing the narrow part, thereby improving the heart function of the patients. Autologous blood vessels are preferred in coronary artery bypass grafting, but their availability is often limited by due to the underlying disease. Thus, tissue-engineered vascular grafts that are devoid of thrombosis and have mechanical properties comparable to those of natural vessels are urgently required for clinical applications. Most of the commercially available artificial implants are made from polymers, which are prone to thrombosis and restenosis. The biomimetic artificial blood vessel containing vascular tissue cells is the most ideal implant material. Due to its precision control ability, three-dimensional (3D) bioprinting is a promising method to prepare biomimetic system. In the 3D bioprinting process, the bioink is at the core state for building the topological structure and keeping the cell viable. Therefore, in this review, the basic properties and viable materials of the bioink are discussed, and the research of natural polymers in bioink, including decellularized extracellular matrix, hyaluronic acid, and collagen, is emphasized. Besides, the advantages of alginate and Pluronic F127, which are the mainstream sacrificial material during the preparation of artificial vascular graft, are also reviewed. Finally, an overview of the applications in the field of artificial blood vessel is also presented."
+      }
     }
   }
 }

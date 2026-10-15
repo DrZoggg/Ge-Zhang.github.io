@@ -9,10 +9,15 @@ from official_abstracts import PATH, abstract_text
 from sync_common import ROOT
 
 FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20260928.json'
+V16_FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20261015_v16.json'
 
 
 def fixtures():
     return json.loads(FIXTURE.read_text(encoding='utf-8'))['papers']
+
+
+def v16_fixtures():
+    return json.loads(V16_FIXTURE.read_text(encoding='utf-8'))['papers']
 
 
 def unique_object(pairs):
@@ -25,7 +30,7 @@ def unique_object(pairs):
 
 
 def reviewed_record(doi):
-    expected = fixtures()[doi]
+    expected = {**fixtures(), **v16_fixtures()}[doi]
     record = json.loads(PATH.read_text(encoding='utf-8'))['papers'][doi]
     serialized = json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
     if hashlib.sha256(serialized.encode('utf-8')).hexdigest() != expected['record_sha256']:
@@ -90,7 +95,7 @@ class AbstractAdditionTests(unittest.TestCase):
         original = {doi: records[doi] for doi in frozen['baseline_dois']}
         serialized = json.dumps(original, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
         self.assertEqual(hashlib.sha256(serialized.encode('utf-8')).hexdigest(), frozen['baseline_records_sha256'])
-        self.assertEqual(set(records), set(frozen['baseline_dois']) | set(frozen['papers']))
+        self.assertEqual(set(records), set(frozen['baseline_dois']) | set(frozen['papers']) | set(v16_fixtures()))
 
     def test_reviewed_record_and_text_hashes(self):
         for doi, fixture in fixtures().items():

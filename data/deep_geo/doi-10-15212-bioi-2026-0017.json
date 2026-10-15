@@ -1,0 +1,379 @@
+{
+  "version": 2,
+  "doi": "10.15212/bioi-2026-0017",
+  "display_title": "TyG:eGFRcr-cys and cardiovascular events: prospective UK Biobank association with independent clinical replication",
+  "summary": "A higher TyG:eGFRcr-cys ratio was associated with incident CVD, particularly CHD, in a prospective UK Biobank analysis. A smaller independent clinical cohort supported an association with MACE. The study did not evaluate whether the ratio improves discrimination or reclassification beyond established cardiovascular risk factors or scores.",
+  "research_question": "Is an index combining the triglyceride–glucose marker with creatinine–cystatin-C-based estimated renal function associated with incident cardiovascular events, and is the association reproduced in an independent clinical cohort?",
+  "author_summary": "The study analyzed baseline metabolic and renal markers in UK Biobank and examined an independent hospital cohort. Higher ratio quartiles were associated with overall CVD and CHD; the fully adjusted highest-versus-lowest-quartile stroke association was not statistically significant. The external complete-case analysis reproduced a ratio–MACE association but was small and imprecise. The findings support further evaluation of a complementary cardiometabolic–renal marker. They do not establish causal mechanisms, a universal treatment threshold, improved decisions, or incremental prediction beyond established risk scores.",
+  "study_profile": {
+    "profile_type": "multicohort_observational",
+    "study_design": "Prospective observational UK Biobank analysis with Cox models, restricted cubic splines, subgroup/sensitivity analyses, independent single-center clinical association replication, and exploratory network analysis across ratio quartiles.",
+    "evidence_type": "Longitudinal observational associations and independent clinical association replication",
+    "population": "UK Biobank adults without baseline CVD; a separately assembled Zhengzhou University vascular-surgery clinical cohort with complete cases used for the fully adjusted external analysis.",
+    "primary_endpoint": "Incident fatal or nonfatal CHD or stroke in the primary cohort; MACE defined as fatal or nonfatal CHD or stroke in the external cohort.",
+    "secondary_endpoint": "CHD and stroke separately; dose–response patterns and exploratory network instability across exposure-defined strata.",
+    "data_modalities": [
+      "Baseline blood triglycerides and glucose",
+      "Creatinine and cystatin-C-based estimated GFR",
+      "Demographic, lifestyle, medication, and clinical covariates",
+      "Hospital and death-registry outcome codes",
+      "External clinical cohort follow-up"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Primary cohort",
+        "value": "UK Biobank analytic sample: 261,865 participants"
+      },
+      {
+        "label": "External source cohort",
+        "value": "1,798 initially assembled clinical participants"
+      },
+      {
+        "label": "External fully adjusted analysis",
+        "value": "328 complete cases, including 88 MACE outcomes"
+      }
+    ],
+    "counting_note": "Primary and external cohort counts are kept separate. The external complete-case group is a subset of the initially assembled hospital cohort. No synthetic total combines the populations or adds the subset to its parent cohort. External validation here means association replication, not an independently calibrated clinical prediction tool."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study combined a UK Biobank prospective analysis with an independent clinical association-replication cohort.",
+      "context": "The primary and external populations are distinct and are reported separately. The external fully adjusted complete-case analysis represents a subset of the initially assembled clinical cohort.",
+      "evidence": [
+        {
+          "label": "UK Biobank analytic participants",
+          "value": "261,865"
+        },
+        {
+          "label": "External cohort initially assembled",
+          "value": "1,798"
+        },
+        {
+          "label": "External complete-case analysis",
+          "value": "328 participants, including 88 MACE outcomes"
+        },
+        {
+          "label": "External recruitment and follow-up",
+          "value": "2018–2020 enrollment; up to 4 years of follow-up"
+        }
+      ],
+      "source_locator": "Methods: Study design and population, Primary cohort and External validation cohort; Results: Population characteristics; Table 1; Figure 5"
+    },
+    {
+      "id": "KF2",
+      "claim": "Higher TyG:eGFRcr-cys quartiles were associated with higher incident CVD hazards in UK Biobank.",
+      "context": "Fully adjusted Model 3; the lowest ratio quartile is the reference. Hazard ratios describe observational associations, not causal effects or a validated clinical risk score.",
+      "evidence": [
+        {
+          "label": "Q2 versus Q1 CVD HR",
+          "value": "1.15; 95% CI 1.10–1.21"
+        },
+        {
+          "label": "Q3 versus Q1 CVD HR",
+          "value": "1.17; 95% CI 1.12–1.23"
+        },
+        {
+          "label": "Q4 versus Q1 CVD HR",
+          "value": "1.24; 95% CI 1.18–1.30"
+        }
+      ],
+      "source_locator": "Abstract: Result; Results: Associations between the TyG index and the TyG:eGFRcr-cys ratio with CVD; Table 2, CVD quartile rows, Model 3"
+    },
+    {
+      "id": "KF3",
+      "claim": "The highest-quartile association was clearer for CHD than for stroke.",
+      "context": "Same highest-versus-lowest ratio-quartile contrast in fully adjusted Model 3. The stroke confidence interval includes the null; other exposure contrasts should not be treated as interchangeable with this quartile comparison.",
+      "evidence": [
+        {
+          "label": "Q4 versus Q1 CHD HR",
+          "value": "1.30; 95% CI 1.23–1.37"
+        },
+        {
+          "label": "Q4 versus Q1 stroke HR",
+          "value": "1.05; 95% CI 0.96–1.16"
+        },
+        {
+          "label": "Stroke Q4 versus Q1 P value",
+          "value": "0.29"
+        }
+      ],
+      "source_locator": "Results: Associations between the TyG index and the TyG:eGFRcr-cys ratio with CVD; Table 2, CHD and STROKE quartile-4 rows, Model 3"
+    },
+    {
+      "id": "KF4",
+      "claim": "The ratio–MACE association was also reported in the external clinical complete-case cohort, with substantial uncertainty in effect magnitude.",
+      "context": "External Cox Model 3; per-standard-deviation contrast, distinct from the UK Biobank quartile comparison. This is independent association replication, not proof of incremental predictive utility or calibrated individual risk.",
+      "evidence": [
+        {
+          "label": "TyG:eGFRcr-cys HR per 1-SD increase",
+          "value": "6.04; 95% CI 2.12–17.19"
+        },
+        {
+          "label": "External analysis scale",
+          "value": "328 complete cases; 88 MACE outcomes"
+        }
+      ],
+      "source_locator": "Methods: External validation statistical analysis; Results: External validation; Figure 5D and caption; Methods: External validation cohort"
+    },
+    {
+      "id": "KF5",
+      "claim": "Dynamic network biomarker analysis identified a possible transition-related pattern across ratio-based risk strata.",
+      "context": "Participants were ordered by between-person exposure quartiles. The exploratory network pattern is not longitudinal demonstration of an individual patient entering a pre-disease state.",
+      "evidence": [
+        {
+          "label": "Risk strata",
+          "value": "Four ratio quartiles, Q1–Q4"
+        },
+        {
+          "label": "Composite-index pattern",
+          "value": "Highest reported value in Q3"
+        },
+        {
+          "label": "Interpretation",
+          "value": "Exploratory network instability across exposure strata; not a proven mechanism or clinical early-warning threshold"
+        }
+      ],
+      "source_locator": "Methods: Dynamic network biomarker analysis; Results: Dynamic network biomarker analysis suggested a potential transition stage during CVD risk progression; Figure 6B–E"
+    }
+  ],
+  "what_this_adds": [
+    "Examines a combined metabolic–renal marker rather than treating its metabolic and renal components as unrelated domains.",
+    "Separates prospective primary-cohort associations from an independent, smaller hospital-cohort analysis.",
+    "Reports outcome-specific associations and explicitly leaves incremental predictive value beyond established risk scores unresolved."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Prospective observational associations between the baseline ratio and incident CVD/CHD in the analyzed UK Biobank population.",
+      "Independent association replication for MACE in a small, complete-case hospital cohort.",
+      "Exploratory network analysis and further research into integrated cardiometabolic–renal markers."
+    ],
+    "does_not_establish": [
+      "A causal effect of the ratio on cardiovascular disease or a confirmed biological mechanism.",
+      "A statistically significant highest-versus-lowest-quartile stroke association in fully adjusted Model 3.",
+      "An independently calibrated individual-risk calculator, improved C-statistic/NRI/IDI, or superiority to established risk scores.",
+      "A universal clinical cut-off, treatment efficacy, or benefit from targeting the ratio.",
+      "That exposure-quartile network differences demonstrate within-person disease transitions."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many participants contributed to the analyses?",
+      "answer": "The UK Biobank analytic cohort contained 261,865 participants. The external hospital cohort initially contained 1,798 participants, but the fully adjusted external analysis used 328 complete cases, including 88 MACE outcomes. These populations and subsets should not be added into a synthetic study total.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What does the TyG:eGFRcr-cys ratio combine?",
+      "answer": "It divides the triglyceride–glucose index by estimated GFR derived using both creatinine and cystatin C. It is intended to summarize metabolic and renal risk-marker information, rather than directly measure a causal process.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "What was the main prospective CVD association?",
+      "answer": "In fully adjusted Model 3, the highest ratio quartile had a CVD HR of 1.24 compared with the lowest quartile, with a 95% CI of 1.18–1.30. This is an observational hazard ratio.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Were all cardiovascular outcomes significantly associated in the quartile comparison?",
+      "answer": "No. The highest-versus-lowest-quartile CHD HR was 1.30, while the stroke HR was 1.05 with a 95% CI of 0.96–1.16 and P=0.29. Outcome and exposure-contrast details must be preserved.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What does external validation mean here?",
+      "answer": "It means that the ratio–MACE association was examined in an independent hospital cohort. The fully adjusted complete-case analysis was small and the confidence interval was wide; this does not establish a calibrated prediction model or improved clinical decision-making.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does the network analysis establish a pre-disease transition?",
+      "answer": "No. The analysis compared exposure-defined groups and was exploratory. It does not show that an individual crosses a validated early-warning threshold over time.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Can the ratio replace established cardiovascular risk scores?",
+      "answer": "The article states that incremental discrimination and reclassification beyond established risk factors or scores were not evaluated. The ratio remains a candidate complementary marker requiring additional evaluation.",
+      "evidence_refs": [
+        "KF2",
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "markers": [
+      "Triglyceride–glucose index",
+      "TyG:eGFRcr-cys ratio",
+      "Creatinine–cystatin-C-based estimated GFR"
+    ],
+    "outcomes": [
+      "Incident cardiovascular disease",
+      "Coronary heart disease",
+      "Stroke",
+      "Major adverse cardiovascular events"
+    ],
+    "methods": [
+      "UK Biobank",
+      "Prospective cohort",
+      "Cox proportional-hazards model",
+      "Independent association replication",
+      "Dynamic network biomarkers"
+    ]
+  },
+  "limitations": [
+    "The observational design cannot establish causation and residual confounding remains possible.",
+    "UK Biobank selection and demographic composition limit generalizability.",
+    "The external cohort was from one clinical center; only a complete-case subset entered the fully adjusted analysis, limiting precision and representativeness.",
+    "The source reports different results for continuous, quartile, and spline contrasts; these should not be collapsed into one uniform association.",
+    "Incremental discrimination, calibration, reclassification, and clinical decision benefit beyond established risk scores were not established.",
+    "Exploratory network comparisons between exposure quartiles cannot demonstrate longitudinal within-person phase transitions."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1111/jdi.70462",
+      "relationship": "A separate CHARLS analysis of metabolic indices addresses a different surrogate-defined multimorbidity endpoint; it is related marker research rather than replication of this ratio."
+    },
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "A distinct heart-failure prognosis study illustrates a different clinical outcome and model-development setting; its performance does not validate this ratio."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://bio-integration.org/10-15212-bioi-2026-0017/",
+    "doi_url": "https://doi.org/10.15212/bioi-2026-0017",
+    "version_of_record": "BIO Integration 2026; volume 7, pages 1–17; published online 15 June 2026",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "data_source": "UK Biobank application 102158; independent First Affiliated Hospital of Zhengzhou University vascular-surgery cohort.",
+    "external_cohort_counting": "1,798 initially assembled; 328 complete cases and 88 MACE events for the fully adjusted external analysis.",
+    "supporting_material_url": "https://bio-integration.org/wp-content/uploads/2026/06/bioi20260017_Supplemental.zip",
+    "supporting_material_note": "Official supplementary link identified; direct retrieval returned HTTP 406. The claims on this page are supported by the accessible official full-text Methods, Results, Table 2, and figure captions.",
+    "source_note_table3": "The official HTML Table 3 former-smoker confidence interval is malformed; that subgroup estimate is not used on this evidence page.",
+    "source_note_subgroups": "Subgroup descriptions are not promoted to causal or mechanistic claims, and demographic subgroup estimates are not used for clinical recommendations.",
+    "author_identity": "Ge Zhang is first and corresponding author, affiliated with Zhengzhou University; the article gives the same public correspondence identity and the DOI appears in ORCID 0000-0002-3116-3246.",
+    "evidence_basis": "Official publisher full-text HTML read through the web tool, Crossref metadata, and public ORCID works. Private raw web-tool text and source hashes retain the reviewed version; no full-text PDF was uploaded."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular epidemiology",
+      "Cardiometabolic–renal markers"
+    ],
+    "review_topics": [
+      "Combined metabolic and renal risk assessment",
+      "External association-replication studies"
+    ],
+    "scientific_role": "Prospective observational biomarker-association study with independent clinical replication and exploratory network analysis.",
+    "evidence_position": "Human cohort association evidence, distinct from incremental prediction validation, causal inference, or treatment effects.",
+    "related_concepts": [
+      "TyG:eGFRcr-cys",
+      "MACE",
+      "UK Biobank"
+    ],
+    "citation_contexts": [
+      "Reviews evaluating integrated metabolic–renal markers for incident cardiovascular outcomes.",
+      "Discussions distinguishing independent association replication from validated clinical prediction and incremental decision value."
+    ]
+  },
+  "evidence_page_notice": "This is an original evidence synthesis linked to the published article. Cite the original article for cohort findings. Cohort/subset counts, outcome-specific results, and the distinction between association replication and clinical prediction are preserved.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What prospective evidence links a combined metabolic–renal ratio with cardiovascular outcomes?",
+        "supported_scope": "UK Biobank observational associations, preserving null or weaker outcome-specific contrasts.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Was the association examined in an independent clinical population?",
+        "supported_scope": "Small complete-case external-cohort association replication, without demonstrated incremental predictive utility.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A causal effect of the ratio on cardiovascular disease or a confirmed biological mechanism.",
+      "A statistically significant highest-versus-lowest-quartile stroke association in fully adjusted Model 3.",
+      "An independently calibrated individual-risk calculator, improved C-statistic/NRI/IDI, or superiority to established risk scores.",
+      "A universal clinical cut-off, treatment efficacy, or benefit from targeting the ratio.",
+      "That exposure-quartile network differences demonstrate within-person disease transitions."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-bioi0017-1",
+        "component": "The study combined a UK Biobank prospective analysis with an independent clinical association-replication cohort.",
+        "context": "The primary and external populations are distinct and are reported separately. The external fully adjusted complete-case analysis represents a subset of the initially assembled clinical cohort.",
+        "finding": "UK Biobank analytic participants: 261,865; External cohort initially assembled: 1,798; External complete-case analysis: 328 participants, including 88 MACE outcomes; External recruitment and follow-up: 2018–2020 enrollment; up to 4 years of follow-up",
+        "evidence_level": "Prospective observational cohort association",
+        "scope": "The primary and external populations are distinct and are reported separately. The external fully adjusted complete-case analysis represents a subset of the initially assembled clinical cohort.",
+        "source_locator": "Methods: Study design and population, Primary cohort and External validation cohort; Results: Population characteristics; Table 1; Figure 5",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-bioi0017-2",
+        "component": "Higher TyG:eGFRcr-cys quartiles were associated with higher incident CVD hazards in UK Biobank.",
+        "context": "Fully adjusted Model 3; the lowest ratio quartile is the reference. Hazard ratios describe observational associations, not causal effects or a validated clinical risk score.",
+        "finding": "Q2 versus Q1 CVD HR: 1.15; 95% CI 1.10–1.21; Q3 versus Q1 CVD HR: 1.17; 95% CI 1.12–1.23; Q4 versus Q1 CVD HR: 1.24; 95% CI 1.18–1.30",
+        "evidence_level": "Prospective observational cohort association",
+        "scope": "Fully adjusted Model 3; the lowest ratio quartile is the reference. Hazard ratios describe observational associations, not causal effects or a validated clinical risk score.",
+        "source_locator": "Abstract: Result; Results: Associations between the TyG index and the TyG:eGFRcr-cys ratio with CVD; Table 2, CVD quartile rows, Model 3",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-bioi0017-3",
+        "component": "The highest-quartile association was clearer for CHD than for stroke.",
+        "context": "Same highest-versus-lowest ratio-quartile contrast in fully adjusted Model 3. The stroke confidence interval includes the null; other exposure contrasts should not be treated as interchangeable with this quartile comparison.",
+        "finding": "Q4 versus Q1 CHD HR: 1.30; 95% CI 1.23–1.37; Q4 versus Q1 stroke HR: 1.05; 95% CI 0.96–1.16; Stroke Q4 versus Q1 P value: 0.29",
+        "evidence_level": "Prospective observational cohort association",
+        "scope": "Same highest-versus-lowest ratio-quartile contrast in fully adjusted Model 3. The stroke confidence interval includes the null; other exposure contrasts should not be treated as interchangeable with this quartile comparison.",
+        "source_locator": "Results: Associations between the TyG index and the TyG:eGFRcr-cys ratio with CVD; Table 2, CHD and STROKE quartile-4 rows, Model 3",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-bioi0017-4",
+        "component": "The ratio–MACE association was also reported in the external clinical complete-case cohort, with substantial uncertainty in effect magnitude.",
+        "context": "External Cox Model 3; per-standard-deviation contrast, distinct from the UK Biobank quartile comparison. This is independent association replication, not proof of incremental predictive utility or calibrated individual risk.",
+        "finding": "TyG:eGFRcr-cys HR per 1-SD increase: 6.04; 95% CI 2.12–17.19; External analysis scale: 328 complete cases; 88 MACE outcomes",
+        "evidence_level": "Prospective observational cohort association",
+        "scope": "External Cox Model 3; per-standard-deviation contrast, distinct from the UK Biobank quartile comparison. This is independent association replication, not proof of incremental predictive utility or calibrated individual risk.",
+        "source_locator": "Methods: External validation statistical analysis; Results: External validation; Figure 5D and caption; Methods: External validation cohort",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-bioi0017-5",
+        "component": "Dynamic network biomarker analysis identified a possible transition-related pattern across ratio-based risk strata.",
+        "context": "Participants were ordered by between-person exposure quartiles. The exploratory network pattern is not longitudinal demonstration of an individual patient entering a pre-disease state.",
+        "finding": "Risk strata: Four ratio quartiles, Q1–Q4; Composite-index pattern: Highest reported value in Q3; Interpretation: Exploratory network instability across exposure strata; not a proven mechanism or clinical early-warning threshold",
+        "evidence_level": "Prospective observational cohort association",
+        "scope": "Participants were ordered by between-person exposure quartiles. The exploratory network pattern is not longitudinal demonstration of an individual patient entering a pre-disease state.",
+        "source_locator": "Methods: Dynamic network biomarker analysis; Results: Dynamic network biomarker analysis suggested a potential transition stage during CVD risk progression; Figure 6B–E",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  }
+}

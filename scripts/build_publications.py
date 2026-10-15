@@ -537,18 +537,18 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     profile_type = required_text(
         study.get("profile_type"), f"{label} study_profile.profile_type"
     )
-    if profile_type not in {"clinical_cohort", "multicohort_omics", "narrative_review", "preclinical_multimodal"}:
+    if profile_type not in {"clinical_cohort", "multicohort_omics", "multicohort_observational", "narrative_review", "preclinical_multimodal"}:
         raise ValueError(
             f"{label} study_profile.profile_type must be clinical_cohort, "
-            "multicohort_omics, narrative_review, or preclinical_multimodal."
+            "multicohort_omics, multicohort_observational, narrative_review, or preclinical_multimodal."
         )
     if "narrative_genre" in study and (
         profile_type != "narrative_review"
         or study["narrative_genre"] not in ("perspective", "correspondence")
     ):
         raise ValueError(f"{label} narrative_genre requires narrative_review and perspective or correspondence.")
-    if profile_type == "preclinical_multimodal" and any(key in study for key in ("unique_total_n", "cohorts")):
-        raise ValueError(f"{label} preclinical_multimodal must use scale_metrics, not a synthetic cohort total.")
+    if profile_type in {"preclinical_multimodal", "multicohort_observational"} and any(key in study for key in ("unique_total_n", "cohorts")):
+        raise ValueError(f"{label} {profile_type} must use scale_metrics, not a synthetic cohort total.")
     detail_keys = ["study_design", "evidence_type"]
     if profile_type == "narrative_review":
         detail_keys.append("translation_scope")
@@ -1890,6 +1890,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     markdown_url = absolute(site_root, f"papers/{slug}.md")
     is_v2 = bool(deep_content and deep_content.get("version") == 2)
     pilot = is_v2 and (evidence_presentation.enabled(doi) if presentation is None else presentation)
+    standalone_v2 = is_v2 and publication.get("deep_geo") is False
     if pilot and (not evidence_presentation.enabled(doi) or not official_abstract):
         raise ValueError('Scholarly-first requires an allowlisted V2 with its Official Abstract')
     is_pending = publication.get("paper_geo_status") == "pending"
@@ -1918,8 +1919,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         links.append('<a class="btn" href="#cite-this-paper">Cite</a>')
     if is_pending:
         deep_badge = '<span class="badge">Deep GEO · Pending</span>'
-    elif deep_content is not None:
+    elif deep_content is not None and publication.get("deep_geo", True):
         deep_badge = '<span class="badge">Deep GEO</span>'
+    elif standalone_v2:
+        deep_badge = '<span class="badge">Paper GEO V2</span>'
     else:
         deep_badge = ""
     citation = [
@@ -1977,7 +1980,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     elif authors:
         v2_authors_html = '<p class="paper-authors">' + html.escape('; '.join(authors)) + '</p>'
     deep_html = (
-        render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot,
+        render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot or standalone_v2,
                          pmc_url=verified_pmc_provenance(publication, deep_content, citation_data))
         if deep_content is not None
         else ""
@@ -2015,7 +2018,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         deep_html += export_html(publication, deep_content)
     if pilot:
         deep_html = evidence_presentation.finding_sections(deep_html)
-    early_html = evidence_presentation.question_summary(deep_content, anchor=True) if pilot else ''
+    early_html = evidence_presentation.question_summary(deep_content, anchor=True) if pilot or standalone_v2 else ''
     return with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
@@ -2140,12 +2143,12 @@ def public_record(publication, *, config, deep_tokens, featured_tokens, deep_con
     item["markdown_url"] = absolute(config["site_url"], f"papers/{slug}.md")
     item["deep_geo"] = token in deep_tokens
     content = deep_contents.get(token)
-    if not item["deep_geo"]:
-        item["paper_geo_status"] = "none"
-    elif content is None:
-        item["paper_geo_status"] = "pending"
-    else:
+    if content is not None:
+        if not item["deep_geo"] and content["version"] != 2:
+            raise ValueError("Evidence content outside Deep GEO must use reviewed Paper GEO V2.")
         item["paper_geo_status"] = "v2" if content["version"] == 2 else "v1"
+    else:
+        item["paper_geo_status"] = "pending" if item["deep_geo"] else "none"
     item["featured"] = token in featured_tokens
     return item
 
@@ -2382,7 +2385,12 @@ def build_site():
     deep_contents = {
         publication_token(publication): load_deep_content(publication, allow_missing=True)
         for publication in public_master
-        if publication_token(publication) in deep_tokens
+    }
+    # Archived ordinary V1 files predate reviewed standalone evidence. Keep
+    # their existing inactive behavior; only reviewed V2 opts ordinary works in.
+    deep_contents = {
+        token: content for token, content in deep_contents.items()
+        if token in deep_tokens or content is None or content.get("version") != 1
     }
     public_items = [
         public_record(

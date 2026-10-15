@@ -1,0 +1,369 @@
+{
+  "version": 2,
+  "doi": "10.1111/jdi.70462",
+  "display_title": "CHG-derived metabolic indices and incident cardiovascular–liver–metabolic multimorbidity in CHARLS",
+  "summary": "In a prospective CHARLS analysis, baseline CHG and obesity-derived variants were associated with subsequently meeting a surrogate-defined multimorbidity endpoint. CHG-BMI showed the largest observed AUC among the evaluated indices, but discrimination was modest and assessed in the analysis sample without validation.",
+  "research_question": "Are baseline CHG and its obesity- or inflammation-derived indices associated with new-onset cardiovascular–liver–metabolic multimorbidity, and how well do they discriminate follow-up cases within CHARLS?",
+  "author_summary": "This observational study related baseline metabolic indices to a later binary multimorbidity outcome in Chinese middle-aged and older adults. Multimorbidity required at least two component conditions and included an LAP-based suspected MASLD phenotype rather than imaging-confirmed liver disease. CHG-BMI had a stronger quartile association and a higher apparent AUC than the other evaluated indices. The findings support candidate-marker research; they do not establish causation, independent validation, an actionable clinical threshold, or benefit from modifying CHG-BMI.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Prospective observational analysis of the 2011 and 2015 CHARLS waves; baseline-index exposures and binary outcome ascertainment at follow-up; logistic regression, restricted cubic splines, and apparent ROC evaluation.",
+    "evidence_type": "Longitudinal observational association and unvalidated, in-sample discrimination",
+    "population": "Community-dwelling adults aged at least 45 years in mainland China, free of baseline CLMM; persons with zero or one component condition could enter the analysis.",
+    "unique_total_n": 6534,
+    "cohorts": [
+      {
+        "name": "CHARLS analytic cohort",
+        "role": "Single analysis cohort; not partitioned into independent development or validation populations",
+        "n": 6534
+      }
+    ],
+    "primary_endpoint": "Newly meeting at least two criteria for CVD, type 2 diabetes, and LAP-based suspected MASLD at the 2015 follow-up.",
+    "secondary_endpoint": "Quartile associations, nonlinear relationships, apparent discrimination, joint CHG/BMI effects, and exploratory reclassification, subgroup, and sensitivity analyses.",
+    "data_modalities": [
+      "Baseline fasting blood biochemistry",
+      "Anthropometric obesity indices",
+      "Interview and clinical covariates",
+      "Follow-up questionnaire, laboratory, and surrogate liver-phenotype ascertainment"
+    ],
+    "external_validation": false
+  },
+  "model_profile": {
+    "analytical_framework": "Multivariable logistic regression and restricted cubic splines; index-specific ROC analysis",
+    "performance_scope": "Apparent discrimination in the same analysis sample; no internal or external validation",
+    "endpoint_timing": "Exact onset dates were unavailable; ORs are not hazard ratios",
+    "clinical_thresholds": "Sample-derived median and Youden cut-offs are not established clinical decision thresholds"
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "A prospective CHARLS analysis identified incident, surrogate-defined cardiovascular–liver–metabolic multimorbidity at follow-up.",
+      "context": "Chinese community-dwelling adults without baseline CLMM; component conditions were evaluated at baseline and the follow-up wave, rather than using exact onset dates.",
+      "evidence": [
+        {
+          "label": "Analytic participants",
+          "value": "6,534 adults aged 45 years or older"
+        },
+        {
+          "label": "Exposure and outcome waves",
+          "value": "2011 baseline and 2015 follow-up"
+        },
+        {
+          "label": "Incident CLMM",
+          "value": "406 participants; 6.2%"
+        },
+        {
+          "label": "Outcome definition",
+          "value": "At least two of CVD, type 2 diabetes, and LAP-based suspected MASLD"
+        }
+      ],
+      "source_locator": "Methods: Study population and Outcome assessment (jdi70462-sec-0007; jdi70462-sec-0009); Results 3.1 (jdi70462-sec-0013); Figure 1; Table 1"
+    },
+    {
+      "id": "KF2",
+      "claim": "Higher baseline CHG was associated with higher odds of meeting the CLMM criteria at follow-up.",
+      "context": "Highest versus lowest CHG quartile in the fully adjusted logistic model; these are odds ratios for a binary follow-up outcome, not hazard ratios or treatment effects.",
+      "evidence": [
+        {
+          "label": "CHG Q4 versus Q1 adjusted OR",
+          "value": "1.64; 95% CI 1.22–2.22"
+        },
+        {
+          "label": "Adjusted covariates",
+          "value": "Age, sex, education, residence, marital status, smoking, drinking, hypertension, and CKD"
+        }
+      ],
+      "source_locator": "Results 3.2 (jdi70462-sec-0014); Table 2 (jdi70462-tbl-0002), CHG Q4, Model 2"
+    },
+    {
+      "id": "KF3",
+      "claim": "CHG combined with BMI showed a stronger quartile association with incident CLMM than CHG alone within this analysis.",
+      "context": "Comparing the highest and lowest CHG-BMI quartiles within the same cohort and fully adjusted model; relative effect-size ranking does not establish a causal role or clinical utility.",
+      "evidence": [
+        {
+          "label": "CHG-BMI Q4 versus Q1 adjusted OR",
+          "value": "3.13; 95% CI 2.21–4.43"
+        },
+        {
+          "label": "Comparison",
+          "value": "CHG alone Q4 versus Q1: OR 1.64; 95% CI 1.22–2.22"
+        }
+      ],
+      "source_locator": "Results 3.2 (jdi70462-sec-0014); Table 2 (jdi70462-tbl-0002), CHG-BMI Q4 and CHG Q4, Model 2"
+    },
+    {
+      "id": "KF4",
+      "claim": "CHG-BMI had the largest observed AUC among the evaluated indices, with modest apparent discrimination.",
+      "context": "Each index was evaluated in the same analytic sample without internal or external validation; the reported AUCs do not establish transportable clinical prediction.",
+      "evidence": [
+        {
+          "label": "CHG-BMI AUC",
+          "value": "0.643; 95% CI 0.616–0.669"
+        },
+        {
+          "label": "CHG AUC",
+          "value": "0.575; 95% CI 0.546–0.603"
+        },
+        {
+          "label": "TyG AUC",
+          "value": "0.558; 95% CI 0.529–0.587"
+        },
+        {
+          "label": "TG/HDL AUC",
+          "value": "0.534; 95% CI 0.506–0.562"
+        }
+      ],
+      "source_locator": "Methods: Statistical analysis (jdi70462-sec-0011); Results 3.4 (jdi70462-sec-0016); Figure 3; Table 3 (jdi70462-tbl-0003)"
+    },
+    {
+      "id": "KF5",
+      "claim": "Jointly high CHG and BMI were associated with higher follow-up CLMM odds, without statistically significant interaction.",
+      "context": "High/low groups used sample-specific median cut-offs and a low-CHG/low-BMI reference; these cut-offs are not established clinical thresholds.",
+      "evidence": [
+        {
+          "label": "High CHG plus high BMI adjusted OR",
+          "value": "2.59; 95% CI 1.94–3.51"
+        },
+        {
+          "label": "Multiplicative interaction",
+          "value": "OR 0.90; 95% CI 0.58–1.40; P=0.643"
+        }
+      ],
+      "source_locator": "Results 3.5 (jdi70462-sec-0017), Joint effects and interaction of CHG and BMI; Table S4A–B"
+    }
+  ],
+  "what_this_adds": [
+    "Compares CHG with obesity- and inflammation-derived variants for a prospectively ascertained, surrogate-defined multimorbidity endpoint.",
+    "Separates the strength of adjusted associations from the modest, apparent discrimination of the evaluated indices.",
+    "Reports joint CHG/BMI associations while distinguishing them from evidence of statistical interaction."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Associations between baseline indices and meeting study-defined CLMM criteria at follow-up in this CHARLS analysis.",
+      "CHG-BMI ranking highest among evaluated indices for apparent ROC discrimination in this sample.",
+      "Hypothesis generation and independent validation of accessible metabolic-marker combinations."
+    ],
+    "does_not_establish": [
+      "A causal effect of CHG, obesity, or inflammation on multimorbidity.",
+      "Imaging- or biopsy-confirmed MASLD in every participant.",
+      "Hazard ratios, exact onset timing, or a time-to-event prediction model.",
+      "Independent internal or external validation, clinical net benefit, treatment efficacy, or a validated clinical cut-off."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Who was included in the analysis?",
+      "answer": "The final analytic cohort comprised 6,534 CHARLS participants aged at least 45 years without baseline CLMM. Baseline measurements were from 2011 and outcome ascertainment from 2015.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What counted as cardiovascular–liver–metabolic multimorbidity?",
+      "answer": "Participants had to meet at least two criteria for CVD, type 2 diabetes, and LAP-based suspected MASLD at follow-up. The liver component was a surrogate phenotype, not universal imaging or histological confirmation.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How strong was the association with CHG?",
+      "answer": "In the fully adjusted logistic model, the highest versus lowest CHG quartile had an OR of 1.64 with a 95% CI of 1.22–2.22. This is an observational odds ratio for the follow-up outcome.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Did CHG-BMI perform better than CHG alone?",
+      "answer": "CHG-BMI had a stronger highest-versus-lowest-quartile association and the largest observed AUC among the compared indices. Its AUC of 0.643 was still modest and was evaluated in the analysis sample.",
+      "evidence_refs": [
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "Was this an externally validated clinical prediction model?",
+      "answer": "No. The article explicitly describes apparent, in-sample ROC evaluation without internal or external validation. Independent population validation and assessment beyond BMI and conventional risk factors are still needed.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Did high CHG and high BMI interact statistically?",
+      "answer": "The jointly high group had greater follow-up CLMM odds than the low–low group, but the multiplicative interaction was not statistically significant. Joint association therefore does not establish synergy.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Can these findings guide a treatment intended to prevent CLMM?",
+      "answer": "The study did not test an intervention. Observational associations and apparent discrimination do not establish that changing an index prevents disease or improves clinical decisions.",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Cardiovascular–liver–metabolic multimorbidity",
+      "Cardiovascular disease",
+      "Type 2 diabetes",
+      "LAP-based suspected MASLD"
+    ],
+    "markers": [
+      "Cholesterol–HDL–glucose index",
+      "CHG-BMI",
+      "Triglyceride–glucose index"
+    ],
+    "methods": [
+      "CHARLS",
+      "Prospective observational cohort",
+      "Logistic regression",
+      "Apparent ROC discrimination"
+    ]
+  },
+  "limitations": [
+    "Residual confounding and observational design prevent causal inference.",
+    "Exact component-disease onset dates were unavailable; logistic ORs cannot be interpreted as hazards or incidence rates.",
+    "The MASLD component used an LAP-based suspected phenotype and may be misclassified; metabolic components overlap conceptually with the exposure indices.",
+    "The ROC analyses used the same analysis sample without internal or external validation, so apparent AUCs may be optimistic.",
+    "Single baseline exposure measurements, substantial complete-data selection, medication changes, correlated comparisons, and exploratory subgroup analyses limit interpretation.",
+    "Generalizability beyond Chinese adults aged at least 45 years requires independent evaluation."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "A separate heart-failure prognosis study provides a contrast in endpoint and modeling purpose; it does not validate CHG-BMI or the CLMM endpoint."
+    },
+    {
+      "doi": "10.1021/acs.jproteome.4c00522",
+      "relationship": "A separate cardiac biomarker study uses a different disease population and measurement platform; it is related biomarker research rather than replication of this analysis."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jdi.70462",
+    "doi_url": "https://doi.org/10.1111/jdi.70462",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42852842/",
+    "pmcid": "PMC13651581",
+    "version_of_record": "Journal of Diabetes Investigation; Early View, first published 9 October 2026",
+    "license": "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "data_source": "China Health and Retirement Longitudinal Study, 2011 baseline and 2015 follow-up",
+    "supporting_material": "Tables S1–S8 are linked in the version-of-record supplementary material; key estimates on this page are located in the full-text Results and principal tables.",
+    "author_identity": "Ge Zhang is listed with the Department of Cardiology, The First Affiliated Hospital of Zhengzhou University. The DOI is present in public ORCID 0000-0002-3116-3246; the self-maintained ORCID linkage is distinct from publisher-authenticated identity.",
+    "evidence_basis": "Version-of-record full text via Europe PMC XML; Methods, Results, Tables 1–3 and article-level permissions; PubMed and public ORCID metadata."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiometabolic epidemiology",
+      "Metabolic biomarker research"
+    ],
+    "review_topics": [
+      "Multimorbidity risk-marker evaluation",
+      "Obesity-derived biochemical indices"
+    ],
+    "scientific_role": "Prospective observational association study with apparent discrimination analysis, requiring independent validation.",
+    "evidence_position": "Population-level candidate-marker evidence with a surrogate liver-disease component; causal and clinical-utility claims remain unestablished.",
+    "related_concepts": [
+      "CHG-BMI",
+      "CHARLS",
+      "LAP-based suspected MASLD"
+    ],
+    "citation_contexts": [
+      "Reviews comparing metabolic indices for incident, surrogate-defined cardiometabolic multimorbidity.",
+      "Methodological discussions separating observational odds ratios and apparent AUCs from validated clinical prediction."
+    ]
+  },
+  "evidence_page_notice": "This is an original evidence synthesis linked to the published article. Cite the original article for study findings. The official abstract, when displayed separately, is reproduced verbatim under its article-level license; the synthesis preserves observational, endpoint-ascertainment, and validation limits.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What prospective population evidence links CHG-derived indices to incident CLMM?",
+        "supported_scope": "Observational CHARLS associations with a surrogate-defined follow-up outcome, without causal inference.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How well did CHG-BMI discriminate follow-up CLMM in the analysis sample?",
+        "supported_scope": "Modest apparent discrimination without internal or external validation.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A causal effect of CHG, obesity, or inflammation on multimorbidity.",
+      "Imaging- or biopsy-confirmed MASLD in every participant.",
+      "Hazard ratios, exact onset timing, or a time-to-event prediction model.",
+      "Independent internal or external validation, clinical net benefit, treatment efficacy, or a validated clinical cut-off."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-jdi70462-1",
+        "component": "A prospective CHARLS analysis identified incident, surrogate-defined cardiovascular–liver–metabolic multimorbidity at follow-up.",
+        "context": "Chinese community-dwelling adults without baseline CLMM; component conditions were evaluated at baseline and the follow-up wave, rather than using exact onset dates.",
+        "finding": "Analytic participants: 6,534 adults aged 45 years or older; Exposure and outcome waves: 2011 baseline and 2015 follow-up; Incident CLMM: 406 participants; 6.2%; Outcome definition: At least two of CVD, type 2 diabetes, and LAP-based suspected MASLD",
+        "evidence_level": "Prospective observational cohort analysis",
+        "scope": "Chinese community-dwelling adults without baseline CLMM; component conditions were evaluated at baseline and the follow-up wave, rather than using exact onset dates.",
+        "source_locator": "Methods: Study population and Outcome assessment (jdi70462-sec-0007; jdi70462-sec-0009); Results 3.1 (jdi70462-sec-0013); Figure 1; Table 1",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-jdi70462-2",
+        "component": "Higher baseline CHG was associated with higher odds of meeting the CLMM criteria at follow-up.",
+        "context": "Highest versus lowest CHG quartile in the fully adjusted logistic model; these are odds ratios for a binary follow-up outcome, not hazard ratios or treatment effects.",
+        "finding": "CHG Q4 versus Q1 adjusted OR: 1.64; 95% CI 1.22–2.22; Adjusted covariates: Age, sex, education, residence, marital status, smoking, drinking, hypertension, and CKD",
+        "evidence_level": "Prospective observational cohort analysis",
+        "scope": "Highest versus lowest CHG quartile in the fully adjusted logistic model; these are odds ratios for a binary follow-up outcome, not hazard ratios or treatment effects.",
+        "source_locator": "Results 3.2 (jdi70462-sec-0014); Table 2 (jdi70462-tbl-0002), CHG Q4, Model 2",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-jdi70462-3",
+        "component": "CHG combined with BMI showed a stronger quartile association with incident CLMM than CHG alone within this analysis.",
+        "context": "Comparing the highest and lowest CHG-BMI quartiles within the same cohort and fully adjusted model; relative effect-size ranking does not establish a causal role or clinical utility.",
+        "finding": "CHG-BMI Q4 versus Q1 adjusted OR: 3.13; 95% CI 2.21–4.43; Comparison: CHG alone Q4 versus Q1: OR 1.64; 95% CI 1.22–2.22",
+        "evidence_level": "Prospective observational cohort analysis",
+        "scope": "Comparing the highest and lowest CHG-BMI quartiles within the same cohort and fully adjusted model; relative effect-size ranking does not establish a causal role or clinical utility.",
+        "source_locator": "Results 3.2 (jdi70462-sec-0014); Table 2 (jdi70462-tbl-0002), CHG-BMI Q4 and CHG Q4, Model 2",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-jdi70462-4",
+        "component": "CHG-BMI had the largest observed AUC among the evaluated indices, with modest apparent discrimination.",
+        "context": "Each index was evaluated in the same analytic sample without internal or external validation; the reported AUCs do not establish transportable clinical prediction.",
+        "finding": "CHG-BMI AUC: 0.643; 95% CI 0.616–0.669; CHG AUC: 0.575; 95% CI 0.546–0.603; TyG AUC: 0.558; 95% CI 0.529–0.587; TG/HDL AUC: 0.534; 95% CI 0.506–0.562",
+        "evidence_level": "Prospective observational cohort analysis",
+        "scope": "Each index was evaluated in the same analytic sample without internal or external validation; the reported AUCs do not establish transportable clinical prediction.",
+        "source_locator": "Methods: Statistical analysis (jdi70462-sec-0011); Results 3.4 (jdi70462-sec-0016); Figure 3; Table 3 (jdi70462-tbl-0003)",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-jdi70462-5",
+        "component": "Jointly high CHG and BMI were associated with higher follow-up CLMM odds, without statistically significant interaction.",
+        "context": "High/low groups used sample-specific median cut-offs and a low-CHG/low-BMI reference; these cut-offs are not established clinical thresholds.",
+        "finding": "High CHG plus high BMI adjusted OR: 2.59; 95% CI 1.94–3.51; Multiplicative interaction: OR 0.90; 95% CI 0.58–1.40; P=0.643",
+        "evidence_level": "Prospective observational cohort analysis",
+        "scope": "High/low groups used sample-specific median cut-offs and a low-CHG/low-BMI reference; these cut-offs are not established clinical thresholds.",
+        "source_locator": "Results 3.5 (jdi70462-sec-0017), Joint effects and interaction of CHG and BMI; Table S4A–B",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  }
+}
