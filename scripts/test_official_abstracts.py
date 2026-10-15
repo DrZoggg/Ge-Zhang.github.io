@@ -9,13 +9,13 @@ import official_abstracts
 from site_common import PAPERS_DIR
 from sync_common import is_withdrawn, load_master, norm_doi
 from validate_site import meta_contents, paper_json_ld_object
-from test_abstract_additions import FIXTURE, fixtures, reviewed_record
+from test_abstract_additions import FIXTURE, fixtures, v16_fixtures, reviewed_record
 
 
 def main():
     public = [item for item in load_master() if not is_withdrawn(item)]
     records = official_abstracts.load_official_abstracts(public)
-    additions = fixtures()
+    additions = {**fixtures(), **v16_fixtures()}
     original_dois = json.loads(FIXTURE.read_text(encoding="utf-8"))["baseline_dois"]
     assert len(records) == len(original_dois) + len(additions)
     for doi in additions:

@@ -16,7 +16,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1007/s10238-026-02130-6",
       "publisher_url": null,
@@ -28,9 +28,30 @@
       "openalex_id": "https://openalex.org/W7151618557",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1007-s10238-026-02130-6.csv",
+      "question_count": 7,
+      "concept_count": 17,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiomyopathy molecular classification",
+          "Cardiovascular systems biology"
+        ],
+        "review_topics": [
+          "Myocardial transcriptomic heterogeneity",
+          "Network-based patient stratification"
+        ],
+        "scientific_role": "Retrospective human expression-network subtyping with cross-dataset assignment, inferred immune profiles and a selected cell-model expression check.",
+        "evidence_position": "Computational and exploratory translational evidence; treatment-response expression similarity does not demonstrate subtype-guided therapeutic benefit.",
+        "related_concepts": [
+          "Edge perturbation",
+          "Immune-signature inference",
+          "Immunoadsorption response hypotheses"
+        ],
+        "citation_contexts": [
+          "Methods: interaction-level features for molecular DCM classification across bulk myocardial expression datasets.",
+          "Background: immune and metabolic heterogeneity in DCM, with exploratory treatment-response matching explicitly separated from clinical efficacy."
+        ]
+      }
     },
     {
       "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
@@ -202,7 +223,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.15212/bioi-2026-0017",
       "publisher_url": null,
@@ -213,10 +234,31 @@
       "pmcid": null,
       "openalex_id": "https://openalex.org/W7164867760",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "official_abstract_available": true,
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-15212-bioi-2026-0017.csv",
+      "question_count": 7,
+      "concept_count": 12,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular epidemiology",
+          "Cardiometabolic–renal markers"
+        ],
+        "review_topics": [
+          "Combined metabolic and renal risk assessment",
+          "External association-replication studies"
+        ],
+        "scientific_role": "Prospective observational biomarker-association study with independent clinical replication and exploratory network analysis.",
+        "evidence_position": "Human cohort association evidence, distinct from incremental prediction validation, causal inference, or treatment effects.",
+        "related_concepts": [
+          "TyG:eGFRcr-cys",
+          "MACE",
+          "UK Biobank"
+        ],
+        "citation_contexts": [
+          "Reviews evaluating integrated metabolic–renal markers for incident cardiovascular outcomes.",
+          "Discussions distinguishing independent association replication from validated clinical prediction and incremental decision value."
+        ]
+      }
     },
     {
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -438,7 +480,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1111/jdi.70462",
       "publisher_url": null,
@@ -449,10 +491,31 @@
       "pmcid": null,
       "openalex_id": null,
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "official_abstract_available": true,
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jdi-70462.csv",
+      "question_count": 7,
+      "concept_count": 11,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiometabolic epidemiology",
+          "Metabolic biomarker research"
+        ],
+        "review_topics": [
+          "Multimorbidity risk-marker evaluation",
+          "Obesity-derived biochemical indices"
+        ],
+        "scientific_role": "Prospective observational association study with apparent discrimination analysis, requiring independent validation.",
+        "evidence_position": "Population-level candidate-marker evidence with a surrogate liver-disease component; causal and clinical-utility claims remain unestablished.",
+        "related_concepts": [
+          "CHG-BMI",
+          "CHARLS",
+          "LAP-based suspected MASLD"
+        ],
+        "citation_contexts": [
+          "Reviews comparing metabolic indices for incident, surrogate-defined cardiometabolic multimorbidity.",
+          "Methodological discussions separating observational odds ratios and apparent AUCs from validated clinical prediction."
+        ]
+      }
     },
     {
       "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
@@ -1469,7 +1532,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1186/s10020-024-00963-z",
       "publisher_url": null,
@@ -1480,10 +1543,31 @@
       "pmcid": "PMC11513636",
       "openalex_id": "https://openalex.org/W4403785027",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "official_abstract_available": true,
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1186-s10020-024-00963-z.csv",
+      "question_count": 7,
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Pulmonary vascular biology",
+          "Computational biomarker research"
+        ],
+        "review_topics": [
+          "Endothelial expression states in PAH",
+          "EndMT-related candidate classification"
+        ],
+        "scientific_role": "Exploratory integration of single-cell and bulk tissue expression to nominate endothelial states and an internally tested two-gene classifier.",
+        "evidence_position": "Retrospective omics association with limited expression experiments; no direct lineage tracing, causal perturbation or independently validated clinical assay.",
+        "related_concepts": [
+          "Pseudotime interpretation",
+          "Tissue-to-blood translation boundary",
+          "Internal versus external validation"
+        ],
+        "citation_contexts": [
+          "Background: endothelial heterogeneity and EndMT-associated transcriptional programs in PAH.",
+          "Methods: candidate-gene selection and internal classifier evaluation, with clear limits on causal and clinical interpretation."
+        ]
+      }
     },
     {
       "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
@@ -2104,7 +2188,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.2147/cia.s462542",
       "publisher_url": null,
@@ -2115,10 +2199,30 @@
       "pmcid": "PMC11068055",
       "openalex_id": "https://openalex.org/W4396222788",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "official_abstract_available": true,
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-2147-cia-s462542.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiorenal medicine",
+          "Clinical prognosis"
+        ],
+        "review_topics": [
+          "Metabolic biomarkers in advanced heart failure",
+          "Risk assessment with impaired kidney function"
+        ],
+        "scientific_role": "Single-center observational assessment of admission TyG and subsequent adverse outcomes in advanced HF with renal dysfunction.",
+        "evidence_position": "Retrospective biomarker association with outcome-derived cutoffs in one cohort; neither external validation nor a TyG-targeted treatment study.",
+        "related_concepts": [
+          "Triglyceride-glucose index interpretation",
+          "Prognostic threshold transportability"
+        ],
+        "citation_contexts": [
+          "Background: metabolic risk markers in advanced HF complicated by renal dysfunction.",
+          "Methods: why same-cohort ROC cutoffs and adjusted hazards require external validation before clinical use."
+        ]
+      }
     },
     {
       "title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
@@ -2339,7 +2443,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.18063/ijb.740",
       "publisher_url": null,
@@ -2350,10 +2454,31 @@
       "pmcid": "PMC10261152",
       "openalex_id": "https://openalex.org/W4380872576",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "official_abstract_available": true,
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-18063-ijb-740.csv",
+      "question_count": 7,
+      "concept_count": 22,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular tissue engineering",
+          "Vascular biomaterials"
+        ],
+        "review_topics": [
+          "Bioink design for vascular constructs",
+          "Printing processes and translation barriers"
+        ],
+        "scientific_role": "Narrative synthesis connecting hydrogel functions, cell compatibility, fabrication methods and clinical-translation constraints.",
+        "evidence_position": "Secondary engineering and preclinical synthesis; no new clinical cohort, pooled clinical effect or demonstrated graft efficacy.",
+        "related_concepts": [
+          "Support and sacrificial materials",
+          "Embedded hydrogel printing",
+          "Endothelialization and durability"
+        ],
+        "citation_contexts": [
+          "Background: material and process trade-offs in tissue-engineered vascular graft research.",
+          "Methods rationale: choosing supportive bioinks, removable templates and embedded printing, while tracing quantitative examples to original experiments."
+        ]
+      }
     },
     {
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",

@@ -1,0 +1,357 @@
+{
+  "version": 2,
+  "doi": "10.2147/cia.s462542",
+  "display_title": "Triglyceride-glucose index and outcomes in advanced heart failure with renal dysfunction",
+  "summary": "In a retrospective cohort of 717 patients with advanced chronic heart failure and renal dysfunction, a higher admission triglyceride-glucose index was associated with subsequent adverse events and all-cause mortality. The thresholds and discrimination were assessed in the same single-center cohort.",
+  "research_question": "Is the admission triglyceride-glucose (TyG) index associated with subsequent major adverse cardiovascular events and all-cause mortality in patients with advanced chronic heart failure and renal dysfunction?",
+  "author_summary": "This study examined hospitalized patients with advanced chronic heart failure and renal dysfunction at the First Affiliated Hospital of Zhengzhou University. Of 815 patients meeting the reported selection criteria, 98 were lost to follow-up and 717 were analyzed. Renal dysfunction was defined as eGFR below 90 mL/min/1.73 m², and the median follow-up was 21.58 months. Higher admission TyG was associated with the broad composite adverse-event endpoint and with all-cause mortality after multivariable adjustment. The adjusted hazard ratios for high versus low TyG were 5.402 for the composite endpoint and 5.062 for mortality. Outcome-specific thresholds of 8.48 and 8.50, respectively, were selected from ROC analyses in this same cohort. These observations support further study of a readily available metabolic marker in this patient group; they do not establish that lowering TyG improves outcomes or that these thresholds work in other settings.",
+  "evidence_page_notice": "This author evidence page provides an original explanation of the published study. Cite the original article for its findings; the page is not a treatment recommendation or an externally validated clinical risk calculator.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Retrospective single-center observational cohort; admissions from September 2019 through December 2020, with follow-up completed in March 2022",
+    "evidence_type": "Admission laboratory biomarker association with longitudinal outcomes, using outcome-derived ROC thresholds, Cox regression and Kaplan-Meier analyses",
+    "population": "Adults with advanced chronic heart failure, eGFR below 90 mL/min/1.73 m², and at least two heart-failure hospitalizations at the First Affiliated Hospital of Zhengzhou University; 717 analyzed after 98 losses among 815 initially included",
+    "primary_endpoint": "Reported MACEs composite: cardiovascular or non-cardiovascular death, worsening-HF rehospitalization, heart transplantation, mechanical circulatory support, malignant arrhythmia, myocardial infarction, or unstable-angina rehospitalization; this is broader than a conventional three-point MACE endpoint",
+    "secondary_endpoint": "All-cause mortality during follow-up; reported median follow-up 21.58 months (interquartile range 17.98–25.39)",
+    "data_modalities": [
+      "Retrospective inpatient and outpatient records",
+      "Admission fasting triglyceride and glucose measurements",
+      "Telephone and clinic follow-up",
+      "Clinical laboratory values and medication history"
+    ],
+    "external_validation": false,
+    "unique_total_n": 717,
+    "cohorts": [
+      {
+        "name": "Analyzed single-center cohort",
+        "n": 717,
+        "role": "Same cohort used for threshold selection, association estimation and outcome assessment"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The analysis comprised 717 patients after follow-up losses, with outcome follow-up of about two years.",
+      "context": "This is an observational advanced-heart-failure population selected for renal dysfunction and repeated HF hospitalization; the initial included population is not the analyzed sample size.",
+      "evidence": [
+        {
+          "label": "Initially included",
+          "value": "815 patients"
+        },
+        {
+          "label": "Lost to follow-up",
+          "value": "98 patients (12.0%)"
+        },
+        {
+          "label": "Analyzed",
+          "value": "717 patients"
+        },
+        {
+          "label": "Median follow-up (IQR)",
+          "value": "21.58 (17.98–25.39) months"
+        },
+        {
+          "label": "Renal dysfunction definition",
+          "value": "eGFR <90 mL/min/1.73 m²"
+        }
+      ],
+      "source_locator": "PMC11068055: Method — Study and Population, Inclusion Criteria, Exclusion Criteria, and Follow-Up; Figure 1; Results — Baseline Characteristics."
+    },
+    {
+      "id": "KF2",
+      "claim": "A TyG cutoff of 8.48 separated groups with different composite-event risks, with moderate discrimination in the source cohort.",
+      "context": "The endpoint-specific cutoff and ROC performance were derived and evaluated in the same cohort; no independent external validation was reported.",
+      "evidence": [
+        {
+          "label": "MACEs cutoff",
+          "value": "8.48"
+        },
+        {
+          "label": "ROC AUC",
+          "value": "0.759"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "0.836"
+        },
+        {
+          "label": "Specificity",
+          "value": "0.588"
+        },
+        {
+          "label": "Low TyG group",
+          "value": "318 patients, TyG <8.48"
+        },
+        {
+          "label": "High TyG group",
+          "value": "399 patients, TyG ≥8.48"
+        }
+      ],
+      "source_locator": "PMC11068055: Results — Baseline Characteristics; Figure 2; Table 1 (Clinical and Laboratory Characteristics According to the TyG (MACEs), anchor t0001)."
+    },
+    {
+      "id": "KF3",
+      "claim": "Higher TyG was associated with a higher adjusted hazard of the reported composite adverse-event endpoint.",
+      "context": "The comparison is the high-TyG group versus the low-TyG group in an observational multivariable Cox model. The hazard ratio is not an absolute event probability or a treatment effect.",
+      "evidence": [
+        {
+          "label": "Adjusted MACEs hazard ratio",
+          "value": "5.402"
+        },
+        {
+          "label": "95% confidence interval",
+          "value": "3.771–7.739"
+        },
+        {
+          "label": "Reported significance",
+          "value": "P <0.001 in Results; table rounds P to 0"
+        }
+      ],
+      "source_locator": "PMC11068055: Table 5 — Multivariate Cox Regression Analysis Results for MACEs, TyG row (anchor t0005); Results — Relationship Between TyG and MACEs. The narrative cross-reference points to Table 4, but the verified result is in Table 5."
+    },
+    {
+      "id": "KF4",
+      "claim": "The mortality-specific TyG threshold was 8.50, and high TyG remained associated with all-cause mortality after adjustment.",
+      "context": "The mortality cutoff reclassifies the same patients, rather than creating a second independent cohort. Its performance does not establish general clinical transportability.",
+      "evidence": [
+        {
+          "label": "ACM cutoff",
+          "value": "8.50"
+        },
+        {
+          "label": "Mortality ROC AUC",
+          "value": "0.700"
+        },
+        {
+          "label": "Low and high groups",
+          "value": "330 and 387 patients, respectively"
+        },
+        {
+          "label": "Adjusted mortality hazard ratio",
+          "value": "5.062"
+        },
+        {
+          "label": "95% confidence interval",
+          "value": "3.268–7.839"
+        },
+        {
+          "label": "Reported significance",
+          "value": "P <0.001 in Results; table rounds P to 0"
+        }
+      ],
+      "source_locator": "PMC11068055: Results — Baseline Characteristics and Relationship Between TyG and ACM; Figure 3; Table 2 (anchor t0002); Table 6 — Multivariate Cox Regression Analysis Results for ACM, TyG row (anchor t0006)."
+    }
+  ],
+  "what_this_adds": [
+    "It examines a practical metabolic index in the specific setting of advanced chronic HF with renal dysfunction, a group in which metabolic biomarkers may be difficult to interpret.",
+    "It reports distinct event and mortality thresholds with both discrimination estimates and adjusted associations, while retaining the same underlying cohort.",
+    "It provides a hypothesis for externally validated cardiorenal risk research without demonstrating a benefit from a TyG-directed intervention."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "A prognostic association between admission TyG and subsequent outcomes in this selected retrospective cohort.",
+      "Outcome-specific discrimination and hazard-ratio estimates under the study definitions and modeling choices."
+    ],
+    "does_not_establish": [
+      "Causality between insulin resistance and the observed events.",
+      "That lowering triglyceride, glucose or TyG reduces mortality or rehospitalization.",
+      "External validity of the same thresholds, prospective clinical utility, or superiority to a validated clinical decision pathway.",
+      "A conventional three-point MACE endpoint: the study composite explicitly includes non-cardiovascular death and multiple HF-related outcomes."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Who was included in the analyzed cohort?",
+      "answer": "The analysis included 717 adults with advanced chronic HF, study-defined renal dysfunction and repeated HF hospitalization at one center. The 815 initially included patients also contained 98 who were lost to follow-up.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Were the MACEs and mortality groups independent cohorts?",
+      "answer": "No. The two outcome-specific cutoffs regrouped the same 717 analyzed patients. Their group sizes must not be added together as independent participants.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF4"
+      ]
+    },
+    {
+      "question": "What was the reported MACEs association?",
+      "answer": "High versus low TyG at the 8.48 threshold had an adjusted hazard ratio of 5.402 (95% CI 3.771–7.739). This is a relative hazard association, not an absolute event rate.",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was the composite limited to cardiovascular death, infarction and stroke?",
+      "answer": "No. The Methods define a broad composite including non-cardiovascular death, worsening-HF rehospitalization, transplantation, circulatory support and other events. Interpretation should preserve that study-specific definition.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was the mortality association evaluated separately?",
+      "answer": "Yes. At the mortality-specific cutoff of 8.50, the adjusted hazard ratio was 5.062 (95% CI 3.268–7.839), with ROC AUC 0.700 in the same cohort.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does the study show that treatment to lower TyG improves survival?",
+      "answer": "No. It is a retrospective observational association study, with thresholds chosen from the source cohort. Prospective and external studies are needed before using the findings to direct treatment.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "Clinical setting": [
+      "Advanced chronic heart failure",
+      "Renal dysfunction",
+      "Cardiorenal risk"
+    ],
+    "Biomarkers": [
+      "Triglyceride-glucose index",
+      "Insulin-resistance surrogate"
+    ],
+    "Methods": [
+      "Retrospective cohort",
+      "Cox proportional-hazards regression",
+      "ROC threshold selection",
+      "Prognostic association"
+    ]
+  },
+  "limitations": [
+    "Single-center retrospective selection and residual confounding restrict causal and transportability claims.",
+    "Thresholds were selected using the outcomes in the same dataset; no independent external validation was reported.",
+    "Ninety-eight initially included patients were lost to follow-up, which may introduce attrition bias.",
+    "The broad study-specific composite should not be treated as interchangeable with a standard three-point MACE outcome.",
+    "Some narrative table cross-references do not match the displayed table captions. This page locates adjusted MACEs and ACM estimates by the actual Table 5 and Table 6 titles and anchors.",
+    "A hazard ratio does not provide an absolute probability or demonstrate benefit from changing TyG."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Related advanced-HF/renal-dysfunction prognostic work using a broader AI modeling framework; the TyG study is a distinct biomarker analysis and must not be counted as independent external validation of that framework."
+    },
+    {
+      "doi": "10.1002/ggn2.202500053",
+      "relationship": "A methodological perspective relevant to the distinction between association, model evaluation and demonstrated clinical utility."
+    }
+  ],
+  "provenance": {
+    "source_of_truth": "Version-of-record article in Clinical Interventions in Aging, 2024;19:639–654; PubMed PMID 38706634; PMC11068055. The complete PMC XML and its hash were retained privately on 2026-10-14.",
+    "original_article_url": "https://doi.org/10.2147/CIA.S462542",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38706634/",
+    "license": "Article-specific CC BY-NC 3.0 notice in the PMC permissions section. This evidence narrative is an original summary; no publisher figures or full article text are republished here.",
+    "license_url": "https://creativecommons.org/licenses/by-nc/3.0/",
+    "identity_verification": "Ge Zhang is formally listed with the Department of Cardiology, First Affiliated Hospital of Zhengzhou University and the cardiovascular research-center/key-laboratory affiliations, consistent with the existing ORCID-derived master record. The article does not supply a Ge Zhang-specific ORCID identifier.",
+    "version_relationship": "Published journal article; no linked preprint relation was established from the checked article metadata.",
+    "numeric_verification": "Cohort flow, ROC thresholds and group sizes were checked against Methods, Results, Figures 1–3 and Tables 1–2. Adjusted estimates were checked directly against the TyG rows of Tables 5–6; rounded table P values are not interpreted as exact zero."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiorenal medicine",
+      "Clinical prognosis"
+    ],
+    "review_topics": [
+      "Metabolic biomarkers in advanced heart failure",
+      "Risk assessment with impaired kidney function"
+    ],
+    "scientific_role": "Single-center observational assessment of admission TyG and subsequent adverse outcomes in advanced HF with renal dysfunction.",
+    "evidence_position": "Retrospective biomarker association with outcome-derived cutoffs in one cohort; neither external validation nor a TyG-targeted treatment study.",
+    "related_concepts": [
+      "Triglyceride-glucose index interpretation",
+      "Prognostic threshold transportability"
+    ],
+    "citation_contexts": [
+      "Background: metabolic risk markers in advanced HF complicated by renal dysfunction.",
+      "Methods: why same-cohort ROC cutoffs and adjusted hazards require external validation before clinical use."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What evidence links TyG to prognosis in advanced HF with renal dysfunction?",
+        "supported_scope": "A retrospective single-center association with broad adverse events and mortality, preserving the study definitions.",
+        "evidence_refs": [
+          "KF1",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How were TyG thresholds evaluated in this patient group?",
+        "supported_scope": "Outcome-specific cutoffs and ROC discrimination evaluated in the same source cohort, without external validation.",
+        "evidence_refs": [
+          "KF2",
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A causal benefit from lowering TyG.",
+      "Independent validation or universally applicable clinical treatment thresholds."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "Cohort and follow-up",
+        "context": "This is an observational advanced-heart-failure population selected for renal dysfunction and repeated HF hospitalization; the initial included population is not the analyzed sample size.",
+        "finding": "The analysis comprised 717 patients after follow-up losses, with outcome follow-up of about two years.",
+        "evidence_level": "Retrospective single-center observational clinical evidence",
+        "scope": "Selected advanced-HF/renal-dysfunction cohort; not a treatment effect",
+        "source_locator": "PMC11068055: Method — Study and Population, Inclusion Criteria, Exclusion Criteria, and Follow-Up; Figure 1; Results — Baseline Characteristics.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Composite-event discrimination",
+        "context": "The endpoint-specific cutoff and ROC performance were derived and evaluated in the same cohort; no independent external validation was reported.",
+        "finding": "A TyG cutoff of 8.48 separated groups with different composite-event risks, with moderate discrimination in the source cohort.",
+        "evidence_level": "Retrospective single-center observational clinical evidence",
+        "scope": "Selected advanced-HF/renal-dysfunction cohort; not a treatment effect",
+        "source_locator": "PMC11068055: Results — Baseline Characteristics; Figure 2; Table 1 (Clinical and Laboratory Characteristics According to the TyG (MACEs), anchor t0001).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "Adjusted composite-event association",
+        "context": "The comparison is the high-TyG group versus the low-TyG group in an observational multivariable Cox model. The hazard ratio is not an absolute event probability or a treatment effect.",
+        "finding": "Higher TyG was associated with a higher adjusted hazard of the reported composite adverse-event endpoint.",
+        "evidence_level": "Retrospective single-center observational clinical evidence",
+        "scope": "Selected advanced-HF/renal-dysfunction cohort; not a treatment effect",
+        "source_locator": "PMC11068055: Table 5 — Multivariate Cox Regression Analysis Results for MACEs, TyG row (anchor t0005); Results — Relationship Between TyG and MACEs. The narrative cross-reference points to Table 4, but the verified result is in Table 5.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-kf4",
+        "component": "Mortality association",
+        "context": "The mortality cutoff reclassifies the same patients, rather than creating a second independent cohort. Its performance does not establish general clinical transportability.",
+        "finding": "The mortality-specific TyG threshold was 8.50, and high TyG remained associated with all-cause mortality after adjustment.",
+        "evidence_level": "Retrospective single-center observational clinical evidence",
+        "scope": "Selected advanced-HF/renal-dysfunction cohort; not a treatment effect",
+        "source_locator": "PMC11068055: Results — Baseline Characteristics and Relationship Between TyG and ACM; Figure 3; Table 2 (anchor t0002); Table 6 — Multivariate Cox Regression Analysis Results for ACM, TyG row (anchor t0006).",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}

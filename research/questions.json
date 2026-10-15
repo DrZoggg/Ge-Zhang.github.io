@@ -2,6 +2,50 @@
   "version": 1,
   "questions": [
     {
+      "id": "doi-10-1007-s10238-026-02130-6",
+      "question": "What data underpin the DCM network subtypes?",
+      "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
+      "doi": "10.1007/s10238-026-02130-6",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html#qa-1",
+      "source": "data/deep_geo/doi-10-1007-s10238-026-02130-6.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "Prospective diagnostic performance, prognosis or generalizability to all clinical DCM populations.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "dilated cardiomyopathy",
+        "heart failure",
+        "myocardial heterogeneity",
+        "edge perturbation",
+        "gene-interaction network",
+        "consensus clustering",
+        "nearest-template prediction",
+        "WGCNA",
+        "ssGSEA",
+        "Submap",
+        "EPS1",
+        "EPS2",
+        "EPS3",
+        "retrospective transcriptomic subtyping",
+        "computational immune inference",
+        "exploratory treatment-response matching",
+        "AC16-cell expression check"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1007-s10238-026-02130-6.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1007-s10238-026-02130-6.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1007-s10238-026-02130-6.csl.json",
+      "field_entry": [
+        "Cardiomyopathy molecular classification",
+        "Cardiovascular systems biology"
+      ],
+      "review_topics": [
+        "Myocardial transcriptomic heterogeneity",
+        "Network-based patient stratification"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1007-s11426-026-3629-x",
       "question": "What quantitative PA calibration was reported?",
       "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
@@ -164,6 +208,45 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#paper-discovery"
     },
     {
+      "id": "doi-10-15212-bioi-2026-0017",
+      "question": "How many participants contributed to the analyses?",
+      "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
+      "doi": "10.15212/bioi-2026-0017",
+      "paper_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#qa-1",
+      "source": "data/deep_geo/doi-10-15212-bioi-2026-0017.json#/qa/0/question",
+      "profile_type": "multicohort_observational",
+      "narrative_genre": null,
+      "evidence_scope": "A causal effect of the ratio on cardiovascular disease or a confirmed biological mechanism.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Triglyceride–glucose index",
+        "TyG:eGFRcr-cys ratio",
+        "Creatinine–cystatin-C-based estimated GFR",
+        "Incident cardiovascular disease",
+        "Coronary heart disease",
+        "Stroke",
+        "Major adverse cardiovascular events",
+        "UK Biobank",
+        "Prospective cohort",
+        "Cox proportional-hazards model",
+        "Independent association replication",
+        "Dynamic network biomarkers"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-15212-bioi-2026-0017.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-15212-bioi-2026-0017.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-15212-bioi-2026-0017.csl.json",
+      "field_entry": [
+        "Cardiovascular epidemiology",
+        "Cardiometabolic–renal markers"
+      ],
+      "review_topics": [
+        "Combined metabolic and renal risk assessment",
+        "External association-replication studies"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1002-ggn2-202500053",
       "question": "What design rationale supports combining complementary learners in a clinical AI ensemble?",
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -303,6 +386,44 @@
         "Transcriptomic scoring of tumor-microenvironment states"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1111-jdi-70462",
+      "question": "Who was included in the analysis?",
+      "title": "The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study",
+      "doi": "10.1111/jdi.70462",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.html#qa-1",
+      "source": "data/deep_geo/doi-10-1111-jdi-70462.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "A causal effect of CHG, obesity, or inflammation on multimorbidity.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Cardiovascular–liver–metabolic multimorbidity",
+        "Cardiovascular disease",
+        "Type 2 diabetes",
+        "LAP-based suspected MASLD",
+        "Cholesterol–HDL–glucose index",
+        "CHG-BMI",
+        "Triglyceride–glucose index",
+        "CHARLS",
+        "Prospective observational cohort",
+        "Logistic regression",
+        "Apparent ROC discrimination"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-jdi-70462.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-jdi-70462.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jdi-70462.csl.json",
+      "field_entry": [
+        "Cardiometabolic epidemiology",
+        "Metabolic biomarker research"
+      ],
+      "review_topics": [
+        "Multimorbidity risk-marker evaluation",
+        "Obesity-derived biochemical indices"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jdi-70462.html#paper-discovery"
     },
     {
       "id": "doi-10-1172-jci194175",
@@ -922,6 +1043,43 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00089.html#paper-discovery"
     },
     {
+      "id": "doi-10-1186-s10020-024-00963-z",
+      "question": "How many people and cells were represented in the single-cell analysis?",
+      "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
+      "doi": "10.1186/s10020-024-00963-z",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#qa-1",
+      "source": "data/deep_geo/doi-10-1186-s10020-024-00963-z.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "Direct lineage-tracing proof that the inferred trajectory is an in vivo cell-fate conversion.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Pulmonary arterial hypertension",
+        "Pulmonary artery endothelial cells",
+        "Endothelial-to-mesenchymal transition",
+        "PETS",
+        "RARRES2/chemerin",
+        "TC2N",
+        "Single-cell transcriptomics",
+        "Pseudotime inference",
+        "Co-expression feature selection",
+        "Internal test-set validation"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1186-s10020-024-00963-z.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1186-s10020-024-00963-z.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1186-s10020-024-00963-z.csl.json",
+      "field_entry": [
+        "Pulmonary vascular biology",
+        "Computational biomarker research"
+      ],
+      "review_topics": [
+        "Endothelial expression states in PAH",
+        "EndMT-related candidate classification"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1111-jcmm-70258",
       "question": "Was this DCM circRNA study performed by sequencing or microarray?",
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -1093,6 +1251,42 @@
         "Targeted proteomics for biomarker discovery"
       ],
       "discovery_url": "https://drgezhang.com/papers/olink-dcm.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-2147-cia-s462542",
+      "question": "Who was included in the analyzed cohort?",
+      "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
+      "doi": "10.2147/cia.s462542",
+      "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html#qa-1",
+      "source": "data/deep_geo/doi-10-2147-cia-s462542.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "Causality between insulin resistance and the observed events.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Advanced chronic heart failure",
+        "Renal dysfunction",
+        "Cardiorenal risk",
+        "Triglyceride-glucose index",
+        "Insulin-resistance surrogate",
+        "Retrospective cohort",
+        "Cox proportional-hazards regression",
+        "ROC threshold selection",
+        "Prognostic association"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-2147-cia-s462542.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-2147-cia-s462542.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-2147-cia-s462542.csl.json",
+      "field_entry": [
+        "Cardiorenal medicine",
+        "Clinical prognosis"
+      ],
+      "review_topics": [
+        "Metabolic biomarkers in advanced heart failure",
+        "Risk assessment with impaired kidney function"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html#paper-discovery"
     },
     {
       "id": "apvs",
@@ -1283,6 +1477,55 @@
         "Preclinical cardioprotection and intervention timing"
       ],
       "discovery_url": "https://drgezhang.com/papers/idebenone-ferroptosis.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-18063-ijb-740",
+      "question": "Is this an original patient study of printed vascular grafts?",
+      "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
+      "doi": "10.18063/ijb.740",
+      "paper_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.html#qa-1",
+      "source": "data/deep_geo/doi-10-18063-ijb-740.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "evidence_scope": "A pooled clinical effect, a patient sample size, a randomized comparison or a meta-analytic estimate.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "tissue-engineered vascular grafts",
+        "vascular bioprinting",
+        "coronary bypass graft context",
+        "hyaluronic acid",
+        "collagen",
+        "gelatin methacryloyl",
+        "decellularized extracellular matrix",
+        "alginate",
+        "Pluronic F-127",
+        "modified polyethylene glycol",
+        "material extrusion",
+        "material jetting",
+        "vat polymerization",
+        "FRESH",
+        "sacrificial templating",
+        "crosslinking",
+        "shear thinning",
+        "yield stress",
+        "cell compatibility",
+        "endothelial function",
+        "mechanical durability",
+        "nutrient transport"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-18063-ijb-740.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-18063-ijb-740.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-18063-ijb-740.csl.json",
+      "field_entry": [
+        "Cardiovascular tissue engineering",
+        "Vascular biomaterials"
+      ],
+      "review_topics": [
+        "Bioink design for vascular constructs",
+        "Printing processes and translation barriers"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.html#paper-discovery"
     },
     {
       "id": "smc-fate",

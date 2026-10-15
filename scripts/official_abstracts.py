@@ -15,6 +15,22 @@ LICENSE_URLS = {
 # EHJ author reuse permits this article's abstract/citation, not its full text.
 # This permission is article-specific and must not authorize other sources.
 DOI_LICENSE_URLS = {
+    # V1.6: individually reviewed article grants, never global relaxations.
+    "10.2147/cia.s462542": {
+        "CC-BY-NC-3.0": "https://creativecommons.org/licenses/by-nc/3.0/",
+    },
+    "10.1186/s10020-024-00963-z": {
+        "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    },
+    "10.18063/ijb.740": {
+        "CC-BY-NC-4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
+    },
+    "10.1111/jdi.70462": {
+        "CC-BY-NC-4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
+    },
+    "10.15212/bioi-2026-0017": {
+        "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    },
     "10.1016/j.ejphar.2023.175569": {
         "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     },
@@ -23,6 +39,11 @@ DOI_LICENSE_URLS = {
     },
 }
 SOURCES = {
+    "10.2147/cia.s462542": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11068055/"),
+    "10.1186/s10020-024-00963-z": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11513636/"),
+    "10.18063/ijb.740": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10261152/"),
+    "10.1111/jdi.70462": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC13651581/"),
+    "10.15212/bioi-2026-0017": ("bio-integration.org", "/10-15212-bioi-2026-0017/"),
     "10.1002/ggn2.202500053": ("advanced.onlinelibrary.wiley.com", "/doi/full/10.1002/ggn2.202500053"),
     "10.18632/aging.205564": ("www.aging-us.com", "/article/205564/text"),
     '10.3389/fcvm.2025.1724572': ('www.frontiersin.org', '/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full'),
@@ -114,6 +135,9 @@ def load_official_abstracts(publications):
             if doi == "10.1002/ehf2.14003" and [s["label"] for s in sections] != ["Aims", "Methods", "Results", "Conclusions"]:
                 raise ValueError("COVID-HF official abstract section order changed.")
             expected = {
+                "10.2147/cia.s462542": ["Background", "Methods and Results", "Conclusion"],
+                "10.1111/jdi.70462": ["Background", "Methods", "Results", "Conclusions"],
+                "10.15212/bioi-2026-0017": ["Background", "Method", "Result", "Conclusion"],
                 "10.2147/ijn.s522157": ["Purpose", "Methods", "Results", "Conclusion"],
                 "10.1186/s12915-025-02400-x": ["Background", "Results", "Conclusions"],
                 "10.1136/jitc-2024-010127": ["Background", "Methods", "Results", "Conclusions"],

@@ -433,6 +433,7 @@ def validate_v2_rendered_page(
         *(["Verify publication identity"] if 'id="scholarly-records"' in page else []),
     ]
     pilot = evidence_presentation.STYLESHEET in page
+    early_summary = pilot or publication.get("deep_geo") is False
     if content.get('discovery_layer'):
         expected_discovery = paper_discovery.render_html(content)
         require(raw_page.count(expected_discovery) == 1 and raw_page.count('data-discovery-layer="1"') == 1,
@@ -446,9 +447,10 @@ def validate_v2_rendered_page(
     if pilot:
         require(evidence_presentation.enabled(content['doi']), f"{label} is outside presentation allowlist.")
         require('id="official-abstract"' in page, f"{label} pilot requires Official Abstract.")
+    if early_summary:
         for heading in ("Research Question", "Author Evidence Summary"):
             expected_headings.remove(heading)
-        index = expected_headings.index("Official Abstract") + 1
+        index = expected_headings.index("Official Abstract" if "Official Abstract" in expected_headings else "Full Authors") + 1
         expected_headings[index:index] = ["Research Question", "Author Evidence Summary"]
     require(element_texts(page, "h2") == expected_headings, f"{label} section order changed.")
     require(
@@ -469,11 +471,14 @@ def validate_v2_rendered_page(
         "related-research",
         "provenance",
     ]
-    if pilot:
+    if early_summary:
         section_markers[:3] = ["research-question", "author-summary", "evidence-snapshot"]
-        require(page.index('id="official-abstract"') < page.index('data-v2-section="research-question"')
+        require(page.index('class="paper-geo-v2__authors"') < page.index('data-v2-section="research-question"')
                 < page.index('data-v2-section="author-summary"') < page.index('id="cite-this-paper"'),
                 f"{label} scholarly-first order changed.")
+        if 'id="official-abstract"' in page:
+            require(page.index('id="official-abstract"') < page.index('data-v2-section="research-question"'),
+                    f"{label} official abstract must precede author interpretation.")
     positions = [page.index(f'data-v2-section="{marker}"') for marker in section_markers]
     require(positions == sorted(positions), f"{label} HTML section order changed.")
     if content.get("citation_pilot"):
@@ -538,7 +543,7 @@ def validate_v2_rendered_page(
     page_text = visible_text(page)
     snapshot_markup = page.split(
         'data-v2-section="evidence-snapshot"', 1
-    )[1].split('data-v2-section="key-findings"' if pilot else 'data-v2-section="research-question"', 1)[0]
+    )[1].split('data-v2-section="key-findings"' if early_summary else 'data-v2-section="research-question"', 1)[0]
     study_markup = page.split('data-v2-section="study-design"', 1)[1].split(
         'data-v2-section="what-this-adds"', 1
     )[0]
@@ -628,7 +633,8 @@ def validate_v2_rendered_page(
             normalized_source_text(value) in page_text,
             f"{label} content lost from HTML: {value!r}",
         )
-        require(value in markdown, f"{label} content lost from Markdown: {value!r}")
+        require(value in markdown or value.replace("|", "\\|") in markdown,
+                f"{label} content lost from Markdown: {value!r}")
     for key, value in (content.get("model_profile") or {}).items():
         if key in {"final_predictors", "interpretability"}:
             continue
@@ -2568,13 +2574,10 @@ def validate_site():
                 f"Unexpected citation_doi in {slug}.html.",
             )
         token = publication_token(item)
-        if token in deep_tokens:
-            content_path = deep_content_path(item)
-            has_content = content_path.is_file()
-            content = (
-                json.loads(content_path.read_text(encoding="utf-8"))
-                if has_content else None
-            )
+        content_path = deep_content_path(item)
+        has_content = content_path.is_file()
+        content = json.loads(content_path.read_text(encoding="utf-8")) if has_content else None
+        if token in deep_tokens or (content and content.get("version") == 2):
             if not has_content:
                 paper_geo_statuses[token] = "pending"
                 require(
@@ -2610,7 +2613,7 @@ def validate_site():
                 v2_dois.append(content_doi)
                 validate_v2_rendered_page(
                     content,
-                    item,
+                    {**item, "deep_geo": token in deep_tokens},
                     page,
                     markdown,
                     schema,
@@ -2660,8 +2663,13 @@ def validate_site():
             paper_geo_statuses[token] = "none"
         require(
             ('<span class="badge">Deep GEO</span>' in page)
-            == (paper_geo_statuses[token] in {"v1", "v2"}),
+            == (token in deep_tokens and paper_geo_statuses[token] in {"v1", "v2"}),
             f"Deep GEO badge/state mismatch for {slug}.html.",
+        )
+        require(
+            ('<span class="badge">Paper GEO V2</span>' in page)
+            == (token not in deep_tokens and paper_geo_statuses[token] == "v2"),
+            f"Non-selected Paper GEO V2 badge/state mismatch for {slug}.html.",
         )
         require(
             ('<span class="badge">Deep GEO · Pending</span>' in page)

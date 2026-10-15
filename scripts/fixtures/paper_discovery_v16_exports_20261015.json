@@ -1,0 +1,56 @@
+{
+  "base_sha": "a1ba072f6bf2c1158510ed22d3dd64d323e95b45",
+  "baseline_layer_sha256": "0ebedbc296ba59670881ed266481b4d57b8cf08781abeb6e61edc592b6939ae5",
+  "approved_search_additions": {
+    "10.1007/s10238-026-02130-6": {
+      "count": 24,
+      "payload_sha256": "7dbb5ca9898b1b266cdc2db8da43fbe07ac6a067a256874a64ce582fd7b7df2d"
+    },
+    "10.1111/jdi.70462": {
+      "count": 21,
+      "payload_sha256": "5bf610f8378e27e9b05a8b4f8d71c827299c3e61e18d6a5f8f72f99173459873"
+    },
+    "10.1186/s10020-024-00963-z": {
+      "count": 21,
+      "payload_sha256": "532c74558fb84ed7044d097699d79eaec41526cf0faf06c83822d72fab882535"
+    },
+    "10.15212/bioi-2026-0017": {
+      "count": 21,
+      "payload_sha256": "290b4fac1a21581f83236b77de09d6b9ae0b1625227569e86fcfb5d87378540b"
+    },
+    "10.18063/ijb.740": {
+      "count": 25,
+      "payload_sha256": "7541a899d5df1f36807a5d2334f7bb04e13e453bac112354b96589176663ba51"
+    },
+    "10.2147/cia.s462542": {
+      "count": 19,
+      "payload_sha256": "a5f3d636fc05265038786bbab0f95254d59bc5a425091348eaf41349893ec572"
+    }
+  },
+  "approved_question_additions": {
+    "10.1007/s10238-026-02130-6": "0c95e42027ee3b7a580067b8093df2a51a6518218fb9832d4a4f215ae7ca5f47",
+    "10.1111/jdi.70462": "67ebd2912ef3c5778ef930decb5d8b27bb39ac6b4aca479488976fde4683ccf7",
+    "10.1186/s10020-024-00963-z": "4219c3b456ca9231d2ce3b07dc544effb2a25ab09b047369f885f919b4dd469f",
+    "10.15212/bioi-2026-0017": "aefd2fb3791398f32d447d0579e0597cc36ca315b27e4784f2d7c670f8547e15",
+    "10.18063/ijb.740": "dff74baca0d3c445358dfec6d1f3e7404e5a8e06a6b64cbf25775a991aefa444",
+    "10.2147/cia.s462542": "48616044f37698f439f664e8480a50e8a47186af595e194b443b9f32d2710783"
+  },
+  "approved_csv_sha256": {
+    "doi-10-1007-s10238-026-02130-6": "99ddc2ebb0cbccf6842b8862ef3406847faf72554fb69e8454ab57474c7bcc37",
+    "doi-10-1111-jdi-70462": "cad039fa86961d5cf56c3c196e36eb879718e9598ba60661cf485dc5c057b60a",
+    "doi-10-1186-s10020-024-00963-z": "a51ff914a2775cb67a0f4994d690ae656797e331aad76530fa4fbfd5bdd4d2a7",
+    "doi-10-15212-bioi-2026-0017": "4fc1bea3e7b7067e3a0c2cacf6f907b2bbb1b01b63beb31c69aa6f1ecf768465",
+    "doi-10-18063-ijb-740": "ac5202b9de9f15654c9ce061a82e04afecb2c399368929e94fd743f55ff09338",
+    "doi-10-2147-cia-s462542": "983ab7143d68d50b498495e6197649a466b4f67edc623545a1a83e68fead966d"
+  },
+  "approved_backlink_blocks": {
+    "papers/doi-10-1002-ggn2-202500053.html": "419b9b14ab27eef39404bf7273b3991f8aa954eefa647ea000fe53ff9d4a39bc",
+    "papers/doi-10-1016-j-cbi-2025-111421.html": "855fcbef94220172969affbc7aab0ba7aa9a6badfa7227215f7090226d01afc3",
+    "papers/aihflevel.html": "7549dd49a04f913a5429e49773009ab06e6b12a1f4656aa361f78f0e997d75a4",
+    "papers/apvs.html": "dab4e5d02af561652715a326d24bba3b54cdfb07925d55c759fe5a99ef8dedf4",
+    "papers/doi-10-1016-j-jma-2023-05-007.html": "b0428dd069c6f945cccda518a2faa894063628e8579c693c917a600cfd6ae24f",
+    "papers/smc-fate.html": "39287344701ee54a075a8ccee6ef3c27f1a40f7f62dacc245d798e9048589b42"
+  },
+  "question_html_sha256": "a726bceac36a36d1625165ee1d3e941d038d7ef68705bf361379e4fa168e01a5",
+  "content_date": "2026-10-15"
+}

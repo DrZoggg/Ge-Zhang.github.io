@@ -115,14 +115,72 @@ class PresentationTests(unittest.TestCase):
     def reject(self, value):
         with self.assertRaises(ValueError):validate_pair(self.before,value,self.doi)
     def test_all_current_pages(self):
-        count=0
-        for p in load_master():
-            if not p.get('slug'):continue
-            file=ROOT/'papers'/(p['slug']+'.html')
-            if not file.exists():continue
-            validate_pair(baseline(file.relative_to(ROOT).as_posix()),file.read_text(encoding='utf-8'),p.get('doi',''))
-            count+=1
-        self.assertEqual(count,74)
+        # The historical pilot negatives below retain their original baseline.
+        # Full-site preservation starts at the reviewed pre-batch main: only six
+        # hash-frozen source upgrades and exact derived relationship panels vary.
+        from build_publications import render_paper_html
+        from citation_common import citation_record, load_citation_metadata
+        from official_abstracts import load_official_abstracts
+        from scholarly_discovery import load_identifiers, reviewed_backlinks, validate_backlink_html
+        from site_common import deep_content_path, load_site_config
+        from test_v2_coverage import BASE as batch_base, FIXTURE, old, newline_hashes, with_reviewed_backlinks
+        from v2_coverage import coverage_rows
+
+        fixture = json.loads(FIXTURE.read_text(encoding='utf-8'))
+        self.assertEqual(fixture['base_sha'], batch_base)
+        self.assertEqual(len(fixture['papers']), 6)
+        previous = json.loads(old('publications.json'))
+        current = json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(previous), 77)
+        self.assertEqual(len(current), len(previous))
+        before_by_slug = {p['slug']: p for p in previous}
+        self.assertEqual(set(before_by_slug), {p['slug'] for p in current})
+        contents = {}
+        for p in current:
+            path = deep_content_path(p)
+            if path.exists():
+                content = json.loads(path.read_text(encoding='utf-8'))
+                if content.get('version') == 2:
+                    contents[p['doi']] = content
+        prior_contents = {p['doi']: json.loads(old(f'data/deep_geo/{p["slug"]}.json'))
+                          for p in previous if p.get('paper_geo_status') == 'v2'}
+        old_backlinks = reviewed_backlinks(previous, prior_contents)
+        new_backlinks = reviewed_backlinks(current, contents)
+        config = load_site_config()
+        metadata = load_citation_metadata(current)
+        abstracts = load_official_abstracts(current)
+        identifiers = load_identifiers(current, metadata)
+        public_by_doi = {p['doi']: p for p in current if p.get('doi')}
+        for p in current:
+            doi = p.get('doi', '')
+            path = f'papers/{p["slug"]}.html'
+            after = (ROOT/path).read_text(encoding='utf-8')
+            before = old(path).decode('utf-8').replace('\r\n', '\n')
+            with self.subTest(page=path):
+                validate_backlink_html(after, new_backlinks.get(doi))
+                expected_identity = dict(before_by_slug[p['slug']])
+                if doi in fixture['papers']:
+                    reviewed = fixture['papers'][doi]
+                    expected_identity['paper_geo_status'] = 'v2'
+                    self.assertEqual(p, expected_identity)
+                    self.assertFalse(p['deep_geo'])
+                    self.assertFalse(p['featured'])
+                    self.assertEqual(p['slug'], reviewed['slug'])
+                    self.assertIn(reviewed['content_sha256'], newline_hashes(deep_content_path(p).read_bytes()))
+                    row = coverage_rows([p], {doi: contents[doi]}, ROOT)[0]
+                    self.assertEqual(row['status'], 'PASS', row['problems'])
+                    expected = render_paper_html(
+                        p, config=config, deep_content=contents[doi],
+                        public_by_doi=public_by_doi,
+                        citation_data=citation_record(p, metadata, config['site_url']),
+                        official_abstract=abstracts.get(doi),
+                        identifiers=identifiers.get(doi),
+                        reviewed_backlinks=new_backlinks.get(doi))
+                    self.assertEqual(after, expected.replace('\r\n', '\n'))
+                else:
+                    self.assertEqual(p, expected_identity)
+                    self.assertEqual(after, with_reviewed_backlinks(
+                        before, old_backlinks.get(doi), new_backlinks.get(doi)))
     def test_hidden_abstract(self):self.reject(self.after.replace('id="official-abstract"','id="official-abstract" hidden',1))
     def test_abstract_at_end(self):
         a,b=Contract(self.after).ranges['official-abstract'];section=self.after[a:b]

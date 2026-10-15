@@ -7,6 +7,7 @@ import html
 import json
 import re
 from sync_common import ROOT, load_master, publication_authors
+from site_common import deep_content_path
 
 
 def without_discovery_additions(before, after, doi):
@@ -37,7 +38,7 @@ def without_discovery_additions(before, after, doi):
         remove_once('<p class="paper-authors">'+html.escape('; '.join(publication_authors(item)))+'</p>')
     if item['paper_geo_status'] == 'v2':
         from paper_discovery import render_html
-        path = ROOT / 'data/deep_geo' / (item['slug'] + '.json')
+        path = deep_content_path(item)
         content = json.loads(path.read_text(encoding='utf-8'))
         if content.get('discovery_layer'):
             block = render_html(content)
@@ -58,9 +59,11 @@ def without_discovery_additions(before, after, doi):
     from scholarly_discovery import identifier_html, identity_links, reviewed_backlinks, backlink_html, validate_backlink_html
     contents = {}
     for p in publications:
-        path = ROOT / 'data/deep_geo' / (p['slug'] + '.json')
-        if p.get('deep_geo') and path.exists():
-            contents[p['doi']] = json.loads(path.read_text(encoding='utf-8'))
+        path = deep_content_path(p)
+        if path.exists():
+            content = json.loads(path.read_text(encoding='utf-8'))
+            if content.get('version') == 2:
+                contents[p['doi']] = content
     rows = reviewed_backlinks(publications, contents).get(doi)
     validate_backlink_html(after, rows)
     if rows:
