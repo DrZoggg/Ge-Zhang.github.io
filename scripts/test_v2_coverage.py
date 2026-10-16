@@ -10,8 +10,8 @@ from site_common import deep_content_path
 from sync_common import ROOT
 from v2_coverage import coverage_rows, validate_v2_coverage, check_qa_refs
 
-BASE = "a1ba072f6bf2c1158510ed22d3dd64d323e95b45"
-FIXTURE = ROOT / "scripts/fixtures/ordinary_v2_batch_20261015.json"
+BASE = "3452075cb5355fc17d45baab1a3989e72f8b5b39"
+FIXTURE = ROOT / "scripts/fixtures/ordinary_v2_batch2_20261016.json"
 LUAD = "10.71321/fy14v342"
 
 
@@ -49,7 +49,7 @@ class V2CoverageTests(unittest.TestCase):
 
     def test_complete_modules_and_explicit_alternatives(self):
         counts = validate_v2_coverage(self.public, self.contents, ROOT)
-        self.assertEqual(len(self.prior_v2), 29)
+        self.assertEqual(len(self.prior_v2), 35)
         self.assertEqual(len(self.reviewed["papers"]), 6)
         expected = len(self.prior_v2) + len(self.reviewed["papers"])
         self.assertEqual(counts, {"v2_pages": expected, "covered_pages": expected, "field_source_qa_exceptions": 5, "citation_pilot_alternatives": 1})
@@ -77,8 +77,8 @@ class V2CoverageTests(unittest.TestCase):
                 self.assertIn(reviewed["content_sha256"], newline_hashes(deep_content_path(publication).read_bytes()))
                 self.assertEqual(check_qa_refs(content), [])
 
-    def test_prior_29_sources_identity_and_selection_unchanged(self):
-        self.assertEqual(len(self.prior_v2), 29)
+    def test_prior_35_sources_identity_and_selection_unchanged(self):
+        self.assertEqual(len(self.prior_v2), 35)
         self.assertEqual(len(self.before), 77)
         self.assertEqual(len(self.public), len(self.before))
         self.assertEqual(len(self.reviewed["baseline_identity"]), len(self.before))
@@ -97,7 +97,7 @@ class V2CoverageTests(unittest.TestCase):
             self.assertIn(digest, newline_hashes(baseline_bytes), path)
             self.assertEqual(current_bytes.replace(b"\r\n", b"\n"), baseline_bytes.replace(b"\r\n", b"\n"), path)
 
-    def test_prior_29_pages_allow_only_reviewed_relationship_navigation(self):
+    def test_prior_35_pages_allow_only_reviewed_relationship_navigation(self):
         prior_backlinks = reviewed_backlinks(self.before, self.prior_contents)
         current_backlinks = reviewed_backlinks(self.public, self.contents)
         for p in self.prior_v2:

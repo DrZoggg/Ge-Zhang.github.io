@@ -1,6 +1,6 @@
-"""Frozen original discovery/science contracts plus the reviewed V1.6 additions.
+"""Frozen production discovery/science contracts plus reviewed batch 2 additions.
 
-The a1ba072 production baseline has 29 V2 pages. Six source-frozen ordinary
+The 3452075 production baseline has 35 V2 pages. Six source-frozen ordinary
 works add V2 evidence without changing selected membership or citation identity.
 These are transcription checks, not evidence of indexing or citation gains.
 """
@@ -29,9 +29,9 @@ from validate_site import (ValidationError, paper_json_ld_object,
                            validate_v2_rendered_page)
 from site_common import load_site_config
 
-BATCH = ROOT/'scripts/fixtures/ordinary_v2_batch_20261015.json'
-EXPORTS = ROOT/'scripts/fixtures/paper_discovery_v16_exports_20261015.json'
-BASELINE = 'a1ba072f6bf2c1158510ed22d3dd64d323e95b45'
+BATCH = ROOT/'scripts/fixtures/ordinary_v2_batch2_20261016.json'
+EXPORTS = ROOT/'scripts/fixtures/paper_discovery_batch2_exports_20261016.json'
+BASELINE = '3452075cb5355fc17d45baab1a3989e72f8b5b39'
 PENDING = set()
 BACKLINK = re.compile(r'<aside\b[^>]*\bid="reviewed-backlinks"[^>]*>.*?</aside>',re.S)
 
@@ -74,10 +74,10 @@ class PaperDiscoveryTests(unittest.TestCase):
     def test_exact_reviewed_scope_and_layer(self):
         self.assertEqual(self.batch['base_sha'],BASELINE)
         self.assertEqual(self.exports['base_sha'],BASELINE)
-        self.assertEqual(len(self.old_sources),29)
+        self.assertEqual(len(self.old_sources),35)
         self.assertEqual(len(self.new_slugs),6)
         self.assertEqual(set(self.sources),set(self.old_sources)|self.new_slugs)
-        self.assertEqual(len(self.sources),35)
+        self.assertEqual(len(self.sources),41)
         layers = {slug:c['discovery_layer'] for slug,c in self.old_sources.items()}
         self.assertEqual(digest(layers),self.exports['baseline_layer_sha256'])
         for c in self.sources.values():
@@ -133,7 +133,7 @@ class PaperDiscoveryTests(unittest.TestCase):
                 self.assertEqual(md,self.old['papers/'+slug+'.md'])
 
     def test_protected_inventory_identity_exports_dates_and_pending(self):
-        mutable_data={'data/official_abstracts.json','data/question_index.json'}
+        mutable_data={'data/question_index.json'} | {'data/deep_geo/'+s+'.json' for s in self.new_slugs}
         for path,text in self.old.items():
             protected=(path.startswith(('citations/','assets/evidence/'))
                        or path.startswith('data/') and path not in mutable_data)
@@ -187,7 +187,7 @@ class PaperDiscoveryTests(unittest.TestCase):
         self.assertEqual([p['paper_url']for p in index['papers']],[p['paper_url']for p in before['papers']])
         abstracts=json.loads((ROOT/'data/official_abstracts.json').read_text(encoding='utf-8'))['papers']
         old_abstracts=json.loads(self.old['data/official_abstracts.json'])['papers']
-        additions=set(self.batch['papers'])-{'10.1007/s10238-026-02130-6'}
+        additions=set()  # Batch 2 carries reviewed evidence, no abstract edits.
         self.assertEqual(set(abstracts),set(old_abstracts)|additions)
         self.assertEqual({doi:abstracts[doi]for doi in old_abstracts},old_abstracts)
         for old,row in zip(before['papers'],index['papers']):
@@ -205,8 +205,8 @@ class PaperDiscoveryTests(unittest.TestCase):
         self.assertEqual({k:v for k,v in old_q.items() if k!='questions'},
                          {k:v for k,v in current.items() if k!='questions'})
         before={q['id']:q for q in old_q['questions']};now={q['id']:q for q in current['questions']}
-        self.assertEqual(len(current['questions']),35)
-        self.assertEqual(len(now),35)
+        self.assertEqual(len(current['questions']),41)
+        self.assertEqual(len(now),41)
         self.assertEqual(set(now),set(before)|self.new_slugs)
         self.assertEqual({slug:now[slug]for slug in before},before)
         for slug in self.new_slugs:
@@ -240,17 +240,17 @@ class PaperDiscoveryTests(unittest.TestCase):
             if counts[h]:counts[h]-=1
             else:additions.append(payload)
         self.assertFalse(+counts,'An original search record was changed or removed')
-        self.assertEqual(len(old['documents']),1054)
-        self.assertEqual(len(additions),131)
-        self.assertEqual(len(current['documents']),1185)
-        self.assertEqual([d['id']for d in current['documents']],list(range(1185)))
+        self.assertEqual(len(old['documents']),1185)
+        self.assertEqual(len(additions),sum(v['count'] for v in self.exports['approved_search_additions'].values()))
+        self.assertEqual(len(current['documents']),len(old['documents'])+len(additions))
+        self.assertEqual([d['id']for d in current['documents']],list(range(len(current['documents']))))
         self.assertEqual({d['doi']for d in additions},set(self.batch['papers']))
         for doi,reviewed in self.exports['approved_search_additions'].items():
             rows=[d for d in additions if d['doi']==doi]
             self.assertEqual(len(rows),reviewed['count'])
             self.assertEqual(digest(rows),reviewed['payload_sha256'])
         contexts=[d for d in current['documents'] if d['category']=='Research & review context']
-        self.assertEqual(len(contexts),35)
+        self.assertEqual(len(contexts),41)
         by_doi={c['doi']:c for c in self.sources.values()}
         self.assertEqual({d['doi']for d in contexts},set(by_doi))
         for d in contexts:

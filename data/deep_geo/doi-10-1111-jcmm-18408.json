@@ -1,0 +1,382 @@
+{
+  "version": 2,
+  "doi": "10.1111/jcmm.18408",
+  "display_title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
+  "summary": "Integrative single-cell and bulk-transcriptomic analyses nominated a Cluster 6-related lung progression-associated signature (LPAS) associated with survival and inferred immune states in lung adenocarcinoma. PSMB1 silencing reduced proliferative and migratory phenotypes in cultured LUAD cells; these findings do not establish patient treatment efficacy.",
+  "research_question": "Can cell-state patterns associated with adenocarcinoma in situ, minimally invasive adenocarcinoma and invasive lung adenocarcinoma inform a prognostic expression signature, and which experimental observations support prioritized genes?",
+  "author_summary": "The researchers integrated two public single-cell LUAD series, TCGA transcriptomic and survival data, five independent GEO survival series, exploratory immunotherapy-response datasets and cultured-cell knockdown assays. The prognostic evidence is observational; pseudotime, immune scores and therapy-response computations require separate interpretation from experiments.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Secondary integration of human LUAD single-cell and bulk expression cohorts with retrospective survival modeling, computational immune/drug-response inference and in-vitro PSMB1 perturbation.",
+    "evidence_type": "Human transcriptomic association, retrospective model evaluation and LUAD cell-line functional assays.",
+    "population": "Early pathological LUAD tissue samples across AIS, MIA and IAC; independent retrospective GEO/TCGA LUAD survival cohorts and additional tumor-treatment series from heterogeneous cancers.",
+    "primary_endpoint": "Association of the LPAS expression score with overall survival in retrospective LUAD series.",
+    "secondary_endpoint": "Single-cell state contrasts across pathological stages; immune/stromal signature associations; computational immunotherapy/drug-response hypotheses; PSMB1 knockdown cell phenotypes.",
+    "data_modalities": [
+      "Two publicly available LUAD scRNA-seq series",
+      "TCGA and GEO transcriptomic and clinical survival data",
+      "Exploratory external treatment-response expression datasets",
+      "Local LUAD RNA sequencing",
+      "A549 and H1299 siRNA perturbation assays"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Single-cell specimen scale",
+        "value": "GSE189357 and GSE150938: 4 AIS, 8 MIA and 9 IAC specimens (21 reported across pathology groups)"
+      },
+      {
+        "label": "Independent survival-series list",
+        "value": "GSE13213 (119), GSE29016 (39), GSE30219 (86), GSE31210 (227) and GSE68465 (443) as reported analyzed series"
+      },
+      {
+        "label": "Model discovery",
+        "value": "TCGA-LUAD; cohort n not inferred from unspecified filtering"
+      },
+      {
+        "label": "Local stage-associated RNA sequencing",
+        "value": "14 LUAD surgical specimens (reported)"
+      },
+      {
+        "label": "LPAS signature",
+        "value": "9 genes"
+      }
+    ],
+    "counting_note": "The 21 scRNA-seq specimens, 14 local RNA-seq specimens, TCGA cases, five survival cohorts and mixed-cancer immunotherapy datasets represent distinct analytic layers; neither cross-dataset independence nor a synthetic unique-patient total is inferred."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Two single-cell series identified heterogeneous epithelial states across early LUAD pathological categories.",
+      "context": "Single-cell cross-sectional profiles; inferCNV and trajectory scores estimate rather than observe clonal evolution.",
+      "evidence": [
+        {
+          "label": "Pathological specimens",
+          "value": "4 AIS, 8 MIA and 9 IAC in GSE189357/GSE150938"
+        },
+        {
+          "label": "Computational annotation",
+          "value": "12 broad cell types; 8 re-clustered inferred tumor epithelial groups"
+        }
+      ],
+      "source_locator": "PMC11149493: Methods §2.1 Data set source (jcmm18408-sec-0003); Results §3.1 (jcmm18408-sec-0024); Figure 2A–H."
+    },
+    {
+      "id": "KF2",
+      "claim": "Cluster 6-associated transcriptomic features were enriched during the reported AIS-to-IAC comparison.",
+      "context": "Proportional and pseudotime associations do not establish observed within-patient malignant transformation.",
+      "evidence": [
+        {
+          "label": "State of interest",
+          "value": "Epithelial Cluster 6"
+        },
+        {
+          "label": "Associated programs",
+          "value": "E2F targets and G2M checkpoint signatures"
+        },
+        {
+          "label": "Inference methods",
+          "value": "inferCNV, pseudotime and SCENIC"
+        }
+      ],
+      "source_locator": "PMC11149493: Results §3.2 Biological characteristic analysis of tumour clusters (jcmm18408-sec-0025); Figure 3A–H."
+    },
+    {
+      "id": "KF3",
+      "claim": "LPAS was constructed from nine genes and associated with overall survival in TCGA and five GEO cohorts.",
+      "context": "Retrospective survival discrimination and cohort reapplication, not independent prospective treatment guidance.",
+      "evidence": [
+        {
+          "label": "Selection",
+          "value": "41 univariately associated module genes, followed by 9-gene LPAS"
+        },
+        {
+          "label": "TCGA time-dependent ROC AUC",
+          "value": "1-year 0.713; 5-year 0.675"
+        },
+        {
+          "label": "Independent series",
+          "value": "GSE13213, GSE29016, GSE30219, GSE31210, GSE68465"
+        },
+        {
+          "label": "Model composition",
+          "value": "PSMB1, ENY2, NPTN, RPS16, HYAL3, KLK8, CAMTA1, MAGEH1, AKR1A1"
+        }
+      ],
+      "source_locator": "PMC11149493: Methods §2.8 (jcmm18408-sec-0010); Results §§3.3–3.4 (jcmm18408-sec-0026, jcmm18408-sec-0027); Figures 4B–G and 5A–F."
+    },
+    {
+      "id": "KF4",
+      "claim": "LPAS scores were associated with computationally inferred immune infiltration and treatment-related expression patterns.",
+      "context": "Immune deconvolution, TIDE and SubMap are analytical scores or expression matching; they are not verified patient-level benefit from immunotherapy.",
+      "evidence": [
+        {
+          "label": "Low-score association",
+          "value": "Higher inferred immune/stromal signatures in TCGA"
+        },
+        {
+          "label": "Drug results",
+          "value": "CTRP/PRISM compound-screen associations are exploratory"
+        },
+        {
+          "label": "Therapy-response analyses",
+          "value": "SubMap/TIDE-based association; mixed external malignancy cohorts"
+        }
+      ],
+      "source_locator": "PMC11149493: Results §§3.5, 3.7, 3.9 (jcmm18408-sec-0028, jcmm18408-sec-0030, jcmm18408-sec-0032); Figures 6A–C, 8D–G, 10A–L."
+    },
+    {
+      "id": "KF5",
+      "claim": "PSMB1 knockdown changed LUAD cell-line growth and motility endpoints.",
+      "context": "Culture experiments provide selected cell-functional evidence but not an in-vivo antitumor effect or human therapeutic validation.",
+      "evidence": [
+        {
+          "label": "Experimental systems",
+          "value": "A549 and H1299 human LUAD cell lines"
+        },
+        {
+          "label": "Intervention",
+          "value": "PSMB1-targeting siRNA"
+        },
+        {
+          "label": "Reported assays",
+          "value": "CCK-8, colony formation, wound healing and Transwell"
+        }
+      ],
+      "source_locator": "PMC11149493: Methods §§2.15–2.19 (jcmm18408-sec-0017 through jcmm18408-sec-0021); Results §3.10 (jcmm18408-sec-0033); Figure 11A–D."
+    }
+  ],
+  "what_this_adds": [
+    "Connects an early-LUAD epithelial-state signature to multi-cohort retrospective survival risk stratification.",
+    "Adds cell-line perturbation observations for PSMB1 while maintaining distinct levels of molecular association and function."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Cluster 6 and LPAS show reproducible associations in the reported transcriptomic cohorts.",
+      "Higher LPAS corresponds to less favorable retrospective LUAD survival in the evaluated cohorts.",
+      "PSMB1 silencing reduces selected proliferation and movement phenotypes in A549/H1299 assays."
+    ],
+    "does_not_establish": [
+      "A directly traced longitudinal path from an AIS cell to an IAC cell or a causal origin of Cluster 6.",
+      "Independent prospective diagnostic, treatment selection, or outcome improvement from LPAS.",
+      "Clinical benefit from PSMB1 inhibition, LPAS-guided immunotherapy or computationally prioritized compounds.",
+      "Unique participant counts aggregated across partially overlapping or heterogeneous public datasets."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which pathological stages were compared in the single-cell analysis?",
+      "answer": "Four AIS, eight MIA and nine IAC specimen profiles were described across two public scRNA-seq series. They are specimens at different pathological stages, not serial samples tracking the same person.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What is the nine-gene LPAS model?",
+      "answer": "LPAS is a retrospective expression-based LUAD survival score containing nine selected genes, including PSMB1. It was developed from TCGA data and evaluated in five additional GEO survival series.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was LPAS externally evaluated?",
+      "answer": "Five additional GEO LUAD survival datasets were evaluated, with differing reported AUCs and follow-up horizons. This is retrospective external dataset evaluation, not a prospective treatment-impact trial.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does inferred cluster progression prove actual tumor-cell fate transitions?",
+      "answer": "No. InferCNV, changing cluster frequencies and pseudotime reconstruct possible molecular patterns from cross-sectional data; they do not directly track cells through AIS, MIA and IAC.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "Can low LPAS identify patients who will benefit from immunotherapy?",
+      "answer": "The article reports in-silico immune scores and SubMap/TIDE comparisons plus treatment-cohort associations, but no prospective LPAS-guided treatment study establishes patient-level clinical benefit.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What did the PSMB1 experiments establish?",
+      "answer": "PSMB1 siRNA reduced cell growth, colony formation and motility-related outcomes in A549/H1299 culture experiments. It does not establish in-vivo therapeutic efficacy or a validated drug target in patients.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease_and_stage": [
+      "Lung adenocarcinoma",
+      "Adenocarcinoma in situ",
+      "Minimally invasive adenocarcinoma"
+    ],
+    "data_and_methods": [
+      "Single-cell transcriptomics",
+      "inferCNV and pseudotime",
+      "Retrospective survival modeling"
+    ],
+    "molecular_and_translation": [
+      "Cluster 6",
+      "LPAS",
+      "PSMB1 knockdown"
+    ]
+  },
+  "limitations": [
+    "Early stages and bulk outcome datasets are distinct study populations; pseudotime is not lineage tracing.",
+    "Source dataset descriptions include heterogeneous immunotherapy studies, and the article uses different counting contexts rather than a single combined n.",
+    "Single-cell immune estimates and simulated drug sensitivity are not direct measurements of clinical response.",
+    "PSMB1 siRNA provides selected in-vitro evidence, not an in-vivo drug efficacy or clinical trial."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1136/jitc-2024-010787",
+      "relationship": "A distinct LUAD prognostic-expression and immune-microenvironment investigation focused on PTMLS and B4GALT2; it does not independently validate LPAS."
+    },
+    {
+      "doi": "10.1002/tox.24284",
+      "relationship": "Another transcriptomic LUAD immunotherapy-prognosis modeling study, related by predictive intent but not a common prospective validation cohort."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1111/jcmm.18408",
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.18408",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11149493/",
+    "pmcid": "PMC11149493",
+    "license": "CC BY 4.0, as shown in article-specific PMC JATS permissions. This evidence page is original factual synthesis.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_of_truth": "Version-of-record article, J Cell Mol Med 2024, published online 4 June 2024; PMC11149493 JATS and Figure 2–11 legends in the supplied source pack.",
+    "supporting_material": "Article Table S1 was obtained; no synthetic patient aggregation is used.",
+    "identity_note": "Publisher/PMC author order is retained by existing publication master; JATS ORCID attribution for one coauthor conflicts with another related paper and is not used to revise structured identities.",
+    "scientific_boundary": "No inference of lineage tracing, prospective clinical decision value or immunotherapy benefit from computational association."
+  },
+  "evidence_page_notice": "This author-maintained evidence summary separates source-located transcriptomic association, retrospective risk modeling, computational therapy hypotheses, and cell-line functional experiments. Cite the publisher article for scientific results.",
+  "discovery_layer": {
+    "field_entry": [
+      "Lung cancer molecular pathology",
+      "Computational oncology"
+    ],
+    "review_topics": [
+      "Cell states in early lung adenocarcinoma",
+      "Transcriptomic survival risk signatures"
+    ],
+    "scientific_role": "Retrospective LUAD multi-dataset signature discovery with an ancillary PSMB1 cell-line perturbation study.",
+    "evidence_position": "Observational transcriptomic/prognostic associations and in-vitro functional readouts; no prospective LPAS-guided therapy evidence.",
+    "related_concepts": [
+      "AIS–MIA–IAC comparison",
+      "LPAS nine-gene signature",
+      "PSMB1 siRNA"
+    ],
+    "citation_contexts": [
+      "Reviews evaluating cross-sectional single-cell LUAD states and prognostic transcriptomic signatures.",
+      "Discussions distinguishing cell-line perturbation from clinical proof of a molecular therapeutic target."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What evidence links early LUAD cell states with stage-associated molecular signatures?",
+        "supported_scope": "Cross-sectional transcriptomic comparison and computational state inference, not longitudinal lineage tracing.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What is the evidence for prognostic LPAS?",
+        "supported_scope": "Retrospective TCGA development and five GEO series, with no prospective intervention.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What experimental evidence supports PSMB1 involvement in LUAD?",
+        "supported_scope": "Two LUAD cell-line knockdown readouts, not demonstrated human benefit.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A directly traced longitudinal path from an AIS cell to an IAC cell or a causal origin of Cluster 6.",
+      "Independent prospective diagnostic, treatment selection, or outcome improvement from LPAS.",
+      "Clinical benefit from PSMB1 inhibition, LPAS-guided immunotherapy or computationally prioritized compounds.",
+      "Unique participant counts aggregated across partially overlapping or heterogeneous public datasets."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-b2-doi-10-1111-jcmm-18408-1",
+        "component": "KF1: Two single-cell series identified heterogeneous epithelial states across early LUAD pathological categories.",
+        "context": "Single-cell cross-sectional profiles; inferCNV and trajectory scores estimate rather than observe clonal evolution.",
+        "finding": "Two single-cell series identified heterogeneous epithelial states across early LUAD pathological categories. Pathological specimens: 4 AIS, 8 MIA and 9 IAC in GSE189357/GSE150938; Computational annotation: 12 broad cell types; 8 re-clustered inferred tumor epithelial groups",
+        "evidence_level": "Single-cell cross-sectional profiles; inferCNV and trajectory scores estimate rather than observe clonal evolution.",
+        "scope": "Single-cell cross-sectional profiles; inferCNV and trajectory scores estimate rather than observe clonal evolution.",
+        "source_locator": "PMC11149493: Methods §2.1 Data set source (jcmm18408-sec-0003); Results §3.1 (jcmm18408-sec-0024); Figure 2A–H.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1111-jcmm-18408-2",
+        "component": "KF2: Cluster 6-associated transcriptomic features were enriched during the reported AIS-to-IAC comparison.",
+        "context": "Proportional and pseudotime associations do not establish observed within-patient malignant transformation.",
+        "finding": "Cluster 6-associated transcriptomic features were enriched during the reported AIS-to-IAC comparison. State of interest: Epithelial Cluster 6; Associated programs: E2F targets and G2M checkpoint signatures; Inference methods: inferCNV, pseudotime and SCENIC",
+        "evidence_level": "Proportional and pseudotime associations do not establish observed within-patient malignant transformation.",
+        "scope": "Proportional and pseudotime associations do not establish observed within-patient malignant transformation.",
+        "source_locator": "PMC11149493: Results §3.2 Biological characteristic analysis of tumour clusters (jcmm18408-sec-0025); Figure 3A–H.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1111-jcmm-18408-3",
+        "component": "KF3: LPAS was constructed from nine genes and associated with overall survival in TCGA and five GEO cohorts.",
+        "context": "Retrospective survival discrimination and cohort reapplication, not independent prospective treatment guidance.",
+        "finding": "LPAS was constructed from nine genes and associated with overall survival in TCGA and five GEO cohorts. Selection: 41 univariately associated module genes, followed by 9-gene LPAS; TCGA time-dependent ROC AUC: 1-year 0.713; 5-year 0.675; Independent series: GSE13213, GSE29016, GSE30219, GSE31210, GSE68465; Model composition: PSMB1, ENY2, NPTN, RPS16, HYAL3, KLK8, CAMTA1, MAGEH1, AKR1A1",
+        "evidence_level": "Retrospective survival discrimination and cohort reapplication, not independent prospective treatment guidance.",
+        "scope": "Retrospective survival discrimination and cohort reapplication, not independent prospective treatment guidance.",
+        "source_locator": "PMC11149493: Methods §2.8 (jcmm18408-sec-0010); Results §§3.3–3.4 (jcmm18408-sec-0026, jcmm18408-sec-0027); Figures 4B–G and 5A–F.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1111-jcmm-18408-4",
+        "component": "KF4: LPAS scores were associated with computationally inferred immune infiltration and treatment-related expression patterns.",
+        "context": "Immune deconvolution, TIDE and SubMap are analytical scores or expression matching; they are not verified patient-level benefit from immunotherapy.",
+        "finding": "LPAS scores were associated with computationally inferred immune infiltration and treatment-related expression patterns. Low-score association: Higher inferred immune/stromal signatures in TCGA; Drug results: CTRP/PRISM compound-screen associations are exploratory; Therapy-response analyses: SubMap/TIDE-based association; mixed external malignancy cohorts",
+        "evidence_level": "Immune deconvolution, TIDE and SubMap are analytical scores or expression matching; they are not verified patient-level benefit from immunotherapy.",
+        "scope": "Immune deconvolution, TIDE and SubMap are analytical scores or expression matching; they are not verified patient-level benefit from immunotherapy.",
+        "source_locator": "PMC11149493: Results §§3.5, 3.7, 3.9 (jcmm18408-sec-0028, jcmm18408-sec-0030, jcmm18408-sec-0032); Figures 6A–C, 8D–G, 10A–L.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1111-jcmm-18408-5",
+        "component": "KF5: PSMB1 knockdown changed LUAD cell-line growth and motility endpoints.",
+        "context": "Culture experiments provide selected cell-functional evidence but not an in-vivo antitumor effect or human therapeutic validation.",
+        "finding": "PSMB1 knockdown changed LUAD cell-line growth and motility endpoints. Experimental systems: A549 and H1299 human LUAD cell lines; Intervention: PSMB1-targeting siRNA; Reported assays: CCK-8, colony formation, wound healing and Transwell",
+        "evidence_level": "Culture experiments provide selected cell-functional evidence but not an in-vivo antitumor effect or human therapeutic validation.",
+        "scope": "Culture experiments provide selected cell-functional evidence but not an in-vivo antitumor effect or human therapeutic validation.",
+        "source_locator": "PMC11149493: Methods §§2.15–2.19 (jcmm18408-sec-0017 through jcmm18408-sec-0021); Results §3.10 (jcmm18408-sec-0033); Figure 11A–D.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "model_profile": {
+    "model_name": "Lung progression-associated signature (LPAS)",
+    "model_family": "Nine-gene expression-based survival model",
+    "development": "TCGA-LUAD retrospective transcriptomic and survival data",
+    "external_evaluation": "Five GEO LUAD retrospective survival cohorts; horizon-specific AUCs vary.",
+    "clinical_boundary": "No prospective LPAS-guided clinical decision validation."
+  }
+}

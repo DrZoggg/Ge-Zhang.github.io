@@ -1,0 +1,404 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.jma.2023.05.007",
+  "display_title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
+  "summary": "A Mg-Zn-Y-Nd alloy bearing MgF2, polydopamine and an exosome-containing coating showed improved corrosion-related test readouts and endothelial-compatible cell behaviors in preclinical material and cell assays. A small rat abdominal-aorta wire-implant experiment provided descriptive 21-day histology. The study did not test a marketed stent in humans or establish restenosis reduction or clinical patency.",
+  "research_question": "Can a surface-bound exosome/polydopamine coating on biodegradable magnesium alloy balance corrosion resistance with vascular-cell responses relevant to stent development, and how far do the supporting models justify translation?",
+  "author_summary": "The researchers created MgF2–PDA/exosome-coated Mg-Zn-Y-Nd alloy, measured morphology and corrosion, compared blood-contact and vascular-cell behavior, examined release/uptake in cultured cells, and implanted three wire configurations into rat abdominal aortas. The only published Figure S1 supplement cited for complete immunoblot views was not obtained; this evidence summary does not draw a result from it.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Surface-modified biodegradable magnesium alloy development with physicochemical testing, in-vitro platelet/macrophage/endothelial/smooth-muscle assays and small rodent abdominal-aorta wire implantation.",
+    "evidence_type": "Preclinical material characterization and cell behavior with qualitative vascular histology; no human randomized trial or implanted clinical coronary stent.",
+    "population": "Mg-Zn-Y-Nd test coupons/wires; vascular and immune cell experiments; 15 adult SD rats implanted with wire variants in abdominal aorta.",
+    "primary_endpoint": "Corrosion-related testing and coating biocompatibility under the reported laboratory conditions.",
+    "secondary_endpoint": "Endothelial adhesion/proliferation and NO/CD31 readouts; macrophage and smooth-muscle phenotypes; release/uptake observations; 21-day rat tissue histology.",
+    "data_modalities": [
+      "Material surface morphology and electrochemical corrosion assays",
+      "Exosome particle characterization and cell uptake imaging",
+      "Blood-contact and macrophage assays",
+      "Vascular endothelial and smooth-muscle cell assays",
+      "Rat abdominal-aorta wire-implant H&E histology"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "Rat implantation",
+        "value": "15 SD rats; three wire groups of 5 rats each"
+      },
+      {
+        "label": "Rat follow-up figure",
+        "value": "H&E imaging at 21 days post-implantation"
+      },
+      {
+        "label": "Wire size",
+        "value": "1 mm diameter × 10 mm length, not a clinical marketed stent"
+      },
+      {
+        "label": "Coating composition",
+        "value": "MgF2, polydopamine and a human-blood-derived exosome preparation"
+      },
+      {
+        "label": "Surface exosome release",
+        "value": "Reported approximately 5–7-day release in experimental conditions"
+      }
+    ],
+    "counting_note": "Five rats per implant group are animal counts, distinct from in-vitro replicate values, cells, particle counts and fabricated material samples. Descriptive histology does not provide an independently quantified clinical patency outcome."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Exosome-associated coating and particle characteristics were documented using material-level tests.",
+      "context": "Exosome identity-related Western blot complete images were cited as missing Figure S1; no conclusion requires interpretation of that unavailable supplement.",
+      "evidence": [
+        {
+          "label": "Alloy",
+          "value": "Mg-Zn-Y-Nd modified with MgF2 and PDA/exosome"
+        },
+        {
+          "label": "Particle size from NTA",
+          "value": "Reported 50–150 nm distribution"
+        },
+        {
+          "label": "Source completeness",
+          "value": "Full Western-blot Figure S1 supplement unavailable; excluded from validated findings"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Abstract and Results §3.1 Exosome characterization, PDF pp.1,6 (printed pp.4988,4993); main Figure 2. The full Western blot is referred to as Figure S1 and was not available in the source pack."
+    },
+    {
+      "id": "KF2",
+      "claim": "The modified surface showed different corrosion characteristics from bare magnesium alloy in laboratory immersion/electrochemical tests.",
+      "context": "Corrosion outcomes reflect specified HBSS and bench-test conditions, not confirmed long-term human implant degradation or clinical durability.",
+      "evidence": [
+        {
+          "label": "Test domain",
+          "value": "Electrochemical behavior, pH, hydrogen evolution and weight loss"
+        },
+        {
+          "label": "Material comparison",
+          "value": "Bare Mg alloy, MgF2, MgF2–PDA and MgF2–PDA/exosome"
+        },
+        {
+          "label": "Result direction",
+          "value": "Article reports improved resistance with modified coating"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Methods §2.4 Corrosion resistance, Results §3.3 Corrosion resistance; Figures 3–5; PDF pp.3–9 (printed 4990–4996)."
+    },
+    {
+      "id": "KF3",
+      "claim": "MgF2–PDA/exosome surfaces were associated with improved cultured endothelial readouts.",
+      "context": "Bench-cell observations are surrogate readouts relevant to endothelialization, not a measurement of human-stent clinical restenosis or healing.",
+      "evidence": [
+        {
+          "label": "Endothelial assays",
+          "value": "Adhesion, CCK-8 growth proxy, CD31 staining, NO release and migration"
+        },
+        {
+          "label": "Reported 3-day surface cell density",
+          "value": "Approximately 1.8×10^5 cells/cm² on coated surface versus 2×10^4 on bare alloy (article-described comparison)"
+        },
+        {
+          "label": "Figure-level replicates",
+          "value": "Figure 8B/C: n=6; Figure 8D: n=3"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Methods §§2.8–2.10, Results §3.7 vascular endothelial cell responses; Figure 8A–H; PDF pp.4–5 and 10–12 (printed 4991–4992 and 4997–4999)."
+    },
+    {
+      "id": "KF4",
+      "claim": "Inflammatory and smooth-muscle cell readouts differed under the coated-material conditions.",
+      "context": "Macrophage TNF-α/CD206 or smooth-muscle α-SMA/OPN expression is not a directly tested causal anti-restenosis mechanism in human vessels.",
+      "evidence": [
+        {
+          "label": "Macrophage assessment",
+          "value": "TNF-α, CD206 and reactive oxygen species in extract-solution culture"
+        },
+        {
+          "label": "Smooth-muscle assessment",
+          "value": "α-SMA, osteopontin and cell competition assays"
+        },
+        {
+          "label": "Model domain",
+          "value": "In-vitro phenotype and compatibility metrics"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Results §§3.6–3.8, Figures 7, 9 and 10; PDF pp.9–14 (printed 4996–5001)."
+    },
+    {
+      "id": "KF5",
+      "claim": "Exosome-associated signals were observed in cultured endothelial uptake and release assays.",
+      "context": "Fluorescence overlap with cellular organelles indicates reported localization, not a proven cargo-mediated causal pathway or controlled therapeutic dose.",
+      "evidence": [
+        {
+          "label": "Release window",
+          "value": "Approximately 5–7 days in the tested coating system"
+        },
+        {
+          "label": "Cellular colocalization",
+          "value": "Reported overlap with lysosomal and mitochondrial fluorescent markers"
+        },
+        {
+          "label": "Interpretation",
+          "value": "Exploratory uptake/localization observations"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Methods §§2.10–2.11, Results §3.8 Release and uptake of exosomes, Figure 11; PDF pp.5–6 and 14–15 (printed 4992–4993 and 5001–5002)."
+    },
+    {
+      "id": "KF6",
+      "claim": "A short rat aortic wire-implant experiment showed descriptive vessel-wall histological differences.",
+      "context": "The animal intervention used wires rather than clinical coronary stents; the presented H&E sections do not independently establish quantitative lumen patency, thrombosis prevention or long-term safety.",
+      "evidence": [
+        {
+          "label": "Rodent design",
+          "value": "15 SD rats; bare-Mg, MgF2 and MgF2–PDA/exosome wire groups, n=5 each"
+        },
+        {
+          "label": "Site and time",
+          "value": "Rat abdominal aorta; 21-day histology"
+        },
+        {
+          "label": "Endpoint limitation",
+          "value": "Qualitative H&E representative sections only in Figure 12"
+        }
+      ],
+      "source_locator": "Publisher VOR PDF: Methods §2.12 The SD rat experiment, PDF p.6 (printed 4993); Results and Figure 12, PDF pp.15–16 (printed 5002–5003)."
+    }
+  ],
+  "what_this_adds": [
+    "Connects material corrosion testing with endothelial, macrophage, smooth-muscle and short animal vascular-tissue readouts.",
+    "Establishes a scoped preclinical basis for magnesium-alloy exosome-coating research while avoiding claims of human restenosis prevention."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Modified material surfaces change measured corrosion and vascular-cell readouts under the stated in-vitro conditions.",
+      "The article reports a small rat aortic wire implantation study with histological observations after 21 days.",
+      "The design offers preclinical hypotheses about biomaterial surface engineering and compatibility."
+    ],
+    "does_not_establish": [
+      "Clinical efficacy, safety, coronary stent patency, thrombosis reduction or restenosis benefit in humans.",
+      "A rigorously measured long-term implantation outcome, given representative rat tissue images only.",
+      "A confirmed exosomal molecular cargo mechanism of endothelial repair.",
+      "Any result relying on the missing full Western-blot Figure S1.",
+      "Evidence that surface endothelial cell density in vitro is equivalent to in-vivo reendothelialization of human stents."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Was this a human cardiovascular stent trial?",
+      "answer": "No. The reported work used material tests, cultured cells and 15 rats implanted with alloy wires in the abdominal aorta. No treated human patients or clinical efficacy endpoint were reported.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What is the coating made from?",
+      "answer": "An Mg-Zn-Y-Nd alloy had an MgF2 layer, an adhesive polydopamine layer and an exosome-containing surface treatment.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What vascular endothelial outcomes were assessed?",
+      "answer": "The paper reports cell adhesion/growth, CD31, nitric oxide and migration assays under culture conditions, with differences between coated and bare material groups.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "How long were the exosome-associated release effects observed?",
+      "answer": "The article reports an experimental release window of approximately 5–7 days; this should not be interpreted as an established clinical delivery period.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What did the 21-day animal experiment measure?",
+      "answer": "Fifteen rats were assigned across three abdominal-aorta wire conditions, with representative H&E tissue sections at day 21. This is not quantitative human stent patency evidence.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Is every figure-level source available?",
+      "answer": "No. The original Figure S1 for full Western blot imaging was not in the source pack, so its content is not used as verified evidence in this summary.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    }
+  ],
+  "concepts": {
+    "device_materials": [
+      "Biodegradable magnesium alloy",
+      "MgF2–PDA/exosome coating",
+      "Vascular scaffold surfaces"
+    ],
+    "preclinical_biology": [
+      "Endothelialization surrogates",
+      "Macrophage phenotype",
+      "Smooth muscle cell markers"
+    ],
+    "evidence_levels": [
+      "Corrosion bench tests",
+      "Rat aortic wire histology",
+      "Supplement Figure S1 absent"
+    ]
+  },
+  "limitations": [
+    "Missing formal supplementary Figure S1 prevents independent checking of the complete immunoblot panel; no result is attributed to that file.",
+    "The preclinical implant was wire placement in rat abdominal aorta, not an implanted human coronary stent.",
+    "Figure 12 shows qualitative histology at 21 days; no clinical or long-term luminal patency study is demonstrated.",
+    "Corrosion, cell proliferation, platelet adhesion and release data depend on specific in-vitro testing protocols.",
+    "The official volume/issue is Journal of Magnesium and Alloys 12(12) (2024), pages 4988–5004; article first online in 2023. Existing bibliographic site year remains protected."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.18063/ijb.740",
+      "relationship": "A different vascular biomaterial engineering review, focused on three-dimensional printed vessels rather than biodegradable metallic stent-wire coatings."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1016/j.jma.2023.05.007",
+    "publisher_url": "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
+    "license": "CC BY-NC-ND 4.0 in publisher version-of-record PDF; original evidence summary only, without adapting/reproducing article text, figures or tables.",
+    "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "version_of_record": "Journal of Magnesium and Alloys 12(12) (2024): 4988–5004; article online 27 June 2023; DOI 10.1016/j.jma.2023.05.007. Existing repository year 2023 is preserved.",
+    "source_artifacts": "Official SciOpen VOR 17-page PDF and Figures 1–12; supplementary Figure S1 still unavailable.",
+    "source_limitation": "Cannot verify the full Western blot panel referenced as Figure S1; all accepted KFs derive from accessible VOR material without use of that image.",
+    "clinical_boundary": "Bench and animal observations only; no human clinical safety, restenosis or stent-outcome evidence."
+  },
+  "evidence_page_notice": "This is an original, noncommercial evidence synthesis of a preclinical biomaterials study, not a clinical stent trial. The unavailable Supplementary Figure S1 is disclosed and no claim is based on its uninspected contents.",
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular biomaterials",
+      "Biodegradable stent research"
+    ],
+    "review_topics": [
+      "Exosome-functionalized magnesium alloys",
+      "Preclinical endothelial compatibility"
+    ],
+    "scientific_role": "Coating-material development with endothelial/immune cell tests and small rat abdominal-aorta wire implantation.",
+    "evidence_position": "Preclinical physicochemical and cell readouts plus short animal histology; no human-stent outcome validation.",
+    "related_concepts": [
+      "MgF2–polydopamine coating",
+      "Exosome surface release",
+      "Rat aortic wire implantation"
+    ],
+    "citation_contexts": [
+      "Reviews comparing biologically functionalized metallic cardiovascular implant surfaces.",
+      "Preclinical biomaterial reports distinguishing cell-level endothelial surrogates from clinical restenosis outcomes."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which coating evidence supports preclinical vascular compatibility?",
+        "supported_scope": "Bench tests, cell culture and descriptive rat histology with narrow outcome scope.",
+        "evidence_refs": [
+          "KF2",
+          "KF3",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What does the exosome-coated magnesium study show in animals?",
+        "supported_scope": "Small rat aortic wire histology; not clinical coronary stent efficacy.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which source limitation affects independent replication?",
+        "supported_scope": "Unobtained original Figure S1 Western blot image; excluded from accepted claims.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Clinical efficacy, safety, coronary stent patency, thrombosis reduction or restenosis benefit in humans.",
+      "A rigorously measured long-term implantation outcome, given representative rat tissue images only.",
+      "A confirmed exosomal molecular cargo mechanism of endothelial repair.",
+      "Any result relying on the missing full Western-blot Figure S1.",
+      "Evidence that surface endothelial cell density in vitro is equivalent to in-vivo reendothelialization of human stents."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-1",
+        "component": "KF1: Exosome-associated coating and particle characteristics were documented using material-level tests.",
+        "context": "Exosome identity-related Western blot complete images were cited as missing Figure S1; no conclusion requires interpretation of that unavailable supplement.",
+        "finding": "Exosome-associated coating and particle characteristics were documented using material-level tests. Alloy: Mg-Zn-Y-Nd modified with MgF2 and PDA/exosome; Particle size from NTA: Reported 50–150 nm distribution; Source completeness: Full Western-blot Figure S1 supplement unavailable; excluded from validated findings",
+        "evidence_level": "Exosome identity-related Western blot complete images were cited as missing Figure S1; no conclusion requires interpretation of that unavailable supplement.",
+        "scope": "Exosome identity-related Western blot complete images were cited as missing Figure S1; no conclusion requires interpretation of that unavailable supplement.",
+        "source_locator": "Publisher VOR PDF: Abstract and Results §3.1 Exosome characterization, PDF pp.1,6 (printed pp.4988,4993); main Figure 2. The full Western blot is referred to as Figure S1 and was not available in the source pack.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-2",
+        "component": "KF2: The modified surface showed different corrosion characteristics from bare magnesium alloy in laboratory immersion/electrochemical tests.",
+        "context": "Corrosion outcomes reflect specified HBSS and bench-test conditions, not confirmed long-term human implant degradation or clinical durability.",
+        "finding": "The modified surface showed different corrosion characteristics from bare magnesium alloy in laboratory immersion/electrochemical tests. Test domain: Electrochemical behavior, pH, hydrogen evolution and weight loss; Material comparison: Bare Mg alloy, MgF2, MgF2–PDA and MgF2–PDA/exosome; Result direction: Article reports improved resistance with modified coating",
+        "evidence_level": "Corrosion outcomes reflect specified HBSS and bench-test conditions, not confirmed long-term human implant degradation or clinical durability.",
+        "scope": "Corrosion outcomes reflect specified HBSS and bench-test conditions, not confirmed long-term human implant degradation or clinical durability.",
+        "source_locator": "Publisher VOR PDF: Methods §2.4 Corrosion resistance, Results §3.3 Corrosion resistance; Figures 3–5; PDF pp.3–9 (printed 4990–4996).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-3",
+        "component": "KF3: MgF2–PDA/exosome surfaces were associated with improved cultured endothelial readouts.",
+        "context": "Bench-cell observations are surrogate readouts relevant to endothelialization, not a measurement of human-stent clinical restenosis or healing.",
+        "finding": "MgF2–PDA/exosome surfaces were associated with improved cultured endothelial readouts. Endothelial assays: Adhesion, CCK-8 growth proxy, CD31 staining, NO release and migration; Reported 3-day surface cell density: Approximately 1.8×10^5 cells/cm² on coated surface versus 2×10^4 on bare alloy (article-described comparison); Figure-level replicates: Figure 8B/C: n=6; Figure 8D: n=3",
+        "evidence_level": "Bench-cell observations are surrogate readouts relevant to endothelialization, not a measurement of human-stent clinical restenosis or healing.",
+        "scope": "Bench-cell observations are surrogate readouts relevant to endothelialization, not a measurement of human-stent clinical restenosis or healing.",
+        "source_locator": "Publisher VOR PDF: Methods §§2.8–2.10, Results §3.7 vascular endothelial cell responses; Figure 8A–H; PDF pp.4–5 and 10–12 (printed 4991–4992 and 4997–4999).",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-4",
+        "component": "KF4: Inflammatory and smooth-muscle cell readouts differed under the coated-material conditions.",
+        "context": "Macrophage TNF-α/CD206 or smooth-muscle α-SMA/OPN expression is not a directly tested causal anti-restenosis mechanism in human vessels.",
+        "finding": "Inflammatory and smooth-muscle cell readouts differed under the coated-material conditions. Macrophage assessment: TNF-α, CD206 and reactive oxygen species in extract-solution culture; Smooth-muscle assessment: α-SMA, osteopontin and cell competition assays; Model domain: In-vitro phenotype and compatibility metrics",
+        "evidence_level": "Macrophage TNF-α/CD206 or smooth-muscle α-SMA/OPN expression is not a directly tested causal anti-restenosis mechanism in human vessels.",
+        "scope": "Macrophage TNF-α/CD206 or smooth-muscle α-SMA/OPN expression is not a directly tested causal anti-restenosis mechanism in human vessels.",
+        "source_locator": "Publisher VOR PDF: Results §§3.6–3.8, Figures 7, 9 and 10; PDF pp.9–14 (printed 4996–5001).",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-5",
+        "component": "KF5: Exosome-associated signals were observed in cultured endothelial uptake and release assays.",
+        "context": "Fluorescence overlap with cellular organelles indicates reported localization, not a proven cargo-mediated causal pathway or controlled therapeutic dose.",
+        "finding": "Exosome-associated signals were observed in cultured endothelial uptake and release assays. Release window: Approximately 5–7 days in the tested coating system; Cellular colocalization: Reported overlap with lysosomal and mitochondrial fluorescent markers; Interpretation: Exploratory uptake/localization observations",
+        "evidence_level": "Fluorescence overlap with cellular organelles indicates reported localization, not a proven cargo-mediated causal pathway or controlled therapeutic dose.",
+        "scope": "Fluorescence overlap with cellular organelles indicates reported localization, not a proven cargo-mediated causal pathway or controlled therapeutic dose.",
+        "source_locator": "Publisher VOR PDF: Methods §§2.10–2.11, Results §3.8 Release and uptake of exosomes, Figure 11; PDF pp.5–6 and 14–15 (printed 4992–4993 and 5001–5002).",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-jma-2023-05-007-6",
+        "component": "KF6: A short rat aortic wire-implant experiment showed descriptive vessel-wall histological differences.",
+        "context": "The animal intervention used wires rather than clinical coronary stents; the presented H&E sections do not independently establish quantitative lumen patency, thrombosis prevention or long-term safety.",
+        "finding": "A short rat aortic wire-implant experiment showed descriptive vessel-wall histological differences. Rodent design: 15 SD rats; bare-Mg, MgF2 and MgF2–PDA/exosome wire groups, n=5 each; Site and time: Rat abdominal aorta; 21-day histology; Endpoint limitation: Qualitative H&E representative sections only in Figure 12",
+        "evidence_level": "The animal intervention used wires rather than clinical coronary stents; the presented H&E sections do not independently establish quantitative lumen patency, thrombosis prevention or long-term safety.",
+        "scope": "The animal intervention used wires rather than clinical coronary stents; the presented H&E sections do not independently establish quantitative lumen patency, thrombosis prevention or long-term safety.",
+        "source_locator": "Publisher VOR PDF: Methods §2.12 The SD rat experiment, PDF p.6 (printed 4993); Results and Figure 12, PDF pp.15–16 (printed 5002–5003).",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
+}
