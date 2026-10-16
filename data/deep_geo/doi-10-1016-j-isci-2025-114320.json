@@ -1,0 +1,390 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.isci.2025.114320",
+  "display_title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
+  "summary": "An integrative ALS study combined blood transcriptomic modeling, external dataset discrimination, cis-eQTL Mendelian randomization and a small serum ELISA series. A nine-gene expression classifier showed an external AUC of 0.75, while the ABCA1 genetic-instrument estimate indicated an inverse association with ALS risk. Serum ABCA1 was higher in 15 ALS patients versus 15 controls. These layers do not establish that raising ABCA1 is therapeutically protective.",
+  "research_question": "What complementary evidence links ABCA1 with ALS blood transcription, diagnostic discrimination, genetically predicted disease susceptibility and protein measurements, and where do the methods stop short of causal therapeutic proof?",
+  "author_summary": "The researchers integrated publicly available ALS blood and tissue expression resources, feature selection and random forest classification, two-sample Mendelian randomization, and an independent small serum ELISA group. Results are separated by data modality; the supplementary data contradict a published sentence claiming significant mouse-spinal-cord upregulation as early as postnatal day 70.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Multi-dataset retrospective transcriptomic discovery/validation with gene-expression classifier development, cis-eQTL Mendelian randomization and a small in-house cross-sectional serum cohort.",
+    "evidence_type": "Blood/tissue expression associations, retrospective classification performance, genetically instrumented association and laboratory serum comparison.",
+    "population": "Patients with ALS and controls from public blood expression series; an independently sampled 15 ALS/15 control serum group; human postmortem tissues and a public SOD1-G93A mouse tissue series.",
+    "primary_endpoint": "Retrospective ALS-versus-control blood expression classification and ABCA1 association with genetically instrumented ALS susceptibility.",
+    "secondary_endpoint": "Serum ABCA1 difference, metabolic/functional correlations and tissue- or time-dependent expression differences.",
+    "data_modalities": [
+      "Whole-blood microarray/transcriptomic datasets",
+      "Random forest and LASSO classifier discrimination",
+      "cis-eQTL and ALS GWAS summary statistics",
+      "Serum ELISA with clinical covariates",
+      "Human postmortem and publicly available SOD1-G93A tissue expression"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Signature",
+        "value": "9 genes selected by intersection of three feature-selection algorithms"
+      },
+      {
+        "label": "External classifier dataset",
+        "value": "GSE112680 independent external expression dataset"
+      },
+      {
+        "label": "Serum clinical sample",
+        "value": "15 ALS cases and 15 controls, measured using ELISA"
+      },
+      {
+        "label": "MR genetic instruments",
+        "value": "11 independent ABCA1-associated cis-eQTL SNPs in primary analysis"
+      },
+      {
+        "label": "Mouse expression timepoints",
+        "value": "Postnatal days 30, 70, 100 and 120 (public data; not a new mouse intervention)"
+      }
+    ],
+    "counting_note": "Transcriptomic cohort sizes, GWAS case-control summaries, public tissue/mouse series and 30 serum participants refer to different data resources. No synthetic total n or intervention trial is claimed."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "A nine-gene ALS classifier showed reduced discrimination when applied to an independent expression cohort.",
+      "context": "The RF model was developed and internally tested in GSE112676 and externally evaluated in GSE112680; feature selection and batch heterogeneity constrain generalization.",
+      "evidence": [
+        {
+          "label": "Gene signature",
+          "value": "9 genes including ABCA1"
+        },
+        {
+          "label": "Random forest AUC",
+          "value": "Training 1.00; internal test 0.91; independent external dataset 0.75"
+        },
+        {
+          "label": "Comparator LASSO AUC",
+          "value": "Training 0.86; internal test 0.89; external 0.72"
+        }
+      ],
+      "source_locator": "PMC12834111: Results Machine learning defines a cross-validated nine-gene signature (sec2.5, paragraphs p0125, p0130); Figure 5H–L; Methods Machine learning for feature selection and diagnostic models (sec8.3.7)."
+    },
+    {
+      "id": "KF2",
+      "claim": "Higher genetically predicted ABCA1 expression was inversely associated with ALS risk in the primary MR estimate.",
+      "context": "This is an IVW Mendelian-randomization estimate conditional on cis-eQTL instrument and pleiotropy assumptions, not a demonstrated effect of protein augmentation in patients.",
+      "evidence": [
+        {
+          "label": "Instrument count",
+          "value": "11 SNPs; reported mean F=71.7"
+        },
+        {
+          "label": "IVW estimate",
+          "value": "OR 0.93, 95% CI 0.87–0.99, P=0.02"
+        },
+        {
+          "label": "Estimator concordance",
+          "value": "MR-Egger and weighted median were directionally similar but not statistically significant"
+        },
+        {
+          "label": "Additional cohorts",
+          "value": "European replication OR 0.96, P=0.04; mixed/East Asian estimates not significant"
+        }
+      ],
+      "source_locator": "PMC12834111: Results ABCA1 expression is associated with reduced ALS risk by MR (sec2.6, p0155–p0175); Figure 6B–G; Methods Mendelian randomization (sec8.3.9)."
+    },
+    {
+      "id": "KF3",
+      "claim": "An independent small serum series showed higher ABCA1 concentrations in ALS versus controls.",
+      "context": "Cross-sectional serum difference in a 30-person convenience sample is neither a validated diagnostic test nor intervention evidence.",
+      "evidence": [
+        {
+          "label": "Clinical participants",
+          "value": "15 ALS and 15 age/sex-matched controls"
+        },
+        {
+          "label": "Group comparison",
+          "value": "Reported ELISA P=0.006"
+        },
+        {
+          "label": "Functional outcome",
+          "value": "ALSFRS-R total correlation r=-0.190, P=0.497 (not significant)"
+        }
+      ],
+      "source_locator": "PMC12834111: Results Serum ABCA1 protein quantification and clinical correlation (sec2.7, p0180–p0195); Figure 7A–I; Methods Serum ABCA1 quantification (sec8.3.10); Supplementary Tables S9, S10, S13."
+    },
+    {
+      "id": "KF4",
+      "claim": "ABCA1 expression associations differed across tissues and public SOD1-G93A timepoints.",
+      "context": "Human compartments, mouse time series and blood assays cannot be treated as the same biological readout.",
+      "evidence": [
+        {
+          "label": "Human blood dataset",
+          "value": "GSE234297 log2FC 0.50, P=0.0068"
+        },
+        {
+          "label": "Mouse spinal cord day 70",
+          "value": "GSE120374 log2FC 0.24; unadjusted P=0.414 and adjusted P approximately 1.00: not significant"
+        },
+        {
+          "label": "Mouse spinal cord day 100",
+          "value": "Reported P=1.7×10^-6"
+        },
+        {
+          "label": "Mouse spinal cord day 120",
+          "value": "Reported P=7.5×10^-14"
+        }
+      ],
+      "source_locator": "PMC12834111: Results Spatial and temporal heterogeneity (sec2.8, p0210–p0240); Figure 8A–G; supplied official Data S1, mmc2.zip/Supplementary Table 14.xlsx, GSE120374_DESeq2_Abca1 worksheet A3/D3/G3/H3, G4/H4, G5/H5."
+    },
+    {
+      "id": "KF5",
+      "claim": "ABCA1 related to transcriptomic immune-cell signature scores, not directly measured cell counts.",
+      "context": "ssGSEA scores are indirect proxies and cannot establish a cell-specific mechanism or tissue-level abundance.",
+      "evidence": [
+        {
+          "label": "Neutrophil ssGSEA association",
+          "value": "Reported Spearman r=0.51, P<0.001"
+        },
+        {
+          "label": "CD56-bright NK ssGSEA association",
+          "value": "Reported Spearman r=-0.42, P<0.001"
+        },
+        {
+          "label": "Biological level",
+          "value": "Blood transcriptome immune signature inference"
+        }
+      ],
+      "source_locator": "PMC12834111: Results Differentially expressed genes and their overlap with ALS modules (sec2.4); Serum ABCA1 clinical interpretation (sec2.7, p0200); Figure 4C–F."
+    }
+  ],
+  "what_this_adds": [
+    "Aligns several observational/genetic/serum modalities around ABCA1 while showing that they interrogate different constructs.",
+    "Documents the external classifier performance drop and a source-traced inconsistency in the published mouse day-70 significance statement."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "A reproducible blood expression-model signal with an external dataset AUC of 0.75 for the reported model.",
+      "An instrument-based inverse ABCA1-expression/ALS-risk association under MR assumptions.",
+      "An ALS-versus-control serum ABCA1 difference in the reported small cohort.",
+      "Cross-compartment variation in human and public mouse expression resources."
+    ],
+    "does_not_establish": [
+      "That increasing ABCA1 expression or administering an ABCA1-targeted treatment prevents ALS.",
+      "A fully validated clinical ALS diagnostic test, cut-off or demonstrated impact on patient outcomes.",
+      "A statistically significant day-70 mouse spinal-cord increase, given source P=0.414.",
+      "That ssGSEA score associations represent directly enumerated neutrophils or NK cells.",
+      "A significant relationship between serum ABCA1 and ALSFRS-R functional score based on the published nonsignificant result."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How did the nine-gene ALS model perform externally?",
+      "answer": "The random forest signature reported AUC 1.00 in training, 0.91 internally, and 0.75 in independent GSE112680, reflecting lower transport performance; no prospective clinical impact test was performed.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Does MR prove ABCA1 upregulation treats ALS?",
+      "answer": "No. IVW MR estimated an inverse association with ALS susceptibility (OR 0.93; 95% CI 0.87–0.99) under genetic instrument assumptions; that is not a drug intervention or demonstrated treatment benefit.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How many people were in the serum cohort?",
+      "answer": "Fifteen ALS cases and fifteen controls (30 participants). The reported group comparison had P=0.006 but is too small to establish clinical diagnostic validity.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Was serum ABCA1 associated with functional disability?",
+      "answer": "The reported ALSFRS-R total correlation r=-0.190, P=0.497 was not statistically significant; the evidence summary does not claim functional prediction.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Is ABCA1 significantly upregulated in mouse spinal cord from day 70?",
+      "answer": "No. The supplied original Supplementary Table 14 reports mouse day-70 P=0.414 (adjusted P approximately 1). Stronger reported evidence appears on days 100 and 120; the published day-70 significant-onward phrase is inconsistent with its numbers.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Are neutrophil and NK findings direct cell counts?",
+      "answer": "No. The reported associations come from ssGSEA immune-cell transcriptomic signatures and should not be interpreted as flow-cytometric cell-number measurements.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease_and_biomarkers": [
+      "Amyotrophic lateral sclerosis",
+      "ABCA1",
+      "Serum biomarker associations"
+    ],
+    "methods_and_models": [
+      "Nine-gene random forest",
+      "cis-eQTL Mendelian randomization",
+      "ELISA"
+    ],
+    "evidence_boundaries": [
+      "External AUC 0.75",
+      "ALSFRS-R nonsignificant association",
+      "Mouse day-70 P-value discrepancy"
+    ]
+  },
+  "limitations": [
+    "The external AUC is lower than the training/internal AUC, and cohort platform differences constrain diagnostic transportability.",
+    "MR inferences rely on genetic instruments and cannot replace direct target perturbation and clinical outcome trials.",
+    "The serum series contains only 15 patients and 15 controls, and multiple exploratory correlates require caution.",
+    "The published mouse day-70 phrase disagrees with raw/adjusted statistics in Supplementary Table 14; day 70 must not be called statistically significant.",
+    "Genetic susceptibility, whole-blood RNA, circulating protein and postmortem tissue are not interchangeable measures."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1093/hmg/ddae189",
+      "relationship": "A separate neurodegeneration multi-omics study focused on Alzheimer disease rather than ALS, offering methodological context without cross-disease biomarker validation."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1016/j.isci.2025.114320",
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S2589004225025817",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12834111/",
+    "pmcid": "PMC12834111",
+    "license": "Article-level CC BY 4.0 in official JATS. This page provides original analysis without full-text or figure republication.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "version_of_record": "iScience, electronically published 3 December 2025; collection date 16 January 2026. Preserve the existing site bibliographic year/identity.",
+    "source_artifacts": "Official JATS/PDF, Document S1 Figures S1–S8, Data S1 Tables S1–S14; day-70 P values independently read from the original supplied XLSX internal worksheet.",
+    "scientific_discrepancy": "The Results prose calls day-70 Abca1 significantly increased, but GSE120374 Table S14 reports unadjusted P=0.414354 and adjusted P=0.999979.",
+    "identity_note": "No inference is made that similarly titled preprint and VOR are identical without official version linking."
+  },
+  "evidence_page_notice": "An author-maintained source-traced synthesis. Day-70 significance is reported according to the original supplemental statistical values rather than an inconsistent narrative phrase. Cite the original article and inspect Table S14 for the time series.",
+  "discovery_layer": {
+    "field_entry": [
+      "Neurodegenerative disease genomics",
+      "Molecular biomarker research"
+    ],
+    "review_topics": [
+      "ABCA1 and ALS susceptibility",
+      "Blood expression and serum biomarker translation"
+    ],
+    "scientific_role": "Integrates blood-expression classification, genetic instrumental-variable association and limited serum measurements in ALS.",
+    "evidence_position": "Retrospective model evaluation and conditional MR evidence with small observational serum cohort; no ABCA1-directed intervention.",
+    "related_concepts": [
+      "External validation AUC",
+      "ABCA1 cis-eQTL",
+      "Day-70 source inconsistency"
+    ],
+    "citation_contexts": [
+      "Reviews separating genetic-instrument and observed serum associations in ALS biomarker research.",
+      "Methodological examples of external classifier performance drop and primary-supplement significance verification."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How consistent is ABCA1 across ALS diagnostic, genetic and serum evidence?",
+        "supported_scope": "Association across distinct measurements, not proven targeted treatment.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Does the ALS nine-gene classifier have independent performance evidence?",
+        "supported_scope": "External expression-dataset AUC reported, not clinical-impact proof.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which reported mouse timepoint claim requires caution?",
+        "supported_scope": "Day 70 P=0.414 is nonsignificant despite wording in the article.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "That increasing ABCA1 expression or administering an ABCA1-targeted treatment prevents ALS.",
+      "A fully validated clinical ALS diagnostic test, cut-off or demonstrated impact on patient outcomes.",
+      "A statistically significant day-70 mouse spinal-cord increase, given source P=0.414.",
+      "That ssGSEA score associations represent directly enumerated neutrophils or NK cells.",
+      "A significant relationship between serum ABCA1 and ALSFRS-R functional score based on the published nonsignificant result."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-b2-doi-10-1016-j-isci-2025-114320-1",
+        "component": "KF1: A nine-gene ALS classifier showed reduced discrimination when applied to an independent expression cohort.",
+        "context": "The RF model was developed and internally tested in GSE112676 and externally evaluated in GSE112680; feature selection and batch heterogeneity constrain generalization.",
+        "finding": "A nine-gene ALS classifier showed reduced discrimination when applied to an independent expression cohort. Gene signature: 9 genes including ABCA1; Random forest AUC: Training 1.00; internal test 0.91; independent external dataset 0.75; Comparator LASSO AUC: Training 0.86; internal test 0.89; external 0.72",
+        "evidence_level": "The RF model was developed and internally tested in GSE112676 and externally evaluated in GSE112680; feature selection and batch heterogeneity constrain generalization.",
+        "scope": "The RF model was developed and internally tested in GSE112676 and externally evaluated in GSE112680; feature selection and batch heterogeneity constrain generalization.",
+        "source_locator": "PMC12834111: Results Machine learning defines a cross-validated nine-gene signature (sec2.5, paragraphs p0125, p0130); Figure 5H–L; Methods Machine learning for feature selection and diagnostic models (sec8.3.7).",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-isci-2025-114320-2",
+        "component": "KF2: Higher genetically predicted ABCA1 expression was inversely associated with ALS risk in the primary MR estimate.",
+        "context": "This is an IVW Mendelian-randomization estimate conditional on cis-eQTL instrument and pleiotropy assumptions, not a demonstrated effect of protein augmentation in patients.",
+        "finding": "Higher genetically predicted ABCA1 expression was inversely associated with ALS risk in the primary MR estimate. Instrument count: 11 SNPs; reported mean F=71.7; IVW estimate: OR 0.93, 95% CI 0.87–0.99, P=0.02; Estimator concordance: MR-Egger and weighted median were directionally similar but not statistically significant; Additional cohorts: European replication OR 0.96, P=0.04; mixed/East Asian estimates not significant",
+        "evidence_level": "This is an IVW Mendelian-randomization estimate conditional on cis-eQTL instrument and pleiotropy assumptions, not a demonstrated effect of protein augmentation in patients.",
+        "scope": "This is an IVW Mendelian-randomization estimate conditional on cis-eQTL instrument and pleiotropy assumptions, not a demonstrated effect of protein augmentation in patients.",
+        "source_locator": "PMC12834111: Results ABCA1 expression is associated with reduced ALS risk by MR (sec2.6, p0155–p0175); Figure 6B–G; Methods Mendelian randomization (sec8.3.9).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-isci-2025-114320-3",
+        "component": "KF3: An independent small serum series showed higher ABCA1 concentrations in ALS versus controls.",
+        "context": "Cross-sectional serum difference in a 30-person convenience sample is neither a validated diagnostic test nor intervention evidence.",
+        "finding": "An independent small serum series showed higher ABCA1 concentrations in ALS versus controls. Clinical participants: 15 ALS and 15 age/sex-matched controls; Group comparison: Reported ELISA P=0.006; Functional outcome: ALSFRS-R total correlation r=-0.190, P=0.497 (not significant)",
+        "evidence_level": "Cross-sectional serum difference in a 30-person convenience sample is neither a validated diagnostic test nor intervention evidence.",
+        "scope": "Cross-sectional serum difference in a 30-person convenience sample is neither a validated diagnostic test nor intervention evidence.",
+        "source_locator": "PMC12834111: Results Serum ABCA1 protein quantification and clinical correlation (sec2.7, p0180–p0195); Figure 7A–I; Methods Serum ABCA1 quantification (sec8.3.10); Supplementary Tables S9, S10, S13.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-isci-2025-114320-4",
+        "component": "KF4: ABCA1 expression associations differed across tissues and public SOD1-G93A timepoints.",
+        "context": "Human compartments, mouse time series and blood assays cannot be treated as the same biological readout.",
+        "finding": "ABCA1 expression associations differed across tissues and public SOD1-G93A timepoints. Human blood dataset: GSE234297 log2FC 0.50, P=0.0068; Mouse spinal cord day 70: GSE120374 log2FC 0.24; unadjusted P=0.414 and adjusted P approximately 1.00: not significant; Mouse spinal cord day 100: Reported P=1.7×10^-6; Mouse spinal cord day 120: Reported P=7.5×10^-14",
+        "evidence_level": "Human compartments, mouse time series and blood assays cannot be treated as the same biological readout.",
+        "scope": "Human compartments, mouse time series and blood assays cannot be treated as the same biological readout.",
+        "source_locator": "PMC12834111: Results Spatial and temporal heterogeneity (sec2.8, p0210–p0240); Figure 8A–G; supplied official Data S1, mmc2.zip/Supplementary Table 14.xlsx, GSE120374_DESeq2_Abca1 worksheet A3/D3/G3/H3, G4/H4, G5/H5.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-1016-j-isci-2025-114320-5",
+        "component": "KF5: ABCA1 related to transcriptomic immune-cell signature scores, not directly measured cell counts.",
+        "context": "ssGSEA scores are indirect proxies and cannot establish a cell-specific mechanism or tissue-level abundance.",
+        "finding": "ABCA1 related to transcriptomic immune-cell signature scores, not directly measured cell counts. Neutrophil ssGSEA association: Reported Spearman r=0.51, P<0.001; CD56-bright NK ssGSEA association: Reported Spearman r=-0.42, P<0.001; Biological level: Blood transcriptome immune signature inference",
+        "evidence_level": "ssGSEA scores are indirect proxies and cannot establish a cell-specific mechanism or tissue-level abundance.",
+        "scope": "ssGSEA scores are indirect proxies and cannot establish a cell-specific mechanism or tissue-level abundance.",
+        "source_locator": "PMC12834111: Results Differentially expressed genes and their overlap with ALS modules (sec2.4); Serum ABCA1 clinical interpretation (sec2.7, p0200); Figure 4C–F.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "model_profile": {
+    "model_name": "Nine-gene ALS blood expression classifier",
+    "model_family": "Random forest; LASSO comparator",
+    "evaluation": "GSE112676 training/internal testing and independent GSE112680 external expression cohort",
+    "performance_scope": "RF AUC 1.00/0.91/0.75 (train/internal/external), not a clinical diagnostic utility trial",
+    "clinical_boundary": "Not an established ALS diagnostic assay or an ABCA1-targeted therapy."
+  }
+}

@@ -1,12 +1,368 @@
 {
-  "version": 1,
+  "version": 2,
   "doi": "10.1186/s12943-024-02047-2",
-  "display_title": "Tumor immune microenvironment & CAR-T",
-  "summary": "A multidimensional-omics review linking tumor immune microenvironment biology to next-generation CAR-T strategies and precision immunotherapy.",
-  "keywords": ["tumor immune microenvironment", "CAR-T", "multi-omics", "single-cell", "immunotherapy", "precision oncology"],
-  "questions": [
-    "How can multi-omics improve CAR-T therapy?",
-    "What tumor microenvironment factors limit CAR-T efficacy in solid tumors?",
-    "How can single-cell and multi-omics data guide next-generation CAR-T design?"
-  ]
+  "display_title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
+  "summary": "This narrative review synthesizes how tumor immune microenvironment (TIME) composition, cellular spatial organization, genomics, transcriptomics, proteomics, microbiome and machine-learning methods could inform CAR-T cell design and solid-tumor immunotherapy research. It presents no original prospective CAR-T trial, systematic pooled estimate, or clinically validated patient-selection tool.",
+  "research_question": "Which tumor immune microenvironment features and omics-informed engineering strategies may help explain obstacles to CAR-T therapy in solid tumors, and which clinical claims remain unsupported by a narrative review?",
+  "author_summary": "The authors discuss the spatial distribution of tumor and immune cells, host and tumor molecular context, antigen choice, metabolic persistence, immunosuppression, infiltration and exhaustion, supported by examples from the published literature. Claims about candidate interventions are attributed to cited prior studies and are not new experimental results of this review.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Narrative review of tumor immune microenvironment heterogeneity, multi-omics characterization, machine learning and candidate CAR-T design strategies.",
+    "evidence_type": "Qualitative synthesis of prior mechanistic, computational, preclinical and clinical publications without reproducible meta-analytic pooling.",
+    "translation_scope": "CAR-T and immunotherapy research strategies, especially solid tumors; the article does not test a new CAR-T product or treatment protocol.",
+    "evidence_domains": [
+      "Spatial immune contexture and immune-infiltration phenotypes",
+      "Genetic, transcriptomic, proteomic and microbiome dimensions of TIME",
+      "CAR-T antigen targeting, trafficking, metabolic fitness and exhaustion",
+      "Machine-learning analysis of spatial and molecular immune evidence"
+    ],
+    "diseases_covered": [
+      "Solid tumors with immunosuppressive tumor microenvironments",
+      "Tumor contexts used in cited immunotherapy studies"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Publication type",
+        "value": "Narrative review (article-type review-article; PubMed publication type Review)"
+      },
+      {
+        "label": "Synthesis visuals",
+        "value": "4 conceptual/main figures"
+      },
+      {
+        "label": "Summary tables",
+        "value": "2 tables describing cited clinical or research examples"
+      }
+    ],
+    "counting_note": "The figure/table counts summarize the review presentation; cited studies and trial-enrollment counts are not new participants enrolled by this paper and cannot be pooled into a total review sample size."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Spatial localization of lymphocytes provides information not captured by simple immune-cell abundance.",
+      "context": "The review discusses immune-excluded and inflamed TIME patterns and spatial proximity from published studies, without constructing or validating a new spatial test.",
+      "evidence": [
+        {
+          "label": "Immune patterns",
+          "value": "Immune-excluded, immune-inflamed and TLS-containing contexts"
+        },
+        {
+          "label": "Spatial dimensions",
+          "value": "Stroma, tumor core and invasive margin"
+        },
+        {
+          "label": "Evidence format",
+          "value": "Narrative examples from cited observational research"
+        }
+      ],
+      "source_locator": "PMC11201788: Classification of the TIME (Sec3), Spatial architecture of the TIME (Sec4), Distribution of immune cells and immune checkpoints (Sec5), Distance between immune cells and tumor/immune cells (Sec6); Figures 1–2."
+    },
+    {
+      "id": "KF2",
+      "claim": "Multiple host- and tumor-derived molecular layers can be used to characterize immune heterogeneity.",
+      "context": "Genomics, transcriptomics, proteomics and microbiome observations are complementary literature domains; integration does not by itself establish intervention efficacy.",
+      "evidence": [
+        {
+          "label": "Molecular sources",
+          "value": "Host genetics, tumor genetics/epigenetics, RNA profiles, proteomics, microbiome"
+        },
+        {
+          "label": "Spatial dimension",
+          "value": "Histology, cellular distribution and intercellular context"
+        },
+        {
+          "label": "Reporting nature",
+          "value": "Literature synthesis; no newly generated study cohort"
+        }
+      ],
+      "source_locator": "PMC11201788: Multi-omics characteristics shape TIME profiles (Sec7); Hostogenetics (Sec8); Genetics and epigenetics (Sec9); Transcriptome (Sec10); Proteomics (Sec11); Microbiome (Sec12); Figure 3."
+    },
+    {
+      "id": "KF3",
+      "claim": "The review groups potential CAR-T improvements into antigen selection and cellular-state or trafficking strategies.",
+      "context": "These are research design considerations illustrated by prior reports and are not head-to-head efficacy estimates from the review.",
+      "evidence": [
+        {
+          "label": "Design axis",
+          "value": "Target-antigen selection including neoantigen candidates"
+        },
+        {
+          "label": "Cell-intrinsic axis",
+          "value": "Metabolic maintenance and reduced exhaustion"
+        },
+        {
+          "label": "Microenvironment axis",
+          "value": "Resistance to suppressive cells/cytokines and improved infiltration"
+        }
+      ],
+      "source_locator": "PMC11201788: Advancing the efficacy of CAR-T immunotherapy (Sec13); Optimize target antigen choice (Sec14); Maintain T cell metabolic activity (Sec15); Resist immunosuppression (Sec16–18); Enhance infiltration (Sec19); Prevent exhaustion (Sec20); Figure 4."
+    },
+    {
+      "id": "KF4",
+      "claim": "Machine-learning approaches are discussed as tools to analyze spatial TIME structure and predict candidate antigens or therapy response.",
+      "context": "The article reviews computational research, not a newly trained and clinically validated classifier on an original patient sample.",
+      "evidence": [
+        {
+          "label": "Applications",
+          "value": "Pathology image spatial analysis; antigen/MHC binding prioritization; treatment response modeling"
+        },
+        {
+          "label": "Input caveat",
+          "value": "MHC affinity alone is not evidence that a peptide is immunogenic"
+        },
+        {
+          "label": "Evidence boundary",
+          "value": "Proposed or cited models need prospective validation in defined clinical settings"
+        }
+      ],
+      "source_locator": "PMC11201788: ML and TIME (Sec22); CAR construction (Sec24); Neoantigen (Sec25); ML and prediction of immunotherapy response (Sec26)."
+    },
+    {
+      "id": "KF5",
+      "claim": "The review identifies barriers to carrying omics-informed CAR-T strategies into clinical solid-tumor use.",
+      "context": "Scientific possibilities remain conditional on tumor type, product design, toxicity, patient selection and independent evidence.",
+      "evidence": [
+        {
+          "label": "Unresolved themes",
+          "value": "Heterogeneous TIME, immune suppression, trafficking and cellular exhaustion"
+        },
+        {
+          "label": "Clinical questions",
+          "value": "Safety, reproducibility, patient benefit and scalable integrated analysis"
+        },
+        {
+          "label": "Article time scope",
+          "value": "Review perspective published 2024"
+        }
+      ],
+      "source_locator": "PMC11201788: Perspective and conclusion (Sec27); Figure 4 and cited studies."
+    }
+  ],
+  "what_this_adds": [
+    "Provides a coherent account of the spatial, genetic, molecular and immune-cell dimensions relevant to CAR-T research.",
+    "Connects candidate CAR-T engineering strategies with heterogeneity and immunosuppression barriers, while remaining a narrative literature synthesis."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The published literature discusses spatially distinct immune phenotypes and diverse omics representations of TIME.",
+      "Candidate CAR-T design and analytic strategies can be organized by antigen selection, cell fitness, infiltration and exhaustion.",
+      "The review offers a historical research framework for questions about TIME and CAR-T engineering."
+    ],
+    "does_not_establish": [
+      "A new prospective study, newly recruited CAR-T treatment cohort or randomized comparison.",
+      "A systematic review protocol, exhaustive meta-analysis or pooled clinical effect estimate.",
+      "That any cited experimental design is universally safe, approved or superior in clinical solid tumors.",
+      "A validated individual-patient CAR-T response model or definite clinical care recommendation."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Did this paper enroll CAR-T-treated patients?",
+      "answer": "No. This is a narrative review synthesizing existing studies and does not report a newly recruited clinical cohort or original therapeutic efficacy estimate.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Why do spatial immune-cell patterns matter?",
+      "answer": "Cells that remain in stromal or peripheral compartments may have different relationships with tumor cells than cells infiltrating malignant nests. The review summarizes these patterns from prior studies.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which omics layers are discussed in TIME?",
+      "answer": "Host genetics, tumor genomes and epigenomes, transcriptomics, proteomics and microbiome data, alongside spatial and cellular measurements.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which CAR-T engineering challenges does the review organize?",
+      "answer": "Antigen targeting, metabolic fitness, resistance to suppressive signals, tissue infiltration and exhaustion are discussed as areas for research, not proven universal solutions.",
+      "evidence_refs": [
+        "KF3",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does the review validate a machine-learning predictor for CAR-T response?",
+      "answer": "No. It discusses candidate machine-learning applications to pathology, antigen discovery and treatment response; no original prospective performance validation is established.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Can the clinical-trial counts in Table 1 be summed as this review’s patients?",
+      "answer": "No. The table describes cited external studies; its reported enrollment values are not new participants in the review or a pooled meta-analytic sample.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "concepts": {
+    "oncology_and_immunity": [
+      "Tumor immune microenvironment",
+      "Immune-excluded tumors",
+      "Tertiary lymphoid structures"
+    ],
+    "data_dimensions": [
+      "Spatial immunology",
+      "Proteomics and transcriptomics",
+      "Host genetics and microbiome"
+    ],
+    "therapy_design": [
+      "CAR-T cell therapy",
+      "Neoantigen selection",
+      "T cell exhaustion"
+    ]
+  },
+  "limitations": [
+    "Narrative inclusion of research examples does not satisfy systematic search or risk-of-bias assessment criteria.",
+    "Statements about specific clinical trials refer to original cited publications and may have changed since the 2024 review.",
+    "Cited cell, mouse and clinical evidence differ in population, design, endpoints and translational readiness.",
+    "No new external clinical dataset, treated cohort, novel model performance estimate or clinical benefit is generated by this review."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.canlet.2024.217079",
+      "relationship": "A separate review on immunogenic cell death and CAR-T combination strategies; it complements, but does not experimentally validate, the TIME framework."
+    },
+    {
+      "doi": "10.3389/fonc.2025.1538574",
+      "relationship": "A primary multi-scale TNBC immune landscape study illustrating computational TIME questions distinct from this narrative CAR-T synthesis."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1186/s12943-024-02047-2",
+    "publisher_url": "https://link.springer.com/article/10.1186/s12943-024-02047-2",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11201788/",
+    "pmcid": "PMC11201788",
+    "license": "Article-level CC BY 4.0 reported in PMC/publisher VOR. This evidence page is an original narrative synthesis.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "version_of_record": "Molecular Cancer 2024, DOI 10.1186/s12943-024-02047-2, published 26 June 2024; classified as Review.",
+    "source_artifacts": "VOR XML/PDF plus four figures and two summary tables in supplied official PMC archive; no supplementary studies are declared.",
+    "scope_note": "Evidence level is narrative literature review, not new clinical trial, original intervention or systematic effect estimate."
+  },
+  "evidence_page_notice": "An author-controlled interpretation of a 2024 narrative review. Its cited experimental/trial examples originate from external studies and must be cited directly when used for numerical or clinical claims.",
+  "discovery_layer": {
+    "field_entry": [
+      "Cancer immunotherapy",
+      "Tumor immune spatial biology"
+    ],
+    "review_topics": [
+      "Multi-omics tumor immune microenvironment",
+      "Engineering strategies for CAR-T cells"
+    ],
+    "scientific_role": "Narrative synthesis connecting TIME spatial/omics heterogeneity to candidate CAR-T engineering and computational analysis strategies.",
+    "evidence_position": "Review-level literature synthesis of prior studies, not new CAR-T clinical validation or pooled treatment effect.",
+    "related_concepts": [
+      "Immune-excluded microenvironment",
+      "CAR-T trafficking",
+      "T cell exhaustion"
+    ],
+    "citation_contexts": [
+      "Reviews describing spatial TIME phenotypes and data modalities used in tumor immunology research.",
+      "Discussion of candidate CAR-T engineering barriers without claiming newly proven patient benefit."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How does spatial TIME information complement omics in immunotherapy reviews?",
+        "supported_scope": "Prior literature synthesis rather than a newly measured effect.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Which CAR-T design limitations are connected to TIME?",
+        "supported_scope": "Antigen choice, trafficking and dysfunction; no universal clinical protocol validated here.",
+        "evidence_refs": [
+          "KF3",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Does the review provide a validated model or new clinical trial?",
+        "supported_scope": "No; it reviews other studies and modeling possibilities.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A new prospective study, newly recruited CAR-T treatment cohort or randomized comparison.",
+      "A systematic review protocol, exhaustive meta-analysis or pooled clinical effect estimate.",
+      "That any cited experimental design is universally safe, approved or superior in clinical solid tumors.",
+      "A validated individual-patient CAR-T response model or definite clinical care recommendation."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-b2-time-cart-1",
+        "component": "KF1: Spatial localization of lymphocytes provides information not captured by simple immune-cell abundance.",
+        "context": "The review discusses immune-excluded and inflamed TIME patterns and spatial proximity from published studies, without constructing or validating a new spatial test.",
+        "finding": "Spatial localization of lymphocytes provides information not captured by simple immune-cell abundance. Immune patterns: Immune-excluded, immune-inflamed and TLS-containing contexts; Spatial dimensions: Stroma, tumor core and invasive margin; Evidence format: Narrative examples from cited observational research",
+        "evidence_level": "The review discusses immune-excluded and inflamed TIME patterns and spatial proximity from published studies, without constructing or validating a new spatial test.",
+        "scope": "The review discusses immune-excluded and inflamed TIME patterns and spatial proximity from published studies, without constructing or validating a new spatial test.",
+        "source_locator": "PMC11201788: Classification of the TIME (Sec3), Spatial architecture of the TIME (Sec4), Distribution of immune cells and immune checkpoints (Sec5), Distance between immune cells and tumor/immune cells (Sec6); Figures 1–2.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-b2-time-cart-2",
+        "component": "KF2: Multiple host- and tumor-derived molecular layers can be used to characterize immune heterogeneity.",
+        "context": "Genomics, transcriptomics, proteomics and microbiome observations are complementary literature domains; integration does not by itself establish intervention efficacy.",
+        "finding": "Multiple host- and tumor-derived molecular layers can be used to characterize immune heterogeneity. Molecular sources: Host genetics, tumor genetics/epigenetics, RNA profiles, proteomics, microbiome; Spatial dimension: Histology, cellular distribution and intercellular context; Reporting nature: Literature synthesis; no newly generated study cohort",
+        "evidence_level": "Genomics, transcriptomics, proteomics and microbiome observations are complementary literature domains; integration does not by itself establish intervention efficacy.",
+        "scope": "Genomics, transcriptomics, proteomics and microbiome observations are complementary literature domains; integration does not by itself establish intervention efficacy.",
+        "source_locator": "PMC11201788: Multi-omics characteristics shape TIME profiles (Sec7); Hostogenetics (Sec8); Genetics and epigenetics (Sec9); Transcriptome (Sec10); Proteomics (Sec11); Microbiome (Sec12); Figure 3.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-b2-time-cart-3",
+        "component": "KF3: The review groups potential CAR-T improvements into antigen selection and cellular-state or trafficking strategies.",
+        "context": "These are research design considerations illustrated by prior reports and are not head-to-head efficacy estimates from the review.",
+        "finding": "The review groups potential CAR-T improvements into antigen selection and cellular-state or trafficking strategies. Design axis: Target-antigen selection including neoantigen candidates; Cell-intrinsic axis: Metabolic maintenance and reduced exhaustion; Microenvironment axis: Resistance to suppressive cells/cytokines and improved infiltration",
+        "evidence_level": "These are research design considerations illustrated by prior reports and are not head-to-head efficacy estimates from the review.",
+        "scope": "These are research design considerations illustrated by prior reports and are not head-to-head efficacy estimates from the review.",
+        "source_locator": "PMC11201788: Advancing the efficacy of CAR-T immunotherapy (Sec13); Optimize target antigen choice (Sec14); Maintain T cell metabolic activity (Sec15); Resist immunosuppression (Sec16–18); Enhance infiltration (Sec19); Prevent exhaustion (Sec20); Figure 4.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-b2-time-cart-4",
+        "component": "KF4: Machine-learning approaches are discussed as tools to analyze spatial TIME structure and predict candidate antigens or therapy response.",
+        "context": "The article reviews computational research, not a newly trained and clinically validated classifier on an original patient sample.",
+        "finding": "Machine-learning approaches are discussed as tools to analyze spatial TIME structure and predict candidate antigens or therapy response. Applications: Pathology image spatial analysis; antigen/MHC binding prioritization; treatment response modeling; Input caveat: MHC affinity alone is not evidence that a peptide is immunogenic; Evidence boundary: Proposed or cited models need prospective validation in defined clinical settings",
+        "evidence_level": "The article reviews computational research, not a newly trained and clinically validated classifier on an original patient sample.",
+        "scope": "The article reviews computational research, not a newly trained and clinically validated classifier on an original patient sample.",
+        "source_locator": "PMC11201788: ML and TIME (Sec22); CAR construction (Sec24); Neoantigen (Sec25); ML and prediction of immunotherapy response (Sec26).",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-b2-time-cart-5",
+        "component": "KF5: The review identifies barriers to carrying omics-informed CAR-T strategies into clinical solid-tumor use.",
+        "context": "Scientific possibilities remain conditional on tumor type, product design, toxicity, patient selection and independent evidence.",
+        "finding": "The review identifies barriers to carrying omics-informed CAR-T strategies into clinical solid-tumor use. Unresolved themes: Heterogeneous TIME, immune suppression, trafficking and cellular exhaustion; Clinical questions: Safety, reproducibility, patient benefit and scalable integrated analysis; Article time scope: Review perspective published 2024",
+        "evidence_level": "Scientific possibilities remain conditional on tumor type, product design, toxicity, patient selection and independent evidence.",
+        "scope": "Scientific possibilities remain conditional on tumor type, product design, toxicity, patient selection and independent evidence.",
+        "source_locator": "PMC11201788: Perspective and conclusion (Sec27); Figure 4 and cited studies.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  }
 }

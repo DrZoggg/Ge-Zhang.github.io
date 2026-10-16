@@ -1,0 +1,407 @@
+{
+  "version": 2,
+  "doi": "10.3389/fonc.2025.1538574",
+  "display_title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
+  "summary": "An integrative TNBC study compared four BRCA1-mutant and four BRCA1-wild-type single-cell specimens (32,386 cells), mapped CAF/immune-state differences, and nominated ISG15-associated myofibroblastic features using transcriptomic, spatial and proteomic analyses. Its immunotherapy response model was trained on mixed non-TNBC treatment cohorts and attained modest internal AUCs around 0.60–0.61; no treated TNBC validation cohort was established.",
+  "research_question": "Which immune and stromal cell-state differences accompany BRCA1 status in sampled TNBC, how was ISG15 prioritized, and what evidence actually supports transferring an immunotherapy response model to TNBC?",
+  "author_summary": "The investigators analyzed GSE161529 single-cell tumor specimens, mapped four BRCA1-wild-type spatial samples, integrated expression and an in-house paired proteomic cohort, and trained a KNN treatment-response classifier on several external ICI cohorts. The survival association in TCGA TNBC was not significant, and the response model was not validated on ICI-treated TNBC patients.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective single-cell TNBC group comparison, spatial reference mapping, bulk expression/network prioritization, paired in-house tissue proteomics and secondary immunotherapy-response classifier development.",
+    "evidence_type": "Human multi-modal observational molecular association with a mixed-cancer retrospective treatment-response model; no experimental causal gene perturbation.",
+    "population": "Eight BRCA1-defined TNBC single-cell specimens; four BRCA1-WT TNBC spatial samples; independently collected 9 paired breast tumor/adjacent tissues; mixed-cancer ICI-response expression cohorts for model training/testing.",
+    "primary_endpoint": "Differences in single-cell and spatially inferred tumor immune/stromal programs across BRCA1 status.",
+    "secondary_endpoint": "ISG15/myCAF association and retrospective response-model discrimination in cross-cancer ICI cohorts.",
+    "data_modalities": [
+      "TNBC single-cell RNA sequencing",
+      "Spatial RNA expression reference mapping",
+      "Bulk expression, coexpression and pathway analysis",
+      "Paired tissue label-free proteomics",
+      "Cross-cancer ICI transcriptomic response modeling"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "TNBC single-cell donors",
+        "value": "8 specimens: 4 BRCA1-mutant and 4 BRCA1 wild-type"
+      },
+      {
+        "label": "Cells after QC",
+        "value": "32,386; 18,182 BRCA1-mutant and 14,204 BRCA1 wild-type"
+      },
+      {
+        "label": "Spatial specimens",
+        "value": "4 BRCA1-WT TNBC spatial samples; no matched BRCA1-MT spatial series in this analysis"
+      },
+      {
+        "label": "Paired proteomics",
+        "value": "9 tumor samples and 9 corresponding para-tumor specimens; nine pairs, not 18 independent patients"
+      },
+      {
+        "label": "ICI model pooled subset",
+        "value": "Four external treatment cohorts pooled to 661 records and divided 80:20 internally"
+      },
+      {
+        "label": "KNN classifier discrimination",
+        "value": "Reported validation AUC 0.60 (95% CI 0.51–0.69); testing AUC 0.61 (95% CI 0.51–0.71)"
+      }
+    ],
+    "counting_note": "Cell profiles, donor tumor specimens, spatial samples, paired proteomic tissues and external cross-cancer treated cohorts are distinct counting units and may involve overlaps or subsets. The article inconsistently describes 13 ICI pre-treatment cohorts (829 records) in Methods versus 12 in Results; no unsupported sum or cohort count is promoted."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The TNBC single-cell series revealed BRCA1-associated differences in annotated tumor immune and stromal states.",
+      "context": "Observed four versus four specimens allow exploratory group comparison; 32,386 cells are nested within eight donors and are not independent patients.",
+      "evidence": [
+        {
+          "label": "TNBC samples",
+          "value": "4 BRCA1-MT and 4 BRCA1-WT"
+        },
+        {
+          "label": "QC-retained cells",
+          "value": "32,386; 18,182 mutant-group and 14,204 wild-type-group"
+        },
+        {
+          "label": "Broad annotated lineages",
+          "value": "7 principal populations"
+        }
+      ],
+      "source_locator": "PMC12401915: Methods Data acquisition and processing (s2_1); Results The single-cell atlas of BRCA1 MT and BRCA1 WT samples (s3_1); Figure 1A–D."
+    },
+    {
+      "id": "KF2",
+      "claim": "T-cell exhaustion and dendritic/macrophage-associated expression programs differed by BRCA1 group.",
+      "context": "State labels and inferred scores are descriptive transcriptomic signatures; lineage transitions and immunotherapy effectiveness cannot be inferred directly.",
+      "evidence": [
+        {
+          "label": "Comparison",
+          "value": "BRCA1-WT versus BRCA1-MT single-cell specimens"
+        },
+        {
+          "label": "CD4/CD8 states",
+          "value": "Treg, Tex and other computationally annotated subsets"
+        },
+        {
+          "label": "Intercellular readouts",
+          "value": "Pseudotime and inferred spatial signaling, not direct lineage tracing"
+        }
+      ],
+      "source_locator": "PMC12401915: Results T cells in BRCA1-WT specimens (s3_2); Activated TAMs and tolerogenic DCs (s3_3); Figures 2–3 and supplemental Figures S3–S5."
+    },
+    {
+      "id": "KF3",
+      "claim": "Distinct CAF states and ISG15-associated molecular programs were prioritized using multi-modal data.",
+      "context": "Relative enrichment, pseudotime, spatial co-localization and proteomic associations do not prove BRCA1 regulates CAF differentiation through a causal ISG15 pathway.",
+      "evidence": [
+        {
+          "label": "CAF state trend",
+          "value": "myCAF associated with BRCA1-WT; iCAF associated with BRCA1-MT"
+        },
+        {
+          "label": "Spatial observation",
+          "value": "4 BRCA1-WT spatial samples, not a direct genotype-matched spatial comparison"
+        },
+        {
+          "label": "Paired proteomics",
+          "value": "9 tumor/adjacent-tissue pairs"
+        },
+        {
+          "label": "Marker",
+          "value": "ISG15 associated with myCAF enriched signatures"
+        }
+      ],
+      "source_locator": "PMC12401915: Results BRCA1-driven CAF reprogramming (s3_6), Multi-scale analysis pinpointed ISG15 (s3_8), ISG15-driven predictor (s3_9); Figures 5–8; Methods high-sensitivity label-free proteomics (s2_11) and supplied DataSheet1.doc Supplementary Methods."
+    },
+    {
+      "id": "KF4",
+      "claim": "The ICI response classifier showed modest retrospective discrimination in treatment cohorts from other cancers.",
+      "context": "The held-out subsets come from a mixed-cancer model-selection pipeline; the study states it lacks an ICI-treated TNBC validation cohort.",
+      "evidence": [
+        {
+          "label": "Pooled cohort definition",
+          "value": "Four cohorts combining to 661 records for 80:20 model development/evaluation"
+        },
+        {
+          "label": "Chosen approach",
+          "value": "K-nearest neighbors, selected among the models by validation performance"
+        },
+        {
+          "label": "Validation ROC AUC",
+          "value": "0.60 (95% CI 0.51–0.69)"
+        },
+        {
+          "label": "Testing ROC AUC",
+          "value": "0.61 (95% CI 0.51–0.71)"
+        }
+      ],
+      "source_locator": "PMC12401915: Methods Reconstruction of the ICI response predictor (s2_10); Results Construction of an ISG15-driven predictive system (s3_9); Figure 8D–G. Paper text inconsistency: Methods mentions 13 cohorts (n=829); Results mentions 12."
+    },
+    {
+      "id": "KF5",
+      "claim": "High predicted response group correlated with immune-signature and selected survival patterns but does not establish TNBC treatment benefit.",
+      "context": "The correlation in METABRIC is not treated ICI response and the TCGA TNBC survival comparison did not reach nominal significance.",
+      "evidence": [
+        {
+          "label": "METABRIC overall survival",
+          "value": "Reported nominal P<0.05 by predicted response group"
+        },
+        {
+          "label": "TCGA TNBC overall survival",
+          "value": "P=0.182; not statistically significant"
+        },
+        {
+          "label": "TIDE interpretation",
+          "value": "Computational exclusion and dysfunction estimates, not observed ICI response"
+        }
+      ],
+      "source_locator": "PMC12401915: Results Construction of an ISG15-driven predictive system for ICI response (s3_9); Figure 8H–K; Discussion (s4), paragraph explicitly stating no ICI-treated TNBC validation."
+    }
+  ],
+  "what_this_adds": [
+    "Adds exploratory donor-level TNBC immune/stromal states and contextual ISG15 associations with spatial and tissue-proteomic observations.",
+    "Clarifies a crucial translational limitation: modest mixed-cancer response-model discrimination does not validate prediction of ICI benefit in TNBC."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Cell-state and CAF-associated transcriptomic differences between the eight sampled BRCA1 groups.",
+      "Spatially associated ISG15 and myCAF signals within the four BRCA1-WT spatial specimens.",
+      "Retrospective mixed-cancer ICI response model discrimination near AUC 0.60–0.61 under the described analysis."
+    ],
+    "does_not_establish": [
+      "Causal BRCA1 control of CAF differentiation or a verified ISG15 immune-response mechanism from the multi-omics associations.",
+      "Independently validated or clinically useful ICI prediction specifically for treated TNBC patients.",
+      "Excellent predictive discrimination, proven chemotherapy/ICI treatment efficacy or a validated treatment-selection cut-off.",
+      "A statistically significant TCGA TNBC overall-survival contrast (reported P=0.182).",
+      "A verified universal count of distinct participants across cell, spatial, paired protein and ICI cohorts."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many single-cell patients were studied and how many cells were retained?",
+      "answer": "Eight donor tumor specimens were analyzed (four BRCA1-MT, four BRCA1-WT), generating 32,386 quality-controlled cells; cell counts must not be reported as independent participant counts.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Was there a genotype-matched spatial comparison?",
+      "answer": "Only four BRCA1-WT spatial transcriptomic samples were described. The spatial analysis cannot independently validate BRCA1-MT versus WT spatial differences in a matched specimen design.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What evidence nominates ISG15?",
+      "answer": "ISG15 was associated with myCAF-related modules, spatial expression and paired proteomic observations. These are multi-modal correlations and do not directly prove its functional mediation.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "How well did the ICI response model discriminate?",
+      "answer": "The selected KNN classifier reported AUC 0.60 (95% CI 0.51–0.69) for validation and 0.61 (95% CI 0.51–0.71) for testing in the external-treatment source data.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Was the ICI model validated in treated TNBC patients?",
+      "answer": "No. The Discussion explicitly identifies the lack of validation in ICI-treated TNBC cohorts; it is inappropriate to claim established TNBC treatment selection.",
+      "evidence_refs": [
+        "KF4",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Did the model-selected groups have significantly different TCGA TNBC overall survival?",
+      "answer": "No. The reported TCGA TNBC overall survival comparison was P=0.182, not statistically significant. A nominal METABRIC comparison does not establish ICI clinical benefit.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "How many ICI cohorts did the authors use?",
+      "answer": "The article is inconsistent: Methods describes 13 pretreatment ICI cohorts (829 records) whereas Results mentions 12 cohorts. Four cohorts pooled as 661 records for the principal development split can be identified; the other cohort count is not silently harmonized.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "disease_and_cells": [
+      "Triple-negative breast cancer",
+      "BRCA1 mutation status",
+      "Cancer-associated fibroblasts"
+    ],
+    "omics_and_biomarkers": [
+      "Single-cell and spatial transcriptomics",
+      "Paired tissue proteomics",
+      "ISG15"
+    ],
+    "prediction_scope": [
+      "Cross-cancer KNN response model",
+      "AUC approximately 0.61",
+      "No treated TNBC validation"
+    ]
+  },
+  "limitations": [
+    "The main BRCA1 genotype comparison is only 4 versus 4 tissue donors; cells are not independent participant replicates.",
+    "Spatial transcriptome mapping used four BRCA1-WT cases and therefore is not a genotype-balanced spatial replication.",
+    "ICI cohort descriptions conflict (13 cohorts n=829 in Methods vs 12 in Results), requiring scope-limited cohort reporting.",
+    "The selected KNN internal validation/test AUCs are approximately 0.60–0.61, not high discrimination; use and model selection on validation data constrain performance interpretation.",
+    "No ICI-treated TNBC response cohort directly validates this cross-cancer model.",
+    "The article reports TCGA TNBC overall-survival P=0.182; this comparison is nonsignificant."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1186/s12943-024-02047-2",
+      "relationship": "Narrative TIME/CAR-T review that provides research context for immunosuppressive cell states but does not validate the TNBC ISG15 model."
+    },
+    {
+      "doi": "10.1136/jitc-2024-010787",
+      "relationship": "A distinct LUAD PTMLS/B4GALT2 immune-exclusion study, related by computational and immune-state themes but not TNBC-specific validation."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.3389/fonc.2025.1538574",
+    "publisher_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2025.1538574/full",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12401915/",
+    "pmcid": "PMC12401915",
+    "license": "Article-level CC BY 4.0 in PMC/Frontiers. This evidence page is original factual synthesis without copy-pasting the study full text.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "version_of_record": "Frontiers in Oncology 2025, DOI 10.3389/fonc.2025.1538574; published 19 August 2025.",
+    "source_artifacts": "PMC VOR/JATS; supplemental DataSheet1.doc methods read with antiword, DataSheet2.docx figures, Tables S1–S4, and supplied publisher/PMC figures.",
+    "numerical_discrepancy": "Main Methods reports 13 ICI pretreatment cohorts (n=829), Results states 12 cohorts; no unsupported cross-series total is accepted.",
+    "clinical_boundary": "Cross-cancer ICI model tested in retrospective data but no treated TNBC response validation; only modest AUC approximately 0.60–0.61."
+  },
+  "evidence_page_notice": "This evidence page distinguishes donor specimens, nested cells, spatial spots, paired proteins and ICI cohorts. The KNN model has modest discrimination and lacks treated TNBC validation; do not cite it as demonstrated ICI treatment benefit.",
+  "discovery_layer": {
+    "field_entry": [
+      "Breast cancer single-cell genomics",
+      "Immunotherapy response modeling"
+    ],
+    "review_topics": [
+      "BRCA1-associated TNBC microenvironment",
+      "ISG15 and cancer-associated fibroblasts"
+    ],
+    "scientific_role": "Exploratory scRNA/spatial/proteomic TNBC comparison with mixed-cancer ICI-response modeling.",
+    "evidence_position": "Small human donor-level omics associations and modest cross-cancer classifier; no TNBC-treated external validation.",
+    "related_concepts": [
+      "BRCA1-WT myCAF states",
+      "ISG15",
+      "No TNBC ICI-treated test"
+    ],
+    "citation_contexts": [
+      "Reviews describing CAF and T-cell state hypotheses in BRCA1-stratified TNBC single-cell evidence.",
+      "Methodological discussions separating cross-cancer ICI-model AUC from genuine TNBC treatment-response validation."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What donor-level omics evidence differentiates BRCA1 groups in TNBC?",
+        "supported_scope": "Eight donor tumors and nested 32,386 cells, limited spatial WT-only series.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Can ISG15 be treated as a confirmed causal TNBC immunotherapy mediator?",
+        "supported_scope": "No; correlative multi-omics without direct functional perturbation.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How much clinical utility is established by the ICI KNN model?",
+        "supported_scope": "AUC near 0.60 and no directly treated TNBC external validation.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Causal BRCA1 control of CAF differentiation or a verified ISG15 immune-response mechanism from the multi-omics associations.",
+      "Independently validated or clinically useful ICI prediction specifically for treated TNBC patients.",
+      "Excellent predictive discrimination, proven chemotherapy/ICI treatment efficacy or a validated treatment-selection cut-off.",
+      "A statistically significant TCGA TNBC overall-survival contrast (reported P=0.182).",
+      "A verified universal count of distinct participants across cell, spatial, paired protein and ICI cohorts."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-b2-doi-10-3389-fonc-2025-1538574-1",
+        "component": "KF1: The TNBC single-cell series revealed BRCA1-associated differences in annotated tumor immune and stromal states.",
+        "context": "Observed four versus four specimens allow exploratory group comparison; 32,386 cells are nested within eight donors and are not independent patients.",
+        "finding": "The TNBC single-cell series revealed BRCA1-associated differences in annotated tumor immune and stromal states. TNBC samples: 4 BRCA1-MT and 4 BRCA1-WT; QC-retained cells: 32,386; 18,182 mutant-group and 14,204 wild-type-group; Broad annotated lineages: 7 principal populations",
+        "evidence_level": "Observed four versus four specimens allow exploratory group comparison; 32,386 cells are nested within eight donors and are not independent patients.",
+        "scope": "Observed four versus four specimens allow exploratory group comparison; 32,386 cells are nested within eight donors and are not independent patients.",
+        "source_locator": "PMC12401915: Methods Data acquisition and processing (s2_1); Results The single-cell atlas of BRCA1 MT and BRCA1 WT samples (s3_1); Figure 1A–D.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-3389-fonc-2025-1538574-2",
+        "component": "KF2: T-cell exhaustion and dendritic/macrophage-associated expression programs differed by BRCA1 group.",
+        "context": "State labels and inferred scores are descriptive transcriptomic signatures; lineage transitions and immunotherapy effectiveness cannot be inferred directly.",
+        "finding": "T-cell exhaustion and dendritic/macrophage-associated expression programs differed by BRCA1 group. Comparison: BRCA1-WT versus BRCA1-MT single-cell specimens; CD4/CD8 states: Treg, Tex and other computationally annotated subsets; Intercellular readouts: Pseudotime and inferred spatial signaling, not direct lineage tracing",
+        "evidence_level": "State labels and inferred scores are descriptive transcriptomic signatures; lineage transitions and immunotherapy effectiveness cannot be inferred directly.",
+        "scope": "State labels and inferred scores are descriptive transcriptomic signatures; lineage transitions and immunotherapy effectiveness cannot be inferred directly.",
+        "source_locator": "PMC12401915: Results T cells in BRCA1-WT specimens (s3_2); Activated TAMs and tolerogenic DCs (s3_3); Figures 2–3 and supplemental Figures S3–S5.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-3389-fonc-2025-1538574-3",
+        "component": "KF3: Distinct CAF states and ISG15-associated molecular programs were prioritized using multi-modal data.",
+        "context": "Relative enrichment, pseudotime, spatial co-localization and proteomic associations do not prove BRCA1 regulates CAF differentiation through a causal ISG15 pathway.",
+        "finding": "Distinct CAF states and ISG15-associated molecular programs were prioritized using multi-modal data. CAF state trend: myCAF associated with BRCA1-WT; iCAF associated with BRCA1-MT; Spatial observation: 4 BRCA1-WT spatial samples, not a direct genotype-matched spatial comparison; Paired proteomics: 9 tumor/adjacent-tissue pairs; Marker: ISG15 associated with myCAF enriched signatures",
+        "evidence_level": "Relative enrichment, pseudotime, spatial co-localization and proteomic associations do not prove BRCA1 regulates CAF differentiation through a causal ISG15 pathway.",
+        "scope": "Relative enrichment, pseudotime, spatial co-localization and proteomic associations do not prove BRCA1 regulates CAF differentiation through a causal ISG15 pathway.",
+        "source_locator": "PMC12401915: Results BRCA1-driven CAF reprogramming (s3_6), Multi-scale analysis pinpointed ISG15 (s3_8), ISG15-driven predictor (s3_9); Figures 5–8; Methods high-sensitivity label-free proteomics (s2_11) and supplied DataSheet1.doc Supplementary Methods.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-3389-fonc-2025-1538574-4",
+        "component": "KF4: The ICI response classifier showed modest retrospective discrimination in treatment cohorts from other cancers.",
+        "context": "The held-out subsets come from a mixed-cancer model-selection pipeline; the study states it lacks an ICI-treated TNBC validation cohort.",
+        "finding": "The ICI response classifier showed modest retrospective discrimination in treatment cohorts from other cancers. Pooled cohort definition: Four cohorts combining to 661 records for 80:20 model development/evaluation; Chosen approach: K-nearest neighbors, selected among the models by validation performance; Validation ROC AUC: 0.60 (95% CI 0.51–0.69); Testing ROC AUC: 0.61 (95% CI 0.51–0.71)",
+        "evidence_level": "The held-out subsets come from a mixed-cancer model-selection pipeline; the study states it lacks an ICI-treated TNBC validation cohort.",
+        "scope": "The held-out subsets come from a mixed-cancer model-selection pipeline; the study states it lacks an ICI-treated TNBC validation cohort.",
+        "source_locator": "PMC12401915: Methods Reconstruction of the ICI response predictor (s2_10); Results Construction of an ISG15-driven predictive system (s3_9); Figure 8D–G. Paper text inconsistency: Methods mentions 13 cohorts (n=829); Results mentions 12.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-b2-doi-10-3389-fonc-2025-1538574-5",
+        "component": "KF5: High predicted response group correlated with immune-signature and selected survival patterns but does not establish TNBC treatment benefit.",
+        "context": "The correlation in METABRIC is not treated ICI response and the TCGA TNBC survival comparison did not reach nominal significance.",
+        "finding": "High predicted response group correlated with immune-signature and selected survival patterns but does not establish TNBC treatment benefit. METABRIC overall survival: Reported nominal P<0.05 by predicted response group; TCGA TNBC overall survival: P=0.182; not statistically significant; TIDE interpretation: Computational exclusion and dysfunction estimates, not observed ICI response",
+        "evidence_level": "The correlation in METABRIC is not treated ICI response and the TCGA TNBC survival comparison did not reach nominal significance.",
+        "scope": "The correlation in METABRIC is not treated ICI response and the TCGA TNBC survival comparison did not reach nominal significance.",
+        "source_locator": "PMC12401915: Results Construction of an ISG15-driven predictive system for ICI response (s3_9); Figure 8H–K; Discussion (s4), paragraph explicitly stating no ICI-treated TNBC validation.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "model_profile": {
+    "model_name": "ISG15-related ICI-response classifier",
+    "model_family": "K-nearest neighbors selected among evaluated learners",
+    "development": "Mixed-cancer external ICI response cohorts, principal pooled set n=661",
+    "evaluation": "Within-pool 80:20 development split; reported AUC 0.60 validation and 0.61 testing",
+    "clinical_boundary": "No independent treated TNBC response cohort; not suitable as a validated TNBC treatment-selection test."
+  }
+}

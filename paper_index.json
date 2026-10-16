@@ -666,7 +666,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.isci.2025.114320",
       "publisher_url": null,
@@ -678,9 +678,30 @@
       "openalex_id": "https://openalex.org/W4416971849",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-isci-2025-114320.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Neurodegenerative disease genomics",
+          "Molecular biomarker research"
+        ],
+        "review_topics": [
+          "ABCA1 and ALS susceptibility",
+          "Blood expression and serum biomarker translation"
+        ],
+        "scientific_role": "Integrates blood-expression classification, genetic instrumental-variable association and limited serum measurements in ALS.",
+        "evidence_position": "Retrospective model evaluation and conditional MR evidence with small observational serum cohort; no ABCA1-directed intervention.",
+        "related_concepts": [
+          "External validation AUC",
+          "ABCA1 cis-eQTL",
+          "Day-70 source inconsistency"
+        ],
+        "citation_contexts": [
+          "Reviews separating genetic-instrument and observed serum associations in ALS biomarker research.",
+          "Methodological examples of external classifier performance drop and primary-supplement significance verification."
+        ]
+      }
     },
     {
       "title": "ABCA1 Acts as a Protective Modulator in Amyotrophic Lateral Sclerosis and Links to Metabolic Status",
@@ -1092,7 +1113,7 @@
       "paper_url": "https://drgezhang.com/papers/b4galt2.html",
       "markdown_url": "https://drgezhang.com/papers/b4galt2.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1136/jitc-2024-010787",
       "publisher_url": null,
@@ -1104,9 +1125,30 @@
       "openalex_id": "https://openalex.org/W4407984543",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/b4galt2.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Lung adenocarcinoma immunology",
+          "Molecular prognostic modeling"
+        ],
+        "review_topics": [
+          "B4GALT2 and immune exclusion",
+          "Post-translational modification signatures"
+        ],
+        "scientific_role": "Retrospective PTM-expression signature research with LUAD tissue immune phenotyping and mouse B4GALT2 perturbation.",
+        "evidence_position": "Retrospective human association and preclinical intervention; no established human anti-PD-1 treatment benefit.",
+        "related_concepts": [
+          "Immune-desert CD8 phenotype",
+          "PTMLS",
+          "Correction to Figure 2"
+        ],
+        "citation_contexts": [
+          "Reviews separating tissue immune-exclusion associations from preclinical gene-suppression and anti-PD-1 experiments.",
+          "Methods reviews of PTM-related LUAD signatures with explicit attention to the published correction."
+        ]
+      }
     },
     {
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -1187,7 +1229,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.3389/fonc.2025.1538574",
       "publisher_url": null,
@@ -1199,9 +1241,30 @@
       "openalex_id": "https://openalex.org/W4413303258",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fonc-2025-1538574.csv",
+      "question_count": 7,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Breast cancer single-cell genomics",
+          "Immunotherapy response modeling"
+        ],
+        "review_topics": [
+          "BRCA1-associated TNBC microenvironment",
+          "ISG15 and cancer-associated fibroblasts"
+        ],
+        "scientific_role": "Exploratory scRNA/spatial/proteomic TNBC comparison with mixed-cancer ICI-response modeling.",
+        "evidence_position": "Small human donor-level omics associations and modest cross-cancer classifier; no TNBC-treated external validation.",
+        "related_concepts": [
+          "BRCA1-WT myCAF states",
+          "ISG15",
+          "No TNBC ICI-treated test"
+        ],
+        "citation_contexts": [
+          "Reviews describing CAF and T-cell state hypotheses in BRCA1-stratified TNBC single-cell evidence.",
+          "Methodological discussions separating cross-cancer ICI-model AUC from genuine TNBC treatment-response validation."
+        ]
+      }
     },
     {
       "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
@@ -1653,7 +1716,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1111/jcmm.18408",
       "publisher_url": null,
@@ -1665,9 +1728,30 @@
       "openalex_id": "https://openalex.org/W4399330698",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jcmm-18408.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Lung cancer molecular pathology",
+          "Computational oncology"
+        ],
+        "review_topics": [
+          "Cell states in early lung adenocarcinoma",
+          "Transcriptomic survival risk signatures"
+        ],
+        "scientific_role": "Retrospective LUAD multi-dataset signature discovery with an ancillary PSMB1 cell-line perturbation study.",
+        "evidence_position": "Observational transcriptomic/prognostic associations and in-vitro functional readouts; no prospective LPAS-guided therapy evidence.",
+        "related_concepts": [
+          "AIS–MIA–IAC comparison",
+          "LPAS nine-gene signature",
+          "PSMB1 siRNA"
+        ],
+        "citation_contexts": [
+          "Reviews evaluating cross-sectional single-cell LUAD states and prognostic transcriptomic signatures.",
+          "Discussions distinguishing cell-line perturbation from clinical proof of a molecular therapeutic target."
+        ]
+      }
     },
     {
       "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
@@ -1703,7 +1787,7 @@
       "paper_url": "https://drgezhang.com/papers/time-cart.html",
       "markdown_url": "https://drgezhang.com/papers/time-cart.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1186/s12943-024-02047-2",
       "publisher_url": null,
@@ -1715,9 +1799,30 @@
       "openalex_id": "https://openalex.org/W4400057543",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/time-cart.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cancer immunotherapy",
+          "Tumor immune spatial biology"
+        ],
+        "review_topics": [
+          "Multi-omics tumor immune microenvironment",
+          "Engineering strategies for CAR-T cells"
+        ],
+        "scientific_role": "Narrative synthesis connecting TIME spatial/omics heterogeneity to candidate CAR-T engineering and computational analysis strategies.",
+        "evidence_position": "Review-level literature synthesis of prior studies, not new CAR-T clinical validation or pooled treatment effect.",
+        "related_concepts": [
+          "Immune-excluded microenvironment",
+          "CAR-T trafficking",
+          "T cell exhaustion"
+        ],
+        "citation_contexts": [
+          "Reviews describing spatial TIME phenotypes and data modalities used in tumor immunology research.",
+          "Discussion of candidate CAR-T engineering barriers without claiming newly proven patient benefit."
+        ]
+      }
     },
     {
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -2328,7 +2433,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.jma.2023.05.007",
       "publisher_url": null,
@@ -2340,9 +2445,30 @@
       "openalex_id": "https://openalex.org/W4382243369",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-jma-2023-05-007.csv",
+      "question_count": 6,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular biomaterials",
+          "Biodegradable stent research"
+        ],
+        "review_topics": [
+          "Exosome-functionalized magnesium alloys",
+          "Preclinical endothelial compatibility"
+        ],
+        "scientific_role": "Coating-material development with endothelial/immune cell tests and small rat abdominal-aorta wire implantation.",
+        "evidence_position": "Preclinical physicochemical and cell readouts plus short animal histology; no human-stent outcome validation.",
+        "related_concepts": [
+          "MgF2–polydopamine coating",
+          "Exosome surface release",
+          "Rat aortic wire implantation"
+        ],
+        "citation_contexts": [
+          "Reviews comparing biologically functionalized metallic cardiovascular implant surfaces.",
+          "Preclinical biomaterial reports distinguishing cell-level endothelial surrogates from clinical restenosis outcomes."
+        ]
+      }
     },
     {
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",

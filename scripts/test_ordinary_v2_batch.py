@@ -17,11 +17,19 @@ class OrdinaryBatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.frozen = json.loads(FIXTURE.read_text(encoding='utf-8'))
+        cls.batch2 = json.loads((ROOT / 'scripts/fixtures/ordinary_v2_batch2_20261016.json').read_text(encoding='utf-8'))
         cls.papers = json.loads((ROOT / 'paper_index.json').read_text(encoding='utf-8'))['papers']
         cls.master = {p.get('doi'): p for p in load_master()}
 
     def test_original_science_master_and_curated_order_are_unchanged(self):
         for path, digest in self.frozen['protected_hashes'].items():
+            if path in {'data/deep_geo/b4galt2.json', 'data/deep_geo/time-cart.json'}:
+                # These inactive V1 records are explicitly superseded by frozen batch 2 Gold.
+                original = json.loads(subprocess.check_output(['git', 'show', self.frozen['base_sha'] + ':' + path], cwd=ROOT))
+                self.assertEqual(original.get('version'), 1)
+                reviewed = next(r for r in self.batch2['papers'].values() if path.endswith('/'+r['slug']+'.json'))
+                self.assertEqual(hashlib.sha256((ROOT/path).read_bytes().replace(b'\r\n',b'\n')).hexdigest(), reviewed['content_sha256'])
+                continue
             with self.subTest(path=path):
                 raw = (ROOT / path).read_bytes().replace(b'\r\n', b'\n')
                 self.assertIn(digest, {hashlib.sha256(raw).hexdigest(), hashlib.sha256(raw.replace(b'\n', b'\r\n')).hexdigest()})
@@ -35,7 +43,7 @@ class OrdinaryBatchTests(unittest.TestCase):
 
     def test_six_reviewed_sources_render_as_nonselected_v2(self):
         self.assertEqual(len(self.frozen['papers']), 6)
-        self.assertEqual(sum(p['paper_geo_status'] == 'v2' for p in self.papers), 35)
+        self.assertEqual(sum(p['paper_geo_status'] == 'v2' for p in self.papers), 41)
         for doi, reviewed in self.frozen['papers'].items():
             with self.subTest(doi=doi):
                 slug = reviewed['slug']

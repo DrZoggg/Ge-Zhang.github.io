@@ -532,6 +532,42 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html#paper-discovery"
     },
     {
+      "id": "doi-10-1016-j-isci-2025-114320",
+      "question": "How did the nine-gene ALS model perform externally?",
+      "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
+      "doi": "10.1016/j.isci.2025.114320",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-isci-2025-114320.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "That increasing ABCA1 expression or administering an ABCA1-targeted treatment prevents ALS.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Amyotrophic lateral sclerosis",
+        "ABCA1",
+        "Serum biomarker associations",
+        "Nine-gene random forest",
+        "cis-eQTL Mendelian randomization",
+        "ELISA",
+        "External AUC 0.75",
+        "ALSFRS-R nonsignificant association",
+        "Mouse day-70 P-value discrepancy"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-isci-2025-114320.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-isci-2025-114320.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-isci-2025-114320.csl.json",
+      "field_entry": [
+        "Neurodegenerative disease genomics",
+        "Molecular biomarker research"
+      ],
+      "review_topics": [
+        "ABCA1 and ALS susceptibility",
+        "Blood expression and serum biomarker translation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#paper-discovery"
+    },
+    {
       "id": "doi-10-3389-fpubh-2025-1521372",
       "question": "How was short sleep associated with mortality?",
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -726,6 +762,42 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#paper-discovery"
     },
     {
+      "id": "b4galt2",
+      "question": "What is PTMLS in this study?",
+      "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
+      "doi": "10.1136/jitc-2024-010787",
+      "paper_url": "https://drgezhang.com/papers/b4galt2.html",
+      "answer_url": "https://drgezhang.com/papers/b4galt2.html#qa-1",
+      "source": "data/deep_geo/b4galt2.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "Prospective clinical response prediction or better human patient outcomes from using PTMLS.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Lung adenocarcinoma",
+        "CD8 spatial exclusion",
+        "Immune-desert phenotype",
+        "B4GALT2",
+        "Post-translational modification signature",
+        "Stepcox and SuperPC",
+        "Archival pathology cohort",
+        "Mouse anti-PD-1 combination",
+        "Published Figure 2 correction"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/b4galt2.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/b4galt2.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/b4galt2.csl.json",
+      "field_entry": [
+        "Lung adenocarcinoma immunology",
+        "Molecular prognostic modeling"
+      ],
+      "review_topics": [
+        "B4GALT2 and immune exclusion",
+        "Post-translational modification signatures"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/b4galt2.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1002-mdr2-70004",
       "question": "How were the thyroid molecular subtypes evaluated externally?",
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -763,6 +835,42 @@
         "Expression-network analysis of disease progression"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-3389-fonc-2025-1538574",
+      "question": "How many single-cell patients were studied and how many cells were retained?",
+      "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
+      "doi": "10.3389/fonc.2025.1538574",
+      "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#qa-1",
+      "source": "data/deep_geo/doi-10-3389-fonc-2025-1538574.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "Causal BRCA1 control of CAF differentiation or a verified ISG15 immune-response mechanism from the multi-omics associations.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Triple-negative breast cancer",
+        "BRCA1 mutation status",
+        "Cancer-associated fibroblasts",
+        "Single-cell and spatial transcriptomics",
+        "Paired tissue proteomics",
+        "ISG15",
+        "Cross-cancer KNN response model",
+        "AUC approximately 0.61",
+        "No treated TNBC validation"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2025-1538574.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2025-1538574.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2025-1538574.csl.json",
+      "field_entry": [
+        "Breast cancer single-cell genomics",
+        "Immunotherapy response modeling"
+      ],
+      "review_topics": [
+        "BRCA1-associated TNBC microenvironment",
+        "ISG15 and cancer-associated fibroblasts"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#paper-discovery"
     },
     {
       "id": "doi-10-2147-ijn-s522157",
@@ -1078,6 +1186,78 @@
         "EndMT-related candidate classification"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1111-jcmm-18408",
+      "question": "Which pathological stages were compared in the single-cell analysis?",
+      "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
+      "doi": "10.1111/jcmm.18408",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html#qa-1",
+      "source": "data/deep_geo/doi-10-1111-jcmm-18408.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "A directly traced longitudinal path from an AIS cell to an IAC cell or a causal origin of Cluster 6.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Lung adenocarcinoma",
+        "Adenocarcinoma in situ",
+        "Minimally invasive adenocarcinoma",
+        "Single-cell transcriptomics",
+        "inferCNV and pseudotime",
+        "Retrospective survival modeling",
+        "Cluster 6",
+        "LPAS",
+        "PSMB1 knockdown"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-18408.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-18408.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-jcmm-18408.csl.json",
+      "field_entry": [
+        "Lung cancer molecular pathology",
+        "Computational oncology"
+      ],
+      "review_topics": [
+        "Cell states in early lung adenocarcinoma",
+        "Transcriptomic survival risk signatures"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html#paper-discovery"
+    },
+    {
+      "id": "time-cart",
+      "question": "Did this paper enroll CAR-T-treated patients?",
+      "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
+      "doi": "10.1186/s12943-024-02047-2",
+      "paper_url": "https://drgezhang.com/papers/time-cart.html",
+      "answer_url": "https://drgezhang.com/papers/time-cart.html#qa-1",
+      "source": "data/deep_geo/time-cart.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "evidence_scope": "A new prospective study, newly recruited CAR-T treatment cohort or randomized comparison.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Tumor immune microenvironment",
+        "Immune-excluded tumors",
+        "Tertiary lymphoid structures",
+        "Spatial immunology",
+        "Proteomics and transcriptomics",
+        "Host genetics and microbiome",
+        "CAR-T cell therapy",
+        "Neoantigen selection",
+        "T cell exhaustion"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/time-cart.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/time-cart.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/time-cart.csl.json",
+      "field_entry": [
+        "Cancer immunotherapy",
+        "Tumor immune spatial biology"
+      ],
+      "review_topics": [
+        "Multi-omics tumor immune microenvironment",
+        "Engineering strategies for CAR-T cells"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/time-cart.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-70258",
@@ -1400,6 +1580,42 @@
         "Transcriptomic characterization of coronary disease"
       ],
       "discovery_url": "https://drgezhang.com/papers/apvs.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1016-j-jma-2023-05-007",
+      "question": "Was this a human cardiovascular stent trial?",
+      "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
+      "doi": "10.1016/j.jma.2023.05.007",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-jma-2023-05-007.json#/qa/0/question",
+      "profile_type": "preclinical_multimodal",
+      "narrative_genre": null,
+      "evidence_scope": "Clinical efficacy, safety, coronary stent patency, thrombosis reduction or restenosis benefit in humans.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Biodegradable magnesium alloy",
+        "MgF2–PDA/exosome coating",
+        "Vascular scaffold surfaces",
+        "Endothelialization surrogates",
+        "Macrophage phenotype",
+        "Smooth muscle cell markers",
+        "Corrosion bench tests",
+        "Rat aortic wire histology",
+        "Supplement Figure S1 absent"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-jma-2023-05-007.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-jma-2023-05-007.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-jma-2023-05-007.csl.json",
+      "field_entry": [
+        "Cardiovascular biomaterials",
+        "Biodegradable stent research"
+      ],
+      "review_topics": [
+        "Exosome-functionalized magnesium alloys",
+        "Preclinical endothelial compatibility"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-17789",
