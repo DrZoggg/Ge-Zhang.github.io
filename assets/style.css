@@ -123,7 +123,7 @@ footer .wrap{padding-inline:32px}
 .home main.wrap{max-width:1280px;padding:0 40px 56px;margin-top:0;background:transparent;border-radius:0;box-shadow:none}
 .home .hero{grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:50px 0 54px;min-height:570px;position:relative;border-bottom:1px solid var(--line)}
 .home .hero>div:first-child{min-width:0}
-.home .hero>div>.eyebrow{font-size:.66rem;letter-spacing:.055em;font-weight:600;max-width:44em;margin-bottom:27px}
+.home .hero>div>.eyebrow{font-size:.75rem;letter-spacing:.055em;font-weight:600;max-width:44em;margin-bottom:27px}
 .home .hero h1{font-size:clamp(4rem,6.2vw,5.6rem);font-weight:500;letter-spacing:-.065em;margin:0 0 24px;line-height:1.05;white-space:nowrap}
 .home .name-zh{display:inline-block;font:400 1.6rem/1.5 var(--body);letter-spacing:.06em;margin-left:12px;color:var(--muted);vertical-align:baseline}
 .bio-intro{font-family:var(--display);font-size:clamp(1.55rem,2.5vw,2.05rem);letter-spacing:-.025em;line-height:1.38;margin:0 0 32px;color:var(--text)}
@@ -133,15 +133,15 @@ footer .wrap{padding-inline:32px}
 .hero-question{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;font-size:.88rem}
 .hero-card{min-width:0}
 .bio-visual{position:relative;margin:0;min-width:0;padding:8px 0 42px}
-.scene-eyebrow{position:relative;z-index:1;text-align:center;text-transform:uppercase;font-size:.61rem;letter-spacing:.15em;color:var(--muted)}
+.scene-eyebrow{position:relative;z-index:1;text-align:center;text-transform:uppercase;font-size:.75rem;letter-spacing:.15em;color:var(--muted)}
 .bio-scene{position:relative;aspect-ratio:8/7;width:100%;max-height:460px;isolation:isolate}
 .bio-scene .membrane{position:absolute;inset:38% -2% 0;opacity:.32;mask-image:linear-gradient(transparent,#000 50%,transparent)}
 .bio-scene .membrane img{width:100%;height:100%;object-fit:cover;object-position:center bottom}
 .concept-field,.bio-orbit{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
 .bio-orbit{transform-origin:50% 50%}
-.scene-labels{display:flex;justify-content:space-between;gap:8px;margin:-16px 10px 20px;position:relative;z-index:1;font-size:.69rem;letter-spacing:.01em;color:var(--muted)}
+.scene-labels{display:flex;justify-content:space-between;gap:8px;margin:-16px 10px 20px;position:relative;z-index:1;font-size:.75rem;letter-spacing:.01em;color:var(--muted)}
 .scene-labels span{padding-top:7px;border-top:1px solid #94b8aa}
-.bio-caption{font-size:.64rem;line-height:1.5;color:var(--muted);text-align:center;margin-inline:12px}
+.bio-caption{font-size:.75rem;line-height:1.5;color:var(--muted);text-align:center;margin-inline:12px}
 .motion-toggle{display:block;margin:12px auto 0;border:1px solid var(--line);border-radius:30px;padding:6px 14px;min-height:36px;background:transparent;color:var(--muted);font:500 .69rem var(--body);cursor:pointer}
 .motion-toggle:hover{background:#e6eee7}
 .home #research,.home #featured,.home #home-questions,.home #about{padding:52px 0 58px}
@@ -230,7 +230,7 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
  .home .themes{grid-template-columns:repeat(2,minmax(0,1fr))}.home #research .card{padding:23px}
  .home #research .card::before{margin-bottom:18px}.bio-intro{font-size:1.65rem}
  .publications main.wrap{grid-template-columns:220px minmax(0,1fr);gap:0 28px}
- .scene-labels{font-size:.61rem}.section-intro{max-width:38ch}
+ .section-intro{max-width:38ch}
 }
 @media(max-width:767px){
  header{position:relative;padding:0 20px}header nav{flex-wrap:wrap;gap:0;padding:10px 0 4px;min-height:0}
@@ -241,14 +241,14 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
  body:not(.home) .hero h1{font-size:clamp(1.75rem,6vw,2.4rem)!important;line-height:1.25!important}
  .home main.wrap{padding:0 22px 36px}
  .home .hero{grid-template-columns:minmax(0,1fr);padding:36px 0 20px;gap:24px;min-height:0}
- .home .hero>div>.eyebrow{font-size:.59rem;letter-spacing:.025em;max-width:44em;margin-bottom:24px;line-height:1.8}
+ .home .hero>div>.eyebrow{letter-spacing:.025em;max-width:44em;margin-bottom:24px;line-height:1.8}
  .home .hero h1{font-size:clamp(2.9rem,14vw,3.7rem);margin-bottom:20px}.home .name-zh{font-size:1.2rem;margin-left:10px}
  .bio-intro{font-size:1.5rem;line-height:1.4;margin-bottom:24px}
  .bio-entry{gap:10px}.bio-entry .btn{font-size:.83rem;gap:16px;padding:10px 15px}
  .hero-question{margin-top:9px;font-size:.84rem}
  .bio-visual{padding:6px 0 20px;max-width:430px;margin:auto}.bio-scene{max-height:310px}
- .scene-eyebrow{font-size:.56rem}.scene-labels{font-size:.64rem;margin:-5px 5px 18px}
- .bio-caption{font-size:.6rem}.motion-toggle{min-height:44px}
+ .scene-labels{margin:-5px 5px 18px}
+ .motion-toggle{min-height:44px}
  .home #research,.home #featured,.home #home-questions,.home #about{padding:36px 0 42px}
  .home h2{font-size:2rem}.home #research>h2{margin-bottom:25px}
  .home .themes{grid-template-columns:1fr;gap:12px}.home #research .card{padding:22px 22px 24px}
@@ -275,7 +275,7 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
 @media(max-width:359px){
  .home main.wrap{padding-inline:18px}.navlinks{gap:0 14px}.navlinks a{font-size:.75rem}
  .home .hero h1{font-size:2.85rem}.home .name-zh{font-size:1rem;margin-left:8px}.bio-entry .btn{gap:12px;font-size:.78rem;padding-inline:12px}
- .home #featured .paper{padding-inline:18px}.scene-labels{font-size:.58rem}
+ .home #featured .paper{padding-inline:18px}
 }
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important}

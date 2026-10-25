@@ -133,14 +133,29 @@ class PaperDiscoveryTests(unittest.TestCase):
                 self.assertEqual(md,self.old['papers/'+slug+'.md'])
 
     def test_protected_inventory_identity_exports_dates_and_pending(self):
-        mutable_data={'data/question_index.json'} | {'data/deep_geo/'+s+'.json' for s in self.new_slugs}
+        # Visual 3.1 replaces exactly two placeholder summaries with the
+        # already frozen Gold summaries; every other controller field stays exact.
+        featured_path='data/featured_papers.json'
+        expected_featured=json.loads(self.old[featured_path])
+        approved_summaries={doi:json.loads(self.old['data/deep_geo/'+slug+'.json'])['summary']
+                            for doi,slug in {
+                                '10.1200/po.24.00089':'doi-10-1200-po-24-00089',
+                                '10.1172/jci194175':'doi-10-1172-jci194175',
+                            }.items()}
+        for entry in expected_featured['papers']:
+            if entry.get('doi') in approved_summaries:
+                entry['summary']=approved_summaries[entry['doi']]
+        mutable_data={'data/question_index.json',featured_path} | {'data/deep_geo/'+s+'.json' for s in self.new_slugs}
         for path,text in self.old.items():
             protected=(path.startswith(('citations/','assets/evidence/'))
                        or path.startswith('data/') and path not in mutable_data)
             if protected:
                 self.assertEqual((ROOT/path).read_text(encoding='utf-8'),text,path)
         for path,expected in self.batch['protected_hashes'].items():
-            self.assertEqual((ROOT/path).read_text(encoding='utf-8'),self.old[path],path)
+            if path==featured_path:
+                self.assertEqual(json.loads((ROOT/path).read_text(encoding='utf-8')),expected_featured,path)
+            else:
+                self.assertEqual((ROOT/path).read_text(encoding='utf-8'),self.old[path],path)
         before=json.loads(self.old['publications.json'])
         expected=copy.deepcopy(before)
         for item in expected:
