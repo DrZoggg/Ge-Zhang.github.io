@@ -7,6 +7,7 @@ export async function mountScientificVisuals() {
   if (!hosts.length) return null;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const compact = matchMedia('(max-width: 700px), (pointer: coarse)');
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const connection = navigator.connection;
   let disposed = false, raf = 0, lastTick = 0, pageActive = true, imported = null;
   let theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
@@ -23,8 +24,9 @@ export async function mountScientificVisuals() {
     e.button.hidden = !e.renderer || e.failed || e.degraded || staticPreference();
     e.button.disabled = e.lost;
     e.button.setAttribute('aria-pressed', String(e.paused));
-    e.button.textContent = e.paused ? 'Resume animation' : 'Pause animation';
-    e.button.setAttribute('aria-label', `${e.paused ? 'Resume' : 'Pause'} ${e.id === 'observatory-wheel' ? 'orbital instrument' : 'research field'} animation`);
+    const label = `${e.paused ? 'Resume' : 'Pause'} ${e.id === 'observatory-wheel' ? 'orbital instrument' : 'research field'} animation`;
+    e.button.setAttribute('aria-label', label);
+    e.button.title = label;
   }
   function showPoster(e, state) {
     e.host.dataset.sceneState = state;
@@ -36,7 +38,9 @@ export async function mountScientificVisuals() {
     if (!e.renderer || e.lost || e.failed || e.degraded || staticPreference()) return;
     const start = performance.now();
     try {
-      e.scene.update(e.time); e.renderer.render(e.scene.scene, e.scene.camera);
+      const delta = Math.min(Math.max(e.time - e.sceneTime, 0), .06);
+      e.sceneTime = e.time;
+      e.scene.update(e.time, delta); e.renderer.render(e.scene.scene, e.scene.camera);
       e.frames++; e.dirty = false; e.renderMs = performance.now() - start;
       e.renderAverage = e.renderAverage ? e.renderAverage * .95 + e.renderMs * .05 : e.renderMs;
       // Measure actual submitted-frame spacing, not the raw monitor RAF rate.
@@ -120,10 +124,17 @@ export async function mountScientificVisuals() {
     const e = { host, id: host.id, poster: host.querySelector('[data-scene-poster]'),
       button: document.querySelector(`[data-scene-pause="${host.id}"]`), visible: inView(host),
       renderer: null, scene: null, canvas: null, loading: false, failed: false, lost: false,
-      paused: false, dirty: true, time: 0, frames: 0, lastDraw: 0, renderMs: 0, renderAverage: 0,
+      paused: false, dirty: true, time: 0, sceneTime: 0, frames: 0, lastDraw: 0, renderMs: 0, renderAverage: 0,
       frameStamp:0, wasActive:false, frameIntervalMs:0, frameIntervalAverage:0, intervalSamples:0, lowSince:0, quality: 'high', dpr: 1 };
     entries.push(e); showPoster(e, staticPreference() ? 'static-preference' : 'poster');
     if (e.button) listen(e.button, 'click', () => { e.paused = !e.paused; e.dirty = true; syncButton(e); schedule(); });
+    listen(host, 'pointermove', event => {
+      if (!finePointer.matches || event.pointerType === 'touch' || !canRun(e)) return;
+      const box = host.getBoundingClientRect();
+      const clamp = value => Math.max(-1, Math.min(1, value));
+      e.scene?.setPointer?.(clamp((event.clientX - box.left) / box.width * 2 - 1), clamp((event.clientY - box.top) / box.height * 2 - 1));
+    }, { passive: true });
+    listen(host, 'pointerleave', () => e.scene?.setPointer?.(0, 0), { passive: true });
   });
   const observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver(records => {
     records.forEach(record => { const e = entries.find(x => x.host === record.target); e.visible = record.isIntersecting && record.boundingClientRect.width>0 && record.boundingClientRect.height>0; if (e.visible) initialize(e); }); schedule();

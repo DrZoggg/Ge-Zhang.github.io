@@ -8,7 +8,7 @@
   const toggle = document.getElementById('featured-toggle');
   if (collection && toggle) {
     const cards = Array.from(collection.querySelectorAll('.paper'));
-    const firstCount = 6;
+    const firstCount = 12;
     if (cards.length > firstCount) {
       let expanded = true;
       function disclose(next, interacted = false) {
@@ -18,7 +18,7 @@
         cards.forEach((card, i) => { card.hidden = !next && i >= firstCount; });
         expanded = next;
         toggle.setAttribute('aria-expanded', String(next));
-        toggle.textContent = next ? 'Show first 6' : 'Show all selected research (' + cards.length + ')';
+        toggle.textContent = next ? 'Show first ' + firstCount : 'Show all selected research (' + cards.length + ')';
         if (interacted && next) {
           const firstNewLink = cards[firstCount].querySelector('h3 a');
           if (firstNewLink) firstNewLink.focus({preventScroll: true});
