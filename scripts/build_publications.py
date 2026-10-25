@@ -356,9 +356,7 @@ def update_homepage(index_html, config):
         f"{HOME_IDENTITY_START}\n"
         f"<h1>{html.escape(config['researcher_name'])} "
         f'<span class="name-zh" lang="zh-CN">'
-        f"{html.escape(config['researcher_name_zh'])}</span></h1>\n"
-        f'<p class="identity-zh" lang="zh-CN">'
-        f"{html.escape(config['profile']['biography']['zh'])}</p>\n{HOME_IDENTITY_END}"
+        f"{html.escape(config['researcher_name_zh'])}</span></h1>\n{HOME_IDENTITY_END}"
     )
     if index_html.count(HOME_IDENTITY_START) == index_html.count(HOME_IDENTITY_END) == 1:
         before, remainder = index_html.split(HOME_IDENTITY_START, 1)
@@ -373,9 +371,19 @@ def update_homepage(index_html, config):
     else:
         raise ValueError("index.html homepage identity markers are incomplete or duplicated.")
 
+    index_html, chinese_count = re.subn(
+        r'<p class="identity-zh" lang="zh-CN">.*?</p>',
+        lambda _: '<p class="identity-zh" lang="zh-CN">'
+        + html.escape(config['profile']['biography']['zh']) + '</p>',
+        index_html, count=1, flags=re.DOTALL,
+    )
+    if chinese_count != 1:
+        raise ValueError("index.html must contain exactly one Chinese biography.")
+
     index_html, biography_count = re.subn(
-        r'<p class="lead">.*?</p>',
-        f'<p class="lead">{html.escape(config["profile"]["biography"]["en"])}</p>',
+        r'<p class="lead" id="biography-en">.*?</p>',
+        lambda _: '<p class="lead" id="biography-en">'
+        + html.escape(config['profile']['biography']['en']) + '</p>',
         index_html,
         count=1,
         flags=re.DOTALL,
@@ -2266,6 +2274,8 @@ def render_featured_cards(featured_entries, public_by_token, deep_contents):
         doi = norm_doi(publication.get("doi"))
         if doi:
             links.append(f'<a class="btn" href="{html.escape(doi_url(doi), quote=True)}">DOI</a>')
+            if not citation_skip_reason(publication):
+                links.append(f'<a class="btn" href="{html.escape(page_url, quote=True)}#cite-this-paper">Cite</a>')
         status = publication["paper_geo_status"]
         if status == "pending":
             badge = ' <span class="badge">Deep GEO · Pending</span>'
@@ -2275,11 +2285,32 @@ def render_featured_cards(featured_entries, public_by_token, deep_contents):
             badge = ""
         cards.append(
             f'<article class="card paper" data-geo-status="{status}"><div class="eyebrow">'
-            f'{html.escape(str(journal))} · {html.escape(str(year))}{badge}</div>'
+            f'{html.escape(str(journal))} · {html.escape(str(year))}'
+            f' <span class="paper-kind">{html.escape(str(publication.get("type") or ""))}</span>{badge}</div>'
             f'<h3><a href="{html.escape(page_url, quote=True)}">{html.escape(str(title))}</a></h3>'
             f'<p>{html.escape(summary)}</p><div class="links">{" ".join(links)}</div></article>'
         )
-    return '<div class="grid">' + "".join(cards) + "</div>"
+    return '<div class="grid" id="featured-papers">' + "".join(cards) + "</div>"
+
+
+def render_homepage_questions(question_rows, featured_entries, public_by_token):
+    """Route to three existing reviewed questions, without composing an answer."""
+    by_doi = {row['doi']: row for row in question_rows}
+    selected = []
+    for entry in featured_entries:
+        doi = norm_doi(public_by_token[controller_token(entry)].get('doi'))
+        if doi in by_doi:
+            selected.append(by_doi[doi])
+        if len(selected) == 3:
+            break
+    return '<div class="question-preview">' + ''.join(
+        '<article class="home-question"><h3><a href="'
+        + html.escape(row['answer_url'], quote=True) + '">'
+        + html.escape(row['question']) + '</a></h3><p class="question-source">'
+        + html.escape(row['title']) + '</p><a class="question-link" href="'
+        + html.escape(row['answer_url'], quote=True) + '">Read the evidence <span aria-hidden="true">↗</span></a></article>'
+        for row in selected
+    ) + '</div>'
 
 
 def write_machine_indexes(items, deep_items, config, discovery_fields):
@@ -2563,6 +2594,14 @@ def build_site():
         f'View all <span id="pubCount">{len(public_items)}</span> publications',
         index_html,
     )
+    question_start, question_end = '<!-- HOME_QUESTIONS_START -->', '<!-- HOME_QUESTIONS_END -->'
+    if index_html.count(question_start) != 1 or index_html.count(question_end) != 1:
+        raise ValueError('index.html must contain exactly one home question marker pair.')
+    before, remainder = index_html.split(question_start, 1)
+    _, after = remainder.split(question_end, 1)
+    index_html = before + question_start + '\n' + render_homepage_questions(
+        question_rows, featured_entries, public_by_token
+    ) + '\n' + question_end + after
     index_html = update_homepage(index_html, config)
     homepage_url = f"{config['site_url']}/"
     html_changed[homepage_url] = write_public_html_if_changed(index_path, index_html)
