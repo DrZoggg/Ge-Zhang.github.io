@@ -25,6 +25,7 @@ import research_guides
 import scholarly_discovery
 import evidence_presentation
 import paper_discovery
+from theme_shell import with_theme_shell, without_theme_shell
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
 from site_common import (
     DEEP_CONTENT_DIR,
@@ -180,17 +181,17 @@ def with_ga4_tag(page):
     if GA4_INSERTION in page:
         if page.count(GA4_INSERTION) != 1:
             raise ValueError("Google tag must occur exactly once in the HTML head.")
-        return page
+        return with_theme_shell(page)
     if page.count("<head>") != 1:
         raise ValueError("Google tag requires exactly one HTML head.")
-    return page.replace("<head>", "<head>" + GA4_INSERTION, 1)
+    return with_theme_shell(page.replace("<head>", "<head>" + GA4_INSERTION, 1))
 
 
 def write_public_html_if_changed(path, content):
     previous = path.read_text(encoding="utf-8") if path.is_file() else None
     content_changed = previous is None or (
-        without_evidence_ui(previous.replace(GA4_INSERTION, ""))
-        != without_evidence_ui(content.replace(GA4_INSERTION, ""))
+        without_evidence_ui(without_theme_shell(previous).replace(GA4_INSERTION, ""))
+        != without_evidence_ui(without_theme_shell(content).replace(GA4_INSERTION, ""))
     )
     write_text_if_changed(path, content)
     return content_changed
@@ -247,7 +248,16 @@ def render_homepage_research(profile):
         + html.escape(section["label"])
         + "</div><h2>"
         + html.escape(section["heading"])
-        + '</h2><div class="grid themes">'
+        + '</h2><figure class="research-visual">'
+        '<div id="research-field" class="scientific-scene field-scene" aria-hidden="true">'
+        '<div class="scene-poster" data-scene-poster>'
+        '<img class="poster-dark field-poster-wide" src="/assets/scientific-visuals/field-dark.webp" alt="" width="1160" height="460" loading="lazy">'
+        '<img class="poster-light field-poster-wide" src="/assets/scientific-visuals/field-light.webp" alt="" width="1160" height="460" loading="lazy">'
+        '<img class="poster-dark field-poster-compact" src="/assets/scientific-visuals/field-dark-mobile.webp" alt="" width="346" height="260" loading="lazy">'
+        '<img class="poster-light field-poster-compact" src="/assets/scientific-visuals/field-light-mobile.webp" alt="" width="346" height="260" loading="lazy">'
+        '</div></div><figcaption class="scene-caption">Conceptual illustration · not experimental data</figcaption>'
+        '<button class="motion-toggle" type="button" data-scene-pause="research-field" aria-pressed="false" hidden>Pause motion</button>'
+        '</figure><div class="grid themes">'
         + cards
         + "</div></section>"
     )
