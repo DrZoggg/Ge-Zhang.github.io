@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "researcher_orcid": "0000-0002-3116-3246",
+  "scope": "Homepage Selected Research labels only; never an authorship-order inference or a master/citation override. Add roles only after formal publication evidence is reviewed.",
+  "papers": {
+    "10.1126/science.aek9583": {
+      "status": "verified",
+      "roles": [
+        "First author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://www.science.org/doi/10.1126/science.aek9583",
+          "locator": "Letter author byline"
+        }
+      ]
+    },
+    "10.1038/s41467-024-50415-9": {
+      "status": "verified",
+      "roles": [
+        "First author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41467-024-50415-9",
+          "locator": "Author information; author byline"
+        }
+      ]
+    },
+    "10.1038/s41698-026-01699-1": {
+      "status": "verified",
+      "roles": [
+        "Corresponding author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41698-026-01699-1",
+          "locator": "Author information; Corresponding authors"
+        }
+      ]
+    },
+    "10.1016/j.isci.2023.107587": {
+      "status": "verified",
+      "roles": [
+        "First author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1016/j.isci.2023.107587",
+          "locator": "Version of Record author byline"
+        }
+      ]
+    },
+    "10.1186/s12967-022-03795-9": {
+      "status": "verified",
+      "roles": [
+        "Co-first author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36474294/",
+          "locator": "Author information; equal contribution note"
+        }
+      ]
+    },
+    "10.1002/ehf2.14003": {
+      "status": "verified",
+      "roles": [
+        "First author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/10.1002/ehf2.14003",
+          "locator": "Version of Record author byline"
+        }
+      ]
+    },
+    "10.1093/eurheartj/ehaf523": {
+      "status": "verified",
+      "roles": [
+        "Co-first author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://academic.oup.com/eurheartj/article/46/45/4969/8212255",
+          "locator": "Author list; equal contribution footnote"
+        }
+      ]
+    },
+    "10.1002/mdr2.70052": {
+      "status": "verified",
+      "roles": [
+        "Corresponding author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70052",
+          "locator": "Author 23 Ge Zhang; cardiology affiliation; ORCID and correspondence information"
+        }
+      ],
+      "identity_note": "This site represents author 23, Ge Zhang, cardiology, ORCID 0000-0002-3116-3246, identified as a corresponding author. Author 2, the gastroenterology Ge Zhang credited as co-first author, is a different person.",
+      "independent_check": "Official Wiley article information corroborates author 23, cardiology, the site ORCID and the corresponding-author designation; author 2 is a different Ge Zhang."
+    },
+    "10.1200/po.24.00089": {
+      "status": "verified",
+      "roles": [
+        "Co-first author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://ascopubs.org/doi/10.1200/PO.24.00089",
+          "locator": "Author notes; equal contribution of three authors"
+        }
+      ],
+      "identity_note": "Only the reviewed equal-contribution designation is supplied. No corresponding-author designation is inferred or added."
+    },
+    "10.1172/jci194175": {
+      "status": "verified",
+      "roles": [
+        "Co-author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "sources": [
+        {
+          "url": "https://jci.org/articles/view/194175",
+          "locator": "Author list and author contributions"
+        }
+      ],
+      "independent_check": "Official JCI page lists Ge Zhang fifth; equal-contribution authors are GM, YH and JC; correspondence is to Xunde Xian and Erdan Dong."
+    },
+    "10.1021/acs.jproteome.4c00522": {
+      "status": "verified",
+      "roles": [
+        "Co-author"
+      ],
+      "verified_on": "2026-10-25",
+      "verification_basis": "Researcher-reviewed role independently checked against official Europe PMC fullTextXML, version PMC11385702.1: Ge Zhang contributor ath2 and affiliations aff3-aff5; author-notes identify Huimin Fan and Yafeng Zhou as corresponding authors, with no equal-contribution designation in the XML.",
+      "identity_note": "The publication assigns Ge Zhang to Zhengzhou University cardiology and cardiovascular centers. The individual contributor element does not contain an ORCID; no paper-level ORCID association is invented.",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11385702/",
+          "locator": "Author list and author notes; PMC11385702.1"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11385702/fullTextXML",
+          "locator": "/article/front/article-meta/contrib-group/contrib[@id='ath2']; affiliations aff3-aff5; /article/front/article-meta/author-notes/corresp[@id='cor1' or @id='cor2']",
+          "sha256": "135b2f7f6cc9f08cb88c2bd30ab404bdcca9db948fdaa13ed880e22fe0af12e1"
+        }
+      ]
+    },
+    "10.1016/j.ejphar.2023.175569": {
+      "status": "pending",
+      "roles": [],
+      "proposed_roles": [
+        "Co-author"
+      ],
+      "verification_note": "PENDING_CONTRIBUTION_NOTE: PubMed 36740037 confirms Ge Zhang and Zhengzhou University cardiology affiliation, but the formal contribution/equal-contribution footnotes were not obtained. ScienceDirect returned 403. No role label is rendered until the requested publication-note check is complete.",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S0014299923000808",
+          "locator": "Author list and author contribution notes"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36740037/",
+          "locator": "Authors and affiliations only; contribution note not available"
+        }
+      ]
+    }
+  }
+}

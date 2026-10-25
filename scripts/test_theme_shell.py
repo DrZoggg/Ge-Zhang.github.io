@@ -123,8 +123,18 @@ class ThemeShellTests(unittest.TestCase):
         profile = load_profile_config()
         rendered = render_homepage_research(profile)
         self.assertEqual(rendered.count('id="research-field"'), 1)
-        self.assertEqual(rendered.count('Conceptual illustration · not experimental data'), 1)
-        self.assertIn('data-scene-pause="research-field" aria-pressed="false" hidden', rendered)
+        from test_visual3 import Document
+        document = Document(rendered).root
+        figure, = document.find('figure', **{'class': 'research-visual'})
+        self.assertIn('not a representation of experimental data', figure.attrs['aria-label'])
+        self.assertEqual(figure.find('figcaption'), [])
+        button, = figure.find('button', **{'data-scene-pause': 'research-field'})
+        for name, value in {'type': 'button', 'aria-controls': 'research-field',
+                            'aria-pressed': 'false', 'aria-label': 'Pause research field animation'}.items():
+            self.assertEqual(button.attrs.get(name), value)
+        self.assertIn('hidden', button.attrs)
+        icon, = button.find('svg')
+        self.assertEqual(icon.attrs.get('aria-hidden'), 'true')
         self.assertLess(rendered.index('id="research-field"'), rendered.index('class="grid themes"'))
         import html
         for theme in profile['homepage_research']['themes']:
