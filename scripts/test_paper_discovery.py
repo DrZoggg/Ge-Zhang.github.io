@@ -175,9 +175,13 @@ class PaperDiscoveryTests(unittest.TestCase):
         expected_urls={'https://drgezhang.com/papers/'+s+'.html' for s in self.new_slugs}
         expected_urls|={'https://drgezhang.com/'+path for path in self.exports['approved_backlink_blocks']}
         expected_urls|={'https://drgezhang.com/research/questions.html','https://drgezhang.com/publications.html'}
+        expected_dates={url:self.exports['content_date'] for url in expected_urls}
+        # Visual 3.0 changes the homepage presentation through the existing
+        # lastmod algorithm; every paper and discovery date stays frozen.
+        expected_dates['https://drgezhang.com/']='2026-10-25'
         self.assertEqual(set(now),set(old_map))
-        self.assertEqual(changed,expected_urls)
-        for url in changed:self.assertEqual(now[url],self.exports['content_date'])
+        self.assertEqual(changed,set(expected_dates))
+        for url in changed:self.assertEqual(now[url],expected_dates[url])
 
     def test_machine_parity_and_unchanged_question_routes(self):
         index=json.loads((ROOT/'paper_index.json').read_text(encoding='utf-8'))

@@ -1,77 +1,102 @@
-/* Luminous Lab progressive decoration. Scientific content is never hidden or loaded here. */
+/* Visual 3.0: progressive disclosure and one optional conceptual orbit. */
 (() => {
   'use strict';
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const pointer = matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)');
-  const scene = document.querySelector('.bio-scene');
-  const control = document.querySelector('.motion-toggle');
-  const animations = [], ambient = [];
-  let paused = false, visible = true, bounds;
-  const animate = (element, frames, options, loop = false) => {
-    if (!element || !element.animate) return;
-    const animation = element.animate(frames, {easing: 'cubic-bezier(.2,.65,.3,1)', ...options});
-    animations.push(animation);
-    if (loop) ambient.push(animation);
-  };
-  function sync() {
-    ambient.forEach(a => (paused || !visible || document.hidden || reduce.matches) ? a.pause() : a.play());
+
+  // All selected titles, summaries and links are already in the HTML.
+  // Without this enhancement every selected work remains visible.
+  const collection = document.getElementById('featured-papers');
+  const toggle = document.getElementById('featured-toggle');
+  if (collection && toggle) {
+    const cards = Array.from(collection.querySelectorAll('.paper'));
+    const firstCount = 6;
+    if (cards.length > firstCount) {
+      let expanded = true;
+      function disclose(next, interacted = false) {
+        if (!next && cards.slice(firstCount).some(card => card.contains(document.activeElement))) {
+          toggle.focus({preventScroll: true});
+        }
+        cards.forEach((card, i) => { card.hidden = !next && i >= firstCount; });
+        expanded = next;
+        toggle.setAttribute('aria-expanded', String(next));
+        toggle.textContent = next ? 'Show first 6' : 'Show all selected research (' + cards.length + ')';
+        if (interacted && next) {
+          const firstNewLink = cards[firstCount].querySelector('h3 a');
+          if (firstNewLink) firstNewLink.focus({preventScroll: true});
+          cards[firstCount].scrollIntoView({block: 'nearest', behavior: 'instant'});
+        } else if (interacted) {
+          toggle.focus({preventScroll: true});
+          toggle.scrollIntoView({block: 'nearest', behavior: 'instant'});
+        }
+      }
+      toggle.addEventListener('click', () => disclose(!expanded, true));
+      toggle.setAttribute('aria-controls', collection.id);
+      disclose(false);
+      toggle.hidden = false;
+    }
   }
-  function resetPointer() {
-    if (!scene) return;
-    scene.style.removeProperty('--parallax-x');
-    scene.style.removeProperty('--parallax-y');
+
+  const scene = document.querySelector('.bio-scene');
+  const orbit = scene && scene.querySelector('.bio-orbit');
+  const control = document.querySelector('.motion-toggle');
+  if (!scene || !orbit || !control || typeof matchMedia !== 'function') return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = matchMedia('(min-width: 960px) and (hover: hover) and (pointer: fine)');
+  const connection = navigator.connection;
+  const constrained = (navigator.deviceMemory > 0 && navigator.deviceMemory <= 2)
+    || (navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 2);
+  let paused = false;
+  let visible = !('IntersectionObserver' in window);
+  let animation = null;
+
+  function sync() {
+    if (!animation) {
+      scene.dataset.motion = 'static';
+      return;
+    }
+    const stopped = paused || !visible || document.hidden || reduce.matches;
+    stopped ? animation.pause() : animation.play();
+    scene.dataset.motion = stopped ? 'paused' : 'running';
   }
   function start() {
-    animations.splice(0).forEach(a => a.cancel());
-    ambient.length = 0;
-    resetPointer();
-    if (control) control.hidden = reduce.matches || !scene || !scene.animate;
-    if (reduce.matches || !scene || !scene.animate) return;
-    const art = scene.querySelector('img');
-    animate(art, [{opacity: .75}, {opacity: 1}], {duration: 1100});
-    animate(document.querySelector('.home h1'), [{opacity: .85, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 850, delay: 80});
-    animate(document.querySelector('.bio-entry'), [{opacity: .9, transform: 'translateY(4px)'}, {opacity: 1, transform: 'none'}], {duration: 700, delay: 320});
-    if (pointer.matches) {
-      animate(scene.querySelector('.optical-sheen'), [{opacity: .2, transform: 'translateX(-3%)'}, {opacity: .7, transform: 'translateX(3%)'}], {duration: 28000, iterations: Infinity, direction: 'alternate'}, true);
+    if (animation) animation.cancel();
+    animation = null;
+    const enabled = !reduce.matches && desktop.matches && !constrained
+      && !(connection && connection.saveData) && typeof orbit.animate === 'function';
+    control.hidden = !enabled;
+    control.setAttribute('aria-pressed', String(paused));
+    control.textContent = paused ? 'Resume motion' : 'Pause motion';
+    if (enabled) {
+      animation = orbit.animate(
+        [{transform: 'rotate(0deg)'}, {transform: 'rotate(360deg)'}],
+        {duration: 28000, iterations: Infinity, easing: 'linear'}
+      );
     }
-    animate(art, [{transform: 'translateY(0)'}, {transform: 'translateY(7px)'}], {duration: 24000, iterations: Infinity, direction: 'alternate'}, true);
-    if (paused) animations.filter(a => !ambient.includes(a)).forEach(a => a.finish());
     sync();
   }
-  if (scene) {
-    const frame = scene.closest('.bio-visual');
-    frame.addEventListener('pointerenter', () => { bounds = frame.getBoundingClientRect(); });
-    frame.addEventListener('pointermove', event => {
-      if (!pointer.matches || reduce.matches || paused || !bounds) return;
-      const clamp = value => Math.max(-8, Math.min(8, value));
-      scene.style.setProperty('--parallax-x', clamp(((event.clientX - bounds.left) / bounds.width - .5) * 16) + 'px');
-      scene.style.setProperty('--parallax-y', clamp(((event.clientY - bounds.top) / bounds.height - .5) * 16) + 'px');
-    }, {passive: true});
-    frame.addEventListener('pointerleave', resetPointer);
-    if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
-      visible = entries[0].isIntersecting;
-      sync();
-    }).observe(frame);
-  }
-  if (control) control.addEventListener('click', () => {
+  control.addEventListener('click', () => {
     paused = !paused;
     control.setAttribute('aria-pressed', String(paused));
     control.textContent = paused ? 'Resume motion' : 'Pause motion';
-    if (paused) { animations.filter(a => !ambient.includes(a)).forEach(a => a.finish()); resetPointer(); }
     sync();
   });
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      if (!reduce.matches) animate(entry.target, [{opacity: .86}, {opacity: 1}], {duration: 450});
-      observer.unobserve(entry.target);
-    }), {threshold: .12});
-    document.querySelectorAll('.home #featured .paper,.publications .year-group').forEach(e => observer.observe(e));
+    const observer = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      sync();
+    }, {threshold: 0.05});
+    observer.observe(scene.closest('.bio-visual') || scene);
   }
-  reduce.addEventListener('change', start);
-  pointer.addEventListener('change', start);
+  [reduce, desktop].forEach(query => {
+    if (query.addEventListener) query.addEventListener('change', start);
+    else if (query.addListener) query.addListener(start);
+  });
+  if (connection && connection.addEventListener) connection.addEventListener('change', start);
   document.addEventListener('visibilitychange', sync);
-  window.addEventListener('pagehide', () => { animations.forEach(a => a.cancel()); resetPointer(); });
+  window.addEventListener('pagehide', () => {
+    if (animation) animation.cancel();
+    animation = null;
+    scene.dataset.motion = 'static';
+  });
   window.addEventListener('pageshow', event => { if (event.persisted) start(); });
   start();
 })();
