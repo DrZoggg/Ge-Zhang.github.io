@@ -446,9 +446,9 @@ def update_homepage(index_html, config):
             "homepage brand",
         ),
         (
-            r'<footer><div class="wrap">© .*? · Academic website · Updated 2026-09</div></footer>',
+            r'<footer><div class="wrap">© .*? · Academic website(?: · Updated \d{4}-\d{2})?</div></footer>',
             '<footer><div class="wrap">© '
-            f'{html.escape(config["researcher_name"])} · Academic website · Updated 2026-09'
+            f'{html.escape(config["researcher_name"])} · Academic website'
             '</div></footer>',
             "homepage footer identity",
         ),
