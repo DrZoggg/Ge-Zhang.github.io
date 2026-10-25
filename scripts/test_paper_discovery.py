@@ -28,6 +28,7 @@ from sync_common import ROOT
 from validate_site import (ValidationError, paper_json_ld_object,
                            validate_v2_rendered_page)
 from site_common import load_site_config
+from theme_shell import without_theme_shell
 
 BATCH = ROOT/'scripts/fixtures/ordinary_v2_batch2_20261016.json'
 EXPORTS = ROOT/'scripts/fixtures/paper_discovery_batch2_exports_20261016.json'
@@ -125,11 +126,13 @@ class PaperDiscoveryTests(unittest.TestCase):
             if slug in self.old_sources:
                 before=self.old['papers/'+slug+'.html']
                 # Existing backlink UI can gain precisely pinned reviewed links;
-                # all remaining HTML, Markdown and JSON-LD remain byte-for-byte.
-                self.assertEqual(BACKLINK.sub('',page),BACKLINK.sub('',before),slug)
+                # Visual 4 adds only the exact shared theme shell; all remaining
+                # HTML, Markdown and JSON-LD remain byte-for-byte.
+                self.assertEqual(without_theme_shell(BACKLINK.sub('',page)),
+                                 without_theme_shell(BACKLINK.sub('',before)),slug)
                 self.assertEqual(paper_json_ld_object(page,slug),paper_json_ld_object(before,slug))
-                self.assertEqual(without_evidence_ui(BACKLINK.sub('',page)),
-                                 without_evidence_ui(BACKLINK.sub('',before)))
+                self.assertEqual(without_evidence_ui(without_theme_shell(BACKLINK.sub('',page))),
+                                 without_evidence_ui(without_theme_shell(BACKLINK.sub('',before))))
                 self.assertEqual(md,self.old['papers/'+slug+'.md'])
 
     def test_protected_inventory_identity_exports_dates_and_pending(self):
@@ -175,7 +178,8 @@ class PaperDiscoveryTests(unittest.TestCase):
                 continue
             path='papers/'+p['slug']+'.html'
             page=(ROOT/path).read_text(encoding='utf-8');old=self.old[path]
-            self.assertEqual(BACKLINK.sub('',page),BACKLINK.sub('',old),path)
+            self.assertEqual(without_theme_shell(BACKLINK.sub('',page)),
+                             without_theme_shell(BACKLINK.sub('',old)),path)
             if BACKLINK.findall(page)!=BACKLINK.findall(old):
                 changed_backlinks[path]=digest(BACKLINK.findall(page))
             path='papers/'+p['slug']+'.md'
@@ -242,7 +246,7 @@ class PaperDiscoveryTests(unittest.TestCase):
         expected['papers'].update({doi:{'qa_index':1}for doi in self.batch['papers']})
         self.assertEqual(config,expected)
         page=(ROOT/'research/questions.html').read_text(encoding='utf-8')
-        self.assertEqual(text_digest(page),self.exports['question_html_sha256'])
+        self.assertEqual(text_digest(without_theme_shell(page)),self.exports['question_html_sha256'])
 
     def test_search_preserves_every_old_record_and_adds_only_visible_context(self):
         old=json.loads(self.old['assets/evidence-search.json'])

@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 from sync_common import ROOT, is_withdrawn
 from paper_discovery import scientific_content
+from theme_shell import with_theme_shell, without_theme_shell
 
 SLUG = 'dcm-hf-circulating-biomarkers'
 URL = 'https://drgezhang.com/research/' + SLUG + '.html'
@@ -130,7 +131,7 @@ def render(data, sources):
         page += '<meta property="' + prop + '" content="' + esc(value, quote=True) + '">\n'
     page += '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
     page += '<style>body{font:17px/1.65 system-ui,sans-serif;color:#172b3a;background:#fafcfd;margin:0}main{max-width:1120px;margin:auto;padding:24px;overflow-wrap:anywhere}h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2}h2{margin-top:2rem}a{color:#075d93}aside{padding:4px 20px;border-left:4px solid #52738b;background:#eef3f6}.eyebrow{color:#486275}.comparison{max-width:100%;overflow-x:auto;margin:2rem 0}table{border-collapse:collapse;min-width:900px;width:100%;font-size:15px}caption{text-align:left;font-weight:bold;padding:12px}th,td{border:1px solid #bdcdd8;padding:14px;vertical-align:top;text-align:left}thead{background:#e7eff5}th[scope=row]{min-width:170px}td{min-width:150px}article{margin:2rem 0}li{margin:.4rem 0}@media(max-width:480px){main{padding:16px}}</style></head><body><main>\n'
-    return page + '\n'.join(body) + '\n</main></body></html>\n', '\n\n'.join(md) + '\n'
+    return with_theme_shell(page + '\n'.join(body) + '\n</main></body></html>\n', guide=True), '\n\n'.join(md) + '\n'
 
 
 def validate_page(page):
@@ -155,11 +156,13 @@ def build(root=ROOT):
     changed = False
     for extension, text in zip(('html', 'md'), rendered):
         path = root / 'research' / (SLUG + '.' + extension)
-        different = not path.exists() or path.read_text(encoding='utf-8') != text
+        previous = path.read_text(encoding='utf-8') if path.exists() else None
+        different = previous != text
         if different:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding='utf-8')
-        if extension == 'html': changed = different
+        if extension == 'html':
+            changed = previous is None or without_theme_shell(previous) != without_theme_shell(text)
     return changed
 
 
