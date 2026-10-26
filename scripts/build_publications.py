@@ -249,17 +249,7 @@ def render_homepage_research(profile):
         + html.escape(section["label"])
         + "</div><h2>"
         + html.escape(section["heading"])
-        + '</h2><figure class="research-visual" aria-label="Abstract cross-scale knowledge field. Conceptual artwork, not a representation of experimental data.">'
-        '<div id="research-field" class="scientific-scene field-scene" aria-hidden="true">'
-        '<div class="scene-poster" data-scene-poster>'
-        '<img class="poster-dark field-poster-wide" src="/assets/scientific-visuals/field-dark.webp" alt="" width="1160" height="460" loading="lazy">'
-        '<img class="poster-light field-poster-wide" src="/assets/scientific-visuals/field-light.webp" alt="" width="1160" height="460" loading="lazy">'
-        '<img class="poster-dark field-poster-compact" src="/assets/scientific-visuals/field-dark-mobile.webp" alt="" width="346" height="260" loading="lazy">'
-        '<img class="poster-light field-poster-compact" src="/assets/scientific-visuals/field-light-mobile.webp" alt="" width="346" height="260" loading="lazy">'
-        '</div></div>'
-        '<button class="motion-toggle" type="button" data-scene-pause="research-field" aria-controls="research-field" aria-pressed="false" aria-label="Pause research field animation" title="Pause research field animation" hidden>'
-        '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path class="motion-pause" d="M4 3h3v10H4zM9 3h3v10H9z"/><path class="motion-play" d="M5 2.5v11L13 8z"/></svg></button>'
-        '</figure><div class="grid themes">'
+        + '</h2><div class="grid themes">'
         + cards
         + "</div></section>"
     )
