@@ -1,0 +1,290 @@
+{
+  "version": 2,
+  "doi": "10.1007/s13402-023-00912-8",
+  "display_title": "Omics-based molecular classifications empowering in precision oncology",
+  "summary": "Narrative review connecting molecular biomarkers, single- and multi-omics cancer classification, biomarker-oriented trial designs and translational constraints; it provides no new patient cohort or pooled treatment effect.",
+  "research_question": "How does omics-based molecular classification connect cancer diagnosis, treatment stratification and prognosis, and what limits its clinical translation?",
+  "author_summary": "This narrative review organizes published work around molecular diagnosis, treatment stratification and prognosis. It covers genomic and epigenomic, transcriptomic and proteomic biomarkers, then discusses integrated and spatial omics as ways to characterize tumor heterogeneity. A separate section compares biomarker-oriented clinical-trial designs. The final sections address data integration, algorithm interpretability and the limitations of preclinical tumor models. These are a synthesis and research agenda: clinical effects and model performance described in the review belong to the cited studies, not to a new cohort or validation experiment conducted for this article.",
+  "evidence_page_notice": "Evidence synthesis of a published narrative review. The reviewed full text is the publicly readable text of an author-uploaded typeset copy on ResearchGate, matched to the publisher's article identity. It is not a new clinical study, and the reviewed copy has not been verified byte-for-byte against the publisher PDF.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Narrative review of omics-based molecular classification in precision oncology",
+    "evidence_type": "Secondary synthesis of published molecular, preclinical and clinical literature",
+    "translation_scope": "Conceptual and methodological context; therapy selection and clinical benefit require the relevant primary validation studies.",
+    "evidence_domains": [
+      "Molecular biomarkers and liquid biopsy",
+      "Single-omics, integrated and spatial classification",
+      "Biomarker-oriented trial designs",
+      "Computational integration and preclinical tumor models"
+    ],
+    "diseases_covered": [
+      "Solid tumors, including lung, breast, colorectal, endometrial, pancreatic and liver cancers"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Main biomarker layers in Fig. 1",
+        "value": "4: genomic, epigenomic, transcriptomic and proteomic"
+      },
+      {
+        "label": "Review illustrations",
+        "value": "4 figures and 1 comparison table"
+      },
+      {
+        "label": "Primary patient cohort",
+        "value": "Not applicable: narrative review"
+      }
+    ],
+    "counting_note": "Counts describe the article's structure. They are not patient denominators, independently validated models or pooled treatment effects."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The review organizes molecular diagnosis across genomic and epigenomic, transcriptomic and proteomic biomarkers.",
+      "context": "Section 2 synthesizes earlier biomarker research; the article does not perform a new diagnostic-accuracy comparison.",
+      "evidence": [
+        {
+          "label": "Illustrated biomarker layers",
+          "value": "4 in Fig. 1: genomic, epigenomic, transcriptomic and proteomic"
+        }
+      ],
+      "source_locator": "Section 2.1, Molecular understanding of tumor biomarkers; subsections 2.1.1-2.1.3; Fig. 1A-D and its caption (author-uploaded full text)."
+    },
+    {
+      "id": "KF2",
+      "claim": "Integrated and spatial omics are presented as complementary approaches to characterize heterogeneity beyond a single molecular layer.",
+      "context": "The review summarizes published subtyping and spatial-profiling examples; it does not train or externally validate a new integrated classifier.",
+      "evidence": [
+        {
+          "label": "Integration discussion",
+          "value": "Section 3.1.4 contrasts single-layer views with multi-omics integration and proteogenomics."
+        },
+        {
+          "label": "Spatial extension",
+          "value": "Section 3.1.5 discusses spatial organization within the tumor microenvironment."
+        }
+      ],
+      "source_locator": "Section 3.1.4, Multi-omics integrated analysis-based molecular typing; Section 3.1.5, Spatial omics; Fig. 3 and its caption."
+    },
+    {
+      "id": "KF3",
+      "claim": "The review compares basket, umbrella, platform and N-of-1 designs as frameworks for molecularly informed oncology research.",
+      "context": "This is a narrative trial-design comparison, not a trial performed by the review authors or a pooled estimate of efficacy.",
+      "evidence": [
+        {
+          "label": "Design categories compared",
+          "value": "4: basket, umbrella, platform and N-of-1"
+        }
+      ],
+      "source_locator": "Section 3.2, Innovative clinical trial-layouts for precision medicine; Table 1, Four major clinical trials' pros, cons, and representative trials. Only the design framework is summarized; classifications of individual trial examples are not independently endorsed."
+    },
+    {
+      "id": "KF4",
+      "claim": "Data integration, clinical interpretability and the fidelity of preclinical tumor models remain translation challenges in the review's research agenda.",
+      "context": "AI, organoids and three-dimensional tumor models are discussed as possible tools, not as proof that a multi-omics treatment strategy improves patient outcomes.",
+      "evidence": [
+        {
+          "label": "Computational challenge",
+          "value": "Sections 5.1 and 6 discuss heterogeneous data integration and clinical interpretability."
+        },
+        {
+          "label": "Preclinical-model challenge",
+          "value": "Section 5.2 discusses missing human tumor-microenvironment features and changes during prolonged culture; Fig. 4 illustrates model construction."
+        }
+      ],
+      "source_locator": "Section 5.1, Intricate data network and artificial intelligence; Section 5.2, Preclinical tumor models drawbacks and progression; Fig. 4 caption; Section 6, Conclusion."
+    }
+  ],
+  "what_this_adds": [
+    "An organized route from omics biomarker classes to molecular stratification and clinical-study design.",
+    "A secondary-literature framework that separates the promise of integration from the need for interpretable algorithms, suitable models and clinical validation."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "A conceptual overview of omics biomarker layers and molecular classification in oncology.",
+      "Context for discussing biomarker-oriented trial designs and translation challenges."
+    ],
+    "does_not_establish": [
+      "A new patient cohort, newly validated classifier or new therapeutic experiment.",
+      "A pooled treatment effect, diagnostic accuracy or causal benefit of molecular classification.",
+      "Clinical superiority of multi-omics for every cancer or independent confirmation of all cited primary-study results.",
+      "Systematic completeness of the literature search or a meta-analysis."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which biomarker layers are distinguished in the review?",
+      "answer": "Its biomarker overview distinguishes genomic, epigenomic, transcriptomic and proteomic information. These are categories of prior molecular research, not four new validation cohorts.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Does this review validate a new multi-omics classifier?",
+      "answer": "No. It discusses published integration and spatial-profiling approaches. Performance or treatment-response claims for any particular classifier must be checked in the cited primary study.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which clinical-trial design frameworks are compared?",
+      "answer": "The review compares basket, umbrella, platform and N-of-1 designs. This comparison provides context for molecularly informed trial design; it does not supply a pooled efficacy estimate.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What prevents a molecular classification from automatically becoming a treatment recommendation?",
+      "answer": "The review identifies complex data integration, the need for clinical interpretability and limitations of preclinical models. Its discussion of AI, organoids and three-dimensional models is a research agenda, not clinical proof of benefit.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "Precision oncology",
+      "Multi-omics"
+    ],
+    "methods": [
+      "Molecular classification",
+      "Proteogenomics",
+      "Spatial omics",
+      "Liquid biopsy",
+      "Biomarker-oriented trial design"
+    ],
+    "models": [
+      "Organoids",
+      "Three-dimensional tumor models"
+    ]
+  },
+  "limitations": [
+    "This is a narrative synthesis without a reported systematic search or pooled effect estimation.",
+    "Results from cited cohorts, trials and experiments remain secondary evidence here; no new primary cohort or validation is reported.",
+    "The public ResearchGate text reproduces a typeset copy uploaded by Zhaokai Zhou on 2 February 2024. The publisher record confirms article identity, but publisher-PDF byte equivalence was not verified.",
+    "Only structural and qualitative review claims are summarized. Numerical results from individual cited studies and the table's assignment of particular trials to design categories are not independently validated."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.csbj.2024.04.044",
+      "relationship": "Complementary narrative review focused on proteomic measurement and integration; related conceptual context, not independent clinical validation."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://link.springer.com/article/10.1007/s13402-023-00912-8",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38294647/",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12974067/",
+    "fulltext_source_url": "https://www.researchgate.net/publication/377849648_Omics-based_molecular_classifications_empowering_in_precision_oncology",
+    "evidence_basis": "Complete publicly readable author-uploaded typeset text on ResearchGate: Sections 1-6, Table 1, captions to Figs. 1-4, references and declarations. Subsequent ResearchGate recommendations and citation excerpts were excluded.",
+    "source_version": "ResearchGate typeset copy uploaded by Zhaokai Zhou on 2 February 2024; accepted 23 December 2023 and copyright Springer Nature Switzerland AG 2024. Official record: Version of Record 31 January 2024, Cellular Oncology 47, 759-777, June 2024. Identity matches; binary equality with the publisher PDF is not established.",
+    "access_date": "2026-10-26",
+    "visual_verification_scope": "Official public thumbnail images of Figs. 1, 3 and 4 were inspected for schematic subject matter and agree with the captions. No effect size or performance value was read from an image. All selected claims are supported by the readable body/table text.",
+    "reuse_boundary": "Publisher states exclusive rights; no open reuse license was verified. This page contains original, bounded paraphrases only and does not redistribute the PDF or figures.",
+    "correction_check": "Official publisher article and same-day Crossref metadata were checked. No correction relation was returned or displayed in the inspected records; this is not an exhaustive guarantee that no later update exists."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cancer molecular classification",
+      "Translational oncology"
+    ],
+    "review_topics": [
+      "Biomarker-directed research designs",
+      "Integrative omics interpretation"
+    ],
+    "scientific_role": "Narrative framework connecting molecular diagnosis, treatment stratification and prognosis, with explicit data and model limitations.",
+    "evidence_position": "Secondary literature synthesis; primary clinical and experimental evidence remains in the studies it cites.",
+    "related_concepts": [
+      "Tumor heterogeneity",
+      "Algorithm interpretability",
+      "Preclinical model fidelity"
+    ],
+    "citation_contexts": [
+      "Background for comparing single-omics, integrated and spatial approaches to cancer classification.",
+      "Methods discussion of biomarker-oriented trial designs and translation requirements; cite primary studies for efficacy or accuracy."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How can omics layers be organized when reviewing molecular cancer classification?",
+        "supported_scope": "Use this review as a secondary overview of biomarker layers and integrated or spatial classification approaches, without attributing a new classifier to it.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Which trial-design frameworks are discussed for molecularly informed oncology?",
+        "supported_scope": "The review compares four design frameworks; cite original trial protocols and results for the design and efficacy of any individual trial.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What translation challenges accompany multi-omics classification?",
+        "supported_scope": "The article discusses heterogeneous data integration, algorithm interpretability and preclinical-model fidelity as research challenges.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A new patient cohort, newly validated classifier or new therapeutic experiment.",
+      "A pooled treatment effect, diagnostic accuracy or causal benefit of molecular classification.",
+      "Clinical superiority of multi-omics for every cancer or independent confirmation of all cited primary-study results.",
+      "Systematic completeness of the literature search or a meta-analysis."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The review organizes molecular diagnosis across genomic and epigenomic, transcriptomic and proteomic biomarkers.",
+        "context": "Section 2 synthesizes earlier biomarker research; the article does not perform a new diagnostic-accuracy comparison.",
+        "finding": "Illustrated biomarker layers: 4 in Fig. 1: genomic, epigenomic, transcriptomic and proteomic",
+        "evidence_level": "Narrative secondary synthesis",
+        "scope": "Qualitative review context; primary-study findings require the original sources.",
+        "source_locator": "Section 2.1, Molecular understanding of tumor biomarkers; subsections 2.1.1-2.1.3; Fig. 1A-D and its caption (author-uploaded full text).",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Integrated and spatial omics are presented as complementary approaches to characterize heterogeneity beyond a single molecular layer.",
+        "context": "The review summarizes published subtyping and spatial-profiling examples; it does not train or externally validate a new integrated classifier.",
+        "finding": "Integration discussion: Section 3.1.4 contrasts single-layer views with multi-omics integration and proteogenomics.; Spatial extension: Section 3.1.5 discusses spatial organization within the tumor microenvironment.",
+        "evidence_level": "Narrative secondary synthesis",
+        "scope": "Qualitative review context; primary-study findings require the original sources.",
+        "source_locator": "Section 3.1.4, Multi-omics integrated analysis-based molecular typing; Section 3.1.5, Spatial omics; Fig. 3 and its caption.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The review compares basket, umbrella, platform and N-of-1 designs as frameworks for molecularly informed oncology research.",
+        "context": "This is a narrative trial-design comparison, not a trial performed by the review authors or a pooled estimate of efficacy.",
+        "finding": "Design categories compared: 4: basket, umbrella, platform and N-of-1",
+        "evidence_level": "Narrative secondary synthesis",
+        "scope": "Trial-design context, without endorsement of individual trial taxonomy or efficacy.",
+        "source_locator": "Section 3.2, Innovative clinical trial-layouts for precision medicine; Table 1, Four major clinical trials' pros, cons, and representative trials. Only the design framework is summarized; classifications of individual trial examples are not independently endorsed.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-kf4",
+        "component": "Data integration, clinical interpretability and the fidelity of preclinical tumor models remain translation challenges in the review's research agenda.",
+        "context": "AI, organoids and three-dimensional tumor models are discussed as possible tools, not as proof that a multi-omics treatment strategy improves patient outcomes.",
+        "finding": "Computational challenge: Sections 5.1 and 6 discuss heterogeneous data integration and clinical interpretability.; Preclinical-model challenge: Section 5.2 discusses missing human tumor-microenvironment features and changes during prolonged culture; Fig. 4 illustrates model construction.",
+        "evidence_level": "Narrative secondary synthesis",
+        "scope": "Qualitative review context; primary-study findings require the original sources.",
+        "source_locator": "Section 5.1, Intricate data network and artificial intelligence; Section 5.2, Preclinical tumor models drawbacks and progression; Fig. 4 caption; Section 6, Conclusion.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}

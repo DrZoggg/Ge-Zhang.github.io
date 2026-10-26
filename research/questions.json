@@ -126,6 +126,41 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#paper-discovery"
     },
     {
+      "id": "doi-10-1056-nejmc2518964",
+      "question": "Which correspondence under this shared DOI is covered?",
+      "title": "Aspirin after PCI in Acute Coronary Syndromes",
+      "doi": "10.1056/nejmc2518964",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html#qa-1",
+      "source": "data/deep_geo/doi-10-1056-nejmc2518964.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": "correspondence",
+      "publication_type": "Letter",
+      "evidence_scope": "New randomized efficacy or safety evidence.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "interventional cardiology",
+        "clinical trial interpretation",
+        "pharmacodynamic platelet-function testing",
+        "aspirin withdrawal",
+        "P2Y12 inhibitor monotherapy",
+        "stent thrombosis",
+        "time-adaptive de-escalation"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1056-nejmc2518964.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1056-nejmc2518964.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1056-nejmc2518964.csl.json",
+      "field_entry": [
+        "Antiplatelet therapy after PCI",
+        "Interpretation of acute coronary syndrome trials"
+      ],
+      "review_topics": [
+        "Timing of aspirin de-escalation",
+        "Early versus later thrombotic risk"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1002-mdr2-70052",
       "question": "Which circadian clock components are central to cardiovascular immune regulation?",
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
@@ -987,6 +1022,41 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70004.html#paper-discovery"
     },
     {
+      "id": "doi-10-1200-po-24-00875",
+      "question": "Does this reply introduce another patient cohort?",
+      "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
+      "doi": "10.1200/po-24-00875",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00875.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00875.html#qa-1",
+      "source": "data/deep_geo/doi-10-1200-po-24-00875.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": "correspondence",
+      "evidence_scope": "A new cohort, performance estimate or prospective clinical validation.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "clinical prediction methodology",
+        "hybrid survival modeling",
+        "consensus model selection",
+        "SHAP",
+        "feature importance",
+        "concordance index",
+        "interpretability",
+        "overfitting"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00875.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00875.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1200-po-24-00875.csl.json",
+      "field_entry": [
+        "Survival prediction methodology",
+        "Clinical machine learning interpretation"
+      ],
+      "review_topics": [
+        "Hybrid model-selection rationale",
+        "Feature-importance criticism and replies"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00875.html#paper-discovery"
+    },
+    {
       "id": "doi-10-3389-fonc-2025-1538574",
       "question": "How many single-cell patients were studied and how many cells were retained?",
       "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -1021,6 +1091,41 @@
         "ISG15 and cancer-associated fibroblasts"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1111-odi-70054",
+      "question": "Which three strategies are proposed?",
+      "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
+      "doi": "10.1111/odi.70054",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#qa-1",
+      "source": "data/deep_geo/doi-10-1111-odi-70054.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": "correspondence",
+      "evidence_scope": "Improved oral health or fewer mission interruptions in astronauts.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "space dentistry",
+        "remote dental guidance",
+        "3D printing",
+        "AI-driven robotics",
+        "crew training",
+        "microgravity adaptation",
+        "communication delay",
+        "dental emergencies"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1111-odi-70054.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1111-odi-70054.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1111-odi-70054.csl.json",
+      "field_entry": [
+        "Spaceflight oral health",
+        "Remote dental care research"
+      ],
+      "review_topics": [
+        "Crew dental capability",
+        "Adaptation of digital dentistry to spaceflight"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#paper-discovery"
     },
     {
       "id": "doi-10-2147-ijn-s522157",
@@ -1173,6 +1278,49 @@
         "Post-translational control of apoptotic-cell clearance"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1002-tox-24284",
+      "question": "What model did the IPPS study select?",
+      "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
+      "doi": "10.1002/tox.24284",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1002-tox-24284.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-tox-24284.html#qa-1",
+      "source": "data/deep_geo/doi-10-1002-tox-24284.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "An independently validated predictor of RECIST response or differential benefit from immunotherapy.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "lung adenocarcinoma",
+        "survival modeling",
+        "Lasso",
+        "supervised principal components",
+        "time-dependent ROC analysis",
+        "IPPS",
+        "oncoPredict",
+        "pRRophetic",
+        "TCGA-LUAD",
+        "GSE13213",
+        "GSE26939",
+        "GSE30219",
+        "GSE31210",
+        "GSE42127",
+        "OAK",
+        "POPLAR"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-tox-24284.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-tox-24284.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-tox-24284.csl.json",
+      "field_entry": [
+        "Computational oncology",
+        "LUAD prognostic modeling"
+      ],
+      "review_topics": [
+        "Immune-associated transcriptomic signatures",
+        "Validation leakage in molecular survival models"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-tox-24284.html#paper-discovery"
     },
     {
       "id": "aihflevel",
@@ -1634,6 +1782,42 @@
         "Expression-based coronary disease subtyping"
       ],
       "discovery_url": "https://drgezhang.com/papers/circadian-ihd.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1007-s13402-023-00912-8",
+      "question": "Which biomarker layers are distinguished in the review?",
+      "title": "Omics-based molecular classifications empowering in precision oncology",
+      "doi": "10.1007/s13402-023-00912-8",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html#qa-1",
+      "source": "data/deep_geo/doi-10-1007-s13402-023-00912-8.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "evidence_scope": "A new patient cohort, newly validated classifier or new therapeutic experiment.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Precision oncology",
+        "Multi-omics",
+        "Molecular classification",
+        "Proteogenomics",
+        "Spatial omics",
+        "Liquid biopsy",
+        "Biomarker-oriented trial design",
+        "Organoids",
+        "Three-dimensional tumor models"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1007-s13402-023-00912-8.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1007-s13402-023-00912-8.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1007-s13402-023-00912-8.csl.json",
+      "field_entry": [
+        "Cancer molecular classification",
+        "Translational oncology"
+      ],
+      "review_topics": [
+        "Biomarker-directed research designs",
+        "Integrative omics interpretation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html#paper-discovery"
     },
     {
       "id": "olink-dcm",

@@ -1,0 +1,250 @@
+{
+  "version": 2,
+  "doi": "10.1056/nejmc2518964",
+  "display_title": "Aspirin after PCI in Acute Coronary Syndromes",
+  "summary": "A letter by Li, Zhang and Liu argues that the timing of aspirin withdrawal deserves further study after PCI; it provides no new randomized comparison or validated treatment rule.",
+  "research_question": "Does the timing of aspirin withdrawal help frame interpretation of early ischemic risk in NEO-MINDSET, and what should future de-escalation studies examine?",
+  "author_summary": "Li, Zhang and Liu interpret the NEO-MINDSET result through the timing of aspirin withdrawal. They highlight that 83% of monotherapy patients who had stent thrombosis experienced it within 30 days, as reported in their letter, and propose studying time-adaptive de-escalation and platelet-function testing. This is commentary on prior evidence, not a new trial or proof that testing-guided withdrawal improves outcomes. Only their signed letter is synthesized; the other letters and trialists' reply sharing this DOI are excluded.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Letter commenting on NEO-MINDSET",
+    "evidence_type": "Interpretation of prior trial evidence and a research proposal",
+    "translation_scope": "Hypothesis and trial-design discussion; not individualized antiplatelet advice",
+    "evidence_domains": [
+      "early post-PCI thrombotic risk",
+      "aspirin withdrawal timing",
+      "antiplatelet de-escalation"
+    ],
+    "diseases_covered": [
+      "acute coronary syndromes"
+    ],
+    "scale_metrics": [
+      {
+        "label": "reviewed signed letter",
+        "value": "Li, Zhang and Liu; PMID 41780015"
+      },
+      {
+        "label": "new trial or patient cohort",
+        "value": "None"
+      }
+    ],
+    "counting_note": "The 83% figure describes when thrombosis occurred among monotherapy patients who had stent thrombosis, not the risk among all monotherapy patients. The authors do not introduce a new patient cohort."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The authors frame early aspirin withdrawal as a timing question in interpreting the NEO-MINDSET result.",
+      "context": "Their interpretation of an existing trial; no new randomization or causal test of withdrawal timing.",
+      "evidence": [
+        {
+          "label": "evidence role",
+          "value": "Clinical commentary"
+        }
+      ],
+      "source_locator": "NEJM 394(10), pp. 1035-1036; Li, Zhang and Liu letter, opening sentence and continuation across the page break; PMID 41780015."
+    },
+    {
+      "id": "KF2",
+      "claim": "The letter highlights an early concentration of stent thrombosis among affected monotherapy patients.",
+      "context": "Among monotherapy patients who experienced stent thrombosis, the letter reports that it occurred in 83% within 30 days; this is not an 83% event rate in the entire treatment group.",
+      "evidence": [
+        {
+          "label": "affected monotherapy patients whose thrombosis occurred within the early interval",
+          "value": "83%"
+        },
+        {
+          "label": "early interval",
+          "value": "First 30 days after PCI"
+        }
+      ],
+      "source_locator": "NEJM 394(10), p. 1036; Li, Zhang and Liu letter, sentence reporting stent-thrombosis timing immediately after the page-break continuation."
+    },
+    {
+      "id": "KF3",
+      "claim": "The authors propose future studies of time-adaptive de-escalation, including platelet-function testing.",
+      "context": "A proposed way to study changing thrombosis and bleeding risks, without a tested decision threshold or demonstrated outcome benefit.",
+      "evidence": [
+        {
+          "label": "proposed investigation",
+          "value": "Time-adaptive de-escalation with pharmacodynamic platelet-function testing"
+        }
+      ],
+      "source_locator": "NEJM 394(10), p. 1036; final sentence of the Li, Zhang and Liu letter, before their three-author signature."
+    }
+  ],
+  "what_this_adds": [
+    "A specific timing-based interpretation of an existing antiplatelet trial.",
+    "A research proposal for studying adaptive transitions rather than a proven treatment algorithm."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Attribution of the timing argument and proposed research agenda to Li, Zhang and Liu.",
+      "Accurate reporting of the letter's early-event proportion with its restricted denominator."
+    ],
+    "does_not_establish": [
+      "New randomized efficacy or safety evidence.",
+      "A causal benefit of delaying aspirin withdrawal or of platelet-function-guided care.",
+      "A patient-specific stopping date or validated treatment threshold."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which correspondence under this shared DOI is covered?",
+      "answer": "Only the letter signed by Mengyao Li, Ge Zhang and Xiaozhu Liu, indexed as PMID 41780015, is covered. Other letters and the trialists' reply are excluded.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What does the 83% figure mean?",
+      "answer": "Among monotherapy patients who had stent thrombosis, the letter reports that 83% experienced it within 30 days. This is not the probability of thrombosis for every monotherapy patient.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What further investigation do the authors propose?",
+      "answer": "They propose studying time-adaptive de-escalation, including platelet-function testing to inform transitions as ischemic and bleeding risks evolve.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Can this letter establish a safe aspirin-withdrawal schedule?",
+      "answer": "No. It supplies interpretation and a research proposal, without a new randomized comparison or validated individualized stopping rule.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "interventional cardiology"
+    ],
+    "methods": [
+      "clinical trial interpretation",
+      "pharmacodynamic platelet-function testing"
+    ],
+    "concepts": [
+      "aspirin withdrawal",
+      "P2Y12 inhibitor monotherapy",
+      "stent thrombosis",
+      "time-adaptive de-escalation"
+    ]
+  },
+  "limitations": [
+    "The event proportion is reported by the correspondence; this synthesis does not independently reanalyze the NEO-MINDSET dataset.",
+    "The shared DOI includes separate letters and a reply. Their statistics and recommendations are not attributed to Li, Zhang and Liu.",
+    "Full text was read from the author's ResearchGate upload in an HTML text rendition; the PDF binary and a publisher-hosted full text were not retrieved."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.isci.2023.107587",
+      "relationship": "Related atherosclerotic plaque risk research; its observational modeling does not validate an aspirin-withdrawal strategy."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.nejm.org/doi/10.1056/NEJMc2518964",
+    "doi_url": "https://doi.org/10.1056/NEJMc2518964",
+    "identity_url": "https://pubmed.ncbi.nlm.nih.gov/41780015/",
+    "full_text_url": "https://www.researchgate.net/publication/402598282_Aspirin_after_PCI_in_Acute_Coronary_Syndromes",
+    "evidence_basis": "The complete signed Li/Zhang/Liu letter was read in the public ResearchGate HTML rendition, with journal pagination 1035-1036. Author order, DOI and pagination match PMID 41780015; publisher issue information is March 5, 2026. Adjacent correspondence is excluded.",
+    "version": "Typeset journal-version text from Meng-Yao Li's ResearchGate upload dated March 18, 2026, accessed October 26, 2026. PDF binary not retrieved; publisher-hosted full text remains restricted.",
+    "figure_verification": "No figure or table occurs in the reviewed signed letter; no image is reproduced."
+  },
+  "evidence_page_notice": "This page interprets the Li, Zhang and Liu letter (PMID 41780015), not all correspondence sharing the DOI. It reports no new clinical experiment and does not establish an aspirin-withdrawal schedule.",
+  "discovery_layer": {
+    "field_entry": [
+      "Antiplatelet therapy after PCI",
+      "Interpretation of acute coronary syndrome trials"
+    ],
+    "review_topics": [
+      "Timing of aspirin de-escalation",
+      "Early versus later thrombotic risk"
+    ],
+    "scientific_role": "Signed correspondence interpreting an existing trial and suggesting future research.",
+    "evidence_position": "Secondary interpretation and hypothesis; no new randomized evidence.",
+    "related_concepts": [
+      "NEO-MINDSET",
+      "Stent thrombosis timing",
+      "Platelet-function testing"
+    ],
+    "citation_contexts": [
+      "Discussion of how early event timing can motivate a de-escalation research question.",
+      "Attribution of the authors' proposal for time-adaptive antiplatelet transitions."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which correspondence under this shared DOI is covered?",
+        "supported_scope": "Only the letter signed by Mengyao Li, Ge Zhang and Xiaozhu Liu, indexed as PMID 41780015, is covered. Other letters and the trialists' reply are excluded.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What does the 83% figure mean?",
+        "supported_scope": "Among monotherapy patients who had stent thrombosis, the letter reports that 83% experienced it within 30 days. This is not the probability of thrombosis for every monotherapy patient.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What further investigation do the authors propose?",
+        "supported_scope": "They propose studying time-adaptive de-escalation, including platelet-function testing to inform transitions as ischemic and bleeding risks evolve.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "New randomized efficacy or safety evidence.",
+      "A causal benefit of delaying aspirin withdrawal or of platelet-function-guided care.",
+      "A patient-specific stopping date or validated treatment threshold."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The authors frame early aspirin withdrawal as a timing question in interpreting the NEO-MINDSET result.",
+        "context": "Their interpretation of an existing trial; no new randomization or causal test of withdrawal timing.",
+        "finding": "evidence role: Clinical commentary",
+        "evidence_level": "Interpretation of prior trial evidence and a research proposal",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "NEJM 394(10), pp. 1035-1036; Li, Zhang and Liu letter, opening sentence and continuation across the page break; PMID 41780015.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The letter highlights an early concentration of stent thrombosis among affected monotherapy patients.",
+        "context": "Among monotherapy patients who experienced stent thrombosis, the letter reports that it occurred in 83% within 30 days; this is not an 83% event rate in the entire treatment group.",
+        "finding": "affected monotherapy patients whose thrombosis occurred within the early interval: 83%; early interval: First 30 days after PCI",
+        "evidence_level": "Interpretation of prior trial evidence and a research proposal",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "NEJM 394(10), p. 1036; Li, Zhang and Liu letter, sentence reporting stent-thrombosis timing immediately after the page-break continuation.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The authors propose future studies of time-adaptive de-escalation, including platelet-function testing.",
+        "context": "A proposed way to study changing thrombosis and bleeding risks, without a tested decision threshold or demonstrated outcome benefit.",
+        "finding": "proposed investigation: Time-adaptive de-escalation with pharmacodynamic platelet-function testing",
+        "evidence_level": "Interpretation of prior trial evidence and a research proposal",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "NEJM 394(10), p. 1036; final sentence of the Li, Zhang and Liu letter, before their three-author signature.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

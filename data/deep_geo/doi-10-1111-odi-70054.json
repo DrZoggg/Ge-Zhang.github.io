@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "doi": "10.1111/odi.70054",
+  "display_title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
+  "summary": "A space-dentistry letter proposes crew training, remote and 3D-enabled care, and adapted AI robotics; it does not test their effectiveness in astronauts or microgravity.",
+  "research_question": "What practical and technological approaches do the authors propose for dental care during prolonged space missions?",
+  "author_summary": "The authors propose three directions: strengthening dental skills within the crew, remotely guided care with virtual and 3D technologies, and adapting AI-driven robotics for autonomous treatment. They acknowledge crew constraints and communication delay or distortion. The letter cites prior literature and a commercial robotics example, but reports no astronaut cohort, microgravity experiment or quantitative evaluation of the proposed systems.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Letter proposing space-dentistry care strategies",
+    "evidence_type": "Conceptual recommendations drawing on cited literature and technology examples",
+    "translation_scope": "Research and operational proposals requiring testing; not validated spaceflight dental care",
+    "evidence_domains": [
+      "crew dental training",
+      "remote guidance and fabrication",
+      "AI-assisted dental robotics"
+    ],
+    "diseases_covered": [
+      "dental emergencies during spaceflight"
+    ],
+    "scale_metrics": [
+      {
+        "label": "proposed strategy directions",
+        "value": "3"
+      },
+      {
+        "label": "new astronaut or experimental cohort",
+        "value": "None"
+      }
+    ],
+    "counting_note": "Three counts proposals, not trials, evaluated systems or patient groups."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The letter proposes strengthening onboard dental capability through crew expertise or additional basic dental training.",
+      "context": "Crew size constrains specialist staffing; this is an operational recommendation without a measured treatment effect.",
+      "evidence": [
+        {
+          "label": "strategy position",
+          "value": "First of three proposals"
+        }
+      ],
+      "source_locator": "Online-first typeset text p. 1, paragraph introducing three strategies and describing crew staffing and dental training."
+    },
+    {
+      "id": "KF2",
+      "claim": "The authors propose remotely guided care using virtual interfaces and 3D technology.",
+      "context": "They explicitly note signal delay and distortion and discuss sensing, communication infrastructure and on-demand fabrication; these are proposed solutions.",
+      "evidence": [
+        {
+          "label": "strategy position",
+          "value": "Second proposal"
+        },
+        {
+          "label": "identified constraints",
+          "value": "Signal delay and distortion"
+        }
+      ],
+      "source_locator": "Online-first typeset text pp. 1-2, second strategy across the page break; p. 2 paragraphs on remote guidance and 3D printing."
+    },
+    {
+      "id": "KF3",
+      "claim": "The letter proposes adapting AI-driven dental robotics for space use.",
+      "context": "A technology prospect illustrated by an external commercial example; no autonomous treatment in microgravity is evaluated in this letter.",
+      "evidence": [
+        {
+          "label": "strategy position",
+          "value": "Third proposal"
+        },
+        {
+          "label": "new microgravity validation",
+          "value": "None reported"
+        }
+      ],
+      "source_locator": "Online-first typeset text p. 2, final scientific paragraph on AI-driven robotic systems and adaptation to microgravity."
+    }
+  ],
+  "what_this_adds": [
+    "A three-part agenda for dental capability during prolonged space missions.",
+    "Explicit separation of crew, remote-care and robotics proposals from tested clinical performance."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Attribution of the three proposed strategies and acknowledged operational constraints.",
+      "Discussion of research needs for adapting terrestrial dental technologies to spaceflight."
+    ],
+    "does_not_establish": [
+      "Improved oral health or fewer mission interruptions in astronauts.",
+      "Safe or effective autonomous dental treatment in microgravity.",
+      "Validated performance of remote guidance, 3D fabrication or AI robotics during space missions."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which three strategies are proposed?",
+      "answer": "Crew dental capability, remotely guided care with virtual and 3D technologies, and adapted AI-driven robotic treatment are proposed.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Why does crew training appear alongside specialist staffing?",
+      "answer": "The authors recognize limited onboard personnel and propose strengthening basic dental training when dedicated specialist staffing is impractical.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What constraints are acknowledged for remote care?",
+      "answer": "The letter identifies signal delay and distortion, and discusses sensing and communications improvements as proposed responses.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Were AI dental robots tested in astronauts or microgravity?",
+      "answer": "No. The letter discusses an external technology example and proposes adaptation, without reporting such an experiment.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "space dentistry"
+    ],
+    "methods": [
+      "remote dental guidance",
+      "3D printing",
+      "AI-driven robotics"
+    ],
+    "concepts": [
+      "crew training",
+      "microgravity adaptation",
+      "communication delay",
+      "dental emergencies"
+    ]
+  },
+  "limitations": [
+    "The letter offers proposals rather than comparative clinical or engineering validation.",
+    "Health concerns and technology examples derive from cited sources, not original observations in this letter.",
+    "The reviewed text uses 2025 online-first pagination 1-2; the later issue record is Oral Diseases 32(1), 270-271 (2026). This is recorded as a version-pagination relationship, without changing the site's publication identity.",
+    "Full text was read through the ResearchGate HTML rendition of the author-uploaded typeset version; the PDF binary and the later issue PDF were not retrieved."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.medd.2026.100004",
+      "relationship": "A separate conceptual correspondence on boundaries for clinical AI use; it does not validate dental robotics or spaceflight applications."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/odi.70054",
+    "doi_url": "https://doi.org/10.1111/odi.70054",
+    "identity_url": "https://pubmed.ncbi.nlm.nih.gov/40818111/",
+    "full_text_url": "https://www.researchgate.net/publication/394518646",
+    "evidence_basis": "Complete online-first typeset text and references were read from Zhengrui Li's public ResearchGate upload. The eleven-author order, title, DOI and Letter to the Editor designation match the publisher record. Publisher first publication is August 16, 2025; later issue pagination is 270-271.",
+    "version": "Online-first Wiley typeset text (2025; 0:1-2), uploaded by Zhengrui Li August 17, 2025; accessed October 26, 2026 in HTML. PDF binary and later issue PDF not retrieved.",
+    "figure_verification": "No figure, table or original experimental dataset appears in the reviewed two-page letter."
+  },
+  "evidence_page_notice": "A conceptual Letter to the Editor, reviewed using its 2025 online-first text. The proposals are not validated clinical or spaceflight technologies.",
+  "discovery_layer": {
+    "field_entry": [
+      "Spaceflight oral health",
+      "Remote dental care research"
+    ],
+    "review_topics": [
+      "Crew dental capability",
+      "Adaptation of digital dentistry to spaceflight"
+    ],
+    "scientific_role": "Conceptual letter outlining three care strategies and implementation constraints.",
+    "evidence_position": "Author proposals supported by cited background; no original astronaut or robotics experiment.",
+    "related_concepts": [
+      "Tele-dentistry",
+      "3D fabrication",
+      "Microgravity robotics"
+    ],
+    "citation_contexts": [
+      "Attribution of the three-part space-dentistry proposal.",
+      "Discussion of untested technology adaptations and communication constraints in long-duration missions."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which three strategies are proposed?",
+        "supported_scope": "Crew dental capability, remotely guided care with virtual and 3D technologies, and adapted AI-driven robotic treatment are proposed.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Why does crew training appear alongside specialist staffing?",
+        "supported_scope": "The authors recognize limited onboard personnel and propose strengthening basic dental training when dedicated specialist staffing is impractical.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What constraints are acknowledged for remote care?",
+        "supported_scope": "The letter identifies signal delay and distortion, and discusses sensing and communications improvements as proposed responses.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Improved oral health or fewer mission interruptions in astronauts.",
+      "Safe or effective autonomous dental treatment in microgravity.",
+      "Validated performance of remote guidance, 3D fabrication or AI robotics during space missions."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The letter proposes strengthening onboard dental capability through crew expertise or additional basic dental training.",
+        "context": "Crew size constrains specialist staffing; this is an operational recommendation without a measured treatment effect.",
+        "finding": "strategy position: First of three proposals",
+        "evidence_level": "Conceptual recommendations drawing on cited literature and technology examples",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Online-first typeset text p. 1, paragraph introducing three strategies and describing crew staffing and dental training.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The authors propose remotely guided care using virtual interfaces and 3D technology.",
+        "context": "They explicitly note signal delay and distortion and discuss sensing, communication infrastructure and on-demand fabrication; these are proposed solutions.",
+        "finding": "strategy position: Second proposal; identified constraints: Signal delay and distortion",
+        "evidence_level": "Conceptual recommendations drawing on cited literature and technology examples",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Online-first typeset text pp. 1-2, second strategy across the page break; p. 2 paragraphs on remote guidance and 3D printing.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The letter proposes adapting AI-driven dental robotics for space use.",
+        "context": "A technology prospect illustrated by an external commercial example; no autonomous treatment in microgravity is evaluated in this letter.",
+        "finding": "strategy position: Third proposal; new microgravity validation: None reported",
+        "evidence_level": "Conceptual recommendations drawing on cited literature and technology examples",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Online-first typeset text p. 2, final scientific paragraph on AI-driven robotic systems and adaptation to microgravity.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}
