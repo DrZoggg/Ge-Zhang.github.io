@@ -78,6 +78,24 @@ class HomepageAuthorRolesTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             load_role_records(self.path,'0000-0000-0000-0000')
 
+    def test_luad_role_verification_preserves_bibliographic_review(self):
+        doi = '10.71321/fy14v342'
+        record = self.records[doi]
+        self.assertEqual(record['status'], 'verified')
+        self.assertEqual(record['roles'], ['Corresponding author'])
+        self.assertEqual(record['verified_on'], '2026-10-26')
+        self.assertEqual(record['sources'][0]['url'], 'https://www.lifeconflux.com/10.71321/fy14v342/')
+        self.assertIn('Corresponding Author', record['sources'][0]['locator'])
+        self.assertIn('IDENTITY_REVIEW_REQUIRED', record['identity_note'])
+        featured = json.loads((ROOT/'data/featured_papers.json').read_text(encoding='utf-8'))['papers']
+        summary = next(p['summary'] for p in featured if p['doi'] == doi)
+        gold = json.loads((ROOT/'data/deep_geo/doi-10-71321-fy14v342.json').read_text(encoding='utf-8'))
+        self.assertTrue(gold['summary'].startswith(summary + ' '))
+        self.assertIn('prospective clinical utility.', summary)
+        self.assertNotIn('IDENTITY_REVIEW_REQUIRED', summary)
+        self.assertIn('IDENTITY_REVIEW_REQUIRED', gold['evidence_page_notice'])
+        self.assertIn('IDENTITY_REVIEW_REQUIRED', (ROOT/'papers/doi-10-71321-fy14v342.html').read_text(encoding='utf-8'))
+
     def test_verified_without_evidence_rejected(self):
         for field in ('sources','verification_basis','roles'):
             data=copy.deepcopy(self.data);data['papers']['10.1126/science.aek9583'][field]=[]

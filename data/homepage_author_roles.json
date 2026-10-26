@@ -182,6 +182,21 @@
         }
       ]
     },
+    "10.71321/fy14v342": {
+      "status": "verified",
+      "roles": [
+        "Corresponding author"
+      ],
+      "verified_on": "2026-10-26",
+      "verification_basis": "The publisher's article-header Corresponding Author information explicitly identifies Ge Zhang with zg381492242@163.com, matching the site researcher. This correspondence evidence was independently reviewed and confirmed by the researcher in the 2026-10-26 instruction; verification is limited to this author role.",
+      "sources": [
+        {
+          "url": "https://www.lifeconflux.com/10.71321/fy14v342/",
+          "locator": "Article-header author information > Corresponding Author: Ge Zhang; zg381492242@163.com"
+        }
+      ],
+      "identity_note": "Role-only verification. Conflicting author lists, author order and publication metadata remain IDENTITY_REVIEW_REQUIRED. This role record does not resolve or replace the existing bibliographic identity audit."
+    },
     "10.1016/j.ejphar.2023.175569": {
       "status": "pending",
       "roles": [],
