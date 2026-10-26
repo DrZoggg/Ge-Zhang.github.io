@@ -9,6 +9,8 @@ from scholarly_discovery import backlink_html, reviewed_backlinks, validate_back
 from site_common import deep_content_path
 from sync_common import ROOT
 from v2_coverage import coverage_rows, validate_v2_coverage, check_qa_refs
+from theme_shell import without_theme_shell
+from discovery_test_contract import REVIEWED_FEATURED_SHA256
 
 BASE = "3452075cb5355fc17d45baab1a3989e72f8b5b39"
 FIXTURE = ROOT / "scripts/fixtures/ordinary_v2_batch2_20261016.json"
@@ -95,7 +97,10 @@ class V2CoverageTests(unittest.TestCase):
             current_bytes = (ROOT / path).read_bytes()
             baseline_bytes = old(path)
             self.assertIn(digest, newline_hashes(baseline_bytes), path)
-            self.assertEqual(current_bytes.replace(b"\r\n", b"\n"), baseline_bytes.replace(b"\r\n", b"\n"), path)
+            if path == 'data/featured_papers.json':
+                self.assertEqual(hashlib.sha256(current_bytes.replace(b"\r\n", b"\n")).hexdigest(), REVIEWED_FEATURED_SHA256, path)
+            else:
+                self.assertEqual(current_bytes.replace(b"\r\n", b"\n"), baseline_bytes.replace(b"\r\n", b"\n"), path)
 
     def test_prior_35_pages_allow_only_reviewed_relationship_navigation(self):
         prior_backlinks = reviewed_backlinks(self.before, self.prior_contents)
@@ -110,7 +115,9 @@ class V2CoverageTests(unittest.TestCase):
             old_rows, new_rows = prior_backlinks.get(p["doi"]), current_backlinks.get(p["doi"])
             validate_backlink_html(after, new_rows)
             expected = with_reviewed_backlinks(before, old_rows, new_rows)
-            self.assertEqual(after, expected, page)
+            # Visual 4's exact shared theme shell is already separately tested.
+            # Preserve every remaining scientific byte and relationship panel.
+            self.assertEqual(without_theme_shell(after), without_theme_shell(expected), page)
             markdown = f'papers/{p["slug"]}.md'
             self.assertEqual((ROOT / markdown).read_bytes().replace(b"\r\n", b"\n"), old(markdown).replace(b"\r\n", b"\n"), markdown)
             self.assertEqual((ROOT / f'assets/evidence/{p["slug"]}.csv').read_bytes().replace(b"\r\n", b"\n"), old(f'assets/evidence/{p["slug"]}.csv').replace(b"\r\n", b"\n"))

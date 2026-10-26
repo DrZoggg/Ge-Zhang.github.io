@@ -9,6 +9,10 @@ import re
 from sync_common import ROOT, load_master, publication_authors
 from site_common import deep_content_path
 
+# Approved homepage-only summaries and the two explicit Selected Research swaps,
+# frozen at production 5fcac9d (2026-10-26). This never relaxes Gold or Deep GEO.
+REVIEWED_FEATURED_SHA256 = '53c93374af69d18066f006666f3222b9065ca7350bd943016ab3425a5505d74a'
+
 
 def without_discovery_additions(before, after, doi):
     publications = json.loads((ROOT / 'publications.json').read_text(encoding='utf-8'))

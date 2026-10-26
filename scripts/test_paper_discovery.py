@@ -29,6 +29,7 @@ from validate_site import (ValidationError, paper_json_ld_object,
                            validate_v2_rendered_page)
 from site_common import load_site_config
 from theme_shell import without_theme_shell
+from discovery_test_contract import REVIEWED_FEATURED_SHA256
 
 BATCH = ROOT/'scripts/fixtures/ordinary_v2_batch2_20261016.json'
 EXPORTS = ROOT/'scripts/fixtures/paper_discovery_batch2_exports_20261016.json'
@@ -136,18 +137,9 @@ class PaperDiscoveryTests(unittest.TestCase):
                 self.assertEqual(md,self.old['papers/'+slug+'.md'])
 
     def test_protected_inventory_identity_exports_dates_and_pending(self):
-        # Visual 3.1 replaces exactly two placeholder summaries with the
-        # already frozen Gold summaries; every other controller field stays exact.
+        # Homepage summaries and explicit position swaps were approved through
+        # 5fcac9d. Freeze that exact controller; all scientific sources stay exact.
         featured_path='data/featured_papers.json'
-        expected_featured=json.loads(self.old[featured_path])
-        approved_summaries={doi:json.loads(self.old['data/deep_geo/'+slug+'.json'])['summary']
-                            for doi,slug in {
-                                '10.1200/po.24.00089':'doi-10-1200-po-24-00089',
-                                '10.1172/jci194175':'doi-10-1172-jci194175',
-                            }.items()}
-        for entry in expected_featured['papers']:
-            if entry.get('doi') in approved_summaries:
-                entry['summary']=approved_summaries[entry['doi']]
         mutable_data={'data/question_index.json',featured_path} | {'data/deep_geo/'+s+'.json' for s in self.new_slugs}
         for path,text in self.old.items():
             protected=(path.startswith(('citations/','assets/evidence/'))
@@ -156,7 +148,7 @@ class PaperDiscoveryTests(unittest.TestCase):
                 self.assertEqual((ROOT/path).read_text(encoding='utf-8'),text,path)
         for path,expected in self.batch['protected_hashes'].items():
             if path==featured_path:
-                self.assertEqual(json.loads((ROOT/path).read_text(encoding='utf-8')),expected_featured,path)
+                self.assertEqual(text_digest((ROOT/path).read_text(encoding='utf-8')),REVIEWED_FEATURED_SHA256,path)
             else:
                 self.assertEqual((ROOT/path).read_text(encoding='utf-8'),self.old[path],path)
         before=json.loads(self.old['publications.json'])
@@ -197,7 +189,7 @@ class PaperDiscoveryTests(unittest.TestCase):
         expected_dates={url:self.exports['content_date'] for url in expected_urls}
         # Visual 3.0 changes the homepage presentation through the existing
         # lastmod algorithm; every paper and discovery date stays frozen.
-        expected_dates['https://drgezhang.com/']='2026-10-25'
+        expected_dates['https://drgezhang.com/']='2026-10-26'
         self.assertEqual(set(now),set(old_map))
         self.assertEqual(changed,set(expected_dates))
         for url in changed:self.assertEqual(now[url],expected_dates[url])
