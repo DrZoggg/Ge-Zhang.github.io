@@ -55,6 +55,20 @@ class HomepageAuthorRolesTests(unittest.TestCase):
         pending={'10.1234/pending':{'status':'pending','roles':['Co-first author']}}
         self.assertEqual(render_role_labels('10.1234/pending',pending),'')
 
+    def test_probe_correspondence_and_idebenone_pending_boundary(self):
+        record = self.records['10.1007/s11426-026-3629-x']
+        self.assertEqual(record['status'], 'verified')
+        self.assertEqual(record['roles'], ['Corresponding author'])
+        self.assertEqual(record['verified_on'], '2026-10-26')
+        self.assertEqual(record['sources'], [{
+            'url': 'https://link.springer.com/article/10.1007/s11426-026-3629-x',
+            'locator': 'Author information > Corresponding authors',
+        }])
+        pending = self.records['10.1016/j.ejphar.2023.175569']
+        self.assertEqual(pending['status'], 'pending')
+        self.assertEqual(pending['roles'], [])
+        self.assertEqual(render_role_labels('10.1016/j.ejphar.2023.175569', self.records), '')
+
     def test_owner_mismatch_rejected(self):
         with self.assertRaises(ValueError):
             load_role_records(self.path,'0000-0000-0000-0000')
