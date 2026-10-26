@@ -778,7 +778,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.3389/fnut.2025.1658286",
       "publisher_url": null,
@@ -790,9 +790,30 @@
       "openalex_id": "https://openalex.org/W4414439421",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fnut-2025-1658286.csv",
+      "question_count": 4,
+      "concept_count": 14,
+      "discovery_layer": {
+        "field_entry": [
+          "Metabolic epidemiology",
+          "Population-based gout and hyperuricemia research"
+        ],
+        "review_topics": [
+          "Insulin-resistance proxies and prevalent disease",
+          "Survey-weighted cross-sectional associations"
+        ],
+        "scientific_role": "Observational analysis of eGDR and two prevalent outcomes in one NHANES adult sample.",
+        "evidence_position": "Adjusted association, not prospective prediction, disease prevention or treatment efficacy.",
+        "related_concepts": [
+          "Estimated glucose disposal rate",
+          "Hyperuricemia",
+          "Gout"
+        ],
+        "citation_contexts": [
+          "Population evidence relating an insulin-resistance proxy to prevalent hyperuricemia and gout.",
+          "Evidence review distinguishing continuous associations from nonsignificant category-specific gout estimates."
+        ]
+      }
     },
     {
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -1703,7 +1724,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1002/clc.70019",
       "publisher_url": null,
@@ -1715,9 +1736,30 @@
       "openalex_id": "https://openalex.org/W4402780523",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-clc-70019.csv",
+      "question_count": 5,
+      "concept_count": 12,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular health epidemiology",
+          "Mental-health symptoms in population surveys"
+        ],
+        "review_topics": [
+          "Life’s Essential 8 and depressive symptoms",
+          "Cross-sectional cardiovascular and mental-health associations"
+        ],
+        "scientific_role": "Population-survey analysis of LE8 and depressive symptoms, with the conflicting anxiety evidence explicitly excluded.",
+        "evidence_position": "Adjusted prevalence association without intervention or prospective diagnostic validation.",
+        "related_concepts": [
+          "Life’s Essential 8",
+          "PHQ-9",
+          "Survey-weighted analysis"
+        ],
+        "citation_contexts": [
+          "Evidence review of cardiovascular-health profiles and prevalent depressive symptoms.",
+          "Methodological discussion of interpreting questionnaire outcomes and observational odds ratios."
+        ]
+      }
     },
     {
       "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
@@ -1753,7 +1795,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-15212-cvia-2024-0023.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-15212-cvia-2024-0023.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.15212/cvia.2024.0023",
       "publisher_url": null,
@@ -1765,9 +1807,30 @@
       "openalex_id": "https://openalex.org/W4394787832",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-15212-cvia-2024-0023.csv",
+      "question_count": 5,
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular genetics",
+          "Microbiome epidemiology"
+        ],
+        "review_topics": [
+          "Gut microbial traits and aneurysm",
+          "Two-sample Mendelian randomization"
+        ],
+        "scientific_role": "Genetic-instrument analysis with bounded AA and AAA main-table findings.",
+        "evidence_position": "Assumption-dependent summary genetic associations, not intervention or clinical validation.",
+        "related_concepts": [
+          "MiBioGen",
+          "FinnGen",
+          "Bilophila"
+        ],
+        "citation_contexts": [
+          "Reviews comparing microbial-trait MR associations with aneurysm outcomes.",
+          "Discussions separating IVW findings from sensitivity uncertainty and treatment evidence."
+        ]
+      }
     },
     {
       "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -2035,7 +2098,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.3389/fonc.2024.1425895",
       "publisher_url": null,
@@ -2047,9 +2110,29 @@
       "openalex_id": "https://openalex.org/W4402658033",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3389-fonc-2024-1425895.csv",
+      "question_count": 4,
+      "concept_count": 12,
+      "discovery_layer": {
+        "field_entry": [
+          "LUAD molecular candidates",
+          "Experimental TGFBR2 biology"
+        ],
+        "review_topics": [
+          "Integration of expression screening and MR",
+          "Tissue staining and single-cell-line functional validation"
+        ],
+        "scientific_role": "Candidate-gene study connecting nominal genetic evidence with tissue IHC and A549 perturbation.",
+        "evidence_position": "Preclinical and hypothesis-generating evidence; not a clinical diagnostic or therapeutic validation study.",
+        "related_concepts": [
+          "Gene-expression instruments",
+          "Apoptosis and migration"
+        ],
+        "citation_contexts": [
+          "Candidate prioritization: the specified nominal TGFBR2 IVW result with MR assumptions and source-table limitations.",
+          "Experimental biology: lower tissue staining and A549 knockdown responses with small-sample and cell-model boundaries."
+        ]
+      }
     },
     {
       "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",

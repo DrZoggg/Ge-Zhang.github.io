@@ -1,0 +1,330 @@
+{
+  "version": 2,
+  "doi": "10.3389/fnut.2025.1658286",
+  "display_title": "Estimated glucose disposal rate, hyperuricemia and gout: cross-sectional NHANES associations",
+  "summary": "A survey-weighted analysis of 29,340 NHANES participants examined eGDR associations with hyperuricemia and self-reported gout. Fully adjusted continuous associations were inverse, but the 4–6 mg/kg/min gout contrast was not statistically significant. The evidence does not establish prevention or a treatment effect.",
+  "research_question": "How is estimated glucose disposal rate associated with prevalent hyperuricemia and self-reported gout in NHANES adults after survey weighting and measured-covariate adjustment?",
+  "author_summary": "The study analyzed adults from six NHANES cycles covering 2007–2018. The exposure eGDR combines waist circumference, hypertension and HbA1c; hyperuricemia was defined from serum uric acid using sex-specific thresholds, while gout relied on self-reported professional diagnosis. In Model 3, each 1 mg/kg/min higher eGDR was associated with lower odds of both outcomes. For gout, the 4–6 mg/kg/min category did not differ significantly from the <4 reference after full adjustment. This exception is explicit in the body and Table 3 and prevents adopting the abstract's universal category-significance claim. The analysis concerns prevalent disease, with residual confounding, self-report and temporal-order limitations.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Secondary cross-sectional analysis of six NHANES survey cycles, 2007–2018",
+    "evidence_type": "Survey-weighted observational association study; no intervention or prospective incidence evaluation",
+    "unique_total_n": 29340,
+    "population": "NHANES adults aged at least 20 years, excluding pregnant participants and those missing eGDR, gout or uric-acid information",
+    "primary_endpoint": "Prevalent hyperuricemia: serum uric acid >7.0 mg/dL in males or >6.0 mg/dL in females",
+    "secondary_endpoint": "Self-reported prior diagnosis of gout by a doctor or other healthcare professional",
+    "data_modalities": [
+      "NHANES examination and serum biomarker data",
+      "Questionnaire-reported diagnoses and lifestyle measures",
+      "Survey-design variables and sampling weights"
+    ],
+    "external_validation": false,
+    "cohorts": [
+      {
+        "name": "NHANES 2007–2018 analytic sample",
+        "role": "Single cross-sectional survey sample used for both outcome analyses; not two independent cohorts",
+        "n": 29340
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Both outcome analyses use the same selected cross-sectional NHANES sample.",
+      "context": "Participant counts are unweighted observations, not weighted prevalence estimates or incident cases.",
+      "evidence": [
+        {
+          "label": "analytic participants",
+          "value": "29,340"
+        },
+        {
+          "label": "NHANES cycles",
+          "value": "6 (2007–2018)"
+        },
+        {
+          "label": "hyperuricemia cases",
+          "value": "5,433"
+        },
+        {
+          "label": "self-reported gout cases",
+          "value": "1,346"
+        }
+      ],
+      "source_locator": "Methods §2.1 Study design and population (sec7); §2.3 Diagnosis of HUA and gout (sec9); Tables 2 and 3 (tab2, tab3), Continuous case/participants rows"
+    },
+    {
+      "id": "KF2",
+      "claim": "Higher continuous eGDR was associated with lower adjusted odds of hyperuricemia.",
+      "context": "Model 3 weighted logistic regression; odds per 1 mg/kg/min higher eGDR. This is not a 17% reduction in incidence or an intervention effect.",
+      "evidence": [
+        {
+          "label": "Model 3 odds ratio",
+          "value": "0.83"
+        },
+        {
+          "label": "95% confidence interval",
+          "value": "0.81–0.85"
+        },
+        {
+          "label": "P value",
+          "value": "<0.001"
+        }
+      ],
+      "source_locator": "Methods §2.2 Calculation of eGDR (sec8), §2.5 Statistical analyses (sec11); Results §3.2 (sec14); Table 2 (tab2), Continuous row, Model 3 and covariate footnote"
+    },
+    {
+      "id": "KF3",
+      "claim": "The continuous gout association was inverse, but not every categorical contrast was statistically significant after full adjustment.",
+      "context": "Table 3 Model 3 compares eGDR categories with <4 mg/kg/min. The 4–6 comparison includes the null and is explicitly described as nonsignificant in Results §3.3.",
+      "evidence": [
+        {
+          "label": "continuous OR per 1 mg/kg/min",
+          "value": "0.83 (95% CI 0.79–0.87), P<0.001"
+        },
+        {
+          "label": "4–6 mg/kg/min versus <4",
+          "value": "OR 0.81 (95% CI 0.63–1.04), P=0.093"
+        },
+        {
+          "label": "6–8 mg/kg/min versus <4",
+          "value": "OR 0.62 (95% CI 0.47–0.82), P=0.001"
+        },
+        {
+          "label": ">8 mg/kg/min versus <4",
+          "value": "OR 0.35 (95% CI 0.25–0.48), P<0.001"
+        }
+      ],
+      "source_locator": "Results §3.3 Association between eGDR and gout (sec15); Table 3 (tab3), Continuous and category rows, Model 3; contrast with Abstract Results category statement"
+    },
+    {
+      "id": "KF4",
+      "claim": "The exposure and outcomes were estimated or measured using distinct operational definitions.",
+      "context": "The eGDR proxy and observational outcome definitions do not directly measure a treatment response or establish a new clinical diagnostic test.",
+      "evidence": [
+        {
+          "label": "eGDR equation (mg/kg/min)",
+          "value": "21.158 − 0.09×waist circumference (cm) − 3.407×hypertension (yes=1/no=0) − 0.551×HbA1c (%)"
+        },
+        {
+          "label": "hyperuricemia thresholds",
+          "value": ">7.0 mg/dL in males; >6.0 mg/dL in females"
+        },
+        {
+          "label": "gout ascertainment",
+          "value": "Self-reported professional diagnosis"
+        }
+      ],
+      "source_locator": "Methods §2.2 Calculation of eGDR (sec8); §2.3 Diagnosis of HUA and gout (sec9)"
+    }
+  ],
+  "what_this_adds": [
+    "Places a composite insulin-resistance proxy alongside measured hyperuricemia and self-reported gout in one weighted population survey analysis.",
+    "Separates continuous association from category-specific evidence; Table 3 does not support a universal significant gout-category effect."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Adjusted prevalence-odds associations in the selected NHANES 2007–2018 adult sample.",
+      "The explicit nonsignificant fully adjusted 4–6 mg/kg/min gout contrast."
+    ],
+    "does_not_establish": [
+      "That increasing eGDR prevents hyperuricemia or gout, or reduces future disease incidence.",
+      "Causal mediation by insulin resistance or benefit from an eGDR-targeted intervention.",
+      "A statistically significant adjusted gout association for every eGDR category.",
+      "Prospective prediction accuracy or a clinical treatment threshold."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many participants and which outcomes were analyzed?",
+      "answer": "One analytic sample of 29,340 adults was used for both outcomes; Tables 2 and 3 list 5,433 hyperuricemia and 1,346 self-reported gout cases. These case counts must not be substituted for survey-weighted prevalence.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Was every higher eGDR category significantly associated with less gout?",
+      "answer": "No. Table 3 Model 3 gives OR 0.81, 95% CI 0.63–1.04 and P=0.093 for 4–6 versus <4 mg/kg/min. Results §3.3 states this loss of significance. The abstract's broader all-category statement is not adopted.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What did the continuous adjusted analyses report?",
+      "answer": "Per 1 mg/kg/min higher eGDR, Model 3 reports OR 0.83 (95% CI 0.81–0.85) for hyperuricemia and OR 0.83 (0.79–0.87) for gout. These are prevalence-odds associations.",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does this demonstrate that raising eGDR will prevent disease?",
+      "answer": "No. The cross-sectional design cannot establish temporal order or a preventive intervention effect. Gout is self-reported and eGDR is a calculated proxy.",
+      "evidence_refs": [
+        "KF1",
+        "KF4"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "hyperuricemia",
+      "gout"
+    ],
+    "populations": [
+      "US NHANES adults aged at least 20 years"
+    ],
+    "outcomes": [
+      "prevalent hyperuricemia",
+      "self-reported gout"
+    ],
+    "methods": [
+      "survey-weighted logistic regression",
+      "cross-sectional analysis",
+      "estimated glucose disposal rate"
+    ],
+    "data_types": [
+      "survey questionnaires",
+      "serum uric acid",
+      "HbA1c",
+      "waist circumference"
+    ],
+    "models_tools": [
+      "eGDR"
+    ],
+    "datasets_cohorts": [
+      "NHANES 2007–2018"
+    ]
+  },
+  "limitations": [
+    "Known source discrepancy: Abstract Results implies all higher eGDR categories significantly reduce both outcomes. Table 3 and Results §3.3 instead identify the fully adjusted gout 4–6 contrast as nonsignificant (OR 0.81, 95% CI 0.63–1.04, P=0.093). This page follows the mutually consistent body/table contrast and does not claim the abstract has been formally corrected.",
+    "Cross-sectional associations cannot establish causality, incident risk reduction or prevention; odds ratios are not prevalence ratios.",
+    "Gout ascertainment is self-reported; eGDR estimates insulin resistance rather than directly measuring clamp-derived glucose disposal.",
+    "Covariate adjustment and imputation do not exclude residual confounding or selection bias.",
+    "Supplementary subgroup, interaction and sensitivity estimates are not used as independently verified key findings in this bounded evidence page."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1002/clc.70019",
+      "relationship": "Another cross-sectional NHANES analysis illustrating survey-weighted prevalence associations; not independent confirmation of the eGDR findings."
+    }
+  ],
+  "discovery_layer": {
+    "field_entry": [
+      "Metabolic epidemiology",
+      "Population-based gout and hyperuricemia research"
+    ],
+    "review_topics": [
+      "Insulin-resistance proxies and prevalent disease",
+      "Survey-weighted cross-sectional associations"
+    ],
+    "scientific_role": "Observational analysis of eGDR and two prevalent outcomes in one NHANES adult sample.",
+    "evidence_position": "Adjusted association, not prospective prediction, disease prevention or treatment efficacy.",
+    "related_concepts": [
+      "Estimated glucose disposal rate",
+      "Hyperuricemia",
+      "Gout"
+    ],
+    "citation_contexts": [
+      "Population evidence relating an insulin-resistance proxy to prevalent hyperuricemia and gout.",
+      "Evidence review distinguishing continuous associations from nonsignificant category-specific gout estimates."
+    ]
+  },
+  "provenance": {
+    "publisher_url": "https://doi.org/10.3389/fnut.2025.1658286",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12501789/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41064288/",
+    "pmcid": "PMC12501789",
+    "pmid": "41064288",
+    "version": "Formal published article archived as PMC12501789.1; no scientific correction relation returned by the targeted Crossref metadata check on 2026-10-26. This is not an exhaustive absence-of-correction claim.",
+    "evidence_basis": "Methods §§2.1–2.5 and Results §§3.2–3.3, including text-encoded Tables 2–3. The contradictory universal category claim in Abstract Results is explicitly excluded.",
+    "source_verification_scope": "Formal Methods, Results and text-encoded tables were checked directly. No original statistical reanalysis and no source figures reproduced.",
+    "license": "CC BY 4.0, as stated in article-level permissions.",
+    "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record. The explicitly disclosed inconsistent findings are excluded from the supported evidence scope.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What population evidence relates eGDR to prevalent hyperuricemia?",
+        "supported_scope": "The weighted Model 3 association in this NHANES sample is OR 0.83 per 1 mg/kg/min, with CI 0.81–0.85; this is not incidence reduction.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Does the paper show a significant gout association for all higher eGDR categories?",
+        "supported_scope": "No. The 4–6 versus <4 contrast is nonsignificant in fully adjusted Model 3; continuous and higher-category associations require their own stated contrasts.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How were the exposure and gout measured?",
+        "supported_scope": "eGDR was calculated from waist circumference, hypertension and HbA1c; gout was self-reported professional diagnosis.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "That increasing eGDR prevents hyperuricemia or gout, or reduces future disease incidence.",
+      "Causal mediation by insulin resistance or benefit from an eGDR-targeted intervention.",
+      "A statistically significant adjusted gout association for every eGDR category.",
+      "Prospective prediction accuracy or a clinical treatment threshold."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "Both outcome analyses use the same selected cross-sectional NHANES sample.",
+        "context": "Participant counts are unweighted observations, not weighted prevalence estimates or incident cases.",
+        "finding": "analytic participants: 29,340; NHANES cycles: 6 (2007–2018); hyperuricemia cases: 5,433; self-reported gout cases: 1,346",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.1 Study design and population (sec7); §2.3 Diagnosis of HUA and gout (sec9); Tables 2 and 3 (tab2, tab3), Continuous case/participants rows",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Higher continuous eGDR was associated with lower adjusted odds of hyperuricemia.",
+        "context": "Model 3 weighted logistic regression; odds per 1 mg/kg/min higher eGDR. This is not a 17% reduction in incidence or an intervention effect.",
+        "finding": "Model 3 odds ratio: 0.83; 95% confidence interval: 0.81–0.85; P value: <0.001",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.2 Calculation of eGDR (sec8), §2.5 Statistical analyses (sec11); Results §3.2 (sec14); Table 2 (tab2), Continuous row, Model 3 and covariate footnote",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The continuous gout association was inverse, but not every categorical contrast was statistically significant after full adjustment.",
+        "context": "Table 3 Model 3 compares eGDR categories with <4 mg/kg/min. The 4–6 comparison includes the null and is explicitly described as nonsignificant in Results §3.3.",
+        "finding": "continuous OR per 1 mg/kg/min: 0.83 (95% CI 0.79–0.87), P<0.001; 4–6 mg/kg/min versus <4: OR 0.81 (95% CI 0.63–1.04), P=0.093; 6–8 mg/kg/min versus <4: OR 0.62 (95% CI 0.47–0.82), P=0.001; >8 mg/kg/min versus <4: OR 0.35 (95% CI 0.25–0.48), P<0.001",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Results §3.3 Association between eGDR and gout (sec15); Table 3 (tab3), Continuous and category rows, Model 3; contrast with Abstract Results category statement",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-kf4",
+        "component": "The exposure and outcomes were estimated or measured using distinct operational definitions.",
+        "context": "The eGDR proxy and observational outcome definitions do not directly measure a treatment response or establish a new clinical diagnostic test.",
+        "finding": "eGDR equation (mg/kg/min): 21.158 − 0.09×waist circumference (cm) − 3.407×hypertension (yes=1/no=0) − 0.551×HbA1c (%); hyperuricemia thresholds: >7.0 mg/dL in males; >6.0 mg/dL in females; gout ascertainment: Self-reported professional diagnosis",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.2 Calculation of eGDR (sec8); §2.3 Diagnosis of HUA and gout (sec9)",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}

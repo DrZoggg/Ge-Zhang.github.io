@@ -1,0 +1,302 @@
+{
+  "version": 2,
+  "doi": "10.15212/cvia.2024.0023",
+  "display_title": "Gut microbial genetic proxies and aortic aneurysm",
+  "summary": "A two-sample Mendelian randomization study linked MiBioGen microbial traits with FinnGen aneurysm outcomes. This page reports verified AA and AAA main-table estimates, excluding TAA-specific findings because its endpoint description is inconsistent.",
+  "research_question": "Which genetically proxied microbial traits were associated with AA and AAA in the MiBioGen–FinnGen summary-data analysis?",
+  "author_summary": "The study reports AA associations for Family XIII UCG001 and Bifidobacteriaceae, and an AAA association for Bilophila. These are genetic-proxy estimates under Mendelian-randomization assumptions, not effects of changing the microbiome. Alternative estimator intervals and unresolved endpoint, taxon-count and supplementary-verification limitations are retained.",
+  "evidence_page_notice": "Bounded summary of verifiable AA and AAA main-table findings. TAA endpoint ambiguity, taxon-count discrepancies and unavailable supplementary verification remain disclosed. No microbiome treatment or prevention benefit is established.",
+  "study_profile": {
+    "profile_type": "multicohort_observational",
+    "study_design": "Two-sample Mendelian randomization of public microbial-trait and aneurysm GWAS summary statistics.",
+    "evidence_type": "Genetic-instrument association estimates under MR assumptions, with alternative estimator comparisons.",
+    "population": "MiBioGen multi-ethnic microbiome GWAS across 24 cohorts and FinnGen version 9 outcomes from a Finnish biobank population.",
+    "primary_endpoint": "Aortic aneurysm (AA) case-control GWAS outcome.",
+    "secondary_endpoint": "Abdominal aortic aneurysm (AAA); TAA was analyzed in the paper but is excluded here because of source endpoint ambiguity.",
+    "data_modalities": [
+      "16S microbiome-trait GWAS summary associations",
+      "SNP instruments",
+      "FinnGen case-control GWAS summary statistics"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "Exposure GWAS",
+        "value": "18,473 participants from 24 MiBioGen cohorts"
+      },
+      {
+        "label": "AA GWAS",
+        "value": "7,395 cases and 349,539 controls as reported"
+      },
+      {
+        "label": "AAA GWAS",
+        "value": "3,548 cases; Methods report the same 349,539-control source"
+      },
+      {
+        "label": "Selected SNP entries",
+        "value": "2,031 across taxonomic levels; not unique participants"
+      }
+    ],
+    "counting_note": "Exposure and outcome sources are not combined into a patient total. AA and subtype outcomes overlap. Methods state 196 retained taxa, while Results counts (9 phyla, 16 classes, 20 orders, 31 families, 119 genera) sum to 195; this remains unresolved."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study paired microbial genetic instruments with separate AA and AAA outcome summary statistics.",
+      "context": "Methods report SNP selection at P<1×10−5, exclusion of F<10 instruments, and LD clumping at r²=0.001 across 10,000 kb. These are reported criteria; instrument rows and exposure–outcome sample overlap were not independently verified.",
+      "evidence": [
+        {
+          "label": "Exposure source",
+          "value": "MiBioGen: 18,473 participants, 24 multi-ethnic cohorts"
+        },
+        {
+          "label": "AA cases / controls",
+          "value": "7,395 / 349,539"
+        },
+        {
+          "label": "AAA cases",
+          "value": "3,548"
+        },
+        {
+          "label": "Reported SNP entries",
+          "value": "2,031"
+        }
+      ],
+      "source_locator": "Methods: Data Source for Gut Microbiota; Data Source for Outcomes; Selection of Instrumental Variables. Results: Selection of Instrumental Variables for Gut Microbiomes. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023"
+    },
+    {
+      "id": "KF2",
+      "claim": "Main Table 1 reports opposite-direction AA estimates for Family XIII UCG001 and Bifidobacteriaceae.",
+      "context": "IVW estimates on the original microbial GWAS genetic-proxy scale; no bacterial dose or treatment contrast is established. These are rows in the authors’ Bonferroni-selected table, not an independently reproduced full-screen significance claim.",
+      "evidence": [
+        {
+          "label": "Genus Family XIII UCG001",
+          "value": "8 SNPs; IVW OR 1.33, 95% CI 1.14–1.55; P=0.000203273"
+        },
+        {
+          "label": "Family Bifidobacteriaceae",
+          "value": "11 SNPs; IVW OR 0.79, 95% CI 0.70–0.89; P=0.0000800528"
+        },
+        {
+          "label": "MR-Egger uncertainty",
+          "value": "P=0.765969749 and P=0.787451213, respectively; no independent statistical confirmation by that estimator"
+        }
+      ],
+      "source_locator": "Results: Bonferroni-Corrected Test; Table 1, AA / Family XIII UCG001 and Bifidobacteriaceae IVW and MR-Egger rows. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023#tb001"
+    },
+    {
+      "id": "KF3",
+      "claim": "Bilophila had a positive IVW association with AAA, while alternative estimator intervals included the null.",
+      "context": "Genus-level genetic proxy and AAA outcome. Method-specific uncertainty prevents a claim of unanimous robustness or established causality.",
+      "evidence": [
+        {
+          "label": "Instruments",
+          "value": "13 SNPs"
+        },
+        {
+          "label": "IVW",
+          "value": "OR 1.36, 95% CI 1.17–1.57; P=0.0000452"
+        },
+        {
+          "label": "MR-Egger",
+          "value": "OR 1.55, 95% CI 0.48–5.03; P=0.483243703"
+        },
+        {
+          "label": "Weighted median",
+          "value": "OR 1.34, 95% CI 0.98–1.85; P=0.068775942"
+        },
+        {
+          "label": "Weighted mode",
+          "value": "OR 1.29, 95% CI 0.80–2.08; P=0.309338759"
+        }
+      ],
+      "source_locator": "Results: Bonferroni-Corrected Test; Table 1, AAA / Genus Bilophila, all four methods. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023#tb001"
+    }
+  ],
+  "what_this_adds": [
+    "Identifies hypothesis-generating microbial genetic-proxy associations with aneurysm outcomes.",
+    "Preserves differences between IVW and alternative-estimator uncertainty rather than treating all MR outputs as uniform causal evidence."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The stated MiBioGen and FinnGen data-source design and AA/AAA estimates printed in main Table 1.",
+      "Different uncertainty across MR estimators for the same microbial trait and outcome."
+    ],
+    "does_not_establish": [
+      "Benefits from changing the microbiome, probiotics, antibiotics or aneurysm-prevention treatment.",
+      "A validated screening biomarker, patient-level risk score or clinical threshold.",
+      "Proof of absent pleiotropy, valid instruments, or independently reproduced supplementary sensitivity and full multiple-testing results.",
+      "A resolved TAA endpoint definition or reconciled screen-wide microbial-taxon count."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What populations and statistical units were analyzed?",
+      "answer": "MiBioGen contributed microbial-trait summary associations from 18,473 people across 24 cohorts. FinnGen provided AA and AAA case-control summary statistics. These separate sources and overlapping aneurysm outcomes must not be summed as one cohort. Source: Methods, Data Source for Gut Microbiota and Data Source for Outcomes.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which AA estimates can be cited?",
+      "answer": "Table 1 reports IVW OR 1.33 (95% CI 1.14–1.55) for genus Family XIII UCG001 and 0.79 (0.70–0.89) for family Bifidobacteriaceae. These are genetic-proxy estimates, not effects of adding or removing bacteria. Source: Table 1, AA rows.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Was the Bilophila–AAA result consistent across all MR methods?",
+      "answer": "The IVW OR was 1.36 (95% CI 1.17–1.57), but MR-Egger, weighted-median and weighted-mode intervals all included 1. The result is method-dependent rather than unanimously confirmed. Source: Table 1, AAA / Genus Bilophila rows.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does this demonstrate that microbiome treatment prevents aneurysm?",
+      "answer": "No. The study analyzed genetic instruments and summary case-control data, without testing treatment or prevention. Interpretation depends on MR relevance, independence and exclusion-restriction assumptions. Source: Methods, Statistical Analysis and Sensitivity Analysis; Table 1.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "Why are TAA findings and strong robustness claims omitted?",
+      "answer": "Methods describe the TAA endpoint using thoracoabdominal outcomes, while the title and subtype labels say thoracic. Methods also report 196 taxa but the Results category counts sum to 195. Supplements and equation/figure assets were not retrievable for independent checking. These discrepancies remain open; no TAA estimate or verified absence of pleiotropy is asserted. Source: Methods, Data Source for Outcomes and Sensitivity Analysis; Results, Selection of Instrumental Variables for Gut Microbiomes.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    }
+  ],
+  "concepts": {
+    "Diseases": [
+      "Aortic aneurysm",
+      "Abdominal aortic aneurysm"
+    ],
+    "Methods": [
+      "Two-sample Mendelian randomization",
+      "GWAS summary statistics",
+      "Inverse-variance weighting",
+      "Horizontal pleiotropy",
+      "Multiple testing"
+    ],
+    "Microbial traits": [
+      "Family XIII UCG001",
+      "Bifidobacteriaceae",
+      "Bilophila"
+    ]
+  },
+  "limitations": [
+    "The TAA Methods definition uses thoracoabdominal rather than thoracic outcomes; TAA-specific findings are excluded pending clarification.",
+    "The retained-taxon total is stated as 196, while Results category counts sum to 195; neither is presented as a reconciled screen-wide count.",
+    "Bonferroni correction is described by taxonomic level, but equation images and supplements were unavailable. Main-table estimates are reported as author-selected associations, not an independently reproduced screen-wide significance claim.",
+    "Alternative estimator intervals do not uniformly exclude the null; MR estimates remain assumption-dependent.",
+    "The exposure GWAS is multi-ethnic and the outcome source is Finnish. Portability, population structure and sample overlap require consideration; overlap was not quantified here.",
+    "Supplementary MR-PRESSO, Steiger, leave-one-out and instrument tables were not independently inspected. Non-significant diagnostic tests would not prove the absence of pleiotropy.",
+    "No intervention, prospective diagnostic validation or clinical treatment benefit was tested."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.15212/bioi-2026-0017",
+      "relationship": "A separate observational cardiovascular-risk study distinguishes biomarker associations from causal or treatment conclusions; it does not replicate this microbial-trait analysis."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023",
+    "doi_url": "https://doi.org/10.15212/CVIA.2024.0023",
+    "version_of_record": "Official ScienceOpen-hosted Cardiovascular Innovations and Applications article; publisher ID cvia.2024.0023; copyright 2024 The Authors.",
+    "license": "Creative Commons Attribution 4.0 International, explicitly stated in Article / License.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "evidence_basis": "Current official hosted full-text Methods, Results and Table 1, retrieved 2026-10-26; only AA and AAA main-table findings included.",
+    "supporting_material_url": "https://cvia-journal.org/wp-content/uploads/2024/03/Supplementary_tables_1_5.xlsx",
+    "supporting_material_note": "Official spreadsheet download returned HTTP 406; equation and figure asset requests returned HTTP 403. No access control bypass and no independent supplement-based sensitivity verification.",
+    "source_conflict_note": "TAA definition and 196-versus-195 taxon counts remain unresolved. Results also use imprecise lower-level wording for some OR<1 taxa; this page quotes Table 1 estimates on their genetic-proxy scale without asserting an intervention direction.",
+    "source_sha256": "1b912092865c5c1951364009a4890ba8b5559d1008db299ad3712e0dbec1ff13"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular genetics",
+      "Microbiome epidemiology"
+    ],
+    "review_topics": [
+      "Gut microbial traits and aneurysm",
+      "Two-sample Mendelian randomization"
+    ],
+    "scientific_role": "Genetic-instrument analysis with bounded AA and AAA main-table findings.",
+    "evidence_position": "Assumption-dependent summary genetic associations, not intervention or clinical validation.",
+    "related_concepts": [
+      "MiBioGen",
+      "FinnGen",
+      "Bilophila"
+    ],
+    "citation_contexts": [
+      "Reviews comparing microbial-trait MR associations with aneurysm outcomes.",
+      "Discussions separating IVW findings from sensitivity uncertainty and treatment evidence."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What genetic-proxy evidence links microbial traits with AA?",
+        "supported_scope": "Main-table AA estimates and instrument counts, preserving method uncertainty.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How consistent is Bilophila–AAA across estimators?",
+        "supported_scope": "IVW association alongside intervals including the null with other methods.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Benefits from changing the microbiome, probiotics, antibiotics or aneurysm-prevention treatment.",
+      "A validated screening biomarker, patient-level risk score or clinical threshold.",
+      "Proof of absent pleiotropy, valid instruments, or independently reproduced supplementary sensitivity and full multiple-testing results.",
+      "A resolved TAA endpoint definition or reconciled screen-wide microbial-taxon count."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-cvia0023-1",
+        "component": "The study paired microbial genetic instruments with separate AA and AAA outcome summary statistics.",
+        "context": "Methods report SNP selection at P<1×10−5, exclusion of F<10 instruments, and LD clumping at r²=0.001 across 10,000 kb. These are reported criteria; instrument rows and exposure–outcome sample overlap were not independently verified.",
+        "finding": "Exposure source: MiBioGen: 18,473 participants, 24 multi-ethnic cohorts; AA cases / controls: 7,395 / 349,539; AAA cases: 3,548; Reported SNP entries: 2,031",
+        "evidence_level": "Summary genetic-instrument association under MR assumptions",
+        "scope": "Methods report SNP selection at P<1×10−5, exclusion of F<10 instruments, and LD clumping at r²=0.001 across 10,000 kb. These are reported criteria; instrument rows and exposure–outcome sample overlap were not independently verified.",
+        "source_locator": "Methods: Data Source for Gut Microbiota; Data Source for Outcomes; Selection of Instrumental Variables. Results: Selection of Instrumental Variables for Gut Microbiomes. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-cvia0023-2",
+        "component": "Main Table 1 reports opposite-direction AA estimates for Family XIII UCG001 and Bifidobacteriaceae.",
+        "context": "IVW estimates on the original microbial GWAS genetic-proxy scale; no bacterial dose or treatment contrast is established. These are rows in the authors’ Bonferroni-selected table, not an independently reproduced full-screen significance claim.",
+        "finding": "Genus Family XIII UCG001: 8 SNPs; IVW OR 1.33, 95% CI 1.14–1.55; P=0.000203273; Family Bifidobacteriaceae: 11 SNPs; IVW OR 0.79, 95% CI 0.70–0.89; P=0.0000800528; MR-Egger uncertainty: P=0.765969749 and P=0.787451213, respectively; no independent statistical confirmation by that estimator",
+        "evidence_level": "Summary genetic-instrument association under MR assumptions",
+        "scope": "IVW estimates on the original microbial GWAS genetic-proxy scale; no bacterial dose or treatment contrast is established. These are rows in the authors’ Bonferroni-selected table, not an independently reproduced full-screen significance claim.",
+        "source_locator": "Results: Bonferroni-Corrected Test; Table 1, AA / Family XIII UCG001 and Bifidobacteriaceae IVW and MR-Egger rows. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023#tb001",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-cvia0023-3",
+        "component": "Bilophila had a positive IVW association with AAA, while alternative estimator intervals included the null.",
+        "context": "Genus-level genetic proxy and AAA outcome. Method-specific uncertainty prevents a claim of unanimous robustness or established causality.",
+        "finding": "Instruments: 13 SNPs; IVW: OR 1.36, 95% CI 1.17–1.57; P=0.0000452; MR-Egger: OR 1.55, 95% CI 0.48–5.03; P=0.483243703; Weighted median: OR 1.34, 95% CI 0.98–1.85; P=0.068775942; Weighted mode: OR 1.29, 95% CI 0.80–2.08; P=0.309338759",
+        "evidence_level": "Summary genetic-instrument association under MR assumptions",
+        "scope": "Genus-level genetic proxy and AAA outcome. Method-specific uncertainty prevents a claim of unanimous robustness or established causality.",
+        "source_locator": "Results: Bonferroni-Corrected Test; Table 1, AAA / Genus Bilophila, all four methods. https://www.scienceopen.com/hosted-document?doi=10.15212/CVIA.2024.0023#tb001",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

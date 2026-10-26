@@ -1,0 +1,298 @@
+{
+  "display_title": "TGFBR2 as a candidate in lung adenocarcinoma: genetic, tissue and cell evidence",
+  "summary": "Transcriptomic screening and nominal Mendelian-randomization evidence prioritized TGFBR2, followed by a small tissue comparison and A549 knockdown experiments. The results support a research candidate rather than a clinically validated biomarker or treatment.",
+  "research_question": "Does the combination of public expression data, genetic association, tissue staining and A549 perturbation support TGFBR2 as a candidate for further lung adenocarcinoma research?",
+  "author_summary": "The study integrated TCGA-LUAD and two GEO expression datasets with feature-selection methods, identifying four candidate genes. TGFBR2 had a nominal inverse MR association in the reported four-instrument analysis. The actual Figure 8 images and quantification show lower TGFBR2 staining in five LUAD specimens than in three control specimens, consistent with the Results paragraph and abstract but contrary to that subsection heading. In A549 cells, TGFBR2 siRNA increased CCK8 signal and Transwell migration and reduced apoptosis. These evidence components are kept separate: they do not establish diagnostic accuracy in clinical practice, universal protective causality, or drug efficacy.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Public transcriptomic screening and two-sample MR combined with a small tissue IHC comparison and A549 siRNA experiments",
+    "evidence_type": "Hypothesis-generating genetic association and laboratory validation",
+    "population": "TCGA-LUAD and two GEO expression datasets; GWAS/eQTL summary data; five LUAD and three control tissue specimens; A549 cells",
+    "primary_endpoint": "Candidate-gene prioritization, TGFBR2 staining and A549 functional assay responses",
+    "secondary_endpoint": "Expression associations and computational drug hypotheses",
+    "data_modalities": [
+      "public transcriptomic expression",
+      "GWAS/eQTL summary statistics",
+      "immunohistochemistry",
+      "qPCR and western blotting",
+      "CCK8, Transwell migration and apoptosis flow cytometry"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "expression datasets",
+        "value": "TCGA-LUAD; GSE40791; GSE31210"
+      },
+      {
+        "label": "IHC tissue specimens",
+        "value": "5 LUAD and 3 controls"
+      },
+      {
+        "label": "forward TGFBR2 MR instruments",
+        "value": "4 SNPs in Supplementary Table S1"
+      },
+      {
+        "label": "functional cell model",
+        "value": "1 cell line, A549"
+      },
+      {
+        "label": "CCK8 setup",
+        "value": "triplicate wells at 0, 24, 48 and 72 hours"
+      }
+    ],
+    "counting_note": "Public expression validation does not mean prospective clinical validation. Tissue specimens, GWAS samples, SNP instruments and culture wells are different units and are not summed. Triplicate CCK8 wells are not three independent patient samples; an independent biological-replicate count is not inferred for all assays."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "TGFBR2 showed a nominal inverse association with LUAD in the reported forward MR analysis.",
+      "context": "The IVW estimate used four genetic instruments after a multi-stage candidate-selection pipeline. This is a conditional genetic association under MR assumptions, not proof of universal protection or a validated diagnostic test.",
+      "evidence": [
+        {
+          "label": "IVW beta, rounded in main text",
+          "value": "-0.06"
+        },
+        {
+          "label": "main-text P value",
+          "value": "0.04"
+        },
+        {
+          "label": "Supplementary Table S1 IVW values",
+          "value": "beta -0.059814; SE 0.02863; P 0.0366879; 4 SNPs"
+        }
+      ],
+      "source_locator": "Results 3.4; Figure 5A-C; Supplementary Table S1, TGFBR2 IVW row."
+    },
+    {
+      "id": "KF2",
+      "claim": "The reported IHC comparison showed lower TGFBR2-positive staining in LUAD tissue than in controls.",
+      "context": "The Figure 8 images, group labels and bar chart agree with the abstract and Results paragraph. The Results 3.7 heading instead says increased; that heading inconsistency is retained as a source limitation rather than silently amended.",
+      "evidence": [
+        {
+          "label": "LUAD specimens",
+          "value": "5"
+        },
+        {
+          "label": "control specimens",
+          "value": "3"
+        },
+        {
+          "label": "Figure 8 comparison",
+          "value": "t-test; P<0.05 as marked in caption"
+        }
+      ],
+      "source_locator": "Methods 2.9; Results 3.7 paragraph and conflicting heading; Figure 8A-B and caption; formal PDF p. 13."
+    },
+    {
+      "id": "KF3",
+      "claim": "TGFBR2 knockdown in A549 cells increased the CCK8 and Transwell-migration readouts and reduced the reported apoptosis readout.",
+      "context": "Two siRNAs were screened and the more effective sequence was used for subsequent assays. The findings concern one cultured-cell model. CCK8 is a cellular assay readout, not a patient survival outcome.",
+      "evidence": [
+        {
+          "label": "cell model",
+          "value": "A549"
+        },
+        {
+          "label": "siRNAs initially screened",
+          "value": "2"
+        },
+        {
+          "label": "CCK8 assessment",
+          "value": "0, 24, 48 and 72 hours, triplicate wells per time point"
+        }
+      ],
+      "source_locator": "Methods 2.10.1-2.10.5; Results 3.8.1-3.8.4; Figure 9A-G and caption; formal PDF p. 13."
+    }
+  ],
+  "what_this_adds": [
+    "Connects public-data gene prioritization with a directly inspected tissue comparison and a separate cell-perturbation experiment.",
+    "Provides experimental reasons to study TGFBR2 while keeping nominal MR evidence, expression differences and cell functions distinct from clinical validation."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "A reported nominal inverse TGFBR2 MR association in the specified analysis.",
+      "Lower TGFBR2-positive staining in the eight-specimen IHC comparison.",
+      "The specified A549 knockdown-associated assay responses."
+    ],
+    "does_not_establish": [
+      "Unconditional causality or universal protection against LUAD from a nominal selected-gene MR association.",
+      "Reliable diagnostic, prognostic or treatment-selection performance in clinical practice.",
+      "Drug efficacy or safety from docking predictions.",
+      "That all MR sensitivity results are free of unresolved direction or source-table labeling issues."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How strong is the reported TGFBR2 MR evidence?",
+      "answer": "The forward IVW analysis used four SNPs and reported beta -0.059814, SE 0.02863 and P=0.0366879 in Supplementary Table S1, rounded to beta -0.06 and P=0.04 in the main text. This is nominal evidence within a candidate-selection pipeline and remains dependent on MR assumptions.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Does the tissue figure show higher or lower TGFBR2 in LUAD?",
+      "answer": "Figure 8 shows lower TGFBR2-positive staining in five LUAD specimens than in three controls. The abstract and Results paragraph agree; the Results 3.7 heading says increased and is inconsistent with that evidence. The heading has not been formally corrected in the sources checked.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What did the A549 perturbation experiment show?",
+      "answer": "After TGFBR2 knockdown, CCK8 and Transwell-migration readouts increased and the apoptosis readout decreased. Two siRNAs were screened, and the more effective sequence was selected for subsequent assays. These results are from one cultured-cell model.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Can these findings guide LUAD diagnosis or treatment now?",
+      "answer": "The study provides candidate-gene evidence, not clinical implementation evidence. A nominal MR association, eight tissue specimens and A549 assays do not establish patient-level diagnostic utility, treatment benefit or drug safety.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "lung adenocarcinoma"
+    ],
+    "genes": [
+      "TGFBR2",
+      "GIMAP6",
+      "CAV1",
+      "PECAM1"
+    ],
+    "models": [
+      "A549 cells"
+    ],
+    "methods": [
+      "two-sample Mendelian randomization",
+      "immunohistochemistry",
+      "siRNA perturbation",
+      "CCK8 assay",
+      "Transwell migration",
+      "apoptosis flow cytometry"
+    ]
+  },
+  "limitations": [
+    "Results 3.7 is headed increased TGFBR2 expression, while its paragraph, the abstract and Figure 8 show decreased expression. This page explicitly attributes the lower staining direction to the latter sources; no formal correction was found in the current publisher page or JATS links.",
+    "The forward MR result is nominal and comes from a multi-stage selection pipeline. It is not an unconditional causal conclusion or clinical biomarker validation.",
+    "The main text cites Supplementary Table S2 for forward heterogeneity and pleiotropy values, but the downloaded S2 contains LUAD-to-TGFBR2 exposure/outcome labels and different Q-test P values. This page does not claim that those sensitivity results validate absence of heterogeneity or pleiotropy.",
+    "The tissue comparison is small: five LUAD and three control specimens. It does not establish generalizable diagnostic performance.",
+    "Functional testing used A549 only. Triplicate wells in the CCK8 setup are not independent donors; the number of independent biological replicates is not stated uniformly across the reported cell assays.",
+    "The paper reports computational drug predictions. No clinical drug efficacy or safety is established."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1136/jitc-2024-010787",
+      "relationship": "A separate LUAD molecular-mechanism study involving B4GALT2 and immune exclusion; it does not independently validate the TGFBR2 MR or A549 results."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2024.1425895/full",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446723/",
+    "formal_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11446723.1/PMC11446723.1.pdf",
+    "supplement_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11446723.1/DataSheet1.zip",
+    "pmcid": "PMC11446723",
+    "evidence_version": "Published article, 19 September 2024; PMC version 1.",
+    "evidence_basis": "Formal PDF and XML, actual Figures 5, 8 and 9, and original Supplementary Tables S1-S5 were examined. The contradictory IHC heading and MR sensitivity-table labeling are explicitly disclosed.",
+    "license": "CC BY 4.0, as stated in formal article permissions.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "LUAD molecular candidates",
+      "Experimental TGFBR2 biology"
+    ],
+    "review_topics": [
+      "Integration of expression screening and MR",
+      "Tissue staining and single-cell-line functional validation"
+    ],
+    "scientific_role": "Candidate-gene study connecting nominal genetic evidence with tissue IHC and A549 perturbation.",
+    "evidence_position": "Preclinical and hypothesis-generating evidence; not a clinical diagnostic or therapeutic validation study.",
+    "related_concepts": [
+      "Gene-expression instruments",
+      "Apoptosis and migration"
+    ],
+    "citation_contexts": [
+      "Candidate prioritization: the specified nominal TGFBR2 IVW result with MR assumptions and source-table limitations.",
+      "Experimental biology: lower tissue staining and A549 knockdown responses with small-sample and cell-model boundaries."
+    ]
+  },
+  "version": 2,
+  "doi": "10.3389/fonc.2024.1425895",
+  "evidence_page_notice": "The source has an increased-expression subsection heading, but the abstract, following paragraph and actual Figure 8 show lower TGFBR2 staining in LUAD. This page follows the identified figure and paragraph while disclosing that inconsistency. The nominal MR, small tissue comparison and A549 findings do not establish a clinical biomarker or treatment.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How strong is the reported TGFBR2 MR evidence?",
+        "supported_scope": "The forward IVW analysis used four SNPs and reported beta -0.059814, SE 0.02863 and P=0.0366879 in Supplementary Table S1, rounded to beta -0.06 and P=0.04 in the main text. This is nominal evidence within a candidate-selection pipeline and remains dependent on MR assumptions.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Does the tissue figure show higher or lower TGFBR2 in LUAD?",
+        "supported_scope": "Figure 8 shows lower TGFBR2-positive staining in five LUAD specimens than in three controls. The abstract and Results paragraph agree; the Results 3.7 heading says increased and is inconsistent with that evidence. The heading has not been formally corrected in the sources checked.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What did the A549 perturbation experiment show?",
+        "supported_scope": "After TGFBR2 knockdown, CCK8 and Transwell-migration readouts increased and the apoptosis readout decreased. Two siRNAs were screened, and the more effective sequence was selected for subsequent assays. These results are from one cultured-cell model.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Unconditional causality or universal protection against LUAD from a nominal selected-gene MR association.",
+      "Reliable diagnostic, prognostic or treatment-selection performance in clinical practice.",
+      "Drug efficacy or safety from docking predictions.",
+      "That all MR sensitivity results are free of unresolved direction or source-table labeling issues."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "TGFBR2 showed a nominal inverse association with LUAD in the reported forward MR analysis.",
+        "context": "The IVW estimate used four genetic instruments after a multi-stage candidate-selection pipeline. This is a conditional genetic association under MR assumptions, not proof of universal protection or a validated diagnostic test.",
+        "finding": "IVW beta, rounded in main text: -0.06; main-text P value: 0.04; Supplementary Table S1 IVW values: beta -0.059814; SE 0.02863; P 0.0366879; 4 SNPs",
+        "evidence_level": "Nominal genetic association and experimental validation",
+        "scope": "A reported nominal inverse TGFBR2 MR association in the specified analysis.",
+        "source_locator": "Results 3.4; Figure 5A-C; Supplementary Table S1, TGFBR2 IVW row.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The reported IHC comparison showed lower TGFBR2-positive staining in LUAD tissue than in controls.",
+        "context": "The Figure 8 images, group labels and bar chart agree with the abstract and Results paragraph. The Results 3.7 heading instead says increased; that heading inconsistency is retained as a source limitation rather than silently amended.",
+        "finding": "LUAD specimens: 5; control specimens: 3; Figure 8 comparison: t-test; P<0.05 as marked in caption",
+        "evidence_level": "Nominal genetic association and experimental validation",
+        "scope": "Lower TGFBR2-positive staining in the eight-specimen IHC comparison.",
+        "source_locator": "Methods 2.9; Results 3.7 paragraph and conflicting heading; Figure 8A-B and caption; formal PDF p. 13.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "TGFBR2 knockdown in A549 cells increased the CCK8 and Transwell-migration readouts and reduced the reported apoptosis readout.",
+        "context": "Two siRNAs were screened and the more effective sequence was used for subsequent assays. The findings concern one cultured-cell model. CCK8 is a cellular assay readout, not a patient survival outcome.",
+        "finding": "cell model: A549; siRNAs initially screened: 2; CCK8 assessment: 0, 24, 48 and 72 hours, triplicate wells per time point",
+        "evidence_level": "Nominal genetic association and experimental validation",
+        "scope": "The specified A549 knockdown-associated assay responses.",
+        "source_locator": "Methods 2.10.1-2.10.5; Results 3.8.1-3.8.4; Figure 9A-G and caption; formal PDF p. 13.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}
