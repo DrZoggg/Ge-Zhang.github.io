@@ -204,7 +204,7 @@
           "value": "Computational scoring and signature matching"
         }
       ],
-      "source_locator": "Methods 2.10 and 2.20; Results 3.5; Discussion"
+      "source_locator": "Methods 2.10 and 2.20; Results 3.5 and 3.9; Figure 7G-I; Discussion"
     }
   ],
   "what_this_adds": [
@@ -474,7 +474,7 @@
         "finding": "IPS and CMap supplied candidate immune/drug-response hypotheses. Evidence: Computational scoring and signature matching",
         "evidence_level": "Retrospective expression and computational evidence",
         "scope": "Predicted compounds are not proven effective treatments. IPS is not an observed outcome in patients receiving immunotherapy.",
-        "source_locator": "Methods 2.10 and 2.20; Results 3.5; Discussion",
+        "source_locator": "Methods 2.10 and 2.20; Results 3.5 and 3.9; Figure 7G-I; Discussion",
         "evidence_refs": [
           "KF7"
         ]

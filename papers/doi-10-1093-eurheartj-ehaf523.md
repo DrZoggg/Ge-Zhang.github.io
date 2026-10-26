@@ -107,7 +107,7 @@ A mechanistic translational preclinical study linking myeloid KIF13B to MERTK-de
 | Global Kif13b loss | Ldlr-deficient control and Kif13b-deficient Ldlr-deficient mice after 12 weeks of Western diet; n=6 mice per group. |
 | Public single-cell GSE155513 | Figure 3 describes n=1 single-cell library at each 8-week and 26-week dietary time point; do not treat library counts as mouse counts. |
 | Study-generated aortic single-cell experiment | Five mice pooled into one single-cell library per genotype; the Results state 20 weeks of Western diet while Figure 3E states 12 weeks of high-fat diet. |
-| Public macrophage single-cell GSE215103 | Reanalysis of Apoe-deficient mouse aortic macrophages; no unique mouse or library count inferred here. |
+| Public macrophage single-cell GSE215103 | Reanalysis of Apoe-deficient mouse peritoneal macrophages; no unique mouse or library count inferred here. |
 | Myeloid conditional model | Kif13b-floxed controls n=9 versus Lyz2-Cre;Kif13b-floxed mice n=6, AAV8-PCSK9 and 12 weeks of Western diet. |
 | Bone-marrow transplantation | Ldlr-deficient recipients of control or Kif13b-deficient donor marrow; n=6 mice per group after 12 weeks of Western diet. |
 | BMDM transcriptomics | Wild-type versus Kif13b-deficient BMDMs n=3 per group, including apoptotic-cell co-incubation transcriptomics n=3 per group. |

@@ -117,7 +117,7 @@ FROZEN = {
             "Results: Construction of WGCNA network in scRNA-seq dataset; Fig. 1",
             "Methods: Calculation of CRDscore based on circadian-related genes",
             "Methods: Data processing; NCBI GEO GSE70049 record",
-            "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4",
+            "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 3A-E",
             "Methods: Construction and validation of the CRD-related subtypes of CAD; Fig. 4",
             "Results: functional and immune microenvironment analyses; Figs. 5-6"
         ],
@@ -323,7 +323,7 @@ FROZEN = {
             "Methods 2.8; Results 3.4; Fig. 4",
             "Methods 2.1.1 and 2.3; Results 3.7; Fig. 5K-N",
             "Methods: tissue and cell experiments; Results 3.6 and 3.8; Fig. 6",
-            "Methods 2.10 and 2.20; Results 3.5; Discussion"
+            "Methods 2.10 and 2.20; Results 3.5 and 3.9; Figure 7G-I; Discussion"
         ],
         "scopes": [
             "Cross-sectional stage comparisons do not establish longitudinal prediction of each patient's future deterioration time.",

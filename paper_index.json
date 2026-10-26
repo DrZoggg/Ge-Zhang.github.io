@@ -314,7 +314,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.medd.2026.100004",
       "publisher_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
@@ -326,9 +326,30 @@
       "openalex_id": null,
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-medd-2026-100004.csv",
+      "question_count": 4,
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular AI evaluation",
+          "Clinical decision support research"
+        ],
+        "review_topics": [
+          "Evidence sufficiency before prediction",
+          "Evaluation of incomplete multimodal data"
+        ],
+        "scientific_role": "Conceptual correspondence proposing explicit deferral criteria and downstream care pathways.",
+        "evidence_position": "Methodological perspective with no new dataset, accuracy estimate or clinical trial.",
+        "related_concepts": [
+          "Informative missingness",
+          "Temporal validity",
+          "Selective prediction"
+        ],
+        "citation_contexts": [
+          "Discussion: why confidence alone may not establish sufficient evidence for a clinical prediction.",
+          "Research agenda: intended-use-specific testing of missing inputs, temporal staleness and deferral pathways."
+        ]
+      }
     },
     {
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -2193,7 +2214,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.csbj.2024.04.044",
       "publisher_url": null,
@@ -2205,9 +2226,29 @@
       "openalex_id": "https://openalex.org/W4394989780",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-csbj-2024-04-044.csv",
+      "question_count": 4,
+      "concept_count": 6,
+      "discovery_layer": {
+        "field_entry": [
+          "Cancer proteomics",
+          "Precision oncology methods"
+        ],
+        "review_topics": [
+          "Proteomic technology selection",
+          "Multi-omics clinical translation"
+        ],
+        "scientific_role": "Narrative synthesis of measurement platforms, integration strategies and published oncology applications.",
+        "evidence_position": "Secondary literature context without a new cohort or pooled clinical effect.",
+        "related_concepts": [
+          "Protein abundance",
+          "Post-translational modification"
+        ],
+        "citation_contexts": [
+          "Background: why proteomics complements genomic and transcriptomic cancer information.",
+          "Methods overview: assay families and integration approaches; cite original studies for performance claims."
+        ]
+      }
     },
     {
       "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",

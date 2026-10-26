@@ -164,7 +164,7 @@
           "value": "436"
         }
       ],
-      "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4"
+      "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 3A-E"
     },
     {
       "id": "KF5",
@@ -405,7 +405,7 @@
         "finding": "Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436",
         "evidence_level": "Retrospective expression and computational evidence",
         "scope": "These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
-        "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4",
+        "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 3A-E",
         "evidence_refs": [
           "KF4"
         ]

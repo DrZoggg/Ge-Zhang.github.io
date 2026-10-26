@@ -41,7 +41,7 @@
       {"label": "Global Kif13b loss", "value": "Ldlr-deficient control and Kif13b-deficient Ldlr-deficient mice after 12 weeks of Western diet; n=6 mice per group."},
       {"label": "Public single-cell GSE155513", "value": "Figure 3 describes n=1 single-cell library at each 8-week and 26-week dietary time point; do not treat library counts as mouse counts."},
       {"label": "Study-generated aortic single-cell experiment", "value": "Five mice pooled into one single-cell library per genotype; the Results state 20 weeks of Western diet while Figure 3E states 12 weeks of high-fat diet."},
-      {"label": "Public macrophage single-cell GSE215103", "value": "Reanalysis of Apoe-deficient mouse aortic macrophages; no unique mouse or library count inferred here."},
+      {"label": "Public macrophage single-cell GSE215103", "value": "Reanalysis of Apoe-deficient mouse peritoneal macrophages; no unique mouse or library count inferred here."},
       {"label": "Myeloid conditional model", "value": "Kif13b-floxed controls n=9 versus Lyz2-Cre;Kif13b-floxed mice n=6, AAV8-PCSK9 and 12 weeks of Western diet."},
       {"label": "Bone-marrow transplantation", "value": "Ldlr-deficient recipients of control or Kif13b-deficient donor marrow; n=6 mice per group after 12 weeks of Western diet."},
       {"label": "BMDM transcriptomics", "value": "Wild-type versus Kif13b-deficient BMDMs n=3 per group, including apoptotic-cell co-incubation transcriptomics n=3 per group."},

@@ -153,7 +153,7 @@ Context: Discovery expression-sample assignment.
 | Type4 samples | 132 |
 | Total expression samples | 436 |
 
-Source locator: Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4
+Source locator: Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 3A-E
 
 <a id="kf5"></a>
 ### KF5: NTP was used to evaluate subtype assignment in four external expression datasets.
@@ -309,7 +309,7 @@ Evidence: [KF6](#kf6)
 - Finding: Expression-based subtyping of GSE59867 yielded four groups. Type1 samples: 124; Type2 samples: 93; Type3 samples: 87; Type4 samples: 132; Total expression samples: 436
 - Evidence Level: Retrospective expression and computational evidence
 - Scope: These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.
-- Source Locator: Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 4
+- Source Locator: Methods: Construction and validation of the CRD-related subtypes of CAD; Results: subtype identification; Fig. 3A-E
 - Evidence refs: [KF4](#kf4)
 
 <a id="evidence-ihd-5"></a>

@@ -1,0 +1,260 @@
+{
+  "display_title": "Multimodal AI for cardiovascular care must learn when not to predict",
+  "summary": "A correspondence proposes an intended-use-specific framework for missing modalities, asynchronous observations and deferral in cardiovascular AI; it reports no new dataset or model performance.",
+  "research_question": "How should cardiovascular multimodal AI account for incomplete or stale evidence when deciding whether to issue a prediction?",
+  "author_summary": "This correspondence separates conventional fusion, missing-modality robustness, temporal modeling, selective prediction and interpretation of why information is missing. It proposes representing observation state alongside patient state and assessing evidence sufficiency before producing a prediction. Figure 1 summarizes six principles. The authors suggest five candidate evaluation conditions, including incomplete inputs, natural co-missingness, temporal staleness and external data, and argue that deferral should lead to a predefined care pathway. This is a conceptual proposal that requires prospective evaluation and broader consensus; it is not a validated algorithm, clinical standard or demonstration of improved patient outcomes.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Conceptual correspondence on clinical AI evaluation",
+    "evidence_type": "Author perspective and methodological proposal",
+    "translation_scope": "Intended-use-specific research and evaluation considerations; not a consensus standard or validated tool",
+    "evidence_domains": [
+      "multimodal representation",
+      "missing data mechanisms",
+      "temporal validity",
+      "selective prediction",
+      "clinical workflow and equity"
+    ],
+    "diseases_covered": [
+      "cardiovascular disease"
+    ],
+    "scale_metrics": [
+      {
+        "label": "distinguished problem categories",
+        "value": "5"
+      },
+      {
+        "label": "principles in Fig. 1",
+        "value": "6"
+      },
+      {
+        "label": "candidate evaluation conditions",
+        "value": "5"
+      },
+      {
+        "label": "new empirical dataset",
+        "value": "None"
+      }
+    ],
+    "counting_note": "Numbers describe the conceptual framework, not patients, external cohorts, performance estimates or trial evidence."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The correspondence separates distinct problems that are often grouped under multimodal AI.",
+      "context": "Conceptual taxonomy of fusion, missing inputs, time, selective prediction and observation mechanisms.",
+      "evidence": [
+        {
+          "label": "problem categories",
+          "value": "5"
+        }
+      ],
+      "source_locator": "Corrected proof p. 1, opening paragraph"
+    },
+    {
+      "id": "KF2",
+      "claim": "The proposed framework makes evidence sufficiency and a defined downstream pathway central to deferral.",
+      "context": "Figure-based conceptual proposal; deferral is distinct from calibration or confidence alone.",
+      "evidence": [
+        {
+          "label": "principles in figure",
+          "value": "6"
+        },
+        {
+          "label": "evidence type",
+          "value": "Conceptual framework, not an evaluated intervention"
+        }
+      ],
+      "source_locator": "Corrected proof pp. 2-3; Fig. 1 caption and paragraphs on abstention/deferral"
+    },
+    {
+      "id": "KF3",
+      "claim": "The authors propose intended-use-specific evaluation conditions for incomplete and temporally heterogeneous information.",
+      "context": "Suggested minimum suite requiring future validation and stakeholder consensus.",
+      "evidence": [
+        {
+          "label": "candidate evaluation conditions",
+          "value": "5: complete inputs, critical modality missing, natural co-missingness, staleness, external data"
+        }
+      ],
+      "source_locator": "Corrected proof p. 3, paragraph beginning Evaluation should be defined by intended use"
+    }
+  ],
+  "what_this_adds": [
+    "A conceptual separation of evidence sufficiency, model uncertainty and operational deferral.",
+    "A proposed evaluation agenda for real clinical missingness and asynchronous data."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Attribution of the stated evaluation and deferral proposal to this correspondence.",
+      "Literature discussion of missingness, temporal context and prospective evaluation needs."
+    ],
+    "does_not_establish": [
+      "Empirical improvement in discrimination, safety, equity or patient outcomes.",
+      "A validated AI algorithm or universal abstention threshold.",
+      "A consensus guideline, clinical standard or independent external validation cohort."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What problem does this correspondence address?",
+      "answer": "It addresses when multimodal cardiovascular AI has enough current and clinically relevant evidence to predict, and when it should defer.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "How does it define the role of deferral?",
+      "answer": "Deferral follows prespecified evidence-adequacy criteria and should trigger an alternative care pathway; it is not synonymous with calibration or high model confidence.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which evaluation conditions does it propose?",
+      "answer": "Five candidate conditions are complete inputs, a critical modality missing, natural co-missingness, temporal staleness and geographically or temporally external data.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does it report new model accuracy or a clinical trial?",
+      "answer": "No. It is a correspondence presenting conceptual proposals, with no new dataset or validated performance result.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "cardiovascular artificial intelligence"
+    ],
+    "methods": [
+      "multimodal learning",
+      "selective prediction"
+    ],
+    "concepts": [
+      "informative missingness",
+      "temporal validity",
+      "evidence sufficiency",
+      "deferral"
+    ]
+  },
+  "limitations": [
+    "Conceptual proposal without empirical validation.",
+    "Evidence locators refer to the archived publisher corrected proof. The reviewed passages and Figure 1 caption match the current issue-assigned publisher HTML after removal of proof page headers and formatting; the current publisher PDF was not independently inspected.",
+    "The five evaluation conditions are candidate recommendations, not consensus criteria."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Related cardiovascular prediction study; its retrospective validation does not validate this correspondence deferral framework."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
+    "evidence_basis": "Evidence synthesis uses the archived publisher corrected proof, compared with the current issue-assigned publisher full text on 2026-10-26. No substantive difference was found in the reviewed passages or Figure 1 caption. Proof pagination is retained as source locators.",
+    "version": "Archived publisher corrected proof; compared with current publisher HTML (Volume 1, Issue 1, September 2026) on 2026-10-26. The current publisher PDF was not independently inspected.",
+    "figure_verification": "Corrected-proof Figure 1 and caption were inspected for the six conceptual principles and deferral pathway; no figure image is reproduced.",
+    "doi_url": "https://doi.org/10.1016/j.medd.2026.100004"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular AI evaluation",
+      "Clinical decision support research"
+    ],
+    "review_topics": [
+      "Evidence sufficiency before prediction",
+      "Evaluation of incomplete multimodal data"
+    ],
+    "scientific_role": "Conceptual correspondence proposing explicit deferral criteria and downstream care pathways.",
+    "evidence_position": "Methodological perspective with no new dataset, accuracy estimate or clinical trial.",
+    "related_concepts": [
+      "Informative missingness",
+      "Temporal validity",
+      "Selective prediction"
+    ],
+    "citation_contexts": [
+      "Discussion: why confidence alone may not establish sufficient evidence for a clinical prediction.",
+      "Research agenda: intended-use-specific testing of missing inputs, temporal staleness and deferral pathways."
+    ]
+  },
+  "version": 2,
+  "doi": "10.1016/j.medd.2026.100004",
+  "evidence_page_notice": "Evidence synthesis of a published conceptual correspondence based on the publisher corrected proof; there is no new clinical cohort, accuracy estimate or validated deferral system. Check the publisher for any later version-of-record updates.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What problem does this correspondence address?",
+        "supported_scope": "It addresses when multimodal cardiovascular AI has enough current and clinically relevant evidence to predict, and when it should defer.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How does it define the role of deferral?",
+        "supported_scope": "Deferral follows prespecified evidence-adequacy criteria and should trigger an alternative care pathway; it is not synonymous with calibration or high model confidence.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which evaluation conditions does it propose?",
+        "supported_scope": "Five candidate conditions are complete inputs, a critical modality missing, natural co-missingness, temporal staleness and geographically or temporally external data.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Empirical improvement in discrimination, safety, equity or patient outcomes.",
+      "A validated AI algorithm or universal abstention threshold.",
+      "A consensus guideline, clinical standard or independent external validation cohort."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The correspondence separates distinct problems that are often grouped under multimodal AI.",
+        "context": "Conceptual taxonomy of fusion, missing inputs, time, selective prediction and observation mechanisms.",
+        "finding": "problem categories: 5",
+        "evidence_level": "Author perspective and methodological proposal",
+        "scope": "Attribution of the stated evaluation and deferral proposal to this correspondence.",
+        "source_locator": "Corrected proof p. 1, opening paragraph",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The proposed framework makes evidence sufficiency and a defined downstream pathway central to deferral.",
+        "context": "Figure-based conceptual proposal; deferral is distinct from calibration or confidence alone.",
+        "finding": "principles in figure: 6; evidence type: Conceptual framework, not an evaluated intervention",
+        "evidence_level": "Author perspective and methodological proposal",
+        "scope": "Literature discussion of missingness, temporal context and prospective evaluation needs.",
+        "source_locator": "Corrected proof pp. 2-3; Fig. 1 caption and paragraphs on abstention/deferral",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The authors propose intended-use-specific evaluation conditions for incomplete and temporally heterogeneous information.",
+        "context": "Suggested minimum suite requiring future validation and stakeholder consensus.",
+        "finding": "candidate evaluation conditions: 5: complete inputs, critical modality missing, natural co-missingness, staleness, external data",
+        "evidence_level": "Author perspective and methodological proposal",
+        "scope": "Literature discussion of missingness, temporal context and prospective evaluation needs.",
+        "source_locator": "Corrected proof p. 3, paragraph beginning Evaluation should be defined by intended use",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

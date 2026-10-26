@@ -281,6 +281,40 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html#paper-discovery"
     },
     {
+      "id": "doi-10-1016-j-medd-2026-100004",
+      "question": "What problem does this correspondence address?",
+      "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+      "doi": "10.1016/j.medd.2026.100004",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": "correspondence",
+      "evidence_scope": "Empirical improvement in discrimination, safety, equity or patient outcomes.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "cardiovascular artificial intelligence",
+        "multimodal learning",
+        "selective prediction",
+        "informative missingness",
+        "temporal validity",
+        "evidence sufficiency",
+        "deferral"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-medd-2026-100004.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-medd-2026-100004.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-medd-2026-100004.csl.json",
+      "field_entry": [
+        "Cardiovascular AI evaluation",
+        "Clinical decision support research"
+      ],
+      "review_topics": [
+        "Evidence sufficiency before prediction",
+        "Evaluation of incomplete multimodal data"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1126-science-aek9583",
       "question": "What public-record problem does this Science Letter address?",
       "title": "Recording results from single-patient trials",
@@ -1431,6 +1465,39 @@
         "Targeted proteomics for biomarker discovery"
       ],
       "discovery_url": "https://drgezhang.com/papers/olink-dcm.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1016-j-csbj-2024-04-044",
+      "question": "Which proteomic approaches does this review cover?",
+      "title": "Proteomics appending a complementary dimension to precision oncotherapy",
+      "doi": "10.1016/j.csbj.2024.04.044",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-csbj-2024-04-044.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "evidence_scope": "A new patient cohort, pooled treatment benefit or meta-analytic accuracy estimate.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "proteomics",
+        "precision oncology",
+        "mass spectrometry",
+        "proximity extension assay",
+        "aptamer assays",
+        "multi-omics integration"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-csbj-2024-04-044.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-csbj-2024-04-044.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-csbj-2024-04-044.csl.json",
+      "field_entry": [
+        "Cancer proteomics",
+        "Precision oncology methods"
+      ],
+      "review_topics": [
+        "Proteomic technology selection",
+        "Multi-omics clinical translation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#paper-discovery"
     },
     {
       "id": "doi-10-2147-cia-s462542",
