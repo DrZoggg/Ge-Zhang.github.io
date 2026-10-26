@@ -120,17 +120,18 @@
     "10.1200/po.24.00089": {
       "status": "verified",
       "roles": [
+        "Corresponding author",
         "Co-first author"
       ],
-      "verified_on": "2026-10-25",
-      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "verified_on": "2026-10-26",
+      "verification_basis": "The researcher independently reviewed the formal ASCO publication record and original PDF and confirmed both roles on 2026-10-26: Notes identify Ge Zhang with a correspondence email, the original PDF's Corresponding Author section explicitly identifies Ge Zhang, and Notes confirm equal contribution by Shiqian Zhang, Ge Zhang and Ming Wang.",
       "sources": [
         {
-          "url": "https://ascopubs.org/doi/10.1200/PO.24.00089",
-          "locator": "Author notes; equal contribution of three authors"
+          "url": "https://ascopubs.org/doi/abs/10.1200/PO.24.00089",
+          "locator": "Notes: Ge Zhang and correspondence email; equal contribution by Shiqian Zhang, Ge Zhang and Ming Wang. Original publication PDF: Corresponding Author."
         }
       ],
-      "identity_note": "Only the reviewed equal-contribution designation is supplied. No corresponding-author designation is inferred or added."
+      "identity_note": "Ge Zhang is a corresponding author and a co-first author. The equal-contribution statement names Shiqian Zhang, Ge Zhang and Ming Wang; both verified identities are retained. No sole-corresponding-author claim is made."
     },
     "10.1172/jci194175": {
       "status": "verified",
