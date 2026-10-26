@@ -30,6 +30,42 @@
       "key_findings": 3,
       "citation_use_cases": 3,
       "evidence_rows": 3
+    },
+    "10.15212/cvia.2024.0023": {
+      "slug": "doi-10-15212-cvia-2024-0023",
+      "profile_type": "multicohort_observational",
+      "content_sha256": "563158ce4a95903ae6c648888834bf9f649351b9f34bc71339e1382c8afd42db",
+      "canonical_json_sha256": "b35819178b93e15f00513ccbf2793c01f3572d104b2c720dbe8c55453930c3a3",
+      "key_findings": 3,
+      "citation_use_cases": 2,
+      "evidence_rows": 3
+    },
+    "10.3389/fnut.2025.1658286": {
+      "slug": "doi-10-3389-fnut-2025-1658286",
+      "profile_type": "clinical_cohort",
+      "content_sha256": "10e65dc7f3dc06103c93bb5ca032746e712ffc974f6f8742708bf9187f53b571",
+      "canonical_json_sha256": "6c1b7f1645a9421bdbf7467eb6fa9f5fc2d7e14a73eacba05a3e5eec84d258b1",
+      "key_findings": 4,
+      "citation_use_cases": 3,
+      "evidence_rows": 4
+    },
+    "10.1002/clc.70019": {
+      "slug": "doi-10-1002-clc-70019",
+      "profile_type": "clinical_cohort",
+      "content_sha256": "d8a14314430a8a69849d59bd6a6f97f73d16259aee2c1f0589cb7db83d274538",
+      "canonical_json_sha256": "339d324d4c1c698e2f45dad10d31324a0cd85dcc8b174a4f9169432ea7815a11",
+      "key_findings": 4,
+      "citation_use_cases": 3,
+      "evidence_rows": 4
+    },
+    "10.3389/fonc.2024.1425895": {
+      "slug": "doi-10-3389-fonc-2024-1425895",
+      "profile_type": "preclinical_multimodal",
+      "content_sha256": "b8c7af6ebf4ec8a78c6e75b9c58fdaca32ab580df5d1e0657dee2adf97a27796",
+      "canonical_json_sha256": "5a37a8c502bb204afde0d336e6edffa0de9f7c135d70f31c2a47907af51442dd",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
     }
   }
 }

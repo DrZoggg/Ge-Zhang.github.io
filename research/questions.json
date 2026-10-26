@@ -640,6 +640,47 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#paper-discovery"
     },
     {
+      "id": "doi-10-3389-fnut-2025-1658286",
+      "question": "How many participants and which outcomes were analyzed?",
+      "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
+      "doi": "10.3389/fnut.2025.1658286",
+      "paper_url": "https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html#qa-1",
+      "source": "data/deep_geo/doi-10-3389-fnut-2025-1658286.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "That increasing eGDR prevents hyperuricemia or gout, or reduces future disease incidence.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "hyperuricemia",
+        "gout",
+        "US NHANES adults aged at least 20 years",
+        "prevalent hyperuricemia",
+        "self-reported gout",
+        "survey-weighted logistic regression",
+        "cross-sectional analysis",
+        "estimated glucose disposal rate",
+        "survey questionnaires",
+        "serum uric acid",
+        "HbA1c",
+        "waist circumference",
+        "eGDR",
+        "NHANES 2007–2018"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fnut-2025-1658286.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fnut-2025-1658286.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fnut-2025-1658286.csl.json",
+      "field_entry": [
+        "Metabolic epidemiology",
+        "Population-based gout and hyperuricemia research"
+      ],
+      "review_topics": [
+        "Insulin-resistance proxies and prevalent disease",
+        "Survey-weighted cross-sectional associations"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html#paper-discovery"
+    },
+    {
       "id": "doi-10-3389-fpubh-2025-1521372",
       "question": "How was short sleep associated with mortality?",
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -1297,6 +1338,82 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#paper-discovery"
     },
     {
+      "id": "doi-10-1002-clc-70019",
+      "question": "Which part of the paper is summarized here?",
+      "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
+      "doi": "10.1002/clc.70019",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.html#qa-1",
+      "source": "data/deep_geo/doi-10-1002-clc-70019.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "That interventions improving LE8 prevent or treat depression or anxiety.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "depressive symptoms",
+        "cardiovascular health",
+        "US NHANES adults aged at least 20 years",
+        "PHQ-9-defined prevalent depressive symptoms",
+        "survey-weighted logistic regression",
+        "cross-sectional analysis",
+        "PHQ-9 responses",
+        "health-behavior questionnaires",
+        "examination and laboratory measures",
+        "Life’s Essential 8",
+        "PHQ-9",
+        "NHANES 2007–2012"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-clc-70019.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-clc-70019.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-clc-70019.csl.json",
+      "field_entry": [
+        "Cardiovascular health epidemiology",
+        "Mental-health symptoms in population surveys"
+      ],
+      "review_topics": [
+        "Life’s Essential 8 and depressive symptoms",
+        "Cross-sectional cardiovascular and mental-health associations"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-15212-cvia-2024-0023",
+      "question": "What populations and statistical units were analyzed?",
+      "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
+      "doi": "10.15212/cvia.2024.0023",
+      "paper_url": "https://drgezhang.com/papers/doi-10-15212-cvia-2024-0023.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-15212-cvia-2024-0023.html#qa-1",
+      "source": "data/deep_geo/doi-10-15212-cvia-2024-0023.json#/qa/0/question",
+      "profile_type": "multicohort_observational",
+      "narrative_genre": null,
+      "evidence_scope": "Benefits from changing the microbiome, probiotics, antibiotics or aneurysm-prevention treatment.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Aortic aneurysm",
+        "Abdominal aortic aneurysm",
+        "Two-sample Mendelian randomization",
+        "GWAS summary statistics",
+        "Inverse-variance weighting",
+        "Horizontal pleiotropy",
+        "Multiple testing",
+        "Family XIII UCG001",
+        "Bifidobacteriaceae",
+        "Bilophila"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-15212-cvia-2024-0023.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-15212-cvia-2024-0023.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-15212-cvia-2024-0023.csl.json",
+      "field_entry": [
+        "Cardiovascular genetics",
+        "Microbiome epidemiology"
+      ],
+      "review_topics": [
+        "Gut microbial traits and aneurysm",
+        "Two-sample Mendelian randomization"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-15212-cvia-2024-0023.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1111-jcmm-18408",
       "question": "Which pathological stages were compared in the single-cell analysis?",
       "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -1442,6 +1559,45 @@
         "Plasma vesicle-associated circular RNA profiling"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70258.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-3389-fonc-2024-1425895",
+      "question": "How strong is the reported TGFBR2 MR evidence?",
+      "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
+      "doi": "10.3389/fonc.2024.1425895",
+      "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html#qa-1",
+      "source": "data/deep_geo/doi-10-3389-fonc-2024-1425895.json#/qa/0/question",
+      "profile_type": "preclinical_multimodal",
+      "narrative_genre": null,
+      "evidence_scope": "Unconditional causality or universal protection against LUAD from a nominal selected-gene MR association.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "lung adenocarcinoma",
+        "TGFBR2",
+        "GIMAP6",
+        "CAV1",
+        "PECAM1",
+        "A549 cells",
+        "two-sample Mendelian randomization",
+        "immunohistochemistry",
+        "siRNA perturbation",
+        "CCK8 assay",
+        "Transwell migration",
+        "apoptosis flow cytometry"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2024-1425895.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2024-1425895.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3389-fonc-2024-1425895.csl.json",
+      "field_entry": [
+        "LUAD molecular candidates",
+        "Experimental TGFBR2 biology"
+      ],
+      "review_topics": [
+        "Integration of expression screening and MR",
+        "Tissue staining and single-cell-line functional validation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html#paper-discovery"
     },
     {
       "id": "circadian-ihd",

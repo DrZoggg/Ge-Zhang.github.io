@@ -1,0 +1,329 @@
+{
+  "version": 2,
+  "doi": "10.1002/clc.70019",
+  "display_title": "Life’s Essential 8 and depressive symptoms: the consistent NHANES evidence",
+  "summary": "A cross-sectional NHANES analysis linked higher Life’s Essential 8 scores to lower odds of PHQ-9-defined depressive symptoms. This evidence page is limited to the internally consistent depression results; conflicting anxiety counts and estimates remain unresolved and are not presented as established findings.",
+  "research_question": "What association between cardiovascular health measured by Life’s Essential 8 and prevalent depressive symptoms is consistently supported by this NHANES analysis?",
+  "author_summary": "The study assessed adults in NHANES 2007–2012 using eight cardiovascular-health components and questionnaire-defined mental-health outcomes. The depression analysis used PHQ-9 scores of at least 10 and survey-weighted logistic regression adjusted for age, sex, race, marital status, poverty and education. The analytic sample, depression count and principal depression estimates agree across the abstract, body and Table 2. Higher LE8 scores were associated with lower odds of prevalent depressive symptoms. Anxiety was also studied, but its count and continuous estimate conflict between abstract and body/table; those findings are excluded here pending source clarification. This bounded summary neither establishes an intervention benefit nor equates a questionnaire cutoff with an independently adjudicated clinical diagnosis.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Cross-sectional secondary analysis of NHANES 2007–2012, restricted here to the consistent depression results",
+    "evidence_type": "Survey-weighted observational prevalence association",
+    "unique_total_n": 13028,
+    "population": "NHANES adults aged at least 20 years with complete LE8 and outcome data, excluding pregnancy",
+    "primary_endpoint": "Prevalent depressive symptoms defined by PHQ-9 score ≥10",
+    "secondary_endpoint": "Associations of LE8 health-behavior and health-factor subscores with depressive symptoms; published anxiety results excluded from this evidence page because of unresolved source conflicts",
+    "data_modalities": [
+      "NHANES examination and laboratory measures",
+      "Dietary and health-behavior questionnaires",
+      "PHQ-9 symptom questionnaire",
+      "Survey sampling weights"
+    ],
+    "external_validation": false,
+    "cohorts": [
+      {
+        "name": "NHANES 2007–2012 complete-data sample",
+        "role": "Single cross-sectional sample; depression findings only in this bounded summary",
+        "n": 13028
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The depression evidence is based on a defined complete-data adult survey sample and a symptom threshold.",
+      "context": "The reported depression count agrees between Abstract Results and Results §3.1. PHQ-9 ascertainment is a symptom measure, not prospective incident depression.",
+      "evidence": [
+        {
+          "label": "analytic participants",
+          "value": "13,028"
+        },
+        {
+          "label": "participants with PHQ-9 ≥10",
+          "value": "1,206"
+        },
+        {
+          "label": "survey period",
+          "value": "2007–2012"
+        }
+      ],
+      "source_locator": "Methods §2.1 Study Population (clc70019-sec-0080), §2.3 Outcomes (clc70019-sec-0100); Results §3.1 (clc70019-sec-0140); Abstract Results"
+    },
+    {
+      "id": "KF2",
+      "claim": "Higher total LE8 score was associated with lower adjusted odds of prevalent depressive symptoms.",
+      "context": "Weighted logistic regression adjusted for age, sex, race, marital status, poverty and education; association per 10-point LE8 increment.",
+      "evidence": [
+        {
+          "label": "OR per 10-point LE8 increase",
+          "value": "0.61"
+        },
+        {
+          "label": "95% confidence interval",
+          "value": "0.58–0.65"
+        },
+        {
+          "label": "P value",
+          "value": "<0.001"
+        }
+      ],
+      "source_locator": "Methods §2.5 Statistical Analysis (clc70019-sec-0120); Results §3.2 (clc70019-sec-0150); Table 2 (clc70019-tbl-0002), Depression column, total-score continuous row and footnotes a–b"
+    },
+    {
+      "id": "KF3",
+      "claim": "Moderate and high LE8 groups had lower depression odds relative to the low-score group.",
+      "context": "The score categories are low 0–49, moderate 50–79 and high 80–100. This compares concurrent health profiles, not the effect of moving a person into a higher category.",
+      "evidence": [
+        {
+          "label": "moderate versus low",
+          "value": "OR 0.36 (95% CI 0.29–0.43)"
+        },
+        {
+          "label": "high versus low",
+          "value": "OR 0.08 (95% CI 0.05–0.13)"
+        },
+        {
+          "label": "P for trend",
+          "value": "<0.001"
+        }
+      ],
+      "source_locator": "Methods §2.2 Assessment of Cardiovascular Health Metrics (clc70019-sec-0090); Results §3.2; Table 2 (clc70019-tbl-0002), LE8 total score category rows, Depression column"
+    },
+    {
+      "id": "KF4",
+      "claim": "Both LE8 health-behavior and health-factor subscores had inverse continuous associations with depressive symptoms.",
+      "context": "Separate Table 2 associations per 10-point subscore increase, adjusted for the six stated demographic and socioeconomic factors; not independent causal effects of individual components.",
+      "evidence": [
+        {
+          "label": "health-behavior score",
+          "value": "OR 0.70 (95% CI 0.67–0.73)"
+        },
+        {
+          "label": "health-factor score",
+          "value": "OR 0.87 (95% CI 0.83–0.92)"
+        },
+        {
+          "label": "P values",
+          "value": "Both <0.001"
+        }
+      ],
+      "source_locator": "Results §3.2 (clc70019-sec-0150); Table 2 (clc70019-tbl-0002), continuous health-behavior and health-factor rows, Depression column and footnotes a–b"
+    }
+  ],
+  "what_this_adds": [
+    "Relates a multidomain cardiovascular-health score to concurrently measured depressive symptoms in a nationally sampled adult dataset.",
+    "Provides mutually consistent total-score, categorical and subscore depression associations while keeping the unresolved anxiety results outside the supported claim set."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Survey-weighted associations of LE8 and its subscores with PHQ-9-defined depressive symptoms in the selected 2007–2012 sample.",
+      "The depression-specific counts and estimates that agree across the abstract, Results and Table 2."
+    ],
+    "does_not_establish": [
+      "That interventions improving LE8 prevent or treat depression or anxiety.",
+      "A causal direction between cardiovascular health and depressive symptoms.",
+      "Resolved anxiety event counts or effect estimates; these remain excluded.",
+      "Prospective depression prediction or psychiatric diagnosis by LE8."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which part of the paper is summarized here?",
+      "answer": "Only the internally consistent depression analysis. The full publication also analyzes anxiety, but its unresolved count and effect-estimate conflicts are explicitly excluded from this page's supported findings.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "How were depressive symptoms defined?",
+      "answer": "PHQ-9 score ≥10. The paper reports 1,206 such participants among 13,028 adults in the analytic sample.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What is the association per 10 LE8 points?",
+      "answer": "The adjusted, survey-weighted depression OR is 0.61 (95% CI 0.58–0.65), P<0.001. It is a prevalence-odds association, not a demonstrated preventive effect.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What did the category and subscore analyses add?",
+      "answer": "Relative to low LE8, moderate and high groups had ORs 0.36 and 0.08. Per 10 subscore points, health-behavior and health-factor ORs were 0.70 and 0.87. The stated confidence intervals and covariate scope remain essential.",
+      "evidence_refs": [
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does this show that improving cardiovascular health treats depression?",
+      "answer": "No. Concurrent cross-sectional measurements cannot resolve temporal direction, reverse causation or residual confounding. No LE8-targeted treatment was tested.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "depressive symptoms",
+      "cardiovascular health"
+    ],
+    "populations": [
+      "US NHANES adults aged at least 20 years"
+    ],
+    "outcomes": [
+      "PHQ-9-defined prevalent depressive symptoms"
+    ],
+    "methods": [
+      "survey-weighted logistic regression",
+      "cross-sectional analysis"
+    ],
+    "data_types": [
+      "PHQ-9 responses",
+      "health-behavior questionnaires",
+      "examination and laboratory measures"
+    ],
+    "models_tools": [
+      "Life’s Essential 8",
+      "PHQ-9"
+    ],
+    "datasets_cohorts": [
+      "NHANES 2007–2012"
+    ]
+  },
+  "limitations": [
+    "Unresolved anxiety conflict: Abstract Results reports 2,947 anxiety participants and OR 0.78 (95% CI 0.75–0.81), whereas Results §3.1 reports 3,326 and Results §3.3/Table 2 give OR 0.80 (0.77–0.82). This page does not choose between these values; all anxiety estimates and anxiety-based conclusions are excluded. The discrepancy has not been declared corrected.",
+    "Cross-sectional associations do not determine temporal order, causality or efficacy of a cardiovascular-health intervention.",
+    "PHQ-9 ≥10 identifies depressive symptoms for this analysis and is not equivalent to an independently adjudicated psychiatric diagnosis.",
+    "Complete-data selection, self-reported behaviors and residual confounding can affect associations.",
+    "Supplementary subgroup/sensitivity results and spline plots are outside the independently verified quantitative claim set."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.3389/fnut.2025.1658286",
+      "relationship": "A separate NHANES prevalence-association study; shared survey design is methodological context, not independent validation of depression associations."
+    }
+  ],
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular health epidemiology",
+      "Mental-health symptoms in population surveys"
+    ],
+    "review_topics": [
+      "Life’s Essential 8 and depressive symptoms",
+      "Cross-sectional cardiovascular and mental-health associations"
+    ],
+    "scientific_role": "Population-survey analysis of LE8 and depressive symptoms, with the conflicting anxiety evidence explicitly excluded.",
+    "evidence_position": "Adjusted prevalence association without intervention or prospective diagnostic validation.",
+    "related_concepts": [
+      "Life’s Essential 8",
+      "PHQ-9",
+      "Survey-weighted analysis"
+    ],
+    "citation_contexts": [
+      "Evidence review of cardiovascular-health profiles and prevalent depressive symptoms.",
+      "Methodological discussion of interpreting questionnaire outcomes and observational odds ratios."
+    ]
+  },
+  "provenance": {
+    "publisher_url": "https://doi.org/10.1002/clc.70019",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11420513/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39314085/",
+    "pmcid": "PMC11420513",
+    "pmid": "39314085",
+    "version": "Formal published article archived as PMC11420513.1; no scientific correction relation returned by the targeted Crossref metadata check on 2026-10-26. This is not an exhaustive absence-of-correction claim.",
+    "evidence_basis": "Formal Methods §§2.1–2.5, Results §§3.1–3.2 and text-encoded Table 2 depression columns. Anxiety counts and effects are excluded because Abstract versus Results/Table 2 conflict.",
+    "source_verification_scope": "Formal Methods, Results and text-encoded tables were checked directly. No original statistical reanalysis and no source figures reproduced.",
+    "license": "CC BY 4.0, as stated in article-level permissions.",
+    "source_sha256": "0bdc92cabe8ddd3dea781e53aadec051e4d6142bbce9091a93a6ec1cb2041f5b"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record. The explicitly disclosed inconsistent findings are excluded from the supported evidence scope.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What evidence relates Life’s Essential 8 to depressive symptoms?",
+        "supported_scope": "The survey-weighted NHANES analysis reports OR 0.61 per 10 LE8 points for PHQ-9-defined depressive symptoms, CI 0.58–0.65, without causal inference.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How did depressive-symptom odds differ by LE8 category?",
+        "supported_scope": "Compared with low LE8, adjusted ORs were 0.36 for moderate and 0.08 for high scores; these are concurrent category associations.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Were both LE8 subscore domains associated with depressive symptoms?",
+        "supported_scope": "Per 10 points, health-behavior and health-factor ORs were 0.70 and 0.87, respectively, in the reported weighted models.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "That interventions improving LE8 prevent or treat depression or anxiety.",
+      "A causal direction between cardiovascular health and depressive symptoms.",
+      "Resolved anxiety event counts or effect estimates; these remain excluded.",
+      "Prospective depression prediction or psychiatric diagnosis by LE8."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The depression evidence is based on a defined complete-data adult survey sample and a symptom threshold.",
+        "context": "The reported depression count agrees between Abstract Results and Results §3.1. PHQ-9 ascertainment is a symptom measure, not prospective incident depression.",
+        "finding": "analytic participants: 13,028; participants with PHQ-9 ≥10: 1,206; survey period: 2007–2012",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.1 Study Population (clc70019-sec-0080), §2.3 Outcomes (clc70019-sec-0100); Results §3.1 (clc70019-sec-0140); Abstract Results",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Higher total LE8 score was associated with lower adjusted odds of prevalent depressive symptoms.",
+        "context": "Weighted logistic regression adjusted for age, sex, race, marital status, poverty and education; association per 10-point LE8 increment.",
+        "finding": "OR per 10-point LE8 increase: 0.61; 95% confidence interval: 0.58–0.65; P value: <0.001",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.5 Statistical Analysis (clc70019-sec-0120); Results §3.2 (clc70019-sec-0150); Table 2 (clc70019-tbl-0002), Depression column, total-score continuous row and footnotes a–b",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "Moderate and high LE8 groups had lower depression odds relative to the low-score group.",
+        "context": "The score categories are low 0–49, moderate 50–79 and high 80–100. This compares concurrent health profiles, not the effect of moving a person into a higher category.",
+        "finding": "moderate versus low: OR 0.36 (95% CI 0.29–0.43); high versus low: OR 0.08 (95% CI 0.05–0.13); P for trend: <0.001",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Methods §2.2 Assessment of Cardiovascular Health Metrics (clc70019-sec-0090); Results §3.2; Table 2 (clc70019-tbl-0002), LE8 total score category rows, Depression column",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-kf4",
+        "component": "Both LE8 health-behavior and health-factor subscores had inverse continuous associations with depressive symptoms.",
+        "context": "Separate Table 2 associations per 10-point subscore increase, adjusted for the six stated demographic and socioeconomic factors; not independent causal effects of individual components.",
+        "finding": "health-behavior score: OR 0.70 (95% CI 0.67–0.73); health-factor score: OR 0.87 (95% CI 0.83–0.92); P values: Both <0.001",
+        "evidence_level": "Survey-weighted cross-sectional observational analysis",
+        "scope": "Reported prevalence-odds association or study measurement, not incident disease prediction or an intervention effect.",
+        "source_locator": "Results §3.2 (clc70019-sec-0150); Table 2 (clc70019-tbl-0002), continuous health-behavior and health-factor rows, Depression column and footnotes a–b",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ]
+  }
+}
