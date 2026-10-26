@@ -557,10 +557,10 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     profile_type = required_text(
         study.get("profile_type"), f"{label} study_profile.profile_type"
     )
-    if profile_type not in {"clinical_cohort", "multicohort_omics", "multicohort_observational", "narrative_review", "preclinical_multimodal"}:
+    if profile_type not in {"clinical_cohort", "multicohort_omics", "multicohort_observational", "narrative_review", "preclinical_multimodal", "bibliometric_corpus"}:
         raise ValueError(
             f"{label} study_profile.profile_type must be clinical_cohort, "
-            "multicohort_omics, multicohort_observational, narrative_review, or preclinical_multimodal."
+            "multicohort_omics, multicohort_observational, narrative_review, preclinical_multimodal, or bibliometric_corpus."
         )
     if "narrative_genre" in study and (
         profile_type != "narrative_review"
@@ -569,6 +569,11 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
         raise ValueError(f"{label} narrative_genre requires narrative_review and perspective or correspondence.")
     if profile_type in {"preclinical_multimodal", "multicohort_observational"} and any(key in study for key in ("unique_total_n", "cohorts")):
         raise ValueError(f"{label} {profile_type} must use scale_metrics, not a synthetic cohort total.")
+    if profile_type == "bibliometric_corpus" and (
+        any(key in study for key in ("unique_total_n", "cohorts"))
+        or "model_profile" in content
+    ):
+        raise ValueError(f"{label} bibliometric_corpus must not use clinical cohort or prediction model fields.")
     detail_keys = ["study_design", "evidence_type"]
     if profile_type == "narrative_review":
         detail_keys.append("translation_scope")
@@ -1102,6 +1107,15 @@ def v2_study_heading(content):
 
 
 def v2_study_label(key, profile_type):
+    if profile_type == "bibliometric_corpus":
+        labels = {
+            "population": "Corpus",
+            "primary_endpoint": "Primary analysis",
+            "secondary_endpoint": "Additional analysis",
+            "external_validation": "Independent corpus evaluation",
+        }
+        if key in labels:
+            return labels[key]
     if key == "external_validation":
         return (
             "External validation"

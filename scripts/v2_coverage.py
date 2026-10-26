@@ -12,8 +12,9 @@ from urllib.parse import urlsplit
 
 from build_publications import (
     validate_deep_v2_content, validate_citation_layer, validate_citation_pilot,
-    v2_article_label, v2_study_heading,
+    v2_article_label, v2_study_heading, paper_schema,
 )
+from site_common import load_site_config
 from paper_discovery import validate_layer, render_html, render_markdown
 
 # Five pre-existing answers cite profile/model/scope fields rather than a KF.
@@ -95,7 +96,11 @@ def coverage_rows(publications, contents, root, read_text=None):
         canonical = publication["paper_url"]
         identity_html = meta("citation_title") == [publication["title"]] and meta("citation_doi") == [doi] and meta("citation_author") == authors and f'<link rel="canonical" href="{canonical}">' in page
         identity_md = markdown.startswith("# " + publication["title"] + "\n") and f"DOI: {doi}" in markdown and f"Canonical page: {canonical}" in markdown and all(f"{i}. {name}" in markdown for i, name in enumerate(authors, 1)) and all(f"{label}: {publication[key]}\n" in markdown for label, key in (("Type", "type"), ("Journal", "journal"), ("Year", "year")))
-        identity_schema = schema.get("name") == publication["title"] and schema.get("url") == canonical and schema.get("identifier", {}).get("value") == doi and [person.get("name") for person in schema.get("author", [])] == authors and schema.get("description") == content.get("author_summary")
+        # The established renderer canonicalizes only the site's researcher
+        # reference (e.g. GE ZHANG -> Ge Zhang), including its ORCID/@id.
+        # Compare complete ordered author objects, never case-fold all authors.
+        expected_authors = paper_schema(publication, canonical, load_site_config())["author"]
+        identity_schema = schema.get("name") == publication["title"] and schema.get("url") == canonical and schema.get("identifier", {}).get("value") == doi and schema.get("author") == expected_authors and schema.get("description") == content.get("author_summary")
         status("publication_identity", bool(authors), identity_html, identity_md)
         row["html_md_jsonld_parity"] = "PASS" if identity_html and identity_md and identity_schema else "FAIL"
         if row["html_md_jsonld_parity"] != "PASS":

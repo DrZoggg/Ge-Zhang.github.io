@@ -7,6 +7,7 @@ from build_publications import validate_citation_layer
 from site_common import PAPERS_DIR
 from sync_common import ROOT
 from central_release_contract import RELEASE
+from autonomous_release_contract import RELEASE as AUTONOMOUS
 
 
 TARGETS = {
@@ -46,6 +47,9 @@ TARGETS = {
 for _row in RELEASE["papers"].values():
     TARGETS[_row["slug"]] = (_row["slug"] + ".json", 3, 3, 3)
 
+
+for _row in AUTONOMOUS['papers'].values():
+    TARGETS[_row['slug']] = (_row['slug'] + '.json', _row['citation_use_cases'], _row['evidence_rows'], _row['key_findings'])
 
 def main():
     tested = []

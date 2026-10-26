@@ -1,0 +1,317 @@
+{
+  "version": 2,
+  "doi": "10.32604/or.2025.059290",
+  "display_title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
+  "summary": "A descriptive bibliometric study of 17,293 English-language Web of Science documents maps publication topics and keyword attention across cancer management; it does not estimate patient outcomes or treatment effects.",
+  "research_question": "How are publications and bibliometric research topics distributed across cancer prevention, screening, diagnosis, treatment and rehabilitation in a defined Web of Science corpus?",
+  "author_summary": "The study retrieved English-language Web of Science Core Collection literature using title terms for cancer and five cancer-management areas. The eligible publication interval was 1 March 2014 to 1 March 2024, with 25 December 2024 stated as the database access date. After exclusions and deduplication, 17,293 documents were analyzed. The article reports publication, keyword, collaboration and co-citation analyses, using bibliometric tools to describe the literature. Treatment accounts for the largest reported topic category, while Table 9 provides frequencies for terms such as targeted therapy, immunotherapy and artificial intelligence. These are descriptive features of the retrieved documents. The study does not validate a treatment, quantify clinical benefit or establish that popular research topics are more reliable. This evidence page omits the inconsistent country-collaboration ranking and does not reproduce or independently interpret network-map images.",
+  "study_profile": {
+    "profile_type": "bibliometric_corpus",
+    "study_design": "Descriptive bibliometric corpus analysis",
+    "evidence_type": "Original analysis of bibliographic records and text-encoded frequency tables",
+    "population": "English-language Web of Science Core Collection documents selected by a title-based oncology query; the unit of analysis is a document, not a patient.",
+    "primary_endpoint": "Distribution of publications across cancer-management topic categories.",
+    "secondary_endpoint": "Descriptive keyword co-occurrence, co-citation, collaboration and timeline analyses; no clinical endpoint.",
+    "external_validation": false,
+    "data_modalities": [
+      "Bibliographic metadata: titles, authors, affiliations, sources and publication dates",
+      "Keywords, abstracts and citation relationships",
+      "Descriptive publication and keyword frequency tables"
+    ],
+    "scale_metrics": [
+      {
+        "label": "documents after deduplication",
+        "value": "17,293"
+      },
+      {
+        "label": "publication eligibility interval",
+        "value": "1 March 2014 to 1 March 2024"
+      },
+      {
+        "label": "database access date reported in Methods",
+        "value": "25 December 2024"
+      },
+      {
+        "label": "literature database",
+        "value": "Web of Science Core Collection"
+      },
+      {
+        "label": "title search",
+        "value": "TI = ((tumor OR neoplasm OR cancer) AND (prevention OR diagnosis OR screening OR rehabilitation OR treatment))"
+      },
+      {
+        "label": "explicit exclusions",
+        "value": "Incomplete-information documents, conference papers and technological reports"
+      },
+      {
+        "label": "record management",
+        "value": "EndNote X9.1 v19.1.0.12691; metadata exported to Excel; deduplication reported"
+      },
+      {
+        "label": "analysis tools reported in Abstract Methods",
+        "value": "VOSviewer 1.6.20; CiteSpace 6.3.R3; Bibliometrix 3.0.3"
+      }
+    ],
+    "counting_note": "Counts are literature records or keyword frequencies, not unique participants, samples, trials or treatment responses. The publication eligibility cutoff and database access date are different dates. The five reported topic counts sum to 17,293; no independent reconstruction of the corpus or its allocation was performed."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study describes a defined English-language oncology literature corpus rather than a patient cohort.",
+      "context": "Title-based Web of Science Core Collection search; published corpus counts are reported without independently rerunning the subscription database query.",
+      "evidence": [
+        {
+          "label": "documents after deduplication",
+          "value": "17,293"
+        },
+        {
+          "label": "eligible publication interval",
+          "value": "1 March 2014 to 1 March 2024"
+        },
+        {
+          "label": "reported database access date",
+          "value": "25 December 2024"
+        }
+      ],
+      "source_locator": "Materials and Methods: Data sources (s2_1), Inclusion criteria for literature (s2_2), Exclusion criteria for literature (s2_3), Statistical methods (s2_4); Figure 1 caption"
+    },
+    {
+      "id": "KF2",
+      "claim": "Treatment accounted for the largest of the five reported topic groups in this retrieved corpus.",
+      "context": "Document-topic allocation, not patient incidence, disease burden, resource need or comparative clinical effectiveness.",
+      "evidence": [
+        {
+          "label": "prevention documents",
+          "value": "1,655"
+        },
+        {
+          "label": "screening documents",
+          "value": "2,300"
+        },
+        {
+          "label": "diagnosis documents",
+          "value": "2,874"
+        },
+        {
+          "label": "treatment documents",
+          "value": "10,298"
+        },
+        {
+          "label": "rehabilitation documents",
+          "value": "166"
+        }
+      ],
+      "source_locator": "Results: National annual publication trends (s3_1), first paragraph"
+    },
+    {
+      "id": "KF3",
+      "claim": "The keyword analysis records attention to treatment and emerging research topics within the selected literature.",
+      "context": "Table 9 frequencies describe terms in the analyzed corpus; co-occurrence or citation prominence does not establish treatment benefit, research quality or future clinical uptake.",
+      "evidence": [
+        {
+          "label": "targeted therapy keyword frequency",
+          "value": "1,069"
+        },
+        {
+          "label": "tumor microenvironment keyword frequency",
+          "value": "927"
+        },
+        {
+          "label": "immunotherapy keyword frequency",
+          "value": "900"
+        },
+        {
+          "label": "artificial intelligence keyword frequency",
+          "value": "797"
+        }
+      ],
+      "source_locator": "Results: Keyword analysis (s3_7); Table 9 (table-9), Frequency column; Figures 12-13 captions identify keyword co-occurrence maps"
+    }
+  ],
+  "what_this_adds": [
+    "A corpus-specific map of how published oncology literature is distributed across five cancer-management topics.",
+    "A descriptive bibliometric entry point for locating research themes; primary clinical studies remain necessary for treatment-effect claims."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Description of the defined title-search corpus and its reported document counts.",
+      "Attribution of topic allocation and selected keyword frequencies to this bibliometric study.",
+      "Discussion of research attention within the specified database, language and date restrictions."
+    ],
+    "does_not_establish": [
+      "Clinical effectiveness, comparative treatment benefit or patient safety.",
+      "Causal mechanisms, incidence or disease burden from publication frequencies.",
+      "An exhaustive global oncology evidence inventory or a quality ranking of therapies, institutions or researchers.",
+      "Independent validation of clinical results summarized from the article's cited literature."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What literature did this bibliometric study analyze?",
+      "answer": "It analyzed 17,293 English-language documents after deduplication from a title-based Web of Science Core Collection search covering publications from 1 March 2014 to 1 March 2024. The reported database access date was 25 December 2024; this differs from the publication eligibility cutoff.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How were the retrieved documents distributed across cancer-management topics?",
+      "answer": "The article reports 1,655 prevention, 2,300 screening, 2,874 diagnosis, 10,298 treatment and 166 rehabilitation documents. These are literature counts in the retrieved corpus, not patients or clinical outcomes.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which treatment-related keyword frequencies are directly reported?",
+      "answer": "Table 9 reports targeted therapy 1,069, tumor microenvironment 927, immunotherapy 900 and artificial intelligence 797. These frequencies describe bibliographic attention and should not be interpreted as measures of clinical effectiveness.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Can this study establish which cancer treatment works best?",
+      "answer": "No. Its original evidence consists of document counts and bibliometric patterns. It does not compare patient interventions or estimate treatment effects; clinical claims discussed from other publications require those primary studies.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "bibliometrics",
+      "oncology research mapping"
+    ],
+    "methods": [
+      "title-based literature search",
+      "keyword co-occurrence",
+      "co-citation analysis",
+      "descriptive frequency analysis"
+    ],
+    "entities": [
+      "Web of Science Core Collection",
+      "VOSviewer",
+      "CiteSpace",
+      "Bibliometrix"
+    ]
+  },
+  "limitations": [
+    "The corpus is restricted to English-language records in Web of Science Core Collection and a title-based query; it is not an exhaustive inventory of oncology research.",
+    "Publication eligibility ends on 1 March 2024, while the Methods give 25 December 2024 as the database access date. The partial 2024 interval cannot be compared with complete years as an annual trend.",
+    "The article states that records were deduplicated but does not provide a complete reproducible deduplication rule or a deposited corpus in its Availability of Data and Materials statement; this page does not independently regenerate the search.",
+    "Bibliometric frequency, co-occurrence and co-citation are descriptive signals of the retrieved literature, not measures of therapeutic efficacy, causal mechanism or evidence quality.",
+    "The Results description of the strongest country collaboration differs from the ranking implied by Table 2 frequencies. This page excludes that ranking rather than choosing a preferred account.",
+    "Selected findings rely on formal body text and text-encoded tables. Network-map geometry and figure-derived effect estimates are not independently reinterpreted here."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.csbj.2024.04.044",
+      "relationship": "Complementary narrative review of proteomics in precision oncology; provides a topic-specific synthesis, not external validation of this bibliometric corpus."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://doi.org/10.32604/or.2025.059290",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12144630/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40486880/",
+    "pmcid": "PMC12144630",
+    "pmid": "40486880",
+    "version": "Published journal article, Oncology Research 33(6), 1437-1458 (2025); formal full-text XML archived from Europe PMC.",
+    "evidence_basis": "Formal article Methods and Results, including text-encoded Tables 2 and 9. Publication identity and nine-author order match the existing record. No source figure is reproduced.",
+    "source_verification_scope": "Selected corpus and frequency findings are supported by body text and text-encoded tables. Network geometry is not interpreted; inconsistent collaboration ranking is excluded and disclosed. No claim of independent database reanalysis.",
+    "license": "CC BY 4.0; article-level license in the formal full-text permissions statement.",
+    "source_sha256": "0597c4626ed61179448485de79794b98d7df8df7b11f0b39c37fd25259c1fde1"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Oncology bibliometrics",
+      "Cancer research mapping"
+    ],
+    "review_topics": [
+      "Publication distribution across cancer management",
+      "Keyword attention in oncology literature"
+    ],
+    "scientific_role": "Original descriptive analysis of a defined bibliographic corpus and its publication and keyword patterns.",
+    "evidence_position": "Document-level evidence; neither a clinical cohort nor a pooled analysis of treatment effects.",
+    "related_concepts": [
+      "Database coverage",
+      "Co-citation networks",
+      "Research attention"
+    ],
+    "citation_contexts": [
+      "Background: corpus-specific publication patterns across prevention, screening, diagnosis, treatment and rehabilitation.",
+      "Methods or research mapping: title-search eligibility and descriptive bibliometric frequencies, with database and language limits."
+    ]
+  },
+  "evidence_page_notice": "Author evidence synthesis of an original bibliometric study. The analyzed units are literature documents and keyword records, not patients. Publication or citation prominence does not establish clinical effectiveness or evidence quality.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What literature did this bibliometric study analyze?",
+        "supported_scope": "It analyzed 17,293 English-language documents after deduplication from a title-based Web of Science Core Collection search covering publications from 1 March 2014 to 1 March 2024. The reported database access date was 25 December 2024; this differs from the publication eligibility cutoff.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How were the retrieved documents distributed across cancer-management topics?",
+        "supported_scope": "The article reports 1,655 prevention, 2,300 screening, 2,874 diagnosis, 10,298 treatment and 166 rehabilitation documents. These are literature counts in the retrieved corpus, not patients or clinical outcomes.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which treatment-related keyword frequencies are directly reported?",
+        "supported_scope": "Table 9 reports targeted therapy 1,069, tumor microenvironment 927, immunotherapy 900 and artificial intelligence 797. These frequencies describe bibliographic attention and should not be interpreted as measures of clinical effectiveness.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Patient-level treatment effects, safety or diagnostic performance.",
+      "Causal biological mechanisms or clinical superiority inferred from publication frequency.",
+      "A complete global literature census or independent validation of cited primary studies."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The study describes a defined English-language oncology literature corpus rather than a patient cohort.",
+        "context": "Title-based Web of Science Core Collection search; published corpus counts are reported without independently rerunning the subscription database query.",
+        "finding": "documents after deduplication: 17,293; eligible publication interval: 1 March 2014 to 1 March 2024; reported database access date: 25 December 2024",
+        "evidence_level": "Descriptive bibliometric corpus analysis",
+        "scope": "Defined literature corpus, not a clinical sample.",
+        "source_locator": "Materials and Methods: Data sources (s2_1), Inclusion criteria for literature (s2_2), Exclusion criteria for literature (s2_3), Statistical methods (s2_4); Figure 1 caption",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Treatment accounted for the largest of the five reported topic groups in this retrieved corpus.",
+        "context": "Document-topic allocation, not patient incidence, disease burden, resource need or comparative clinical effectiveness.",
+        "finding": "prevention documents: 1,655; screening documents: 2,300; diagnosis documents: 2,874; treatment documents: 10,298; rehabilitation documents: 166",
+        "evidence_level": "Descriptive bibliometric corpus analysis",
+        "scope": "Reported topic allocation, not clinical effectiveness or burden.",
+        "source_locator": "Results: National annual publication trends (s3_1), first paragraph",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The keyword analysis records attention to treatment and emerging research topics within the selected literature.",
+        "context": "Table 9 frequencies describe terms in the analyzed corpus; co-occurrence or citation prominence does not establish treatment benefit, research quality or future clinical uptake.",
+        "finding": "targeted therapy keyword frequency: 1,069; tumor microenvironment keyword frequency: 927; immunotherapy keyword frequency: 900; artificial intelligence keyword frequency: 797",
+        "evidence_level": "Descriptive bibliometric corpus analysis",
+        "scope": "Published keyword frequency, not clinical benefit or evidence quality.",
+        "source_locator": "Results: Keyword analysis (s3_7); Table 9 (table-9), Frequency column; Figures 12-13 captions identify keyword co-occurrence maps",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

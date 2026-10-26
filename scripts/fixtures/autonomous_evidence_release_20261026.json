@@ -1,0 +1,35 @@
+{
+  "base_sha": "d29956ac5e8b390e72c4f6bc1856f5ebff4bcb29",
+  "content_date": "2026-10-26",
+  "baseline_v2": 43,
+  "patches": {},
+  "papers": {
+    "10.1007/s10238-024-01439-4": {
+      "slug": "doi-10-1007-s10238-024-01439-4",
+      "profile_type": "multicohort_omics",
+      "content_sha256": "f1656be479ec4a2602da6331e627efb125d662fa26ab737a2d4abda8c4d0356d",
+      "canonical_json_sha256": "ac37ce593ccd2a5b6163401d9723b80725751640cf7a8da18026190ad264e651",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    },
+    "10.32604/or.2025.059290": {
+      "slug": "doi-10-32604-or-2025-059290",
+      "profile_type": "bibliometric_corpus",
+      "content_sha256": "ccffb06872476dac4b354f44731a1e7b9a33dfe0a1405aef7055218d484cd082",
+      "canonical_json_sha256": "49a6de61d8e9a9f5c4b7258dc065c6ecfa63bbb2dd009adc3e507deb778d6154",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    },
+    "10.1155/humu/5591097": {
+      "slug": "doi-10-1155-humu-5591097",
+      "profile_type": "preclinical_multimodal",
+      "content_sha256": "f1b212840108b941879de05fff6d7a9dcf44b48b43cc219247a3c18345fb4935",
+      "canonical_json_sha256": "ffcdb3256a86bacfa2e2dd8b5dc516b0b0166f4157274f130e6e8f743690696a",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    }
+  }
+}

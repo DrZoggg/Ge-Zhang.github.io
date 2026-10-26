@@ -3,13 +3,14 @@ import copy
 import hashlib
 import json
 import subprocess
+import re
 import unittest
 
 from scholarly_discovery import backlink_html, reviewed_backlinks, validate_backlink_html
 from site_common import deep_content_path
 from sync_common import ROOT
 from v2_coverage import coverage_rows, validate_v2_coverage, check_qa_refs
-from central_release_contract import (BASE, RELEASE, old, newline_hashes,
+from autonomous_release_contract import (BASE, RELEASE, old, newline_hashes,
                                       reviewed_source, restore_reviewed_text,
                                       validate_new_source)
 
@@ -39,11 +40,8 @@ class V2CoverageTests(unittest.TestCase):
 
     def test_complete_modules_and_explicit_alternatives(self):
         counts = validate_v2_coverage(self.public, self.contents, ROOT)
-        self.assertEqual(len(self.prior_v2), 41)
-        self.assertEqual(sum(len(p['changes']) for p in RELEASE['patches'].values()), 13)
-        self.assertIn(set(RELEASE['papers']), [
-            {'10.1016/j.csbj.2024.04.044'},
-            {'10.1016/j.csbj.2024.04.044', '10.1016/j.medd.2026.100004'}])
+        self.assertEqual(len(self.prior_v2), RELEASE['baseline_v2'])
+        self.assertEqual(RELEASE['patches'], {})
         expected = len(self.prior_v2) + len(self.reviewed["papers"])
         self.assertEqual(counts, {"v2_pages": expected, "covered_pages": expected, "field_source_qa_exceptions": 5, "citation_pilot_alternatives": 1})
 
@@ -70,7 +68,7 @@ class V2CoverageTests(unittest.TestCase):
                 validate_new_source(doi, content)
                 self.assertEqual(check_qa_refs(content), [])
 
-    def test_prior_41_sources_identity_and_selection_unchanged_except_13_fields(self):
+    def test_prior_43_sources_identity_and_selection_unchanged(self):
         self.assertEqual(len(self.before), 77)
         expected = copy.deepcopy(self.before)
         for p in expected:
@@ -96,14 +94,20 @@ class V2CoverageTests(unittest.TestCase):
         prior = {p['doi']: p for p in historic if p['paper_geo_status'] == 'v2'}
         self.assertEqual(len(prior), 35)
         self.assertEqual(len(batch['papers']), 6)
-        self.assertEqual(set(self.prior_contents), set(prior) | set(batch['papers']))
+        from central_release_contract import RELEASE as CENTRAL, reviewed_source as centrally_reviewed
+        self.assertEqual(set(self.prior_contents), set(prior) | set(batch['papers']) | set(CENTRAL['papers']))
         for doi, p in prior.items():
             raw = subprocess.check_output(['git', 'show', baseline + ':data/deep_geo/' + p['slug'] + '.json'], cwd=ROOT)
-            self.assertEqual(self.prior_contents[doi], json.loads(raw), doi)
+            self.assertEqual(self.prior_contents[doi], centrally_reviewed(p['slug'], json.loads(raw)), doi)
         for doi, row in batch['papers'].items():
-            self.assertIn(row['content_sha256'], newline_hashes(old('data/deep_geo/' + row['slug'] + '.json')), doi)
+            from central_release_contract import old as central_old, validate_new_source as validate_central
+            self.assertIn(row['content_sha256'], newline_hashes(central_old('data/deep_geo/' + row['slug'] + '.json')), doi)
+            self.assertEqual(self.prior_contents[doi], centrally_reviewed(row['slug'], json.loads(central_old('data/deep_geo/' + row['slug'] + '.json'))))
+        self.assertEqual(sum(len(p['changes']) for p in CENTRAL['patches'].values()), 13)
+        for doi in CENTRAL['papers']:
+            validate_central(doi, self.prior_contents[doi])
 
-    def test_prior_41_pages_allow_only_reviewed_fields_and_relationships(self):
+    def test_prior_43_pages_allow_only_reviewed_relationships(self):
         prior_backlinks = reviewed_backlinks(self.before, self.prior_contents)
         current_backlinks = reviewed_backlinks(self.public, self.contents)
         from evidence_reuse import render_csv
@@ -129,6 +133,28 @@ class V2CoverageTests(unittest.TestCase):
         paths = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', BASE, '--', 'citations'], cwd=ROOT).decode().splitlines()
         for path in paths:
             self.assertEqual((ROOT / path).read_bytes().replace(b'\r\n', b'\n'), old(path).replace(b'\r\n', b'\n'), path)
+
+    def test_canonical_researcher_case_preserves_full_ordered_identity(self):
+        doi = '10.32604/or.2025.059290'
+        p = next(p for p in self.public if p['doi'] == doi)
+        self.assertIn('GE ZHANG', p['authors'])
+        path = 'papers/' + p['slug'] + '.html'
+        original = (ROOT/path).read_text(encoding='utf-8')
+        def evaluate(page):
+            read = lambda name: page if name == path else (ROOT/name).read_text(encoding='utf-8')
+            return coverage_rows([p], {doi:self.contents[doi]}, ROOT, read_text=read)[0]
+        self.assertEqual(evaluate(original)['html_md_jsonld_parity'], 'PASS')
+        pattern = r'<script type="application/ld\+json">(.*?)</script>'
+        raw = next(m.group(1) for m in re.finditer(pattern, original, re.S)
+                   if json.loads(m.group(1)).get('@type') == 'ScholarlyArticle')
+        for change in ('reorder', 'remove_orcid', 'rename'):
+            schema = json.loads(raw)
+            researcher = next(a for a in schema['author'] if a.get('@id'))
+            if change == 'reorder': schema['author'].reverse()
+            elif change == 'remove_orcid': researcher.pop('sameAs')
+            else: schema['author'][0]['name'] = 'Different author'
+            altered = original.replace(raw, json.dumps(schema), 1)
+            self.assertEqual(evaluate(altered)['html_md_jsonld_parity'], 'FAIL', change)
 
     def target_row(self, mutate):
         p = next(p for p in self.public if p["doi"] == LUAD)

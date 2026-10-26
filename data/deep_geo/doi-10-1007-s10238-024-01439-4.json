@@ -1,0 +1,287 @@
+{
+  "display_title": "ERAS: endoplasmic-reticulum-stress gene signatures in lung adenocarcinoma",
+  "summary": "Retrospective transcriptomic modeling defined a 10-gene ERAS signature, evaluated it across TCGA and GEO datasets, and assessed two model genes in 10 paired LUAD specimens. Treatment-response analyses were computational.",
+  "research_question": "Can an endoplasmic-reticulum-stress gene signature stratify overall-survival prognosis in retrospective LUAD transcriptomic cohorts?",
+  "author_summary": "The study combined LUAD single-cell and bulk transcriptomic datasets to investigate endoplasmic reticulum stress. Twenty-two survival-associated genes were reduced to a 10-gene ERAS signature using LASSO in TCGA. The authors examined survival stratification in TCGA and seven named GEO datasets, and combined ERAS with age and stage in a nomogram. The reported nomogram AUCs were 0.740, 0.754 and 0.754 at 1, 3 and 5 years. Expression of SERPINH1 and GPR37 was assessed by qPCR in 10 paired tumor and adjacent specimens. Immune scores and drug sensitivities were inferred from molecular data; this does not establish that using ERAS to choose treatment improves outcomes.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective public-dataset prognostic modeling with tissue expression experiments",
+    "evidence_type": "Human transcriptomic associations and limited expression validation",
+    "population": "LUAD bulk transcriptomic cohorts, nine treatment-naive patients represented in a single-cell dataset, and paired clinical tissue specimens",
+    "primary_endpoint": "Overall survival association and prognostic discrimination",
+    "secondary_endpoint": "Inferred immune states, computational drug sensitivity and tissue gene expression",
+    "data_modalities": [
+      "bulk transcriptomics",
+      "single-cell transcriptomics",
+      "clinical survival data",
+      "qPCR"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "bulk survival datasets",
+        "value": "TCGA plus seven named GEO datasets"
+      },
+      {
+        "label": "single-cell input patients",
+        "value": "9"
+      },
+      {
+        "label": "paired tissue specimens",
+        "value": "10 tumor-adjacent pairs"
+      },
+      {
+        "label": "final signature genes",
+        "value": "10"
+      }
+    ],
+    "counting_note": "Datasets and specimen pairs are distinct units. No unique pooled participant total is derived. The Results text calls the external survival datasets six but enumerates seven; Methods and Figure 4C identify TCGA plus seven GEO datasets. External evaluation here means retrospective public-dataset assessment, not prospective clinical validation; cross-dataset participant overlap was not independently reconstructed."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "A 10-gene ERAS signature was selected from 22 survival-associated genes.",
+      "context": "Univariate Cox screening followed by LASSO in the TCGA development dataset; public-dataset survival evaluation was not uniformly significant.",
+      "evidence": [
+        {
+          "label": "screened prognostic genes",
+          "value": "22"
+        },
+        {
+          "label": "final ERAS genes",
+          "value": "10"
+        },
+        {
+          "label": "named survival datasets",
+          "value": "8 including TCGA"
+        }
+      ],
+      "source_locator": "Methods: Dataset source; Results: Model construction and evaluation, Par17; Fig. 4A-C; Supplementary Fig. 1 (MOESM1)"
+    },
+    {
+      "id": "KF2",
+      "claim": "The nomogram combining ERAS, age and stage showed the reported time-specific survival discrimination.",
+      "context": "Retrospective nomogram evaluation; these values are not independent prospective performance estimates.",
+      "evidence": [
+        {
+          "label": "1-year AUC",
+          "value": "0.740"
+        },
+        {
+          "label": "3-year AUC",
+          "value": "0.754"
+        },
+        {
+          "label": "5-year AUC",
+          "value": "0.754"
+        }
+      ],
+      "source_locator": "Results: Independent prognostic analysis of the ERAS and construction of the nomogram, Par18; Fig. 6F-H"
+    },
+    {
+      "id": "KF3",
+      "claim": "SERPINH1 and GPR37 expression was higher in LUAD tumor than paired adjacent tissue in the reported qPCR experiment.",
+      "context": "Expression validation only; it does not test survival prediction or treatment effect.",
+      "evidence": [
+        {
+          "label": "clinical tissue pairs",
+          "value": "10"
+        },
+        {
+          "label": "genes tested in this qPCR comparison",
+          "value": "2: SERPINH1 and GPR37"
+        }
+      ],
+      "source_locator": "Methods: Clinical specimen collection, Par12; Results: Experimental validation, Par23; Supplementary Fig. 3A-B (MOESM3)"
+    }
+  ],
+  "what_this_adds": [
+    "A stress-related gene score developed retrospectively and assessed across public LUAD transcriptomic datasets.",
+    "An explicit distinction between prognostic modeling, tissue-expression validation and inferred drug-response hypotheses."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Retrospective LUAD prognostic signature development and public-dataset evaluation.",
+      "Reported nomogram discrimination within the analyzed data.",
+      "Limited tumor-adjacent expression validation."
+    ],
+    "does_not_establish": [
+      "Prospective clinical utility or improved survival from ERAS-guided care.",
+      "Observed benefit from immunotherapy or chemotherapy selected using ERAS.",
+      "A causal tumor-promoting effect inferred from expression or survival association alone."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many genes are in ERAS?",
+      "answer": "The signature contains 10 genes selected from 22 survival-associated candidates.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What survival discrimination was reported for the ERAS nomogram?",
+      "answer": "The nomogram AUCs were 0.740, 0.754 and 0.754 at 1, 3 and 5 years in the reported retrospective evaluation.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What experimental expression check accompanied ERAS?",
+      "answer": "qPCR compared SERPINH1 and GPR37 in 10 paired LUAD tumor and adjacent tissue samples.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does ERAS establish benefit from a selected immunotherapy or chemotherapy?",
+      "answer": "No. The reported survival modeling and two-gene expression experiment do not test whether choosing treatment with ERAS improves outcomes.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "lung adenocarcinoma"
+    ],
+    "methods": [
+      "LASSO Cox regression",
+      "survival analysis",
+      "single-cell transcriptomics"
+    ],
+    "models_tools": [
+      "ERAS"
+    ],
+    "genes": [
+      "SERPINH1",
+      "GPR37"
+    ]
+  },
+  "limitations": [
+    "Retrospective public data and heterogeneous molecular datasets limit clinical transportability.",
+    "No prospective ERAS-guided intervention was evaluated; public-dataset survival separation and retrospective AUCs do not establish clinical utility.",
+    "The Results text calls seven named GEO cohorts six. Methods and Figure 4C identify the seven named GEO datasets; no pooled participant total is inferred.",
+    "Survival separation was not uniformly significant: Figure 4C reports a log-rank P value of 0.091 for GSE29016. The study should not be cited as significant prognostic validation in every external dataset.",
+    "Immune-infiltration and TMB group differences described in Results include nonsignificant comparisons; computational immune and drug-sensitivity estimates are not observed treatment-response validation.",
+    "The qPCR experiment assesses two genes in 10 paired tissue specimens; it does not validate the complete survival model or establish that these genes cause tumor progression.",
+    "The selected figures were checked for labels, reported values and direction, without reanalysis of participant-level or raw qPCR data."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1002/tox.24284",
+      "relationship": "Related LUAD prognostic modeling using a distinct immunotherapy-associated signature; not independent confirmation of ERAS."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://link.springer.com/article/10.1007/s10238-024-01439-4",
+    "pmcid": "PMC11272744",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11272744/",
+    "fulltext_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11272744/fullTextXML",
+    "figure4_url": "https://link.springer.com/article/10.1007/s10238-024-01439-4/figures/4",
+    "figure6_url": "https://link.springer.com/article/10.1007/s10238-024-01439-4/figures/6",
+    "supplementary_fig1_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs10238-024-01439-4/MediaObjects/10238_2024_1439_MOESM1_ESM.tif",
+    "supplementary_fig3_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs10238-024-01439-4/MediaObjects/10238_2024_1439_MOESM3_ESM.tif",
+    "evidence_basis": "Published Europe PMC journal XML and the current Springer Nature full text; Figure 4, Figure 6, Supplementary Figures 1 and 3 were visually inspected on 2026-10-26 for the selected claims. No source images are reproduced on this evidence page.",
+    "version": "Publisher Version of Record, 25 July 2024; Clinical and Experimental Medicine 24, article 169.",
+    "reporting_discrepancies": "The six-versus-seven GEO wording discrepancy is retained explicitly. Figure 4C includes a nonsignificant GSE29016 log-rank comparison; no uniformly significant external validation is asserted.",
+    "license": "CC BY 4.0; article-level Rights and permissions.",
+    "treatment_inference_locator": "Methods: Differences in the TME and drug inference; Results: Drug sensitivity analysis; Figures 9-10. IPS and Oncopredict outputs are computational estimates, not a treated validation cohort."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Lung cancer genomics",
+      "Computational oncology"
+    ],
+    "review_topics": [
+      "Stress-associated prognostic signatures",
+      "Retrospective molecular risk models"
+    ],
+    "scientific_role": "Ten-gene ERAS model with public-cohort evaluation and limited tissue expression checks.",
+    "evidence_position": "Retrospective prognostic associations; immune and drug-response outputs are computational hypotheses.",
+    "related_concepts": [
+      "Endoplasmic reticulum stress",
+      "Tumor immune context"
+    ],
+    "citation_contexts": [
+      "Methods: stress-related molecular signatures for LUAD survival stratification.",
+      "Evidence synthesis: distinguish prognostic AUCs and tissue expression from treatment-response validation."
+    ]
+  },
+  "version": 2,
+  "doi": "10.1007/s10238-024-01439-4",
+  "evidence_page_notice": "Author evidence synthesis of a retrospective LUAD prognostic study. Public-dataset evaluation and limited tissue-expression experiments are distinct from prospective clinical utility, causal mechanism or treatment benefit; identified reporting limitations are disclosed below.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How many genes are in ERAS?",
+        "supported_scope": "The signature contains 10 genes selected from 22 survival-associated candidates.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What survival discrimination was reported for the ERAS nomogram?",
+        "supported_scope": "The nomogram AUCs were 0.740, 0.754 and 0.754 at 1, 3 and 5 years in the reported retrospective evaluation.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What experimental expression check accompanied ERAS?",
+        "supported_scope": "qPCR compared SERPINH1 and GPR37 in 10 paired LUAD tumor and adjacent tissue samples.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Prospective clinical utility or improved survival from ERAS-guided care.",
+      "Observed benefit from immunotherapy or chemotherapy selected using ERAS.",
+      "A causal tumor-promoting effect inferred from expression or survival association alone.",
+      "Uniformly significant survival separation in every external dataset or a deduplicated pooled patient denominator."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "A 10-gene ERAS signature was selected from 22 survival-associated genes.",
+        "context": "Univariate Cox screening followed by LASSO in the TCGA development dataset; public-dataset survival evaluation was not uniformly significant.",
+        "finding": "screened prognostic genes: 22; final ERAS genes: 10; named survival datasets: 8 including TCGA",
+        "evidence_level": "Human transcriptomic associations and limited expression validation",
+        "scope": "Retrospective LUAD prognostic signature development and public-dataset evaluation.",
+        "source_locator": "Methods: Dataset source; Results: Model construction and evaluation, Par17; Fig. 4A-C; Supplementary Fig. 1 (MOESM1)",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The nomogram combining ERAS, age and stage showed the reported time-specific survival discrimination.",
+        "context": "Retrospective nomogram evaluation; these values are not independent prospective performance estimates.",
+        "finding": "1-year AUC: 0.740; 3-year AUC: 0.754; 5-year AUC: 0.754",
+        "evidence_level": "Human transcriptomic associations and limited expression validation",
+        "scope": "Reported nomogram discrimination within the analyzed data.",
+        "source_locator": "Results: Independent prognostic analysis of the ERAS and construction of the nomogram, Par18; Fig. 6F-H",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "SERPINH1 and GPR37 expression was higher in LUAD tumor than paired adjacent tissue in the reported qPCR experiment.",
+        "context": "Expression validation only; it does not test survival prediction or treatment effect.",
+        "finding": "clinical tissue pairs: 10; genes tested in this qPCR comparison: 2: SERPINH1 and GPR37",
+        "evidence_level": "Human transcriptomic associations and limited expression validation",
+        "scope": "Limited tumor-adjacent expression validation.",
+        "source_locator": "Methods: Clinical specimen collection, Par12; Results: Experimental validation, Par23; Supplementary Fig. 3A-B (MOESM3)",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}
