@@ -3,7 +3,7 @@ let mounted = null;
 
 export async function mountScientificVisuals() {
   if (mounted) return mounted;
-  const hosts = ['observatory-wheel', 'research-field'].map(id => document.getElementById(id)).filter(Boolean);
+  const hosts = [document.getElementById('research-field')].filter(Boolean);
   if (!hosts.length) return null;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const compact = matchMedia('(max-width: 700px), (pointer: coarse)');
@@ -11,6 +11,14 @@ export async function mountScientificVisuals() {
   const connection = navigator.connection;
   let disposed = false, raf = 0, lastTick = 0, pageActive = true, imported = null;
   let theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+  function readHeroBudget() {
+    try {
+      const api = window.__gradientWaves;
+      const metrics = typeof api?.metrics === 'function' ? api.metrics() : api?.metrics;
+      return Boolean(metrics?.running);
+    } catch (_) { return false; }
+  }
+  let heroBudgetActive = readHeroBudget();
   const removers = [], entries = [];
   function listen(target, type, fn, options) {
     target?.addEventListener?.(type, fn, options);
@@ -18,13 +26,13 @@ export async function mountScientificVisuals() {
   }
   const staticPreference = () => reduced.matches || Boolean(connection?.saveData);
   const inView = host => { const r = host.getBoundingClientRect(); return r.width>0 && r.height>0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth; };
-  const canRun = e => !disposed && pageActive && !document.hidden && e.visible && !e.paused && !e.lost && !e.failed && !e.degraded && !staticPreference() && Boolean(e.renderer);
+  const canRun = e => !disposed && !heroBudgetActive && pageActive && !document.hidden && e.visible && !e.paused && !e.lost && !e.failed && !e.degraded && !staticPreference() && Boolean(e.renderer);
   function syncButton(e) {
     if (!e.button) return;
     e.button.hidden = !e.renderer || e.failed || e.degraded || staticPreference();
     e.button.disabled = e.lost;
     e.button.setAttribute('aria-pressed', String(e.paused));
-    const label = `${e.paused ? 'Resume' : 'Pause'} ${e.id === 'observatory-wheel' ? 'orbital instrument' : 'research field'} animation`;
+    const label = `${e.paused ? 'Resume' : 'Pause'} research field animation`;
     e.button.setAttribute('aria-label', label);
     e.button.title = label;
   }
@@ -35,7 +43,7 @@ export async function mountScientificVisuals() {
     syncButton(e);
   }
   function draw(e, animationStamp = 0) {
-    if (!e.renderer || e.lost || e.failed || e.degraded || staticPreference()) return;
+    if (heroBudgetActive || !e.renderer || e.lost || e.failed || e.degraded || staticPreference()) return;
     const start = performance.now();
     try {
       const delta = Math.min(Math.max(e.time - e.sceneTime, 0), .06);
@@ -68,7 +76,7 @@ export async function mountScientificVisuals() {
   }
   function tick(stamp) {
     raf = 0;
-    if (disposed) return;
+    if (disposed || heroBudgetActive) { lastTick = 0; return; }
     const dt = lastTick ? Math.min((stamp - lastTick) / 1000, .06) : 0;
     lastTick = stamp;
     let again = false;
@@ -86,11 +94,11 @@ export async function mountScientificVisuals() {
     if (again) raf = requestAnimationFrame(tick); else lastTick = 0;
   }
   function schedule() {
-    if (disposed || raf) return;
+    if (disposed || raf || heroBudgetActive) return;
     if (entries.some(e => canRun(e) || (e.dirty && e.visible && e.renderer && !e.failed && !e.degraded && !e.lost && !staticPreference() && pageActive && !document.hidden))) raf = requestAnimationFrame(tick);
   }
   function resizeEntry(e) {
-    if (!e.renderer) return;
+    if (!e.renderer || heroBudgetActive) return;
     const w = e.host.clientWidth, h = e.host.clientHeight;
     if (!w || !h) return;
     e.dpr = Math.min(devicePixelRatio || 1, e.quality === 'low' ? 1 : compact.matches ? 1.25 : 1.6);
@@ -98,18 +106,18 @@ export async function mountScientificVisuals() {
     e.scene.resize(w, h); e.scene.setQuality(e.quality, e.dpr); e.dirty = true;
   }
   async function initialize(e) {
-    if (e.renderer || e.loading || e.failed || disposed || staticPreference() || !e.host.clientWidth || !e.host.clientHeight) return;
+    if (e.renderer || e.loading || e.failed || disposed || heroBudgetActive || staticPreference() || !e.host.clientWidth || !e.host.clientHeight) return;
     e.loading = true;
     try {
       imported ||= import('./scenes.js');
-      const {createWheel, createField, createRenderer} = await imported;
-      if (disposed || staticPreference() || !e.host.clientWidth || !e.host.clientHeight) return;
+      const {createField, createRenderer} = await imported;
+      if (disposed || heroBudgetActive || staticPreference() || !e.host.clientWidth || !e.host.clientHeight) return;
       const canvas = document.createElement('canvas');
       canvas.className = 'scientific-canvas'; canvas.setAttribute('aria-hidden', 'true');
       canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;visibility:hidden;';
       e.canvas = canvas;
       e.renderer = createRenderer(canvas);
-      e.scene = e.id === 'observatory-wheel' ? createWheel() : createField();
+      e.scene = createField();
       e.scene.setTheme(theme); e.host.append(canvas);
       listen(canvas, 'webglcontextlost', event => { event.preventDefault(); e.lost = true; showPoster(e, 'context-lost'); });
       listen(canvas, 'webglcontextrestored', () => { e.lost = false; e.dirty = true; resizeEntry(e); schedule(); });
@@ -136,8 +144,29 @@ export async function mountScientificVisuals() {
     }, { passive: true });
     listen(host, 'pointerleave', () => e.scene?.setPointer?.(0, 0), { passive: true });
   });
+  function heroBudgetChanged(event) {
+    heroBudgetActive = typeof event.detail?.active === 'boolean' ? event.detail.active : readHeroBudget();
+    lastTick = 0;
+    entries.forEach(e => { e.frameStamp = 0; e.wasActive = false; });
+    if (heroBudgetActive) {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+    } else {
+      entries.forEach(e => { if (e.visible) { e.dirty = true; resizeEntry(e); initialize(e); } });
+      schedule();
+    }
+  }
+  // Accept either dispatch target; an already-running hero is read at mount.
+  listen(window, 'hero-render-budget-change', heroBudgetChanged);
+  listen(document, 'hero-render-budget-change', heroBudgetChanged);
   const observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver(records => {
-    records.forEach(record => { const e = entries.find(x => x.host === record.target); e.visible = record.isIntersecting && record.boundingClientRect.width>0 && record.boundingClientRect.height>0; if (e.visible) initialize(e); }); schedule();
+    records.forEach(record => {
+      const e = entries.find(x => x.host === record.target);
+      // Edge adjacency may be isIntersecting without any visible pixels.
+      e.visible = record.isIntersecting && (record.intersectionRect
+        ? record.intersectionRect.width>0 && record.intersectionRect.height>0 : inView(e.host));
+      if (e.visible) initialize(e);
+    }); schedule();
   }, { threshold: 0 }) : null;
   entries.forEach(e => { observer?.observe(e.host); if (e.visible || !observer) initialize(e); });
   const resizeObserver = typeof ResizeObserver === 'function' ? new ResizeObserver(records => {
@@ -160,7 +189,7 @@ export async function mountScientificVisuals() {
   listen(reduced, 'change', preferencesChanged); listen(connection, 'change', preferencesChanged);
   listen(compact, 'change', () => { entries.forEach(resizeEntry); schedule(); });
   const api = {
-    metrics() { return { disposed, theme, schedulerPending: Boolean(raf), rendererCount: entries.filter(e => e.renderer).length,
+    metrics() { return { disposed, theme, heroBudgetActive, schedulerPending: Boolean(raf), rendererCount: entries.filter(e => e.renderer).length,
       scenes: entries.map(e => ({ id: e.id, state: e.host.dataset.sceneState, visible: e.visible, paused: e.paused, running: canRun(e), frames: e.frames, time: e.time, quality: e.quality, dpr: e.dpr, cpuSubmitMs:e.renderMs, cpuSubmitAverageMs:e.renderAverage, actualFrameIntervalMs:e.frameIntervalMs, actualFrameIntervalAverageMs:e.frameIntervalAverage, measuredFrameSamples:e.intervalSamples, error: e.error || null, geometries: e.renderer?.info.memory.geometries || 0, textures: e.renderer?.info.memory.textures || 0, drawCalls: e.renderer?.info.render.calls || 0 })) }; },
     setPaused(id, paused) { const e = entries.find(x => x.id === id); if (e) { e.paused = Boolean(paused); e.dirty = true; syncButton(e); schedule(); } },
     // Deterministic captures only. No URL/query parameters, no data or tracking.
