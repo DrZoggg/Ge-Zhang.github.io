@@ -167,6 +167,20 @@
         }
       ]
     },
+    "10.1007/s11426-026-3629-x": {
+      "status": "verified",
+      "roles": [
+        "Corresponding author"
+      ],
+      "verified_on": "2026-10-26",
+      "verification_basis": "Springer Nature explicitly identifies Ge Zhang as a corresponding author under Author information > Corresponding authors, independently reviewed and confirmed by the researcher in the 2026-10-26 instruction. The correspondence email and Department of Cardiology, The First Affiliated Hospital of Zhengzhou University affiliation identify the site researcher. This does not imply sole corresponding authorship.",
+      "sources": [
+        {
+          "url": "https://link.springer.com/article/10.1007/s11426-026-3629-x",
+          "locator": "Author information > Corresponding authors"
+        }
+      ]
+    },
     "10.1016/j.ejphar.2023.175569": {
       "status": "pending",
       "roles": [],
