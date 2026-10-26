@@ -119,23 +119,25 @@ class ThemeShellTests(unittest.TestCase):
                 self.assertEqual(target.read_bytes(), first)
                 self.assertEqual(target.with_suffix('.md').read_text(encoding='utf-8'), md)
 
-    def test_research_illustration_preserves_controlled_theme_text(self):
+    def test_research_editorial_preserves_controlled_theme_text_and_order(self):
         profile = load_profile_config()
         rendered = render_homepage_research(profile)
-        self.assertEqual(rendered.count('id="research-field"'), 1)
         from test_visual3 import Document
         document = Document(rendered).root
-        figure, = document.find('figure', **{'class': 'research-visual'})
-        self.assertIn('not a representation of experimental data', figure.attrs['aria-label'])
-        self.assertEqual(figure.find('figcaption'), [])
-        button, = figure.find('button', **{'data-scene-pause': 'research-field'})
-        for name, value in {'type': 'button', 'aria-controls': 'research-field',
-                            'aria-pressed': 'false', 'aria-label': 'Pause research field animation'}.items():
-            self.assertEqual(button.attrs.get(name), value)
-        self.assertIn('hidden', button.attrs)
-        icon, = button.find('svg')
-        self.assertEqual(icon.attrs.get('aria-hidden'), 'true')
-        self.assertLess(rendered.index('id="research-field"'), rendered.index('class="grid themes"'))
+        section, = document.find('section', id='research')
+        label, = section.find('div', **{'class': 'eyebrow'})
+        heading, = section.find('h2')
+        self.assertEqual(label.text(), profile['homepage_research']['label'])
+        self.assertEqual(heading.text(), profile['homepage_research']['heading'])
+        themes, = section.find('div', **{'class': 'grid themes'})
+        enabled = [theme for theme in profile['homepage_research']['themes'] if theme['enabled']]
+        self.assertEqual([node.text() for node in themes.find('h3')], [theme['title'] for theme in enabled])
+        self.assertEqual([node.text() for node in themes.find('p')], [theme['description'] for theme in enabled])
+        self.assertEqual(len(themes.find('div', **{'class': 'card'})), len(enabled))
+        self.assertEqual(section.find('figure'), [])
+        self.assertEqual(section.find(id='research-field'), [])
+        self.assertEqual(section.find('button', **{'data-scene-pause': 'research-field'}), [])
+        self.assertNotIn('/assets/scientific-visuals/field-', rendered)
         import html
         for theme in profile['homepage_research']['themes']:
             if theme['enabled']:

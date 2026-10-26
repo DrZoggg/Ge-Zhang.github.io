@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/jktrn/astro-erudite",
+  "commit": "1926b88c549e8505bbe03b9e8585b0e247aaa0c1",
+  "license": {
+    "path": "LICENSE",
+    "type": "MIT",
+    "copyright": "Copyright (c) 2026 enscribe"
+  },
+  "files": [
+    "src/styles/color.css",
+    "src/styles/layout.css",
+    "src/styles/typography.css",
+    "src/styles/typography-headings.css"
+  ],
+  "adopted": [
+    "Exact neutral gray palette pairs: background gray-1, text gray-12, secondary gray-11, separators gray-6.",
+    "Exact Utopia clamp expressions for space-s/m/l/xl/2xl and step--1/0/1/3, renamed --editorial-* and declared only on four content sections.",
+    "Tight -0.015em tracking, medium 450 heading weight, balanced headings and underline thickness max(1px,0.0625em)."
+  ],
+  "adapted": [
+    "Explicit existing html[data-theme] selectors replace light-dark/color-scheme/global root palette.",
+    "Existing site fonts remain; no upstream font/reset/global selector imports.",
+    "Open 2-column research and selected layouts, local readable leading/underline offset and 44px interaction targets are project-specific.",
+    "Full-bleed neutral background shadows are clipped to each below-Hero section; Hero ancestor and global variables are untouched."
+  ],
+  "not_imported": [
+    "reset.css",
+    "fonts.css",
+    "Astro runtime/build/router",
+    "custom elements",
+    "external fonts",
+    "global :root/body/a selectors",
+    "upstream site content"
+  ],
+  "other_design_references": "No code or assets copied from other templates."
+}
