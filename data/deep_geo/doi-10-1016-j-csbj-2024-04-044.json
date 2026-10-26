@@ -1,0 +1,254 @@
+{
+  "display_title": "Proteomics appending a complementary dimension to precision oncotherapy",
+  "summary": "Narrative review of proteomic measurement technologies, data integration and potential oncology applications; it reports no new clinical cohort or pooled treatment effect.",
+  "research_question": "How can proteomic measurement and integration with other omics contribute complementary information to precision oncology?",
+  "author_summary": "This narrative review surveys mass spectrometry, aptamer-based assays, proximity extension assays, protein microarrays and combined single-cell methods. It explains how proteomic measurements and computational integration may reveal molecular subtypes, biomarkers, primary-tumor signatures and treatment-related biology. Figures 1-3 and Table 1 organize technologies, analysis and published application examples. The article is a synthesis of earlier research, so application-specific efficacy and accuracy estimates should be traced to their original studies. The review highlights costs, specimen availability and the need for integrated analysis as practical constraints.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Narrative technology and application review",
+    "evidence_type": "Secondary synthesis of published proteomics studies",
+    "translation_scope": "Research overview; technology and biomarker hypotheses require application-specific validation",
+    "evidence_domains": [
+      "proteomic measurement",
+      "multi-omics integration",
+      "molecular classification",
+      "biomarker discovery",
+      "cancer immunotherapy"
+    ],
+    "diseases_covered": [
+      "solid tumors",
+      "hematologic malignancies"
+    ],
+    "scale_metrics": [
+      {
+        "label": "technology subsection groups",
+        "value": "5"
+      },
+      {
+        "label": "overview figures",
+        "value": "3"
+      },
+      {
+        "label": "primary study cohort",
+        "value": "Not applicable: narrative review"
+      }
+    ],
+    "counting_note": "These are review-structure counts, not pooled patient denominators or newly measured performance."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The review distinguishes major proteomic assay families and their measurement principles.",
+      "context": "Secondary technical overview; no head-to-head accuracy comparison is performed.",
+      "evidence": [
+        {
+          "label": "technology subsection groups",
+          "value": "5: mass spectrometry, aptamers, proximity extension assay, protein microarrays, combined single-cell techniques"
+        }
+      ],
+      "source_locator": "Proteomics analysis technology subsections; Fig. 1A-D"
+    },
+    {
+      "id": "KF2",
+      "claim": "Proteomic data integration is presented as a way to connect molecular layers and protein-network behavior.",
+      "context": "Methodological synthesis of earlier studies rather than a newly trained integrative model.",
+      "evidence": [
+        {
+          "label": "illustrated integration methods",
+          "value": "TieDIE, PCA and NMF"
+        },
+        {
+          "label": "overview locator",
+          "value": "Fig. 1E and Fig. 3"
+        }
+      ],
+      "source_locator": "Proteomics data analysis and integration; Fig. 1E; Future directions for proteomics pairing with other omics; Fig. 3"
+    },
+    {
+      "id": "KF3",
+      "claim": "The review organizes potential oncology uses including subtyping, primary-site identification, biomarkers and immunotherapy.",
+      "context": "Published examples are summarized; clinical utility is not established collectively by this review.",
+      "evidence": [
+        {
+          "label": "application-summary table",
+          "value": "Table 1"
+        },
+        {
+          "label": "illustrative application figure",
+          "value": "Fig. 2"
+        }
+      ],
+      "source_locator": "Proteomics in precision oncotherapy subsections; Fig. 2; Table 1; Conclusions"
+    }
+  ],
+  "what_this_adds": [
+    "A technology-to-application map for reading proteomics literature in oncology.",
+    "A framework for distinguishing assay platforms and secondary evidence from primary clinical validation."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "An overview of assay principles and integration strategies.",
+      "Secondary contextualization of published precision-oncology examples."
+    ],
+    "does_not_establish": [
+      "A new patient cohort, pooled treatment benefit or meta-analytic accuracy estimate.",
+      "Clinical superiority of one assay platform for every cancer or use case.",
+      "Independent validation of all biomarkers discussed in cited primary studies."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which proteomic approaches does this review cover?",
+      "answer": "It covers mass spectrometry, aptamer-based assays, proximity extension assays, protein microarrays and combined single-cell techniques.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What role does data integration play in the review?",
+      "answer": "Integration connects protein measurements with other molecular layers; the review illustrates approaches including TieDIE, PCA and NMF.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Which precision-oncology applications are discussed?",
+      "answer": "The review discusses molecular subtyping, primary-site identification, biomarkers, mechanisms and immunotherapy applications using published examples.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Can this article be cited as a new clinical validation study?",
+      "answer": "No. It is a narrative synthesis; quantitative claims about individual biomarkers or therapies should be checked against the original primary studies.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "proteomics",
+      "precision oncology"
+    ],
+    "methods": [
+      "mass spectrometry",
+      "proximity extension assay",
+      "aptamer assays",
+      "multi-omics integration"
+    ]
+  },
+  "limitations": [
+    "Narrative coverage does not establish a systematic or exhaustive evidence search.",
+    "No pooled participant denominator or comparative effect estimate is reported.",
+    "Translation depends on specimen availability, cost and application-specific validation."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1007/s13402-023-00912-8",
+      "relationship": "Complementary review on molecular classification in precision oncology; overlapping conceptual scope, not independent validation."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://doi.org/10.1016/j.csbj.2024.04.044",
+    "pmcid": "PMC11058087",
+    "evidence_basis": "Formal journal XML and figures/tables text. Original paraphrase only; do not redistribute adapted source figures under CC BY-NC-ND.",
+    "visual_verification_scope": "FULL_CORE applies to the selected narrative/structural claims, all supported by article body or text-encoded table. No effect size, cohort size or empirical performance is taken from an image. Visual assets were not inspected; figure references are supplementary locators.",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058087/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38689716/"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Cancer proteomics",
+      "Precision oncology methods"
+    ],
+    "review_topics": [
+      "Proteomic technology selection",
+      "Multi-omics clinical translation"
+    ],
+    "scientific_role": "Narrative synthesis of measurement platforms, integration strategies and published oncology applications.",
+    "evidence_position": "Secondary literature context without a new cohort or pooled clinical effect.",
+    "related_concepts": [
+      "Protein abundance",
+      "Post-translational modification"
+    ],
+    "citation_contexts": [
+      "Background: why proteomics complements genomic and transcriptomic cancer information.",
+      "Methods overview: assay families and integration approaches; cite original studies for performance claims."
+    ]
+  },
+  "version": 2,
+  "doi": "10.1016/j.csbj.2024.04.044",
+  "evidence_page_notice": "Author evidence synthesis of a published narrative review. The reviewed examples are secondary literature; any primary-study effect, validation or treatment claim requires the cited original research.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which proteomic approaches does this review cover?",
+        "supported_scope": "It covers mass spectrometry, aptamer-based assays, proximity extension assays, protein microarrays and combined single-cell techniques.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What role does data integration play in the review?",
+        "supported_scope": "Integration connects protein measurements with other molecular layers; the review illustrates approaches including TieDIE, PCA and NMF.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which precision-oncology applications are discussed?",
+        "supported_scope": "The review discusses molecular subtyping, primary-site identification, biomarkers, mechanisms and immunotherapy applications using published examples.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A new patient cohort, pooled treatment benefit or meta-analytic accuracy estimate.",
+      "Clinical superiority of one assay platform for every cancer or use case.",
+      "Independent validation of all biomarkers discussed in cited primary studies."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The review distinguishes major proteomic assay families and their measurement principles.",
+        "context": "Secondary technical overview; no head-to-head accuracy comparison is performed.",
+        "finding": "technology subsection groups: 5: mass spectrometry, aptamers, proximity extension assay, protein microarrays, combined single-cell techniques",
+        "evidence_level": "Secondary synthesis of published proteomics studies",
+        "scope": "An overview of assay principles and integration strategies.",
+        "source_locator": "Proteomics analysis technology subsections; Fig. 1A-D",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Proteomic data integration is presented as a way to connect molecular layers and protein-network behavior.",
+        "context": "Methodological synthesis of earlier studies rather than a newly trained integrative model.",
+        "finding": "illustrated integration methods: TieDIE, PCA and NMF; overview locator: Fig. 1E and Fig. 3",
+        "evidence_level": "Secondary synthesis of published proteomics studies",
+        "scope": "Secondary contextualization of published precision-oncology examples.",
+        "source_locator": "Proteomics data analysis and integration; Fig. 1E; Future directions for proteomics pairing with other omics; Fig. 3",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The review organizes potential oncology uses including subtyping, primary-site identification, biomarkers and immunotherapy.",
+        "context": "Published examples are summarized; clinical utility is not established collectively by this review.",
+        "finding": "application-summary table: Table 1; illustrative application figure: Fig. 2",
+        "evidence_level": "Secondary synthesis of published proteomics studies",
+        "scope": "Secondary contextualization of published precision-oncology examples.",
+        "source_locator": "Proteomics in precision oncotherapy subsections; Fig. 2; Table 1; Conclusions",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

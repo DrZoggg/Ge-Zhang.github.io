@@ -6,6 +6,7 @@ import json
 from build_publications import validate_citation_layer
 from site_common import PAPERS_DIR
 from sync_common import ROOT
+from central_release_contract import RELEASE
 
 
 TARGETS = {
@@ -40,6 +41,10 @@ TARGETS = {
     "smc-fate": ("smc-fate.json", 6, 6, 6),
     "doi-10-1002-ehf2-14003": ("doi-10-1002-ehf2-14003.json", 5, 6, 6),
 }
+
+
+for _row in RELEASE["papers"].values():
+    TARGETS[_row["slug"]] = (_row["slug"] + ".json", 3, 3, 3)
 
 
 def main():
