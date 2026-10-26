@@ -47,7 +47,12 @@ class HomepageAuthorRolesTests(unittest.TestCase):
         self.assertEqual(self.records['10.1002/mdr2.70052']['roles'],['Corresponding author'])
         self.assertIn('author 23',self.records['10.1002/mdr2.70052']['identity_note'])
         self.assertIn(self.owner,self.records['10.1002/mdr2.70052']['identity_note'])
-        self.assertEqual(self.records['10.1200/po.24.00089']['roles'],['Co-first author'])
+        jco = self.records['10.1200/po.24.00089']
+        self.assertEqual(jco['roles'], ['Corresponding author', 'Co-first author'])
+        self.assertEqual(jco['verified_on'], '2026-10-26')
+        self.assertEqual(jco['sources'][0]['url'], 'https://ascopubs.org/doi/abs/10.1200/PO.24.00089')
+        self.assertIn('Corresponding Author', jco['sources'][0]['locator'])
+        self.assertIn('Shiqian Zhang, Ge Zhang and Ming Wang', jco['identity_note'])
         self.assertEqual(self.records['10.1172/jci194175']['roles'],['Co-author'])
 
     def test_unknown_or_pending_doi_has_no_fallback_label(self):
