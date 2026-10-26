@@ -35,16 +35,25 @@
     }
   }
 
-  if (!document.querySelector('#observatory-wheel')) return;
+  const hasHero = Boolean(document.querySelector('[data-gradient-waves], #gradient-waves'));
+  const hasResearch = Boolean(document.getElementById('research-field'));
+  if (!hasHero && !hasResearch) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const connection = navigator.connection;
   let loaded = false;
   const enhance = () => {
     if (loaded || reduced.matches || (connection && connection.saveData)) return;
     loaded = true;
-    import('./scientific-visuals/index.js')
-      .then(module => module.mountScientificVisuals())
-      .catch(() => { document.documentElement.dataset.visuals = 'fallback'; });
+    if (hasHero) {
+      import('./gradient-waves/index.js')
+        .then(module => module.mountGradientWaves())
+        .catch(() => { document.documentElement.dataset.heroVisuals = 'fallback'; });
+    }
+    if (hasResearch) {
+      import('./scientific-visuals/index.js')
+        .then(module => module.mountScientificVisuals())
+        .catch(() => { document.documentElement.dataset.visuals = 'fallback'; });
+    }
   };
   reduced.addEventListener('change', enhance);
   if (connection && connection.addEventListener) connection.addEventListener('change', enhance);

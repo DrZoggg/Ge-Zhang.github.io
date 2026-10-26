@@ -1,0 +1,60 @@
+/* Visual 5: full-width satin surface, with an HTML identity and native controls. */
+.home main.wrap{max-width:none;padding:0 0 56px}
+.home main.wrap>section:not(.hero){width:min(1200px,calc(100% - 80px));margin-inline:auto}
+.home .hero{display:flex;align-items:center;isolation:isolate;position:relative;min-height:700px;min-height:min(760px,calc(100svh - 88px));padding:92px max(40px,calc((100% - 1200px)/2)) 108px;overflow:hidden;border:0;background:#090e21}
+.home .hero .gradient-waves-container{position:absolute;inset:0;z-index:-3;width:100%;height:100%;overflow:hidden;pointer-events:none;background:#090e21}
+.gradient-waves-canvas,.wave-poster,.wave-poster img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.wave-poster img{object-fit:cover}
+.gradient-waves-canvas{opacity:0;pointer-events:none}
+[data-wave-state="ready"]>.gradient-waves-canvas,[data-wave-state="paused"]>.gradient-waves-canvas{opacity:1}
+[data-wave-state="ready"]>.wave-poster,[data-wave-state="paused"]>.wave-poster{visibility:hidden}
+.home .hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(8,12,30,.92) 0%,rgba(8,12,30,.69) 29%,rgba(8,12,30,.17) 59%,transparent 83%)}
+.home .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(0deg,var(--bg),transparent 19%)}
+.home .hero>div:first-child{position:relative;width:min(650px,100%);min-width:0}
+.home .hero>div:first-child>.eyebrow{font-size:.72rem;line-height:1.8;letter-spacing:.095em;font-weight:550;color:#d0c9e8;max-width:44em;margin:0 0 32px}
+.home .hero h1{font-size:clamp(4.2rem,6.7vw,7rem);line-height:1.03;font-weight:450;letter-spacing:-.055em;color:#faf8ff;margin-bottom:28px}
+.home .hero .name-zh{font-size:1.6rem;color:#d8cfea;letter-spacing:.04em}
+.home .hero .bio-intro{font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.36;color:#faf8ff;margin-bottom:34px}
+.home .hero .bio-intro span{color:#ded0ff}
+.home .hero .bio-entry .btn{border-color:#a094c2;background:#11142de8;color:#f4efff;backdrop-filter:blur(8px)}
+.home .hero .bio-entry .btn.primary{background:#ece5ff;border-color:#ece5ff;color:#171329}
+.home .hero .bio-entry .btn:hover{border-color:#e2d7ff;background:#28243e}
+.home .hero .bio-entry .btn.primary:hover{background:#fff;color:#171329}
+.home .hero .hero-question{color:#e4d9fa;text-decoration-color:#9585b4}
+.hero-wave-caption{position:absolute;right:max(40px,calc((100% - 1200px)/2));bottom:44px;margin:0;color:#cfc0e9;font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;pointer-events:none}
+.home .hero .wave-motion-toggle{right:max(34px,calc((100% - 1200px)/2 - 6px));bottom:79px;color:#f2eaff}
+.home .hero .wave-motion-toggle::before{background:#11162dc9;border-color:#a493c4}
+.home .hero .wave-motion-toggle:hover::before{background:#2b2545;border-color:#f4dcff}
+.home .hero a:focus-visible,.home .hero button:focus-visible{outline:2px solid #f0d8ff;outline-offset:5px}
+:root[data-theme="light"] .hero,:root[data-theme="light"] .home .hero .gradient-waves-container{background:#edf3f8}
+:root[data-theme="light"] .home .hero::before{background:linear-gradient(90deg,rgba(237,243,248,.95),rgba(237,243,248,.79) 29%,rgba(237,243,248,.22) 59%,transparent 83%)}
+:root[data-theme="light"] .home .hero h1,:root[data-theme="light"] .home .hero .bio-intro{color:#112e47}
+:root[data-theme="light"] .home .hero .name-zh,:root[data-theme="light"] .home .hero>div:first-child>.eyebrow{color:#37556e}
+:root[data-theme="light"] .home .hero .bio-intro span{color:#20577b}
+:root[data-theme="light"] .home .hero .bio-entry .btn{color:#173f5c;background:#edf5fbe6;border-color:#7393ad}
+:root[data-theme="light"] .home .hero .bio-entry .btn.primary{color:#fff;background:#1d4a69;border-color:#1d4a69}
+:root[data-theme="light"] .home .hero .bio-entry .btn:hover{background:#dcebf5;border-color:#345d7b}
+:root[data-theme="light"] .home .hero .bio-entry .btn.primary:hover{background:#123a58;color:#fff}
+:root[data-theme="light"] .home .hero .hero-question,:root[data-theme="light"] .hero-wave-caption{color:#315772}
+:root[data-theme="light"] .home .hero .wave-motion-toggle{color:#244963}
+:root[data-theme="light"] .home .hero .wave-motion-toggle::before{background:#edf5fbdc;border-color:#6b8aa2}
+:root[data-theme="light"] .home .hero a:focus-visible,:root[data-theme="light"] .home .hero button:focus-visible{outline-color:#1b5075}
+@media(min-width:1600px){.home .hero{min-height:760px;padding-top:110px;padding-bottom:120px}}
+@media(max-width:900px){.home .hero{min-height:690px;padding-top:90px;padding-bottom:110px}.home .hero::before{background:linear-gradient(90deg,rgba(8,12,30,.9),rgba(8,12,30,.57) 55%,rgba(8,12,30,.12))}}
+@media(max-width:700px){
+ .home main.wrap>section:not(.hero){width:calc(100% - 44px)}
+ .home .hero{min-height:700px;min-height:calc(100svh - 106px);max-height:860px;padding:64px 22px 152px;align-items:flex-start;gap:0}
+ .home .hero>div:first-child>.eyebrow{font-size:.64rem;letter-spacing:.06em;max-width:29em;margin-bottom:28px}
+ .home .hero h1{font-size:clamp(3.2rem,14.5vw,4.3rem);margin-bottom:24px}
+ .home .hero .name-zh{font-size:1.2rem;margin-left:9px}
+ .home .hero .bio-intro{font-size:1.62rem;line-height:1.38;margin-bottom:28px}
+ .home .hero .bio-entry{gap:10px}.home .hero .bio-entry .btn{min-height:46px;font-size:.78rem;padding:10px 13px;gap:16px}
+ .home .hero::before{background:linear-gradient(180deg,rgba(8,12,30,.93),rgba(8,12,30,.70) 42%,rgba(8,12,30,.16) 72%,transparent)}
+ :root[data-theme="light"] .home .hero::before{background:linear-gradient(180deg,rgba(237,243,248,.95),rgba(237,243,248,.79) 42%,rgba(237,243,248,.15) 75%,transparent)}
+ .hero-wave-caption{right:24px;bottom:38px;font-size:.6rem;letter-spacing:.12em}
+ .home .hero .wave-motion-toggle{right:18px;bottom:64px}
+}
+@media(prefers-reduced-motion:reduce){.gradient-waves-canvas{display:none}.wave-poster{visibility:visible!important}.wave-motion-toggle{display:none!important}}
+@media print{.home .hero{min-height:0;padding:24px;color:#000;background:#fff}.home .hero::before,.home .hero::after,.gradient-waves-container,.hero-wave-caption,.wave-motion-toggle{display:none!important}.home .hero h1,.home .hero .bio-intro,.home .hero .name-zh,.home .hero .bio-intro span{color:#000!important}.home main.wrap>section:not(.hero){width:auto}}
+
+.wave-motion-toggle[hidden]{display:none!important}
