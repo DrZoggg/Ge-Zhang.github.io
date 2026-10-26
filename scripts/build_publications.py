@@ -25,6 +25,7 @@ import research_guides
 import scholarly_discovery
 import evidence_presentation
 import paper_discovery
+import patent_evidence
 from theme_shell import with_theme_shell, without_theme_shell
 from homepage_author_roles import load_role_records, render_role_labels
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
@@ -2067,7 +2068,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
 {(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{early_html}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
-{notice_html}{scholarly_discovery.identifier_html(identifiers)}{scholarly_discovery.backlink_html(reviewed_backlinks)}
+{patent_evidence.render_html(patent_evidence.load(publication))}{notice_html}{scholarly_discovery.identifier_html(identifiers)}{scholarly_discovery.backlink_html(reviewed_backlinks)}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 {'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -2135,6 +2136,9 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
                 "",
             ]
         )
+    patent_note = patent_evidence.render_markdown(patent_evidence.load(publication))
+    if patent_note:
+        lines.append(patent_note)
     if deep_content is not None:
         if official_abstract:
             lines.append(render_official_abstract_markdown(official_abstract, doi))

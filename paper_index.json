@@ -153,7 +153,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1056-nejmc2518964.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1056/nejmc2518964",
       "publisher_url": null,
@@ -165,9 +165,30 @@
       "openalex_id": "https://openalex.org/W7133488087",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1056-nejmc2518964.csv",
+      "question_count": 4,
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Antiplatelet therapy after PCI",
+          "Interpretation of acute coronary syndrome trials"
+        ],
+        "review_topics": [
+          "Timing of aspirin de-escalation",
+          "Early versus later thrombotic risk"
+        ],
+        "scientific_role": "Signed correspondence interpreting an existing trial and suggesting future research.",
+        "evidence_position": "Secondary interpretation and hypothesis; no new randomized evidence.",
+        "related_concepts": [
+          "NEO-MINDSET",
+          "Stent thrombosis timing",
+          "Platelet-function testing"
+        ],
+        "citation_contexts": [
+          "Discussion of how early event timing can motivate a de-escalation research question.",
+          "Attribution of the authors' proposal for time-adaptive antiplatelet transitions."
+        ]
+      }
     },
     {
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
@@ -1287,7 +1308,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00875.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1200-po-24-00875.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1200/po-24-00875",
       "publisher_url": null,
@@ -1299,9 +1320,30 @@
       "openalex_id": "https://openalex.org/W4406202665",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1200-po-24-00875.csv",
+      "question_count": 4,
+      "concept_count": 8,
+      "discovery_layer": {
+        "field_entry": [
+          "Survival prediction methodology",
+          "Clinical machine learning interpretation"
+        ],
+        "review_topics": [
+          "Hybrid model-selection rationale",
+          "Feature-importance criticism and replies"
+        ],
+        "scientific_role": "Author response explaining methodological choices in earlier studies.",
+        "evidence_position": "Methodological argument; separate from the primary retrospective validation evidence.",
+        "related_concepts": [
+          "Ensemble learning",
+          "Concordance-based selection",
+          "SHAP attribution"
+        ],
+        "citation_contexts": [
+          "Discussion of the authors' rationale for comparing hybrid modeling schemes.",
+          "Review of methodological debate about feature-importance interpretation in prognostic models."
+        ]
+      }
     },
     {
       "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -1358,7 +1400,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1111/odi.70054",
       "publisher_url": null,
@@ -1370,9 +1412,30 @@
       "openalex_id": "https://openalex.org/W4413270071",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-odi-70054.csv",
+      "question_count": 4,
+      "concept_count": 8,
+      "discovery_layer": {
+        "field_entry": [
+          "Spaceflight oral health",
+          "Remote dental care research"
+        ],
+        "review_topics": [
+          "Crew dental capability",
+          "Adaptation of digital dentistry to spaceflight"
+        ],
+        "scientific_role": "Conceptual letter outlining three care strategies and implementation constraints.",
+        "evidence_position": "Author proposals supported by cited background; no original astronaut or robotics experiment.",
+        "related_concepts": [
+          "Tele-dentistry",
+          "3D fabrication",
+          "Microgravity robotics"
+        ],
+        "citation_contexts": [
+          "Attribution of the three-part space-dentistry proposal.",
+          "Discussion of untested technology adaptations and communication constraints in long-duration missions."
+        ]
+      }
     },
     {
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
@@ -1518,7 +1581,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1002-tox-24284.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1002-tox-24284.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1002/tox.24284",
       "publisher_url": null,
@@ -1530,9 +1593,30 @@
       "openalex_id": "https://openalex.org/W4394621029",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-tox-24284.csv",
+      "question_count": 5,
+      "concept_count": 16,
+      "discovery_layer": {
+        "field_entry": [
+          "Computational oncology",
+          "LUAD prognostic modeling"
+        ],
+        "review_topics": [
+          "Immune-associated transcriptomic signatures",
+          "Validation leakage in molecular survival models"
+        ],
+        "scientific_role": "A retrospective 13-gene model-development study with outcome-based screening, multi-algorithm selection and computational drug hypotheses.",
+        "evidence_position": "Development and retrospective association evidence; no untouched external or prospective immunotherapy-benefit validation.",
+        "related_concepts": [
+          "IPPS",
+          "Outcome-based selection",
+          "Computational drug sensitivity"
+        ],
+        "citation_contexts": [
+          "Methods reviews describing the Lasso plus SuperPC model selected from 101 algorithm combinations.",
+          "Critical appraisal of cohort reuse, outcome-based immunotherapy sample selection and the distinction between prognostic AUCs and treatment-response evidence."
+        ]
+      }
     },
     {
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
@@ -2263,7 +2347,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1007/s13402-023-00912-8",
       "publisher_url": null,
@@ -2275,9 +2359,30 @@
       "openalex_id": "https://openalex.org/W4391403718",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1007-s13402-023-00912-8.csv",
+      "question_count": 4,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cancer molecular classification",
+          "Translational oncology"
+        ],
+        "review_topics": [
+          "Biomarker-directed research designs",
+          "Integrative omics interpretation"
+        ],
+        "scientific_role": "Narrative framework connecting molecular diagnosis, treatment stratification and prognosis, with explicit data and model limitations.",
+        "evidence_position": "Secondary literature synthesis; primary clinical and experimental evidence remains in the studies it cites.",
+        "related_concepts": [
+          "Tumor heterogeneity",
+          "Algorithm interpretability",
+          "Preclinical model fidelity"
+        ],
+        "citation_contexts": [
+          "Background for comparing single-omics, integrated and spatial approaches to cancer classification.",
+          "Methods discussion of biomarker-oriented trial designs and translation requirements; cite primary studies for efficacy or accuracy."
+        ]
+      }
     },
     {
       "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",

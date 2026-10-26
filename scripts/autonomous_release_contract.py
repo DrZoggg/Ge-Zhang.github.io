@@ -16,6 +16,17 @@ def reviewed_source(slug, baseline):
     return copy.deepcopy(baseline)
 
 def restore_reviewed_text(slug, before, after):
+    if slug in RELEASE.get('non_v2_notes', {}):
+        import patent_evidence
+        row = RELEASE['non_v2_notes'][slug]
+        if row['content_sha256'] not in newline_hashes((ROOT/row['path']).read_bytes()):
+            raise ValueError('Reviewed patent note changed')
+        content = json.loads((ROOT/row['path']).read_text(encoding='utf-8'))
+        block = (patent_evidence.render_html(content) if before.startswith('<!doctype')
+                 else patent_evidence.render_markdown(content) + '\n')
+        if block in before or after.count(block) != 1:
+            raise ValueError('Patent note must be one exact reviewed addition')
+        return after.replace(block, '', 1)
     return after
 
 def validate_new_source(doi, content):

@@ -1,0 +1,57 @@
+{
+  "base_sha": "e5ef42864f66d1bd1d8aa06fbb38613faeb7193f",
+  "baseline_v2": 50,
+  "papers": {
+    "10.1002/tox.24284": {
+      "slug": "doi-10-1002-tox-24284",
+      "profile_type": "multicohort_omics",
+      "content_sha256": "b97978052377f9de3a26df30ab8729cc54307e821daba3f7b145a3535271718b",
+      "canonical_json_sha256": "f43768b8f34576148c241aa9c9e089ec0df4ea57982c24827e709cf86c5def9d",
+      "key_findings": 4,
+      "citation_use_cases": 3,
+      "evidence_rows": 4
+    },
+    "10.1007/s13402-023-00912-8": {
+      "slug": "doi-10-1007-s13402-023-00912-8",
+      "profile_type": "narrative_review",
+      "content_sha256": "00465cefd6492d5515b99a4d5174021f2c1ceef4fffc2f2d679dc0e7f4435c86",
+      "canonical_json_sha256": "48a7327059ea4c4921001463c138627db9d4526339e24102361ca06f8df7e77c",
+      "key_findings": 4,
+      "citation_use_cases": 3,
+      "evidence_rows": 4
+    },
+    "10.1056/nejmc2518964": {
+      "slug": "doi-10-1056-nejmc2518964",
+      "profile_type": "narrative_review",
+      "content_sha256": "aa34154dff3005eef1937cd217a3524b18592aeea35602a85e85fd94fd492eea",
+      "canonical_json_sha256": "49698660c6a04cccec805ba072614da9672a29b7ad1b393427ca62b5634d387d",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    },
+    "10.1111/odi.70054": {
+      "slug": "doi-10-1111-odi-70054",
+      "profile_type": "narrative_review",
+      "content_sha256": "731f91c0f200aab475ee0b5d8135d36a98bd56d44ff8ceccb861292949749796",
+      "canonical_json_sha256": "aacd6ed8bc5df7df1766f63865cef664da97d6f1658af4051e8a0a74336fd4a0",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    },
+    "10.1200/po-24-00875": {
+      "slug": "doi-10-1200-po-24-00875",
+      "profile_type": "narrative_review",
+      "content_sha256": "49fff6289050d3d3a094abfc0cb1d717d69e53ef5c80d1911ad9ce434ec35bb4",
+      "canonical_json_sha256": "ce113af928c089edb78a35b4126481f0ea7129c14c5a6e77f6fd442e2d7933da",
+      "key_findings": 3,
+      "citation_use_cases": 3,
+      "evidence_rows": 3
+    }
+  },
+  "non_v2_notes": {
+    "work-3d25d7e32b86959b": {
+      "path": "data/patent_evidence.json",
+      "content_sha256": "b9dbe6f9f04913e4bfb65b5fee162c65cea7d11c12e09da3558e23a00638fd75"
+    }
+  }
+}

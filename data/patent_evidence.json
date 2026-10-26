@@ -1,0 +1,90 @@
+{
+  "module_type": "patent_record",
+  "schema_version": 1,
+  "work_slug": "work-3d25d7e32b86959b",
+  "ordinary_paper_v2": false,
+  "display_title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
+  "evidence_notice": "Patent-document context, not clinical evidence. The reviewed author-uploaded text identifies application 2023/00397 and an acceptance notice; current grant, maintenance and enforceability status have not been verified.",
+  "record_evidence": [
+    {
+      "label": "Application record",
+      "statement": "South African application 2023/00397 is listed in the CIPC journal. The uploaded P8 identifies the same application and FOSB/abdominal-aortic-aneurysm subject matter.",
+      "source_url": "https://iponline.cipc.co.za/Publications/PublishedJournals/E_Journal_March%202023%20Part%202.pdf",
+      "source_locator": "March 2023 CIPC Patent Journal, application entry 2023/00397 and filing-date table; author-uploaded P8 fields 21 and 54."
+    },
+    {
+      "label": "Filing and acceptance",
+      "statement": "The official March journal lists a filing date of January 10, 2023. The uploaded acceptance notice and P8 state March 2, 2023 as the acceptance date. Acceptance documentation is not presented here as proof of current legal status.",
+      "source_url": "https://www.researchgate.net/publication/376798644_Application_of_reagent_for_detecting_andor_regulating_FOSB_gene_in_preparation_of_product_for_predicting_andor_targeting_abdominal_aortic_aneurysm",
+      "source_locator": "Author-uploaded notice headed PATENT APPLICATION NO 2023/00397; P8 lodging-date and acceptance-date fields; official March journal filing-date table."
+    },
+    {
+      "label": "Version and identity caution",
+      "statement": "The website title retains 'targeting', while the uploaded specification and CIPC notice use 'treating'. January and March notices differ in inventor ordering. These differences remain documented; this module does not alter the website's title or inventor metadata.",
+      "source_url": "https://iponline.cipc.co.za/Publications/PublishedJournals/E_Journal_January%202023%20Part%202.pdf",
+      "source_locator": "January 2023 Patent Journal p.86, entry 2023/00397; March journal p.581, same entry; uploaded P8 inventor and title fields."
+    }
+  ],
+  "claim_scope": [
+    {
+      "claim_numbers": [
+        1
+      ],
+      "summary": "The first claim concerns use of FOSB-detecting or FOSB-regulating reagents in preparation of products for AAA prediction or treatment, with a sequence-fragment limitation referring to SEQ ID NO.4.",
+      "source_locator": "Uploaded specification p.8, claim 1."
+    },
+    {
+      "claim_numbers": [
+        2,
+        3,
+        4
+      ],
+      "summary": "Dependent claims specify sequence forms and an mRNA-detection primer route, including the named FOSB-EXON4 primer pair and references to SEQ ID NO.5 and NO.6.",
+      "source_locator": "Uploaded specification p.8, claims 2-4."
+    },
+    {
+      "claim_numbers": [
+        5
+      ],
+      "summary": "A separate claim describes an FOSB-expression detection kit containing that specified primer pair.",
+      "source_locator": "Uploaded specification p.8, claim 5."
+    },
+    {
+      "claim_numbers": [
+        6,
+        7
+      ],
+      "summary": "Further dependent kit claims add internal-reference primers and identify GAPDH with references to SEQ ID NO.7 and NO.8.",
+      "source_locator": "Uploaded specification p.8, claims 6-7."
+    }
+  ],
+  "research_context": {
+    "summary": "The specification discusses FOSB in AAA-associated transcriptomic and immune-cell analyses and describes qRT-PCR work. These are disclosures within a patent document. They are not treated here as independently reviewed proof of diagnostic performance, therapeutic benefit or a causal mechanism.",
+    "source_locators": [
+      "Uploaded specification pp.4-7, paragraphs [0023]-[0041].",
+      "Paragraph [0011] describes a non-diagnostic/non-treatment-purpose expression assay; it is description text, not an additional numbered claim."
+    ]
+  },
+  "limitations": [
+    "This is a concise description of claims visible in an author-uploaded version, not a legal claim-construction opinion or confirmation of currently enforceable scope.",
+    "The official patent register's free-search route required login on October 26, 2026. Current grant, renewal, lapse, amendment and enforceability status are unknown.",
+    "The PDF binary was not obtained. Some opening text has unreadable font encoding; drawing images and sequence-listing content were not independently inspected.",
+    "The historical title wording and inventor-order differences remain unresolved as bibliographic issues. Existing website identity is preserved.",
+    "Patent acceptance and claimed applications do not demonstrate clinical accuracy, safety, efficacy or regulatory approval."
+  ],
+  "provenance": {
+    "source_url": "https://www.researchgate.net/publication/376798644_Application_of_reagent_for_detecting_andor_regulating_FOSB_gene_in_preparation_of_product_for_predicting_andor_targeting_abdominal_aortic_aneurysm",
+    "official_record_urls": [
+      "https://iponline.cipc.co.za/Publications/PublishedJournals/E_Journal_March%202023%20Part%202.pdf",
+      "https://iponline.cipc.co.za/Publications/PublishedJournals/E_Journal_January%202023%20Part%202.pdf"
+    ],
+    "source_format": "Public HTML text rendition of an author-uploaded patent document",
+    "uploader": "Ge Zhang",
+    "uploaded_on": "2023-12-25",
+    "accessed_on": "2026-10-26",
+    "reviewed_version": "Author-uploaded set containing a March 2, 2023 acceptance notice, P8, numbered specification paragraphs and seven readable numbered claims. No current registry certification is inferred.",
+    "current_status_check_url": "https://iponline.cipc.co.za/Patents/Search/FreePTSearch.aspx",
+    "current_status_check_result": "Redirected to official login; no account credentials used and no legal-status result obtained.",
+    "copyright_note": "No blanket redistribution license established. Publish only this original concise description and source links, not the uploaded document or verbatim claim text."
+  }
+}

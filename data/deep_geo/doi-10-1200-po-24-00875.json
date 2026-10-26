@@ -1,0 +1,260 @@
+{
+  "version": 2,
+  "doi": "10.1200/po-24-00875",
+  "display_title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
+  "summary": "A methodological reply explains hybrid survival-model selection and feature interpretation in earlier work; it reports no new cohort or performance experiment.",
+  "research_question": "How do the authors justify their hybrid survival-model selection and feature-importance interpretation in response to methodological criticism?",
+  "author_summary": "The reply describes an earlier framework combining 12 learners into 132 candidate modeling schemes, explains selection using average concordance across validation approaches, and discusses SHAP for feature interpretation. These are the authors' methodological arguments about prior studies. The reply does not add a new patient cohort, a new accuracy estimate, or an experiment demonstrating that SHAP removes bias. The original retrospective proctectomy study remains the source for its model results.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Methodological reply concerning prior prognostic modeling",
+    "evidence_type": "Author explanation and defense of prior methods",
+    "translation_scope": "Model-development and interpretability discussion; not new clinical validation",
+    "evidence_domains": [
+      "hybrid survival modeling",
+      "model selection",
+      "feature-importance interpretation"
+    ],
+    "diseases_covered": [
+      "rectal cancer"
+    ],
+    "scale_metrics": [
+      {
+        "label": "learners described from prior work",
+        "value": "12"
+      },
+      {
+        "label": "candidate schemes described from prior work",
+        "value": "132"
+      },
+      {
+        "label": "new cohort reported in the reply",
+        "value": "None"
+      }
+    ],
+    "counting_note": "Learners and schemes are methodological units from prior work, not independent cohorts or additional patients."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The reply describes the breadth of the authors' earlier hybrid modeling framework.",
+      "context": "A retrospective account of previous work, not a new model-comparison experiment in this correspondence.",
+      "evidence": [
+        {
+          "label": "learners",
+          "value": "12"
+        },
+        {
+          "label": "candidate modeling schemes",
+          "value": "132"
+        }
+      ],
+      "source_locator": "Reply PDF-text rendition p. 1, opening paragraph; reference 2 on p. 2 identifies the original proctectomy study."
+    },
+    {
+      "id": "KF2",
+      "claim": "The authors explain a consensus selection strategy using average concordance across validation techniques.",
+      "context": "Their stated rationale for scheme selection; no new C-index value or independent validation cohort is reported here.",
+      "evidence": [
+        {
+          "label": "selection criterion described",
+          "value": "Average concordance index across validation techniques"
+        }
+      ],
+      "source_locator": "Reply PDF-text rendition p. 1, paragraph on consensus evaluation following the ensemble-learning discussion."
+    },
+    {
+      "id": "KF3",
+      "claim": "The reply discusses SHAP as its approach to interpreting feature contributions.",
+      "context": "An explanation of the authors' interpretability choice; it does not establish causal effects or experimentally demonstrate freedom from bias.",
+      "evidence": [
+        {
+          "label": "interpretation method",
+          "value": "Shapley Additive Explanation (SHAP)"
+        }
+      ],
+      "source_locator": "Reply PDF-text rendition pp. 1-2, paragraph addressing feature-importance bias, continuing after the p. 1 corresponding-author footer."
+    }
+  ],
+  "what_this_adds": [
+    "The authors' rationale for comparing multiple hybrid survival-modeling schemes.",
+    "Their response to feature-importance criticism, distinguished from new empirical evidence."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Attribution of the authors' model-selection rationale and interpretability arguments.",
+      "Literature discussion of how this team responded to criticism of earlier survival models."
+    ],
+    "does_not_establish": [
+      "A new cohort, performance estimate or prospective clinical validation.",
+      "Proof that SHAP eliminates feature-importance bias or yields causal explanations.",
+      "Universal superiority of hybrid ensembles or improved patient survival from model use."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Does this reply introduce another patient cohort?",
+      "answer": "No. It discusses previous modeling work and contains no new cohort or clinical outcome analysis.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "What do 12 and 132 count?",
+      "answer": "They count learners and candidate modeling schemes described from earlier work; they are not numbers of patients or independent validation cohorts.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How is model selection explained?",
+      "answer": "The authors describe averaging concordance across validation techniques as part of a consensus strategy for selecting a scheme.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Does the SHAP discussion establish unbiased or causal feature effects?",
+      "answer": "No. It explains the chosen attribution method, without a new experiment proving elimination of bias or causal interpretation.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "fields": [
+      "clinical prediction methodology"
+    ],
+    "methods": [
+      "hybrid survival modeling",
+      "consensus model selection",
+      "SHAP"
+    ],
+    "concepts": [
+      "feature importance",
+      "concordance index",
+      "interpretability",
+      "overfitting"
+    ]
+  },
+  "limitations": [
+    "The reply's claims about robustness and generalizability are author arguments; they are not new empirical validation.",
+    "The original proctectomy article is the source for sample sizes, performance estimates and external-validation limits.",
+    "The complete author-uploaded typeset text was accessible through ResearchGate; the PDF binary and publisher-hosted full text were not retrieved."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1200/po.24.00089",
+      "relationship": "The original retrospective robot-assisted proctectomy study discussed in the reply; consult it for patient counts and model-performance evidence."
+    },
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Prior hybrid survival framework cited by the reply; a separate clinical population, not a new validation cohort in this correspondence."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://ascopubs.org/doi/10.1200/PO-24-00875",
+    "doi_url": "https://doi.org/10.1200/PO-24-00875",
+    "identity_url": "https://pubmed.ncbi.nlm.nih.gov/39787464/",
+    "full_text_url": "https://www.researchgate.net/publication/387871458_Reply_to_Addressing_Bias_in_Feature_Importance_A_Hybrid_Approach_for_Risk_Prediction_in_Prognostic_Survival_Models",
+    "evidence_basis": "The complete two-page typeset reply, including five-author signature, DOI and January 9, 2025 publication footer, was read from Ge Zhang's public ResearchGate upload. Identity matches the PubMed record; the publisher-hosted full text was not available.",
+    "version": "Typeset ASCO correspondence text uploaded by Ge Zhang on January 11, 2025; accessed October 26, 2026 through its HTML rendition. PDF binary not retrieved.",
+    "figure_verification": "The two-page reply contains no figures, tables or new experimental results."
+  },
+  "evidence_page_notice": "Methodological correspondence about prior work, with no new cohort or performance experiment. Claims about bias mitigation are attributed to the authors, not treated as demonstrated removal of bias.",
+  "discovery_layer": {
+    "field_entry": [
+      "Survival prediction methodology",
+      "Clinical machine learning interpretation"
+    ],
+    "review_topics": [
+      "Hybrid model-selection rationale",
+      "Feature-importance criticism and replies"
+    ],
+    "scientific_role": "Author response explaining methodological choices in earlier studies.",
+    "evidence_position": "Methodological argument; separate from the primary retrospective validation evidence.",
+    "related_concepts": [
+      "Ensemble learning",
+      "Concordance-based selection",
+      "SHAP attribution"
+    ],
+    "citation_contexts": [
+      "Discussion of the authors' rationale for comparing hybrid modeling schemes.",
+      "Review of methodological debate about feature-importance interpretation in prognostic models."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Does this reply introduce another patient cohort?",
+        "supported_scope": "No. It discusses previous modeling work and contains no new cohort or clinical outcome analysis.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What do 12 and 132 count?",
+        "supported_scope": "They count learners and candidate modeling schemes described from earlier work; they are not numbers of patients or independent validation cohorts.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How is model selection explained?",
+        "supported_scope": "The authors describe averaging concordance across validation techniques as part of a consensus strategy for selecting a scheme.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A new cohort, performance estimate or prospective clinical validation.",
+      "Proof that SHAP eliminates feature-importance bias or yields causal explanations.",
+      "Universal superiority of hybrid ensembles or improved patient survival from model use."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The reply describes the breadth of the authors' earlier hybrid modeling framework.",
+        "context": "A retrospective account of previous work, not a new model-comparison experiment in this correspondence.",
+        "finding": "learners: 12; candidate modeling schemes: 132",
+        "evidence_level": "Author explanation and defense of prior methods",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Reply PDF-text rendition p. 1, opening paragraph; reference 2 on p. 2 identifies the original proctectomy study.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "The authors explain a consensus selection strategy using average concordance across validation techniques.",
+        "context": "Their stated rationale for scheme selection; no new C-index value or independent validation cohort is reported here.",
+        "finding": "selection criterion described: Average concordance index across validation techniques",
+        "evidence_level": "Author explanation and defense of prior methods",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Reply PDF-text rendition p. 1, paragraph on consensus evaluation following the ensemble-learning discussion.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "The reply discusses SHAP as its approach to interpreting feature contributions.",
+        "context": "An explanation of the authors' interpretability choice; it does not establish causal effects or experimentally demonstrate freedom from bias.",
+        "finding": "interpretation method: Shapley Additive Explanation (SHAP)",
+        "evidence_level": "Author explanation and defense of prior methods",
+        "scope": "Supports attribution to this correspondence; not a new experiment or independently validated clinical effect.",
+        "source_locator": "Reply PDF-text rendition pp. 1-2, paragraph addressing feature-importance bias, continuing after the p. 1 corresponding-author footer.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}
