@@ -388,8 +388,8 @@ def validate_v2_rendered_page(
         else "Study Design & Model Development"
     )
     expected_external_label = (
-        "External validation"
-        if profile_type == "clinical_cohort"
+        "Independent corpus evaluation" if profile_type == "bibliometric_corpus"
+        else "External validation" if profile_type == "clinical_cohort"
         else "External dataset evaluation"
     )
     unexpected_external_label = (
@@ -556,6 +556,10 @@ def validate_v2_rendered_page(
         f"{label} Markdown renders a study heading for the wrong source semantics.",
     )
     study_labels = element_texts(study_markup, "dt")
+    if profile_type == "bibliometric_corpus":
+        require(all(label in study_labels for label in ("Corpus", "Primary analysis", "Additional analysis"))
+                and not any(label in study_labels for label in ("Population", "Primary Endpoint", "Secondary Endpoint", "External validation", "External dataset evaluation")),
+                f"{label} must render document-corpus analysis labels, not clinical outcome labels.")
     if profile_type == "narrative_review":
         require("External validation" not in study_labels
                 and "External dataset evaluation" not in study_labels

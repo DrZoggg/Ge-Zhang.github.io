@@ -315,6 +315,44 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html#paper-discovery"
     },
     {
+      "id": "doi-10-1155-humu-5591097",
+      "question": "What happened to mutant PAPPA2 in the expression experiment?",
+      "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
+      "doi": "10.1155/humu/5591097",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#qa-1",
+      "source": "data/deep_geo/doi-10-1155-humu-5591097.json#/qa/0/question",
+      "profile_type": "preclinical_multimodal",
+      "narrative_genre": null,
+      "evidence_scope": "Independently reconciled family-wide counts, complete segregation, population allele frequency, penetrance or clinical pathogenicity of PAPPA2 c.392G>C.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "primary open-angle glaucoma",
+        "PAPPA2",
+        "IGFBP5",
+        "293T expression assay",
+        "primary human trabecular-meshwork cells",
+        "Pappa2-deficient mice",
+        "qPCR",
+        "western blotting",
+        "immunofluorescence",
+        "intraocular pressure measurement",
+        "Masson staining"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1155-humu-5591097.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1155-humu-5591097.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1155-humu-5591097.csl.json",
+      "field_entry": [
+        "Experimental glaucoma biology",
+        "Trabecular extracellular matrix regulation"
+      ],
+      "review_topics": [
+        "PAPPA2 and IGFBP5 in ocular fibrosis-associated responses",
+        "Comparison of variant-expression assays and gene-deficiency models"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#paper-discovery"
+    },
+    {
       "id": "doi-10-1126-science-aek9583",
       "question": "What public-record problem does this Science Letter address?",
       "title": "Recording results from single-patient trials",
@@ -634,6 +672,43 @@
         "Sleep-related associations in adults with hyperuricemia"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fpubh-2025-1521372.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-32604-or-2025-059290",
+      "question": "What literature did this bibliometric study analyze?",
+      "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
+      "doi": "10.32604/or.2025.059290",
+      "paper_url": "https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html#qa-1",
+      "source": "data/deep_geo/doi-10-32604-or-2025-059290.json#/qa/0/question",
+      "profile_type": "bibliometric_corpus",
+      "narrative_genre": null,
+      "evidence_scope": "Clinical effectiveness, comparative treatment benefit or patient safety.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "bibliometrics",
+        "oncology research mapping",
+        "title-based literature search",
+        "keyword co-occurrence",
+        "co-citation analysis",
+        "descriptive frequency analysis",
+        "Web of Science Core Collection",
+        "VOSviewer",
+        "CiteSpace",
+        "Bibliometrix"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-32604-or-2025-059290.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-32604-or-2025-059290.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-32604-or-2025-059290.csl.json",
+      "field_entry": [
+        "Oncology bibliometrics",
+        "Cancer research mapping"
+      ],
+      "review_topics": [
+        "Publication distribution across cancer management",
+        "Keyword attention in oncology literature"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html#paper-discovery"
     },
     {
       "id": "doi-10-1111-jcmm-70725",
@@ -1256,6 +1331,40 @@
         "Transcriptomic survival risk signatures"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1007-s10238-024-01439-4",
+      "question": "How many genes are in ERAS?",
+      "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
+      "doi": "10.1007/s10238-024-01439-4",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.html#qa-1",
+      "source": "data/deep_geo/doi-10-1007-s10238-024-01439-4.json#/qa/0/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "evidence_scope": "Prospective clinical utility or improved survival from ERAS-guided care.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "lung adenocarcinoma",
+        "LASSO Cox regression",
+        "survival analysis",
+        "single-cell transcriptomics",
+        "ERAS",
+        "SERPINH1",
+        "GPR37"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1007-s10238-024-01439-4.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1007-s10238-024-01439-4.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1007-s10238-024-01439-4.csl.json",
+      "field_entry": [
+        "Lung cancer genomics",
+        "Computational oncology"
+      ],
+      "review_topics": [
+        "Stress-associated prognostic signatures",
+        "Retrospective molecular risk models"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.html#paper-discovery"
     },
     {
       "id": "time-cart",

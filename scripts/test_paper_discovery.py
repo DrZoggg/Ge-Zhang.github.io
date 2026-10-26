@@ -1,7 +1,6 @@
-"""Frozen 41-V2 production plus centrally reviewed, source-pinned release.
+"""Frozen 43-V2 / Visual 5 production plus independently source-reviewed additions.
 
-Only 13 approved JSON-pointer values and the named ordinary V2 additions may
-change. These are transcription checks, not external AI citation statistics.
+Only the named ordinary V2 additions may change scientific sources. These are transcription checks, not external AI citation statistics.
 """
 import copy
 from collections import Counter
@@ -30,7 +29,7 @@ from site_common import load_site_config
 from theme_shell import without_theme_shell
 from scholarly_discovery import (reviewed_backlinks, validate_backlink_html,
                                  render_questions, question_records)
-from central_release_contract import (BASE as BASELINE, RELEASE,
+from autonomous_release_contract import (BASE as BASELINE, RELEASE,
                                       reviewed_source, restore_reviewed_text,
                                       newline_hashes, validate_new_source)
 
@@ -67,7 +66,7 @@ class PaperDiscoveryTests(unittest.TestCase):
         cls.ai = cls.sources['aihflevel']
 
     def test_exact_reviewed_scope_and_layer(self):
-        self.assertEqual(len(self.old_sources), 41)
+        self.assertEqual(len(self.old_sources), RELEASE['baseline_v2'])
         self.assertEqual(set(self.sources), set(self.old_sources) | self.new_slugs)
         for c in self.sources.values():
             validate_deep_v2_content(c)

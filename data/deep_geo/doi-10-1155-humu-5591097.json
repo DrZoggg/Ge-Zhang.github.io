@@ -1,0 +1,298 @@
+{
+  "display_title": "PAPPA2 and IGFBP5 in experimental trabecular-meshwork fibrosis",
+  "summary": "A reported glaucoma-family variant was studied in transfected cells, while primary trabecular-meshwork cultures and Pappa2-deficient mice tested related fibrosis-associated responses. This evidence page focuses on the verified experimental findings and does not validate family-wide segregation or clinical treatment efficacy.",
+  "research_question": "What do variant-expression, primary trabecular-meshwork cell and Pappa2-deficient mouse experiments show about PAPPA2-IGFBP5 biology, and what remains unproven about human glaucoma?",
+  "author_summary": "The study investigated PAPPA2 c.392G>C after a familial glaucoma observation. In 293T cells, mutant PAPPA2 was associated with lower intracellular and culture-supernatant protein levels, with no statistically significant mRNA difference from wild type. In two donor-derived primary human trabecular-meshwork cell lines, IGFBP5 exposure increased fibrosis-associated proteins and PAPPA2 cotreatment attenuated those changes. At eight weeks, heterozygous and knockout Pappa2 mice had higher intraocular pressure and more trabecular Masson-positive staining than wild-type mice. These experiments support a preclinical research mechanism. The published pedigree does not provide a sufficiently explicit inclusion key and individual genotype table to independently reconcile the reported family denominator and family-wide segregation; those genetic claims are not treated here as validated findings.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Family-initiated investigation with variant-expression, primary human cell and mouse experiments; this page evaluates the experimental findings",
+    "evidence_type": "Experimental preclinical evidence with an explicitly unvalidated family-wide segregation component",
+    "population": "293T cells; two donor-derived primary human trabecular-meshwork cell lines; wild-type, heterozygous and knockout Pappa2 mice. The article also reports a glaucoma pedigree and aqueous-humor comparison, which are not used here to quantify clinical or genetic effects.",
+    "primary_endpoint": "Experimental PAPPA2 protein abundance and fibrosis-associated protein or staining responses",
+    "secondary_endpoint": "PAPPA2 mRNA and mouse intraocular pressure",
+    "data_modalities": [
+      "qPCR and western blotting",
+      "primary-cell immunofluorescence",
+      "mouse intraocular pressure",
+      "mouse eye histology"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "primary human trabecular-meshwork donor lines",
+        "value": "2"
+      },
+      {
+        "label": "cell-assay independent experiments",
+        "value": "3, as reported in Figures 2, 5 and 6"
+      },
+      {
+        "label": "immunofluorescence observations",
+        "value": "20 cells per group per experiment, as reported in Figure 6"
+      },
+      {
+        "label": "mouse comparison",
+        "value": "3 genotypes; 5 mice per genotype at 8 weeks"
+      }
+    ],
+    "counting_note": "Donor cell lines, repeated cell experiments, imaged cells and animals are different units and are not summed. The 20 imaged cells per group per experiment are not 20 donors. Mouse IOP used the mean of three repeated measurements per mouse; these are not additional animals. Family-wide denominators are not asserted as independently reconciled."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "PAPPA2 c.392G>C expression was associated with lower PAPPA2 protein levels in transfected 293T cells and their culture supernatant, without a statistically significant mRNA difference from wild type.",
+      "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The variant encodes p.Gly131Ala; protein abundance measurements do not directly measure protein half-life or human disease penetrance.",
+      "evidence": [
+        {
+          "label": "post-transfection collection",
+          "value": "48 hours"
+        },
+        {
+          "label": "independent experiments",
+          "value": "3"
+        },
+        {
+          "label": "protein assay compartments",
+          "value": "cell lysate and culture supernatant"
+        }
+      ],
+      "source_locator": "Results 3.3; Figure 2d-h and caption; formal PDF pp. 5-6."
+    },
+    {
+      "id": "KF2",
+      "claim": "IGFBP5 exposure increased fibrosis-associated proteins in two primary human trabecular-meshwork cell lines, and PAPPA2 cotreatment attenuated these responses.",
+      "context": "Western blots measured COL3A1, COL4A4, alpha-SMA and MYOC; immunofluorescence assessed COL3A1, COL4A4 and alpha-SMA. These are cultured-cell molecular readouts, not measurements of human treatment benefit.",
+      "evidence": [
+        {
+          "label": "IGFBP5 concentration",
+          "value": "100 ng/mL"
+        },
+        {
+          "label": "PAPPA2 concentration",
+          "value": "10 ng/mL"
+        },
+        {
+          "label": "exposure duration",
+          "value": "48 hours"
+        },
+        {
+          "label": "donor-derived primary cell lines",
+          "value": "2"
+        },
+        {
+          "label": "independent experiments",
+          "value": "3; Figure 6 reports 20 cells per group per experiment for imaging"
+        }
+      ],
+      "source_locator": "Methods 2.6 and 2.8; Results 3.6; Figures 5a-j and 6a-h with captions; formal PDF pp. 3, 5, 7, 11-14."
+    },
+    {
+      "id": "KF3",
+      "claim": "Heterozygous and knockout Pappa2 mice had higher intraocular pressure and more trabecular Masson-positive staining than wild-type mice in the reported experiment.",
+      "context": "The three genotypes were Pappa2+/+, Pappa2+/- and Pappa2-/-. The study measured pressure and collagen-associated histology; the deficient mice are not an exact p.Gly131Ala knock-in model and the experiment did not test a glaucoma treatment.",
+      "evidence": [
+        {
+          "label": "age at assessment",
+          "value": "8 weeks"
+        },
+        {
+          "label": "animals per genotype",
+          "value": "5"
+        },
+        {
+          "label": "IOP measurement unit",
+          "value": "mean of 3 repeated measurements per mouse"
+        }
+      ],
+      "source_locator": "Methods 2.9-2.10; Results 3.7; Figure 7b, 7d-e and caption; formal PDF pp. 3, 7, 15."
+    }
+  ],
+  "what_this_adds": [
+    "Direct comparison of wild-type and c.392G>C PAPPA2 expression in a cell assay, separately from human genetic pathogenicity.",
+    "Complementary primary-cell and mouse observations linking PAPPA2-IGFBP5 biology to trabecular fibrosis-associated readouts, with the biological units and translation limits kept explicit."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Lower PAPPA2 protein abundance with mutant expression in the reported 293T assay.",
+      "Attenuation of IGFBP5-associated molecular responses by PAPPA2 cotreatment in the specified primary-cell conditions.",
+      "Elevated pressure and increased trabecular collagen-associated staining in the specified Pappa2-deficient mouse comparison."
+    ],
+    "does_not_establish": [
+      "Independently reconciled family-wide counts, complete segregation, population allele frequency, penetrance or clinical pathogenicity of PAPPA2 c.392G>C.",
+      "A directly measured change in PAPPA2 protein half-life from endpoint protein and mRNA assays alone.",
+      "Equivalence of Pappa2 deficiency to the exact human p.Gly131Ala variant.",
+      "Human diagnostic performance, glaucoma prevention, treatment efficacy or safety."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What happened to mutant PAPPA2 in the expression experiment?",
+      "answer": "At 48 hours after plasmid transfection, the three independent experiments showed lower mutant PAPPA2 protein in 293T cell lysates and culture supernatant, while the mRNA comparison was not statistically significant. This is an abundance result, not a direct protein half-life measurement.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which primary-cell treatment conditions support the fibrosis-associated finding?",
+      "answer": "Two donor-derived primary trabecular-meshwork lines were exposed for 48 hours to IGFBP5 at 100 ng/mL, PAPPA2 at 10 ng/mL, or their combination. PAPPA2 cotreatment attenuated the IGFBP5-associated protein and fluorescence responses. The reported 20 imaged cells per group per experiment are subsamples, not independent human donors.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What did the mouse experiment measure, and did it reproduce the human variant?",
+      "answer": "At eight weeks, five mice per genotype were assessed. Pappa2 heterozygous and knockout mice had higher intraocular pressure and more trabecular Masson-positive staining than wild type. These are deficiency models, not mice carrying an engineered human p.Gly131Ala allele.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Do these experiments validate a human glaucoma mutation or establish a treatment?",
+      "answer": "No. The cell and mouse findings provide experimental support for PAPPA2-IGFBP5 biology but do not establish population pathogenicity or human therapeutic benefit. Family-wide segregation and the reported pedigree denominator are not independently reconciled here, and no human therapeutic intervention was tested.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "primary open-angle glaucoma"
+    ],
+    "genes": [
+      "PAPPA2",
+      "IGFBP5"
+    ],
+    "models": [
+      "293T expression assay",
+      "primary human trabecular-meshwork cells",
+      "Pappa2-deficient mice"
+    ],
+    "methods": [
+      "qPCR",
+      "western blotting",
+      "immunofluorescence",
+      "intraocular pressure measurement",
+      "Masson staining"
+    ]
+  },
+  "limitations": [
+    "Results 3.1-3.2 describe a family association, but the Figure 1a caption does not fully specify which depicted relatives contribute to the reported counts, and Figure 2a-b provides representative Sanger traces rather than an individual-level genotype table. The page therefore does not validate family-wide counts or complete segregation; it does not substitute an alternative count inferred from symbols.",
+    "The mutant expression assay measured endpoint protein abundance and mRNA. It did not directly measure protein half-life, secretion rate, or clinical variant penetrance.",
+    "The primary-cell experiments used two donor-derived lines. Three experimental repeats and multiple cells imaged within each experiment do not increase the number of independent human donors.",
+    "The mouse study used five animals per genotype. Deficiency of Pappa2 is not equivalent to an exact missense-variant knock-in, and pressure and collagen-associated staining do not establish the full human glaucoma phenotype.",
+    "No human therapeutic intervention, clinical diagnostic validation, or patient outcome benefit is established by the experimental findings summarized here."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "relationship": "Related ocular cell-culture research context; retinal pigment epithelium is a different cell lineage and provides no validation of the glaucoma mechanism."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://doi.org/10.1155/humu/5591097",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13080692/",
+    "formal_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080692.1/PMC13080692.1.pdf",
+    "pmcid": "PMC13080692",
+    "evidence_version": "Published journal article, 15 April 2026; PMC13080692 version 1.",
+    "evidence_basis": "Formal PDF and JATS XML; Results 3.3, 3.6 and 3.7, Methods 2.6 and 2.8-2.10, and actual Figures 2, 5, 6 and 7 were reviewed together. Pedigree and representative Sanger images were inspected, with the unresolved family-wide denominator and segregation review boundary explicitly retained.",
+    "license": "CC BY 4.0, stated on the article first page and in the formal JATS permissions element.",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Experimental glaucoma biology",
+      "Trabecular extracellular matrix regulation"
+    ],
+    "review_topics": [
+      "PAPPA2 and IGFBP5 in ocular fibrosis-associated responses",
+      "Comparison of variant-expression assays and gene-deficiency models"
+    ],
+    "scientific_role": "Primary preclinical experiments arising from a reported glaucoma-family observation; the page does not validate family-wide segregation.",
+    "evidence_position": "Direct experimental cell and mouse evidence, with no population penetrance estimate, exact-variant mouse model or human treatment validation.",
+    "related_concepts": [
+      "Protein abundance versus protein stability",
+      "Trabecular collagen and intraocular pressure"
+    ],
+    "citation_contexts": [
+      "Variant biology: endpoint PAPPA2 abundance after missense-variant expression in 293T cells.",
+      "Experimental fibrosis: primary-cell IGFBP5/PAPPA2 exposure and Pappa2-deficient mouse pressure/histology, with model limits stated."
+    ]
+  },
+  "version": 2,
+  "doi": "10.1155/humu/5591097",
+  "evidence_page_notice": "This evidence page summarizes the verified cell and mouse experiments in the formal article. The pedigree inclusion denominator and participant-level segregation are not independently reconciled; no family-wide count, penetrance estimate or clinical variant classification is validated here. The experimental findings do not establish a human glaucoma treatment.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What happened to mutant PAPPA2 in the expression experiment?",
+        "supported_scope": "At 48 hours after plasmid transfection, the three independent experiments showed lower mutant PAPPA2 protein in 293T cell lysates and culture supernatant, while the mRNA comparison was not statistically significant. This is an abundance result, not a direct protein half-life measurement.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Which primary-cell treatment conditions support the fibrosis-associated finding?",
+        "supported_scope": "Two donor-derived primary trabecular-meshwork lines were exposed for 48 hours to IGFBP5 at 100 ng/mL, PAPPA2 at 10 ng/mL, or their combination. PAPPA2 cotreatment attenuated the IGFBP5-associated protein and fluorescence responses. The reported 20 imaged cells per group per experiment are subsamples, not independent human donors.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What did the mouse experiment measure, and did it reproduce the human variant?",
+        "supported_scope": "At eight weeks, five mice per genotype were assessed. Pappa2 heterozygous and knockout mice had higher intraocular pressure and more trabecular Masson-positive staining than wild type. These are deficiency models, not mice carrying an engineered human p.Gly131Ala allele.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Independently reconciled family-wide counts, complete segregation, population allele frequency, penetrance or clinical pathogenicity of PAPPA2 c.392G>C.",
+      "A directly measured change in PAPPA2 protein half-life from endpoint protein and mRNA assays alone.",
+      "Equivalence of Pappa2 deficiency to the exact human p.Gly131Ala variant.",
+      "Human diagnostic performance, glaucoma prevention, treatment efficacy or safety."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "PAPPA2 c.392G>C expression was associated with lower PAPPA2 protein levels in transfected 293T cells and their culture supernatant, without a statistically significant mRNA difference from wild type.",
+        "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The variant encodes p.Gly131Ala; protein abundance measurements do not directly measure protein half-life or human disease penetrance.",
+        "finding": "post-transfection collection: 48 hours; independent experiments: 3; protein assay compartments: cell lysate and culture supernatant",
+        "evidence_level": "Experimental preclinical evidence",
+        "scope": "Lower PAPPA2 protein abundance with mutant expression in the reported 293T assay.",
+        "source_locator": "Results 3.3; Figure 2d-h and caption; formal PDF pp. 5-6.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "IGFBP5 exposure increased fibrosis-associated proteins in two primary human trabecular-meshwork cell lines, and PAPPA2 cotreatment attenuated these responses.",
+        "context": "Western blots measured COL3A1, COL4A4, alpha-SMA and MYOC; immunofluorescence assessed COL3A1, COL4A4 and alpha-SMA. These are cultured-cell molecular readouts, not measurements of human treatment benefit.",
+        "finding": "IGFBP5 concentration: 100 ng/mL; PAPPA2 concentration: 10 ng/mL; exposure duration: 48 hours; donor-derived primary cell lines: 2; independent experiments: 3; Figure 6 reports 20 cells per group per experiment for imaging",
+        "evidence_level": "Experimental preclinical evidence",
+        "scope": "Attenuation of IGFBP5-associated molecular responses by PAPPA2 cotreatment in the specified primary-cell conditions.",
+        "source_locator": "Methods 2.6 and 2.8; Results 3.6; Figures 5a-j and 6a-h with captions; formal PDF pp. 3, 5, 7, 11-14.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "Heterozygous and knockout Pappa2 mice had higher intraocular pressure and more trabecular Masson-positive staining than wild-type mice in the reported experiment.",
+        "context": "The three genotypes were Pappa2+/+, Pappa2+/- and Pappa2-/-. The study measured pressure and collagen-associated histology; the deficient mice are not an exact p.Gly131Ala knock-in model and the experiment did not test a glaucoma treatment.",
+        "finding": "age at assessment: 8 weeks; animals per genotype: 5; IOP measurement unit: mean of 3 repeated measurements per mouse",
+        "evidence_level": "Experimental preclinical evidence",
+        "scope": "Elevated pressure and increased trabecular collagen-associated staining in the specified Pappa2-deficient mouse comparison.",
+        "source_locator": "Methods 2.9-2.10; Results 3.7; Figure 7b, 7d-e and caption; formal PDF pp. 3, 7, 15.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      }
+    ]
+  }
+}

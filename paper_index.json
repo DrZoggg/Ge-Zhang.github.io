@@ -360,7 +360,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1155/humu/5591097",
       "publisher_url": null,
@@ -372,9 +372,29 @@
       "openalex_id": "https://openalex.org/W7154461818",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1155-humu-5591097.csv",
+      "question_count": 4,
+      "concept_count": 11,
+      "discovery_layer": {
+        "field_entry": [
+          "Experimental glaucoma biology",
+          "Trabecular extracellular matrix regulation"
+        ],
+        "review_topics": [
+          "PAPPA2 and IGFBP5 in ocular fibrosis-associated responses",
+          "Comparison of variant-expression assays and gene-deficiency models"
+        ],
+        "scientific_role": "Primary preclinical experiments arising from a reported glaucoma-family observation; the page does not validate family-wide segregation.",
+        "evidence_position": "Direct experimental cell and mouse evidence, with no population penetrance estimate, exact-variant mouse model or human treatment validation.",
+        "related_concepts": [
+          "Protein abundance versus protein stability",
+          "Trabecular collagen and intraocular pressure"
+        ],
+        "citation_contexts": [
+          "Variant biology: endpoint PAPPA2 abundance after missense-variant expression in 293T cells.",
+          "Experimental fibrosis: primary-cell IGFBP5/PAPPA2 exposure and Pappa2-deficient mouse pressure/histology, with model limits stated."
+        ]
+      }
     },
     {
       "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
@@ -828,7 +848,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-32604-or-2025-059290.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.32604/or.2025.059290",
       "publisher_url": null,
@@ -840,9 +860,30 @@
       "openalex_id": "https://openalex.org/W4407614715",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-32604-or-2025-059290.csv",
+      "question_count": 4,
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Oncology bibliometrics",
+          "Cancer research mapping"
+        ],
+        "review_topics": [
+          "Publication distribution across cancer management",
+          "Keyword attention in oncology literature"
+        ],
+        "scientific_role": "Original descriptive analysis of a defined bibliographic corpus and its publication and keyword patterns.",
+        "evidence_position": "Document-level evidence; neither a clinical cohort nor a pooled analysis of treatment effects.",
+        "related_concepts": [
+          "Database coverage",
+          "Co-citation networks",
+          "Research attention"
+        ],
+        "citation_contexts": [
+          "Background: corpus-specific publication patterns across prevention, screening, diagnosis, treatment and rehabilitation.",
+          "Methods or research mapping: title-search eligibility and descriptive bibliometric frequencies, with database and language limits."
+        ]
+      }
     },
     {
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
@@ -1783,7 +1824,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1007/s10238-024-01439-4",
       "publisher_url": null,
@@ -1795,9 +1836,29 @@
       "openalex_id": "https://openalex.org/W4400980865",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1007-s10238-024-01439-4.csv",
+      "question_count": 4,
+      "concept_count": 7,
+      "discovery_layer": {
+        "field_entry": [
+          "Lung cancer genomics",
+          "Computational oncology"
+        ],
+        "review_topics": [
+          "Stress-associated prognostic signatures",
+          "Retrospective molecular risk models"
+        ],
+        "scientific_role": "Ten-gene ERAS model with public-cohort evaluation and limited tissue expression checks.",
+        "evidence_position": "Retrospective prognostic associations; immune and drug-response outputs are computational hypotheses.",
+        "related_concepts": [
+          "Endoplasmic reticulum stress",
+          "Tumor immune context"
+        ],
+        "citation_contexts": [
+          "Methods: stress-related molecular signatures for LUAD survival stratification.",
+          "Evidence synthesis: distinguish prognostic AUCs and tissue expression from treatment-response validation."
+        ]
+      }
     },
     {
       "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
