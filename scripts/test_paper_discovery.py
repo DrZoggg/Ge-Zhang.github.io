@@ -12,6 +12,7 @@ import subprocess
 import tarfile
 import tempfile
 import unittest
+import limited_evidence
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -64,6 +65,7 @@ class PaperDiscoveryTests(unittest.TestCase):
                            for p in cls.old_items if p['paper_geo_status']=='v2'}
         cls.new_slugs = {row['slug'] for row in RELEASE['papers'].values()}
         cls.ai = cls.sources['aihflevel']
+        cls.limited_notes = limited_evidence.load(cls.items)
 
     def test_exact_reviewed_scope_and_layer(self):
         self.assertEqual(len(self.old_sources), RELEASE['baseline_v2'])
@@ -113,11 +115,21 @@ class PaperDiscoveryTests(unittest.TestCase):
                     public_by_doi={q.get('doi'):q for q in self.items},config=load_site_config())
             if slug not in self.new_slugs:
                 before=self.old['papers/'+slug+'.html']
-                self.assertEqual(BACKLINK.sub('',restore_reviewed_text(slug,before,page)),
+                note=self.limited_notes.get(p.get('doi'))
+                frozen_page=page
+                frozen_md=md
+                if note:
+                    html_block=limited_evidence.render_html(note)
+                    md_block=limited_evidence.render_markdown(note)+'\n'
+                    self.assertEqual(page.count(html_block),1,slug)
+                    self.assertEqual(md.count(md_block),1,slug)
+                    frozen_page=page.replace(html_block,'',1)
+                    frozen_md=md.replace(md_block,'',1)
+                self.assertEqual(BACKLINK.sub('',restore_reviewed_text(slug,before,frozen_page)),
                                  BACKLINK.sub('',before),slug)
                 self.assertEqual(paper_json_ld_object(page,slug),paper_json_ld_object(before,slug))
                 before_md=self.old['papers/'+slug+'.md']
-                self.assertEqual(restore_reviewed_text(slug,before_md,md),before_md,slug)
+                self.assertEqual(restore_reviewed_text(slug,before_md,frozen_md),before_md,slug)
 
     def test_protected_inventory_identity_exports_and_source_files(self):
         expected=copy.deepcopy(self.old_items)
@@ -210,12 +222,15 @@ class PaperDiscoveryTests(unittest.TestCase):
         old_map=sitemap(self.old['sitemap.xml'])
         now=sitemap((ROOT/'sitemap.xml').read_text(encoding='utf-8'))
         self.assertEqual(set(now),set(old_map))
+        limited_dates={p['paper_url']:self.limited_notes[p['doi']]['reviewed_on']
+                       for p in self.items if p.get('doi') in self.limited_notes}
         for url,prior_date in old_map.items():
             relative=url.removeprefix('https://drgezhang.com/') or 'index.html'
             if relative in self.old and relative.endswith('.html'):
                 current=(ROOT/relative).read_text(encoding='utf-8')
                 changed=without_evidence_ui(without_theme_shell(current))!=without_evidence_ui(without_theme_shell(self.old[relative]))
-                self.assertEqual(now[url],RELEASE['content_date'] if changed else prior_date,url)
+                expected_date=limited_dates.get(url,RELEASE['content_date']) if changed else prior_date
+                self.assertEqual(now[url],expected_date,url)
             else:
                 self.assertEqual(now[url],prior_date,url)
 

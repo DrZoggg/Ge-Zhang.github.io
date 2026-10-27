@@ -16,6 +16,35 @@ Markdown record: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
+<a id="limited-evidence"></a>
+## Research context and source limits
+
+Limited evidence note. Only the source material identified below has been reviewed; this is not a complete Paper GEO V2 assessment.
+
+Abstract-supported multi-omics research context; the complete genetic and experimental analyses have not been reviewed.
+
+### Multi-omics question
+
+The study investigates cellular senescence in Alzheimer’s disease using transcriptomic comparisons and integration of genome-wide association summary statistics with expression and methylation quantitative trait loci. Blood and brain evidence are described separately in the abstract.
+
+Source: [PubMed PMID 39690817, Abstract: transcriptomic analysis and integrative Mendelian randomization.](https://pubmed.ncbi.nlm.nih.gov/39690817/)
+
+### Experimental follow-up and interpretation
+
+The abstract identifies CDKN2B and ITGAV as brain-prioritized candidates followed up in vitro. Candidate prioritization and laboratory follow-up do not establish that targeting these genes prevents or treats Alzheimer’s disease in patients.
+
+Source: [PubMed PMID 39690817, Abstract: brain-tissue candidate prioritization and in vitro experiments.](https://pubmed.ncbi.nlm.nih.gov/39690817/)
+
+### Evidence limits
+
+- GWAS and QTL sample sizes, ancestry, instrument selection, colocalization assumptions, multiplicity and experimental conditions require the full article and supplements. No causal gene or treatment-effect conclusion is independently certified by this abstract-level note.
+
+### Provenance
+
+- [Indexed article abstract](https://pubmed.ncbi.nlm.nih.gov/39690817/) — PubMed abstract, refreshed through the official Europe PMC API. PubMed PMID 39690817, Abstract: transcriptomic analysis and integrative Mendelian randomization.
+
+Source review: 2026-10-27.
+
 ## Links
 
 - DOI: https://doi.org/10.1093/hmg/ddae189
