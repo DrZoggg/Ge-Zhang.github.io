@@ -26,6 +26,7 @@ import scholarly_discovery
 import evidence_presentation
 import paper_discovery
 import patent_evidence
+import limited_evidence
 from theme_shell import with_theme_shell, without_theme_shell
 from homepage_author_roles import load_role_records, render_role_labels
 from evidence_reuse import enhance_html, navigation, export_html, render_csv, EXPORT_NOTICE, CSV_SAFETY
@@ -1902,7 +1903,7 @@ def render_official_abstract_markdown(record, doi):
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
                       citation_data=None, official_abstract=None, presentation=None, identifiers=None,
-                      reviewed_backlinks=None):
+                      reviewed_backlinks=None, limited_note=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2068,7 +2069,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 <div class="links">{' '.join(links)}</div>{navigation(deep_content, bool(citation_data)) if is_v2 else ''}
 </div></section>
 {(render_official_abstract_html(official_abstract, doi) + chr(10)) if official_abstract else ''}{early_html}{(render_cite_html(citation_data) + chr(10)) if citation_data else ''}{deep_html}{pending_html}
-{patent_evidence.render_html(patent_evidence.load(publication))}{notice_html}{scholarly_discovery.identifier_html(identifiers)}{scholarly_discovery.backlink_html(reviewed_backlinks)}
+{limited_evidence.render_html(limited_note)}{patent_evidence.render_html(patent_evidence.load(publication))}{notice_html}{scholarly_discovery.identifier_html(identifiers)}{scholarly_discovery.backlink_html(reviewed_backlinks)}
 <section><div class="links"><a class="btn" href="../publications.html">All Publications</a> <a class="btn" href="../index.html">Homepage</a></div></section>
 <script type="application/ld+json">{safe_schema}</script>
 {'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
@@ -2077,7 +2078,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 
 
 def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None,
-                          official_abstract=None):
+                          official_abstract=None, limited_note=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2139,6 +2140,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     patent_note = patent_evidence.render_markdown(patent_evidence.load(publication))
     if patent_note:
         lines.append(patent_note)
+    if limited_note:
+        lines.append(limited_evidence.render_markdown(limited_note))
     if deep_content is not None:
         if official_abstract:
             lines.append(render_official_abstract_markdown(official_abstract, doi))
@@ -2463,6 +2466,7 @@ def build_site():
         if norm_doi(item.get("doi"))
     }
     resolve_research_clusters(deep_contents, public_by_doi)
+    limited_notes = limited_evidence.load(public_items)
     evidence_dir = ROOT / "assets/evidence"
     evidence_dir.mkdir(parents=True, exist_ok=True)
     expected_evidence_files = set()
@@ -2515,6 +2519,7 @@ def build_site():
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
                 identifiers=scholarly_ids.get(norm_doi(item.get('doi'))),
                 reviewed_backlinks=reviewed_backlinks.get(norm_doi(item.get('doi'))),
+                limited_note=limited_notes.get(norm_doi(item.get('doi'))),
             ),
         )
         write_text_if_changed(
@@ -2525,6 +2530,7 @@ def build_site():
                 deep_content=deep_content,
                 public_by_doi=public_by_doi,
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
+                limited_note=limited_notes.get(norm_doi(item.get('doi'))),
             ),
         )
     CITATIONS_DIR.mkdir(parents=True, exist_ok=True)

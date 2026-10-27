@@ -3159,7 +3159,10 @@ def validate_site():
     evidence_counts = validate_evidence(ROOT, discovery_public, discovery_contents)
     from v2_coverage import validate_v2_coverage
     coverage_counts = validate_v2_coverage(discovery_public, discovery_contents, ROOT)
+    from limited_evidence import validate_generated as validate_limited_evidence
+    limited_counts = validate_limited_evidence(discovery_public)
     result = {
+        "limited_evidence": limited_counts,
         "v2_module_coverage": coverage_counts,
         "scholarly_discovery": scholarly_counts,
         "master": len(master),
