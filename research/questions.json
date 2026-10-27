@@ -947,6 +947,49 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#paper-discovery"
     },
     {
+      "id": "doi-10-1016-j-cbi-2025-111421",
+      "question": "Is this a patient study?",
+      "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
+      "doi": "10.1016/j.cbi.2025.111421",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-cbi-2025-111421.json#/qa/0/question",
+      "profile_type": "preclinical_multimodal",
+      "narrative_genre": null,
+      "evidence_scope": "Clinical diagnostic accuracy, patient benefit, prevention of diabetic heart disease or a glucose target for patients.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Human induced pluripotent stem cells",
+        "Cardiac organoids",
+        "Diabetic cardiomyopathy model",
+        "Glucose",
+        "Sodium palmitate",
+        "Metformin",
+        "CCK-8",
+        "BAX",
+        "APAF1",
+        "TUNEL",
+        "Inflammatory transcripts",
+        "Masson staining",
+        "In vitro evidence",
+        "Biological versus technical replication",
+        "Journal Pre-proof version",
+        "Protocol reporting gaps"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-cbi-2025-111421.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-cbi-2025-111421.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-cbi-2025-111421.csl.json",
+      "field_entry": [
+        "Cardiac disease modeling",
+        "Human stem-cell-derived organoids"
+      ],
+      "review_topics": [
+        "Glucose and palmitate injury experiments",
+        "Three-dimensional cellular assay systems"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#paper-discovery"
+    },
+    {
       "id": "b4galt2",
       "question": "What is PTMLS in this study?",
       "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -1525,6 +1568,45 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1002-clc-70019.html#paper-discovery"
     },
     {
+      "id": "doi-10-1016-j-jtemb-2024-127543",
+      "question": "What population and outcome were actually analyzed?",
+      "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
+      "doi": "10.1016/j.jtemb.2024.127543",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-jtemb-2024-127543.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "That magnesium depletion causes depression, or that lowering MDS or magnesium supplementation prevents or treats depression.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "NHANES 2005–2018",
+        "adults aged 20–60 years",
+        "magnesium depletion score",
+        "proton pump inhibitor use",
+        "renal function",
+        "heavy drinking",
+        "PHQ-9",
+        "depressive symptoms",
+        "cross-sectional prevalence",
+        "survey-weighted logistic regression",
+        "restricted cubic splines",
+        "interaction analysis"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-jtemb-2024-127543.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-jtemb-2024-127543.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-jtemb-2024-127543.csl.json",
+      "field_entry": [
+        "Nutritional epidemiology",
+        "Population mental-health research"
+      ],
+      "review_topics": [
+        "Magnesium depletion proxies and depressive symptoms",
+        "Medication and renal-function components in cross-sectional nutritional scores"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html#paper-discovery"
+    },
+    {
       "id": "doi-10-15212-cvia-2024-0023",
       "question": "What populations and statistical units were analyzed?",
       "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
@@ -1820,6 +1902,43 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html#paper-discovery"
     },
     {
+      "id": "doi-10-1016-j-ejso-2024-108527",
+      "question": "How many independent patients were included?",
+      "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
+      "doi": "10.1016/j.ejso.2024.108527",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-ejso-2024-108527.json#/qa/0/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "evidence_scope": "Superior safety, survival or oncologic equivalence of endoscopy versus surgery.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "Esophageal gastrointestinal stromal tumor",
+        "E-GIST",
+        "Retrospective case series",
+        "Endoscopic resection",
+        "Submucosal tunneling endoscopic resection",
+        "Endoscopic submucosal dissection",
+        "Endoscopic mucosal band ligation",
+        "Surgery",
+        "Neoadjuvant imatinib",
+        "Conservative management"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-ejso-2024-108527.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-ejso-2024-108527.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-ejso-2024-108527.csl.json",
+      "field_entry": [
+        "Gastrointestinal surgical oncology",
+        "Esophageal GIST"
+      ],
+      "review_topics": [
+        "Management of rare esophageal mesenchymal tumors",
+        "Selection bias in endoscopic and surgical case series"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#paper-discovery"
+    },
+    {
       "id": "olink-dcm",
       "question": "What targeted plasma proteomics evidence identifies candidate biomarkers for DCM-HF?",
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -1947,6 +2066,42 @@
         "Multi-omics clinical translation"
       ],
       "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#paper-discovery"
+    },
+    {
+      "id": "doi-10-1016-j-canlet-2024-217083",
+      "question": "Is this an original clinical study?",
+      "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
+      "doi": "10.1016/j.canlet.2024.217083",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html#qa-1",
+      "source": "data/deep_geo/doi-10-1016-j-canlet-2024-217083.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "evidence_scope": "A new clinical cohort, prospective experiment, systematic review or meta-analysis.",
+      "evidence_scope_kind": "does_not_establish",
+      "concepts": [
+        "CAR-T cell therapy",
+        "Secondary T-cell malignancy",
+        "Long-term safety surveillance",
+        "Insertional mutagenesis",
+        "Persistent cellular activation",
+        "Inflammatory microenvironment",
+        "Tumor transgene testing",
+        "Host susceptibility",
+        "Treatment-history confounding"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-canlet-2024-217083.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-canlet-2024-217083.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-canlet-2024-217083.csl.json",
+      "field_entry": [
+        "Cellular immunotherapy safety",
+        "Hematologic oncology"
+      ],
+      "review_topics": [
+        "Secondary T-cell malignancy after CAR-T therapy",
+        "Mechanistic and treatment-history explanations"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html#paper-discovery"
     },
     {
       "id": "doi-10-2147-cia-s462542",

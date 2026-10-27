@@ -5,9 +5,14 @@ import json
 import subprocess
 from sync_common import ROOT
 from central_release_contract import newline_hashes
+import author_account_release_contract as author_release
 
 RELEASE = json.loads((ROOT/'scripts/fixtures/autonomous_evidence_release_20261026.json').read_text(encoding='utf-8'))
 BASE = RELEASE['base_sha']
+if set(RELEASE['papers']) & set(author_release.RELEASE['papers']):
+    raise ValueError('Author-account additions cannot overwrite historical scientific approvals')
+RELEASE['papers'].update(copy.deepcopy(author_release.RELEASE['papers']))
+RELEASE['content_dates'] = {url: author_release.CONTENT_DATE for url in author_release.dated_urls()}
 
 def old(path):
     return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)

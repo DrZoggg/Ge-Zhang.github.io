@@ -1192,7 +1192,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.cbi.2025.111421",
       "publisher_url": null,
@@ -1204,9 +1204,30 @@
       "openalex_id": "https://openalex.org/W4407731417",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-cbi-2025-111421.csv",
+      "question_count": 8,
+      "concept_count": 16,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiac disease modeling",
+          "Human stem-cell-derived organoids"
+        ],
+        "review_topics": [
+          "Glucose and palmitate injury experiments",
+          "Three-dimensional cellular assay systems"
+        ],
+        "scientific_role": "An in vitro organoid experiment with viability, transcript and imaging observations; version and protocol limitations are retained.",
+        "evidence_position": "Preclinical human-cell-derived model evidence from a Journal Pre-proof; no clinical validation or complete reproducibility claim.",
+        "related_concepts": [
+          "Lipotoxicity-associated cellular injury",
+          "Experimental replicate units",
+          "Descriptive drug-response readouts"
+        ],
+        "citation_contexts": [
+          "Modeling methods: cite the source version and stated culture exposure conditions while retaining unresolved protocol details.",
+          "Results: cite selected organoid observations; do not turn them into validated patient outcomes or a metformin regimen."
+        ]
+      }
     },
     {
       "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -1854,7 +1875,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.jtemb.2024.127543",
       "publisher_url": null,
@@ -1866,9 +1887,30 @@
       "openalex_id": "https://openalex.org/W4403267871",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-jtemb-2024-127543.csv",
+      "question_count": 8,
+      "concept_count": 12,
+      "discovery_layer": {
+        "field_entry": [
+          "Nutritional epidemiology",
+          "Population mental-health research"
+        ],
+        "review_topics": [
+          "Magnesium depletion proxies and depressive symptoms",
+          "Medication and renal-function components in cross-sectional nutritional scores"
+        ],
+        "scientific_role": "A survey-weighted secondary analysis relating a four-domain proxy score to concurrent PHQ-9 classification in US adults aged 20–60.",
+        "evidence_position": "Observational prevalence-odds evidence, with questionnaire-defined symptoms and no biochemical magnesium validation or intervention.",
+        "related_concepts": [
+          "Proxy exposure measurement",
+          "PHQ-9 outcome definition",
+          "Cross-sectional confounding"
+        ],
+        "citation_contexts": [
+          "Evidence synthesis on MDS and depressive symptoms, specifying the PHQ-9 threshold, sample exclusions and adjusted odds rather than incident disease risk.",
+          "Methods discussion of composite exposure scores and survey weighting; not evidence for a validated depression screening tool."
+        ]
+      }
     },
     {
       "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
@@ -2393,7 +2435,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.ejso.2024.108527",
       "publisher_url": null,
@@ -2405,9 +2447,30 @@
       "openalex_id": "https://openalex.org/W4400190725",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-ejso-2024-108527.csv",
+      "question_count": 5,
+      "concept_count": 10,
+      "discovery_layer": {
+        "field_entry": [
+          "Gastrointestinal surgical oncology",
+          "Esophageal GIST"
+        ],
+        "review_topics": [
+          "Management of rare esophageal mesenchymal tumors",
+          "Selection bias in endoscopic and surgical case series"
+        ],
+        "scientific_role": "A small retrospective clinical series documenting treatment allocation, procedural experience and follow-up.",
+        "evidence_position": "Descriptive single-center observational evidence; no randomized comparative efficacy or validated treatment-selection rule.",
+        "related_concepts": [
+          "STER",
+          "ESD",
+          "Neoadjuvant imatinib"
+        ],
+        "citation_contexts": [
+          "Reviews describing the range of management approaches in a rare esophageal tumor.",
+          "Evidence appraisal separating case-series feasibility observations from comparative safety and oncologic outcomes."
+        ]
+      }
     },
     {
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -2533,7 +2596,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.md",
       "deep_geo": false,
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.canlet.2024.217083",
       "publisher_url": null,
@@ -2545,9 +2608,30 @@
       "openalex_id": "https://openalex.org/W4399986411",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-canlet-2024-217083.csv",
+      "question_count": 8,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Cellular immunotherapy safety",
+          "Hematologic oncology"
+        ],
+        "review_topics": [
+          "Secondary T-cell malignancy after CAR-T therapy",
+          "Mechanistic and treatment-history explanations"
+        ],
+        "scientific_role": "Narrative review organizing candidate mechanisms and competing explanations for T-cell malignancy after CAR-T treatment.",
+        "evidence_position": "Review-level synthesis with disclosed citation-count inconsistencies; no new cohort, pooled incidence or causal safety determination.",
+        "related_concepts": [
+          "Insertional mutagenesis",
+          "Tumor transgene assays",
+          "Long-term safety surveillance"
+        ],
+        "citation_contexts": [
+          "Literature background on possible mechanisms and alternative explanations for secondary T-cell malignancy after CAR-T treatment.",
+          "Critical discussion of why case reports, transgene testing and conceptual diagrams cannot supply a general clinical risk estimate."
+        ]
+      }
     },
     {
       "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",

@@ -1,0 +1,467 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.cbi.2025.111421",
+  "display_title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
+  "summary": "A human induced-pluripotent-stem-cell cardiac organoid study examined responses to glucose and sodium palmitate using viability, gene-expression and imaging assays. This evidence summary is based on an author-provided Journal Pre-proof, separates reported group observations from unresolved protocol and figure-label details, and does not establish human treatment efficacy.",
+  "research_question": "Can hiPSC-derived cardiac organoids provide an in vitro setting for observing glucose- and palmitate-associated cellular injury, and what bounded model responses are documented in the available manuscript?",
+  "author_summary": "The investigators generated three-dimensional cardiac organoids from commercial hiPSCs, characterized morphology and lineage-marker staining, and applied glucose and sodium palmitate for 48 hours. The acquired manuscript contains a viability screen, selected apoptosis-related measurements, inflammatory and fibrosis-associated transcripts, staining and a metformin-labeled group comparison. The usable core consists of these organoid observations with their explicit figure sample labels. Conflicting TNNT2/MYH6 descriptions and the JC-1 ratio label are excluded from accepted directional conclusions. Missing metformin concentration and incomplete replicate definitions limit reproducibility; the paper does not test patient treatment, diagnose diabetic cardiomyopathy or validate a clinical glucose target.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "In vitro hiPSC-derived cardiac organoid generation, glucose/palmitate exposure and descriptive drug-response testing",
+    "evidence_type": "Cell-culture morphology, immunofluorescence, CCK-8, RT-qPCR, TUNEL, histological staining and Western blots from a publisher Journal Pre-proof",
+    "population": "Commercial human induced pluripotent stem cells differentiated into organoids; donor count and line identifiers not reported. No recruited patients or in vivo animal cohort.",
+    "primary_endpoint": "Main evidence-page readout: CCK-8 signal after glucose/palmitate exposure; the paper does not designate a prespecified primary endpoint.",
+    "secondary_endpoint": "Organoid geometry and marker staining; selected apoptosis, inflammatory and fibrosis-associated readouts; descriptive metformin group comparison.",
+    "external_validation": false,
+    "data_modalities": [
+      "Bright-field morphology",
+      "Cardiac-lineage immunofluorescence",
+      "CCK-8 absorbance",
+      "RT-qPCR",
+      "TUNEL microscopy",
+      "Masson staining",
+      "Western blots"
+    ],
+    "counting_note": "The Methods state that experiments were conducted at least three times. Captions report n=6 for CCK-8 and n=3 for several transcript/staining panels, but do not define independent donor, differentiation-batch or technical-replicate counts. Assay points are not summed into a total human or organoid n.",
+    "scale_metrics": [
+      {
+        "label": "Source version",
+        "value": "37-page Journal Pre-proof; definitive final full text not compared"
+      },
+      {
+        "label": "Exposure duration",
+        "value": "48 hours"
+      },
+      {
+        "label": "Palmitate screen",
+        "value": "50-300 micromolar plus a 0-palmitate comparator"
+      },
+      {
+        "label": "Glucose screen",
+        "value": "5-50 mM as displayed in Fig. 2C"
+      },
+      {
+        "label": "CCK-8 caption sample label",
+        "value": "n=6; biological independence unspecified"
+      },
+      {
+        "label": "Selected transcript/staining sample label",
+        "value": "n=3; biological independence unspecified"
+      },
+      {
+        "label": "Metformin concentration",
+        "value": "Not reported in the acquired file"
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The investigators generated hiPSC-derived three-dimensional cardiac organoids and documented growth and cardiac-lineage marker staining.",
+      "context": "This is characterization of an in vitro construct. Marker-positive images do not establish mature adult-heart physiology, precise cell proportions, perfused vasculature or fidelity across independent human donors.",
+      "source_locator": "Journal Pre-proof PDF pp. 7, 12-16, Methods 2.3-2.4, Results 3.1-3.2 and Figs. 1A-D and 2A; Fig. 1 is on PDF p. 13 and Fig. 2A on PDF p. 15.",
+      "evidence": [
+        {
+          "label": "Reported geometry",
+          "value": "Approximately 500 micrometers at day 2 and approximately 1500 micrometers at day 14, stated in Results 3.1; these are not independently re-estimated bar values."
+        },
+        {
+          "label": "Lineage readouts",
+          "value": "MLC2A, MLC2V, cTnT, CD31 and WT1 immunofluorescence."
+        },
+        {
+          "label": "Cell source",
+          "value": "Commercial human induced pluripotent stem cells; independent donor count and detailed line identity are not specified."
+        },
+        {
+          "label": "Timing boundary",
+          "value": "Figure 1C-D and the results describe day 14, while the differentiation schematic ends at day 13; the schematic is not promoted as an exact reproducible timetable."
+        }
+      ]
+    },
+    {
+      "id": "KF2",
+      "claim": "The CCK-8 screen showed lower viability-associated signal at higher sodium-palmitate concentrations and a non-monotonic response across the displayed glucose conditions.",
+      "context": "CCK-8 is an assay of cellular metabolic activity used here as a viability readout. The figure does not provide an absolute surviving-cell count, a validated clinical glucose threshold or a drug dose for patients. The glucose-alone plot and combined glucose/palmitate experiments are separate comparisons.",
+      "source_locator": "Journal Pre-proof PDF pp. 8, 15-16, Methods 2.5-2.6, Results 3.3 and Fig. 2B-C (figure on PDF p. 15; legend on PDF p. 16).",
+      "evidence": [
+        {
+          "label": "Exposure duration",
+          "value": "48 hours; followed by 2 hours with CCK-8 reagent and an absorbance measurement at 450 nm."
+        },
+        {
+          "label": "Palmitate screen",
+          "value": "0, 50, 100, 150, 200, 250 and 300 micromolar are displayed; the 200-300 micromolar groups are below the 0-palmitate comparator."
+        },
+        {
+          "label": "Glucose screen",
+          "value": "5, 12.5, 25, 33.3 and 50 mM are displayed. The peak is at 25 mM, and the 50 mM bar is below the displayed 5 mM group; no glucose-free group is shown in Fig. 2C."
+        },
+        {
+          "label": "Reported sample label",
+          "value": "Fig. 2 legend: n=6, mean +/- SD; the independent biological-replicate unit is not defined."
+        },
+        {
+          "label": "Quantitative boundary",
+          "value": "No exact viability percentage, effect size or p value is reconstructed from bar heights or significance symbols; no minimum toxic threshold is selected."
+        }
+      ]
+    },
+    {
+      "id": "KF3",
+      "claim": "Under the combined glucose/palmitate conditions, selected apoptosis-related readouts were elevated relative to the labeled control, with lower signals in intermediate-glucose groups than in the group labeled PA/0 mM glucose and the highest-glucose condition.",
+      "context": "The evidence comprises BAX/APAF1 mRNA and TUNEL staining in organoids. These readouts support an experimental injury pattern, not a demonstrated clinical apoptotic pathway or proof that an intermediate glucose concentration protects human hearts.",
+      "source_locator": "Journal Pre-proof PDF pp. 10, 17-20, Methods 2.7-2.8, Results 3.4, Fig. 3B-C and Fig. 4; Table 1 primers on PDF pp. 8-10.",
+      "evidence": [
+        {
+          "label": "Combined exposure labels",
+          "value": "Palmitate fixed at 200 micromolar; glucose labels 0, 5, 12.5, 25, 33.3 and 50 mM, with a separate CON/control group."
+        },
+        {
+          "label": "Gene readouts",
+          "value": "BAX and APAF1 relative mRNA expression measured by RT-qPCR; Table 1 provides primer sequences."
+        },
+        {
+          "label": "Imaging readout",
+          "value": "TUNEL images and red-fluorescence intensity; this is not a reported percentage of apoptotic cells."
+        },
+        {
+          "label": "Reported sample labels",
+          "value": "Fig. 3 and Fig. 4 legends: n=3, mean +/- SD. These are not verified independent donor counts."
+        },
+        {
+          "label": "Excluded marker directions",
+          "value": "TNNT2 and MYH6 are excluded from this claim because their Fig. 3D/H directions do not agree with the blanket prose description in Results 3.4."
+        }
+      ]
+    },
+    {
+      "id": "KF4",
+      "claim": "The combined-exposure experiment showed changes in inflammatory and fibrosis-associated readouts alongside altered Masson staining.",
+      "context": "TNF, IL6 and IL1B transcription, profibrotic transcripts and staining are experimental correlates of injury in a cultured construct. They do not establish clinical myocardial fibrosis, collagen turnover in patients or a uniquely identified causal mechanism.",
+      "source_locator": "Journal Pre-proof PDF pp. 8-10 and 20-22, Methods 2.7 and 2.9, Results 3.5 and Fig. 5A-I (figure on PDF p. 21; legend continues on PDF p. 22).",
+      "evidence": [
+        {
+          "label": "Experimental conditions",
+          "value": "200 micromolar palmitate with displayed glucose labels from 0 to 50 mM and a separate control."
+        },
+        {
+          "label": "Inflammatory markers",
+          "value": "TNFA, IL1B and IL6 panels A-C show higher expression in the labeled treatment conditions than CON, with differing responses across glucose groups."
+        },
+        {
+          "label": "Fibrosis-related markers",
+          "value": "COL1A1, FBN1, TGFB1 and CCN2 panels D-G, with Masson quantification and images in H-I."
+        },
+        {
+          "label": "Reported sample label",
+          "value": "Fig. 5 legend: n=3, mean +/- SD; no unique participant or donor total is assigned."
+        },
+        {
+          "label": "Reporting boundary",
+          "value": "No fold-change, collagen percentage or exact p value is digitized from the figure. The Masson readout is reported as staining, not as independently confirmed fibrin deposition."
+        }
+      ]
+    },
+    {
+      "id": "KF5",
+      "claim": "The paper includes a three-group metformin comparison in which CCK-8 signal and selected expression readouts shifted toward control values in the DCM+MET group.",
+      "context": "This is a descriptive comparison of the groups labeled in the pre-proof. The metformin concentration is not stated in the inspected methods, results or legends, and no clinical efficacy or fully reproducible dosing claim is made.",
+      "source_locator": "Journal Pre-proof PDF pp. 11-12 and 23-25, Methods 2.12-2.14, Results 3.7 and Figs. 7-8; Fig. 7 on PDF p. 24 and Fig. 8 on PDF p. 25.",
+      "evidence": [
+        {
+          "label": "Group labels",
+          "value": "CON, DCM and DCM+MET."
+        },
+        {
+          "label": "Model exposure",
+          "value": "Results 3.7 specifies 200 micromolar sodium palmitate plus 33.3 mM glucose; samples were collected 48 hours after intervention in Methods 2.12."
+        },
+        {
+          "label": "Selected observations",
+          "value": "Fig. 8A shows a higher CCK-8 signal in DCM+MET than DCM; Fig. 7 BAX/APAF1 and Fig. 8 BAX/COL1A1 panels show lower signals in the labeled DCM+MET group than DCM."
+        },
+        {
+          "label": "Reported sample labels",
+          "value": "Fig. 7 legend: n=3; Fig. 8A legend: n=6. Independent biological replication and the separate Western-blot sample count are not specified."
+        },
+        {
+          "label": "Missing dosing information",
+          "value": "Metformin concentration, precise independent replicate definition and raw observations were not supplied in the acquired file. No dose, percentage rescue or effect size is inferred."
+        }
+      ]
+    }
+  ],
+  "what_this_adds": [
+    "An in vitro cardiac-organoid setting for studying responses to glucose and sodium palmitate across complementary cellular readouts.",
+    "Source-specific separation of the observed organoid findings from protocol omissions, conflicting marker descriptions and clinical extrapolation."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The described generation and marker characterization of hiPSC-derived cardiac organoids.",
+      "The reported viability-screen pattern and selected apoptosis, inflammatory and fibrosis-associated group observations in the acquired pre-proof.",
+      "A descriptive metformin-labeled group comparison, with the absent dose and unresolved biological replicate count explicitly disclosed."
+    ],
+    "does_not_establish": [
+      "Clinical diagnostic accuracy, patient benefit, prevention of diabetic heart disease or a glucose target for patients.",
+      "A validated metformin dose, treatment regimen, safety profile or clinical effect size.",
+      "Independent biological replication across a known number of donors or a complete reproduction protocol.",
+      "A reconciled TNNT2/MYH6 expression direction, verified JC-1 ratio orientation, calibrated contractile force or measured mitochondrial respiratory capacity.",
+      "Equivalence of every detail in the pre-proof and definitive final full text, or independent verification of the two unavailable supplementary files."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Is this a patient study?",
+      "answer": "No. It uses cardiac organoids differentiated from commercial human induced pluripotent stem cells. Human cell origin does not make this a clinical validation, and the source does not provide a verified independent donor count. Source location: Journal Pre-proof PDF pp. 6-7, Methods 2.2-2.3.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which source version supports this evidence page?",
+      "answer": "The reviewed file is the 37-page Journal Pre-proof obtained through the author-authorized ResearchGate file channel. The DOI, title and 14-author order match the formal indexed record. The definitive full text has not been compared, and the two cited supplementary files have not been inspected. Source location: Journal Pre-proof cover p. 1 and title page p. 2; Crossref DOI record checked 2026-10-27; PubMed PMID 39984109.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "What do the n=3 and n=6 labels mean?",
+      "answer": "They are the sample labels reported in individual figure legends. The paper does not clearly distinguish independent donors, differentiation batches and technical repeats, so the labels are retained without assigning a synthetic total n or claiming independent patient replication. Source location: Journal Pre-proof PDF p. 12, Methods 2.14; legends on PDF pp. 16, 18, 20, 22 and 25.",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5"
+      ]
+    },
+    {
+      "question": "What glucose and lipid conditions were examined?",
+      "answer": "The viability screen used a 48-hour exposure, with palmitate conditions from 50 to 300 micromolar and displayed glucose conditions from 5 to 50 mM. The combined-condition panels use 200 micromolar palmitate and varying glucose. These are culture conditions, not clinical targets or patient dosing instructions. Source location: Journal Pre-proof PDF p. 8, Methods 2.5-2.6; Figs. 2B-C and 3.",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "What is the defensible injury evidence?",
+      "answer": "The accepted evidence includes CCK-8 signal, BAX/APAF1 transcription, TUNEL staining and selected inflammatory/fibrosis-associated readouts in labeled organoid groups. No exact effect sizes are reconstructed from bars, and these assays do not demonstrate a complete causal mechanism in patients. Source location: Journal Pre-proof PDF pp. 15-22, Figs. 2B-C, 3B-C, 4 and 5; Results 3.3-3.5.",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does the metformin experiment establish a treatment regimen?",
+      "answer": "No. Three labeled groups are compared and selected readouts shift toward control values after metformin, but the acquired file does not state the metformin concentration. The observations cannot establish a reproducible dose-response regimen, safety or human efficacy. Source location: Journal Pre-proof PDF pp. 11, 23-25, Methods 2.12, Results 3.7 and Figs. 7-8.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Why are some transcript and mitochondrial conclusions excluded?",
+      "answer": "The broad TNNT2/MYH6 prose descriptions differ from the directions shown in the plots. Methods 2.11 states a red/green JC-1 ratio while Fig. 6B labels green/red. Those details are not reconciled by guesswork or promoted as confirmed findings. Source location: Journal Pre-proof PDF pp. 11, 17-18 and 23-24; Methods 2.11, Results 3.4/3.7, Figs. 3D/H, 6B and 7.",
+      "evidence_refs": [
+        "KF3",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Has the study validated a physiologically mature heart or a clinical screening platform?",
+      "answer": "No. Morphology and lineage-marker staining characterize a construct, but do not establish adult-heart maturity, clinical prediction or performance across independently characterized donors. No prospective patient validation or direct comparative test proving superiority to every 2D or animal model is reported. Source location: Journal Pre-proof PDF pp. 12-16, Results 3.1-3.3 and Figs. 1-2; Discussion pp. 26-30.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    }
+  ],
+  "concepts": {
+    "Experimental system": [
+      "Human induced pluripotent stem cells",
+      "Cardiac organoids",
+      "Diabetic cardiomyopathy model"
+    ],
+    "Exposures": [
+      "Glucose",
+      "Sodium palmitate",
+      "Metformin"
+    ],
+    "Accepted assay contexts": [
+      "CCK-8",
+      "BAX",
+      "APAF1",
+      "TUNEL",
+      "Inflammatory transcripts",
+      "Masson staining"
+    ],
+    "Interpretation boundaries": [
+      "In vitro evidence",
+      "Biological versus technical replication",
+      "Journal Pre-proof version",
+      "Protocol reporting gaps"
+    ]
+  },
+  "limitations": [
+    "The reviewed source is a 37-page publisher-branded Journal Pre-proof obtained through the author-authorized ResearchGate private-file channel. It is not the definitive version of record. DOI, title and all 14 authors agree with the current Crossref record, publisher landing page and PubMed record, but full final-text equivalence has not been verified.",
+    "The study is an in vitro experiment using human-derived cells, not a human clinical cohort or an animal experiment. hiPSC line identifiers, independent donor number and the biological versus technical replicate unit are not clearly reported; caption n=3/n=6 values must not be converted into a unique human n.",
+    "Methods 2.14 describes experiments conducted at least three times, mean +/- SD and one-way ANOVA. A post-hoc procedure, multiplicity strategy, randomization, blinded outcome assessment and a prospective sample-size calculation are not specified in the acquired source.",
+    "TNNT2 and MYH6 are not included as accepted directional findings: Results 3.4 and 3.7 describe marker increases too broadly, whereas Figs. 3D/H and 7 display lower TNNT2/MYH6 in relevant treatment groups than control. No text or figure direction is silently chosen as a correction.",
+    "JC-1 findings are excluded from directional or quantitative conclusions: Methods 2.11 specifies a red/green ratio, while Fig. 6B labels green/red. Reported fluorescence-channel wavelengths also require clarification. No mitochondrial respiration or ATP measurement was reported; membrane-potential fluorescence cannot establish respiratory capacity.",
+    "The metformin concentration is absent from the inspected methods, results and legends. The labeled-group observations are described without an inferred regimen, dose-response claim, percentage rescue or extrapolation to patient efficacy.",
+    "The culture methods print 10 mM for Y-27632, CHIR99021 and IWR-1. These values are not silently changed to micromolar concentrations and are not offered as an independently verified reproduction protocol.",
+    "The glucose-alone figure displays a 5 mM baseline but no glucose-free group; its control terminology differs from the text. No exact clinical or in vitro toxicity threshold is certified. No explicit osmotic-control experiment is reported.",
+    "Figure 3A measures diameter excursion in micrometers, despite use of the word force in the text. It is not a calibrated mechanical-force measurement, and no claim of validated cardiac pumping performance is made.",
+    "Supplementary files 1 and 2 are cited but were not present in the acquired PDF or retrieved from an accessible official channel. Their dynamic contraction and high-dose morphology material is not treated as viewed or independently verified.",
+    "Quantitative plots are not digitized. Bar heights, exact p values, raw biological replicates and precision estimates are not reconstructed; data are stated to be available on request."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.18063/ijb.740",
+      "relationship": "Site-curated connection to engineered cardiac tissue and three-dimensional culture. This separate bioprinting-related publication does not replicate the glucose/palmitate organoid experiment or resolve its protocol omissions."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0009279725000511",
+    "doi_url": "https://doi.org/10.1016/j.cbi.2025.111421",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39984109/",
+    "crossref_url": "https://api.crossref.org/works/10.1016/j.cbi.2025.111421",
+    "source_record_url": "https://www.researchgate.net/publication/389140383_Modeling_Diabetic_Cardiomyopathy_Using_Human_Cardiac_Organoids_Effects_of_High_Glucose_and_Lipid_Conditions",
+    "review_date": "2026-10-27",
+    "review_basis": "The acquired 37-page Journal Pre-proof was read in full; Figs. 1-8 and their captions were inspected as rendered pages. Identity was compared with the current Crossref record and preserved publisher/PubMed records. The definitive full text and cited supplementary files were unavailable for direct comparison.",
+    "source_version": "Publisher-branded Journal Pre-proof; not the definitive version of record. ResearchGate is the authorized acquisition channel, not a version certification.",
+    "local_full_text_sha256": "92e7fa7eecfc52074c83b59824c0d7f875047b6b71fcfcab6087fab4e720bb91",
+    "copyright": "Copyright 2025 Elsevier B.V. The private full text is retained outside the public repository and is not redistributed.",
+    "unresolved_source_scope": "Supplementary files 1 and 2, final-text comparison, metformin concentration and biological-replicate definitions remain unavailable.",
+    "quantitative_rule": "Report only printed conditions, caption sample labels and source-supported directions; no graph digitization, invented effect sizes, synthetic donor totals or clinical extrapolation."
+  },
+  "evidence_page_notice": "This page reviews a publisher Journal Pre-proof acquired through an authorized author-account file. It is a bounded in vitro evidence summary: the definitive full text and two cited supplements were not compared, conflicting TNNT2/MYH6 and JC-1 details are excluded, and the absent metformin dose is not inferred.",
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiac disease modeling",
+      "Human stem-cell-derived organoids"
+    ],
+    "review_topics": [
+      "Glucose and palmitate injury experiments",
+      "Three-dimensional cellular assay systems"
+    ],
+    "scientific_role": "An in vitro organoid experiment with viability, transcript and imaging observations; version and protocol limitations are retained.",
+    "evidence_position": "Preclinical human-cell-derived model evidence from a Journal Pre-proof; no clinical validation or complete reproducibility claim.",
+    "related_concepts": [
+      "Lipotoxicity-associated cellular injury",
+      "Experimental replicate units",
+      "Descriptive drug-response readouts"
+    ],
+    "citation_contexts": [
+      "Modeling methods: cite the source version and stated culture exposure conditions while retaining unresolved protocol details.",
+      "Results: cite selected organoid observations; do not turn them into validated patient outcomes or a metformin regimen."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What organoid system was used to study a diabetic-like cellular environment?",
+        "supported_scope": "Cite the hiPSC-derived construct and marker characterization with the source-version and donor-replication limitations.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What in vitro exposure and viability-screen observations were reported?",
+        "supported_scope": "Cite the 48-hour assay conditions and qualitative plotted response, without inventing a clinical threshold or numerical effect size.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What apoptosis, inflammatory and fibrosis-associated readouts accompanied the organoid exposure?",
+        "supported_scope": "Cite the selected verified panels; exclude unresolved transcript directions and retain the limits of the reported n labels.",
+        "evidence_refs": [
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "How should the metformin-labeled organoid comparison be cited?",
+        "supported_scope": "Describe the group observations together with the absent concentration and limited replication information, without a dosing or human-efficacy claim.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Clinical diagnostic accuracy, patient benefit, prevention of diabetic heart disease or a glucose target for patients.",
+      "A validated metformin dose, treatment regimen, safety profile or clinical effect size.",
+      "Independent biological replication across a known number of donors or a complete reproduction protocol.",
+      "A reconciled TNNT2/MYH6 expression direction, verified JC-1 ratio orientation, calibrated contractile force or measured mitochondrial respiratory capacity.",
+      "Equivalence of every detail in the pre-proof and definitive final full text, or independent verification of the two unavailable supplementary files."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-organoid-1",
+        "component": "The investigators generated hiPSC-derived three-dimensional cardiac organoids and documented growth and cardiac-lineage marker staining.",
+        "context": "This is characterization of an in vitro construct. Marker-positive images do not establish mature adult-heart physiology, precise cell proportions, perfused vasculature or fidelity across independent human donors.",
+        "finding": "Reported geometry: Approximately 500 micrometers at day 2 and approximately 1500 micrometers at day 14, stated in Results 3.1; these are not independently re-estimated bar values.; Lineage readouts: MLC2A, MLC2V, cTnT, CD31 and WT1 immunofluorescence.; Cell source: Commercial human induced pluripotent stem cells; independent donor count and detailed line identity are not specified.; Timing boundary: Figure 1C-D and the results describe day 14, while the differentiation schematic ends at day 13; the schematic is not promoted as an exact reproducible timetable.",
+        "evidence_level": "In vitro organoid experiment; Journal Pre-proof",
+        "scope": "This is characterization of an in vitro construct. Marker-positive images do not establish mature adult-heart physiology, precise cell proportions, perfused vasculature or fidelity across independent human donors.",
+        "source_locator": "Journal Pre-proof PDF pp. 7, 12-16, Methods 2.3-2.4, Results 3.1-3.2 and Figs. 1A-D and 2A; Fig. 1 is on PDF p. 13 and Fig. 2A on PDF p. 15.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-organoid-2",
+        "component": "The CCK-8 screen showed lower viability-associated signal at higher sodium-palmitate concentrations and a non-monotonic response across the displayed glucose conditions.",
+        "context": "CCK-8 is an assay of cellular metabolic activity used here as a viability readout. The figure does not provide an absolute surviving-cell count, a validated clinical glucose threshold or a drug dose for patients. The glucose-alone plot and combined glucose/palmitate experiments are separate comparisons.",
+        "finding": "Exposure duration: 48 hours; followed by 2 hours with CCK-8 reagent and an absorbance measurement at 450 nm.; Palmitate screen: 0, 50, 100, 150, 200, 250 and 300 micromolar are displayed; the 200-300 micromolar groups are below the 0-palmitate comparator.; Glucose screen: 5, 12.5, 25, 33.3 and 50 mM are displayed. The peak is at 25 mM, and the 50 mM bar is below the displayed 5 mM group; no glucose-free group is shown in Fig. 2C.; Reported sample label: Fig. 2 legend: n=6, mean +/- SD; the independent biological-replicate unit is not defined.; Quantitative boundary: No exact viability percentage, effect size or p value is reconstructed from bar heights or significance symbols; no minimum toxic threshold is selected.",
+        "evidence_level": "In vitro organoid experiment; Journal Pre-proof",
+        "scope": "CCK-8 is an assay of cellular metabolic activity used here as a viability readout. The figure does not provide an absolute surviving-cell count, a validated clinical glucose threshold or a drug dose for patients. The glucose-alone plot and combined glucose/palmitate experiments are separate comparisons.",
+        "source_locator": "Journal Pre-proof PDF pp. 8, 15-16, Methods 2.5-2.6, Results 3.3 and Fig. 2B-C (figure on PDF p. 15; legend on PDF p. 16).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-organoid-3",
+        "component": "Under the combined glucose/palmitate conditions, selected apoptosis-related readouts were elevated relative to the labeled control, with lower signals in intermediate-glucose groups than in the group labeled PA/0 mM glucose and the highest-glucose condition.",
+        "context": "The evidence comprises BAX/APAF1 mRNA and TUNEL staining in organoids. These readouts support an experimental injury pattern, not a demonstrated clinical apoptotic pathway or proof that an intermediate glucose concentration protects human hearts.",
+        "finding": "Combined exposure labels: Palmitate fixed at 200 micromolar; glucose labels 0, 5, 12.5, 25, 33.3 and 50 mM, with a separate CON/control group.; Gene readouts: BAX and APAF1 relative mRNA expression measured by RT-qPCR; Table 1 provides primer sequences.; Imaging readout: TUNEL images and red-fluorescence intensity; this is not a reported percentage of apoptotic cells.; Reported sample labels: Fig. 3 and Fig. 4 legends: n=3, mean +/- SD. These are not verified independent donor counts.; Excluded marker directions: TNNT2 and MYH6 are excluded from this claim because their Fig. 3D/H directions do not agree with the blanket prose description in Results 3.4.",
+        "evidence_level": "In vitro organoid experiment; Journal Pre-proof",
+        "scope": "The evidence comprises BAX/APAF1 mRNA and TUNEL staining in organoids. These readouts support an experimental injury pattern, not a demonstrated clinical apoptotic pathway or proof that an intermediate glucose concentration protects human hearts.",
+        "source_locator": "Journal Pre-proof PDF pp. 10, 17-20, Methods 2.7-2.8, Results 3.4, Fig. 3B-C and Fig. 4; Table 1 primers on PDF pp. 8-10.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-organoid-4",
+        "component": "The combined-exposure experiment showed changes in inflammatory and fibrosis-associated readouts alongside altered Masson staining.",
+        "context": "TNF, IL6 and IL1B transcription, profibrotic transcripts and staining are experimental correlates of injury in a cultured construct. They do not establish clinical myocardial fibrosis, collagen turnover in patients or a uniquely identified causal mechanism.",
+        "finding": "Experimental conditions: 200 micromolar palmitate with displayed glucose labels from 0 to 50 mM and a separate control.; Inflammatory markers: TNFA, IL1B and IL6 panels A-C show higher expression in the labeled treatment conditions than CON, with differing responses across glucose groups.; Fibrosis-related markers: COL1A1, FBN1, TGFB1 and CCN2 panels D-G, with Masson quantification and images in H-I.; Reported sample label: Fig. 5 legend: n=3, mean +/- SD; no unique participant or donor total is assigned.; Reporting boundary: No fold-change, collagen percentage or exact p value is digitized from the figure. The Masson readout is reported as staining, not as independently confirmed fibrin deposition.",
+        "evidence_level": "In vitro organoid experiment; Journal Pre-proof",
+        "scope": "TNF, IL6 and IL1B transcription, profibrotic transcripts and staining are experimental correlates of injury in a cultured construct. They do not establish clinical myocardial fibrosis, collagen turnover in patients or a uniquely identified causal mechanism.",
+        "source_locator": "Journal Pre-proof PDF pp. 8-10 and 20-22, Methods 2.7 and 2.9, Results 3.5 and Fig. 5A-I (figure on PDF p. 21; legend continues on PDF p. 22).",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-organoid-5",
+        "component": "The paper includes a three-group metformin comparison in which CCK-8 signal and selected expression readouts shifted toward control values in the DCM+MET group.",
+        "context": "This is a descriptive comparison of the groups labeled in the pre-proof. The metformin concentration is not stated in the inspected methods, results or legends, and no clinical efficacy or fully reproducible dosing claim is made.",
+        "finding": "Group labels: CON, DCM and DCM+MET.; Model exposure: Results 3.7 specifies 200 micromolar sodium palmitate plus 33.3 mM glucose; samples were collected 48 hours after intervention in Methods 2.12.; Selected observations: Fig. 8A shows a higher CCK-8 signal in DCM+MET than DCM; Fig. 7 BAX/APAF1 and Fig. 8 BAX/COL1A1 panels show lower signals in the labeled DCM+MET group than DCM.; Reported sample labels: Fig. 7 legend: n=3; Fig. 8A legend: n=6. Independent biological replication and the separate Western-blot sample count are not specified.; Missing dosing information: Metformin concentration, precise independent replicate definition and raw observations were not supplied in the acquired file. No dose, percentage rescue or effect size is inferred.",
+        "evidence_level": "In vitro organoid experiment; Journal Pre-proof",
+        "scope": "This is a descriptive comparison of the groups labeled in the pre-proof. The metformin concentration is not stated in the inspected methods, results or legends, and no clinical efficacy or fully reproducible dosing claim is made.",
+        "source_locator": "Journal Pre-proof PDF pp. 11-12 and 23-25, Methods 2.12-2.14, Results 3.7 and Figs. 7-8; Fig. 7 on PDF p. 24 and Fig. 8 on PDF p. 25.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  }
+}
