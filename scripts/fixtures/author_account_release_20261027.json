@@ -1,0 +1,60 @@
+{
+  "base_sha": "e388001d7b3de97c32931a372fc17e9d66644206",
+  "public_works": 77,
+  "baseline_v2": 55,
+  "papers": {
+    "10.1016/j.cbi.2025.111421": {
+      "slug": "doi-10-1016-j-cbi-2025-111421",
+      "content_sha256": "e2279edf76ab5b9f4c626bc4c39e4822169b203e04b6fa615f5a029954e6282a",
+      "canonical_json_sha256": "f9fa6a3c0b4c4e18f9c27b882a68db37a713bacb479579356cdf4a99c1427896",
+      "profile_type": "preclinical_multimodal",
+      "key_findings": 5,
+      "citation_use_cases": 4,
+      "evidence_rows": 5
+    },
+    "10.1016/j.ejso.2024.108527": {
+      "slug": "doi-10-1016-j-ejso-2024-108527",
+      "content_sha256": "b9e8a6e4904ed302c22b1ca3a72574d169ac1398dacfdb07f0863a0b963a9dc2",
+      "canonical_json_sha256": "e2344700884a0a1ace4c4b6cfc0320842ca2ca4cddde84802961bb7bae9ac56a",
+      "profile_type": "clinical_cohort",
+      "key_findings": 5,
+      "citation_use_cases": 3,
+      "evidence_rows": 5
+    },
+    "10.1016/j.canlet.2024.217083": {
+      "slug": "doi-10-1016-j-canlet-2024-217083",
+      "content_sha256": "9eb6b14f05bfbbe74406a9a5e7ab9a6c7ce08382064d3145d13568da5c937d65",
+      "canonical_json_sha256": "f7146eaf57805240be44b9ece68945827c4b8268ec5e5541bf82ddd83e9c011a",
+      "profile_type": "narrative_review",
+      "key_findings": 5,
+      "citation_use_cases": 3,
+      "evidence_rows": 5
+    },
+    "10.1016/j.jtemb.2024.127543": {
+      "slug": "doi-10-1016-j-jtemb-2024-127543",
+      "content_sha256": "c7e2608ac267bdf46ae4c11e0835ea464d3d4d8e3ea7bf10dbd82e6fc3067c6d",
+      "canonical_json_sha256": "000d18bc80e166b8fc079dcb6c0a6a63ce3a7e71068505ecbae9c08c64a6cf94",
+      "profile_type": "clinical_cohort",
+      "key_findings": 7,
+      "citation_use_cases": 3,
+      "evidence_rows": 7
+    }
+  },
+  "limited_evidence_updates": {
+    "10.1016/j.intimp.2024.112574": {
+      "slug": "doi-10-1016-j-intimp-2024-112574",
+      "content_sha256": "e659f73096b291cf7cb068a72ce9d34c5e7c8131a3a8992726a2aa2e09df67f3"
+    },
+    "10.1093/hmg/ddae189": {
+      "slug": "doi-10-1093-hmg-ddae189",
+      "content_sha256": "6c25ebbb9c54989ee2951bd1e606f2da799d4c7429879ef503b37a94e563656b"
+    }
+  },
+  "content_date": "2026-10-27",
+  "backlink_only_slugs": [
+    "time-cart",
+    "doi-10-3389-fpubh-2025-1521372",
+    "doi-10-1038-s41598-025-98859-3",
+    "icd-cart"
+  ]
+}

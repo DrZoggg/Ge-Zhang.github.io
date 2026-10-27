@@ -1,0 +1,486 @@
+{
+  "doi": "10.1016/j.jtemb.2024.127543",
+  "version": 2,
+  "display_title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
+  "summary": "A cross-sectional NHANES analysis examined a medication, renal-function and alcohol-based magnesium depletion score in relation to PHQ-9-defined depressive symptoms. The adjusted associations describe the surveyed analytic sample; they do not validate a depression diagnostic tool or demonstrate benefit from magnesium supplementation.",
+  "research_question": "Among NHANES 2005–2018 adults aged 20–60 years, how was magnesium depletion score associated with a PHQ-9 score of at least 10 after survey-weighted covariate adjustment?",
+  "author_summary": "The study pooled public survey data and compared concurrent MDS and PHQ-9 classifications. The main regression table supports a modest adjusted per-point association and higher odds in the MDS 2 and at least 3 categories. MDS is a proxy score, the outcome is questionnaire-defined, and reverse causation and residual confounding remain possible.",
+  "evidence_page_notice": "Author-controlled evidence synthesis of the published main article, separate from its abstract. Supplementary-table claims and clinical interpretations not supported by the audited evidence are excluded.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Secondary pooled cross-sectional analysis of NHANES 2005–2018",
+    "evidence_type": "Survey-weighted human prevalence-odds association",
+    "population": "Adults aged 20–60 years after exclusions for missing PHQ-9, MDS and specified covariates and for pregnancy",
+    "primary_endpoint": "PHQ-9 score at least 10 at the survey assessment",
+    "secondary_endpoint": "The same PHQ-9 outcome in score-category, component, spline and subgroup analyses; no separate prospective endpoint",
+    "data_modalities": [
+      "PHQ-9 symptom questionnaire",
+      "medication-use and alcohol variables",
+      "estimated glomerular filtration rate",
+      "demographic and health covariates",
+      "two 24-hour dietary recalls"
+    ],
+    "unique_total_n": 18247,
+    "cohorts": [
+      {
+        "name": "Pooled NHANES 2005–2018 analytic sample",
+        "role": "Single cross-sectional analytic sample; 1,753 participants met PHQ-9 at least 10 and 16,494 did not",
+        "n": 18247
+      }
+    ],
+    "external_validation": false
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The pooled NHANES 2005–2018 cross-sectional analysis included 18,247 adults aged 20–60 years; 1,753 met the study's PHQ-9 threshold of at least 10.",
+      "context": "These are unweighted participant counts after the stated exclusions. PHQ-9 reflects self-reported symptoms in the preceding two weeks; the threshold classification is not an independently confirmed clinical diagnosis or incident depression outcome.",
+      "evidence": [
+        {
+          "label": "analytic participants",
+          "value": "18,247"
+        },
+        {
+          "label": "PHQ-9 at least 10",
+          "value": "1,753"
+        },
+        {
+          "label": "PHQ-9 below 10",
+          "value": "16,494"
+        },
+        {
+          "label": "survey years",
+          "value": "2005–2018"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 2, Methods 2.1–2.2 and Fig. 1; pp. 3–4, Table 1."
+    },
+    {
+      "id": "KF2",
+      "claim": "MDS was a 0–5 score assembled from diuretic use, proton pump inhibitor use, reduced estimated glomerular filtration rate and heavy drinking.",
+      "context": "The score is an operational proxy assembled from medication, renal-function and alcohol variables. This study did not measure or validate whole-body magnesium deficiency against serum magnesium. A higher score must not be described as a directly measured magnesium concentration.",
+      "evidence": [
+        {
+          "label": "score range",
+          "value": "0–5"
+        },
+        {
+          "label": "diuretic use",
+          "value": "1 point"
+        },
+        {
+          "label": "proton pump inhibitor use",
+          "value": "1 point"
+        },
+        {
+          "label": "renal component",
+          "value": "1 point for eGFR between 60 and 90; 2 points below 60 mL/min/1.73 m²"
+        },
+        {
+          "label": "heavy drinking component",
+          "value": "1 point; more than 1 drink/day for women or 2 drinks/day for men"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 2, Methods 2.3; p. 5, Discussion limitations."
+    },
+    {
+      "id": "KF3",
+      "claim": "In survey-weighted Model 3, each one-point higher MDS was associated with higher odds of PHQ-9-defined depression: OR 1.15, 95% CI 1.04–1.26, P=0.0100.",
+      "context": "Model 3 adjusted for age, sex, race/ethnicity, education, marital status, BMI, smoking, diabetes and dietary energy, calcium and magnesium intake. This adjusted prevalence-odds association is neither a prospective risk estimate nor an effect of changing magnesium status.",
+      "evidence": [
+        {
+          "label": "model",
+          "value": "Survey-weighted Model 3"
+        },
+        {
+          "label": "comparison",
+          "value": "Per 1 MDS point"
+        },
+        {
+          "label": "OR",
+          "value": "1.15"
+        },
+        {
+          "label": "95% CI",
+          "value": "1.04–1.26"
+        },
+        {
+          "label": "P",
+          "value": "0.0100"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2 and Table 2, continuous MDS row and footnote a."
+    },
+    {
+      "id": "KF4",
+      "claim": "Relative to MDS 0, Model 3 ORs were 1.03 (95% CI 0.87–1.21) for MDS 1, 1.41 (1.12–1.78) for MDS 2, and 1.58 (1.06–2.35) for MDS at least 3.",
+      "context": "MDS 1 did not show a statistically significant association. The highest category contained only 368 participants, including 71 with PHQ-9 at least 10; sparse high scores limit precision and do not define a clinical screening or treatment threshold.",
+      "evidence": [
+        {
+          "label": "MDS 1 versus 0",
+          "value": "OR 1.03; 95% CI 0.87–1.21; P=0.7600"
+        },
+        {
+          "label": "MDS 2 versus 0",
+          "value": "OR 1.41; 95% CI 1.12–1.78; P=0.0040"
+        },
+        {
+          "label": "MDS at least 3 versus 0",
+          "value": "OR 1.58; 95% CI 1.06–2.35; P=0.0300"
+        },
+        {
+          "label": "highest-category participants",
+          "value": "368"
+        },
+        {
+          "label": "highest-category PHQ-9 at least 10",
+          "value": "71"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 4, Table 1 continuation, MDS rows; Table 2, Model 3 categorical MDS rows and footnote b."
+    },
+    {
+      "id": "KF5",
+      "claim": "The component analysis reported an association for proton pump inhibitor use in Model 3: OR 2.24, 95% CI 1.78–2.80, P<0.0001.",
+      "context": "Diuretic use, heavy drinking and the renal-function categories had confidence intervals crossing 1 in the same model. These component estimates do not establish medication-induced depression, magnesium mediation, or benefit from stopping a prescribed medication.",
+      "evidence": [
+        {
+          "label": "PPI-use OR",
+          "value": "2.24"
+        },
+        {
+          "label": "95% CI",
+          "value": "1.78–2.80"
+        },
+        {
+          "label": "P",
+          "value": "<0.0001"
+        },
+        {
+          "label": "analysis",
+          "value": "Survey-weighted component associations, Model 3"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 5, Table 3, Model 3 component rows and footnote a; p. 4, Results 3.2."
+    },
+    {
+      "id": "KF6",
+      "claim": "The restricted cubic spline analysis reported P=0.084 for nonlinearity.",
+      "context": "The test did not detect nonlinearity at the paper's 0.05 significance level; this is not proof that the relationship is linear. Figure 2's wording about a beneficial threshold is not adopted as a clinical claim, and no numerical threshold is extracted from the curve.",
+      "evidence": [
+        {
+          "label": "nonlinearity P",
+          "value": "0.084"
+        },
+        {
+          "label": "test",
+          "value": "Restricted cubic spline; likelihood-ratio assessment"
+        },
+        {
+          "label": "reference shown in figure",
+          "value": "MDS 0"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2; p. 5, Fig. 2 and its caption."
+    },
+    {
+      "id": "KF7",
+      "claim": "All reported subgroup interaction P values in Table 4 exceeded 0.05.",
+      "context": "Failure to detect interaction does not show that every subgroup estimate is statistically significant, identical or clinically useful. Several subgroup confidence intervals cross 1, and some are wide; these stratified analyses are not independent external validation.",
+      "evidence": [
+        {
+          "label": "age interaction P",
+          "value": "0.140"
+        },
+        {
+          "label": "sex interaction P",
+          "value": "0.180"
+        },
+        {
+          "label": "race/ethnicity interaction P",
+          "value": "0.134"
+        },
+        {
+          "label": "reported interaction tests",
+          "value": "All P>0.05"
+        }
+      ],
+      "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.3; p. 6, Table 4, interaction column and footnote a."
+    }
+  ],
+  "what_this_adds": [
+    "Quantifies the association of an operational magnesium depletion score with concurrent PHQ-9 classification in a pooled NHANES adult sample.",
+    "Separates the per-point association from score-category and component estimates, with their uncertainty.",
+    "Provides spline and subgroup analyses while retaining the limits of non-significant nonlinearity and interaction tests."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Reported survey-weighted MDS–PHQ-9 prevalence-odds associations in the included adults aged 20–60 years.",
+      "Definition of the proxy score, questionnaire outcome, analytic denominator and covariate-adjustment set in the main article.",
+      "Descriptive assessment of score categories, components, spline nonlinearity and subgroup interactions within the same survey sample."
+    ],
+    "does_not_establish": [
+      "That magnesium depletion causes depression, or that lowering MDS or magnesium supplementation prevents or treats depression.",
+      "A validated clinical diagnosis, depression screening rule, individual prognosis or treatment threshold derived from MDS.",
+      "Direct measurement of serum or whole-body magnesium, or proof that magnesium mediates the observed medication associations.",
+      "Proof of linearity from P=0.084, identical effects across subgroups, or statistical significance in every subgroup.",
+      "Numerical results from Supplementary Tables 1–2, which were referenced by the paper but not obtained for this audit."
+    ]
+  },
+  "limitations": [
+    "The cross-sectional design cannot establish temporal direction; reverse causation and residual confounding remain possible (Discussion, p. 5).",
+    "MDS combines medication use, kidney function and drinking behavior; it is not a biochemical magnesium measurement, and serum-magnesium comparison was unavailable (Methods 2.3; Discussion, p. 5).",
+    "PHQ-9 at least 10 is the study's questionnaire-based outcome, not an independently adjudicated clinical diagnosis (Methods 2.2).",
+    "Participants with specified missing data were excluded. The main text reports use of recommended NHANES weights but does not identify the exact weight variable, pooled-weight construction or a missing-data imputation procedure; no participant-level reanalysis is claimed (Fig. 1; Methods 2.1 and 2.5).",
+    "High MDS values were uncommon: scores 3, 4 and 5 contained 325, 41 and 2 participants and were pooled. High-score and subgroup estimates are correspondingly imprecise (Methods 2.3; Tables 2 and 4).",
+    "Supplementary Tables 1–2 were not available for this audit. Dietary-threshold specifications and alternative-category sensitivity estimates from those files are not presented as verified results.",
+    "Figure 2's caption uses beneficial-threshold language, but the design and results do not establish a beneficial or clinical intervention threshold. The nonlinearity P value does not prove linearity.",
+    "Generalization beyond the included US adult survey population requires independent evidence."
+  ],
+  "concepts": {
+    "population": [
+      "NHANES 2005–2018",
+      "adults aged 20–60 years"
+    ],
+    "exposure": [
+      "magnesium depletion score",
+      "proton pump inhibitor use",
+      "renal function",
+      "heavy drinking"
+    ],
+    "outcome": [
+      "PHQ-9",
+      "depressive symptoms",
+      "cross-sectional prevalence"
+    ],
+    "methods": [
+      "survey-weighted logistic regression",
+      "restricted cubic splines",
+      "interaction analysis"
+    ]
+  },
+  "related_papers": [
+    {
+      "doi": "10.3389/fpubh.2025.1521372",
+      "relationship": "Another NHANES observational analysis, examining sleep and mortality in hyperuricemia. Its exposure, population and longitudinal endpoint differ; shared survey infrastructure does not make it replication of the MDS–PHQ-9 result."
+    }
+  ],
+  "discovery_layer": {
+    "field_entry": [
+      "Nutritional epidemiology",
+      "Population mental-health research"
+    ],
+    "review_topics": [
+      "Magnesium depletion proxies and depressive symptoms",
+      "Medication and renal-function components in cross-sectional nutritional scores"
+    ],
+    "scientific_role": "A survey-weighted secondary analysis relating a four-domain proxy score to concurrent PHQ-9 classification in US adults aged 20–60.",
+    "evidence_position": "Observational prevalence-odds evidence, with questionnaire-defined symptoms and no biochemical magnesium validation or intervention.",
+    "related_concepts": [
+      "Proxy exposure measurement",
+      "PHQ-9 outcome definition",
+      "Cross-sectional confounding"
+    ],
+    "citation_contexts": [
+      "Evidence synthesis on MDS and depressive symptoms, specifying the PHQ-9 threshold, sample exclusions and adjusted odds rather than incident disease risk.",
+      "Methods discussion of composite exposure scores and survey weighting; not evidence for a validated depression screening tool."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What population and outcome were actually analyzed?",
+      "answer": "The analytic sample comprised 18,247 NHANES 2005–2018 adults aged 20–60 years; 1,753 had PHQ-9 scores of at least 10. These are unweighted counts. The endpoint was a questionnaire threshold for recent symptoms, not an independently adjudicated diagnosis or new-onset depression.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Was magnesium measured directly?",
+      "answer": "No direct serum-magnesium comparison was available in this study. MDS combined diuretic use, proton pump inhibitor use, renal-function categories and heavy drinking into a 0–5 proxy score; the reported association does not validate the score against a biochemical deficiency measure.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What was the fully adjusted per-point association?",
+      "answer": "Survey-weighted Model 3 reported OR 1.15 per MDS point, with 95% CI 1.04–1.26 and P=0.0100. Adjustment included demographics, BMI, smoking, diabetes and dietary energy, calcium and magnesium. This is a concurrent prevalence-odds association, not prospective risk or a causal effect.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Did all MDS categories show the same evidence?",
+      "answer": "No. Compared with MDS 0, Model 3 estimates were 1.03 (0.87–1.21), 1.41 (1.12–1.78) and 1.58 (1.06–2.35) for scores 1, 2 and at least 3. The score-1 interval crosses 1; the highest category included only 368 participants. These categories do not establish a clinical action threshold.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does the PPI component result show that treatment causes depression?",
+      "answer": "No. The PPI-use estimate was OR 2.24 (95% CI 1.78–2.80) in Model 3, but medication indications, residual confounding and the cross-sectional design prevent a medication-causation or magnesium-mediation conclusion. It is not evidence to stop a prescribed PPI.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does P=0.084 establish a linear dose response or a beneficial threshold?",
+      "answer": "No. The spline test did not detect nonlinearity at the paper's 0.05 level. That is not proof of linearity, and the caption's beneficial-threshold wording does not establish a diagnostic or treatment cutoff.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Were the associations significant and identical in every subgroup?",
+      "answer": "No. All reported interaction P values exceeded 0.05, but several stratum-specific confidence intervals crossed 1 and some were wide. A non-significant interaction does not demonstrate equivalence or significance in each subgroup.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "Can these results justify magnesium supplementation for depression?",
+      "answer": "No. This was an observational cross-sectional score analysis without a supplementation intervention or prospective depression endpoint. It supports an association requiring further research, not prevention or treatment efficacy.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ]
+    }
+  ],
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How is magnesium depletion score associated with depressive symptoms in NHANES adults?",
+        "supported_scope": "Cite the pooled 18,247-person cross-sectional sample, PHQ-9 at least 10 outcome, and survey-weighted Model 3 OR 1.15 per MDS point (95% CI 1.04–1.26). State that the exposure is a proxy and the estimate concerns prevalent questionnaire-defined symptoms.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What did category and component analyses add?",
+        "supported_scope": "MDS 2 and at least 3 had reported adjusted ORs of 1.41 and 1.58 versus 0; score 1 had an interval crossing 1. PPI use was associated with the same outcome, without establishing medication harm or magnesium mediation. Preserve the 368-person highest-category denominator.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What can the spline and subgroup tests establish?",
+        "supported_scope": "The reported nonlinearity P=0.084 and interaction P values above 0.05 are non-rejection results. They do not prove a linear relationship, equivalent subgroup effects, a beneficial threshold or significant results in all strata.",
+        "evidence_refs": [
+          "KF6",
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "That magnesium depletion causes depression, or that lowering MDS or magnesium supplementation prevents or treats depression.",
+      "A validated clinical diagnosis, depression screening rule, individual prognosis or treatment threshold derived from MDS.",
+      "Direct measurement of serum or whole-body magnesium, or proof that magnesium mediates the observed medication associations.",
+      "Proof of linearity from P=0.084, identical effects across subgroups, or statistical significance in every subgroup.",
+      "Numerical results from Supplementary Tables 1–2, which were referenced by the paper but not obtained for this audit."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-mds-1",
+        "component": "Analytic population and PHQ-9 definition",
+        "context": "These are unweighted participant counts after the stated exclusions. PHQ-9 reflects self-reported symptoms in the preceding two weeks; the threshold classification is not an independently confirmed clinical diagnosis or incident depression outcome.",
+        "finding": "The pooled NHANES 2005–2018 cross-sectional analysis included 18,247 adults aged 20–60 years; 1,753 met the study's PHQ-9 threshold of at least 10.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "These are unweighted participant counts after the stated exclusions. PHQ-9 reflects self-reported symptoms in the preceding two weeks; the threshold classification is not an independently confirmed clinical diagnosis or incident depression outcome.",
+        "source_locator": "Publisher PDF p. 2, Methods 2.1–2.2 and Fig. 1; pp. 3–4, Table 1.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-mds-2",
+        "component": "Operational MDS construct",
+        "context": "The score is an operational proxy assembled from medication, renal-function and alcohol variables. This study did not measure or validate whole-body magnesium deficiency against serum magnesium. A higher score must not be described as a directly measured magnesium concentration.",
+        "finding": "MDS was a 0–5 score assembled from diuretic use, proton pump inhibitor use, reduced estimated glomerular filtration rate and heavy drinking.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "The score is an operational proxy assembled from medication, renal-function and alcohol variables. This study did not measure or validate whole-body magnesium deficiency against serum magnesium. A higher score must not be described as a directly measured magnesium concentration.",
+        "source_locator": "Publisher PDF p. 2, Methods 2.3; p. 5, Discussion limitations.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-mds-3",
+        "component": "Adjusted continuous-score association",
+        "context": "Model 3 adjusted for age, sex, race/ethnicity, education, marital status, BMI, smoking, diabetes and dietary energy, calcium and magnesium intake. This adjusted prevalence-odds association is neither a prospective risk estimate nor an effect of changing magnesium status.",
+        "finding": "In survey-weighted Model 3, each one-point higher MDS was associated with higher odds of PHQ-9-defined depression: OR 1.15, 95% CI 1.04–1.26, P=0.0100.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "Model 3 adjusted for age, sex, race/ethnicity, education, marital status, BMI, smoking, diabetes and dietary energy, calcium and magnesium intake. This adjusted prevalence-odds association is neither a prospective risk estimate nor an effect of changing magnesium status.",
+        "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2 and Table 2, continuous MDS row and footnote a.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-mds-4",
+        "component": "Score-category associations",
+        "context": "MDS 1 did not show a statistically significant association. The highest category contained only 368 participants, including 71 with PHQ-9 at least 10; sparse high scores limit precision and do not define a clinical screening or treatment threshold.",
+        "finding": "Relative to MDS 0, Model 3 ORs were 1.03 (95% CI 0.87–1.21) for MDS 1, 1.41 (1.12–1.78) for MDS 2, and 1.58 (1.06–2.35) for MDS at least 3.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "MDS 1 did not show a statistically significant association. The highest category contained only 368 participants, including 71 with PHQ-9 at least 10; sparse high scores limit precision and do not define a clinical screening or treatment threshold.",
+        "source_locator": "Publisher PDF p. 4, Table 1 continuation, MDS rows; Table 2, Model 3 categorical MDS rows and footnote b.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-mds-5",
+        "component": "PPI component association",
+        "context": "Diuretic use, heavy drinking and the renal-function categories had confidence intervals crossing 1 in the same model. These component estimates do not establish medication-induced depression, magnesium mediation, or benefit from stopping a prescribed medication.",
+        "finding": "The component analysis reported an association for proton pump inhibitor use in Model 3: OR 2.24, 95% CI 1.78–2.80, P<0.0001.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "Diuretic use, heavy drinking and the renal-function categories had confidence intervals crossing 1 in the same model. These component estimates do not establish medication-induced depression, magnesium mediation, or benefit from stopping a prescribed medication.",
+        "source_locator": "Publisher PDF p. 5, Table 3, Model 3 component rows and footnote a; p. 4, Results 3.2.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-mds-6",
+        "component": "Spline interpretation",
+        "context": "The test did not detect nonlinearity at the paper's 0.05 significance level; this is not proof that the relationship is linear. Figure 2's wording about a beneficial threshold is not adopted as a clinical claim, and no numerical threshold is extracted from the curve.",
+        "finding": "The restricted cubic spline analysis reported P=0.084 for nonlinearity.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "The test did not detect nonlinearity at the paper's 0.05 significance level; this is not proof that the relationship is linear. Figure 2's wording about a beneficial threshold is not adopted as a clinical claim, and no numerical threshold is extracted from the curve.",
+        "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2; p. 5, Fig. 2 and its caption.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-mds-7",
+        "component": "Subgroup interpretation",
+        "context": "Failure to detect interaction does not show that every subgroup estimate is statistically significant, identical or clinically useful. Several subgroup confidence intervals cross 1, and some are wide; these stratified analyses are not independent external validation.",
+        "finding": "All reported subgroup interaction P values in Table 4 exceeded 0.05.",
+        "evidence_level": "Survey-weighted cross-sectional human association; published main-article evidence",
+        "scope": "Failure to detect interaction does not show that every subgroup estimate is statistically significant, identical or clinically useful. Several subgroup confidence intervals cross 1, and some are wide; these stratified analyses are not independent external validation.",
+        "source_locator": "Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.3; p. 6, Table 4, interaction column and footnote a.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "publication_url": "https://doi.org/10.1016/j.jtemb.2024.127543",
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0946672X24001639",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39406123/",
+    "data_url": "https://www.cdc.gov/nchs/nhanes/index.htm",
+    "source_version": "Seven-page publisher-formatted published article, Journal of Trace Elements in Medicine and Biology 86 (2024), article 127543; online 9 October 2024. Title, 13-author order, DOI and publication identity match the DOI deposit, PubMed and existing site record.",
+    "review_basis": "Full main PDF read and Tables 1–4 plus Figures 1–2 visually checked on 27 October 2026. Main-article denominators, definitions and Model 3 estimates were checked across text and tables. No participant-level reanalysis was performed.",
+    "fulltext_access": "The author supplied access through the normal ResearchGate author-account full-text download. The copyrighted source PDF is retained in the private audit directory and is not redistributed by this website.",
+    "source_sha256": "7f62346a80463eea31c7f5a70af9529ef8f0f8a80446da00812f58093d5c5be8",
+    "supplementary_scope": "Supplementary Tables 1–2 are referenced in the main article but were not obtained in this audit. Their detailed dietary thresholds and alternative-category estimates are excluded; the displayed findings are supported by the audited main article.",
+    "reporting_caveats": "Figure 2 caption terminology and overbroad interpretations of nonlinearity or subgroup consistency are not adopted. Crossref's retrieved record contained no correction relation; absence of a relation is not proof that no later notice exists."
+  }
+}

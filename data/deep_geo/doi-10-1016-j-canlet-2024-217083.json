@@ -1,0 +1,398 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.canlet.2024.217083",
+  "display_title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
+  "summary": "This narrative review examines possible explanations for secondary T-cell malignancy after CAR-T therapy, including vector integration, persistent activation, inflammation, host susceptibility and prior treatment. It contributes a mechanistic discussion rather than a new cohort or incidence estimate; discrepancies in cited patient counts and untested causal claims are explicitly excluded.",
+  "research_question": "How does this 2024 review organize possible explanations for T-cell malignancy after CAR-T therapy, and what can its cited evidence establish about mechanism and safety?",
+  "author_summary": "The authors contrast therapy-related mechanisms with host and treatment-history explanations, using published studies, safety reports and one conceptual figure. They argue for further mechanistic work and continued monitoring. The review does not independently determine incidence, prove a universal causal mechanism, or establish that CAR-T treatment is unrelated to secondary malignancy.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Narrative mechanistic review of secondary T-cell malignancy in the context of CAR-T therapy.",
+    "evidence_type": "Qualitative discussion of regulatory reports, external clinical observations and mechanistic publications; no original intervention, cohort or pooled analysis.",
+    "translation_scope": "Safety-research interpretation for hematologic cancer immunotherapy; no patient-selection rule, risk calculator or treatment recommendation validated here.",
+    "evidence_domains": [
+      "Vector integration and cellular growth regulation",
+      "Persistent activation, exhaustion and inflammation",
+      "Host susceptibility and previous or peri-infusion treatments",
+      "Tumor transgene testing and long-term safety interpretation"
+    ],
+    "diseases_covered": [
+      "T-cell malignancies arising after CAR-T therapy",
+      "B-cell and plasma-cell malignancies treated with CAR-T products in cited studies"
+    ],
+    "scale_metrics": [
+      {
+        "label": "Article format",
+        "value": "5-page narrative review; PubMed PMID 38925363 includes publication type Review"
+      },
+      {
+        "label": "Conceptual figure",
+        "value": "1 figure with 2 panels; no original data table"
+      },
+      {
+        "label": "Reference list",
+        "value": "53 numbered entries; entries 13 and 53 repeat the same publication"
+      },
+      {
+        "label": "New clinical sample",
+        "value": "No original patient cohort or pooled sample size"
+      }
+    ],
+    "counting_note": "Figure and reference counts describe the review, not an experimental denominator. External patients, tumor events and biopsies are different units and cannot be summed as participants recruited by this paper."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The review frames secondary T-cell malignancy after CAR-T therapy as a safety question requiring mechanistic investigation and continued surveillance.",
+      "context": "Its starting point is the FDA's historical safety communication, not a new patient cohort assembled by the authors. Regulatory reports are a signal and do not supply a denominator for incidence in this article.",
+      "evidence": [
+        {
+          "label": "Historical trigger",
+          "value": "FDA communication of 28 November 2023"
+        },
+        {
+          "label": "Therapy classes discussed",
+          "value": "BCMA-directed and CD19-directed autologous CAR-T therapies"
+        },
+        {
+          "label": "Article evidence level",
+          "value": "2024 narrative review; no original clinical safety estimate"
+        }
+      ],
+      "source_locator": "Cancer Letters 597 (2024) 217083, publisher-typeset PDF p. 1, Section 1 (Introduction), and p. 4, Section 5 (Conclusions); reference 1, FDA safety communication dated 28 November 2023."
+    },
+    {
+      "id": "KF2",
+      "claim": "Vector integration is discussed as a possible route to altered growth regulation in genetically modified T cells.",
+      "context": "The authors connect retroviral or lentiviral insertion to host-gene regulation and depict this possibility in a schematic. They do not map new integration sites or demonstrate malignant transformation in an original experiment.",
+      "evidence": [
+        {
+          "label": "Mechanistic focus",
+          "value": "Insertional mutagenesis and dysregulated cell-growth programs"
+        },
+        {
+          "label": "Visual support",
+          "value": "Figure 1A, within the article's only conceptual figure"
+        },
+        {
+          "label": "Related but distinct topic",
+          "value": "HHV-6 reactivation is discussed; a causal HHV-6 pathway to post-CAR-T lymphoma is not established"
+        }
+      ],
+      "source_locator": "Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.1 (Insertional mutagenesis), references 14-23; p. 3, Figure 1A (conceptual schematic, not an experiment)."
+    },
+    {
+      "id": "KF3",
+      "claim": "Persistent CAR signaling and an inflammatory cytokine environment are proposed as additional contexts in which malignant clones might emerge or expand.",
+      "context": "The discussion draws on external work on activation, exhaustion, inflammation and tumor biology. These examples do not constitute a longitudinal test of malignant evolution in CAR-T recipients.",
+      "evidence": [
+        {
+          "label": "Contexts considered",
+          "value": "Sustained cellular activation, T-cell exhaustion and inflammatory signaling"
+        },
+        {
+          "label": "Article location",
+          "value": "Section 3.2 and Figure 1A"
+        },
+        {
+          "label": "Inference limit",
+          "value": "Candidate mechanisms; no new causal effect size, mutation rate or clinical risk estimate"
+        }
+      ],
+      "source_locator": "Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.2 (Sustained T-cell activation and inflammation-related cytokine-rich environment), references 24-33; p. 3, Figure 1A."
+    },
+    {
+      "id": "KF4",
+      "claim": "The review also considers host susceptibility and preceding or accompanying treatments when interpreting a malignancy diagnosed after CAR-T infusion.",
+      "context": "Germline susceptibility, prior chemotherapy, bridging treatment and lymphodepletion are potential alternative or interacting explanations. The competing-hypothesis layout is not evidence that CAR-T therapy has no causal role.",
+      "evidence": [
+        {
+          "label": "Conceptual structure",
+          "value": "Two hypothesis groups, illustrated in Figure 1 panels A and B"
+        },
+        {
+          "label": "Clinical context",
+          "value": "Prior treatment history, susceptibility and peri-infusion therapy"
+        },
+        {
+          "label": "Excluded inference",
+          "value": "Figure 1B supplies no statistical test of a null association"
+        }
+      ],
+      "source_locator": "Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3 (Potential susceptibility and bridging therapy considerations), references 34-52; p. 3, Figure 1B (hypothesis, not a statistical comparison)."
+    },
+    {
+      "id": "KF5",
+      "claim": "Case reports, transgene assays and product-specific observations require separate interpretation before drawing a general safety conclusion.",
+      "context": "The review discusses both CAR-positive and CAR-negative tumors and calls for continued investigation. This evidence page retains that research question while excluding inconsistent denominators and the article's broad reassurance about risk.",
+      "evidence": [
+        {
+          "label": "Evidence distinction",
+          "value": "Detection of a CAR transgene concerns tumor origin; it is not by itself a complete causal mechanism"
+        },
+        {
+          "label": "Numerical audit",
+          "value": "Reference 36 confuses patients, events and biopsies; reference 37 mixes early and later follow-up populations"
+        },
+        {
+          "label": "Supported output",
+          "value": "A critical review framework, not a pooled incidence or proof of universal safety"
+        }
+      ],
+      "source_locator": "Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results."
+    }
+  ],
+  "what_this_adds": [
+    "A structured account of proposed cellular mechanisms alongside host and treatment-history explanations for secondary T-cell malignancy.",
+    "A way to distinguish mechanistic plausibility, tumor transgene testing and clinical risk estimation when reading the CAR-T safety literature.",
+    "A research agenda for continued observation and causal clarification, rather than a new estimate of treatment safety."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Attribution of the mechanistic and competing-explanation framework to this 2024 narrative review.",
+      "Discussion of insertional mutagenesis, activation, inflammation and prior treatment as research questions, with the cited primary sources consulted for specific claims.",
+      "Recognition that a conceptual diagram, case description and transgene assay answer different questions from a comparative incidence study."
+    ],
+    "does_not_establish": [
+      "A new clinical cohort, prospective experiment, systematic review or meta-analysis.",
+      "A general incidence of secondary T-cell malignancy, a product ranking or a current patient-specific risk estimate.",
+      "That absence of a CAR transgene excludes every indirect treatment contribution, or that its presence identifies a unique oncogenic driver.",
+      "That HHV-6 reactivation causes post-CAR-T lymphoma, that mature T cells cannot transform, or that Figure 1B proves no association.",
+      "A universal benefit-risk conclusion or advice to ignore a new malignancy after treatment."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Is this an original clinical study?",
+      "answer": "No. It is a narrative review of published evidence and safety concerns, with one conceptual figure. The FDA reports and cited patients are not an original cohort recruited by these authors. Source location: Cancer Letters 597 (2024) 217083, publisher-typeset PDF p. 1, Section 1 (Introduction), and p. 4, Section 5 (Conclusions); reference 1, FDA safety communication dated 28 November 2023.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which mechanisms does the review discuss?",
+      "answer": "It discusses integration-related disruption of growth regulation, persistent activation and an inflammatory environment, alongside host susceptibility and treatment history. These are candidate explanations, not mechanisms newly proven by this article. Source location: Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.1 (Insertional mutagenesis), references 14-23; p. 3, Figure 1A (conceptual schematic, not an experiment). Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.2 (Sustained T-cell activation and inflammation-related cytokine-rich environment), references 24-33; p. 3, Figure 1A. Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3 (Potential susceptibility and bridging therapy considerations), references 34-52; p. 3, Figure 1B (hypothesis, not a statistical comparison).",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "Does Figure 1B establish that CAR-T therapy is not associated with T-cell malignancy?",
+      "answer": "No. Panel B is a conceptual depiction of a competing explanation. The review supplies no original statistical comparison supporting its 'not significantly associated' wording. Source location: Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3 (Potential susceptibility and bridging therapy considerations), references 34-52; p. 3, Figure 1B (hypothesis, not a statistical comparison).",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Can the clinical case numbers be used to calculate incidence?",
+      "answer": "No. The cited populations differ, the review mixes units in reference 36 and follow-up populations in reference 37, and spontaneous safety reports lack a compatible denominator. No pooled rate is calculated or endorsed here. Source location: Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does CAR positivity prove a specific carcinogenic mechanism?",
+      "answer": "No. It can inform the relationship of a tumor to engineered cells, but integration, clonal history and other molecular evidence are needed to assess mechanism. CAR negativity also does not by itself exclude every indirect treatment contribution. Source location: Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results.",
+      "evidence_refs": [
+        "KF4",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Does this paper establish HHV-6 as the cause of a secondary T-cell cancer?",
+      "answer": "No. Section 3.1 brings viral reactivation into the discussion, but the review does not demonstrate that reactivation caused a secondary lymphoma after CAR-T treatment. Source location: Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.1 (Insertional mutagenesis), references 14-23; p. 3, Figure 1A (conceptual schematic, not an experiment).",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What safety conclusion can be cited to this review?",
+      "answer": "It supports a 2024 discussion of unresolved mechanisms and the need for continued investigation. It does not provide an independently validated risk estimate or justify a universal claim that CAR-T therapy is safe or unrelated to secondary cancer. Source location: Cancer Letters 597 (2024) 217083, publisher-typeset PDF p. 1, Section 1 (Introduction), and p. 4, Section 5 (Conclusions); reference 1, FDA safety communication dated 28 November 2023. Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results.",
+      "evidence_refs": [
+        "KF1",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Are the disputed source counts silently corrected into new findings?",
+      "answer": "No. They are disclosed as citation-level inconsistencies and excluded from the review's quantitative claims. The original studies must be cited directly for their populations, events, assay results and follow-up windows. Source location: Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "concepts": {
+    "therapy_and_safety": [
+      "CAR-T cell therapy",
+      "Secondary T-cell malignancy",
+      "Long-term safety surveillance"
+    ],
+    "mechanisms": [
+      "Insertional mutagenesis",
+      "Persistent cellular activation",
+      "Inflammatory microenvironment"
+    ],
+    "interpretation": [
+      "Tumor transgene testing",
+      "Host susceptibility",
+      "Treatment-history confounding"
+    ]
+  },
+  "limitations": [
+    "This is a selective narrative review without a reproducible systematic search, risk-of-bias assessment or pooled analysis. Its 2024 discussion is not a current clinical guideline.",
+    "Section 3.3 describes transgene-negative biopsies from 16 patients when citing reference 36. The cited study's Abstract, Results and Table 4 instead distinguish 13 affected patients, 16 tumor events and 11 available biopsies (DOI 10.1182/blood.2022015728; PMC9346960). No estimate using the review's conflated count is accepted here.",
+    "Section 3.3 uses 28 patients for reference 37. The cited ASH abstract describes 28 as the earlier population in its Background and 48 recipients in its long-term Results (DOI 10.1182/blood-2023-182817). Its event counts cannot be attached to the earlier denominator.",
+    "Figure 1B and the text's suggestion of no significant association are hypotheses, not an original statistical result. Lack of insertion in a recognized oncogene does not demonstrate absence of treatment-related malignant transformation.",
+    "The historical report counts and infusion total in Section 4 are not a matched numerator and denominator; no frequency is calculated. Product-specific reports cannot establish class-wide safety.",
+    "Statements about HHV-6, mature T-cell resistance and inflammatory carcinogenesis must not be promoted from discussion or extrapolation into demonstrated mechanisms of secondary malignancy in humans.",
+    "The article has 53 reference numbers, with the same Ghilardi publication repeated as references 13 and 53. These are not 53 independent studies."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1186/s12943-024-02047-2",
+      "relationship": "A separate narrative review of tumor immune microenvironment and CAR-T design; it provides therapeutic research context, not validation of secondary-malignancy incidence."
+    },
+    {
+      "doi": "10.1016/j.canlet.2024.217079",
+      "relationship": "A separate review of immunogenic cell death and CAR-T combinations; its efficacy hypotheses are distinct from the safety questions considered here."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1016/j.canlet.2024.217083",
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0304383524004786",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38925363/",
+    "source_url": "https://www.researchgate.net/publication/381691837_The_underlying_mechanism_of_chimeric_antigen_receptor_CAR-T_cell_therapy_triggering_secondary_T-cell_cancers_mystery_of_the_Sphinx",
+    "regulatory_context_url": "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/fda-investigating-serious-risk-t-cell-malignancy-following-bcma-directed-or-cd19-directed-autologous",
+    "count_audit_primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9346960/",
+    "followup_abstract_url": "https://ashpublications.org/blood/article/142/Supplement%201/1025/501613/C-CAR039-a-Novel-Anti-CD20-CD19-Bi-Specific-CAR-T",
+    "version_of_record": "Publisher-typeset Cancer Letters 597 (2024) 217083, 5 pages. Available online 24 June 2024; issue dated 10 August 2024. DOI, title and all eight authors match the publisher record, Crossref and PubMed; the existing bibliographic identity is preserved.",
+    "source_artifacts": "Complete publisher-typeset PDF accessed through the authorized ResearchGate author account on 27 October 2026; source file and rendered audit pages retained privately outside the site repository. No supplementary dataset is declared in the supplied article.",
+    "source_sha256": "51b6845804c227cc587784d301ecaa45d1031112e66b90d2ad80435d0298586c",
+    "license": "The PDF states copyright 2024 Elsevier B.V., all rights reserved. ResearchGate is the lawful access channel in the authorized account, not an open redistribution license. Neither the PDF nor its figure is republished.",
+    "identity_note": "Eight-author order confirmed, with Ge Zhang second and affiliated with cardiology at the First Affiliated Hospital of Zhengzhou University. PubMed classifies the work as Review; the site's protected Article metadata is unchanged.",
+    "review_note": "Full text and the single figure inspected. Citation-count discrepancies are disclosed and excluded. Crossref returned no update-to or related-correction entry on 27 October 2026; this does not certify every cited statement.",
+    "scope_note": "Complete V2 representation of a bounded narrative-review core, not blanket validation of all claims or numbers in the source article."
+  },
+  "evidence_page_notice": "This page interprets a 2024 narrative review, not a new clinical study. Mechanistic proposals remain hypotheses. Citation-count discrepancies are disclosed below; no incidence estimate or universal safety conclusion is endorsed.",
+  "discovery_layer": {
+    "field_entry": [
+      "Cellular immunotherapy safety",
+      "Hematologic oncology"
+    ],
+    "review_topics": [
+      "Secondary T-cell malignancy after CAR-T therapy",
+      "Mechanistic and treatment-history explanations"
+    ],
+    "scientific_role": "Narrative review organizing candidate mechanisms and competing explanations for T-cell malignancy after CAR-T treatment.",
+    "evidence_position": "Review-level synthesis with disclosed citation-count inconsistencies; no new cohort, pooled incidence or causal safety determination.",
+    "related_concepts": [
+      "Insertional mutagenesis",
+      "Tumor transgene assays",
+      "Long-term safety surveillance"
+    ],
+    "citation_contexts": [
+      "Literature background on possible mechanisms and alternative explanations for secondary T-cell malignancy after CAR-T treatment.",
+      "Critical discussion of why case reports, transgene testing and conceptual diagrams cannot supply a general clinical risk estimate."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which mechanistic explanations are discussed for secondary T-cell malignancy after CAR-T therapy?",
+        "supported_scope": "A narrative framework spanning integration, cellular activation and inflammation; no newly proven mechanism.",
+        "evidence_refs": [
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How should host susceptibility and prior treatment be considered in CAR-T safety research?",
+        "supported_scope": "Competing or interacting explanations; no proof of a null association from the review.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Can this review quantify secondary T-cell cancer risk or establish general safety?",
+        "supported_scope": "No. It supports critical evidence interpretation and continued investigation, with count conflicts excluded.",
+        "evidence_refs": [
+          "KF1",
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A CAR-T secondary-cancer incidence, attributable risk, comparative product ranking or patient-specific prediction.",
+      "Proof that any proposed mechanism universally causes malignancy, or that CAR-T therapy has no causal role.",
+      "New patients, experiments, tumor specimens or numerical results generated by this review.",
+      "A current clinical recommendation to accept or reject treatment, or to disregard adverse events."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-cartmalignancy-1",
+        "component": "KF1: The review frames secondary T-cell malignancy after CAR-T therapy as a safety question requiring mechanistic investigation and continued surveillance.",
+        "context": "Its starting point is the FDA's historical safety communication, not a new patient cohort assembled by the authors. Regulatory reports are a signal and do not supply a denominator for incidence in this article.",
+        "finding": "Historical trigger: FDA communication of 28 November 2023; Therapy classes discussed: BCMA-directed and CD19-directed autologous CAR-T therapies; Article evidence level: 2024 narrative review; no original clinical safety estimate",
+        "evidence_level": "Narrative review and explicitly attributed external evidence; no original patient-level result.",
+        "scope": "Its starting point is the FDA's historical safety communication, not a new patient cohort assembled by the authors. Regulatory reports are a signal and do not supply a denominator for incidence in this article.",
+        "source_locator": "Cancer Letters 597 (2024) 217083, publisher-typeset PDF p. 1, Section 1 (Introduction), and p. 4, Section 5 (Conclusions); reference 1, FDA safety communication dated 28 November 2023.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-cartmalignancy-2",
+        "component": "KF2: Vector integration is discussed as a possible route to altered growth regulation in genetically modified T cells.",
+        "context": "The authors connect retroviral or lentiviral insertion to host-gene regulation and depict this possibility in a schematic. They do not map new integration sites or demonstrate malignant transformation in an original experiment.",
+        "finding": "Mechanistic focus: Insertional mutagenesis and dysregulated cell-growth programs; Visual support: Figure 1A, within the article's only conceptual figure; Related but distinct topic: HHV-6 reactivation is discussed; a causal HHV-6 pathway to post-CAR-T lymphoma is not established",
+        "evidence_level": "Narrative review and explicitly attributed external evidence; no original patient-level result.",
+        "scope": "The authors connect retroviral or lentiviral insertion to host-gene regulation and depict this possibility in a schematic. They do not map new integration sites or demonstrate malignant transformation in an original experiment.",
+        "source_locator": "Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.1 (Insertional mutagenesis), references 14-23; p. 3, Figure 1A (conceptual schematic, not an experiment).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-cartmalignancy-3",
+        "component": "KF3: Persistent CAR signaling and an inflammatory cytokine environment are proposed as additional contexts in which malignant clones might emerge or expand.",
+        "context": "The discussion draws on external work on activation, exhaustion, inflammation and tumor biology. These examples do not constitute a longitudinal test of malignant evolution in CAR-T recipients.",
+        "finding": "Contexts considered: Sustained cellular activation, T-cell exhaustion and inflammatory signaling; Article location: Section 3.2 and Figure 1A; Inference limit: Candidate mechanisms; no new causal effect size, mutation rate or clinical risk estimate",
+        "evidence_level": "Narrative review and explicitly attributed external evidence; no original patient-level result.",
+        "scope": "The discussion draws on external work on activation, exhaustion, inflammation and tumor biology. These examples do not constitute a longitudinal test of malignant evolution in CAR-T recipients.",
+        "source_locator": "Cancer Letters 597 (2024) 217083, PDF p. 2, Section 3.2 (Sustained T-cell activation and inflammation-related cytokine-rich environment), references 24-33; p. 3, Figure 1A.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-cartmalignancy-4",
+        "component": "KF4: The review also considers host susceptibility and preceding or accompanying treatments when interpreting a malignancy diagnosed after CAR-T infusion.",
+        "context": "Germline susceptibility, prior chemotherapy, bridging treatment and lymphodepletion are potential alternative or interacting explanations. The competing-hypothesis layout is not evidence that CAR-T therapy has no causal role.",
+        "finding": "Conceptual structure: Two hypothesis groups, illustrated in Figure 1 panels A and B; Clinical context: Prior treatment history, susceptibility and peri-infusion therapy; Excluded inference: Figure 1B supplies no statistical test of a null association",
+        "evidence_level": "Narrative review and explicitly attributed external evidence; no original patient-level result.",
+        "scope": "Germline susceptibility, prior chemotherapy, bridging treatment and lymphodepletion are potential alternative or interacting explanations. The competing-hypothesis layout is not evidence that CAR-T therapy has no causal role.",
+        "source_locator": "Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3 (Potential susceptibility and bridging therapy considerations), references 34-52; p. 3, Figure 1B (hypothesis, not a statistical comparison).",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-cartmalignancy-5",
+        "component": "KF5: Case reports, transgene assays and product-specific observations require separate interpretation before drawing a general safety conclusion.",
+        "context": "The review discusses both CAR-positive and CAR-negative tumors and calls for continued investigation. This evidence page retains that research question while excluding inconsistent denominators and the article's broad reassurance about risk.",
+        "finding": "Evidence distinction: Detection of a CAR transgene concerns tumor origin; it is not by itself a complete causal mechanism; Numerical audit: Reference 36 confuses patients, events and biopsies; reference 37 mixes early and later follow-up populations; Supported output: A critical review framework, not a pooled incidence or proof of universal safety",
+        "evidence_level": "Narrative review and explicitly attributed external evidence; no original patient-level result.",
+        "scope": "The review discusses both CAR-positive and CAR-negative tumors and calls for continued investigation. This evidence page retains that research question while excluding inconsistent denominators and the article's broad reassurance about risk.",
+        "source_locator": "Cancer Letters 597 (2024) 217083, PDF pp. 2 and 4, Section 3.3, references 36, 37, 40 and 46; p. 4, Sections 4-5. Numerical cross-check: reference 36, DOI 10.1182/blood.2022015728, Abstract, Results and Table 4 (PMC9346960); reference 37, DOI 10.1182/blood-2023-182817, Background versus Results.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.ejso.2024.108527",
+  "display_title": "Esophageal GIST management: a 23-patient retrospective series",
+  "summary": "A single-center series describes endoscopic, surgical and conservative management of 23 patients with esophageal GIST. Treatment selection, postoperative events and follow-up are descriptive observations, without randomized comparison or proof that one approach improves survival.",
+  "research_question": "What treatment approaches and clinical follow-up were reported in a single-center series of patients with esophageal GIST, and what can this small, selected cohort establish?",
+  "author_summary": "The investigators reviewed 23 patients with pathologically confirmed esophageal GIST. Fifteen underwent endoscopic resection, five direct surgery, two surgery after neoadjuvant imatinib, and one conservative treatment. The endoscopic procedures comprised nine STER, four ESD and two EMBL; 12 of these 15 tumors were reported as no larger than 30 mm. Paroxysmal palpitations and fever were each reported once after endoscopic treatment. Mean follow-up was 48.2 ± 24.2 months; one described patient developed recurrence at 15 months and died at 29 months. Procedure choice depended on clinical and tumor features. These observations illustrate a center’s treatment experience and do not establish comparative safety, survival benefit, or a validated treatment-selection rule. The inconsistent enrollment cutoff and mitotic-index wording are retained as reporting limitations, without choosing a correction.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Retrospective single-center descriptive case series with clinician-selected management",
+    "evidence_type": "Observational treatment-pattern, adverse-event and follow-up evidence",
+    "unique_total_n": 23,
+    "population": "Patients with pathologically confirmed esophageal GIST treated at the First Affiliated Hospital of Zhengzhou University",
+    "primary_endpoint": "Description of treatment allocation and postoperative clinical observations; no prespecified comparative primary endpoint is stated",
+    "secondary_endpoint": "Tumor characteristics, reported postoperative adverse events, follow-up and individual recurrence/death observations",
+    "data_modalities": [
+      "Retrospective clinical records",
+      "CT and endoscopic ultrasound",
+      "Pathology and immunohistochemistry",
+      "Procedure records and clinical follow-up"
+    ],
+    "external_validation": false,
+    "cohorts": [
+      {
+        "name": "Single-center esophageal GIST series",
+        "role": "One retrospective descriptive cohort; the treatment groups are subsets of these same patients",
+        "n": 23
+      }
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The report describes 23 patients with pathologically confirmed esophageal gastrointestinal stromal tumors at one hospital.",
+      "context": "Retrospective clinical records from the First Affiliated Hospital of Zhengzhou University. The total and sex counts agree across the abstract and Table 1; the exact 2023 enrollment cutoff differs between Methods and Results and is not resolved here.",
+      "evidence": [
+        {
+          "label": "patients",
+          "value": "23"
+        },
+        {
+          "label": "male / female",
+          "value": "12 / 11"
+        },
+        {
+          "label": "mean age ± SD",
+          "value": "56.7 ± 12.0 years"
+        }
+      ],
+      "source_locator": "Publisher-layout PDF p. 1, Abstract; p. 2, Methods 2.1; p. 3, Results 3.1 and Table 1."
+    },
+    {
+      "id": "KF2",
+      "claim": "Treatment allocation comprised 15 endoscopic resections, five direct operations, two operations after neoadjuvant imatinib, and one conservatively managed patient.",
+      "context": "These four groups partition the same 23-patient series. The seven surgical patients in Table 3 include the five direct operations and two after neoadjuvant treatment; they are not an additional cohort. Treatment was selected by clinicians using tumor characteristics, not randomized.",
+      "evidence": [
+        {
+          "label": "endoscopic resection",
+          "value": "15"
+        },
+        {
+          "label": "direct surgery",
+          "value": "5"
+        },
+        {
+          "label": "neoadjuvant imatinib then surgery",
+          "value": "2"
+        },
+        {
+          "label": "conservative treatment",
+          "value": "1"
+        }
+      ],
+      "source_locator": "Publisher-layout PDF p. 2, Methods 2.3; pp. 3–4, Results 3.2; p. 4, Table 2 and Table 3 headings."
+    },
+    {
+      "id": "KF3",
+      "claim": "Endoscopic management used three techniques, and 12 of the 15 endoscopically treated tumors were reported as no larger than 30 mm.",
+      "context": "The series documents selected procedures and lesion sizes. It does not establish a universal treatment-size threshold or comparative oncologic equivalence to surgery.",
+      "evidence": [
+        {
+          "label": "STER",
+          "value": "9/15"
+        },
+        {
+          "label": "ESD",
+          "value": "4/15"
+        },
+        {
+          "label": "EMBL",
+          "value": "2/15"
+        },
+        {
+          "label": "endoscopic tumors ≤30 mm",
+          "value": "12/15"
+        }
+      ],
+      "source_locator": "Publisher-layout PDF p. 4, Table 2; Results 3.3 and Table 3; p. 5, Discussion on selection and procedural limitations."
+    },
+    {
+      "id": "KF4",
+      "claim": "The endoscopic group had two reported postoperative adverse events: one episode of paroxysmal palpitations and one of fever.",
+      "context": "The denominator is the 15 endoscopically treated patients. The article describes management of both events, but this small, selected retrospective group cannot establish lower treatment risk than surgery.",
+      "evidence": [
+        {
+          "label": "paroxysmal palpitations",
+          "value": "1/15"
+        },
+        {
+          "label": "fever",
+          "value": "1/15"
+        }
+      ],
+      "source_locator": "Publisher-layout PDF p. 4, Results 3.3 and Table 3; p. 5, Discussion paragraph on postoperative events."
+    },
+    {
+      "id": "KF5",
+      "claim": "The article reports mean follow-up of 48.2 months and documents one patient with postoperative recurrence at 15 months and death at 29 months.",
+      "context": "The follow-up mean covers the reported series. The recurrence and death times describe patient No. 16, not a model-derived survival estimate. A separate account of patient No. 21 concerns a previous, incompletely documented procedure; it is not combined into a new recurrence-rate calculation.",
+      "evidence": [
+        {
+          "label": "mean follow-up ± SD",
+          "value": "48.2 ± 24.2 months"
+        },
+        {
+          "label": "patient No. 16 recurrence",
+          "value": "15 months after surgery"
+        },
+        {
+          "label": "patient No. 16 death",
+          "value": "29 months after surgery"
+        }
+      ],
+      "source_locator": "Publisher-layout PDF p. 4, Results 3.2 and Table 2; p. 5, Discussion paragraphs describing patients No. 16 and No. 21."
+    }
+  ],
+  "what_this_adds": [
+    "A documented 23-patient treatment series spanning endoscopic resection, direct surgery, surgery after neoadjuvant imatinib and conservative management.",
+    "Procedure-specific descriptive experience that separates selected clinical observations from comparative efficacy claims."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The reported 23-patient case series and its mutually exclusive treatment allocations.",
+      "The three endoscopic techniques, lesion-size distribution, reported endoscopic events and specific follow-up observations.",
+      "Discussion of how clinician-selected case mix limits comparisons between endoscopic and surgical approaches."
+    ],
+    "does_not_establish": [
+      "Superior safety, survival or oncologic equivalence of endoscopy versus surgery.",
+      "A validated universal size cutoff, treatment algorithm or replacement for clinical guidelines.",
+      "A causal effect of imatinib or any procedure on recurrence or survival.",
+      "Prospective, multicenter or externally validated outcomes.",
+      "A reconciled 2023 enrollment cutoff or corrected mitotic-index category."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How many independent patients were included?",
+      "answer": "The single-center series reports 23 patients. The endoscopic, direct-surgery, neoadjuvant-plus-surgery and conservative groups are subdivisions of those same patients.",
+      "evidence_refs": [
+        "KF1",
+        "KF2"
+      ]
+    },
+    {
+      "question": "How were treatment approaches distributed?",
+      "answer": "There were 15 endoscopic resections, five direct operations, two operations after neoadjuvant imatinib, and one conservatively managed patient. The surgical total of seven already includes the two neoadjuvant-treated patients.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What endoscopic procedures and lesion sizes were reported?",
+      "answer": "The 15 endoscopic procedures included nine STER, four ESD and two EMBL. Twelve tumors in this group were reported as no larger than 30 mm. This selected experience does not validate a universal treatment cutoff.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Does the study show that endoscopy is safer or more effective than surgery?",
+      "answer": "No. Clinicians selected treatment according to tumor and patient features, and the groups differed in case mix. Two reported endoscopic adverse events in a small retrospective sample do not establish comparative safety or survival benefit.",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "What follow-up observation can be cited?",
+      "answer": "The reported mean follow-up was 48.2 ± 24.2 months. Patient No. 16 developed recurrence at 15 months after surgery and died at 29 months. These observations are not a randomized treatment effect or a validated survival prediction.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Esophageal gastrointestinal stromal tumor",
+      "E-GIST"
+    ],
+    "methods": [
+      "Retrospective case series",
+      "Endoscopic resection",
+      "Submucosal tunneling endoscopic resection",
+      "Endoscopic submucosal dissection",
+      "Endoscopic mucosal band ligation"
+    ],
+    "treatments": [
+      "Surgery",
+      "Neoadjuvant imatinib",
+      "Conservative management"
+    ]
+  },
+  "limitations": [
+    "The study is retrospective and includes 23 patients at one center. Treatment was chosen by experienced clinicians on the basis of tumor size, location, origin and growth pattern, creating strong selection differences between treatment groups.",
+    "No randomized comparison, adjusted treatment-effect estimate or external validation establishes superiority or oncologic equivalence. The discussion’s procedural suggestions are not independently validated selection rules.",
+    "The abstract and Methods 2.1 specify January 2017 to August 2023, whereas Results 3.1 says January 2017 to December 2023. No exact corrected end date is adopted.",
+    "Results 3.2 describes the highest mitotic-index category as >5/50 HPF, while Table 2 labels it >10/50 HPF. This category is excluded from the quantitative findings rather than silently corrected.",
+    "The manuscript discusses an earlier procedure and suspected recurrence in patient No. 21 without the original postoperative pathology. It is not used to derive an additional event rate, survival curve or effect estimate.",
+    "Postoperative adverse-event counts and follow-up are reported observations in small selected groups. No unreported confidence interval, standardized quality-of-life score or recurrence-rate estimate is generated.",
+    "The complete six-page publisher-layout PDF was reviewed. It contains no identified supplementary-results appendix or supplementary-file citation needed for the findings reproduced here; this does not assert that no supplementary resource exists elsewhere."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41598-025-98859-3",
+      "relationship": "A separate reported comparison of endoscopic and laparoscopic resection at the esophagogastric junction. Differences in site, design and unresolved cohort accounting mean it is not treated as independent validation or pooled with this series."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S0748798324005791",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38968857/",
+    "author_uploaded_fulltext_url": "https://www.researchgate.net/publication/381895630_Optimal_Management_Options_for_Esophageal_Gastrointestinal_Stromal_Tumors_E-GIST",
+    "version": "Six-page publisher-layout journal article, European Journal of Surgical Oncology 50 (2024), 108527; available online 1 July 2024. Title, DOI, eleven-author order and journal identity agree with the formal PubMed and archived Crossref records.",
+    "evidence_basis": "Full text through references reviewed; Tables 1–3 and Figure 3 visually checked. Numeric claims are restricted to internally consistent descriptive counts and specifically attributed follow-up observations.",
+    "uploader": "Shanshan Zhu; ResearchGate Private Full-text file dated 23 April 2025.",
+    "accessed_on": "2026-10-27",
+    "acquired_format": "E-GIST.pdf, six readable PDF pages, acquired through an authorized ResearchGate author-account download.",
+    "fulltext_sha256": "e5dbac07ba29aa8b79e856ec257086d986ef33b9f78267518653abfd2b0f2415",
+    "license": "Copyright 2024 Elsevier Ltd, BASO and the European Society of Surgical Oncology. No open redistribution licence is asserted; the PDF remains in the private audit directory and is not distributed by the website.",
+    "reporting_discrepancies": "Enrollment cutoff August versus December 2023; highest mitotic-index category >5/50 HPF in text versus >10/50 HPF in Table 2. Neither discrepancy is silently corrected."
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Gastrointestinal surgical oncology",
+      "Esophageal GIST"
+    ],
+    "review_topics": [
+      "Management of rare esophageal mesenchymal tumors",
+      "Selection bias in endoscopic and surgical case series"
+    ],
+    "scientific_role": "A small retrospective clinical series documenting treatment allocation, procedural experience and follow-up.",
+    "evidence_position": "Descriptive single-center observational evidence; no randomized comparative efficacy or validated treatment-selection rule.",
+    "related_concepts": [
+      "STER",
+      "ESD",
+      "Neoadjuvant imatinib"
+    ],
+    "citation_contexts": [
+      "Reviews describing the range of management approaches in a rare esophageal tumor.",
+      "Evidence appraisal separating case-series feasibility observations from comparative safety and oncologic outcomes."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What management approaches were reported in a 23-patient esophageal GIST series?",
+        "supported_scope": "The cohort partitions into 15 endoscopic, five direct surgical, two neoadjuvant-plus-surgical and one conservative cases.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What endoscopic techniques and selected lesion sizes were described?",
+        "supported_scope": "Nine STER, four ESD and two EMBL procedures; 12 of the 15 endoscopically treated tumors were reported as no larger than 30 mm.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Can this case series establish that endoscopy improves survival or safety?",
+        "supported_scope": "The nonrandom treatment selection, small groups and descriptive events cannot establish comparative safety or a survival benefit.",
+        "evidence_refs": [
+          "KF2",
+          "KF4",
+          "KF5"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Endoscopic superiority, oncologic equivalence or a causal survival advantage over surgery.",
+      "A universal size threshold or a validated personalized treatment algorithm.",
+      "A treatment effect of imatinib, a standardized quality-of-life improvement, or an independently validated recurrence model."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-kf1",
+        "component": "The report describes 23 patients with pathologically confirmed esophageal gastrointestinal stromal tumors at one hospital.",
+        "context": "Retrospective clinical records from the First Affiliated Hospital of Zhengzhou University. The total and sex counts agree across the abstract and Table 1; the exact 2023 enrollment cutoff differs between Methods and Results and is not resolved here.",
+        "finding": "patients: 23; male / female: 12 / 11; mean age ± SD: 56.7 ± 12.0 years",
+        "evidence_level": "Observational treatment-pattern, adverse-event and follow-up evidence",
+        "scope": "Selected retrospective clinical experience; no comparative treatment-effect inference.",
+        "source_locator": "Publisher-layout PDF p. 1, Abstract; p. 2, Methods 2.1; p. 3, Results 3.1 and Table 1.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-kf2",
+        "component": "Treatment allocation comprised 15 endoscopic resections, five direct operations, two operations after neoadjuvant imatinib, and one conservatively managed patient.",
+        "context": "These four groups partition the same 23-patient series. The seven surgical patients in Table 3 include the five direct operations and two after neoadjuvant treatment; they are not an additional cohort. Treatment was selected by clinicians using tumor characteristics, not randomized.",
+        "finding": "endoscopic resection: 15; direct surgery: 5; neoadjuvant imatinib then surgery: 2; conservative treatment: 1",
+        "evidence_level": "Observational treatment-pattern, adverse-event and follow-up evidence",
+        "scope": "Selected retrospective clinical experience; no comparative treatment-effect inference.",
+        "source_locator": "Publisher-layout PDF p. 2, Methods 2.3; pp. 3–4, Results 3.2; p. 4, Table 2 and Table 3 headings.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-kf3",
+        "component": "Endoscopic management used three techniques, and 12 of the 15 endoscopically treated tumors were reported as no larger than 30 mm.",
+        "context": "The series documents selected procedures and lesion sizes. It does not establish a universal treatment-size threshold or comparative oncologic equivalence to surgery.",
+        "finding": "STER: 9/15; ESD: 4/15; EMBL: 2/15; endoscopic tumors ≤30 mm: 12/15",
+        "evidence_level": "Observational treatment-pattern, adverse-event and follow-up evidence",
+        "scope": "Selected retrospective clinical experience; no comparative treatment-effect inference.",
+        "source_locator": "Publisher-layout PDF p. 4, Table 2; Results 3.3 and Table 3; p. 5, Discussion on selection and procedural limitations.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-kf4",
+        "component": "The endoscopic group had two reported postoperative adverse events: one episode of paroxysmal palpitations and one of fever.",
+        "context": "The denominator is the 15 endoscopically treated patients. The article describes management of both events, but this small, selected retrospective group cannot establish lower treatment risk than surgery.",
+        "finding": "paroxysmal palpitations: 1/15; fever: 1/15",
+        "evidence_level": "Observational treatment-pattern, adverse-event and follow-up evidence",
+        "scope": "Selected retrospective clinical experience; no comparative treatment-effect inference.",
+        "source_locator": "Publisher-layout PDF p. 4, Results 3.3 and Table 3; p. 5, Discussion paragraph on postoperative events.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-kf5",
+        "component": "The article reports mean follow-up of 48.2 months and documents one patient with postoperative recurrence at 15 months and death at 29 months.",
+        "context": "The follow-up mean covers the reported series. The recurrence and death times describe patient No. 16, not a model-derived survival estimate. A separate account of patient No. 21 concerns a previous, incompletely documented procedure; it is not combined into a new recurrence-rate calculation.",
+        "finding": "mean follow-up ± SD: 48.2 ± 24.2 months; patient No. 16 recurrence: 15 months after surgery; patient No. 16 death: 29 months after surgery",
+        "evidence_level": "Observational treatment-pattern, adverse-event and follow-up evidence",
+        "scope": "Selected retrospective clinical experience; no comparative treatment-effect inference.",
+        "source_locator": "Publisher-layout PDF p. 4, Results 3.2 and Table 2; p. 5, Discussion paragraphs describing patients No. 16 and No. 21.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      }
+    ]
+  },
+  "evidence_page_notice": "Descriptive single-center case-series evidence. Treatment selection and small groups prevent causal or comparative efficacy claims; two reporting inconsistencies are disclosed and excluded from corrected numerical claims."
+}

@@ -8,6 +8,7 @@ import unittest
 from pathlib import Path
 from sync_common import ROOT
 import patent_evidence
+import author_account_release_contract as author_release
 
 REVIEW=json.loads((ROOT/'scripts/fixtures/researchgate_release_20261026.json').read_text(encoding='utf-8'))
 BASE=REVIEW['base_sha']
@@ -23,8 +24,9 @@ class ResearchGateReleaseTests(unittest.TestCase):
         expected=copy.deepcopy(before)
         for p in expected:
             if p.get('doi') in REVIEW['papers']:p['paper_geo_status']='v2'
+        expected=author_release.with_upgrades(expected)
         self.assertEqual(current,expected)
-        self.assertEqual(sum(p['paper_geo_status']=='v2' for p in current),55)
+        self.assertEqual(sum(p['paper_geo_status']=='v2' for p in current),55+len(author_release.RELEASE['papers']))
         for p in previous:
             for path in ['data/deep_geo/'+p['slug']+'.json','papers/'+p['slug']+'.md','assets/evidence/'+p['slug']+'.csv']:
                 self.assertEqual(now(path),old(path),path)

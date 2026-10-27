@@ -1,68 +1,6 @@
 {
   "version": 1,
   "papers": {
-    "10.1016/j.cbi.2025.111421": {
-      "slug": "doi-10-1016-j-cbi-2025-111421",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Study context supported by the indexed abstract; complete experimental methods and figures have not been reviewed.",
-      "sections": [
-        {
-          "heading": "Human cardiac organoid model",
-          "text": "The authors describe cardiac organoids derived from human induced pluripotent stem cells and exposure to glucose and sodium palmitate to model metabolic stress relevant to diabetic cardiomyopathy.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39984109/",
-          "source_locator": "PubMed PMID 39984109, Abstract: model construction and exposure description."
-        },
-        {
-          "heading": "Experimental questions",
-          "text": "The abstract describes measurements of cell viability, apoptosis, oxidative stress, mitochondrial dysfunction, and injury, fibrosis and inflammatory markers. Metformin is included as a pharmacological challenge in the model. These are laboratory model readouts, not patient outcomes or evidence of clinical treatment efficacy.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39984109/",
-          "source_locator": "PubMed PMID 39984109, Abstract: reported readouts and metformin experiment."
-        }
-      ],
-      "limitations": [
-        "Dose, exposure duration, organoid batch structure, biological replication and the underlying figures require the complete article and supplements. The abstract alone does not establish the reproducibility or clinical validity of this model."
-      ],
-      "sources": [
-        {
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39984109/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 39984109, Abstract: model construction and exposure description."
-        }
-      ]
-    },
-    "10.1016/j.jtemb.2024.127543": {
-      "slug": "doi-10-1016-j-jtemb-2024-127543",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Abstract-supported observational study context; full analytical methods and tables remain unavailable.",
-      "sections": [
-        {
-          "heading": "Cross-sectional survey question",
-          "text": "The study examines magnesium depletion score and depression in adults aged 20 to 60 years using NHANES 2005–2018. The indexed Methods specify PHQ-9 assessment of depression; the exposure is a depletion score rather than a randomized magnesium intervention.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39406123/",
-          "source_locator": "PubMed PMID 39406123, Abstract: Background and Methods."
-        },
-        {
-          "heading": "Analysis and interpretation",
-          "text": "The abstract describes multivariable logistic regression and restricted cubic splines. This design addresses associations measured in survey data. It does not establish that magnesium depletion causes depression or that supplementation would prevent or treat depression.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39406123/",
-          "source_locator": "PubMed PMID 39406123, Abstract: Methods and Conclusions."
-        }
-      ],
-      "limitations": [
-        "The complete article is needed to verify survey weighting, exclusions, covariate definitions, missing-data handling and regression tables. Abstract-reported effect estimates are not presented here as independently checked full-text findings."
-      ],
-      "sources": [
-        {
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39406123/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 39406123, Abstract: Background and Methods."
-        }
-      ]
-    },
     "10.1016/j.canlet.2024.217079": {
       "slug": "icd-cart",
       "evidence_status": "limited",
@@ -98,30 +36,64 @@
       "slug": "doi-10-1016-j-intimp-2024-112574",
       "evidence_status": "limited",
       "reviewed_on": "2026-10-27",
-      "scope": "Abstract-supported computational and animal-study context; full model evaluation and experimental records remain unverified.",
+      "scope": "Full-article-supported candidate-gene and mouse-expression evidence. Unresolved human cohort accounting and model-validation questions prevent a complete V2 upgrade.",
       "sections": [
         {
-          "heading": "Computational research question",
-          "text": "The abstract describes analysis of public ischemic cardiomyopathy expression datasets, comparison of machine-learning models, and immune-feature analyses. It names DLST, ATP7B, FDX1, SLC31A1 and DLAT as the candidate panel examined by the authors.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38971104/",
-          "source_locator": "PubMed PMID 38971104, Abstract: Methods and Results, core-gene panel."
+          "heading": "Five candidate genes and experimental follow-up",
+          "text": "The article selects DLST, ATP7B, FDX1, SLC31A1 and DLAT after a retrospective public-transcriptomic analysis. The full text is now available for review, but its classification performance is not treated here as independently validated clinical diagnosis.",
+          "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+          "source_locator": "Publisher-layout PDF pp. 2–3, Methods 2.1–2.5; pp. 5–8, Results 3.3 and Figures 4–5."
         },
         {
-          "heading": "Experimental component",
-          "text": "The Methods describe a mouse model created by left anterior descending coronary artery ligation, with Western blot and immunohistochemistry to examine candidate-gene expression. This provides an experimental setting for further review; it is not a prospective human diagnostic validation.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38971104/",
-          "source_locator": "PubMed PMID 38971104, Abstract: Methods, LAD ligation and WB/IHC."
+          "heading": "Mouse expression evidence",
+          "text": "Methods 2.9 describes male C57BL/6 mice assigned to sham control or left-anterior-descending coronary artery ligation, six per group. Figure 8 reports echocardiography with n=6 and Western blot with n=4; these are separate reported assay counts, not additional animal cohorts. The myocardial Western blot and immunohistochemistry show higher DLST and ATP7B and lower FDX1, SLC31A1 and DLAT in the ligation group. This establishes reported expression differences in the tested model, not that these genes cause cuproptosis or diagnose disease in patients.",
+          "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+          "source_locator": "Publisher-layout PDF pp. 3–4, Methods 2.9–2.14; p. 8, Results 3.6; p. 11, Figure 8C–E and caption (echocardiography n=6; Western blot n=4)."
+        },
+        {
+          "heading": "Computational chemical hypotheses",
+          "text": "Chemical–gene associations were retrieved from CTD and examined with molecular docking. These analyses generate hypotheses; no compound-treatment experiment or human treatment benefit is established by this article.",
+          "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+          "source_locator": "Publisher-layout PDF p. 3, Methods 2.8; pp. 8 and 10, Results 3.5 and Figure 7; pp. 3–4, animal experimental methods."
+        },
+        {
+          "heading": "Why diagnostic validation remains unresolved",
+          "text": "Figure 1 labels the training inputs as 181 IC samples from GSE5406 and 91 from GSE57338, but labels their merged IC group as 203. Those counts do not reconcile. Moreover, GSE57338 is a SubSeries of the stated validation accession GSE57345; the article does not provide a verified sample-level exclusion map. Figure 5 describes five-fold cross-validation within its evaluation datasets. These records do not establish an untouched external test of a frozen diagnostic model.",
+          "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
+          "source_locator": "Official GEO Series GSE57338, relation “SubSeries of: GSE57345”; compare publisher PDF p. 3 Figure 1, p. 2 Methods 2.1 and p. 8 Figure 5 caption."
         }
       ],
       "limitations": [
-        "The complete methods and supplements are needed to verify sample overlap, model-selection nesting, diagnostic endpoints and animal group sizes. Reported AUCs, docking scores and chemical predictions are not adopted here as verified diagnostic or therapeutic evidence."
+        "Human sample accounting remains unresolved: Figure 1 input IC counts 181 and 91 do not equal the displayed combined 203. No corrected denominator or deduplicated participant total is inferred. The GSE42955 AUC is 0.943 in the abstract but 0.933 in Results 3.3 and Figure 5D. Neither number is selected as a reconciled performance estimate.",
+        "Training GSE57338 is part of validation SuperSeries GSE57345. A GSM-level membership and overlap audit and the frozen-model evaluation procedure are needed before claiming independent external validation. The article alternates between disease identification and cluster prediction. Methods 2.4, Results 3.3 and the Figure 5 caption do not resolve the exact target and partitioning of every model analysis.",
+        "Animal expression differences do not demonstrate causal cuproptosis activity, clinical diagnostic utility or treatment efficacy. The post-ligation assessment interval and the relationship between the six allocated animals and four Western-blot observations require clarification.",
+        "Supplementary Figures S1–S7 and Tables S1–S3 were not obtained in this review. No supplementary-only values or docking-based therapeutic recommendation is adopted.",
+        "The author-account PDF matches the formal article title, DOI, 18-author order, journal, volume and article number. It is retained privately for audit; no open redistribution licence is asserted."
       ],
       "sources": [
         {
+          "url": "https://doi.org/10.1016/j.intimp.2024.112574",
+          "label": "Formal article and publisher-layout PDF",
+          "format": "Thirteen-page publisher-layout PDF obtained through the authorized ResearchGate author account",
+          "locator": "International Immunopharmacology 138 (2024), 112574; Methods 2.1–2.14, Results 3.3–3.6 and Figures 1, 4, 5, 7, 8."
+        },
+        {
+          "url": "https://www.researchgate.net/publication/382061618_Identification_of_diagnostic_signature_and_immune_infiltration_for_ischemic_cardiomyopathy_based_on_cuproptosis-related_genes_through_bioinformatics_analysis_and_experimental_validation",
+          "label": "Author-account source record",
+          "format": "ResearchGate Private Full-text; Ge Zhang upload dated 16 July 2024",
+          "locator": "Private full-text 1; file 1-s2.0-S1567576924010956-main.pdf, accessed 27 October 2026. File access requires authorized account permissions."
+        },
+        {
           "url": "https://pubmed.ncbi.nlm.nih.gov/38971104/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 38971104, Abstract: Methods and Results, core-gene panel."
+          "label": "Indexed publication identity",
+          "format": "PubMed record",
+          "locator": "PMID 38971104; ordered authors, DOI, journal, volume and electronic publication date 6 July 2024."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
+          "label": "Official dataset relationship",
+          "format": "GEO Series record",
+          "locator": "GSE57338 is a SubSeries of GSE57345; previously saved official SOFT Series response verified during this review."
         }
       ]
     },
@@ -129,92 +101,58 @@
       "slug": "doi-10-1093-hmg-ddae189",
       "evidence_status": "limited",
       "reviewed_on": "2026-10-27",
-      "scope": "Abstract-supported multi-omics research context; the complete genetic and experimental analyses have not been reviewed.",
+      "scope": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
       "sections": [
         {
-          "heading": "Multi-omics question",
-          "text": "The study investigates cellular senescence in Alzheimer’s disease using transcriptomic comparisons and integration of genome-wide association summary statistics with expression and methylation quantitative trait loci. Blood and brain evidence are described separately in the abstract.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39690817/",
-          "source_locator": "PubMed PMID 39690817, Abstract: transcriptomic analysis and integrative Mendelian randomization."
+          "heading": "Publication version and material reviewed",
+          "text": "The acquired document is the publisher-typeset advance article first published on 18 December 2024, with 10 authors and DOI 10.1093/hmg/ddae189. The publisher subsequently assigned volume 34, issue 5, pages 381–391 in 2025. The complete article, supplementary figures, supplementary tables and STROBE-MR checklist are available for this review. These publication stages do not justify changing the existing bibliographic identity.",
+          "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+          "source_locator": "Publisher article header, author list and publication history; acquired advance-article PDF p. 1; Supplementary data: supplementary_figure_ddae189.docx, supplementary_table_ddae189.xlsx and supplementary_materials_ddae189.docx."
         },
         {
-          "heading": "Experimental follow-up and interpretation",
-          "text": "The abstract identifies CDKN2B and ITGAV as brain-prioritized candidates followed up in vitro. Candidate prioritization and laboratory follow-up do not establish that targeting these genes prevents or treats Alzheimer’s disease in patients.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/39690817/",
-          "source_locator": "PubMed PMID 39690817, Abstract: brain-tissue candidate prioritization and in vitro experiments."
+          "heading": "Blood and brain expression context",
+          "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). It constructs a senescence-related expression score from upregulated and downregulated gene sets, then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
+          "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+          "source_locator": "Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5."
+        },
+        {
+          "heading": "Unresolved analysis-input version",
+          "text": "The article Methods and Supplementary Table 10 identify FinnGen R9 G6_ALZHEIMER and report 9,301 cases with 367,976 controls. The official R9 Risteys endpoint independently confirms 9,301 cases after genotype quality control. However, STROBE-MR item 4d reports 7,759 cases and 334,740 controls under the same R9 label. The available materials do not identify the exact outcome input file used in the reported MR runs. The official R9 case count is known; the unresolved issue is which input generated this paper’s estimates. No disputed denominator is selected and no full V2 genetic conclusion is certified.",
+          "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+          "source_locator": "PDF p. 8, GWAS data for Alzheimer’s disease; supplementary_table_ddae189.xlsx, Supplementary Table 10 row 6; supplementary_materials_ddae189.docx, STROBE-MR item 4d. Official cross-check: R9 Risteys G6_ALZHEIMER, Case counts → Remove individuals based on genotype QC (linked in Provenance)."
+        },
+        {
+          "heading": "Cell-line follow-up and its limits",
+          "text": "The Methods describe PC12 cells exposed to 7 μM Aβ1–42 for 12 hours. Figure 4E–G and the supplementary expression records report higher CDKN2B and ITGAV expression in treated cells than in controls. This is a cell-line expression comparison, not evidence from human Alzheimer’s disease neurons or a demonstration of therapeutic benefit. Because the plotted qPCR scale and supplementary values are inconsistent, this note does not certify an exact fold change or plotted significance value.",
+          "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+          "source_locator": "PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolation, reverse transcription, and quantitative real-time PCR; Figure 4E–G; supplementary_table_ddae189.xlsx, sheets labelled Supplemenatry Table 7 (B3:C6, B9:C12) and Supplemenatry Table 8; Supplementary Figures 5–6."
         }
       ],
       "limitations": [
-        "GWAS and QTL sample sizes, ancestry, instrument selection, colocalization assumptions, multiplicity and experimental conditions require the full article and supplements. No causal gene or treatment-effect conclusion is independently certified by this abstract-level note."
+        "Full V2 remains on hold until an exact archived GWAS input filename/release and checksum, linked to the analysis code or run record, or a formal author clarification resolves which dataset generated the MR estimates. Agreement between the main Methods and the official R9 case count does not establish the analysis input used.",
+        "The source contains unresolved mediation annotations: Figure 1 labels an EXOSC9 probe differently from Table 1/Figure 3C, and Figure 3 coefficients differ from the MR tables, including a SLFN12 sign discrepancy. This note neither corrects the labels nor certifies the proposed mediation chains.",
+        "The qPCR supplement lists four values per group per target and the immunoblot supplement lists three entries per group; biological independence is not specified. The qPCR plot/table scale discrepancy remains unresolved, so no exact fold change, effective biological sample size or plotted P value is certified.",
+        "MR depends on instrument relevance, independence and exclusion restriction. The reported sensitivity checks do not prove all assumptions, and the supplement reports significant SLFN12 heterogeneity. Gene-target causality is not established by this limited note.",
+        "The PC12 experiments measure expression after an amyloid-peptide challenge. They do not test gene knockdown or rescue, animal disease modification, patient outcomes, or the safety and efficacy of a treatment. An ambiguous CDKN2B primer character and absent GAPDH primer sequence in Supplementary Table 11 also limit reproducibility."
       ],
       "sources": [
         {
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39690817/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 39690817, Abstract: transcriptomic analysis and integrative Mendelian randomization."
-        }
-      ]
-    },
-    "10.1016/j.ejso.2024.108527": {
-      "slug": "doi-10-1016-j-ejso-2024-108527",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Clinical study context reported in the indexed abstract; patient-level tables and comparative outcomes have not been audited.",
-      "sections": [
-        {
-          "heading": "Retrospective clinical series",
-          "text": "The abstract describes consecutive patients with esophageal gastrointestinal stromal tumors treated at one hospital between January 2017 and August 2023. It reports 23 patients and assessment of clinical characteristics and long-term quality of life.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38968857/",
-          "source_locator": "PubMed PMID 38968857, Abstract: Methods and Results, overall cohort."
+          "url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+          "label": "Official publisher article and publication history",
+          "format": "Publisher HTML and complete 11-page publisher-typeset advance-article PDF obtained through the authorized author account",
+          "locator": "DOI 10.1093/hmg/ddae189; advance publication 18 December 2024; final issue 34(5), 381–391 (2025). Main Figures 1–4, Table 1 and Methods were reviewed."
         },
         {
-          "heading": "Treatment-selection question",
-          "text": "The series includes endoscopic resection, surgery, surgery after preoperative imatinib, and conservative management. These are observed management choices in a small retrospective series, not randomized treatment allocations or proof that one strategy is superior.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38968857/",
-          "source_locator": "PubMed PMID 38968857, Abstract: Results, treatment categories; Conclusions, study limitations."
-        }
-      ],
-      "limitations": [
-        "The full article is required to verify patient selection, tumor characteristics, treatment eligibility, follow-up and quality-of-life instruments. Comparative effectiveness or safety cannot be established from the abstract-level counts."
-      ],
-      "sources": [
-        {
-          "url": "https://pubmed.ncbi.nlm.nih.gov/38968857/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 38968857, Abstract: Methods and Results, overall cohort."
-        }
-      ]
-    },
-    "10.1016/j.canlet.2024.217083": {
-      "slug": "doi-10-1016-j-canlet-2024-217083",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Abstract-supported safety-review context; no incidence estimate or causal mechanism is established here.",
-      "sections": [
-        {
-          "heading": "Safety-review question",
-          "text": "This 2024 review was prompted by regulatory reports of T-cell malignancies, including CAR-positive lymphomas, after BCMA- or CD19-targeted autologous CAR-T therapy. The abstract identifies clinical trials and post-marketing adverse-event data as the origins of those reports.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38925363/",
-          "source_locator": "PubMed PMID 38925363, Abstract: reported regulatory safety context; publication type Review."
+          "url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+          "label": "Official publisher supplementary data",
+          "format": "Three unique files: two DOCX files and one XLSX workbook, acquired 27 October 2026",
+          "locator": "supplementary_figure_ddae189.docx: Figures 1–6; supplementary_table_ddae189.xlsx: Tables 1–11; supplementary_materials_ddae189.docx: STROBE-MR checklist, especially item 4d. These materials have been obtained and inspected."
         },
         {
-          "heading": "Interpretation boundary",
-          "text": "The review asks about possible mechanisms behind secondary T-cell cancers. Reports occurring after treatment do not by themselves prove treatment causality, quantify the absolute risk, or establish one mechanism for every case.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/38925363/",
-          "source_locator": "PubMed PMID 38925363, Abstract: final sentence stating the mechanistic review objective."
-        }
-      ],
-      "limitations": [
-        "The complete review and the underlying case, molecular and surveillance records are needed to assess denominators, CAR positivity and alternative explanations. The historical abstract should not be treated as a current regulatory recommendation or clinical management guideline."
-      ],
-      "sources": [
-        {
-          "url": "https://pubmed.ncbi.nlm.nih.gov/38925363/",
-          "label": "Indexed article abstract",
-          "format": "PubMed abstract, refreshed through the official Europe PMC API",
-          "locator": "PubMed PMID 38925363, Abstract: reported regulatory safety context; publication type Review."
+          "url": "https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER",
+          "label": "FinnGen R9 official Alzheimer endpoint",
+          "format": "Official Risteys endpoint HTML, retrieved 27 October 2026",
+          "locator": "G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input."
         }
       ]
     },

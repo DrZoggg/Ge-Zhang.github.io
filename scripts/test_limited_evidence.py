@@ -7,6 +7,7 @@ import unittest
 from xml.etree import ElementTree
 from sync_common import ROOT
 import limited_evidence as notes
+import author_account_release_contract as author_release
 
 REVIEW=json.loads((ROOT/'scripts/fixtures/limited_evidence_release_20261027.json').read_text(encoding='utf-8'))
 BASE=REVIEW['base_sha']
@@ -22,19 +23,21 @@ class LimitedEvidenceTests(unittest.TestCase):
         cls.bydoi={p['doi']:p for p in cls.public if p.get('doi')}
 
     def test_reviewed_notes_are_exact_and_never_upgrade_status(self):
-        self.assertEqual(self.public,json.loads(old('publications.json')))
+        self.assertEqual(self.public,author_release.with_upgrades(json.loads(old('publications.json'))))
         self.assertEqual(len(self.public),REVIEW['public_works'])
-        self.assertEqual(sum(p['paper_geo_status']=='v2' for p in self.public),REVIEW['baseline_v2'])
-        self.assertEqual(len(self.records),REVIEW['limited_evidence_pages'])
-        self.assertEqual(hashlib.sha256(now('data/limited_evidence.json')).hexdigest(),REVIEW['data_sha256'])
-        self.assertEqual(set(self.records),set(REVIEW['papers']))
+        additions=len(author_release.RELEASE['papers'])
+        self.assertEqual(sum(p['paper_geo_status']=='v2' for p in self.public),REVIEW['baseline_v2']+additions)
+        self.assertEqual(len(self.records),REVIEW['limited_evidence_pages']-additions)
+        self.assertEqual(hashlib.sha256(author_release.old('data/limited_evidence.json')).hexdigest(),REVIEW['data_sha256'])
+        expected=author_release.reviewed_note_rows(REVIEW['papers'])
+        self.assertEqual(set(self.records),set(expected))
         for doi,r in self.records.items():
             encoded=json.dumps(r,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()
-            self.assertEqual(hashlib.sha256(encoded).hexdigest(),REVIEW['papers'][doi]['content_sha256'])
+            self.assertEqual(hashlib.sha256(encoded).hexdigest(),expected[doi]['content_sha256'])
             self.assertEqual(self.bydoi[doi]['paper_geo_status'],'none')
             self.assertNotIn('key_findings',r)
             self.assertNotIn('qa',r)
-        self.assertEqual(notes.validate_generated(self.public),{'limited_evidence_pages':21,'full_v2_status_changed':False})
+        self.assertEqual(notes.validate_generated(self.public),{'limited_evidence_pages':REVIEW['limited_evidence_pages']-additions,'full_v2_status_changed':False})
 
     def test_note_removal_restores_every_target_page_and_schema_exactly(self):
         for doi,r in self.records.items():
@@ -43,7 +46,11 @@ class LimitedEvidenceTests(unittest.TestCase):
                 path='papers/'+slug+'.'+ext
                 before=old(path).decode();after=now(path).decode();block=render(r)+('' if ext=='html' else '\n')
                 self.assertEqual(after.count(block),1,path)
-                self.assertEqual(after.replace(block,'',1),before,path)
+                restored=after.replace(block,'',1)
+                if ext=='html' and slug in author_release.BACKLINK_ONLY:
+                    before=author_release.backlink_core(slug,before,baseline=True)
+                    restored=author_release.backlink_core(slug,restored)
+                self.assertEqual(restored,before,path)
                 if ext=='html':
                     self.assertNotIn('Paper GEO V2</span>',after)
                     for row in r['sections']:
@@ -56,18 +63,24 @@ class LimitedEvidenceTests(unittest.TestCase):
 
     def test_all_existing_science_identity_citations_and_visuals_are_frozen(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'--','data/deep_geo','citations','assets','index.html','data/publications_master.json','data/featured_papers.json','data/deep_geo_papers.json','data/profile_config.json','data/homepage_author_roles.json','data/patent_evidence.json','paper_index.json','publication_inventory.csv','publications.html','research','robots.txt','CNAME','.github','scripts/sync_common.py'],cwd=ROOT,text=True).splitlines()
-        for path in paths:self.assertEqual(now(path),old(path),path)
-        target_slugs={r['slug'] for r in self.records.values()}
+        for path in paths:
+            if path not in author_release.allowed_production_paths():
+                self.assertEqual(now(path),old(path),path)
+        target_slugs={r['slug'] for r in self.records.values()} | author_release.new_slugs()
         for p in self.public:
             if p['slug'] not in target_slugs:
                 for ext in ['html','md']:
                     path='papers/'+p['slug']+'.'+ext
-                    self.assertEqual(now(path),old(path),path)
+                    before=old(path);after=now(path)
+                    if ext=='html' and p['slug'] in author_release.BACKLINK_ONLY:
+                        before=author_release.backlink_core(p['slug'],before.decode(),baseline=True)
+                        after=author_release.backlink_core(p['slug'],after.decode())
+                    self.assertEqual(after,before,path)
         def sitemap(raw):
             return {e.find('{*}loc').text:e.find('{*}lastmod').text for e in ElementTree.fromstring(raw)}
         before=sitemap(old('sitemap.xml'));after=sitemap(now('sitemap.xml'))
         self.assertEqual(set(before),set(after))
-        targets={self.bydoi[doi]['paper_url'] for doi in self.records}
+        targets={self.bydoi[doi]['paper_url'] for doi in self.records} | author_release.dated_urls()
         for url in before:
             if url not in targets:self.assertEqual(before[url],after[url],url)
 

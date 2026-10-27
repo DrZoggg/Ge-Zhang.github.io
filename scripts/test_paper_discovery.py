@@ -229,7 +229,7 @@ class PaperDiscoveryTests(unittest.TestCase):
             if relative in self.old and relative.endswith('.html'):
                 current=(ROOT/relative).read_text(encoding='utf-8')
                 changed=without_evidence_ui(without_theme_shell(current))!=without_evidence_ui(without_theme_shell(self.old[relative]))
-                expected_date=limited_dates.get(url,RELEASE['content_date']) if changed else prior_date
+                expected_date=limited_dates.get(url,RELEASE.get('content_dates',{}).get(url,RELEASE['content_date'])) if changed else prior_date
                 self.assertEqual(now[url],expected_date,url)
             else:
                 self.assertEqual(now[url],prior_date,url)
