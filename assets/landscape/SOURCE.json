@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "acquired_date": "2026-10-28",
+  "photo": {
+    "title": "Snow covered mountain near reflecting on water during daytime",
+    "unsplash_id": "o2B9YF7X6wI",
+    "photographer": "Kimon Maritz",
+    "photographer_url": "https://unsplash.com/@kimonmaritz",
+    "photo_page": "https://unsplash.com/photos/snow-covered-mountain-near-reflecting-on-water-during-daytime-o2B9YF7X6wI",
+    "place": "Oeschinen Lake, Kandersteg, Switzerland",
+    "published_date": "2017-01-04"
+  },
+  "license": {
+    "name": "Unsplash License",
+    "url": "https://unsplash.com/license",
+    "photo_page_states": "Free to use under the Unsplash License",
+    "commercial_use": true,
+    "modification_permitted": true,
+    "permission_required": false,
+    "attribution_required": false,
+    "attribution_appreciated": true,
+    "summary": "Free download, copy, modification and use including commercial use. No photographer or Unsplash permission or attribution required; credit is appreciated. Cannot sell images without significant modification or compile them to replicate a similar or competing service.",
+    "recommended_credit": "Photo by Kimon Maritz on Unsplash",
+    "use_case": "One locally hosted mountain/lake photograph used as a website background.",
+    "blocking_issue": null,
+    "verified_from_official_pages_on": "2026-10-28"
+  },
+  "source": {
+    "file": "photo-source/kimon-maritz-o2B9YF7X6wI-original.jpg",
+    "width": 5472,
+    "height": 3648,
+    "bytes": 3293379,
+    "sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+    "requested_download_url": "https://images.unsplash.com/photo-1483546024624-d2f76c1f6b56",
+    "actual_download_url": "https://images.unsplash.com/photo-1483546024624-d2f76c1f6b56",
+    "normal_download_endpoint": "https://unsplash.com/photos/o2B9YF7X6wI/download?force=true",
+    "retrieval_notes": "Normal download endpoint returned HTTP 401 without login. Used the untransformed public images.unsplash.com image resource verified on the official photo page; HTTP 200. No watermarked social/OG preview was used.",
+    "private_evidence_only": true,
+    "no_hotlink_in_deliverable": true
+  },
+  "processing": {
+    "tool": "Existing Pillow 12.3.0",
+    "ai_generation": false,
+    "source_orientation": "EXIF transposed before processing",
+    "operations_in_order": [
+      "RGB conversion",
+      "saturation factor 0.90",
+      "contrast factor 0.98",
+      "red channel round(value * 0.985)",
+      "green channel unchanged",
+      "blue channel round(value * 1.008 + 0.5), clipped to 255",
+      "composition crop using explicit source pixel coordinates",
+      "Lanczos downsample",
+      "encode local WebP, AVIF and progressive JPEG"
+    ],
+    "notes": "Light conventional gray-blue treatment; no replacement sky, object removal, generative fill or synthetic image elements. Crops are expressed in EXIF-oriented original pixels with right/bottom exclusive."
+  },
+  "compositions": {
+    "desktop": {
+      "crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "ratio": "16:9",
+      "reason": "Retains full-width mountain range, horizontal fog and lake reflections; the shoreline sits about 55% down the frame.",
+      "sizes": [
+        [
+          1920,
+          1080
+        ],
+        [
+          1440,
+          810
+        ]
+      ],
+      "max_webp_bytes": 450000
+    },
+    "mobile": {
+      "crop_box_xyxy": [
+        1300,
+        0,
+        4036,
+        3648
+      ],
+      "ratio": "3:4",
+      "reason": "Centers the snow peaks, narrow fog band and mirrored water, with the shoreline near mid-frame.",
+      "sizes": [
+        [
+          780,
+          1040
+        ]
+      ],
+      "max_webp_bytes": 180000
+    }
+  },
+  "assets": [
+    {
+      "file": "photo-ready/oeschinen-desktop-1920.webp",
+      "composition": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "format": "WEBP",
+      "bytes": 445608,
+      "kilobytes_decimal": 445.6,
+      "sha256": "085331a95251e96e1ae57e52a85ecc6b8c2ad284f90818278da62538495fb943",
+      "encoder_quality": 90,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-desktop-1920.avif",
+      "composition": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "format": "AVIF",
+      "bytes": 361188,
+      "kilobytes_decimal": 361.2,
+      "sha256": "d46574fd858ccb35d88a9865e54f57b06f8a38acef138f538894712884ad2215",
+      "encoder_quality": 78,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-desktop-1920.jpg",
+      "composition": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "format": "JPEG",
+      "bytes": 358469,
+      "kilobytes_decimal": 358.5,
+      "sha256": "c6df03f16161f80fb49cba43739b2a4c01230dd7b8bedb06ef57837cbbaf6529",
+      "encoder_quality": 76,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-desktop-1440.webp",
+      "composition": "desktop",
+      "width": 1440,
+      "height": 810,
+      "format": "WEBP",
+      "bytes": 299824,
+      "kilobytes_decimal": 299.8,
+      "sha256": "977df72158ef16c52d988255964ee2d44de32c3ae7091a074fbb77c4fd47c6b5",
+      "encoder_quality": 92,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-desktop-1440.avif",
+      "composition": "desktop",
+      "width": 1440,
+      "height": 810,
+      "format": "AVIF",
+      "bytes": 218199,
+      "kilobytes_decimal": 218.2,
+      "sha256": "057a8fd3f6822cc7f67b5a84d7a8c3ae6c80c1d48665e6c63f9580555b4c615d",
+      "encoder_quality": 78,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-desktop-1440.jpg",
+      "composition": "desktop",
+      "width": 1440,
+      "height": 810,
+      "format": "JPEG",
+      "bytes": 362482,
+      "kilobytes_decimal": 362.5,
+      "sha256": "66a3e6fc289cc96556d5a9ece3fb7d7a42ec4540da71f3d3ec9e4861e87c19aa",
+      "encoder_quality": 90,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        0,
+        180,
+        5472,
+        3258
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-mobile-780.webp",
+      "composition": "mobile",
+      "width": 780,
+      "height": 1040,
+      "format": "WEBP",
+      "bytes": 170526,
+      "kilobytes_decimal": 170.5,
+      "sha256": "621af0e0d9a7861f6ad9cb069fefb05d906be4ea488a1abb0a222f93bcc4c0c8",
+      "encoder_quality": 90,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        1300,
+        0,
+        4036,
+        3648
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-mobile-780.avif",
+      "composition": "mobile",
+      "width": 780,
+      "height": 1040,
+      "format": "AVIF",
+      "bytes": 140571,
+      "kilobytes_decimal": 140.6,
+      "sha256": "653a77bc2b46650dfdc3334cb84d3205adfe3aabbc4659d5f2f59400d8a45ca5",
+      "encoder_quality": 78,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        1300,
+        0,
+        4036,
+        3648
+      ],
+      "resize_filter": "Lanczos"
+    },
+    {
+      "file": "photo-ready/oeschinen-mobile-780.jpg",
+      "composition": "mobile",
+      "width": 780,
+      "height": 1040,
+      "format": "JPEG",
+      "bytes": 178553,
+      "kilobytes_decimal": 178.6,
+      "sha256": "4d471072acc933d285ee2dce12f6e01f5854b61dcf5c80a22cfd79822cf3cba7",
+      "encoder_quality": 84,
+      "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "source_crop_box_xyxy": [
+        1300,
+        0,
+        4036,
+        3648
+      ],
+      "resize_filter": "Lanczos"
+    }
+  ],
+  "integration_recommendation": {
+    "desktop": "photo-ready/oeschinen-desktop-1920.avif with WebP/JPEG fallbacks; 1440 variant for narrower desktop. Use full 16:9 composition if possible.",
+    "mobile": "photo-ready/oeschinen-mobile-780.avif with WebP/JPEG fallbacks. Use 3:4 composition or preserve shoreline when applying further CSS cover cropping.",
+    "aspect_ratio_desktop": "16 / 9",
+    "aspect_ratio_mobile": "3 / 4",
+    "suggested_object_position_desktop": "50% 55%",
+    "suggested_object_position_mobile": "50% 50%"
+  },
+  "high_dpi_extension": {
+    "checkedAt": "2026-10-28",
+    "reason": "Actual headless DPR test demonstrates1920px derivative upsampling in three device cases. See DPR_BEFORE.json.",
+    "source": {
+      "file": "photo-source/kimon-maritz-o2B9YF7X6wI-original.jpg",
+      "width": 5472,
+      "height": 3648,
+      "bytes": 3293379,
+      "sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+      "requested_download_url": "https://images.unsplash.com/photo-1483546024624-d2f76c1f6b56",
+      "actual_download_url": "https://images.unsplash.com/photo-1483546024624-d2f76c1f6b56",
+      "normal_download_endpoint": "https://unsplash.com/photos/o2B9YF7X6wI/download?force=true",
+      "retrieval_notes": "Normal download endpoint returned HTTP 401 without login. Used the untransformed public images.unsplash.com image resource verified on the official photo page; HTTP 200. No watermarked social/OG preview was used.",
+      "private_evidence_only": true,
+      "no_hotlink_in_deliverable": true
+    },
+    "sourceHashVerified": true,
+    "photo": {
+      "title": "Snow covered mountain near reflecting on water during daytime",
+      "unsplash_id": "o2B9YF7X6wI",
+      "photographer": "Kimon Maritz",
+      "photographer_url": "https://unsplash.com/@kimonmaritz",
+      "photo_page": "https://unsplash.com/photos/snow-covered-mountain-near-reflecting-on-water-during-daytime-o2B9YF7X6wI",
+      "place": "Oeschinen Lake, Kandersteg, Switzerland",
+      "published_date": "2017-01-04"
+    },
+    "license": {
+      "name": "Unsplash License",
+      "url": "https://unsplash.com/license",
+      "photo_page_states": "Free to use under the Unsplash License",
+      "commercial_use": true,
+      "modification_permitted": true,
+      "permission_required": false,
+      "attribution_required": false,
+      "attribution_appreciated": true,
+      "summary": "Free download, copy, modification and use including commercial use. No photographer or Unsplash permission or attribution required; credit is appreciated. Cannot sell images without significant modification or compile them to replicate a similar or competing service.",
+      "recommended_credit": "Photo by Kimon Maritz on Unsplash",
+      "use_case": "One locally hosted mountain/lake photograph used as a website background.",
+      "blocking_issue": null,
+      "verified_from_official_pages_on": "2026-10-28"
+    },
+    "processing": {
+      "tool": "Existing Pillow 12.3.0",
+      "ai_generation": false,
+      "source_orientation": "EXIF transposed before processing",
+      "operations_in_order": [
+        "RGB conversion",
+        "saturation factor 0.90",
+        "contrast factor 0.98",
+        "red channel round(value * 0.985)",
+        "green channel unchanged",
+        "blue channel round(value * 1.008 + 0.5), clipped to 255",
+        "composition crop using explicit source pixel coordinates",
+        "Lanczos downsample",
+        "encode local WebP, AVIF and progressive JPEG"
+      ],
+      "notes": "Light conventional gray-blue treatment; no replacement sky, object removal, generative fill or synthetic image elements. Crops are expressed in EXIF-oriented original pixels with right/bottom exclusive."
+    },
+    "assets": [
+      {
+        "file": "oeschinen-desktop-2880.avif",
+        "width": 2880,
+        "height": 1620,
+        "bytes": 497171,
+        "sha256": "f61ce8c6eb9e05236785717ab5b43f926248d7854645bd3866192740c68c2348",
+        "format": "AVIF",
+        "quality": 66,
+        "boundedEncodingTrials": [
+          {
+            "quality": 66,
+            "bytes": 497171
+          }
+        ],
+        "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+        "source_crop_box_xyxy": [
+          0,
+          180,
+          5472,
+          3258
+        ],
+        "resizeFilter": "Lanczos",
+        "upscaledFromDerivative": false
+      },
+      {
+        "file": "oeschinen-desktop-2880.webp",
+        "width": 2880,
+        "height": 1620,
+        "bytes": 527154,
+        "sha256": "05922274665697437adbd5e59fde2cae810f931c469f6370e66172c6c19dbe84",
+        "format": "WEBP",
+        "quality": 80,
+        "boundedEncodingTrials": [
+          {
+            "quality": 80,
+            "bytes": 527154
+          }
+        ],
+        "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+        "source_crop_box_xyxy": [
+          0,
+          180,
+          5472,
+          3258
+        ],
+        "resizeFilter": "Lanczos",
+        "upscaledFromDerivative": false
+      },
+      {
+        "file": "oeschinen-desktop-2880.jpg",
+        "width": 2880,
+        "height": 1620,
+        "bytes": 522847,
+        "sha256": "ab6d91f55c49b811bb5026678379f4de86c24a9d98ef83144fc5e9a6b69bd65c",
+        "format": "JPEG",
+        "quality": 58,
+        "boundedEncodingTrials": [
+          {
+            "quality": 70,
+            "bytes": 648016
+          },
+          {
+            "quality": 64,
+            "bytes": 574315
+          },
+          {
+            "quality": 58,
+            "bytes": 522847
+          }
+        ],
+        "source_sha256": "8bca133c7587b1a55a396737af83965b0aaba557a724831e8d401fde5c3a54d9",
+        "source_crop_box_xyxy": [
+          0,
+          180,
+          5472,
+          3258
+        ],
+        "resizeFilter": "Lanczos",
+        "upscaledFromDerivative": false
+      }
+    ],
+    "notes": [
+      "Generated directly from5472x3648 original, not1920 derivative.",
+      "No sharpening, AI super-resolution or generative fill.",
+      "2880 limit intentionally bounds transfer cost;1920CSS px at2DPR and80% photo width needs3072device px, so6.67% residual cover upsampling remains at that extreme geometry.",
+      "Original and existing source derivatives were not changed; root must integrate srcset only after reviewing."
+    ]
+  }
+}
