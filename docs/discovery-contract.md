@@ -34,6 +34,39 @@ remain unchanged, so the JSON contract stays at version 1. The answer and scope
 are ordinary crawlable HTML, not excluded UI-only text, and the Questions
 page's sitemap lastmod follows the existing substantive-content change rule.
 
+The additive Scientific Questions discovery contract has `discovery_version: 2`.
+The existing `version: 1` and 59 selected `questions` retain their fields, order,
+eight independent navigation mappings and six complete answer previews. They are
+not replaced by the full Q&A list; homepage consumers still use that legacy list.
+
+`works` is a normalized context record for every current public work, in publication
+order. It identifies the existing paper and Markdown URLs, DOI and citation exports
+(null when unavailable), source evidence status, exact reviewed fields and concepts,
+complete evidence scope and limitations, and source-located findings. Fields and
+concepts describe paper context, not a claim that each Q&A validates every concept.
+Limited notes and the patent reuse their existing scope without synthesizing Q&A.
+Gold source pointers refer to the public source repository; `/data/` is not deployed
+by Pages and is not advertised as a public site endpoint. Gold hashes normalize LF.
+
+`all_questions` is generated from all existing V2 Gold `qa` entries. Each stable
+`work_id--qa-N` record retains the exact question and answer, one-based position,
+direct canonical-paper `#qa-N` URL, source pointers, answer hash and evidence refs.
+The work record resolves each finding reference to its exact original-source locator
+and existing paper anchor. An empty source `evidence_refs` is explicitly
+`not_encoded`; no finding relationship is guessed, and no stronger scientific
+verification is claimed. The current snapshot contains 362 Q&A: 357 with resolved
+question-level refs and five without encoded refs. These are observations, not fixed
+future inventory requirements.
+
+The public HTML contains all question links in native disclosures, every work
+identity, six answer previews and the original evidence limits. Complete answers
+remain on existing canonical paper pages and in the derived JSON export, rather
+than hundreds of new pages or a single full-answer HTML dump. No new canonical URL,
+FAQ/QAPage schema, robots policy or publishing framework is introduced. The existing
+MiniSearch corpus and pinned engine are reused; Q&A hits now link directly to the
+corresponding answer anchor. Search is a local progressive enhancement, not a new
+AI answer generator; all discovery links remain available without JavaScript.
+
 `data/scholarly_identifiers.json` stores DOI-matched verified stable IDs and their
 public API provenance. DOI is primary. PMID/PMCID conflicts with existing verified
 citation metadata are rejected. Only publisher/PubMed/PMC representations of the

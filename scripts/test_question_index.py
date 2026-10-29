@@ -36,6 +36,24 @@ def validate_questions():
     return len(rows)
 class QuestionTests(unittest.TestCase):
     def test_source_bound_routes(self):validate_questions()
+    def test_complete_question_catalog_is_static_and_points_to_existing_answers(self):
+        payload=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))
+        public=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
+        self.assertEqual(payload['version'],1)
+        self.assertEqual(payload['discovery_version'],2)
+        self.assertEqual([w['id'] for w in payload['works']],[p['slug'] for p in public])
+        page=(ROOT/'research/questions.html').read_text(encoding='utf-8');document=Document(page)
+        self.assertEqual(page.count('data-question-route'),len(payload['all_questions']))
+        self.assertEqual(len(document.ids),len(set(document.ids)))
+        for work in payload['works']:
+            self.assertTrue(any(link.get('href')==work['paper_url'] for link in document.links))
+        for question in payload['all_questions']:
+            self.assertIn(html.escape(question['question']),page)
+            self.assertIn(html.escape(question['answer_url'],quote=True),page)
+            target=Document(local(question['answer_url']).read_text(encoding='utf-8'))
+            self.assertEqual(target.ids.count(urlparse(question['answer_url']).fragment),1)
+        self.assertIn('<noscript>',page)
+        self.assertNotIn('https://drgezhang.com/data/',page)
     def test_reviewed_answer_previews_are_complete_source_bound_and_additive(self):
         rows=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))['questions']
         settings=json.loads((ROOT/'data/question_index.json').read_text(encoding='utf-8'))

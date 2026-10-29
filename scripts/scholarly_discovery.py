@@ -216,8 +216,13 @@ def question_records(items, contents, fields, root=ROOT):
     return rows
 
 
-def render_questions(rows, config):
+def render_questions(rows, config, discovery=None):
     escape = html.escape
+    discovery = discovery or {'works': [], 'all_questions': []}
+    works = {work['id']: work for work in discovery['works']}
+    by_work = {}
+    for question in discovery['all_questions']:
+        by_work.setdefault(question['work_id'], []).append(question)
     cards = []
     for row in rows:
         citation = (f'<a href="{escape(row["paper_url"], quote=True)}#cite-this-paper">Cite</a>'
@@ -250,28 +255,79 @@ def render_questions(rows, config):
             # Keep the existing first limitation and expose every remaining one.
             scope += '<ul>' + ''.join('<li>' + escape(limit) + '</li>'
                                      for limit in preview['does_not_establish'][1:]) + '</ul>'
+        complete = ''
+        questions = by_work.get(row['id'], [])
+        if questions:
+            links = ''.join(
+                '<li id="question-' + escape(q['id'], quote=True) + '"><a data-question-route href="'
+                + escape(q['answer_url'], quote=True) + '">' + escape(q['question']) + '</a>'
+                + ('<small>Question-level finding references are not encoded; consult the paper context and provenance.</small>'
+                   if q['evidence_refs_status'] == 'not_encoded' else '') + '</li>'
+                for q in questions)
+            concepts = [str(v) for values in works[row['id']].get('concepts', {}).values() for v in values]
+            complete = ('<details class="discovery-questions"><summary>' + str(len(questions))
+                        + ' reviewed questions — direct answers and evidence</summary>'
+                        + '<p>Each link opens the unchanged answer on the paper evidence page. '
+                        + 'Interpret it with that paper’s full evidence scope and provenance.</p><ol>'
+                        + links + '</ol></details>')
+            if concepts:
+                complete += ('<details class="discovery-concepts"><summary>Paper-level research concepts</summary>'
+                             + '<p>These labels describe the paper context; they are not independent claims or evidence of validation.</p><ul>'
+                             + ''.join('<li>' + escape(c) + '</li>' for c in concepts) + '</ul></details>')
         cards.append(
             f'<article class="card" id="{escape(row["id"], quote=True)}">'
             + context +
             f'<h2><a href="{escape(row["answer_url"], quote=True)}">{escape(row["question"])}</a></h2>'
             f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row.get("publication_type") or row["profile_type"].replace("_", " "))}</p>'
-            + answer + scope +
-            f'<p class="links"><a href="https://doi.org/{escape(row["doi"], quote=True)}">Original article DOI</a>'
+            + answer + scope + complete +
+            f'<p class="links"><a href="{escape(row["paper_url"], quote=True)}">Paper evidence and provenance</a> '
+            f'<a href="https://doi.org/{escape(row["doi"], quote=True)}">Original article DOI</a>'
             f' {citation}</p></article>')
+    other = []
+    selected = {row['id'] for row in rows}
+    for work in discovery['works']:
+        if work['id'] in selected:
+            continue
+        scope = work.get('scope') or ''
+        limitations = work.get('limitations', [])
+        other.append('<article class="card" id="' + escape(work['id'], quote=True) + '">'
+                     + '<h2><a href="' + escape(work['paper_url'], quote=True) + '">'
+                     + escape(work['title']) + '</a></h2><p class="meta">'
+                     + escape(str(work.get('type') or 'Work')) + ' · ' + escape(str(work.get('year') or ''))
+                     + ' · ' + escape(str(work.get('journal') or '')) + '</p>'
+                     + '<p><strong>Available evidence scope:</strong> ' + escape(scope) + '</p>'
+                     + ('<ul>' + ''.join('<li>' + escape(text) + '</li>' for text in limitations) + '</ul>' if limitations else '')
+                     + '<p>No full reviewed Gold Q&amp;A is indexed for this record. Follow the existing page for its available sources and limits.</p>'
+                     + '<p class="links"><a href="' + escape(work['paper_url'], quote=True) + '">Record and source evidence</a>'
+                     + (' <a href="https://doi.org/' + escape(work['doi'], quote=True) + '">Original DOI</a>' if work.get('doi') else '')
+                     + (' <a href="' + escape(work['paper_url'], quote=True) + '#cite-this-paper">Cite</a>' if work.get('citation_csl_json_url') else '')
+                     + '</p></article>')
+    extra = ('<section id="other-public-works"><h2>Other public works: identity and source limits</h2>'
+             + '<p>These records retain their limited-evidence or patent boundaries; no reviewed answer is inferred.</p>'
+             + '<div class="question-index">' + ''.join(other) + '</div></section>') if other else ''
+    counts = (str(len(discovery['all_questions'])) + ' reviewed Q&amp;A across ' + str(len(rows))
+              + ' full evidence pages; ' + str(len(discovery['works'])) + ' public works have record links below.') if works else ''
     url = config['site_url'] + '/' + QUESTION_PATH
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Scientific questions | {escape(config['researcher_name'])}</title>
 <meta name="description" content="Browse reviewed scientific questions, evidence limits and original article citations from this research program.">
 <link rel="canonical" href="{url}"><link rel="alternate" type="application/json" href="questions.json">
-<link rel="stylesheet" href="../assets/style.css"></head><body>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/question-discovery.css">
+<script src="../assets/evidence-search.js" defer></script></head><body class="scientific-discovery">
 <header><nav><a class="brand" href="../index.html">{escape(config['researcher_name'])}</a><div class="navlinks"><a href="../publications.html">All publications</a></div></nav></header>
 <main class="wrap"><section><div class="eyebrow">Research discovery</div><h1>Scientific questions</h1>
 <p class="lead">Questions addressed by publications in this research program</p>
-<p>This selective index is not an exhaustive or systematic review of the field. Questions are reproduced from reviewed paper Q&amp;A or existing reviewed question mappings. Read each question in its stated paper context. Follow it to the existing answer or evidence section and full evidence scope; the original article remains the formal citation source.</p>
-<p>Selected entries include an unchanged reviewed answer with its source locators and complete stated limitations. Other entries retain their direct question-to-paper route.</p>
+<p>This research-program index is not an exhaustive or systematic review of the field. Questions are reproduced from reviewed paper Q&amp;A or existing reviewed question mappings. Read each question in its stated paper context. Follow it to the existing answer or evidence section and full evidence scope; the original article remains the formal citation source.</p>
+<p>{counts}</p><p>Six selected entries retain complete reviewed answers here. All indexed Q&amp;A links lead directly to their unchanged answers on the existing paper pages.</p>
 <p><a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
-<div class="question-index">{''.join(cards)}</div></main>
+<section class="discovery-search" aria-labelledby="discovery-search-title"><h2 id="discovery-search-title">Find a question, concept or original work</h2>
+<label for="pubSearch">Search existing paper evidence, questions, concepts, title or DOI</label>
+<input id="pubSearch" type="search" autocomplete="off" placeholder="Question, research concept or DOI" aria-describedby="evidenceSearchStatus">
+<p id="evidenceSearchStatus" role="status" aria-live="polite">Search runs locally using the existing evidence index. No answer is generated and query text is not sent to a server.</p>
+<noscript><p>Interactive search needs JavaScript. Every indexed question and work link remains in the HTML below.</p></noscript>
+<div id="evidenceResults"></div></section>
+<div class="question-index">{''.join(cards)}</div>{extra}</main>
 <footer><div class="wrap">{escape(config['researcher_name'])} · Academic evidence hub</div></footer></body></html>
 '''
 
@@ -304,9 +360,21 @@ def validate_generated(items, config, root=ROOT):
         validate_backlink_html(page, backlinks.get(item.get('doi')))
     expected = question_records(items, contents, fields, root)
     actual = json.loads((root / QUESTION_JSON_PATH).read_text(encoding='utf-8'))
-    if actual != {'version':1,'questions':expected}:
+    from question_discovery import build_discovery
+    discovery = build_discovery(items, contents, fields, root)
+    if actual != {'version':1,'questions':expected, **discovery}:
         raise ValueError('Question index differs from reviewed sources')
     page = (root / QUESTION_PATH).read_text(encoding='utf-8')
+    if page.count('data-question-route') != len(discovery['all_questions']):
+        raise ValueError('Complete reviewed question HTML inventory differs from Gold')
+    for question in discovery['all_questions']:
+        target = (root / 'papers' / (question['work_id'] + '.html')).read_text(encoding='utf-8')
+        anchor = question['answer_url'].split('#')[1]
+        if target.count('id="' + anchor + '"') != 1 or html.escape(question['answer_url'], quote=True) not in page:
+            raise ValueError('Full reviewed question is not directly reachable')
+    for work in discovery['works']:
+        if html.escape(work['paper_url'], quote=True) not in page:
+            raise ValueError('A public work is missing its discovery link')
     for row in expected:
         slug = row['id']; anchor = row['answer_url'].split('#')[1]
         target = (root / 'papers' / (slug + '.html')).read_text(encoding='utf-8')
