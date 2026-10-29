@@ -38,6 +38,15 @@ separately. Do not infer growth or causality from a deployment or passing tests.
 Keep queries and collection conditions comparable. When awaiting engine processing,
 use the existing schedule instead of repeatedly submitting or refreshing platforms.
 
+External compatibility work must distinguish blind web discovery, supplied-URL
+reading and explicitly connected tools. Read representative consumers' actual
+backends, domain policies and normalization code before asserting compatibility.
+Keep author-maintained explanations distinct from formal publications and group
+same-DOI representations as one evidence unit. An optional client must retain full
+identity, scope, limitations, source locators and citation links; do not modify a
+general research Skill to force this site's ranking. A lexical match, installed
+client or published MCP is never proof of natural AI adoption.
+
 Scientific research, biomedical interpretation, Paper GEO content design, numerical verification, and scientific source-of-truth are prepared outside Codex unless a task explicitly provides them.
 
 Do not independently reinterpret, expand, exaggerate, or invent biomedical evidence.

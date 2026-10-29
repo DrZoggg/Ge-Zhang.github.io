@@ -78,3 +78,25 @@ No new answers, official abstracts, PDF licenses, scientific claims or citation
 exports are inferred. Existing robots, IndexNow, GA4, ORCID/Crossref synchronization
 and deployment behavior are unchanged. IndexNow receipt is not indexing. Neither
 metadata parsing nor search eligibility measures formal academic citation growth.
+
+## Explicit external consumers
+
+The [optional read-only client](author-evidence-client.md) reuses these exports
+and the existing MiniSearch engine. `search` returns stable question/work IDs;
+`fetch` joins a question to its work and returns full identity, scope, limitations,
+encoded locators, formal citation links and content-version metadata. It does not
+generate scientific answers or add a new public page, API, Skill or MCP server.
+Local and live-public-export reads are labeled separately. A client match is an
+explicit integration result, not evidence of natural external AI adoption.
+
+A URL fragment such as `#qa-3` is a document location, not a distinct HTTP response
+or independent index page. Extractors must select that node and retain or join the
+work context. A normalized `all_questions` record is deliberately not a standalone
+clinical evidence packet; consuming it without its `works` record loses context.
+The data relationship itself is unchanged. Missing question-level refs stay missing.
+
+Paraphrase fallback preserves paper selection and now chooses the most relevant
+passage within its selected category, rather than the first Q&A of that paper.
+All exact-question routing remains covered by the existing regression. Broader
+text matches, null work-level answers, no matches and unsupported language must
+not be reported as correct answers to clinical or causal questions.
