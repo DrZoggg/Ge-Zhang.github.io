@@ -28,5 +28,9 @@ for (const qa of qas) {
 assert(search('DCM-HF circulating biomarkers').some(x => x.result_kind === 'guide' && x.doi === ''));
 assert(search('10.1021/acs.jproteome.4c00522').every(x => x.result_kind === 'paper'));
 assert(search('complete discovery participant count').some(x => x.result_kind === 'guide' && x.limitation));
+// Paraphrase regression: aggregate paper relevance must not select the first
+// Q&A (human tissue) when the matching passage concerns pooled aortic libraries.
+assert(search('How many independent aortic single cell libraries came from five Kif13b mice?')
+  .some(x => x.url === 'https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#qa-3'));
 assert(!corpus.documents.some(x => x.category === 'Official Abstract'));
 console.log(`SEARCH PASS: official MiniSearch, DOI, Unicode, limitations, direct reviewed answer anchors; ${publications.length} public records`);
