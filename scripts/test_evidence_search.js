@@ -16,9 +16,17 @@ assert(search('Nature Communications').some(x => x.category === 'Journal'));
 assert.equal(search('gpx5zz').length, 0); // fuzzy disabled
 assert.equal(search('<script>alert("injection")</script>xxxx').length, 0);
 assert(search('prospectively validated early diagnostic').some(x => x.limitation && x.category.includes('Limitations')));
-assert.equal(new Set(corpus.documents.filter(x => x.result_kind === 'paper').map(x => x.url.split('#')[0])).size, 74);
+const publications = JSON.parse(fs.readFileSync(path.join(root, 'publications.json'), 'utf8'));
+assert.equal(new Set(corpus.documents.filter(x => x.result_kind === 'paper').map(x => x.url.split('#')[0])).size, publications.length);
+const qas = corpus.documents.filter(x => x.category === 'Q&A' && x.result_kind === 'paper');
+assert(qas.length > 0 && qas.every(x => /#qa-\d+$/u.test(x.url)));
+// An exact reviewed question lands on that same answer, not the paper top.
+for (const qa of qas) {
+  const hits = search(qa.text.split('\n')[0]);
+  assert(hits.some(hit => hit.url === qa.url), qa.url);
+}
 assert(search('DCM-HF circulating biomarkers').some(x => x.result_kind === 'guide' && x.doi === ''));
 assert(search('10.1021/acs.jproteome.4c00522').every(x => x.result_kind === 'paper'));
 assert(search('complete discovery participant count').some(x => x.result_kind === 'guide' && x.limitation));
 assert(!corpus.documents.some(x => x.category === 'Official Abstract'));
-console.log('SEARCH PASS: official MiniSearch GPX4, MCC950, DOI, case/Unicode, title/journal, no result, limitations; 74 public records');
+console.log(`SEARCH PASS: official MiniSearch, DOI, Unicode, limitations, direct reviewed answer anchors; ${publications.length} public records`);

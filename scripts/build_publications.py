@@ -2588,15 +2588,18 @@ def build_site():
             )
     publications_url = absolute(config["site_url"], "publications.html")
     html_changed[research_guides.URL] = research_guides.build(ROOT)
-    question_rows = scholarly_discovery.question_records(public_items, {
+    question_contents = {
         norm_doi(c['doi']): c for c in deep_contents.values() if c
-    }, discovery_fields)
+    }
+    question_rows = scholarly_discovery.question_records(public_items, question_contents, discovery_fields)
+    from question_discovery import build_discovery
+    question_discovery = build_discovery(public_items, question_contents, discovery_fields, ROOT)
     question_url = absolute(config['site_url'], scholarly_discovery.QUESTION_PATH)
     html_changed[question_url] = write_public_html_if_changed(
         ROOT / scholarly_discovery.QUESTION_PATH,
-        with_ga4_tag(scholarly_discovery.render_questions(question_rows, config)))
+        with_ga4_tag(scholarly_discovery.render_questions(question_rows, config, question_discovery)))
     write_text_if_changed(ROOT / scholarly_discovery.QUESTION_JSON_PATH,
-                         json.dumps({'version': 1, 'questions': question_rows}, ensure_ascii=False, indent=2) + '\n')
+                         json.dumps({'version': 1, 'questions': question_rows, **question_discovery}, ensure_ascii=False, indent=2) + '\n')
     write_text_if_changed(
         ROOT / "assets/evidence-search.json",
         json.dumps(search_corpus(ROOT, public_items, {

@@ -1,0 +1,11 @@
+/* Reading and search controls, scoped to the evidence directory only. */
+.scientific-discovery .discovery-search{max-width:900px}
+.scientific-discovery #pubSearch{display:block;width:100%;max-width:100%;margin:12px 0;padding:14px 16px;border:1px solid var(--strong-line);border-radius:6px;background:var(--card);color:var(--text);font:inherit}
+.scientific-discovery #evidenceSearchStatus{color:var(--muted);font-size:.9rem}
+.scientific-discovery .discovery-questions,.scientific-discovery .discovery-concepts{margin:20px 0;border-top:1px solid var(--line);padding-top:14px}
+.scientific-discovery summary{cursor:pointer;min-height:44px;padding:8px 0;font-weight:600;overflow-wrap:anywhere}
+.scientific-discovery .discovery-questions li{margin:14px 0}
+.scientific-discovery .discovery-questions small{display:block;color:var(--muted)}
+.scientific-discovery .discovery-concepts ul{display:flex;flex-wrap:wrap;gap:8px 24px;padding-left:20px}
+.scientific-discovery #evidenceResults,.scientific-discovery #other-public-works{overflow-wrap:anywhere}
+.scientific-discovery code{overflow-wrap:anywhere}

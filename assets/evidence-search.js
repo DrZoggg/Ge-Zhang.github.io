@@ -12,6 +12,9 @@
     const index = new MiniSearch({fields: ['text'], storeFields: ['title', 'doi', 'url', 'category', 'text', 'limitation', 'result_kind'],
       processTerm: normalize, searchOptions: {fuzzy: false, prefix: false, combineWith: 'AND'}});
     index.addAll(data.documents);
+    const exactQuestions = new Map(data.documents
+      .filter(d => d.result_kind === 'paper' && d.category === 'Q&A')
+      .map(d => [normalize(d.text.split('\n')[0]), d]));
     const papers = new Map();
     data.documents.filter(d => d.result_kind === 'paper' && d.doi).forEach(d => {
       const paper = papers.get(d.doi) || {doi:d.doi, title:d.title, url:d.url, fields:{}, sections:[]};
@@ -28,7 +31,7 @@
         const infoCoverage = informative / Math.max(1, groups.filter(g => !fallbackGeneric.has(g.raw)).length);
         if (infoCoverage < .65 || score < 12 || !fields.length || fields.every(f => f.toLowerCase().includes('limitation') || f.toLowerCase().includes('scope'))) return;
         const section = paper.sections.find(s => s.category === fields[0]) || paper.sections[0];
-        rows.push({...section, doi:paper.doi, title:paper.title, url:paper.url, score, matchGroup:'broader', limitation:Boolean(section.limitation)});
+        rows.push({...section, doi:paper.doi, title:paper.title, url:section.url, score, matchGroup:'broader', limitation:Boolean(section.limitation)});
       });
       return rows.sort((a,b) => b.score - a.score).slice(0,3);
     };
@@ -42,7 +45,10 @@
       const value = normalize(query); if (!value) return envelope([], []);
       const doi = doiOf(value);
       if (/^10\.\d{4,9}\//u.test(doi)) { const exact = data.documents.find(d => normalize(d.doi) === doi); return envelope(exact ? [{...exact, category:'Exact DOI', score:1, matchGroup:'best'}] : [], []); }
-      const stageA = dedupe(index.search(value));
+      // An unchanged reviewed question must resolve to its own answer before
+      // paper-level deduplication can select a different matched section.
+      const exactQuestion = exactQuestions.get(value);
+      const stageA = dedupe([...(exactQuestion ? [{...exactQuestion, score:1}] : []), ...index.search(value)]);
       const strongA = stageA.length > 0;
       if (strongA) return envelope(stageA.map(h => ({...h, matchGroup:'best'})), []);
       return envelope([], fallback(value));
@@ -54,18 +60,20 @@
   if (!box) return;
   const results = document.getElementById('evidenceResults');
   const status = document.getElementById('evidenceSearchStatus');
+  // Resolve from this existing script so the same search works at / and /research/.
+  const assetsBase = new URL('.', document.currentScript.src);
   let loading;
   function load() {
     if (!loading) loading = Promise.all([
       new Promise((resolve, reject) => {
         if (root.MiniSearch) return resolve(root.MiniSearch);
         const script = document.createElement('script');
-        script.src = 'assets/vendor/minisearch-7.2.0/minisearch.js';
+        script.src = new URL('vendor/minisearch-7.2.0/minisearch.js', assetsBase).href;
         script.onload = () => root.MiniSearch ? resolve(root.MiniSearch) : reject(Error('Missing MiniSearch'));
         script.onerror = reject;
         document.head.append(script);
       }),
-      fetch('assets/evidence-search.json').then(r => { if (!r.ok) throw Error('Corpus unavailable'); return r.json(); })
+      fetch(new URL('evidence-search.json', assetsBase)).then(r => { if (!r.ok) throw Error('Corpus unavailable'); return r.json(); })
     ]).then(([MiniSearch, corpus]) => createEngine(MiniSearch, corpus)).catch(error => { loading = null; throw error; });
     return loading;
   }
@@ -87,7 +95,7 @@
       groups.forEach(([label, papers]) => { if (!papers.length) return; results.append(node('h2', label)); papers.forEach(hit => {
         const card = node('article', ''); card.className = 'evidence-search-result';
         const heading = node('h3', ''); const link = node('a', hit.title); link.href = hit.url; heading.append(link); card.append(heading);
-        card.append(node('p', hit.result_kind === 'guide' ? 'Guide — selected evidence comparison; not a research article.' : 'Paper'));
+        card.append(node('p', hit.result_kind === 'guide' ? 'Guide — selected evidence comparison; not a research article.' : 'Research record'));
         card.append(node('p', (hit.limitation ? 'LIMITATION / DOES NOT ESTABLISH — not an affirmative conclusion. ' : '') + 'Matched section: ' + hit.category));
         // Preserve full matched field; do not turn a truncated denial into a positive snippet.
         const excerpt = node('p', hit.text); excerpt.className = 'evidence-search-excerpt'; card.append(excerpt);

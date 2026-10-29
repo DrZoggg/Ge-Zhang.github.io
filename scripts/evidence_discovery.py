@@ -108,8 +108,8 @@ def search_corpus(root, items, contents):
         for f in c['key_findings']:
             add('Key argument' if argument else 'Key finding',
                 [f['claim'], f['context'], *[x[k] for x in f['evidence'] for k in ('label','value')], f['source_locator']], f['id'].lower())
-        for q in c['qa']:
-            add('Q&A', [q['question'], q['answer']])
+        for position, q in enumerate(c['qa'], 1):
+            add('Q&A', [q['question'], q['answer']], f'qa-{position}')
         for row in c.get('citation_layer', {}).get('citation_use_cases', []):
             add('Citation use case', [row['query'], row['supported_scope']], row['id'].lower())
         add('Evidence scope — supports', c['evidence_scope']['supports'], 'ev-scope')
