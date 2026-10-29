@@ -20,6 +20,20 @@ anchor. Scope is one existing limitation, not the complete scope: consult the
 linked paper before interpreting findings. This is a selective research-program
 index, not a systematic review, a field-wide answer engine or an evidence ranking.
 
+The optional `answer_preview` field is an additive, at-most-six-entry pilot,
+selected by `answer_previews` in the same `data/question_index.json` controller.
+Only directly selected Gold Q&A entries qualify; navigation mappings without an
+exact Q&A selector are rejected rather than assigned a guessed answer. The
+complete answer is copied verbatim, alongside all `does_not_establish` limits,
+resolved `evidence_refs`, original-source locators and links to the existing
+paper evidence anchors. No answer, denominator or conclusion is synthesized.
+The source and scope JSON pointers identify the unchanged Gold file. The Gold
+content SHA-256 uses UTF-8 text with LF line endings for portability; the answer
+SHA-256 hashes the exact UTF-8 answer string. Existing fields, routes and order
+remain unchanged, so the JSON contract stays at version 1. The answer and scope
+are ordinary crawlable HTML, not excluded UI-only text, and the Questions
+page's sitemap lastmod follows the existing substantive-content change rule.
+
 `data/scholarly_identifiers.json` stores DOI-matched verified stable IDs and their
 public API provenance. DOI is primary. PMID/PMCID conflicts with existing verified
 citation metadata are rejected. Only publisher/PubMed/PMC representations of the

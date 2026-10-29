@@ -1,5 +1,6 @@
 """Static discovery interfaces derived only from approved publication sources."""
 import html
+import hashlib
 import json
 import re
 from datetime import date
@@ -138,7 +139,12 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
 
 def question_records(items, contents, fields, root=ROOT):
     """One context-bound, exact reviewed question per V2; never synthesize answers."""
-    selection = json.loads((root / 'data/question_index.json').read_text(encoding='utf-8'))['papers']
+    settings = json.loads((root / 'data/question_index.json').read_text(encoding='utf-8'))
+    selection = settings['papers']
+    previews = settings.get('answer_previews', [])
+    if (not isinstance(previews, list) or len(previews) > 6
+            or len(previews) != len(set(previews)) or set(previews) - set(selection)):
+        raise ValueError('Reviewed answer preview pilot must select at most six distinct question routes')
     navigation = json.loads((root / 'data/evidence_navigation.json').read_text(encoding='utf-8'))
     mapping = {r['doi']: (i, r) for i, r in enumerate(navigation)}
     eligible = {p['doi'] for p in items if contents.get(p.get('doi', '').lower(), {}).get('version') == 2}
@@ -160,7 +166,7 @@ def question_records(items, contents, fields, root=ROOT):
             source = f'data/deep_geo/{item["slug"]}.json#/qa/{i-1}/question'
         else:
             raise ValueError('Invalid reviewed question selector: ' + item['doi'])
-        rows.append({
+        row = {
                 'id': item['slug'], 'question': question,
                 'title': item['title'], 'doi': item['doi'], 'paper_url': item['paper_url'],
                 'answer_url': item['paper_url'] + '#' + anchor,
@@ -178,7 +184,35 @@ def question_records(items, contents, fields, root=ROOT):
                     'review_topics': content['discovery_layer']['review_topics'],
                     'discovery_url': item['paper_url'] + '#paper-discovery'}
                    if content.get('discovery_layer') else {}),
-        })
+        }
+        if item['doi'] in previews:
+            # Navigation questions are not interchangeable with a Gold Q&A.
+            # Only an exact, already-selected Q&A is eligible for this pilot.
+            if 'qa_index' not in choice:
+                raise ValueError('Answer preview requires an exact reviewed Q&A selector: ' + item['doi'])
+            qa = content['qa'][choice['qa_index'] - 1]
+            source_path = f'data/deep_geo/{item["slug"]}.json'
+            findings = {f['id']: (n, f) for n, f in enumerate(content['key_findings'])}
+            refs = list(qa.get('evidence_refs', []))
+            if not refs or any(ref not in findings for ref in refs):
+                raise ValueError('Answer preview lacks resolved reviewed evidence: ' + item['doi'])
+            row['answer_preview'] = {
+                'answer': qa['answer'],
+                'source': source_path + f'#/qa/{choice["qa_index"] - 1}/answer',
+                'source_content_sha256': hashlib.sha256(
+                    (root / source_path).read_text(encoding='utf-8').encode('utf-8')).hexdigest(),
+                'answer_sha256': hashlib.sha256(qa['answer'].encode('utf-8')).hexdigest(),
+                'evidence_refs': refs,
+                'evidence_sources': [{
+                    'id': ref,
+                    'source': source_path + f'#/key_findings/{findings[ref][0]}',
+                    'source_locator': findings[ref][1]['source_locator'],
+                    'evidence_url': item['paper_url'] + '#' + ref.lower(),
+                } for ref in refs],
+                'does_not_establish': list(content['evidence_scope']['does_not_establish']),
+                'scope_source': source_path + '#/evidence_scope/does_not_establish',
+            }
+        rows.append(row)
     return rows
 
 
@@ -195,12 +229,33 @@ def render_questions(rows, config):
                          + '</p><p><strong>Review topics:</strong> ' + escape('; '.join(row['review_topics']))
                          + '</p><p><a href="' + escape(row['discovery_url'], quote=True)
                          + '">Research &amp; review context</a></p>')
+        preview = row.get('answer_preview')
+        answer = ''
+        scope = f'<p><strong>Does not establish:</strong> {escape(row["evidence_scope"])}</p>'
+        if preview:
+            evidence = ''.join(
+                '<li><a href="' + escape(ref['evidence_url'], quote=True) + '">'
+                + escape(ref['id']) + '</a>: ' + escape(ref['source_locator']) + '</li>'
+                for ref in preview['evidence_sources'])
+            answer = ('<div class="reviewed-answer-preview"><p><strong>Reviewed answer:</strong> '
+                      + '<span data-reviewed-answer="' + escape(row['id'], quote=True) + '">'
+                      + escape(preview['answer']) + '</span></p><p><a href="'
+                      + escape(row['answer_url'], quote=True) + '">Read the paper evidence</a></p>'
+                      + '<p><strong>Evidence and original-source locators:</strong></p><ul>'
+                      + evidence + '</ul><details><summary>Reviewed answer provenance</summary>'
+                      + '<p>Gold source: <code>' + escape(preview['source']) + '</code></p>'
+                      + '<p>Gold content SHA-256: <code>' + escape(preview['source_content_sha256'])
+                      + '</code></p><p>Answer SHA-256: <code>' + escape(preview['answer_sha256'])
+                      + '</code></p></details></div>')
+            # Keep the existing first limitation and expose every remaining one.
+            scope += '<ul>' + ''.join('<li>' + escape(limit) + '</li>'
+                                     for limit in preview['does_not_establish'][1:]) + '</ul>'
         cards.append(
             f'<article class="card" id="{escape(row["id"], quote=True)}">'
             + context +
             f'<h2><a href="{escape(row["answer_url"], quote=True)}">{escape(row["question"])}</a></h2>'
             f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row.get("publication_type") or row["profile_type"].replace("_", " "))}</p>'
-            f'<p><strong>Does not establish:</strong> {escape(row["evidence_scope"])}</p>'
+            + answer + scope +
             f'<p class="links"><a href="https://doi.org/{escape(row["doi"], quote=True)}">Original article DOI</a>'
             f' {citation}</p></article>')
     url = config['site_url'] + '/' + QUESTION_PATH
@@ -214,6 +269,7 @@ def render_questions(rows, config):
 <main class="wrap"><section><div class="eyebrow">Research discovery</div><h1>Scientific questions</h1>
 <p class="lead">Questions addressed by publications in this research program</p>
 <p>This selective index is not an exhaustive or systematic review of the field. Questions are reproduced from reviewed paper Q&amp;A or existing reviewed question mappings. Read each question in its stated paper context. Follow it to the existing answer or evidence section and full evidence scope; the original article remains the formal citation source.</p>
+<p>Selected entries include an unchanged reviewed answer with its source locators and complete stated limitations. Other entries retain their direct question-to-paper route.</p>
 <p><a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
 <div class="question-index">{''.join(cards)}</div></main>
 <footer><div class="wrap">{escape(config['researcher_name'])} · Academic evidence hub</div></footer></body></html>
@@ -256,5 +312,18 @@ def validate_generated(items, config, root=ROOT):
         target = (root / 'papers' / (slug + '.html')).read_text(encoding='utf-8')
         if target.count('id="'+anchor+'"') != 1 or html.escape(row['answer_url'],quote=True) not in page:
             raise ValueError('Missing or ambiguous scientific question route')
+        if row.get('answer_preview'):
+            preview = row['answer_preview']
+            card = re.search(r'<article class="card" id="' + re.escape(slug) + r'">(.*?)</article>', page, re.S)
+            if (not card or html.escape(preview['answer']) not in card.group(1)
+                    or any(html.escape(limit) not in card.group(1) for limit in preview['does_not_establish'])
+                    or preview['answer_sha256'] not in card.group(1)
+                    or preview['source_content_sha256'] not in card.group(1)):
+                raise ValueError('Reviewed answer or complete limitations differ from Gold')
+            for ref in preview['evidence_sources']:
+                if (target.count('id="' + ref['id'].lower() + '"') != 1
+                        or html.escape(ref['evidence_url'], quote=True) not in card.group(1)
+                        or html.escape(ref['source_locator']) not in card.group(1)):
+                    raise ValueError('Reviewed answer evidence reference is not resolvable')
     return {'question_routes':len(expected),'identity_records':len(identities),
             'reviewed_backlink_edges':sum(len(rows) for rows in backlinks.values())}
