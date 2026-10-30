@@ -18,12 +18,17 @@ async function run() {
     assert.deepEqual(packet.evidence_scope,work.evidence_scope);
     assert.deepEqual(packet.limitations,work.limitations);
     assert.deepEqual(packet.provenance,work.provenance);
+    assert.deepEqual(packet.study_profile,work.study_profile);
+    assert.deepEqual(packet.model_profile,work.model_profile);
+    assert.equal(packet.source_pointers.study_profile_source,work.study_profile_source);
+    assert.equal(packet.source_pointers.model_profile_source,work.model_profile_source);
     assert.equal(packet.links.answer_url,question.answer_url);
     assert.equal(packet.links.original_doi_url,work.doi_url);
     assert.equal(packet.content_version.answer_sha256,question.answer_sha256);
     assert(packet.content_version.answer_sha256_verified);
     assert.deepEqual(packet.supporting_evidence.map(ref=>ref.id),question.evidence_refs);
     assert(packet.supporting_evidence.every(ref=>typeof ref.source_locator==='string'&&ref.source_locator));
+    assert.deepEqual(packet.supporting_evidence,work.key_findings.filter(ref=>question.evidence_refs.includes(ref.id)));
     if (question.evidence_refs_status==='not_encoded') {
       nonEncoded++;assert.equal(packet.evidence_refs_status,'not_encoded');assert.deepEqual(packet.supporting_evidence,[]);
     }
@@ -37,6 +42,7 @@ async function run() {
     assert.deepEqual(packet.evidence_scope,work.evidence_scope);
     assert.deepEqual(packet.limitations,work.limitations);
     if (work.evidence_status!=='reviewed_v2') {
+      assert.equal(packet.study_profile,null);assert.equal(packet.model_profile,null);
       assert.equal(packet.available_scope,work.scope || null);
       assert.deepEqual(packet.supporting_evidence,[]);
       assert.deepEqual(packet.available_questions,[]);
@@ -74,6 +80,28 @@ async function run() {
   assert.throws(()=>createClient(catalog,duplicateRoute),/duplicate/);
   const mixedIdentity=structuredClone(loaded.search);mixedIdentity.documents[qaDocIndex].doi='10.0000/wrong';
   assert.throws(()=>createClient(catalog,mixedIdentity),/do not match/);
+  const missingProfile=structuredClone(catalog);delete missingProfile.works.find(w=>w.evidence_status==='reviewed_v2').study_profile;
+  assert.throws(()=>createClient(missingProfile,loaded.search),/source-bound profile/);
+  const staleFinding=structuredClone(catalog);
+  staleFinding.works.find(w=>w.id==='aihflevel').key_findings[0].evidence[0].value='0.999';
+  assert.throws(()=>createClient(staleFinding,loaded.search),/work context do not match/);
+  const staleScope=structuredClone(catalog);
+  staleScope.works.find(w=>w.id==='aihflevel').evidence_scope.does_not_establish[0]='A stale limitation';
+  assert.throws(()=>createClient(staleScope,loaded.search),/work context do not match/);
+  // Denominators and study design are source context, not counts to add up.
+  const hf=client.fetch('aihflevel--qa-1');
+  assert.equal(hf.study_profile.unique_total_n,1736);
+  assert.equal(hf.study_profile.cohorts.find(c=>c.name==='CRCCD Discovery').subset_of,'CRCCD Meta');
+  assert.equal(hf.model_profile.final_predictor_count,12);
+  assert.equal(hf.model_profile.final_predictors.length,12);
+  const plaque=client.fetch('apvs--qa-7');
+  assert(plaque.study_profile.counting_note.includes('not combined'));
+  assert(plaque.study_profile.scale_metrics.some(row=>row.value.includes('43,964 cells')));
+  const sameStudy=client.fetch('aihflevel--qa-3');
+  assert.equal(hf.evidence_unit.id,sameStudy.evidence_unit.id);
+  const absentRef=client.fetch('aihflevel--qa-6');
+  assert.equal(absentRef.evidence_refs_status,'not_encoded');assert.deepEqual(absentRef.supporting_evidence,[]);
+  assert.deepEqual(absentRef.model_profile,hf.model_profile);
   assert.equal(digest('{\r\n}'),digest('{\n}'));
   const calls=[];
   const fake=async(url,options)=>{

@@ -72,9 +72,13 @@ Do not expand the scientific corpus merely to make benchmark phrases match.
 `fetch` returns one source-bound packet including:
 
 - Exact reviewed question/answer and stable ID, or null for a work-level fetch.
-- Title, DOI, publication type, year, journal, authors and the reviewed profile.
+- Title, DOI, publication type, year, journal and authors.
+- The complete source `study_profile` and optional `model_profile`, copied without
+  flattening cohort hierarchies, sample/cell units, counting notes or endpoints.
 - Complete work-level evidence scope and every limitation, without truncation.
-- Encoded finding references, exact original-source locators and evidence URLs.
+- Encoded finding references with the exact claim, context, labeled measurements,
+  original-source locator and evidence URL. Work fetches retain all findings;
+  question fetches retain only their explicitly encoded supporting findings.
 - Original DOI/publisher, canonical evidence page, answer fragment, Markdown and
   existing BibTeX/RIS/CSL links. Missing exports and identifiers remain null.
 - Source pointers, provenance, dataset hashes, available HTTP version metadata,
@@ -87,6 +91,19 @@ that state and does not manufacture question-level findings. Limited evidence
 and patent records do not acquire invented answers, a DOI, or clinical validation.
 An answer hash confirms text consistency with the export, not scientific truth
 or independent authentication of the publisher's full text.
+
+Work-level profiles remain context even when a question is `not_encoded`;
+their presence does not manufacture a question-to-finding link. Do not add a
+parent cohort to its nested subsets, sum cells/tissues into patients, rank AUCs
+across different endpoints, or turn experimental conditions into clinical tests.
+
+The client rejects an older export lacking complete reviewed profiles/findings.
+It checks overlapping answers, findings and scope against the search corpus so
+a stale search excerpt cannot silently join changed scientific context. Profiles
+exist in the questions snapshot only; they are not reconstructed from search or
+independently checked against a newly fetched Gold file. Dataset/Gold hashes are
+version evidence, not scientific authentication. Refresh both exports on a
+version mismatch instead of ignoring the error.
 
 ## Add to a writing workflow without replacing its bibliography
 

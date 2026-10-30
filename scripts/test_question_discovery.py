@@ -56,12 +56,17 @@ class QuestionDiscoveryTests(unittest.TestCase):
             self.assertEqual(work['evidence_scope'], gold['evidence_scope'])
             self.assertEqual(work['limitations'], gold['limitations'])
             self.assertEqual(work['provenance'], gold['provenance'])
+            self.assertEqual(work['study_profile'], gold['study_profile'])
+            self.assertEqual(work['study_profile_source'], source + '#/study_profile')
+            self.assertEqual(work['model_profile'], gold.get('model_profile'))
+            self.assertEqual(work['model_profile_source'], source + '#/model_profile' if 'model_profile' in gold else None)
             self.assertEqual(work['gold_content_sha256'], hashlib.sha256((ROOT / source).read_text(encoding='utf-8').encode('utf-8')).hexdigest())
             # Gold files are in the public repository, not in the Pages artifact.
             self.assertTrue(work['gold_source_url'].startswith('https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/'))
             self.assertFalse(work['gold_source_url'].startswith('https://drgezhang.com/data/'))
             document_by_id[item['slug']] = Document((ROOT / 'papers' / (item['slug'] + '.html')).read_text(encoding='utf-8'))
             for index, ref in enumerate(work['key_findings']):
+                self.assertEqual({key: ref[key] for key in gold['key_findings'][index]}, gold['key_findings'][index])
                 self.assertEqual(ref['id'], gold['key_findings'][index]['id'])
                 self.assertEqual(ref['source_locator'], gold['key_findings'][index]['source_locator'])
                 self.assertEqual(ref['source'], source + '#/key_findings/' + str(index))
