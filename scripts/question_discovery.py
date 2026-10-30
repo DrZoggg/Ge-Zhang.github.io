@@ -115,6 +115,10 @@ def build_discovery(items, contents, fields, root=ROOT):
                 'evidence_scope': copy.deepcopy(scope),
                 'limitations': copy.deepcopy(content['limitations']),
                 'profile_type': content['study_profile']['profile_type'],
+                'study_profile': copy.deepcopy(content['study_profile']),
+                'study_profile_source': source + '#/study_profile',
+                'model_profile': copy.deepcopy(content.get('model_profile')),
+                'model_profile_source': source + '#/model_profile' if 'model_profile' in content else None,
                 'narrative_genre': content['study_profile'].get('narrative_genre'),
                 'gold_source': source,
                 'gold_source_url': REPOSITORY_SOURCE + source,
@@ -132,6 +136,7 @@ def build_discovery(items, contents, fields, root=ROOT):
                     raise ValueError('Duplicate reviewed finding ID: ' + slug)
                 locator = _text(finding['source_locator'], slug + '/' + ref + '/locator')
                 findings[ref] = {
+                    **copy.deepcopy(finding),
                     'id': ref,
                     'source': source + '#/key_findings/' + str(position),
                     'source_locator': locator,

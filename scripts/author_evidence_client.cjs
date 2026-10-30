@@ -86,6 +86,14 @@ function createClient(questions, searchCorpus, retrieval = {}) {
     if (work.evidence_status === 'reviewed_v2' && (!work.evidence_scope || !Array.isArray(work.evidence_scope.does_not_establish))) {
       throw Error('Reviewed work lacks complete evidence scope');
     }
+    if (work.evidence_status === 'reviewed_v2' && (!work.study_profile
+        || work.study_profile.profile_type !== work.profile_type
+        || work.study_profile_source !== work.gold_source + '#/study_profile'
+        || (work.model_profile && work.model_profile_source !== work.gold_source + '#/model_profile')
+        || work.key_findings.some(ref => typeof ref.claim !== 'string'
+          || typeof ref.context !== 'string' || !Array.isArray(ref.evidence)))) {
+      throw Error('Reviewed work lacks complete source-bound profile or findings; refresh the public export');
+    }
     if (!work.paper_url || workByUrl.has(work.paper_url)) throw Error('Invalid or duplicate canonical work URL');
     works.set(work.id, work); workByUrl.set(work.paper_url, work);
   }
@@ -122,6 +130,28 @@ function createClient(questions, searchCorpus, retrieval = {}) {
   if (seenQaDocuments.size !== qas.size || [...qaByUrl.keys()].some(url => !seenQaDocuments.has(url))) {
     throw Error('Search corpus and reviewed Q&A export do not match: missing reviewed answer route');
   }
+  // Compare the shared scientific context as well as answers. Profiles are
+  // carried only by the single questions snapshot; they are not joined from
+  // search excerpts. No source or denominator is inferred from nearest text.
+  for (const work of works.values()) {
+    if (work.evidence_status !== 'reviewed_v2') continue;
+    const shared = [
+      ...work.key_findings.map(ref => ({url:ref.evidence_url,
+        categories:['Key finding','Key argument'],
+        text:[ref.claim,ref.context,...ref.evidence.flatMap(row => [row.label,row.value]),ref.source_locator].filter(Boolean).join('\n')})),
+      {url:work.paper_url + '#ev-scope',categories:['Evidence scope — supports'],text:work.evidence_scope.supports.join('\n')},
+      {url:work.paper_url + '#ev-scope',categories:['Limitations — does not establish'],text:work.evidence_scope.does_not_establish.join('\n')},
+      {url:work.paper_url + '#ev-scope',categories:['Limitations'],text:work.limitations.join('\n')}
+    ];
+    for (const expected of shared) {
+      const matches = searchCorpus.documents.filter(doc => doc.result_kind === 'paper'
+        && doc.url === expected.url && expected.categories.includes(doc.category));
+      if (matches.length !== 1 || matches[0].text !== expected.text
+          || matches[0].doi !== work.doi || matches[0].title !== work.title) {
+        throw Error('Search corpus and reviewed work context do not match: stale or missing finding/scope');
+      }
+    }
+  }
   const engine = createEngine(MiniSearch, searchCorpus);
   function evidenceUnit(work) {
     return {id:work.doi ? 'doi:' + work.doi : 'site_record:' + work.id,
@@ -145,6 +175,8 @@ function createClient(questions, searchCorpus, retrieval = {}) {
       study_type:{publication_type:work.type, profile_type:work.profile_type || null,
         narrative_genre:work.narrative_genre || null, scientific_role:work.scientific_role || null,
         evidence_position:work.evidence_position || null},
+      study_profile:work.study_profile || null,
+      model_profile:work.model_profile || null,
       evidence_scope:work.evidence_scope, available_scope:work.scope || null,
       limitations:work.limitations,
       evidence_refs:qa ? qa.evidence_refs : [], evidence_refs_status:qa ? qa.evidence_refs_status : 'not_applicable',
@@ -157,6 +189,8 @@ function createClient(questions, searchCorpus, retrieval = {}) {
         gold_source_url:work.gold_source_url || null},
       provenance:work.provenance || null,
       source_pointers:{gold_source:work.gold_source || null, scope_source:work.scope_source || null,
+        study_profile_source:work.study_profile_source || null,
+        model_profile_source:work.model_profile_source || null,
         question_source:qa ? qa.question_source : null, answer_source:qa ? qa.answer_source : null},
       content_version:{...retrieval, gold_content_sha256_from_export:work.gold_content_sha256 || null,
         answer_sha256:qa ? qa.answer_sha256 : null, answer_sha256_verified:Boolean(qa)},

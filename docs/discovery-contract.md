@@ -42,7 +42,12 @@ not replaced by the full Q&A list; homepage consumers still use that legacy list
 `works` is a normalized context record for every current public work, in publication
 order. It identifies the existing paper and Markdown URLs, DOI and citation exports
 (null when unavailable), source evidence status, exact reviewed fields and concepts,
-complete evidence scope and limitations, and source-located findings. Fields and
+complete evidence scope and limitations, and source-located findings. The additive
+`study_profile` and optional `model_profile` preserve the entire reviewed object,
+including cohort relationships, denominators, counting notes and endpoints, with
+their source JSON pointers. Findings retain exact claim, context and labeled
+measurements as well as locators. Missing model profiles are null. These fields
+are work context and do not fill absent question-level evidence refs. Fields and
 concepts describe paper context, not a claim that each Q&A validates every concept.
 Limited notes and the patent reuse their existing scope without synthesizing Q&A.
 Gold source pointers refer to the public source repository; `/data/` is not deployed
