@@ -33,4 +33,21 @@ assert(search('complete discovery participant count').some(x => x.result_kind ==
 assert(search('How many independent aortic single cell libraries came from five Kif13b mice?')
   .some(x => x.url === 'https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#qa-3'));
 assert(!corpus.documents.some(x => x.category === 'Official Abstract'));
+// A broad fallback must retain a rare explicit query term. Duplicating that
+// term in many sections of the same work must not make it appear common.
+const fixture = (id, doi, text) => ({id, doi, text, title:text, url:'https://example.test/' + doi,
+  category:'Title', result_kind:'paper', limitation:false});
+const guarded = createEngine(MiniSearch, {documents:[
+  ...Array.from({length:4}, (_, i) => fixture('a' + i, '10.1000/a', 'cedar widget calibration field specimen')),
+  fixture('b', '10.1000/b', 'widget calibration field specimen'),
+  fixture('c', '10.1000/c', 'unrelated control material')
+]});
+const guardedHits = guarded('cedar widget calibration field specimen unusual');
+assert(guardedHits.broaderRelated.some(hit => hit.doi === '10.1000/a'));
+assert(!guardedHits.some(hit => hit.doi === '10.1000/b'));
+assert.equal(guarded('10.1000/b')[0].doi, '10.1000/b');
+assert(guarded('widget calibration').bestMatches.some(hit => hit.doi === '10.1000/b'));
+// A disclosed diagnostic negative is a regression, not a new held-out score.
+const drugPremise = search('How large is the clinical treatment benefit of Kenpaullone in patients with atherosclerosis?');
+assert(!drugPremise.some(hit => hit.doi === '10.1002/mdr2.70052'));
 console.log(`SEARCH PASS: official MiniSearch, DOI, Unicode, limitations, direct reviewed answer anchors; ${publications.length} public records`);
