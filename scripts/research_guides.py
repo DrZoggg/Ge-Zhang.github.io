@@ -15,6 +15,7 @@ SLUG = 'dcm-hf-circulating-biomarkers'
 URL = 'https://drgezhang.com/research/' + SLUG + '.html'
 DATA = 'data/research_guides/' + SLUG + '.json'
 CONTRACT_SHA256 = '682e83660b7c8cbbb4d70c409c935d2b8c765272cdf1c6a26255e4d190551c45'
+GUIDE_READING_STYLE = '<style>body{font:17px/1.65 system-ui,sans-serif;color:#172b3a;background:#fafcfd;margin:0}main{max-width:1120px;margin:auto;padding:24px;overflow-wrap:anywhere}h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2}h2{margin-top:2rem}a{color:#075d93}aside{padding:4px 20px;border-left:4px solid #52738b;background:#eef3f6}.eyebrow{color:#486275}.comparison{max-width:100%;overflow-x:auto;margin:2rem 0}table{border-collapse:collapse;min-width:900px;width:100%;font-size:15px}caption{text-align:left;font-weight:bold;padding:12px}th,td{border:1px solid #bdcdd8;padding:14px;vertical-align:top;text-align:left}thead{background:#e7eff5}th[scope=row]{min-width:170px}td{min-width:150px}article{margin:2rem 0}li{margin:.4rem 0}@media(max-width:480px){main{padding:16px}}</style>'
 FIELDS = [('discovery', 'Material / discovery'), ('follow_up', 'Follow-up'),
           ('candidates', 'Candidates'), ('additional', 'Additional evaluation'),
           ('use', 'Appropriate use'), ('boundary', 'Boundary')]
@@ -130,11 +131,11 @@ def render(data, sources):
     for prop, value in [('og:type', 'website'), ('og:title', data['title']), ('og:description', data['scope']), ('og:url', URL)]:
         page += '<meta property="' + prop + '" content="' + esc(value, quote=True) + '">\n'
     page += '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
-    page += '<style>body{font:17px/1.65 system-ui,sans-serif;color:#172b3a;background:#fafcfd;margin:0}main{max-width:1120px;margin:auto;padding:24px;overflow-wrap:anywhere}h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2}h2{margin-top:2rem}a{color:#075d93}aside{padding:4px 20px;border-left:4px solid #52738b;background:#eef3f6}.eyebrow{color:#486275}.comparison{max-width:100%;overflow-x:auto;margin:2rem 0}table{border-collapse:collapse;min-width:900px;width:100%;font-size:15px}caption{text-align:left;font-weight:bold;padding:12px}th,td{border:1px solid #bdcdd8;padding:14px;vertical-align:top;text-align:left}thead{background:#e7eff5}th[scope=row]{min-width:170px}td{min-width:150px}article{margin:2rem 0}li{margin:.4rem 0}@media(max-width:480px){main{padding:16px}}</style></head><body><main>\n'
+    page += GUIDE_READING_STYLE + '</head><body><main>\n'
     return with_theme_shell(page + '\n'.join(body) + '\n</main></body></html>\n', guide=True), '\n\n'.join(md) + '\n'
 
 
-def validate_page(page):
+def validate_page(page, expected_url=URL):
     from html.parser import HTMLParser
     class Identity(HTMLParser):
         def __init__(self):
@@ -145,7 +146,7 @@ def validate_page(page):
             require(not (tag == 'meta' and a.get('name', '').lower() == 'citation_doi'), 'Guide cannot have citation_doi')
             if tag == 'link' and a.get('rel') == 'canonical': self.canonical.append(a.get('href'))
     p = Identity(); p.feed(page)
-    require(p.h1 == 1 and p.canonical == [URL], 'Guide identity/canonical mismatch')
+    require(p.h1 == 1 and p.canonical == [expected_url], 'Guide identity/canonical mismatch')
     require('ScholarlyArticle' not in page and 'FAQPage' not in page, 'Guide is WebPage only')
 
 
@@ -177,7 +178,8 @@ def validate(root=ROOT):
 
 def navigation():
     data = load()
-    return '<section id="selected-evidence-guides"><h2>Selected evidence guides</h2><p><a href="' + URL + '">' + html.escape(data['title']) + '</a></p><p>' + html.escape(data['scope']) + '</p></section>'
+    extra = ''.join('<p><a href="' + comparison_url(d) + '">' + html.escape(d['title']) + '</a></p><p>' + html.escape(d['scope']) + '</p>' for d in load_comparisons())
+    return '<section id="selected-evidence-guides"><h2>Selected evidence guides</h2><p><a href="' + URL + '">' + html.escape(data['title']) + '</a></p><p>' + html.escape(data['scope']) + '</p>' + extra + '</section>'
 
 
 def search_documents(root, start):
@@ -203,6 +205,160 @@ def search_documents(root, start):
     return docs
 
 
+# Extractive comparisons reuse this guide pipeline. The original frozen guide
+# and its contract above remain unchanged; each new selection is reviewed alone.
+COMPARISONS = {'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781'}
+
+
+def load_comparisons(root=ROOT):
+    result = []
+    for slug, contract in COMPARISONS.items():
+        data = json.loads((root / 'data/research_guides' / (slug + '.json')).read_text(encoding='utf-8'))
+        require(data['slug'] == slug and fingerprint(data) == contract,
+                'Comparison selection changed: independent review required')
+        result.append(data)
+    return result
+
+
+def comparison_url(data):
+    return 'https://drgezhang.com/research/' + data['slug'] + '.html'
+
+
+def urls(root=ROOT):
+    return [URL] + [comparison_url(d) for d in load_comparisons(root)]
+
+
+def comparison_packet(data, root=ROOT):
+    require(data['slug'] in COMPARISONS and fingerprint(data) == COMPARISONS[data['slug']],
+            'Comparison contract changed: independent review required')
+    master = json.loads((root / 'data/publications_master.json').read_text(encoding='utf-8'))
+    public = {p.get('doi', '').lower(): p for p in master if not is_withdrawn(p)}
+    require(not any(p.get('slug') == data['slug'] or p.get('title') == data['title'] for p in master),
+            'Comparison must not enter publication master')
+    studies = []
+    for row in data['studies']:
+        path = root / row['source_json']
+        require(path.resolve().is_relative_to((root / 'data/deep_geo').resolve()), 'Unsafe comparison source path')
+        c = json.loads(path.read_text(encoding='utf-8'))
+        require(c['doi'] == row['source_doi'] and c['version'] == 2 and c['doi'] in public,
+                'Comparison source identity/version mismatch')
+        require(fingerprint(scientific_content(c)) == row['source_fingerprint'],
+                'Comparison scientific source changed: re-review required')
+        p = public[c['doi']]
+        require(p['slug'] == row['id'], 'Comparison source slug mismatch')
+        url = 'https://drgezhang.com/papers/' + p['slug'] + '.html'
+        page = (root / 'papers' / (p['slug'] + '.html')).read_text(encoding='utf-8')
+        findings = {f['id']: f for f in c['key_findings']}
+        selected = []
+        for index in row['qa_indices']:
+            require(isinstance(index, int) and 1 <= index <= len(c['qa']), 'Invalid reviewed question index')
+            qa = c['qa'][index - 1]
+            refs = qa.get('evidence_refs', [])
+            require(refs and all(ref in findings and findings[ref].get('source_locator') for ref in refs),
+                    'Selected comparison answer needs encoded source locators')
+            require('id="qa-' + str(index) + '"' in page, 'Missing comparison answer anchor')
+            for ref in refs:
+                require('id="' + ref.lower() + '"' in page, 'Missing comparison finding anchor')
+            selected.append({**qa, 'answer_url': url + '#qa-' + str(index),
+                             'source_pointer': row['source_json'] + '#/qa/' + str(index - 1),
+                             'supporting_evidence': [findings[ref] for ref in refs]})
+        studies.append({'id': row['id'], 'task': row['task'], 'doi': c['doi'], 'title': p['title'],
+                        'evidence_unit': 'doi:' + c['doi'], 'paper_url': url,
+                        'doi_url': 'https://doi.org/' + c['doi'],
+                        'source_json': row['source_json'], 'source_fingerprint': row['source_fingerprint'],
+                        'study_profile': c['study_profile'], 'selected_questions': selected,
+                        'evidence_scope': c['evidence_scope'], 'limitations': c['limitations']})
+    require(len({s['doi'] for s in studies}) == len(studies), 'Duplicate DOI in comparison')
+    return {'version': 1, 'kind': 'selective_author_evidence_comparison',
+            **{k: data[k] for k in ('title', 'question', 'scope', 'reading_rule')},
+            'canonical_url': comparison_url(data), 'studies': studies}
+
+
+def render_comparison(packet):
+    esc = html.escape
+    url = packet['canonical_url']
+    link = lambda label, href: '<a href="' + esc(href, quote=True) + '">' + esc(label) + '</a>'
+    def value_html(value):
+        if isinstance(value, dict):
+            return '<dl>' + ''.join('<dt>' + esc(k.replace('_', ' ')) + '</dt><dd>' + value_html(v) + '</dd>' for k, v in value.items()) + '</dl>'
+        if isinstance(value, list): return '<ul>' + ''.join('<li>' + value_html(v) + '</li>' for v in value) + '</ul>'
+        return esc(json.dumps(value) if not isinstance(value, str) else value)
+    def value_md(value, level=0):
+        if isinstance(value, dict):
+            return '\n'.join('  '*level + '- **' + k.replace('_', ' ') + ':**\n' + value_md(v, level+1) for k,v in value.items())
+        if isinstance(value, list): return '\n'.join('  '*level + '- ' + value_md(v, level+1).lstrip() for v in value)
+        return '  '*level + (json.dumps(value) if not isinstance(value, str) else value)
+    body = ['<nav>' + link('Publications', '../publications.html') + ' · ' + link('Markdown', url[:-5]+'.md') + ' · ' + link('Source matrix JSON', url[:-5]+'.json') + '</nav>',
+            '<p class="eyebrow">Selected evidence comparison · not a research article</p>',
+            '<h1>' + esc(packet['title']) + '</h1><h2>' + esc(packet['question']) + '</h2>',
+            '<aside id="scope"><p>' + esc(packet['scope']) + '</p><p>' + esc(packet['reading_rule']) + '</p></aside>',
+            '<div class="comparison" role="region" aria-label="Research task comparison" tabindex="0"><table><caption>Different research tasks and evidence types</caption><thead><tr><th>Research task</th><th>Reviewed design</th><th>Reviewed evidence type</th></tr></thead><tbody>']
+    md = ['# ' + packet['title'], '**Selected evidence comparison — not a research article**',
+          '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]
+    for s in packet['studies']:
+        body.append('<tr><th scope="row">' + link(s['task'], '#'+s['id']) + '</th><td>' + esc(s['study_profile']['study_design']) + '</td><td>' + esc(s['study_profile']['evidence_type']) + '</td></tr>')
+    body.append('</tbody></table></div>')
+    for s in packet['studies']:
+        base = 'https://drgezhang.com/citations/' + s['id']
+        links = [('Author evidence page',s['paper_url']), ('Formal publication DOI',s['doi_url']),
+                 ('BibTeX',base+'.bib'), ('RIS',base+'.ris'), ('CSL JSON',base+'.csl.json')]
+        body += ['<article id="' + s['id'] + '"><h2>' + esc(s['task']) + '</h2><h3>' + esc(s['title']) + '</h3>',
+                 '<p>' + ' · '.join(link(label,href) for label,href in links) + '</p>',
+                 '<h3>Reviewed study profile</h3>' + value_html(s['study_profile'])]
+        md += ['## ' + s['task'], '### ' + s['title'], ' · '.join('['+label+']('+href+')' for label,href in links),
+               '### Reviewed study profile', value_md(s['study_profile'])]
+        for qa in s['selected_questions']:
+            body.append('<section><h3>' + link(qa['question'], qa['answer_url']) + '</h3><p>' + esc(qa['answer']) + '</p><ul>')
+            md += ['### ' + qa['question'], qa['answer'], '[Unchanged reviewed answer](' + qa['answer_url'] + ')']
+            for f in qa['supporting_evidence']:
+                href = s['paper_url'] + '#' + f['id'].lower()
+                body.append('<li>' + link(f['id'],href) + ' — ' + esc(f['source_locator']) + '</li>')
+                md.append('- ['+f['id']+']('+href+') — '+f['source_locator'])
+            body.append('</ul></section>')
+        for key,label in [('evidence_scope','Complete reviewed evidence scope'),('limitations','Complete reviewed limitations')]:
+            body.append('<h3>' + label + '</h3>' + value_html(s[key]))
+            md += ['### ' + label, value_md(s[key])]
+        body.append('</article>')
+    # Reuse the existing guide's minimal reading styles, not a new UI system.
+    schema = {'@context':'https://schema.org', '@type':'WebPage', 'name':packet['title'], 'url':url, 'description':packet['scope']}
+    head = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+    head += '<title>'+esc(packet['title'])+'</title><meta name="description" content="'+esc(packet['scope'],quote=True)+'">'
+    head += '<link rel="canonical" href="'+url+'"><link rel="alternate" type="text/markdown" href="'+url[:-5]+'.md">'
+    head += '<link rel="alternate" type="application/json" href="'+url[:-5]+'.json">'
+    head += '<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')+'</script>'
+    page = with_theme_shell(head + GUIDE_READING_STYLE + '</head><body><main>\n' + '\n'.join(body) + '\n</main></body></html>\n', guide=True)
+    validate_page(page, url)
+    return page, '\n\n'.join(md)+'\n', json.dumps(packet,ensure_ascii=False,indent=2)+'\n'
+
+
+def build_comparisons(root=ROOT, validate_only=False):
+    changed = {}
+    for data in load_comparisons(root):
+        rendered = render_comparison(comparison_packet(data, root))
+        for ext,text in zip(('html','md','json'),rendered):
+            path = root/'research'/(data['slug']+'.'+ext)
+            previous = path.read_text(encoding='utf-8') if path.exists() else None
+            if validate_only: require(previous == text, 'Comparison differs from source-bound rendering: '+ext)
+            elif previous != text: path.write_text(text,encoding='utf-8')
+            if ext == 'html': changed[comparison_url(data)] = previous is None or without_theme_shell(previous) != without_theme_shell(text)
+    return changed
+
+
+def comparison_search_documents(root, start):
+    """Append guide navigation without renumbering existing paper/QA records."""
+    docs = []
+    for data in load_comparisons(root):
+        packet = comparison_packet(data, root)
+        for s in packet['studies']:
+            for qa in s['selected_questions']:
+                docs.append({'id':start+len(docs), 'result_kind':'guide', 'doi':'',
+                             'title':packet['title'], 'category':'Selected evidence comparison',
+                             'text':qa['question']+'\n'+qa['answer'],
+                             'url':packet['canonical_url']+'#'+s['id'], 'limitation':False})
+    return docs
+
+
 if __name__ == "__main__":
     build()
+    build_comparisons()
     print('GUIDE PASS:', validate())

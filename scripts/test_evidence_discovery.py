@@ -19,7 +19,8 @@ def check():
     assert {d['doi'] for d in data['documents'] if d['category']=='Research & review context'} == set(content)
     assert len({d['url'].split('#')[0] for d in data['documents'] if d['result_kind']=='paper'}) == len(public)
     guides = [d for d in data['documents'] if d['result_kind']=='guide']
-    assert len({d['url'].split('#')[0] for d in guides}) == 1 and all(d['doi']=='' for d in guides)
+    from research_guides import urls as guide_urls
+    assert {d['url'].split('#')[0] for d in guides} == set(guide_urls()) and all(d['doi']=='' for d in guides)
     for d in data['documents']:
         u = urlsplit(d['url'])
         page = (ROOT / u.path.lstrip('/')).read_text(encoding='utf-8')

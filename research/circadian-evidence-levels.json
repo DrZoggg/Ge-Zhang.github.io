@@ -1,0 +1,819 @@
+{
+  "version": 1,
+  "kind": "selective_author_evidence_comparison",
+  "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+  "question": "What do these circadian studies measure, how are they evaluated, and which clinical claims do they not establish?",
+  "scope": "A selective comparison of three works in this author-maintained collection, using unchanged reviewed study profiles, answers and evidence boundaries. This is not a systematic review, a new study, a pooled effect estimate or a clinical dosing recommendation.",
+  "reading_rule": "Compare the research tasks and validation units, not the sizes of unrelated metrics. Do not add cells, tissue samples, repeated expression samples or bibliography entries into a combined participant total. A publication and its author evidence page represent the same work, not independent evidence.",
+  "canonical_url": "https://drgezhang.com/research/circadian-evidence-levels.html",
+  "studies": [
+    {
+      "id": "circadian-ihd",
+      "task": "Coronary expression subtyping",
+      "doi": "10.1038/s41598-024-65236-5",
+      "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
+      "evidence_unit": "doi:10.1038/s41598-024-65236-5",
+      "paper_url": "https://drgezhang.com/papers/circadian-ihd.html",
+      "doi_url": "https://doi.org/10.1038/s41598-024-65236-5",
+      "source_json": "data/deep_geo/circadian-ihd.json",
+      "source_fingerprint": "38df964bf25a842699ba54a3650cc945c72f14d0649c1eafea4c2dbf2e57611d",
+      "study_profile": {
+        "profile_type": "multicohort_omics",
+        "study_design": "Retrospective public single-cell and bulk transcriptomic analysis",
+        "evidence_type": "Expression-based subtyping, computational annotation and external template evaluation",
+        "population": "Public coronary-disease-related samples and separately analyzed reference datasets",
+        "primary_endpoint": "Expression-defined CRDscore and molecular subtype structure",
+        "secondary_endpoint": "External subtype assignment and associated immune/functional annotations",
+        "data_modalities": [
+          "single-cell RNA sequencing",
+          "bulk expression arrays",
+          "co-expression networks",
+          "NTP",
+          "computational enrichment and cell-type estimates"
+        ],
+        "external_validation": true,
+        "scale_metrics": [
+          {
+            "label": "GSE184073 analyzed samples",
+            "value": "2 samples"
+          },
+          {
+            "label": "GSE184073 post-QC cells",
+            "value": "2,237 cells"
+          },
+          {
+            "label": "GSE59867 expression samples",
+            "value": "436 samples, not 436 independent patients"
+          },
+          {
+            "label": "GSE59867 original design",
+            "value": "Repeated follow-up of 111 STEMI patients and 46 stable CAD controls"
+          },
+          {
+            "label": "GSE20680 article-reported samples",
+            "value": "195"
+          },
+          {
+            "label": "GSE20681 article-reported samples",
+            "value": "198"
+          },
+          {
+            "label": "GSE43292 article-reported samples",
+            "value": "64"
+          },
+          {
+            "label": "GSE62646 article-reported samples",
+            "value": "98"
+          }
+        ],
+        "counting_note": "GSE184073 cells are not independent patients. GSE59867 contains repeated follow-up of 111 STEMI patients and 46 stable CAD controls; its 436 expression samples are not 436 independent patients. Follow-up represents post-infarction recovery time points, not 24-hour circadian monitoring of the same individual. External dataset counts are article-reported samples and are not summed into a deduplicated participant total. External validation means retrospective expression-template evaluation, not prospective clinical utility. GSE70049 is a Danio rerio setb morphant expression experiment, not a verified mouse circadian perturbation."
+      },
+      "selected_questions": [
+        {
+          "question": "What does CRDscore measure, and what does it not directly measure?",
+          "answer": "CRDscore was constructed as a research score from target-gene expression and a random background. Formula: CRDscore = Srandom - SCADCRgenes; Random features: 1,000; Single-cell cutoff: 75th percentile; Bulk cutoff: Median. The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+          "evidence_refs": [
+            "KF2"
+          ],
+          "answer_url": "https://drgezhang.com/papers/circadian-ihd.html#qa-2",
+          "source_pointer": "data/deep_geo/circadian-ihd.json#/qa/1",
+          "supporting_evidence": [
+            {
+              "id": "KF2",
+              "claim": "CRDscore was constructed as a research score from target-gene expression and a random background.",
+              "context": "Single-cell and bulk expression scoring.",
+              "evidence": [
+                {
+                  "label": "Formula",
+                  "value": "CRDscore = Srandom - SCADCRgenes"
+                },
+                {
+                  "label": "Random features",
+                  "value": "1,000"
+                },
+                {
+                  "label": "Single-cell cutoff",
+                  "value": "75th percentile"
+                },
+                {
+                  "label": "Bulk cutoff",
+                  "value": "Median"
+                }
+              ],
+              "source_locator": "Methods: Calculation of CRDscore based on circadian-related genes"
+            }
+          ]
+        },
+        {
+          "question": "What kind of external validation was performed?",
+          "answer": "NTP was used to evaluate subtype assignment in four external expression datasets. Datasets: GSE20680; GSE20681; GSE43292; GSE62646. External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+          "evidence_refs": [
+            "KF5"
+          ],
+          "answer_url": "https://drgezhang.com/papers/circadian-ihd.html#qa-5",
+          "source_pointer": "data/deep_geo/circadian-ihd.json#/qa/4",
+          "supporting_evidence": [
+            {
+              "id": "KF5",
+              "claim": "NTP was used to evaluate subtype assignment in four external expression datasets.",
+              "context": "External expression-template evaluation.",
+              "evidence": [
+                {
+                  "label": "Datasets",
+                  "value": "GSE20680; GSE20681; GSE43292; GSE62646"
+                }
+              ],
+              "source_locator": "Methods: Construction and validation of the CRD-related subtypes of CAD; Fig. 4"
+            }
+          ]
+        },
+        {
+          "question": "Do subtype-associated immune patterns establish treatment benefit?",
+          "answer": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics. Contractile markers: Lower expression; Immune and collagen pathways: Associated enrichment differences. Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+          "evidence_refs": [
+            "KF6"
+          ],
+          "answer_url": "https://drgezhang.com/papers/circadian-ihd.html#qa-6",
+          "source_pointer": "data/deep_geo/circadian-ihd.json#/qa/5",
+          "supporting_evidence": [
+            {
+              "id": "KF6",
+              "claim": "Type2 showed higher CRDscore and immune-inflammatory expression characteristics.",
+              "context": "Subtype-associated expression and computational annotations.",
+              "evidence": [
+                {
+                  "label": "Contractile markers",
+                  "value": "Lower expression"
+                },
+                {
+                  "label": "Immune and collagen pathways",
+                  "value": "Associated enrichment differences"
+                }
+              ],
+              "source_locator": "Results: functional and immune microenvironment analyses; Figs. 5-6"
+            }
+          ]
+        }
+      ],
+      "evidence_scope": {
+        "supports": [
+          "The analysis of GSE184073 constructed a single-cell co-expression foundation related to coronary disease.",
+          "CRDscore was constructed as a research score from target-gene expression and a random background.",
+          "The article reports external reference-data evaluation, but the use of GSE70049 requires qualification.",
+          "Expression-based subtyping of GSE59867 yielded four groups.",
+          "NTP was used to evaluate subtype assignment in four external expression datasets.",
+          "Type2 showed higher CRDscore and immune-inflammatory expression characteristics."
+        ],
+        "does_not_establish": [
+          "Direct measurement of physiological circadian phase, amplitude or period.",
+          "A discovery cohort of 436 independent patients.",
+          "Verification that all cited reference experiments are mouse circadian interventions.",
+          "Prospectively validated clinical risk prediction or clinical utility.",
+          "Benefit from treatment or chronotherapy.",
+          "An independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model."
+        ]
+      },
+      "limitations": [
+        "GSE184073 cells are not independent patients. GSE59867 contains repeated follow-up of 111 STEMI patients and 46 stable CAD controls; its 436 expression samples are not 436 independent patients. Follow-up represents post-infarction recovery time points, not 24-hour circadian monitoring of the same individual. External dataset counts are article-reported samples and are not summed into a deduplicated participant total. External validation means retrospective expression-template evaluation, not prospective clinical utility. GSE70049 is a Danio rerio setb morphant expression experiment, not a verified mouse circadian perturbation.",
+        "Cells are not independent patients; two analyzed samples do not establish population-level robustness.",
+        "The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+        "The evidence does not establish that all four reference experiments are verified mouse circadian interventions. No intended replacement accession is inferred.",
+        "These are expression-sample groups, not 436 independent patients. The grouping does not resolve independence of repeated follow-up samples or outcome analyses.",
+        "External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+        "Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+        "Direct measurement of physiological circadian phase, amplitude or period.",
+        "A discovery cohort of 436 independent patients.",
+        "Verification that all cited reference experiments are mouse circadian interventions.",
+        "Prospectively validated clinical risk prediction or clinical utility.",
+        "Benefit from treatment or chronotherapy.",
+        "An independently verified mortality hazard ratio, AUC or clinical cutoff; adverse-prognosis wording is not a verified all-cause mortality model."
+      ]
+    },
+    {
+      "id": "doi-10-1038-s41698-026-01699-1",
+      "task": "Colorectal expression scoring and cell perturbation",
+      "doi": "10.1038/s41698-026-01699-1",
+      "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
+      "evidence_unit": "doi:10.1038/s41698-026-01699-1",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+      "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
+      "source_json": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
+      "source_fingerprint": "43ba1d7dba4b28ea937d9e6f3ea058ba32fef53a98b4695689ae73faa78fc2ea",
+      "study_profile": {
+        "profile_type": "multicohort_omics",
+        "study_design": "Multicohort systems-biology study integrating public bulk transcriptomics, microarrays, single-cell RNA sequencing, cross-species circadian perturbation datasets, gene-regulatory-network analysis, and in-vitro CRC-cell perturbation experiments",
+        "evidence_type": "Public transcriptomic and single-cell cohort analysis, expression-matched circadian scoring, cross-species rhythmicity evaluation, survival and clinical-association analysis, single-cell cell-state and ligand-receptor analysis, gene-regulatory-network analysis, and in-vitro functional perturbation",
+        "population": "Public human colorectal-cancer and normal-mucosal datasets, public human/mouse/non-human-primate circadian time-series and perturbation datasets, and HCT116/SW480 colorectal-cancer cell models",
+        "primary_endpoint": "Development and multicohort evaluation of ClockProCRC as a transcriptomic measure of endogenous circadian misalignment",
+        "secondary_endpoint": "Association of ClockProCRC with CRC progression, survival and tumor-microenvironment states, plus prioritization and functional testing of SYNE1 as a circadian-associated CRC regulator",
+        "data_modalities": [
+          "single-cell RNA sequencing",
+          "bulk RNA sequencing",
+          "microarray expression profiling",
+          "cross-species circadian time-series transcriptomics",
+          "gene-regulatory-network analysis",
+          "CRC-cell perturbation RNA sequencing",
+          "qRT-PCR",
+          "Transwell and wound-healing assays",
+          "colony-formation assays",
+          "Western blotting"
+        ],
+        "external_validation": true,
+        "scale_metrics": [
+          {
+            "label": "article-reported aggregate",
+            "value": "3,758 samples across 35 public GEO datasets"
+          },
+          {
+            "label": "abstract-reported additional cohort layer",
+            "value": "3,733 samples from 34 additional public bulk RNA, microarray and single-cell cohorts, alongside the 25-sample primary single-cell cohort"
+          },
+          {
+            "label": "primary CRC single-cell cohort",
+            "value": "GSE166555; 25 tissue samples: 13 CRC and 12 normal mucosal samples"
+          },
+          {
+            "label": "post-QC single cells",
+            "value": "94,683"
+          },
+          {
+            "label": "single-cell structure",
+            "value": "19 clusters and 9 major cell types"
+          },
+          {
+            "label": "initial colon circadian reference",
+            "value": "906 genes; maSigPro-derived temporal genes with FDR <0.01 and goodness-of-fit R² ≥0.7"
+          },
+          {
+            "label": "circadian co-expression network",
+            "value": "9 modules after meta-cell network construction"
+          },
+          {
+            "label": "CRC-associated CTD signature",
+            "value": "4 modules (M1, M3, M4 and M6), totaling 559 genes"
+          },
+          {
+            "label": "ClockProCRC random-background model",
+            "value": "100 expression bins and 1,000 expression-matched random samplings"
+          },
+          {
+            "label": "article-reported circadian robustness evaluation",
+            "value": "16 independent public datasets spanning human, mouse and non-human-primate circadian contexts"
+          },
+          {
+            "label": "CRC cross-cohort robustness layer",
+            "value": ">1,400 CRC samples across 10 independent cohorts"
+          },
+          {
+            "label": "functional CRC cell models",
+            "value": "HCT116 and SW480"
+          }
+        ],
+        "counting_note": "The article reports heterogeneous evidence units. The 25 tissue samples in the primary GSE166555 single-cell cohort yielded 94,683 post-QC cells and must not be conflated with participant counts. The Methods reports an aggregate 3,758 samples across 35 public datasets, while the Abstract describes the primary 25-sample single-cell cohort plus 3,733 samples from 34 additional cohorts. These figures are preserved as article-reported dataset/sample counts and are not interpreted as 3,758 unique human participants."
+      },
+      "selected_questions": [
+        {
+          "question": "What is ClockProCRC and how was it constructed?",
+          "answer": "ClockProCRC is a transcriptomic circadian-misalignment scoring framework. The study began with a 906-gene colon circadian reference and separately used CRC single-cell co-expression analysis to derive nine modules and a 559-gene four-module CTD signature. The ClockProCRC scoring Methods then applied expression-matched random-background correction to circadian rhythm disorder genes using 100 expression bins and 1,000 random samplings. The reviewed manuscript text does not establish that the 559 CTD genes are identical to the final scoring gene set.",
+          "evidence_refs": [
+            "KF1",
+            "KF2"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#qa-1",
+          "source_pointer": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json#/qa/0",
+          "supporting_evidence": [
+            {
+              "id": "KF1",
+              "claim": "A CRC-focused circadian transcriptional architecture was derived from a 906-gene colon circadian reference and a 94,683-cell single-cell framework.",
+              "context": "GSE10644-derived circadian reference mapped into the GSE166555 CRC single-cell cohort, followed by KNN meta-cell aggregation and high-dimensional co-expression analysis",
+              "evidence": [
+                {
+                  "label": "primary tissue samples",
+                  "value": "13 CRC and 12 normal mucosal samples"
+                },
+                {
+                  "label": "post-QC cells",
+                  "value": "94,683"
+                },
+                {
+                  "label": "cellular structure",
+                  "value": "19 clusters; 9 major cell types"
+                },
+                {
+                  "label": "initial circadian reference",
+                  "value": "906 genes; FDR <0.01 and R² ≥0.7 in the source temporal analysis"
+                },
+                {
+                  "label": "meta-cell sparsity setting",
+                  "value": "K=50 gave the reported optimal sparsity reduction"
+                },
+                {
+                  "label": "co-expression modules",
+                  "value": "9"
+                },
+                {
+                  "label": "selected CRC-associated modules",
+                  "value": "M1, M3, M4 and M6"
+                },
+                {
+                  "label": "CTD signature",
+                  "value": "559 genes across the four selected modules"
+                }
+              ],
+              "source_locator": "Results: single-cell CRC landscape and high-dimensional circadian co-expression network, Fig. 1A-I and Supplementary Fig. 2; Methods: Single-cell RNA sequencing, Bulk RNA sequencing, and microarray chip cohort processing; Expression of the circadian gene set in the colorectum; High-dimensional co-expression network analysis; Supplementary Tables 2-3"
+            },
+            {
+              "id": "KF2",
+              "claim": "ClockProCRC used expression-matched random-background correction and tracked circadian perturbation across multiple independent human and animal datasets.",
+              "context": "ClockProCRC development and cross-species circadian robustness evaluation",
+              "evidence": [
+                {
+                  "label": "expression stratification",
+                  "value": "100 expression bins"
+                },
+                {
+                  "label": "random-background sampling",
+                  "value": "1,000 iterations with expression-matched feature selection"
+                },
+                {
+                  "label": "single-cell CRD grouping",
+                  "value": "75th-percentile cutoff"
+                },
+                {
+                  "label": "bulk-RNA grouping",
+                  "value": "cohort median commonly used"
+                },
+                {
+                  "label": "article-reported robustness datasets",
+                  "value": "16 independent public datasets"
+                },
+                {
+                  "label": "cross-species phase alignment",
+                  "value": "mouse Zeitgeber time shifted by 12 h before alignment with human/primate rhythms"
+                },
+                {
+                  "label": "interpretation",
+                  "value": "higher ClockProCRC values represented greater endogenous circadian dysregulation in the article's framework"
+                },
+                {
+                  "label": "score gene-set scope",
+                  "value": "The scoring Methods refers to circadian rhythm disorder genes (CRGs). The evidence page does not assume that the separate 559-gene CTD network signature is identical to the final ClockProCRC score input."
+                }
+              ],
+              "source_locator": "Results: ClockProCRC score detection and quantification of endogenous circadian disorder states, Fig. 2B-I and Supplementary Fig. 3A; Methods: Development of ClockProCRC scoring system; Detection of the biological clock rhythm of the ClockProCRC score; Assessment of Cross-species Rhythmic Module Concordance"
+            }
+          ]
+        },
+        {
+          "question": "How did CLOCK knockdown, melatonin and the reported SYNE1 AUC relate to the circadian perturbation experiment?",
+          "answer": "CLOCK knockdown increased ClockProCRC and disrupted SYNE1 rhythmicity; melatonin partially restored the ClockProCRC-defined state and SYNE1 rhythmicity in CRC-cell experiments. The reported SYNE1 AUC of 0.915 refers specifically to discrimination of CLOCK-knockdown experimental conditions, not to CRC diagnosis or patient-level prediction.",
+          "evidence_refs": [
+            "KF6"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#qa-7",
+          "source_pointer": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json#/qa/6",
+          "supporting_evidence": [
+            {
+              "id": "KF6",
+              "claim": "SYNE1 and CLOCK perturbation experiments linked the computational circadian state to CRC-cell migration, invasion, proliferation-associated phenotypes and epithelial/mesenchymal marker changes.",
+              "context": "HCT116 and SW480 CRC-cell experiments using SYNE1 or CLOCK siRNA, cell-line RNA sequencing, qRT-PCR, functional assays and melatonin rescue conditions",
+              "evidence": [
+                {
+                  "label": "cell models",
+                  "value": "HCT116 and SW480"
+                },
+                {
+                  "label": "SYNE1 perturbation",
+                  "value": "two specific siRNAs were used for knockdown"
+                },
+                {
+                  "label": "Transwell result",
+                  "value": "SYNE1 knockdown reduced migration and invasion; 3 independent biological replicates with 4 random microscopic fields averaged per experiment"
+                },
+                {
+                  "label": "wound-healing result",
+                  "value": "SYNE1 knockdown reduced migration"
+                },
+                {
+                  "label": "colony-formation result",
+                  "value": "SYNE1 knockdown reduced colony formation in both cell lines"
+                },
+                {
+                  "label": "epithelial/mesenchymal markers",
+                  "value": "E-cadherin and ZO-1 increased, while N-cadherin decreased after SYNE1 knockdown"
+                },
+                {
+                  "label": "CLOCK perturbation",
+                  "value": "CLOCK knockdown increased ClockProCRC; melatonin treatment partially restored the molecular state"
+                },
+                {
+                  "label": "SYNE1 rhythmicity",
+                  "value": "si-NC P=2.5×10^-4; si-CLOCK P=0.0704; si-CLOCK+melatonin P=3.4×10^-3"
+                },
+                {
+                  "label": "SYNE1 ROC scope",
+                  "value": "AUC=0.915 for discriminating CLOCK-knockdown experimental conditions, not for diagnosing CRC in patients"
+                },
+                {
+                  "label": "melatonin condition",
+                  "value": "0.1 mM for 24 h before RNA collection in the cell experiment"
+                }
+              ],
+              "source_locator": "Results: SYNE1 functional and circadian-perturbation experiments, Fig. 6A-N and related supplementary figures; Methods: Cell lines; Cell transfection with siRNA and plasmids; Bulk RNA-seq; qRT-PCR; Transwell assay and scratch assay; Western blot analysis; Cell cloning formation experiment"
+            }
+          ]
+        },
+        {
+          "question": "Are ClockProCRC or SYNE1 clinically validated for diagnosis, prognosis or treatment selection?",
+          "answer": "No. ClockProCRC has multicohort analytical and retrospective association evidence but lacks large prospective multicenter clinical validation and a universal clinical cutoff. SYNE1 has computational and in-vitro functional evidence but no SYNE1-directed animal efficacy or patient-treatment validation.",
+          "evidence_refs": [
+            "KF2",
+            "KF3",
+            "KF5",
+            "KF6"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#qa-8",
+          "source_pointer": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json#/qa/7",
+          "supporting_evidence": [
+            {
+              "id": "KF2",
+              "claim": "ClockProCRC used expression-matched random-background correction and tracked circadian perturbation across multiple independent human and animal datasets.",
+              "context": "ClockProCRC development and cross-species circadian robustness evaluation",
+              "evidence": [
+                {
+                  "label": "expression stratification",
+                  "value": "100 expression bins"
+                },
+                {
+                  "label": "random-background sampling",
+                  "value": "1,000 iterations with expression-matched feature selection"
+                },
+                {
+                  "label": "single-cell CRD grouping",
+                  "value": "75th-percentile cutoff"
+                },
+                {
+                  "label": "bulk-RNA grouping",
+                  "value": "cohort median commonly used"
+                },
+                {
+                  "label": "article-reported robustness datasets",
+                  "value": "16 independent public datasets"
+                },
+                {
+                  "label": "cross-species phase alignment",
+                  "value": "mouse Zeitgeber time shifted by 12 h before alignment with human/primate rhythms"
+                },
+                {
+                  "label": "interpretation",
+                  "value": "higher ClockProCRC values represented greater endogenous circadian dysregulation in the article's framework"
+                },
+                {
+                  "label": "score gene-set scope",
+                  "value": "The scoring Methods refers to circadian rhythm disorder genes (CRGs). The evidence page does not assume that the separate 559-gene CTD network signature is identical to the final ClockProCRC score input."
+                }
+              ],
+              "source_locator": "Results: ClockProCRC score detection and quantification of endogenous circadian disorder states, Fig. 2B-I and Supplementary Fig. 3A; Methods: Development of ClockProCRC scoring system; Detection of the biological clock rhythm of the ClockProCRC score; Assessment of Cross-species Rhythmic Module Concordance"
+            },
+            {
+              "id": "KF3",
+              "claim": "Higher ClockProCRC values were associated with CRC progression-related states and poorer survival in the analyzed retrospective/public cohorts.",
+              "context": "Clinical-association and cross-cohort evaluation of ClockProCRC",
+              "evidence": [
+                {
+                  "label": "survival cohort",
+                  "value": "GSE17537, n=55"
+                },
+                {
+                  "label": "survival association",
+                  "value": "higher ClockProCRC associated with lower overall-survival probability; log-rank P<0.01"
+                },
+                {
+                  "label": "RCS reference",
+                  "value": "ClockProCRC 0.0197 corresponded to ln(HR)=0 / HR=1 in the displayed spline model"
+                },
+                {
+                  "label": "progression trajectory",
+                  "value": "scores increased across normal mucosa → adenoma/polyp → high/severe dysplasia → CRC → colorectal liver metastasis"
+                },
+                {
+                  "label": "GSE68468 progression comparison",
+                  "value": "P<0.0001"
+                },
+                {
+                  "label": "multi-cohort robustness",
+                  "value": ">1,400 CRC samples across 10 independent cohorts"
+                }
+              ],
+              "source_locator": "Results: Analysis of clinical significance of ClockProCRC score, Fig. 3A-I; Methods: Analysis of the evaluation and clinical correlation of circadian rhythm disorder scores"
+            },
+            {
+              "id": "KF5",
+              "claim": "Gene-regulatory-network analysis prioritized SYNE1 within a CRC-associated circadian dysregulation axis, with NFATC2-SYNE1 regulation differing between CRC and normal mucosa.",
+              "context": "Dysregsig-based gene-regulatory-network analysis of CTD genes followed by cross-dataset SYNE1 contextualization",
+              "evidence": [
+                {
+                  "label": "genetic-algorithm iterations",
+                  "value": "100"
+                },
+                {
+                  "label": "recurrent regulatory axes",
+                  "value": "61"
+                },
+                {
+                  "label": "NFATC2→SYNE1 regulatory strength in CRC",
+                  "value": "0.607; 95% CI 0.412-0.802"
+                },
+                {
+                  "label": "NFATC2→SYNE1 regulatory strength in normal mucosa",
+                  "value": "-0.102; 95% CI -0.058-0.262"
+                },
+                {
+                  "label": "circadian context",
+                  "value": "SYNE1 showed time-dependent or perturbation-associated expression changes across independent circadian datasets including GSE43073, GSE35026, GSE56931 and GSE30411"
+                },
+                {
+                  "label": "metastasis-associated expression",
+                  "value": "SYNE1 expression was higher in colorectal liver metastasis than primary CRC in the reported analyses (Wilcoxon P=0.035 and P=0.048)"
+                }
+              ],
+              "source_locator": "Results: Key circadian and night regulatory genes screening and their effects on circadian rhythm disorder in colorectal cancer, Fig. 5A-G and Supplementary Figs. 3F, 4A-E, 5F-G; Methods: Construction of the circadian rhythm gene regulation network (GRN)"
+            },
+            {
+              "id": "KF6",
+              "claim": "SYNE1 and CLOCK perturbation experiments linked the computational circadian state to CRC-cell migration, invasion, proliferation-associated phenotypes and epithelial/mesenchymal marker changes.",
+              "context": "HCT116 and SW480 CRC-cell experiments using SYNE1 or CLOCK siRNA, cell-line RNA sequencing, qRT-PCR, functional assays and melatonin rescue conditions",
+              "evidence": [
+                {
+                  "label": "cell models",
+                  "value": "HCT116 and SW480"
+                },
+                {
+                  "label": "SYNE1 perturbation",
+                  "value": "two specific siRNAs were used for knockdown"
+                },
+                {
+                  "label": "Transwell result",
+                  "value": "SYNE1 knockdown reduced migration and invasion; 3 independent biological replicates with 4 random microscopic fields averaged per experiment"
+                },
+                {
+                  "label": "wound-healing result",
+                  "value": "SYNE1 knockdown reduced migration"
+                },
+                {
+                  "label": "colony-formation result",
+                  "value": "SYNE1 knockdown reduced colony formation in both cell lines"
+                },
+                {
+                  "label": "epithelial/mesenchymal markers",
+                  "value": "E-cadherin and ZO-1 increased, while N-cadherin decreased after SYNE1 knockdown"
+                },
+                {
+                  "label": "CLOCK perturbation",
+                  "value": "CLOCK knockdown increased ClockProCRC; melatonin treatment partially restored the molecular state"
+                },
+                {
+                  "label": "SYNE1 rhythmicity",
+                  "value": "si-NC P=2.5×10^-4; si-CLOCK P=0.0704; si-CLOCK+melatonin P=3.4×10^-3"
+                },
+                {
+                  "label": "SYNE1 ROC scope",
+                  "value": "AUC=0.915 for discriminating CLOCK-knockdown experimental conditions, not for diagnosing CRC in patients"
+                },
+                {
+                  "label": "melatonin condition",
+                  "value": "0.1 mM for 24 h before RNA collection in the cell experiment"
+                }
+              ],
+              "source_locator": "Results: SYNE1 functional and circadian-perturbation experiments, Fig. 6A-N and related supplementary figures; Methods: Cell lines; Cell transfection with siRNA and plasmids; Bulk RNA-seq; qRT-PCR; Transwell assay and scratch assay; Western blot analysis; Cell cloning formation experiment"
+            }
+          ]
+        }
+      ],
+      "evidence_scope": {
+        "supports": [
+          "The article defines a 906-gene colon circadian reference and derives CRC-associated circadian co-expression structure from a 94,683-cell single-cell dataset.",
+          "ClockProCRC uses expression-matched random-background correction and varies in expected directions across multiple experimentally or behaviorally perturbed circadian datasets.",
+          "Higher ClockProCRC values are associated with CRC progression-related states and poorer overall survival in the analyzed retrospective/public cohorts.",
+          "ClockProCRC-defined states are associated with distinct CRC single-cell composition and intercellular-communication patterns.",
+          "SYNE1 is prioritized by gene-regulatory-network analysis and shows circadian perturbation-associated expression/rhythmicity changes across independent datasets.",
+          "SYNE1 knockdown in HCT116 and SW480 cells reduces migration, invasion and colony formation and shifts E-cadherin, ZO-1 and N-cadherin expression.",
+          "CLOCK knockdown and melatonin rescue conditions alter ClockProCRC and SYNE1 rhythmicity in CRC-cell experiments."
+        ],
+        "does_not_establish": [
+          "That ClockProCRC has been prospectively validated in a multicenter clinical cohort.",
+          "That ClockProCRC is a clinically approved diagnostic, prognostic, screening or treatment-selection test.",
+          "That the cohort-specific median or single-cell 75th-percentile grouping rules define a universal clinical cutoff.",
+          "That higher ClockProCRC causally drives CRC progression in humans; most clinical and tumor-microenvironment evidence is observational or retrospective.",
+          "That ClockProCRC adds incremental clinical utility over established CRC staging, molecular markers or treatment-response assessment.",
+          "That SYNE1 is a validated therapeutic target in patients with CRC.",
+          "That SYNE1 inhibition improves tumor control, metastasis or survival in vivo; the study reports cell-line perturbation but no SYNE1-directed animal efficacy experiment.",
+          "That melatonin treatment is effective for CRC patients; melatonin was used as a molecular rescue condition in cell experiments.",
+          "That AUC=0.915 represents CRC diagnosis or patient-level prediction; it refers to discrimination of CLOCK-knockdown experimental conditions by SYNE1 expression.",
+          "That single-cell ligand-receptor and pathway analyses prove causal tumor-microenvironment remodeling."
+        ]
+      },
+      "limitations": [
+        "Most human clinical evidence derives from retrospective/public transcriptomic datasets rather than a prospectively enrolled multicenter clinical validation cohort.",
+        "The study integrates heterogeneous evidence units across human, mouse and non-human-primate datasets; sample, tissue, cohort and cell counts are not interchangeable.",
+        "ClockProCRC grouping uses data-context-specific thresholds (75th percentile for single-cell analyses and commonly the cohort median for bulk cohorts), not a universal clinical cutoff.",
+        "The manuscript distinguishes the 906-gene colon circadian reference from the 559-gene four-module CTD signature. The ClockProCRC scoring Methods refers to circadian rhythm disorder genes (CRGs), so this evidence page does not infer that the 559 CTD genes are identical to the final score-input gene set.",
+        "The Results text contains the accession GSE200977, whereas the Methods and Figure 4 legend identify the CRC single-cell cohort as GSE200997; the evidence page uses GSE200997 and records the Results-text accession as a manuscript typo.",
+        "The manuscript contains several wording/locator inconsistencies, including knockdown described once as knockout, Transwell language that conflates proliferation with migration/invasion, and a scratch-assay timing inconsistency; the evidence page follows the experimental Methods and figure legends.",
+        "The public ClockProCRC GitHub repository is an associated code resource but does not exactly mirror the accepted manuscript: the README reports an earlier 32-cohort/3,075-sample configuration, the current scoring script defaults to 50 bins rather than the manuscript's 100 bins, and DiffCircadian.R contains a placeholder scoring function.",
+        "SYNE1 functional evidence is in vitro; no SYNE1-directed animal efficacy experiment or human therapeutic study is reported.",
+        "The publisher currently labels the article as an early peer-reviewed accepted version that may undergo further editing before the final Version of Record."
+      ]
+    },
+    {
+      "id": "doi-10-1002-mdr2-70052",
+      "task": "Cardiovascular chronotherapy narrative synthesis",
+      "doi": "10.1002/mdr2.70052",
+      "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
+      "evidence_unit": "doi:10.1002/mdr2.70052",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+      "doi_url": "https://doi.org/10.1002/mdr2.70052",
+      "source_json": "data/deep_geo/doi-10-1002-mdr2-70052.json",
+      "source_fingerprint": "34bd2ac180e5c76c8f8c9583379bf5c602f4d5df3106f69302faa03a542363e6",
+      "study_profile": {
+        "profile_type": "narrative_review",
+        "study_design": "Narrative evidence synthesis integrating molecular, cellular, animal, epidemiological and clinical chronotherapy literature. The article does not report a PRISMA-style systematic-search or study-selection workflow, quantitative meta-analysis, or a newly generated dataset.",
+        "evidence_type": "Narrative synthesis of heterogeneous preclinical, mechanistic, epidemiological and clinical evidence; no new dataset and no pooled meta-analytic effect estimate.",
+        "evidence_domains": [
+          "Molecular circadian clock",
+          "Redox and epigenetic regulation",
+          "PRR / NF-kB / NLRP3 inflammatory signaling",
+          "Cytokine, chemokine and adhesion-molecule rhythmicity",
+          "Immune-cell trafficking and function",
+          "Cardiovascular disease mechanisms",
+          "Preclinical chronotherapy",
+          "Clinical chronotherapy and translation"
+        ],
+        "diseases_covered": [
+          "Atherosclerosis",
+          "Stroke",
+          "Ischemic heart disease",
+          "Myocardial infarction",
+          "Heart failure",
+          "Hypertension and blood-pressure chronotherapy where relevant"
+        ],
+        "translation_scope": "Mechanistic rationale and preclinical chronotherapy are substantially stronger than the clinical evidence for universal time-specific dosing.",
+        "scale_metrics": [
+          {
+            "label": "Article type",
+            "value": "Review Article"
+          },
+          {
+            "label": "Bibliography",
+            "value": "392 references"
+          },
+          {
+            "label": "Tables",
+            "value": "5 synthesis tables"
+          },
+          {
+            "label": "Figures",
+            "value": "9 figures"
+          },
+          {
+            "label": "New data",
+            "value": "None created or analyzed"
+          }
+        ],
+        "counting_note": "This is a narrative review. The 392 bibliography entries include heterogeneous evidence types and are not a systematic count of independent studies, experiments, animals or participants. Study-level denominators must not be summed into a synthetic n. The review reports no newly generated or newly analyzed dataset."
+      },
+      "selected_questions": [
+        {
+          "question": "What type of article is this?",
+          "answer": "It is a narrative Review Article synthesizing prior evidence. It reports no new experimental or clinical dataset, systematic study-selection workflow or pooled meta-analysis.",
+          "evidence_refs": [
+            "KF1",
+            "KF7"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#qa-1",
+          "source_pointer": "data/deep_geo/doi-10-1002-mdr2-70052.json#/qa/0",
+          "supporting_evidence": [
+            {
+              "id": "KF1",
+              "claim": "The review places CLOCK-BMAL1, PER/CRY and REV-ERB/ROR feedback loops at the center of temporal regulation of cardiovascular immune biology.",
+              "context": "This is a synthesis of prior molecular and experimental literature rather than a new clock experiment.",
+              "evidence": [
+                {
+                  "label": "Core clock machinery",
+                  "value": "BMAL1/ARNTL, CLOCK, PER1/2/3, CRY1/2, REV-ERB alpha/beta and ROR alpha/gamma are integrated with redox and epigenetic regulation."
+                }
+              ],
+              "source_locator": "Sections 2.1-2.4; Figures 1-2; Tables 1-2."
+            },
+            {
+              "id": "KF7",
+              "claim": "The review identifies unresolved methodological and translational gaps that limit precision chronotherapy.",
+              "context": "These gaps are part of the authors' discussion, not newly experimentally tested findings.",
+              "evidence": [
+                {
+                  "label": "Research gaps",
+                  "value": "Constitutive-versus-inducible knockout-model differences, immune-cell-subpopulation heterogeneity, insufficient spatiotemporal resolution of vascular-immune interactions and the need for high-quality circadian-aware clinical trials are highlighted."
+                }
+              ],
+              "source_locator": "Sections 8.1-8.4."
+            }
+          ]
+        },
+        {
+          "question": "Should all antihypertensive medications be taken at bedtime?",
+          "answer": "No. Clinical evidence conflicts: Hygia and related studies reported bedtime-dosing benefits, while BedMed did not reproduce a cardiovascular-event benefit. The review does not support a universal bedtime recommendation.",
+          "evidence_refs": [
+            "KF6",
+            "KF8"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#qa-7",
+          "source_pointer": "data/deep_geo/doi-10-1002-mdr2-70052.json#/qa/6",
+          "supporting_evidence": [
+            {
+              "id": "KF6",
+              "claim": "Clinical chronotherapy evidence is heterogeneous and does not define a universal optimal dosing time for most cardiovascular drugs.",
+              "context": "Physiological timing effects and mechanistic rationale are not equivalent to proven reductions in clinical outcomes.",
+              "evidence": [
+                {
+                  "label": "Drug classes and timing",
+                  "value": "The review discusses aspirin, beta-blockers, melatonin, tPA, SGLT2 inhibitors, colchicine, ACEIs/ARBs, MRAs, ARNI and antihypertensive timing."
+                },
+                {
+                  "label": "Conflicting trials",
+                  "value": "Hygia and related studies reported bedtime-dosing benefits, whereas BedMed did not reproduce a cardiovascular-event benefit."
+                }
+              ],
+              "source_locator": "Section 7.2; Table 5."
+            },
+            {
+              "id": "KF8",
+              "claim": "Chronotherapy claims in this review require explicit separation of mechanistic rhythmicity, preclinical time-of-day efficacy, human surrogate effects and hard cardiovascular outcomes.",
+              "context": "These evidence levels are not interchangeable. Human clinical timing evidence remains incomplete or conflicting for many cardiovascular therapies.",
+              "evidence": [
+                {
+                  "label": "Human timing evidence",
+                  "value": "Bedtime aspirin can alter morning platelet reactivity, but cardiovascular event reduction has not been established by a large randomized trial; SGLT2-inhibitor and colchicine timing remain insufficiently tested."
+                },
+                {
+                  "label": "Outcome-level uncertainty",
+                  "value": "Antihypertensive bedtime-dosing studies have reported conflicting cardiovascular outcome results, including the Hygia and BedMed trials."
+                }
+              ],
+              "source_locator": "Section 7.2; Table 5; Sections 8.1-8.4."
+            }
+          ]
+        },
+        {
+          "question": "Is this a systematic review or meta-analysis?",
+          "answer": "No. The article reports no explicit systematic-search strategy, PRISMA study-selection workflow or quantitative meta-analysis; its 392 references are bibliography entries, not a systematic count of independent studies.",
+          "evidence_refs": [
+            "KF7"
+          ],
+          "answer_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#qa-10",
+          "source_pointer": "data/deep_geo/doi-10-1002-mdr2-70052.json#/qa/9",
+          "supporting_evidence": [
+            {
+              "id": "KF7",
+              "claim": "The review identifies unresolved methodological and translational gaps that limit precision chronotherapy.",
+              "context": "These gaps are part of the authors' discussion, not newly experimentally tested findings.",
+              "evidence": [
+                {
+                  "label": "Research gaps",
+                  "value": "Constitutive-versus-inducible knockout-model differences, immune-cell-subpopulation heterogeneity, insufficient spatiotemporal resolution of vascular-immune interactions and the need for high-quality circadian-aware clinical trials are highlighted."
+                }
+              ],
+              "source_locator": "Sections 8.1-8.4."
+            }
+          ]
+        }
+      ],
+      "evidence_scope": {
+        "supports": [
+          "Prior evidence links circadian clock networks with immune and vascular processes, inflammatory and redox pathways.",
+          "Immune-cell number, trafficking and functional state can vary with circadian timing across experimental contexts.",
+          "Experimental circadian disruption can alter cardiovascular inflammatory phenotypes, while cardiovascular physiology and events exhibit time-of-day patterns.",
+          "Preclinical evidence provides a mechanistic rationale for chronotherapy; some cardiovascular drugs show dosing-time-dependent physiological effects.",
+          "Clinical chronotherapy remains an active and unresolved translational field."
+        ],
+        "does_not_establish": [
+          "A new patient cohort, new experimental data or a newly analyzed dataset.",
+          "A systematic review, meta-analysis or pooled quantitative effect size.",
+          "One universally causal circadian pathway across all cardiovascular diseases.",
+          "Human cardiovascular treatment efficacy of REV-ERB agonists or time-targeted NLRP3 or NF-kB inhibition.",
+          "Universal superiority of bedtime antihypertensive dosing or a dosing schedule suitable for every patient.",
+          "Reduced myocardial infarction or stroke outcomes from bedtime aspirin.",
+          "Established optimal dosing for SGLT2 inhibitors, colchicine, mineralocorticoid receptor antagonists or ARNI.",
+          "A guideline-level recommendation to change cardiovascular medication timing."
+        ]
+      },
+      "limitations": [
+        "This is a narrative, non-systematic evidence synthesis with no new dataset or pooled effect estimate.",
+        "Species, tissues, disease models and evidence levels are heterogeneous; causal animal or cell findings cannot automatically be generalized to human cardiovascular disease.",
+        "Constitutive and inducible clock-gene knockout models may yield different findings.",
+        "Treatment-timing evidence is uneven across cardiovascular drug classes and many proposed chronotherapy windows remain theoretical or preclinical.",
+        "Clinical antihypertensive timing evidence is conflicting, including Hygia-versus-BedMed differences.",
+        "No universal dosing recommendation is established; high-quality circadian-aware randomized clinical trials are needed."
+      ]
+    }
+  ]
+}

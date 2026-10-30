@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
-from research_guides import ROOT, SLUG, URL, require, validate_page
+from research_guides import ROOT, SLUG, URL, COMPARISONS, urls as guide_urls, require, validate_page
 
 
 class Links(HTMLParser):
@@ -18,30 +18,36 @@ class Links(HTMLParser):
 
 def validate_staged(stage, source=ROOT):
     stage = Path(stage).resolve()
-    for ext in ('html','md'):
-        name = 'research/'+SLUG+'.'+ext
-        require((stage/name).is_file(), 'Missing staged guide: '+name)
-        require((stage/name).read_bytes()==(source/name).read_bytes(), 'Staged guide payload differs: '+name)
-    page=(stage/'research'/(SLUG+'.html')).read_text(encoding='utf-8')
-    validate_page(page)
-    parser=Links(); parser.feed(page)
-    for href in parser.links:
-        u=urlsplit(urljoin(URL,href))
-        if u.netloc!='drgezhang.com': continue
-        target=(stage/unquote(u.path).lstrip('/')).resolve()
-        require(target.is_relative_to(stage), 'Unsafe staged link')
-        require(target.is_file(), 'Missing staged guide link: '+href)
-        if u.fragment:
-            linked=Links(); linked.feed(target.read_text(encoding='utf-8'))
-            require(u.fragment in linked.ids, 'Missing staged guide anchor: '+href)
+    expected_inventory = {'questions.html','questions.json'}
+    same_site_links = 0
+    for guide_url in guide_urls(source):
+        slug = Path(urlsplit(guide_url).path).stem
+        for ext in (('html','md','json') if slug in COMPARISONS else ('html','md')):
+            name = 'research/'+slug+'.'+ext
+            expected_inventory.add(slug+'.'+ext)
+            require((stage/name).is_file(), 'Missing staged guide: '+name)
+            require((stage/name).read_bytes()==(source/name).read_bytes(), 'Staged guide payload differs: '+name)
+        page=(stage/'research'/(slug+'.html')).read_text(encoding='utf-8')
+        validate_page(page, guide_url)
+        parser=Links(); parser.feed(page)
+        for href in parser.links:
+            u=urlsplit(urljoin(guide_url,href))
+            if u.netloc!='drgezhang.com': continue
+            same_site_links += 1
+            target=(stage/unquote(u.path).lstrip('/')).resolve()
+            require(target.is_relative_to(stage), 'Unsafe staged link')
+            require(target.is_file(), 'Missing staged guide link: '+href)
+            if u.fragment:
+                linked=Links(); linked.feed(target.read_text(encoding='utf-8'))
+                require(u.fragment in linked.ids, 'Missing staged guide anchor: '+href)
     entries=ET.parse(stage/'sitemap.xml').getroot()
     urls=[n.text for n in entries.findall('{*}url/{*}loc')]
-    require(urls.count(URL)==1, 'Guide must occur once in staged sitemap')
+    require(all(urls.count(u)==1 for u in guide_urls(source)), 'Guide must occur once in staged sitemap')
     for url in urls:
         u=urlsplit(url)
         target=stage/(u.path.lstrip('/') or 'index.html')
         require(target.is_file(), 'Sitemap URL has no staged file: '+url)
-    require({p.name for p in (stage/'research').iterdir()}=={SLUG+'.html',SLUG+'.md','questions.html','questions.json'}, 'Unexpected staged research inventory')
+    require({p.name for p in (stage/'research').iterdir()}==expected_inventory, 'Unexpected staged research inventory')
     for name in ('questions.html','questions.json'):
         require((stage/'research'/name).read_bytes()==(source/'research'/name).read_bytes(), 'Staged question index differs: '+name)
     questions=Links();questions.feed((stage/'research/questions.html').read_text(encoding='utf-8'))
@@ -54,7 +60,7 @@ def validate_staged(stage, source=ROOT):
             linked=Links();linked.feed(target.read_text(encoding='utf-8'))
             require(u.fragment in linked.ids,'Missing staged question anchor: '+href)
     require(urls.count('https://drgezhang.com/research/questions.html')==1,'Question index must occur once in sitemap')
-    return {'guides':1,'same_site_links_checked':sum(urlsplit(urljoin(URL,h)).netloc=='drgezhang.com' for h in parser.links),'sitemap_urls':len(urls)}
+    return {'guides':len(guide_urls(source)),'same_site_links_checked':same_site_links,'sitemap_urls':len(urls)}
 
 
 if __name__=='__main__':

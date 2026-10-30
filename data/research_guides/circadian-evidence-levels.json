@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "slug": "circadian-evidence-levels",
+  "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+  "question": "What do these circadian studies measure, how are they evaluated, and which clinical claims do they not establish?",
+  "scope": "A selective comparison of three works in this author-maintained collection, using unchanged reviewed study profiles, answers and evidence boundaries. This is not a systematic review, a new study, a pooled effect estimate or a clinical dosing recommendation.",
+  "reading_rule": "Compare the research tasks and validation units, not the sizes of unrelated metrics. Do not add cells, tissue samples, repeated expression samples or bibliography entries into a combined participant total. A publication and its author evidence page represent the same work, not independent evidence.",
+  "studies": [
+    {
+      "id": "circadian-ihd",
+      "task": "Coronary expression subtyping",
+      "source_doi": "10.1038/s41598-024-65236-5",
+      "source_json": "data/deep_geo/circadian-ihd.json",
+      "source_fingerprint": "38df964bf25a842699ba54a3650cc945c72f14d0649c1eafea4c2dbf2e57611d",
+      "qa_indices": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "doi-10-1038-s41698-026-01699-1",
+      "task": "Colorectal expression scoring and cell perturbation",
+      "source_doi": "10.1038/s41698-026-01699-1",
+      "source_json": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
+      "source_fingerprint": "43ba1d7dba4b28ea937d9e6f3ea058ba32fef53a98b4695689ae73faa78fc2ea",
+      "qa_indices": [
+        1,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "doi-10-1002-mdr2-70052",
+      "task": "Cardiovascular chronotherapy narrative synthesis",
+      "source_doi": "10.1002/mdr2.70052",
+      "source_json": "data/deep_geo/doi-10-1002-mdr2-70052.json",
+      "source_fingerprint": "34bd2ac180e5c76c8f8c9583379bf5c602f4d5df3106f69302faa03a542363e6",
+      "qa_indices": [
+        1,
+        7,
+        10
+      ]
+    }
+  ]
+}

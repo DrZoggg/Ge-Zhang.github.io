@@ -16491,6 +16491,96 @@
       "text": "Biliary tract oncology\nEarly-phase cancer treatment evidence\nCholangiocarcinoma after chemotherapy failure\nSingle-arm phase II activity and toxicity reporting\nProspective single-arm description of apatinib activity and toxicity after gemcitabine-based treatment failure in advanced cholangiocarcinoma.\nHuman single-center phase II observations without a randomized concurrent control; not comparative superiority, causal survival benefit or a current treatment recommendation.\nNon-comparative oncology evidence\nResponse-denominator interpretation\nEvidence synthesis: early-phase treatment studies in previously treated advanced cholangiocarcinoma.\nMethods: denominator-explicit interpretation of response and safety in single-arm oncology trials.",
       "url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#paper-discovery",
       "limitation": false
+    },
+    {
+      "id": 1649,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "What does CRDscore measure, and what does it not directly measure?\nCRDscore was constructed as a research score from target-gene expression and a random background. Formula: CRDscore = Srandom - SCADCRgenes; Random features: 1,000; Single-cell cutoff: 75th percentile; Bulk cutoff: Median. The score does not directly measure an individual's circadian phase, amplitude or period. The two data-layer cutoffs are not one clinical threshold.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#circadian-ihd",
+      "limitation": false
+    },
+    {
+      "id": 1650,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "What kind of external validation was performed?\nNTP was used to evaluate subtype assignment in four external expression datasets. Datasets: GSE20680; GSE20681; GSE43292; GSE62646. External expression-template reproducibility is not prospective risk prediction or demonstrated clinical utility.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#circadian-ihd",
+      "limitation": false
+    },
+    {
+      "id": 1651,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "Do subtype-associated immune patterns establish treatment benefit?\nType2 showed higher CRDscore and immune-inflammatory expression characteristics. Contractile markers: Lower expression; Immune and collagen pathways: Associated enrichment differences. Computational estimates and expression associations do not establish causal plaque transitions or benefit from immunotherapy or chronotherapy.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#circadian-ihd",
+      "limitation": false
+    },
+    {
+      "id": 1652,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "What is ClockProCRC and how was it constructed?\nClockProCRC is a transcriptomic circadian-misalignment scoring framework. The study began with a 906-gene colon circadian reference and separately used CRC single-cell co-expression analysis to derive nine modules and a 559-gene four-module CTD signature. The ClockProCRC scoring Methods then applied expression-matched random-background correction to circadian rhythm disorder genes using 100 expression bins and 1,000 random samplings. The reviewed manuscript text does not establish that the 559 CTD genes are identical to the final scoring gene set.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1038-s41698-026-01699-1",
+      "limitation": false
+    },
+    {
+      "id": 1653,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "How did CLOCK knockdown, melatonin and the reported SYNE1 AUC relate to the circadian perturbation experiment?\nCLOCK knockdown increased ClockProCRC and disrupted SYNE1 rhythmicity; melatonin partially restored the ClockProCRC-defined state and SYNE1 rhythmicity in CRC-cell experiments. The reported SYNE1 AUC of 0.915 refers specifically to discrimination of CLOCK-knockdown experimental conditions, not to CRC diagnosis or patient-level prediction.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1038-s41698-026-01699-1",
+      "limitation": false
+    },
+    {
+      "id": 1654,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "Are ClockProCRC or SYNE1 clinically validated for diagnosis, prognosis or treatment selection?\nNo. ClockProCRC has multicohort analytical and retrospective association evidence but lacks large prospective multicenter clinical validation and a universal clinical cutoff. SYNE1 has computational and in-vitro functional evidence but no SYNE1-directed animal efficacy or patient-treatment validation.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1038-s41698-026-01699-1",
+      "limitation": false
+    },
+    {
+      "id": 1655,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "What type of article is this?\nIt is a narrative Review Article synthesizing prior evidence. It reports no new experimental or clinical dataset, systematic study-selection workflow or pooled meta-analysis.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1002-mdr2-70052",
+      "limitation": false
+    },
+    {
+      "id": 1656,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "Should all antihypertensive medications be taken at bedtime?\nNo. Clinical evidence conflicts: Hygia and related studies reported bedtime-dosing benefits, while BedMed did not reproduce a cardiovascular-event benefit. The review does not support a universal bedtime recommendation.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1002-mdr2-70052",
+      "limitation": false
+    },
+    {
+      "id": 1657,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
+      "category": "Selected evidence comparison",
+      "text": "Is this a systematic review or meta-analysis?\nNo. The article reports no explicit systematic-search strategy, PRISMA study-selection workflow or quantitative meta-analysis; its 392 references are bibliography entries, not a systematic count of independent studies.",
+      "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1002-mdr2-70052",
+      "limitation": false
     }
   ]
 }

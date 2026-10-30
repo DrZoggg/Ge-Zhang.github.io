@@ -2588,6 +2588,7 @@ def build_site():
             )
     publications_url = absolute(config["site_url"], "publications.html")
     html_changed[research_guides.URL] = research_guides.build(ROOT)
+    html_changed.update(research_guides.build_comparisons(ROOT))
     question_contents = {
         norm_doi(c['doi']): c for c in deep_contents.values() if c
     }
@@ -2644,7 +2645,7 @@ def build_site():
         homepage_url,
         publications_url,
         *[item["paper_url"] for item in public_items],
-        research_guides.URL,
+        *research_guides.urls(ROOT),
         question_url,
     ]
     lastmods = {
