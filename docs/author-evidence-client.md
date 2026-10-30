@@ -67,6 +67,15 @@ the returned work's question list, retaining the original query and the exact
 source answer; it must not report that assisted lookup as blind natural discovery.
 Do not expand the scientific corpus merely to make benchmark phrases match.
 
+The broader-related fallback retains exact query words found in a corpus title
+or concept field and occurring in only one or two works (counted by DOI), except
+short/numeric tokens and the existing explicit acronym aliases. A result must
+contain those words somewhere in its
+indexed evidence text. This prevents broad coverage from silently dropping a
+specific drug or model name. It may conservatively return no result; this is not
+entity recognition, translation, semantic understanding or a check of clinical
+truth. Exact DOI, exact reviewed-question and first-pass AND matches are unchanged.
+
 ## Evidence packet
 
 `fetch` returns one source-bound packet including:

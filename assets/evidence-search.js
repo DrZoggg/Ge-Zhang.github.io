@@ -22,10 +22,23 @@
       paper.sections.push(d);
       papers.set(d.doi, paper);
     });
+    // Corpus-specific words must not disappear when a whole-paper fallback
+    // relaxes coverage. Count works, not repeated sections or representations.
+    const tokenWorkCounts = new Map(), topicalTokens = new Set();
+    papers.forEach(paper => {
+      paper.tokens = new Set(normalize(Object.values(paper.fields).join(' ')).split(/[^a-z0-9]+/u));
+      paper.tokens.forEach(token => tokenWorkCounts.set(token, (tokenWorkCounts.get(token) || 0) + 1));
+      normalize((paper.fields.Title || '') + ' ' + (paper.fields.Concepts || ''))
+        .split(/[^a-z0-9]+/u).forEach(token => topicalTokens.add(token));
+    });
     const dedupe = hits => { const seen = new Set(); return hits.filter(h => { const key = h.doi || h.title; if (seen.has(key)) return false; seen.add(key); return true; }); };
     const fallback = query => {
       const groups = fallbackGroups(query), rows = [];
+      const anchors = groups.map(group => group.raw).filter(token =>
+        token.length >= 3 && /[a-z]/u.test(token) && !fallbackAliases[token]
+        && topicalTokens.has(token) && tokenWorkCounts.get(token) <= 2);
       papers.forEach(paper => {
+        if (anchors.some(token => !paper.tokens.has(token))) return;
         let matched = 0, informative = 0, score = 0, fields = [];
         groups.forEach(group => { const hits = Object.keys(paper.fields).filter(cat => group.terms.has(cat.toLowerCase()) || [...group.terms].some(t => normalize(paper.fields[cat]).split(/[^a-z0-9]+/u).includes(t))); if (!hits.length) return; matched += 1; if (!fallbackGeneric.has(group.raw)) informative += 1; const best = hits.sort((a,b) => (fallbackWeights[b] || 1) - (fallbackWeights[a] || 1))[0]; score += (fallbackWeights[best] || 1) * (fallbackGeneric.has(group.raw) ? .18 : 1); fields.push(best); });
         const infoCoverage = informative / Math.max(1, groups.filter(g => !fallbackGeneric.has(g.raw)).length);
