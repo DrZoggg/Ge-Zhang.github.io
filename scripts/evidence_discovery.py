@@ -121,4 +121,6 @@ def search_corpus(root, items, contents):
     for document in discovery_documents:
         document['id'] = len(documents)
         documents.append(document)
+    from research_guides import comparison_search_documents
+    documents.extend(comparison_search_documents(root, len(documents)))
     return {'version': 1, 'description': 'Visible public text for local text-relevance search; no generated answers or evidence-strength ranking.', 'documents': documents}

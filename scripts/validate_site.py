@@ -3078,12 +3078,13 @@ def validate_site():
         f"{config['site_url']}/",
         f"{config['site_url']}/publications.html",
         *[f"{config['site_url']}/papers/{slug}.html" for slug in slugs],
-        research_guides.URL,
+        *research_guides.urls(ROOT),
         f"{config['site_url']}/research/questions.html",
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")
     require(set(sitemap_urls) == set(expected_urls), "Sitemap URLs do not match public pages.")
     research_guides.validate(ROOT)
+    research_guides.build_comparisons(ROOT, validate_only=True)
     for item in withdrawn:
         slug = str(item.get("slug") or "")
         require(not slug or not any(slug in url for url in sitemap_urls), "Withdrawn in sitemap.")

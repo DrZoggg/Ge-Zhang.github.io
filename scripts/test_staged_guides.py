@@ -3,7 +3,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
-from research_guides import ROOT, SLUG, URL
+from research_guides import ROOT, SLUG, URL, urls as guide_urls
 from validate_staged_guides import validate_staged
 from indexnow_submit import detect_changes_with_html, validate_public_html_url
 
@@ -17,7 +17,11 @@ class StagedGuideTests(unittest.TestCase):
         for name in ('index.html','publications.html','sitemap.xml'):
             shutil.copy2(ROOT/name,self.stage/name)
 
-    def test_complete(self): self.assertEqual(validate_staged(self.stage)['guides'],1)
+    def test_complete(self): self.assertEqual(validate_staged(self.stage)['guides'],len(guide_urls()))
+
+    def test_comparison_matrix_required(self):
+        (self.stage/'research/circadian-evidence-levels.json').unlink()
+        with self.assertRaisesRegex(ValueError,'Missing staged guide'): validate_staged(self.stage)
 
     def test_missing_research(self):
         shutil.rmtree(self.stage/'research')
