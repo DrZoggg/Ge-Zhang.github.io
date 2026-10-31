@@ -6,10 +6,15 @@ You are the autonomous technical lead and engineering executor for this reposito
 
 ## Current project strategy: AI-first evidence discovery (2026-10-29)
 
-The priority is accurate research evidence being retrieved, understood, verified
-and cited by AI search systems. Traditional search and scholarly identity support
-that goal; routine visual redesign is not a project objective. Preserve the
-approved landscape and Gradient Waves homepage.
+The priority is relevant formal papers being discovered, read, correctly used
+and accurately cited in AI-assisted research and writing. Discovery through a
+publisher, PubMed, PMC, another lawful source or this author site all counts;
+deduplicate representations by the formal DOI. Site-URL citations are a separate
+supplementary measure. Never force a consumer to prefer this domain over a better
+source, exclude competing evidence or treat the author's explanation as an
+independent study. Traditional search and scholarly identity support this goal;
+routine visual redesign is not a project objective. Preserve the approved
+landscape and Gradient Waves homepage.
 
 Use the existing publishing core and reviewed Gold assets to improve this chain:
 scientific query → reviewed answer → supporting evidence and source locator →
@@ -35,8 +40,24 @@ of a real scheduled execution.
 Measure indexing, AI impressions, retrieval candidates, successful body reads,
 final site citations, original-paper citations, referrals and academic citations
 separately. Do not infer growth or causality from a deployment or passing tests.
-Keep queries and collection conditions comparable. When awaiting engine processing,
-use the existing schedule instead of repeatedly submitting or refreshing platforms.
+Keep queries and collection conditions comparable. Candidate inclusion, abstract
+or full-text reading, evidence extraction, use in a generated draft, accurate
+formal citation and newly published academic citations are distinct outcomes.
+For natural-discovery tests, do not prompt with the owner's name, domain, target
+paper title or DOI; identity follow-ups after discovery must be logged separately.
+When awaiting engine processing, use the existing schedule instead of repeatedly
+submitting or refreshing platforms. An index-request error pauses that branch,
+not independent retrieval or writing engineering.
+
+At the start of a delivery round, select a finite set of evidenced bottlenecks
+and acceptance conditions in the existing private ledger. Preserve ongoing work
+when the goal expands. Reuse completed source and consumer investigations rather
+than rebuilding them. Compare working alternatives, independently verify the
+selected improvement, publish and check it, and actually exercise an available
+external retrieval channel and a research-writing workflow. A PR, local recall
+score or successful client installation alone cannot close the round. Close only
+when selected controllable items are verified, empirically rejected or specifically
+externally blocked; do not wait indefinitely for favorable citation statistics.
 
 External compatibility work must distinguish blind web discovery, supplied-URL
 reading and explicitly connected tools. Read representative consumers' actual
@@ -398,20 +419,6 @@ For routine engineering tasks:
 - do not rerun tests whose result cannot materially affect the requested change;
 - prefer targeted validation over full regression for low-risk changes;
 - reuse verified source-of-truth supplied by Web Chat rather than researching it again.
-
-Validation:
-
-- only `AGENTS.md` may change
-- no site build or regression suite is required
-- run `git diff --check`
-- review the exact diff
-
-Commit:
-`docs: optimize Codex execution speed`
-
-Push to `main`.
-
-If Pages is automatically triggered by the push, only observe and report the result.
 
 ## Final Report
 

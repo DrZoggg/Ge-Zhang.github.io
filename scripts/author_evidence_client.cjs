@@ -215,7 +215,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
     };
     return clone({source_kind:SOURCE_KIND, channel:'explicitly_connected_readonly_client', query,
       query_transmitted_to_source:false, natural_discovery_proven:false,
-      ranking:'Existing MiniSearch text relevance, not evidence strength or a generated scientific answer',
+      ranking:'MiniSearch question/answer lexical relevance with English word-form normalization; not evidence strength or a generated scientific answer',
       best_matches:result.bestMatches.slice(0,limit).map(format),
       broader_related:result.broaderRelated.slice(0,limit).map(format),
       total_best_matches:result.bestMatches.length, total_broader_related:result.broaderRelated.length,
