@@ -45,7 +45,13 @@ const guarded = createEngine(MiniSearch, {documents:[
 const guardedHits = guarded('cedar widget calibration field specimen unusual');
 assert(guardedHits.broaderRelated.some(hit => hit.doi === '10.1000/a'));
 assert(!guardedHits.some(hit => hit.doi === '10.1000/b'));
+const coverage = guardedHits.broaderRelated.find(hit => hit.doi === '10.1000/a').queryCoverage;
+assert.deepEqual(coverage.unmatched_query_terms, ['unusual']);
+assert.deepEqual(coverage.matched_query_terms, ['cedar', 'widget', 'calibration', 'field', 'specimen']);
+assert.deepEqual(coverage.evaluated_query_terms, [...coverage.matched_query_terms, 'unusual']);
+assert.match(coverage.basis, /Whole-work/);
 assert.equal(guarded('10.1000/b')[0].doi, '10.1000/b');
+assert.equal(guarded('10.1000/b')[0].queryCoverage, undefined);
 assert(guarded('widget calibration').bestMatches.some(hit => hit.doi === '10.1000/b'));
 // A disclosed diagnostic negative is a regression, not a new held-out score.
 const drugPremise = search('How large is the clinical treatment benefit of Kenpaullone in patients with atherosclerosis?');

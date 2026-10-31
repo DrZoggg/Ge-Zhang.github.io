@@ -209,7 +209,9 @@ function createClient(questions, searchCorpus, retrieval = {}) {
         evidence_status:work ? work.evidence_status : null, evidence_unit:work ? evidenceUnit(work) : null,
         url:hit.url, matched_section:hit.category, matched_text:hit.text,
         limitation:Boolean(hit.limitation), match_group:hit.matchGroup,
-        fetch_context_available:Boolean(work)};
+        fetch_context_available:Boolean(work),
+        ...(hit.queryCoverage ? {query_coverage:{...clone(hit.queryCoverage),
+          interpretation:'Partial lexical matching only. Unmatched terms may include a different entity or intervention; verify them before using this record. Matched terms do not validate the query premise. This is not entity recognition, semantic coverage or proof that absent terms are scientifically false.'}} : {})};
     };
     return clone({source_kind:SOURCE_KIND, channel:'explicitly_connected_readonly_client', query,
       query_transmitted_to_source:false, natural_discovery_proven:false,

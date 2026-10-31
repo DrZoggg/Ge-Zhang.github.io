@@ -57,6 +57,11 @@ async function run() {
   const found=client.search(exact.question);
   assert(found.best_matches.some(hit=>hit.id===exact.id));
   assert.equal(found.query_transmitted_to_source,false);assert.equal(found.natural_discovery_proven,false);
+  const partial=client.search('KIF13B KCTD10 KLF4 vascular smooth muscle coveragefixtureunseen');
+  assert(partial.broader_related.length > 0);
+  assert(partial.broader_related.every(hit=>hit.query_coverage.unmatched_query_terms.includes('coveragefixtureunseen')));
+  assert(partial.broader_related.every(hit=>hit.query_coverage.interpretation.includes('do not validate the query premise')));
+  assert(found.best_matches.every(hit=>hit.query_coverage===undefined));
   const unrelated=client.search('James Webb exoplanet transit atmosphere methane detection');
   assert.equal(unrelated.best_matches.length,0);assert.equal(unrelated.broader_related.length,0);
   assert.throws(()=>client.fetch('not-a-known-id'),/Unknown stable/);

@@ -40,7 +40,8 @@
       papers.forEach(paper => {
         if (anchors.some(token => !paper.tokens.has(token))) return;
         let matched = 0, informative = 0, score = 0, fields = [];
-        groups.forEach(group => { const hits = Object.keys(paper.fields).filter(cat => group.terms.has(cat.toLowerCase()) || [...group.terms].some(t => normalize(paper.fields[cat]).split(/[^a-z0-9]+/u).includes(t))); if (!hits.length) return; matched += 1; if (!fallbackGeneric.has(group.raw)) informative += 1; const best = hits.sort((a,b) => (fallbackWeights[b] || 1) - (fallbackWeights[a] || 1))[0]; score += (fallbackWeights[best] || 1) * (fallbackGeneric.has(group.raw) ? .18 : 1); fields.push(best); });
+        const matchedQueryTerms = new Set();
+        groups.forEach(group => { const hits = Object.keys(paper.fields).filter(cat => group.terms.has(cat.toLowerCase()) || [...group.terms].some(t => normalize(paper.fields[cat]).split(/[^a-z0-9]+/u).includes(t))); if (!hits.length) return; matchedQueryTerms.add(group.raw); matched += 1; if (!fallbackGeneric.has(group.raw)) informative += 1; const best = hits.sort((a,b) => (fallbackWeights[b] || 1) - (fallbackWeights[a] || 1))[0]; score += (fallbackWeights[best] || 1) * (fallbackGeneric.has(group.raw) ? .18 : 1); fields.push(best); });
         const infoCoverage = informative / Math.max(1, groups.filter(g => !fallbackGeneric.has(g.raw)).length);
         if (infoCoverage < .65 || score < 12 || !fields.length || fields.every(f => f.toLowerCase().includes('limitation') || f.toLowerCase().includes('scope'))) return;
         // A category can contain several Q&A/findings. Choose its strongest
@@ -52,7 +53,14 @@
         };
         const candidates = paper.sections.filter(s => s.category === fields[0]);
         const section = candidates.sort((a,b) => passageScore(b) - passageScore(a))[0] || paper.sections[0];
-        rows.push({...section, doi:paper.doi, title:paper.title, url:section.url, score, matchGroup:'broader', limitation:Boolean(section.limitation)});
+        const evaluatedQueryTerms = [...new Set(groups.map(group => group.raw))];
+        rows.push({...section, doi:paper.doi, title:paper.title, url:section.url, score, matchGroup:'broader', limitation:Boolean(section.limitation),
+          queryCoverage: {
+            basis:'Whole-work indexed text using the existing ASCII fallback tokens, stop words and acronym aliases; not the matched passage alone',
+            evaluated_query_terms:evaluatedQueryTerms,
+            matched_query_terms:evaluatedQueryTerms.filter(term => matchedQueryTerms.has(term)),
+            unmatched_query_terms:evaluatedQueryTerms.filter(term => !matchedQueryTerms.has(term))
+          }});
       });
       return rows.sort((a,b) => b.score - a.score).slice(0,3);
     };
