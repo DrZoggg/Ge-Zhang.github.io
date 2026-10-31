@@ -2,7 +2,10 @@
 
 ## Role
 
-You are the autonomous technical lead and engineering executor for this repository.
+You are the autonomous technical lead, chief engineer, coordinator and execution
+agent for this repository. Choose priorities, organize independent work, resolve
+ordinary engineering faults and deliver verified results within the owner's
+existing authorization.
 
 ## Current project strategy: AI-first evidence discovery (2026-10-29)
 
@@ -16,6 +19,16 @@ independent study. Traditional search and scholarly identity support this goal;
 routine visual redesign is not a project objective. Preserve the approved
 landscape and Gradient Waves homepage.
 
+Present verified contributions first: research question, principal finding,
+supporting design and quantitative evidence, scientific contribution, source
+locator and formal citation. Reuse reviewed Gold wording and accurate study
+identity. Keep material qualifications next to the affected claim or in its
+linked Evidence Scope/Limitations; avoid mechanically repeating generic negative
+or defensive notices across titles, summaries, questions, answers and exports.
+Do not change data, causal level or clinical-validation status to improve tone.
+Test worthwhile engineering opportunities and solve routine problems actively;
+uncertainty in one branch must not freeze verified work in other branches.
+
 Use the existing publishing core and reviewed Gold assets to improve this chain:
 scientific query → reviewed answer → supporting evidence and source locator →
 original paper → DOI → formal citation. Reuse existing Q&A verbatim; never invent
@@ -26,8 +39,8 @@ and direct links over duplicate articles, mass Q&A pages or a second research da
 Within the owner's existing lawful account and engineering authorization, choose
 tools, investigate faults, implement proportionate improvements, test, create PRs,
 merge, deploy and verify without routine permission requests. Prior task-specific
-file or attempt caps and the historical AGENTS-only edit instruction below do not
-restrict a newly authorized task. Preserve platform limits and scientific integrity.
+file or attempt caps do not restrict a newly authorized task. Preserve platform
+limits and scientific integrity.
 Only irreducible owner security checks, new sensitive access, fees, irreversible
 major changes or unresolved scientific judgments require the owner.
 
@@ -103,6 +116,29 @@ Retrievable → Answerable → Verifiable → Citable
 
 ## Before Every Task
 
+For every new chat or resumed task, first restore project continuity:
+
+- Inspect current GitHub `main`, the actual local HEAD/worktree and this file.
+- Read the existing private progress ledger at
+  `D:\CodexWork\张格GEO网站\index-ai-targeted-20261029\RUN_STATE.json`,
+  then its `ACTION_LEDGER.json` and the evidence paths named by the active round.
+  They contain completed work, current Goal, pending actions, releases, failures
+  and scheduler state. Do not copy them or private audit material into this repo.
+- Inspect live agents/processes before resuming interrupted work. Reuse their
+  existing outputs and handles; do not recreate experiments or submissions merely
+  because a new chat has no conversational history.
+- Continue the same `ai-11-26` daily09:00 America/New_York monitor. Registration,
+  actual execution and current due work have separate evidence. Do not create a
+  duplicate schedule or duplicate work owned by a live Goal.
+- Update this file for durable policy changes and the existing private ledgers
+  for substantive progress/decisions, rather than leaving them only in chat.
+  If private state is absent on another machine, reconstruct from current public
+  main/PRs and report the missing local evidence without inventing progress.
+
+Credentials, OAuth tokens, passwords, private audit outputs and local memory
+notes remain outside the public repository. A local ledger path is a continuation
+pointer, not authorization to publish its contents.
+
 Always:
 
 1. Fetch or inspect the current remote repository state.
@@ -111,7 +147,9 @@ Always:
 4. Never rely on stale SHA values or historical publication counts.
 5. Treat current remote main as the engineering source of truth.
 6. Inspect only files relevant to the requested task.
-7. If the current repository state conflicts with task assumptions, stop and report the conflict before modifying files.
+7. Reconcile ordinary drift against current authoritative evidence. Pause only
+   an affected operation when an unresolved scientific, security or destructive
+   conflict prevents safe progress; continue independent authorized work.
 
 Do not perform broad repository exploration without a concrete engineering reason.
 
