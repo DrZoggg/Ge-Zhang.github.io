@@ -60,12 +60,19 @@ other consumers. The local snapshot mode remains available without a network.
 4. Preserve the full scope and provenance while writing. If no suitable answer
    exists, report that gap; do not turn the nearest text match into an answer.
 
-This is the same lexical MiniSearch used on the site. It is not a multilingual
-semantic retriever. Some natural paraphrases and Chinese queries do not match
-English source text. A caller may transparently translate a question or inspect
-the returned work's question list, retaining the original query and the exact
-source answer; it must not report that assisted lookup as blind natural discovery.
-Do not expand the scientific corpus merely to make benchmark phrases match.
+The client and website use the same local MiniSearch engine. Natural queries use
+separate question/answer fields and an English Porter word-form index to select
+a relevant original answer within a matching work. This is lexical relevance,
+not semantic entailment or scientific evidence strength. Some paraphrases still
+do not match; inspect the full packet instead of treating a nearby answer as proof.
+
+Chinese queries remain limited against the English evidence corpus. A bounded
+local label adapter was actually tested but was not selected because it blocked
+the independent Chinese queries. No full multilingual understanding is claimed.
+Callers may transparently translate a question or inspect a returned work's
+question list while retaining the original query and source answer. Assisted
+lookup must not be reported as blind natural discovery. See
+[query component sources and limits](retrieval-query-sources.md).
 
 The broader-related fallback retains exact query words found in a corpus title
 or concept field and occurring in only one or two works (counted by DOI), except
@@ -74,17 +81,18 @@ contain those words somewhere in its
 indexed evidence text. This prevents broad coverage from silently dropping a
 specific drug or model name. It may conservatively return no result; this is not
 entity recognition, translation, semantic understanding or a check of clinical
-truth. Exact DOI, exact reviewed-question and first-pass AND matches are unchanged.
+truth. Exact DOI, unchanged reviewed questions, exact title/journal, short
+identifier and precise guide/denial routes retain the established behavior.
 
 Broader-related results include `query_coverage` with the evaluated, matched and
 unmatched query terms from that same fallback. Inspect unmatched terms before
 using a result: the broader match can omit a different named entity, treatment
 or condition. Coverage is across the work's indexed text, not necessarily the
-returned passage. It uses the existing ASCII tokenization, stop words and acronym
-aliases, so it does not assess every word or multilingual meaning. Even complete
+returned passage. It uses disclosed tokenization, stop words, acronym aliases
+and word-form normalization, so it does not assess every word or multilingual meaning. Even complete
 lexical coverage does not establish that a query's premise is correct. Missing
 words do not prove a claim false or absent from all scientific literature. The
-diagnostic does not change ranking; fetch and verify the full evidence packet.
+diagnostic is descriptive; fetch and verify the full evidence packet.
 
 ## Evidence packet
 

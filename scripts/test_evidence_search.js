@@ -56,4 +56,7 @@ assert(guarded('widget calibration').bestMatches.some(hit => hit.doi === '10.100
 // A disclosed diagnostic negative is a regression, not a new held-out score.
 const drugPremise = search('How large is the clinical treatment benefit of Kenpaullone in patients with atherosclerosis?');
 assert(!drugPremise.some(hit => hit.doi === '10.1002/mdr2.70052'));
+// Natural wording must retain the original reviewed-answer route.
+assert(search('What happened after knocking down SYNE1 in CRC cells?')
+  .some(hit => hit.url === 'https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#qa-6'));
 console.log(`SEARCH PASS: official MiniSearch, DOI, Unicode, limitations, direct reviewed answer anchors; ${publications.length} public records`);

@@ -57,6 +57,8 @@ async function run() {
   const found=client.search(exact.question);
   assert(found.best_matches.some(hit=>hit.id===exact.id));
   assert.equal(found.query_transmitted_to_source,false);assert.equal(found.natural_discovery_proven,false);
+  const paraphrase=client.search('What happened after knocking down SYNE1 in CRC cells?');
+  assert(paraphrase.broader_related.some(hit=>hit.id==='doi-10-1038-s41698-026-01699-1--qa-6'));
   const partial=client.search('KIF13B KCTD10 KLF4 vascular smooth muscle coveragefixtureunseen');
   assert(partial.broader_related.length > 0);
   assert(partial.broader_related.every(hit=>hit.query_coverage.unmatched_query_terms.includes('coveragefixtureunseen')));
