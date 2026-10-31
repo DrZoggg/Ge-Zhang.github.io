@@ -1,0 +1,5 @@
+# Optional local evidence consumer: runtime and private query artifacts.
+.venv-evidence-semantic/
+.evidence-semantic/
+__pycache__/
+*.py[cod]

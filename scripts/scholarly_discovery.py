@@ -1,6 +1,7 @@
 """Static discovery interfaces derived only from approved publication sources."""
 import html
 import hashlib
+import copy
 import json
 import re
 from datetime import date
@@ -166,10 +167,25 @@ def question_records(items, contents, fields, root=ROOT):
             source = f'data/deep_geo/{item["slug"]}.json#/qa/{i-1}/question'
         else:
             raise ValueError('Invalid reviewed question selector: ' + item['doi'])
+        source_path = f'data/deep_geo/{item["slug"]}.json'
+        refs = content['qa'][choice['qa_index'] - 1].get('evidence_refs', []) if 'qa_index' in choice else []
+        finding_index = 0
+        if refs:
+            matching = [n for n, finding in enumerate(content['key_findings']) if finding['id'] == refs[0]]
+            if len(matching) != 1:
+                raise ValueError('Question card lacks its encoded finding reference: ' + item['doi'])
+            finding_index = matching[0]
+        finding = content['key_findings'][finding_index]
         row = {
                 'id': item['slug'], 'question': question,
                 'title': item['title'], 'doi': item['doi'], 'paper_url': item['paper_url'],
                 'answer_url': item['paper_url'] + '#' + anchor,
+                'key_finding': {
+                    **copy.deepcopy(finding),
+                    'source': source_path + f'#/key_findings/{finding_index}',
+                    'evidence_url': item['paper_url'] + '#' + finding['id'].lower(),
+                },
+                'key_finding_basis': 'question_evidence_ref' if refs else 'work',
                 'source': source,
                 'profile_type': content['study_profile']['profile_type'],
                 'narrative_genre': content['study_profile'].get('narrative_genre'),
@@ -191,7 +207,6 @@ def question_records(items, contents, fields, root=ROOT):
             if 'qa_index' not in choice:
                 raise ValueError('Answer preview requires an exact reviewed Q&A selector: ' + item['doi'])
             qa = content['qa'][choice['qa_index'] - 1]
-            source_path = f'data/deep_geo/{item["slug"]}.json'
             findings = {f['id']: (n, f) for n, f in enumerate(content['key_findings'])}
             refs = list(qa.get('evidence_refs', []))
             if not refs or any(ref not in findings for ref in refs):
@@ -212,7 +227,12 @@ def question_records(items, contents, fields, root=ROOT):
                 'does_not_establish': list(content['evidence_scope']['does_not_establish']),
                 'scope_source': source_path + '#/evidence_scope/does_not_establish',
             }
-        rows.append(row)
+        # Keep answer/finding text ahead of qualification fields in JSON readers.
+        first = ('id', 'title', 'doi', 'paper_url', 'question', 'answer_url', 'answer_preview', 'key_finding', 'key_finding_basis')
+        last = ('evidence_scope_kind', 'evidence_scope')
+        rows.append({**{k: row[k] for k in first if k in row},
+                     **{k: v for k, v in row.items() if k not in first + last},
+                     **{k: row[k] for k in last}})
     return rows
 
 
@@ -236,7 +256,31 @@ def render_questions(rows, config, discovery=None):
                          + '">Research &amp; review context</a></p>')
         preview = row.get('answer_preview')
         answer = ''
-        scope = f'<p><strong>Does not establish:</strong> {escape(row["evidence_scope"])}</p>'
+        work = works.get(row['id'], {})
+        finding = row['key_finding']
+        finding_label = ('Supporting key finding' if row['key_finding_basis'] == 'question_evidence_ref'
+                         else 'Key finding from this work')
+        finding_html = ('<div class="work-key-finding" data-work-key-finding="'
+                        + escape(row['id'], quote=True) + '" data-key-finding-id="'
+                        + escape(finding['id'], quote=True) + '">'
+                        + '<h3>' + finding_label + '</h3><p data-finding-claim>'
+                        + escape(finding['claim']) + '</p><p>' + escape(finding['context']) + '</p><ul>'
+                        + ''.join('<li><strong>' + escape(item['label']) + ':</strong> '
+                                  + escape(item['value']) + '</li>' for item in finding['evidence'])
+                        + '</ul><p><strong>Original-source locator:</strong> <a href="'
+                        + escape(finding['evidence_url'], quote=True) + '">'
+                        + escape(finding['id']) + '</a> · ' + escape(finding['source_locator'])
+                        + '</p></div>')
+        full_scope = work.get('evidence_scope') or {'supports': [], 'does_not_establish': [row['evidence_scope']]}
+        scope = ('<details class="discovery-scope"><summary>Evidence scope and limitations</summary>'
+                 + ('<h3>Supports</h3><ul>' + ''.join('<li>' + escape(item) + '</li>'
+                    for item in full_scope['supports']) + '</ul>' if full_scope['supports'] else '')
+                 + '<p><strong>Does not establish:</strong></p><ul>'
+                 + ''.join('<li>' + escape(item) + '</li>' for item in full_scope['does_not_establish'])
+                 + '</ul><h3>Limitations</h3><ul>'
+                 + ''.join('<li>' + escape(item) + '</li>' for item in work.get('limitations', []))
+                 + '</ul><p><a href="' + escape(row['paper_url'], quote=True)
+                 + '#ev-scope">Full paper evidence scope</a></p></details>')
         if preview:
             evidence = ''.join(
                 '<li><a href="' + escape(ref['evidence_url'], quote=True) + '">'
@@ -252,9 +296,6 @@ def render_questions(rows, config, discovery=None):
                       + '<p>Gold content SHA-256: <code>' + escape(preview['source_content_sha256'])
                       + '</code></p><p>Answer SHA-256: <code>' + escape(preview['answer_sha256'])
                       + '</code></p></details></div>')
-            # Keep the existing first limitation and expose every remaining one.
-            scope += '<ul>' + ''.join('<li>' + escape(limit) + '</li>'
-                                     for limit in preview['does_not_establish'][1:]) + '</ul>'
         complete = ''
         questions = by_work.get(row['id'], [])
         if questions:
@@ -267,22 +308,20 @@ def render_questions(rows, config, discovery=None):
             concepts = [str(v) for values in works[row['id']].get('concepts', {}).values() for v in values]
             complete = ('<details class="discovery-questions"><summary>' + str(len(questions))
                         + ' reviewed questions — direct answers and evidence</summary>'
-                        + '<p>Each link opens the unchanged answer on the paper evidence page. '
-                        + 'Interpret it with that paper’s full evidence scope and provenance.</p><ol>'
+                        + '<p>Open the reviewed answer and supporting evidence on the paper page.</p><ol>'
                         + links + '</ol></details>')
             if concepts:
                 complete += ('<details class="discovery-concepts"><summary>Paper-level research concepts</summary>'
-                             + '<p>These labels describe the paper context; they are not independent claims or evidence of validation.</p><ul>'
+                             + '<ul>'
                              + ''.join('<li>' + escape(c) + '</li>' for c in concepts) + '</ul></details>')
         cards.append(
             f'<article class="card" id="{escape(row["id"], quote=True)}">'
-            + context +
             f'<h2><a href="{escape(row["answer_url"], quote=True)}">{escape(row["question"])}</a></h2>'
             f'<p>Paper context: {escape(row["title"])}</p><p class="meta">{escape(row.get("publication_type") or row["profile_type"].replace("_", " "))}</p>'
-            + answer + scope + complete +
+            + finding_html + answer +
             f'<p class="links"><a href="{escape(row["paper_url"], quote=True)}">Paper evidence and provenance</a> '
             f'<a href="https://doi.org/{escape(row["doi"], quote=True)}">Original article DOI</a>'
-            f' {citation}</p></article>')
+            f' {citation}</p>' + context + scope + complete + '</article>')
     other = []
     selected = {row['id'] for row in rows}
     for work in discovery['works']:
@@ -311,15 +350,15 @@ def render_questions(rows, config, discovery=None):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Scientific questions | {escape(config['researcher_name'])}</title>
-<meta name="description" content="Browse reviewed scientific questions, evidence limits and original article citations from this research program.">
+<meta name="description" content="Browse reviewed scientific questions, key findings and original article citations from this research program.">
 <link rel="canonical" href="{url}"><link rel="alternate" type="application/json" href="questions.json">
 <link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/question-discovery.css">
 <script src="../assets/evidence-search.js" defer></script></head><body class="scientific-discovery">
 <header><nav><a class="brand" href="../index.html">{escape(config['researcher_name'])}</a><div class="navlinks"><a href="../publications.html">All publications</a></div></nav></header>
 <main class="wrap"><section><div class="eyebrow">Research discovery</div><h1>Scientific questions</h1>
 <p class="lead">Questions addressed by publications in this research program</p>
-<p>This research-program index is not an exhaustive or systematic review of the field. Questions are reproduced from reviewed paper Q&amp;A or existing reviewed question mappings. Read each question in its stated paper context. Follow it to the existing answer or evidence section and full evidence scope; the original article remains the formal citation source.</p>
-<p>{counts}</p><p>Six selected entries retain complete reviewed answers here. All indexed Q&amp;A links lead directly to their unchanged answers on the existing paper pages.</p>
+<p>This index covers publications in this research program; it is not an exhaustive or systematic review of the field. Reviewed Q&amp;A and mapped questions link to canonical paper evidence and original article DOIs.</p>
+<p>{counts}</p><p>Each full-evidence entry presents a source-linked key finding from the work. Six selected entries also retain complete reviewed answers here. All indexed Q&amp;A links lead directly to their unchanged answers on the existing paper pages.</p>
 <p><a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
 <section class="discovery-search" aria-labelledby="discovery-search-title"><h2 id="discovery-search-title">Find a question, concept or original work</h2>
 <label for="pubSearch">Search existing paper evidence, questions, concepts, title or DOI</label>
@@ -380,9 +419,27 @@ def validate_generated(items, config, root=ROOT):
         target = (root / 'papers' / (slug + '.html')).read_text(encoding='utf-8')
         if target.count('id="'+anchor+'"') != 1 or html.escape(row['answer_url'],quote=True) not in page:
             raise ValueError('Missing or ambiguous scientific question route')
+        card = re.search(r'<article class="card" id="' + re.escape(slug) + r'">(.*?)</article>', page, re.S)
+        work = next(work for work in discovery['works'] if work['id'] == slug)
+        finding = row['key_finding']
+        qa = next((q for q in discovery['all_questions'] if q['answer_url'] == row['answer_url']
+                   and q['question'] == row['question']), None)
+        refs = qa['evidence_refs'] if qa else []
+        expected_finding = (next(f for f in work['key_findings'] if f['id'] == refs[0])
+                            if refs else work['key_findings'][0])
+        if (finding != expected_finding
+                or row['key_finding_basis'] != ('question_evidence_ref' if refs else 'work')):
+            raise ValueError('Question card finding differs from its encoded QA reference or work fallback')
+        finding_text = [finding['claim'], finding['context'], finding['source_locator']]
+        finding_text += [value for evidence in finding['evidence'] for value in evidence.values()]
+        scope_text = [*work['evidence_scope']['supports'], *work['evidence_scope']['does_not_establish'], *work['limitations']]
+        if (not card or any(html.escape(value) not in card.group(1) for value in finding_text + scope_text)
+                or card.group(1).index('data-work-key-finding=') > card.group(1).index('class="discovery-scope"')
+                or target.count('id="ev-scope"') != 1
+                or html.escape(finding['evidence_url'], quote=True) not in card.group(1)):
+            raise ValueError('Question card finding or complete readable scope differs from Gold')
         if row.get('answer_preview'):
             preview = row['answer_preview']
-            card = re.search(r'<article class="card" id="' + re.escape(slug) + r'">(.*?)</article>', page, re.S)
             if (not card or html.escape(preview['answer']) not in card.group(1)
                     or any(html.escape(limit) not in card.group(1) for limit in preview['does_not_establish'])
                     or preview['answer_sha256'] not in card.group(1)

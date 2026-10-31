@@ -3,6 +3,8 @@ import json
 import hashlib
 import html
 import tempfile
+import re
+import copy
 import unittest
 from pathlib import Path
 from sync_common import ROOT
@@ -36,6 +38,38 @@ def validate_questions():
     return len(rows)
 class QuestionTests(unittest.TestCase):
     def test_source_bound_routes(self):validate_questions()
+    def test_each_card_leads_with_a_complete_work_finding_and_readable_full_scope(self):
+        payload=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))
+        page=(ROOT/'research/questions.html').read_text(encoding='utf-8')
+        works={work['id']:work for work in payload['works']}
+        selections=json.loads((ROOT/'data/question_index.json').read_text(encoding='utf-8'))['papers']
+        self.assertEqual(page.count('data-work-key-finding='),len(payload['questions']))
+        self.assertEqual(page.count('class="discovery-scope"'),len(payload['questions']))
+        for row in payload['questions']:
+            gold=json.loads((ROOT/'data/deep_geo'/f'{row["id"]}.json').read_text(encoding='utf-8'))
+            choice=selections[row['doi']]
+            refs=gold['qa'][choice['qa_index']-1].get('evidence_refs',[]) if 'qa_index' in choice else []
+            index=next(i for i,f in enumerate(gold['key_findings']) if f['id']==refs[0]) if refs else 0
+            finding=row['key_finding'];original=gold['key_findings'][index]
+            self.assertEqual({key:finding[key] for key in original},original)
+            self.assertEqual(finding,works[row['id']]['key_findings'][index])
+            self.assertEqual(row['key_finding_basis'],'question_evidence_ref' if refs else 'work')
+            self.assertEqual(finding['source'],f'data/deep_geo/{row["id"]}.json#/key_findings/{index}')
+            card=re.search(r'<article class="card" id="'+re.escape(row['id'])+r'">(.*?)</article>',page,re.S)[1]
+            contribution=re.search(r'<div class="work-key-finding".*?</div>',card,re.S)[0]
+            self.assertIn('Supporting key finding' if refs else 'Key finding from this work',contribution)
+            self.assertNotIn('data-reviewed-answer',contribution)
+            for value in [original['claim'],original['context'],original['source_locator']]:
+                self.assertIn(html.escape(value),contribution)
+            for evidence in original['evidence']:
+                for value in evidence.values():self.assertIn(html.escape(value),contribution)
+            scope=re.search(r'<details class="discovery-scope">(.*?)</details>',card,re.S)[1]
+            self.assertIn('<summary>Evidence scope and limitations</summary>',scope)
+            for value in [*gold['evidence_scope']['supports'],*gold['evidence_scope']['does_not_establish'],*gold['limitations']]:
+                self.assertIn(html.escape(value),scope)
+            self.assertLess(card.index('data-work-key-finding='),card.index('class="discovery-scope"'))
+            self.assertIn(row['paper_url']+'#ev-scope',scope)
+        self.assertNotIn('These labels describe the paper context; they are not independent claims',page)
     def test_complete_question_catalog_is_static_and_points_to_existing_answers(self):
         payload=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))
         public=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
@@ -96,4 +130,26 @@ class QuestionTests(unittest.TestCase):
                 settings['answer_previews']=selected
                 (root/'data/question_index.json').write_text(json.dumps(settings),encoding='utf-8')
                 with self.assertRaises(ValueError):question_records(items,contents,fields,root)
+
+    def test_unencoded_question_uses_labeled_work_finding_and_invalid_ref_is_rejected(self):
+        from scholarly_discovery import question_records
+        items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
+        contents={p['doi']:json.loads((ROOT/'data/deep_geo'/f"{p['slug']}.json").read_text(encoding='utf-8'))
+                  for p in items if p['paper_geo_status']=='v2'}
+        fields={p['slug']:{k:None for k in ['citation_bibtex_url','citation_ris_url','citation_csl_json_url']} for p in items}
+        doi,index=next((doi,index) for doi,gold in contents.items()
+                       for index,qa in enumerate(gold['qa'],1) if not qa.get('evidence_refs'))
+        settings=json.loads((ROOT/'data/question_index.json').read_text(encoding='utf-8'))
+        settings['answer_previews']=[];settings['papers'][doi]={'qa_index':index}
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);(root/'data').mkdir()
+            (root/'data/evidence_navigation.json').write_text((ROOT/'data/evidence_navigation.json').read_text(encoding='utf-8'),encoding='utf-8')
+            (root/'data/question_index.json').write_text(json.dumps(settings),encoding='utf-8')
+            row=next(row for row in question_records(items,contents,fields,root) if row['doi']==doi)
+            self.assertEqual(row['key_finding_basis'],'work')
+            self.assertEqual(row['key_finding']['id'],contents[doi]['key_findings'][0]['id'])
+            self.assertEqual(row['question'],contents[doi]['qa'][index-1]['question'])
+            tampered=copy.deepcopy(contents);tampered[doi]['qa'][index-1]['evidence_refs']=['NOT_ENCODED']
+            with self.assertRaisesRegex(ValueError,'encoded finding reference'):
+                question_records(items,tampered,fields,root)
 if __name__=='__main__':unittest.main()

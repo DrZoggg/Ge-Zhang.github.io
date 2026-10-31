@@ -118,6 +118,16 @@ class QuestionDiscoveryTests(unittest.TestCase):
                 self.assertEqual(work['evidence_notice'], patent['evidence_notice'])
                 self.assertEqual(work['limitations'], patent['limitations'])
 
+    def test_export_reading_order_keeps_source_evidence_before_full_scope(self):
+        self.assertLess((ROOT/'research/questions.json').stat().st_size,2*1024*1024)
+        for work in self.data['works']:
+            keys=list(work)
+            self.assertLess(keys.index('title'),keys.index('key_findings'))
+            self.assertLess(keys.index('key_findings'),keys.index('evidence_scope'))
+            if work['evidence_status']=='reviewed_v2':
+                self.assertLess(keys.index('key_findings'),keys.index('study_profile'))
+                self.assertLess(keys.index('provenance'),keys.index('evidence_scope'))
+
     def fixture(self, root):
         item = {'slug': 'example', 'doi': '10.1234/example', 'title': 'Example research record',
                 'type': 'Article', 'paper_geo_status': 'v2',

@@ -78,12 +78,12 @@ def build_discovery(items, contents, fields, root=ROOT):
             **{key: fields[slug].get(key) for key in IDENTITY_FIELDS},
             'evidence_status': 'identity_only',
             'question_count': 0,
+            'key_findings': [],
             'field_entry': [],
             'review_topics': [],
             'concepts': {},
             'evidence_scope': None,
             'limitations': [],
-            'key_findings': [],
         }
         _text(work['title'], slug + '/title')
         if item.get('paper_geo_status') == 'v2':
@@ -196,5 +196,9 @@ def build_discovery(items, contents, fields, root=ROOT):
                 'source_url': REPOSITORY_SOURCE + 'data/patent_evidence.json',
                 'provenance': copy.deepcopy(patent['provenance']),
             })
-        works.append(work)
+        # Presentation order only: retain every scope value after evidence,
+        # design and provenance rather than leading with qualification fields.
+        scope_fields = ('scope', 'evidence_notice', 'evidence_scope', 'limitations', 'scope_source')
+        works.append({**{k: v for k, v in work.items() if k not in scope_fields},
+                      **{k: work[k] for k in scope_fields if k in work}})
     return {'discovery_version': 2, 'works': works, 'all_questions': questions}

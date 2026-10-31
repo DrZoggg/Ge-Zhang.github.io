@@ -29,6 +29,12 @@ async function run() {
     assert.deepEqual(packet.supporting_evidence.map(ref=>ref.id),question.evidence_refs);
     assert(packet.supporting_evidence.every(ref=>typeof ref.source_locator==='string'&&ref.source_locator));
     assert.deepEqual(packet.supporting_evidence,work.key_findings.filter(ref=>question.evidence_refs.includes(ref.id)));
+    const order=Object.keys(packet);
+    assert(order.indexOf('publication')<order.indexOf('question'));
+    assert(order.indexOf('answer')<order.indexOf('supporting_evidence'));
+    assert(order.indexOf('supporting_evidence')<order.indexOf('study_profile'));
+    assert(order.indexOf('provenance')<order.indexOf('evidence_scope'));
+    assert(order.indexOf('source_pointers')<order.indexOf('limitations'));
     if (question.evidence_refs_status==='not_encoded') {
       nonEncoded++;assert.equal(packet.evidence_refs_status,'not_encoded');assert.deepEqual(packet.supporting_evidence,[]);
     }
