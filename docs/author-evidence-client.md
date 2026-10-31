@@ -76,6 +76,16 @@ specific drug or model name. It may conservatively return no result; this is not
 entity recognition, translation, semantic understanding or a check of clinical
 truth. Exact DOI, exact reviewed-question and first-pass AND matches are unchanged.
 
+Broader-related results include `query_coverage` with the evaluated, matched and
+unmatched query terms from that same fallback. Inspect unmatched terms before
+using a result: the broader match can omit a different named entity, treatment
+or condition. Coverage is across the work's indexed text, not necessarily the
+returned passage. It uses the existing ASCII tokenization, stop words and acronym
+aliases, so it does not assess every word or multilingual meaning. Even complete
+lexical coverage does not establish that a query's premise is correct. Missing
+words do not prove a claim false or absent from all scientific literature. The
+diagnostic does not change ranking; fetch and verify the full evidence packet.
+
 ## Evidence packet
 
 `fetch` returns one source-bound packet including:
