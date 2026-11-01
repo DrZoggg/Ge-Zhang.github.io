@@ -60,6 +60,14 @@ other consumers. The local snapshot mode remains available without a network.
 4. Preserve the full scope and provenance while writing. If no suitable answer
    exists, report that gap; do not turn the nearest text match into an answer.
 
+For a formal-paper reading and writing workflow, inspect the fetched packet's
+`primary_sources.reading_routes`. It offers source-bound PubMed records, PMC
+full-text archive pages and publisher/DOI routes, alongside the original DOI.
+Choose an available source using the consumer's existing reading tools, record
+whether an abstract or body was actually read, then cite the formal paper.
+This helps a consumer continue through a database record when a publisher route
+is unavailable, while retaining the author's explanation as supplementary context.
+
 The client and website use the same local MiniSearch engine. Natural queries use
 separate question/answer fields and an English Porter word-form index to select
 a relevant original answer within a matching work. This is lexical relevance,
@@ -108,10 +116,27 @@ diagnostic is descriptive; fetch and verify the full evidence packet.
   question fetches retain only their explicitly encoded supporting findings.
 - Original DOI/publisher, canonical evidence page, answer fragment, Markdown and
   existing BibTeX/RIS/CSL links. Missing exports and identifiers remain null.
+- `primary_sources.identifiers` supplies existing PMID/PMCID values;
+  `links.pubmed_url` and `links.pmc_url` are their official source routes.
+  Each reading route reports its role, original `source_fields` and
+  `availability: "not_checked"`. PubMed is a database record, PMC a full-text
+  archive, and a DOI resolver is distinct from a publisher source page.
 - Source pointers, provenance, dataset hashes, available HTTP version metadata,
   Gold hash reported by the export and a locally verified exact-answer hash.
 - An evidence-unit identity shared by representations of the same DOI, so the
   author page and publisher record are not counted as two independent studies.
+
+Source fields refer to the same work in the public JSON export. A valid explicit
+publisher URL is preferred; when missing or invalid, a unique publisher URL from
+the work's existing provenance can supply the fallback. Only explicit identity
+and link fields are used, including those in provenance lists; arbitrary source
+or supplement URLs are not promoted to article identities. Invalid or conflicting
+fields appear in `primary_sources.metadata_issues` and disable the affected route,
+while the paper and its other evidence remain usable. Missing identifiers stay
+null. Correction links remain in the original provenance and belong to the same
+study context. The client lists these routes locally; it does not automatically
+open them or transmit a query. Actual access and reading are recorded by the
+consumer, separately from natural discovery and citation measurements.
 
 Five current Q&A have `evidence_refs_status: not_encoded`. The packet preserves
 that state and does not manufacture question-level findings. Limited evidence
