@@ -2514,12 +2514,18 @@ def validate_site():
             f"Markdown record: {expected_markdown_url}" in markdown,
             f"Markdown record URL missing from {slug}.md.",
         )
-        for identity_line in (
+        identity_lines = (
+            f"Site maintainer: {config['researcher_name']}",
+            f"Site maintainer Chinese name: {config['researcher_name_zh']}",
+            f"Site maintainer ORCID: https://orcid.org/{config['orcid']}",
+            f"Canonical site maintainer: {config['person_id']}",
+        ) if item.get("researcher_author_positions") == [] else (
             f"Researcher: {config['researcher_name']}",
             f"Chinese name: {config['researcher_name_zh']}",
             f"ORCID identity anchor: https://orcid.org/{config['orcid']}",
             f"Canonical researcher: {config['person_id']}",
-        ):
+        )
+        for identity_line in identity_lines:
             require(identity_line in markdown, f"Identity line missing from {slug}.md.")
         require(
             expected_markdown_url in page,

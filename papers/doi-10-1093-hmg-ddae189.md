@@ -12,6 +12,19 @@ DOI: 10.1093/hmg/ddae189
 Canonical page: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html
 Markdown record: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md
 
+## Full Authors
+
+1. Yudi Xu
+2. Shutong Liu
+3. Zhaokai Zhou
+4. Hongzhuo Qin
+5. Yuyuan Zhang
+6. Ge Zhang
+7. Hongxuan Ma
+8. Xinwei Han
+9. Huimin Liu
+10. Zaoqu Liu
+
 ## About this record
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
@@ -62,6 +75,14 @@ Source: [PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolat
 - [FinnGen R9 official Alzheimer endpoint](https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER) — Official Risteys endpoint HTML, retrieved 27 October 2026. G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input.
 
 Source review: 2026-10-27.
+
+## Cite this paper
+
+Yudi Xu, Shutong Liu, Zhaokai Zhou, Hongzhuo Qin, Yuyuan Zhang, Ge Zhang, Hongxuan Ma, Xinwei Han, Huimin Liu, Zaoqu Liu. Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease. Human Molecular Genetics. 2024. https://doi.org/10.1093/hmg/ddae189
+
+- [BibTeX](https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.bib)
+- [RIS / EndNote](https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.ris)
+- [CSL JSON](https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.csl.json)
 
 ## Links
 

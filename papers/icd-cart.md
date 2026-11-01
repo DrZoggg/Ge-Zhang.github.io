@@ -12,6 +12,19 @@ DOI: 10.1016/j.canlet.2024.217079
 Canonical page: https://drgezhang.com/papers/icd-cart.html
 Markdown record: https://drgezhang.com/papers/icd-cart.md
 
+## Full Authors
+
+1. Zhaokai Zhou
+2. Yumiao Mai
+3. Ge Zhang
+4. Yingjie Wang
+5. Pan Sun
+6. Zhaohe Jing
+7. Zhengrui Li
+8. Yudi Xu
+9. Bo Han
+10. Jian Liu
+
 ## About this record
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
@@ -44,6 +57,14 @@ Source: [PubMed PMID 38936505, Abstract: final sentence identifying the review s
 - [Indexed article abstract](https://pubmed.ncbi.nlm.nih.gov/38936505/) — PubMed abstract, refreshed through the official Europe PMC API. PubMed PMID 38936505, Abstract: opening rationale and solid-tumor barriers.
 
 Source review: 2026-10-27.
+
+## Cite this paper
+
+Zhaokai Zhou, Yumiao Mai, Ge Zhang, Yingjie Wang, Pan Sun, Zhaohe Jing, Zhengrui Li, Yudi Xu, Bo Han, Jian Liu. Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination. Cancer Letters. 2024. https://doi.org/10.1016/j.canlet.2024.217079
+
+- [BibTeX](https://drgezhang.com/citations/icd-cart.bib)
+- [RIS / EndNote](https://drgezhang.com/citations/icd-cart.ris)
+- [CSL JSON](https://drgezhang.com/citations/icd-cart.csl.json)
 
 ## Links
 

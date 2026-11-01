@@ -698,7 +698,7 @@
       "slug": "doi-10-3980-j-issn-1672-5123-2020-12-13",
       "evidence_status": "limited",
       "reviewed_on": "2026-10-27",
-      "scope": "Methods-review context from the complete official PDF; the researcher’s author identity remains unresolved.",
+      "scope": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
       "sections": [
         {
           "heading": "Research context",
@@ -720,13 +720,13 @@
         },
         {
           "heading": "Authorship boundary",
-          "text": "The first Chinese author is 张格 and the last is 张戈. Both are printed as Ge Zhang in English. Han Zhu is the named corresponding author. The article supplies no ORCID or individual identifier that uniquely connects either Ge Zhang entry with this site researcher.",
+          "text": "The publisher lists six authors, including 张格 first and 张戈 last, both printed as Ge Zhang in English; Han Zhu is the corresponding author. The PDF provides no unique ORCID or individual-identifier mapping of either Ge Zhang to this site's researcher, so both remain name-only authors while the complete author list and formal citation are retained.",
           "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
           "source_locator": "PDF p. 1 / journal p. 2079: Chinese and English author lines, author biography, affiliation and correspondence"
         }
       ],
       "limitations": [
-        "The PDF identifies International Eye Science and a narrative review, unlike the preserved site metadata. Authorship, journal and type corrections remain on hold pending identity resolution."
+        "The publisher PDF identifies a narrative review in International Eye Science. The site's broad Article metadata category does not imply an original experiment or clinical study."
       ],
       "sources": [
         {
