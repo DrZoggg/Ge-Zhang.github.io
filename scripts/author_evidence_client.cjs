@@ -74,6 +74,90 @@ async function loadLive(fetchImpl = globalThis.fetch) {
   return {...data, retrieval:{mode:'public_https', retrieved_at:new Date().toISOString(), datasets}};
 }
 
+function primarySources(work) {
+  const issues = [], routes = [];
+  const present = value => value !== null && value !== undefined && value !== '';
+  // Read only explicit identity/link fields, not arbitrary URLs in scientific
+  // provenance, references, supplements or a limited record's source list.
+  const provenance = Array.isArray(work.provenance) ? work.provenance
+    .map((value,index) => ({value,path:`work.provenance[${index}]`}))
+    : [{value:work.provenance,path:'work.provenance'}];
+  const records = [{value:work,path:'work'}, ...provenance]
+    .filter(row => row.value && typeof row.value === 'object' && !Array.isArray(row.value));
+  const fields = key => records.filter(row => present(row.value[key]))
+    .map(row => ({value:row.value[key],field:row.path + '.' + key}));
+  const issue = (field,reason,source_fields) => issues.push({field,reason,...(source_fields ? {source_fields} : {})});
+  function https(value) {
+    if (typeof value !== 'string' || !value || value !== value.trim()) return null;
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' && !url.username && !url.password ? url : null;
+    } catch { return null; }
+  }
+  const idFormat = {pmid:/^[1-9][0-9]{0,9}$/,pmcid:/^PMC[1-9][0-9]{0,9}$/i};
+  function identifier(key,urlKey) {
+    const claims = [];
+    for (const row of fields(key)) {
+      const value = typeof row.value === 'string' ? row.value.trim()
+        : Number.isSafeInteger(row.value) && row.value > 0 ? String(row.value) : '';
+      if (!idFormat[key].test(value)) issue(row.field,'invalid_identifier');
+      else claims.push({value:key === 'pmcid' ? value.toUpperCase() : value,field:row.field});
+    }
+    for (const row of fields(urlKey)) {
+      const url = https(row.value);
+      const match = url && !url.search && !url.hash && (key === 'pmid'
+        ? url.hostname === 'pubmed.ncbi.nlm.nih.gov' && url.pathname.match(/^\/([1-9][0-9]{0,9})\/?$/)
+        : url.hostname === 'pmc.ncbi.nlm.nih.gov' && url.pathname.match(/^\/articles\/(PMC[1-9][0-9]{0,9})\/?$/i));
+      if (!match) issue(row.field,'invalid_database_url');
+      else claims.push({value:key === 'pmcid' ? match[1].toUpperCase() : match[1],field:row.field});
+    }
+    const values = [...new Set(claims.map(row => row.value))];
+    if (values.length > 1) {
+      issue(key,'conflicting_identifiers',claims.map(row => row.field));
+      return {value:null,source_fields:[]};
+    }
+    return {value:values[0] || null,source_fields:claims.map(row => row.field)};
+  }
+  const pmid = identifier('pmid','pubmed_url'), pmcid = identifier('pmcid','pmc_url');
+  const pubmed = pmid.value ? `https://pubmed.ncbi.nlm.nih.gov/${pmid.value}/` : null;
+  const pmc = pmcid.value ? `https://pmc.ncbi.nlm.nih.gov/articles/${pmcid.value}/` : null;
+  if (pubmed) routes.push({provider:'PubMed',kind:'database_record',url:pubmed,source_fields:pmid.source_fields,availability:'not_checked'});
+  if (pmc) routes.push({provider:'PMC',kind:'full_text_archive',url:pmc,source_fields:pmcid.source_fields,availability:'not_checked'});
+  const publisherFields = fields('publisher_url'), validPublishers = [];
+  for (const row of publisherFields) {
+    const url = https(row.value);
+    if (!url) { issue(row.field,'invalid_https_url'); continue; }
+    if (['pubmed.ncbi.nlm.nih.gov','pmc.ncbi.nlm.nih.gov'].includes(url.hostname)) {
+      issue(row.field,'database_url_in_publisher_field'); continue;
+    }
+    if (['doi.org','dx.doi.org'].includes(url.hostname)) {
+      let doi = null;
+      try { doi = decodeURIComponent(url.pathname.slice(1)); } catch {}
+      if (!doi) { issue(row.field,'invalid_doi_url'); continue; }
+      if (typeof work.doi !== 'string' || doi.toLowerCase() !== work.doi.toLowerCase()) {
+        issue(row.field,'conflicting_doi_url'); continue;
+      }
+    }
+    validPublishers.push({...row,url:url.href});
+  }
+  // The explicit work identity field is the preferred source. Only use a
+  // provenance fallback when that field is missing or invalid; do not guess
+  // between different fallback locations.
+  let publisher = validPublishers.find(row => row.field === 'work.publisher_url') || null;
+  if (!publisher) {
+    const alternatives = [...new Set(validPublishers.map(row => row.url))];
+    if (alternatives.length === 1) publisher = validPublishers[0];
+    else if (alternatives.length > 1) issue('publisher_url','conflicting_fallback_urls',validPublishers.map(row => row.field));
+  }
+  if (publisher) {
+    const resolver = ['doi.org','dx.doi.org'].includes(new URL(publisher.url).hostname);
+    routes.push({provider:resolver ? 'DOI' : 'Publisher',kind:resolver ? 'doi_resolver' : 'publisher_source',
+      url:publisher.url,source_fields:[publisher.field],availability:'not_checked'});
+  }
+  return {identifiers:{pmid:pmid.value,pmcid:pmcid.value},reading_routes:routes,metadata_issues:issues,
+    links:{pubmed_url:pubmed,pmc_url:pmc,publisher_url:publisher ? publisher.url : null}};
+}
+
 function createClient(questions, searchCorpus, retrieval = {}) {
   if (questions.version !== 1 || questions.discovery_version !== 2 || !Array.isArray(questions.works)
       || !Array.isArray(questions.all_questions) || searchCorpus.version !== 1 || !Array.isArray(searchCorpus.documents)) {
@@ -162,6 +246,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
     const work = qa ? works.get(qa.work_id) : works.get(id);
     if (!work) throw Error('Unknown stable evidence ID: ' + id);
     const supporting = qa ? work.key_findings.filter(ref => qa.evidence_refs.includes(ref.id)) : [];
+    const primary = primarySources(work);
     return clone({
       id, work_id:work.id, source_kind:SOURCE_KIND,
       source_description:'Author-maintained explanation of an existing work; cite the original article DOI for the formal research publication.',
@@ -180,9 +265,11 @@ function createClient(questions, searchCorpus, retrieval = {}) {
         evidence_position:work.evidence_position || null},
       study_profile:work.study_profile || null,
       model_profile:work.model_profile || null,
+      primary_sources:{identifiers:primary.identifiers,reading_routes:primary.reading_routes,metadata_issues:primary.metadata_issues},
       links:{canonical_paper_url:work.paper_url, answer_url:qa ? qa.answer_url : null,
         markdown_url:work.markdown_url, original_doi_url:work.doi_url || null,
-        publisher_url:work.publisher_url || null, citation_bibtex_url:work.citation_bibtex_url || null,
+        publisher_url:primary.links.publisher_url, pubmed_url:primary.links.pubmed_url, pmc_url:primary.links.pmc_url,
+        citation_bibtex_url:work.citation_bibtex_url || null,
         citation_ris_url:work.citation_ris_url || null, citation_csl_json_url:work.citation_csl_json_url || null,
         gold_source_url:work.gold_source_url || null},
       provenance:work.provenance || null,

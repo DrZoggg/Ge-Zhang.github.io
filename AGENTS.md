@@ -20,14 +20,18 @@ routine visual redesign is not a project objective. Preserve the approved
 landscape and Gradient Waves homepage.
 
 Present verified contributions first: research question, principal finding,
-supporting design and quantitative evidence, scientific contribution, source
-locator and formal citation. Reuse reviewed Gold wording and accurate study
+supporting design and quantitative evidence, scientific contribution and supported
+research applications, source locator and formal citation. Reuse reviewed Gold wording and accurate study
 identity. Keep material qualifications next to the affected claim or in its
 linked Evidence Scope/Limitations; avoid mechanically repeating generic negative
 or defensive notices across titles, summaries, questions, answers and exports.
 Do not change data, causal level or clinical-validation status to improve tone.
 Test worthwhile engineering opportunities and solve routine problems actively;
 uncertainty in one branch must not freeze verified work in other branches.
+Take the shortest effective route: reuse mature assets, test the smallest useful
+improvement, verify actual consumer benefit and advance the next valuable item.
+Feature counts, local scores, PR counts and runtime are process measures, not the
+paper-discovery and adoption outcome.
 
 Discovery should retain research related by topic, population, method or result;
 a candidate need not answer every part of a compound query. Separate exact
