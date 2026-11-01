@@ -2,6 +2,7 @@
 
 import copy
 import json
+import re
 import tempfile
 from pathlib import Path
 
@@ -143,8 +144,30 @@ def test_locator_and_unicode_edges():
         for text in (bib, ris, render_csl_json(record)): assert text.encode('utf-8').decode('utf-8') == text
 
 
+def test_bibtex_hyphenated_names():
+    # Citation.js imported ungrouped Ya-chen Hou as particle=chen/family=Ya-Hou.
+    # Preserve the verified name tokens instead of guessing new given/family data.
+    record = dict(id='synthetic-name-encoding', type='Article', title='Name encoding fixture',
+                  authors=['Ya-chen Hou', 'Anne Smith-Jones', 'Ge Zhang',
+                           'Élodie Müller', '张格', r'A-B C&D_%#{Q}\R'],
+                  journal='Synthetic Journal', year=2026,
+                  doi='10.9999/name-encoding', doi_url='https://doi.org/10.9999/name-encoding')
+    original = copy.deepcopy(record)
+    bib = render_bibtex(record)
+    assert ('author = {{Ya-chen} Hou and Anne {Smith-Jones} and Ge Zhang and '
+            'Élodie Müller and 张格 and {A-B} C\\&D\\_\\%\\#\\{Q\\}\\textbackslash{}R}') in bib
+    assert r'\{Ya-chen\}' not in bib  # Grouping must not be escaped as literal braces.
+    assert record == original
+    assert json.loads(render_csl_json(record))['author'] == [
+        {'literal': name} for name in record['authors']
+    ]
+    assert [line[6:] for line in render_ris(record).splitlines()
+            if line.startswith('AU  - ')] == record['authors']
+
+
 def run_tests():
     test_locator_and_unicode_edges()
+    test_bibtex_hyphenated_names()
     master = load_master()
     public = [item for item in master if not is_withdrawn(item)]
     withdrawn = [item for item in master if is_withdrawn(item)]
@@ -253,7 +276,10 @@ def run_tests():
     assert csl["DOI"] == CIRCADIAN_DOI
     assert csl["title"] == record["title"]
     assert [author["literal"] for author in csl["author"]] == record["authors"]
-    assert " and ".join(record["authors"]) in bib
+    author_line = next(line.strip() for line in bib.splitlines()
+                       if line.strip().startswith("author = {"))
+    author_value = author_line.removeprefix("author = {").removesuffix("},")
+    assert re.sub(r"\{([^{}]*)\}", r"\1", author_value) == " and ".join(record["authors"])
     assert [line.removeprefix("AU  - ") for line in ris.splitlines()
             if line.startswith("AU  - ")] == record["authors"]
     for publication in public:
