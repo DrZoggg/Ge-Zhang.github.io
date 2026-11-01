@@ -1,9 +1,10 @@
 # Read-only author evidence client
 
-This is an **explicitly selected supplementary source**, not a general literature
-database, MCP service or proof that external AI search engines naturally prefer
-this website. It returns existing author-maintained evidence explanations, not a
-new independent study. Keep the original DOI as the formal publication identity.
+This read-only client gives a research agent access to reviewed author-maintained
+answers, work-level context, original-paper reading routes and formal citation exports.
+Select it as a supplementary source alongside the agent's other literature tools,
+and use the original DOI as the publication identity. Explicit integration and
+natural external discovery are separate retrieval channels.
 
 ## Use with an existing research agent
 
@@ -51,14 +52,29 @@ other consumers. The local snapshot mode remains available without a network.
 ## Search, inspect, fetch
 
 1. Call `search` with a question, established acronym, research terms or DOI.
-2. Inspect `best_matches` and `broader_related` separately. Both indicate text
-   relevance; neither proves that the query's clinical or causal premise holds.
+2. Inspect `best_matches` and `broader_related` separately. Use their match
+   explanations to select answers and related papers for the research task.
 3. Call `fetch` with a returned stable ID. A question ID returns its unchanged
    answer and complete paper context. A work ID returns `answer: null`, full
    scope, and `available_questions`; select a relevant existing question before
    fetching an answer. A guide with a null ID is navigation, not another study.
-4. Preserve the full scope and provenance while writing. If no suitable answer
-   exists, report that gap; do not turn the nearest text match into an answer.
+4. Match each writing claim to its supporting answer, evidence and source locator.
+   Retain relevant works for background, methods or discussion even when they
+   address only part of the brief, keeping their study type and scope visible.
+
+### Complex writing briefs
+
+Keep the complete request, its initial result and the chosen snapshot/version.
+If a multi-question brief misses useful related work, try two or three focused
+subquestions from the original need, retaining disease, material and named-entity
+constraints. Keep the original query and any complete
+translation, labeling translated subqueries as assisted retrieval.
+Merge candidates by formal DOI and retain each query-to-work route as a reading
+queue. Fetch the relevant packets, read the available original sources and assign
+each work its actual role: direct partial evidence, background or method comparison.
+An existing Q&A answers its own question; the combined queue is not a complete
+answer or a selected bibliography. Use additional searches selectively: they add
+calls and can introduce unrelated candidates that need to be set aside.
 
 For a formal-paper reading and writing workflow, inspect the fetched packet's
 `primary_sources.reading_routes`. It offers source-bound PubMed records, PMC
