@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from build_publications import (GA4_INSERTION, render_homepage_research,
+from build_publications import (GA4_INSERTION, LEGACY_GA4_INSERTION, render_homepage_research,
                                 resolve_lastmod, with_ga4_tag,
                                 write_public_html_if_changed)
 import research_guides as guides
@@ -58,6 +58,20 @@ class ThemeShellTests(unittest.TestCase):
         self.assertEqual(page.count(GA4_INSERTION), 1)
         self.assertLess(page.index(THEME_INIT), page.index(GA4_INSERTION))
         self.assertEqual(with_ga4_tag(page), page)
+
+    def test_analytics_host_guard_migration_preserves_content_dates(self):
+        previous = with_ga4_tag(FIXTURE).replace(GA4_INSERTION, LEGACY_GA4_INSERTION)
+        migrated = with_ga4_tag(previous)
+        self.assertNotIn(LEGACY_GA4_INSERTION, migrated)
+        self.assertEqual(migrated.count(GA4_INSERTION), 1)
+        self.assertEqual(with_ga4_tag(migrated), migrated)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "fixture.html"
+            path.write_text(previous, encoding="utf-8")
+            self.assertFalse(write_public_html_if_changed(path, migrated))
+            self.assertEqual(path.read_text(encoding="utf-8"), migrated)
+        with self.assertRaises(ValueError):
+            with_ga4_tag(previous.replace("</head>", GA4_INSERTION + "</head>"))
 
     def test_theme_only_write_preserves_lastmod_and_real_edits_change_it(self):
         url = 'https://example.org/papers/fixture.html'

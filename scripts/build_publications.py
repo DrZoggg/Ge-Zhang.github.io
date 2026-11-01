@@ -66,7 +66,7 @@ GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
 GA4_MEASUREMENT_ID = "G-65LDZXWWQK"
-GA4_TAG = (
+LEGACY_GA4_TAG = (
     "<!-- Google tag (gtag.js) -->\n"
     f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>\n'
     "<script>\n"
@@ -74,6 +74,24 @@ GA4_TAG = (
     "  function gtag(){dataLayer.push(arguments);}\n"
     "  gtag('js', new Date());\n"
     f"  gtag('config', '{GA4_MEASUREMENT_ID}');\n"
+    "</script>\n"
+)
+LEGACY_GA4_INSERTION = "\n" + LEGACY_GA4_TAG
+GA4_TAG = (
+    "<!-- Google tag (gtag.js) -->\n"
+    "<script>\n"
+    "  (function () {\n"
+    "    if (window.location.protocol !== 'https:' ||\n"
+    "        !['drgezhang.com', 'www.drgezhang.com'].includes(window.location.hostname)) return;\n"
+    "    window.dataLayer = window.dataLayer || [];\n"
+    "    window.gtag = function(){window.dataLayer.push(arguments);};\n"
+    "    window.gtag('js', new Date());\n"
+    f"    window.gtag('config', '{GA4_MEASUREMENT_ID}');\n"
+    "    var script = document.createElement('script');\n"
+    "    script.async = true;\n"
+    f"    script.src = 'https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}';\n"
+    "    document.head.appendChild(script);\n"
+    "  })();\n"
     "</script>\n"
 )
 GA4_INSERTION = "\n" + GA4_TAG
@@ -181,6 +199,9 @@ def with_ga4_tag(page):
     favicon = '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">'
     if favicon not in page:
         page = page.replace('</head>', favicon + '</head>', 1)
+    if page.count(GA4_INSERTION) + page.count(LEGACY_GA4_INSERTION) > 1:
+        raise ValueError("Google tag must occur exactly once in the HTML head.")
+    page = page.replace(LEGACY_GA4_INSERTION, GA4_INSERTION)
     if GA4_INSERTION in page:
         if page.count(GA4_INSERTION) != 1:
             raise ValueError("Google tag must occur exactly once in the HTML head.")
@@ -190,11 +211,16 @@ def with_ga4_tag(page):
     return with_theme_shell(page.replace("<head>", "<head>" + GA4_INSERTION, 1))
 
 
+def without_ga4_tag(page):
+    """Ignore only the two exact shared tag versions in content-date checks."""
+    return page.replace(GA4_INSERTION, "").replace(LEGACY_GA4_INSERTION, "")
+
+
 def write_public_html_if_changed(path, content):
     previous = path.read_text(encoding="utf-8") if path.is_file() else None
     content_changed = previous is None or (
-        without_evidence_ui(without_theme_shell(previous).replace(GA4_INSERTION, ""))
-        != without_evidence_ui(without_theme_shell(content).replace(GA4_INSERTION, ""))
+        without_evidence_ui(without_theme_shell(without_ga4_tag(previous)))
+        != without_evidence_ui(without_theme_shell(without_ga4_tag(content)))
     )
     write_text_if_changed(path, content)
     return content_changed
