@@ -7,7 +7,7 @@ agent for this repository. Choose priorities, organize independent work, resolve
 ordinary engineering faults and deliver verified results within the owner's
 existing authorization.
 
-## Current project strategy: AI-first evidence discovery (2026-10-29)
+## Current project strategy: AI-first evidence discovery (Paper-first, updated 2026-11-01)
 
 The priority is relevant formal papers being discovered, read, correctly used
 and accurately cited in AI-assisted research and writing. Discovery through a
@@ -29,10 +29,23 @@ Do not change data, causal level or clinical-validation status to improve tone.
 Test worthwhile engineering opportunities and solve routine problems actively;
 uncertainty in one branch must not freeze verified work in other branches.
 
+Discovery should retain research related by topic, population, method or result;
+a candidate need not answer every part of a compound query. Separate exact
+answers from related studies and explain useful connections. Retrospective,
+exploratory, animal, cell, review, case and perspective evidence can contribute
+to background, methods or discussion in its actual role. Incomplete full-text
+access changes the recorded reading level, not the existence or relevance of a
+paper. Do not empty useful related results because precise answer evidence is
+missing, and do not insert unrelated work. The writer makes the final citation
+choice after reading the evidence.
+
 Use the existing publishing core and reviewed Gold assets to improve this chain:
 scientific query → reviewed answer → supporting evidence and source locator →
 original paper → DOI → formal citation. Reuse existing Q&A verbatim; never invent
 answers or evidence links for limited records, patents or missing reference fields.
+An unresolved reference field does not disqualify its whole work. Resolve a field
+from available authoritative evidence when possible; otherwise mark that field
+without inventing a link or suppressing the research identity.
 Keep the canonical paper as the complete evidence context. Prefer derived indexes
 and direct links over duplicate articles, mass Q&A pages or a second research database.
 
@@ -62,15 +75,36 @@ When awaiting engine processing, use the existing schedule instead of repeatedly
 submitting or refreshing platforms. An index-request error pauses that branch,
 not independent retrieval or writing engineering.
 
-At the start of a delivery round, select a finite set of evidenced bottlenecks
-and acceptance conditions in the existing private ledger. Preserve ongoing work
-when the goal expands. Reuse completed source and consumer investigations rather
-than rebuilding them. Compare working alternatives, independently verify the
-selected improvement, publish and check it, and actually exercise an available
-external retrieval channel and a research-writing workflow. A PR, local recall
-score or successful client installation alone cannot close the round. Close only
-when selected controllable items are verified, empirically rejected or specifically
-externally blocked; do not wait indefinitely for favorable citation statistics.
+The active master Goal coordinates successive work packages across the adoption
+chain. Maintain one current work graph in the existing private ledger with ready,
+in-progress, external-wait and accepted items. Preserve ongoing work when scope
+expands and reuse completed investigations. After accepting a package, choose
+the next worthwhile executable item; do not stop the master Goal at one pilot,
+two writing tasks, a retrieval score or several PRs. Keep bounded experiments and
+independent comparisons, but do not replace the overall outcome with their scope.
+
+Before marking the master Goal complete, obtain an independent global review
+showing all five conditions together:
+
+- A: The main research themes and representative retrieval, review,
+  Introduction, Discussion and research-design needs have actual external
+  discovery-to-reading-to-use baselines and diagnoses.
+- B: Identified high-priority controllable gaps have been improved and deployed,
+  or reliable experiments establish that further work is not worthwhile.
+- C: Different independent needs or replications show reproducible formal-paper
+  discovery, reading and correct use, with baseline differences and unresolved
+  items recorded. A single citation example or PR count is insufficient.
+- D: The existing scheduler has actually obtained useful new data, restored the
+  queue and executed due actions; registration or a cache-only run alone is not
+  proof of that complete chain.
+- E: A global review finds no omitted high-value executable work and confirms
+  the entire construction and validation plan, rather than only the latest package.
+
+If A-E are not jointly established, update package status and continue. A failed
+provider pauses that branch. If only external conditions, owner authorization or
+system limits remain, preserve evidence and recovery conditions and use the actual
+supported lifecycle state; do not label the master Goal complete or spin merely
+to remain busy. Do not promise permanent background execution or engine refresh.
 
 External compatibility work must distinguish blind web discovery, supplied-URL
 reading and explicitly connected tools. Read representative consumers' actual
@@ -93,6 +127,9 @@ Web Chat
 → Codex implementation, validation, Git delivery and deployment
 
 Do not redo scientific research already supplied by Web Chat unless explicitly requested.
+This default does not prohibit authorized primary-source identity/claim checks,
+real external-consumer experiments or independently verified source-backed
+engineering corrections. Reuse existing reviewed science rather than rebuilding it.
 
 ## Repository
 
