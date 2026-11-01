@@ -75,19 +75,19 @@ def normalize_authors(value, *, preserve_duplicates=False):
 
 
 def publication_authors(publication):
-    """Preserve same-name occurrences only with explicit researcher positions."""
+    """Preserve same-name occurrences with explicit positions; [] binds no site Person."""
     positions = publication.get("researcher_author_positions")
     authors = normalize_authors(
         publication.get("authors"), preserve_duplicates=positions is not None
     )
     if positions is not None and (
         not isinstance(positions, list)
-        or not positions
+        or not authors
         or any(type(position) is not int or not 1 <= position <= len(authors)
                for position in positions)
         or len(positions) != len(set(positions))
     ):
-        raise ValueError("researcher_author_positions must be unique 1-based author positions.")
+        raise ValueError("researcher_author_positions requires nonempty authors and a list of unique 1-based author positions; [] means no verified site Person.")
     return authors
 
 
@@ -213,6 +213,8 @@ def _merge_record(old, new):
     # Preserve arbitrary/manual fields and stable slugs. Featured state is
     # deliberately excluded by normalize_item().
     for key, value in right.items():
+        if key == "researcher_author_positions" and key in merged:
+            continue  # [] is an explicit unresolved identity, not a missing field.
         if key not in merged or merged.get(key) in (None, "", [], 0, False):
             merged[key] = copy.deepcopy(value)
 

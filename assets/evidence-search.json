@@ -15538,12 +15538,32 @@
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
       "category": "Journal",
-      "text": "International Journal of Ophthalmology",
+      "text": "International Eye Science",
       "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
       "limitation": false
     },
     {
       "id": 1554,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "DOI",
+      "text": "10.3980/j.issn.1672-5123.2020.12.13",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
+      "limitation": false
+    },
+    {
+      "id": 1555,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Authors",
+      "text": "Ge Zhang\nHan Zhu\nJing-Wen Zhang\nYu-Di Xu\nMing-Xuan Duan\nGe Zhang",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
+      "limitation": false
+    },
+    {
+      "id": 1556,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15553,7 +15573,7 @@
       "limitation": false
     },
     {
-      "id": 1555,
+      "id": 1557,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15563,7 +15583,7 @@
       "limitation": false
     },
     {
-      "id": 1556,
+      "id": 1558,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15573,7 +15593,7 @@
       "limitation": false
     },
     {
-      "id": 1557,
+      "id": 1559,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15583,7 +15603,7 @@
       "limitation": true
     },
     {
-      "id": 1558,
+      "id": 1560,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15593,7 +15613,7 @@
       "limitation": false
     },
     {
-      "id": 1559,
+      "id": 1561,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15603,7 +15623,7 @@
       "limitation": false
     },
     {
-      "id": 1560,
+      "id": 1562,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15613,7 +15633,7 @@
       "limitation": false
     },
     {
-      "id": 1561,
+      "id": 1563,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15623,7 +15643,7 @@
       "limitation": false
     },
     {
-      "id": 1562,
+      "id": 1564,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15633,7 +15653,7 @@
       "limitation": false
     },
     {
-      "id": 1563,
+      "id": 1565,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15643,7 +15663,7 @@
       "limitation": false
     },
     {
-      "id": 1564,
+      "id": 1566,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15653,7 +15673,7 @@
       "limitation": false
     },
     {
-      "id": 1565,
+      "id": 1567,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15663,7 +15683,7 @@
       "limitation": true
     },
     {
-      "id": 1566,
+      "id": 1568,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15673,7 +15693,7 @@
       "limitation": false
     },
     {
-      "id": 1567,
+      "id": 1569,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15683,7 +15703,7 @@
       "limitation": false
     },
     {
-      "id": 1568,
+      "id": 1570,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15693,7 +15713,7 @@
       "limitation": false
     },
     {
-      "id": 1569,
+      "id": 1571,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15703,7 +15723,7 @@
       "limitation": false
     },
     {
-      "id": 1570,
+      "id": 1572,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15713,7 +15733,7 @@
       "limitation": true
     },
     {
-      "id": 1571,
+      "id": 1573,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15723,7 +15743,7 @@
       "limitation": false
     },
     {
-      "id": 1572,
+      "id": 1574,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15733,7 +15753,7 @@
       "limitation": false
     },
     {
-      "id": 1573,
+      "id": 1575,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15743,7 +15763,7 @@
       "limitation": false
     },
     {
-      "id": 1574,
+      "id": 1576,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15753,7 +15773,7 @@
       "limitation": false
     },
     {
-      "id": 1575,
+      "id": 1577,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15763,7 +15783,7 @@
       "limitation": true
     },
     {
-      "id": 1576,
+      "id": 1578,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15773,7 +15793,7 @@
       "limitation": false
     },
     {
-      "id": 1577,
+      "id": 1579,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15783,7 +15803,7 @@
       "limitation": false
     },
     {
-      "id": 1578,
+      "id": 1580,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15793,7 +15813,7 @@
       "limitation": false
     },
     {
-      "id": 1579,
+      "id": 1581,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15803,7 +15823,7 @@
       "limitation": true
     },
     {
-      "id": 1580,
+      "id": 1582,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15813,7 +15833,7 @@
       "limitation": false
     },
     {
-      "id": 1581,
+      "id": 1583,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15823,7 +15843,7 @@
       "limitation": true
     },
     {
-      "id": 1582,
+      "id": 1584,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15833,7 +15853,7 @@
       "limitation": false
     },
     {
-      "id": 1583,
+      "id": 1585,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15843,7 +15863,7 @@
       "limitation": false
     },
     {
-      "id": 1584,
+      "id": 1586,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15853,7 +15873,7 @@
       "limitation": false
     },
     {
-      "id": 1585,
+      "id": 1587,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15863,7 +15883,7 @@
       "limitation": true
     },
     {
-      "id": 1586,
+      "id": 1588,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15873,7 +15893,7 @@
       "limitation": false
     },
     {
-      "id": 1587,
+      "id": 1589,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15883,7 +15903,7 @@
       "limitation": true
     },
     {
-      "id": 1588,
+      "id": 1590,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15893,7 +15913,7 @@
       "limitation": false
     },
     {
-      "id": 1589,
+      "id": 1591,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -15903,7 +15923,7 @@
       "limitation": false
     },
     {
-      "id": 1590,
+      "id": 1592,
       "result_kind": "paper",
       "doi": "10.1007/s10238-026-02130-6",
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
@@ -15913,7 +15933,7 @@
       "limitation": false
     },
     {
-      "id": 1591,
+      "id": 1593,
       "result_kind": "paper",
       "doi": "10.1007/s11426-026-3629-x",
       "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
@@ -15923,7 +15943,7 @@
       "limitation": false
     },
     {
-      "id": 1592,
+      "id": 1594,
       "result_kind": "paper",
       "doi": "10.3389/fcvm.2025.1724572",
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
@@ -15933,7 +15953,7 @@
       "limitation": false
     },
     {
-      "id": 1593,
+      "id": 1595,
       "result_kind": "paper",
       "doi": "10.1056/nejmc2518964",
       "title": "Aspirin after PCI in Acute Coronary Syndromes",
@@ -15943,7 +15963,7 @@
       "limitation": false
     },
     {
-      "id": 1594,
+      "id": 1596,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70052",
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
@@ -15953,7 +15973,7 @@
       "limitation": false
     },
     {
-      "id": 1595,
+      "id": 1597,
       "result_kind": "paper",
       "doi": "10.15212/bioi-2026-0017",
       "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
@@ -15963,7 +15983,7 @@
       "limitation": false
     },
     {
-      "id": 1596,
+      "id": 1598,
       "result_kind": "paper",
       "doi": "10.1002/ggn2.202500053",
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -15973,7 +15993,7 @@
       "limitation": false
     },
     {
-      "id": 1597,
+      "id": 1599,
       "result_kind": "paper",
       "doi": "10.1016/j.medd.2026.100004",
       "title": "Multimodal AI for cardiovascular care must learn when not to predict",
@@ -15983,7 +16003,7 @@
       "limitation": false
     },
     {
-      "id": 1598,
+      "id": 1600,
       "result_kind": "paper",
       "doi": "10.1155/humu/5591097",
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -15993,7 +16013,7 @@
       "limitation": false
     },
     {
-      "id": 1599,
+      "id": 1601,
       "result_kind": "paper",
       "doi": "10.1126/science.aek9583",
       "title": "Recording results from single-patient trials",
@@ -16003,7 +16023,7 @@
       "limitation": false
     },
     {
-      "id": 1600,
+      "id": 1602,
       "result_kind": "paper",
       "doi": "10.1038/s41698-026-01699-1",
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
@@ -16013,7 +16033,7 @@
       "limitation": false
     },
     {
-      "id": 1601,
+      "id": 1603,
       "result_kind": "paper",
       "doi": "10.1111/jdi.70462",
       "title": "The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study",
@@ -16023,7 +16043,7 @@
       "limitation": false
     },
     {
-      "id": 1602,
+      "id": 1604,
       "result_kind": "paper",
       "doi": "10.1172/jci194175",
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
@@ -16033,7 +16053,7 @@
       "limitation": false
     },
     {
-      "id": 1603,
+      "id": 1605,
       "result_kind": "paper",
       "doi": "10.1016/j.curpro.2025.100054",
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
@@ -16043,7 +16063,7 @@
       "limitation": false
     },
     {
-      "id": 1604,
+      "id": 1606,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2025.114320",
       "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
@@ -16053,7 +16073,7 @@
       "limitation": false
     },
     {
-      "id": 1605,
+      "id": 1607,
       "result_kind": "paper",
       "doi": "10.3389/fnut.2025.1658286",
       "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
@@ -16063,7 +16083,7 @@
       "limitation": false
     },
     {
-      "id": 1606,
+      "id": 1608,
       "result_kind": "paper",
       "doi": "10.3389/fpubh.2025.1521372",
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -16073,7 +16093,7 @@
       "limitation": false
     },
     {
-      "id": 1607,
+      "id": 1609,
       "result_kind": "paper",
       "doi": "10.32604/or.2025.059290",
       "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
@@ -16083,7 +16103,7 @@
       "limitation": false
     },
     {
-      "id": 1608,
+      "id": 1610,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70725",
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
@@ -16093,7 +16113,7 @@
       "limitation": false
     },
     {
-      "id": 1609,
+      "id": 1611,
       "result_kind": "paper",
       "doi": "10.1016/j.joim.2025.06.003",
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
@@ -16103,7 +16123,7 @@
       "limitation": false
     },
     {
-      "id": 1610,
+      "id": 1612,
       "result_kind": "paper",
       "doi": "10.1186/s12915-025-02400-x",
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
@@ -16113,7 +16133,7 @@
       "limitation": false
     },
     {
-      "id": 1611,
+      "id": 1613,
       "result_kind": "paper",
       "doi": "10.71321/fy14v342",
       "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
@@ -16123,7 +16143,7 @@
       "limitation": false
     },
     {
-      "id": 1612,
+      "id": 1614,
       "result_kind": "paper",
       "doi": "10.1016/j.cbi.2025.111421",
       "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
@@ -16133,7 +16153,7 @@
       "limitation": false
     },
     {
-      "id": 1613,
+      "id": 1615,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010787",
       "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -16143,7 +16163,7 @@
       "limitation": false
     },
     {
-      "id": 1614,
+      "id": 1616,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70004",
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -16153,7 +16173,7 @@
       "limitation": false
     },
     {
-      "id": 1615,
+      "id": 1617,
       "result_kind": "paper",
       "doi": "10.1200/po-24-00875",
       "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
@@ -16163,7 +16183,7 @@
       "limitation": false
     },
     {
-      "id": 1616,
+      "id": 1618,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2025.1538574",
       "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -16173,7 +16193,7 @@
       "limitation": false
     },
     {
-      "id": 1617,
+      "id": 1619,
       "result_kind": "paper",
       "doi": "10.1111/odi.70054",
       "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
@@ -16183,7 +16203,7 @@
       "limitation": false
     },
     {
-      "id": 1618,
+      "id": 1620,
       "result_kind": "paper",
       "doi": "10.2147/ijn.s522157",
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
@@ -16193,7 +16213,7 @@
       "limitation": false
     },
     {
-      "id": 1619,
+      "id": 1621,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010127",
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
@@ -16203,7 +16223,7 @@
       "limitation": false
     },
     {
-      "id": 1620,
+      "id": 1622,
       "result_kind": "paper",
       "doi": "10.1093/eurheartj/ehaf523",
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
@@ -16213,7 +16233,7 @@
       "limitation": false
     },
     {
-      "id": 1621,
+      "id": 1623,
       "result_kind": "paper",
       "doi": "10.1002/tox.24284",
       "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
@@ -16223,7 +16243,7 @@
       "limitation": false
     },
     {
-      "id": 1622,
+      "id": 1624,
       "result_kind": "paper",
       "doi": "10.1038/s41467-024-50415-9",
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
@@ -16233,7 +16253,7 @@
       "limitation": false
     },
     {
-      "id": 1623,
+      "id": 1625,
       "result_kind": "paper",
       "doi": "10.18632/aging.205564",
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
@@ -16243,7 +16263,7 @@
       "limitation": false
     },
     {
-      "id": 1624,
+      "id": 1626,
       "result_kind": "paper",
       "doi": "10.1200/po.24.00089",
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
@@ -16253,7 +16273,7 @@
       "limitation": false
     },
     {
-      "id": 1625,
+      "id": 1627,
       "result_kind": "paper",
       "doi": "10.1186/s10020-024-00963-z",
       "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
@@ -16263,7 +16283,7 @@
       "limitation": false
     },
     {
-      "id": 1626,
+      "id": 1628,
       "result_kind": "paper",
       "doi": "10.1002/clc.70019",
       "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
@@ -16273,7 +16293,7 @@
       "limitation": false
     },
     {
-      "id": 1627,
+      "id": 1629,
       "result_kind": "paper",
       "doi": "10.1016/j.jtemb.2024.127543",
       "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
@@ -16283,7 +16303,7 @@
       "limitation": false
     },
     {
-      "id": 1628,
+      "id": 1630,
       "result_kind": "paper",
       "doi": "10.15212/cvia.2024.0023",
       "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
@@ -16293,7 +16313,7 @@
       "limitation": false
     },
     {
-      "id": 1629,
+      "id": 1631,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.18408",
       "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -16303,7 +16323,7 @@
       "limitation": false
     },
     {
-      "id": 1630,
+      "id": 1632,
       "result_kind": "paper",
       "doi": "10.1007/s10238-024-01439-4",
       "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
@@ -16313,7 +16333,7 @@
       "limitation": false
     },
     {
-      "id": 1631,
+      "id": 1633,
       "result_kind": "paper",
       "doi": "10.1186/s12943-024-02047-2",
       "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
@@ -16323,7 +16343,7 @@
       "limitation": false
     },
     {
-      "id": 1632,
+      "id": 1634,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70258",
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -16333,7 +16353,7 @@
       "limitation": false
     },
     {
-      "id": 1633,
+      "id": 1635,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2024.1425895",
       "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
@@ -16343,7 +16363,7 @@
       "limitation": false
     },
     {
-      "id": 1634,
+      "id": 1636,
       "result_kind": "paper",
       "doi": "10.1038/s41598-024-65236-5",
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
@@ -16353,7 +16373,7 @@
       "limitation": false
     },
     {
-      "id": 1635,
+      "id": 1637,
       "result_kind": "paper",
       "doi": "10.1007/s13402-023-00912-8",
       "title": "Omics-based molecular classifications empowering in precision oncology",
@@ -16363,7 +16383,7 @@
       "limitation": false
     },
     {
-      "id": 1636,
+      "id": 1638,
       "result_kind": "paper",
       "doi": "10.1016/j.ejso.2024.108527",
       "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
@@ -16373,7 +16393,7 @@
       "limitation": false
     },
     {
-      "id": 1637,
+      "id": 1639,
       "result_kind": "paper",
       "doi": "10.1021/acs.jproteome.4c00522",
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -16383,7 +16403,7 @@
       "limitation": false
     },
     {
-      "id": 1638,
+      "id": 1640,
       "result_kind": "paper",
       "doi": "10.1016/j.csbj.2024.04.044",
       "title": "Proteomics appending a complementary dimension to precision oncotherapy",
@@ -16393,7 +16413,7 @@
       "limitation": false
     },
     {
-      "id": 1639,
+      "id": 1641,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -16403,7 +16423,7 @@
       "limitation": false
     },
     {
-      "id": 1640,
+      "id": 1642,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16413,7 +16433,7 @@
       "limitation": false
     },
     {
-      "id": 1641,
+      "id": 1643,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16423,7 +16443,7 @@
       "limitation": false
     },
     {
-      "id": 1642,
+      "id": 1644,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16433,7 +16453,7 @@
       "limitation": false
     },
     {
-      "id": 1643,
+      "id": 1645,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16443,7 +16463,7 @@
       "limitation": false
     },
     {
-      "id": 1644,
+      "id": 1646,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -16453,7 +16473,7 @@
       "limitation": false
     },
     {
-      "id": 1645,
+      "id": 1647,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -16463,7 +16483,7 @@
       "limitation": false
     },
     {
-      "id": 1646,
+      "id": 1648,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -16473,7 +16493,7 @@
       "limitation": false
     },
     {
-      "id": 1647,
+      "id": 1649,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -16483,7 +16503,7 @@
       "limitation": false
     },
     {
-      "id": 1648,
+      "id": 1650,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -16493,7 +16513,7 @@
       "limitation": false
     },
     {
-      "id": 1649,
+      "id": 1651,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16503,7 +16523,7 @@
       "limitation": false
     },
     {
-      "id": 1650,
+      "id": 1652,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16513,7 +16533,7 @@
       "limitation": false
     },
     {
-      "id": 1651,
+      "id": 1653,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16523,7 +16543,7 @@
       "limitation": false
     },
     {
-      "id": 1652,
+      "id": 1654,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16533,7 +16553,7 @@
       "limitation": false
     },
     {
-      "id": 1653,
+      "id": 1655,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16543,7 +16563,7 @@
       "limitation": false
     },
     {
-      "id": 1654,
+      "id": 1656,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16553,7 +16573,7 @@
       "limitation": false
     },
     {
-      "id": 1655,
+      "id": 1657,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16563,7 +16583,7 @@
       "limitation": false
     },
     {
-      "id": 1656,
+      "id": 1658,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -16573,7 +16593,7 @@
       "limitation": false
     },
     {
-      "id": 1657,
+      "id": 1659,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",

@@ -6,7 +6,9 @@ import tempfile
 from pathlib import Path
 
 import sync_common
-from build_publications import paper_schema, render_paper_html
+import limited_evidence
+from build_publications import paper_schema, render_paper_html, render_paper_markdown
+from citation_common import citation_files, citation_plain_text, citation_record, load_citation_metadata
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import load_master, merge_items, normalize_authors, publication_authors, save_master
 from sync_crossref import crossref_author_names
@@ -52,6 +54,12 @@ def reject_identity_fixture(callback):
     raise AssertionError('Invalid publication identity fixture was accepted')
 
 
+def bibtex_author_names(bib):
+    # G11 protects hyphenated name tokens with BibTeX groups, not CSL literals.
+    value = re.search(r'^  author = \{(.*)\},$', bib, re.M).group(1)
+    return re.sub(r'\{([^{}]*)\}', r'\1', value).split(' and ')
+
+
 def run_verified_identity_tests():
     config = load_site_config()
     by_doi = {p.get('doi'): p for p in load_master()}
@@ -90,7 +98,7 @@ def run_verified_identity_tests():
         bib = (citations / (slug + '.bib')).read_text(encoding='utf-8')
         ris = (citations / (slug + '.ris')).read_text(encoding='utf-8')
         csl = json.loads((citations / (slug + '.csl.json')).read_text(encoding='utf-8'))
-        assert re.search(r'^  author = \{(.*)\},$', bib, re.M).group(1).split(' and ') == expected['authors']
+        assert bibtex_author_names(bib) == expected['authors']
         assert [line[6:] for line in ris.splitlines() if line.startswith('AU  - ')] == expected['authors']
         assert f"year = {{{expected['year']}}}" in bib and f"PY  - {expected['year']}" in ris
         assert f"number = {{{expected['issue']}}}" in bib and f"eid = {{{expected['number']}}}" in bib
@@ -151,11 +159,164 @@ def run_luad_affiliation_marker_test():
     bib = (citation_dir / f"{slug}.bib").read_text(encoding="utf-8")
     ris = (citation_dir / f"{slug}.ris").read_text(encoding="utf-8")
     csl = json.loads((citation_dir / f"{slug}.csl.json").read_text(encoding="utf-8"))
-    assert re.search(r'^  author = \{(.*)\},$', bib, re.M).group(1).split(" and ") == expected
+    assert bibtex_author_names(bib) == expected
     assert [line[6:] for line in ris.splitlines() if line.startswith("AU  - ")] == expected
     assert [author["literal"] for author in csl["author"]] == expected
     assert csl["DOI"] == doi
     print("LUAD NAME FIXTURE PASS: 14 positions preserved; site Person remains at 14; stale incoming marker rejected without external sync")
+
+
+def run_retinal_publisher_identity_test():
+    """Keep both publisher-named Ge Zhang authors without inferring a site identity."""
+    doi = '10.3980/j.issn.1672-5123.2020.12.13'
+    expected = {
+        'authors': ['Ge Zhang', 'Han Zhu', 'Jing-Wen Zhang', 'Yu-Di Xu', 'Ming-Xuan Duan', 'Ge Zhang'],
+        'positions': [], 'year': 2020,
+    }
+    target = next(item for item in load_master() if item.get('doi') == doi)
+    assert_identity_record(target, expected)
+    assert target['journal'] == 'International Eye Science'
+    # Ordinary incoming author deduplication and the old journal cannot displace
+    # this complete byline or its unresolved owner mapping, including after save/load.
+    incoming = {key: target[key] for key in ('doi', 'title', 'type', 'year')}
+    incoming.update(authors=normalize_authors(expected['authors']), journal='International Journal of Ophthalmology')
+    assert len(incoming['authors']) == 5
+    for source in ('ORCID:isolated-fixture', 'Crossref:isolated-fixture'):
+        stale = {**incoming, 'authors': expected['authors'], 'researcher_author_positions': [1]}
+        for candidate in (incoming, stale):
+            merged, added, _, duplicates = merge_items([copy.deepcopy(target)], [copy.deepcopy(candidate)], source)
+            assert added == duplicates == 0 and len(merged) == 1
+            assert_identity_record(merged[0], expected)
+            assert merged[0]['journal'] == target['journal']
+            with tempfile.TemporaryDirectory() as temporary:
+                original_master = sync_common.MASTER
+                try:
+                    sync_common.MASTER = Path(temporary) / 'master.json'
+                    save_master(merged)
+                    assert_identity_record(load_master()[0], expected)
+                    assert load_master()[0]['journal'] == target['journal']
+                finally:
+                    sync_common.MASTER = original_master
+    slug = target['slug']
+    page = (PAPERS_DIR / f'{slug}.html').read_text(encoding='utf-8')
+    assert [html.unescape(v) for v in re.findall(r'<meta name="citation_author" content="([^"]*)">', page)] == expected['authors']
+    schema_authors = paper_json_ld_object(page, slug)['author']
+    config = load_site_config()
+    assert_identity_schema(schema_authors, expected, config)
+    assert all(set(person) == {'@type', 'name'} for person in schema_authors)
+    markdown = (PAPERS_DIR / f'{slug}.md').read_text(encoding='utf-8')
+    assert f"Site maintainer: {config['researcher_name']}\n" in markdown
+    assert f"Site maintainer ORCID: https://orcid.org/{config['orcid']}\n" in markdown
+    assert f"Canonical site maintainer: {config['person_id']}\n" in markdown
+    assert '## ORCID work-record provenance\n' in markdown
+    assert 'the identity mapping between individual authors and the site maintainer remains unverified.' in markdown
+    assert 'ORCID identity anchor:' not in markdown and 'Canonical researcher:' not in markdown
+    assert 'Site maintainer: Ge Zhang' in page and 'site maintainer ORCID' in page
+    assert 'not replace the publisher version or assert a complete author list' not in page
+    # Only [] changes these role labels; omitted and verified positions retain the old text.
+    for positions in (None, [1]):
+        fixture = copy.deepcopy(target)
+        if positions is None:
+            fixture.pop('researcher_author_positions')
+        else:
+            fixture['researcher_author_positions'] = positions
+        legacy = render_paper_markdown(fixture, config=config)
+        assert f"Researcher: {config['researcher_name']}\n" in legacy
+        assert 'ORCID identity anchor:' in legacy and 'Canonical researcher:' in legacy
+        assert '## About this record\n' in legacy and 'via ORCID;' in legacy
+        assert 'Site maintainer:' not in legacy
+        assert 'Author-controlled academic record for Ge Zhang' in render_paper_html(fixture, config=config)
+    citations = PAPERS_DIR.parent / 'citations'
+    bib = (citations / f'{slug}.bib').read_text(encoding='utf-8')
+    ris = (citations / f'{slug}.ris').read_text(encoding='utf-8')
+    csl = json.loads((citations / f'{slug}.csl.json').read_text(encoding='utf-8'))
+    assert bibtex_author_names(bib) == expected['authors']
+    assert [line[6:] for line in ris.splitlines() if line.startswith('AU  - ')] == expected['authors']
+    assert [author['literal'] for author in csl['author']] == expected['authors']
+    assert csl['container-title'] == target['journal'] and csl['DOI'] == doi
+    assert csl['issued'] == {'date-parts': [[2020]]}
+    assert (csl['volume'], csl['issue'], csl['page']) == ('20', '12', '2079-2082')
+    assert 'number' not in csl and 'article-number' not in csl
+    assert 'pages = {2079--2082}' in bib and 'journal = {International Eye Science}' in bib
+    assert 'SP  - 2079' in ris and 'EP  - 2082' in ris and 'DA  - ' not in ris
+    metadata = json.loads((PAPERS_DIR.parent / 'data/citation_metadata.json').read_text(encoding='utf-8'))['papers'][doi]
+    assert metadata['journal_abbrev'] == 'Int Eye Sci' and metadata['issn'] == '1672-5123'
+    assert 'publication_date' not in metadata
+    bad = copy.deepcopy(target); bad['authors'].pop()
+    reject_identity_fixture(lambda: assert_identity_record(bad, expected))
+    for position in (0, 5):
+        bad_authors = copy.deepcopy(schema_authors)
+        bad_authors[position].update({'@id': config['person_id'], 'sameAs': f"https://orcid.org/{config['orcid']}"})
+        reject_identity_fixture(lambda: assert_identity_schema(bad_authors, expected, config))
+        bad = copy.deepcopy(target); bad['researcher_author_positions'] = [position + 1]
+        reject_identity_fixture(lambda: assert_identity_record(bad, expected))
+    print('RETINAL IDENTITY TEST PASS: six ordered authors; no verified site Person; ORCID/Crossref preservation; year-only paginated citation; 5 negative fixtures')
+
+
+def run_explicit_researcher_positions_contract_tests():
+    """An explicit empty list keeps the complete byline without a guessed owner."""
+    fixture = {
+        'title': 'Explicit identity fixture', 'doi': '10.1/identity-fixture',
+        'authors': ['Ge Zhang', 'Other Author', 'Ge Zhang'],
+        'researcher_author_positions': [],
+    }
+    config = load_site_config()
+    for positions in ([], [1], [3], [1, 3]):
+        item = {**fixture, 'researcher_author_positions': positions}
+        assert publication_authors(item) == fixture['authors']
+        assert sync_common.normalize_item(item)['researcher_author_positions'] == positions
+        schema = paper_schema(item, 'https://drgezhang.com/papers/identity-fixture.html', config)['author']
+        assert_identity_schema(schema, {'authors': fixture['authors'], 'positions': positions}, config)
+        old = {**item, 'sync_fixture_note': ''}
+        incoming = {**item, 'researcher_author_positions': [3], 'sync_fixture_note': 'filled'}
+        merged, added, _, duplicates = merge_items([old], [incoming], 'Crossref:isolated-fixture')
+        assert added == duplicates == 0 and merged[0]['researcher_author_positions'] == positions
+        assert merged[0]['sync_fixture_note'] == 'filled'  # Other empty-field backfill is unchanged.
+    invalid = ('1', '', 1, True, False, {}, (), [0], [-1], [4], [1, 1], [True], [1.0], ['1'], [None])
+    for positions in invalid:
+        reject_identity_fixture(lambda: publication_authors({**fixture, 'researcher_author_positions': positions}))
+    reject_identity_fixture(lambda: sync_common.normalize_item({'researcher_author_positions': []}))
+    for authors in ([], None, ''):
+        reject_identity_fixture(lambda: publication_authors({**fixture, 'authors': authors}))
+    print(f'EXPLICIT POSITIONS CONTRACT PASS: empty and 3 nonempty lists; {len(invalid) + 4} invalid type/range/duplicate/missing-author fixtures rejected')
+
+
+def run_limited_markdown_citation_tests():
+    """Limited scientific notes keep their body while exposing existing citations."""
+    config = load_site_config()
+    public = json.loads((PAPERS_DIR.parent / 'publications.json').read_text(encoding='utf-8'))
+    metadata = load_citation_metadata(public)
+    notes = limited_evidence.load(public)
+    by_doi = {p.get('doi'): p for p in public}
+    checked = 0
+    for doi, note in notes.items():
+        publication = by_doi[doi]
+        citation = citation_record(publication, metadata, config['site_url'])
+        markdown = (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding='utf-8')
+        assert markdown.count(limited_evidence.render_markdown(note)) == 1
+        if citation is None:
+            assert '## Cite this paper\n' not in markdown
+            continue
+        authors = markdown.split('## Full Authors\n\n', 1)[1].split('\n\n## ', 1)[0]
+        assert authors.splitlines() == [f'{i}. {name}' for i, name in enumerate(publication_authors(publication), 1)]
+        assert markdown.count('## Cite this paper\n') == 1
+        assert citation_plain_text(citation) in markdown
+        for name in citation_files(citation).values():
+            assert f"{config['site_url']}/citations/{name}" in markdown
+        checked += 1
+    # Missing metadata must still suppress citations; no guessed author list.
+    target = by_doi['10.3980/j.issn.1672-5123.2020.12.13']
+    missing = copy.deepcopy(target)
+    missing.pop('authors'); missing.pop('researcher_author_positions')
+    assert citation_record(missing, metadata, config['site_url']) is None
+    markdown = render_paper_markdown(missing, config=config, limited_note=notes[target['doi']])
+    assert '## Full Authors\n' not in markdown and '## Cite this paper\n' not in markdown
+    target_note = notes[target['doi']]
+    assert 'remains unresolved' not in target_note['scope']
+    assert not any('corrections remain on hold' in limit for limit in target_note['limitations'])
+    assert 'no unique ORCID or individual-identifier mapping' in target_note['sections'][-1]['text']
+    assert 'both remain name-only authors' in target_note['sections'][-1]['text']
+    print(f'LIMITED MARKDOWN CITATION TESTS PASS: {checked} ordered author lists and citation links; scientific note blocks preserved; missing-author fail closed')
 
 
 def run_tests():
@@ -258,6 +419,9 @@ def run_tests():
 
     run_verified_identity_tests()
     run_luad_affiliation_marker_test()
+    run_retinal_publisher_identity_test()
+    run_explicit_researcher_positions_contract_tests()
+    run_limited_markdown_citation_tests()
     print("AUTHOR METADATA TESTS PASS")
 
 

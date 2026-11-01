@@ -18264,21 +18264,28 @@
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "year": 2020,
-      "journal": "International Journal of Ophthalmology",
+      "journal": "International Eye Science",
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.md",
       "paper_geo_status": "none",
-      "authors": null,
+      "authors": [
+        "Ge Zhang",
+        "Han Zhu",
+        "Jing-Wen Zhang",
+        "Yu-Di Xu",
+        "Ming-Xuan Duan",
+        "Ge Zhang"
+      ],
       "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
       "publisher_url": null,
       "pmid": null,
       "pmcid": null,
       "openalex_id": "https://openalex.org/W4399062302",
       "semantic_scholar_id": null,
-      "citation_bibtex_url": null,
-      "citation_ris_url": null,
-      "citation_csl_json_url": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-3980-j-issn-1672-5123-2020-12-13.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-3980-j-issn-1672-5123-2020-12-13.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-3980-j-issn-1672-5123-2020-12-13.csl.json",
       "evidence_status": "limited",
       "question_count": 0,
       "key_findings": [],
@@ -18295,11 +18302,11 @@
           "locator": "PDF p. 1 / journal p. 2079: 文献综述, 摘要, Abstract and Introduction"
         }
       ],
-      "scope": "Methods-review context from the complete official PDF; the researcher’s author identity remains unresolved.",
-      "evidence_notice": "Methods-review context from the complete official PDF; the researcher’s author identity remains unresolved.",
+      "scope": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
+      "evidence_notice": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
       "evidence_scope": null,
       "limitations": [
-        "The PDF identifies International Eye Science and a narrative review, unlike the preserved site metadata. Authorship, journal and type corrections remain on hold pending identity resolution."
+        "The publisher PDF identifies a narrative review in International Eye Science. The site's broad Article metadata category does not imply an original experiment or clinical study."
       ],
       "scope_source": "data/limited_evidence.json#/papers/10.3980~1j.issn.1672-5123.2020.12.13/scope"
     }

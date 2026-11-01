@@ -11,6 +11,7 @@ from citation_common import (
     CITATION_METADATA_PATH,
     CITATIONS_DIR,
     citation_files,
+    citation_plain_text,
     citation_record,
     citation_skip_reason,
     load_citation_metadata,
@@ -2055,15 +2056,25 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         ]
     notice_html = ""
     if not is_v2:
-        notice_html = (
-            f'<section><div class="notice"><strong>Author-controlled academic record for '
-            f'{html.escape(config["researcher_name"])} '
-            f'({html.escape(config["researcher_name_zh"])}; ORCID '
-            f'<a href="{html.escape(orcid_url(config), quote=True)}">'
-            f'{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as '
-            f'part of {html.escape(config["researcher_name"])}’s publication record. It does '
-            "not replace the publisher version or assert a complete author list.</div></section>"
-        )
+        if publication.get("researcher_author_positions") == []:
+            notice_html = (
+                f'<section><div class="notice"><strong>Site maintainer: '
+                f'{html.escape(config["researcher_name"])} '
+                f'({html.escape(config["researcher_name_zh"])}; site maintainer ORCID '
+                f'<a href="{html.escape(orcid_url(config), quote=True)}">'
+                f'{html.escape(config["orcid"])}</a>).</strong> '
+                f'{html.escape(unmapped_author_record_provenance(config))}</div></section>'
+            )
+        else:
+            notice_html = (
+                f'<section><div class="notice"><strong>Author-controlled academic record for '
+                f'{html.escape(config["researcher_name"])} '
+                f'({html.escape(config["researcher_name_zh"])}; ORCID '
+                f'<a href="{html.escape(orcid_url(config), quote=True)}">'
+                f'{html.escape(config["orcid"])}</a>).</strong> This page identifies the work as '
+                f'part of {html.escape(config["researcher_name"])}’s publication record. It does '
+                "not replace the publisher version or assert a complete author list.</div></section>"
+            )
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
     if is_v2:
         deep_html = enhance_html(deep_html, publication, deep_content, canonical)
@@ -2103,8 +2114,18 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 ''')
 
 
+def unmapped_author_record_provenance(config):
+    """Separate ORCID work-list provenance from an unresolved individual author mapping."""
+    return (
+        "This site-maintained record is listed through the site maintainer's ORCID work record "
+        f"({orcid_url(config)}). The publisher byline and formal citation are provided; "
+        "the identity mapping between individual authors and the site maintainer remains unverified. "
+        "The publisher version remains the version of record."
+    )
+
+
 def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None,
-                          official_abstract=None, limited_note=None):
+                          official_abstract=None, limited_note=None, citation_data=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2120,13 +2141,19 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     )
     if is_v2:
         deep_content = with_research_cluster(deep_content, public_by_doi)
+    unmapped_author_identity = publication.get("researcher_author_positions") == []
+    identity_labels = (
+        ("Site maintainer", "Site maintainer Chinese name", "Site maintainer ORCID", "Canonical site maintainer")
+        if unmapped_author_identity else
+        ("Researcher", "Chinese name", "ORCID identity anchor", "Canonical researcher")
+    )
     lines = [
         f"# {title}",
         "",
-        f"Researcher: {config['researcher_name']}",
-        f"Chinese name: {config['researcher_name_zh']}",
-        f"ORCID identity anchor: {orcid_url(config)}",
-        f"Canonical researcher: {config['person_id']}",
+        f"{identity_labels[0]}: {config['researcher_name']}",
+        f"{identity_labels[1]}: {config['researcher_name_zh']}",
+        f"{identity_labels[2]}: {orcid_url(config)}",
+        f"{identity_labels[3]}: {config['person_id']}",
         "",
         f"Journal: {journal}",
         f"Year: {year}",
@@ -2136,7 +2163,7 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         f"Markdown record: {md_url}",
         "",
     ]
-    if is_v2 or (publication_type in {"Letter", "Correspondence"} and publication_authors(publication)):
+    if is_v2 or (limited_note and citation_data) or (publication_type in {"Letter", "Correspondence"} and publication_authors(publication)):
         lines.extend(
             [
                 "## Full Authors",
@@ -2151,15 +2178,18 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
             ]
         )
     if not is_v2:
+        about = unmapped_author_record_provenance(config) if unmapped_author_identity else (
+            f"This is an author-controlled publication record in the {config['researcher_name']} "
+            "Academic Hub. "
+            f"It identifies this work as part of {config['researcher_name']}’s publication record "
+            "via ORCID; "
+            "the publisher version remains the version of record."
+        )
         lines.extend(
             [
-                "## About this record",
+                "## ORCID work-record provenance" if unmapped_author_identity else "## About this record",
                 "",
-                f"This is an author-controlled publication record in the {config['researcher_name']} "
-                "Academic Hub. "
-                f"It identifies this work as part of {config['researcher_name']}’s publication record "
-                "via ORCID; "
-                "the publisher version remains the version of record.",
+                about,
                 "",
             ]
         )
@@ -2177,6 +2207,14 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         lines.append(render_official_abstract_markdown(official_abstract, doi))
     if publication.get("paper_geo_status") == "pending":
         lines.extend(["## Deep GEO · Pending", "", PENDING_NOTICE, ""])
+    if limited_note and citation_data:
+        files = citation_files(citation_data)
+        lines.extend([
+            "## Cite this paper", "", citation_plain_text(citation_data), "",
+            *[f"- [{label}]({absolute(site_root, 'citations/' + files[key])})"
+              for key, label in (("bib", "BibTeX"), ("ris", "RIS / EndNote"), ("csl", "CSL JSON"))],
+            "",
+        ])
     lines.extend(
         [
             "## Links",
@@ -2557,6 +2595,7 @@ def build_site():
                 public_by_doi=public_by_doi,
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
                 limited_note=limited_notes.get(norm_doi(item.get('doi'))),
+                citation_data=citation_by_slug[item["slug"]],
             ),
         )
     CITATIONS_DIR.mkdir(parents=True, exist_ok=True)

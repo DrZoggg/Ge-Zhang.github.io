@@ -12,6 +12,19 @@ DOI: 10.1371/journal.pone.0346326
 Canonical page: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
 Markdown record: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md
 
+## Full Authors
+
+1. Meirong Shan
+2. Qian Guo
+3. Ruofei Li
+4. Ni Li
+5. Yanhua Fu
+6. Huanyu Qi
+7. Ge Zhang
+8. Qian Wang
+9. Xingli Xu
+10. Jinchuan Lai
+
 ## About this record
 
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
@@ -53,6 +66,14 @@ Source: [Table 1, AE severity and Serious outcome rows; Discussion limitations](
 - [Official supplementary material](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003) — Publisher-hosted supplementary document. S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025
 
 Source review: 2026-10-27.
+
+## Cite this paper
+
+Meirong Shan, Qian Guo, Ruofei Li, Ni Li, Yanhua Fu, Huanyu Qi, Ge Zhang, Qian Wang, Xingli Xu, Jinchuan Lai. Real-world safety of aliskiren in primary hypertension: A cross-database study. PLOS One. 2026. https://doi.org/10.1371/journal.pone.0346326
+
+- [BibTeX](https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.bib)
+- [RIS / EndNote](https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.ris)
+- [CSL JSON](https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.csl.json)
 
 ## Links
 

@@ -693,7 +693,7 @@
 - Deep GEO: yes
 
 ## Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells
-- Journal: International Journal of Ophthalmology
+- Journal: International Eye Science
 - Year: 2020
 - Type: Article
 - DOI: 10.3980/j.issn.1672-5123.2020.12.13
