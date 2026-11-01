@@ -200,11 +200,21 @@ def _bib_text(value):
     return "".join(escaped.get(character, character) for character in str(value))
 
 
+def _bib_authors(authors):
+    """Protect existing hyphenated name tokens without inferring name parts."""
+    def token(match):
+        value = match.group()
+        escaped = _bib_text(value)
+        return "{" + escaped + "}" if "-" in value else escaped
+
+    return " and ".join(re.sub(r"\S+", token, author) for author in authors)
+
+
 def render_bibtex(record):
     kind = "article" if record["type"] in JOURNAL_PUBLICATION_TYPES else "misc"
     fields = [
         ("title", record["title"]),
-        ("author", " and ".join(record["authors"])),
+        ("author", record["authors"]),
         ("journal" if kind == "article" else "howpublished", record["journal"]),
         ("year", str(record["year"])),
     ]
@@ -225,7 +235,10 @@ def render_bibtex(record):
     fields.extend([("doi", record["doi"]), ("url", record["doi_url"])])
     if record.get("issn") or record.get("eissn"):
         fields.append(("issn", record.get("issn") or record["eissn"]))
-    body = ",\n".join(f"  {key} = {{{_bib_text(value)}}}" for key, value in fields)
+    body = ",\n".join(
+        f"  {key} = {{{_bib_authors(value) if key == 'author' else _bib_text(value)}}}"
+        for key, value in fields
+    )
     return f"@{kind}{{{record['id']},\n{body}\n}}\n"
 
 
