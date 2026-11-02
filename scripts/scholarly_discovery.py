@@ -239,6 +239,8 @@ def question_records(items, contents, fields, root=ROOT):
 def render_questions(rows, config, discovery=None):
     escape = html.escape
     discovery = discovery or {'works': [], 'all_questions': []}
+    from scientific_intents import render_intent_layer
+    intent_layer = render_intent_layer(discovery)
     works = {work['id']: work for work in discovery['works']}
     by_work = {}
     for question in discovery['all_questions']:
@@ -356,10 +358,11 @@ def render_questions(rows, config, discovery=None):
 <script src="../assets/evidence-search.js" defer></script></head><body class="scientific-discovery">
 <header><nav><a class="brand" href="../index.html">{escape(config['researcher_name'])}</a><div class="navlinks"><a href="../publications.html">All publications</a></div></nav></header>
 <main class="wrap"><section><div class="eyebrow">Research discovery</div><h1>Scientific questions</h1>
-<p class="lead">Questions addressed by publications in this research program</p>
-<p>This index covers publications in this research program; it is not an exhaustive or systematic review of the field. Reviewed Q&amp;A and mapped questions link to canonical paper evidence and original article DOIs.</p>
-<p>{counts}</p><p>Each full-evidence entry presents a source-linked key finding from the work. Six selected entries also retain complete reviewed answers here. All indexed Q&amp;A links lead directly to their unchanged answers on the existing paper pages.</p>
-<p><a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
+<p class="lead">Explore research questions, reviewed findings and original-paper sources from this research program.</p>
+<p>Start with a broad research direction, follow a focused question, and locate the corresponding study, reviewed answer and formal citation.</p>
+<p>{counts}</p>
+<p class="discovery-shortcuts"><a href="#research-intents">Explore research themes</a> · <a href="#discovery-search-title">Search reviewed questions and papers</a> · <a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
+{intent_layer}
 <section class="discovery-search" aria-labelledby="discovery-search-title"><h2 id="discovery-search-title">Find a question, concept or original work</h2>
 <label for="pubSearch">Search existing paper evidence, questions, concepts, title or DOI</label>
 <input id="pubSearch" type="search" autocomplete="off" placeholder="Question, research concept or DOI" aria-describedby="evidenceSearchStatus">
@@ -404,6 +407,8 @@ def validate_generated(items, config, root=ROOT):
     if actual != {'version':1,'questions':expected, **discovery}:
         raise ValueError('Question index differs from reviewed sources')
     page = (root / QUESTION_PATH).read_text(encoding='utf-8')
+    from scientific_intents import validate_intent_html
+    intent_counts = validate_intent_html(page, discovery, root)
     if page.count('data-question-route') != len(discovery['all_questions']):
         raise ValueError('Complete reviewed question HTML inventory differs from Gold')
     for question in discovery['all_questions']:
@@ -450,5 +455,5 @@ def validate_generated(items, config, root=ROOT):
                         or html.escape(ref['evidence_url'], quote=True) not in card.group(1)
                         or html.escape(ref['source_locator']) not in card.group(1)):
                     raise ValueError('Reviewed answer evidence reference is not resolvable')
-    return {'question_routes':len(expected),'identity_records':len(identities),
+    return {**intent_counts, 'question_routes':len(expected),'identity_records':len(identities),
             'reviewed_backlink_edges':sum(len(rows) for rows in backlinks.values())}

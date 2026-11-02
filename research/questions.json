@@ -23840,6 +23840,779 @@
       "evidence_refs_status": "resolved"
     }
   ],
+  "intent_layer_version": 1,
+  "intent_sources": [
+    {
+      "id": "hf-omics-hf-ai-review-2018",
+      "title": "Artificial Intelligence in Cardiology",
+      "doi": "10.1016/j.jacc.2018.03.521",
+      "url": "https://doi.org/10.1016/j.jacc.2018.03.521",
+      "year": 2018,
+      "locator": "Clinician-oriented AI/ML methods, cardiovascular applications and incorporation into practice."
+    },
+    {
+      "id": "hf-omics-hf-ml-review-2017",
+      "title": "Heart Failure: Diagnosis, Severity Estimation and Prediction of Adverse Events Through Machine Learning Techniques",
+      "doi": "10.1016/j.csbj.2016.11.001",
+      "url": "https://doi.org/10.1016/j.csbj.2016.11.001",
+      "year": 2016,
+      "locator": "The actual review separates detection, subtypes, severity, adverse events, rehospitalisation and mortality. Its summary discusses differing data sources and comparison of methods."
+    },
+    {
+      "id": "hf-omics-tripod-ai-2024",
+      "title": "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+      "doi": "10.1136/bmj-2023-078378",
+      "url": "https://doi.org/10.1136/bmj-2023-078378",
+      "year": 2024,
+      "locator": "The checklist covers development/evaluation context and transparent reporting; model evaluation, discrimination, calibration and clinical role are distinct information needs."
+    },
+    {
+      "id": "hf-omics-cvd-multiomics-2021",
+      "title": "Systems biology in cardiovascular disease: a multiomics approach",
+      "doi": "10.1038/s41569-020-00477-1",
+      "url": "https://doi.org/10.1038/s41569-020-00477-1",
+      "year": 2020,
+      "locator": "The review combines network theory with gene regulation, proteomics, metabolomics, lipidomics and phenomics; independent biological validation accompanies integration."
+    },
+    {
+      "id": "hf-omics-multiomics-review-2017",
+      "title": "Multi-omics approaches to disease",
+      "doi": "10.1186/s13059-017-1215-1",
+      "url": "https://doi.org/10.1186/s13059-017-1215-1",
+      "year": 2017,
+      "locator": "The review organises integrative analyses as genome-first, phenotype-first and environment-first, with study design, phenotyping, analytical integration and resolution as recurring needs."
+    },
+    {
+      "id": "hf-omics-proteomics-review-2026",
+      "title": "Proteomics in cardiology: research and practice",
+      "doi": "10.1136/heartjnl-2025-326751",
+      "url": "https://doi.org/10.1136/heartjnl-2025-326751",
+      "year": 2026,
+      "locator": "Recent review structures applications around disease mechanisms, prediction/detection, patient stratification and therapeutic-target prioritisation. It highlights reliable measurement, multiple platforms, longitudinal sampling and ancestry diversity."
+    },
+    {
+      "id": "vsmc-circadian-vc1",
+      "title": "Vascular Smooth Muscle Cells in Atherosclerosis",
+      "doi": "10.1161/CIRCRESAHA.115.306361",
+      "url": "https://doi.org/10.1161/CIRCRESAHA.115.306361",
+      "year": 2016,
+      "locator": "PMC4762053 body/sec[@id=\"S2\"]; PMC4762053 body/sec[@id=\"S4\"]; PMC4762053 body/sec[@id=\"S8\"]"
+    },
+    {
+      "id": "vsmc-circadian-vc2",
+      "title": "Vascular smooth muscle cells in atherosclerosis",
+      "doi": "10.1038/s41569-019-0227-9",
+      "url": "https://doi.org/10.1038/s41569-019-0227-9",
+      "year": 2019,
+      "locator": "Publisher indexed Abstract and Key points; Figures1–4 captions; PubMed31243391 abstract"
+    },
+    {
+      "id": "vsmc-circadian-vc3",
+      "title": "Vascular smooth muscle cells in atherosclerosis: time for a re-assessment",
+      "doi": "10.1093/cvr/cvab046",
+      "url": "https://doi.org/10.1093/cvr/cvab046",
+      "year": 2021,
+      "locator": "Publisher Abstract; PubMed33576407 abstract"
+    },
+    {
+      "id": "vsmc-circadian-vc4",
+      "title": "Vascular smooth muscle cell metabolic reprogramming and phenotypic remodeling in atherosclerosis",
+      "doi": "10.1038/s41420-025-02932-9",
+      "url": "https://doi.org/10.1038/s41420-025-02932-9",
+      "year": 2025,
+      "locator": "PMC12847746 body/sec[@id=\"Sec3\"]; PMC12847746 body/sec[@id=\"Sec27\"]; PMC12847746 body/sec[@id=\"Sec32\"]"
+    },
+    {
+      "id": "vsmc-circadian-vc5",
+      "title": "Efferocytosis in health and disease",
+      "doi": "10.1038/s41577-019-0240-6",
+      "url": "https://doi.org/10.1038/s41577-019-0240-6",
+      "year": 2019,
+      "locator": "Publisher Abstract; Publisher Figure2 caption and references74–78; PubMed31822793 abstract"
+    },
+    {
+      "id": "vsmc-circadian-cr1",
+      "title": "Circadian rhythms and the molecular clock in cardiovascular biology and disease",
+      "doi": "10.1038/s41569-019-0167-4",
+      "url": "https://doi.org/10.1038/s41569-019-0167-4",
+      "year": 2019,
+      "locator": "PubMed30796369 / official bibliographic abstract; cardiovascular cell-type, physiology/disease and timing structure"
+    },
+    {
+      "id": "vsmc-circadian-cr2",
+      "title": "Clocking in to immunity",
+      "doi": "10.1038/s41577-018-0008-4",
+      "url": "https://doi.org/10.1038/s41577-018-0008-4",
+      "year": 2018,
+      "locator": "PubMed29662121 / official bibliographic abstract; immunity mechanisms and chrono-immunotherapy scope"
+    },
+    {
+      "id": "vsmc-circadian-cr3",
+      "title": "The emerging link between cancer, metabolism, and circadian rhythms",
+      "doi": "10.1038/s41591-018-0271-8",
+      "url": "https://doi.org/10.1038/s41591-018-0271-8",
+      "year": 2018,
+      "locator": "PMC6535395 body/sec[@id=\"S1\"]; PMC6535395 body/sec[@id=\"S5\"]; PMC6535395 body/sec[@id=\"S8\"]"
+    },
+    {
+      "id": "vsmc-circadian-cr4",
+      "title": "Metabolic rivalry: circadian homeostasis and tumorigenesis",
+      "doi": "10.1038/s41568-020-0291-9",
+      "url": "https://doi.org/10.1038/s41568-020-0291-9",
+      "year": 2020,
+      "locator": "PubMed32895495 abstract; publisher abstract and Figure5 temporal communication description"
+    },
+    {
+      "id": "vsmc-circadian-cr5",
+      "title": "Role of Circadian Health in Cardiometabolic Health and Disease Risk: A Scientific Statement From the American Heart Association",
+      "doi": "10.1161/CIR.0000000000001388",
+      "url": "https://doi.org/10.1161/CIR.0000000000001388",
+      "year": 2025,
+      "locator": "AHA statement abstract; Figure on circadian disruption/interventions/cardiometabolic outcomes; PubMed41147137"
+    },
+    {
+      "id": "onco-agent-onco-s1",
+      "title": "Understanding the tumor immune microenvironment (TIME) for effective therapy",
+      "doi": "10.1038/s41591-018-0014-x",
+      "url": "https://doi.org/10.1038/s41591-018-0014-x",
+      "year": 2018,
+      "locator": "PMC5998822 body/S1; PMC5998822 body/S7; PMC5998822 body/S13-S16"
+    },
+    {
+      "id": "onco-agent-onco-s2",
+      "title": "Navigating CAR-T cells through the solid-tumour microenvironment",
+      "doi": "10.1038/s41573-021-00189-2",
+      "url": "https://doi.org/10.1038/s41573-021-00189-2",
+      "year": 2021,
+      "locator": "PubMed33972771 Abstract; EuropePMC core record33972771 abstractText"
+    },
+    {
+      "id": "onco-agent-onco-s3",
+      "title": "The immune contexture and Immunoscore in cancer prognosis and therapeutic efficacy",
+      "doi": "10.1038/s41568-020-0285-7",
+      "url": "https://doi.org/10.1038/s41568-020-0285-7",
+      "year": 2020,
+      "locator": "PubMed32753728 Abstract; Publisher indexed abstract; Figure1 heading only"
+    },
+    {
+      "id": "onco-agent-onco-s4",
+      "title": "2022 ESC Guidelines on cardio-oncology developed in collaboration with the European Hematology Association (EHA), the European Society for Therapeutic Radiology and Oncology (ESTRO) and the International Cardio-Oncology Society (IC-OS)",
+      "doi": "10.1093/eurheartj/ehac244",
+      "url": "https://doi.org/10.1093/eurheartj/ehac244",
+      "year": 2022,
+      "locator": "Official ESC guideline title/date/scope description; Publisher contents section5.5.9 identity"
+    },
+    {
+      "id": "onco-agent-onco-s5",
+      "title": "Immune-checkpoint inhibitor-mediated myocarditis: CTLA4, PD1 and LAG3 in the heart",
+      "doi": "10.1038/s41568-024-00715-5",
+      "url": "https://doi.org/10.1038/s41568-024-00715-5",
+      "year": 2024,
+      "locator": "PubMed38982146 Abstract; EuropePMC core record38982146 abstractText"
+    }
+  ],
+  "intents": [
+    {
+      "id": "ai-heart-failure",
+      "question": "How can AI support heart failure risk prediction, and how should prognostic models be validated?",
+      "question_zh": "人工智能如何支持心衰风险预测，预后模型应如何接受验证？",
+      "source_ids": [
+        "hf-omics-hf-ai-review-2018",
+        "hf-omics-hf-ml-review-2017",
+        "hf-omics-tripod-ai-2024"
+      ],
+      "focused_queries": [
+        {
+          "id": "ai-heart-failure-1",
+          "question": "Which interpretable survival models have been evaluated in heart failure with kidney dysfunction?",
+          "question_zh": "哪些可解释生存模型在合并肾功能异常的心衰人群中接受过评估？",
+          "work_refs": [
+            {
+              "work_id": "aihflevel",
+              "question_ids": [
+                "aihflevel--qa-1",
+                "aihflevel--qa-3",
+                "aihflevel--qa-4",
+                "aihflevel--qa-7"
+              ],
+              "preview_question_id": "aihflevel--qa-1",
+              "paper_url": "https://drgezhang.com/papers/aihflevel.html",
+              "doi": "10.1038/s41467-024-50415-9",
+              "doi_url": "https://doi.org/10.1038/s41467-024-50415-9",
+              "scope_url": "https://drgezhang.com/papers/aihflevel.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/aihflevel.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "ai-heart-failure-2",
+          "question": "What should be reported when comparing discrimination, calibration and external validation in heart failure models?",
+          "question_zh": "比较心衰模型区分度、校准度和外部验证时应报告哪些证据？",
+          "work_refs": [
+            {
+              "work_id": "aihflevel",
+              "question_ids": [
+                "aihflevel--qa-3",
+                "aihflevel--qa-4",
+                "aihflevel--qa-5"
+              ],
+              "preview_question_id": "aihflevel--qa-3",
+              "paper_url": "https://drgezhang.com/papers/aihflevel.html",
+              "doi": "10.1038/s41467-024-50415-9",
+              "doi_url": "https://doi.org/10.1038/s41467-024-50415-9",
+              "scope_url": "https://drgezhang.com/papers/aihflevel.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/aihflevel.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "ai-heart-failure-3",
+          "question": "How can cardiovascular AI be evaluated when important modalities are missing or clinical data are out of date?",
+          "question_zh": "关键模态缺失或临床数据过时时，心血管AI应怎样评估？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-medd-2026-100004",
+              "question_ids": [
+                "doi-10-1016-j-medd-2026-100004--qa-1",
+                "doi-10-1016-j-medd-2026-100004--qa-2",
+                "doi-10-1016-j-medd-2026-100004--qa-3"
+              ],
+              "preview_question_id": "doi-10-1016-j-medd-2026-100004--qa-1",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html",
+              "doi": "10.1016/j.medd.2026.100004",
+              "doi_url": "https://doi.org/10.1016/j.medd.2026.100004",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vascular-cell-states",
+      "question": "How do vascular cell states shape atherosclerotic plaque heterogeneity and stability?",
+      "question_zh": "血管细胞状态如何影响动脉粥样硬化斑块的异质性与稳定性？",
+      "source_ids": [
+        "vsmc-circadian-vc1",
+        "vsmc-circadian-vc2",
+        "vsmc-circadian-vc3",
+        "vsmc-circadian-vc4",
+        "vsmc-circadian-vc5"
+      ],
+      "focused_queries": [
+        {
+          "id": "vascular-cell-states-1",
+          "question": "Which smooth muscle cell states and transitions are found in human atherosclerotic plaques?",
+          "question_zh": "人类粥样硬化斑块中存在哪些平滑肌细胞状态与状态转换？",
+          "work_refs": [
+            {
+              "work_id": "smc-fate",
+              "question_ids": [
+                "smc-fate--qa-1",
+                "smc-fate--qa-2",
+                "smc-fate--qa-4",
+                "smc-fate--qa-6"
+              ],
+              "preview_question_id": "smc-fate--qa-1",
+              "paper_url": "https://drgezhang.com/papers/smc-fate.html",
+              "doi": "10.1186/s12967-022-03795-9",
+              "doi_url": "https://doi.org/10.1186/s12967-022-03795-9",
+              "scope_url": "https://drgezhang.com/papers/smc-fate.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/smc-fate.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "vascular-cell-states-2",
+          "question": "What connects inflammatory versus matrix-preserving smooth muscle programs with plaque stability?",
+          "question_zh": "炎症型与基质维持型平滑肌程序如何关联斑块稳定性？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1172-jci194175",
+              "question_ids": [
+                "doi-10-1172-jci194175--qa-2",
+                "doi-10-1172-jci194175--qa-5",
+                "doi-10-1172-jci194175--qa-6",
+                "doi-10-1172-jci194175--qa-7"
+              ],
+              "preview_question_id": "doi-10-1172-jci194175--qa-2",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+              "doi": "10.1172/jci194175",
+              "doi_url": "https://doi.org/10.1172/jci194175",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#cite-this-paper"
+            },
+            {
+              "work_id": "apvs",
+              "question_ids": [
+                "apvs--qa-5",
+                "apvs--qa-7"
+              ],
+              "preview_question_id": "apvs--qa-7",
+              "paper_url": "https://drgezhang.com/papers/apvs.html",
+              "doi": "10.1016/j.isci.2023.107587",
+              "doi_url": "https://doi.org/10.1016/j.isci.2023.107587",
+              "scope_url": "https://drgezhang.com/papers/apvs.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/apvs.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "vascular-cell-states-3",
+          "question": "Which cell-type-specific pathways regulate smooth-muscle inflammation and macrophage efferocytosis?",
+          "question_zh": "哪些细胞类型特异通路分别调控平滑肌炎症与巨噬细胞对凋亡细胞的清除？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1172-jci194175",
+              "question_ids": [
+                "doi-10-1172-jci194175--qa-5",
+                "doi-10-1172-jci194175--qa-6",
+                "doi-10-1172-jci194175--qa-7",
+                "doi-10-1172-jci194175--qa-9"
+              ],
+              "preview_question_id": "doi-10-1172-jci194175--qa-5",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
+              "doi": "10.1172/jci194175",
+              "doi_url": "https://doi.org/10.1172/jci194175",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-1093-eurheartj-ehaf523",
+              "question_ids": [
+                "doi-10-1093-eurheartj-ehaf523--qa-2",
+                "doi-10-1093-eurheartj-ehaf523--qa-4",
+                "doi-10-1093-eurheartj-ehaf523--qa-5"
+              ],
+              "preview_question_id": "doi-10-1093-eurheartj-ehaf523--qa-4",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html",
+              "doi": "10.1093/eurheartj/ehaf523",
+              "doi_url": "https://doi.org/10.1093/eurheartj/ehaf523",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1093-eurheartj-ehaf523.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "circadian-disease",
+      "question": "What links circadian regulation to cardiovascular immunity and tumour heterogeneity?",
+      "question_zh": "昼夜节律调控与心血管免疫和肿瘤异质性有哪些联系？",
+      "source_ids": [
+        "vsmc-circadian-cr1",
+        "vsmc-circadian-cr2",
+        "vsmc-circadian-cr5",
+        "vsmc-circadian-cr3",
+        "vsmc-circadian-cr4"
+      ],
+      "focused_queries": [
+        {
+          "id": "circadian-disease-1",
+          "question": "Which clock networks and immune-cell rhythms are discussed in vascular inflammation and chronotherapy research?",
+          "question_zh": "血管炎症与时间治疗研究涉及哪些时钟网络及免疫细胞节律？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-mdr2-70052",
+              "question_ids": [
+                "doi-10-1002-mdr2-70052--qa-2",
+                "doi-10-1002-mdr2-70052--qa-3",
+                "doi-10-1002-mdr2-70052--qa-4",
+                "doi-10-1002-mdr2-70052--qa-11"
+              ],
+              "preview_question_id": "doi-10-1002-mdr2-70052--qa-2",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html",
+              "doi": "10.1002/mdr2.70052",
+              "doi_url": "https://doi.org/10.1002/mdr2.70052",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70052.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "circadian-disease-2",
+          "question": "How have circadian-related expression programs been used to characterize coronary disease heterogeneity?",
+          "question_zh": "研究如何用昼夜节律相关表达程序刻画冠心病异质性？",
+          "work_refs": [
+            {
+              "work_id": "circadian-ihd",
+              "question_ids": [
+                "circadian-ihd--qa-2",
+                "circadian-ihd--qa-4",
+                "circadian-ihd--qa-5",
+                "circadian-ihd--qa-6"
+              ],
+              "preview_question_id": "circadian-ihd--qa-6",
+              "paper_url": "https://drgezhang.com/papers/circadian-ihd.html",
+              "doi": "10.1038/s41598-024-65236-5",
+              "doi_url": "https://doi.org/10.1038/s41598-024-65236-5",
+              "scope_url": "https://drgezhang.com/papers/circadian-ihd.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/circadian-ihd.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "circadian-disease-3",
+          "question": "Which circadian-associated transcriptional subtypes have been reported across lung, liver and colorectal cancer?",
+          "question_zh": "肺癌、肝癌及结直肠癌中报道了哪些昼夜节律相关转录亚型？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-71321-fy14v342",
+              "question_ids": [
+                "doi-10-71321-fy14v342--qa-2",
+                "doi-10-71321-fy14v342--qa-3",
+                "doi-10-71321-fy14v342--qa-6"
+              ],
+              "preview_question_id": "doi-10-71321-fy14v342--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html",
+              "doi": "10.71321/fy14v342",
+              "doi_url": "https://doi.org/10.71321/fy14v342",
+              "scope_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-71321-fy14v342.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-1016-j-joim-2025-06-003",
+              "question_ids": [
+                "doi-10-1016-j-joim-2025-06-003--qa-3",
+                "doi-10-1016-j-joim-2025-06-003--qa-5"
+              ],
+              "preview_question_id": "doi-10-1016-j-joim-2025-06-003--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html",
+              "doi": "10.1016/j.joim.2025.06.003",
+              "doi_url": "https://doi.org/10.1016/j.joim.2025.06.003",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-joim-2025-06-003.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-1038-s41698-026-01699-1",
+              "question_ids": [
+                "doi-10-1038-s41698-026-01699-1--qa-3",
+                "doi-10-1038-s41698-026-01699-1--qa-4"
+              ],
+              "preview_question_id": "doi-10-1038-s41698-026-01699-1--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+              "doi": "10.1038/s41698-026-01699-1",
+              "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "circadian-disease-4",
+          "question": "What functional experiments connect circadian-associated molecular programs with colorectal cancer cell behavior?",
+          "question_zh": "哪些功能实验将昼夜节律相关分子程序与结直肠癌细胞行为联系起来？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1038-s41698-026-01699-1",
+              "question_ids": [
+                "doi-10-1038-s41698-026-01699-1--qa-6",
+                "doi-10-1038-s41698-026-01699-1--qa-7"
+              ],
+              "preview_question_id": "doi-10-1038-s41698-026-01699-1--qa-6",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+              "doi": "10.1038/s41698-026-01699-1",
+              "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiovascular-biomarkers",
+      "question": "How can proteomic and metabolic biomarkers inform cardiovascular risk and patient stratification?",
+      "question_zh": "蛋白组与代谢标志物如何帮助心血管风险评估和患者分层？",
+      "source_ids": [
+        "hf-omics-proteomics-review-2026",
+        "hf-omics-cvd-multiomics-2021",
+        "hf-omics-hf-ml-review-2017"
+      ],
+      "focused_queries": [
+        {
+          "id": "cardiovascular-biomarkers-1",
+          "question": "Which circulating protein signatures distinguish dilated cardiomyopathy with heart failure, and how are they evaluated?",
+          "question_zh": "哪些循环蛋白特征能够区分扩张型心肌病合并心衰，以及如何开展评估？",
+          "work_refs": [
+            {
+              "work_id": "olink-dcm",
+              "question_ids": [
+                "olink-dcm--qa-2",
+                "olink-dcm--qa-3",
+                "olink-dcm--qa-4",
+                "olink-dcm--qa-5",
+                "olink-dcm--qa-6"
+              ],
+              "preview_question_id": "olink-dcm--qa-3",
+              "paper_url": "https://drgezhang.com/papers/olink-dcm.html",
+              "doi": "10.1021/acs.jproteome.4c00522",
+              "doi_url": "https://doi.org/10.1021/acs.jproteome.4c00522",
+              "scope_url": "https://drgezhang.com/papers/olink-dcm.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/olink-dcm.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "cardiovascular-biomarkers-2",
+          "question": "What does circulating extracellular-vesicle proteomics reveal about vascular disease biomarkers?",
+          "question_zh": "循环细胞外囊泡蛋白组学能为血管疾病标志物提供什么线索？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1111-jcmm-70725",
+              "question_ids": [
+                "doi-10-1111-jcmm-70725--qa-2",
+                "doi-10-1111-jcmm-70725--qa-3",
+                "doi-10-1111-jcmm-70725--qa-4",
+                "doi-10-1111-jcmm-70725--qa-5"
+              ],
+              "preview_question_id": "doi-10-1111-jcmm-70725--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html",
+              "doi": "10.1111/jcmm.70725",
+              "doi_url": "https://doi.org/10.1111/jcmm.70725",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "cardiovascular-biomarkers-3",
+          "question": "What evidence links insulin-resistance markers and renal function with cardiovascular outcomes?",
+          "question_zh": "胰岛素抵抗指标与肾功能和心血管结局之间有哪些研究证据？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-cia-s462542",
+              "question_ids": [
+                "doi-10-2147-cia-s462542--qa-1",
+                "doi-10-2147-cia-s462542--qa-3",
+                "doi-10-2147-cia-s462542--qa-5"
+              ],
+              "preview_question_id": "doi-10-2147-cia-s462542--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html",
+              "doi": "10.2147/cia.s462542",
+              "doi_url": "https://doi.org/10.2147/cia.s462542",
+              "scope_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-15212-bioi-2026-0017",
+              "question_ids": [
+                "doi-10-15212-bioi-2026-0017--qa-2",
+                "doi-10-15212-bioi-2026-0017--qa-3",
+                "doi-10-15212-bioi-2026-0017--qa-5"
+              ],
+              "preview_question_id": "doi-10-15212-bioi-2026-0017--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html",
+              "doi": "10.15212/bioi-2026-0017",
+              "doi_url": "https://doi.org/10.15212/bioi-2026-0017",
+              "scope_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiomics-subtypes",
+      "question": "How can multi-omics reveal disease subtypes and clinically relevant molecular states?",
+      "question_zh": "多组学如何揭示疾病分型与有临床意义的分子状态？",
+      "source_ids": [
+        "hf-omics-cvd-multiomics-2021",
+        "hf-omics-multiomics-review-2017",
+        "hf-omics-proteomics-review-2026",
+        "onco-agent-onco-s1",
+        "onco-agent-onco-s3"
+      ],
+      "focused_queries": [
+        {
+          "id": "multiomics-subtypes-1",
+          "question": "How can transcriptomic networks identify biologically distinct dilated cardiomyopathy subtypes?",
+          "question_zh": "转录组网络如何识别具有不同生物学特征的扩张型心肌病亚型？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1007-s10238-026-02130-6",
+              "question_ids": [
+                "doi-10-1007-s10238-026-02130-6--qa-1",
+                "doi-10-1007-s10238-026-02130-6--qa-2",
+                "doi-10-1007-s10238-026-02130-6--qa-3",
+                "doi-10-1007-s10238-026-02130-6--qa-4",
+                "doi-10-1007-s10238-026-02130-6--qa-6"
+              ],
+              "preview_question_id": "doi-10-1007-s10238-026-02130-6--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html",
+              "doi": "10.1007/s10238-026-02130-6",
+              "doi_url": "https://doi.org/10.1007/s10238-026-02130-6",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "multiomics-subtypes-2",
+          "question": "How can single-cell, spatial and proteomic profiling characterize tumor immune niches?",
+          "question_zh": "单细胞、空间和蛋白组学如何刻画肿瘤免疫生态位？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-3389-fonc-2025-1538574",
+              "question_ids": [
+                "doi-10-3389-fonc-2025-1538574--qa-3",
+                "doi-10-3389-fonc-2025-1538574--qa-4"
+              ],
+              "preview_question_id": "doi-10-3389-fonc-2025-1538574--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html",
+              "doi": "10.3389/fonc.2025.1538574",
+              "doi_url": "https://doi.org/10.3389/fonc.2025.1538574",
+              "scope_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#cite-this-paper"
+            },
+            {
+              "work_id": "time-cart",
+              "question_ids": [
+                "time-cart--qa-3"
+              ],
+              "preview_question_id": "time-cart--qa-3",
+              "paper_url": "https://drgezhang.com/papers/time-cart.html",
+              "doi": "10.1186/s12943-024-02047-2",
+              "doi_url": "https://doi.org/10.1186/s12943-024-02047-2",
+              "scope_url": "https://drgezhang.com/papers/time-cart.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/time-cart.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-1016-j-csbj-2024-04-044",
+              "question_ids": [
+                "doi-10-1016-j-csbj-2024-04-044--qa-1",
+                "doi-10-1016-j-csbj-2024-04-044--qa-2",
+                "doi-10-1016-j-csbj-2024-04-044--qa-3"
+              ],
+              "preview_question_id": "doi-10-1016-j-csbj-2024-04-044--qa-2",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html",
+              "doi": "10.1016/j.csbj.2024.04.044",
+              "doi_url": "https://doi.org/10.1016/j.csbj.2024.04.044",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tumour-immunity-therapy",
+      "question": "How do immune states shape cancer therapy research and treatment-associated cardiac injury?",
+      "question_zh": "免疫状态如何影响肿瘤治疗研究及治疗相关心脏损伤研究？",
+      "source_ids": [
+        "onco-agent-onco-s1",
+        "onco-agent-onco-s3",
+        "onco-agent-onco-s2",
+        "onco-agent-onco-s4",
+        "onco-agent-onco-s5"
+      ],
+      "focused_queries": [
+        {
+          "id": "tumour-immunity-therapy-1",
+          "question": "Which tumor and stromal states are associated with T-cell distribution in lung and breast cancer?",
+          "question_zh": "肺癌和乳腺癌中哪些肿瘤及基质状态与T细胞分布相关？",
+          "work_refs": [
+            {
+              "work_id": "b4galt2",
+              "question_ids": [
+                "b4galt2--qa-3",
+                "b4galt2--qa-4"
+              ],
+              "preview_question_id": "b4galt2--qa-3",
+              "paper_url": "https://drgezhang.com/papers/b4galt2.html",
+              "doi": "10.1136/jitc-2024-010787",
+              "doi_url": "https://doi.org/10.1136/jitc-2024-010787",
+              "scope_url": "https://drgezhang.com/papers/b4galt2.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/b4galt2.html#cite-this-paper"
+            },
+            {
+              "work_id": "doi-10-3389-fonc-2025-1538574",
+              "question_ids": [
+                "doi-10-3389-fonc-2025-1538574--qa-3"
+              ],
+              "preview_question_id": "doi-10-3389-fonc-2025-1538574--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html",
+              "doi": "10.3389/fonc.2025.1538574",
+              "doi_url": "https://doi.org/10.3389/fonc.2025.1538574",
+              "scope_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html#cite-this-paper"
+            },
+            {
+              "work_id": "time-cart",
+              "question_ids": [
+                "time-cart--qa-2"
+              ],
+              "preview_question_id": "time-cart--qa-2",
+              "paper_url": "https://drgezhang.com/papers/time-cart.html",
+              "doi": "10.1186/s12943-024-02047-2",
+              "doi_url": "https://doi.org/10.1186/s12943-024-02047-2",
+              "scope_url": "https://drgezhang.com/papers/time-cart.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/time-cart.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "tumour-immunity-therapy-2",
+          "question": "How do antigen choice, infiltration, metabolic fitness and exhaustion guide CAR-T research?",
+          "question_zh": "抗原选择、浸润、代谢适能与耗竭如何组织CAR-T研究方向？",
+          "work_refs": [
+            {
+              "work_id": "time-cart",
+              "question_ids": [
+                "time-cart--qa-4",
+                "time-cart--qa-2",
+                "time-cart--qa-3"
+              ],
+              "preview_question_id": "time-cart--qa-4",
+              "paper_url": "https://drgezhang.com/papers/time-cart.html",
+              "doi": "10.1186/s12943-024-02047-2",
+              "doi_url": "https://doi.org/10.1186/s12943-024-02047-2",
+              "scope_url": "https://drgezhang.com/papers/time-cart.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/time-cart.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "tumour-immunity-therapy-3",
+          "question": "Where does immunogenic cell death fit into combination strategies for CAR-T research?",
+          "question_zh": "免疫原性细胞死亡在CAR-T联合策略研究中处于什么位置？",
+          "work_refs": [
+            {
+              "work_id": "icd-cart",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/icd-cart.html",
+              "doi": "10.1016/j.canlet.2024.217079",
+              "doi_url": "https://doi.org/10.1016/j.canlet.2024.217079",
+              "scope_url": "https://drgezhang.com/papers/icd-cart.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/icd-cart.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "tumour-immunity-therapy-4",
+          "question": "How are inflammasome activation and macrophage–T-cell interactions studied in ICI-related cardiac injury?",
+          "question_zh": "ICI相关心脏损伤中如何研究炎症小体与巨噬细胞–T细胞互作？",
+          "work_refs": [
+            {
+              "work_id": "nlrp3-ici",
+              "question_ids": [
+                "nlrp3-ici--qa-2",
+                "nlrp3-ici--qa-4",
+                "nlrp3-ici--qa-5"
+              ],
+              "preview_question_id": "nlrp3-ici--qa-2",
+              "paper_url": "https://drgezhang.com/papers/nlrp3-ici.html",
+              "doi": "10.1136/jitc-2024-010127",
+              "doi_url": "https://doi.org/10.1136/jitc-2024-010127",
+              "scope_url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/nlrp3-ici.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "questions": [
     {
       "id": "doi-10-1007-s10238-026-02130-6",

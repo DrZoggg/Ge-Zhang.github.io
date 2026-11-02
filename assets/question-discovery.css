@@ -9,3 +9,21 @@
 .scientific-discovery .discovery-concepts ul{display:flex;flex-wrap:wrap;gap:8px 24px;padding-left:20px}
 .scientific-discovery #evidenceResults,.scientific-discovery #other-public-works{overflow-wrap:anywhere}
 .scientific-discovery code{overflow-wrap:anywhere}
+
+/* Research-intent navigation uses the directory's existing theme and type. */
+.scientific-discovery .intent-layer{margin:40px 0;padding-top:0;overflow-wrap:anywhere}
+.scientific-discovery .intent-navigation{padding:16px 20px;background:var(--card);border:1px solid var(--line);border-radius:6px}
+.scientific-discovery .intent-navigation ol{margin:0;padding-left:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+.scientific-discovery .intent-topic{margin:36px 0;padding-top:28px;border-top:1px solid var(--strong-line);scroll-margin-top:90px}
+.scientific-discovery .intent-topic>h3{font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.3;margin:0 0 10px}
+.scientific-discovery .intent-translation{color:var(--muted);margin:8px 0 18px}
+.scientific-discovery .intent-focused{margin:26px 0;scroll-margin-top:90px}
+.scientific-discovery .intent-focused>h4{font-size:1.15rem;line-height:1.4;margin:0 0 8px}
+.scientific-discovery .intent-evidence{margin:20px 0;padding:18px 20px;border-left:3px solid var(--strong-line);background:var(--card);min-width:0}
+.scientific-discovery .intent-evidence h5{font-size:1.04rem;line-height:1.5;margin:0 0 8px}
+.scientific-discovery .intent-locators,.scientific-discovery .intent-question-links{padding-left:20px}
+.scientific-discovery .intent-locators li,.scientific-discovery .intent-question-links li{margin:8px 0}
+.scientific-discovery .intent-locators,.scientific-discovery .intent-reviews{font-size:.9rem;color:var(--muted)}
+.scientific-discovery .intent-study{margin:14px 0}
+.scientific-discovery .intent-evidence .links{display:block;line-height:1.8;margin-bottom:0}
+@media(max-width:700px){.scientific-discovery .intent-navigation ol{grid-template-columns:1fr}.scientific-discovery .intent-evidence{padding:16px 14px}}

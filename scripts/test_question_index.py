@@ -18,8 +18,8 @@ def validate_questions():
     assert {r['doi'] for r in rows}==expected and len(rows)==len(expected)
     assert len({r['question'] for r in rows})==len(rows)
     page=(ROOT/'research/questions.html').read_text(encoding='utf-8');document=Document(page)
-    assert 'Questions addressed by publications in this research program' in page
-    assert 'not an exhaustive or systematic review' in page
+    assert 'research program' in page and 'reviewed findings and original-paper sources' in page
+    assert str(len(rows)) + ' full evidence pages' in page and 'Machine-readable question index' in page
     assert page.count('<strong>Does not establish:</strong>') == len(rows)
     assert 'FAQPage' not in page and 'QAPage' not in page and 'ScholarlyArticle' not in page
     for row in rows:
