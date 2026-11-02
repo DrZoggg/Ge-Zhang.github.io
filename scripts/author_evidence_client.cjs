@@ -154,6 +154,9 @@ function primarySources(work) {
     routes.push({provider:resolver ? 'DOI' : 'Publisher',kind:resolver ? 'doi_resolver' : 'publisher_source',
       url:publisher.url,source_fields:[publisher.field],availability:'not_checked'});
   }
+  if (pmcid.value) routes.push({provider:'PMC',kind:'full_text_xml_api',
+    url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${pmcid.value.slice(3)}&retmode=xml`,
+    source_fields:pmcid.source_fields,availability:'not_checked'});
   return {identifiers:{pmid:pmid.value,pmcid:pmcid.value},reading_routes:routes,metadata_issues:issues,
     links:{pubmed_url:pubmed,pmc_url:pmc,publisher_url:publisher ? publisher.url : null}};
 }
