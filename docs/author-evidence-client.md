@@ -186,6 +186,26 @@ wants the author's evidence explanation. Pass the returned JSON alongside the
 literature manifest as a **supplementary evidence sidecar**. Do not insert it as
 a second independent paper or automatically set a human-verification flag.
 
+### PubMed discovery for question-led writing
+
+Choose the API sort explicitly: question relevance and a newest-literature scan
+are different tasks. PubMed's web interface and ESearch API can have different
+defaults. For question-led retrieval, use `sort=relevance` (Best Match); for a
+recency scan, use `sort=date_desc`. See the
+[NLM API guidance](https://ncbiinsights.ncbi.nlm.nih.gov/2022/03/24/test-server-pubmed-api/)
+and [PubMed search help](https://pubmed.ncbi.nlm.nih.gov/help/#sorting-your-results).
+
+For example, send the research concepts without an author, domain, title or DOI:
+
+```text
+https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=10&sort=relevance&term=vascular%20smooth%20muscle%20inflammation%20plaque%20stability%20atherosclerosis
+```
+
+Fetch the returned PMIDs with EFetch `db=pubmed`; PMC uses different identifiers.
+Record the query, sort, rank and actual abstract/body read, then link each writing
+claim to the source and formal DOI. Keep relevant competing studies. The author
+evidence client remains an optional supplement to that literature search.
+
 The inspected K-Dense implementation at
 [`5f2bc034`](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/research-lookup/scripts/manuscript_packet.py)
 canonicalizes away URL fragments and deduplicates same-DOI records. Its generic
