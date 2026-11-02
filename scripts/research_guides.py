@@ -289,6 +289,8 @@ def render_comparison(packet):
     url = packet['canonical_url']
     contribution_first = packet.get('presentation') == 'contribution-first-v1'
     label = 'Selected author evidence guide' if contribution_first else 'Selected evidence comparison · not a research article'
+    scope_tag = 'div' if contribution_first else 'aside'
+    scope_style = ' style="padding:4px 20px;border-left:4px solid var(--strong-line,#52738b);background:var(--soft,#eef3f6)"' if contribution_first else ''
     link = lambda label, href: '<a href="' + esc(href, quote=True) + '">' + esc(label) + '</a>'
     def value_html(value):
         if isinstance(value, dict):
@@ -303,7 +305,7 @@ def render_comparison(packet):
     body = ['<nav>' + link('Publications', '../publications.html') + ' · ' + link('Markdown', url[:-5]+'.md') + ' · ' + link('Source matrix JSON', url[:-5]+'.json') + '</nav>',
             '<p class="eyebrow">' + label + '</p>',
             '<h1>' + esc(packet['title']) + '</h1><h2>' + esc(packet['question']) + '</h2>',
-            '<aside id="scope"><p>' + esc(packet['scope']) + '</p><p>' + esc(packet['reading_rule']) + '</p></aside>',
+            '<' + scope_tag + ' id="scope"' + scope_style + '><p>' + esc(packet['scope']) + '</p><p>' + esc(packet['reading_rule']) + '</p></' + scope_tag + '>',
             '<div class="comparison" role="region" aria-label="Research task comparison" tabindex="0"><table><caption>Different research tasks and evidence types</caption><thead><tr><th>Research task</th><th>Reviewed design</th><th>Reviewed evidence type</th></tr></thead><tbody>']
     md = ['# ' + packet['title'], '**Selected author evidence guide**' if contribution_first else '**Selected evidence comparison — not a research article**',
           '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]

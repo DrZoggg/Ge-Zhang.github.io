@@ -4,6 +4,7 @@ import html
 import json
 import re
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 from unittest.mock import patch
 
@@ -106,6 +107,56 @@ class CardiovascularGuideTests(unittest.TestCase):
         changed['studies'][0]['source_doi'] = '10.9999/not-the-source'
         with self.assertRaisesRegex(ValueError, 'identity/version'):
             self.packet(changed)
+
+    def test_global_intro_is_main_content_and_legacy_scope_semantics_retained(self):
+        class IntroParser(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.path, self.scopes, self.paragraphs = [], [], []
+
+            def handle_starttag(self, tag, attrs):
+                attrs = dict(attrs)
+                if attrs.get('id') == 'scope':
+                    self.scopes.append((tag, [t for t, _ in self.path], attrs))
+                if tag == 'p' and any(a.get('id') == 'scope' for _, a in self.path):
+                    self.paragraphs.append('')
+                if tag not in ('meta', 'link', 'br', 'hr', 'img', 'input'):
+                    self.path.append((tag, attrs))
+
+            def handle_endtag(self, tag):
+                if self.path and self.path[-1][0] == tag:
+                    self.path.pop()
+
+            def handle_data(self, data):
+                if any(a.get('id') == 'scope' for _, a in self.path) and self.path[-1][0] == 'p':
+                    self.paragraphs[-1] += data
+
+        packet = g.comparison_packet(self.data)
+        parser = IntroParser()
+        parser.feed(g.render_comparison(packet)[0])
+        self.assertEqual(len(parser.scopes), 1)
+        tag, ancestors, attrs = parser.scopes[0]
+        self.assertIn(tag, ('div', 'section'))
+        self.assertIn('main', ancestors)
+        self.assertFalse(set(ancestors) & {'aside', 'nav', 'header', 'footer'})
+        self.assertNotEqual(attrs.get('role'), 'complementary')
+        self.assertEqual(parser.paragraphs, [packet['scope'], packet['reading_rule']])
+        # Main/secondary content semantics remain explicit for existing guides.
+        legacy = g.load()
+        circadian = next(d for d in g.load_comparisons() if d['slug'] == 'circadian-evidence-levels')
+        circadian_packet = g.comparison_packet(circadian)
+        legacy_cases = [
+            (g.render(legacy, g.resolve(legacy))[0], [legacy['scope']]),
+            (g.render_comparison(circadian_packet)[0],
+             [circadian_packet['scope'], circadian_packet['reading_rule']]),
+        ]
+        for page, expected_paragraphs in legacy_cases:
+            with self.subTest(expected_paragraphs=expected_paragraphs):
+                old_parser = IntroParser()
+                old_parser.feed(page)
+                self.assertEqual(old_parser.scopes[0][0], 'aside')
+                self.assertEqual(old_parser.paragraphs, expected_paragraphs)
+
 
     def test_invalid_and_unencoded_questions_rejected(self):
         for index, error in ((999, 'question index'), (8, 'encoded source locators')):
