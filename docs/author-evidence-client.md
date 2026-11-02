@@ -207,6 +207,28 @@ Record the query, sort, rank and actual abstract/body read, then link each writi
 claim to the source and formal DOI. Keep relevant competing studies. The author
 evidence client remains an optional supplement to that literature search.
 
+When the research concept is artificial intelligence, cover its controlled
+vocabulary as well as title/abstract wording. For example, combine the disease
+and outcome concepts with this method block:
+
+```text
+("Artificial Intelligence"[MeSH Terms] OR "Machine Learning"[MeSH Terms]
+ OR "artificial intelligence"[Title/Abstract]
+ OR "machine learning"[Title/Abstract] OR "deep learning"[Title/Abstract])
+```
+
+An article can be indexed under Artificial Intelligence without a Machine
+Learning heading or those full phrases in its title/abstract. The narrower
+heading alone does not retrieve its parent. Retain the text alternatives for
+records whose MeSH indexing is incomplete. NLM documents the
+[AI/ML hierarchy](https://meshb.nlm.nih.gov/record/ui?ui=D001185) and how
+[field tags restrict automatic term mapping](https://pubmed.ncbi.nlm.nih.gov/help/).
+Inspect the API's query translation and the returned studies; adding a subject
+branch can also change finite top-result rankings. When refining a search, keep
+relevant earlier candidates as a separate queue and deduplicate by DOI.
+This vocabulary choice is
+source-neutral and does not require a preferred paper, author or domain.
+
 For a compound research need, assign a candidate budget to each research aspect
 before searching, for example two queues of 10 rather than one mixed queue of 20.
 Deduplicate representations by normalized DOI while preserving each branch's
