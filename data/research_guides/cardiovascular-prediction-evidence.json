@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "slug": "cardiovascular-prediction-evidence",
+  "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+  "question": "How do these studies support heart-failure prognosis, biomarker interpretation and evaluation planning for cardiovascular AI?",
+  "scope": "Compare three author-maintained evidence summaries for heart-failure prognosis and clinical AI research. This guide brings each paper’s reported task, population, endpoints, validation design and source-linked findings together for literature selection and Discussion writing.",
+  "reading_rule": "Start with the contribution that matches your research question, then use the reported population, endpoint and validation design to choose the citation. The three roles here are external survival-model evaluation, admission-marker associations, and methodological planning for clinician–AI workflows.",
+  "contribution_first": true,
+  "studies": [
+    {
+      "id": "aihflevel",
+      "task": "Externally evaluated HF survival-risk assessment",
+      "source_doi": "10.1038/s41467-024-50415-9",
+      "source_json": "data/deep_geo/aihflevel.json",
+      "source_fingerprint": "c145e50b289575b66f78778679fd4c78ce95c295d0e92aa4c7e042eb990ec9b3",
+      "qa_indices": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "doi-10-2147-cia-s462542",
+      "task": "Admission TyG and subsequent HF outcomes",
+      "source_doi": "10.2147/cia.s462542",
+      "source_json": "data/deep_geo/doi-10-2147-cia-s462542.json",
+      "source_fingerprint": "91daba7fbf774bc6ab3145f2c56a2afc57a18f0d7c45597c2b7c0870f1f349a0",
+      "qa_indices": [
+        3,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "id": "doi-10-1016-j-medd-2026-100004",
+      "task": "Multimodal cardiovascular AI evaluation and deferral",
+      "source_doi": "10.1016/j.medd.2026.100004",
+      "source_json": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
+      "source_fingerprint": "5fc56c6d6238cb01b81c6ed0ec9d1caf1e9d2a8e09e7c966a3058e35a0e757b6",
+      "qa_indices": [
+        1,
+        3,
+        4
+      ]
+    }
+  ]
+}
