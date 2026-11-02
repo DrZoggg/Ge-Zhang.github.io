@@ -249,7 +249,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
     const primary = primarySources(work);
     return clone({
       id, work_id:work.id, source_kind:SOURCE_KIND,
-      source_description:'Author-maintained explanation of an existing work; cite the original article DOI for the formal research publication.',
+      source_description:'Author-maintained explanation of an existing work; cite the original work using its stated publication type and available identifiers.',
       evidence_unit:evidenceUnit(work),
       publication:{title:work.title, doi:work.doi || null, type:work.type, year:work.year, journal:work.journal,
         authors:work.authors, paper_geo_status:work.paper_geo_status, evidence_status:work.evidence_status},

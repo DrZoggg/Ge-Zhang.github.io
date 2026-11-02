@@ -139,8 +139,9 @@ diagnostic is descriptive; fetch and verify the full evidence packet.
   archive, and a DOI resolver is distinct from a publisher source page.
 - Source pointers, provenance, dataset hashes, available HTTP version metadata,
   Gold hash reported by the export and a locally verified exact-answer hash.
-- An evidence-unit identity shared by representations of the same DOI, so the
-  author page and publisher record are not counted as two independent studies.
+- An evidence-unit identity shared by representations of the same DOI. Check
+  authoritative preprint/publication version links when choosing a version to cite
+  or counting independent studies across different DOIs.
 
 Source fields refer to the same work in the public JSON export. A valid explicit
 publisher URL is preferred; when missing or invalid, a unique publisher URL from
