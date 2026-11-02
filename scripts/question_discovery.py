@@ -201,4 +201,7 @@ def build_discovery(items, contents, fields, root=ROOT):
         scope_fields = ('scope', 'evidence_notice', 'evidence_scope', 'limitations', 'scope_source')
         works.append({**{k: v for k, v in work.items() if k not in scope_fields},
                       **{k: work[k] for k in scope_fields if k in work}})
-    return {'discovery_version': 2, 'works': works, 'all_questions': questions}
+    discovery = {'discovery_version': 2, 'works': works, 'all_questions': questions}
+    from scientific_intents import build_intent_layer
+    discovery.update(build_intent_layer(discovery, root))
+    return discovery
