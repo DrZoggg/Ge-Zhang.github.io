@@ -83,7 +83,10 @@ The active master Goal coordinates successive work packages across the adoption
 chain. Maintain one current work graph in the existing private ledger with ready,
 in-progress, external-wait and accepted items. Preserve ongoing work when scope
 expands and reuse completed investigations. After accepting a package, choose
-the next worthwhile executable item; do not stop the master Goal at one pilot,
+the next worthwhile executable item from the full adoption chain, including
+credible cross-industry GEO practice and actual research-writing needs. A frozen
+package backlog or one engine's quota does not establish that useful opportunities
+are exhausted. Do not stop the master Goal at one pilot,
 two writing tasks, a retrieval score or several PRs. Keep bounded experiments and
 independent comparisons, but do not replace the overall outcome with their scope.
 

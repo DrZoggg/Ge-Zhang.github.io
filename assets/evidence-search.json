@@ -16601,6 +16601,96 @@
       "text": "Is this a systematic review or meta-analysis?\nNo. The article reports no explicit systematic-search strategy, PRISMA study-selection workflow or quantitative meta-analysis; its 392 references are bibliography entries, not a systematic count of independent studies.",
       "url": "https://drgezhang.com/research/circadian-evidence-levels.html#doi-10-1002-mdr2-70052",
       "limitation": false
+    },
+    {
+      "id": 1660,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "What is AIHFLevel?\nAIHFLevel is an explainable 12-predictor survival-risk assessment system developed for patients with advanced heart failure and renal dysfunction.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#aihflevel",
+      "limitation": false
+    },
+    {
+      "id": 1661,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Was AIHFLevel externally validated?\nYes. AIHFLevel was independently evaluated in 1,024 patients from BIDMC.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#aihflevel",
+      "limitation": false
+    },
+    {
+      "id": 1662,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "What was the reported MACEs association?\nHigh versus low TyG at the 8.48 threshold had an adjusted hazard ratio of 5.402 (95% CI 3.771–7.739). This is a relative hazard association, not an absolute event rate.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-2147-cia-s462542",
+      "limitation": false
+    },
+    {
+      "id": 1663,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Who was included in the analyzed cohort?\nThe analysis included 717 adults with advanced chronic HF, study-defined renal dysfunction and repeated HF hospitalization at one center. The 815 initially included patients also contained 98 who were lost to follow-up.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-2147-cia-s462542",
+      "limitation": false
+    },
+    {
+      "id": 1664,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Were the MACEs and mortality groups independent cohorts?\nNo. The two outcome-specific cutoffs regrouped the same 717 analyzed patients. Their group sizes must not be added together as independent participants.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-2147-cia-s462542",
+      "limitation": false
+    },
+    {
+      "id": 1665,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Was the composite limited to cardiovascular death, infarction and stroke?\nNo. The Methods define a broad composite including non-cardiovascular death, worsening-HF rehospitalization, transplantation, circulatory support and other events. Interpretation should preserve that study-specific definition.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-2147-cia-s462542",
+      "limitation": false
+    },
+    {
+      "id": 1666,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "What problem does this correspondence address?\nIt addresses when multimodal cardiovascular AI has enough current and clinically relevant evidence to predict, and when it should defer.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-1016-j-medd-2026-100004",
+      "limitation": false
+    },
+    {
+      "id": 1667,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Which evaluation conditions does it propose?\nFive candidate conditions are complete inputs, a critical modality missing, natural co-missingness, temporal staleness and geographically or temporally external data.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-1016-j-medd-2026-100004",
+      "limitation": false
+    },
+    {
+      "id": 1668,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Selected evidence comparison",
+      "text": "Does it report new model accuracy or a clinical trial?\nNo. It is a correspondence presenting conceptual proposals, with no new dataset or validated performance result.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-1016-j-medd-2026-100004",
+      "limitation": false
     }
   ]
 }

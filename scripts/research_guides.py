@@ -207,7 +207,10 @@ def search_documents(root, start):
 
 # Extractive comparisons reuse this guide pipeline. The original frozen guide
 # and its contract above remain unchanged; each new selection is reviewed alone.
-COMPARISONS = {'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781'}
+COMPARISONS = {
+    'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781',
+    'cardiovascular-prediction-evidence': '79bb864002734d23102d969b0932aa82d6ccfde13d111a769063cd28ff04862e',
+}
 
 
 def load_comparisons(root=ROOT):
@@ -268,15 +271,24 @@ def comparison_packet(data, root=ROOT):
                         'source_json': row['source_json'], 'source_fingerprint': row['source_fingerprint'],
                         'study_profile': c['study_profile'], 'selected_questions': selected,
                         'evidence_scope': c['evidence_scope'], 'limitations': c['limitations']})
+        if data.get('contribution_first') is True:
+            studies[-1]['publication'] = {key: p[key] for key in ('authors', 'year', 'journal', 'type') if key in p}
     require(len({s['doi'] for s in studies}) == len(studies), 'Duplicate DOI in comparison')
-    return {'version': 1, 'kind': 'selective_author_evidence_comparison',
+    packet = {'version': 1, 'kind': 'selective_author_evidence_comparison',
             **{k: data[k] for k in ('title', 'question', 'scope', 'reading_rule')},
             'canonical_url': comparison_url(data), 'studies': studies}
+    require('contribution_first' not in data or type(data['contribution_first']) is bool,
+            'Comparison presentation flag must be boolean')
+    if data.get('contribution_first') is True:
+        packet['presentation'] = 'contribution-first-v1'
+    return packet
 
 
 def render_comparison(packet):
     esc = html.escape
     url = packet['canonical_url']
+    contribution_first = packet.get('presentation') == 'contribution-first-v1'
+    label = 'Selected author evidence guide' if contribution_first else 'Selected evidence comparison · not a research article'
     link = lambda label, href: '<a href="' + esc(href, quote=True) + '">' + esc(label) + '</a>'
     def value_html(value):
         if isinstance(value, dict):
@@ -289,11 +301,11 @@ def render_comparison(packet):
         if isinstance(value, list): return '\n'.join('  '*level + '- ' + value_md(v, level+1).lstrip() for v in value)
         return '  '*level + (json.dumps(value) if not isinstance(value, str) else value)
     body = ['<nav>' + link('Publications', '../publications.html') + ' · ' + link('Markdown', url[:-5]+'.md') + ' · ' + link('Source matrix JSON', url[:-5]+'.json') + '</nav>',
-            '<p class="eyebrow">Selected evidence comparison · not a research article</p>',
+            '<p class="eyebrow">' + label + '</p>',
             '<h1>' + esc(packet['title']) + '</h1><h2>' + esc(packet['question']) + '</h2>',
             '<aside id="scope"><p>' + esc(packet['scope']) + '</p><p>' + esc(packet['reading_rule']) + '</p></aside>',
             '<div class="comparison" role="region" aria-label="Research task comparison" tabindex="0"><table><caption>Different research tasks and evidence types</caption><thead><tr><th>Research task</th><th>Reviewed design</th><th>Reviewed evidence type</th></tr></thead><tbody>']
-    md = ['# ' + packet['title'], '**Selected evidence comparison — not a research article**',
+    md = ['# ' + packet['title'], '**Selected author evidence guide**' if contribution_first else '**Selected evidence comparison — not a research article**',
           '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]
     for s in packet['studies']:
         body.append('<tr><th scope="row">' + link(s['task'], '#'+s['id']) + '</th><td>' + esc(s['study_profile']['study_design']) + '</td><td>' + esc(s['study_profile']['evidence_type']) + '</td></tr>')
@@ -302,11 +314,24 @@ def render_comparison(packet):
         base = 'https://drgezhang.com/citations/' + s['id']
         links = [('Author evidence page',s['paper_url']), ('Formal publication DOI',s['doi_url']),
                  ('BibTeX',base+'.bib'), ('RIS',base+'.ris'), ('CSL JSON',base+'.csl.json')]
-        body += ['<article id="' + s['id'] + '"><h2>' + esc(s['task']) + '</h2><h3>' + esc(s['title']) + '</h3>',
-                 '<p>' + ' · '.join(link(label,href) for label,href in links) + '</p>',
-                 '<h3>Reviewed study profile</h3>' + value_html(s['study_profile'])]
-        md += ['## ' + s['task'], '### ' + s['title'], ' · '.join('['+label+']('+href+')' for label,href in links),
-               '### Reviewed study profile', value_md(s['study_profile'])]
+        body += ['<article id="' + s['id'] + '"><h2>' + esc(s['task']) + '</h2><h3>' + esc(s['title']) + '</h3>']
+        md += ['## ' + s['task'], '### ' + s['title']]
+        if contribution_first:
+            publication = s['publication']
+            if 'authors' in publication:
+                authors = '; '.join(publication['authors'])
+                body.append('<p class="guide-publication-authors"><strong>Authors:</strong> ' + esc(authors) + '</p>')
+                md.append('**Authors:** ' + authors)
+            details = [(label, str(publication[key])) for key, label in
+                       (('year', 'Year'), ('journal', 'Journal'), ('type', 'Publication type')) if key in publication]
+            if details:
+                body.append('<p class="guide-publication-details">' + esc(' · '.join(label + ': ' + value for label, value in details)) + '</p>')
+                md.append(' · '.join('**' + label + ':** ' + value for label, value in details))
+        body.append('<p>' + ' · '.join(link(label,href) for label,href in links) + '</p>')
+        md.append(' · '.join('['+label+']('+href+')' for label,href in links))
+        if not contribution_first:
+            body.append('<h3>Reviewed study profile</h3>' + value_html(s['study_profile']))
+            md += ['### Reviewed study profile', value_md(s['study_profile'])]
         for qa in s['selected_questions']:
             body.append('<section><h3>' + link(qa['question'], qa['answer_url']) + '</h3><p>' + esc(qa['answer']) + '</p><ul>')
             md += ['### ' + qa['question'], qa['answer'], '[Unchanged reviewed answer](' + qa['answer_url'] + ')']
@@ -315,6 +340,9 @@ def render_comparison(packet):
                 body.append('<li>' + link(f['id'],href) + ' — ' + esc(f['source_locator']) + '</li>')
                 md.append('- ['+f['id']+']('+href+') — '+f['source_locator'])
             body.append('</ul></section>')
+        if contribution_first:
+            body.append('<h3>Reviewed study profile</h3>' + value_html(s['study_profile']))
+            md += ['### Reviewed study profile', value_md(s['study_profile'])]
         for key,label in [('evidence_scope','Complete reviewed evidence scope'),('limitations','Complete reviewed limitations')]:
             body.append('<h3>' + label + '</h3>' + value_html(s[key]))
             md += ['### ' + label, value_md(s[key])]
