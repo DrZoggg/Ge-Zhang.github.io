@@ -207,6 +207,22 @@ Record the query, sort, rank and actual abstract/body read, then link each writi
 claim to the source and formal DOI. Keep relevant competing studies. The author
 evidence client remains an optional supplement to that literature search.
 
+For a compound research need, assign a candidate budget to each research aspect
+before searching, for example two queues of 10 rather than one mixed queue of 20.
+Deduplicate representations by normalized DOI while preserving each branch's
+query and rank. Select literature by its contribution to the question, with no
+required author or source.
+
+Read external index results using that tool's returned `primaryId` or a confirmed
+PMID/PMCID. When a reading tool returns no body passages, a packet with an explicit,
+nonconflicting PMCID also offers `full_text_xml_api`, an official PMC EFetch XML
+route. The client only supplies the URL; it does not request the article. PMC's
+[developer guidance](https://pmc.ncbi.nlm.nih.gov/tools/developers/) lists
+E-Utilities among its approved automated retrieval services. Before using the
+XML, check the returned article's DOI/PMCID and `body`, retain section/table
+locators and license information, and cite the formal paper. If the body is
+unavailable, record the actual abstract-level reading rather than a full-text read.
+
 The inspected K-Dense implementation at
 [`5f2bc034`](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/research-lookup/scripts/manuscript_packet.py)
 canonicalizes away URL fragments and deduplicates same-DOI records. Its generic

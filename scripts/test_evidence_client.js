@@ -3,13 +3,34 @@ const assert = require('node:assert/strict');
 const {createClient,loadLocal,loadLive,fetchDataset,digest,MAX_BYTES} = require('./author_evidence_client.cjs');
 
 async function run() {
+  const networkCalls=[];
+  const originalFetch=globalThis.fetch;
+  globalThis.fetch=(...args)=>{networkCalls.push(args);throw Error('Unexpected network request in local client');};
   const loaded = loadLocal(), catalog = loaded.questions;
   const client = createClient(catalog, loaded.search, loaded.retrieval);
   const works = new Map(catalog.works.map(work => [work.id,work]));
+  function assertXmlRoute(packet) {
+    const primary=packet.primary_sources, routes=primary.reading_routes;
+    const api=routes.filter(route=>route.kind==='full_text_xml_api');
+    if (!primary.identifiers.pmcid) {assert.deepEqual(api,[]);return;}
+    assert.equal(api.length,1);assert.equal(routes.at(-1),api[0]);
+    const archive=routes.find(route=>route.kind==='full_text_archive');
+    assert(archive);assert.deepEqual(api[0].source_fields,archive.source_fields);
+    assert.equal(api[0].provider,'PMC');assert.equal(api[0].availability,'not_checked');
+    const url=new URL(api[0].url);
+    assert.equal(url.origin,'https://eutils.ncbi.nlm.nih.gov');
+    assert.equal(url.pathname,'/entrez/eutils/efetch.fcgi');
+    assert.equal(url.username,'');assert.equal(url.password,'');assert.equal(url.hash,'');
+    assert.deepEqual([...url.searchParams.keys()].sort(),['db','id','retmode']);
+    assert.equal(url.searchParams.get('db'),'pmc');assert.equal(url.searchParams.get('retmode'),'xml');
+    assert.equal('PMC'+url.searchParams.get('id'),primary.identifiers.pmcid);
+    assert.equal(new URL(archive.url).pathname,`/articles/${primary.identifiers.pmcid}/`);
+  }
   assert.equal(catalog.works.length, new Set(catalog.works.map(work=>work.id)).size);
   let nonEncoded = 0;
   for (const question of catalog.all_questions) {
     const packet = client.fetch(question.id), work = works.get(question.work_id);
+    assertXmlRoute(packet);
     assert.equal(packet.question,question.question);assert.equal(packet.answer,question.answer);
     assert.deepEqual(packet.available_questions,[]);
     assert.equal(packet.publication.title,work.title);assert.equal(packet.publication.doi,work.doi);
@@ -42,6 +63,7 @@ async function run() {
   assert.equal(nonEncoded,catalog.all_questions.filter(q=>q.evidence_refs_status==='not_encoded').length);
   for (const work of catalog.works) {
     const packet = client.fetch(work.id);
+    assertXmlRoute(packet);
     assert.equal(packet.answer,null);assert.equal(packet.question,null);
     assert.deepEqual(packet.available_questions,catalog.all_questions.filter(q=>q.work_id===work.id)
       .map(q=>({id:q.id,question:q.question,answer_url:q.answer_url,evidence_refs_status:q.evidence_refs_status})));
@@ -145,6 +167,7 @@ async function run() {
     assert.equal(packet.publication.doi,hf.publication.doi);
     assert.equal(packet.answer,client.fetch('aihflevel--qa-3').answer);
     assert.deepEqual(packet.evidence_scope,hf.evidence_scope);assert.deepEqual(packet.limitations,hf.limitations);
+    assertXmlRoute(packet);
     return packet;
   }
   const noIdentifiers=routeFixture({provenance:[{url:'https://example.org/a-supplement',label:'Source'}]});
@@ -180,7 +203,23 @@ async function run() {
   const misplaced=routeFixture({pmid:39117613,publisher_url:'https://pubmed.ncbi.nlm.nih.gov/39117613/'});
   assert.equal(misplaced.links.pubmed_url,hf.links.pubmed_url);assert.equal(misplaced.links.publisher_url,null);
   assert.equal(misplaced.primary_sources.metadata_issues[0].reason,'database_url_in_publisher_field');
-  assert.equal(sourceRouteCases,12);
+  const pmcConflict=routeFixture({pmcid:'PMC11310499',provenance:{pmcid:'PMC11865799'}});
+  assert.equal(pmcConflict.primary_sources.identifiers.pmcid,null);
+  assert(pmcConflict.primary_sources.metadata_issues.some(issue=>issue.field==='pmcid'&&issue.reason==='conflicting_identifiers'));
+  const pmcUrlConflict=routeFixture({pmcid:'PMC11310499',provenance:{pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/'}});
+  assert.equal(pmcUrlConflict.primary_sources.identifiers.pmcid,null);
+  const pmcUrlOnly=routeFixture({provenance:{pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/'}});
+  assert.equal(pmcUrlOnly.primary_sources.identifiers.pmcid,'PMC11310499');
+  const validFallback=routeFixture({pmcid:'invalid',provenance:{pmcid:'pmc11310499'}});
+  assert.equal(validFallback.primary_sources.identifiers.pmcid,'PMC11310499');
+  for (const pmcid of ['PMC0','PMC001','PMC-7','11310499','PMC12345678901','PMC11310499?id=other']) {
+    const malformed=routeFixture({pmcid});
+    assert.equal(malformed.primary_sources.identifiers.pmcid,null);
+    assert(malformed.primary_sources.metadata_issues.some(issue=>issue.reason==='invalid_identifier'));
+  }
+  const unrelatedPmc=routeFixture({references:[{pmcid:'PMC11865799'}],provenance:{correction_pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/'}});
+  assert.equal(unrelatedPmc.primary_sources.identifiers.pmcid,null);
+  assert.equal(sourceRouteCases,23);
   assert.equal(digest('{\r\n}'),digest('{\n}'));
   const calls=[];
   const fake=async(url,options)=>{
@@ -202,6 +241,7 @@ async function run() {
   await assert.rejects(()=>fetchDataset('research/questions.json',badType),/not JSON/);
   const tooLarge=async(url)=>{const response=new Response(new Uint8Array(MAX_BYTES+1),{headers:{'content-type':'application/json'}});Object.defineProperty(response,'url',{value:url});return response;};
   await assert.rejects(()=>fetchDataset('research/questions.json',tooLarge),/exceeds/);
+  assert.deepEqual(networkCalls,[]);globalThis.fetch=originalFetch;
   console.log(`EVIDENCE CLIENT PASS: ${catalog.all_questions.length} source-exact question packets, ${catalog.works.length} work identities, ${nonEncoded} not_encoded preserved, scope/refs/citations joined; ${sourceRouteCases} source-route fixtures and fixed-host bounded transport failures tested offline`);
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
