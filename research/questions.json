@@ -24081,6 +24081,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10318712/",
       "year": 2023,
       "locator": "Introduction (Sec4), paragraph 3; Methods: Exposure (Sec8); Discussion (Sec18), paragraphs 4 and 6: longitudinal AL–HF research, immune/inflammatory biomarker domains, unresolved mechanisms, one-time measurement and observational limitations."
+    },
+    {
+      "id": "pah-endmt-review-2021",
+      "title": "Endothelial-to-Mesenchymal Transition in Pulmonary Arterial Hypertension.",
+      "doi": "10.1089/ars.2020.8169",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32746619/",
+      "year": 2021,
+      "locator": "Actual EuropePMC MED32746619 official indexed abstract: EndMT transcriptional reprogramming in PAH; hypoxia, inflammation, BMPR2/redox context and future mechanism research. Review abstract only; full review body was unavailable in this read."
     }
   ],
   "intents": [
@@ -24610,7 +24618,8 @@
         "hf-omics-multiomics-review-2017",
         "hf-omics-proteomics-review-2026",
         "onco-agent-onco-s1",
-        "onco-agent-onco-s3"
+        "onco-agent-onco-s3",
+        "pah-endmt-review-2021"
       ],
       "focused_queries": [
         {
@@ -24679,6 +24688,104 @@
               "doi_url": "https://doi.org/10.1016/j.csbj.2024.04.044",
               "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "multiomics-subtypes-3",
+          "question": "What do lung single-cell and bulk-expression studies reveal about EndMT-related endothelial states and candidate molecular classifiers in PAH?",
+          "question_zh": "肺组织单细胞与整体转录组研究如何刻画肺动脉高压中 EndMT 相关内皮细胞状态及候选分子分类器？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1186-s10020-024-00963-z",
+              "question_ids": [
+                "doi-10-1186-s10020-024-00963-z--qa-1",
+                "doi-10-1186-s10020-024-00963-z--qa-2",
+                "doi-10-1186-s10020-024-00963-z--qa-3",
+                "doi-10-1186-s10020-024-00963-z--qa-4",
+                "doi-10-1186-s10020-024-00963-z--qa-5",
+                "doi-10-1186-s10020-024-00963-z--qa-6"
+              ],
+              "preview_question_id": "doi-10-1186-s10020-024-00963-z--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html",
+              "doi": "10.1186/s10020-024-00963-z",
+              "doi_url": "https://doi.org/10.1186/s10020-024-00963-z",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#cite-this-paper",
+              "finding_previews": [
+                {
+                  "id": "KF2",
+                  "claim": "Endothelial trajectory analyses identified expression states consistent with an EndMT-related program, including an EC3 state.",
+                  "context": "Slingshot and Monocle2 infer ordering from cross-sectional gene-expression data. They do not directly observe an individual endothelial cell converting in vivo or prove causality.",
+                  "evidence": [
+                    {
+                      "label": "Endothelial cells analyzed",
+                      "value": "3,165"
+                    },
+                    {
+                      "label": "Endothelial states",
+                      "value": "EC1, EC2 and EC3"
+                    },
+                    {
+                      "label": "Patterns along inferred trajectory",
+                      "value": "3 gene-expression clusters (C1–C3)"
+                    },
+                    {
+                      "label": "Associated biological programs",
+                      "value": "Mesenchymal differentiation, extracellular matrix organization and oxidative phosphorylation"
+                    }
+                  ],
+                  "source_locator": "PMC11513636: Materials and methods — Pseudotime trajectory inference; Results — Trajectory analyses revealed EndMT in endothelial populations; Figure 4A–G; Figure 5A.",
+                  "source": "data/deep_geo/doi-10-1186-s10020-024-00963-z.json#/key_findings/1",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#kf2"
+                },
+                {
+                  "id": "KF4",
+                  "claim": "A two-gene glmNet score showed PAH-versus-control discrimination in an internal held-out test set.",
+                  "context": "The testing subset came from the same GSE117261 dataset as discovery and was also used to compare the nine algorithms and select the preferred model. The reported performance may therefore be optimistic, rather than an untouched final validation estimate. The C-index is reported as such, not relabeled as ROC AUC, and the supplementary residual column is not relabeled as RMSR.",
+                  "evidence": [
+                    {
+                      "label": "Candidate learners",
+                      "value": "9"
+                    },
+                    {
+                      "label": "Discovery/testing split",
+                      "value": "7:3 within GSE117261"
+                    },
+                    {
+                      "label": "Discovery resampling",
+                      "value": "10-fold cross-validation repeated 10 times"
+                    },
+                    {
+                      "label": "PETS formula",
+                      "value": "2.6926723 × RARRES2 + 0.7410611 × TC2N"
+                    },
+                    {
+                      "label": "glmNet internal test accuracy",
+                      "value": "0.833333333333333"
+                    },
+                    {
+                      "label": "glmNet internal test C-index",
+                      "value": "0.890756302521008"
+                    },
+                    {
+                      "label": "glmNet internal test F1-score",
+                      "value": "0.888888888888889"
+                    },
+                    {
+                      "label": "glmNet internal test precision and recall",
+                      "value": "0.842105263157895 and 0.941176470588235"
+                    },
+                    {
+                      "label": "Supplementary |Residuals| column",
+                      "value": "0.253593"
+                    }
+                  ],
+                  "source_locator": "PMC11513636: Materials and methods — PETS generated from integrative machine-learning program; Results — Machine learning-based integrative program generates PETS; Figure 7A–D; Additional file 13, Table S7, glmNet row (worksheet row 3, columns B–G).",
+                  "source": "data/deep_geo/doi-10-1186-s10020-024-00963-z.json#/key_findings/3",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#kf4"
+                }
+              ]
             }
           ]
         }
