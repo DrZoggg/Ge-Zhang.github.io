@@ -276,3 +276,17 @@ An [optional pinned-reader adaptation](../examples/review-citation-contexts/READ
 provides a runnable citation-context sidecar for an existing K-Dense JATS reader.
 It is explicitly applied by the consumer and is not an upstream default, an
 installed Skill, or a source-preference rule in this author evidence client.
+
+### Preserve a paper's genre, design and writing role
+
+Letters, reviews and original studies can each contribute to a research argument.
+Keep publication genre separate from study design: a Letter may report a trial,
+while discussion of a trial does not make another article a trial. Preserve
+explicit source metadata through same-DOI joins and keep conflicting assertions
+visible. A study-design label is also distinct from a quality appraisal.
+
+The [optional pinned manuscript-packet adaptation](../examples/manuscript-packet-metadata/README.md)
+provides offline verification and application instructions for this behavior in
+the inspected K-Dense helper. It preserves candidate identities, source excerpts
+and formal citations, including through the runner's repeated deduplication.
+Consumers apply it explicitly; this client does not install or enable it.
