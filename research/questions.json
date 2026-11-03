@@ -24009,6 +24009,38 @@
       "url": "https://doi.org/10.1038/s41568-024-00715-5",
       "year": 2024,
       "locator": "PubMed38982146 Abstract; EuropePMC core record38982146 abstractText"
+    },
+    {
+      "id": "als-lipid-research-review-2026",
+      "title": "Cholesterol in amyotrophic lateral sclerosis: a bystander, a biomarker, or a target?",
+      "doi": "10.1016/j.athplu.2026.100576",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42405014/",
+      "year": 2026,
+      "locator": "Official indexed Abstract: The review separates disease-onset risk, progression/prognostic biomarkers and potential target research. Abstract-level demand context; no bibliography relation asserted."
+    },
+    {
+      "id": "als-biomarker-systematic-review-2025",
+      "title": "Diagnostic and Prognostic Value of Blood and Cerebrospinal Fluid Biomarkers in Amyotrophic Lateral Sclerosis: A Systematic Review and Meta-Analysis",
+      "doi": "10.1111/ene.70382",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12554952/",
+      "year": 2025,
+      "locator": "Official indexed Abstract: Diagnostic and prognostic assessments are separated; multimodal validation is proposed. No claim that the project paper is cited. Abstract-level demand context; no bibliography relation asserted."
+    },
+    {
+      "id": "ocular-trabecular-ecm-review-2022",
+      "title": "Pathogenesis of glaucoma: Extracellular matrix dysfunction in the trabecular meshwork-A review",
+      "doi": "10.1111/ceo.14027",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35037377/",
+      "year": 2022,
+      "locator": "PubMed indexed Abstract: cells–extracellular matrix interactions, matrix remodeling, aqueous outflow resistance and intraocular pressure; abstract read through official Europe PMC core. Full text not obtained in this research pass."
+    },
+    {
+      "id": "ocular-rpe-development-review-2024",
+      "title": "Considerations for Developing an Autologous Induced Pluripotent Stem Cell (iPSC)-Derived Retinal Pigment Epithelium (RPE) Replacement Therapy",
+      "doi": "10.1101/cshperspect.a041295",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37487631/",
+      "year": 2024,
+      "locator": "PubMed indexed Abstract: differentiation-protocol design, cell-validation assays, preclinical models and regulatory translation for iPSC-derived RPE; abstract read through official Europe PMC core. Full text not obtained in this research pass."
     }
   ],
   "intents": [
@@ -24701,6 +24733,150 @@
               "doi_url": "https://doi.org/10.1136/jitc-2024-010127",
               "scope_url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/nlrp3-ici.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "als-molecular-biomarkers",
+      "question": "How can blood and molecular biomarkers contribute to ALS research?",
+      "question_zh": "血液与分子生物标志物如何帮助开展肌萎缩侧索硬化研究？",
+      "source_ids": [
+        "als-lipid-research-review-2026",
+        "als-biomarker-systematic-review-2025"
+      ],
+      "focused_queries": [
+        {
+          "id": "als-molecular-biomarkers-1",
+          "question": "How well have blood-expression classifiers distinguished ALS in an independent dataset?",
+          "question_zh": "血液基因表达分类模型在独立数据集中区分肌萎缩侧索硬化的表现如何？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-isci-2025-114320",
+              "question_ids": [
+                "doi-10-1016-j-isci-2025-114320--qa-1"
+              ],
+              "preview_question_id": "doi-10-1016-j-isci-2025-114320--qa-1",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html",
+              "doi": "10.1016/j.isci.2025.114320",
+              "doi_url": "https://doi.org/10.1016/j.isci.2025.114320",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "als-molecular-biomarkers-2",
+          "question": "Which genetic-instrument evidence links lipid-transport gene expression with ALS susceptibility?",
+          "question_zh": "哪些遗传工具变量证据将脂质转运基因表达与肌萎缩侧索硬化易感性联系起来？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-isci-2025-114320",
+              "question_ids": [
+                "doi-10-1016-j-isci-2025-114320--qa-2"
+              ],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html",
+              "doi": "10.1016/j.isci.2025.114320",
+              "doi_url": "https://doi.org/10.1016/j.isci.2025.114320",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "als-molecular-biomarkers-3",
+          "question": "What has a small ALS serum-protein case-control study measured, including functional-score associations?",
+          "question_zh": "一项小规模肌萎缩侧索硬化血清蛋白病例对照研究测量了什么，包括与功能评分的关联？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-isci-2025-114320",
+              "question_ids": [
+                "doi-10-1016-j-isci-2025-114320--qa-3",
+                "doi-10-1016-j-isci-2025-114320--qa-4"
+              ],
+              "preview_question_id": "doi-10-1016-j-isci-2025-114320--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html",
+              "doi": "10.1016/j.isci.2025.114320",
+              "doi_url": "https://doi.org/10.1016/j.isci.2025.114320",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocular-matrix-glaucoma",
+      "question": "How do trabecular-meshwork matrix changes inform glaucoma mechanism research?",
+      "question_zh": "小梁网基质变化如何帮助研究青光眼相关机制？",
+      "source_ids": [
+        "ocular-trabecular-ecm-review-2022"
+      ],
+      "focused_queries": [
+        {
+          "id": "ocular-matrix-glaucoma-1",
+          "question": "How has PAPPA2 cotreatment affected IGFBP5-associated fibrosis markers in primary human trabecular-meshwork cells?",
+          "question_zh": "在原代人小梁网细胞中，PAPPA2联合处理对IGFBP5相关纤维化标志物产生了什么影响？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1155-humu-5591097",
+              "question_ids": [
+                "doi-10-1155-humu-5591097--qa-2"
+              ],
+              "preview_question_id": "doi-10-1155-humu-5591097--qa-2",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html",
+              "doi": "10.1155/humu/5591097",
+              "doi_url": "https://doi.org/10.1155/humu/5591097",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "ocular-matrix-glaucoma-2",
+          "question": "What do Pappa2-deficient mouse experiments show about intraocular pressure and trabecular collagen-associated staining?",
+          "question_zh": "Pappa2缺陷小鼠实验对眼内压和小梁网胶原相关染色提供了哪些观察？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1155-humu-5591097",
+              "question_ids": [
+                "doi-10-1155-humu-5591097--qa-3"
+              ],
+              "preview_question_id": "doi-10-1155-humu-5591097--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html",
+              "doi": "10.1155/humu/5591097",
+              "doi_url": "https://doi.org/10.1155/humu/5591097",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retinal-cell-culture",
+      "question": "Which culture strategies are used to derive retinal pigment epithelium from pluripotent stem cells?",
+      "question_zh": "研究如何通过不同培养策略将多能干细胞分化为视网膜色素上皮细胞？",
+      "source_ids": [
+        "ocular-rpe-development-review-2024"
+      ],
+      "focused_queries": [
+        {
+          "id": "retinal-cell-culture-1",
+          "question": "Which embryonic stem-cell culture approaches are described in the 2020 retinal pigment epithelium methods review?",
+          "question_zh": "2020年视网膜色素上皮细胞方法综述介绍了哪些胚胎干细胞培养途径？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-3980-j-issn-1672-5123-2020-12-13",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
+              "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+              "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
+              "scope_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cite-this-paper"
             }
           ]
         }
