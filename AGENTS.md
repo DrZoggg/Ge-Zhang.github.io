@@ -43,6 +43,16 @@ paper. Do not empty useful related results because precise answer evidence is
 missing, and do not insert unrelated work. The writer makes the final citation
 choice after reading the evidence.
 
+Maintain discovery opportunities across the full current publication master,
+including overlapping scientific domains beyond homepage themes or existing broad
+questions. Reuse the private work-level opportunity matrix to track identity,
+supported writing uses, current entry coverage, real source relationships and
+next actions. Prioritize underrepresented domains rather than repeatedly investing
+in AIHFLevel, atherosclerosis and KIF13B. Preserve type-appropriate routes for
+preprints, limited-evidence works and patents. Broader coverage means relevant
+research can be encountered, not mass-generated questions or invented findings;
+verify external discovery and writing use separately from added internal links.
+
 Use the existing publishing core and reviewed Gold assets to improve this chain:
 scientific query → reviewed answer → supporting evidence and source locator →
 original paper → DOI → formal citation. Reuse existing Q&A verbatim; never invent

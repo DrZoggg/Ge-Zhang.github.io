@@ -1,0 +1,401 @@
+--- a/skills/research-lookup/scripts/manuscript_packet.py
++++ b/skills/research-lookup/scripts/manuscript_packet.py
+@@ -93,6 +93,13 @@
+     "review": 2,
+     "case report/series": 1,
+     "primary/other": 2,
++    "letter": 2,
++    "correspondence": 2,
++    "editorial": 2,
++    "commentary": 2,
++    "perspective": 2,
++    "journal article": 2,
++    "non-empirical": 2,
+ }
+ 
+ 
+@@ -119,11 +126,16 @@
+ 
+ 
+ def source_excerpts(source: dict[str, Any]) -> list[str]:
+-    """Prefer Extract evidence over candidate snippets after retrieval succeeds."""
++    """Prefer extracted evidence, then snippets, then a supplied summary.
++
++    A summary is a snippet fallback only; it does not change reading status.
++    Explicit excerpt fields, including an empty extraction, take precedence.
++    """
+     excerpts = (
+         source.get("extraction_excerpts")
+         if source.get("extracted") and "extraction_excerpts" in source
+-        else source.get("excerpts")
++        else source.get("excerpts") if "excerpts" in source
++        else source.get("summary")
+     ) or []
+     if isinstance(excerpts, str):
+         excerpts = [excerpts]
+@@ -183,31 +195,240 @@
+     return [sentence.strip() for sentence in sentences if 30 <= len(sentence) <= 800]
+ 
+ 
++def _type_key(value: str) -> str:
++    return re.sub(r"[\s_\-–—]+", " ", value.strip().casefold())
++
++
++GENRES = {name: name for name in (
++    "letter", "correspondence", "editorial", "commentary", "perspective",
++    "review", "journal article", "primary/other", "unknown",
++)}
++GENRES.update({"article": "journal article", "research article": "journal article",
++               "review article": "review", "letter to the editor": "letter",
++               "methods/protocol": "methods/protocol", "protocol": "methods/protocol",
++               "study protocol": "methods/protocol", "trial protocol": "methods/protocol"})
++DESIGNS = {_type_key(term): name for name, terms in PUBLICATION_TYPES
++           for term in (name, *terms)}
++DESIGNS.update({"rct": "randomized controlled trial", "case series": "case report/series",
++                "case report": "case report/series", "protocol": "methods/protocol",
++                "prospective cohort study": "cohort study",
++                "retrospective cohort study": "cohort study",
++                "randomized controlled clinical trial": "randomized controlled trial",
++                "randomised controlled clinical trial": "randomized controlled trial",
++                "unknown": "unknown"})
++DESIGNS.update({name: "non-empirical" for name in (
++    "none", "not applicable", "non empirical", "narrative argument",
++    "conceptual argument", "policy analysis", "no new empirical study",
++)})
++
++
++def _metadata_types(value: Any, *, design: bool = False) -> list[tuple[str, str]]:
++    """Recognize whole metadata values, never trial words inside free text.
++
++    Keep the supplied display wording; a list may contain a genre AND a design.
++    Caller metadata is an assertion, not independent scientific verification.
++    """
++    values = value if isinstance(value, (list, tuple)) else [value]
++    names = DESIGNS if design else {**DESIGNS, **GENRES}
++    return [(item.strip(), names[_type_key(item)]) for item in values
++            if isinstance(item, str) and _type_key(item) in names]
++
++
++def _text_genre(text: str) -> str:
++    labelled = extract_label(text, ("publication type", "publication_type", "article type"))
++    known = _metadata_types(labelled)
++    if known:
++        return known[0][1]
++    match = re.search(
++        r"(?:^|[.!?]\s+)(?:in\s+)?(?:this|our|the present)\s+"
++        r"(letter|correspondence|editorial|commentary|perspective|review)\b",
++        text, re.I,
++    )
++    return match[1].casefold() if match else ""
++
++
++def _text_design(text: str) -> str:
++    """Conservative self-design fallback, not a mention-based evidence grade.
++
++    Metadata is preferable. These rules cannot resolve arbitrary scientific
++    prose; ambiguous, quoted, prospective or other-study mentions stay unknown.
++    Negative RESULTS do not negate an affirmative description of the design.
++    """
++    lines = [line.strip() for line in text.splitlines() if line.strip()]
++    if not lines:
++        return "unknown"
++    own = re.compile(
++        r"^(?:in\s+)?(?:we\s+(?:conducted|performed|undertook|carried out)\b|"
++        r"(?:the\s+)?(?:authors|investigators|researchers)\s+"
++        r"(?:conduct(?:ed)?|perform(?:ed)?|develop(?:ed)?|validate[ds]?|"
++        r"evaluat(?:e[ds]?|ed)|report(?:ed)?|analy[sz](?:e[ds]?|ed))\b|"
++        r"(?:this|our|the present|the current)\s+"
++        r"(?:(?:randomi[sz]ed|controlled|clinical|prospective|retrospective|cohort|"
++        r"case-control|cross-sectional)\s+)*(?:study|trial|analysis)\b)", re.I)
++    negated = re.compile(
++        r"\b(?:no|not|never|without|rather than|instead of)\s+"
++        r"(?:(?:a|an|any|new|actual|completed|report|reporting|presenting|conduct|"
++        r"conducting|conducted|perform|performed|performing|undertaking|been)\s+)*$", re.I)
++    prospective = re.compile(r"\b(?:will|would|could|should|propos\w*|plan\w*|intend\w*|future)\b", re.I)
++    other = re.compile(r"\b(?:previously (?:published|reported|conducted)|prior|earlier|cited|"
++                       r"another|other|secondary analysis|reanalysis|et al|"
++                       r"(?:data|dataset|records)\s+from)\b", re.I)
++    title = lines[0]
++    protocol = re.search(
++        r"^(?:a |an )?(?:(?:study |trial )?protocol|proposal|design of)\b|"
++        r":\s*(?:a |an )?(?:study |trial )?protocol\b", title, re.I)
++    if protocol:
++        return "methods/protocol"
++    labelled = extract_label(text, ("study design", "study_design", "design"))
++    if known := _metadata_types(labelled, design=True):
++        return known[0][1]
++    for name, terms in PUBLICATION_TYPES:
++        for term in (name, *terms):
++            pattern = r"\b" + re.escape(term.strip()) + r"\b"
++            if name == "cohort study":
++                pattern = r"\b(?:(?:retrospective|prospective)\s+)?(?:longitudinal\s+)?cohorts?\b"
++            # A design explicitly in the TITLE is evidence; a topic-only title
++            # about trial reporting, future trials, reviews, etc. is not.
++            if (re.match(r"^(?:a |an )?" + pattern + r"(?:$|\s+(?:of|in|on|for|to)\b)", title, re.I)
++                    and not re.search(r"\b(?:reporting|registration|review|comment|perspective|"
++                                      r"needed|need|future|proposed|planned)\b", title, re.I)):
++                return name
++            for clause in re.split(r"[.!?;\n]+", text):
++                clause = clause.strip()
++                if not own.match(clause):
++                    continue
++                for match in re.finditer(pattern, clause, re.I):
++                    before = clause[:match.start()]
++                    if not (negated.search(before) or prospective.search(before)
++                            or other.search(before)):
++                        if name == "cohort study":
++                            if re.search(r"\bretrospective\b", match.group(0), re.I):
++                                return "retrospective cohort study"
++                            if re.search(r"\bprospective\b", match.group(0), re.I):
++                                return "prospective cohort study"
++                        return name
++    return "unknown"
++
++
+ def classify_publication(text: str) -> str:
+-    """Classify publication type from explicit wording."""
+-    lowered = f" {text.lower()} "
+-    for publication_type, terms in PUBLICATION_TYPES:
+-        if any(term in lowered for term in terms):
+-            return publication_type
+-    return "primary/other"
++    """Retain self-described genre; infer design only from self-study evidence."""
++    genre = _text_genre(text)
++    design = _text_design(text)
++    return genre or (design if design != "unknown" else "primary/other")
++
++
++METADATA_FIELDS = (
++    "publication_type", "study_design", "evidence_quality", "quality_rationale",
++    "evidence_quality_basis", "evidence_quality_verified",
++)
++
++
++def _metadata_assertion(source: dict[str, Any]) -> dict[str, Any]:
++    assertion = {key: source[key] for key in METADATA_FIELDS
++                 if key in source and source[key] not in (None, "", [])}
++    return {"url": str(source.get("url") or ""), **assertion} if assertion else {}
++
++
++def _metadata_values(source: dict[str, Any], field: str) -> list[Any]:
++    assertions = source.get("_metadata_assertions") or [source]
++    values = []
++    for assertion in assertions:
++        value = assertion.get(field)
++        values.extend(value if isinstance(value, (list, tuple)) else [value])
++    return values
++
++
++def metadata_conflicts(source: dict[str, Any]) -> dict[str, Any]:
++    """Expose incompatible supplied assertions instead of choosing the last one."""
++    assertions = source.get("_metadata_assertions") or [_metadata_assertion(source)]
++    types = _metadata_types(_metadata_values(source, "publication_type"))
++    genres = {key for _, key in types if key in GENRES
++              and key not in {"journal article", "primary/other", "unknown"}}
++    designs = {key for _, key in _metadata_types(_metadata_values(source, "study_design"), design=True)
++               if key != "unknown"}
++    designs.update(key for _, key in types if key in EVIDENCE_WEIGHTS and key not in GENRES)
++    if "randomized controlled trial" in designs:
++        designs.discard("clinical trial")  # A generic trial tag can coexist with its RCT subtype.
++    grades = {value.strip().casefold() for value in _metadata_values(source, "evidence_quality")
++              if isinstance(value, str) and value.strip().casefold() in
++              {"high", "moderate", "contextual", "low", "exclude"}}
++    return {field: assertions for field, values in (
++        ("publication_type", genres), ("study_design", designs), ("evidence_quality", grades)
++    ) if len(values) > 1}
++
++
++def classification_fields(source: dict[str, Any], text: str) -> tuple[str, str, str]:
++    """Publication genre and research design are independent, including Letters."""
++    supplied = _metadata_types(_metadata_values(source, "publication_type"))
++    # PubMed-style arrays commonly contain generic Journal Article plus Letter.
++    specific = [item for item in supplied if item[1] in GENRES
++                and item[1] not in {"journal article", "primary/other", "unknown"}]
++    publication = next(iter(specific or supplied), None)
++    design = next(iter(_metadata_types(_metadata_values(source, "study_design"), design=True)), None)
++    if not design:
++        design = next((item for item in supplied if item[1] in EVIDENCE_WEIGHTS
++                       and item[1] not in GENRES), None)
++    inferred_design = _text_design(text)
++    genre = publication[1] if publication else _text_genre(text)
++    publication_type = publication[0] if publication else classify_publication(text)
++    study_design = design[0] if design else inferred_design
++    design_key = design[1] if design else inferred_design
++    # A protocol's stated planned design is not completed trial evidence.
++    tier_type = "methods/protocol" if genre == "methods/protocol" else design_key
++    if tier_type == "unknown":
++        tier_type = genre if genre in EVIDENCE_WEIGHTS else "primary/other"
++    supplied_designs = {item[1] for item in supplied if item[1] in EVIDENCE_WEIGHTS
++                        and item[1] not in GENRES}
++    if design and supplied_designs and design_key not in supplied_designs:
++        tier_type = "unknown"
++    conflicts = metadata_conflicts(source)
++    if "publication_type" in conflicts:
++        publication_type = "unknown"
++    if "study_design" in conflicts:
++        study_design = "unknown"
++    return publication_type, study_design, tier_type
+ 
+ 
+ def evidence_quality(
+     publication_type: str, *, preprint: bool, retracted: bool
+ ) -> tuple[str, str]:
+-    """Return a transparent evidence tier and rationale."""
++    """Separate a design label from an actual evidence-quality appraisal."""
+     if retracted:
+         return "exclude", "Source is marked as retracted or withdrawn."
+-    weight = EVIDENCE_WEIGHTS.get(publication_type, 1)
++    rationale = (
++        "No evidence-quality appraisal supplied; research design or publication "
++        "genre alone is not a quality assessment."
++    )
+     if preprint:
+-        weight = max(1, weight - 1)
+-    label = {5: "high", 4: "high", 3: "moderate", 2: "contextual"}.get(
+-        weight, "low"
+-    )
+-    rationale = f"Classified as {publication_type}"
+-    if preprint:
+-        rationale += "; preprint status lowers confidence pending peer review"
+-    return label, rationale + "."
++        rationale += " Preprint status is recorded separately."
++    return "unknown", rationale
++
++
++def supplied_quality(source: dict[str, Any]) -> tuple[str, str] | None:
++    """Keep grades bundled with their own source's appraisal provenance."""
++    assessments = []
++    for assertion in source.get("_metadata_assertions") or [source]:
++        value = assertion.get("evidence_quality")
++        if not isinstance(value, str):
++            continue
++        grade = value.strip().casefold()
++        if grade not in {"high", "moderate", "contextual", "low", "unknown", "exclude"}:
++            continue
++        basis = assertion.get("quality_rationale") or assertion.get("evidence_quality_basis")
++        if isinstance(basis, str) and basis.strip():
++            rationale = "Caller-supplied assessment: " + basis.strip()
++        elif assertion.get("evidence_quality_verified") is True:
++            rationale = "Caller attests this supplied assessment was verified; no appraisal rationale supplied."
++        else:
++            rationale = "Caller-supplied assessment; no appraisal rationale or independent verification supplied."
++        assessments.append((grade, rationale))
++    if not assessments:
++        return None
++    if any(grade != "unknown" for grade, _ in assessments):
++        assessments = [(grade, reason) for grade, reason in assessments if grade != "unknown"]
++    if len({grade for grade, _ in assessments}) > 1:
++        return "unknown", "Conflicting caller-supplied quality assessments; see metadata_conflicts."
++    return assessments[0][0], "; ".join(dict.fromkeys(reason for _, reason in assessments))
+ 
+ 
+ def relevance_tags(text: str, publication_type: str) -> list[str]:
+@@ -253,6 +474,25 @@
+     for raw_source in sources:
+         source = dict(raw_source)
+         source["url"] = canonicalize_url(str(source.get("url") or ""))
++        prior_assertions = source.get("_metadata_assertions")
++        if isinstance(prior_assertions, list):
++            source["_metadata_assertions"] = [dict(item) for item in prior_assertions
++                                               if isinstance(item, dict)]
++        else:
++            assertion = _metadata_assertion(source)
++            source["_metadata_assertions"] = [assertion] if assertion else []
++        # Materialize a summary fallback before adding/merging excerpt fields.
++        # An explicit empty extraction still takes precedence in source_excerpts.
++        if "excerpts" in source:
++            snippets = source.get("excerpts") or []
++            if isinstance(snippets, str):
++                snippets = [snippets]
++        elif source.get("extracted") and "extraction_excerpts" in source:
++            snippets = []
++        else:
++            snippets = source_excerpts(source)
++        source["excerpts"] = list(dict.fromkeys(
++            item for item in snippets if isinstance(item, str) and item.strip()))
+         text = source_text(source)
+         doi = str(source.get("doi") or extract_doi(f"{source['url']}\n{text}"))
+         pmid = str(source.get("pmid") or extract_pmid(f"{source['url']}\n{text}"))
+@@ -278,6 +518,12 @@
+             continue
+ 
+         current = merged[existing]
++        assertions = [*(current.get("_metadata_assertions") or []),
++                      *(source.get("_metadata_assertions") or [])]
++        current["_metadata_assertions"] = list({
++            json.dumps(item, sort_keys=True): item for item in assertions
++        }.values())
++        current["_metadata_merged"] = bool(assertions)
+         if not current.get("title") and source.get("title"):
+             current["title"] = source["title"]
+         if not current.get("publish_date") and source.get("publish_date"):
+@@ -311,7 +557,7 @@
+     url = canonicalize_url(str(source.get("url") or ""))
+     doi = str(source.get("doi") or extract_doi(f"{url}\n{text}"))
+     pmid = str(source.get("pmid") or extract_pmid(f"{url}\n{text}"))
+-    publication_type = classify_publication(text)
++    publication_type, study_design, tier_type = classification_fields(source, text)
+     preprint = is_preprint_url(url) or "preprint" in text.lower()
+     retracted = any(
+         marker in text.lower()
+@@ -319,8 +565,10 @@
+     )
+     corrected = any(marker in text.lower() for marker in ("correction", "erratum"))
+     quality, quality_rationale = evidence_quality(
+-        publication_type, preprint=preprint, retracted=retracted
+-    )
++        tier_type, preprint=preprint, retracted=retracted
++    )
++    if not retracted and (assessment := supplied_quality(source)):
++        quality, quality_rationale = assessment
+     sentences = split_sentences(text)
+     findings = [
+         sentence
+@@ -362,7 +610,7 @@
+         else "search-only"
+     )
+ 
+-    return {
++    reference = {
+         "reference_id": f"ref-{index:03d}",
+         "title": str(source.get("title") or "Untitled source").strip(),
+         "authors": authors,
+@@ -372,7 +620,7 @@
+         "doi": doi,
+         "pmid": pmid,
+         "publication_type": publication_type,
+-        "study_design": publication_type,
++        "study_design": study_design,
+         "population_or_system": extract_label(
+             text, ("population", "participants", "subjects", "system")
+         ),
+@@ -397,6 +645,11 @@
+         "facets": list(source.get("facets") or []),
+         "scholarly_source": is_scholarly_url(url),
+     }
++    if source.get("_metadata_merged"):
++        reference["metadata_assertions"] = source.get("_metadata_assertions") or []
++    if conflicts := metadata_conflicts(source):
++        reference["metadata_conflicts"] = conflicts
++    return reference
+ 
+ 
+ def reference_score(reference: dict[str, Any]) -> tuple[int, int, int, int]:
+@@ -466,7 +719,7 @@
+                 consensus.append(item)
+ 
+     design_counts = Counter(
+-        str(reference.get("publication_type") or "unknown")
++        str(reference.get("study_design") or "unknown")
+         for reference in references
+     )
+     gaps: list[str] = []
+@@ -475,7 +728,7 @@
+         and reference.get("verification_status") == "extracted"
+         for reference in references
+     ):
+-        gaps.append("No high-tier synthesis or trial evidence was verified.")
++        gaps.append("No supplied high-quality appraisal is attached to an extracted source.")
+     if not conflicts:
+         gaps.append(
+             "No explicit contradictory or null evidence was identified; run a targeted "
