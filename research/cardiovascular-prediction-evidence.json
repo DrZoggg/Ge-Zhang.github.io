@@ -701,5 +701,191 @@
       }
     }
   ],
-  "presentation": "contribution-first-v1"
+  "presentation": "contribution-first-v1",
+  "research_use": {
+    "kind": "source_linked_methodological_synthesis",
+    "id": "model-evaluation",
+    "question": "What should be reported when comparing discrimination, calibration and external validation in heart failure models?",
+    "question_zh": "比较心衰模型区分度、校准度和外部验证时应报告哪些证据？",
+    "answer": "Start with the clinical task: target population, care setting, prediction time, endpoint and horizon. Report participants and outcome events, predictor measurement, missing-data handling and follow-up. Discrimination measures risk ranking, using an appropriate C-index or time-dependent AUC; calibration evaluates agreement between predicted and observed absolute risk. Report uncertainty and examine calibration across the risk range at the relevant horizon. Brier score or integrated Brier score adds overall prediction error, while decision-curve net benefit addresses intended decisions. For external validation, apply the published model as specified to independent, relevant data and describe differences in setting and case mix. Report recalibration, refitting and updating separately. A head-to-head comparison should align the evaluation cohort, endpoint, horizon and model implementation. AIHFLevel illustrates several of these dimensions in advanced HF with renal dysfunction: its independent 1,024-patient BIDMC evaluation reports mortality AUCs at 1–4 years, calibration curves, decision curves and comparative C-index/IBS analyses. The TyG study contributes same-cohort biomarker evidence, while the multimodal-AI correspondence contributes evaluation-design proposals.",
+    "answer_zh": "先统一临床任务：人群、应用场景、预测起点、结局和时间窗，并报告样本数、事件数、预测变量测量、缺失处理与随访。区分度回答风险排序能力；校准度回答绝对风险是否与观察结果一致，应结合不确定性和相应时间窗的校准曲线阅读。Brier或IBS补充整体预测误差，决策曲线补充给定决策阈值下的净获益。外部验证应在独立相关数据上按原模型实施，另列再校准、重拟合和模型更新。AIHFLevel提供高级心衰合并肾功能异常的外部预后评估实例；TyG提供同队列标志物证据；多模态AI通信文章提供评估设计建议。",
+    "answer_source_ids": [
+      "tripod-ai-2024",
+      "external-validation-2024",
+      "aihflevel",
+      "doi-10-2147-cia-s462542",
+      "doi-10-1016-j-medd-2026-100004"
+    ],
+    "sources": [
+      {
+        "id": "tripod-ai-2024",
+        "title": "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+        "doi": "10.1136/bmj-2023-078378",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/",
+        "locator": "Table 2: data and participants (items 5–6), outcome/predictors (8–9), analysis (12), model specification (22), performance with uncertainty (23), model updating (24)."
+      },
+      {
+        "id": "external-validation-2024",
+        "title": "Evaluation of clinical prediction models (part 2): how to undertake an external validation study",
+        "doi": "10.1136/bmj-2023-074820",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/",
+        "locator": "What do we mean by external validation?; Steps 2–4; calibration plots, calibration measures, discrimination and clinical usefulness; Table 1."
+      },
+      {
+        "id": "aihflevel",
+        "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
+        "doi": "10.1038/s41467-024-50415-9",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/",
+        "locator": "Figure 6d: external time-dependent AUC; Figure 6e: calibration; Figure 6f: decision curves; Figure 6m: comparative C-index/IBS. Methods: performance evaluation; Discussion: comparator predictor-set refitting."
+      },
+      {
+        "id": "doi-10-2147-cia-s462542",
+        "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
+        "doi": "10.2147/cia.s462542",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/",
+        "locator": "Methods: Study and Population, Follow-Up and Statistical Analysis; Figures 1–3; Tables 5–6. Existing reviewed KF1–KF4 and Q&A."
+      },
+      {
+        "id": "doi-10-1016-j-medd-2026-100004",
+        "title": "Multimodal AI for cardiovascular care must learn when not to predict",
+        "doi": "10.1016/j.medd.2026.100004",
+        "url": "https://doi.org/10.1016/j.medd.2026.100004",
+        "locator": "Existing reviewed KF1–KF3; corrected proof pp. 2–3 and Figure 1; paragraph beginning Evaluation should be defined by intended use."
+      }
+    ],
+    "checklist": [
+      {
+        "dimension": "Clinical task and data",
+        "text": "State the population, setting, prediction time, endpoint, horizon, participants/events, predictor availability, missingness and follow-up.",
+        "source_ids": [
+          "tripod-ai-2024",
+          "external-validation-2024"
+        ]
+      },
+      {
+        "dimension": "Discrimination",
+        "text": "Name the C-index or time-dependent AUC definition, time horizon, uncertainty and survival-data handling.",
+        "source_ids": [
+          "external-validation-2024",
+          "tripod-ai-2024"
+        ]
+      },
+      {
+        "dimension": "Calibration",
+        "text": "Show observed versus predicted risk at the relevant horizon, with a calibration curve and appropriate numerical summaries and uncertainty.",
+        "source_ids": [
+          "external-validation-2024"
+        ]
+      },
+      {
+        "dimension": "External evaluation and updating",
+        "text": "Describe independent data and case mix, apply the original specified model, and identify any recalibration, refitting or updating separately.",
+        "source_ids": [
+          "external-validation-2024",
+          "tripod-ai-2024"
+        ]
+      },
+      {
+        "dimension": "Overall performance and decisions",
+        "text": "Report Brier/IBS over a defined time window and, when relevant to intended use, decision curves over stated thresholds.",
+        "source_ids": [
+          "external-validation-2024",
+          "aihflevel"
+        ]
+      }
+    ],
+    "study_roles": [
+      {
+        "work_id": "aihflevel",
+        "role": "Externally evaluated survival-risk modeling",
+        "text": "AIHFLevel contributes a 12-predictor prognostic system with independent BIDMC evaluation. Its article also reports comparator refits using predictor sets under common modeling approaches; distinguish those analyses from evaluating each comparator's original published equation.",
+        "source_ids": [
+          "aihflevel",
+          "external-validation-2024"
+        ]
+      },
+      {
+        "work_id": "doi-10-2147-cia-s462542",
+        "role": "Admission-marker associations and source-cohort discrimination",
+        "text": "The TyG study connects an accessible admission metabolic marker to subsequent events in advanced HF with renal dysfunction; its ROC thresholds and association estimates come from the same analyzed cohort.",
+        "source_ids": [
+          "doi-10-2147-cia-s462542"
+        ]
+      },
+      {
+        "work_id": "doi-10-1016-j-medd-2026-100004",
+        "role": "Evaluation planning for incomplete and stale multimodal evidence",
+        "text": "The correspondence proposes intended-use-specific tests of missing inputs, co-missingness, temporal staleness and external data, alongside an explicit deferral pathway.",
+        "source_ids": [
+          "doi-10-1016-j-medd-2026-100004"
+        ]
+      }
+    ],
+    "comparison": {
+      "caption": "Complementary evidence roles: design, population, endpoint and reported evaluation",
+      "rows": [
+        {
+          "work_id": "aihflevel",
+          "design": "Multicenter retrospective longitudinal prognostic-model study",
+          "population": "1,736 unique patients with advanced HF and renal dysfunction: CRCCD 712 (498 discovery, 214 replication) plus independent BIDMC 1,024.",
+          "endpoint": "All-cause mortality; external AUCs reported at 1, 2, 3 and 4 years.",
+          "validation": "Independent BIDMC evaluation; comparator refitting is also reported as a separate type of analysis.",
+          "metrics": "External AUC 0.788 / 0.816 / 0.824 / 0.846 at 1 / 2 / 3 / 4 years; calibration plots (Fig. 6e), decision curves (6f), comparative C-index and IBS (6m).",
+          "doi": "10.1038/s41467-024-50415-9",
+          "source_ids": [
+            "aihflevel"
+          ]
+        },
+        {
+          "work_id": "doi-10-2147-cia-s462542",
+          "design": "Retrospective single-center observational biomarker study",
+          "population": "717 analyzed adults with advanced chronic HF, study-defined renal dysfunction and repeated HF hospitalization; 815 initially included, 98 lost to follow-up.",
+          "endpoint": "Study-defined broad MACEs and all-cause mortality; median follow-up 21.58 months.",
+          "validation": "ROC thresholds and associations estimated in the same analyzed cohort.",
+          "metrics": "Source-cohort ROC AUC 0.759 for broad MACEs and 0.700 for all-cause mortality.",
+          "doi": "10.2147/cia.s462542",
+          "source_ids": [
+            "doi-10-2147-cia-s462542"
+          ]
+        },
+        {
+          "work_id": "doi-10-1016-j-medd-2026-100004",
+          "design": "Conceptual correspondence on cardiovascular AI evaluation",
+          "population": "Methodological cardiovascular-AI context; no new empirical cohort.",
+          "endpoint": "Evidence adequacy and prediction/deferral decisions under intended use.",
+          "validation": "Five proposed evaluation conditions include incomplete inputs, natural co-missingness, staleness and external data.",
+          "metrics": "Evaluation-design proposal rather than a new model-performance estimate.",
+          "doi": "10.1016/j.medd.2026.100004",
+          "source_ids": [
+            "doi-10-1016-j-medd-2026-100004"
+          ]
+        }
+      ]
+    },
+    "comparison_note": "Read the rows by their stated research role. Head-to-head model ranking requires aligned data, endpoints, horizons and implementations; predictive or decision-curve performance and clinical impact are different evaluations.",
+    "comparison_note_source_ids": [
+      "external-validation-2024",
+      "tripod-ai-2024",
+      "aihflevel"
+    ],
+    "research_uses": [
+      {
+        "use": "Methods and research design",
+        "text": "Use the checklist to specify the target setting, independent evaluation data, calibration/discrimination measures, prediction-error summary and any model updating before analysis.",
+        "source_ids": [
+          "external-validation-2024",
+          "tripod-ai-2024"
+        ]
+      },
+      {
+        "use": "Discussion and evidence selection",
+        "text": "Use AIHFLevel for an external prognostic-evaluation example, TyG for admission-marker associations, and the correspondence for missingness/staleness evaluation planning, with each formal DOI tied to its actual contribution.",
+        "source_ids": [
+          "aihflevel",
+          "doi-10-2147-cia-s462542",
+          "doi-10-1016-j-medd-2026-100004"
+        ]
+      }
+    ]
+  }
 }

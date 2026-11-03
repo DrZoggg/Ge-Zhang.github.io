@@ -4,9 +4,12 @@ The frozen-text digest is a contract check, not independent scientific verificat
 No network, new publication records, citation exports, or scientific inference.
 """
 import hashlib
+import copy
 import html
 import json
+import re
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 from sync_common import ROOT, is_withdrawn
 from paper_discovery import scientific_content
 from theme_shell import with_theme_shell, without_theme_shell
@@ -209,7 +212,7 @@ def search_documents(root, start):
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
     'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781',
-    'cardiovascular-prediction-evidence': '79bb864002734d23102d969b0932aa82d6ccfde13d111a769063cd28ff04862e',
+    'cardiovascular-prediction-evidence': 'aa9def47e279a546674f2b942748c8aedb7f942b0eeaa454c5dd852e3b7bfe45',
 }
 
 
@@ -225,6 +228,94 @@ def load_comparisons(root=ROOT):
 
 def comparison_url(data):
     return 'https://drgezhang.com/research/' + data['slug'] + '.html'
+
+
+def research_use_packet(value, studies):
+    """Validate reviewed synthesis separately from the unchanged Gold answers.
+
+    The enclosing guide digest binds the new prose and source selection. These
+    guards additionally keep sentence references and formal study identities
+    intact when the controller is reviewed or extended.
+    """
+    def fields(row, keys):
+        require(isinstance(row, dict) and set(row) == set(keys), 'Research-use fields differ')
+    def text(value):
+        require(isinstance(value, str) and value and value == value.strip()
+                and not any(ord(c) < 32 for c in value), 'Research-use text must be plain and non-empty')
+    def identifier(value):
+        text(value)
+        require(re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*', value), 'Unsafe research-use ID')
+    def rows(value):
+        require(isinstance(value, list) and value, 'Research-use arrays must be non-empty')
+    fields(value, ('id', 'question', 'question_zh', 'answer', 'answer_zh', 'answer_source_ids',
+                   'sources', 'checklist', 'study_roles', 'comparison', 'comparison_note',
+                   'comparison_note_source_ids', 'research_uses'))
+    identifier(value['id'])
+    for key in ('question', 'question_zh', 'answer', 'answer_zh', 'comparison_note'):
+        text(value[key])
+    sources = {}
+    rows(value['sources'])
+    for source in value['sources']:
+        fields(source, ('id', 'title', 'doi', 'url', 'locator'))
+        identifier(source['id'])
+        require(source['id'] not in sources, 'Duplicate research-use source ID')
+        for key in ('title', 'doi', 'url', 'locator'):
+            text(source[key])
+        require(re.fullmatch(r'10\.\d{4,9}/[^\s<>\"]+', source['doi'], re.I), 'Invalid research-use source DOI')
+        try:
+            url = urlsplit(source['url'])
+            valid = url.scheme == 'https' and url.hostname and not url.username and not url.password
+        except ValueError:
+            valid = False
+        require(valid, 'Research-use sources require public HTTPS')
+        if url.hostname in ('doi.org', 'dx.doi.org'):
+            require(unquote(url.path.lstrip('/')).casefold() == source['doi'].casefold(),
+                    'Research-use source DOI URL mismatch')
+        sources[source['id']] = source
+    def refs(value):
+        rows(value)
+        require(all(isinstance(s, str) and s in sources for s in value)
+                and len(set(value)) == len(value), 'Unknown or duplicate research-use source reference')
+    refs(value['answer_source_ids'])
+    refs(value['comparison_note_source_ids'])
+    for key, title in (('checklist', 'dimension'), ('research_uses', 'use')):
+        rows(value[key])
+        for row in value[key]:
+            fields(row, (title, 'text', 'source_ids'))
+            text(row[title]); text(row['text']); refs(row['source_ids'])
+    study_by_id = {study['id']: study for study in studies}
+    rows(value['study_roles'])
+    require([row.get('work_id') for row in value['study_roles']] == list(study_by_id),
+            'Research-use roles must retain selected study identities and order')
+    for row in value['study_roles']:
+        fields(row, ('work_id', 'role', 'text', 'source_ids'))
+        text(row['role']); text(row['text']); refs(row['source_ids'])
+        require(row['work_id'] in row['source_ids'], 'Research-use study role needs its original source')
+    fields(value['comparison'], ('caption', 'rows'))
+    text(value['comparison']['caption'])
+    rows(value['comparison']['rows'])
+    require([row.get('work_id') for row in value['comparison']['rows']] == list(study_by_id),
+            'Research-use comparison must retain selected study identities and order')
+    for row in value['comparison']['rows']:
+        fields(row, ('work_id', 'design', 'population', 'endpoint', 'validation', 'metrics', 'doi', 'source_ids'))
+        for key in ('design', 'population', 'endpoint', 'validation', 'metrics', 'doi'):
+            text(row[key])
+        refs(row['source_ids'])
+        wid = row['work_id']
+        require(wid in sources and wid in row['source_ids'] and row['doi'] == study_by_id[wid]['doi']
+                and sources[wid]['doi'] == row['doi'] and sources[wid]['title'] == study_by_id[wid]['title'],
+                'Research-use comparison original identity/DOI mismatch')
+    return {'kind': 'source_linked_methodological_synthesis', **copy.deepcopy(value)}
+
+
+def resolve_research_use(slug, section_id, root=ROOT):
+    """Resolve a navigation reference from the sole reviewed guide controller."""
+    require(slug in COMPARISONS, 'Unknown research-use guide reference')
+    data = json.loads((Path(root) / 'data/research_guides' / (slug + '.json')).read_text(encoding='utf-8'))
+    packet = comparison_packet(data, root)
+    use = packet.get('research_use')
+    require(use and use['id'] == section_id, 'Unknown research-use section reference')
+    return {**copy.deepcopy(use), 'guide_url': packet['canonical_url'] + '#' + use['id']}
 
 
 def urls(root=ROOT):
@@ -281,7 +372,71 @@ def comparison_packet(data, root=ROOT):
             'Comparison presentation flag must be boolean')
     if data.get('contribution_first') is True:
         packet['presentation'] = 'contribution-first-v1'
+    if 'research_use' in data:
+        packet['research_use'] = research_use_packet(data['research_use'], studies)
     return packet
+
+
+def render_research_use(use, studies):
+    """Public, source-linked answer, metric table and research uses in HTML/MD."""
+    esc = html.escape
+    sid = use['id']
+    source_by_id = {source['id']: source for source in use['sources']}
+    study_by_id = {study['id']: study for study in studies}
+    def refs(ids):
+        return ' '.join('<a href="#' + sid + '-source-' + source + '">['
+                        + str(list(source_by_id).index(source) + 1) + ']</a>' for source in ids)
+    def md_refs(ids):
+        return ' '.join('[' + str(list(source_by_id).index(source) + 1) + ']('
+                        + source_by_id[source]['url'] + ')' for source in ids)
+    body = ['<section id="' + sid + '" class="research-use"><h2>' + esc(use['question']) + '</h2>',
+            '<p lang="zh">' + esc(use['question_zh']) + '</p>',
+            '<p><strong>Source-linked methodological synthesis:</strong> ' + esc(use['answer']) + ' '
+            + refs(use['answer_source_ids']) + '</p>',
+            '<p lang="zh">' + esc(use['answer_zh']) + '</p><h3>Evaluation checklist</h3><ul>']
+    md = ['## ' + use['question'], use['question_zh'], '**Source-linked methodological synthesis:** '
+          + use['answer'] + ' ' + md_refs(use['answer_source_ids']), use['answer_zh'], '### Evaluation checklist']
+    for row in use['checklist']:
+        body.append('<li><strong>' + esc(row['dimension']) + ':</strong> ' + esc(row['text']) + ' ' + refs(row['source_ids']) + '</li>')
+        md.append('- **' + row['dimension'] + ':** ' + row['text'] + ' ' + md_refs(row['source_ids']))
+    body.append('</ul><h3>How the selected papers contribute</h3><ul>')
+    md.append('### How the selected papers contribute')
+    for row in use['study_roles']:
+        study = study_by_id[row['work_id']]
+        body.append('<li><strong><a href="#' + study['id'] + '">' + esc(row['role'])
+                    + '</a>:</strong> ' + esc(row['text']) + ' ' + refs(row['source_ids']) + '</li>')
+        md.append('- **[' + row['role'] + '](' + study['paper_url'] + '):** ' + row['text'] + ' ' + md_refs(row['source_ids']))
+    body.append('</ul><div class="comparison" role="region" aria-label="Model evaluation evidence" tabindex="0"><table><caption>'
+                + esc(use['comparison']['caption']) + '</caption><thead><tr><th>Paper / design</th><th>Population</th>'
+                + '<th>Endpoint / horizon</th><th>Validation</th><th>Reported evaluation</th><th>Original source</th></tr></thead><tbody>')
+    md += ['### ' + use['comparison']['caption'], '| Paper / design | Population | Endpoint / horizon | Validation | Reported evaluation | Original source |',
+           '| --- | --- | --- | --- | --- | --- |']
+    for row in use['comparison']['rows']:
+        study = study_by_id[row['work_id']]
+        body.append('<tr><th scope="row"><a href="' + esc(study['paper_url'], quote=True) + '">' + esc(study['title'])
+                    + '</a><br>' + esc(row['design']) + '</th>'
+                    + ''.join('<td>' + esc(row[key]) + '</td>' for key in ('population', 'endpoint', 'validation', 'metrics'))
+                    + '<td><a href="' + esc(study['doi_url'], quote=True) + '">' + esc(row['doi']) + '</a> '
+                    + refs(row['source_ids']) + '</td></tr>')
+        cells = ['[' + study['title'] + '](' + study['paper_url'] + '); ' + row['design']]
+        cells += [row[key] for key in ('population', 'endpoint', 'validation', 'metrics')]
+        cells += ['[' + row['doi'] + '](' + study['doi_url'] + ') ' + md_refs(row['source_ids'])]
+        md.append('| ' + ' | '.join(cell.replace('|', '\\|') for cell in cells) + ' |')
+    body.append('</tbody></table></div><p>' + esc(use['comparison_note']) + ' ' + refs(use['comparison_note_source_ids']) + '</p><h3>Research applications</h3><ul>')
+    md += [use['comparison_note'] + ' ' + md_refs(use['comparison_note_source_ids']), '### Research applications']
+    for row in use['research_uses']:
+        body.append('<li><strong>' + esc(row['use']) + ':</strong> ' + esc(row['text']) + ' ' + refs(row['source_ids']) + '</li>')
+        md.append('- **' + row['use'] + ':** ' + row['text'] + ' ' + md_refs(row['source_ids']))
+    body.append('</ul><h3>Sources and locators</h3><ol>')
+    md.append('### Sources and locators')
+    for source in use['sources']:
+        body.append('<li id="' + sid + '-source-' + source['id'] + '"><a href="' + esc(source['url'], quote=True) + '">'
+                    + esc(source['title']) + '</a> · DOI: <a href="https://doi.org/' + esc(source['doi'], quote=True) + '">'
+                    + esc(source['doi']) + '</a> — ' + esc(source['locator']) + '</li>')
+        md.append('- [' + source['title'] + '](' + source['url'] + ') · DOI: [' + source['doi']
+                  + '](https://doi.org/' + source['doi'] + ') — ' + source['locator'])
+    body.append('</ol></section>')
+    return '\n'.join(body), md
 
 
 def render_comparison(packet):
@@ -309,6 +464,11 @@ def render_comparison(packet):
             '<div class="comparison" role="region" aria-label="Research task comparison" tabindex="0"><table><caption>Different research tasks and evidence types</caption><thead><tr><th>Research task</th><th>Reviewed design</th><th>Reviewed evidence type</th></tr></thead><tbody>']
     md = ['# ' + packet['title'], '**Selected author evidence guide**' if contribution_first else '**Selected evidence comparison — not a research article**',
           '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]
+    if packet.get('research_use'):
+        synthesis_html, synthesis_md = render_research_use(packet['research_use'], packet['studies'])
+        # Keep every legacy guide byte-identical when the optional section is absent.
+        body.insert(-1, synthesis_html)
+        md += synthesis_md
     for s in packet['studies']:
         body.append('<tr><th scope="row">' + link(s['task'], '#'+s['id']) + '</th><td>' + esc(s['study_profile']['study_design']) + '</td><td>' + esc(s['study_profile']['evidence_type']) + '</td></tr>')
     body.append('</tbody></table></div>')
@@ -377,14 +537,24 @@ def build_comparisons(root=ROOT, validate_only=False):
 def comparison_search_documents(root, start):
     """Append guide navigation without renumbering existing paper/QA records."""
     docs = []
+    research_uses = []
     for data in load_comparisons(root):
         packet = comparison_packet(data, root)
+        if packet.get('research_use'):
+            research_uses.append((packet, packet['research_use']))
         for s in packet['studies']:
             for qa in s['selected_questions']:
                 docs.append({'id':start+len(docs), 'result_kind':'guide', 'doi':'',
                              'title':packet['title'], 'category':'Selected evidence comparison',
                              'text':qa['question']+'\n'+qa['answer'],
                              'url':packet['canonical_url']+'#'+s['id'], 'limitation':False})
+    # Keep existing guide IDs stable; the new answer comes from the same
+    # reviewed controller and visible section, not a second answer database.
+    for packet, use in research_uses:
+        docs.append({'id':start+len(docs), 'result_kind':'guide', 'doi':'',
+                     'title':packet['title'], 'category':'Research-use answer',
+                     'text':use['question']+'\n'+use['answer'],
+                     'url':packet['canonical_url']+'#'+use['id'], 'limitation':False})
     return docs
 
 

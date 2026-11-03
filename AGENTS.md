@@ -138,6 +138,19 @@ This default does not prohibit authorized primary-source identity/claim checks,
 real external-consumer experiments or independently verified source-backed
 engineering corrections. Reuse existing reviewed science rather than rebuilding it.
 
+For the owner's explicitly authorized Paper-first growth work (including the
+2026-11-02 continuation), Codex may investigate primary literature, develop
+source-backed explanations and cross-paper comparison materials, independently
+verify them and publish within the existing authorization. This overrides the
+default Web Chat preparation step for those work packages. Preserve original
+Gold and paper identity; attach provenance and reasons to new or corrected material.
+Proactively discover and test relevant growth opportunities, rather than requiring
+a pre-existing code defect or a new platform measurement before acting. Separate
+broad-question answers from narrower paper examples. Before a global external-wait
+decision, classify the current opportunity directions as accepted, in progress,
+still testable, empirically unhelpful or dependent on a specific external condition;
+"no additional repair" alone is not a sufficient stopping argument.
+
 ## Repository
 
 Repository:

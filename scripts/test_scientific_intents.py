@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scientific_intents import build_intent_layer, render_intent_layer, validate_intent_html
 
@@ -222,6 +223,31 @@ class ScientificIntentTests(unittest.TestCase):
                         document + '<p id="research-intents">Duplicate ID</p>'):
             with self.subTest(changed=changed[-80:]), self.assertRaises(ValueError):
                 validate_intent_html(changed, discovery)
+
+    def test_guide_reference_derives_context_without_adding_an_answer_store(self):
+        self.query['guide_ref'] = {'slug': 'reviewed-guide', 'section_id': 'evaluation'}
+        use = {'question': self.query['question'], 'question_zh': self.query['question_zh'],
+               'kind': 'source_linked_methodological_synthesis', 'answer': 'A source-linked answer.',
+               'answer_zh': '有出处的答案。', 'answer_source_ids': ['review-context'],
+               'sources': [self.source], 'guide_url': 'https://example.org/research/guide.html#evaluation',
+               'study_roles': [{'work_id': self.work['id']}]}
+        with patch('research_guides.resolve_research_use', return_value=use) as resolve:
+            layer = self.build()
+            resolve.assert_called_once_with('reviewed-guide', 'evaluation', self.root)
+        query = layer['intents'][0]['focused_queries'][0]
+        self.assertEqual(query['context_answer']['answer'], use['answer'])
+        self.assertNotIn('answer', self.query)
+        self.assertEqual(self.discovery['all_questions'], [self.qa])
+        for changed in ({'question': 'Different question'}, {'question_zh': '另一个问题'},
+                        {'study_roles': [{'work_id': 'foreign-work'}]}):
+            with self.subTest(changed=changed), patch('research_guides.resolve_research_use', return_value={**use, **changed}):
+                with self.assertRaisesRegex(ValueError, 'question or related work identities'):
+                    self.build()
+        for ref in ({'slug': '../outside', 'section_id': 'evaluation'},
+                    {'slug': 'reviewed-guide', 'section_id': 'evaluation', 'answer': 'Copied answer'}):
+            self.query['guide_ref'] = ref
+            with self.subTest(ref=ref), self.assertRaises(ValueError):
+                self.build()
 
 
 if __name__ == '__main__':

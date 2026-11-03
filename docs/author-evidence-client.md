@@ -257,3 +257,22 @@ Publishing this client does not connect it to ChatGPT, Claude, Perplexity or a
 third-party writing tool. Consumer opt-in, its allowed tools/data sources and
 successful execution are prerequisites. Search-engine candidates, URL-reading
 tests and explicitly connected client results must be measured separately.
+
+### Follow a review's relevant paragraph to original research
+
+A concept search, a citation-graph expansion and a paragraph-level citation are
+different discovery routes. Resolve a chosen review to the tool's canonical
+record ID before expanding references; an unrecognized input ID is not a finding
+that the review has no references. Keep the search query, candidate budget and
+selection reasons with the results.
+
+For a specific mechanism or method, retain the review paragraph's JATS cross-reference
+IDs and bibliography identities before flattening or compressing the body.
+A general top-k reference list can contain relevant studies while omitting that
+paragraph's originals. Inspect the actual paragraph group, keep the alternative
+studies, then read the chosen original and connect the writing claim to its DOI.
+
+An [optional pinned-reader adaptation](../examples/review-citation-contexts/README.md)
+provides a runnable citation-context sidecar for an existing K-Dense JATS reader.
+It is explicitly applied by the consumer and is not an upstream default, an
+installed Skill, or a source-preference rule in this author evidence client.

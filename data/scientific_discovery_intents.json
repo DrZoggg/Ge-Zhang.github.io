@@ -212,7 +212,11 @@
               ],
               "preview_question_id": "aihflevel--qa-3"
             }
-          ]
+          ],
+          "guide_ref": {
+            "slug": "cardiovascular-prediction-evidence",
+            "section_id": "model-evaluation"
+          }
         },
         {
           "id": "ai-heart-failure-3",
