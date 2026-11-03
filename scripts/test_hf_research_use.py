@@ -54,14 +54,14 @@ class HeartFailureResearchUseTests(unittest.TestCase):
             for position, qa in zip(selection['qa_indices'], study['selected_questions']):
                 self.assertEqual({key: qa[key] for key in source['qa'][position - 1]}, source['qa'][position - 1])
 
-    def test_questions_derives_one_context_answer_before_the_original_gold_preview(self):
+    def test_questions_derives_guide_answer_before_the_original_gold_preview(self):
         before = copy.deepcopy(self.discovery)
         layer = build_intent_layer(self.discovery)
         combined = {**self.discovery, **layer}
         all_queries = [query for intent in layer['intents'] for query in intent['focused_queries']]
         contextual = [query for query in all_queries if 'context_answer' in query]
-        self.assertEqual([query['id'] for query in contextual], ['ai-heart-failure-2'])
-        query = contextual[0]
+        self.assertIn('ai-heart-failure-2', [query['id'] for query in contextual])
+        query = next(query for query in contextual if query['id'] == 'ai-heart-failure-2')
         self.assertEqual(query['context_answer']['answer'], self.use['answer'])
         self.assertEqual(query['context_answer']['answer_zh'], self.use['answer_zh'])
         self.assertEqual(query['context_answer']['guide_url'],

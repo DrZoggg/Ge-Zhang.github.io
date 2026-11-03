@@ -16696,10 +16696,90 @@
       "id": 1669,
       "result_kind": "guide",
       "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "How does KIF13B affect primary human vascular smooth muscle cells?\nUnder oxLDL, KIF13B knockdown reduced contractile/matrix features, collagen secretion and collagen-gel contraction and increased inflammatory features, while KIF13B overexpression produced reciprocal effects. These are in vitro primary-HASMC perturbation data, not human treatment outcomes.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1172-jci194175",
+      "limitation": false
+    },
+    {
+      "id": 1670,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "Is KLF4 functionally downstream of KIF13B?\nIn primary HASMC experiments, KIF13B loss increased KLF4, and concomitant KLF4 knockdown rescued the collagen-suppressive and inflammatory phenotype caused by KIF13B knockdown. This supports a downstream functional relationship in the tested cell system.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1172-jci194175",
+      "limitation": false
+    },
+    {
+      "id": 1671,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "What evidence supports the KIF13B-KCTD10-KLF4 mechanism?\nKIF13B knockdown stabilized KLF4 in CHX/proteasome experiments and reduced KLF4 ubiquitination. Integrated analyses nominated KCTD10, co-IP supported KCTD10-KLF4 association, KCTD10 increased KLF4 ubiquitination, and KCTD10 overexpression rescued KIF13B-loss phenotypes. The study does not resolve how KIF13B itself controls KCTD10 abundance.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1172-jci194175",
+      "limitation": false
+    },
+    {
+      "id": 1672,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "How does this JCI study differ from the European Heart Journal KIF13B study?\nThe JCI study focuses on vascular smooth muscle cells and a KIF13B-KCTD10-KLF4 mechanism controlling matrix/inflammatory VSMC states. The European Heart Journal study focuses on macrophage KIF13B, MERTK-dependent efferocytosis and an ITCH/CBL regulatory network. Together they describe distinct cell-type-specific KIF13B mechanisms in experimental atherosclerosis.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1172-jci194175",
+      "limitation": false
+    },
+    {
+      "id": 1673,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "Did Kif13b loss worsen mouse plaques independently of circulating lipids?\nGlobal Kif13b deletion in the Ldlr-deficient model worsened plaques and increased total cholesterol and triglycerides, so that comparison is lipid-confounded. Lyz2-Cre myeloid deletion and Kif13b-deficient donor-marrow transfer worsened lesion, necrotic-core, macrophage and apoptotic-cell outcomes without corresponding plasma-lipid changes in their tested mouse models. These approaches are not macrophage-exclusive.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1093-eurheartj-ehaf523",
+      "limitation": false
+    },
+    {
+      "id": 1674,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "Is MERTK involved in the efferocytosis phenotype, and was it rescued in vivo?\nKif13b-deficient BMDMs had lower MERTK protein and impaired efferocytosis. Restoring MERTK in deficient BMDMs improved efferocytosis, supporting functional involvement in cells. This was not a demonstrated in vivo MERTK-restoration therapy or human treatment.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1093-eurheartj-ehaf523",
+      "limitation": false
+    },
+    {
+      "id": 1675,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Selected evidence comparison",
+      "text": "How certain is the proposed KIF13B–ITCH–CBL–MERTK mechanism?\nUnchanged Mertk mRNA, faster MERTK protein loss, proteasome-sensitive degradation, increased MERTK ubiquitination, KIF13B–ITCH interaction and ITCH overexpression rescue support a post-translational model. The precise proposed ITCH-mediated CBL ubiquitination/degradation step was not fully demonstrated; alternative routes including CBL self-ubiquitination remain possible.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#doi-10-1093-eurheartj-ehaf523",
+      "limitation": false
+    },
+    {
+      "id": 1676,
+      "result_kind": "guide",
+      "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
       "category": "Research-use answer",
       "text": "What should be reported when comparing discrimination, calibration and external validation in heart failure models?\nStart with the clinical task: target population, care setting, prediction time, endpoint and horizon. Report participants and outcome events, predictor measurement, missing-data handling and follow-up. Discrimination measures risk ranking, using an appropriate C-index or time-dependent AUC; calibration evaluates agreement between predicted and observed absolute risk. Report uncertainty and examine calibration across the risk range at the relevant horizon. Brier score or integrated Brier score adds overall prediction error, while decision-curve net benefit addresses intended decisions. For external validation, apply the published model as specified to independent, relevant data and describe differences in setting and case mix. Report recalibration, refitting and updating separately. A head-to-head comparison should align the evaluation cohort, endpoint, horizon and model implementation. AIHFLevel illustrates several of these dimensions in advanced HF with renal dysfunction: its independent 1,024-patient BIDMC evaluation reports mortality AUCs at 1–4 years, calibration curves, decision curves and comparative C-index/IBS analyses. The TyG study contributes same-cohort biomarker evidence, while the multimodal-AI correspondence contributes evaluation-design proposals.",
       "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#model-evaluation",
+      "limitation": false
+    },
+    {
+      "id": 1677,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+      "category": "Research-use answer",
+      "text": "Which cell-type-specific pathways regulate smooth-muscle inflammation and macrophage efferocytosis?\nTwo KIF13B-dependent mechanisms address different plaque functions. In vascular smooth-muscle cells, KIF13B supports KCTD10-dependent ubiquitination and proteasomal turnover of KLF4. KIF13B loss reduces collagen and contractile features and increases inflammatory readouts in primary human aortic smooth-muscle cells; KLF4 knockdown or KCTD10 restoration rescues the collagen/inflammatory phenotype. How KIF13B maintains KCTD10 abundance remains unresolved. In macrophages, KIF13B supports MERTK protein maintenance and efferocytosis: deficient BMDMs have less MERTK and impaired uptake, and MERTK restoration improves clearance in cells. Myeloid deletion and deficient-marrow transfer worsen mouse plaque composition without corresponding plasma-lipid changes in those models. Protein-turnover evidence supports a KIF13B–ITCH/CBL–MERTK model, while the precise proposed ITCH-to-CBL degradation step remains incompletely demonstrated. These axes connect VSMC matrix/inflammatory programs and macrophage apoptotic-cell clearance to plaque composition; they are not one demonstrated cross-cell signaling cascade. For experiment design, CD47 blockade supplies a recognition-checkpoint comparator and cleavage-resistant MerTK supplies a receptor-cleavage comparator, distinct from intracellular receptor-protein maintenance.",
+      "url": "https://drgezhang.com/research/atherosclerosis-cell-mechanisms.html#cell-type-mechanisms",
       "limitation": false
     }
   ]

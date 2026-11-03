@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "slug": "atherosclerosis-cell-mechanisms",
+  "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
+  "question": "Which cell-type-specific pathways regulate smooth-muscle inflammation and macrophage efferocytosis?",
+  "scope": "A source-linked research-use guide to two complementary cell-specific mechanisms in experimental atherosclerosis: VSMC matrix/inflammatory regulation and macrophage efferocytosis. Original mouse/cell studies, human plaque observations and external review entry points retain their distinct roles.",
+  "reading_rule": "Start with the cell function and experimental perturbation needed for the argument, then compare molecular, functional and plaque-composition readouts. Follow the original DOI and figure or abstract locator supporting that role.",
+  "contribution_first": true,
+  "studies": [
+    {
+      "id": "doi-10-1172-jci194175",
+      "task": "VSMC matrix and inflammatory-state regulation",
+      "source_doi": "10.1172/jci194175",
+      "source_json": "data/deep_geo/doi-10-1172-jci194175.json",
+      "source_fingerprint": "bb43c257202c931a3ec93c7507f17ccaa45a957424de31edd242382e2d5e8322",
+      "qa_indices": [
+        5,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "doi-10-1093-eurheartj-ehaf523",
+      "task": "Macrophage MERTK maintenance and apoptotic-cell clearance",
+      "source_doi": "10.1093/eurheartj/ehaf523",
+      "source_json": "data/deep_geo/doi-10-1093-eurheartj-ehaf523.json",
+      "source_fingerprint": "6b3fd6e6d94797fb12f5e422c0e6c619e3359cd0a5a76c46e27f4d56e90e4256",
+      "qa_indices": [
+        2,
+        4,
+        5
+      ]
+    }
+  ],
+  "research_use": {
+    "id": "cell-type-mechanisms",
+    "question": "Which cell-type-specific pathways regulate smooth-muscle inflammation and macrophage efferocytosis?",
+    "question_zh": "哪些细胞类型特异通路分别调控平滑肌炎症与巨噬细胞对凋亡细胞的清除？",
+    "answer": "Two KIF13B-dependent mechanisms address different plaque functions. In vascular smooth-muscle cells, KIF13B supports KCTD10-dependent ubiquitination and proteasomal turnover of KLF4. KIF13B loss reduces collagen and contractile features and increases inflammatory readouts in primary human aortic smooth-muscle cells; KLF4 knockdown or KCTD10 restoration rescues the collagen/inflammatory phenotype. How KIF13B maintains KCTD10 abundance remains unresolved. In macrophages, KIF13B supports MERTK protein maintenance and efferocytosis: deficient BMDMs have less MERTK and impaired uptake, and MERTK restoration improves clearance in cells. Myeloid deletion and deficient-marrow transfer worsen mouse plaque composition without corresponding plasma-lipid changes in those models. Protein-turnover evidence supports a KIF13B–ITCH/CBL–MERTK model, while the precise proposed ITCH-to-CBL degradation step remains incompletely demonstrated. These axes connect VSMC matrix/inflammatory programs and macrophage apoptotic-cell clearance to plaque composition; they are not one demonstrated cross-cell signaling cascade. For experiment design, CD47 blockade supplies a recognition-checkpoint comparator and cleavage-resistant MerTK supplies a receptor-cleavage comparator, distinct from intracellular receptor-protein maintenance.",
+    "answer_zh": "两条KIF13B相关通路分别作用于不同的斑块功能。在血管平滑肌细胞中，KIF13B支持KCTD10依赖的KLF4泛素化和蛋白酶体周转；KIF13B缺失降低胶原和收缩表型、增加炎症读数，KLF4敲低或KCTD10恢复可在原代人主动脉平滑肌细胞中纠正胶原下降和炎症增强的表型。KIF13B如何维持KCTD10丰度仍待解释。在巨噬细胞中，KIF13B参与MERTK蛋白维持和凋亡细胞清除；缺失细胞的MERTK减少、清除受损，恢复MERTK可改善BMDM中的清除。髓系删除与缺失骨髓移植在相应小鼠模型中加重斑块表型而未伴随相应血脂变化。蛋白周转证据支持KIF13B–ITCH/CBL–MERTK模型，但所提ITCH促CBL降解的具体步骤尚未完全证明。两轴分别关联基质/炎症状态与清除功能，不应合并为已证实的跨细胞级联。CD47识别检查点与MerTK剪切研究可作为区分受体调控层级的实验对照。",
+    "answer_source_ids": [
+      "doi-10-1172-jci194175",
+      "doi-10-1093-eurheartj-ehaf523",
+      "cd47-2016",
+      "mertk-cleavage-2017"
+    ],
+    "sources": [
+      {
+        "id": "doi-10-1172-jci194175",
+        "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
+        "doi": "10.1172/jci194175",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12987658/",
+        "locator": "Results: VSMC-specific deletion and plaque composition (Figure 2); primary HASMC state and matrix phenotypes (Figure 5L–Q); KLF4 genetic rescue (Figure 6); KCTD10/KLF4 protein turnover and rescue (Figures 7–8)."
+      },
+      {
+        "id": "doi-10-1093-eurheartj-ehaf523",
+        "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
+        "doi": "10.1093/eurheartj/ehaf523",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40709729/",
+        "locator": "Original structured Abstract (Methods and Results); reviewed original Figure 4 (myeloid and marrow models), Figure 5 (MERTK/BMDM restoration), and Figure 6 (MERTK protein turnover and ITCH/CBL model). The current public record is an abstract; detailed figure evidence is retained in the linked reviewed paper summary."
+      },
+      {
+        "id": "jcdd-vsmc-review-2026",
+        "title": "Cell-Surface Signatures and Targets of Modulated Vascular Smooth Muscle Cells in Atherosclerosis: From State Identification to Precision Intervention",
+        "doi": "10.3390/jcdd13090472",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13607131/",
+        "locator": "Section 4.1, second paragraph: references 89–90 on matrix/collagen/cap-supporting VSMC states; section 4.4, second paragraph: reference 89 on preserving protective states. Reference 89 identifies the JCI KIF13B study. This is a rationale for state preservation, not evidence that the JCI study tested FAP-targeted treatment."
+      },
+      {
+        "id": "medcomm-efferocytosis-review-2025",
+        "title": "Efferocytosis in Health and Disease",
+        "doi": "10.1002/mco2.70546",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12703062/",
+        "locator": "Section 4.1.1 Atherosclerosis, first paragraph: the grouped references 145–148 accompany recognition, metabolic and MerTK-related mechanisms. Reference 148 identifies the EHJ KIF13B study; 145 and 146 identify CD47 and MerTK-cleavage original studies. The grouped citation does not assign every listed submechanism to every cited paper."
+      },
+      {
+        "id": "cd47-2016",
+        "title": "CD47-blocking antibodies restore phagocytosis and prevent atherosclerosis",
+        "doi": "10.1038/nature18935",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27437576/",
+        "locator": "Complete original Abstract: anti-phagocytic CD47, antibody perturbation, restored efferocytosis and reduced atherosclerosis in multiple mouse models. This guide uses the abstract-level comparison."
+      },
+      {
+        "id": "mertk-cleavage-2017",
+        "title": "MerTK receptor cleavage promotes plaque necrosis and defective resolution in atherosclerosis",
+        "doi": "10.1172/jci90520",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28067670/",
+        "locator": "Complete original Abstract: human carotid-plaque cleavage associations and fat-fed Ldlr-deficient mice with myeloid cleavage-resistant MerTK; lesional receptor, soluble Mer, efferocytosis, necrotic-core and fibrous-cap readouts. This guide uses the abstract-level comparison."
+      }
+    ],
+    "checklist": [
+      {
+        "dimension": "VSMC state and plaque structure",
+        "text": "Pair lesion burden with collagen, fibrous-cap features, inflammatory readouts and contractile function. The VSMC study and the review’s state-preservation argument help distinguish matrix-supporting functions from inflammatory programs.",
+        "source_ids": [
+          "doi-10-1172-jci194175",
+          "jcdd-vsmc-review-2026"
+        ]
+      },
+      {
+        "dimension": "VSMC protein mechanism and rescue",
+        "text": "Measure KCTD10 and KLF4 abundance, KLF4 turnover/ubiquitination and matrix/inflammatory outputs together. Use KLF4 knockdown and KCTD10 restoration to test functional ordering; the upstream control of KCTD10 by KIF13B remains open.",
+        "source_ids": [
+          "doi-10-1172-jci194175"
+        ]
+      },
+      {
+        "dimension": "Macrophage clearance and receptor maintenance",
+        "text": "Read apoptotic-cell uptake together with MERTK protein, Mertk transcript and protein-turnover evidence. MERTK restoration in deficient BMDMs links receptor abundance to the clearance phenotype; myeloid/marrow models connect this pathway to plaque composition.",
+        "source_ids": [
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      },
+      {
+        "dimension": "Recognition versus cleavage versus protein maintenance",
+        "text": "Recognition: CD47 antibody blockade tests an anti-phagocytic checkpoint. Cleavage: cleavage-resistant myeloid MerTK links lesional receptor/soluble Mer with clearance, necrotic core and cap thickness. Protein maintenance: the KIF13B study links intracellular MERTK regulation with BMDM loss and restoration. These are complementary comparators, not a treatment ranking.",
+        "source_ids": [
+          "cd47-2016",
+          "mertk-cleavage-2017",
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      },
+      {
+        "dimension": "Cell identity and experimental denominators",
+        "text": "State the genetic cell-targeting strategy and model, and distinguish human tissue association from mouse/cell perturbation. The JCI primary VSMC comparison used n=8 mice per group; the EHJ myeloid comparison used n=9 controls versus n=6 deletion mice. Pooled aortic single-cell data are one library per genotype, not five independent libraries.",
+        "source_ids": [
+          "doi-10-1172-jci194175",
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      }
+    ],
+    "study_roles": [
+      {
+        "work_id": "doi-10-1172-jci194175",
+        "role": "VSMC matrix/inflammatory states and KCTD10–KLF4 turnover",
+        "text": "Provides human plaque associations plus VSMC-specific mouse perturbation, primary HASMC gain/loss experiments and KLF4/KCTD10 rescue. Its contribution is the relationship between smooth-muscle state, matrix function and inflammatory remodeling.",
+        "source_ids": [
+          "doi-10-1172-jci194175"
+        ]
+      },
+      {
+        "work_id": "doi-10-1093-eurheartj-ehaf523",
+        "role": "Macrophage MERTK maintenance and efferocytosis",
+        "text": "Provides human tissue association, myeloid/marrow mouse perturbation and macrophage protein-turnover and rescue evidence. Its contribution is a receptor-homeostasis route to apoptotic-cell clearance, distinct from the VSMC KCTD10–KLF4 route.",
+        "source_ids": [
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      }
+    ],
+    "comparison": {
+      "caption": "Two cell-specific mechanisms: perturbation, functional readout and plaque endpoint",
+      "rows": [
+        {
+          "work_id": "doi-10-1172-jci194175",
+          "design": "Mechanistic mouse and primary-cell perturbation/rescue study with associative human plaque and multi-omic evidence.",
+          "population": "Paired carotid plaque regions from 6 patients; independent human plaque datasets; male AAV8-PCSK9 VSMC-Kif13b models and primary human aortic smooth-muscle cells.",
+          "endpoint": "Plaque burden/composition; collagen and matrix/contractile features; inflammatory VSMC readouts; KCTD10-dependent KLF4 ubiquitination and turnover.",
+          "validation": "Convergent mouse genetics, HASMC gain/loss and KLF4/KCTD10 rescue; human plaque evidence is associative. Pooled single-cell state evidence has one library per genotype.",
+          "metrics": "Primary VSMC-specific mouse comparison: 20-week Western diet, n=8/group (Figure 2). Key HASMC biochemical/rescue assays generally n=3 biological replicates (Figures 6–8); matrix and inflammatory phenotypes are read together.",
+          "doi": "10.1172/jci194175",
+          "source_ids": [
+            "doi-10-1172-jci194175"
+          ]
+        },
+        {
+          "work_id": "doi-10-1093-eurheartj-ehaf523",
+          "design": "Mechanistic preclinical study combining myeloid/marrow mouse perturbation, macrophage functional assays and human tissue association.",
+          "population": "Lyz2-Cre conditional mice and donor-marrow recipients; BMDMs and THP-1 cells; human arterial-wall and carotid-plaque tissue observations.",
+          "endpoint": "Efferocytosis and MERTK protein regulation; lesion/necrotic-core, macrophage and apoptotic-cell outcomes; plasma lipids in the specified genetic models.",
+          "validation": "Myeloid deletion and marrow transfer support the tested myeloid/hematopoietic contribution; they are not macrophage-exclusive. MERTK restoration rescues the BMDM phenotype in cells; the exact proposed ITCH-to-CBL step remains incomplete.",
+          "metrics": "Conditional model: n=9 controls versus n=6 deletion mice; marrow transfer n=6/group, each after 12-week Western diet (Figure 4). BMDM MERTK-restoration efferocytosis assay n=10/group (Figure 5).",
+          "doi": "10.1093/eurheartj/ehaf523",
+          "source_ids": [
+            "doi-10-1093-eurheartj-ehaf523"
+          ]
+        }
+      ]
+    },
+    "comparison_note": "Choose the study by the cell function and perturbation that support the intended claim. Human plaque observations are associative; the functional pathway evidence comes from the stated mouse and cell experiments. Keep the global Kif13b/Ldlr lipid increase separate from the conditional or marrow comparisons. The two papers do not establish a single cross-cell cascade or a head-to-head intervention ranking.",
+    "comparison_note_source_ids": [
+      "doi-10-1172-jci194175",
+      "doi-10-1093-eurheartj-ehaf523"
+    ],
+    "research_uses": [
+      {
+        "use": "Introduction and Discussion",
+        "text": "Use the JCI pathway for matrix-preserving versus inflammatory VSMC functions and the EHJ pathway for macrophage receptor maintenance and apoptotic-cell clearance. Connect each claim to its cell type, original DOI and actual experimental role.",
+        "source_ids": [
+          "doi-10-1172-jci194175",
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      },
+      {
+        "use": "Experimental readout selection",
+        "text": "Build a readout panel around the perturbed step: KCTD10/KLF4 turnover plus collagen/inflammatory outputs for VSMCs; receptor abundance/cleavage plus uptake and plaque composition for efferocytosis. CD47 and cleavage-resistant MerTK provide distinct original-study comparators for recognition and receptor processing.",
+        "source_ids": [
+          "doi-10-1172-jci194175",
+          "doi-10-1093-eurheartj-ehaf523",
+          "cd47-2016",
+          "mertk-cleavage-2017"
+        ]
+      },
+      {
+        "use": "Review-to-original reading route",
+        "text": "The cell-surface-target review sections 4.1/4.4 lead through reference 89 to the VSMC original study. The MedComm atherosclerosis section leads through reference 148 to the macrophage original study and retains CD47/MerTK-cleavage comparators in the surrounding group. Use these as citation locators; the reviews are synthesis rather than additional independent experiments.",
+        "source_ids": [
+          "jcdd-vsmc-review-2026",
+          "medcomm-efferocytosis-review-2025",
+          "doi-10-1172-jci194175",
+          "doi-10-1093-eurheartj-ehaf523"
+        ]
+      }
+    ]
+  }
+}

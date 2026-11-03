@@ -213,6 +213,7 @@ def search_documents(root, start):
 COMPARISONS = {
     'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781',
     'cardiovascular-prediction-evidence': 'aa9def47e279a546674f2b942748c8aedb7f942b0eeaa454c5dd852e3b7bfe45',
+    'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
 }
 
 
