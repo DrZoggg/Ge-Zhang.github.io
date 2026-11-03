@@ -224,6 +224,14 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38865660/",
       "year": 2024,
       "locator": "Official PubMed 38865660 / Europe PMC indexed abstract: Background, Methods, Results and Conclusions; institutional clinical observations with tumor, CAR-T and normal-cell molecular comparison. Supplies clinical and clonal-investigation context for a distinct narrative-review route."
+    },
+    {
+      "id": "gist-bsg-clinical-guideline-2025",
+      "title": "Gastrointestinal stromal tumour (GIST): British Sarcoma Group clinical practice guidelines",
+      "doi": "10.1038/s41416-024-02672-0",
+      "url": "https://www.nature.com/articles/s41416-024-02672-0",
+      "year": 2025,
+      "locator": "Official publisher abstract; Diagnosis and Localised disease—surgery sections: anatomical complexity, specialist resection and molecularly sensitive neoadjuvant context. First published online 5 June 2024; formal citation Br J Cancer 132:1–10 (2025)."
     }
   ],
   "intents": [
@@ -874,6 +882,33 @@
                 "doi-10-1016-j-jma-2023-05-007--qa-3"
               ],
               "preview_question_id": "doi-10-1016-j-jma-2023-05-007--qa-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gist-site-management",
+      "question": "How do anatomical site and treatment context guide research on localised gastrointestinal stromal tumours?",
+      "question_zh": "解剖部位与治疗背景如何组织局限性胃肠间质瘤的管理研究？",
+      "source_ids": [
+        "gist-bsg-clinical-guideline-2025"
+      ],
+      "focused_queries": [
+        {
+          "id": "gist-site-management-1",
+          "question": "Which management approaches were reported in a single-centre esophageal GIST series?",
+          "question_zh": "单中心食管胃肠间质瘤病例系列报道了哪些管理方式？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-ejso-2024-108527",
+              "question_ids": [
+                "doi-10-1016-j-ejso-2024-108527--qa-1",
+                "doi-10-1016-j-ejso-2024-108527--qa-2",
+                "doi-10-1016-j-ejso-2024-108527--qa-3",
+                "doi-10-1016-j-ejso-2024-108527--qa-5"
+              ],
+              "preview_question_id": "doi-10-1016-j-ejso-2024-108527--qa-2"
             }
           ]
         }
