@@ -24057,6 +24057,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8166647/",
       "year": 2021,
       "locator": "OfficialJATS body:Introduction/sec1;PDAcoatings/sec3.4.5;organiclayer/functionalbiomolecules/sec3.5.4;coatingcomparison/sec4,p0460/p0470;Conclusions/sec5. The review distinguishes cell/coupon studies from testing complete stents."
+    },
+    {
+      "id": "cart-secondary-malignancy-clonal-study-2024",
+      "title": "Risk of Second Tumors and T-Cell Lymphoma after CAR T-Cell Therapy",
+      "doi": "10.1056/nejmoa2401361",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38865660/",
+      "year": 2024,
+      "locator": "Official PubMed 38865660 / Europe PMC indexed abstract: Background, Methods, Results and Conclusions; institutional clinical observations with tumor, CAR-T and normal-cell molecular comparison. Supplies clinical and clonal-investigation context for a distinct narrative-review route."
     }
   ],
   "intents": [
@@ -24646,7 +24654,8 @@
         "onco-agent-onco-s3",
         "onco-agent-onco-s2",
         "onco-agent-onco-s4",
-        "onco-agent-onco-s5"
+        "onco-agent-onco-s5",
+        "cart-secondary-malignancy-clonal-study-2024"
       ],
       "focused_queries": [
         {
@@ -24749,6 +24758,27 @@
               "doi_url": "https://doi.org/10.1136/jitc-2024-010127",
               "scope_url": "https://drgezhang.com/papers/nlrp3-ici.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/nlrp3-ici.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "tumour-immunity-therapy-5",
+          "question": "Which mechanistic explanations guide research on secondary T-cell malignancy after CAR-T therapy?",
+          "question_zh": "CAR-T治疗后继发T细胞恶性肿瘤研究涉及哪些机制解释？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-canlet-2024-217083",
+              "question_ids": [
+                "doi-10-1016-j-canlet-2024-217083--qa-2",
+                "doi-10-1016-j-canlet-2024-217083--qa-5",
+                "doi-10-1016-j-canlet-2024-217083--qa-7"
+              ],
+              "preview_question_id": "doi-10-1016-j-canlet-2024-217083--qa-2",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html",
+              "doi": "10.1016/j.canlet.2024.217083",
+              "doi_url": "https://doi.org/10.1016/j.canlet.2024.217083",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html#cite-this-paper"
             }
           ]
         }
