@@ -200,6 +200,22 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37487631/",
       "year": 2024,
       "locator": "PubMed indexed Abstract: differentiation-protocol design, cell-validation assays, preclinical models and regulatory translation for iPSC-derived RPE; abstract read through official Europe PMC core. Full text not obtained in this research pass."
+    },
+    {
+      "id": "vascular-materials-bioink-definition-2018",
+      "title": "A definition of bioinks and their distinction from biomaterial inks",
+      "doi": "10.1088/1758-5090/aaec52",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30468151/",
+      "year": 2018,
+      "locator": "Methodological Perspective, first published 23 November 2018 (Biofabrication volume11 carries a2019 citation). Abstract and author-hosted publisherPDF, printedpp2–3: material roles, process-dependent rheology, and distinction between cell-containing bioinks and cell-free biomaterial/sacrificial inks."
+    },
+    {
+      "id": "vascular-materials-mg-coatings-review-2021",
+      "title": "Advances in coatings on magnesium alloys for cardiovascular stents – A review",
+      "doi": "10.1016/j.bioactmat.2021.04.044",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8166647/",
+      "year": 2021,
+      "locator": "OfficialJATS body:Introduction/sec1;PDAcoatings/sec3.4.5;organiclayer/functionalbiomolecules/sec3.5.4;coatingcomparison/sec4,p0460/p0470;Conclusions/sec5. The review distinguishes cell/coupon studies from testing complete stents."
     }
   ],
   "intents": [
@@ -780,6 +796,59 @@
               "work_id": "doi-10-3980-j-issn-1672-5123-2020-12-13",
               "question_ids": [],
               "preview_question_id": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vascular-biomaterials-engineering",
+      "question": "How can material design and fabrication support vascular tissue engineering and resorbable implant research?",
+      "question_zh": "材料设计与制造方法如何服务于血管组织工程和可吸收植入物研究？",
+      "source_ids": [
+        "vascular-materials-bioink-definition-2018",
+        "vascular-materials-mg-coatings-review-2021"
+      ],
+      "focused_queries": [
+        {
+          "id": "vascular-biomaterials-engineering-1",
+          "question": "What roles do supportive and sacrificial materials play when fabricating vascular constructs?",
+          "question_zh": "制造血管构建体时，支撑材料与牺牲材料分别发挥什么作用？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-18063-ijb-740",
+              "question_ids": [
+                "doi-10-18063-ijb-740--qa-3"
+              ],
+              "preview_question_id": "doi-10-18063-ijb-740--qa-3"
+            }
+          ]
+        },
+        {
+          "id": "vascular-biomaterials-engineering-2",
+          "question": "Which printing families and embedded-support strategy are compared for vascular construct fabrication?",
+          "question_zh": "血管构建体制造中比较了哪些打印技术类别及嵌入式支撑策略？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-18063-ijb-740",
+              "question_ids": [
+                "doi-10-18063-ijb-740--qa-5"
+              ],
+              "preview_question_id": "doi-10-18063-ijb-740--qa-5"
+            }
+          ]
+        },
+        {
+          "id": "vascular-biomaterials-engineering-3",
+          "question": "Which cultured endothelial-cell readouts were reported for exosome-modified magnesium alloy surfaces?",
+          "question_zh": "外泌体修饰镁合金表面研究报告了哪些培养内皮细胞读出？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-jma-2023-05-007",
+              "question_ids": [
+                "doi-10-1016-j-jma-2023-05-007--qa-3"
+              ],
+              "preview_question_id": "doi-10-1016-j-jma-2023-05-007--qa-3"
             }
           ]
         }
