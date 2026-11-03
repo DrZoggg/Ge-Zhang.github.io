@@ -5,6 +5,7 @@ Usage: python verify_reference_sidecar.py /path/to/jats_to_text.py
 Unresolved reference fields or links retain the readable article.
 The original v1 verifier and criteria are retained separately in provenance;
 two whole-article exception expectations now assert stronger partial preservation.
+Includes same-citation alternatives without inferring missing identifiers.
 Only synthetic structural XML is sent to the existing helper's stdin. No HTTP,
 licensed article text, fixture files, installation or third-party packages.
 """
@@ -238,6 +239,102 @@ class ReferenceChecks(unittest.TestCase):
         self.assertEqual(d['citation_contexts'][0]['reference_ids'],['a'])
         self.assertEqual(next(r for r in d['bibliography_references'] if r['reference_id']=='b')['context_status'],
             'cited_outside_selected_contexts')
+
+    def test_alternatives_agree_are_one_bibliography_record(self):
+        identities=('<pub-id pub-id-type="doi">10.1234/alternative</pub-id>'
+            '<pub-id pub-id-type="pmid">123</pub-id><pub-id pub-id-type="pmcid">PMC123</pub-id>')
+        r=('<ref id="a"><label>1.</label><citation-alternatives>'
+            '<element-citation publication-type="journal"><article-title>Structured title</article-title>'
+            +identities+'</element-citation><mixed-citation>'+identities.replace(
+                '10.1234/alternative','10.1234/ALTERNATIVE')+'</mixed-citation>'
+            '</citation-alternatives></ref>')
+        xml=article('<p>Claim '+xref('a',1)+'.</p>',r)
+        plain=output(xml);d=output(xml,'--include-cited-references')
+        self.assertTrue(all(d[k]==v for k,v in plain.items()))
+        self.assertEqual(len(d['bibliography_references']),1)
+        b=d['bibliography_references'][0]
+        self.assertEqual(b['identifiers'],{'doi':'10.1234/alternative','pmid':'123','pmcid':'PMC123'})
+        self.assertEqual((b['title'],b['publication_type']),('Structured title','journal'))
+        self.assertEqual(len(b['identifier_sources']),6)
+        self.assertEqual(len({s['locator'] for s in b['identifier_sources']}),6)
+        self.assertTrue(all('/citation-alternatives[1]/' in s['locator'] for s in b['identifier_sources']))
+        self.assertNotIn('identifier_conflicts',b)
+        self.assertEqual(len(d['citation_contexts'][0]['references']),1)
+        self.assertEqual(b['original_reading_status'],'not_observed_by_parser')
+
+    def test_alternatives_missing_fields_and_nlm_representation(self):
+        r=('<ref id="a"><label>1.</label><citation-alternatives>'
+            '<object-id pub-id-type="doi">10.1234/not-a-citation</object-id>'
+            '<mixed-citation>Formatted text without an identifier.</mixed-citation>'
+            '<nlm-citation publication-type="journal"><article-title>Available title</article-title>'
+            '<ext-link ext-link-type="doi" xlink:href="https://doi.org/10.1234/explicit"/>'
+            '<pub-id pub-id-type="pmid">123</pub-id></nlm-citation>'
+            '<element-citation><pub-id pub-id-type="pmid">123</pub-id>'
+            '<pub-id pub-id-type="pmcid">PMC123</pub-id></element-citation>'
+            '</citation-alternatives></ref>')
+        d=output(article('<p>Claim '+xref('a',1)+'.</p>',r),'--include-cited-references')
+        self.assertEqual(len(d['bibliography_references']),1)
+        b=d['bibliography_references'][0]
+        self.assertEqual(b['identifiers'],{'doi':'10.1234/explicit','pmid':'123','pmcid':'PMC123'})
+        self.assertEqual(b['title'],'Available title')
+        self.assertNotIn('not-a-citation',json.dumps(b['identifiers']))
+        self.assertIn('/nlm-citation[1]/',b['identifier_sources'][0]['locator'])
+
+    def test_alternatives_conflict_retains_article_and_unambiguous_fields(self):
+        r=('<ref id="a"><label>1.</label><citation-alternatives>'
+            '<element-citation><pub-id pub-id-type="doi">10.1234/first</pub-id>'
+            '<pub-id pub-id-type="pmid">123</pub-id></element-citation>'
+            '<mixed-citation><pub-id pub-id-type="doi">10.1234/second</pub-id>'
+            '<pub-id pub-id-type="pmid">123</pub-id></mixed-citation>'
+            '<nlm-citation><pub-id pub-id-type="doi">10.1234/third</pub-id></nlm-citation>'
+            '</citation-alternatives></ref>')
+        xml=article('<p>Readable claim '+xref('a',1)+' and '+xref('b',2)+'.</p>',r+ref(2,'b'))
+        plain=output(xml);d=output(xml,'--include-cited-references')
+        self.assertTrue(all(d[k]==v for k,v in plain.items()))
+        self.assertEqual(len(d['bibliography_references']),2)
+        refs={x['reference_id']:x for x in d['citation_contexts'][0]['references']}
+        self.assertNotIn('doi',refs['a']['identifiers'])
+        self.assertEqual(refs['a']['identifiers']['pmid'],'123')
+        conflict=refs['a']['identifier_conflicts']['doi']
+        self.assertEqual(conflict['status'],'unresolved')
+        self.assertEqual({x['value'] for x in conflict['candidates']},
+            {'10.1234/first','10.1234/second','10.1234/third'})
+        self.assertEqual(len({x['locator'] for x in conflict['candidates']}),3)
+        self.assertEqual(refs['b']['identifiers']['doi'],'10.1234/study2')
+
+    def test_alternatives_missing_explicit_identity_is_not_inferred(self):
+        r=('<ref id="a"><label>1.</label><citation-alternatives>'
+            '<element-citation><article-title>Title 10.1234/not-identity</article-title>'
+            '<pub-id pub-id-type="doi">invalid</pub-id></element-citation>'
+            '<mixed-citation>Text 10.1234/not-identity<ext-link ext-link-type="google-scholar" '
+            'xlink:href="https://scholar.google.com/?doi=10.1234/not-identity"/></mixed-citation>'
+            '</citation-alternatives></ref>')
+        b=output(article('<p>Claim '+xref('a',1)+'.</p>',r),'--include-cited-references')['bibliography_references'][0]
+        self.assertEqual(b['identifiers'],{})
+        self.assertTrue(b['citation_available'])
+        self.assertEqual(b['identifier_issues'][0]['reason'],'invalid_explicit_identifier')
+        self.assertEqual(b['draft_use_status'],'not_observed_by_parser')
+
+    def test_alternatives_do_not_escape_ref_or_owning_article(self):
+        alt='<citation-alternatives><element-citation><pub-id pub-id-type="doi">10.1234/foreign</pub-id></element-citation></citation-alternatives>'
+        foreign='<sub-article><back><ref-list><ref id="foreign">'+alt+'</ref></ref-list></back></sub-article>'
+        d=output(article('<p>Claim '+xref('a',1)+'.</p>'+alt+foreign,
+            ref(1,'a')), '--include-cited-references')
+        self.assertEqual(len(d['bibliography_references']),1)
+        self.assertEqual(d['bibliography_references'][0]['identifiers']['doi'],'10.1234/study1')
+        self.assertEqual(d['metadata']['doi'],'10.1234/source')
+
+    def test_alternatives_do_not_merge_duplicate_reference_ids(self):
+        def a(n):
+            return ('<ref id="same"><label>'+str(n)+'.</label><citation-alternatives>'
+                '<element-citation><pub-id pub-id-type="doi">10.1234/study'+str(n)+'</pub-id></element-citation>'
+                '<mixed-citation><pub-id pub-id-type="doi">10.1234/study'+str(n)+'</pub-id></mixed-citation>'
+                '</citation-alternatives></ref>')
+        d=output(article('<p>Claim '+xref('same',1)+'.</p>',a(1)+a(2)),'--include-cited-references')
+        self.assertEqual(len(d['bibliography_references']),2)
+        self.assertTrue(all(b['reference_id_status']=='ambiguous_duplicate' for b in d['bibliography_references']))
+        self.assertEqual(d['citation_contexts'][0]['unresolved_reference_ids'],['same'])
+        self.assertEqual(d['citation_contexts'][0]['references'],[])
 
     def test_metadata_only_refusal_and_text_only_contract(self):
         malformed=run('<article>','--include-cited-references')

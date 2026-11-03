@@ -75,7 +75,7 @@
      title = front.find(".//title-group/article-title")
      if title is not None:
          metadata["title"] = element_text(title)
-@@ -204,6 +217,207 @@
+@@ -204,6 +217,217 @@
          metadata["abstract"] = element_text(abstract)
  
      return metadata
@@ -118,13 +118,19 @@
 +            citation = ref.find("mixed-citation")
 +            if citation is None:
 +                citation = ref.find("element-citation")
++            # JATS alternatives are representations of this one citation, not
++            # additional works. Keep legacy direct-citation selection unchanged.
++            citations = [citation] if citation is not None else [
++                child for alternatives in ref.findall("citation-alternatives")
++                for child in alternatives
++                if child.tag in {"element-citation", "mixed-citation", "nlm-citation"}]
 +            identities: dict[str, str] = {}
 +            sources: list[dict[str, str]] = []
 +            issues: list[dict[str, str]] = []
 +            candidates: dict[str, list[dict[str, str]]] = {}
 +            conflicts: dict[str, Any] = {}
-+            if citation is not None:
-+                for node in owned_nodes(citation):
++            for representation in citations:
++                for node in owned_nodes(representation):
 +                    if node.tag not in {"pub-id", "ext-link"}:
 +                        continue
 +                    kind = node.get("pub-id-type" if node.tag == "pub-id" else "ext-link-type")
@@ -164,13 +170,17 @@
 +                        # Preserve a clean field's first spelling; never choose a conflicting value.
 +                        identities.setdefault(field, value)
 +                    sources.append({"field": field, "encoding": node.tag, "locator": paths[node]})
-+            title = citation.find("article-title") if citation is not None else None
++            title = next((node for item in citations
++                          if (node := item.find("article-title")) is not None), None)
++            publication_type = (citation.get("publication-type") if citation is not None else
++                                next((item.get("publication-type") for item in citations
++                                      if item.get("publication-type")), None))
 +            record = {"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
 +                "title": element_text(title) if title is not None else None,
-+                "publication_type": citation.get("publication-type") if citation is not None else None,
++                "publication_type": publication_type,
 +                "identifiers": identities, "reference_locator": paths[ref],
 +                "identifier_sources": sources, "identifier_issues": issues,
-+                "citation_available": citation is not None}
++                "citation_available": bool(citations)}
 +            if conflicts:
 +                record["identifier_conflicts"] = conflicts
 +            records.append(record)
@@ -283,7 +293,7 @@
  
  
  def build_parser() -> argparse.ArgumentParser:
-@@ -237,6 +451,8 @@
+@@ -237,6 +461,8 @@
              "explicitly decided metadata is enough -- the default refusal is the point."
          ),
      )
@@ -292,7 +302,7 @@
      return parser
  
  
-@@ -307,16 +523,21 @@
+@@ -307,16 +533,21 @@
              sys.stdout.write(text)
          return 0
  
