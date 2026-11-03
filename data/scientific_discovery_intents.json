@@ -314,7 +314,11 @@
               ],
               "preview_question_id": "doi-10-1093-eurheartj-ehaf523--qa-4"
             }
-          ]
+          ],
+          "guide_ref": {
+            "slug": "atherosclerosis-cell-mechanisms",
+            "section_id": "cell-type-mechanisms"
+          }
         }
       ]
     },
