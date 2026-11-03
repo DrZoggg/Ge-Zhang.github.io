@@ -75,7 +75,7 @@
      title = front.find(".//title-group/article-title")
      if title is not None:
          metadata["title"] = element_text(title)
-@@ -204,6 +217,185 @@
+@@ -204,6 +217,207 @@
          metadata["abstract"] = element_text(abstract)
  
      return metadata
@@ -110,22 +110,19 @@
 +    """Explicit identifiers from reference lists in the owning article only."""
 +    paths = element_locators(article)
 +    records: list[dict[str, Any]] = []
-+    seen: set[str] = set()
 +    for container in owned_nodes(article):
 +        if container.tag != "ref-list":
 +            continue
 +        for ref in container.findall("ref"):
 +            ref_id = ref.get("id")
-+            if ref_id and ref_id in seen:
-+                raise InputError(f"duplicate bibliography ref id: {ref_id}")
-+            if ref_id:
-+                seen.add(ref_id)
 +            citation = ref.find("mixed-citation")
 +            if citation is None:
 +                citation = ref.find("element-citation")
 +            identities: dict[str, str] = {}
 +            sources: list[dict[str, str]] = []
 +            issues: list[dict[str, str]] = []
++            candidates: dict[str, list[dict[str, str]]] = {}
++            conflicts: dict[str, Any] = {}
 +            if citation is not None:
 +                for node in owned_nodes(citation):
 +                    if node.tag not in {"pub-id", "ext-link"}:
@@ -158,18 +155,34 @@
 +                        issues.append({"field": field, "reason": "invalid_explicit_identifier",
 +                                       "locator": paths[node]})
 +                        continue
-+                    if field in identities and identities[field].casefold() != value.casefold():
-+                        raise InputError(f"conflicting {field} in bibliography ref: {ref_id}")
-+                    # Preserve the first explicit spelling; DOI comparison is case-insensitive.
-+                    identities.setdefault(field, value)
++                    values = candidates.setdefault(field, [])
++                    values.append({"value": value, "encoding": node.tag, "locator": paths[node]})
++                    if len({item["value"].casefold() for item in values}) > 1:
++                        identities.pop(field, None)
++                        conflicts[field] = {"status": "unresolved", "candidates": values}
++                    else:
++                        # Preserve a clean field's first spelling; never choose a conflicting value.
++                        identities.setdefault(field, value)
 +                    sources.append({"field": field, "encoding": node.tag, "locator": paths[node]})
 +            title = citation.find("article-title") if citation is not None else None
-+            records.append({"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
++            record = {"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
 +                "title": element_text(title) if title is not None else None,
 +                "publication_type": citation.get("publication-type") if citation is not None else None,
 +                "identifiers": identities, "reference_locator": paths[ref],
 +                "identifier_sources": sources, "identifier_issues": issues,
-+                "citation_available": citation is not None})
++                "citation_available": citation is not None}
++            if conflicts:
++                record["identifier_conflicts"] = conflicts
++            records.append(record)
++    locations: dict[str, list[str]] = {}
++    for record in records:
++        if record["reference_id"]:
++            locations.setdefault(record["reference_id"], []).append(record["reference_locator"])
++    for record in records:
++        matches = locations.get(record["reference_id"], [])
++        if len(matches) > 1:
++            record["reference_id_status"] = "ambiguous_duplicate"
++            record["reference_id_candidate_locators"] = matches
 +    return records
 +
 +
@@ -178,7 +191,7 @@
 +    labels: dict[int, list[str]] = {}
 +    for ref in records:
 +        match = re.fullmatch(r"(\d+)\.?", ref["label"])
-+        if match and ref["reference_id"]:
++        if match and ref["reference_id"] and ref.get("reference_id_status") != "ambiguous_duplicate":
 +            labels.setdefault(int(match[1]), []).append(ref["reference_id"])
 +    parents = {child: parent for parent in owned_nodes(paragraph) for child in parent
 +               if child.tag not in FOREIGN_TAGS}
@@ -215,7 +228,10 @@
 +def collect_citation_contexts(article: ET.Element, body: ET.Element, wanted: list[str]) -> list[dict[str, Any]]:
 +    """Keep source-relative citation groups, not assertions of original reading/use."""
 +    records = bibliography(article)
-+    refs = {ref["reference_id"]: ref for ref in records if ref["reference_id"]}
++    refs = {ref["reference_id"]: ref for ref in records
++            if ref["reference_id"] and ref.get("reference_id_status") != "ambiguous_duplicate"}
++    ambiguous_ids = {ref["reference_id"]: ref["reference_id_candidate_locators"] for ref in records
++                     if ref.get("reference_id_status") == "ambiguous_duplicate"}
 +    paths = element_locators(article)
 +    metadata = extract_metadata(article)
 +    source = {"identifiers": {key: metadata[key] for key in ("doi", "pmid", "pmcid")},
@@ -233,13 +249,18 @@
 +                continue
 +            unresolved = [rid for rid in ref_ids if rid not in refs or not refs[rid]["citation_available"]]
 +            cited = [dict(refs[rid]) for rid in ref_ids if rid in refs and refs[rid]["citation_available"]]
-+            contexts.append({"section_id": block.get("id"), "section_title": section_title(block),
++            context = {"section_id": block.get("id"), "section_title": section_title(block),
 +                "paragraph_index": index, "text": element_text(paragraph), "reference_ids": ref_ids,
 +                "references": cited, "unresolved_reference_ids": unresolved,
 +                "attribution": "co-cited group; individual subclaim support requires reading each cited study",
 +                "source_article": source, "section_locator": paths[block],
 +                "paragraph_locator": paths[paragraph], "range_expansions": ranges,
-+                "original_reading_status": "not_observed_by_parser", "draft_use_status": "not_observed_by_parser"})
++                "original_reading_status": "not_observed_by_parser", "draft_use_status": "not_observed_by_parser"}
++            link_issues = [{"reference_id": rid, "reason": "ambiguous_duplicate_reference_id",
++                            "candidate_locators": ambiguous_ids[rid]} for rid in ref_ids if rid in ambiguous_ids]
++            if link_issues:
++                context["reference_link_issues"] = link_issues
++            contexts.append(context)
 +    return contexts
 +
 +
@@ -252,6 +273,7 @@
 +    for ref in records:
 +        rid = ref["reference_id"]
 +        ref["context_status"] = ("missing_reference_id" if not rid else
++            "unresolved_duplicate_reference_id" if ref.get("reference_id_status") == "ambiguous_duplicate" else
 +            "cited_in_selected_contexts" if rid in selected else
 +            "cited_outside_selected_contexts" if rid in all_ids else
 +            "not_linked_with_unresolved_ranges" if ambiguous else "uncited_in_scanned_body_paragraphs")
@@ -261,7 +283,7 @@
  
  
  def build_parser() -> argparse.ArgumentParser:
-@@ -237,6 +429,8 @@
+@@ -237,6 +451,8 @@
              "explicitly decided metadata is enough -- the default refusal is the point."
          ),
      )
@@ -270,7 +292,7 @@
      return parser
  
  
-@@ -307,16 +501,21 @@
+@@ -307,16 +523,21 @@
              sys.stdout.write(text)
          return 0
  

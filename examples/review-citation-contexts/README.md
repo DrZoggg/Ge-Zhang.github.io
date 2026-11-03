@@ -21,8 +21,8 @@ python -X utf8 /path/to/verify_reference_sidecar.py skills/paper-lookup/scripts/
 python -X utf8 skills/paper-lookup/scripts/jats_to_text.py article.xml --include-cited-references
 ```
 
-Patch SHA-256: `a147920813a12b1b460e83ccdf0857970b0ecab5908b9f9ded3ca0dd6f795ae0`.
-Applied reader SHA-256: `2a61a64268b98688f657dacacf03dcc847fad5edb4b28f8fe76a9a7e9e421547`.
+Patch SHA-256: `59be2c4d976f81260e1318b41f49f6eecc3f78c1edd2a32c2e91866a05e79926`.
+Applied reader SHA-256: `4660fc9e6ca25f1ab84bc3fbc990c9670075ca8d8226452a836c447bc9e50dec`.
 Python 3.10+ and its standard library suffice. The verifier accepts the existing
 helper path and sends small synthetic structural XML through stdin; it makes no
 HTTP requests and contains no copyrighted article fixture or private audit data.
@@ -53,8 +53,25 @@ It supports reference lists nested in the owning body or back matter and explici
 `pub-id` or identity-labelled `ext-link` attributes. DOI-resolver URLs are accepted
 only in explicitly DOI-labelled fields. Titles, arbitrary URLs and Google Scholar
 links are never mined for DOI identity. The first explicit identifier spelling is
-retained; DOI conflicts are compared case-insensitively and conflicting identities
-or duplicate reference IDs fail closed.
+retained, and DOI conflicts are compared case-insensitively. Ambiguous identifiers
+or links remain unresolved while the readable article and other unambiguous
+references stay available.
+
+A conflicting identifier field is omitted from that record's `identifiers`;
+`identifier_conflicts[field]` instead records status `unresolved` and every valid
+explicit candidate value, encoding and locator. Other unambiguous fields remain.
+No conflicting value is chosen. Invalid explicit fields retain their existing
+issue records. The article's source identity and readable scientific body do not
+become unavailable because a cited reference contains a conflict.
+
+Duplicate reference IDs retain every bibliography entry, each marked
+`reference_id_status: "ambiguous_duplicate"` with all candidate reference locators.
+A context keeps that ID in `unresolved_reference_ids`, omits all ambiguous entries
+from its `references`, and supplies `reference_link_issues` with candidate locators.
+Other references remain linked normally. Duplicate IDs cannot supply numeric-range
+resolution. These ambiguity fields appear only on affected records/contexts;
+clean records receive no new annotations. Malformed XML and the metadata-only
+refusal retain their original failure behavior.
 
 A numeric citation range is expanded only for adjacent bibliography xrefs in the
 same parent separated by a range dash, with numeric endpoint text, a unique and

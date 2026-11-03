@@ -2,6 +2,9 @@
 """Offline synthetic checks for the optional pinned K-Dense JATS adaptation.
 
 Usage: python verify_reference_sidecar.py /path/to/jats_to_text.py
+Unresolved reference fields or links retain the readable article.
+The original v1 verifier and criteria are retained separately in provenance;
+two whole-article exception expectations now assert stronger partial preservation.
 Only synthetic structural XML is sent to the existing helper's stdin. No HTTP,
 licensed article text, fixture files, installation or third-party packages.
 """
@@ -146,15 +149,60 @@ class ReferenceChecks(unittest.TestCase):
         self.assertEqual(set(after)-set(before),{'citation_contexts','bibliography_references'})
         self.assertTrue(all(after[k]==v for k,v in before.items()))
 
-    def test_conflicting_identifiers_fail_closed(self):
+    def test_conflicting_identifiers_fail_closed_at_field_not_article(self):
         r=ref(1,'a').replace('</mixed-citation>',
-            '<ext-link ext-link-type="doi" xlink:href="10.1234/conflict"/></mixed-citation>')
-        p=run(article('<p>Claim '+xref('a',1)+'.</p>',r),'--include-cited-references')
-        self.assertNotEqual(p.returncode,0);self.assertIn('conflicting doi',p.stderr)
+            '<pub-id pub-id-type="pmid">123</pub-id>'
+            '<ext-link ext-link-type="doi" xlink:href="10.1234/conflict"/>'
+            '<pub-id pub-id-type="doi">10.1234/third</pub-id></mixed-citation>')
+        xml=article('<sec id="s"><title>Discussion</title><p>Preserved claim '+xref('a',1)+
+            ' and '+xref('b',2)+'.</p><p>Independent scientific paragraph.</p></sec>',r+ref(2,'b'))
+        clean_body=output(xml);d=output(xml,'--include-cited-references')
+        self.assertTrue(all(d[k]==v for k,v in clean_body.items()))
+        self.assertEqual(d['metadata']['doi'],'10.1234/source')
+        linked={r['reference_id']:r for r in d['citation_contexts'][0]['references']}
+        self.assertEqual(set(linked),{'a','b'})
+        self.assertEqual(linked['a']['identifiers'],{'pmid':'123'})
+        conflict=linked['a']['identifier_conflicts']['doi']
+        self.assertEqual(conflict['status'],'unresolved')
+        self.assertEqual({c['value'] for c in conflict['candidates']},
+            {'10.1234/study1','10.1234/conflict','10.1234/third'})
+        self.assertEqual(len({c['locator'] for c in conflict['candidates']}),3)
+        self.assertTrue(all(c['locator'].startswith('article/') for c in conflict['candidates']))
+        self.assertEqual(linked['b']['identifiers']['doi'],'10.1234/study2')
+        self.assertNotIn('identifier_conflicts',linked['b'])
+        a=next(r for r in d['bibliography_references'] if r['reference_id']=='a')
+        self.assertNotIn('doi',a['identifiers'])
+        self.assertEqual(a['identifiers']['pmid'],'123')
+        self.assertEqual(a['original_reading_status'],'not_observed_by_parser')
 
-    def test_duplicate_reference_ids_fail_closed(self):
-        p=run(article('<p>Claim '+xref('a',1)+'.</p>',ref(1,'a')+ref(2,'a')),'--include-cited-references')
-        self.assertNotEqual(p.returncode,0);self.assertIn('duplicate bibliography ref id',p.stderr)
+    def test_duplicate_reference_ids_fail_closed_at_link_not_article(self):
+        xml=article('<p>Preserved claim '+xref('a',1)+' and '+xref('b',3)+'.</p>',
+            ref(1,'a')+ref(2,'a')+ref(3,'b'))
+        clean_body=output(xml);d=output(xml,'--include-cited-references')
+        self.assertTrue(all(d[k]==v for k,v in clean_body.items()))
+        c=d['citation_contexts'][0]
+        self.assertEqual(c['reference_ids'],['a','b'])
+        self.assertEqual(c['unresolved_reference_ids'],['a'])
+        self.assertEqual([r['reference_id'] for r in c['references']],['b'])
+        self.assertEqual(c['references'][0]['identifiers']['doi'],'10.1234/study3')
+        duplicated=[r for r in d['bibliography_references'] if r['reference_id']=='a']
+        self.assertEqual(len(duplicated),2)
+        self.assertEqual({r['identifiers']['doi'] for r in duplicated},{'10.1234/study1','10.1234/study2'})
+        locators={r['reference_locator'] for r in duplicated}
+        self.assertEqual(len(locators),2)
+        self.assertTrue(all(r['reference_id_status']=='ambiguous_duplicate' for r in duplicated))
+        self.assertTrue(all(r['context_status']=='unresolved_duplicate_reference_id' for r in duplicated))
+        self.assertTrue(all(set(r['reference_id_candidate_locators'])==locators for r in duplicated))
+        self.assertEqual(c['reference_link_issues'][0]['reason'],'ambiguous_duplicate_reference_id')
+        self.assertEqual(set(c['reference_link_issues'][0]['candidate_locators']),locators)
+        good=next(r for r in d['bibliography_references'] if r['reference_id']=='b')
+        self.assertNotIn('reference_id_status',good)
+        self.assertNotIn('reference_id_candidate_locators',good)
+        self.assertEqual(good['context_status'],'cited_in_selected_contexts')
+        ambiguous_range=self.range_doc().replace('id="middle-q"','id="middle-a"')
+        r=output(ambiguous_range,'--include-cited-references')['citation_contexts'][0]
+        self.assertEqual(r['reference_ids'],['start-z','end-b'])
+        self.assertEqual(r['range_expansions'][0]['status'],'unresolved')
 
     def test_subarticle_text_metadata_and_refs_do_not_leak(self):
         foreign=('<sub-article><front><article-meta><article-id pub-id-type="doi">10.1234/foreign</article-id>'
@@ -192,6 +240,9 @@ class ReferenceChecks(unittest.TestCase):
             'cited_outside_selected_contexts')
 
     def test_metadata_only_refusal_and_text_only_contract(self):
+        malformed=run('<article>','--include-cited-references')
+        self.assertNotEqual(malformed.returncode,0)
+        self.assertIn('not parseable as XML',malformed.stderr)
         xml='<article><front><article-meta/></front></article>'
         p=run(xml,'--include-cited-references')
         self.assertEqual(p.returncode,2);self.assertFalse(json.loads(p.stdout)['full_text_available'])
