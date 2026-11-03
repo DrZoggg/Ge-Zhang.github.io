@@ -16691,6 +16691,16 @@
       "text": "Does it report new model accuracy or a clinical trial?\nNo. It is a correspondence presenting conceptual proposals, with no new dataset or validated performance result.",
       "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#doi-10-1016-j-medd-2026-100004",
       "limitation": false
+    },
+    {
+      "id": 1669,
+      "result_kind": "guide",
+      "doi": "",
+      "title": "Cardiovascular prediction: study tasks, cohorts and validation",
+      "category": "Research-use answer",
+      "text": "What should be reported when comparing discrimination, calibration and external validation in heart failure models?\nStart with the clinical task: target population, care setting, prediction time, endpoint and horizon. Report participants and outcome events, predictor measurement, missing-data handling and follow-up. Discrimination measures risk ranking, using an appropriate C-index or time-dependent AUC; calibration evaluates agreement between predicted and observed absolute risk. Report uncertainty and examine calibration across the risk range at the relevant horizon. Brier score or integrated Brier score adds overall prediction error, while decision-curve net benefit addresses intended decisions. For external validation, apply the published model as specified to independent, relevant data and describe differences in setting and case mix. Report recalibration, refitting and updating separately. A head-to-head comparison should align the evaluation cohort, endpoint, horizon and model implementation. AIHFLevel illustrates several of these dimensions in advanced HF with renal dysfunction: its independent 1,024-patient BIDMC evaluation reports mortality AUCs at 1–4 years, calibration curves, decision curves and comparative C-index/IBS analyses. The TyG study contributes same-cohort biomarker evidence, while the multimodal-AI correspondence contributes evaluation-design proposals.",
+      "url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html#model-evaluation",
+      "limitation": false
     }
   ]
 }

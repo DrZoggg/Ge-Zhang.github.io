@@ -1,0 +1,103 @@
+--- a/skills/paper-lookup/scripts/jats_to_text.py
++++ b/skills/paper-lookup/scripts/jats_to_text.py
+@@ -205,6 +205,65 @@
+ 
+     return metadata
+ 
++
++
++def collect_citation_contexts(article: ET.Element, body: ET.Element, wanted: list[str]) -> list[dict[str, Any]]:
++    """Resolve selected body citation groups before text flattening discards xrefs.
++
++    Bibliography identities describe the cited work, never the source article.
++    A co-cited group does not establish which subclaim each reference supports.
++    """
++    refs: dict[str, ET.Element] = {}
++    for ref in article.findall("back/ref-list/ref"):
++        ref_id = ref.get("id")
++        if not ref_id:
++            continue
++        if ref_id in refs:
++            raise InputError(f"duplicate bibliography ref id: {ref_id}")
++        refs[ref_id] = ref
++    contexts: list[dict[str, Any]] = []
++    selected_blocks = body.findall("sec") or [body]
++    blocks = [block for outer in selected_blocks
++        if not wanted or matches({"title": section_title(outer), "sec_type": outer.get("sec-type")}, wanted)
++        for block in (list(outer.iter("sec")) or [outer])]
++    for block in blocks:
++        section = {"title": section_title(block), "sec_type": block.get("sec-type")}
++        for index, paragraph in enumerate(block.findall("p"), start=1):
++            ref_ids = list(dict.fromkeys(rid for xref in paragraph.findall(".//xref")
++                if xref.get("ref-type") == "bibr" for rid in (xref.get("rid") or "").split()))
++            if not ref_ids:
++                continue
++            cited = []
++            unresolved = []
++            for ref_id in ref_ids:
++                ref = refs.get(ref_id)
++                if ref is None:
++                    unresolved.append(ref_id)
++                    continue
++                citation = ref.find("mixed-citation")
++                if citation is None:
++                    citation = ref.find("element-citation")
++                if citation is None:
++                    unresolved.append(ref_id)
++                    continue
++                identities: dict[str, str] = {}
++                for pub_id in citation.findall("pub-id"):
++                    id_type = pub_id.get("pub-id-type")
++                    value = collapse_ws(pub_id.text)
++                    if id_type in {"doi", "pmid", "pmcid", "pmc"} and value:
++                        field = "pmcid" if id_type == "pmc" else id_type
++                        if field in identities and identities[field] != value:
++                            raise InputError(f"conflicting {field} in bibliography ref: {ref_id}")
++                        identities[field] = value
++                title = citation.find("article-title")
++                cited.append({"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
++                    "title": element_text(title) if title is not None else None,
++                    "publication_type": citation.get("publication-type"), "identifiers": identities})
++            contexts.append({"section_id": block.get("id"), "section_title": section["title"],
++                "paragraph_index": index, "text": element_text(paragraph), "reference_ids": ref_ids,
++                "references": cited, "unresolved_reference_ids": unresolved,
++                "attribution": "co-cited group; individual subclaim support requires reading each cited study"})
++    return contexts
+ 
+ def build_parser() -> argparse.ArgumentParser:
+     parser = argparse.ArgumentParser(
+@@ -237,6 +296,8 @@
+             "explicitly decided metadata is enough -- the default refusal is the point."
+         ),
+     )
++    parser.add_argument("--include-cited-references", action="store_true",
++        help="retain selected-section citation groups and cited-work identity as a separate sidecar")
+     return parser
+ 
+ 
+@@ -307,16 +368,20 @@
+             sys.stdout.write(text)
+         return 0
+ 
+-    emit(
+-        {
++    payload = {
+             "full_text_available": True,
+             "metadata": metadata,
+             "section_count": len(sections),
+             "word_count": sum(len(section["text"].split()) for section in sections),
+             "sections": sections,
+-        },
+-        args.output,
+-    )
++        }
++    if args.include_cited_references:
++        wanted = [part.strip().lower() for part in (args.sections or "").split(",") if part.strip()]
++        try:
++            payload["citation_contexts"] = collect_citation_contexts(article, body, wanted)
++        except InputError as error:
++            fail(str(error))
++    emit(payload, args.output)
+     return 0
+ 
+ 

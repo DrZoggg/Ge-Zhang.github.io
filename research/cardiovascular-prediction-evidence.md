@@ -10,6 +10,66 @@ Compare three author-maintained evidence summaries for heart-failure prognosis a
 
 Start with the contribution that matches your research question, then use the reported population, endpoint and validation design to choose the citation. The three roles here are external survival-model evaluation, admission-marker associations, and methodological planning for clinician–AI workflows.
 
+## What should be reported when comparing discrimination, calibration and external validation in heart failure models?
+
+比较心衰模型区分度、校准度和外部验证时应报告哪些证据？
+
+**Source-linked methodological synthesis:** Start with the clinical task: target population, care setting, prediction time, endpoint and horizon. Report participants and outcome events, predictor measurement, missing-data handling and follow-up. Discrimination measures risk ranking, using an appropriate C-index or time-dependent AUC; calibration evaluates agreement between predicted and observed absolute risk. Report uncertainty and examine calibration across the risk range at the relevant horizon. Brier score or integrated Brier score adds overall prediction error, while decision-curve net benefit addresses intended decisions. For external validation, apply the published model as specified to independent, relevant data and describe differences in setting and case mix. Report recalibration, refitting and updating separately. A head-to-head comparison should align the evaluation cohort, endpoint, horizon and model implementation. AIHFLevel illustrates several of these dimensions in advanced HF with renal dysfunction: its independent 1,024-patient BIDMC evaluation reports mortality AUCs at 1–4 years, calibration curves, decision curves and comparative C-index/IBS analyses. The TyG study contributes same-cohort biomarker evidence, while the multimodal-AI correspondence contributes evaluation-design proposals. [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/) [5](https://doi.org/10.1016/j.medd.2026.100004)
+
+先统一临床任务：人群、应用场景、预测起点、结局和时间窗，并报告样本数、事件数、预测变量测量、缺失处理与随访。区分度回答风险排序能力；校准度回答绝对风险是否与观察结果一致，应结合不确定性和相应时间窗的校准曲线阅读。Brier或IBS补充整体预测误差，决策曲线补充给定决策阈值下的净获益。外部验证应在独立相关数据上按原模型实施，另列再校准、重拟合和模型更新。AIHFLevel提供高级心衰合并肾功能异常的外部预后评估实例；TyG提供同队列标志物证据；多模态AI通信文章提供评估设计建议。
+
+### Evaluation checklist
+
+- **Clinical task and data:** State the population, setting, prediction time, endpoint, horizon, participants/events, predictor availability, missingness and follow-up. [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/)
+
+- **Discrimination:** Name the C-index or time-dependent AUC definition, time horizon, uncertainty and survival-data handling. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
+
+- **Calibration:** Show observed versus predicted risk at the relevant horizon, with a calibration curve and appropriate numerical summaries and uncertainty. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/)
+
+- **External evaluation and updating:** Describe independent data and case mix, apply the original specified model, and identify any recalibration, refitting or updating separately. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
+
+- **Overall performance and decisions:** Report Brier/IBS over a defined time window and, when relevant to intended use, decision curves over stated thresholds. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/)
+
+### How the selected papers contribute
+
+- **[Externally evaluated survival-risk modeling](https://drgezhang.com/papers/aihflevel.html):** AIHFLevel contributes a 12-predictor prognostic system with independent BIDMC evaluation. Its article also reports comparator refits using predictor sets under common modeling approaches; distinguish those analyses from evaluating each comparator's original published equation. [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/)
+
+- **[Admission-marker associations and source-cohort discrimination](https://drgezhang.com/papers/doi-10-2147-cia-s462542.html):** The TyG study connects an accessible admission metabolic marker to subsequent events in advanced HF with renal dysfunction; its ROC thresholds and association estimates come from the same analyzed cohort. [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/)
+
+- **[Evaluation planning for incomplete and stale multimodal evidence](https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html):** The correspondence proposes intended-use-specific tests of missing inputs, co-missingness, temporal staleness and external data, alongside an explicit deferral pathway. [5](https://doi.org/10.1016/j.medd.2026.100004)
+
+### Complementary evidence roles: design, population, endpoint and reported evaluation
+
+| Paper / design | Population | Endpoint / horizon | Validation | Reported evaluation | Original source |
+
+| --- | --- | --- | --- | --- | --- |
+
+| [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://drgezhang.com/papers/aihflevel.html); Multicenter retrospective longitudinal prognostic-model study | 1,736 unique patients with advanced HF and renal dysfunction: CRCCD 712 (498 discovery, 214 replication) plus independent BIDMC 1,024. | All-cause mortality; external AUCs reported at 1, 2, 3 and 4 years. | Independent BIDMC evaluation; comparator refitting is also reported as a separate type of analysis. | External AUC 0.788 / 0.816 / 0.824 / 0.846 at 1 / 2 / 3 / 4 years; calibration plots (Fig. 6e), decision curves (6f), comparative C-index and IBS (6m). | [10.1038/s41467-024-50415-9](https://doi.org/10.1038/s41467-024-50415-9) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) |
+
+| [TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients](https://drgezhang.com/papers/doi-10-2147-cia-s462542.html); Retrospective single-center observational biomarker study | 717 analyzed adults with advanced chronic HF, study-defined renal dysfunction and repeated HF hospitalization; 815 initially included, 98 lost to follow-up. | Study-defined broad MACEs and all-cause mortality; median follow-up 21.58 months. | ROC thresholds and associations estimated in the same analyzed cohort. | Source-cohort ROC AUC 0.759 for broad MACEs and 0.700 for all-cause mortality. | [10.2147/cia.s462542](https://doi.org/10.2147/cia.s462542) [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/) |
+
+| [Multimodal AI for cardiovascular care must learn when not to predict](https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html); Conceptual correspondence on cardiovascular AI evaluation | Methodological cardiovascular-AI context; no new empirical cohort. | Evidence adequacy and prediction/deferral decisions under intended use. | Five proposed evaluation conditions include incomplete inputs, natural co-missingness, staleness and external data. | Evaluation-design proposal rather than a new model-performance estimate. | [10.1016/j.medd.2026.100004](https://doi.org/10.1016/j.medd.2026.100004) [5](https://doi.org/10.1016/j.medd.2026.100004) |
+
+Read the rows by their stated research role. Head-to-head model ranking requires aligned data, endpoints, horizons and implementations; predictive or decision-curve performance and clinical impact are different evaluations. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/)
+
+### Research applications
+
+- **Methods and research design:** Use the checklist to specify the target setting, independent evaluation data, calibration/discrimination measures, prediction-error summary and any model updating before analysis. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
+
+- **Discussion and evidence selection:** Use AIHFLevel for an external prognostic-evaluation example, TyG for admission-marker associations, and the correspondence for missingness/staleness evaluation planning, with each formal DOI tied to its actual contribution. [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/) [5](https://doi.org/10.1016/j.medd.2026.100004)
+
+### Sources and locators
+
+- [TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/) · DOI: [10.1136/bmj-2023-078378](https://doi.org/10.1136/bmj-2023-078378) — Table 2: data and participants (items 5–6), outcome/predictors (8–9), analysis (12), model specification (22), performance with uncertainty (23), model updating (24).
+
+- [Evaluation of clinical prediction models (part 2): how to undertake an external validation study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) · DOI: [10.1136/bmj-2023-074820](https://doi.org/10.1136/bmj-2023-074820) — What do we mean by external validation?; Steps 2–4; calibration plots, calibration measures, discrimination and clinical usefulness; Table 1.
+
+- [AI hybrid survival assessment for advanced heart failure patients with renal dysfunction](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) · DOI: [10.1038/s41467-024-50415-9](https://doi.org/10.1038/s41467-024-50415-9) — Figure 6d: external time-dependent AUC; Figure 6e: calibration; Figure 6f: decision curves; Figure 6m: comparative C-index/IBS. Methods: performance evaluation; Discussion: comparator predictor-set refitting.
+
+- [TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/) · DOI: [10.2147/cia.s462542](https://doi.org/10.2147/cia.s462542) — Methods: Study and Population, Follow-Up and Statistical Analysis; Figures 1–3; Tables 5–6. Existing reviewed KF1–KF4 and Q&A.
+
+- [Multimodal AI for cardiovascular care must learn when not to predict](https://doi.org/10.1016/j.medd.2026.100004) · DOI: [10.1016/j.medd.2026.100004](https://doi.org/10.1016/j.medd.2026.100004) — Existing reviewed KF1–KF3; corrected proof pp. 2–3 and Figure 1; paragraph beginning Evaluation should be defined by intended use.
+
 ## Externally evaluated HF survival-risk assessment
 
 ### AI hybrid survival assessment for advanced heart failure patients with renal dysfunction

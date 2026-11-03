@@ -1,7 +1,8 @@
 """Source-bound navigation from research intents to existing reviewed evidence.
 
-This layer contains questions and references, not a second answer store. Work and
-Q&A identities are resolved against the unchanged question-discovery export.
+This controller contains questions and references, not a second answer store.
+Work and Q&A identities resolve against the unchanged question-discovery export;
+optional contextual answers are derived from source-linked research guides.
 """
 import copy
 import html
@@ -116,7 +117,10 @@ def build_intent_layer(discovery, root=ROOT):
             raise ValueError('A broad intent requires focused queries')
         focused, seen_queries = [], set()
         for query in intent['focused_queries']:
-            _keys(query, ('id', 'question', 'question_zh', 'work_refs'), 'focused query')
+            query_keys = ('id', 'question', 'question_zh', 'work_refs')
+            if isinstance(query, dict) and 'guide_ref' in query:
+                query_keys += ('guide_ref',)
+            _keys(query, query_keys, 'focused query')
             qid = _identifier(query['id'], iid + '/focused query')
             if qid in seen_queries:
                 raise ValueError('Duplicate focused query ID within an intent')
@@ -159,7 +163,24 @@ def build_intent_layer(discovery, root=ROOT):
                               'doi_url': work.get('doi_url'), 'scope_url': scope_url,
                               'citation_url': paper_url + '#cite-this-paper'
                               if work.get('citation_csl_json_url') else None})
-            focused.append({**{key: query[key] for key in ('id', 'question', 'question_zh')}, 'work_refs': links})
+            resolved = {**{key: query[key] for key in ('id', 'question', 'question_zh')}, 'work_refs': links}
+            if 'guide_ref' in query:
+                ref = query['guide_ref']
+                _keys(ref, ('slug', 'section_id'), 'research guide reference')
+                _identifier(ref['slug'], 'guide slug')
+                _identifier(ref['section_id'], 'guide section')
+                from research_guides import resolve_research_use
+                use = resolve_research_use(ref['slug'], ref['section_id'], root)
+                if (use['question'] != query['question'] or use['question_zh'] != query['question_zh']
+                        or not seen_works <= {row['work_id'] for row in use['study_roles']}):
+                    raise ValueError('Intent guide answer differs from question or related work identities')
+                answer_source_ids = use['answer_source_ids']
+                resolved['guide_ref'] = copy.deepcopy(ref)
+                resolved['context_answer'] = {
+                    'kind': use['kind'], 'answer': use['answer'], 'answer_zh': use['answer_zh'],
+                    'guide_url': use['guide_url'],
+                    'sources': [copy.deepcopy(s) for s in use['sources'] if s['id'] in answer_source_ids]}
+            focused.append(resolved)
         intents.append({**{key: intent[key] for key in ('id', 'question', 'question_zh')},
                         'source_ids': list(refs), 'focused_queries': focused})
     return {'intent_layer_version': 1, 'intent_sources': sources, 'intents': intents}
@@ -181,6 +202,18 @@ def render_intent_layer(discovery):
         queries = []
         for query in intent['focused_queries']:
             evidence = []
+            context_answer = ''
+            if query.get('context_answer'):
+                answer = query['context_answer']
+                context_answer = ('<div class="intent-context-answer" data-intent-context-answer="'
+                                  + escape(query['id'], quote=True) + '"><p><strong>Source-linked methodological synthesis:</strong> '
+                                  + escape(answer['answer']) + '</p><p lang="zh">' + escape(answer['answer_zh'])
+                                  + '</p><p><a href="' + escape(answer['guide_url'], quote=True)
+                                  + '">Evaluation checklist, study comparison and source locators</a></p>'
+                                  + '<p class="intent-reviews">Sources: ' + ' · '.join('<a href="'
+                                  + escape(source['url'], quote=True) + '">' + escape(source['title'])
+                                  + '</a> (DOI: <a href="https://doi.org/' + escape(source['doi'], quote=True) + '">'
+                                  + escape(source['doi']) + '</a>)' for source in answer['sources']) + '</p></div>')
             for ref in query['work_refs']:
                 work = works[ref['work_id']]
                 original_questions = [questions[qid] for qid in ref['question_ids']]
@@ -222,7 +255,7 @@ def render_intent_layer(discovery):
             queries.append('<section class="intent-focused" id="' + escape(anchor + '--' + query['id'], quote=True)
                            + '" data-intent-focused="' + escape(query['id'], quote=True) + '"><h4>'
                            + escape(query['question']) + '</h4><p class="intent-translation" lang="zh">'
-                           + escape(query['question_zh']) + '</p>' + ''.join(evidence) + '</section>')
+                           + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence) + '</section>')
         context = '<p class="intent-reviews"><strong>Review context:</strong> ' + ' · '.join(
             '<a href="' + escape(sources[sid]['url'], quote=True) + '">'
             + escape(sources[sid]['title']) + ' (' + str(sources[sid]['year']) + ')</a>'
@@ -270,7 +303,8 @@ def validate_intent_html(page, discovery, root=None):
     expected_markers = {'data-intent-layer': int(bool(intents)), 'data-research-intent': len(intents),
                         'data-intent-focused': len(queries), 'data-intent-paper': len(refs),
                         'data-intent-question': sum(len(ref['question_ids']) for ref in refs),
-                        'data-intent-answer': sum(ref['preview_question_id'] is not None for ref in refs)}
+                        'data-intent-answer': sum(ref['preview_question_id'] is not None for ref in refs),
+                        'data-intent-context-answer': sum(bool(query.get('context_answer')) for query in queries)}
     if any(parsed.markers.get(key, 0) != count for key, count in expected_markers.items()):
         raise ValueError('Scientific intent HTML reference or answer inventory differs')
     if root is not None:
