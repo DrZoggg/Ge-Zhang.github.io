@@ -24073,6 +24073,14 @@
       "url": "https://www.nature.com/articles/s41416-024-02672-0",
       "year": 2025,
       "locator": "Official publisher abstract; Diagnosis and Localised disease—surgery sections: anatomical complexity, specialist resection and molecularly sensitive neoadjuvant context. First published online 5 June 2024; formal citation Br J Cancer 132:1–10 (2025)."
+    },
+    {
+      "id": "allostatic-load-regards-cohort-2023",
+      "title": "Allostatic load and incident heart failure in the Reasons for Geographic and Racial Differences in Stroke (REGARDS) study",
+      "doi": "10.1186/s12872-023-03371-z",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10318712/",
+      "year": 2023,
+      "locator": "Introduction (Sec4), paragraph 3; Methods: Exposure (Sec8); Discussion (Sec18), paragraphs 4 and 6: longitudinal AL–HF research, immune/inflammatory biomarker domains, unresolved mechanisms, one-time measurement and observational limitations."
     }
   ],
   "intents": [
@@ -24485,7 +24493,8 @@
       "source_ids": [
         "hf-omics-proteomics-review-2026",
         "hf-omics-cvd-multiomics-2021",
-        "hf-omics-hf-ml-review-2017"
+        "hf-omics-hf-ml-review-2017",
+        "allostatic-load-regards-cohort-2023"
       ],
       "focused_queries": [
         {
@@ -24565,6 +24574,28 @@
               "doi_url": "https://doi.org/10.15212/bioi-2026-0017",
               "scope_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "cardiovascular-biomarkers-4",
+          "question": "What prospective cohort evidence links allostatic load to incident CVD, and how is inflammatory mediation interpreted?",
+          "question_zh": "前瞻性队列研究为生理累积负荷（allostatic load）与新发心血管疾病的关联提供了哪些证据，应如何解读炎症中介分析？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-3389-fcvm-2025-1724572",
+              "question_ids": [
+                "doi-10-3389-fcvm-2025-1724572--qa-1",
+                "doi-10-3389-fcvm-2025-1724572--qa-2",
+                "doi-10-3389-fcvm-2025-1724572--qa-3",
+                "doi-10-3389-fcvm-2025-1724572--qa-5"
+              ],
+              "preview_question_id": "doi-10-3389-fcvm-2025-1724572--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html",
+              "doi": "10.3389/fcvm.2025.1724572",
+              "doi_url": "https://doi.org/10.3389/fcvm.2025.1724572",
+              "scope_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#cite-this-paper"
             }
           ]
         }
