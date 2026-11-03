@@ -1,72 +1,289 @@
 --- a/skills/paper-lookup/scripts/jats_to_text.py
 +++ b/skills/paper-lookup/scripts/jats_to_text.py
-@@ -205,6 +205,65 @@
+@@ -28,6 +28,7 @@
+ import xml.etree.ElementTree as ET
+ from pathlib import Path
+ from typing import Any
++from urllib.parse import unquote, urlsplit
+ 
+ sys.path.insert(0, str(Path(__file__).resolve().parent))
+ 
+@@ -35,7 +36,8 @@
+ 
+ #: Tags whose text is not part of the reading order. `xref` and `label` are
+ #: excluded so citation markers and "Figure 1" labels do not land mid-sentence.
+-SKIP_TAGS = frozenset({"xref", "label", "table-wrap", "graphic", "media", "inline-formula"})
++FOREIGN_TAGS = frozenset({"sub-article", "response", "article"})
++SKIP_TAGS = frozenset({"xref", "label", "table-wrap", "graphic", "media", "inline-formula"}) | FOREIGN_TAGS
+ 
+ #: Block-level tags that must not run into their neighbours.
+ #:
+@@ -128,23 +130,28 @@
+ 
+ 
+ def collect_sections(body: ET.Element) -> list[dict[str, Any]]:
+-    """Top-level `<sec>` blocks, each with its nested subsection text inlined."""
+-    sections: list[dict[str, Any]] = []
+-
+-    top_level = body.findall("sec")
+-    if not top_level:
+-        # Some articles put paragraphs straight under <body> with no sections.
++    """Keep top-level section text and interleaved direct body text in source order."""
++    if not body.findall("sec"):
+         text = element_text(body)
+         return [{"title": "", "sec_type": None, "text": text}] if text else []
+-
+-    for section in top_level:
+-        sections.append(
+-            {
+-                "title": section_title(section),
+-                "sec_type": section.get("sec-type"),
+-                "text": element_text(section),
+-            }
+-        )
++    sections: list[dict[str, Any]] = []
++    pending: list[str] = []
++
++    def flush() -> None:
++        if pending:
++            sections.append({"title": "", "sec_type": None, "text": collapse_ws(" ".join(pending))})
++            pending.clear()
++
++    for child in body:
++        if child.tag == "sec":
++            flush()
++            sections.append({"title": section_title(child), "sec_type": child.get("sec-type"),
++                             "text": element_text(child)})
++        elif child.tag not in SKIP_TAGS:
++            text = element_text(child)
++            if text:
++                pending.append(text)
++    flush()
+     return sections
+ 
+ 
+@@ -169,6 +176,12 @@
+     if front is None:
+         return metadata
+ 
++    front = ET.fromstring(ET.tostring(front, encoding="unicode"))
++    for parent in list(front.iter()):
++        for child in list(parent):
++            if child.tag in FOREIGN_TAGS:
++                parent.remove(child)
++
+     title = front.find(".//title-group/article-title")
+     if title is not None:
+         metadata["title"] = element_text(title)
+@@ -204,6 +217,207 @@
+         metadata["abstract"] = element_text(abstract)
  
      return metadata
- 
++
++
++
++def owned_nodes(root: ET.Element):
++    """Walk one article's content without entering foreign sub-articles/responses."""
++    yield root
++    for child in root:
++        if child.tag not in FOREIGN_TAGS:
++            yield from owned_nodes(child)
++
++
++def element_locators(article: ET.Element) -> dict[ET.Element, str]:
++    paths = {article: "article"}
++
++    def walk(parent: ET.Element) -> None:
++        counts: dict[str, int] = {}
++        for child in parent:
++            counts[child.tag] = counts.get(child.tag, 0) + 1
++            if child.tag in FOREIGN_TAGS:
++                continue
++            paths[child] = f"{paths[parent]}/{child.tag}[{counts[child.tag]}]"
++            walk(child)
++
++    walk(article)
++    return paths
++
++
++def bibliography(article: ET.Element) -> list[dict[str, Any]]:
++    """Explicit identifiers from reference lists in the owning article only."""
++    paths = element_locators(article)
++    records: list[dict[str, Any]] = []
++    for container in owned_nodes(article):
++        if container.tag != "ref-list":
++            continue
++        for ref in container.findall("ref"):
++            ref_id = ref.get("id")
++            citation = ref.find("mixed-citation")
++            if citation is None:
++                citation = ref.find("element-citation")
++            identities: dict[str, str] = {}
++            sources: list[dict[str, str]] = []
++            issues: list[dict[str, str]] = []
++            candidates: dict[str, list[dict[str, str]]] = {}
++            conflicts: dict[str, Any] = {}
++            if citation is not None:
++                for node in owned_nodes(citation):
++                    if node.tag not in {"pub-id", "ext-link"}:
++                        continue
++                    kind = node.get("pub-id-type" if node.tag == "pub-id" else "ext-link-type")
++                    if kind not in {"doi", "pmid", "pmcid", "pmc"}:
++                        continue
++                    field = "pmcid" if kind == "pmc" else kind
++                    value = collapse_ws(node.text) if node.tag == "pub-id" else collapse_ws(
++                        node.get("{http://www.w3.org/1999/xlink}href") or node.get("href") or node.text)
++                    if field == "doi":
++                        value = re.sub(r"^doi:\s*", "", value, flags=re.IGNORECASE)
++                        if "://" in value:
++                            try:
++                                url = urlsplit(value)
++                                valid_url = (url.scheme.lower() in {"http", "https"}
++                                    and url.hostname in {"doi.org", "dx.doi.org"}
++                                    and not url.username and not url.password and not url.query and not url.fragment
++                                    and url.port in {None, 80, 443})
++                                value = unquote(url.path[1:]) if valid_url else ""
++                            except ValueError:
++                                value = ""
++                        valid = re.fullmatch(r"10\.\d{4,9}/\S+", value) is not None
++                    elif field == "pmid":
++                        valid = re.fullmatch(r"\d+", value) is not None
++                    else:
++                        value = value.upper()
++                        valid = re.fullmatch(r"PMC\d+", value) is not None
++                    if not valid:
++                        issues.append({"field": field, "reason": "invalid_explicit_identifier",
++                                       "locator": paths[node]})
++                        continue
++                    values = candidates.setdefault(field, [])
++                    values.append({"value": value, "encoding": node.tag, "locator": paths[node]})
++                    if len({item["value"].casefold() for item in values}) > 1:
++                        identities.pop(field, None)
++                        conflicts[field] = {"status": "unresolved", "candidates": values}
++                    else:
++                        # Preserve a clean field's first spelling; never choose a conflicting value.
++                        identities.setdefault(field, value)
++                    sources.append({"field": field, "encoding": node.tag, "locator": paths[node]})
++            title = citation.find("article-title") if citation is not None else None
++            record = {"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
++                "title": element_text(title) if title is not None else None,
++                "publication_type": citation.get("publication-type") if citation is not None else None,
++                "identifiers": identities, "reference_locator": paths[ref],
++                "identifier_sources": sources, "identifier_issues": issues,
++                "citation_available": citation is not None}
++            if conflicts:
++                record["identifier_conflicts"] = conflicts
++            records.append(record)
++    locations: dict[str, list[str]] = {}
++    for record in records:
++        if record["reference_id"]:
++            locations.setdefault(record["reference_id"], []).append(record["reference_locator"])
++    for record in records:
++        matches = locations.get(record["reference_id"], [])
++        if len(matches) > 1:
++            record["reference_id_status"] = "ambiguous_duplicate"
++            record["reference_id_candidate_locators"] = matches
++    return records
++
++
++def citation_ids(paragraph: ET.Element, records: list[dict[str, Any]]) -> tuple[list[str], list[dict[str, Any]]]:
++    """Literal xrefs plus complete, unambiguous numeric-label ranges; never ID-order guesses."""
++    labels: dict[int, list[str]] = {}
++    for ref in records:
++        match = re.fullmatch(r"(\d+)\.?", ref["label"])
++        if match and ref["reference_id"] and ref.get("reference_id_status") != "ambiguous_duplicate":
++            labels.setdefault(int(match[1]), []).append(ref["reference_id"])
++    parents = {child: parent for parent in owned_nodes(paragraph) for child in parent
++               if child.tag not in FOREIGN_TAGS}
++    ids: list[str] = []
++    ranges: list[dict[str, Any]] = []
++    for xref in owned_nodes(paragraph):
++        if xref.tag != "xref" or xref.get("ref-type") != "bibr":
++            continue
++        ids.extend((xref.get("rid") or "").split())
++        if not re.fullmatch(r"\s*[-–−]\s*", xref.tail or ""):
++            continue
++        siblings = list(parents[xref])
++        index = siblings.index(xref)
++        right = siblings[index + 1] if index + 1 < len(siblings) else None
++        if right is None or right.tag != "xref" or right.get("ref-type") != "bibr":
++            continue
++        left_text = collapse_ws("".join(xref.itertext()))
++        right_text = collapse_ws("".join(right.itertext()))
++        event: dict[str, Any] = {"endpoint_reference_ids": [xref.get("rid"), right.get("rid")],
++                                 "endpoint_labels": [left_text, right_text], "status": "unresolved"}
++        if left_text.isdecimal() and right_text.isdecimal():
++            lo, hi = int(left_text), int(right_text)
++            if (0 < hi - lo <= 1000 and all(len(labels.get(n, [])) == 1 for n in range(lo, hi + 1))
++                    and labels[lo][0] == xref.get("rid") and labels[hi][0] == right.get("rid")):
++                resolved = [labels[n][0] for n in range(lo, hi + 1)]
++                ids.extend(resolved)
++                event.update(status="resolved", reference_ids=resolved, method="explicit_numeric_label_range")
++        if event["status"] != "resolved":
++            event["reason"] = "nonascending_incomplete_or_ambiguous_numeric_label_range"
++        ranges.append(event)
++    return list(dict.fromkeys(ids)), ranges
 +
 +
 +def collect_citation_contexts(article: ET.Element, body: ET.Element, wanted: list[str]) -> list[dict[str, Any]]:
-+    """Resolve selected body citation groups before text flattening discards xrefs.
-+
-+    Bibliography identities describe the cited work, never the source article.
-+    A co-cited group does not establish which subclaim each reference supports.
-+    """
-+    refs: dict[str, ET.Element] = {}
-+    for ref in article.findall("back/ref-list/ref"):
-+        ref_id = ref.get("id")
-+        if not ref_id:
-+            continue
-+        if ref_id in refs:
-+            raise InputError(f"duplicate bibliography ref id: {ref_id}")
-+        refs[ref_id] = ref
++    """Keep source-relative citation groups, not assertions of original reading/use."""
++    records = bibliography(article)
++    refs = {ref["reference_id"]: ref for ref in records
++            if ref["reference_id"] and ref.get("reference_id_status") != "ambiguous_duplicate"}
++    ambiguous_ids = {ref["reference_id"]: ref["reference_id_candidate_locators"] for ref in records
++                     if ref.get("reference_id_status") == "ambiguous_duplicate"}
++    paths = element_locators(article)
++    metadata = extract_metadata(article)
++    source = {"identifiers": {key: metadata[key] for key in ("doi", "pmid", "pmcid")},
++              "publication_type": article.get("article-type")}
 +    contexts: list[dict[str, Any]] = []
-+    selected_blocks = body.findall("sec") or [body]
-+    blocks = [block for outer in selected_blocks
-+        if not wanted or matches({"title": section_title(outer), "sec_type": outer.get("sec-type")}, wanted)
-+        for block in (list(outer.iter("sec")) or [outer])]
++    blocks: list[ET.Element] = [body] if not wanted else []
++    for outer in body.findall("sec"):
++        if not wanted or matches({"title": section_title(outer), "sec_type": outer.get("sec-type")}, wanted):
++            blocks.extend(node for node in owned_nodes(outer) if node.tag == "sec")
++    # A body without section children is already handled by the body block.
 +    for block in blocks:
-+        section = {"title": section_title(block), "sec_type": block.get("sec-type")}
 +        for index, paragraph in enumerate(block.findall("p"), start=1):
-+            ref_ids = list(dict.fromkeys(rid for xref in paragraph.findall(".//xref")
-+                if xref.get("ref-type") == "bibr" for rid in (xref.get("rid") or "").split()))
++            ref_ids, ranges = citation_ids(paragraph, records)
 +            if not ref_ids:
 +                continue
-+            cited = []
-+            unresolved = []
-+            for ref_id in ref_ids:
-+                ref = refs.get(ref_id)
-+                if ref is None:
-+                    unresolved.append(ref_id)
-+                    continue
-+                citation = ref.find("mixed-citation")
-+                if citation is None:
-+                    citation = ref.find("element-citation")
-+                if citation is None:
-+                    unresolved.append(ref_id)
-+                    continue
-+                identities: dict[str, str] = {}
-+                for pub_id in citation.findall("pub-id"):
-+                    id_type = pub_id.get("pub-id-type")
-+                    value = collapse_ws(pub_id.text)
-+                    if id_type in {"doi", "pmid", "pmcid", "pmc"} and value:
-+                        field = "pmcid" if id_type == "pmc" else id_type
-+                        if field in identities and identities[field] != value:
-+                            raise InputError(f"conflicting {field} in bibliography ref: {ref_id}")
-+                        identities[field] = value
-+                title = citation.find("article-title")
-+                cited.append({"reference_id": ref_id, "label": collapse_ws(ref.findtext("label")),
-+                    "title": element_text(title) if title is not None else None,
-+                    "publication_type": citation.get("publication-type"), "identifiers": identities})
-+            contexts.append({"section_id": block.get("id"), "section_title": section["title"],
++            unresolved = [rid for rid in ref_ids if rid not in refs or not refs[rid]["citation_available"]]
++            cited = [dict(refs[rid]) for rid in ref_ids if rid in refs and refs[rid]["citation_available"]]
++            context = {"section_id": block.get("id"), "section_title": section_title(block),
 +                "paragraph_index": index, "text": element_text(paragraph), "reference_ids": ref_ids,
 +                "references": cited, "unresolved_reference_ids": unresolved,
-+                "attribution": "co-cited group; individual subclaim support requires reading each cited study"})
++                "attribution": "co-cited group; individual subclaim support requires reading each cited study",
++                "source_article": source, "section_locator": paths[block],
++                "paragraph_locator": paths[paragraph], "range_expansions": ranges,
++                "original_reading_status": "not_observed_by_parser", "draft_use_status": "not_observed_by_parser"}
++            link_issues = [{"reference_id": rid, "reason": "ambiguous_duplicate_reference_id",
++                            "candidate_locators": ambiguous_ids[rid]} for rid in ref_ids if rid in ambiguous_ids]
++            if link_issues:
++                context["reference_link_issues"] = link_issues
++            contexts.append(context)
 +    return contexts
++
++
++def bibliography_sidecar(article: ET.Element, body: ET.Element, contexts: list[dict[str, Any]], wanted: list[str]) -> list[dict[str, Any]]:
++    all_contexts = collect_citation_contexts(article, body, []) if wanted else contexts
++    all_ids = {rid for group in all_contexts for rid in group["reference_ids"]}
++    selected = {rid for group in contexts for rid in group["reference_ids"]}
++    ambiguous = any(event["status"] != "resolved" for group in all_contexts for event in group["range_expansions"])
++    records = bibliography(article)
++    for ref in records:
++        rid = ref["reference_id"]
++        ref["context_status"] = ("missing_reference_id" if not rid else
++            "unresolved_duplicate_reference_id" if ref.get("reference_id_status") == "ambiguous_duplicate" else
++            "cited_in_selected_contexts" if rid in selected else
++            "cited_outside_selected_contexts" if rid in all_ids else
++            "not_linked_with_unresolved_ranges" if ambiguous else "uncited_in_scanned_body_paragraphs")
++        ref["original_reading_status"] = "not_observed_by_parser"
++        ref["draft_use_status"] = "not_observed_by_parser"
++    return records
+ 
  
  def build_parser() -> argparse.ArgumentParser:
-     parser = argparse.ArgumentParser(
-@@ -237,6 +296,8 @@
+@@ -237,6 +451,8 @@
              "explicitly decided metadata is enough -- the default refusal is the point."
          ),
      )
@@ -75,7 +292,7 @@
      return parser
  
  
-@@ -307,16 +368,20 @@
+@@ -307,16 +523,21 @@
              sys.stdout.write(text)
          return 0
  
@@ -95,6 +312,7 @@
 +        wanted = [part.strip().lower() for part in (args.sections or "").split(",") if part.strip()]
 +        try:
 +            payload["citation_contexts"] = collect_citation_contexts(article, body, wanted)
++            payload["bibliography_references"] = bibliography_sidecar(article, body, payload["citation_contexts"], wanted)
 +        except InputError as error:
 +            fail(str(error))
 +    emit(payload, args.output)
