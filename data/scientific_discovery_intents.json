@@ -240,6 +240,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10318712/",
       "year": 2023,
       "locator": "Introduction (Sec4), paragraph 3; Methods: Exposure (Sec8); Discussion (Sec18), paragraphs 4 and 6: longitudinal AL–HF research, immune/inflammatory biomarker domains, unresolved mechanisms, one-time measurement and observational limitations."
+    },
+    {
+      "id": "pah-endmt-review-2021",
+      "title": "Endothelial-to-Mesenchymal Transition in Pulmonary Arterial Hypertension.",
+      "doi": "10.1089/ars.2020.8169",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32746619/",
+      "year": 2021,
+      "locator": "Actual EuropePMC MED32746619 official indexed abstract: EndMT transcriptional reprogramming in PAH; hypoxia, inflammation, BMPR2/redox context and future mechanism research. Review abstract only; full review body was unavailable in this read."
     }
   ],
   "intents": [
@@ -588,7 +596,8 @@
         "hf-omics-multiomics-review-2017",
         "hf-omics-proteomics-review-2026",
         "onco-agent-onco-s1",
-        "onco-agent-onco-s3"
+        "onco-agent-onco-s3",
+        "pah-endmt-review-2021"
       ],
       "focused_queries": [
         {
@@ -637,6 +646,29 @@
                 "doi-10-1016-j-csbj-2024-04-044--qa-3"
               ],
               "preview_question_id": "doi-10-1016-j-csbj-2024-04-044--qa-2"
+            }
+          ]
+        },
+        {
+          "id": "multiomics-subtypes-3",
+          "question": "What do lung single-cell and bulk-expression studies reveal about EndMT-related endothelial states and candidate molecular classifiers in PAH?",
+          "question_zh": "肺组织单细胞与整体转录组研究如何刻画肺动脉高压中 EndMT 相关内皮细胞状态及候选分子分类器？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1186-s10020-024-00963-z",
+              "question_ids": [
+                "doi-10-1186-s10020-024-00963-z--qa-1",
+                "doi-10-1186-s10020-024-00963-z--qa-2",
+                "doi-10-1186-s10020-024-00963-z--qa-3",
+                "doi-10-1186-s10020-024-00963-z--qa-4",
+                "doi-10-1186-s10020-024-00963-z--qa-5",
+                "doi-10-1186-s10020-024-00963-z--qa-6"
+              ],
+              "preview_question_id": "doi-10-1186-s10020-024-00963-z--qa-3",
+              "preview_finding_ids": [
+                "KF2",
+                "KF4"
+              ]
             }
           ]
         }

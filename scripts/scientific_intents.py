@@ -131,7 +131,10 @@ def build_intent_layer(discovery, root=ROOT):
                 raise ValueError('A focused query requires existing work references')
             links, seen_works = [], set()
             for ref in query['work_refs']:
-                _keys(ref, ('work_id', 'question_ids', 'preview_question_id'), 'work reference')
+                ref_keys = ('work_id', 'question_ids', 'preview_question_id')
+                if isinstance(ref, dict) and 'preview_finding_ids' in ref:
+                    ref_keys += ('preview_finding_ids',)
+                _keys(ref, ref_keys, 'work reference')
                 wid = ref['work_id']
                 if not isinstance(wid, str) or wid not in works or wid in seen_works:
                     raise ValueError('Unknown or duplicate intent work reference')
@@ -163,6 +166,28 @@ def build_intent_layer(discovery, root=ROOT):
                               'doi_url': work.get('doi_url'), 'scope_url': scope_url,
                               'citation_url': paper_url + '#cite-this-paper'
                               if work.get('citation_csl_json_url') else None})
+                if 'preview_finding_ids' in ref:
+                    fids = _unique(ref['preview_finding_ids'], wid + '/preview finding IDs')
+                    if not fids or work.get('evidence_status') != 'reviewed_v2':
+                        raise ValueError('Finding previews require existing reviewed work and findings')
+                    findings = {finding['id']: finding for finding in work['key_findings']}
+                    encoded = {fid for qid in qrefs
+                               if questions[qid].get('evidence_refs_status') == 'resolved'
+                               for fid in questions[qid].get('evidence_refs', [])}
+                    previews = []
+                    for fid in fids:
+                        if fid not in findings or fid not in encoded:
+                            raise ValueError('Finding preview must belong to this work and its referenced questions')
+                        finding = findings[fid]
+                        for field in ('claim', 'context', 'source_locator'):
+                            _text(finding.get(field), wid + '/' + fid + '/' + field)
+                        target = urlsplit(_https(finding['evidence_url'], wid + '/' + fid + '/evidence URL'))
+                        canonical = urlsplit(paper_url)
+                        if ((target.scheme, target.netloc, target.path) != (canonical.scheme, canonical.netloc, canonical.path)
+                                or target.fragment != fid.lower()):
+                            raise ValueError('Finding preview must use its canonical finding URL')
+                        previews.append(copy.deepcopy(finding))
+                    links[-1]['finding_previews'] = previews
             resolved = {**{key: query[key] for key in ('id', 'question', 'question_zh')}, 'work_refs': links}
             if 'guide_ref' in query:
                 ref = query['guide_ref']
@@ -218,6 +243,15 @@ def render_intent_layer(discovery):
                 work = works[ref['work_id']]
                 original_questions = [questions[qid] for qid in ref['question_ids']]
                 preview = questions.get(ref['preview_question_id'])
+                principal = ''
+                if ref.get('finding_previews'):
+                    principal = ('<div class="intent-findings"><p><strong>Principal findings from this paper:</strong></p><ul>'
+                                 + ''.join('<li data-intent-finding="' + escape(work['id'] + '--' + finding['id'], quote=True) + '">'
+                                           + '<p>' + escape(finding['claim']) + '</p>'
+                                           + '<details><summary>Study context and source</summary><p>' + escape(finding['context']) + '</p>'
+                                           + '<p><a href="' + escape(finding['evidence_url'], quote=True) + '">' + escape(finding['id'])
+                                           + '</a> · ' + escape(finding['source_locator']) + '</p></details></li>'
+                                           for finding in ref['finding_previews']) + '</ul></div>')
                 answer = ''
                 if preview:
                     findings = {finding['id']: finding for finding in work['key_findings']}
@@ -251,7 +285,7 @@ def render_intent_layer(discovery):
                 evidence.append('<div class="intent-evidence" data-intent-work="' + escape(work['id'], quote=True) + '">'
                                 + '<h5><a href="' + escape(ref['paper_url'], quote=True) + '">'
                                 + escape(work['title']) + '</a></h5><p class="meta">' + escape(identity) + '</p>'
-                                + answer + detail + question_links + '<p class="links">' + links + '</p></div>')
+                                + principal + answer + detail + question_links + '<p class="links">' + links + '</p></div>')
             queries.append('<section class="intent-focused" id="' + escape(anchor + '--' + query['id'], quote=True)
                            + '" data-intent-focused="' + escape(query['id'], quote=True) + '"><h4>'
                            + escape(query['question']) + '</h4><p class="intent-translation" lang="zh">'
@@ -304,6 +338,7 @@ def validate_intent_html(page, discovery, root=None):
                         'data-intent-focused': len(queries), 'data-intent-paper': len(refs),
                         'data-intent-question': sum(len(ref['question_ids']) for ref in refs),
                         'data-intent-answer': sum(ref['preview_question_id'] is not None for ref in refs),
+                        'data-intent-finding': sum(len(ref.get('finding_previews', [])) for ref in refs),
                         'data-intent-context-answer': sum(bool(query.get('context_answer')) for query in queries)}
     if any(parsed.markers.get(key, 0) != count for key, count in expected_markers.items()):
         raise ValueError('Scientific intent HTML reference or answer inventory differs')
@@ -317,6 +352,7 @@ def validate_intent_html(page, discovery, root=None):
                 document.feed((Path(root) / 'papers' / (wid + '.html')).read_text(encoding='utf-8'))
                 documents[wid] = document.ids
             urls = [ref['scope_url'], *(questions[qid]['answer_url'] for qid in ref['question_ids'])]
+            urls += [finding['evidence_url'] for finding in ref.get('finding_previews', [])]
             if ref['preview_question_id']:
                 qa = questions[ref['preview_question_id']]
                 findings = {finding['id']: finding for finding in works[wid]['key_findings']}
