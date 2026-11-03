@@ -21,8 +21,8 @@ python -X utf8 /path/to/verify_reference_sidecar.py skills/paper-lookup/scripts/
 python -X utf8 skills/paper-lookup/scripts/jats_to_text.py article.xml --include-cited-references
 ```
 
-Patch SHA-256: `59be2c4d976f81260e1318b41f49f6eecc3f78c1edd2a32c2e91866a05e79926`.
-Applied reader SHA-256: `4660fc9e6ca25f1ab84bc3fbc990c9670075ca8d8226452a836c447bc9e50dec`.
+Patch SHA-256: `6ba78d271fd7b5babf4edde12f8cda5e1446fa0df2c5d6908c82d0efe64ef21a`.
+Applied reader SHA-256: `654e7a6050d44bd8857473fd095dc15444b7293d3e501a7647811b0fc0144a88`.
 Python 3.10+ and its standard library suffice. The verifier accepts the existing
 helper path and sends small synthetic structural XML through stdin; it makes no
 HTTP requests and contains no copyrighted article fixture or private audit data.
@@ -93,6 +93,34 @@ body paragraphs participate when no section filter is supplied. This is not a
 fine-grained nested-section selector. `--text-only` emits text and no JSON
 sidecars. The existing metadata-only refusal/exit 2 remains, unless the caller
 explicitly requests `--allow-metadata-only`.
+
+## Same-citation alternatives
+
+[JATS 1.4 citation-alternatives](https://jats.nlm.nih.gov/archiving/tag-library/1.4/element/citation-alternatives.html)
+represents multiple formats or languages of one citation. If a reference has no
+legacy direct mixed/element citation, this adaptation also accepts direct
+`element-citation`, `mixed-citation` and `nlm-citation` children of its direct
+`citation-alternatives` container. It emits one bibliography record per `ref`,
+not one study per representation. Existing direct-citation precedence is unchanged.
+
+Repeated identifier fields merge only when their explicit normalized values
+agree; DOI comparison remains case-insensitive. Available unambiguous fields are
+retained when another representation omits them. Missing identities are never
+inferred from titles, unlabelled prose, arbitrary links or the container's
+`object-id`. An explicit disagreement removes only that field from `identifiers`
+and preserves every candidate value/encoding/locator in `identifier_conflicts`.
+Other fields, references and readable article text remain available. The standard
+container asserts one citation; the parser does not independently verify DOI/PMID
+crosswalks. Identifier-source locators retain both representations. The first
+available structured title and publication type are display metadata, not an
+identity-inference rule. Duplicate `ref` IDs remain separate ambiguous entries;
+alternatives never merge different `ref` elements or foreign sub-articles.
+
+The verifier runs 28 synthetic cases, including same-citation alternatives.
+Retained-source checks keep
+default reading text, source identity, paragraph order, locators and existing
+citation-range behavior unchanged. This is parsing/identity completeness, not a
+new original read, natural candidate result, scientific validation or draft use.
 
 ## Use in a research-writing workflow
 
