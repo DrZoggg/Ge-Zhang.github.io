@@ -29359,36 +29359,56 @@
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
       "doi": "10.3389/fonc.2021.659217",
       "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html",
-      "question": "Do the survival estimates establish comparative benefit?",
-      "answer_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#qa-3",
+      "question": "What response and disease-control results were reported?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#qa-2",
       "key_finding": {
-        "claim": "Median PFS was 95 days (reported 95% CI 79.70–154.34 days), and median OS was 250 days (reported 95% CI 112.86–387.14 days).",
-        "context": "Without a concurrent comparison, these observed survival times do not establish a survival gain or comparative benefit.",
+        "claim": "Among 24 efficacy-evaluable patients, responses were CR 1, PR 4, SD 10 and PD 9; ORR was 20.8% and DCR was 62.5%.",
+        "context": "These are observations without a concurrent control. ORR uses the reported percentage interval; DCR uses the Results-reported percentage interval, not the survival-day interval printed in the abstract.",
         "evidence": [
           {
-            "label": "median PFS",
-            "value": "95 days"
+            "label": "efficacy denominator",
+            "value": "24"
           },
           {
-            "label": "PFS reported 95 percent CI",
-            "value": "79.70–154.34 days"
+            "label": "CR",
+            "value": "1"
           },
           {
-            "label": "median OS",
-            "value": "250 days"
+            "label": "PR",
+            "value": "4"
           },
           {
-            "label": "OS reported 95 percent CI",
-            "value": "112.86–387.14 days"
+            "label": "SD",
+            "value": "10"
+          },
+          {
+            "label": "PD",
+            "value": "9"
+          },
+          {
+            "label": "ORR",
+            "value": "20.8%"
+          },
+          {
+            "label": "ORR reported 95 percent CI",
+            "value": "9.24–40.47%"
+          },
+          {
+            "label": "DCR",
+            "value": "62.5%"
+          },
+          {
+            "label": "DCR Results reported 95 percent CI",
+            "value": "42.71–78.84%"
           }
         ],
-        "source_locator": "Results: Efficacy of Apatinib Treatment; Fig. 1",
-        "id": "KF3",
-        "source": "data/deep_geo/doi-10-3389-fonc-2021-659217.json#/key_findings/2",
-        "evidence_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#kf3"
+        "source_locator": "Results: Efficacy of Apatinib Treatment",
+        "id": "KF2",
+        "source": "data/deep_geo/doi-10-3389-fonc-2021-659217.json#/key_findings/1",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2021-659217.html#kf2"
       },
       "key_finding_basis": "question_evidence_ref",
-      "source": "data/deep_geo/doi-10-3389-fonc-2021-659217.json#/qa/2/question",
+      "source": "data/deep_geo/doi-10-3389-fonc-2021-659217.json#/qa/1/question",
       "profile_type": "clinical_cohort",
       "narrative_genre": null,
       "concepts": [
