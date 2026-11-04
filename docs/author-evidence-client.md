@@ -277,6 +277,37 @@ provides a runnable citation-context sidecar for an existing K-Dense JATS reader
 It is explicitly applied by the consumer and is not an upstream default, an
 installed Skill, or a source-preference rule in this author evidence client.
 
+### Follow a discovered paper to newer research
+
+A useful older paper can lead to subsequent research through its citing works.
+Choose the seed from papers already discovered and read, resolve its canonical
+work ID, and reuse the consumer's citation-graph tool. For example, an existing
+HTTP client or the [pinned paper-lookup OpenAlex workflow](https://github.com/K-Dense-AI/scientific-agent-skills/blob/a25cf9ec00e2745d03f8704acf6f6919694ccd9a/skills/paper-lookup/references/openalex.md)
+can request one newest-citing page after replacing `OPENALEX_WORK_ID`:
+
+```text
+https://api.openalex.org/works?filter=cites:OPENALEX_WORK_ID&sort=publication_date:desc&per_page=20
+```
+
+Keep the full returned page, seed, sort, budget and original query. Verify that
+each record's `referenced_works` contains the resolved seed ID. Select relevant
+studies for the writing need, retain competing evidence, and join representations
+by formal DOI. This bounded recent-citer page supplements the original search;
+it is not a complete citation graph or a relevance ranking.
+
+When an already selected paper cannot be read, retain that access result and
+try an exact-DOI supplementary lookup only if this client is explicitly connected.
+Use `search "<selected DOI>" --live`, accept only the same DOI, then `fetch` its
+returned stable ID for the complete evidence context. A catalog miss leaves the
+paper in the reading queue; never substitute a nearby lexical match. An author
+explanation remains one representation of the same study, not a publisher-body
+read or a second paper. Record the source layer actually read and cite the formal
+paper for claims supported by that evidence, with the explanation locator retained.
+
+Measure graph candidates, metadata-only entries, scientific reading and material
+use in the draft separately. Listing a DOI in a bibliography is not evidence use;
+a correct draft reference is distinct from a newly published academic citation.
+
 ### Preserve a paper's genre, design and writing role
 
 Letters, reviews and original studies can each contribute to a research argument.
