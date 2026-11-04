@@ -24097,6 +24097,22 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13235386/",
       "year": 2026,
       "locator": "Main-text Methods 4.12–4.16 and Results2.7–2.8: glucose-gradient/co-culture contrasts and structural/function/transcript readout definitions; not clinical validation or a project citation edge."
+    },
+    {
+      "id": "space-oral-care-review-2025",
+      "title": "Aerospace Dentistry: Challenges, Innovations, and a Practical Guide for Space-Based Oral Healthcare.",
+      "doi": "10.1096/fj.202503258R",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41351523/",
+      "year": 2025,
+      "locator": "Official PubMed abstract and publication-type record: prolonged-spaceflight oral healthcare, tele-dentistry, AI diagnostics and on-demand 3D fabrication. Review abstract only; full review body was not read."
+    },
+    {
+      "id": "oral-health-ai-applications-review-2026",
+      "title": "Application of artificial intelligence in oral health management: challenges and opportunities.",
+      "doi": "10.3389/fmed.2026.1700529",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12910841/",
+      "year": 2026,
+      "locator": "Methods; Table 2; Telemedicine; Dental monitoring and follow-up; Clinical and implementation challenges; Limitations. Targeted body reading of terrestrial oral-health AI applications and implementation context."
     }
   ],
   "intents": [
@@ -25209,6 +25225,39 @@
               "doi_url": "https://doi.org/10.1016/j.cbi.2025.111421",
               "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "space-oral-health",
+      "question": "How can oral-health research support dental care during prolonged space missions?",
+      "question_zh": "口腔健康研究如何支持长时程太空任务中的牙科照护？",
+      "source_ids": [
+        "space-oral-care-review-2025",
+        "oral-health-ai-applications-review-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "space-oral-health-1",
+          "question": "What crew, remote-care and AI-robotics roles does a space-dentistry Letter propose?",
+          "question_zh": "一篇太空牙科来信提出了哪些船员能力、远程诊疗和AI机器人作用？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1111-odi-70054",
+              "question_ids": [
+                "doi-10-1111-odi-70054--qa-1",
+                "doi-10-1111-odi-70054--qa-2",
+                "doi-10-1111-odi-70054--qa-3",
+                "doi-10-1111-odi-70054--qa-4"
+              ],
+              "preview_question_id": "doi-10-1111-odi-70054--qa-1",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html",
+              "doi": "10.1111/odi.70054",
+              "doi_url": "https://doi.org/10.1111/odi.70054",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#cite-this-paper"
             }
           ]
         }
