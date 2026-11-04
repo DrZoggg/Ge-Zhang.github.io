@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "base_sha": "83410c006fd22774502f5e5d4d02473b20618c43",
+  "purpose": "Preserve the current approved site and historical scientific note approvals while permitting one source-grounded contribution-first presentation revision.",
+  "allowed_production_paths": [
+    "data/limited_evidence.json",
+    "papers/doi-10-1371-journal-pone-0346326.html",
+    "papers/doi-10-1371-journal-pone-0346326.md",
+    "research/questions.html",
+    "research/questions.json",
+    "sitemap.xml"
+  ],
+  "allowed_sitemap_lastmod": {
+    "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html": "2026-11-04"
+  },
+  "inherited_note_revisions": {
+    "10.3980/j.issn.1672-5123.2020.12.13": {
+      "historical_content_sha256": "f24ef9d5f3baac584ce980d1ffc0e46e79718458c492aeab58190bf3ec1d234c",
+      "approved_baseline_content_sha256": "8e7cad9c61703b779ed232c43c70379926fc06d3bbe49adbf40c7bed1bc9b0a4",
+      "reason": "Retain the already published bibliographic and author-identity clarification present in the approved baseline. This note is unchanged by the PLOS presentation revision."
+    }
+  },
+  "note_updates": {
+    "10.1371/journal.pone.0346326": {
+      "slug": "doi-10-1371-journal-pone-0346326",
+      "previous_content_sha256": "93b374d03881e6d73754ab4cce82373ae1532ecc8f167cb22279bb083b3c36c2",
+      "content_sha256": "8948893f77bdc482059c15c8f1e7e5ce2a63f462effd4f8c8f8b380df53cb022",
+      "allowed_changed_fields": [
+        "scope",
+        "sections[0].text"
+      ],
+      "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
+      "source_locator": "Methods: Statistical analysis, sec005; existing reviewed study context and article-reported database totals",
+      "evidence_status": "limited",
+      "scientific_review_date_retained": "2026-10-27"
+    }
+  }
+}
