@@ -248,6 +248,14 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32746619/",
       "year": 2021,
       "locator": "Actual EuropePMC MED32746619 official indexed abstract: EndMT transcriptional reprogramming in PAH; hypoxia, inflammation, BMPR2/redox context and future mechanism research. Review abstract only; full review body was unavailable in this read."
+    },
+    {
+      "id": "cardiac-organoid-heart-islet-model-2026",
+      "title": "Development of a vascularized multi-organoid-on-a-chip to model the heart-islet axis in diabetic cardiomyopathy",
+      "doi": "10.1016/j.bioactmat.2026.05.033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13235386/",
+      "year": 2026,
+      "locator": "Main-text Methods 4.12–4.16 and Results2.7–2.8: glucose-gradient/co-culture contrasts and structural/function/transcript readout definitions; not clinical validation or a project citation edge."
     }
   ],
   "intents": [
@@ -967,6 +975,33 @@
                 "doi-10-1016-j-ejso-2024-108527--qa-5"
               ],
               "preview_question_id": "doi-10-1016-j-ejso-2024-108527--qa-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiac-organoid-metabolic-injury",
+      "question": "How can human cardiac-organoid exposure experiments support metabolic cardiac-injury research?",
+      "question_zh": "人源心脏类器官暴露实验如何支持代谢性心肌损伤研究？",
+      "source_ids": [
+        "cardiac-organoid-heart-islet-model-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "cardiac-organoid-metabolic-injury-1",
+          "question": "What glucose/palmitate exposure and injury readouts have been reported in hiPSC-derived cardiac organoids?",
+          "question_zh": "hiPSC 来源心脏类器官的葡萄糖/棕榈酸暴露实验报告了哪些损伤读出？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-cbi-2025-111421",
+              "question_ids": [
+                "doi-10-1016-j-cbi-2025-111421--qa-4",
+                "doi-10-1016-j-cbi-2025-111421--qa-5",
+                "doi-10-1016-j-cbi-2025-111421--qa-3",
+                "doi-10-1016-j-cbi-2025-111421--qa-8"
+              ],
+              "preview_question_id": "doi-10-1016-j-cbi-2025-111421--qa-4"
             }
           ]
         }
