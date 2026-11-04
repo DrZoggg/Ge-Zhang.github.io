@@ -24533,6 +24533,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12910841/",
       "year": 2026,
       "locator": "Methods; Table 2; Telemedicine; Dental monitoring and follow-up; Clinical and implementation challenges; Limitations. Targeted body reading of terrestrial oral-health AI applications and implementation context."
+    },
+    {
+      "id": "rna-delivery-antagomir-review-2023",
+      "title": "Targeting and delivery of microRNA-targeting antisense oligonucleotides in cardiovascular diseases.",
+      "doi": "10.1016/j.atherosclerosis.2022.12.003",
+      "url": "https://doi.org/10.1016/j.atherosclerosis.2022.12.003",
+      "year": 2023,
+      "locator": "Official EuropePMC core abstract (PMID 36577600; 2023 print record): cardiovascular antagomir delivery using viral vectors and non-viral liposomes, extracellular vesicles and polymer nanoparticles. Carrier-classification background only."
     }
   ],
   "intents": [
@@ -25678,6 +25686,92 @@
               "doi_url": "https://doi.org/10.1111/odi.70054",
               "scope_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1111-odi-70054.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiac-microrna-delivery",
+      "question": "How can targeted delivery support microRNA-inhibition research in cardiac injury?",
+      "question_zh": "靶向递送如何支持心脏损伤中的微RNA抑制研究？",
+      "source_ids": [
+        "rna-delivery-antagomir-review-2023"
+      ],
+      "focused_queries": [
+        {
+          "id": "cardiac-microrna-delivery-1",
+          "question": "What carrier, distribution and response evidence was reported for peptide-targeted liposomal miRNA inhibition in doxorubicin-associated cardiac injury?",
+          "question_zh": "阿霉素相关心脏损伤中，肽靶向脂质体递送微RNA抑制剂的研究报告了哪些载体、组织分布和实验结果证据？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-ijn-s522157",
+              "question_ids": [
+                "doi-10-2147-ijn-s522157--qa-2",
+                "doi-10-2147-ijn-s522157--qa-3",
+                "doi-10-2147-ijn-s522157--qa-4",
+                "doi-10-2147-ijn-s522157--qa-5"
+              ],
+              "preview_question_id": "doi-10-2147-ijn-s522157--qa-5",
+              "paper_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html",
+              "doi": "10.2147/ijn.s522157",
+              "doi_url": "https://doi.org/10.2147/ijn.s522157",
+              "scope_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#cite-this-paper",
+              "finding_previews": [
+                {
+                  "id": "KF1",
+                  "claim": "The study characterized miR-185-5p-inhibitor-loaded liposomes functionalized with the reported heart-targeting peptide.",
+                  "context": "The carrier is a liposomal formulation; the candidate miRNA relationship to previous exosomal profiling does not make this an exosome-transfusion experiment.",
+                  "source_locator": "Methods: Lipo@miR-185-5p Inhibitor Preparation; Result and Discussion: Physicochemical Characterization of the Lipo@miR-185-5p Inhibitor Complex; Fig. 1",
+                  "evidence": [
+                    {
+                      "label": "Targeting peptide",
+                      "value": "APWHLSSQYSRT"
+                    },
+                    {
+                      "label": "Loaded-particle DLS diameter",
+                      "value": "172.35 ± 0.8 nm"
+                    },
+                    {
+                      "label": "Encapsulation efficiency",
+                      "value": "98.0 ± 1.2%"
+                    },
+                    {
+                      "label": "Reported release",
+                      "value": "Approximately 80% at 48 hours"
+                    },
+                    {
+                      "label": "Size-method distinction",
+                      "value": "TEM describes approximately 100 nm; DLS reports hydrodynamic size"
+                    }
+                  ],
+                  "source": "data/deep_geo/doi-10-2147-ijn-s522157.json#/key_findings/0",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#kf1"
+                },
+                {
+                  "id": "KF2",
+                  "claim": "Peptide-functionalized liposomes produced greater cardiac fluorescence than the non-targeted comparator in the tested mouse biodistribution experiment.",
+                  "context": "Fluorescence localization supports distribution of the labeled preparation, not exclusive cardiac delivery or a directly quantified intact-drug tissue dose.",
+                  "source_locator": "Methods: Biodistribution of Liposome@CY5.5-Encapsulated miR-185-5p Inhibitor by in vivo Imaging System; Fig. 2A",
+                  "evidence": [
+                    {
+                      "label": "Comparators",
+                      "value": "Lipo-HT versus Lipo-V"
+                    },
+                    {
+                      "label": "Imaging times",
+                      "value": "2, 8, 12 and 24 hours"
+                    },
+                    {
+                      "label": "Reported pattern",
+                      "value": "Greater cardiac fluorescence with the targeting peptide, especially at 8 and 12 hours"
+                    }
+                  ],
+                  "source": "data/deep_geo/doi-10-2147-ijn-s522157.json#/key_findings/1",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-2147-ijn-s522157.html#kf2"
+                }
+              ]
             }
           ]
         }
