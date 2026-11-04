@@ -27462,28 +27462,40 @@
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
       "doi": "10.18632/aging.205564",
       "paper_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html",
-      "question": "Were the nominated compounds experimentally shown to treat UC?",
-      "answer_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#qa-5",
+      "question": "What external discrimination was reported?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#qa-3",
       "key_finding": {
-        "claim": "CMap/eXtreme-Sum signature matching nominated five candidate compounds.",
-        "context": "These are computational drug-signature hypotheses. Clinical drug efficacy was not established in this study, and no doses or treatment recommendations are provided.",
-        "source_locator": "Results: Construction of global regulatory landscape and therapeutic discovery; Fig. 6C",
+        "claim": "Results reported external UC-versus-control AUCs of 0.930 for GSE47908, 0.942 for GSE59071, 0.934 for GSE75214, 0.988 for GSE92415 and 1.000 for GSE14580.",
+        "context": "These are article-reported external bulk-expression discrimination results, not independent prospective clinical effectiveness. No individually unresolved confidence intervals or clinical thresholds are supplied, and AUC 1.000 does not mean universally perfect diagnosis.",
+        "source_locator": "Results: Robust performance of UCRGs-based diagnostic model; Fig. 4D-H",
         "evidence": [
           {
-            "label": "candidate compounds",
-            "value": "5"
+            "label": "GSE47908 AUC",
+            "value": "0.930"
           },
           {
-            "label": "method",
-            "value": "CMap/eXtreme-Sum signature matching"
+            "label": "GSE59071 AUC",
+            "value": "0.942"
+          },
+          {
+            "label": "GSE75214 AUC",
+            "value": "0.934"
+          },
+          {
+            "label": "GSE92415 AUC",
+            "value": "0.988"
+          },
+          {
+            "label": "GSE14580 AUC",
+            "value": "1.000"
           }
         ],
-        "id": "KF5",
-        "source": "data/deep_geo/doi-10-18632-aging-205564.json#/key_findings/4",
-        "evidence_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#kf5"
+        "id": "KF3",
+        "source": "data/deep_geo/doi-10-18632-aging-205564.json#/key_findings/2",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-18632-aging-205564.html#kf3"
       },
       "key_finding_basis": "question_evidence_ref",
-      "source": "data/deep_geo/doi-10-18632-aging-205564.json#/qa/4/question",
+      "source": "data/deep_geo/doi-10-18632-aging-205564.json#/qa/2/question",
       "profile_type": "multicohort_omics",
       "narrative_genre": null,
       "concepts": [
