@@ -24089,6 +24089,14 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32746619/",
       "year": 2021,
       "locator": "Actual EuropePMC MED32746619 official indexed abstract: EndMT transcriptional reprogramming in PAH; hypoxia, inflammation, BMPR2/redox context and future mechanism research. Review abstract only; full review body was unavailable in this read."
+    },
+    {
+      "id": "cardiac-organoid-heart-islet-model-2026",
+      "title": "Development of a vascularized multi-organoid-on-a-chip to model the heart-islet axis in diabetic cardiomyopathy",
+      "doi": "10.1016/j.bioactmat.2026.05.033",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13235386/",
+      "year": 2026,
+      "locator": "Main-text Methods 4.12–4.16 and Results2.7–2.8: glucose-gradient/co-culture contrasts and structural/function/transcript readout definitions; not clinical validation or a project citation edge."
     }
   ],
   "intents": [
@@ -25169,6 +25177,38 @@
               "doi_url": "https://doi.org/10.1016/j.ejso.2024.108527",
               "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#cite-this-paper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiac-organoid-metabolic-injury",
+      "question": "How can human cardiac-organoid exposure experiments support metabolic cardiac-injury research?",
+      "question_zh": "人源心脏类器官暴露实验如何支持代谢性心肌损伤研究？",
+      "source_ids": [
+        "cardiac-organoid-heart-islet-model-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "cardiac-organoid-metabolic-injury-1",
+          "question": "What glucose/palmitate exposure and injury readouts have been reported in hiPSC-derived cardiac organoids?",
+          "question_zh": "hiPSC 来源心脏类器官的葡萄糖/棕榈酸暴露实验报告了哪些损伤读出？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-cbi-2025-111421",
+              "question_ids": [
+                "doi-10-1016-j-cbi-2025-111421--qa-4",
+                "doi-10-1016-j-cbi-2025-111421--qa-5",
+                "doi-10-1016-j-cbi-2025-111421--qa-3",
+                "doi-10-1016-j-cbi-2025-111421--qa-8"
+              ],
+              "preview_question_id": "doi-10-1016-j-cbi-2025-111421--qa-4",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html",
+              "doi": "10.1016/j.cbi.2025.111421",
+              "doi_url": "https://doi.org/10.1016/j.cbi.2025.111421",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#cite-this-paper"
             }
           ]
         }
@@ -26684,36 +26724,40 @@
       "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
       "doi": "10.1016/j.cbi.2025.111421",
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html",
-      "question": "Is this a patient study?",
-      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#qa-1",
+      "question": "What glucose and lipid conditions were examined?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#qa-4",
       "key_finding": {
-        "id": "KF1",
-        "claim": "The investigators generated hiPSC-derived three-dimensional cardiac organoids and documented growth and cardiac-lineage marker staining.",
-        "context": "This is characterization of an in vitro construct. Marker-positive images do not establish mature adult-heart physiology, precise cell proportions, perfused vasculature or fidelity across independent human donors.",
-        "source_locator": "Journal Pre-proof PDF pp. 7, 12-16, Methods 2.3-2.4, Results 3.1-3.2 and Figs. 1A-D and 2A; Fig. 1 is on PDF p. 13 and Fig. 2A on PDF p. 15.",
+        "id": "KF2",
+        "claim": "The CCK-8 screen showed lower viability-associated signal at higher sodium-palmitate concentrations and a non-monotonic response across the displayed glucose conditions.",
+        "context": "CCK-8 is an assay of cellular metabolic activity used here as a viability readout. The figure does not provide an absolute surviving-cell count, a validated clinical glucose threshold or a drug dose for patients. The glucose-alone plot and combined glucose/palmitate experiments are separate comparisons.",
+        "source_locator": "Journal Pre-proof PDF pp. 8, 15-16, Methods 2.5-2.6, Results 3.3 and Fig. 2B-C (figure on PDF p. 15; legend on PDF p. 16).",
         "evidence": [
           {
-            "label": "Reported geometry",
-            "value": "Approximately 500 micrometers at day 2 and approximately 1500 micrometers at day 14, stated in Results 3.1; these are not independently re-estimated bar values."
+            "label": "Exposure duration",
+            "value": "48 hours; followed by 2 hours with CCK-8 reagent and an absorbance measurement at 450 nm."
           },
           {
-            "label": "Lineage readouts",
-            "value": "MLC2A, MLC2V, cTnT, CD31 and WT1 immunofluorescence."
+            "label": "Palmitate screen",
+            "value": "0, 50, 100, 150, 200, 250 and 300 micromolar are displayed; the 200-300 micromolar groups are below the 0-palmitate comparator."
           },
           {
-            "label": "Cell source",
-            "value": "Commercial human induced pluripotent stem cells; independent donor count and detailed line identity are not specified."
+            "label": "Glucose screen",
+            "value": "5, 12.5, 25, 33.3 and 50 mM are displayed. The peak is at 25 mM, and the 50 mM bar is below the displayed 5 mM group; no glucose-free group is shown in Fig. 2C."
           },
           {
-            "label": "Timing boundary",
-            "value": "Figure 1C-D and the results describe day 14, while the differentiation schematic ends at day 13; the schematic is not promoted as an exact reproducible timetable."
+            "label": "Reported sample label",
+            "value": "Fig. 2 legend: n=6, mean +/- SD; the independent biological-replicate unit is not defined."
+          },
+          {
+            "label": "Quantitative boundary",
+            "value": "No exact viability percentage, effect size or p value is reconstructed from bar heights or significance symbols; no minimum toxic threshold is selected."
           }
         ],
-        "source": "data/deep_geo/doi-10-1016-j-cbi-2025-111421.json#/key_findings/0",
-        "evidence_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#kf1"
+        "source": "data/deep_geo/doi-10-1016-j-cbi-2025-111421.json#/key_findings/1",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html#kf2"
       },
       "key_finding_basis": "question_evidence_ref",
-      "source": "data/deep_geo/doi-10-1016-j-cbi-2025-111421.json#/qa/0/question",
+      "source": "data/deep_geo/doi-10-1016-j-cbi-2025-111421.json#/qa/3/question",
       "profile_type": "preclinical_multimodal",
       "narrative_genre": null,
       "concepts": [
