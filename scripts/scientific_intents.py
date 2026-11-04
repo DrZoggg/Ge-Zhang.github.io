@@ -8,6 +8,7 @@ import copy
 import html
 import json
 import re
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -64,6 +65,37 @@ def _lookup(discovery):
             or len(questions) != len(discovery['all_questions'])):
         raise ValueError('Duplicate underlying intent work or question identity')
     return works, questions
+
+
+def _note_previews(work, headings):
+    """Select original limited-note sections, never controller-supplied prose."""
+    headings = _unique(headings, work['id'] + '/preview note headings')
+    note = work.get('author_evidence_note')
+    if not headings or work.get('evidence_status') != 'limited' or not note:
+        raise ValueError('Author-note previews require an existing limited author evidence note')
+    _keys(note, ('reviewed_on', 'source_record', 'sections'), 'author evidence note')
+    reviewed_on = _text(note['reviewed_on'], 'author note review date')
+    if date.fromisoformat(reviewed_on).isoformat() != reviewed_on:
+        raise ValueError('Invalid author note review date')
+    doi = work.get('doi')
+    pointer = 'data/limited_evidence.json#/papers/' + str(doi).replace('~', '~0').replace('/', '~1')
+    if not doi or note['source_record'] != pointer:
+        raise ValueError('Author note source record must belong to its limited work')
+    if not isinstance(note['sections'], list) or not note['sections']:
+        raise ValueError('Author note requires existing source sections')
+    for section in note['sections']:
+        _keys(section, ('heading', 'text', 'source_url', 'source_locator'), 'author note section')
+        for field in ('heading', 'text', 'source_locator'):
+            _text(section[field], 'author note/' + field)
+        _https(section['source_url'], 'author note/source URL')
+    previews = []
+    for heading in headings:
+        matches = [section for section in note['sections'] if section['heading'] == heading]
+        if len(matches) != 1:
+            raise ValueError('Author note heading must match exactly one existing section')
+        previews.append({**copy.deepcopy(matches[0]), 'reviewed_on': reviewed_on,
+                         'source_record': note['source_record']})
+    return previews
 
 
 def build_intent_layer(discovery, root=ROOT):
@@ -134,6 +166,8 @@ def build_intent_layer(discovery, root=ROOT):
                 ref_keys = ('work_id', 'question_ids', 'preview_question_id')
                 if isinstance(ref, dict) and 'preview_finding_ids' in ref:
                     ref_keys += ('preview_finding_ids',)
+                if isinstance(ref, dict) and 'preview_note_headings' in ref:
+                    ref_keys += ('preview_note_headings',)
                 _keys(ref, ref_keys, 'work reference')
                 wid = ref['work_id']
                 if not isinstance(wid, str) or wid not in works or wid in seen_works:
@@ -188,6 +222,8 @@ def build_intent_layer(discovery, root=ROOT):
                             raise ValueError('Finding preview must use its canonical finding URL')
                         previews.append(copy.deepcopy(finding))
                     links[-1]['finding_previews'] = previews
+                if 'preview_note_headings' in ref:
+                    links[-1]['author_note_previews'] = _note_previews(work, ref['preview_note_headings'])
             resolved = {**{key: query[key] for key in ('id', 'question', 'question_zh')}, 'work_refs': links}
             if 'guide_ref' in query:
                 ref = query['guide_ref']
@@ -262,6 +298,15 @@ def render_intent_layer(discovery):
                                         + '">' + escape(fid) + '</a> · '
                                         + escape(findings[fid]['source_locator']) + '</li>'
                                         for fid in preview['evidence_refs']) + '</ul>')
+                note_context = ''
+                if ref.get('author_note_previews'):
+                    note_context = ('<div class="intent-author-context"><p><strong>Author-reviewed research context:</strong></p><ul>'
+                                    + ''.join('<li data-intent-note="' + escape(work['id'] + '--' + note['heading'], quote=True) + '">'
+                                              + '<p><strong>' + escape(note['heading']) + ':</strong> ' + escape(note['text']) + '</p>'
+                                              + '<details><summary>Original source and review</summary><p><a href="'
+                                              + escape(note['source_url'], quote=True) + '">Original source</a> · '
+                                              + escape(note['source_locator']) + '</p><p>Reviewed ' + escape(note['reviewed_on'])
+                                              + '</p></details></li>' for note in ref['author_note_previews']) + '</ul></div>')
                 links = ('<a data-intent-paper href="' + escape(ref['paper_url'], quote=True)
                          + '">Paper evidence</a>')
                 if ref['doi_url']:
@@ -285,12 +330,14 @@ def render_intent_layer(discovery):
                 evidence.append('<div class="intent-evidence" data-intent-work="' + escape(work['id'], quote=True) + '">'
                                 + '<h5><a href="' + escape(ref['paper_url'], quote=True) + '">'
                                 + escape(work['title']) + '</a></h5><p class="meta">' + escape(identity) + '</p>'
-                                + principal + answer + detail + question_links + '<p class="links">' + links + '</p></div>')
+                                + principal + answer + note_context + detail + question_links + '<p class="links">' + links + '</p></div>')
             queries.append('<section class="intent-focused" id="' + escape(anchor + '--' + query['id'], quote=True)
                            + '" data-intent-focused="' + escape(query['id'], quote=True) + '"><h4>'
                            + escape(query['question']) + '</h4><p class="intent-translation" lang="zh">'
                            + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence) + '</section>')
-        context = '<p class="intent-reviews"><strong>Review context:</strong> ' + ' · '.join(
+        context_label = ('Original source context:' if any(ref.get('author_note_previews')
+                         for query in intent['focused_queries'] for ref in query['work_refs']) else 'Review context:')
+        context = '<p class="intent-reviews"><strong>' + context_label + '</strong> ' + ' · '.join(
             '<a href="' + escape(sources[sid]['url'], quote=True) + '">'
             + escape(sources[sid]['title']) + ' (' + str(sources[sid]['year']) + ')</a>'
             for sid in intent['source_ids']) + '</p>'
@@ -339,6 +386,7 @@ def validate_intent_html(page, discovery, root=None):
                         'data-intent-question': sum(len(ref['question_ids']) for ref in refs),
                         'data-intent-answer': sum(ref['preview_question_id'] is not None for ref in refs),
                         'data-intent-finding': sum(len(ref.get('finding_previews', [])) for ref in refs),
+                        'data-intent-note': sum(len(ref.get('author_note_previews', [])) for ref in refs),
                         'data-intent-context-answer': sum(bool(query.get('context_answer')) for query in queries)}
     if any(parsed.markers.get(key, 0) != count for key, count in expected_markers.items()):
         raise ValueError('Scientific intent HTML reference or answer inventory differs')
