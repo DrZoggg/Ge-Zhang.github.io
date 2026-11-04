@@ -312,6 +312,22 @@
       "url": "https://doi.org/10.1016/j.jtemb.2024.127543",
       "year": 2024,
       "locator": "Publisher PDF p. 2, Methods 2.1–2.2 and Fig. 1; pp. 3–4, Table 1.; Publisher PDF p. 2, Methods 2.3; p. 5, Discussion limitations.; Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2 and Table 2, continuous MDS row and footnote a."
+    },
+    {
+      "id": "drug-safety-irbesartan-dual-database-2024",
+      "title": "A real-world pharmacovigilance analysis of adverse events associated with irbesartan using the FAERS and JADER databases",
+      "doi": "10.3389/fphar.2024.1485190",
+      "url": "https://doi.org/10.3389/fphar.2024.1485190",
+      "year": 2024,
+      "locator": "Methods sections 2.1–2.3; selected Results and Discussion/limitations. Original FAERS/JADER pharmacovigilance methodology, used as a drug-specific research-method example."
+    },
+    {
+      "id": "drug-safety-alpha1-neurological-2026",
+      "title": "Drug- and patient-specific neurological risk profiles of α1-adrenergic blockers: evidence from FAERS and external validation in JADER",
+      "doi": "10.1177/20420986261444611",
+      "url": "https://doi.org/10.1177/20420986261444611",
+      "year": 2026,
+      "locator": "Main Methods; Results including Table 1 and adjusted FAERS/JADER associations; Discussion/limitations. Original drug- and neurological-endpoint-specific reporting analysis, used for methodological context."
     }
   ],
   "intents": [
@@ -1226,6 +1242,33 @@
       "source_ids": [
         "le8-depressive-symptoms-original-2024",
         "mds-depressive-symptoms-original-2024"
+      ]
+    },
+    {
+      "id": "cross-database-drug-safety",
+      "question": "How can cross-database spontaneous-report studies support drug-safety signal research?",
+      "question_zh": "跨数据库自发报告研究如何支持药物安全信号研究？",
+      "source_context_kind": "original_research",
+      "source_ids": [
+        "drug-safety-irbesartan-dual-database-2024",
+        "drug-safety-alpha1-neurological-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "cross-database-drug-safety-1",
+          "question": "Which databases, report units and signal-detection methods were described in a cross-database aliskiren pharmacovigilance study?",
+          "question_zh": "一项阿利吉仑跨数据库药物警戒研究描述了哪些数据库、报告分析单位和信号检测方法？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1371-journal-pone-0346326",
+              "question_ids": [],
+              "preview_question_id": null,
+              "preview_note_headings": [
+                "Study and evidence unit"
+              ]
+            }
+          ]
+        }
       ]
     }
   ]
