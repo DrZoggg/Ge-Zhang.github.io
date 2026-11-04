@@ -2451,6 +2451,30 @@
           "locator": "S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1371~1journal.pone.0346326",
+        "sections": [
+          {
+            "heading": "Study and evidence unit",
+            "text": "This pharmacovigilance study examines aliskiren-associated spontaneous reports in FAERS and WHO-VigiAccess. The article summarizes 5,596 and 5,549 reports, respectively. Its statistical analysis describes proportional reporting ratio (PRR), reporting odds ratio (ROR), Bayesian confidence propagation neural network (BCPNN), and multi-item gamma Poisson shrinker (MGPS) methods for detecting reporting signals. These descriptive data and methods provide an example for cross-database safety-signal research; the observation units are reports rather than exposed patients.",
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
+            "source_locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)"
+          },
+          {
+            "heading": "What the supplementary report clarifies",
+            "text": "The official FAERS mining supplement contains annual entries from 2005 through 2025, alongside report characteristics and signal tables. This directly demonstrates a broader reporting period than the main Table 1 caption, which states Q4 2023–Q4 2024. It does not establish the exact extraction quarters or authorize silently replacing the published caption with the Methods window.",
+            "source_url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003",
+            "source_locator": "S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025"
+          },
+          {
+            "heading": "Evidence boundary",
+            "text": "The audit therefore retains study context without endorsing quantitative signal ranking or a clinical safety recommendation. The printed Serious count of 1,037 and Hospitalization count of 1,735 remain unreconciled at the report-versus-outcome level. Author clarification must identify the analytic window and counting rules; reporting associations cannot establish that aliskiren caused an event.",
+            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
+            "source_locator": "Table 1, AE severity and Serious outcome rows; Discussion limitations"
+          }
+        ]
+      },
       "scope": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
       "evidence_notice": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
       "evidence_scope": null,
@@ -3456,6 +3480,30 @@
           "locator": "Results 2.1–2.2; Figure 3 caption"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1002~1mdr2.70073",
+        "sections": [
+          {
+            "heading": "Reported data and clinical task",
+            "text": "The paper describes an AI system for osteoarthritis, rheumatoid arthritis and osteoporosis using routine laboratory measurements, demographics and symptom narratives. It reports 58,777 NHANES records, split into 49,523 training records from 1999–2016 and 9,254 temporal-test records from 2017–2018, plus 4,436 records from four Chinese centres. These are reported dataset roles, not independently verified evidence of clinical utility.",
+            "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+            "source_locator": "Results 2.1–2.2; Figure 3 caption"
+          },
+          {
+            "heading": "A specific, interpretable architecture",
+            "text": "The described fusion combines three structured-model scores with a 768-dimensional Bio_ClinicalBERT representation, producing 771 features for a classifier. The text encoder uses LoRA adapters; explicit diagnostic fields and disease names are described as removed or masked. This is a supervised prediction architecture with workflow orchestration, not evidence that a generative model independently reasons through diagnosis or improves patient outcomes.",
+            "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+            "source_locator": "Results 2.4 Multimodal Data Interconnection; Figure 5"
+          },
+          {
+            "heading": "Performance claims remain limited",
+            "text": "All three printed training AUC estimates lie outside their accompanying confidence intervals. The 42-versus-41 predictor count and the relationship between test-set-based hyperparameter selection and later one-time evaluation also require clarification. The audit consequently does not endorse diagnostic accuracy, the reported multimodal improvement, or prospective self-screening effectiveness.",
+            "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+            "source_locator": "Results 2.2, Figure 2 caption and Figure 3C caption; Results 2.4"
+          }
+        ]
+      },
       "scope": "Reported multimodal design; diagnostic performance and clinical utility remain unverified.",
       "evidence_notice": "Reported multimodal design; diagnostic performance and clinical utility remain unverified.",
       "evidence_scope": null,
@@ -4143,6 +4191,30 @@
           "locator": "Series relation: SubSeries of GSE57345, official GEO record"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1111~1jcmm.70475",
+        "sections": [
+          {
+            "heading": "Discovery and experimental components",
+            "text": "This study combines public myocardial transcriptomes with mouse experiments to examine disulfidptosis-related genes in ischaemic cardiomyopathy. The reported discovery set merges GSE5406 and GSE57338, comprising 152 control and 203 ischaemic samples. The animal protocol assigns 16 mice to each sham or disease group, with eight of each sex, and assesses tissue one week after coronary ligation.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11897062/",
+            "source_locator": "Methods 2.1 Data Source (jcmm70475-sec-0003); 2.9 Animal (jcmm70475-sec-0011)"
+          },
+          {
+            "heading": "Reported observations that can be separated",
+            "text": "Results report reduced MYH9, MYL6 and NCKAP1 myocardial mRNA in both female and male disease groups. These exploratory animal observations do not establish human diagnostic performance. They do not establish that manipulating these genes changes disease, or that a disulfidptosis mechanism was causally demonstrated.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11897062/",
+            "source_locator": "Results 3.7 (jcmm70475-sec-0027); Figure 8F and cited Figure S8D"
+          },
+          {
+            "heading": "Validation and sex-specific boundaries",
+            "text": "Independent validation remains unconfirmed: training accession GSE57338 is a SubSeries of validation accession GSE57345, and nonoverlapping sample selection is not demonstrated. Separately, Results report opposite MYH10 mRNA directions by sex, whereas Discussion describes matching patterns. The audit therefore excludes the claimed independent classifier performance and any sex-invariant MYH10 conclusion; it does not choose between conflicting statements.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11897062/",
+            "source_locator": "Methods 2.1; Results 3.3 and 3.7; Discussion (jcmm70475-sec-0028)"
+          }
+        ]
+      },
       "scope": "Discovery design and reported animal expression observations; independent human validation remains unresolved.",
       "evidence_notice": "Discovery design and reported animal expression observations; independent human validation remains unresolved.",
       "evidence_scope": null,
@@ -4480,6 +4552,30 @@
           "locator": "Abstract: Background, Methods, Results; indexed official landing record"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.2139~1ssrn.5292589",
+        "sections": [
+          {
+            "heading": "Preprint record",
+            "text": "This 2025 SSRN deposit lists eight authors, with Qiang Li first and Ge Zhang second. It is registered as posted content rather than a journal article.",
+            "source_url": "https://api.crossref.org/works/10.2139/ssrn.5292589",
+            "source_locator": "Crossref DOI deposit: title, authors, posted-content type, publication date and relation fields."
+          },
+          {
+            "heading": "Source-visible research context",
+            "text": "The indexed SSRN abstract describes an ALS investigation combining population burden, blood transcriptomics, modelling, Mendelian randomization, and serum protein assessment. These are abstract-level descriptions; the original manuscript methods and figures have not been reviewed.",
+            "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5292589",
+            "source_locator": "Abstract: Background, Methods, Results; indexed official landing record"
+          },
+          {
+            "heading": "Version boundary",
+            "text": "The indexed landing record labels the work published while retaining a preprint notice, but no explicit successor DOI was obtained. No journal-article results are assigned to this unverified manuscript version.",
+            "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5292589",
+            "source_locator": "Indexed official record: publication status and preprint notice; Crossref deposit relation field."
+          }
+        ]
+      },
       "scope": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_notice": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_scope": null,
@@ -5593,6 +5689,30 @@
           "locator": "Supplementary Table 1, survival/Cox analysis script"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.2147~1cia.s493841",
+        "sections": [
+          {
+            "heading": "Cohort and endpoint",
+            "text": "This single-centre retrospective study follows 304 patients after elective endovascular abdominal aortic aneurysm repair. The article describes an internal random split into 213 training and 91 validation patients, all-cause mortality as the endpoint, and median follow-up of 24 months (interquartile range 16–33). Emergency repair for ruptured aneurysms was excluded.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12673264/",
+            "source_locator": "Methods: Study Population and Endpoint and Follow-Up (s0002-s2001–s0002-s2002); Results Patient Characteristics; Table 1"
+          },
+          {
+            "heading": "Reported exploratory associations",
+            "text": "Table 3 and its accompanying Results agree on adjusted associations for the article’s large-AAA variable (hazard ratio 3.09, 95% CI 1.43–6.72), stroke history (3.59, 1.67–7.70), and common iliac artery atherosclerosis (4.48, 1.92–10.49). They do not establish causality or the benefit of changing treatment, and their analytic sample size remains unspecified.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12673264/#t0003",
+            "source_locator": "Table 3 multivariable rows; Variable Analysis and Selection (s0003-s2002)"
+          },
+          {
+            "heading": "Why this is not a validated risk tool",
+            "text": "The supplement runs Cox regression on an object named datacox without defining its membership, so the audit does not assign these estimates to 213 or 304 patients. Inconsistent time-specific AUCs and validation mortality percentages remain unresolved. Continuous-variable hazard ratios are omitted because scaling is unclear; no individual risk calculator, clinical utility, or externally validated performance is endorsed.",
+            "source_url": "https://www.dovepress.com/article/supplementary_file/493841/493841%20Revised%20Supplementary%20Table%201.docx",
+            "source_locator": "Supplementary Table 1, survival/Cox analysis script"
+          }
+        ]
+      },
       "scope": "Published exploratory Cox estimates with an unspecified analytical denominator; prediction performance remains unverified.",
       "evidence_notice": "Published exploratory Cox estimates with an unspecified analytical denominator; prediction performance remains unverified.",
       "evidence_scope": null,
@@ -5655,6 +5775,30 @@
           "locator": "Methods: Study design and patients; Figure 1"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3",
+        "sections": [
+          {
+            "heading": "Research question and design",
+            "text": "This single-centre retrospective study compared endoscopic and laparoscopic resection for pathologically confirmed gastrointestinal stromal tumours at the esophagogastric junction. The stated study window was December 2013 to November 2023, and eligibility focused on tumours measuring 2–5 cm. This is an observational treatment comparison, not a randomized trial.",
+            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+            "source_locator": "Methods: Study design and patients; Figure 1"
+          },
+          {
+            "heading": "How treatment groups were compared",
+            "text": "The authors describe nearest-neighbour propensity matching at a 1:1 ratio, using age, sex, tumour size, mitotic count and risk classification. This establishes the reported analytical approach; it does not verify that matching achieved balance or removed unmeasured confounding. No comparative safety, recovery or oncological benefit is endorsed here.",
+            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+            "source_locator": "Methods: Statistical analysis; Tables 1–3"
+          },
+          {
+            "heading": "Unresolved source conflict",
+            "text": "The abstract reverses the unmatched ER/LR allocation relative to the Results and Table 1. More substantially, the matched laparoscopic group is labelled n=20 but lists 10 males and 20 females. The formal PDF confirms the table inconsistency, so matched-group balance remains unverified.",
+            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+            "source_locator": "Abstract versus Results: Baseline clinicopathologic characteristics; Table 1 after PSM, LR Gender; publisher PDF p. 5"
+          }
+        ]
+      },
       "scope": "Study design and unresolved matching integrity; treatment comparisons are not verified.",
       "evidence_notice": "Study design and unresolved matching integrity; treatment comparisons are not verified.",
       "evidence_scope": null,
@@ -5721,6 +5865,30 @@
           "locator": "Table S2, FCN2 and DEFA1 IVW, MR-Egger and weighted-median rows"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.2147~1jir.s495784",
+        "sections": [
+          {
+            "heading": "Protein discovery and follow-up",
+            "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It selects PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 for ELISA and transcriptomic comparisons. These are protein measurements, and the observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
+            "source_locator": "Methods: General Information and biomarker screening; Results: Identification of Cardiometabolic-Related Biomarkers and ELISA Validation"
+          },
+          {
+            "heading": "What the MR supplement actually reports",
+            "text": "Supplementary Table S2 reports nominal inverse-variance-weighted associations for FCN2 and DEFA1. Their MR-Egger and weighted-median tests are not significant at 0.05. These method-dependent exploratory findings do not establish causality or treatment targets; exposure units, multiplicity and instrument mapping remain unverified.",
+            "source_url": "https://www.dovepress.com/article/supplementary_file/495784/495784.docx",
+            "source_locator": "Table S2, FCN2 and DEFA1 IVW, MR-Egger and weighted-median rows"
+          },
+          {
+            "heading": "Validation boundaries remain explicit",
+            "text": "ELISA counts differ between the Methods/Table 1 and Figure 5: 125 versus 120 infarction cases. Supplementary Table S1 identifies GSE57338, while the main text names GSE57388, leaving accession-to-result mapping unresolved. Differential-expression methods specify FDR adjustment, but its mapping to reported result thresholds needs clarification. The audit therefore withholds diagnostic accuracy and causal-validation claims.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
+            "source_locator": "Methods ELISA and Statistical Analysis; Table 1; Figure 5; ELISA Results"
+          }
+        ]
+      },
       "scope": "Protein-discovery design and supplementary sensitivity checks; diagnostic and causal claims remain unverified.",
       "evidence_notice": "Protein-discovery design and supplementary sensitivity checks; diagnostic and causal claims remain unverified.",
       "evidence_scope": null,
@@ -12778,6 +12946,24 @@
           "locator": "PubMed PMID 38936505, Abstract: opening rationale and solid-tumor barriers."
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1016~1j.canlet.2024.217079",
+        "sections": [
+          {
+            "heading": "Review question",
+            "text": "This review considers immunogenic cell death as a possible partner for CAR-T strategies in solid tumors. Its abstract connects stress-induced release of damage-associated molecular patterns with the immune environment and describes antigen heterogeneity and physical or immune barriers as challenges for CAR-T cells.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/38936505/",
+            "source_locator": "PubMed PMID 38936505, Abstract: opening rationale and solid-tumor barriers."
+          },
+          {
+            "heading": "Evidence level",
+            "text": "The article is a review of mechanisms and proposed combination approaches, not a new clinical trial. Its discussion of potential synergy should be distinguished from demonstrated patient benefit for a specific regimen.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/38936505/",
+            "source_locator": "PubMed PMID 38936505, Abstract: final sentence identifying the review scope; publication type Review."
+          }
+        ]
+      },
       "scope": "Abstract-supported review context; the complete review and its cited experimental evidence have not been audited.",
       "evidence_notice": "Abstract-supported review context; the complete review and its cited experimental evidence have not been audited.",
       "evidence_scope": null,
@@ -12837,6 +13023,30 @@
           "locator": "Methods: Construction of machine learning models; Results: Construction and evaluation of SVM, RF, GLM and XGB machine models"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1186~1s12931-024-02978-w",
+        "sections": [
+          {
+            "heading": "Research question and reported workflow",
+            "text": "The study investigates disulfidptosis-related expression patterns in pulmonary hypertension. Its workflow compares random forest, support-vector machine, generalized linear and XGBoost models, then constructs a nomogram and regulatory-network hypotheses. DSTN, NDUFS1, RPN1, TLN1 and MYH10 are the five nominated genes; their nomination does not establish a clinically validated diagnostic panel.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465917/",
+            "source_locator": "Methods: Construction of machine learning models; Results: Construction and evaluation of SVM, RF, GLM and XGB machine models"
+          },
+          {
+            "heading": "Separate experimental component",
+            "text": "The paper also reports a hypoxia-exposure rodent experiment and Western-blot measurements of the nominated proteins. This is a preclinical expression assessment, separate from human diagnostic-model evaluation. It does not establish diagnostic accuracy in patients, demonstrate a treatment effect, or validate predicted drugs from molecular docking.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465917/",
+            "source_locator": "Methods: Animal; Chemicals and materials; Results: Five DiGs as diagnostic markers were validated in HPH animal model; Figure 8"
+          },
+          {
+            "heading": "Why performance remains unverified",
+            "text": "The abstract and Methods list different training and validation accessions. The Results also assign validation AUCs to cohorts differently from the Figure 5 caption. Neither accession series nor curve attribution is silently selected here; the cohort-to-analysis mapping requires clarification.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465917/",
+            "source_locator": "Abstract Methods; Materials and methods: Data source; validation Results; Figure 5D–I caption"
+          }
+        ]
+      },
       "scope": "Reported molecular-screening workflow and animal-assay design; diagnostic performance is unresolved.",
       "evidence_notice": "Reported molecular-screening workflow and animal-assay design; diagnostic performance is unresolved.",
       "evidence_scope": null,
@@ -12919,6 +13129,36 @@
           "locator": "GSE57338 is a SubSeries of GSE57345; previously saved official SOFT Series response verified during this review."
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1016~1j.intimp.2024.112574",
+        "sections": [
+          {
+            "heading": "Five candidate genes and experimental follow-up",
+            "text": "The article selects DLST, ATP7B, FDX1, SLC31A1 and DLAT after a retrospective public-transcriptomic analysis. The full text is now available for review, but its classification performance is not treated here as independently validated clinical diagnosis.",
+            "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+            "source_locator": "Publisher-layout PDF pp. 2–3, Methods 2.1–2.5; pp. 5–8, Results 3.3 and Figures 4–5."
+          },
+          {
+            "heading": "Mouse expression evidence",
+            "text": "Methods 2.9 describes male C57BL/6 mice assigned to sham control or left-anterior-descending coronary artery ligation, six per group. Figure 8 reports echocardiography with n=6 and Western blot with n=4; these are separate reported assay counts, not additional animal cohorts. The myocardial Western blot and immunohistochemistry show higher DLST and ATP7B and lower FDX1, SLC31A1 and DLAT in the ligation group. This establishes reported expression differences in the tested model, not that these genes cause cuproptosis or diagnose disease in patients.",
+            "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+            "source_locator": "Publisher-layout PDF pp. 3–4, Methods 2.9–2.14; p. 8, Results 3.6; p. 11, Figure 8C–E and caption (echocardiography n=6; Western blot n=4)."
+          },
+          {
+            "heading": "Computational chemical hypotheses",
+            "text": "Chemical–gene associations were retrieved from CTD and examined with molecular docking. These analyses generate hypotheses; no compound-treatment experiment or human treatment benefit is established by this article.",
+            "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+            "source_locator": "Publisher-layout PDF p. 3, Methods 2.8; pp. 8 and 10, Results 3.5 and Figure 7; pp. 3–4, animal experimental methods."
+          },
+          {
+            "heading": "Why diagnostic validation remains unresolved",
+            "text": "Figure 1 labels the training inputs as 181 IC samples from GSE5406 and 91 from GSE57338, but labels their merged IC group as 203. Those counts do not reconcile. Moreover, GSE57338 is a SubSeries of the stated validation accession GSE57345; the article does not provide a verified sample-level exclusion map. Figure 5 describes five-fold cross-validation within its evaluation datasets. These records do not establish an untouched external test of a frozen diagnostic model.",
+            "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
+            "source_locator": "Official GEO Series GSE57338, relation “SubSeries of: GSE57345”; compare publisher PDF p. 3 Figure 1, p. 2 Methods 2.1 and p. 8 Figure 5 caption."
+          }
+        ]
+      },
       "scope": "Full-article-supported candidate-gene and mouse-expression evidence. Unresolved human cohort accounting and model-validation questions prevent a complete V2 upgrade.",
       "evidence_notice": "Full-article-supported candidate-gene and mouse-expression evidence. Unresolved human cohort accounting and model-validation questions prevent a complete V2 upgrade.",
       "evidence_scope": null,
@@ -13213,6 +13453,36 @@
           "locator": "G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input."
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189",
+        "sections": [
+          {
+            "heading": "Publication version and material reviewed",
+            "text": "The acquired document is the publisher-typeset advance article first published on 18 December 2024, with 10 authors and DOI 10.1093/hmg/ddae189. The publisher subsequently assigned volume 34, issue 5, pages 381–391 in 2025. The complete article, supplementary figures, supplementary tables and STROBE-MR checklist are available for this review. These publication stages do not justify changing the existing bibliographic identity.",
+            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+            "source_locator": "Publisher article header, author list and publication history; acquired advance-article PDF p. 1; Supplementary data: supplementary_figure_ddae189.docx, supplementary_table_ddae189.xlsx and supplementary_materials_ddae189.docx."
+          },
+          {
+            "heading": "Blood and brain expression context",
+            "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). It constructs a senescence-related expression score from upregulated and downregulated gene sets, then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
+            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+            "source_locator": "Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5."
+          },
+          {
+            "heading": "Unresolved analysis-input version",
+            "text": "The article Methods and Supplementary Table 10 identify FinnGen R9 G6_ALZHEIMER and report 9,301 cases with 367,976 controls. The official R9 Risteys endpoint independently confirms 9,301 cases after genotype quality control. However, STROBE-MR item 4d reports 7,759 cases and 334,740 controls under the same R9 label. The available materials do not identify the exact outcome input file used in the reported MR runs. The official R9 case count is known; the unresolved issue is which input generated this paper’s estimates. No disputed denominator is selected and no full V2 genetic conclusion is certified.",
+            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+            "source_locator": "PDF p. 8, GWAS data for Alzheimer’s disease; supplementary_table_ddae189.xlsx, Supplementary Table 10 row 6; supplementary_materials_ddae189.docx, STROBE-MR item 4d. Official cross-check: R9 Risteys G6_ALZHEIMER, Case counts → Remove individuals based on genotype QC (linked in Provenance)."
+          },
+          {
+            "heading": "Cell-line follow-up and its limits",
+            "text": "The Methods describe PC12 cells exposed to 7 μM Aβ1–42 for 12 hours. Figure 4E–G and the supplementary expression records report higher CDKN2B and ITGAV expression in treated cells than in controls. This is a cell-line expression comparison, not evidence from human Alzheimer’s disease neurons or a demonstration of therapeutic benefit. Because the plotted qPCR scale and supplementary values are inconsistent, this note does not certify an exact fold change or plotted significance value.",
+            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+            "source_locator": "PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolation, reverse transcription, and quantitative real-time PCR; Figure 4E–G; supplementary_table_ddae189.xlsx, sheets labelled Supplemenatry Table 7 (B3:C6, B9:C12) and Supplemenatry Table 8; Supplementary Figures 5–6."
+          }
+        ]
+      },
       "scope": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
       "evidence_notice": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
       "evidence_scope": null,
@@ -13274,6 +13544,30 @@
           "locator": "Methods 2: data source and participant selection; Methods 2.3"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1016~1j.cmpbup.2024.100164",
+        "sections": [
+          {
+            "heading": "Research question and data source",
+            "text": "This study examines multimorbidity and frailty using NHANES survey cycles from 1999–2018. The paper describes cross-sectional analyses and machine-learning classification, rather than prospective prediction of new frailty or evaluation of a preventive treatment. Its scientific question concerns associations and classification within the analysed survey records.",
+            "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
+            "source_locator": "Methods 2: data source and participant selection; Methods 2.3"
+          },
+          {
+            "heading": "Frailty definition and analysis",
+            "text": "Frailty is defined through a modified 36-item deficit-accumulation index. The Methods describe survey-weighted summaries, regression analyses and resampling for model selection. The complete item list and predictor overlap still require verification; reporting these procedures does not establish that outcome leakage was excluded or that an independent external cohort was tested.",
+            "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
+            "source_locator": "Methods 2.2: Assessment of disease and frailty; Methods 2.3; Supplementary materials"
+          },
+          {
+            "heading": "Unresolved analytical denominator",
+            "text": "Methods reports 42,886 participants, while Results states 46,187 and then refers to 431 participants. Table 1 sex counts support a different total from the Results headline. These statements cannot be reconciled by selecting the most plausible number. The model-evaluation partition also remains insufficiently specified.",
+            "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
+            "source_locator": "Methods 2 first paragraph; Results 3 first paragraph; Table 1 Sex rows; Results 3.2"
+          }
+        ]
+      },
       "scope": "Cross-sectional survey methods and frailty-label definition; sample denominator and model validation remain unresolved.",
       "evidence_notice": "Cross-sectional survey methods and frailty-label definition; sample denominator and model validation remain unresolved.",
       "evidence_scope": null,
@@ -13636,6 +13930,30 @@
           "locator": "Methods: Cell culture; RNA interference; cell migration/invasion methods; Figure 5A–E"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-024-80885-2",
+        "sections": [
+          {
+            "heading": "Research question and experimental setting",
+            "text": "The paper combines cancer-expression analyses with colorectal-cancer cell experiments involving SLC7A7. The inspected assays use HCT116 and SW480 cells, with RNA interference and measurements of migration, invasion and molecular expression. These are experimental cell-model observations, not evidence that targeting SLC7A7 benefits patients.",
+            "source_url": "https://www.nature.com/articles/s41598-024-80885-2",
+            "source_locator": "Methods: Cell culture; RNA interference; cell migration/invasion methods; Figure 5A–E"
+          },
+          {
+            "heading": "What the inspected figures support",
+            "text": "Figure 5A–E reports reduced migration and invasion after SLC7A7 knockdown in the two cell lines. Figure 6C identifies APC as the measured analyte and shows increased APC expression after knockdown. These limited observations can be distinguished from the paper’s broader RNA-modification mechanism; no animal sample size is inferred from displayed examples.",
+            "source_url": "https://www.nature.com/articles/s41598-024-80885-2",
+            "source_locator": "Figure 5A–E; Figure 6C; Animal models and Figure 5F"
+          },
+          {
+            "heading": "Unresolved molecular identity",
+            "text": "The official title says N7-methyladenosine, whereas the abstract and mechanistic assays refer to N7-methylguanosine/m7G. A complete mechanism-centred V2 cannot silently choose or rename the modification. This disclosure preserves the formal title while withholding endorsement of the disputed mechanistic identity.",
+            "source_url": "https://www.nature.com/articles/s41598-024-80885-2",
+            "source_locator": "Title versus Abstract; mechanistic Results; Figure 6E–I; Supplementary Figure 4"
+          }
+        ]
+      },
       "scope": "Separately verified cell-assay observations; RNA-modification identity and full mechanistic interpretation are unresolved.",
       "evidence_notice": "Separately verified cell-assay observations; RNA-modification identity and full mechanistic interpretation are unresolved.",
       "evidence_scope": null,
@@ -14789,6 +15107,30 @@
           "locator": "Article Abstract and MR Results; Figure 2B,D; Supplementary Table 4; Transcriptional data Methods and Figure 5E; GEO Series/Sample fields"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.14283~1jpad.2024.161",
+        "sections": [
+          {
+            "heading": "Research question and study components",
+            "text": "This computational study examines shift work, circadian-related molecular patterns and Alzheimer’s disease. Its Methods combine separate Mendelian-randomization analyses, public expression datasets and a proposed clock-deviation measure. These analytical components are identifiable, but their presence does not establish a causal effect of shift work or clinical validity of the proposed molecular score.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11573866/",
+            "source_locator": "Methods: Transcriptional data; Mendelian randomization analysis; clock-deviation-level analysis"
+          },
+          {
+            "heading": "Distinct clinical-substudy design",
+            "text": "A separate retrospective clinical component reports 45 people with Alzheimer’s disease and 12 healthy participants recruited at one hospital. The Methods describe clinical assessment, hippocampal MRI in the Alzheimer’s group and sleep/chronotype questionnaires. This is distinct from the public expression samples and does not independently resolve the genetic analyses.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11573866/",
+            "source_locator": "Methods: Clinical data collection of the inhouse cohort"
+          },
+          {
+            "heading": "Unresolved interpretation",
+            "text": "The reported OR confidence interval is inconsistent with the plotted beta-scale interval, and the main-text instrument count differs from the sensitivity supplement. GSE124870 is described as mouse day/night-shift data, whereas its official record specifies rat heart and shift-work/feeding conditions. These discrepancies prevent endorsement of the principal MR estimate and that validation claim.",
+            "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124870",
+            "source_locator": "Article Abstract and MR Results; Figure 2B,D; Supplementary Table 4; Transcriptional data Methods and Figure 5E; GEO Series/Sample fields"
+          }
+        ]
+      },
       "scope": "Reported study components and clinical-substudy design; MR effect precision and molecular-score validation are unresolved.",
       "evidence_notice": "Reported study components and clinical-substudy design; MR effect precision and molecular-score validation are unresolved.",
       "evidence_scope": null,
@@ -15107,6 +15449,30 @@
           "locator": "Title; author list; 21 Pages Posted: 10 Jun 2024; Preprints with The Lancet notice"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.2139~1ssrn.4857099",
+        "sections": [
+          {
+            "heading": "Preprint record",
+            "text": "The official indexed SSRN record lists nine authors, a posting date of 10 June 2024, and a 21-page manuscript. It labels the work a non-peer-reviewed preprint; hosting in Preprints with The Lancet does not make it a Lancet journal publication.",
+            "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4857099",
+            "source_locator": "Title; author list; 21 Pages Posted: 10 Jun 2024; Preprints with The Lancet notice"
+          },
+          {
+            "heading": "Abstract-level study design",
+            "text": "The abstract describes a retrospective multicentre comparison of sleeve lobectomy and lobectomy after neoadjuvant chemoimmunotherapy in central-type NSCLC. It reports intraoperative margin assessment and propensity-score weighting. Full eligibility rules, treatment allocation, tables, and follow-up data were not available for verification.",
+            "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4857099",
+            "source_locator": "Abstract: Methods"
+          },
+          {
+            "heading": "Clinical evidence boundary",
+            "text": "The source describes an observational comparison rather than a randomized noninferiority trial. The abstract alone cannot justify treating the procedures as equivalent or recommending a change in surgery. No numerical outcome is promoted here as a full-text-verified finding.",
+            "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4857099",
+            "source_locator": "Abstract: Methods and Results; complete manuscript not obtained"
+          }
+        ]
+      },
       "scope": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_notice": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_scope": null,
@@ -15475,6 +15841,30 @@
           "locator": "message.title; message.type; message.subtype; message.author[0:10]; message.published"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.2139~1ssrn.4391582",
+        "sections": [
+          {
+            "heading": "Preprint record",
+            "text": "This 2023 SSRN deposit lists ten authors, beginning with Ge Zhang and ending with Junnan Tang. Crossref classifies it as posted content.",
+            "source_url": "https://api.crossref.org/works/10.2139/ssrn.4391582",
+            "source_locator": "Crossref DOI deposit: title, authors, posted-content type, publication date and relation fields."
+          },
+          {
+            "heading": "Research question in the title",
+            "text": "The title frames a survival-assessment system for advanced heart failure with renal dysfunction, using an artificial-intelligence framework and multicentre integration. The preprint-specific cohorts, model development, validation, calibration, and clinical impact cannot be established from the metadata available here.",
+            "source_url": "https://api.crossref.org/works/10.2139/ssrn.4391582",
+            "source_locator": "Crossref DOI deposit: title, authors, posted-content type, publication date and relation fields."
+          },
+          {
+            "heading": "Version boundary",
+            "text": "The current deposit contains no explicit later-article relationship. This record remains an independent preprint entry; absence of a deposited link does not prove that no later publication exists.",
+            "source_url": "https://api.crossref.org/works/10.2139/ssrn.4391582",
+            "source_locator": "Crossref DOI deposit: title, authors, posted-content type, publication date and relation fields."
+          }
+        ]
+      },
       "scope": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_notice": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "evidence_scope": null,
@@ -18302,6 +18692,36 @@
           "locator": "PDF p. 1 / journal p. 2079: 文献综述, 摘要, Abstract and Introduction"
         }
       ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-10-27",
+        "source_record": "data/limited_evidence.json#/papers/10.3980~1j.issn.1672-5123.2020.12.13",
+        "sections": [
+          {
+            "heading": "Research context",
+            "text": "This narrative review considers how embryonic stem cells can be directed toward retinal pigment epithelial cells. It organizes published culture approaches; it does not report a new patient cohort, clinical trial, or head-to-head experiment by the review authors.",
+            "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+            "source_locator": "PDF p. 1 / journal p. 2079: 文献综述, 摘要, Abstract and Introduction"
+          },
+          {
+            "heading": "Culture approaches",
+            "text": "The review discusses cytokine induction, two- and three-dimensional differentiation, coculture, and scaffold encapsulation. Its scaffold discussion covers alginate, fibrin, and polyethylene-glycol/gellan systems. Individual experimental outcomes are attributed to the studies cited in these sections.",
+            "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+            "source_locator": "PDF pp. 2–3 / journal pp. 2080–2081: §§1, 2, 3, 4.1–4.3; References"
+          },
+          {
+            "heading": "Evidence boundary",
+            "text": "The outlook weighs differentiation efficiency, time, cost, function, immune rejection, and ethical concerns. It identifies long-term safety and effectiveness after transplantation as unresolved; this review does not establish a clinically validated replacement therapy.",
+            "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+            "source_locator": "PDF p. 3 / journal p. 2081: §5 小结与展望"
+          },
+          {
+            "heading": "Authorship boundary",
+            "text": "The publisher lists six authors, including 张格 first and 张戈 last, both printed as Ge Zhang in English; Han Zhu is the corresponding author. The PDF provides no unique ORCID or individual-identifier mapping of either Ge Zhang to this site's researcher, so both remain name-only authors while the complete author list and formal citation are retained.",
+            "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+            "source_locator": "PDF p. 1 / journal p. 2079: Chinese and English author lines, author biography, affiliation and correspondence"
+          }
+        ]
+      },
       "scope": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
       "evidence_notice": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
       "evidence_scope": null,

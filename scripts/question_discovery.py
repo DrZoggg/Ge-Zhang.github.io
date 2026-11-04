@@ -180,6 +180,12 @@ def build_discovery(items, contents, fields, root=ROOT):
                                 + doi.replace('~', '~0').replace('/', '~1') + '/scope',
                 'source_url': REPOSITORY_SOURCE + 'data/limited_evidence.json',
                 'provenance': copy.deepcopy(record['sources']),
+                'author_evidence_note': {
+                    'reviewed_on': record['reviewed_on'],
+                    'source_record': 'data/limited_evidence.json#/papers/'
+                                     + doi.replace('~', '~0').replace('/', '~1'),
+                    'sections': copy.deepcopy(record['sections']),
+                },
             })
         elif item.get('type') == 'Patent':
             if (doi or not patent or patent.get('work_slug') != slug
