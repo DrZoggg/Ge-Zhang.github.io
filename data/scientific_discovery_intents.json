@@ -280,6 +280,14 @@
       "url": "https://doi.org/10.1016/j.atherosclerosis.2022.12.003",
       "year": 2023,
       "locator": "Official EuropePMC core abstract (PMID 36577600; 2023 print record): cardiovascular antagomir delivery using viral vectors and non-viral liposomes, extracellular vesicles and polymer nanoparticles. Carrier-classification background only."
+    },
+    {
+      "id": "ad-senescence-expression-original-2024",
+      "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
+      "doi": "10.1093/hmg/ddae189",
+      "url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+      "year": 2024,
+      "locator": "Existing author-reviewed note: Blood and brain expression context. Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5."
     }
   ],
   "intents": [
@@ -1084,6 +1092,31 @@
               "preview_finding_ids": [
                 "KF1",
                 "KF2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "alzheimers-senescence-expression",
+      "question": "How can blood and brain expression data inform cellular-senescence research in Alzheimer's disease?",
+      "question_zh": "血液与脑组织表达数据如何为阿尔茨海默病细胞衰老研究提供依据？",
+      "source_ids": [
+        "ad-senescence-expression-original-2024"
+      ],
+      "focused_queries": [
+        {
+          "id": "alzheimers-senescence-expression-1",
+          "question": "Which separate blood and brain datasets, comparison sizes and senescence-related expression-score approach were reported in this Alzheimer's disease study?",
+          "question_zh": "这项阿尔茨海默病研究报告了哪些分别来自血液和脑组织的数据集、比较样本数及衰老相关表达评分方法？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1093-hmg-ddae189",
+              "question_ids": [],
+              "preview_question_id": null,
+              "preview_note_headings": [
+                "Blood and brain expression context"
               ]
             }
           ]
