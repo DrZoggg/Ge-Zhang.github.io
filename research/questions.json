@@ -2451,8 +2451,8 @@
           "locator": "S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025"
         }
       ],
-      "scope": "Spontaneous-report study design, descriptive evidence and explicit corpus/counting uncertainty; no validated adverse-event incidence or causal estimate.",
-      "evidence_notice": "Spontaneous-report study design, descriptive evidence and explicit corpus/counting uncertainty; no validated adverse-event incidence or causal estimate.",
+      "scope": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
+      "evidence_notice": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
       "evidence_scope": null,
       "limitations": [
         "Exact FAERS analysis quarters remain unresolved.",

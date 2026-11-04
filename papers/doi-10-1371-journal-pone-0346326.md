@@ -34,11 +34,11 @@ This is an author-controlled publication record in the Ge Zhang Academic Hub. It
 
 Limited evidence note. Only the source material identified below has been reviewed; this is not a complete Paper GEO V2 assessment.
 
-Spontaneous-report study design, descriptive evidence and explicit corpus/counting uncertainty; no validated adverse-event incidence or causal estimate.
+The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.
 
 ### Study and evidence unit
 
-This pharmacovigilance study examines aliskiren-associated spontaneous reports in FAERS and VigiAccess. The article summarizes 5,596 and 5,549 reports, respectively, and describes disproportionality analyses rather than a cohort of exposed patients. Its clinical question concerns possible reporting signals; these databases do not supply the treated-population denominator needed to estimate adverse-event incidence or comparative treatment risk.
+This pharmacovigilance study examines aliskiren-associated spontaneous reports in FAERS and WHO-VigiAccess. The article summarizes 5,596 and 5,549 reports, respectively. Its statistical analysis describes proportional reporting ratio (PRR), reporting odds ratio (ROR), Bayesian confidence propagation neural network (BCPNN), and multi-item gamma Poisson shrinker (MGPS) methods for detecting reporting signals. These descriptive data and methods provide an example for cross-database safety-signal research; the observation units are reports rather than exposed patients.
 
 Source: [Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326)
 
