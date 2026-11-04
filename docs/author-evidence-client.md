@@ -290,6 +290,17 @@ provides a runnable citation-context sidecar for an existing K-Dense JATS reader
 It is explicitly applied by the consumer and is not an upstream default, an
 installed Skill, or a source-preference rule in this author evidence client.
 
+To call the same fixed reader directly, use Python 3.10+ and its standard library
+with a lawfully saved local JATS file:
+
+```sh
+python -X utf8 -B scripts/jats-reader/jats_to_text.py article.xml --include-cited-references -o reading.json
+```
+
+[Origin, MIT license, stdin and output contracts](../scripts/jats-reader/ORIGIN.md)
+are included with the reader. This local CLI is explicitly invoked by the consumer;
+it does not change this client's search/fetch behavior or install an upstream default.
+
 ### Follow a discovered paper to newer research
 
 A useful older paper can lead to subsequent research through its citing works.
