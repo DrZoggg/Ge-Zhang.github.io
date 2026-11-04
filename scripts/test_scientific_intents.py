@@ -70,6 +70,36 @@ class ScientificIntentTests(unittest.TestCase):
         self.assertEqual(ref['doi'], self.work['doi'])
         self.assertEqual(ref['citation_url'], self.work['paper_url'] + '#cite-this-paper')
 
+    def test_explicit_source_kind_uses_fixed_labels_without_serializing_a_legacy_default(self):
+        before = self.build()
+        old_page = render_intent_layer({**self.discovery, **before})
+        self.assertNotIn('source_context_kind', before['intents'][0])
+        for kind, label in [('original_research', 'Original research context:'),
+                            ('review', 'Review context:')]:
+            self.intent['source_context_kind'] = kind
+            layer = self.build()
+            self.assertEqual(layer['intents'][0]['source_context_kind'], kind)
+            detached = copy.deepcopy(layer)
+            del detached['intents'][0]['source_context_kind']
+            self.assertEqual(detached, before)
+            page = render_intent_layer({**self.discovery, **layer})
+            self.assertIn('<strong>' + label + '</strong>', page)
+            self.assertEqual(page.replace('<strong>' + label + '</strong>', '<strong>Review context:</strong>'), old_page)
+            validate_intent_html(page, {**self.discovery, **layer})
+        del self.intent['source_context_kind']
+        self.assertEqual(self.build(), before)
+
+    def test_source_context_kind_cannot_supply_arbitrary_text_or_html(self):
+        for value in [None, True, 1, [], {}, '', 'Original research context:',
+                      'review ', 'unknown', '<script>alert(1)</script>']:
+            self.intent['source_context_kind'] = value
+            with self.subTest(kind=value), self.assertRaisesRegex(ValueError, 'source context kind'):
+                self.build()
+        del self.intent['source_context_kind']
+        self.intent['source_context_label'] = 'Controller prose or HTML is not allowed'
+        with self.assertRaisesRegex(ValueError, 'fields differ'):
+            self.build()
+
     def test_complete_original_answer_and_locators_are_public_and_escaped(self):
         discovery = {**self.discovery, **self.build()}
         document = render_intent_layer(discovery)

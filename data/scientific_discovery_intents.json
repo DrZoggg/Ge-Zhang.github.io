@@ -288,6 +288,30 @@
       "url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
       "year": 2024,
       "locator": "Existing author-reviewed note: Blood and brain expression context. Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5."
+    },
+    {
+      "id": "oncology-bibliometric-original-2025",
+      "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
+      "doi": "10.32604/or.2025.059290",
+      "url": "https://doi.org/10.32604/or.2025.059290",
+      "year": 2025,
+      "locator": "Materials and Methods: Data sources (s2_1), Inclusion criteria for literature (s2_2), Exclusion criteria for literature (s2_3), Statistical methods (s2_4); Figure 1 caption; Results: National annual publication trends (s3_1), first paragraph"
+    },
+    {
+      "id": "le8-depressive-symptoms-original-2024",
+      "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
+      "doi": "10.1002/clc.70019",
+      "url": "https://doi.org/10.1002/clc.70019",
+      "year": 2024,
+      "locator": "Methods §2.1 Study Population (clc70019-sec-0080), §2.3 Outcomes (clc70019-sec-0100); Results §3.1 (clc70019-sec-0140); Abstract Results; Methods §2.5 Statistical Analysis (clc70019-sec-0120); Results §3.2 (clc70019-sec-0150); Table 2 (clc70019-tbl-0002), Depression column, total-score continuous row and footnotes a–b"
+    },
+    {
+      "id": "mds-depressive-symptoms-original-2024",
+      "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
+      "doi": "10.1016/j.jtemb.2024.127543",
+      "url": "https://doi.org/10.1016/j.jtemb.2024.127543",
+      "year": 2024,
+      "locator": "Publisher PDF p. 2, Methods 2.1–2.2 and Fig. 1; pp. 3–4, Table 1.; Publisher PDF p. 2, Methods 2.3; p. 5, Discussion limitations.; Publisher PDF p. 3, Methods 2.5; p. 4, Results 3.2 and Table 2, continuous MDS row and footnote a."
     }
   ],
   "intents": [
@@ -1121,6 +1145,87 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "oncology-literature-mapping",
+      "question": "How can bibliometric mapping characterize oncology research activity and support literature exploration?",
+      "question_zh": "文献计量映射如何刻画肿瘤研究活动并支持文献探索？",
+      "source_context_kind": "original_research",
+      "focused_queries": [
+        {
+          "id": "oncology-literature-mapping-1",
+          "question": "What corpus definition and cancer-management topic distribution were reported in an oncology-wide bibliometric analysis?",
+          "question_zh": "一项覆盖癌症管理领域的文献计量研究报告了怎样的文献集定义及主题分布？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-32604-or-2025-059290",
+              "question_ids": [
+                "doi-10-32604-or-2025-059290--qa-1",
+                "doi-10-32604-or-2025-059290--qa-2"
+              ],
+              "preview_question_id": "doi-10-32604-or-2025-059290--qa-1",
+              "preview_finding_ids": [
+                "KF2",
+                "KF1"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_ids": [
+        "oncology-bibliometric-original-2025"
+      ]
+    },
+    {
+      "id": "population-health-scores-depressive-symptoms",
+      "question": "How do composite cardiovascular-health and nutritional proxy scores relate to depressive symptoms in adult population surveys?",
+      "question_zh": "成人群体调查中，综合心血管健康评分与营养相关替代评分和抑郁症状有何关联？",
+      "source_context_kind": "original_research",
+      "focused_queries": [
+        {
+          "id": "population-health-scores-depressive-symptoms-1",
+          "question": "What per-10-point association did the Life's Essential 8 study report for PHQ-9-defined depressive symptoms in US adults?",
+          "question_zh": "美国成人的Life's Essential 8研究报告了评分每增加10分与PHQ-9界定抑郁症状之间怎样的关联？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-clc-70019",
+              "question_ids": [
+                "doi-10-1002-clc-70019--qa-2",
+                "doi-10-1002-clc-70019--qa-3"
+              ],
+              "preview_question_id": "doi-10-1002-clc-70019--qa-3",
+              "preview_finding_ids": [
+                "KF2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "population-health-scores-depressive-symptoms-2",
+          "question": "What does the magnesium depletion score measure, and how was each score point associated with PHQ-9-defined depressive symptoms?",
+          "question_zh": "镁耗竭评分衡量什么，其每增加1分与PHQ-9界定抑郁症状有何关联？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-jtemb-2024-127543",
+              "question_ids": [
+                "doi-10-1016-j-jtemb-2024-127543--qa-1",
+                "doi-10-1016-j-jtemb-2024-127543--qa-2",
+                "doi-10-1016-j-jtemb-2024-127543--qa-3"
+              ],
+              "preview_question_id": "doi-10-1016-j-jtemb-2024-127543--qa-3",
+              "preview_finding_ids": [
+                "KF3",
+                "KF2",
+                "KF1"
+              ]
+            }
+          ]
+        }
+      ],
+      "source_ids": [
+        "le8-depressive-symptoms-original-2024",
+        "mds-depressive-symptoms-original-2024"
       ]
     }
   ]
