@@ -298,7 +298,166 @@ async function run() {
   await assert.rejects(()=>fetchDataset('research/questions.json',badType),/not JSON/);
   const tooLarge=async(url)=>{const response=new Response(new Uint8Array(MAX_BYTES+1),{headers:{'content-type':'application/json'}});Object.defineProperty(response,'url',{value:url});return response;};
   await assert.rejects(()=>fetchDataset('research/questions.json',tooLarge),/exceeds/);
+  const recoveryCases=[];
+  async function recoveryCase(name, check) { await check(); recoveryCases.push(name); }
+  function responseAt(url, body='{}', status=200, headers={}) {
+    const response=new Response(body,{status,headers:{'content-type':'application/json',...headers}});
+    Object.defineProperty(response,'url',{value:url});return response;
+  }
+  function sequence(steps) {
+    const calls=[];
+    return {calls,fetch:async(url,options)=>{
+      calls.push({url,options});
+      assert(calls.length<=steps.length,'Recovery requested an unplanned extra response');
+      return steps[calls.length-1](url,options);
+    }};
+  }
+  const unavailable=(url,headers={})=>responseAt(url,'{"error":"temporarily unavailable"}',503,{'retry-after':'0',...headers});
+  await recoveryCase('503-then200 retains exact evidence and records only recovered dataset',async()=>{
+    const byPath=new Map(),calls=[];
+    const fetch=async(url,options)=>{
+      const attempt=(byPath.get(url)||0)+1;byPath.set(url,attempt);calls.push({url,options});
+      if(url.endsWith('assets/evidence-search.json')&&attempt===1)return unavailable(url);
+      return responseAt(url,JSON.stringify(url.endsWith('research/questions.json')?catalog:loaded.search));
+    };
+    const recovered=await loadLive(fetch),packet=createClient(recovered.questions,recovered.search,recovered.retrieval).fetch(exact.id);
+    const baseline=client.fetch(exact.id);delete baseline.content_version;delete packet.content_version;
+    assert.deepEqual(packet,baseline);assert.equal(calls.length,3);
+    const retried=calls.filter(row=>row.url.endsWith('assets/evidence-search.json'));
+    assert.strictEqual(retried[0].options.signal,retried[1].options.signal);
+    assert.strictEqual(retried[0].options,retried[1].options);
+    assert.deepEqual(retried[0].options.headers,{Accept:'application/json'});
+    assert.equal(retried[0].options.redirect,'error');
+    assert(!Object.hasOwn(recovered.retrieval.datasets.questions,'recovery'));
+    assert.deepEqual(recovered.retrieval.datasets.search.recovery,
+      {attempts:2,initial_http_status:503,delay_ms:0,retry_after:'0'});
+  });
+  await recoveryCase('first successful response keeps old metadata shape and one request',async()=>{
+    const fixture=sequence([url=>responseAt(url,'{"same":true}')]);
+    const result=await fetchDataset('research/questions.json',fixture.fetch);
+    assert.equal(fixture.calls.length,1);assert.deepEqual(result.value,{same:true});
+    assert.deepEqual(Object.keys(result.metadata).sort(),
+      ['source','sha256_lf','mode','etag','last_modified','http_status'].sort());
+    assert.equal(result.metadata.sha256_lf,digest('{"same":true}'));
+  });
+  await recoveryCase('missing Retry-After uses fixed small delay and releases first body',async()=>{
+    let first;const fixture=sequence([url=>(first=responseAt(url,'Temporary service outage',503,{'content-type':'text/plain'})),url=>responseAt(url,'{"ready":true}')]);
+    const started=performance.now(),result=await fetchDataset('research/questions.json',fixture.fetch);
+    assert(performance.now()-started>=200);assert(first.bodyUsed);
+    assert.equal(result.metadata.recovery.delay_ms,250);assert.equal(result.metadata.recovery.retry_after,null);
+  });
+  await recoveryCase('small complete ordinary maintenance HTML can recover',async()=>{
+    const fixture=sequence([url=>responseAt(url,'<h1>503 Service Unavailable</h1>',503,{'content-type':'text/html','retry-after':'0'}),url=>responseAt(url)]);
+    const result=await fetchDataset('research/questions.json',fixture.fetch);
+    assert.equal(fixture.calls.length,2);assert.equal(result.metadata.recovery.initial_http_status,503);
+  });
+  await recoveryCase('integer Retry-After is not shortened',async()=>{
+    const fixture=sequence([url=>unavailable(url,{'retry-after':'1'}),url=>responseAt(url)]);
+    const started=performance.now(),result=await fetchDataset('research/questions.json',fixture.fetch);
+    assert(performance.now()-started>=900);assert.equal(result.metadata.recovery.delay_ms,1000);
+  });
+  await recoveryCase('future HTTP-date is respected',async()=>{
+    const header=new Date(Date.now()+1800).toUTCString();let secondAt=0;
+    const fixture=sequence([url=>unavailable(url,{'retry-after':header}),url=>{secondAt=Date.now();return responseAt(url);}]);
+    const result=await fetchDataset('research/questions.json',fixture.fetch);
+    assert(secondAt>=Date.parse(header));assert.equal(result.metadata.recovery.retry_after,header);
+  });
+  await recoveryCase('obsolete valid HTTP-date forms remain accepted',async()=>{
+    for(const header of ['Sunday, 06-Nov-94 08:49:37 GMT','Sun Nov  6 08:49:37 1994']) {
+      const fixture=sequence([url=>unavailable(url,{'retry-after':header}),url=>responseAt(url)]);
+      const result=await fetchDataset('research/questions.json',fixture.fetch);
+      assert.equal(fixture.calls.length,2);assert.equal(result.metadata.recovery.delay_ms,0);
+    }
+  });
+  await recoveryCase('persistent503 has at most two requests and releases both bodies',async()=>{
+    const bodies=[];const fixture=sequence([url=>{const r=unavailable(url);bodies.push(r);return r;},url=>{const r=unavailable(url);bodies.push(r);return r;}]);
+    await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/HTTP 503.*after one bounded retry/);
+    assert.equal(fixture.calls.length,2);assert(bodies.every(response=>response.bodyUsed));
+  });
+  await recoveryCase('403429 and other HTTP failures are never retried',async()=>{
+    for(const status of [403,429,500,502,504]) {
+      const fixture=sequence([url=>responseAt(url,'{}',status,{'retry-after':'0'})]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),new RegExp('HTTP '+status));
+      assert.equal(fixture.calls.length,1);
+    }
+  });
+  await recoveryCase('network failure gets no speculative retry',async()=>{
+    const fixture=sequence([()=>{throw Error('Fixture connection failure');}]);
+    await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/Fixture connection failure/);
+    assert.equal(fixture.calls.length,1);
+  });
+  await recoveryCase('long Retry-After does not wait or grant a new timeout',async()=>{
+    const fixture=sequence([url=>unavailable(url,{'retry-after':'60'})]),started=performance.now();
+    await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/exceeds remaining.*deadline/);
+    assert.equal(fixture.calls.length,1);assert(performance.now()-started<1000);
+  });
+  await recoveryCase('invalid explicit Retry-After is not replaced by the short default',async()=>{
+    for(const header of ['', '-1', '1.5', 'tomorrow', '999999999999999999999999', 'Sat, 31 Feb 2024 00:00:00 GMT',
+                         'SundayX, 06-Nov-94 08:49:37 GMT', 'Sun, 06-Nov-94 08:49:37 GMT']) {
+      const fixture=sequence([url=>unavailable(url,{'retry-after':header})]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/Invalid Retry-After/);
+      assert.equal(fixture.calls.length,1);
+    }
+  });
+  await recoveryCase('time already spent on first response reduces remaining deadline',async()=>{
+    const descriptor=Object.getOwnPropertyDescriptor(performance,'now');let clock=0;
+    Object.defineProperty(performance,'now',{configurable:true,value:()=>clock});
+    try {
+      const fixture=sequence([url=>{clock=14950;return unavailable(url,{'retry-after':'1'});}]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/exceeds remaining.*deadline/);
+      assert.equal(fixture.calls.length,1);
+    } finally {if(descriptor)Object.defineProperty(performance,'now',descriptor);else delete performance.now;}
+  });
+  await recoveryCase('error-body time also stays inside the same deadline',async()=>{
+    const descriptor=Object.getOwnPropertyDescriptor(performance,'now');let clock=0;
+    Object.defineProperty(performance,'now',{configurable:true,value:()=>clock});
+    try {
+      const fixture=sequence([url=>responseAt(url,new ReadableStream({pull(controller){
+        clock=15001;controller.enqueue(new TextEncoder().encode('Temporary outage'));controller.close();
+      }}),503,{'retry-after':'0','content-type':'text/plain'})]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/exceeds remaining.*deadline/);
+      assert.equal(fixture.calls.length,1);
+    } finally {if(descriptor)Object.defineProperty(performance,'now',descriptor);else delete performance.now;}
+  });
+  await recoveryCase('explicit security headers and interstitial bodies get no retry',async()=>{
+    const headers=[{'cf-mitigated':'challenge'},{'www-authenticate':'Basic realm="fixture"'},{'x-amzn-waf-action':'captcha'}];
+    const bodies=['{"challenge":"required"}','<html><script>verify()</script></html>','Verify that you are human','x'.repeat(8193),new Uint8Array([0xff]),'opaque','<html>One more step</html>'];
+    const fixtures=[...headers.map(header=>url=>unavailable(url,header)),...bodies.map((body,index)=>url=>responseAt(url,body,503,{'retry-after':'0','content-type':index===5?'application/octet-stream':'text/html'}))];
+    for(const response of fixtures) {
+      const fixture=sequence([response]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/safety state is unclear/);
+      assert.equal(fixture.calls.length,1);
+    }
+  });
+  await recoveryCase('wrong503 URL cannot gain a second request',async()=>{
+    const fixture=sequence([()=>unavailable('https://other.invalid/research/questions.json')]);
+    await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch),/Unexpected public export URL/);
+    assert.equal(fixture.calls.length,1);
+  });
+  await recoveryCase('recovery never bypasses success URL type JSON UTF8 or size guards',async()=>{
+    const invalid=[()=>responseAt('https://other.invalid/research/questions.json'),
+      url=>responseAt(url,'{}',200,{'content-type':'text/html'}),url=>responseAt(url,'{bad json'),
+      url=>responseAt(url,new Uint8Array([0xff])),
+      url=>responseAt(url,'{}',200,{'content-length':String(MAX_BYTES+1)}),
+      url=>responseAt(url,new Uint8Array(MAX_BYTES+1))];
+    for(const response of invalid) {
+      const fixture=sequence([url=>unavailable(url),response]);
+      await assert.rejects(()=>fetchDataset('research/questions.json',fixture.fetch));
+      assert.equal(fixture.calls.length,2);
+    }
+  });
+  await recoveryCase('mixed-version scientific content still fails after transport recovery',async()=>{
+    const calls=new Map();let total=0;
+    const recovered=await loadLive(async(url)=>{
+      const n=(calls.get(url)||0)+1;calls.set(url,n);total++;
+      if(url.endsWith('assets/evidence-search.json')&&n===1)return unavailable(url);
+      return responseAt(url,JSON.stringify(url.endsWith('research/questions.json')?catalog:mixedText));
+    });
+    assert.throws(()=>createClient(recovered.questions,recovered.search,recovered.retrieval),/do not match/);
+    assert.equal(total,3);
+  });
   assert.deepEqual(networkCalls,[]);globalThis.fetch=originalFetch;
+  console.log('OFFLINE BOUNDED503 CHECKS: '+JSON.stringify({cases:recoveryCases.length,passed:recoveryCases,network_calls:networkCalls.length}));
   console.log(`EVIDENCE CLIENT PASS: ${catalog.all_questions.length} source-exact question packets, ${catalog.works.length} work identities, ${nonEncoded} not_encoded preserved, scope/refs/citations joined; ${sourceRouteCases} source-route fixtures, ${limitedWorks.length} source-exact limited notes, ${noteCases.length+2} invalid-note cases and fixed-host bounded transport failures tested offline`);
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
