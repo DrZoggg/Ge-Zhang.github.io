@@ -229,6 +229,19 @@ relevant earlier candidates as a separate queue and deduplicate by DOI.
 This vocabulary choice is
 source-neutral and does not require a preferred paper, author or domain.
 
+The same pattern applies beyond AI. For a gene-expression concept, pair text
+variants with the [NLM Gene Expression heading](https://meshb.nlm.nih.gov/record/ui?ui=D015870):
+
+```text
+("gene expression"[Title/Abstract] OR transcriptom*[Title/Abstract]
+ OR microarray*[Title/Abstract] OR "Gene Expression"[MeSH Terms])
+```
+
+Retain the original candidate queue when adding the branch, and record the
+query translation, explicit sort and whether the complete hit set was retrieved.
+Screen added papers for their actual phenotype, endpoint and study design before
+using them in a synthesis.
+
 For a compound research need, assign a candidate budget to each research aspect
 before searching, for example two queues of 10 rather than one mixed queue of 20.
 Deduplicate representations by normalized DOI while preserving each branch's
