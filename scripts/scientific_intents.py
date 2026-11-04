@@ -18,6 +18,8 @@ from sync_common import ROOT
 CONFIG_PATH = 'data/scientific_discovery_intents.json'
 _ID = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*')
 _DOI = re.compile(r'10\.\d{4,9}/[^\s<>"]+', re.I)
+_SOURCE_CONTEXT_LABELS = {'review': 'Review context:',
+                          'original_research': 'Original research context:'}
 
 
 def _keys(value, expected, label):
@@ -135,7 +137,14 @@ def build_intent_layer(discovery, root=ROOT):
         sources.append(copy.deepcopy(source))
     seen, intents = set(), []
     for intent in config['intents']:
-        _keys(intent, ('id', 'question', 'question_zh', 'source_ids', 'focused_queries'), 'broad intent')
+        intent_keys = ('id', 'question', 'question_zh', 'source_ids', 'focused_queries')
+        if isinstance(intent, dict) and 'source_context_kind' in intent:
+            intent_keys += ('source_context_kind',)
+        _keys(intent, intent_keys, 'broad intent')
+        if 'source_context_kind' in intent:
+            kind = intent['source_context_kind']
+            if not isinstance(kind, str) or kind not in _SOURCE_CONTEXT_LABELS:
+                raise ValueError('Unsupported intent source context kind')
         iid = _identifier(intent['id'], 'broad intent')
         if iid in seen:
             raise ValueError('Duplicate broad intent ID')
@@ -244,6 +253,8 @@ def build_intent_layer(discovery, root=ROOT):
             focused.append(resolved)
         intents.append({**{key: intent[key] for key in ('id', 'question', 'question_zh')},
                         'source_ids': list(refs), 'focused_queries': focused})
+        if 'source_context_kind' in intent:
+            intents[-1]['source_context_kind'] = intent['source_context_kind']
     return {'intent_layer_version': 1, 'intent_sources': sources, 'intents': intents}
 
 
@@ -337,6 +348,8 @@ def render_intent_layer(discovery):
                            + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence) + '</section>')
         context_label = ('Original source context:' if any(ref.get('author_note_previews')
                          for query in intent['focused_queries'] for ref in query['work_refs']) else 'Review context:')
+        if 'source_context_kind' in intent:
+            context_label = _SOURCE_CONTEXT_LABELS[intent['source_context_kind']]
         context = '<p class="intent-reviews"><strong>' + context_label + '</strong> ' + ' · '.join(
             '<a href="' + escape(sources[sid]['url'], quote=True) + '">'
             + escape(sources[sid]['title']) + ' (' + str(sources[sid]['year']) + ')</a>'
