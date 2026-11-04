@@ -20,6 +20,35 @@ const SOURCE_KIND = 'author_maintained_supplemental_evidence';
 const clone = value => JSON.parse(JSON.stringify(value));
 const digest = text => crypto.createHash('sha256').update(text.replace(/\r\n/g, '\n'), 'utf8').digest('hex');
 
+function validateAuthorEvidenceNote(work) {
+  if (!Object.hasOwn(work, 'author_evidence_note')) return; // Older export snapshots remain readable.
+  const note = work.author_evidence_note;
+  const object = value => value && typeof value === 'object' && !Array.isArray(value);
+  const keys = (value, expected) => object(value)
+    && Object.keys(value).sort().join(',') === expected.slice().sort().join(',');
+  const plain = (value, maximum) => typeof value === 'string' && value.length > 0
+    && value.length <= maximum && value === value.trim() && !/[\r\n<>]/.test(value);
+  const invalid = () => { throw Error('Invalid source-bound author evidence note: ' + work.id); };
+  if (work.evidence_status !== 'limited' || work.paper_geo_status === 'v2'
+      || work.type === 'Patent' || typeof work.doi !== 'string' || !work.doi
+      || !keys(note, ['reviewed_on', 'source_record', 'sections'])) invalid();
+  const pointer = 'data/limited_evidence.json#/papers/' + work.doi.replace(/~/g, '~0').replace(/\//g, '~1');
+  const day = note.reviewed_on;
+  const parsedDay = typeof day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(day)
+    && !day.startsWith('0000-') ? Date.parse(day + 'T00:00:00Z') : NaN;
+  if (note.source_record !== pointer || !Number.isFinite(parsedDay)
+      || new Date(parsedDay).toISOString().slice(0, 10) !== day
+      || !Array.isArray(note.sections) || note.sections.length < 1 || note.sections.length > 4) invalid();
+  for (const section of note.sections) {
+    if (!keys(section, ['heading', 'text', 'source_url', 'source_locator'])
+        || !plain(section.heading, 100) || !plain(section.text, 1800)
+        || !plain(section.source_locator, 600) || typeof section.source_url !== 'string') invalid();
+    let url;
+    try { url = new URL(section.source_url); } catch { invalid(); }
+    if (url.protocol !== 'https:' || !url.hostname || url.username || url.password) invalid();
+  }
+}
+
 function parseDataset(text, label) {
   const value = JSON.parse(text);
   if (!value || typeof value !== 'object') throw Error('Invalid dataset: ' + label);
@@ -170,6 +199,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
   for (const work of questions.works) {
     if (!work.id || works.has(work.id) || typeof work.title !== 'string' || !Array.isArray(work.limitations)
         || !Array.isArray(work.key_findings)) throw Error('Invalid or duplicate work identity');
+    validateAuthorEvidenceNote(work);
     if (work.evidence_status === 'reviewed_v2' && (!work.evidence_scope || !Array.isArray(work.evidence_scope.does_not_establish))) {
       throw Error('Reviewed work lacks complete evidence scope');
     }
@@ -282,6 +312,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
         question_source:qa ? qa.question_source : null, answer_source:qa ? qa.answer_source : null},
       content_version:{...retrieval, gold_content_sha256_from_export:work.gold_content_sha256 || null,
         answer_sha256:qa ? qa.answer_sha256 : null, answer_sha256_verified:Boolean(qa)},
+      ...(Object.hasOwn(work, 'author_evidence_note') ? {author_evidence_note:work.author_evidence_note} : {}),
       evidence_scope:work.evidence_scope, available_scope:work.scope || null,
       limitations:work.limitations,
       interpretation:'Text and context are returned unchanged. Retrieval relevance does not validate a query premise or establish treatment benefit.'

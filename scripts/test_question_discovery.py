@@ -4,6 +4,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -127,6 +128,38 @@ class QuestionDiscoveryTests(unittest.TestCase):
             if work['evidence_status']=='reviewed_v2':
                 self.assertLess(keys.index('key_findings'),keys.index('study_profile'))
                 self.assertLess(keys.index('provenance'),keys.index('evidence_scope'))
+
+    def test_limited_note_sections_preserve_original_sources_dates_and_evidence_role(self):
+        records = json.loads((ROOT/'data/limited_evidence.json').read_text(encoding='utf-8'))['papers']
+        notes = [work for work in self.data['works'] if 'author_evidence_note' in work]
+        self.assertEqual({work['doi'] for work in notes}, set(records))
+        self.assertEqual(len(notes), len(records))
+        self.assertEqual(sum(len(work['author_evidence_note']['sections']) for work in notes),
+                         sum(len(record['sections']) for record in records.values()))
+        for work in self.data['works']:
+            if work['doi'] not in records:
+                self.assertNotIn('author_evidence_note', work)
+                continue
+            original = records[work['doi']]
+            note = work['author_evidence_note']
+            self.assertEqual(set(note), {'reviewed_on', 'source_record', 'sections'})
+            self.assertEqual(note['reviewed_on'], original['reviewed_on'])
+            self.assertEqual(note['sections'], original['sections'])
+            # Resolve the emitted pointer independently rather than rebuilding it.
+            path, pointer = note['source_record'].split('#', 1)
+            value = json.loads((ROOT/path).read_text(encoding='utf-8'))
+            for token in pointer.lstrip('/').split('/'):
+                value = value[token.replace('~1', '/').replace('~0', '~')]
+            self.assertEqual(value, original)
+            self.assertEqual((work['evidence_status'], work['question_count']), ('limited', 0))
+            self.assertEqual(work['key_findings'], [])
+            self.assertEqual(work['limitations'], original['limitations'])
+        with patch('question_discovery._limited_sources', return_value=records):
+            detached = build_discovery(self.items, self.contents, self.fields, ROOT)
+        first = next(work for work in detached['works'] if work['doi'] in records)
+        original_text = records[first['doi']]['sections'][0]['text']
+        first['author_evidence_note']['sections'][0]['text'] = 'Caller mutation must not change the source.'
+        self.assertEqual(records[first['doi']]['sections'][0]['text'], original_text)
 
     def fixture(self, root):
         item = {'slug': 'example', 'doi': '10.1234/example', 'title': 'Example research record',

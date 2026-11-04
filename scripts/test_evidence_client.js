@@ -1,5 +1,7 @@
 'use strict';
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const {createClient,loadLocal,loadLive,fetchDataset,digest,MAX_BYTES} = require('./author_evidence_client.cjs');
 
 async function run() {
@@ -80,6 +82,61 @@ async function run() {
       assert.equal(packet.links.citation_bibtex_url,null);
       assert(packet.evidence_unit.id.startsWith('site_record:'));
     }
+  }
+  const limitedSource=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/limited_evidence.json'),'utf8')).papers;
+  const limitedWorks=catalog.works.filter(work=>work.evidence_status==='limited');
+  assert.equal(limitedWorks.length,Object.keys(limitedSource).length);
+  assert.equal(limitedWorks.reduce((count,work)=>count+work.author_evidence_note.sections.length,0),
+    Object.values(limitedSource).reduce((count,record)=>count+record.sections.length,0));
+  for (const work of catalog.works) {
+    const packet=client.fetch(work.id);
+    if (work.evidence_status!=='limited') {
+      assert(!Object.hasOwn(work,'author_evidence_note'));assert(!Object.hasOwn(packet,'author_evidence_note'));
+      continue;
+    }
+    const note=packet.author_evidence_note, source=limitedSource[work.doi];
+    assert.deepEqual(note.sections,source.sections);assert.equal(note.reviewed_on,source.reviewed_on);
+    assert.deepEqual(note,work.author_evidence_note);assert.equal(packet.answer,null);
+    assert.deepEqual(packet.available_questions,[]);assert.deepEqual(packet.work_key_findings,[]);
+    assert.equal(packet.publication.type,work.type);assert.equal(packet.publication.evidence_status,'limited');
+    assert.deepEqual(packet.limitations,source.limitations);
+    assert(Object.keys(packet).indexOf('author_evidence_note')<Object.keys(packet).indexOf('available_scope'));
+    const [relative,pointer]=note.source_record.split('#');assert.equal(relative,'data/limited_evidence.json');
+    let record={papers:limitedSource};
+    for (const token of pointer.slice(1).split('/')) record=record[token.replace(/~1/g,'/').replace(/~0/g,'~')];
+    assert.deepEqual(record,source);
+    note.sections[0].text='Local packet mutation';
+    assert.equal(client.fetch(work.id).author_evidence_note.sections[0].text,source.sections[0].text);
+  }
+  // An older snapshot's omission is not an empty note or an evidence upgrade.
+  const oldSnapshot=structuredClone(catalog);
+  for (const work of oldSnapshot.works) delete work.author_evidence_note;
+  const oldClient=createClient(oldSnapshot,loaded.search,loaded.retrieval);
+  for (const id of ['doi-10-1371-journal-pone-0346326','doi-10-2139-ssrn-4857099']) {
+    const packet=client.fetch(id),oldPacket=oldClient.fetch(id);
+    assert(packet.author_evidence_note);assert(!Object.hasOwn(oldPacket,'author_evidence_note'));
+    delete packet.author_evidence_note;assert.deepEqual(packet,oldPacket);
+  }
+  const noteCases=[
+    note=>{note.source_record='data/limited_evidence.json#/papers/10.0000~1other';},
+    note=>{note.reviewed_on='2026-02-30';},
+    note=>{note.sections=[];},
+    note=>{delete note.sections[0].source_locator;},
+    note=>{note.sections[0].source_url='http://example.org/paper';},
+    note=>{note.sections[0].source_url='javascript:alert(1)';},
+    note=>{note.sections[0].source_url='https://user:password@example.org/paper';},
+    note=>{note.sections[0].text='<p>Unapproved markup</p>';},
+    note=>{note.extra='Not part of the source record';},
+  ];
+  for (const mutate of noteCases) {
+    const fixture=structuredClone(catalog),work=fixture.works.find(work=>work.id==='doi-10-1371-journal-pone-0346326');
+    mutate(work.author_evidence_note);
+    assert.throws(()=>createClient(fixture,loaded.search),/source-bound author evidence note/);
+  }
+  for (const role of ['reviewed_v2','patent_record']) {
+    const fixture=structuredClone(catalog),work=fixture.works.find(work=>work.evidence_status===role);
+    work.author_evidence_note=structuredClone(limitedWorks[0].author_evidence_note);
+    assert.throws(()=>createClient(fixture,loaded.search),/source-bound author evidence note/);
   }
   const exact = catalog.all_questions.find(q=>q.work_id==='aihflevel');
   const found=client.search(exact.question);
@@ -242,6 +299,6 @@ async function run() {
   const tooLarge=async(url)=>{const response=new Response(new Uint8Array(MAX_BYTES+1),{headers:{'content-type':'application/json'}});Object.defineProperty(response,'url',{value:url});return response;};
   await assert.rejects(()=>fetchDataset('research/questions.json',tooLarge),/exceeds/);
   assert.deepEqual(networkCalls,[]);globalThis.fetch=originalFetch;
-  console.log(`EVIDENCE CLIENT PASS: ${catalog.all_questions.length} source-exact question packets, ${catalog.works.length} work identities, ${nonEncoded} not_encoded preserved, scope/refs/citations joined; ${sourceRouteCases} source-route fixtures and fixed-host bounded transport failures tested offline`);
+  console.log(`EVIDENCE CLIENT PASS: ${catalog.all_questions.length} source-exact question packets, ${catalog.works.length} work identities, ${nonEncoded} not_encoded preserved, scope/refs/citations joined; ${sourceRouteCases} source-route fixtures, ${limitedWorks.length} source-exact limited notes, ${noteCases.length+2} invalid-note cases and fixed-host bounded transport failures tested offline`);
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});

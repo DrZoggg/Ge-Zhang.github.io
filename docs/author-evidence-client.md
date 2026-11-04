@@ -62,6 +62,16 @@ other consumers. The local snapshot mode remains available without a network.
    Retain relevant works for background, methods or discussion even when they
    address only part of the brief, keeping their study type and scope visible.
 
+Limited-evidence works can also provide an optional `author_evidence_note` in
+the export and fetched packet. Its `sections` retain the existing author note's
+headings, text, HTTPS source URLs and locators, alongside the original
+`reviewed_on` date. This is supplementary author context, not Gold Q&A or a read
+of the original paper's full text; the work's publication type, scope and limits
+remain unchanged. `source_record` is a repository-relative JSON Pointer into
+`data/limited_evidence.json`, not an HTTP reading URL. Use the original HTTPS
+URLs within `sections` to open their sources. Older snapshots without this
+optional object remain readable; omission does not mean no author note exists.
+
 ### Complex writing briefs
 
 Keep the complete request, its initial result and the chosen snapshot/version.
