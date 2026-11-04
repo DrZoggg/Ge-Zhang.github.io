@@ -272,6 +272,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12910841/",
       "year": 2026,
       "locator": "Methods; Table 2; Telemedicine; Dental monitoring and follow-up; Clinical and implementation challenges; Limitations. Targeted body reading of terrestrial oral-health AI applications and implementation context."
+    },
+    {
+      "id": "rna-delivery-antagomir-review-2023",
+      "title": "Targeting and delivery of microRNA-targeting antisense oligonucleotides in cardiovascular diseases.",
+      "doi": "10.1016/j.atherosclerosis.2022.12.003",
+      "url": "https://doi.org/10.1016/j.atherosclerosis.2022.12.003",
+      "year": 2023,
+      "locator": "Official EuropePMC core abstract (PMID 36577600; 2023 print record): cardiovascular antagomir delivery using viral vectors and non-viral liposomes, extracellular vesicles and polymer nanoparticles. Carrier-classification background only."
     }
   ],
   "intents": [
@@ -1046,6 +1054,37 @@
                 "doi-10-1111-odi-70054--qa-4"
               ],
               "preview_question_id": "doi-10-1111-odi-70054--qa-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cardiac-microrna-delivery",
+      "question": "How can targeted delivery support microRNA-inhibition research in cardiac injury?",
+      "question_zh": "靶向递送如何支持心脏损伤中的微RNA抑制研究？",
+      "source_ids": [
+        "rna-delivery-antagomir-review-2023"
+      ],
+      "focused_queries": [
+        {
+          "id": "cardiac-microrna-delivery-1",
+          "question": "What carrier, distribution and response evidence was reported for peptide-targeted liposomal miRNA inhibition in doxorubicin-associated cardiac injury?",
+          "question_zh": "阿霉素相关心脏损伤中，肽靶向脂质体递送微RNA抑制剂的研究报告了哪些载体、组织分布和实验结果证据？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-ijn-s522157",
+              "question_ids": [
+                "doi-10-2147-ijn-s522157--qa-2",
+                "doi-10-2147-ijn-s522157--qa-3",
+                "doi-10-2147-ijn-s522157--qa-4",
+                "doi-10-2147-ijn-s522157--qa-5"
+              ],
+              "preview_question_id": "doi-10-2147-ijn-s522157--qa-5",
+              "preview_finding_ids": [
+                "KF1",
+                "KF2"
+              ]
             }
           ]
         }
