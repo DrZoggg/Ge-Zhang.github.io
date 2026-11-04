@@ -8,6 +8,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const {setTimeout: wait} = require('node:timers/promises');
 const MiniSearch = require('../assets/vendor/minisearch-7.2.0/minisearch.js');
 const {createEngine} = require('../assets/evidence-search.js');
 
@@ -16,6 +17,8 @@ const ORIGIN = 'https://drgezhang.com';
 const PATHS = {questions:'research/questions.json', search:'assets/evidence-search.json'};
 const MAX_BYTES = 2 * 1024 * 1024;
 const TIMEOUT_MS = 15000;
+const RETRY_DELAY_MS = 250;
+const MAX_RETRY_BODY_BYTES = 8192;
 const SOURCE_KIND = 'author_maintained_supplemental_evidence';
 const clone = value => JSON.parse(JSON.stringify(value));
 const digest = text => crypto.createHash('sha256').update(text.replace(/\r\n/g, '\n'), 'utf8').digest('hex');
@@ -67,12 +70,101 @@ function loadLocal(root = ROOT) {
   return {...data, retrieval:{mode:'local_snapshot', retrieved_at:new Date().toISOString(), datasets}};
 }
 
+function retryDelay(value) {
+  if (value === null) return RETRY_DELAY_MS;
+  if (/^\d+$/.test(value)) {
+    const milliseconds = Number(value) * 1000;
+    if (Number.isSafeInteger(milliseconds)) return milliseconds;
+  }
+  // Normalize the two obsolete HTTP-date forms before strict calendar checking.
+  const normalized = value.replace(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{2})-([A-Za-z]{3})-(\d{2}) (\d{2}:\d{2}:\d{2}) GMT$/,
+    (_, weekday, day, month, shortYear, time) => {
+      const currentYear = new Date().getUTCFullYear();
+      let year = Math.floor(currentYear / 100) * 100 + Number(shortYear);
+      if (year > currentYear + 50) year -= 100;
+      return `${weekday.slice(0, 3)}, ${day} ${month} ${year} ${time} GMT`;
+    }).replace(/^([A-Za-z]{3}) ([A-Za-z]{3}) ([ \d]\d) (\d{2}:\d{2}:\d{2}) (\d{4})$/,
+      (_, weekday, month, day, time, year) => `${weekday}, ${day.trim().padStart(2, '0')} ${month} ${year} ${time} GMT`);
+  const httpDate = /^[A-Za-z]{3}, \d{2} [A-Za-z]{3} \d{4} \d{2}:\d{2}:\d{2} GMT$/;
+  const timestamp = httpDate.test(normalized) ? Date.parse(normalized) : NaN;
+  if (Number.isFinite(timestamp) && new Date(timestamp).toUTCString() === normalized) {
+    return Math.max(0, timestamp - Date.now());
+  }
+  throw Error('Invalid Retry-After; public export HTTP 503 was not retried');
+}
+
+async function releaseErrorBody(response) {
+  if (response.body) await response.body.cancel();
+}
+
+async function ordinary503(response, signal) {
+  const get = name => response.headers.get(name) || '';
+  if (get('cf-mitigated') || get('www-authenticate')
+      || /challenge|captcha/i.test(get('x-amzn-waf-action'))) {
+    await releaseErrorBody(response);
+    return false;
+  }
+  if (!response.body) return true;
+  if (!/^(?:application\/json|text\/(?:plain|html))(?:;|$)/i.test(get('content-type'))) {
+    await releaseErrorBody(response);
+    return false;
+  }
+  // A small complete error message can be classified without executing it.
+  // Truncated/binary bodies and security interstitials get no second request.
+  const reader = response.body.getReader(), chunks = [];
+  let size = 0;
+  try {
+    for (;;) {
+      signal.throwIfAborted();
+      const {done, value} = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX_RETRY_BODY_BYTES) { await reader.cancel(); return false; }
+      chunks.push(value);
+    }
+  } finally { reader.releaseLock(); }
+  let message;
+  try { message = new TextDecoder('utf-8', {fatal:true}).decode(Buffer.concat(chunks)); }
+  catch { return false; }
+  const ordinaryHtml = !/^text\/html(?:;|$)/i.test(get('content-type'))
+    || /503|service (?:temporarily )?unavailable|temporarily unavailable|temporary outage/i.test(message);
+  return ordinaryHtml
+    && !/captcha|challenge|verify.{0,40}human|unusual traffic|access denied|automated (?:requests|traffic)|enable.{0,30}(?:javascript|cookies)|<script\b|<form\b|<iframe\b/i.test(message);
+}
+
 async function fetchDataset(relative, fetchImpl = globalThis.fetch) {
   if (!Object.values(PATHS).includes(relative)) throw Error('Only fixed public export paths are allowed');
   const url = ORIGIN + '/' + relative;
-  const response = await fetchImpl(url, {redirect:'error', signal:AbortSignal.timeout(TIMEOUT_MS),
-    headers:{Accept:'application/json'}});
-  if (!response.ok) throw Error('Public export returned HTTP ' + response.status + ': ' + relative);
+  const deadline = performance.now() + TIMEOUT_MS, signal = AbortSignal.timeout(TIMEOUT_MS);
+  const options = {redirect:'error', signal, headers:{Accept:'application/json'}};
+  let response, recovery;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    signal.throwIfAborted();
+    if (performance.now() >= deadline) throw Error('Public export deadline expired: ' + relative);
+    response = await fetchImpl(url, options);
+    if (response.ok) break;
+    if (response.status !== 503 || attempt === 2) {
+      await releaseErrorBody(response);
+      throw Error('Public export returned HTTP ' + response.status + ': ' + relative
+        + (attempt === 2 ? ' (after one bounded retry)' : ''));
+    }
+    if (response.url !== url) {
+      await releaseErrorBody(response);
+      throw Error('Unexpected public export URL');
+    }
+    let delay;
+    try { delay = retryDelay(response.headers.get('retry-after')); }
+    catch (error) { await releaseErrorBody(response); throw error; }
+    if (delay >= deadline - performance.now()) {
+      await releaseErrorBody(response);
+      throw Error('Retry-After exceeds remaining public export deadline: ' + relative);
+    }
+    if (!await ordinary503(response, signal)) throw Error('Public export HTTP 503 safety state is unclear; not retried');
+    if (delay >= deadline - performance.now()) throw Error('Retry-After exceeds remaining public export deadline: ' + relative);
+    await wait(delay, undefined, {signal});
+    recovery = {attempts:2, initial_http_status:503, delay_ms:delay,
+      retry_after:response.headers.get('retry-after')};
+  }
   // No arbitrary redirects, alternate hosts, credentials or query parameters.
   if (response.url !== url || new URL(response.url).origin !== ORIGIN) throw Error('Unexpected public export URL');
   if (!/^application\/json(?:;|$)/i.test(response.headers.get('content-type') || '')) throw Error('Public export is not JSON');
@@ -93,7 +185,8 @@ async function fetchDataset(relative, fetchImpl = globalThis.fetch) {
   } finally { reader.releaseLock(); }
   const text = new TextDecoder('utf-8', {fatal:true}).decode(Buffer.concat(chunks));
   return {value:parseDataset(text, relative), metadata:{source:url, sha256_lf:digest(text), mode:'public_https',
-    etag:response.headers.get('etag'), last_modified:response.headers.get('last-modified'), http_status:response.status}};
+    etag:response.headers.get('etag'), last_modified:response.headers.get('last-modified'), http_status:response.status,
+    ...(recovery ? {recovery} : {})}};
 }
 
 async function loadLive(fetchImpl = globalThis.fetch) {
