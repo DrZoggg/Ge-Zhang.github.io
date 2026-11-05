@@ -76,9 +76,9 @@
           },
           {
             "heading": "Vascular-interface contribution",
-            "text": "ZFP36-engineered vesicles were immobilized on polydopamine/hyaluronic-acid-modified NiTi. The coating had a particle-based loading efficiency of 72.80% ± 0.83% (mean ± SD, n=3) and released NTA-detected particles over 14 days in PBS. In the rat femoral-artery injury model, the coated filaments supported endothelial recovery and reduced local inflammatory and lipid-peroxidation-associated signals.",
+            "text": "ZFP36-engineered vesicles were immobilized on polydopamine/hyaluronic-acid-modified NiTi (NPH). The study subtracted particles recovered in the remaining suspension and three PBS washes from the initial input count, then divided by that input count to estimate 72.80% ± 0.83% loading (mean ± SD, n=3). Over 14 days in PBS at 37 °C, it measured released particles by nanoparticle tracking analysis after collecting and replacing the medium at each time point. Cumulative release was expressed relative to the estimated number initially immobilized. Under RSL3, the direct-contact endothelial assay compared bare NiTi, NPH without vesicles, NPH with control vesicles and NPH with engineered vesicles. It also included bare NiTi without RSL3. The separate rat femoral-artery injury model compared bare, NPH and engineered-vesicle filaments. The engineered-vesicle filaments supported endothelial recovery and reduced local inflammatory and lipid-peroxidation-associated signals.",
             "source_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
-            "source_locator": "Section 2.12, page 4 (mean ± SD); Figure 5G–H, page 9 and Section 3.5, page 11 (loading and release); Figure 6, page 11 and Section 3.6, pages 11–12 (rat tissue findings)."
+            "source_locator": "Sections 2.9–2.11, page 3 (particle counts, release denominator and comparison groups); Figure 5G–H and J–M, page 9 (loading, release and endothelial assays); Figure 6, page 11 and Section 3.6, pages 11–12 (rat tissue findings)."
           },
           {
             "heading": "Research use",
