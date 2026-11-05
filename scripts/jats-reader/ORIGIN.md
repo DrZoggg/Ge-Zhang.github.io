@@ -19,12 +19,13 @@ The [existing patch instructions and structural verifier](../../examples/review-
 remain available for consumers maintaining a separate pinned upstream checkout.
 
 The complete upstream MIT notice, Copyright (c) 2025 K-Dense Inc., is retained in
-[LICENSE.kdense.md](LICENSE.kdense.md). `_common.py` is unchanged. The patched
-reader and support files are copied without further source edits. Shipped SHA-256:
+[LICENSE.kdense.md](LICENSE.kdense.md). `_common.py` is unchanged. The bundled
+reader also includes the optional attachment-declaration flag documented below.
+Shipped SHA-256:
 
 | File | SHA-256 |
 | --- | --- |
-| `jats_to_text.py` | `654e7a6050d44bd8857473fd095dc15444b7293d3e501a7647811b0fc0144a88` |
+| `jats_to_text.py` | `05f8f4779518f467d48bc38cb4665db4d1f1c3e066822ce6cb50d22c15648d9d` |
 | `_common.py` | `4c6962ddbcb8cb89adc6c6ac02199835310f04b2ab93ffab9855adef38efd369` |
 | `LICENSE.kdense.md` | `09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1` |
 
@@ -47,10 +48,21 @@ A consumer can invoke the same argument list with its existing subprocess tool,
 supply XML on stdin and retain the returned JSON with its own reading record.
 The reader does not download articles or select papers for the consumer.
 
+Add `--include-supplementary-material` to return the article's declared attachment
+filenames or hrefs, supplement labels and XML locators alongside the body.
+The sidecar covers the owning article even when the body is section-filtered.
+Treat its hrefs as source declarations. Confirm the selected attachment in the
+publisher's article page or the [official versioned PMC dataset](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/)
+before opening it. For PMC, check the DOI and version in the corresponding
+`metadata/PMC….<version>.json` object, then match the declared filename against
+`media_urls` and verify its checksum. Compare the actual table headings, study
+direction and values with the body before using the article as evidence.
+Continue to cite the formal paper DOI.
+
 ## Compatibility and repair scope
 
-Without `--include-cited-references`, the original release's default JSON schema
-is retained. Direct body paragraphs interleaved with sections are now included in
+With neither opt-in flag, the original release's default JSON schema is retained.
+Direct body paragraphs interleaved with sections are now included in
 source order, which can correct section/word counts for that layout. The owning
 article's text and metadata exclude foreign sub-articles and responses.
 
