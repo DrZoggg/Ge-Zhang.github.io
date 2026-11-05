@@ -1032,6 +1032,7 @@
       "id": "gist-site-management",
       "question": "How do anatomical site and treatment context guide research on localised gastrointestinal stromal tumours?",
       "question_zh": "解剖部位与治疗背景如何组织局限性胃肠间质瘤的管理研究？",
+      "source_context_kind": "review",
       "source_ids": [
         "gist-bsg-clinical-guideline-2025"
       ],
@@ -1050,6 +1051,23 @@
                 "doi-10-1016-j-ejso-2024-108527--qa-5"
               ],
               "preview_question_id": "doi-10-1016-j-ejso-2024-108527--qa-2"
+            }
+          ]
+        },
+        {
+          "id": "gist-site-management-2",
+          "question": "How did a retrospective study compare endoscopic and laparoscopic resection for gastrointestinal stromal tumours at the esophagogastric junction?",
+          "question_zh": "一项回顾性研究如何比较食管胃交界部胃肠间质瘤的内镜切除与腹腔镜切除？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1038-s41598-025-98859-3",
+              "question_ids": [],
+              "preview_question_id": null,
+              "preview_note_headings": [
+                "Research question and design",
+                "How treatment groups were compared",
+                "Unresolved source conflict"
+              ]
             }
           ]
         }
