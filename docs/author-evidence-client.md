@@ -355,3 +355,94 @@ provides offline verification and application instructions for this behavior in
 the inspected K-Dense helper. It preserves candidate identities, source excerpts
 and formal citations, including through the runner's repeated deduplication.
 Consumers apply it explicitly; this client does not install or enable it.
+
+### Follow a selected paper to formal comments and corrections
+
+For a Methods or Discussion question where interpretation, event counting, analysis populations or later corrections matter, inspect the already selected original paper's PubMed XML for `MedlineCitation/CommentsCorrectionsList`. Retain the selected paper, original research need, XML source/hash and each associated record's raw `RefType`, PMID, `RefSource` and optional note. Select the associated correspondence or correction for its substantive contribution to that question, and retain competing interpretations. Reuse the consumer's existing lawful PubMed/publisher reading route when it explicitly continues to those records.
+
+Keep the relationship's direction. `CommentIn` identifies a comment on the current paper; a correspondence record's `CommentOn` identifies the paper being discussed. Preserve correction/retraction relationship types as returned. These typed associations are not citation counts. See NLM's [CommentsCorrections element](https://dtd.nlm.nih.gov/ncbi/pubmed/doc/out/250101/el-CommentsCorrections.html) and [comment/correction guidance](https://pubmed.ncbi.nlm.nih.gov/help/#comment-correction).
+
+Keep each PMID record with its authors, pages, formal DOI and any publisher segment identifier before joining work representations. Several letters and a reply can share one DOI while retaining distinct PMIDs, author lists and page ranges. Preserve those records and their writing roles; they do not constitute several trials or independent replications. A missing PMID remains `null`; free-text references do not supply an invented identifier.
+
+Save the following standard-library code as `extract_pubmed_relations.py` in your existing working directory. It reads one already saved PubMed article XML file and prints JSON. Run it once for the selected papers' XML, then for any associated-record XML the consumer has actually obtained. It preserves raw relation types and record identities; shared-DOI groups use case-insensitive keys and are diagnostic only; each raw DOI value is retained.
+
+```sh
+python -X utf8 -B extract_pubmed_relations.py selected-papers.xml
+python -X utf8 -B extract_pubmed_relations.py associated-records.xml
+```
+
+```python
+"""Extract typed PubMed relations from one already-saved XML file; no network."""
+import argparse
+from collections import Counter, defaultdict
+import hashlib
+import json
+from pathlib import Path
+import xml.etree.ElementTree as ET
+
+
+def text(node):
+    return ("".join(node.itertext()).strip() or None) if node is not None else None
+
+
+def extract(raw):
+    root = ET.fromstring(raw)  # ElementTree does not fetch the external PubMed DTD.
+    if root.tag not in ("PubmedArticleSet", "PubmedArticle"):
+        raise ValueError("Expected PubmedArticleSet or PubmedArticle XML")
+    articles = [root] if root.tag == "PubmedArticle" else root.findall("./PubmedArticle")
+    records = []
+    for index, item in enumerate(articles, 1):
+        article = item.find("./MedlineCitation/Article")
+        ids = [{"type": n.get("IdType"), "value": text(n)}
+               for n in item.findall("./PubmedData/ArticleIdList/ArticleId")]
+        locations = [{"type": n.get("EIdType"), "valid": n.get("ValidYN"), "value": text(n)}
+                     for n in article.findall("./ELocationID")] if article is not None else []
+        dois = [x["value"] for x in ids if x["type"] == "doi" and x["value"]]
+        dois += [x["value"] for x in locations
+                 if x["type"] == "doi" and x["valid"] != "N" and x["value"]]
+        records.append({
+            "record_index": index,
+            "pmid": text(item.find("./MedlineCitation/PMID")),
+            "title": text(item.find("./MedlineCitation/Article/ArticleTitle")),
+            "authors": [{tag: text(a.find(tag)) for tag in
+                         ("LastName", "ForeName", "Initials", "Suffix", "CollectiveName")}
+                        for a in item.findall("./MedlineCitation/Article/AuthorList/Author")],
+            "journal": text(item.find("./MedlineCitation/Article/Journal/Title")),
+            "volume": text(item.find("./MedlineCitation/Article/Journal/JournalIssue/Volume")),
+            "issue": text(item.find("./MedlineCitation/Article/Journal/JournalIssue/Issue")),
+            "pagination": {tag: text(item.find("./MedlineCitation/Article/Pagination/" + tag))
+                           for tag in ("MedlinePgn", "StartPage", "EndPage")},
+            "dois": list(dict.fromkeys(dois)),
+            "article_ids": ids, "elocation_ids": locations,
+            "publication_types": [text(n) for n in item.findall(
+                "./MedlineCitation/Article/PublicationTypeList/PublicationType")],
+            "comments_corrections": [
+                {"RefType": n.get("RefType"), "PMID": text(n.find("PMID")),
+                 "RefSource": text(n.find("RefSource")), "Note": text(n.find("Note"))}
+                for n in item.findall("./MedlineCitation/CommentsCorrectionsList/CommentsCorrections")]
+        })
+    relations = [edge for row in records for edge in row["comments_corrections"]]
+    groups = defaultdict(list)
+    for row in records:
+        for doi in dict.fromkeys(value.casefold() for value in row["dois"]):
+            groups[doi].append({"record_index": row["record_index"], "pmid": row["pmid"]})
+    return {"records": records, "summary": {
+        "record_count": len(records), "relation_count": len(relations),
+        "relation_types": dict(Counter(edge["RefType"] for edge in relations)),
+        "missing_related_pmids": sum(edge["PMID"] is None for edge in relations),
+        "shared_doi_records": {doi: rows for doi, rows in groups.items() if len(rows) > 1}
+    }}
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("xml", type=Path)
+    args = parser.parse_args()
+    raw = args.xml.read_bytes()
+    result = extract(raw)
+    result["input"] = str(args.xml.resolve())
+    result["input_sha256"] = hashlib.sha256(raw).hexdigest()
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+```
+
+This snippet supports `PubmedArticleSet`/`PubmedArticle` XML and performs no network requests. Record metadata extraction, abstract/body reading and material use in a draft separately. Read the available communication/correction itself before relying on its substantive argument; preserve its own genre, source locator and formal citation. A metadata link alone establishes an association. The consumer must explicitly choose and execute this workflow with its allowed tools; publication of this recipe does not install it in external research agents or demonstrate natural adoption.
