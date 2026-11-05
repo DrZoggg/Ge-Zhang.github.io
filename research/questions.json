@@ -25750,7 +25750,17 @@
               "doi": "10.3980/j.issn.1672-5123.2020.12.13",
               "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
               "scope_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#limited-evidence",
-              "citation_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cite-this-paper"
+              "citation_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cite-this-paper",
+              "author_note_previews": [
+                {
+                  "heading": "Culture approaches",
+                  "text": "The review discusses cytokine induction, two- and three-dimensional differentiation, coculture, and scaffold encapsulation. Its scaffold discussion covers alginate, fibrin, and polyethylene-glycol/gellan systems. Individual experimental outcomes are attributed to the studies cited in these sections.",
+                  "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+                  "source_locator": "PDF pp. 2–3 / journal pp. 2080–2081: §§1, 2, 3, 4.1–4.3; References",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.3980~1j.issn.1672-5123.2020.12.13"
+                }
+              ]
             }
           ]
         }
