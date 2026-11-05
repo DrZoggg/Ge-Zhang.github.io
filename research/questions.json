@@ -25993,8 +25993,52 @@
               "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#cite-this-paper"
             }
           ]
+        },
+        {
+          "id": "gist-site-management-2",
+          "question": "How did a retrospective study compare endoscopic and laparoscopic resection for gastrointestinal stromal tumours at the esophagogastric junction?",
+          "question_zh": "一项回顾性研究如何比较食管胃交界部胃肠间质瘤的内镜切除与腹腔镜切除？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1038-s41598-025-98859-3",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html",
+              "doi": "10.1038/s41598-025-98859-3",
+              "doi_url": "https://doi.org/10.1038/s41598-025-98859-3",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#cite-this-paper",
+              "author_note_previews": [
+                {
+                  "heading": "Research question and design",
+                  "text": "This single-centre retrospective study compared endoscopic and laparoscopic resection for pathologically confirmed gastrointestinal stromal tumours at the esophagogastric junction. The stated study window was December 2013 to November 2023, and eligibility focused on tumours measuring 2–5 cm. This is an observational treatment comparison, not a randomized trial.",
+                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+                  "source_locator": "Methods: Study design and patients; Figure 1",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                },
+                {
+                  "heading": "How treatment groups were compared",
+                  "text": "The authors describe nearest-neighbour propensity matching at a 1:1 ratio, using age, sex, tumour size, mitotic count and risk classification. This establishes the reported analytical approach; it does not verify that matching achieved balance or removed unmeasured confounding. No comparative safety, recovery or oncological benefit is endorsed here.",
+                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+                  "source_locator": "Methods: Statistical analysis; Tables 1–3",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                },
+                {
+                  "heading": "Unresolved source conflict",
+                  "text": "The abstract reverses the unmatched ER/LR allocation relative to the Results and Table 1. More substantially, the matched laparoscopic group is labelled n=20 but lists 10 males and 20 females. The formal PDF confirms the table inconsistency, so matched-group balance remains unverified.",
+                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
+                  "source_locator": "Abstract versus Results: Baseline clinicopathologic characteristics; Table 1 after PSM, LR Gender; publisher PDF p. 5",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                }
+              ]
+            }
+          ]
         }
-      ]
+      ],
+      "source_context_kind": "review"
     },
     {
       "id": "cardiac-organoid-metabolic-injury",
