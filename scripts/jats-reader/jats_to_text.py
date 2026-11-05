@@ -244,6 +244,30 @@ def element_locators(article: ET.Element) -> dict[ET.Element, str]:
     return paths
 
 
+def declared_supplementary_material(article: ET.Element) -> list[dict[str, Any]]:
+    """Report article-owned attachment declarations without resolving or opening them."""
+    paths = element_locators(article)
+    declarations = []
+    for node in paths:
+        if node.tag not in {"supplementary-material", "inline-supplementary-material"}:
+            continue
+        label = node.find("label")
+        for attachment in (node, *node):
+            if attachment is not node and attachment.tag not in {"media", "graphic"}:
+                continue
+            href = attachment.get("{http://www.w3.org/1999/xlink}href") or attachment.get("href")
+            if not href or not href.strip() or not href.isprintable():
+                continue
+            declarations.append({
+                "supplement_id": node.get("id"),
+                "label": collapse_ws("".join(label.itertext())) if label is not None else None,
+                "locator": paths[attachment],
+                "declared_href": href,
+                "attachment_reading_status": "not_observed_by_parser",
+            })
+    return declarations
+
+
 def bibliography(article: ET.Element) -> list[dict[str, Any]]:
     """Explicit identifiers from reference lists in the owning article only."""
     paths = element_locators(article)
@@ -463,6 +487,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--include-cited-references", action="store_true",
         help="retain selected-section citation groups and cited-work identity as a separate sidecar")
+    parser.add_argument("--include-supplementary-material", action="store_true",
+        help="retain declared attachment locators in JSON without resolving or reading the files")
     return parser
 
 
@@ -547,6 +573,8 @@ def main(argv: list[str] | None = None) -> int:
             payload["bibliography_references"] = bibliography_sidecar(article, body, payload["citation_contexts"], wanted)
         except InputError as error:
             fail(str(error))
+    if args.include_supplementary_material:
+        payload["supplementary_material"] = declared_supplementary_material(article)
     emit(payload, args.output)
     return 0
 
