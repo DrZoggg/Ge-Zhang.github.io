@@ -365,6 +365,108 @@ the inspected K-Dense helper. It preserves candidate identities, source excerpts
 and formal citations, including through the runner's repeated deduplication.
 Consumers apply it explicitly; this client does not install or enable it.
 
+### Follow PubMed full-text links after a resolver failure
+
+If a selected paper's DOI route fails, reuse the already read official PubMed
+record's **Full Text Sources** links before treating its abstract as the only
+available text. A publisher link can work even when the DOI route failed;
+other LinkOut providers may require access. Keep those outcomes separate.
+
+Save this standard-library snippet as `extract_pubmed_fulltext_routes.py`. It
+reads a saved scrape JSON containing `metadata` and `markdown` (including a
+Firecrawl `structuredContent` envelope or a saved `response` wrapper). Supply
+the selected paper's PMID and DOI from its verified identity. It extracts only
+the Full Text Sources section, not references, related articles or generic links.
+
+```sh
+python -X utf8 -B extract_pubmed_fulltext_routes.py pubmed-scrape.json --pmid 36940731 --doi 10.1016/j.freeradbiomed.2023.03.003 > reading-routes.json
+```
+
+```python
+"""Extract source-bound LinkOut routes from a saved PubMed scrape; no network."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import re
+from urllib.parse import urlsplit
+
+
+def extract(payload, pmid, doi):
+    if not re.fullmatch(r"[1-9][0-9]{0,9}", pmid):
+        raise ValueError("Expected a numeric PMID")
+    if not re.fullmatch(r"10\.\d{4,9}/\S+", doi):
+        raise ValueError("Expected a formal DOI, without a resolver prefix")
+    response = payload.get("response", payload)
+    if response.get("isError") or response.get("success") is False:
+        raise ValueError("Saved scrape reports an error")
+    data = response.get("structuredContent", response)
+    meta, markdown = data.get("metadata", {}), data.get("markdown", "")
+    if meta.get("statusCode") != 200 or not isinstance(markdown, str):
+        raise ValueError("Expected a successful saved page with Markdown")
+    if str(meta.get("citation_pmid", "")) != pmid:
+        raise ValueError("Source PMID does not match the selected paper")
+    if str(meta.get("citation_doi", "")).casefold() != doi.casefold():
+        raise ValueError("Source DOI does not match the selected paper")
+    if meta.get("uid") is not None and str(meta["uid"]) != pmid:
+        raise ValueError("Conflicting source PMID")
+    source_url = meta.get("sourceURL")
+    for value in (source_url, meta.get("url", source_url)):
+        u = urlsplit(value or "")
+        if (u.scheme != "https" or u.netloc != "pubmed.ncbi.nlm.nih.gov"
+                or u.path.rstrip("/") != "/" + pmid or u.query or u.fragment):
+            raise ValueError("Expected the selected official PubMed record URL")
+    heading = re.search(r"(?m)^\s*(?:-\s*)?#{1,6}\s+Full Text Sources\s*$", markdown)
+    if not heading:
+        raise ValueError("No saved Full Text Sources section; availability remains unknown")
+    section = re.split(r"(?m)^\s*(?:-\s*)?#{1,6}\s+", markdown[heading.end():], maxsplit=1)[0]
+    routes, seen = [], set()
+    for line in section.splitlines():
+        match = re.fullmatch(r"\s*-\s+\[([^\]\n]+)\]\((https://[^\s]+)\)\s*", line)
+        if not match:
+            continue
+        provider, url = match.groups()
+        try:
+            u = urlsplit(url)
+            port = u.port
+        except ValueError:
+            continue
+        if (not u.hostname or "." not in u.hostname or u.username or u.password
+                or port not in (None, 443) or url in seen):
+            continue
+        seen.add(url)
+        routes.append({"kind": "pubmed_full_text_link", "provider": provider,
+                       "url": url, "source_pmid": pmid, "source_doi": doi,
+                       "source_url": source_url, "source_section": "Full Text Sources",
+                       "availability": "not_checked", "reading_level": "not_read",
+                       "destination_identity": "not_verified"})
+    if not routes:
+        raise ValueError("No usable saved LinkOut links; availability remains unknown")
+    return {"pmid": pmid, "doi": doi, "reading_routes": routes}
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("scrape", type=Path)
+    parser.add_argument("--pmid", required=True)
+    parser.add_argument("--doi", required=True)
+    args = parser.parse_args()
+    raw = args.scrape.read_bytes()
+    result = extract(json.loads(raw), args.pmid, args.doi)
+    result["input_sha256"] = hashlib.sha256(raw).hexdigest()
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+```
+
+Pass an untried `reading_routes[].url` to the consumer's existing permitted web
+reader; do not repeat a failed URL or bypass access controls. Confirm the
+returned article's DOI/title and actual body sections before promoting the route
+to a body read. A link, open-access label or HTTP 200 alone is insufficient.
+Preserve the original abstract-only run, then record the later source, time,
+reading level and any newly supported methods separately. This recipe performs
+no network calls and does not install itself into other research agents; the
+consumer must explicitly use it. It does not change the site's article identity
+or `primary_sources` exports.
+
 ### Follow a selected paper to formal comments and corrections
 
 For a Methods or Discussion question where interpretation, event counting, analysis populations or later corrections matter, inspect the already selected original paper's PubMed XML for `MedlineCitation/CommentsCorrectionsList`. Retain the selected paper, original research need, XML source/hash and each associated record's raw `RefType`, PMID, `RefSource` and optional note. Select the associated correspondence or correction for its substantive contribution to that question, and retain competing interpretations. Reuse the consumer's existing lawful PubMed/publisher reading route when it explicitly continues to those records.
