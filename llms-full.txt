@@ -152,6 +152,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1002-mdr2-70073.md
 - Deep GEO: no
 
+## Trustworthy AI for disease pathogenesis and precision medicine: A disease-agnostic framework from data to deployment
+- Journal: Genes & Diseases
+- Year: 2026
+- Type: Article
+- DOI: 10.1016/j.gendis.2026.102480
+- HTML: https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.html
+- Markdown: https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.md
+- Deep GEO: no
+
 ## Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis
 - Journal: Journal of Clinical Investigation
 - Year: 2026
