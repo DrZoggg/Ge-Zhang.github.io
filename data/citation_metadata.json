@@ -453,6 +453,15 @@
       ],
       "issue": "4",
       "publication_date": "2026-10-18"
+    },
+    "10.1016/j.gendis.2026.102480": {
+      "online_publication_date": "2026-09-18",
+      "article_number": "102480",
+      "verified_sources": [
+        "https://api.crossref.org/works/10.1016/j.gendis.2026.102480",
+        "https://www.sciencedirect.com/science/article/pii/S2352304226004526",
+        "https://orca.cardiff.ac.uk/id/eprint/189812/"
+      ]
     }
   }
 }
