@@ -294,6 +294,23 @@ function primarySources(work) {
       doi:route.doi,version:route.version,
       source_fields:[row.path + '.url',row.path + '.reading_route'],availability:'not_checked'});
   }
+  const copyKey = 'researchgate_author_shared_copy_url';
+  for (const row of provenance) {
+    if (!present(row.value?.[copyKey])) continue;
+    const field = row.path + '.' + copyKey;
+    const url = https(row.value[copyKey]), doiUrl = row.value.doi_url;
+    // Surface only the reviewed provenance role, bound to this work's formal DOI.
+    if (typeof work.doi !== 'string' || !/^10\.\d{4,9}\/\S+$/.test(work.doi)
+        || typeof doiUrl !== 'string' || doiUrl.toLowerCase() !== 'https://doi.org/' + work.doi.toLowerCase()
+        || !url || url.hostname !== 'www.researchgate.net' || url.port || url.search || url.hash
+        || !/^\/publication\/[1-9]\d*(?:_[A-Za-z0-9_-]+)?\/?$/.test(url.pathname)) {
+      issue(field,'invalid_same_work_author_shared_route');
+      continue;
+    }
+    if (routes.some(existing => existing.kind === 'author_shared_copy' && existing.url === url.href)) continue;
+    routes.push({provider:'ResearchGate',kind:'author_shared_copy',url:url.href,doi:work.doi,
+      source_fields:[field,row.path + '.doi_url'],availability:'not_checked'});
+  }
   if (pmcid.value) routes.push({provider:'PMC',kind:'full_text_xml_api',
     url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${pmcid.value.slice(3)}&retmode=xml`,
     source_fields:pmcid.source_fields,availability:'not_checked'});

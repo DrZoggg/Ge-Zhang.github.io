@@ -805,10 +805,11 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1007-s11426-026-3629-x.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1007-s11426-026-3629-x.json",
-      "gold_content_sha256": "abe0f48da5a6326be441e0735da9c0c510bbf1bccc6a1cbda5146b0dfd75ae69",
+      "gold_content_sha256": "0e30c3a9250669be7395c932e71d29bfa4bc5affcb5e69d2afca7f1152941817",
       "provenance": {
         "publisher_url": "https://link.springer.com/article/10.1007/s11426-026-3629-x",
         "doi_url": "https://doi.org/10.1007/s11426-026-3629-x",
+        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/414406664_A_redox-responsive_reversible_photoacoustic_molecular_probe_for_visualizing_atherosclerotic_plaque_redox_status_in_vivo",
         "supplement_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1007%2Fs11426-026-3629-x/MediaObjects/11426_2026_3629_MOESM1_ESM.pdf",
         "crossref_url": "https://api.crossref.org/works/10.1007/s11426-026-3629-x",
         "review_date": "2026-10-12",
