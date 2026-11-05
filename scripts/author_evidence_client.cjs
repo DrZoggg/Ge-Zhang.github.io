@@ -199,8 +199,8 @@ async function loadLive(fetchImpl = globalThis.fetch) {
 function primarySources(work) {
   const issues = [], routes = [];
   const present = value => value !== null && value !== undefined && value !== '';
-  // Read only explicit identity/link fields, not arbitrary URLs in scientific
-  // provenance, references, supplements or a limited record's source list.
+  // Read explicit identity/link fields and reviewed same-DOI repository routes.
+  // Never infer article identity from arbitrary source URLs or display labels.
   const provenance = Array.isArray(work.provenance) ? work.provenance
     .map((value,index) => ({value,path:`work.provenance[${index}]`}))
     : [{value:work.provenance,path:'work.provenance'}];
@@ -275,6 +275,24 @@ function primarySources(work) {
     const resolver = ['doi.org','dx.doi.org'].includes(new URL(publisher.url).hostname);
     routes.push({provider:resolver ? 'DOI' : 'Publisher',kind:resolver ? 'doi_resolver' : 'publisher_source',
       url:publisher.url,source_fields:[publisher.field],availability:'not_checked'});
+  }
+  for (const row of provenance) {
+    if (!row.value || typeof row.value !== 'object' || !Object.hasOwn(row.value, 'reading_route')) continue;
+    const route = row.value.reading_route, url = https(row.value.url);
+    if (!route || typeof route !== 'object' || Array.isArray(route)
+        || Object.keys(route).sort().join(',') !== 'doi,kind,version'
+        || route.kind !== 'institutional_repository_pdf'
+        || typeof work.doi !== 'string' || typeof route.doi !== 'string'
+        || !/^10\.\d{4,9}\/\S+$/.test(route.doi) || route.doi.toLowerCase() !== work.doi.toLowerCase()
+        || !['journal_pre_proof','accepted_manuscript','version_of_record'].includes(route.version)
+        || !url || !url.pathname.toLowerCase().endsWith('.pdf') || url.search || url.hash) {
+      issue(row.path + '.reading_route','invalid_same_work_repository_route');
+      continue;
+    }
+    if (routes.some(existing => existing.url === url.href && existing.version === route.version)) continue;
+    routes.push({provider:'Institutional repository',kind:route.kind,url:url.href,
+      doi:route.doi,version:route.version,
+      source_fields:[row.path + '.url',row.path + '.reading_route'],availability:'not_checked'});
   }
   if (pmcid.value) routes.push({provider:'PMC',kind:'full_text_xml_api',
     url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${pmcid.value.slice(3)}&retmode=xml`,

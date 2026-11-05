@@ -49,11 +49,20 @@ def validate_record(doi, record, publication):
     for text in record['limitations']:
         plain(text, 700)
     for row in record['sources']:
-        if set(row) != {'url', 'label', 'format', 'locator'}:
+        if set(row) - {'reading_route'} != {'url', 'label', 'format', 'locator'}:
             raise ValueError('Unsupported source provenance')
         source_url(row['url'])
         for key in ['label', 'format', 'locator']:
             plain(row[key], 700)
+        if 'reading_route' in row:
+            route = row['reading_route']
+            location = urlsplit(row['url'])
+            if (not isinstance(route, dict) or set(route) != {'kind', 'doi', 'version'}
+                    or route['kind'] != 'institutional_repository_pdf'
+                    or route['doi'] != doi
+                    or route['version'] not in ('journal_pre_proof', 'accepted_manuscript', 'version_of_record')
+                    or not location.path.lower().endswith('.pdf') or location.query or location.fragment):
+                raise ValueError('Repository reading route requires an explicit same-DOI PDF version')
 
 
 def load(publications):

@@ -3766,7 +3766,12 @@
           "url": "https://orca.cardiff.ac.uk/id/eprint/189812/1/1-s2.0-S2352304226004526-main.pdf",
           "label": "Cardiff University repository full text",
           "format": "Publisher Journal Pre-proof; CC BY 4.0",
-          "locator": "Front matter; manuscript lines 121–133, 491–518, 666–679 and 738–740. Physical PDF pagination includes repository and publisher cover pages."
+          "locator": "Front matter; manuscript lines 121–133, 491–518, 666–679 and 738–740. Physical PDF pagination includes repository and publisher cover pages.",
+          "reading_route": {
+            "kind": "institutional_repository_pdf",
+            "doi": "10.1016/j.gendis.2026.102480",
+            "version": "journal_pre_proof"
+          }
         },
         {
           "url": "https://api.crossref.org/works/10.1016/j.gendis.2026.102480",
