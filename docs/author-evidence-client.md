@@ -94,6 +94,15 @@ whether an abstract or body was actually read, then cite the formal paper.
 This helps a consumer continue through a database record when a publisher route
 is unavailable, while retaining the author's explanation as supplementary context.
 
+A reviewed institutional PDF can also appear as an `institutional_repository_pdf`
+route with its bound `doi` and explicit `version` (`journal_pre_proof`,
+`accepted_manuscript` or `version_of_record`). Follow that URL with the consumer's
+existing PDF reader and retain the stated version in the reading log. The route
+comes from an explicit `reading_route` annotation on an existing source record;
+the client does not infer it from a filename, label, reference or arbitrary note
+URL. `availability: "not_checked"` means the client has not fetched that PDF.
+Older exports without the annotation continue to expose their original sources.
+
 The client and website use the same local MiniSearch engine. Natural queries use
 separate question/answer fields and an English Porter word-form index to select
 a relevant original answer within a matching work. This is lexical relevance,

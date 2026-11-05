@@ -277,6 +277,49 @@ async function run() {
   const unrelatedPmc=routeFixture({references:[{pmcid:'PMC11865799'}],provenance:{correction_pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/'}});
   assert.equal(unrelatedPmc.primary_sources.identifiers.pmcid,null);
   assert.equal(sourceRouteCases,23);
+  // An explicit same-work repository PDF is a reading route; an arbitrary
+  // provenance link (even one labelled "full text") remains just provenance.
+  const repositorySource={url:'https://repository.example.org/paper.pdf',label:'Institutional full text',
+    reading_route:{kind:'institutional_repository_pdf',doi:hf.publication.doi,version:'journal_pre_proof'}};
+  const repository=routeFixture({provenance:[repositorySource]});
+  assert.deepEqual(repository.primary_sources.reading_routes,[{
+    provider:'Institutional repository',kind:'institutional_repository_pdf',url:repositorySource.url,
+    doi:hf.publication.doi,version:'journal_pre_proof',
+    source_fields:['work.provenance[0].url','work.provenance[0].reading_route'],availability:'not_checked'}]);
+  assert.equal(repository.links.publisher_url,null);
+  const repositoryAndPmc=routeFixture({pmcid:'PMC11310499',provenance:[repositorySource]});
+  assert.equal(repositoryAndPmc.primary_sources.reading_routes.at(-1).kind,'full_text_xml_api');
+  assert.equal(repositoryAndPmc.primary_sources.reading_routes.filter(route=>route.kind==='institutional_repository_pdf').length,1);
+  const untyped=routeFixture({provenance:[{url:repositorySource.url,label:'Publisher full text'}]});
+  assert.deepEqual(untyped.primary_sources.reading_routes,[]);
+  for (const changed of [
+    {reading_route:{...repositorySource.reading_route,doi:'10.0000/another-work'}},
+    {reading_route:{...repositorySource.reading_route,doi:''}},
+    {reading_route:{...repositorySource.reading_route,version:'latest'}},
+    {reading_route:{...repositorySource.reading_route,kind:'metadata'}},
+    {reading_route:null},
+    {url:'https://api.crossref.org/works/' + hf.publication.doi},
+    {url:'file:///private/author-copy.pdf'},
+    {url:'http://repository.example.org/paper.pdf'},
+    {url:'https://user:secret@repository.example.org/paper.pdf'},
+    {url:'https://repository.example.org/paper.pdf?token=secret'},
+  ]) {
+    const invalidRepository=routeFixture({provenance:[{...repositorySource,...changed}]});
+    assert.deepEqual(invalidRepository.primary_sources.reading_routes,[]);
+    assert.equal(invalidRepository.primary_sources.metadata_issues[0].reason,'invalid_same_work_repository_route');
+    assert(!JSON.stringify(invalidRepository.primary_sources.metadata_issues).includes('secret'));
+  }
+  const genes=client.fetch('doi-10-1016-j-gendis-2026-102480');
+  const geneRoutes=genes.primary_sources.reading_routes;
+  assert.equal(geneRoutes.length,1);
+  assert.equal(geneRoutes[0].url,genes.provenance[0].url);
+  assert.equal(geneRoutes[0].doi,genes.publication.doi);
+  assert.equal(geneRoutes[0].version,'journal_pre_proof');
+  assert.equal(genes.answer,null);assert.deepEqual(genes.available_questions,[]);
+  assert.equal(genes.publication.evidence_status,'limited');
+  assert.equal(genes.links.publisher_url,null);
+  assert(!client.fetch('doi-10-1016-j-colsurfb-2026-116261').primary_sources.reading_routes
+    .some(route=>route.kind==='institutional_repository_pdf'));
   assert.equal(digest('{\r\n}'),digest('{\n}'));
   const calls=[];
   const fake=async(url,options)=>{
