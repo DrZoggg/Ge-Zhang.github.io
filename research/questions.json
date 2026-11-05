@@ -13432,7 +13432,13 @@
           "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
           "label": "Official dataset relationship",
           "format": "GEO Series record",
-          "locator": "GSE57338 is a SubSeries of GSE57345; previously saved official SOFT Series response verified during this review."
+          "locator": "GSE57338 is a SubSeries of GSE57345. The GEO Series lists 313 GSM accessions."
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57345",
+          "label": "GSE57345 SuperSeries sample membership",
+          "format": "GEO Series record",
+          "locator": "319 GSM accessions, including all 313 records from GSE57338. Registry comparison verified 5 November 2026."
         }
       ],
       "author_evidence_note": {
@@ -13458,10 +13464,10 @@
             "source_locator": "Publisher-layout PDF p. 3, Methods 2.8; pp. 8 and 10, Results 3.5 and Figure 7; pp. 3–4, animal experimental methods."
           },
           {
-            "heading": "Why diagnostic validation remains unresolved",
-            "text": "Figure 1 labels the training inputs as 181 IC samples from GSE5406 and 91 from GSE57338, but labels their merged IC group as 203. Those counts do not reconcile. Moreover, GSE57338 is a SubSeries of the stated validation accession GSE57345; the article does not provide a verified sample-level exclusion map. Figure 5 describes five-fold cross-validation within its evaluation datasets. These records do not establish an untouched external test of a frozen diagnostic model.",
-            "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
-            "source_locator": "Official GEO Series GSE57338, relation “SubSeries of: GSE57345”; compare publisher PDF p. 3 Figure 1, p. 2 Methods 2.1 and p. 8 Figure 5 caption."
+            "heading": "Human transcriptome datasets and validation design",
+            "text": "The GEO registries show that all 313 sample accessions in the training SubSeries GSE57338 also appear among the 319 sample accessions in the reported validation SuperSeries GSE57345. Figure 1 labels the training inputs as 181 IC samples from GSE5406 and 91 from GSE57338, but labels their merged IC group as 203. Figure 5 describes five-fold cross-validation within the evaluation datasets.",
+            "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57345",
+            "source_locator": "Official GEO Series sample accessions for GSE57345 and GSE57338; compare publisher PDF p. 3 Figure 1, p. 2 Methods 2.1 and p. 8 Figure 5 caption."
           }
         ]
       },
@@ -13470,7 +13476,7 @@
       "evidence_scope": null,
       "limitations": [
         "Human sample accounting remains unresolved: Figure 1 input IC counts 181 and 91 do not equal the displayed combined 203. No corrected denominator or deduplicated participant total is inferred. The GSE42955 AUC is 0.943 in the abstract but 0.933 in Results 3.3 and Figure 5D. Neither number is selected as a reconciled performance estimate.",
-        "Training GSE57338 is part of validation SuperSeries GSE57345. A GSM-level membership and overlap audit and the frozen-model evaluation procedure are needed before claiming independent external validation. The article alternates between disease identification and cluster prediction. Methods 2.4, Results 3.3 and the Figure 5 caption do not resolve the exact target and partitioning of every model analysis.",
+        "The GEO membership comparison describes the deposited samples. A map of the samples actually selected or excluded and the frozen-model evaluation procedure are needed to determine whether the article used an independent external test. The article alternates between disease identification and cluster prediction. Methods 2.4, Results 3.3 and the Figure 5 caption do not resolve the exact target and partitioning of every model analysis.",
         "Animal expression differences do not demonstrate causal cuproptosis activity, clinical diagnostic utility or treatment efficacy. The post-ligation assessment interval and the relationship between the six allocated animals and four Western-blot observations require clarification.",
         "Supplementary Figures S1–S7 and Tables S1–S3 were not obtained in this review. No supplementary-only values or docking-based therapeutic recommendation is adopted.",
         "The author-account PDF matches the formal article title, DOI, 18-author order, journal, volume and article number. It is retained privately for audit; no open redistribution licence is asserted."
