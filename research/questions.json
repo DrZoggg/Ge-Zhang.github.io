@@ -11023,11 +11023,12 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1200-po-24-00089.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1200-po-24-00089.json",
-      "gold_content_sha256": "1bd3630ab381e29d9920df5a2844506c8fd93bea295947730458243a92144346",
+      "gold_content_sha256": "0db8fbe000f61d2035601bd92fa61a33e1e477e231515477c4348c64f7c7aba6",
       "provenance": {
         "doi_url": "https://doi.org/10.1200/po.24.00089",
         "publisher_url": "https://ascopubs.org/doi/10.1200/PO.24.00089",
-        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39432882/"
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39432882/",
+        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/385105654_Artificial_Intelligence_Hybrid_Survival_Assessment_System_for_Robot-Assisted_Proctectomy_A_Retrospective_Cohort_Study"
       },
       "scientific_role": "Interpretable survival-modeling framework for rectal-cancer patients after robot-assisted proctectomy.",
       "evidence_position": "Two-center retrospective human prognostic modeling with external evaluation; not prospective clinical utility or a causal survival advantage of robotic surgery.",
