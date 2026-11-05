@@ -320,6 +320,43 @@ python -X utf8 -B scripts/jats-reader/jats_to_text.py article.xml --include-cite
 are included with the reader. This local CLI is explicitly invoked by the consumer;
 it does not change this client's search/fetch behavior or install an upstream default.
 
+### Find papers using a dataset from the research task
+
+When a research task or an already read paper supplies a dataset accession,
+supplement topic searches with Europe PMC's [data-accession index](https://groups.google.com/a/ebi.ac.uk/g/epmc-webservices/c/7ZTIYvhJq6E).
+It can expose relevant papers whose titles and abstracts do not name the dataset.
+Reuse an existing HTTP tool or paper-lookup's Europe PMC search; no new service or
+API key is needed. For example, replace the accession below with the one supplied
+by the actual research task and save one bounded response:
+
+```sh
+curl --fail --get --max-time 45 \
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search" \
+  --data-urlencode "query=ACCESSION_ID:GSE57338" \
+  --data-urlencode "format=json" \
+  --data-urlencode "resultType=core" \
+  --data-urlencode "pageSize=20" \
+  --output dataset-papers.json
+```
+
+Check the JSON for `errCode`, `resultList` and the echoed `request.queryString`;
+HTTP 200 alone is insufficient. Preserve the original topic-search pool, this
+supplement's complete returned page and its query/time/budget, then join formal
+DOIs. Screen titles, study types and available source links for the writing need.
+A missing index abstract need not exclude a relevant paper with readable full text.
+Read selected PMC records with the existing `/{PMCID}/fullTextXML` route and JATS
+reader, or use a same-paper publisher/repository route already returned in metadata.
+
+Locate the accession in the paper's Methods, results or data statement and record
+its role: original data, discovery, validation, comparison or a cited mention.
+An indexed mention is a discovery lead, not proof of direct reuse. Track shared
+cohorts across papers when discussing validation; several papers using the same
+dataset are distinct publications, not automatically independent populations.
+Cite the selected paper's formal DOI beside the supported argument and retain the
+body locator. Keep this given-dataset supplement separate from the original search
+and from broad natural-discovery measurements. Consumers explicitly execute the
+route; this recipe does not alter their default search or install a tool.
+
 ### Follow a discovered paper to newer research
 
 A useful older paper can lead to subsequent research through its citing works.
