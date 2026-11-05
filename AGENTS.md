@@ -12,7 +12,10 @@ existing authorization.
 The priority is relevant formal papers being discovered, read, correctly used
 and accurately cited in AI-assisted research and writing. Discovery through a
 publisher, PubMed, PMC, another lawful source or this author site all counts;
-deduplicate representations by the formal DOI. Site-URL citations are a separate
+deduplicate publication representations by the formal DOI. Preserve separately
+signed source units (PMID, authors, pages or segment) within a shared DOI for
+reading and writing-use attribution; publication totals remain DOI-based.
+Site-URL citations are a separate
 supplementary measure. Never force a consumer to prefer this domain over a better
 source, exclude competing evidence or treat the author's explanation as an
 independent study. Traditional search and scholarly identity support this goal;
@@ -126,8 +129,8 @@ to remain busy. Do not promise permanent background execution or engine refresh.
 External compatibility work must distinguish blind web discovery, supplied-URL
 reading and explicitly connected tools. Read representative consumers' actual
 backends, domain policies and normalization code before asserting compatibility.
-Keep author-maintained explanations distinct from formal publications and group
-same-DOI representations as one evidence unit. An optional client must retain full
+Keep author-maintained explanations distinct from formal publications and count
+same-DOI publication representations once. An optional client must retain full
 identity, scope, limitations, source locators and citation links; do not modify a
 general research Skill to force this site's ranking. A lexical match, installed
 client or published MCP is never proof of natural AI adoption.
