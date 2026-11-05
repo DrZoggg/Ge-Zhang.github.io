@@ -103,6 +103,13 @@ the client does not infer it from a filename, label, reference or arbitrary note
 URL. `availability: "not_checked"` means the client has not fetched that PDF.
 Older exports without the annotation continue to expose their original sources.
 
+A verified author-shared ResearchGate publication page can appear as an
+`author_shared_copy` route. The client uses the dedicated provenance link
+only when its accompanying DOI URL matches the work's formal DOI. Use a web
+reader to check what the landing page actually exposes and record the reading
+level. The author-shared route supplements the publisher and PubMed links.
+Use the original DOI for the formal citation.
+
 The client and website use the same local MiniSearch engine. Natural queries use
 separate question/answer fields and an English Porter word-form index to select
 a relevant original answer within a matching work. This is lexical relevance,

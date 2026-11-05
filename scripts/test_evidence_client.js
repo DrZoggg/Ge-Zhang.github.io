@@ -320,6 +320,35 @@ async function run() {
   assert.equal(genes.links.publisher_url,null);
   assert(!client.fetch('doi-10-1016-j-colsurfb-2026-116261').primary_sources.reading_routes
     .some(route=>route.kind==='institutional_repository_pdf'));
+  const rap=client.fetch('doi-10-1200-po-24-00089--qa-5');
+  const authorCopyKey='researchgate_author_shared_copy_url';
+  assert.deepEqual(rap.primary_sources.reading_routes.filter(route=>route.kind==='author_shared_copy'),[
+    {provider:'ResearchGate',kind:'author_shared_copy',url:rap.provenance[authorCopyKey],
+      doi:'10.1200/po.24.00089',source_fields:[`work.provenance.${authorCopyKey}`,'work.provenance.doi_url'],
+      availability:'not_checked'},
+  ]);
+  assert.equal(rap.links.publisher_url,'https://ascopubs.org/doi/10.1200/PO.24.00089');
+  const rep=client.fetch('doi-10-1007-s11426-026-3629-x');
+  assert(rep.primary_sources.reading_routes.some(route=>route.kind==='author_shared_copy'
+    && route.doi===rep.publication.doi && route.url===rep.provenance[authorCopyKey]));
+  const organoid=client.fetch('doi-10-1016-j-cbi-2025-111421');
+  assert(organoid.provenance.source_record_url.includes('researchgate.net'));
+  assert(!organoid.primary_sources.reading_routes.some(route=>route.kind==='author_shared_copy'));
+  const shared={doi_url:hf.links.original_doi_url,[authorCopyKey]:'https://www.researchgate.net/publication/123_Example'};
+  assert.equal(routeFixture({provenance:[shared,shared]}).primary_sources.reading_routes.length,1);
+  for (const invalid of [
+    {doi_url:null}, {doi_url:'https://doi.org/10.0000/wrong'},
+    {[authorCopyKey]:'https://www.researchgate.net.example.org/publication/123'},
+    {[authorCopyKey]:'https://user:secret@www.researchgate.net/publication/123'},
+    {[authorCopyKey]:'https://www.researchgate.net:8080/publication/123'},
+    {[authorCopyKey]:'https://www.researchgate.net/publication/123?ref=other'},
+    {[authorCopyKey]:'https://www.researchgate.net/publication/123/links/download.pdf'},
+  ]) {
+    const rejected=routeFixture({provenance:{...shared,...invalid}});
+    assert.deepEqual(rejected.primary_sources.reading_routes,[]);
+    assert.equal(rejected.primary_sources.metadata_issues[0].reason,'invalid_same_work_author_shared_route');
+    assert(!JSON.stringify(rejected.primary_sources.metadata_issues).includes('secret'));
+  }
   assert.equal(digest('{\r\n}'),digest('{\n}'));
   const calls=[];
   const fake=async(url,options)=>{
