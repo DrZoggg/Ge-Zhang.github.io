@@ -86,6 +86,12 @@ def require(condition, message):
         raise ValidationError(message)
 
 
+def validate_schema_publication_date(schema, publication, citation_data, label):
+    expected = (citation_data or {}).get("online_publication_date") or str(publication["year"])
+    require(schema.get("datePublished") == expected,
+            f"Schema.org first publication date changed for {label}.")
+
+
 def validate_ga4_rendering(html_files):
     require(GA4_MEASUREMENT_ID == "G-65LDZXWWQK", "GA4 measurement ID changed.")
     for path in html_files:
@@ -2495,10 +2501,7 @@ def validate_site():
                 == expected_highwire_date,
                 f"citation_publication_date changed for {slug}.html.",
             )
-            require(
-                schema.get("datePublished") == expected_year,
-                f"Schema.org publication year changed for {slug}.html.",
-            )
+            validate_schema_publication_date(schema, item, citation_data, f"{slug}.html")
         h1_titles = element_texts(page, "h1")
         require(len(h1_titles) == 1, f"{slug}.html must have exactly one h1 title.")
         require(
@@ -3002,6 +3005,17 @@ def validate_site():
         publications_schema.get("url") == publications_url,
         "Wrong publications Schema.org URL.",
     )
+    for item in public_expected:
+        fields = citation_metadata.get(norm_doi(item.get("doi")), {})
+        if not fields.get("online_publication_date"):
+            continue
+        parts = publications_schema.get("hasPart")
+        require(isinstance(parts, list), "Publications Schema.org hasPart must be a list.")
+        matches = [part for part in parts if isinstance(part, dict)
+                   and part.get("url") == f"{config['site_url']}/papers/{item['slug']}.html"]
+        require(len(matches) == 1, f"Publication schema missing or duplicated: {item['slug']}")
+        validate_schema_publication_date(matches[0], item, fields,
+                                         f"publications hasPart/{item['slug']}")
     publications_person = publications_schema.get("mainEntity")
     validate_researcher_reference(
         publications_person,

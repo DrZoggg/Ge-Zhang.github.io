@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "base_sha": "ec52365181e8665004be43f9dd9e73858d39033d",
+  "source_review": "Independent public ORCID self DOI association plus PubMed author affiliation and ArticleDate, with Crossref complete ordered bibliography; original paraphrases of indexed abstracts.",
+  "papers": {
+    "10.1016/j.colsurfb.2026.116261": {
+      "identity": {
+        "title": "Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces",
+        "year": 2027,
+        "journal": "Colloids and Surfaces B: Biointerfaces",
+        "type": "Article",
+        "doi": "10.1016/j.colsurfb.2026.116261",
+        "url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+        "sources": [
+          "ORCID",
+          "Crossref",
+          "PubMed"
+        ],
+        "slug": "doi-10-1016-j-colsurfb-2026-116261",
+        "authors": [
+          "Demin Li",
+          "Yachen Hou",
+          "Yang Lu",
+          "Pengchong Du",
+          "Ge Zhang",
+          "Yan Lv",
+          "Ke Hu",
+          "Rilige Su",
+          "Bolin Jiao",
+          "Yangyang Wu",
+          "Yujia Wang",
+          "Jinying Zhang",
+          "Junnan Tang"
+        ],
+        "researcher_author_positions": [
+          5
+        ]
+      },
+      "pmid": "42896257",
+      "first_online": "2026-10-15",
+      "citation_date_parts": [
+        2027
+      ],
+      "note_sha256": "976683a082c33071dbfefbd903a8c3196409275065baa5c756e60330ea24a9d2"
+    },
+    "10.1177/00368504261499186": {
+      "identity": {
+        "title": "Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study",
+        "year": 2026,
+        "journal": "Science Progress",
+        "type": "Article",
+        "doi": "10.1177/00368504261499186",
+        "url": "https://doi.org/10.1177/00368504261499186",
+        "sources": [
+          "ORCID",
+          "Crossref",
+          "PubMed"
+        ],
+        "slug": "doi-10-1177-00368504261499186",
+        "authors": [
+          "Asiya Abudesimu",
+          "Zhonghua Sun",
+          "Ge Zhang",
+          "Xiangyu Sun",
+          "Xinliang Peng",
+          "Dilixiati Siti",
+          "Xiang Ma"
+        ],
+        "researcher_author_positions": [
+          3
+        ]
+      },
+      "pmid": "42893432",
+      "first_online": "2026-10-18",
+      "citation_date_parts": [
+        2026,
+        10,
+        18
+      ],
+      "note_sha256": "1a53dd1c21880b6ef077ed0173e3254c016b35c19971f36f2168930d8d487e97"
+    }
+  }
+}

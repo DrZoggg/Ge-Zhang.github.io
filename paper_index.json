@@ -8,6 +8,31 @@
   },
   "papers": [
     {
+      "title": "Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces",
+      "journal": "Colloids and Surfaces B: Biointerfaces",
+      "year": 2027,
+      "type": "Article",
+      "doi": "10.1016/j.colsurfb.2026.116261",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html",
+      "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md",
+      "deep_geo": false,
+      "paper_geo_status": "none",
+      "featured": false,
+      "doi_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+      "publisher_url": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.csl.json",
+      "pmid": "42896257",
+      "pmcid": null,
+      "openalex_id": null,
+      "semantic_scholar_id": null,
+      "official_abstract_available": false,
+      "evidence_csv_url": null,
+      "question_count": 0,
+      "concept_count": 0
+    },
+    {
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
       "journal": "Clinical and Experimental Medicine",
       "year": 2026,
@@ -280,6 +305,31 @@
           "Discussions distinguishing independent association replication from validated clinical prediction and incremental decision value."
         ]
       }
+    },
+    {
+      "title": "Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study",
+      "journal": "Science Progress",
+      "year": 2026,
+      "type": "Article",
+      "doi": "10.1177/00368504261499186",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.html",
+      "markdown_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.md",
+      "deep_geo": false,
+      "paper_geo_status": "none",
+      "featured": false,
+      "doi_url": "https://doi.org/10.1177/00368504261499186",
+      "publisher_url": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.csl.json",
+      "pmid": "42893432",
+      "pmcid": null,
+      "openalex_id": null,
+      "semantic_scholar_id": null,
+      "official_abstract_available": false,
+      "evidence_csv_url": null,
+      "question_count": 0,
+      "concept_count": 0
     },
     {
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",

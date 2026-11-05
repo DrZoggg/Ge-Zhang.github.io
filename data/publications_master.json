@@ -1,5 +1,37 @@
 [
   {
+    "title": "Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces",
+    "year": 2027,
+    "journal": "Colloids and Surfaces B: Biointerfaces",
+    "type": "Article",
+    "doi": "10.1016/j.colsurfb.2026.116261",
+    "url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+    "sources": [
+      "ORCID",
+      "Crossref",
+      "PubMed"
+    ],
+    "slug": "doi-10-1016-j-colsurfb-2026-116261",
+    "authors": [
+      "Demin Li",
+      "Yachen Hou",
+      "Yang Lu",
+      "Pengchong Du",
+      "Ge Zhang",
+      "Yan Lv",
+      "Ke Hu",
+      "Rilige Su",
+      "Bolin Jiao",
+      "Yangyang Wu",
+      "Yujia Wang",
+      "Jinying Zhang",
+      "Junnan Tang"
+    ],
+    "researcher_author_positions": [
+      5
+    ]
+  },
+  {
     "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
     "year": 2026,
     "journal": "Clinical and Experimental Medicine",
@@ -155,6 +187,32 @@
       "Fangkun Yang",
       "Bo Yang",
       "Chaoyang Yu"
+    ]
+  },
+  {
+    "title": "Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study",
+    "year": 2026,
+    "journal": "Science Progress",
+    "type": "Article",
+    "doi": "10.1177/00368504261499186",
+    "url": "https://doi.org/10.1177/00368504261499186",
+    "sources": [
+      "ORCID",
+      "Crossref",
+      "PubMed"
+    ],
+    "slug": "doi-10-1177-00368504261499186",
+    "authors": [
+      "Asiya Abudesimu",
+      "Zhonghua Sun",
+      "Ge Zhang",
+      "Xiangyu Sun",
+      "Xinliang Peng",
+      "Dilixiati Siti",
+      "Xiang Ma"
+    ],
+    "researcher_author_positions": [
+      3
     ]
   },
   {
