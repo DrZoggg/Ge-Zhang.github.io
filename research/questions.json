@@ -3,6 +3,100 @@
   "discovery_version": 2,
   "works": [
     {
+      "id": "doi-10-1016-j-colsurfb-2026-116261",
+      "title": "Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces",
+      "doi": "10.1016/j.colsurfb.2026.116261",
+      "year": 2027,
+      "journal": "Colloids and Surfaces B: Biointerfaces",
+      "type": "Article",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html",
+      "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md",
+      "paper_geo_status": "none",
+      "authors": [
+        "Demin Li",
+        "Yachen Hou",
+        "Yang Lu",
+        "Pengchong Du",
+        "Ge Zhang",
+        "Yan Lv",
+        "Ke Hu",
+        "Rilige Su",
+        "Bolin Jiao",
+        "Yangyang Wu",
+        "Yujia Wang",
+        "Jinying Zhang",
+        "Junnan Tang"
+      ],
+      "doi_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+      "publisher_url": null,
+      "pmid": "42896257",
+      "pmcid": null,
+      "openalex_id": null,
+      "semantic_scholar_id": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1016-j-colsurfb-2026-116261.csl.json",
+      "evidence_status": "limited",
+      "question_count": 0,
+      "key_findings": [],
+      "field_entry": [],
+      "review_topics": [],
+      "concepts": {},
+      "evidence_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html#limited-evidence",
+      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
+      "provenance": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+          "label": "Indexed study abstract and author metadata",
+          "format": "PubMed XML abstract and bibliographic metadata; original paraphrase above",
+          "locator": "PMID 42896257, Abstract, AuthorList, ArticleDate and ArticleIdList."
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1016/j.colsurfb.2026.116261",
+          "label": "Publisher-deposited citation record",
+          "format": "Crossref bibliographic metadata",
+          "locator": "DOI 10.1016/j.colsurfb.2026.116261, published-print, volume and article-number."
+        }
+      ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-11-04",
+        "source_record": "data/limited_evidence.json#/papers/10.1016~1j.colsurfb.2026.116261",
+        "sections": [
+          {
+            "heading": "Principal findings",
+            "text": "Vesicles released by ZFP36-overexpressing AC16 cells protected RSL3-challenged human umbilical vein endothelial cells: viability and mitochondrial membrane potential improved, while oxidative stress declined. Direct myocardial administration also improved cardiac function and reduced fibrosis in a mouse infarction model.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+            "source_locator": "PubMed PMID 42896257, Abstract sentences 4–7: engineered preparation, RSL3-HUVEC experiments and mouse myocardial-infarction findings."
+          },
+          {
+            "heading": "Vascular-interface contribution",
+            "text": "The same engineered vesicles were attached to a NiTi surface modified with polydopamine and hyaluronic acid. The resulting coating supported vesicle loading and gradual particle release in vitro. In rat femoral-artery injury, the abstract reports better endothelial recovery alongside lower inflammatory activation and lipid-peroxidation-associated injury. This connects cell-derived vesicle engineering with a functional vascular-material interface.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+            "source_locator": "PubMed PMID 42896257, Abstract sentences 8–12: NPH@Z-EV preparation, release, direct-contact tests and rat injury model."
+          },
+          {
+            "heading": "Research use",
+            "text": "The study offers a preclinical example for discussions of ferroptosis-related endothelial repair and biologically functionalized NiTi. Its cell, mouse and rat experiments represent separate experimental settings; the indexed abstract provides no sample sizes or numerical effect estimates.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+            "source_locator": "PubMed PMID 42896257, Abstract: RSL3-treated HUVEC, mouse MI and rat femoral-artery injury experiments."
+          },
+          {
+            "heading": "Publication chronology",
+            "text": "PubMed records electronic publication on 15 October 2026. The assigned Crossref print record is volume 270, article 116261, February 2027; formal citation exports use 2027. These dates describe one DOI and one study, not two versions of the evidence.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+            "source_locator": "PubMed ArticleDate DateType=Electronic 2026-10-15; Crossref published-print date-parts [2027,2], volume 270 and article-number 116261."
+          }
+        ]
+      },
+      "scope": "Original author-maintained explanation of a preclinical extracellular-vesicle and vascular-interface study, based on its indexed abstract and verified publication metadata.",
+      "evidence_notice": "Original author-maintained explanation of a preclinical extracellular-vesicle and vascular-interface study, based on its indexed abstract and verified publication metadata.",
+      "evidence_scope": null,
+      "limitations": [
+        "The reviewed source is the indexed abstract, not the complete methods, figures or supplementary materials. The reported endothelial and repair findings are preclinical; clinical outcomes were not studied in the experiments described here."
+      ],
+      "scope_source": "data/limited_evidence.json#/papers/10.1016~1j.colsurfb.2026.116261/scope"
+    },
+    {
       "id": "doi-10-1007-s10238-026-02130-6",
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
       "doi": "10.1007/s10238-026-02130-6",
@@ -1774,6 +1868,94 @@
         "Exploratory network comparisons between exposure quartiles cannot demonstrate longitudinal within-person phase transitions."
       ],
       "scope_source": "data/deep_geo/doi-10-15212-bioi-2026-0017.json#/evidence_scope"
+    },
+    {
+      "id": "doi-10-1177-00368504261499186",
+      "title": "Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study",
+      "doi": "10.1177/00368504261499186",
+      "year": 2026,
+      "journal": "Science Progress",
+      "type": "Article",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.html",
+      "markdown_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.md",
+      "paper_geo_status": "none",
+      "authors": [
+        "Asiya Abudesimu",
+        "Zhonghua Sun",
+        "Ge Zhang",
+        "Xiangyu Sun",
+        "Xinliang Peng",
+        "Dilixiati Siti",
+        "Xiang Ma"
+      ],
+      "doi_url": "https://doi.org/10.1177/00368504261499186",
+      "publisher_url": null,
+      "pmid": "42893432",
+      "pmcid": null,
+      "openalex_id": null,
+      "semantic_scholar_id": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1177-00368504261499186.csl.json",
+      "evidence_status": "limited",
+      "question_count": 0,
+      "key_findings": [],
+      "field_entry": [],
+      "review_topics": [],
+      "concepts": {},
+      "evidence_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.html#limited-evidence",
+      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
+      "provenance": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+          "label": "Indexed cohort-study abstract and author metadata",
+          "format": "PubMed XML abstract and bibliographic metadata; original paraphrase above",
+          "locator": "PMID 42893432, Abstract Objective/Methods/Results/Conclusions, AuthorList and ArticleDate."
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1177/00368504261499186",
+          "label": "Publisher-deposited citation record",
+          "format": "Crossref bibliographic metadata",
+          "locator": "DOI 10.1177/00368504261499186, volume, issue, article-number and publication dates."
+        }
+      ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-11-04",
+        "source_record": "data/limited_evidence.json#/papers/10.1177~100368504261499186",
+        "sections": [
+          {
+            "heading": "Research question and design",
+            "text": "The study examined whether EASIX was associated with later mortality among 10,885 NHANES participants aged at least 30 years with cardiovascular-kidney-metabolic syndrome stages 0–3. It retrospectively analyzed survey cycles from 1999–2018, linking deaths through 2019. EASIX is calculated as lactate dehydrogenase multiplied by creatinine, divided by platelet count.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+            "source_locator": "PubMed PMID 42893432, Abstract Objective and Methods: population, NHANES cycles, mortality linkage and EASIX definition."
+          },
+          {
+            "heading": "Principal quantitative findings",
+            "text": "Over a median 97 months of follow-up, 1,122 participants died; 295 deaths were cardiovascular. Per one-unit higher EASIX, the adjusted hazard ratio was 1.41 (95% CI 1.24–1.61) for all-cause mortality and 1.30 (95% CI 1.13–1.49) for cardiovascular mortality. The abstract reports that the associations persisted after further lifestyle adjustment.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+            "source_locator": "PubMed PMID 42893432, Abstract Results: follow-up, deaths, adjusted HRs and CIs, one-unit exposure scale and lifestyle adjustment."
+          },
+          {
+            "heading": "Scientific contribution and use",
+            "text": "The analysis connects a composite endothelial-stress index with long-term outcomes among adults at CKM stages 0–3. It provides an observational comparator for epidemiologic discussions of endothelial stress, CKM staging and mortality; survey-weighted Cox models and spline analyses supply the reported association framework. Clinical risk-assessment use requires further validation.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+            "source_locator": "PubMed PMID 42893432, Abstract Methods and Conclusions: survey-weighted Cox models, restricted cubic splines, CKM stage scope and risk-assessment interpretation."
+          },
+          {
+            "heading": "Publication chronology",
+            "text": "Electronic publication is recorded as 18 October 2026. The formal journal record is Science Progress, volume 109, issue 4 (2026), article 00368504261499186.",
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+            "source_locator": "PubMed ArticleDate DateType=Electronic 2026-10-18; Crossref volume 109, issue 4, article-number 00368504261499186 and published-print [2026,10]."
+          }
+        ]
+      },
+      "scope": "Original author-maintained explanation of an observational mortality analysis in CKM stages 0–3, based on the indexed abstract and verified publication metadata.",
+      "evidence_notice": "Original author-maintained explanation of an observational mortality analysis in CKM stages 0–3, based on the indexed abstract and verified publication metadata.",
+      "evidence_scope": null,
+      "limitations": [
+        "This summary uses the indexed abstract rather than a full-methods audit. The retrospective cohort associations support epidemiologic comparison; they do not establish that changing EASIX changes mortality or that EASIX is an externally validated clinical prediction model."
+      ],
+      "scope_source": "data/limited_evidence.json#/papers/10.1177~100368504261499186/scope"
     },
     {
       "id": "doi-10-1002-ggn2-202500053",

@@ -16,7 +16,7 @@ CITATIONS_DIR = ROOT / "citations"
 ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
-    "verified_sources",
+    "verified_sources", "online_publication_date",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -83,6 +83,16 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
             else:
                 _verified_text(value, f"Citation metadata {doi} {key}")
+        if "online_publication_date" in fields:
+            value = fields["online_publication_date"]
+            try:
+                parsed = date.fromisoformat(value)
+            except ValueError as exc:
+                raise ValueError(f"Citation metadata {doi} online_publication_date is invalid.") from exc
+            if parsed.isoformat() != value:
+                raise ValueError(f"Citation metadata {doi} online_publication_date must use YYYY-MM-DD.")
+            if not fields.get("verified_sources"):
+                raise ValueError(f"Citation metadata {doi} online_publication_date requires verified_sources.")
         if "publication_date" in fields:
             value = fields["publication_date"]
             try:

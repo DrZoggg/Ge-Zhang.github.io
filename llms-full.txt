@@ -8,6 +8,15 @@
 - Scientific Question Index: https://drgezhang.com/research/questions.html
 - Questions JSON: https://drgezhang.com/research/questions.json
 
+## Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces
+- Journal: Colloids and Surfaces B: Biointerfaces
+- Year: 2027
+- Type: Article
+- DOI: 10.1016/j.colsurfb.2026.116261
+- HTML: https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html
+- Markdown: https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md
+- Deep GEO: no
+
 ## A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity
 - Journal: Clinical and Experimental Medicine
 - Year: 2026
@@ -60,6 +69,15 @@
 - DOI: 10.15212/bioi-2026-0017
 - HTML: https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html
 - Markdown: https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.md
+- Deep GEO: no
+
+## Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study
+- Journal: Science Progress
+- Year: 2026
+- Type: Article
+- DOI: 10.1177/00368504261499186
+- HTML: https://drgezhang.com/papers/doi-10-1177-00368504261499186.html
+- Markdown: https://drgezhang.com/papers/doi-10-1177-00368504261499186.md
 - Deep GEO: no
 
 ## From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks

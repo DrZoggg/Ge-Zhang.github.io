@@ -427,6 +427,32 @@
         "https://www.keaipublishing.com/en/journals/medicine-discovery/recent-articles/",
         "https://www.sciencedirect.com/science/article/pii/S3117928226000044"
       ]
+    },
+    "10.1016/j.colsurfb.2026.116261": {
+      "online_publication_date": "2026-10-15",
+      "volume": "270",
+      "article_number": "116261",
+      "publisher": "Elsevier BV",
+      "pmid": "42896257",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42896257/",
+        "https://api.crossref.org/works/10.1016/j.colsurfb.2026.116261",
+        "https://orcid.org/0000-0002-3116-3246"
+      ]
+    },
+    "10.1177/00368504261499186": {
+      "online_publication_date": "2026-10-18",
+      "volume": "109",
+      "article_number": "00368504261499186",
+      "publisher": "SAGE Publications",
+      "pmid": "42893432",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+        "https://api.crossref.org/works/10.1177/00368504261499186",
+        "https://orcid.org/0000-0002-3116-3246"
+      ],
+      "issue": "4",
+      "publication_date": "2026-10-18"
     }
   }
 }

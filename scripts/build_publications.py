@@ -985,7 +985,7 @@ def resolve_related_papers(content, public_by_doi, site_root):
     return resolved
 
 
-def paper_schema(publication, paper_url, config):
+def paper_schema(publication, paper_url, config, *, citation_data=None):
     title = publication.get("title") or "Untitled work"
     authors = publication_authors(publication)
     explicit_positions = publication.get("researcher_author_positions")
@@ -1013,7 +1013,9 @@ def paper_schema(publication, paper_url, config):
             else researcher_reference(config)
         ),
     }
-    if publication.get("year"):
+    if citation_data and citation_data.get("online_publication_date"):
+        result["datePublished"] = citation_data["online_publication_date"]
+    elif publication.get("year"):
         result["datePublished"] = str(publication["year"])
     if publication.get("journal"):
         result["isPartOf"] = {
@@ -2042,7 +2044,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         f'<section><div class="notice">{html.escape(PENDING_NOTICE)}</div></section>'
         if is_pending else ""
     )
-    schema = paper_schema(publication, canonical, config)
+    schema = paper_schema(publication, canonical, config, citation_data=citation_data)
     if identifiers:
         schema['sameAs'] = list(dict.fromkeys([doi_url(doi)] + [url for _, url in scholarly_discovery.identity_links(identifiers)]))
     if official_abstract:
@@ -2248,7 +2250,7 @@ def public_record(publication, *, config, deep_tokens, featured_tokens, deep_con
     return item
 
 
-def render_publications_page(items, config):
+def render_publications_page(items, config, *, citation_metadata=None):
     by_year = {}
     for publication in items:
         by_year.setdefault(int(publication.get("year") or 0), []).append(publication)
@@ -2302,7 +2304,11 @@ def render_publications_page(items, config):
         "name": f"{config['researcher_name']} — Publications",
         "url": absolute(config["site_url"], "publications.html"),
         "mainEntity": researcher_reference(config),
-        "hasPart": [paper_schema(item, item["paper_url"], config) for item in items],
+        "hasPart": [
+            paper_schema(item, item["paper_url"], config,
+                         citation_data=(citation_metadata or {}).get(norm_doi(item.get("doi"))))
+            for item in items
+        ],
     }
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
     page_title = (
@@ -2673,7 +2679,8 @@ def build_site():
         }), ensure_ascii=False, indent=2) + "\n",
     )
     html_changed[publications_url] = write_public_html_if_changed(
-        ROOT / "publications.html", render_publications_page(public_items, config)
+        ROOT / "publications.html", render_publications_page(
+            public_items, config, citation_metadata=citation_metadata)
     )
 
     index_path = ROOT / "index.html"
