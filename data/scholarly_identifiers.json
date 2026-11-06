@@ -748,6 +748,16 @@
         "https://www.keaipublishing.com/en/journals/medicine-discovery/recent-articles/"
       ],
       "verified_at": "2026-10-12"
+    },
+    "10.1111/jdi.70462": {
+      "pmid": "42852842",
+      "pmcid": "PMC13651581",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jdi.70462",
+      "verified_sources": [
+        "https://api.crossref.org/works/10.1111/jdi.70462",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13651581/fullTextXML"
+      ],
+      "verified_at": "2026-11-05"
     }
   }
 }
