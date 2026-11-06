@@ -25436,6 +25436,41 @@
               "citation_url": "https://drgezhang.com/papers/doi-10-3389-fcvm-2025-1724572.html#cite-this-paper"
             }
           ]
+        },
+        {
+          "id": "cardiovascular-biomarkers-5",
+          "question": "How can acute myocardial infarction studies screen plasma proteins and follow up with ELISA and transcriptomic comparisons?",
+          "question_zh": "急性心肌梗死研究如何筛选血浆蛋白，并用 ELISA 复核与转录组比对提供不同层次的证据？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-jir-s495784",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-2147-jir-s495784.html",
+              "doi": "10.2147/jir.s495784",
+              "doi_url": "https://doi.org/10.2147/jir.s495784",
+              "scope_url": "https://drgezhang.com/papers/doi-10-2147-jir-s495784.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/doi-10-2147-jir-s495784.html#cite-this-paper",
+              "author_note_previews": [
+                {
+                  "heading": "Protein discovery and follow-up",
+                  "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It selects PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 for ELISA and transcriptomic comparisons. These are protein measurements, and the observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
+                  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
+                  "source_locator": "Methods: General Information and biomarker screening; Results: Identification of Cardiometabolic-Related Biomarkers and ELISA Validation",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.2147~1jir.s495784"
+                },
+                {
+                  "heading": "Validation boundaries remain explicit",
+                  "text": "ELISA counts differ between the Methods/Table 1 and Figure 5: 125 versus 120 infarction cases. Supplementary Table S1 identifies GSE57338, while the main text names GSE57388, leaving accession-to-result mapping unresolved. Differential-expression methods specify FDR adjustment, but its mapping to reported result thresholds needs clarification. The audit therefore withholds diagnostic accuracy and causal-validation claims.",
+                  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
+                  "source_locator": "Methods ELISA and Statistical Analysis; Table 1; Figure 5; ELISA Results",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.2147~1jir.s495784"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
