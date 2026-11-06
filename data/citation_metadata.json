@@ -534,6 +534,16 @@
         "https://www.sciencedirect.com/science/article/pii/S2352304226004526",
         "https://orca.cardiff.ac.uk/id/eprint/189812/"
       ]
+    },
+    "10.14283/jpad.2024.161": {
+      "volume": "11",
+      "issue": "6",
+      "first_page": "1721",
+      "last_page": "1733",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39559883/",
+        "https://api.crossref.org/works/10.14283/jpad.2024.161"
+      ]
     }
   }
 }

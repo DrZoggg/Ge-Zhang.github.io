@@ -29,6 +29,9 @@ VERIFIED_RIS_LOCATORS = {
     "10.1186/s12967-022-03795-9": "568",
 }
 PRIORITY_FIELDS = {
+    "10.14283/jpad.2024.161": {
+        "volume": "11", "issue": "6", "first_page": "1721", "last_page": "1733",
+    },
     "10.3980/j.issn.1672-5123.2020.12.13": {
         "journal_abbrev": "Int Eye Sci", "issn": "1672-5123",
         "volume": "20", "issue": "12", "first_page": "2079", "last_page": "2082",
