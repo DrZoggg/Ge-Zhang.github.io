@@ -2119,8 +2119,11 @@ def validate_citations(publications, config):
                     f"Citation export does not preserve source identity: {filename}")
             if format_name == "csl":
                 csl = json.loads(content)
+                expected_authors = record.get("ris_authors")
+                if expected_authors is None:
+                    expected_authors = [{"literal": name} for name in record["authors"]]
                 require(csl["DOI"] == record["doi"] and csl["title"] == record["title"]
-                        and [author["literal"] for author in csl["author"]] == record["authors"],
+                        and csl["author"] == expected_authors,
                         f"CSL identity or author sequence mismatch: {filename}")
         expected_date = record.get("publication_date", "").replace("-", "/") or str(record["year"])
         require(meta_contents(page, "citation_publication_date") == [expected_date],

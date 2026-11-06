@@ -4,52 +4,68 @@
   "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
   "author": [
     {
-      "literal": "Shiqian Zhang"
+      "family": "Zhang",
+      "given": "Shiqian"
     },
     {
-      "literal": "Ge Zhang"
+      "family": "Zhang",
+      "given": "Ge"
     },
     {
-      "literal": "Ming Wang"
+      "family": "Wang",
+      "given": "Ming"
     },
     {
-      "literal": "Song-Bin Guo"
+      "family": "Guo",
+      "given": "Song-Bin"
     },
     {
-      "literal": "Fuqi Wang"
+      "family": "Wang",
+      "given": "Fuqi"
     },
     {
-      "literal": "Yun Li"
+      "family": "Li",
+      "given": "Yun"
     },
     {
-      "literal": "Kaisaierjiang Kadier"
+      "family": "Kadier",
+      "given": "Kaisaierjiang"
     },
     {
-      "literal": "Zhaokai Zhou"
+      "family": "Zhou",
+      "given": "Zhaokai"
     },
     {
-      "literal": "Pengpeng Zhang"
+      "family": "Zhang",
+      "given": "Pengpeng"
     },
     {
-      "literal": "Hao Chi"
+      "family": "Chi",
+      "given": "Hao"
     },
     {
-      "literal": "Chuchu Zhang"
+      "family": "Zhang",
+      "given": "Chuchu"
     },
     {
-      "literal": "Quanbo Zhou"
+      "family": "Zhou",
+      "given": "Quanbo"
     },
     {
-      "literal": "Pin Lyu"
+      "family": "Lyu",
+      "given": "Pin"
     },
     {
-      "literal": "Shuaiya Zhao"
+      "family": "Zhao",
+      "given": "Shuaiya"
     },
     {
-      "literal": "Shuaixi Yang"
+      "family": "Yang",
+      "given": "Shuaixi"
     },
     {
-      "literal": "Weitang Yuan"
+      "family": "Yuan",
+      "given": "Weitang"
     }
   ],
   "container-title": "JCO Precision Oncology",

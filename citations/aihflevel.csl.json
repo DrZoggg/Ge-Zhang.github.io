@@ -4,55 +4,72 @@
   "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
   "author": [
     {
-      "literal": "Ge Zhang"
+      "family": "Zhang",
+      "given": "Ge"
     },
     {
-      "literal": "Zeyu Wang"
+      "family": "Wang",
+      "given": "Zeyu"
     },
     {
-      "literal": "Zhuang Tong"
+      "family": "Tong",
+      "given": "Zhuang"
     },
     {
-      "literal": "Zhen Qin"
+      "family": "Qin",
+      "given": "Zhen"
     },
     {
-      "literal": "Chang Su"
+      "family": "Su",
+      "given": "Chang"
     },
     {
-      "literal": "Demin Li"
+      "family": "Li",
+      "given": "Demin"
     },
     {
-      "literal": "Shuai Xu"
+      "family": "Xu",
+      "given": "Shuai"
     },
     {
-      "literal": "Kaixiang Li"
+      "family": "Li",
+      "given": "Kaixiang"
     },
     {
-      "literal": "Zhaokai Zhou"
+      "family": "Zhou",
+      "given": "Zhaokai"
     },
     {
-      "literal": "Yudi Xu"
+      "family": "Xu",
+      "given": "Yudi"
     },
     {
-      "literal": "Shiqian Zhang"
+      "family": "Zhang",
+      "given": "Shiqian"
     },
     {
-      "literal": "Ruhao Wu"
+      "family": "Wu",
+      "given": "Ruhao"
     },
     {
-      "literal": "Teng Li"
+      "family": "Li",
+      "given": "Teng"
     },
     {
-      "literal": "Youyang Zheng"
+      "family": "Zheng",
+      "given": "Youyang"
     },
     {
-      "literal": "Jinying Zhang"
+      "family": "Zhang",
+      "given": "Jinying"
     },
     {
-      "literal": "Ke Cheng"
+      "family": "Cheng",
+      "given": "Ke"
     },
     {
-      "literal": "Junnan Tang"
+      "family": "Tang",
+      "given": "Junnan"
     }
   ],
   "container-title": "Nature Communications",
