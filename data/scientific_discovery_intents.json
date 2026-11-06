@@ -581,6 +581,7 @@
       "id": "cardiovascular-biomarkers",
       "question": "How can proteomic and metabolic biomarkers inform cardiovascular risk and patient stratification?",
       "question_zh": "蛋白组与代谢标志物如何帮助心血管风险评估和患者分层？",
+      "source_context_kind": "review",
       "source_ids": [
         "hf-omics-proteomics-review-2026",
         "hf-omics-cvd-multiomics-2021",
@@ -662,6 +663,22 @@
                 "doi-10-3389-fcvm-2025-1724572--qa-5"
               ],
               "preview_question_id": "doi-10-3389-fcvm-2025-1724572--qa-3"
+            }
+          ]
+        },
+        {
+          "id": "cardiovascular-biomarkers-5",
+          "question": "How can acute myocardial infarction studies screen plasma proteins and follow up with ELISA and transcriptomic comparisons?",
+          "question_zh": "急性心肌梗死研究如何筛选血浆蛋白，并用 ELISA 复核与转录组比对提供不同层次的证据？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-jir-s495784",
+              "question_ids": [],
+              "preview_question_id": null,
+              "preview_note_headings": [
+                "Protein discovery and follow-up",
+                "Validation boundaries remain explicit"
+              ]
             }
           ]
         }
