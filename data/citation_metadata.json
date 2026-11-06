@@ -23,6 +23,7 @@
       "volume": "15",
       "issue": "1",
       "article_number": "6756",
+      "ris_article_locator": "6756",
       "eissn": "2041-1723",
       "pmid": "39117613",
       "pmcid": "PMC11310499",
@@ -80,10 +81,12 @@
       "volume": "20",
       "issue": "1",
       "article_number": "568",
+      "ris_article_locator": "568",
       "eissn": "1479-5876",
       "pmid": "36474294",
       "pmcid": "PMC9724432",
       "verified_sources": [
+        "https://citation-needed.springer.com/v2/references/10.1186/s12967-022-03795-9?format=refman&flavour=citation",
         "https://doi.org/10.1186/s12967-022-03795-9",
         "https://pubmed.ncbi.nlm.nih.gov/36474294/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC9724432/"
@@ -205,11 +208,13 @@
       "volume": "23",
       "issue": "1",
       "article_number": "280",
+      "ris_article_locator": "280",
       "eissn": "1741-7007",
       "pmid": "41013440",
       "pmcid": "PMC12465141",
       "publisher": "BioMed Central",
       "verified_sources": [
+        "https://citation-needed.springer.com/v2/references/10.1186/s12915-025-02400-x?format=refman&flavour=citation",
         "https://link.springer.com/article/10.1186/s12915-025-02400-x",
         "https://pubmed.ncbi.nlm.nih.gov/41013440/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC12465141/"
@@ -329,10 +334,12 @@
       "volume": "14",
       "issue": "1",
       "article_number": "14155",
+      "ris_article_locator": "14155",
       "eissn": "2045-2322",
       "pmid": "38898215",
       "pmcid": "PMC11187219",
       "verified_sources": [
+        "https://citation-needed.springer.com/v2/references/10.1038/s41598-024-65236-5?format=refman&flavour=citation",
         "https://www.nature.com/articles/s41598-024-65236-5",
         "https://pubmed.ncbi.nlm.nih.gov/38898215/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC11187219/"

@@ -16,7 +16,7 @@ CITATIONS_DIR = ROOT / "citations"
 ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
-    "verified_sources", "online_publication_date", "ris_authors",
+    "verified_sources", "online_publication_date", "ris_authors", "ris_article_locator",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -124,6 +124,11 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
         first, last = fields.get("first_page"), fields.get("last_page")
         if first and last and first.isdecimal() and last.isdecimal() and int(first) > int(last):
             raise ValueError(f"Citation metadata {doi} page range is inverted.")
+        if "ris_article_locator" in fields and (
+            first or last or not fields.get("verified_sources")
+            or fields["ris_article_locator"] != fields.get("article_number")
+        ):
+            raise ValueError(f"Citation metadata {doi} RIS locator requires a sourced article number without pagination.")
     return papers
 
 
@@ -286,6 +291,8 @@ def render_ris(record):
         if record.get(key):
             lines.append(f"{tag}  - {record[key]}")
     if record.get("article_number"):
+        if record.get("ris_article_locator"):
+            lines.append(f"SP  - {record['ris_article_locator']}")
         lines.append(f"C7  - {record['article_number']}")
     if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
         lines.append(f"M3  - {record['type']}")
