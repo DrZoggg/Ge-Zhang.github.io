@@ -23,12 +23,16 @@ from validate_site import meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 VERIFIED_RIS_LOCATORS = {
+    "10.1016/j.intimp.2024.112574": "112574",
     "10.1038/s41467-024-50415-9": "6756",
     "10.1038/s41598-024-65236-5": "14155",
     "10.1186/s12915-025-02400-x": "280",
     "10.1186/s12967-022-03795-9": "568",
 }
 PRIORITY_FIELDS = {
+    "10.1016/j.intimp.2024.112574": {
+        "volume": "138", "article_number": "112574",
+    },
     "10.14283/jpad.2024.161": {
         "volume": "11", "issue": "6", "first_page": "1721", "last_page": "1733",
     },

@@ -544,6 +544,15 @@
         "https://pubmed.ncbi.nlm.nih.gov/39559883/",
         "https://api.crossref.org/works/10.14283/jpad.2024.161"
       ]
+    },
+    "10.1016/j.intimp.2024.112574": {
+      "volume": "138",
+      "article_number": "112574",
+      "ris_article_locator": "112574",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/38971104/",
+        "https://api.crossref.org/works/10.1016/j.intimp.2024.112574"
+      ]
     }
   }
 }
