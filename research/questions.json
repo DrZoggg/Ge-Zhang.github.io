@@ -2402,7 +2402,7 @@
         {
           "id": "KF1",
           "claim": "PAPPA2 c.392G>C expression was associated with lower PAPPA2 protein levels in transfected 293T cells and their culture supernatant, without a statistically significant mRNA difference from wild type.",
-          "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The variant encodes p.Gly131Ala; protein abundance measurements do not directly measure protein half-life or human disease penetrance.",
+          "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The reported PAPPA2 variant NM_020318.3:c.392G>C encodes p.Gly131Ala. The assay measured endpoint protein abundance. Protein half-life and human penetrance require separate evidence.",
           "evidence": [
             {
               "label": "post-transfection collection",
@@ -2417,7 +2417,7 @@
               "value": "cell lysate and culture supernatant"
             }
           ],
-          "source_locator": "Results 3.3; Figure 2d-h and caption; formal PDF pp. 5-6.",
+          "source_locator": "Results 3.2 (transcript and variant) and 3.3 (expression assay); Figure 2c-h and caption; formal PDF pp. 5-6.",
           "source": "data/deep_geo/doi-10-1155-humu-5591097.json#/key_findings/0",
           "evidence_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#kf1"
         },
@@ -2544,7 +2544,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1155-humu-5591097.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1155-humu-5591097.json",
-      "gold_content_sha256": "0580905b3338ed324f16b0224e13507119b244fb37ed93c29997bc21437e670f",
+      "gold_content_sha256": "c90c8784f35a9a330550711015922a54a3fd5a83608e1882f4bf7a8537f4a685",
       "provenance": {
         "publisher_url": "https://doi.org/10.1155/humu/5591097",
         "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13080692/",
@@ -18998,7 +18998,7 @@
         "Ge Zhang"
       ],
       "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
-      "publisher_url": null,
+      "publisher_url": "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013",
       "pmid": null,
       "pmcid": null,
       "openalex_id": "https://openalex.org/W4399062302",
@@ -27071,7 +27071,7 @@
       "key_finding": {
         "id": "KF1",
         "claim": "PAPPA2 c.392G>C expression was associated with lower PAPPA2 protein levels in transfected 293T cells and their culture supernatant, without a statistically significant mRNA difference from wild type.",
-        "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The variant encodes p.Gly131Ala; protein abundance measurements do not directly measure protein half-life or human disease penetrance.",
+        "context": "Equal amounts of wild-type and mutant expression plasmids were compared 48 hours after transfection. The reported PAPPA2 variant NM_020318.3:c.392G>C encodes p.Gly131Ala. The assay measured endpoint protein abundance. Protein half-life and human penetrance require separate evidence.",
         "evidence": [
           {
             "label": "post-transfection collection",
@@ -27086,7 +27086,7 @@
             "value": "cell lysate and culture supernatant"
           }
         ],
-        "source_locator": "Results 3.3; Figure 2d-h and caption; formal PDF pp. 5-6.",
+        "source_locator": "Results 3.2 (transcript and variant) and 3.3 (expression assay); Figure 2c-h and caption; formal PDF pp. 5-6.",
         "source": "data/deep_geo/doi-10-1155-humu-5591097.json#/key_findings/0",
         "evidence_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#kf1"
       },

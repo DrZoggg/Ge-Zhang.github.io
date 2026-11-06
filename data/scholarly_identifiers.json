@@ -728,10 +728,12 @@
     },
     "10.3980/j.issn.1672-5123.2020.12.13": {
       "openalex_id": "https://openalex.org/W4399062302",
+      "publisher_url": "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013",
       "verified_sources": [
-        "https://api.openalex.org/works/W4399062302"
+        "https://api.openalex.org/works/W4399062302",
+        "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013"
       ],
-      "verified_at": "2026-09-30"
+      "verified_at": "2026-11-06"
     },
     "10.1126/science.aek9583": {
       "pmid": "42821669",
