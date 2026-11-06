@@ -4,73 +4,96 @@
   "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
   "author": [
     {
-      "literal": "Chaoyang Yu"
+      "family": "Yu",
+      "given": "Chaoyang"
     },
     {
-      "literal": "Ge Zhang"
+      "family": "Zhang",
+      "given": "Ge"
     },
     {
-      "literal": "Shaotong Pei"
+      "family": "Pei",
+      "given": "Shaotong"
     },
     {
-      "literal": "Yifei Zhang"
+      "family": "Zhang",
+      "given": "Yifei"
     },
     {
-      "literal": "Peiyu Yuan"
+      "family": "Yuan",
+      "given": "Peiyu"
     },
     {
-      "literal": "Renying Miao"
+      "family": "Miao",
+      "given": "Renying"
     },
     {
-      "literal": "Kaisaierjiang Kadier"
+      "family": "Kadier",
+      "given": "Kaisaierjiang"
     },
     {
-      "literal": "Pengpeng Zhang"
+      "family": "Zhang",
+      "given": "Pengpeng"
     },
     {
-      "literal": "Tianshu Gu"
+      "family": "Gu",
+      "given": "Tianshu"
     },
     {
-      "literal": "Ruhao Wu"
+      "family": "Wu",
+      "given": "Ruhao"
     },
     {
-      "literal": "Haonan Zhang"
+      "family": "Zhang",
+      "given": "Haonan"
     },
     {
-      "literal": "Shiqian Zhang"
+      "family": "Zhang",
+      "given": "Shiqian"
     },
     {
-      "literal": "Bo Yang"
+      "family": "Yang",
+      "given": "Bo"
     },
     {
-      "literal": "Han Wu"
+      "family": "Wu",
+      "given": "Han"
     },
     {
-      "literal": "Yudi Xu"
+      "family": "Xu",
+      "given": "Yudi"
     },
     {
-      "literal": "Ke Hu"
+      "family": "Hu",
+      "given": "Ke"
     },
     {
-      "literal": "Qingfei Xu"
+      "family": "Xu",
+      "given": "Qingfei"
     },
     {
-      "literal": "Yaxin Chen"
+      "family": "Chen",
+      "given": "Yaxin"
     },
     {
-      "literal": "Jinliang Wang"
+      "family": "Wang",
+      "given": "Jinliang"
     },
     {
-      "literal": "Zongao Cai"
+      "family": "Cai",
+      "given": "Zongao"
     },
     {
-      "literal": "Junnan Tang"
+      "family": "Tang",
+      "given": "Junnan"
     },
     {
-      "literal": "Teng Li"
+      "family": "Li",
+      "given": "Teng"
     },
     {
-      "literal": "Yan Song"
+      "family": "Song",
+      "given": "Yan"
     }
   ],
   "container-title": "Journal of Cellular and Molecular Medicine",

@@ -171,7 +171,20 @@ def coverage_rows(publications, contents, root, read_text=None):
                 exports_ok &= bool(export) and publication.get(key, expected_url) == expected_url and f'../{path}' in page
                 if suffix == "csl.json":
                     csl = json.loads(export)
-                    exports_ok &= csl.get("DOI") == doi and [author.get("literal") for author in csl.get("author", [])] == authors and csl.get("type") == "article-journal"
+                    csl_authors = csl.get("author", [])
+                    exports_ok &= csl.get("DOI") == doi and csl.get("type") == "article-journal"
+                    exports_ok &= (
+                        isinstance(csl_authors, list) and len(csl_authors) == len(authors)
+                        and all(
+                            author == {"literal": name}
+                            or (
+                                isinstance(author, dict) and set(author) == {"given", "family"}
+                                and all(isinstance(part, str) and part for part in author.values())
+                                and f"{author['given']} {author['family']}" == name
+                            )
+                            for author, name in zip(csl_authors, authors)
+                        )
+                    )
                     if publication["type"] in {"Letter", "Correspondence"}:
                         exports_ok &= csl.get("genre") == publication["type"]
         except (OSError, KeyError, ValueError) as error:

@@ -233,6 +233,7 @@ def run_tests():
         if "ris_authors" in enrichment:
             parts = enrichment["ris_authors"]
             assert [f"{name['given']} {name['family']}" for name in parts] == priority["authors"]
+            assert csl_data["author"] == parts
             assert ris_names == [f"{name['family']}, {name['given']}" for name in parts]
             unstructured = {k: v for k, v in priority.items() if k != "ris_authors"}
             other_lines = [line for line in ris_text.splitlines() if not line.startswith("AU  - ")]
@@ -241,8 +242,8 @@ def run_tests():
             assert other_lines == original_lines
         else:
             assert ris_names == priority["authors"]
+            assert csl_data["author"] == [{"literal": name} for name in priority["authors"]]
         assert csl_data["DOI"] == doi and csl_data["title"] == priority["title"]
-        assert [author["literal"] for author in csl_data["author"]] == priority["authors"]
         if "article_number" in expected:
             number = expected["article_number"]
             assert f"eid = {{{number}}}" in bib_text

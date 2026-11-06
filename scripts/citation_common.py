@@ -309,11 +309,15 @@ def render_csl_json(record):
     issued = [record["year"]]
     if record.get("publication_date"):
         issued = [int(part) for part in record["publication_date"].split("-")]
+    # Reuse the complete name pairs already verified against the publication.
+    authors = record.get("ris_authors")
+    if authors is None:
+        authors = [{"literal": name} for name in record["authors"]]
     result = {
         "id": record["id"],
         "type": "article-journal" if record["type"] in JOURNAL_PUBLICATION_TYPES else "manuscript",
         "title": record["title"],
-        "author": [{"literal": name} for name in record["authors"]],
+        "author": authors,
         "container-title": record["journal"],
         "issued": {"date-parts": [issued]},
         "DOI": record["doi"],
