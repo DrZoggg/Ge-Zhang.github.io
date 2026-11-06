@@ -242,9 +242,17 @@ def run_tests():
 
     deep_entries = load_deep_geo()
     featured_entries = load_featured()
-    expected_dois = [doi for doi, _ in PRIORITY_STATUS]
-    assert [norm_doi(entry["doi"]) for entry in featured_entries] == expected_dois
-    assert [norm_doi(entry["doi"]) for entry in deep_entries] == expected_dois
+    expected_deep_dois = [doi for doi, _ in PRIORITY_STATUS]
+    expected_featured_dois = expected_deep_dois.copy()
+    # PRs #24 and #26 swapped Featured positions 12/29 and 11/23, respectively.
+    expected_featured_dois[11], expected_featured_dois[28] = (
+        expected_featured_dois[28], expected_featured_dois[11]
+    )
+    expected_featured_dois[10], expected_featured_dois[22] = (
+        expected_featured_dois[22], expected_featured_dois[10]
+    )
+    assert [norm_doi(entry["doi"]) for entry in featured_entries] == expected_featured_dois
+    assert [norm_doi(entry["doi"]) for entry in deep_entries] == expected_deep_dois
     v1_count = 0
     v2_items = []
     pending_count = 0
@@ -317,7 +325,7 @@ def run_tests():
     ]
     assert len(jci_items) == 1
     assert norm_doi(deep_entries[10].get("doi")) == OLINK_DCM_DOI
-    assert norm_doi(load_featured()[10].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(featured_entries[22].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
         "10.71321/fy14v342": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1126/science.aek9583": ("Article Scope & Approach", None),

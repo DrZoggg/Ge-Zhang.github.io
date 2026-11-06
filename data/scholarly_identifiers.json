@@ -413,13 +413,15 @@
     },
     "10.32604/or.2025.059290": {
       "openalex_id": "https://openalex.org/W4407614715",
+      "publisher_url": "https://www.techscience.com/or/v33n6/61340/html",
       "verified_sources": [
         "https://api.openalex.org/works/W4407614715",
-        "https://europepmc.org/article/MED/40486880"
+        "https://europepmc.org/article/MED/40486880",
+        "https://www.techscience.com/or/v33n6/61340/html"
       ],
       "pmid": "40486880",
       "pmcid": "PMC12144630",
-      "verified_at": "2026-09-30"
+      "verified_at": "2026-11-06"
     },
     "10.2147/cia.s493841": {
       "openalex_id": "https://openalex.org/W4416776237",
