@@ -581,6 +581,7 @@
       "id": "cardiovascular-biomarkers",
       "question": "How can proteomic and metabolic biomarkers inform cardiovascular risk and patient stratification?",
       "question_zh": "蛋白组与代谢标志物如何帮助心血管风险评估和患者分层？",
+      "source_context_kind": "review",
       "source_ids": [
         "hf-omics-proteomics-review-2026",
         "hf-omics-cvd-multiomics-2021",
