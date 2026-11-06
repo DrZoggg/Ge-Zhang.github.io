@@ -20,12 +20,12 @@ remain available for consumers maintaining a separate pinned upstream checkout.
 
 The complete upstream MIT notice, Copyright (c) 2025 K-Dense Inc., is retained in
 [LICENSE.kdense.md](LICENSE.kdense.md). `_common.py` is unchanged. The bundled
-reader also includes the optional attachment-declaration flag documented below.
+reader also includes the optional attachment and exact table-ID flags below.
 Shipped SHA-256:
 
 | File | SHA-256 |
 | --- | --- |
-| `jats_to_text.py` | `6331453a3e7f4f67965ba0a5eee99df93f5497471018490c6b599467a4c8556c` |
+| `jats_to_text.py` | `d1b05ed17ae56b313e9bbaa79eb77da6f2265feeb6c5e99ad5edefea857d7934` |
 | `_common.py` | `4c6962ddbcb8cb89adc6c6ac02199835310f04b2ab93ffab9855adef38efd369` |
 | `LICENSE.kdense.md` | `09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1` |
 
@@ -61,6 +61,21 @@ before opening it. For PMC, check the DOI and version in the corresponding
 `media_urls` and verify its checksum. Compare the actual table headings, study
 direction and values with the body before using the article as evidence.
 Continue to cite the formal paper DOI.
+
+The section text omits tables. For a claim that depends on table values, use the
+exact, case-sensitive XML ID from the article's table cross-reference, such as
+`rid="tab2"` in the original JATS:
+
+```sh
+python -B scripts/jats-reader/jats_to_text.py article.xml --sections results --table-id tab2
+```
+
+Repeat `--table-id` to request more tables. In a full-text result, each selection
+returns its status, article-relative locator and, when uniquely found, the
+reserialized `table-wrap` XML. The XML retains cell spans and footnotes. Table
+lookup covers the owning article, including floating tables, even when section
+text is filtered. A located graphic or attachment-only table has
+`has_embedded_table: false`. The reader leaves its external file unopened.
 
 ## Compatibility and repair scope
 
