@@ -35,6 +35,18 @@ PRIORITY_FIELDS = {
         "publication_date": "2026-09-22", "article_number": "100004",
         "issn": "3117-9282", "publisher": "Elsevier BV",
     },
+    "10.1016/j.colsurfb.2026.116261": {
+        "online_publication_date": "2026-10-15", "volume": "270",
+        "article_number": "116261", "publisher": "Elsevier BV", "pmid": "42896257",
+    },
+    "10.1016/j.gendis.2026.102480": {
+        "online_publication_date": "2026-09-18", "article_number": "102480",
+    },
+    "10.1177/00368504261499186": {
+        "online_publication_date": "2026-10-18", "publication_date": "2026-10-18",
+        "volume": "109", "issue": "4", "article_number": "00368504261499186",
+        "publisher": "SAGE Publications", "pmid": "42893432",
+    },
     "10.1056/nejmc2518964": {
         "publication_date": "2026-03-05", "journal_abbrev": "N Engl J Med",
         "volume": "394", "issue": "10", "first_page": "1035", "last_page": "1036",
@@ -182,7 +194,7 @@ def run_tests():
     for doi, expected in PRIORITY_FIELDS.items():
         enrichment = enhancements[doi]
         assert {key: value for key, value in enrichment.items()
-                if key != "verified_sources"} == expected
+                if key not in {"verified_sources", "ris_authors"}} == expected
         assert enrichment["verified_sources"]
         publication = by_doi[doi]
         priority = citation_record(publication, enhancements, config["site_url"])
@@ -208,6 +220,18 @@ def run_tests():
         ris_text = (CITATIONS_DIR / export["ris"]).read_text(encoding="utf-8")
         csl_data = json.loads((CITATIONS_DIR / export["csl"]).read_text(encoding="utf-8"))
         assert f"doi = {{{doi}}}" in bib_text and f"DO  - {doi}" in ris_text
+        ris_names = [line[6:] for line in ris_text.splitlines() if line.startswith("AU  - ")]
+        if "ris_authors" in enrichment:
+            parts = enrichment["ris_authors"]
+            assert [f"{name['given']} {name['family']}" for name in parts] == priority["authors"]
+            assert ris_names == [f"{name['family']}, {name['given']}" for name in parts]
+            unstructured = {k: v for k, v in priority.items() if k != "ris_authors"}
+            other_lines = [line for line in ris_text.splitlines() if not line.startswith("AU  - ")]
+            original_lines = [line for line in render_ris(unstructured).splitlines()
+                              if not line.startswith("AU  - ")]
+            assert other_lines == original_lines
+        else:
+            assert ris_names == priority["authors"]
         assert csl_data["DOI"] == doi and csl_data["title"] == priority["title"]
         assert [author["literal"] for author in csl_data["author"]] == priority["authors"]
         if "article_number" in expected:
@@ -314,6 +338,14 @@ def run_tests():
         reject_metadata(public, {CIRCADIAN_DOI: changed})
     reject_metadata(public, {"10.9999/non-public": valid})
     reject_metadata(public, {CIRCADIAN_DOI.upper(): valid})
+    doi = "10.1038/s41467-024-50415-9"
+    with_ris_names = enhancements[doi]
+    names = with_ris_names["ris_authors"]
+    assert names[0] == {"family": "Zhang", "given": "Ge"}
+    for invalid in (list(reversed(names)), names[:-1],
+                    [{"family": "Zhang", "given": "Ge,"}, *names[1:]]):
+        reject_metadata(public, {doi: {**with_ris_names, "ris_authors": invalid}})
+    reject_metadata(public, {doi: {**with_ris_names, "verified_sources": []}})
     print(f"CITATION TESTS PASS: {eligible} eligible, {len(public) - eligible} skipped, "
           f"{len(enhancements)} verified enrichments")
 

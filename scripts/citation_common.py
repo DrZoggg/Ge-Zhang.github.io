@@ -16,7 +16,7 @@ CITATIONS_DIR = ROOT / "citations"
 ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
-    "verified_sources", "online_publication_date",
+    "verified_sources", "online_publication_date", "ris_authors",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -81,6 +81,19 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                 if any(urlparse(url).scheme != "https" or not urlparse(url).netloc
                        for url in sources):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
+            elif key == "ris_authors":
+                authors = publication_authors(publication)
+                if (not isinstance(value, list) or len(value) != len(authors)
+                        or not authors or not fields.get("verified_sources")):
+                    raise ValueError(f"Citation metadata {doi} requires sourced RIS names for every author.")
+                for name, display_name in zip(value, authors):
+                    if not isinstance(name, dict) or set(name) != {"family", "given"}:
+                        raise ValueError(f"Citation metadata {doi} has invalid RIS name parts.")
+                    family = _verified_text(name["family"], f"{doi} RIS family name")
+                    given = _verified_text(name["given"], f"{doi} RIS given name")
+                    if (any("," in part or not part.isprintable() for part in (family, given))
+                            or f"{given} {family}" != display_name):
+                        raise ValueError(f"Citation metadata {doi} RIS name parts disagree with master authors.")
             else:
                 _verified_text(value, f"Citation metadata {doi} {key}")
         if "online_publication_date" in fields:
@@ -254,7 +267,10 @@ def render_bibtex(record):
 
 def render_ris(record):
     lines = ["TY  - JOUR" if record["type"] in JOURNAL_PUBLICATION_TYPES else "TY  - GEN"]
-    lines.extend(f"AU  - {author}" for author in record["authors"])
+    authors = record["authors"]
+    if "ris_authors" in record:
+        authors = [f"{name['family']}, {name['given']}" for name in record["ris_authors"]]
+    lines.extend(f"AU  - {author}" for author in authors)
     lines.extend([
         f"TI  - {record['title']}",
         f"JO  - {record['journal']}",
