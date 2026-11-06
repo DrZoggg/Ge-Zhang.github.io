@@ -323,6 +323,13 @@ with a lawfully saved local JATS file:
 python -X utf8 -B scripts/jats-reader/jats_to_text.py article.xml --include-cited-references -o reading.json
 ```
 
+For a citation in a table, follow the reference link in the published HTML. With
+JATS, add `--table-id` with the exact `table-wrap` ID and match the bibliography
+`xref` element's `rid` to `bibliography_references[].reference_id`. The paragraph
+sidecar covers scanned body paragraphs. If you use Europe PMC's references API,
+check `hitCount` for additional pages and match by DOI or PMID. Keep the article's
+reference label separately because the API's `citedOrder` can differ from it.
+
 [Origin, MIT license, stdin and output contracts](../scripts/jats-reader/ORIGIN.md)
 are included with the reader. This local CLI is explicitly invoked by the consumer;
 it does not change this client's search/fetch behavior or install an upstream default.
