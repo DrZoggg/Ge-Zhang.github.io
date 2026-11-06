@@ -6194,7 +6194,7 @@
         "sections": [
           {
             "heading": "Protein discovery and follow-up",
-            "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It selects PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 for ELISA and transcriptomic comparisons. These are protein measurements, and the observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
+            "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It measures PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 by plasma ELISA and separately examines expression of the corresponding genes in public GEO datasets. These observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
             "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
             "source_locator": "Methods: General Information and biomarker screening; Results: Identification of Cardiometabolic-Related Biomarkers and ELISA Validation"
           },
@@ -25454,7 +25454,7 @@
               "author_note_previews": [
                 {
                   "heading": "Protein discovery and follow-up",
-                  "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It selects PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 for ELISA and transcriptomic comparisons. These are protein measurements, and the observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
+                  "text": "The study measures 92 plasma proteins in an exploratory Olink discovery set of 20 acute myocardial infarction cases and 10 controls. It measures PCOLCE, FCN2, REG1A, DEFA1 and CRTAC1 by plasma ELISA and separately examines expression of the corresponding genes in public GEO datasets. These observational comparisons do not establish diagnostic utility, a clinical decision threshold, or a treatment effect.",
                   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
                   "source_locator": "Methods: General Information and biomarker screening; Results: Identification of Cardiometabolic-Related Biomarkers and ELISA Validation",
                   "reviewed_on": "2026-10-27",
