@@ -367,10 +367,12 @@
     },
     "10.1002/mdr2.70073": {
       "openalex_id": "https://openalex.org/W7163366492",
+      "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
       "verified_sources": [
-        "https://api.openalex.org/works/W7163366492"
+        "https://api.openalex.org/works/W7163366492",
+        "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073"
       ],
-      "verified_at": "2026-09-30"
+      "verified_at": "2026-11-06"
     },
     "10.1111/jcmm.70475": {
       "openalex_id": "https://openalex.org/W4408377359",
