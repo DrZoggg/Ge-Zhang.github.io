@@ -23,6 +23,7 @@ Handles both wrappers: eFetch's `<pmc-articleset><article>` and Europe PMC's bar
 from __future__ import annotations
 
 import argparse
+from copy import copy
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -242,6 +243,36 @@ def element_locators(article: ET.Element) -> dict[ET.Element, str]:
 
     walk(article)
     return paths
+
+
+def selected_tables(article: ET.Element, table_ids: list[str]) -> list[dict[str, Any]]:
+    """Keep exact owning-article table selections separate from prose."""
+    paths = element_locators(article)
+    tables: dict[str, list[ET.Element]] = {table_id: [] for table_id in table_ids}
+    for node in paths:
+        table_id = node.get("id")
+        if node.tag == "table-wrap" and table_id in tables:
+            tables[table_id].append(node)
+
+    results = []
+    for table_id, matches in tables.items():
+        if len(matches) != 1:
+            status = "ambiguous" if matches else "not_found"
+            results.append({"table_id": table_id, "status": status,
+                            "candidate_locators": [paths[node] for node in matches]})
+            continue
+        node = matches[0]
+        if any(child.tag in FOREIGN_TAGS for child in node.iter()):
+            results.append({"table_id": table_id, "status": "unsupported_nested_article",
+                            "locator": paths[node]})
+            continue
+        wrapper = copy(node)
+        wrapper.tail = None
+        has_table = any(child.tag.rsplit("}", 1)[-1] == "table" for child in owned_nodes(node))
+        results.append({"table_id": table_id, "status": "located", "locator": paths[node],
+                        "has_embedded_table": has_table,
+                        "table_xml": ET.tostring(wrapper, encoding="unicode")})
+    return results
 
 
 def declared_supplementary_material(article: ET.Element) -> list[dict[str, Any]]:
@@ -489,6 +520,8 @@ def build_parser() -> argparse.ArgumentParser:
         help="retain selected-section citation groups and cited-work identity as a separate sidecar")
     parser.add_argument("--include-supplementary-material", action="store_true",
         help="retain declared attachment locators in JSON without resolving or reading the files")
+    parser.add_argument("--table-id", action="append", metavar="ID",
+        help="include a JATS table-wrap by its exact XML ID in JSON (repeatable)")
     return parser
 
 
@@ -498,7 +531,10 @@ def matches(section: dict[str, Any], wanted: list[str]) -> bool:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.table_id and args.text_only:
+        parser.error("--table-id requires JSON output")
 
     try:
         xml_text = read_input(args.source)
@@ -575,6 +611,8 @@ def main(argv: list[str] | None = None) -> int:
             fail(str(error))
     if args.include_supplementary_material:
         payload["supplementary_material"] = declared_supplementary_material(article)
+    if args.table_id:
+        payload["tables"] = selected_tables(article, args.table_id)
     emit(payload, args.output)
     return 0
 
