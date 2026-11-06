@@ -274,6 +274,12 @@ Deduplicate representations by normalized DOI while preserving each branch's
 query and rank. Select literature by its contribution to the question, with no
 required author or source.
 
+For a broad cross-database drug-safety question, keep the clinical topic fixed
+and run separate branches such as `FAERS AND JADER` and `FAERS AND VigiAccess`.
+Verify the actual data source and reporting unit in each paper's Methods. For
+nutritional assessment, search reported intake, laboratory measurements and
+operational proxy scores separately when each can contribute to the question.
+
 Read external index results using that tool's returned `primaryId` or a confirmed
 PMID/PMCID. When a reading tool returns no body passages, a packet with an explicit,
 nonconflicting PMCID also offers `full_text_xml_api`, an official PMC EFetch XML

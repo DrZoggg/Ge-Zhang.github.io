@@ -42,6 +42,12 @@ This pharmacovigilance study examines aliskiren-associated spontaneous reports i
 
 Source: [Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326)
 
+### VigiAccess term counts and report totals
+
+Public VigiAccess provides aggregated counts. The VigiAccess supplement sums to 17,094 aliskiren-associated preferred-term counts, which is also the target-drug total in each preferred-term comparison. The article separately reports 5,549 VigiAccess reports in its descriptive results. Keep those denominators separate when comparing reporting patterns across databases, and verify the construction of the comparison cells before attempting to reproduce the signal estimates.
+
+Source: [S4 Table, Preferred Term worksheet, cells I2:L2073; compare the article's descriptive Results and Table 2](https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0346326.s004&type=supplementary)
+
 ### What the supplementary report clarifies
 
 The official FAERS mining supplement contains annual entries from 2005 through 2025, alongside report characteristics and signal tables. This directly demonstrates a broader reporting period than the main Table 1 caption, which states Q4 2023–Q4 2024. It does not establish the exact extraction quarters or authorize silently replacing the published caption with the Methods window.
@@ -64,6 +70,8 @@ Source: [Table 1, AE severity and Serious outcome rows; Discussion limitations](
 
 - [Article source](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326) — Official publisher or PMC full text reviewed locally. Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)
 - [Official supplementary material](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003) — Publisher-hosted supplementary document. S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025
+- [VigiAccess supplementary workbook](https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0346326.s004&type=supplementary) — Publisher-hosted spreadsheet. S4 Table, Preferred Term worksheet, cells I2:L2073
+- [Official VigiAccess data scope](https://who-umc.org/vigibase-data-access/vigibase-faq/) — Uppsala Monitoring Centre guidance. Is any VigiBase data available to the public?
 
 Source review: 2026-10-27.
 
