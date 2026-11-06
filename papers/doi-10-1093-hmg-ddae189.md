@@ -44,9 +44,9 @@ Source: [Publisher article header, author list and publication history; acquired
 
 ### Blood and brain expression context
 
-The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). It constructs a senescence-related expression score from upregulated and downregulated gene sets, then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.
+The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.
 
-Source: [Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5.](https://academic.oup.com/hmg/article/34/5/381/7926367)
+Source: [Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data.](https://academic.oup.com/hmg/article/34/5/381/7926367)
 
 ### Unresolved analysis-input version
 

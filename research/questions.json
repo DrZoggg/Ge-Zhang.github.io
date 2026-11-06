@@ -6401,13 +6401,13 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1016-j-joim-2025-06-003.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-joim-2025-06-003.json",
-      "gold_content_sha256": "4d43240cde17744663497387ee8c0b14973146879bfcaf4e31d9305ec351beb7",
+      "gold_content_sha256": "b1a3be199a9a00699057e698163b4b0ca6cc051f051c16c1bcba9f7cef550149",
       "provenance": {
         "doi_url": "https://doi.org/10.1016/j.joim.2025.06.003",
         "publisher_url": "https://www.sciencedirect.com/science/article/abs/pii/S2095496425000834",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40581550/",
-        "author_deposited_full_text": "https://www.researchgate.net/publication/392697303_Integrated-omics_analysis_defines_subtypes_of_hepatocellular_carcinoma_based_on_circadian_rhythm",
-        "source_version": "Bibliographic identity was checked against the final PubMed/publisher record. Detailed evidence locators refer to the author-deposited full text; final typeset figure-level equivalence was not independently re-established.",
+        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/392697303_Integrated-omics_analysis_defines_subtypes_of_hepatocellular_carcinoma_based_on_circadian_rhythm",
+        "source_version": "Bibliographic identity was checked against the final PubMed and publisher records. Detailed evidence locators refer to the author-uploaded ahead-of-print copy. Figure-level equivalence with the final typeset version was not independently re-established.",
         "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed."
       },
       "scientific_role": "Circadian-related HCC expression-subtyping framework with external subtype evaluation and retrospective outcome associations.",
@@ -13777,9 +13777,9 @@
           },
           {
             "heading": "Blood and brain expression context",
-            "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). It constructs a senescence-related expression score from upregulated and downregulated gene sets, then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
+            "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
             "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
-            "source_locator": "Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5."
+            "source_locator": "Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data."
           },
           {
             "heading": "Unresolved analysis-input version",
@@ -26216,9 +26216,9 @@
               "author_note_previews": [
                 {
                   "heading": "Blood and brain expression context",
-                  "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). It constructs a senescence-related expression score from upregulated and downregulated gene sets, then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
+                  "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
                   "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
-                  "source_locator": "Advance-article PDF pp. 2–3, Results: Analysis of cellular senescence features in AD; p. 8, Materials and methods: Data collection and Processing; supplementary_table_ddae189.xlsx, Supplementary Table 9 gene sets and Supplementary Table 10 rows 3–5.",
+                  "source_locator": "Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data.",
                   "reviewed_on": "2026-10-27",
                   "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189"
                 }
