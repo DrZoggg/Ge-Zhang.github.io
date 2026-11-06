@@ -25,7 +25,7 @@ Shipped SHA-256:
 
 | File | SHA-256 |
 | --- | --- |
-| `jats_to_text.py` | `05f8f4779518f467d48bc38cb4665db4d1f1c3e066822ce6cb50d22c15648d9d` |
+| `jats_to_text.py` | `6331453a3e7f4f67965ba0a5eee99df93f5497471018490c6b599467a4c8556c` |
 | `_common.py` | `4c6962ddbcb8cb89adc6c6ac02199835310f04b2ab93ffab9855adef38efd369` |
 | `LICENSE.kdense.md` | `09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1` |
 
@@ -46,6 +46,9 @@ cat article.xml | python -X utf8 -B scripts/jats-reader/jats_to_text.py - --incl
 
 A consumer can invoke the same argument list with its existing subprocess tool,
 supply XML on stdin and retain the returned JSON with its own reading record.
+The bundled CLI writes UTF-8 to redirected stdout for both JSON and text output,
+including on Windows. Decode captured stdout as UTF-8. The separate upstream
+sidecar patch covers extraction only.
 The reader does not download articles or select papers for the consumer.
 
 Add `--include-supplementary-material` to return the article's declared attachment
