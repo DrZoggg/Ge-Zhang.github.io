@@ -22,6 +22,12 @@ from validate_site import meta_contents, validate_citations
 
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
+VERIFIED_RIS_LOCATORS = {
+    "10.1038/s41467-024-50415-9": "6756",
+    "10.1038/s41598-024-65236-5": "14155",
+    "10.1186/s12915-025-02400-x": "280",
+    "10.1186/s12967-022-03795-9": "568",
+}
 PRIORITY_FIELDS = {
     "10.3980/j.issn.1672-5123.2020.12.13": {
         "journal_abbrev": "Int Eye Sci", "issn": "1672-5123",
@@ -194,7 +200,7 @@ def run_tests():
     for doi, expected in PRIORITY_FIELDS.items():
         enrichment = enhancements[doi]
         assert {key: value for key, value in enrichment.items()
-                if key not in {"verified_sources", "ris_authors"}} == expected
+                if key not in {"verified_sources", "ris_authors", "ris_article_locator"}} == expected
         assert enrichment["verified_sources"]
         publication = by_doi[doi]
         priority = citation_record(publication, enhancements, config["site_url"])
@@ -241,7 +247,11 @@ def run_tests():
             assert csl_data["number"] == number
             assert isinstance(csl_data["number"], str)
             assert "page" not in csl_data
-            assert "SP  - " not in ris_text and "EP  - " not in ris_text
+            locator = VERIFIED_RIS_LOCATORS.get(doi)
+            assert enrichment.get("ris_article_locator") == locator
+            start_pages = [line[6:] for line in ris_text.splitlines() if line.startswith("SP  - ")]
+            assert start_pages == ([locator] if locator else [])
+            assert "EP  - " not in ris_text
         else:
             assert "number" not in csl_data
         assert "article-number" not in csl_data
@@ -346,6 +356,8 @@ def run_tests():
                     [{"family": "Zhang", "given": "Ge,"}, *names[1:]]):
         reject_metadata(public, {doi: {**with_ris_names, "ris_authors": invalid}})
     reject_metadata(public, {doi: {**with_ris_names, "verified_sources": []}})
+    for invalid in ({"ris_article_locator": "6757"}, {"first_page": "1"}, {"last_page": "2"}):
+        reject_metadata(public, {doi: {**with_ris_names, **invalid}})
     print(f"CITATION TESTS PASS: {eligible} eligible, {len(public) - eligible} skipped, "
           f"{len(enhancements)} verified enrichments")
 
