@@ -13459,7 +13459,7 @@
           },
           {
             "heading": "Computational chemical hypotheses",
-            "text": "Chemical–gene associations were retrieved from CTD and examined with molecular docking. These analyses generate hypotheses; no compound-treatment experiment or human treatment benefit is established by this article.",
+            "text": "Chemical–gene associations were retrieved from CTD. The authors used AutoDock Vina v1.1.2 to dock candidate compounds against the core gene targets and PyMOL v2.0.0 to visualize the results. The docking results provide computational hypotheses for follow-up compound testing.",
             "source_url": "https://doi.org/10.1016/j.intimp.2024.112574",
             "source_locator": "Publisher-layout PDF p. 3, Methods 2.8; pp. 8 and 10, Results 3.5 and Figure 7; pp. 3–4, animal experimental methods."
           },
