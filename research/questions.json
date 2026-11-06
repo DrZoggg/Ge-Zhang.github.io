@@ -24919,6 +24919,14 @@
       "url": "https://doi.org/10.1177/20420986261444611",
       "year": 2026,
       "locator": "Main Methods; Results including Table 1 and adjusted FAERS/JADER associations; Discussion/limitations. Original drug- and neurological-endpoint-specific reporting analysis, used for methodological context."
+    },
+    {
+      "id": "evar-mortality-external-validation-2010",
+      "title": "Defining high risk in endovascular aneurysm repair",
+      "doi": "10.1016/j.jvs.2009.12.026",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0741521409025750#sec1",
+      "year": 2010,
+      "locator": "Methods: development and external validation cohorts; Results: Prognostic model; Figures 2 and 4. An independent infrarenal EVAR trial cohort was used to assess discrimination and calibration for a model developed in high-risk patients."
     }
   ],
   "intents": [
@@ -26563,6 +26571,44 @@
                   "source_locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)",
                   "reviewed_on": "2026-10-27",
                   "source_record": "data/limited_evidence.json#/papers/10.1371~1journal.pone.0346326"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_context_kind": "original_research"
+    },
+    {
+      "id": "evar-mortality-prediction",
+      "question": "How are mortality prediction models developed and validated after endovascular aneurysm repair (EVAR)?",
+      "question_zh": "腹主动脉瘤腔内修复术（EVAR）后，死亡风险预测模型如何建立和验证？",
+      "source_ids": [
+        "evar-mortality-external-validation-2010"
+      ],
+      "focused_queries": [
+        {
+          "id": "evar-mortality-prediction-1",
+          "question": "What cohort, outcome and validation design did a mortality nomogram study use after elective EVAR?",
+          "question_zh": "择期EVAR术后的死亡风险列线图研究纳入了哪些患者、采用了什么结局指标，又如何验证模型？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-2147-cia-s493841",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.html",
+              "doi": "10.2147/cia.s493841",
+              "doi_url": "https://doi.org/10.2147/cia.s493841",
+              "scope_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.html#cite-this-paper",
+              "author_note_previews": [
+                {
+                  "heading": "Cohort and endpoint",
+                  "text": "This single-centre retrospective study follows 304 patients after elective endovascular abdominal aortic aneurysm repair. The article describes an internal random split into 213 training and 91 validation patients, all-cause mortality as the endpoint, and median follow-up of 24 months (interquartile range 16–33). Emergency repair for ruptured aneurysms was excluded.",
+                  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12673264/",
+                  "source_locator": "Methods: Study Population and Endpoint and Follow-Up (s0002-s2001–s0002-s2002); Results Patient Characteristics; Table 1",
+                  "reviewed_on": "2026-10-27",
+                  "source_record": "data/limited_evidence.json#/papers/10.2147~1cia.s493841"
                 }
               ]
             }
