@@ -2361,6 +2361,95 @@
       "scope_source": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json#/evidence_scope"
     },
     {
+      "id": "doi-10-1097-re9-0000000000000037",
+      "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
+      "doi": "10.1097/re9.0000000000000037",
+      "year": 2026,
+      "journal": "Cardiac Research",
+      "type": "Article",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
+      "markdown_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md",
+      "paper_geo_status": "none",
+      "authors": [
+        "Xuanjiang Zhao",
+        "Qian Guo",
+        "Lina Zhu",
+        "Mingxuan Duan",
+        "Kaisaierjiang Kadier",
+        "Aikeliyaer ainiwaer",
+        "Honglin Zheng",
+        "Qiang Li",
+        "Taiqi Zhao",
+        "Ruhao Wu",
+        "Shiqian Zhang",
+        "Chaoyang Yu",
+        "Yahui Han",
+        "Tianshu Gu",
+        "Zhonghua Sun",
+        "Pengpeng Zhang",
+        "Shanshan Cai",
+        "Hao Chi",
+        "Chengliang Yin",
+        "Ge Zhang"
+      ],
+      "doi_url": "https://doi.org/10.1097/re9.0000000000000037",
+      "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+      "pmid": null,
+      "pmcid": null,
+      "openalex_id": "https://openalex.org/W7225256893",
+      "semantic_scholar_id": null,
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.csl.json",
+      "evidence_status": "limited",
+      "question_count": 0,
+      "key_findings": [],
+      "field_entry": [],
+      "review_topics": [],
+      "concepts": {},
+      "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#limited-evidence",
+      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
+      "provenance": [
+        {
+          "url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+          "label": "Official publisher abstract and article identity",
+          "format": "Unauthenticated Ovid publisher HTML; full abstract and complete byline/author metadata; advertised PDF returned HTML.",
+          "locator": "Review Article - Cardiovascular Disease Epidemiology; Publish Ahead of Print, November 04, 2026; Abstract, sole paragraph, sentences 1-10."
+        }
+      ],
+      "author_evidence_note": {
+        "reviewed_on": "2026-11-07",
+        "source_record": "data/limited_evidence.json#/papers/10.1097~1re9.0000000000000037",
+        "sections": [
+          {
+            "heading": "Review question",
+            "text": "This review examines how microbial processes and host characteristics can be combined to study cardiovascular disease, separating vascular and cardiac pathways.",
+            "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+            "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 1-5."
+          },
+          {
+            "heading": "What the review contributes",
+            "text": "It organizes integration of microbial profiles, genomics and metabolomics with imaging and repeated clinical observations, and compares approaches for combining these data. A central distinction is between support for a mechanism and the maturity of a biomarker. The review prioritizes reproducible cardiovascular subtypes and microbial candidates for subsequent intervention studies.",
+            "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+            "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 5-7 and 10."
+          },
+          {
+            "heading": "Research use",
+            "text": "This synthesis can inform background writing, multimodal study design and discussion of biomarker translation. Its abstract places current support more firmly in biological discovery than clinical deployment, and calls for confounder control, comparisons against clinical and single modality models, external validation and prospective evaluation of clinical usefulness.",
+            "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+            "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 8-10; proposed writing uses inferred from the review scope."
+          }
+        ]
+      },
+      "scope": "Publisher abstract-supported review summary; the full article and references have not been reviewed.",
+      "evidence_notice": "Publisher abstract-supported review summary; the full article and references have not been reviewed.",
+      "evidence_scope": null,
+      "limitations": [
+        "The review search strategy, cited primary studies and quantitative details require full-text reading."
+      ],
+      "scope_source": "data/limited_evidence.json#/papers/10.1097~1re9.0000000000000037/scope"
+    },
+    {
       "id": "doi-10-1155-humu-5591097",
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
       "doi": "10.1155/humu/5591097",
