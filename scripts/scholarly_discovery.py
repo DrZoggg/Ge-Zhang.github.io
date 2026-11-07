@@ -26,7 +26,9 @@ def load_identifiers(items, metadata, root=ROOT):
                 'openalex_id': r'https://openalex.org/W[1-9]\d*',
                 'semantic_scholar_id': r'[0-9a-f]{40}'}
     for doi, row in payload['papers'].items():
-        if doi not in allowed or set(row) - (set(patterns) | {'publisher_url','verified_sources','verified_at'}):
+        if doi not in allowed or set(row) - (set(patterns) | {
+            'publisher_url', 'verified_sources', 'verified_at', 'trial_registry_context',
+        }):
             raise ValueError('Unrecognized or non-public scholarly identity')
         for key, pattern in patterns.items():
             if key in row and not re.fullmatch(pattern, row[key]):
@@ -38,6 +40,24 @@ def load_identifiers(items, metadata, root=ROOT):
         for url in row['verified_sources'] + ([row['publisher_url']] if row.get('publisher_url') else []):
             if urlparse(url).scheme != 'https' or not urlparse(url).netloc:
                 raise ValueError('Unsafe scholarly source URL')
+        if 'trial_registry_context' in row:
+            context = row['trial_registry_context']
+            required = {'registry_id', 'registry_last_posted', 'registered_primary_endpoint',
+                        'published_primary_endpoint', 'published_methods_url'}
+            if (not isinstance(context, dict) or set(context) != required
+                    or any(not isinstance(value, str) or not value or value != value.strip()
+                           or '\n' in value or '\r' in value for value in context.values())
+                    or not re.fullmatch(r'NCT[0-9]{8}', context['registry_id'])):
+                raise ValueError('Invalid trial registry context for ' + doi)
+            if date.fromisoformat(context['registry_last_posted']).isoformat() != context['registry_last_posted']:
+                raise ValueError('Invalid trial registry posting date for ' + doi)
+            methods = urlparse(context['published_methods_url'])
+            publisher = urlparse(row.get('publisher_url', ''))
+            if (methods.scheme != 'https' or not methods.hostname
+                    or methods.netloc.casefold() != publisher.netloc.casefold()
+                    or methods.username is not None or methods.query or not methods.fragment
+                    or not re.search(r'/' + re.escape(doi) + r'(?:/|$)', methods.path, re.I)):
+                raise ValueError('Trial context must link to the formal publication Methods for ' + doi)
     return payload['papers']
 
 
@@ -106,6 +126,35 @@ def identifier_html(row):
             '<div class="links">' + ' '.join('<a href="' + html.escape(url,quote=True) + '">' + html.escape(label) + '</a>' for label,url in links) + '</div></section>')
 
 
+def trial_registry_rows(context):
+    return [
+        ('ClinicalTrials.gov ' + context['registry_id'], context['registry_url'],
+         f"The record last posted on {context['registry_last_posted']} lists "
+         f"{context['registered_primary_endpoint']} as the primary outcome."),
+        ('Published Methods', context['published_methods_url'],
+         f"The article names {context['published_primary_endpoint']} as the primary endpoint."),
+    ]
+
+
+def trial_registry_html(context):
+    if not context:
+        return ''
+    rows = ''.join(f'<li><a href="{html.escape(url, quote=True)}">{html.escape(label)}</a>. '
+                   f'{html.escape(text)}</li>' for label, url, text in trial_registry_rows(context))
+    data_url = html.escape(context['registry_data_url'], quote=True)
+    return ('<aside id="trial-registration-context" aria-labelledby="trial-registration-context-title">'
+            '<h3 id="trial-registration-context-title">Trial registration and published endpoints</h3><ul>'
+            + rows + f'</ul><p><a href="{data_url}">ClinicalTrials.gov record data (JSON)</a></p></aside>')
+
+
+def trial_registry_markdown(context):
+    if not context:
+        return ''
+    rows = [f'- [{label}]({url}). {text}' for label, url, text in trial_registry_rows(context)]
+    return '\n'.join(['### Trial registration and published endpoints', '', *rows, '',
+                      f"[ClinicalTrials.gov record data (JSON)]({context['registry_data_url']})"])
+
+
 def citation_head(record):
     if not record:
         return ''
@@ -120,6 +169,16 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
     v2 = content if content and content.get('version') == 2 else None
     base = f'{site_url}/citations/{item["slug"]}'
     identifiers = identifiers or {}
+    registry_fields = {}
+    if context := identifiers.get('trial_registry_context'):
+        reported = (v2 or {}).get('provenance', {}).get('trial_registration', '')
+        registry_id = context['registry_id']
+        if not re.search(rf'\b{registry_id}\b', reported):
+            raise ValueError('Trial registry context is not bound to the reviewed publication ' + item['slug'])
+        registry_fields['trial_registry_context'] = {
+            **context, 'registry_url': 'https://clinicaltrials.gov/study/' + registry_id,
+            'registry_data_url': 'https://clinicaltrials.gov/api/v2/studies/' + registry_id,
+        }
     return {
         'doi_url': record['doi_url'] if record else (f'https://doi.org/{item["doi"]}' if item.get('doi') else None),
         'publisher_url': identifiers.get('publisher_url'),
@@ -135,6 +194,7 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
         'question_count': len(v2['qa']) if v2 else 0,
         'concept_count': sum(len(values) for values in v2['concepts'].values()) if v2 else 0,
         **({'discovery_layer': content['discovery_layer']} if v2 and content.get('discovery_layer') else {}),
+        **registry_fields,
     }
 
 
@@ -400,6 +460,11 @@ def validate_generated(items, config, root=ROOT):
             raise ValueError('Machine discovery field drift: ' + item['slug'])
         page = (root / 'papers' / (item['slug'] + '.html')).read_text(encoding='utf-8')
         validate_backlink_html(page, backlinks.get(item.get('doi')))
+        context = fields[item['slug']].get('trial_registry_context')
+        if context:
+            markdown = (root / 'papers' / (item['slug'] + '.md')).read_text(encoding='utf-8')
+            if page.count(trial_registry_html(context)) != 1 or markdown.count(trial_registry_markdown(context)) != 1:
+                raise ValueError('Trial registry context differs from its verified source: ' + item['slug'])
     expected = question_records(items, contents, fields, root)
     actual = json.loads((root / QUESTION_JSON_PATH).read_text(encoding='utf-8'))
     from question_discovery import build_discovery

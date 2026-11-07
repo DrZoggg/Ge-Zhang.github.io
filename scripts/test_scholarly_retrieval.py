@@ -4,7 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from scholarly_discovery import reviewed_backlinks, backlink_html, validate_backlink_html, load_identifiers
+from scholarly_discovery import reviewed_backlinks, backlink_html, validate_backlink_html, load_identifiers, index_fields
 
 
 class RetrievalTests(unittest.TestCase):
@@ -52,6 +52,39 @@ class RetrievalTests(unittest.TestCase):
             self.assertEqual(set(load_identifiers(self.items, {}, root)), {'a'})
             payload['papers']['withdrawn'] = payload['papers'].pop('a'); write()
             with self.assertRaises(ValueError): load_identifiers(self.items, {}, root)
+
+    def test_trial_context_requires_the_reported_registry_and_publisher_method(self):
+        doi = '10.1234/example'
+        item = {'doi': doi, 'slug': 'example'}
+        note = {'registry_id': 'NCT03521219', 'registry_last_posted': '2018-05-11',
+                'registered_primary_endpoint': 'one-month disease control',
+                'published_primary_endpoint': 'objective response',
+                'published_methods_url': f'https://publisher.example/{doi}/full#methods'}
+        row = {'publisher_url': f'https://publisher.example/{doi}/full',
+               'verified_sources': [f'https://doi.org/{doi}'], 'verified_at': '2026-11-06',
+               'trial_registry_context': note}
+        gold = {'version': 2, 'qa': [], 'concepts': {}, 'provenance': {'trial_registration': 'NCT03521219 as reported'}}
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'data').mkdir()
+            path = root / 'data/scholarly_identifiers.json'
+            def fields():
+                path.write_text(json.dumps({'version': 1, 'papers': {doi: row}}), encoding='utf-8')
+                identifiers = load_identifiers([item], {}, root)
+                return index_fields(item, None, gold, None, 'https://drgezhang.com', identifiers[doi])
+            context = fields()['trial_registry_context']
+            self.assertEqual(context['registry_url'], 'https://clinicaltrials.gov/study/NCT03521219')
+            self.assertEqual(context['registry_data_url'], 'https://clinicaltrials.gov/api/v2/studies/NCT03521219')
+            note['registry_id'] = 'NCT03521218'
+            with self.assertRaisesRegex(ValueError, 'not bound'):
+                fields()
+            note['registry_id'] = 'NCT03521219'
+            note['published_methods_url'] = f'https://other.example/{doi}/full#methods'
+            with self.assertRaisesRegex(ValueError, 'formal publication Methods'):
+                fields()
+            note['published_methods_url'] = f'https://publisher.example/{doi}0/full#methods'
+            with self.assertRaisesRegex(ValueError, 'formal publication Methods'):
+                fields()
 
 
 if __name__ == '__main__': unittest.main()

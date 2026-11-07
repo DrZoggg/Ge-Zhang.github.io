@@ -1359,7 +1359,7 @@ def verified_pmc_provenance(publication, content, citation_data=None):
     return destination if any(same_source(v) for v in citation_data.get("verified_sources", []) + existing) else ""
 
 
-def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url=""):
+def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url="", trial_registry_context=None):
     study = content["study_profile"]
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
@@ -1575,7 +1575,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
 <section class="paper-geo-v2__section" data-v2-section="qa" id="qa"><h2>Q&amp;A</h2><div class="paper-geo-v2__qa-list">{qa}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="concepts"><h2>Concepts &amp; Entities</h2><div class="paper-geo-v2__concepts">{concepts}</div></section>
 <section class="paper-geo-v2__section" data-v2-section="related-research"><h2>Related Research</h2><ul class="paper-geo-v2__related">{related}</ul></section>{evidence_presentation.guide_navigation(content['doi'])}
-<section class="paper-geo-v2__section" data-v2-section="provenance"><h2>Publication &amp; Provenance</h2><dl class="paper-geo-v2__provenance">{provenance}</dl></section>
+<section class="paper-geo-v2__section" data-v2-section="provenance"><h2>Publication &amp; Provenance</h2><dl class="paper-geo-v2__provenance">{provenance}</dl>{scholarly_discovery.trial_registry_html(trial_registry_context)}</section>
 <section class="paper-geo-v2__notice"><div class="notice">{notice_html}</div></section>
 </div>'''
 
@@ -1674,7 +1674,7 @@ def render_research_cluster_markdown(cluster):
     return parts
 
 
-def render_deep_v2_markdown(content, related_papers, *, pmc_url=""):
+def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_registry_context=None):
     study = content["study_profile"]
     profile_type = study["profile_type"]
     model = content.get("model_profile") or {}
@@ -1865,6 +1865,7 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url=""):
                 for key, value in content["provenance"].items()
             ],
             "",
+            *([scholarly_discovery.trial_registry_markdown(trial_registry_context), ""] if trial_registry_context else []),
             "## Evidence-page notice",
             "",
             content["evidence_page_notice"],
@@ -1874,15 +1875,17 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url=""):
     return "\n".join(parts)
 
 
-def render_deep_html(content, *, related_papers=None, early_summary=False, pmc_url=""):
+def render_deep_html(content, *, related_papers=None, early_summary=False, pmc_url="", trial_registry_context=None):
     if content.get("version") == 2:
-        return render_deep_v2_html(content, related_papers or [], early_summary=early_summary, pmc_url=pmc_url)
+        return render_deep_v2_html(content, related_papers or [], early_summary=early_summary, pmc_url=pmc_url,
+                                   trial_registry_context=trial_registry_context)
     return render_deep_v1_html(content)
 
 
-def render_deep_markdown(content, *, related_papers=None, pmc_url=""):
+def render_deep_markdown(content, *, related_papers=None, pmc_url="", trial_registry_context=None):
     if content.get("version") == 2:
-        return render_deep_v2_markdown(content, related_papers or [], pmc_url=pmc_url)
+        return render_deep_v2_markdown(content, related_papers or [], pmc_url=pmc_url,
+                                       trial_registry_context=trial_registry_context)
     return render_deep_v1_markdown(content)
 
 
@@ -1932,7 +1935,7 @@ def render_official_abstract_markdown(record, doi):
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
                       citation_data=None, official_abstract=None, presentation=None, identifiers=None,
-                      reviewed_backlinks=None, limited_note=None):
+                      reviewed_backlinks=None, limited_note=None, trial_registry_context=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2036,7 +2039,8 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         v2_authors_html = '<p class="paper-authors">' + html.escape('; '.join(authors)) + '</p>'
     deep_html = (
         render_deep_html(deep_content or {}, related_papers=related_papers, early_summary=pilot or standalone_v2,
-                         pmc_url=verified_pmc_provenance(publication, deep_content, citation_data))
+                         pmc_url=verified_pmc_provenance(publication, deep_content, citation_data),
+                         trial_registry_context=trial_registry_context)
         if deep_content is not None
         else ""
     )
@@ -2127,7 +2131,7 @@ def unmapped_author_record_provenance(config):
 
 
 def render_paper_markdown(publication, *, config, deep_content=None, public_by_doi=None,
-                          official_abstract=None, limited_note=None, citation_data=None):
+                          official_abstract=None, limited_note=None, citation_data=None, trial_registry_context=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2204,7 +2208,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         if official_abstract:
             lines.append(render_official_abstract_markdown(official_abstract, doi))
         lines.append(render_deep_markdown(deep_content, related_papers=related_papers,
-                                         pmc_url=verified_pmc_provenance(publication, deep_content)))
+                                         pmc_url=verified_pmc_provenance(publication, deep_content),
+                                         trial_registry_context=trial_registry_context))
     elif official_abstract:
         lines.append(render_official_abstract_markdown(official_abstract, doi))
     if publication.get("paper_geo_status") == "pending":
@@ -2578,6 +2583,7 @@ def build_site():
         token = publication_token(item)
         deep_content = deep_contents.get(token)
         paper_url = item["paper_url"]
+        trial_registry_context = discovery_fields[item['slug']].get('trial_registry_context')
         html_changed[paper_url] = write_public_html_if_changed(
             PAPERS_DIR / f"{item['slug']}.html",
             render_paper_html(
@@ -2590,6 +2596,7 @@ def build_site():
                 identifiers=scholarly_ids.get(norm_doi(item.get('doi'))),
                 reviewed_backlinks=reviewed_backlinks.get(norm_doi(item.get('doi'))),
                 limited_note=limited_notes.get(norm_doi(item.get('doi'))),
+                trial_registry_context=trial_registry_context,
             ),
         )
         write_text_if_changed(
@@ -2602,6 +2609,7 @@ def build_site():
                 official_abstract=official_abstracts.get(norm_doi(item.get("doi"))),
                 limited_note=limited_notes.get(norm_doi(item.get('doi'))),
                 citation_data=citation_by_slug[item["slug"]],
+                trial_registry_context=trial_registry_context,
             ),
         )
     CITATIONS_DIR.mkdir(parents=True, exist_ok=True)
