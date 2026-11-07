@@ -206,9 +206,11 @@
     }
   ],
   "provenance": {
+    "doi_url": "https://doi.org/10.1002/tox.24284",
     "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1002/tox.24284",
     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38591820/",
     "author_uploaded_fulltext_url": "https://www.researchgate.net/publication/379695827_Advancing_predictive_markers_in_lung_adenocarcinoma_A_machine_learning-based_immunotherapy_prognostic_prediction_signature",
+    "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/379695827_Advancing_predictive_markers_in_lung_adenocarcinoma_A_machine_learning-based_immunotherapy_prognostic_prediction_signature",
     "figure1_url": "https://www.researchgate.net/figure/Comparative-Study-of-Immunotherapy-Cohorts-and-Model-Gene-Selection-A-The-volcano-plot_fig1_379695827",
     "figure2_url": "https://www.researchgate.net/figure/Model-Construction-and-Evaluation-A-Comparison-of-C-index-values-for-101-predictive_fig2_379695827",
     "version": "Author-uploaded publisher-layout early-online version, 2024, pp. 1-13, DOI 10.1002/tox.24284; Wiley download stamp 12 April 2024. The current publisher record lists Environmental Toxicology 39(10), 4581-4593, first online 9 April 2024.",
