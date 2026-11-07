@@ -923,7 +923,7 @@
       "slug": "doi-10-1097-re9-0000000000000037",
       "evidence_status": "limited",
       "reviewed_on": "2026-11-07",
-      "scope": "Publisher abstract-supported review summary; the full article and references have not been reviewed.",
+      "scope": "Source-bound narrative review summary using the publisher abstract and the publisher-hosted accepted manuscript, including multimodal fusion and model-evaluation guidance.",
       "sections": [
         {
           "heading": "Review question",
@@ -938,21 +938,33 @@
           "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 5-7 and 10."
         },
         {
-          "heading": "Research use",
-          "text": "This synthesis can inform background writing, multimodal study design and discussion of biomarker translation. Its abstract places current support more firmly in biological discovery than clinical deployment, and calls for confounder control, comparisons against clinical and single modality models, external validation and prospective evaluation of clinical usefulness.",
-          "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-          "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 8-10; proposed writing uses inferred from the review scope."
+          "heading": "Choose a fusion strategy",
+          "text": "Table 2 compares feature-level early fusion, prediction-level late fusion and intermediate or hybrid representations. Early fusion suits well-aligned, largely complete modalities with adequate sample size; late fusion supports heterogeneous data, intermittent missingness and modular deployment. Intermediate or hybrid fusion targets cross-modal interactions when sample size and missing-modality training support the design. The choice depends on alignment, dimensionality, modality completeness and validation rather than a universally best architecture.",
+          "source_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed#page=66",
+          "source_locator": "Publisher accepted manuscript, PDF p. 66, Table 2; p. 20, section 5.2, Data preparation, multimodal fusion, and model development."
+        },
+        {
+          "heading": "Benchmark incremental value",
+          "text": "For microbiome-informed cardiovascular model development, the review recommends starting with a clinical baseline, adding relevant modalities step by step, and testing a simple multimodal model before higher-capacity AI. Clinical, unimodal and simple multimodal models should use the same data partitions. Evaluation includes discrimination, calibration, uncertainty, subgroup stability and decision utility; external validation examines transport across populations, sites, assay platforms and clinical settings, including performance when modalities are missing.",
+          "source_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed#page=20",
+          "source_locator": "Publisher accepted manuscript, PDF pp. 20-21, sections 5.2-5.3, including Benchmarking, interpretability, and external validation."
         }
       ],
       "limitations": [
-        "The review search strategy, cited primary studies and quantitative details require full-text reading."
+        "This is a narrative review drawing on seminal and directly relevant literature available through August 2026, without a formal PRISMA selection process. Its fusion and validation guidance synthesizes existing evidence rather than reporting a newly trained model or an intervention trial."
       ],
       "sources": [
         {
           "url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
           "label": "Official publisher abstract and article identity",
-          "format": "Unauthenticated Ovid publisher HTML; full abstract and complete byline/author metadata; advertised PDF returned HTML.",
+          "format": "Unauthenticated Ovid publisher HTML; full abstract and complete byline/author metadata",
           "locator": "Review Article - Cardiovascular Disease Epidemiology; Publish Ahead of Print, November 04, 2026; Abstract, sole paragraph, sentences 1-10."
+        },
+        {
+          "url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+          "label": "Official publisher accepted manuscript: full-text PDF",
+          "format": "Publish Ahead of Print; 70 PDF pages with an ACCEPTED watermark",
+          "locator": "Identity and byline, PDF pp. 1-2; narrative-review selection, p. 6; multimodal study design and validation, pp. 18-21; fusion comparison, Table 2, p. 66."
         }
       ]
     }
