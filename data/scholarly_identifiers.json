@@ -771,6 +771,16 @@
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13651581/fullTextXML"
       ],
       "verified_at": "2026-11-05"
+    },
+    "10.1097/re9.0000000000000037": {
+      "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+      "verified_sources": [
+        "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "https://api.crossref.org/works/10.1097/re9.0000000000000037",
+        "https://api.openalex.org/works/W7225256893"
+      ],
+      "verified_at": "2026-11-07",
+      "openalex_id": "https://openalex.org/W7225256893"
     }
   }
 }

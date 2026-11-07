@@ -553,6 +553,98 @@
         "https://pubmed.ncbi.nlm.nih.gov/38971104/",
         "https://api.crossref.org/works/10.1016/j.intimp.2024.112574"
       ]
+    },
+    "10.1097/re9.0000000000000037": {
+      "publication_date": "2026-11-04",
+      "online_publication_date": "2026-11-04",
+      "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+      "eissn": "3066-1250",
+      "ris_authors": [
+        {
+          "family": "Zhao",
+          "given": "Xuanjiang"
+        },
+        {
+          "family": "Guo",
+          "given": "Qian"
+        },
+        {
+          "family": "Zhu",
+          "given": "Lina"
+        },
+        {
+          "family": "Duan",
+          "given": "Mingxuan"
+        },
+        {
+          "family": "Kadier",
+          "given": "Kaisaierjiang"
+        },
+        {
+          "family": "ainiwaer",
+          "given": "Aikeliyaer"
+        },
+        {
+          "family": "Zheng",
+          "given": "Honglin"
+        },
+        {
+          "family": "Li",
+          "given": "Qiang"
+        },
+        {
+          "family": "Zhao",
+          "given": "Taiqi"
+        },
+        {
+          "family": "Wu",
+          "given": "Ruhao"
+        },
+        {
+          "family": "Zhang",
+          "given": "Shiqian"
+        },
+        {
+          "family": "Yu",
+          "given": "Chaoyang"
+        },
+        {
+          "family": "Han",
+          "given": "Yahui"
+        },
+        {
+          "family": "Gu",
+          "given": "Tianshu"
+        },
+        {
+          "family": "Sun",
+          "given": "Zhonghua"
+        },
+        {
+          "family": "Zhang",
+          "given": "Pengpeng"
+        },
+        {
+          "family": "Cai",
+          "given": "Shanshan"
+        },
+        {
+          "family": "Chi",
+          "given": "Hao"
+        },
+        {
+          "family": "Yin",
+          "given": "Chengliang"
+        },
+        {
+          "family": "Zhang",
+          "given": "Ge"
+        }
+      ],
+      "verified_sources": [
+        "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "https://api.crossref.org/works/10.1097/re9.0000000000000037"
+      ]
     }
   }
 }

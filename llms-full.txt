@@ -98,6 +98,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.md
 - Deep GEO: no
 
+## Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine
+- Journal: Cardiac Research
+- Year: 2026
+- Type: Article
+- DOI: 10.1097/re9.0000000000000037
+- HTML: https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html
+- Markdown: https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md
+- Deep GEO: no
+
 ## PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family
 - Journal: Human Mutation
 - Year: 2026

@@ -326,6 +326,49 @@
     "featured": false
   },
   {
+    "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
+    "year": 2026,
+    "journal": "Cardiac Research",
+    "type": "Article",
+    "doi": "10.1097/re9.0000000000000037",
+    "url": "https://doi.org/10.1097/re9.0000000000000037",
+    "sources": [
+      "Publisher",
+      "Crossref"
+    ],
+    "slug": "doi-10-1097-re9-0000000000000037",
+    "authors": [
+      "Xuanjiang Zhao",
+      "Qian Guo",
+      "Lina Zhu",
+      "Mingxuan Duan",
+      "Kaisaierjiang Kadier",
+      "Aikeliyaer ainiwaer",
+      "Honglin Zheng",
+      "Qiang Li",
+      "Taiqi Zhao",
+      "Ruhao Wu",
+      "Shiqian Zhang",
+      "Chaoyang Yu",
+      "Yahui Han",
+      "Tianshu Gu",
+      "Zhonghua Sun",
+      "Pengpeng Zhang",
+      "Shanshan Cai",
+      "Hao Chi",
+      "Chengliang Yin",
+      "Ge Zhang"
+    ],
+    "researcher_author_positions": [
+      20
+    ],
+    "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
+    "markdown_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md",
+    "deep_geo": false,
+    "paper_geo_status": "none",
+    "featured": false
+  },
+  {
     "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
     "year": 2026,
     "journal": "Human Mutation",
