@@ -6,9 +6,7 @@ from urllib.parse import urlsplit
 from sync_common import ROOT, norm_doi
 
 PATH = ROOT / 'data/limited_evidence.json'
-HEADING = 'Research context and source limits'
-NOTICE = ('Limited evidence note. Only the source material identified below has been '
-          'reviewed; this is not a complete Paper GEO V2 assessment.')
+HEADING = 'Author evidence note'
 
 
 def plain(value, limit=1800):
@@ -82,13 +80,13 @@ def render_html(record):
         return ''
     esc = html.escape
     parts = ['<section id="limited-evidence" aria-labelledby="limited-evidence-title" data-evidence-scope="limited">',
-             '<h2 id="limited-evidence-title">' + HEADING + '</h2>',
-             '<p class="notice">' + NOTICE + '</p><p>' + esc(record['scope']) + '</p>']
+             '<h2 id="limited-evidence-title">' + HEADING + '</h2>']
     for row in record['sections']:
         parts.append('<h3>' + esc(row['heading']) + '</h3><p>' + esc(row['text']) + '</p>')
         parts.append('<p class="muted">Source: <a href="' + esc(row['source_url'], quote=True) + '">'
                      + esc(row['source_locator']) + '</a></p>')
-    parts.append('<h3>Evidence limits</h3><ul>' + ''.join('<li>' + esc(x) + '</li>' for x in record['limitations']) + '</ul>')
+    parts.append('<h3>Evidence scope and limitations</h3><p>' + esc(record['scope']) + '</p><ul>'
+                 + ''.join('<li>' + esc(x) + '</li>' for x in record['limitations']) + '</ul>')
     parts.append('<h3>Provenance</h3><ul>')
     for source in record['sources']:
         parts.append('<li><a href="' + esc(source['url'], quote=True) + '">' + esc(source['label'])
@@ -100,11 +98,12 @@ def render_html(record):
 def render_markdown(record):
     if record is None:
         return ''
-    parts = ['<a id="limited-evidence"></a>', '## ' + HEADING, '', NOTICE, '', record['scope'], '']
+    parts = ['<a id="limited-evidence"></a>', '## ' + HEADING, '']
     for row in record['sections']:
         parts += ['### ' + row['heading'], '', row['text'], '',
                   'Source: [' + row['source_locator'] + '](' + row['source_url'] + ')', '']
-    parts += ['### Evidence limits', '', *['- ' + x for x in record['limitations']], '', '### Provenance', '']
+    parts += ['### Evidence scope and limitations', '', record['scope'], '',
+              *['- ' + x for x in record['limitations']], '', '### Provenance', '']
     for source in record['sources']:
         parts.append('- [' + source['label'] + '](' + source['url'] + ') — ' + source['format'] + '. ' + source['locator'])
     parts += ['', 'Source review: ' + record['reviewed_on'] + '.', '']

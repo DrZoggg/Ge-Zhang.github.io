@@ -30,11 +30,7 @@ Markdown record: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.m
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
 <a id="limited-evidence"></a>
-## Research context and source limits
-
-Limited evidence note. Only the source material identified below has been reviewed; this is not a complete Paper GEO V2 assessment.
-
-The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.
+## Author evidence note
 
 ### Study and evidence unit
 
@@ -60,7 +56,9 @@ The audit therefore retains study context without endorsing quantitative signal 
 
 Source: [Table 1, AE severity and Serious outcome rows; Discussion limitations](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326)
 
-### Evidence limits
+### Evidence scope and limitations
+
+The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.
 
 - Exact FAERS analysis quarters remain unresolved.
 - Serious/outcome counting units are not reconciled.
