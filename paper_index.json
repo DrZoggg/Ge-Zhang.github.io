@@ -3188,6 +3188,15 @@
           "Evidence synthesis: early-phase treatment studies in previously treated advanced cholangiocarcinoma.",
           "Methods: denominator-explicit interpretation of response and safety in single-arm oncology trials."
         ]
+      },
+      "trial_registry_context": {
+        "registry_id": "NCT03521219",
+        "registry_last_posted": "2018-05-11",
+        "registered_primary_endpoint": "disease control rate (DCR) at one month",
+        "published_primary_endpoint": "objective response rate (ORR)",
+        "published_methods_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full#s2",
+        "registry_url": "https://clinicaltrials.gov/study/NCT03521219",
+        "registry_data_url": "https://clinicaltrials.gov/api/v2/studies/NCT03521219"
       }
     },
     {

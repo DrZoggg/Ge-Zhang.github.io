@@ -314,6 +314,13 @@
       "pmcid": "PMC8126718",
       "openalex_id": "https://openalex.org/W3158276903",
       "publisher_url": "https://www.frontiersin.org/articles/10.3389/fonc.2021.659217/full",
+      "trial_registry_context": {
+        "registry_id": "NCT03521219",
+        "registry_last_posted": "2018-05-11",
+        "registered_primary_endpoint": "disease control rate (DCR) at one month",
+        "published_primary_endpoint": "objective response rate (ORR)",
+        "published_methods_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full#s2"
+      },
       "verified_sources": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.3389%2Ffonc.2021.659217%22&format=json&pageSize=10&resultType=core",
         "https://api.openalex.org/works/https://doi.org/10.3389%2Ffonc.2021.659217",

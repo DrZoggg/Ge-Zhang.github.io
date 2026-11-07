@@ -434,6 +434,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
         citation_ris_url:work.citation_ris_url || null, citation_csl_json_url:work.citation_csl_json_url || null,
         gold_source_url:work.gold_source_url || null},
       provenance:work.provenance || null,
+      ...(work.trial_registry_context ? {trial_registry_context:work.trial_registry_context} : {}),
       source_pointers:{gold_source:work.gold_source || null, scope_source:work.scope_source || null,
         study_profile_source:work.study_profile_source || null,
         model_profile_source:work.model_profile_source || null,

@@ -41,6 +41,7 @@ async function run() {
     assert.deepEqual(packet.evidence_scope,work.evidence_scope);
     assert.deepEqual(packet.limitations,work.limitations);
     assert.deepEqual(packet.provenance,work.provenance);
+    assert.deepEqual(packet.trial_registry_context,work.trial_registry_context);
     assert.deepEqual(packet.study_profile,work.study_profile);
     assert.deepEqual(packet.model_profile,work.model_profile);
     assert.equal(packet.source_pointers.study_profile_source,work.study_profile_source);

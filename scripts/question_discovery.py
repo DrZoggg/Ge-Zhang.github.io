@@ -86,6 +86,8 @@ def build_discovery(items, contents, fields, root=ROOT):
             'limitations': [],
         }
         _text(work['title'], slug + '/title')
+        if context := fields[slug].get('trial_registry_context'):
+            work['trial_registry_context'] = copy.deepcopy(context)
         if item.get('paper_geo_status') == 'v2':
             if not content or content.get('version') != 2:
                 raise ValueError('V2 discovery work lacks reviewed Gold: ' + slug)
