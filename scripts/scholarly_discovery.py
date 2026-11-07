@@ -391,14 +391,26 @@ def render_questions(rows, config, discovery=None):
             continue
         scope = work.get('scope') or ''
         limitations = work.get('limitations', [])
-        other.append('<article class="card" id="' + escape(work['id'], quote=True) + '">'
+        note = work.get('author_evidence_note') or {}
+        sections = note.get('sections') or []
+        has_note = work.get('evidence_status') == 'limited' and bool(sections)
+        preview = ''
+        if has_note:
+            first = sections[0]
+            preview = ('<p><strong>Author evidence note</strong></p><h3>'
+                       + escape(first['heading']) + '</h3><p>' + escape(first['text']) + '</p>'
+                       + '<p class="muted">Source: <a href="' + escape(first['source_url'], quote=True)
+                       + '">' + escape(first['source_locator']) + '</a></p>')
+        other.append('<article class="card" id="' + escape(work['id'], quote=True) + '"'
+                     + (' style="scroll-margin-top:108px"' if has_note else '') + '>'
                      + '<h2><a href="' + escape(work['paper_url'], quote=True) + '">'
                      + escape(work['title']) + '</a></h2><p class="meta">'
                      + escape(str(work.get('type') or 'Work')) + ' · ' + escape(str(work.get('year') or ''))
                      + ' · ' + escape(str(work.get('journal') or '')) + '</p>'
+                     + preview
                      + '<p><strong>Available evidence scope:</strong> ' + escape(scope) + '</p>'
                      + ('<ul>' + ''.join('<li>' + escape(text) + '</li>' for text in limitations) + '</ul>' if limitations else '')
-                     + '<p>No full reviewed Gold Q&amp;A is indexed for this record. Follow the existing page for its available sources and limits.</p>'
+                     + ('' if has_note else '<p>No full reviewed Gold Q&amp;A is indexed for this record. Follow the existing page for its available sources and limits.</p>')
                      + '<p class="links"><a href="' + escape(work['paper_url'], quote=True) + '">Record and source evidence</a>'
                      + (' <a href="https://doi.org/' + escape(work['doi'], quote=True) + '">Original DOI</a>' if work.get('doi') else '')
                      + (' <a href="' + escape(work['paper_url'], quote=True) + '#cite-this-paper">Cite</a>' if work.get('citation_csl_json_url') else '')

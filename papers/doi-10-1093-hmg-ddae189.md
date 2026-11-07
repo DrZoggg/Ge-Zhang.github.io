@@ -30,11 +30,7 @@ Markdown record: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
 <a id="limited-evidence"></a>
-## Research context and source limits
-
-Limited evidence note. Only the source material identified below has been reviewed; this is not a complete Paper GEO V2 assessment.
-
-The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.
+## Author evidence note
 
 ### Publication version and material reviewed
 
@@ -60,7 +56,9 @@ The Methods describe PC12 cells exposed to 7 μM Aβ1–42 for 12 hours. Figure 
 
 Source: [PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolation, reverse transcription, and quantitative real-time PCR; Figure 4E–G; supplementary_table_ddae189.xlsx, sheets labelled Supplemenatry Table 7 (B3:C6, B9:C12) and Supplemenatry Table 8; Supplementary Figures 5–6.](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data)
 
-### Evidence limits
+### Evidence scope and limitations
+
+The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.
 
 - Full V2 remains on hold until an exact archived GWAS input filename/release and checksum, linked to the analysis code or run record, or a formal author clarification resolves which dataset generated the MR estimates. Agreement between the main Methods and the official R9 case count does not establish the analysis input used.
 - The source contains unresolved mediation annotations: Figure 1 labels an EXOSC9 probe differently from Table 1/Figure 3C, and Figure 3 coefficients differ from the MR tables, including a SLFN12 sign discrepancy. This note neither corrects the labels nor certifies the proposed mediation chains.

@@ -30,11 +30,7 @@ Markdown record: https://drgezhang.com/papers/icd-cart.md
 This is an author-controlled publication record in the Ge Zhang Academic Hub. It identifies this work as part of Ge Zhang’s publication record via ORCID; the publisher version remains the version of record.
 
 <a id="limited-evidence"></a>
-## Research context and source limits
-
-Limited evidence note. Only the source material identified below has been reviewed; this is not a complete Paper GEO V2 assessment.
-
-Abstract-supported review context; the complete review and its cited experimental evidence have not been audited.
+## Author evidence note
 
 ### Review question
 
@@ -48,7 +44,9 @@ The article is a review of mechanisms and proposed combination approaches, not a
 
 Source: [PubMed PMID 38936505, Abstract: final sentence identifying the review scope; publication type Review.](https://pubmed.ncbi.nlm.nih.gov/38936505/)
 
-### Evidence limits
+### Evidence scope and limitations
+
+Abstract-supported review context; the complete review and its cited experimental evidence have not been audited.
 
 - Specific combinations, experimental models and effect sizes require the complete review and the relevant primary studies. The available abstract cannot establish prospective clinical efficacy or safety.
 

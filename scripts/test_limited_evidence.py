@@ -7,6 +7,7 @@ import copy
 import hashlib
 import json
 import subprocess
+import types
 import unittest
 from xml.etree import ElementTree
 from sync_common import ROOT
@@ -27,6 +28,9 @@ class LimitedEvidenceTests(unittest.TestCase):
         cls.records=notes.load(cls.public)
         cls.bydoi={p['doi']:p for p in cls.public if p.get('doi')}
         cls.baseline_records=json.loads(old('data/limited_evidence.json'))['papers']
+        cls.baseline_renderer=types.ModuleType('historical_limited_evidence')
+        exec(compile(old('scripts/limited_evidence.py'), 'historical_limited_evidence.py', 'exec'),
+             cls.baseline_renderer.__dict__)
 
     def test_reviewed_notes_are_exact_and_never_upgrade_status(self):
         self.assertEqual(self.public,author_release.with_upgrades(json.loads(old('publications.json'))))
@@ -68,10 +72,12 @@ class LimitedEvidenceTests(unittest.TestCase):
     def test_note_removal_restores_every_target_page_and_schema_exactly(self):
         for doi,r in self.records.items():
             slug=r['slug']
-            for ext,render in [('html',notes.render_html),('md',notes.render_markdown)]:
+            for ext,render,baseline_render in [
+                    ('html',notes.render_html,self.baseline_renderer.render_html),
+                    ('md',notes.render_markdown,self.baseline_renderer.render_markdown)]:
                 path='papers/'+slug+'.'+ext
                 before=old(path).decode();after=now(path).decode();block=render(r)+('' if ext=='html' else '\n')
-                baseline_block=render(self.baseline_records[doi])+('' if ext=='html' else '\n')
+                baseline_block=baseline_render(self.baseline_records[doi])+('' if ext=='html' else '\n')
                 self.assertEqual(before.count(baseline_block),1,path+' baseline note')
                 before=before.replace(baseline_block,'',1)
                 self.assertEqual(after.count(block),1,path)
