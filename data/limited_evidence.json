@@ -165,7 +165,7 @@
     "10.1002/mdr2.70073": {
       "slug": "doi-10-1002-mdr2-70073",
       "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
+      "reviewed_on": "2026-11-12",
       "scope": "Reported multimodal design; diagnostic performance and clinical utility remain unverified.",
       "sections": [
         {
@@ -179,6 +179,12 @@
           "text": "The described fusion combines three structured-model scores with a 768-dimensional Bio_ClinicalBERT representation, producing 771 features for a classifier. The text encoder uses LoRA adapters; explicit diagnostic fields and disease names are described as removed or masked. This is a supervised prediction architecture with workflow orchestration, not evidence that a generative model independently reasons through diagnosis or improves patient outcomes.",
           "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
           "source_locator": "Results 2.4 Multimodal Data Interconnection; Figure 5"
+        },
+        {
+          "heading": "Compare the multimodal training stages",
+          "text": "Section 2.4 provides a concrete stacking workflow for comparing structured and symptom-text models. It describes a multimodal comparison using hospitalization records from 126 patients at Shanghai Sixth People's Hospital. For fusion-head training, inner five-fold out-of-fold predictions supply the disease-specific structured scores. The structured models are then refitted on the full training set for validation and test scoring. After selection of the text-encoder checkpoint, the structured branch and LoRA-tuned text encoder remain fixed while a linear softmax fusion head is trained. These stages give a Methods comparison two specific checks: how predictions feeding the fusion model are generated, and which branch parameters are updated.",
+          "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+          "source_locator": "Results 2.4, paragraph specifying the two-stage stacking protocol and paragraph beginning Finally (126-patient multimodal comparison); Figure 5."
         },
         {
           "heading": "Performance claims remain limited",
