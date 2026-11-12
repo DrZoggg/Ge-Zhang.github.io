@@ -8882,12 +8882,13 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1111-odi-70054.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1111-odi-70054.json",
-      "gold_content_sha256": "731f91c0f200aab475ee0b5d8135d36a98bd56d44ff8ceccb861292949749796",
+      "gold_content_sha256": "3d88b9493934fdfdd691bc1626c4d609263d5c4cd193a71c7622dc1ef0bb5315",
       "provenance": {
         "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/odi.70054",
         "doi_url": "https://doi.org/10.1111/odi.70054",
         "identity_url": "https://pubmed.ncbi.nlm.nih.gov/40818111/",
         "full_text_url": "https://www.researchgate.net/publication/394518646",
+        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/394518646",
         "evidence_basis": "Complete online-first typeset text and references were read from Zhengrui Li's public ResearchGate upload. The eleven-author order, title, DOI and Letter to the Editor designation match the publisher record. Publisher first publication is August 16, 2025; later issue pagination is 270-271.",
         "version": "Online-first Wiley typeset text (2025; 0:1-2), uploaded by Zhengrui Li August 17, 2025; accessed October 26, 2026 in HTML. PDF binary and later issue PDF not retrieved.",
         "figure_verification": "No figure, table or original experimental dataset appears in the reviewed two-page letter."
