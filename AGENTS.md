@@ -135,6 +135,14 @@ identity, scope, limitations, source locators and citation links; do not modify 
 general research Skill to force this site's ranking. A lexical match, installed
 client or published MCP is never proof of natural AI adoption.
 
+Include real researcher-facing literature search and claim-to-citation writing
+software in the active queue; record native web, official API/MCP, open-source
+reproductions and custom-client tests separately. Login or pre-search authorization
+failure is an access result, not a retrieval failure. Track investigation, local
+validation, upstream submission, merge, public release, external consumers receiving
+the update and observed use separately; acceptance or a PR does not establish
+delivery or adoption growth.
+
 Scientific research, biomedical interpretation, Paper GEO content design, numerical verification, and scientific source-of-truth are prepared outside Codex unless a task explicitly provides them.
 
 Do not independently reinterpret, expand, exaggerate, or invent biomedical evidence.
@@ -186,14 +194,17 @@ Retrievable → Answerable → Verifiable → Citable
 
 ## Before Every Task
 
-For every new chat or resumed task, first restore project continuity:
+For every new chat or resumed task, restore continuity from the latest verified
+checkpoint and current highest-value executable opportunity, not an obsolete
+phase's starting point. Read current task and short checkpoint before history:
 
 - Inspect current GitHub `main`, the actual local HEAD/worktree and this file.
 - Read the existing private progress ledger at
   `D:\CodexWork\张格GEO网站\index-ai-targeted-20261029\RUN_STATE.json`,
-  then its `ACTION_LEDGER.json` and the evidence paths named by the active round.
-  They contain completed work, current Goal, pending actions, releases, failures
-  and scheduler state. Do not copy them or private audit material into this repo.
+  then its `ACTION_LEDGER.json`, existing `CURRENT_CHECKPOINT` and evidence paths
+  named by the active round. They record completed work, Goal, pending actions,
+  releases, failures and scheduler state. Prefer latest accepted state over older
+  summaries; do not copy them or private audit material into this repo.
 - Inspect live agents/processes before resuming interrupted work. Reuse their
   existing outputs and handles; do not recreate experiments or submissions merely
   because a new chat has no conversational history.
@@ -486,6 +497,10 @@ Do not:
 - rerun unrelated tests;
 - redesign an already specified task;
 - produce long narrative execution reports.
+
+Reuse completed work under the same conditions; do not repeat unchanged requests.
+New versions, sources, permissions, needs or implemented changes can justify
+independent revalidation. Record what changed and what the test will resolve.
 
 Prefer:
 
