@@ -344,6 +344,14 @@
       "url": "https://doi.org/10.1097/re9.0000000000000037",
       "year": 2026,
       "locator": "Narrative-review Methods-planning context: modality alignment/completeness and early, late or intermediate/hybrid fusion (publisher-hosted accepted manuscript, Table 2, PDF p. 66; section 5.2, p. 20); clinical, unimodal and simple multimodal baselines on shared data partitions (sections 5.2-5.3, pp. 20-21)."
+    },
+    {
+      "id": "apatinib-cholangiocarcinoma-phase2-2021",
+      "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
+      "doi": "10.3389/fonc.2021.659217",
+      "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full",
+      "year": 2021,
+      "locator": "One prospective, open-label, single-center, single-arm phase II study of apatinib monotherapy after gemcitabine-based treatment failure in advanced cholangiocarcinoma. Results: Patients' Characteristics; Efficacy of Apatinib Treatment; Safety, Table 3. Response and safety populations are distinct; there is no concurrent comparator."
     }
   ],
   "intents": [
@@ -1366,6 +1374,34 @@
               "preview_note_headings": [
                 "Cohort and endpoint"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "single-arm-oncology-reporting",
+      "question": "How do early-phase single-arm oncology studies report antitumor activity and safety?",
+      "question_zh": "早期单臂肿瘤临床研究如何报告抗肿瘤活性和安全性？",
+      "source_ids": [
+        "apatinib-cholangiocarcinoma-phase2-2021"
+      ],
+      "source_context_kind": "original_research",
+      "focused_queries": [
+        {
+          "id": "single-arm-oncology-reporting-1",
+          "question": "What response and safety outcomes were reported for apatinib monotherapy after gemcitabine-based treatment failed in advanced cholangiocarcinoma?",
+          "question_zh": "在吉西他滨方案治疗失败的晚期胆管癌中，阿帕替尼单药研究报告了哪些肿瘤反应和安全性结果？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-3389-fonc-2021-659217",
+              "question_ids": [
+                "doi-10-3389-fonc-2021-659217--qa-1",
+                "doi-10-3389-fonc-2021-659217--qa-2",
+                "doi-10-3389-fonc-2021-659217--qa-3",
+                "doi-10-3389-fonc-2021-659217--qa-4"
+              ],
+              "preview_question_id": "doi-10-3389-fonc-2021-659217--qa-2"
             }
           ]
         }
