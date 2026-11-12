@@ -1,0 +1,127 @@
+name: G341 official translator validation
+on:
+  push:
+    branches: [g341-official-validation]
+permissions:
+  contents: read
+jobs:
+  validate:
+    if: github.repository == 'DrZoggg/Ge-Zhang.github.io' && github.ref == 'refs/heads/g341-official-validation'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: payload
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: zotero/translators
+          ref: 95366e09cbd4f94756eaa3bb741ce6f09259e360
+          path: translators
+          submodules: true
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install official connector build prerequisite
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends librsvg2-bin
+      - name: Apply the reviewed generic patch
+        working-directory: translators
+        run: |
+          git apply --check ../payload/verification/g341-journal-article.patch
+          git apply --whitespace=error-all ../payload/verification/g341-journal-article.patch
+      - name: Install official repository dependencies
+        working-directory: translators
+        run: npm ci
+      - name: Install browser used by official CI
+        working-directory: translators
+        run: npx playwright install chromium
+      - name: Generate a real journal-article fixture using the official tool
+        working-directory: translators
+        run: |
+          set +e
+          node .bin/create-test.mjs GitHub.js --url https://github.com/scikit-learn/scikit-learn --json > g341-generated-fixture.json
+          result=$?
+          cat g341-generated-fixture.json
+          exit "$result"
+      - name: Verify the actual new article fixture and retained old cases
+        working-directory: translators
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const cp = require('node:child_process');
+          const assert = require('node:assert/strict');
+          function cases(text) {
+            const section = text.split('/** BEGIN TEST CASES **/')[1].split('/** END TEST CASES **/')[0];
+            return JSON.parse(section.match(/var\s+testCases\s*=\s*(\[[\s\S]*\])/)[1]);
+          }
+          const oldCases = cases(cp.execFileSync('git', ['show', 'HEAD:GitHub.js'], { encoding: 'utf8' }));
+          const newCases = cases(fs.readFileSync('GitHub.js', 'utf8'));
+          assert.equal(oldCases.length, 8);
+          assert.equal(newCases.length, 9);
+          assert.deepEqual(newCases.slice(0, 8), oldCases);
+          const added = newCases[8];
+          assert.equal(added.url.replace(/\/$/, ''), 'https://github.com/scikit-learn/scikit-learn');
+          assert.equal(added.items.length, 1);
+          const item = added.items[0];
+          assert.equal(item.itemType, 'journalArticle');
+          assert.equal(item.creators.length, 16);
+          assert(item.creators.every(c => c.creatorType === 'author'));
+          assert(/journal of machine learning research/i.test(item.publicationTitle));
+          assert.equal(String(item.volume), '12');
+          assert.equal(item.pages.replace(/[–—]/g, '-').replace(/--/g, '-'), '2825-2830');
+          assert(/2011/.test(item.date));
+          assert(!item.DOI);
+          assert(!item.programmingLanguage);
+          console.log('G341_REAL_ARTICLE_FIXTURE: 1 article;16 authors;JMLR12:2825-2830;2011;no DOI;8 old cases retained');
+          NODE
+      - name: Refresh translator metadata with the official tool
+        working-directory: translators
+        run: node .bin/update-metadata.mjs GitHub.js
+      - name: Official translator lint
+        working-directory: translators
+        run: npm run lint -- GitHub.js
+      - name: Official complete browser-host translator tests
+        working-directory: translators
+        run: |
+          set +e
+          node .bin/run-tests.mjs GitHub.js --json > g341-full-results.json
+          result=$?
+          cat g341-full-results.json
+          exit "$result"
+      - name: Require actual GitHub full-host coverage
+        working-directory: translators
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const assert = require('node:assert/strict');
+          const raw = fs.readFileSync('g341-full-results.json', 'utf8');
+          const knownServerLine = /^Translator server is running on http:\/\/localhost:8085\/\r?\n/;
+          assert(knownServerLine.test(raw), 'Expected the actual official server stdout prefix');
+          const results = JSON.parse(raw.replace(knownServerLine, ''));
+          const result = results['a7747ba7-42c6-4a22-9415-1dafae6262a9'];
+          assert(result, 'The actual GitHub translator result must exist');
+          const message = result.message;
+          assert(/Running 9 tests? for/.test(message), 'All 9 actual fixtures must run');
+          const succeeded = message.match(/(?:^|\n)\s*Test \d+: succeeded\b/g) || [];
+          assert.equal(succeeded.length, 9);
+          assert(!/Test \d+: failed|Tests? (?:failed|not run)/i.test(message));
+          for (const [id, value] of Object.entries(results)) {
+            assert(!/Test \d+: failed/i.test(value.message || ''), `Dependency failure: ${id}`);
+          }
+          console.log('G341_ACTUAL_HOST_COVERAGE: GitHub9/9 succeeded;no returned dependency failure');
+          NODE
+      - name: Preserve public verification output in the job log
+        if: always()
+        working-directory: translators
+        run: |
+          git diff -- GitHub.js
+          if [ -f g341-generated-fixture.json ]; then cat g341-generated-fixture.json; fi
+          if [ -f g341-full-results.json ]; then cat g341-full-results.json; fi
+          node --version
+          npm --version
+          if [ -d .ci/pull-request-check/connectors/.git ]; then
+            git -C .ci/pull-request-check/connectors rev-parse HEAD
+            git -C .ci/pull-request-check/connectors submodule status
+          fi

@@ -1,0 +1,17 @@
+--- a/GitHub.js
++++ b/GitHub.js
+@@ -170,6 +170,14 @@
+ 	translator.setString(bibtex);
+ 	
+ 	translator.setHandler("itemDone", function (obj, bibItem) {
++		// A preferred paper citation is a bibliographic item, not repository software.
++		if (bibItem.itemType === "journalArticle") {
++			bibItem.attachments = [];
++			delete bibItem.itemID;
++			bibItem.complete();
++			return;
++		}
++
+ 		let path = item.title;
+ 		
+ 		delete bibItem.itemType;
