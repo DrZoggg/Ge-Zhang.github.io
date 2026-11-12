@@ -25774,6 +25774,63 @@
               ]
             }
           ]
+        },
+        {
+          "id": "multiomics-subtypes-4",
+          "question": "What shared genes and inflammatory network hubs emerge across independent public COVID-19 and heart-failure transcriptomes?",
+          "question_zh": "独立公开数据集中的新冠与心衰转录组呈现哪些共有基因和炎症网络枢纽？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-ehf2-14003",
+              "question_ids": [
+                "doi-10-1002-ehf2-14003--qa-1",
+                "doi-10-1002-ehf2-14003--qa-2",
+                "doi-10-1002-ehf2-14003--qa-3"
+              ],
+              "preview_question_id": "doi-10-1002-ehf2-14003--qa-3",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html",
+              "doi": "10.1002/ehf2.14003",
+              "doi_url": "https://doi.org/10.1002/ehf2.14003",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#cite-this-paper",
+              "finding_previews": [
+                {
+                  "id": "KF3",
+                  "claim": "PPI topology prioritized ten inflammatory hub genes and a four-gene core of TLR4, TLR2, IL10 and STAT3.",
+                  "context": "Hub status reflects network centrality and algorithmic prioritization, not proof that these genes cause either disease.",
+                  "evidence": [
+                    {
+                      "label": "initial PPI network",
+                      "value": "62 nodes and 655 edges"
+                    },
+                    {
+                      "label": "ten hub genes",
+                      "value": "TLR4, TLR2, CXCL8, IL10, STAT3, IL1B, TLR1, TP53, CCL20 and CXCL10"
+                    },
+                    {
+                      "label": "hub interaction network",
+                      "value": "59 nodes and 649 edges"
+                    },
+                    {
+                      "label": "seven-algorithm core",
+                      "value": "TLR4, TLR2, IL10 and STAT3"
+                    },
+                    {
+                      "label": "MCODE module 1",
+                      "value": "29 nodes, 381 edges, score 27.214; includes XCL1, CCL4 and CCL11"
+                    },
+                    {
+                      "label": "MCODE module 2",
+                      "value": "23 nodes, 65 edges, score 11.818"
+                    }
+                  ],
+                  "source_locator": "Results: Protein-protein interaction analysis; Figures 4-5; Supplementary Tables S3-S4",
+                  "source": "data/deep_geo/doi-10-1002-ehf2-14003.json#/key_findings/2",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ehf2-14003.html#kf3"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

@@ -776,6 +776,25 @@
               ]
             }
           ]
+        },
+        {
+          "id": "multiomics-subtypes-4",
+          "question": "What shared genes and inflammatory network hubs emerge across independent public COVID-19 and heart-failure transcriptomes?",
+          "question_zh": "独立公开数据集中的新冠与心衰转录组呈现哪些共有基因和炎症网络枢纽？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-ehf2-14003",
+              "question_ids": [
+                "doi-10-1002-ehf2-14003--qa-1",
+                "doi-10-1002-ehf2-14003--qa-2",
+                "doi-10-1002-ehf2-14003--qa-3"
+              ],
+              "preview_question_id": "doi-10-1002-ehf2-14003--qa-3",
+              "preview_finding_ids": [
+                "KF3"
+              ]
+            }
+          ]
         }
       ]
     },
