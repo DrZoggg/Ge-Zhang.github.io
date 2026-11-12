@@ -25046,6 +25046,14 @@
       "url": "https://www.sciencedirect.com/science/article/pii/S0741521409025750#sec1",
       "year": 2010,
       "locator": "Methods: development and external validation cohorts; Results: Prognostic model; Figures 2 and 4. An independent infrarenal EVAR trial cohort was used to assess discrimination and calibration for a model developed in high-risk patients."
+    },
+    {
+      "id": "microbiome-cv-multimodal-review-2026",
+      "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
+      "doi": "10.1097/re9.0000000000000037",
+      "url": "https://doi.org/10.1097/re9.0000000000000037",
+      "year": 2026,
+      "locator": "Narrative-review Methods-planning context: modality alignment/completeness and early, late or intermediate/hybrid fusion (publisher-hosted accepted manuscript, Table 2, PDF p. 66; section 5.2, p. 20); clinical, unimodal and simple multimodal baselines on shared data partitions (sections 5.2-5.3, pp. 20-21)."
     }
   ],
   "intents": [
@@ -25612,7 +25620,8 @@
         "hf-omics-proteomics-review-2026",
         "onco-agent-onco-s1",
         "onco-agent-onco-s3",
-        "pah-endmt-review-2021"
+        "pah-endmt-review-2021",
+        "microbiome-cv-multimodal-review-2026"
       ],
       "focused_queries": [
         {
