@@ -26237,6 +26237,70 @@
               "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#cite-this-paper"
             }
           ]
+        },
+        {
+          "id": "vascular-biomaterials-engineering-4",
+          "question": "How can biomaterial studies compare extracellular-vesicle loading, release, uptake and vascular-cell responses?",
+          "question_zh": "生物材料研究如何比较细胞外囊泡的负载、释放、摄取与血管细胞反应？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-jma-2023-05-007",
+              "question_ids": [
+                "doi-10-1016-j-jma-2023-05-007--qa-3",
+                "doi-10-1016-j-jma-2023-05-007--qa-4"
+              ],
+              "preview_question_id": "doi-10-1016-j-jma-2023-05-007--qa-4",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html",
+              "doi": "10.1016/j.jma.2023.05.007",
+              "doi_url": "https://doi.org/10.1016/j.jma.2023.05.007",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#cite-this-paper",
+              "finding_previews": [
+                {
+                  "id": "KF5",
+                  "claim": "Exosome-associated signals were observed in cultured endothelial uptake and release assays.",
+                  "context": "Fluorescence overlap with cellular organelles indicates reported localization, not a proven cargo-mediated causal pathway or controlled therapeutic dose.",
+                  "evidence": [
+                    {
+                      "label": "Release window",
+                      "value": "Approximately 5–7 days in the tested coating system"
+                    },
+                    {
+                      "label": "Cellular colocalization",
+                      "value": "Reported overlap with lysosomal and mitochondrial fluorescent markers"
+                    },
+                    {
+                      "label": "Interpretation",
+                      "value": "Exploratory uptake/localization observations"
+                    }
+                  ],
+                  "source_locator": "Publisher VOR PDF: Methods §§2.10–2.11, Results §3.8 Release and uptake of exosomes, Figure 11; PDF pp.5–6 and 14–15 (printed 4992–4993 and 5001–5002).",
+                  "source": "data/deep_geo/doi-10-1016-j-jma-2023-05-007.json#/key_findings/4",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html#kf5"
+                }
+              ]
+            },
+            {
+              "work_id": "doi-10-1016-j-colsurfb-2026-116261",
+              "question_ids": [],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html",
+              "doi": "10.1016/j.colsurfb.2026.116261",
+              "doi_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html#limited-evidence",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html#cite-this-paper",
+              "author_note_previews": [
+                {
+                  "heading": "Vascular-interface contribution",
+                  "text": "ZFP36-engineered vesicles were immobilized on polydopamine/hyaluronic-acid-modified NiTi (NPH). The study used nanoparticle tracking analysis (NTA) to measure particle concentrations in the remaining suspension and three PBS washes. It subtracted the recovered particle count from the initial input count, then divided by that input count to estimate 72.80% ± 0.83% loading (mean ± SD, n=3). Over 14 days in PBS at 37 °C, it measured released particles by NTA after collecting and replacing the medium at each time point. Cumulative release was expressed relative to the estimated number initially immobilized. Under RSL3, human umbilical vein endothelial cells (HUVECs) were cultured directly on bare NiTi, NPH without vesicles, NPH with control vesicles and NPH with engineered vesicles. The direct-contact assay also included bare NiTi without RSL3. The separate rat femoral-artery injury model compared bare, NPH and engineered-vesicle filaments. The engineered-vesicle filaments supported endothelial recovery and reduced local inflammatory and lipid-peroxidation-associated signals.",
+                  "source_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
+                  "source_locator": "Sections 2.9–2.11, page 3 (particle counts, release denominator and comparison groups); Figure 5G–H and J–M, page 9 (loading, release and endothelial assays); Figure 6, page 11 and Section 3.6, pages 11–12 (rat tissue findings).",
+                  "reviewed_on": "2026-11-04",
+                  "source_record": "data/limited_evidence.json#/papers/10.1016~1j.colsurfb.2026.116261"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
