@@ -1103,6 +1103,32 @@
               "preview_question_id": "doi-10-1016-j-jma-2023-05-007--qa-3"
             }
           ]
+        },
+        {
+          "id": "vascular-biomaterials-engineering-4",
+          "question": "How can biomaterial studies compare extracellular-vesicle loading, release, uptake and vascular-cell responses?",
+          "question_zh": "生物材料研究如何比较细胞外囊泡的负载、释放、摄取与血管细胞反应？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-jma-2023-05-007",
+              "question_ids": [
+                "doi-10-1016-j-jma-2023-05-007--qa-3",
+                "doi-10-1016-j-jma-2023-05-007--qa-4"
+              ],
+              "preview_question_id": "doi-10-1016-j-jma-2023-05-007--qa-4",
+              "preview_finding_ids": [
+                "KF5"
+              ]
+            },
+            {
+              "work_id": "doi-10-1016-j-colsurfb-2026-116261",
+              "question_ids": [],
+              "preview_question_id": null,
+              "preview_note_headings": [
+                "Vascular-interface contribution"
+              ]
+            }
+          ]
         }
       ]
     },
