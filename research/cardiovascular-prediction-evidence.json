@@ -993,7 +993,7 @@
             "endpoint_horizon": "All-cause mortality; external evaluation at 1, 2, 3 and 4 years",
             "model_implementation": "Published 12-predictor AIHFLevel as reported for external evaluation; exact frozen implementation archive NR here",
             "data_independence": "BIDMC is independent of CRCCD; Discovery, Replication and Meta are separate evaluations.",
-            "performance_evidence": "Source Figure 6d: time-dependent AUC; 6e: calibration; 6f: decision curves; 6m: C-index/IBS comparison. Extract uncertainty and horizon with any value",
+            "performance_evidence": "Independent BIDMC cohort: 1-year time-dependent AUC 0.788; uncertainty/CI: NR in this extraction. Source Figure 6d: time-dependent AUC; 6e: calibration; 6f: decision curves; 6m: C-index/IBS comparison. Extract uncertainty and horizon with each additional value.",
             "updating_status": "Any separate BIDMC recalibration/update is NR in this extraction. A calibration plot alone is an assessment, not proof of recalibration",
             "comparison_decision": "Use as an independent external-prognosis example across 1–4 years. Assess aligned cohorts, tasks, times and implementations before a cross-paper comparison.",
             "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/",
