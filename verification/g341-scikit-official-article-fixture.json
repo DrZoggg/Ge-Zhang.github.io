@@ -1,0 +1,104 @@
+{
+	"type": "web",
+	"url": "https://github.com/scikit-learn/scikit-learn",
+	"detectedItemType": "computerProgram",
+	"items": [
+		{
+			"itemType": "journalArticle",
+			"title": "Scikit-learn: Machine Learning in Python",
+			"creators": [
+				{
+					"firstName": "Fabian",
+					"lastName": "Pedregosa",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Gaël",
+					"lastName": "Varoquaux",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Alexandre",
+					"lastName": "Gramfort",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Vincent",
+					"lastName": "Michel",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Bertrand",
+					"lastName": "Thirion",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Olivier",
+					"lastName": "Grisel",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Mathieu",
+					"lastName": "Blondel",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Peter",
+					"lastName": "Prettenhofer",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Ron",
+					"lastName": "Weiss",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Vincent",
+					"lastName": "Dubourg",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Jake",
+					"lastName": "Vanderplas",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Alexandre",
+					"lastName": "Passos",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "David",
+					"lastName": "Cournapeau",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Matthieu",
+					"lastName": "Brucher",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Matthieu",
+					"lastName": "Perrot",
+					"creatorType": "author"
+				},
+				{
+					"firstName": "Édouard",
+					"lastName": "Duchesnay",
+					"creatorType": "author"
+				}
+			],
+			"date": "2011",
+			"libraryCatalog": "GitHub",
+			"pages": "2825–2830",
+			"publicationTitle": "Journal of Machine Learning Research",
+			"shortTitle": "Scikit-learn",
+			"url": "https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html",
+			"volume": "12",
+			"attachments": [],
+			"tags": [],
+			"notes": [],
+			"seeAlso": []
+		}
+	]
+}
