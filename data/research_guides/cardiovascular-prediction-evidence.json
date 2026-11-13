@@ -368,11 +368,11 @@
             "endpoint_horizon": "Death and hospitalization outcomes kept separate. Model-predicted versus observed 1- and 3-year survival assessed; exact Table 6 C-statistic horizon NR here",
             "model_implementation": "Risk Models applies beta coefficients from each original derivation cohort to calculate the scores",
             "data_independence": "External HFpEF cohort relative to model development; shared complete-case comparison includes 350 patients.",
-            "performance_evidence": "Table 6: discrimination; Figures 4–5: calibration; Statistical Analysis and Results: 1-/3-year survival. Do not substitute mean follow-up for a prediction horizon",
+            "performance_evidence": "Table 6, death outcome in the shared 350-patient complete-case sample: MAGGIC C-statistic 0.74 (95% CI 0.68–0.80), SHFM 0.72 (95% CI 0.67–0.78). The paper reports all C-statistic comparisons as nonsignificant (P>0.05). Figures 4–5 provide calibration; 1-/3-year survival is assessed separately. The fixed Table 6 horizon and exact C-statistic estimator remain NR in this extraction.",
             "updating_status": "Original-score application reported; Cox score-association and added-BNP analyses are separate analyses, not evidence that every result is unchanged original absolute-risk validation",
-            "comparison_decision": "Use the shared 350-patient analysis for the paired score comparison. Compare applicability and reporting with the advanced-HF example as a distinct population.",
+            "comparison_decision": "The paired death-outcome C-statistics are MAGGIC 0.74 (95% CI 0.68–0.80) and SHFM 0.72 (0.67–0.78); the reported comparison is nonsignificant (P>0.05). Use this shared 350-patient analysis for the score comparison, keeping its unresolved metric horizon separate from the reported 1-/3-year survival assessment. The advanced-HF example is a distinct population.",
             "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6474968/",
-            "source_locator": "Methods Study Population/Outcomes/Risk Models/Statistical Analysis (sec0011/0015/0016/0017); Results complete-case paragraph (sec0018); Table 6, Figures 4–5"
+            "source_locator": "Methods Study Population/Outcomes/Risk Models/Statistical Analysis (sec0011/0015/0016/0017); Results complete-case paragraph (sec0018); Table 6, Figures 4–5; Table 6 Death row and footnotes a/b (jah33502-note-0009/0010): paired n, C-statistics, 95% CIs and nonsignificant comparison"
           },
           "source_ids": [
             "maggic-hfpef-validation-2018",
