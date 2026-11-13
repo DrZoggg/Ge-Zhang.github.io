@@ -25066,6 +25066,14 @@
       "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full",
       "year": 2021,
       "locator": "One prospective, open-label, single-center, single-arm phase II study of apatinib monotherapy after gemcitabine-based treatment failure in advanced cholangiocarcinoma. Results: Patients' Characteristics; Efficacy of Apatinib Treatment; Safety, Table 3. Response and safety populations are distinct; there is no concurrent comparator."
+    },
+    {
+      "id": "precision-oncology-molecular-omics-review-2024",
+      "title": "Omics-based molecular classifications empowering in precision oncology",
+      "doi": "10.1007/s13402-023-00912-8",
+      "url": "https://doi.org/10.1007/s13402-023-00912-8",
+      "year": 2024,
+      "locator": "Review context for multi-omics molecular classification in precision oncology: genomic, epigenomic, transcriptomic and proteomic biomarker layers (section 2.1, subsections 2.1.1-2.1.3; Fig. 1A-D); integrated analysis and proteogenomics (section 3.1.4); spatial omics (section 3.1.5; Fig. 3)."
     }
   ],
   "intents": [
@@ -25633,7 +25641,8 @@
         "onco-agent-onco-s1",
         "onco-agent-onco-s3",
         "pah-endmt-review-2021",
-        "microbiome-cv-multimodal-review-2026"
+        "microbiome-cv-multimodal-review-2026",
+        "precision-oncology-molecular-omics-review-2024"
       ],
       "focused_queries": [
         {
