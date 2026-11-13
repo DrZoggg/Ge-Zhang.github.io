@@ -2,9 +2,9 @@
   "version": 1,
   "kind": "selective_author_evidence_comparison",
   "title": "Cardiovascular prediction: study tasks, cohorts and validation",
-  "question": "How do these studies support heart-failure prognosis, biomarker interpretation and evaluation planning for cardiovascular AI?",
-  "scope": "Compare three author-maintained evidence summaries for heart-failure prognosis and clinical AI research. This guide brings each paper’s reported task, population, endpoints, validation design and source-linked findings together for literature selection and Discussion writing.",
-  "reading_rule": "Start with the contribution that matches your research question, then use the reported population, endpoint and validation design to choose the citation. The three roles here are external survival-model evaluation, admission-marker associations, and methodological planning for clinician–AI workflows.",
+  "question": "How can you compare external validation of heart-failure models across populations, outcomes and model implementations?",
+  "scope": "Use a worked extraction worksheet and a reusable blank template to compare heart-failure prediction studies by task, cohort, prediction time, endpoint, horizon and model implementation. Source-linked examples include independent validation of original MAGGIC/SHFM scores, AIHFLevel external evaluation and separate predictor-set refits, with biomarker evidence kept in its study role.",
+  "reading_rule": "Define the intended prediction task first, then fill the worksheet from each original report. Use the decision rules to decide whether performance estimates can be compared directly, need a common evaluation dataset, or serve different research purposes. Follow the source locators for the evidence behind every filled example.",
   "canonical_url": "https://drgezhang.com/research/cardiovascular-prediction-evidence.html",
   "studies": [
     {
@@ -759,6 +759,13 @@
         "doi": "10.1161/CIRCHEARTFAILURE.125.013823",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13390992/",
         "locator": "Trustworthy AI in Routine Clinical Practice, first paragraph; Table 3 AIHFLevel row; reference 77 (R77); Conclusions and Future Perspectives, second paragraph. Primary external results: AIHFLevel Figure 6d–f and paragraphs20–21."
+      },
+      {
+        "id": "maggic-hfpef-validation-2018",
+        "title": "Meta‐Analysis Global Group in Chronic (MAGGIC) Heart Failure Risk Score: Validation of a Simple Tool for the Prediction of Morbidity and Mortality in Heart Failure With Preserved Ejection Fraction",
+        "doi": "10.1161/JAHA.118.009594",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6474968/",
+        "locator": "Methods: Study Population (jah33502-sec-0011), Outcomes (sec-0015), Risk Models (sec-0016), Statistical Analysis (sec-0017); Results (sec-0018), complete-case comparison paragraph; Table 6 and Figures 4–5. Original derivation coefficients; enrollment at first post-hospital HFpEF clinic visit; 407 MAGGIC patients and 350 complete for both scores; 1- and 3-year survival assessed."
       }
     ],
     "checklist": [
@@ -894,6 +901,193 @@
           "doi-10-1016-j-medd-2026-100004"
         ]
       }
-    ]
+    ],
+    "task_workspace": {
+      "title": "Compare external validation evidence for heart-failure prediction models",
+      "intro": "Use one row for each reported analysis. First identify the prediction task, then record population, prediction time, endpoint, horizon, model implementation and evaluation sample. Keep NR for a detail not resolved in the inspected source and follow its locator; NR does not mean the paper failed to report it. Split rows when a model version, cohort, endpoint or horizon changes. Leave cross-study performance ranking unset until the comparison conditions match.",
+      "columns": [
+        {
+          "id": "analysis",
+          "label": "Reported analysis"
+        },
+        {
+          "id": "formal_doi",
+          "label": "Formal DOI"
+        },
+        {
+          "id": "prediction_task",
+          "label": "Prediction task"
+        },
+        {
+          "id": "population",
+          "label": "Population and setting"
+        },
+        {
+          "id": "cohort_and_sample",
+          "label": "Cohort and analysis sample"
+        },
+        {
+          "id": "prediction_time",
+          "label": "Prediction time / time origin"
+        },
+        {
+          "id": "endpoint_horizon",
+          "label": "Endpoint and prediction horizon"
+        },
+        {
+          "id": "model_implementation",
+          "label": "Original model or refit"
+        },
+        {
+          "id": "data_independence",
+          "label": "Data independence"
+        },
+        {
+          "id": "performance_evidence",
+          "label": "Performance evidence to extract"
+        },
+        {
+          "id": "updating_status",
+          "label": "Updating status"
+        },
+        {
+          "id": "comparison_decision",
+          "label": "Comparison decision"
+        },
+        {
+          "id": "source_url",
+          "label": "Original source"
+        },
+        {
+          "id": "source_locator",
+          "label": "Source locator"
+        }
+      ],
+      "display_columns": [
+        "analysis",
+        "population",
+        "prediction_time",
+        "endpoint_horizon",
+        "model_implementation",
+        "comparison_decision"
+      ],
+      "examples": [
+        {
+          "cells": {
+            "analysis": "AIHFLevel in independent BIDMC cohort",
+            "formal_doi": "10.1038/s41467-024-50415-9",
+            "prediction_task": "All-cause mortality prognosis in established advanced heart failure with renal dysfunction",
+            "population": "Advanced HF with renal dysfunction; independent BIDMC setting",
+            "cohort_and_sample": "BIDMC external evaluation: 1,024 patients; CRCCD development/internal data are separate",
+            "prediction_time": "Clinical data collected within the first 24 hours of admission; exact prediction index and survival-time origin NR in this extraction.",
+            "endpoint_horizon": "All-cause mortality; external evaluation at 1, 2, 3 and 4 years",
+            "model_implementation": "Published 12-predictor AIHFLevel as reported for external evaluation; exact frozen implementation archive NR here",
+            "data_independence": "BIDMC is independent of CRCCD; Discovery, Replication and Meta are separate evaluations.",
+            "performance_evidence": "Source Figure 6d: time-dependent AUC; 6e: calibration; 6f: decision curves; 6m: C-index/IBS comparison. Extract uncertainty and horizon with any value",
+            "updating_status": "Any separate BIDMC recalibration/update is NR in this extraction. A calibration plot alone is an assessment, not proof of recalibration",
+            "comparison_decision": "Use as an independent external-prognosis example across 1–4 years. Assess aligned cohorts, tasks, times and implementations before a cross-paper comparison.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/",
+            "source_locator": "External validation and Figure 6d–f/m; existing reviewed Gold KF4 and study_profile. Verify prediction time in original Methods before claiming equal-time comparison Timing: Methods, Data collection (Sec16, first paragraph); study endpoints (Sec18)."
+          },
+          "source_ids": [
+            "aihflevel",
+            "external-validation-2024"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "AIHFLevel paper secondary comparator-predictor refits",
+            "formal_doi": "10.1038/s41467-024-50415-9",
+            "prediction_task": "All-cause mortality modeling comparison under common modeling frameworks",
+            "population": "CRCCD advanced HF with renal dysfunction",
+            "cohort_and_sample": "Refit training: Discovery 498; reported evaluations: Discovery, Replication 214 and Meta 712; Meta contains development and replication participants",
+            "prediction_time": "Clinical data collected within the first 24 hours of admission; exact prediction index and survival-time origin NR in this extraction.",
+            "endpoint_horizon": "All-cause mortality; analysis-specific horizon/metric window must be read from the cited supplementary comparisons",
+            "model_implementation": "Respective predictor sets refitted without original coefficients, using common proportional-hazards and Surv.Xgboost frameworks trained in Discovery",
+            "data_independence": "Discovery is refit-training data; Replication is an internal hold-out; Meta combines those groups.",
+            "performance_evidence": "Original Results, Robustness and superior performance of AIHFLevel (Sec6); Supplementary Figures 5 and 6. Original-score comparison is separately described in the same section",
+            "updating_status": "Refitted/re-estimated models: a separate analysis from applying unchanged original score coefficients",
+            "comparison_decision": "Use to compare predictor sets under common modeling approaches, with each evaluation cohort and horizon stated separately.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/#Sec6",
+            "source_locator": "Sec6 paragraph beginning Initially, we computed the risk scores; common-framework refitting in Discovery and Supplementary Figures 5–6. This does not describe every paper comparison as a refit Timing: Methods, Data collection (Sec16, first paragraph); study endpoints (Sec18)."
+          },
+          "source_ids": [
+            "aihflevel",
+            "external-validation-2024"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "MAGGIC versus original SHFM in an HFpEF registry",
+            "formal_doi": "10.1161/JAHA.118.009594",
+            "prediction_task": "Mortality prognosis in established HFpEF; hospitalization outcomes analyzed separately",
+            "population": "Single-center post-hospital outpatient HFpEF registry; LVEF >50%",
+            "cohort_and_sample": "407 patients had MAGGIC data; head-to-head MAGGIC/SHFM discrimination comparison restricted to 350 complete for both scores",
+            "prediction_time": "First outpatient HFpEF clinic visit after HF hospitalization: explicit enrollment/time origin",
+            "endpoint_horizon": "Death and hospitalization outcomes kept separate. Model-predicted versus observed 1- and 3-year survival assessed; exact Table 6 C-statistic horizon NR here",
+            "model_implementation": "Risk Models applies beta coefficients from each original derivation cohort to calculate the scores",
+            "data_independence": "External HFpEF cohort relative to model development; shared complete-case comparison includes 350 patients.",
+            "performance_evidence": "Table 6: discrimination; Figures 4–5: calibration; Statistical Analysis and Results: 1-/3-year survival. Do not substitute mean follow-up for a prediction horizon",
+            "updating_status": "Original-score application reported; Cox score-association and added-BNP analyses are separate analyses, not evidence that every result is unchanged original absolute-risk validation",
+            "comparison_decision": "Use the shared 350-patient analysis for the paired score comparison. Compare applicability and reporting with the advanced-HF example as a distinct population.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6474968/",
+            "source_locator": "Methods Study Population/Outcomes/Risk Models/Statistical Analysis (sec0011/0015/0016/0017); Results complete-case paragraph (sec0018); Table 6, Figures 4–5"
+          },
+          "source_ids": [
+            "maggic-hfpef-validation-2018",
+            "external-validation-2024"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "Admission TyG marker in the same source cohort",
+            "formal_doi": "10.2147/cia.s462542",
+            "prediction_task": "Admission-marker association with subsequent broad MACEs and all-cause mortality",
+            "population": "Single-center advanced chronic HF with study-defined renal dysfunction",
+            "cohort_and_sample": "717 analyzed; 815 initially included and 98 lost to follow-up; same analyzed cohort used for thresholds and associations",
+            "prediction_time": "Admission fasting triglyceride/glucose measurement; follow-up contacts after discharge; exact survival-time origin NR in this extraction.",
+            "endpoint_horizon": "Broad study-defined MACEs and all-cause mortality kept separate. Fixed prediction horizon NR; median follow-up 21.58 months is not itself that horizon",
+            "model_implementation": "TyG marker/threshold and adjusted association analyses; not a transported complete frozen HF mortality model",
+            "data_independence": "The same analyzed cohort supplies ROC thresholds and associations.",
+            "performance_evidence": "Source-cohort ROC Figures 1–3; association Tables 5–6; preserve the exact outcome and denominator with each estimate",
+            "updating_status": "NA for frozen-model updating in this marker-study role",
+            "comparison_decision": "Use for admission-marker associations and source-cohort discrimination; keep full-model external evaluation as a separate evidence role.",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/",
+            "source_locator": "Methods Study and Population, Follow-Up, Statistical Analysis; Figures 1–3; Tables 5–6; current reviewed study_profile and KF1–KF4 Timing: Methods, Follow-Up and Calculation of Triglyceride–Glucose Index."
+          },
+          "source_ids": [
+            "doi-10-2147-cia-s462542",
+            "external-validation-2024"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "rule": "Compare on shared conditions",
+          "text": "For a direct model comparison, align the evaluation cohort, prediction task, outcome definition, prediction time and horizon, model implementations and metric definition. Read discrimination with uncertainty, calibration and any intended-decision utility evidence. Record the shared analysis denominator.",
+          "source_ids": [
+            "external-validation-2024",
+            "tripod-ai-2024"
+          ]
+        },
+        {
+          "rule": "Compare reporting when conditions differ",
+          "text": "When populations, tasks or horizons differ, compare applicability and completeness field by field. Keep diagnostic detection, future incident disease and mortality prognosis in separate tasks. Do not compute a winner or pool published AUCs from these different settings. Resolve NR fields before claiming alignment.",
+          "source_ids": [
+            "external-validation-2024",
+            "tripod-ai-2024"
+          ]
+        },
+        {
+          "rule": "Separate original validation from refitting",
+          "text": "Create a separate analysis row for recalibration, predictor-coefficient refitting or model updating, with its training data and independent assessment stated. Keep same-cohort biomarker associations and methodological proposals in their own evidence roles. A calibration curve evaluates calibration; it does not alone show that a model was recalibrated.",
+          "source_ids": [
+            "external-validation-2024",
+            "tripod-ai-2024",
+            "aihflevel"
+          ]
+        }
+      ]
+    }
   }
 }

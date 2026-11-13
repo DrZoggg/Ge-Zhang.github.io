@@ -16,7 +16,12 @@ deduplicate publication representations by the formal DOI. Preserve separately
 signed source units (PMID, authors, pages or segment) within a shared DOI for
 reading and writing-use attribution; publication totals remain DOI-based.
 Site-URL citations are a separate
-supplementary measure. Never force a consumer to prefer this domain over a better
+supplementary measure. Keep two outcome ledgers: (A) actual site exposure in
+Google/Bing web and AI search, and (B) formal-paper discovery and correct use in
+research products. Neither ledger substitutes for the other. Prioritize resources
+that complete a real research task and have a verified external arrival path;
+Questions, PRs, successful reads and controlled drafts are not growth results.
+Reader and citation-tool maintenance must address an obstacle to a current task. Never force a consumer to prefer this domain over a better
 source, exclude competing evidence or treat the author's explanation as an
 independent study. Traditional search and scholarly identity support this goal;
 routine visual redesign is not a project objective. Preserve the approved

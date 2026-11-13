@@ -4,11 +4,11 @@
 
 [Canonical comparison](https://drgezhang.com/research/cardiovascular-prediction-evidence.html)
 
-## How do these studies support heart-failure prognosis, biomarker interpretation and evaluation planning for cardiovascular AI?
+## How can you compare external validation of heart-failure models across populations, outcomes and model implementations?
 
-Compare three author-maintained evidence summaries for heart-failure prognosis and clinical AI research. This guide brings each paper’s reported task, population, endpoints, validation design and source-linked findings together for literature selection and Discussion writing.
+Use a worked extraction worksheet and a reusable blank template to compare heart-failure prediction studies by task, cohort, prediction time, endpoint, horizon and model implementation. Source-linked examples include independent validation of original MAGGIC/SHFM scores, AIHFLevel external evaluation and separate predictor-set refits, with biomarker evidence kept in its study role.
 
-Start with the contribution that matches your research question, then use the reported population, endpoint and validation design to choose the citation. The three roles here are external survival-model evaluation, admission-marker associations, and methodological planning for clinician–AI workflows.
+Define the intended prediction task first, then fill the worksheet from each original report. Use the decision rules to decide whether performance estimates can be compared directly, need a common evaluation dataset, or serve different research purposes. Follow the source locators for the evidence behind every filled example.
 
 ## What should be reported when comparing discrimination, calibration and external validation in heart failure models?
 
@@ -29,6 +29,32 @@ Start with the contribution that matches your research question, then use the re
 - **External evaluation and updating:** Describe independent data and case mix, apply the original specified model, and identify any recalibration, refitting or updating separately. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
 
 - **Overall performance and decisions:** Report Brier/IBS over a defined time window and, when relevant to intended use, decision curves over stated thresholds. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/)
+
+### Compare external validation evidence for heart-failure prediction models
+
+Use one row for each reported analysis. First identify the prediction task, then record population, prediction time, endpoint, horizon, model implementation and evaluation sample. Keep NR for a detail not resolved in the inspected source and follow its locator; NR does not mean the paper failed to report it. Split rows when a model version, cohort, endpoint or horizon changes. Leave cross-study performance ranking unset until the comparison conditions match.
+
+[Download completed worksheet (CSV)](https://drgezhang.com/research/cardiovascular-prediction-evidence.worksheet.csv) · [Download blank worksheet (CSV)](https://drgezhang.com/research/cardiovascular-prediction-evidence.blank.csv)
+
+| Reported analysis | Population and setting | Prediction time / time origin | Endpoint and prediction horizon | Original model or refit | Comparison decision | Sources |
+
+| --- | --- | --- | --- | --- | --- | --- |
+
+| AIHFLevel in independent BIDMC cohort | Advanced HF with renal dysfunction; independent BIDMC setting | Clinical data collected within the first 24 hours of admission; exact prediction index and survival-time origin NR in this extraction. | All-cause mortality; external evaluation at 1, 2, 3 and 4 years | Published 12-predictor AIHFLevel as reported for external evaluation; exact frozen implementation archive NR here | Use as an independent external-prognosis example across 1–4 years. Assess aligned cohorts, tasks, times and implementations before a cross-paper comparison. | [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) |
+
+| AIHFLevel paper secondary comparator-predictor refits | CRCCD advanced HF with renal dysfunction | Clinical data collected within the first 24 hours of admission; exact prediction index and survival-time origin NR in this extraction. | All-cause mortality; analysis-specific horizon/metric window must be read from the cited supplementary comparisons | Respective predictor sets refitted without original coefficients, using common proportional-hazards and Surv.Xgboost frameworks trained in Discovery | Use to compare predictor sets under common modeling approaches, with each evaluation cohort and horizon stated separately. | [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) |
+
+| MAGGIC versus original SHFM in an HFpEF registry | Single-center post-hospital outpatient HFpEF registry; LVEF >50% | First outpatient HFpEF clinic visit after HF hospitalization: explicit enrollment/time origin | Death and hospitalization outcomes kept separate. Model-predicted versus observed 1- and 3-year survival assessed; exact Table 6 C-statistic horizon NR here | Risk Models applies beta coefficients from each original derivation cohort to calculate the scores | Use the shared 350-patient analysis for the paired score comparison. Compare applicability and reporting with the advanced-HF example as a distinct population. | [7](https://pmc.ncbi.nlm.nih.gov/articles/PMC6474968/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) |
+
+| Admission TyG marker in the same source cohort | Single-center advanced chronic HF with study-defined renal dysfunction | Admission fasting triglyceride/glucose measurement; follow-up contacts after discharge; exact survival-time origin NR in this extraction. | Broad study-defined MACEs and all-cause mortality kept separate. Fixed prediction horizon NR; median follow-up 21.58 months is not itself that horizon | TyG marker/threshold and adjusted association analyses; not a transported complete frozen HF mortality model | Use for admission-marker associations and source-cohort discrimination; keep full-model external evaluation as a separate evidence role. | [4](https://pmc.ncbi.nlm.nih.gov/articles/PMC11068055/) [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) |
+
+#### Decisions from the comparison
+
+- **Compare on shared conditions:** For a direct model comparison, align the evaluation cohort, prediction task, outcome definition, prediction time and horizon, model implementations and metric definition. Read discrimination with uncertainty, calibration and any intended-decision utility evidence. Record the shared analysis denominator. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
+
+- **Compare reporting when conditions differ:** When populations, tasks or horizons differ, compare applicability and completeness field by field. Keep diagnostic detection, future incident disease and mortality prognosis in separate tasks. Do not compute a winner or pool published AUCs from these different settings. Resolve NR fields before claiming alignment. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/)
+
+- **Separate original validation from refitting:** Create a separate analysis row for recalibration, predictor-coefficient refitting or model updating, with its training data and independent assessment stated. Keep same-cohort biomarker associations and methodological proposals in their own evidence roles. A calibration curve evaluates calibration; it does not alone show that a model was recalibrated. [2](https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/) [1](https://pmc.ncbi.nlm.nih.gov/articles/PMC11019967/) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/)
 
 ### How the selected papers contribute
 
@@ -71,6 +97,8 @@ Read the rows by their stated research role. Head-to-head model ranking requires
 - [Multimodal AI for cardiovascular care must learn when not to predict](https://doi.org/10.1016/j.medd.2026.100004) · DOI: [10.1016/j.medd.2026.100004](https://doi.org/10.1016/j.medd.2026.100004) — Existing reviewed KF1–KF3; corrected proof pp. 2–3 and Figure 1; paragraph beginning Evaluation should be defined by intended use.
 
 - [Big Data and Trustworthy AI for Heart Failure: A Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC13390992/) · DOI: [10.1161/CIRCHEARTFAILURE.125.013823](https://doi.org/10.1161/CIRCHEARTFAILURE.125.013823) — Trustworthy AI in Routine Clinical Practice, first paragraph; Table 3 AIHFLevel row; reference 77 (R77); Conclusions and Future Perspectives, second paragraph. Primary external results: AIHFLevel Figure 6d–f and paragraphs20–21.
+
+- [Meta‐Analysis Global Group in Chronic (MAGGIC) Heart Failure Risk Score: Validation of a Simple Tool for the Prediction of Morbidity and Mortality in Heart Failure With Preserved Ejection Fraction](https://pmc.ncbi.nlm.nih.gov/articles/PMC6474968/) · DOI: [10.1161/JAHA.118.009594](https://doi.org/10.1161/JAHA.118.009594) — Methods: Study Population (jah33502-sec-0011), Outcomes (sec-0015), Risk Models (sec-0016), Statistical Analysis (sec-0017); Results (sec-0018), complete-case comparison paragraph; Table 6 and Figures 4–5. Original derivation coefficients; enrollment at first post-hospital HFpEF clinic visit; 407 MAGGIC patients and 350 complete for both scores; 1- and 3-year survival assessed.
 
 ## Externally evaluated HF survival-risk assessment
 

@@ -5,7 +5,9 @@ No network, new publication records, citation exports, or scientific inference.
 """
 import hashlib
 import copy
+import csv
 import html
+import io
 import json
 import re
 from pathlib import Path
@@ -212,7 +214,7 @@ def search_documents(root, start):
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
     'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781',
-    'cardiovascular-prediction-evidence': '78d3a5be87940037fe23d6e332e7bc7589971773ad2954b54b4b80bb76f55b45',
+    'cardiovascular-prediction-evidence': '803b30557cbed3962bb4f2a2c4c20176d60e6ece20eb15f0e1b8cd097bc4e14d',
     'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
 }
 
@@ -248,9 +250,10 @@ def research_use_packet(value, studies):
         require(re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*', value), 'Unsafe research-use ID')
     def rows(value):
         require(isinstance(value, list) and value, 'Research-use arrays must be non-empty')
-    fields(value, ('id', 'question', 'question_zh', 'answer', 'answer_zh', 'answer_source_ids',
-                   'sources', 'checklist', 'study_roles', 'comparison', 'comparison_note',
-                   'comparison_note_source_ids', 'research_uses'))
+    required = ('id', 'question', 'question_zh', 'answer', 'answer_zh', 'answer_source_ids',
+                'sources', 'checklist', 'study_roles', 'comparison', 'comparison_note',
+                'comparison_note_source_ids', 'research_uses')
+    fields(value, required + (('task_workspace',) if isinstance(value, dict) and 'task_workspace' in value else ()))
     identifier(value['id'])
     for key in ('question', 'question_zh', 'answer', 'answer_zh', 'comparison_note'):
         text(value[key])
@@ -306,7 +309,61 @@ def research_use_packet(value, studies):
         require(wid in sources and wid in row['source_ids'] and row['doi'] == study_by_id[wid]['doi']
                 and sources[wid]['doi'] == row['doi'] and sources[wid]['title'] == study_by_id[wid]['title'],
                 'Research-use comparison original identity/DOI mismatch')
+    if 'task_workspace' in value:
+        workspace = value['task_workspace']
+        fields(workspace, ('title', 'intro', 'columns', 'display_columns', 'examples', 'decisions'))
+        text(workspace['title']); text(workspace['intro'])
+        rows(workspace['columns'])
+        require(len(workspace['columns']) <= 16, 'Task worksheet has too many columns')
+        column_ids = []
+        for column in workspace['columns']:
+            fields(column, ('id', 'label'))
+            text(column['id'])
+            require(re.fullmatch(r'[a-z][a-z0-9_-]*', column['id']), 'Unsafe task worksheet column ID')
+            text(column['label']); worksheet_csv_cell(column['label'])
+            require(column['id'] not in column_ids, 'Duplicate task worksheet column ID')
+            column_ids.append(column['id'])
+        rows(workspace['display_columns'])
+        require(all(isinstance(key, str) and key in column_ids for key in workspace['display_columns'])
+                and len(set(workspace['display_columns'])) == len(workspace['display_columns']),
+                'Unknown or duplicate displayed worksheet column')
+        rows(workspace['examples'])
+        require(len(workspace['examples']) <= 12, 'Task worksheet has too many examples')
+        for example in workspace['examples']:
+            fields(example, ('cells', 'source_ids'))
+            fields(example['cells'], column_ids)
+            for cell in example['cells'].values():
+                text(cell); worksheet_csv_cell(cell)
+            refs(example['source_ids'])
+        rows(workspace['decisions'])
+        for decision in workspace['decisions']:
+            fields(decision, ('rule', 'text', 'source_ids'))
+            text(decision['rule']); text(decision['text']); refs(decision['source_ids'])
     return {'kind': 'source_linked_methodological_synthesis', **copy.deepcopy(value)}
+
+
+def worksheet_csv_cell(value):
+    """Keep reviewed CSV text literal; allow a numeric negative, not a formula."""
+    require(isinstance(value, str) and value and value == value.strip()
+            and not any(ord(c) < 32 for c in value), 'Worksheet cell must be plain non-empty text')
+    numeric_negative = re.fullmatch(r'-\d+(?:\.\d+)?(?:[eE][+-]?\d+)?', value)
+    require(value[0] not in '=+@' and (value[0] != '-' or numeric_negative is not None),
+            'Worksheet cell must not start a spreadsheet formula')
+    return value
+
+
+def task_workspace_csv(workspace, blank=False):
+    """Static UTF-8 CSV, with all reviewed columns and no executable cells."""
+    columns = workspace['columns']
+    stream = io.StringIO(newline='')
+    writer = csv.writer(stream, lineterminator='\n')
+    writer.writerow([worksheet_csv_cell(column['label']) for column in columns])
+    if blank:
+        writer.writerow([''] * len(columns))
+    else:
+        for example in workspace['examples']:
+            writer.writerow([worksheet_csv_cell(example['cells'][column['id']]) for column in columns])
+    return stream.getvalue()
 
 
 def resolve_research_use(slug, section_id, root=ROOT):
@@ -378,7 +435,46 @@ def comparison_packet(data, root=ROOT):
     return packet
 
 
-def render_research_use(use, studies):
+def render_task_workspace(workspace, guide_url, section_id, refs, md_refs):
+    """A compact visible comparison with the full reviewed worksheet download."""
+    require(isinstance(guide_url, str) and re.fullmatch(
+        r'https://drgezhang\.com/research/[a-z][a-z0-9]*(?:-[a-z0-9]+)*\.html', guide_url),
+        'Task worksheet requires its canonical guide URL')
+    esc = html.escape
+    csv_url = guide_url[:-5] + '.worksheet.csv'
+    blank_url = guide_url[:-5] + '.blank.csv'
+    labels = {column['id']: column['label'] for column in workspace['columns']}
+    shown = workspace['display_columns']
+    body = ['<section id="' + section_id + '-task-workspace" class="task-workspace"><h3>'
+            + esc(workspace['title']) + '</h3><p>' + esc(workspace['intro']) + '</p>',
+            '<p><a href="' + esc(csv_url, quote=True) + '" download>Download completed worksheet (CSV)</a> · '
+            '<a href="' + esc(blank_url, quote=True) + '" download>Download blank worksheet (CSV)</a></p>',
+            '<div class="comparison" role="region" aria-label="' + esc(workspace['title'], quote=True)
+            + '" tabindex="0"><table><caption>' + esc(workspace['title']) + '</caption><thead><tr>'
+            + ''.join('<th scope="col">' + esc(labels[key]) + '</th>' for key in shown)
+            + '<th scope="col">Sources</th></tr></thead><tbody>']
+    md = ['### ' + workspace['title'], workspace['intro'],
+          '[Download completed worksheet (CSV)](' + csv_url + ') · [Download blank worksheet (CSV)](' + blank_url + ')',
+          '| ' + ' | '.join(labels[key].replace('|', '\\|') for key in shown) + ' | Sources |',
+          '| ' + ' | '.join('---' for _ in range(len(shown) + 1)) + ' |']
+    for example in workspace['examples']:
+        cells = [example['cells'][key] for key in shown]
+        body.append('<tr><th scope="row">' + esc(cells[0]) + '</th>'
+                    + ''.join('<td>' + esc(cell) + '</td>' for cell in cells[1:])
+                    + '<td>' + refs(example['source_ids']) + '</td></tr>')
+        md.append('| ' + ' | '.join(cell.replace('|', '\\|') for cell in cells)
+                  + ' | ' + md_refs(example['source_ids']) + ' |')
+    body.append('</tbody></table></div><h4>Decisions from the comparison</h4><ul>')
+    md.append('#### Decisions from the comparison')
+    for decision in workspace['decisions']:
+        body.append('<li><strong>' + esc(decision['rule']) + ':</strong> ' + esc(decision['text'])
+                    + ' ' + refs(decision['source_ids']) + '</li>')
+        md.append('- **' + decision['rule'] + ':** ' + decision['text'] + ' ' + md_refs(decision['source_ids']))
+    body.append('</ul></section>')
+    return '\n'.join(body), md
+
+
+def render_research_use(use, studies, guide_url=None):
     """Public, source-linked answer, metric table and research uses in HTML/MD."""
     esc = html.escape
     sid = use['id']
@@ -400,7 +496,13 @@ def render_research_use(use, studies):
     for row in use['checklist']:
         body.append('<li><strong>' + esc(row['dimension']) + ':</strong> ' + esc(row['text']) + ' ' + refs(row['source_ids']) + '</li>')
         md.append('- **' + row['dimension'] + ':** ' + row['text'] + ' ' + md_refs(row['source_ids']))
-    body.append('</ul><h3>How the selected papers contribute</h3><ul>')
+    if 'task_workspace' in use:
+        workspace_html, workspace_md = render_task_workspace(
+            use['task_workspace'], guide_url, sid, refs, md_refs)
+        body += ['</ul>', workspace_html, '<h3>How the selected papers contribute</h3><ul>']
+        md += workspace_md
+    else:
+        body.append('</ul><h3>How the selected papers contribute</h3><ul>')
     md.append('### How the selected papers contribute')
     for row in use['study_roles']:
         study = study_by_id[row['work_id']]
@@ -466,7 +568,7 @@ def render_comparison(packet):
     md = ['# ' + packet['title'], '**Selected author evidence guide**' if contribution_first else '**Selected evidence comparison — not a research article**',
           '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]
     if packet.get('research_use'):
-        synthesis_html, synthesis_md = render_research_use(packet['research_use'], packet['studies'])
+        synthesis_html, synthesis_md = render_research_use(packet['research_use'], packet['studies'], url)
         # Keep every legacy guide byte-identical when the optional section is absent.
         body.insert(-1, synthesis_html)
         md += synthesis_md
@@ -525,12 +627,22 @@ def render_comparison(packet):
 def build_comparisons(root=ROOT, validate_only=False):
     changed = {}
     for data in load_comparisons(root):
-        rendered = render_comparison(comparison_packet(data, root))
-        for ext,text in zip(('html','md','json'),rendered):
+        packet = comparison_packet(data, root)
+        rendered = render_comparison(packet)
+        outputs = list(zip(('html', 'md', 'json'), rendered))
+        workspace = packet.get('research_use', {}).get('task_workspace')
+        if workspace is not None:
+            outputs += [('worksheet.csv', task_workspace_csv(workspace)),
+                        ('blank.csv', task_workspace_csv(workspace, blank=True))]
+        for ext,text in outputs:
             path = root/'research'/(data['slug']+'.'+ext)
-            previous = path.read_text(encoding='utf-8') if path.exists() else None
+            is_csv = ext.endswith('.csv')
+            previous = ((path.read_bytes().decode('utf-8') if is_csv else path.read_text(encoding='utf-8'))
+                        if path.exists() else None)
             if validate_only: require(previous == text, 'Comparison differs from source-bound rendering: '+ext)
-            elif previous != text: path.write_text(text,encoding='utf-8')
+            elif previous != text:
+                if is_csv: path.write_bytes(text.encode('utf-8'))
+                else: path.write_text(text,encoding='utf-8')
             if ext == 'html': changed[comparison_url(data)] = previous is None or without_theme_shell(previous) != without_theme_shell(text)
     return changed
 
