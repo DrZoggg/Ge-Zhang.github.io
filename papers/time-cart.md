@@ -25,6 +25,12 @@ Markdown record: https://drgezhang.com/papers/time-cart.md
 9. Zhan Wang
 10. Qiong Lu
 
+## Official Abstract
+
+Tumor immune microenvironment (TIME) consists of intra-tumor immunological components and plays a significant role in tumor initiation, progression, metastasis, and response to therapy. Chimeric antigen receptor (CAR)-T cell immunotherapy has revolutionized the cancer treatment paradigm. Although CAR-T cell immunotherapy has emerged as a successful treatment for hematologic malignancies, it remains a conundrum for solid tumors. The heterogeneity of TIME is responsible for poor outcomes in CAR-T cell immunotherapy against solid tumors. The advancement of highly sophisticated technology enhances our exploration in TIME from a multi-omics perspective. In the era of machine learning, multi-omics studies could reveal the characteristics of TIME and its immune resistance mechanism. Therefore, the clinical efficacy of CAR-T cell immunotherapy in solid tumors could be further improved with strategies that target unfavorable conditions in TIME. Herein, this review seeks to investigate the factors influencing TIME formation and propose strategies for improving the effectiveness of CAR-T cell immunotherapy through a multi-omics perspective, with the ultimate goal of developing personalized therapeutic approaches.
+
+Text reproduced verbatim from PMC ([source](https://pmc.ncbi.nlm.nih.gov/articles/PMC11201788/)); [DOI](https://doi.org/10.1186/s12943-024-02047-2); [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/).
+
 <a id="paper-discovery"></a>
 ## Research & review context
 

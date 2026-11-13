@@ -2169,7 +2169,7 @@
       "pmcid": "PMC11201788",
       "openalex_id": "https://openalex.org/W4400057543",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
+      "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/time-cart.csv",
       "question_count": 6,
       "concept_count": 9,

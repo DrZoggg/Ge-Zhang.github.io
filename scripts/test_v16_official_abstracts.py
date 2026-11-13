@@ -10,7 +10,7 @@ from unittest.mock import patch
 import official_abstracts as abstracts
 from build_publications import render_official_abstract_html, render_official_abstract_markdown
 from sync_common import ROOT, load_master
-from test_abstract_additions import V16_FIXTURE, expected_block, reviewed_record, v16_fixtures
+from test_abstract_additions import V16_FIXTURE, expected_block, reviewed_record, v16_fixtures, nov13_fixtures
 
 
 class V16AbstractTests(unittest.TestCase):
@@ -33,7 +33,7 @@ class V16AbstractTests(unittest.TestCase):
         previous={doi:self.records[doi]for doi in self.frozen['baseline_dois']}
         digest=hashlib.sha256(json.dumps(previous,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')).hexdigest()
         self.assertEqual(digest,self.frozen['baseline_records_sha256'])
-        self.assertEqual(set(self.records),set(self.frozen['baseline_dois'])|set(v16_fixtures()))
+        self.assertEqual(set(self.records),set(self.frozen['baseline_dois'])|set(v16_fixtures())|set(nov13_fixtures()))
 
     def test_selected_lists_and_original_29_scientific_payloads_stay_frozen(self):
         paths=self.frozen['protected_files_sha256']
@@ -43,7 +43,7 @@ class V16AbstractTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((ROOT/name).read_text(encoding='utf-8').encode('utf-8')).hexdigest(),digest)
 
     def test_complete_source_abstracts_render_without_rewriting(self):
-        for doi in v16_fixtures():
+        for doi in {**v16_fixtures(), **nov13_fixtures()}:
             with self.subTest(doi=doi):
                 record=reviewed_record(doi)
                 self.assertEqual(render_official_abstract_html(record,doi),expected_block(record,doi))

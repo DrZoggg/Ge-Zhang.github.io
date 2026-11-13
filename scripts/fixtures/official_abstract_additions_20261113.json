@@ -1,0 +1,15 @@
+{
+  "baseline_sha": "fb83eb4d604a6c53a47ab7c9e17d627e030e41c3",
+  "papers": {
+    "10.1186/s12943-024-02047-2": {
+      "slug": "time-cart",
+      "record_sha256": "d326f936e2331dacb3b17cbf627861e4fc405664649b0e2e8b2dde78902d5e66",
+      "text_sha256": "ac2ef06e89f70cc60055051c2c282160733846f72926cdb749f4027e6aa79bde",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11201788/",
+      "source_sha256": "04e4cd25df800a214ca4d55e9e526725ba1617144168e3d2656dff79bac0292f",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "Complete PMC XML Abs1 paragraph; inline markup flattened and surrounding whitespace stripped only. Raw and whitespace-normalized text are identical; no scientific wording, punctuation or sentence changed."
+    }
+  }
+}
