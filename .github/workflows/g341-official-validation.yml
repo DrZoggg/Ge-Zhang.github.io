@@ -19,6 +19,7 @@ jobs:
           repository: zotero/translators
           ref: 95366e09cbd4f94756eaa3bb741ce6f09259e360
           path: translators
+          fetch-depth: 2
           submodules: true
           persist-credentials: false
       - uses: actions/setup-node@v4
@@ -26,6 +27,12 @@ jobs:
           node-version: 22
       - name: Install official connector build prerequisite
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends librsvg2-bin
+      - name: Verify official source and required parent history
+        working-directory: translators
+        run: |
+          git rev-parse HEAD
+          git rev-parse --verify HEAD~1
+          git hash-object GitHub.js
       - name: Apply the reviewed generic patch
         working-directory: translators
         run: |
@@ -97,7 +104,7 @@ jobs:
           const fs = require('node:fs');
           const assert = require('node:assert/strict');
           const raw = fs.readFileSync('g341-full-results.json', 'utf8');
-          const knownServerLine = /^Translator server is running on http:\/\/localhost:8085\/\r?\n/;
+          const knownServerLine = /^Translator server is running on http:\/\/localhost:8085\r?\n/;
           assert(knownServerLine.test(raw), 'Expected the actual official server stdout prefix');
           const results = JSON.parse(raw.replace(knownServerLine, ''));
           const result = results['a7747ba7-42c6-4a22-9415-1dafae6262a9'];
