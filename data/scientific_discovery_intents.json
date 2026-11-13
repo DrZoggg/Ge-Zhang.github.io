@@ -360,6 +360,14 @@
       "url": "https://doi.org/10.1007/s13402-023-00912-8",
       "year": 2024,
       "locator": "Review context for multi-omics molecular classification in precision oncology: genomic, epigenomic, transcriptomic and proteomic biomarker layers (section 2.1, subsections 2.1.1-2.1.3; Fig. 1A-D); integrated analysis and proteogenomics (section 3.1.4); spatial omics (section 3.1.5; Fig. 3)."
+    },
+    {
+      "id": "sleep-hyperuricemia-mortality-original-2025",
+      "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
+      "doi": "10.3389/fpubh.2025.1521372",
+      "url": "https://doi.org/10.3389/fpubh.2025.1521372",
+      "year": 2025,
+      "locator": "Original observational NHANES linked-mortality study: design/population and survey-weighted Cox analysis (Methods 2.1 and 2.6; Results 3.1); distinct self-reported sleep-duration and sleep-trouble measures (Methods 2.3), with separate adjusted mortality associations (Results 3.2; Table 2)."
     }
   ],
   "intents": [
@@ -1411,6 +1419,39 @@
                 "doi-10-3389-fonc-2021-659217--qa-4"
               ],
               "preview_question_id": "doi-10-3389-fonc-2021-659217--qa-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-metabolic-epidemiology",
+      "question": "What can observational studies tell us about sleep and health outcomes in metabolically defined adult populations?",
+      "question_zh": "观察性研究能为代谢特征明确的成人群体中睡眠与健康结局的关系提供哪些证据？",
+      "source_context_kind": "original_research",
+      "source_ids": [
+        "sleep-hyperuricemia-mortality-original-2025"
+      ],
+      "focused_queries": [
+        {
+          "id": "sleep-metabolic-epidemiology-1",
+          "question": "What mortality associations were reported for sleep duration and sleep trouble among NHANES adults with hyperuricemia?",
+          "question_zh": "NHANES高尿酸血症成人的睡眠时长和睡眠困难分别与死亡风险呈现怎样的关联？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-3389-fpubh-2025-1521372",
+              "question_ids": [
+                "doi-10-3389-fpubh-2025-1521372--qa-1",
+                "doi-10-3389-fpubh-2025-1521372--qa-2",
+                "doi-10-3389-fpubh-2025-1521372--qa-3",
+                "doi-10-3389-fpubh-2025-1521372--qa-4",
+                "doi-10-3389-fpubh-2025-1521372--qa-5"
+              ],
+              "preview_question_id": "doi-10-3389-fpubh-2025-1521372--qa-2",
+              "preview_finding_ids": [
+                "KF3",
+                "KF4"
+              ]
             }
           ]
         }
