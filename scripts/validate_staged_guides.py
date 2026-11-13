@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
-from research_guides import ROOT, SLUG, URL, COMPARISONS, urls as guide_urls, require, validate_page
+from research_guides import ROOT, SLUG, URL, COMPARISONS, load_comparisons, urls as guide_urls, require, validate_page
 
 
 class Links(HTMLParser):
@@ -19,13 +19,20 @@ class Links(HTMLParser):
 def validate_staged(stage, source=ROOT):
     stage = Path(stage).resolve()
     expected_inventory = {'questions.html','questions.json'}
+    workspace_slugs = {data['slug'] for data in load_comparisons(source)
+                       if isinstance(data.get('research_use'), dict)
+                       and 'task_workspace' in data['research_use']}
     same_site_links = 0
     for guide_url in guide_urls(source):
         slug = Path(urlsplit(guide_url).path).stem
-        for ext in (('html','md','json') if slug in COMPARISONS else ('html','md')):
+        extensions = ('html','md','json') if slug in COMPARISONS else ('html','md')
+        if slug in workspace_slugs:
+            extensions += ('worksheet.csv','blank.csv')
+        for ext in extensions:
             name = 'research/'+slug+'.'+ext
             expected_inventory.add(slug+'.'+ext)
             require((stage/name).is_file(), 'Missing staged guide: '+name)
+            require((source/name).is_file(), 'Missing generated guide source: '+name)
             require((stage/name).read_bytes()==(source/name).read_bytes(), 'Staged guide payload differs: '+name)
         page=(stage/'research'/(slug+'.html')).read_text(encoding='utf-8')
         validate_page(page, guide_url)
