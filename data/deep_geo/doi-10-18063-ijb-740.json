@@ -326,7 +326,11 @@
     "primary_technical_example": "Hinton et al., Three-dimensional printing of complex biological structures by freeform reversible embedding of suspended hydrogels, Science Advances 2015;1:e1500758, DOI 10.1126/sciadv.1500758, review reference 196. The support-bath temperature, release temperature and illustrative filament diameter were independently cross-checked in the primary text.",
     "supporting_material": "No article-level supplementary experimental dataset is required for the claims on this review page; the source is a literature synthesis, with technical examples traced to its references.",
     "preprint_relation": "No linked preprint was identified in the inspected publisher/PMC/Crossref metadata; no new exhaustive literature search was performed.",
-    "evidence_basis": "Version-of-record full-text XML, PubMed/Europe PMC author-affiliation and publication-type metadata, Crossref DOI metadata, public ORCID works and the cited primary FRESH paper, checked 15 October 2026."
+    "evidence_basis": "Version-of-record full-text XML, PubMed/Europe PMC author-affiliation and publication-type metadata, Crossref DOI metadata, public ORCID works and the cited primary FRESH paper, checked 15 October 2026.",
+    "coaxial_bioprinting_applications": "The review presents coaxial bioprinting as an approach to hollow and layered vascular constructs. Section 3.2.2 describes alginate–calcium core-and-shell printing for hollow vessels and summarizes coaxial or multilayer-nozzle examples of perfusable, cell-containing vascular structures.",
+    "coaxial_bioprinting_source_locator": "Section 3.2.2, Alginate (sec3-7), paragraphs 1–2; cited engineering examples in references 173–176.",
+    "coaxial_bioprinting_source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10261152/#sec3-7",
+    "coaxial_bioprinting_checked_on": "2026-11-12"
   },
   "evidence_page_notice": "Author-controlled evidence page for this review. This original synthesis separates cited technical examples from the review's own contribution and does not replace the publisher's version of record.",
   "discovery_layer": {
