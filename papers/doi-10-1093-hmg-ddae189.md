@@ -71,8 +71,9 @@ The complete 11-page publisher advance article and three official supplementary 
 - [Official publisher article and publication history](https://academic.oup.com/hmg/article/34/5/381/7926367) — Publisher HTML and complete 11-page publisher-typeset advance-article PDF obtained through the authorized author account. DOI 10.1093/hmg/ddae189; advance publication 18 December 2024; final issue 34(5), 381–391 (2025). Main Figures 1–4, Table 1 and Methods were reviewed.
 - [Official publisher supplementary data](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data) — Three unique files: two DOCX files and one XLSX workbook, acquired 27 October 2026. supplementary_figure_ddae189.docx: Figures 1–6; supplementary_table_ddae189.xlsx: Tables 1–11; supplementary_materials_ddae189.docx: STROBE-MR checklist, especially item 4d. These materials have been obtained and inspected.
 - [FinnGen R9 official Alzheimer endpoint](https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER) — Official Risteys endpoint HTML, retrieved 27 October 2026. G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input.
+- [Editable experiment-planning record: ITGAV worked example](https://drgezhang.com/assets/research/ad-itgav-experiment-record.md) — Author-designed research resource; published observations and proposed follow-up decisions are labelled separately. Prepared 15 November 2026. Uses the source-reported PC12 expression observation to plan a candidate-specific test, controls, separate functional endpoint and interpretable outcomes; no experiment or new result is reported.
 
-Source review: 2026-10-27.
+Source review: 2026-11-15.
 
 ## Cite this paper
 

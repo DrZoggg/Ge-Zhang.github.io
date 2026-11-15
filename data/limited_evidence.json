@@ -106,7 +106,7 @@
     "10.1093/hmg/ddae189": {
       "slug": "doi-10-1093-hmg-ddae189",
       "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
+      "reviewed_on": "2026-11-15",
       "scope": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
       "sections": [
         {
@@ -159,6 +159,12 @@
           "label": "FinnGen R9 official Alzheimer endpoint",
           "format": "Official Risteys endpoint HTML, retrieved 27 October 2026",
           "locator": "G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input."
+        },
+        {
+          "url": "https://drgezhang.com/assets/research/ad-itgav-experiment-record.md",
+          "label": "Editable experiment-planning record: ITGAV worked example",
+          "format": "Author-designed research resource; published observations and proposed follow-up decisions are labelled separately",
+          "locator": "Prepared 15 November 2026. Uses the source-reported PC12 expression observation to plan a candidate-specific test, controls, separate functional endpoint and interpretable outcomes; no experiment or new result is reported."
         }
       ]
     },
