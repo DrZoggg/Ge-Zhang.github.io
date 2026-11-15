@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "title": "NHANES 2017-2018 source map for eGDR, hyperuricemia and gout",
+  "prepared_on": "2026-11-15",
+  "formal_study": {
+    "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
+    "DOI": "10.3389/fnut.2025.1658286",
+    "url": "https://doi.org/10.3389/fnut.2025.1658286",
+    "full_text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12501789/",
+    "design": "Secondary cross-sectional analysis of six NHANES cycles, 2007-2018; prevalent outcomes, not incidence or treatment response."
+  },
+  "example_cycle": {
+    "period": "2017-2018",
+    "suffix": "J",
+    "component_files": [
+      "DEMO_J.xpt",
+      "BMX_J.xpt",
+      "GHB_J.xpt",
+      "BIOPRO_J.xpt",
+      "MCQ_J.xpt",
+      "BPQ_J.xpt",
+      "BPX_J.xpt"
+    ]
+  },
+  "scope": "A source-linked core-variable lookup for one survey cycle inside the study's 2007-2018 period. Use it to find files and definitions before planning a new analysis. It is not an analysis-ready dataset or a reproduction of the pooled study.",
+  "variables": [
+    {
+      "role": "Join key",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "SEQN"
+      ],
+      "units_or_codes": "Identifier; no physical unit",
+      "study_use": "Join the selected same-cycle component files by respondent identifier; no row-order join.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "SEQN; component analytic notes in GHB_J/BIOPRO_J also identify SEQN",
+      "decision_to_document": null
+    },
+    {
+      "role": "eGDR waist input",
+      "component_file": "BMX_J.xpt",
+      "variables": [
+        "BMXWAIST"
+      ],
+      "units_or_codes": "cm; numeric missing is .",
+      "study_use": "Article sec8 waist circumference maps to the measured waist field.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BMX_J.htm",
+      "source_locator": "BMXWAIST codebook; Body Measures protocol",
+      "decision_to_document": null
+    },
+    {
+      "role": "eGDR HbA1c input",
+      "component_file": "GHB_J.xpt",
+      "variables": [
+        "LBXGH"
+      ],
+      "units_or_codes": "%; numeric missing is .",
+      "study_use": "Use glycohemoglobin percent, matching the coefficient's input unit; not an unconverted mmol/mol value.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/GHB_J.htm",
+      "source_locator": "LBXGH codebook; Analytic Notes",
+      "decision_to_document": null
+    },
+    {
+      "role": "Hypertension diagnosis component",
+      "component_file": "BPQ_J.xpt",
+      "variables": [
+        "BPQ020"
+      ],
+      "units_or_codes": "1 Yes;2 No;7 Refused;9 Don't know",
+      "study_use": "Source sec8 includes self-reported physician diagnosis. This is one component, not the entire hypertension definition.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPQ_J.htm",
+      "source_locator": "BPQ020 codebook",
+      "decision_to_document": "Refused/unknown must not be silently recoded to No."
+    },
+    {
+      "role": "Hypertension current-medication component",
+      "component_file": "BPQ_J.xpt",
+      "variables": [
+        "BPQ050A"
+      ],
+      "units_or_codes": "1 Yes;2 No;7 Refused;9 Don't know; . may reflect questionnaire routing",
+      "study_use": "Maps current antihypertensive use. BPQ040A asks whether ever told to take medicine and is not equivalent to currently taking it.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPQ_J.htm",
+      "source_locator": "BPQ040A/BPQ050A codebook and skip routing",
+      "decision_to_document": "Exact paper handling of routing and partially missing hypertension inputs is not supplied in inspected main Methods."
+    },
+    {
+      "role": "Hypertension measured-BP component",
+      "component_file": "BPX_J.xpt",
+      "variables": [
+        "BPXSY1",
+        "BPXSY2",
+        "BPXSY3",
+        "BPXSY4",
+        "BPXDI1",
+        "BPXDI2",
+        "BPXDI3",
+        "BPXDI4"
+      ],
+      "units_or_codes": "mmHg; . missing; recorded diastolic0 is possible",
+      "study_use": "Article sec8 uses average BP expressed as >=140/90mmHg. CDC describes3 consecutive readings with an optional4th attempt.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPX_J.htm",
+      "source_locator": "Protocol/Procedure; Data Processing; BPXSY*/BPXDI* entries",
+      "decision_to_document": "Paper does not specify which readings enter its average, zero/missing handling, minimum valid readings or detailed systolic/diastolic logical operation. Do not choose these silently."
+    },
+    {
+      "role": "Hyperuricemia laboratory input",
+      "component_file": "BIOPRO_J.xpt",
+      "variables": [
+        "LBXSUA"
+      ],
+      "units_or_codes": "mg/dL; . missing",
+      "study_use": "Article sec9 HUA criterion is strictly >7.0mg/dL in males or >6.0mg/dL in females. LBDSUASI is a different SI-unit field; CDC conversion factor is59.48.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BIOPRO_J.htm",
+      "source_locator": "LBXSUA/LBDSUASI; Data Processing and Editing",
+      "decision_to_document": "Sex/urate missing values cannot be classified as non-HUA. This map does not automatically harmonize this cycle with earlier lab instruments."
+    },
+    {
+      "role": "Gout outcome",
+      "component_file": "MCQ_J.xpt",
+      "variables": [
+        "MCQ160n"
+      ],
+      "units_or_codes": "1 Yes; 2 No; 7 Refused; 9 Do not know; . Missing",
+      "study_use": "Use the reported prior professional diagnosis of gout; only 2 is a negative response. Refused, unknown and missing are not No.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/MCQ_J.htm",
+      "source_locator": "MCQ160n codebook (target age20+)",
+      "decision_to_document": null
+    },
+    {
+      "role": "Age eligibility",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "RIDAGEYR"
+      ],
+      "units_or_codes": "years;80+ top-coded80",
+      "study_use": "Article sec7 includes adults age>=20.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "RIDAGEYR in DEMO_J/official2017-2018 demographic variable index",
+      "decision_to_document": "Actual analysis exclusions/counts not reconstructed."
+    },
+    {
+      "role": "Recorded-sex threshold selector",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "RIAGENDR"
+      ],
+      "units_or_codes": "1 Male; 2 Female; . Missing",
+      "study_use": "Use the recorded male/female categories for the study's sex-specific urate cutoffs.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "DEMO_J, RIAGENDR variable definition and code/value table",
+      "decision_to_document": null
+    },
+    {
+      "role": "Pregnancy exclusion source",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "RIDEXPRG"
+      ],
+      "units_or_codes": "1 Pregnant by test or self-report; 2 Not pregnant at exam; 3 Cannot ascertain; . Missing. Released for females aged 20-44.",
+      "study_use": "Article sec7 excludes pregnant participants. CDC's public release scope is not a complete pregnancy flag for every female participant.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "DEMO_J, RIDEXPRG definition, target population and code/value table",
+      "decision_to_document": "Restricted release and out-of-scope missingness require an explicit exclusion rule. Missing is not by itself a positive pregnancy test or proof of nonpregnancy; the original implementation is not specified."
+    },
+    {
+      "role": "Exam weighting",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "WTMEC2YR"
+      ],
+      "units_or_codes": "Full-sample 2-year MEC exam weight; 0 indicates not MEC examined",
+      "study_use": "CDC BPX_J says exam weights for BP analysis; BPQ_J says exam weights when merged with MEC data. This is the relevant documented core-map weight, not proof of the paper's exact choice.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "WTMEC2YR; BPX_J Analytic Notes; BPQ_J Analytic Notes",
+      "decision_to_document": "Paper sec11 names sampling weights without exact variable/pooled construction. WTINT2YR is interview weight. No six-cycle division or pooled design is prescribed here."
+    },
+    {
+      "role": "Variance design",
+      "component_file": "DEMO_J.xpt",
+      "variables": [
+        "SDMVSTRA",
+        "SDMVPSU"
+      ],
+      "units_or_codes": "Masked variance stratum; masked pseudo-PSU",
+      "study_use": "Keep the complex survey design identifiers with the merged core records. GHB_J/BIOPRO_J specifically call for them.",
+      "official_codebook": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.htm",
+      "source_locator": "DEMO_J definitions; GHB_J/BIOPRO_J Demographic and Other Related Variables",
+      "decision_to_document": "No variance estimation or subpopulation analysis has been executed."
+    }
+  ],
+  "definitions": [
+    {
+      "output": "eGDR",
+      "definition": "21.158 -0.09*waist_cm -3.407*hypertension_0_or_1 -0.551*HbA1c_percent",
+      "unit": "mg/kg/min",
+      "source": "Formal article Methods 2.2",
+      "readiness": "Formula and component identities confirmed; exact paper-equivalent hypertension construction remains unresolved."
+    },
+    {
+      "output": "HUA",
+      "definition": "LBXSUA>7.0mg/dL for recorded male participants; LBXSUA>6.0mg/dL for recorded female participants.",
+      "source": "Formal article Methods 2.3; BIOPRO_J/LBXSUA; DEMO_J/RIAGENDR",
+      "readiness": "Urate units/thresholds and RIAGENDR codebook categories verified. Keep missing urate or recorded category separate from non-HUA."
+    },
+    {
+      "output": "gout",
+      "definition": "MCQ160n=1 is reported professional diagnosis; MCQ160n=2 is No;7/9/. are not No.",
+      "source": "Formal article Methods 2.3; MCQ_J codebook/MCQ160n",
+      "readiness": "Codebook definition/response mapping verified; this is not an imported XPT dataset."
+    }
+  ],
+  "reproduction_decisions": [
+    "Hypertension includes physician diagnosis, current medication and measured blood pressure. The article does not specify the exact repeated-BP averaging, systolic/diastolic implementation or partially missing-input rules.",
+    "The article names sampling weights and survey-design variables without its exact weight variable or pooled construction. CDC identifies WTMEC2YR as the two-year MEC exam weight; this does not certify the original pooled analysis.",
+    "BIOPRO_J documents laboratory/instrument changes and bridging guidance for combinations with earlier cycles. This single-cycle map applies no bridging transformation and does not certify the paper's harmonization.",
+    "Full model covariates, supplemental definitions, imputation and sensitivity analyses are outside this core map."
+  ],
+  "readiness": {
+    "basis": "Published study plus official CDC component codebooks; demographic response tables additionally checked directly.",
+    "variable_names": "Codebook spellings. Confirm column names and storage types after importing actual XPT files.",
+    "survey_records": "Dictionary-level mapping; no analysis-ready participant dataset or fitted results included."
+  },
+  "source_locators": {
+    "study_formula_and_hypertension": "Methods 2.2",
+    "study_outcomes": "Methods 2.3",
+    "study_design_and_weights": "Methods 2.5",
+    "CDC": "Exact component URL and field locator in every variable row"
+  }
+}

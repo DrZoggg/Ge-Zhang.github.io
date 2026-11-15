@@ -239,7 +239,10 @@
     "evidence_basis": "Methods §§2.1–2.5 and Results §§3.2–3.3, including text-encoded Tables 2–3. The contradictory universal category claim in Abstract Results is explicitly excluded.",
     "source_verification_scope": "Formal Methods, Results and text-encoded tables were checked directly. No original statistical reanalysis and no source figures reproduced.",
     "license": "CC BY 4.0, as stated in article-level permissions.",
-    "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2"
+    "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2",
+    "research_source_map_url": "https://drgezhang.com/assets/research/nhanes-j-egdr-source-map.md",
+    "research_source_map_json_url": "https://drgezhang.com/assets/research/nhanes-j-egdr-source-map.json",
+    "research_source_map_scope": "Author-prepared 2017-2018 NHANES core dictionary map: component files, field identifiers, units, outcome coding and decisions to document. This one-cycle lookup supports research planning; it supplies neither participant records nor a pooled-analysis reproduction."
   },
   "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record. The explicitly disclosed inconsistent findings are excluded from the supported evidence scope.",
   "citation_layer": {

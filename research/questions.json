@@ -5315,7 +5315,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-3389-fnut-2025-1658286.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-3389-fnut-2025-1658286.json",
-      "gold_content_sha256": "d25b1c1e8630537e73b08dde710e1e88cdbf9fac39f6d822423943e1d9a1d117",
+      "gold_content_sha256": "2e4fbce26b9ad961ab6a100d49a168a1d0c0e19f5d42a1f60f895cd2b4e81d8d",
       "provenance": {
         "publisher_url": "https://doi.org/10.3389/fnut.2025.1658286",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12501789/",
@@ -5326,7 +5326,10 @@
         "evidence_basis": "Methods §§2.1–2.5 and Results §§3.2–3.3, including text-encoded Tables 2–3. The contradictory universal category claim in Abstract Results is explicitly excluded.",
         "source_verification_scope": "Formal Methods, Results and text-encoded tables were checked directly. No original statistical reanalysis and no source figures reproduced.",
         "license": "CC BY 4.0, as stated in article-level permissions.",
-        "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2"
+        "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2",
+        "research_source_map_url": "https://drgezhang.com/assets/research/nhanes-j-egdr-source-map.md",
+        "research_source_map_json_url": "https://drgezhang.com/assets/research/nhanes-j-egdr-source-map.json",
+        "research_source_map_scope": "Author-prepared 2017-2018 NHANES core dictionary map: component files, field identifiers, units, outcome coding and decisions to document. This one-cycle lookup supports research planning; it supplies neither participant records nor a pooled-analysis reproduction."
       },
       "scientific_role": "Observational analysis of eGDR and two prevalent outcomes in one NHANES adult sample.",
       "evidence_position": "Adjusted association, not prospective prediction, disease prevention or treatment efficacy.",
