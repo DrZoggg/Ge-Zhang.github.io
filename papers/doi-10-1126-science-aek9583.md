@@ -301,6 +301,7 @@ Single-patient research context, Treatment-emergent event reporting, Event occur
 ## Related Research
 
 - [Multimodal AI for cardiovascular care must learn when not to predict](https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html) — Site-curated editorial connection: both publications discuss the limits of clinical evidence and how it should inform practice. This is a thematic link, not a claim that the Science Letter cites the Medicine Discovery Correspondence. (DOI: 10.1016/j.medd.2026.100004)
+- [What one patient can teach the next](https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html) — Learning across individualised-treatment cases: the CTM Invited Letter distinguishes safety monitoring, mechanistic tests and benefit assessment, complementing the Science Letter’s proposal for public protocols and outcome records (site-curated methodological connection). (DOI: 10.1002/ctm2.70900)
 
 ## Publication & Provenance
 
