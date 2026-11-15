@@ -13996,10 +13996,16 @@
           "label": "FinnGen R9 official Alzheimer endpoint",
           "format": "Official Risteys endpoint HTML, retrieved 27 October 2026",
           "locator": "G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input."
+        },
+        {
+          "url": "https://drgezhang.com/assets/research/ad-itgav-experiment-record.md",
+          "label": "Editable experiment-planning record: ITGAV worked example",
+          "format": "Author-designed research resource; published observations and proposed follow-up decisions are labelled separately",
+          "locator": "Prepared 15 November 2026. Uses the source-reported PC12 expression observation to plan a candidate-specific test, controls, separate functional endpoint and interpretable outcomes; no experiment or new result is reported."
         }
       ],
       "author_evidence_note": {
-        "reviewed_on": "2026-10-27",
+        "reviewed_on": "2026-11-15",
         "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189",
         "sections": [
           {
@@ -26664,7 +26670,7 @@
                   "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
                   "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
                   "source_locator": "Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data.",
-                  "reviewed_on": "2026-10-27",
+                  "reviewed_on": "2026-11-15",
                   "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189"
                 }
               ]
