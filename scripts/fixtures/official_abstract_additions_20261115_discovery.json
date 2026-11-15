@@ -1,0 +1,35 @@
+{
+  "baseline_sha": "4456fcbbebee6b567e727e91ac07727e194c643a",
+  "papers": {
+    "10.3389/fnut.2025.1658286": {
+      "slug": "doi-10-3389-fnut-2025-1658286",
+      "record_sha256": "15af8143226749d5e85d0f904545a8e4392328ae979073ee6aa13ff1af0b57c2",
+      "text_sha256": "6ae8f0f1779db51d507a4555409ea1c869f94b71450e273a449dd73937c025fb",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12501789/",
+      "source_sha256": "42d4736dac32237e52512f05e654c5d4c78deff3c9c327db465b9212c2d24ca2",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "Flatten inline JATS text only. Preserve original words, punctuation, Unicode spaces and order; no in-paragraph whitespace or Unicode normalization. Complete main abstract only; exclude separate graphical abstract and nested keywords. Original publication claims remain attributed and separate from reviewed Gold."
+    },
+    "10.3389/fonc.2025.1538574": {
+      "slug": "doi-10-3389-fonc-2025-1538574",
+      "record_sha256": "9438cf18db98df2c1070e851f6e6343644a6130d925c299e34f497872ef2d0ce",
+      "text_sha256": "261103954e7a9dd90684e9fc74deddb3fc12b4a2664362422bb14c9642b3dbfa",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12401915/",
+      "source_sha256": "3a7d2b5b65fd46cb6e8670fcd827a8b38c12a75d02bd4d736441f0ae1c80c00d",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "Flatten inline JATS text only. Preserve original words, punctuation, Unicode spaces and order; no in-paragraph whitespace or Unicode normalization. Complete main abstract only; exclude separate graphical abstract and nested keywords. Original publication claims remain attributed and separate from reviewed Gold."
+    },
+    "10.1016/j.csbj.2024.04.044": {
+      "slug": "doi-10-1016-j-csbj-2024-04-044",
+      "record_sha256": "3bd6f3859d3720f2f8ff02987101f1dab2335bf0f14e5f6c7d965c884ecf01d0",
+      "text_sha256": "d7b1cfd701721d51d3ea2d56071d3392eed467d46fa2e46c0fbd0182a6eb7fa9",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058087/",
+      "source_sha256": "6e743e26da408bb50349eafff9c3cdebe3efe2929a73309e765152fdc32e17a1",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "normalization": "Flatten inline JATS text only. Preserve original words, punctuation, Unicode spaces and order; no in-paragraph whitespace or Unicode normalization. Complete main abstract only; exclude separate graphical abstract and nested keywords. Original publication claims remain attributed and separate from reviewed Gold."
+    }
+  }
+}
