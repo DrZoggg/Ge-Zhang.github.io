@@ -1,0 +1,15 @@
+{
+  "baseline_sha": "2253c2c0d6edca2063486363512d8576a7fec579",
+  "papers": {
+    "10.1016/j.isci.2025.114320": {
+      "slug": "doi-10-1016-j-isci-2025-114320",
+      "record_sha256": "3a125bbd9c6ff06dc8e73ef152ebebdd53e48f2cdd4c814d443addf50819b352",
+      "text_sha256": "8ae812cff6c592d0a185a969a8a54e1da18954667ca5ad5ffcf07a5c9d158d08",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12834111/",
+      "source_sha256": "4f9cd22a522c504dac3aeb5ab3223526d8f46a3e1026877238028571ec6928b6",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "normalization": "Complete main textual Summary abstract abs0010 from official PMC JATS. Inline formatting flattened and whitespace normalized only; graphical abstract, author highlights and teaser are separate and not appended."
+    }
+  }
+}

@@ -11,6 +11,7 @@ from sync_common import ROOT
 FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20260928.json'
 V16_FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20261015_v16.json'
 NOV13_FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20261113.json'
+NOV15_ALS_FIXTURE = ROOT / 'scripts/fixtures/official_abstract_additions_20261115_als.json'
 
 
 def fixtures():
@@ -28,6 +29,13 @@ def nov13_fixtures():
     return papers
 
 
+def nov15_als_fixtures():
+    papers = json.loads(NOV15_ALS_FIXTURE.read_text(encoding='utf-8'))['papers']
+    if set(papers) != {'10.1016/j.isci.2025.114320'}:
+        raise ValueError('November 15 abstract batch must contain only the reviewed ALS article')
+    return papers
+
+
 def unique_object(pairs):
     value = {}
     for key, item in pairs:
@@ -38,7 +46,7 @@ def unique_object(pairs):
 
 
 def reviewed_record(doi):
-    expected = {**fixtures(), **v16_fixtures(), **nov13_fixtures()}[doi]
+    expected = {**fixtures(), **v16_fixtures(), **nov13_fixtures(), **nov15_als_fixtures()}[doi]
     record = json.loads(PATH.read_text(encoding='utf-8'))['papers'][doi]
     serialized = json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
     if hashlib.sha256(serialized.encode('utf-8')).hexdigest() != expected['record_sha256']:
@@ -63,7 +71,7 @@ def expected_block(record, doi):
 
 
 def without_approved_abstract(before, after, doi):
-    if doi not in {**fixtures(), **nov13_fixtures()}:
+    if doi not in {**fixtures(), **nov13_fixtures(), **nov15_als_fixtures()}:
         return after
     record = reviewed_record(doi)
     text = abstract_text(record)
@@ -103,10 +111,10 @@ class AbstractAdditionTests(unittest.TestCase):
         original = {doi: records[doi] for doi in frozen['baseline_dois']}
         serialized = json.dumps(original, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
         self.assertEqual(hashlib.sha256(serialized.encode('utf-8')).hexdigest(), frozen['baseline_records_sha256'])
-        self.assertEqual(set(records), set(frozen['baseline_dois']) | set(frozen['papers']) | set(v16_fixtures()) | set(nov13_fixtures()))
+        self.assertEqual(set(records), set(frozen['baseline_dois']) | set(frozen['papers']) | set(v16_fixtures()) | set(nov13_fixtures()) | set(nov15_als_fixtures()))
 
     def test_reviewed_record_and_text_hashes(self):
-        for doi, fixture in {**fixtures(), **nov13_fixtures()}.items():
+        for doi, fixture in {**fixtures(), **nov13_fixtures(), **nov15_als_fixtures()}.items():
             with self.subTest(doi=doi):
                 record = reviewed_record(doi)
                 self.assertEqual(hashlib.sha256(abstract_text(record).encode('utf-8')).hexdigest(), fixture['text_sha256'])
