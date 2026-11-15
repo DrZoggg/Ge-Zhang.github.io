@@ -2952,7 +2952,7 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1126-science-aek9583.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1126-science-aek9583.json",
-      "gold_content_sha256": "705d1e430afa0be856894f2962dd2ce698dddc38294fd997dbcfccafa4a0a294",
+      "gold_content_sha256": "af8ccfac481233d2a2197a018ecacb01b84b57f95af4766808de0f81e2ca6918",
       "provenance": {
         "publisher_url": "https://www.science.org/doi/10.1126/science.aek9583",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42821669/",
@@ -27744,7 +27744,7 @@
       "answer_preview": {
         "answer": "The authors describe a gap between a previously reported human outcome and the registry or preclinical publication, and argue that directly related human protocols and major outcomes should remain visible in current public records. The case is contextual evidence from other sources, not a new study in this Letter.",
         "source": "data/deep_geo/doi-10-1126-science-aek9583.json#/qa/0/answer",
-        "source_content_sha256": "705d1e430afa0be856894f2962dd2ce698dddc38294fd997dbcfccafa4a0a294",
+        "source_content_sha256": "af8ccfac481233d2a2197a018ecacb01b84b57f95af4766808de0f81e2ca6918",
         "answer_sha256": "0f30a5add0e3542d95a150ff113e7b62af7466d8ae536647684ddb65cf6f40bf",
         "evidence_refs": [
           "KF1"
