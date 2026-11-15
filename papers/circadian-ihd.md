@@ -403,6 +403,9 @@ transcriptomic subtyping, repeated measurements
 - Gse59867 Url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867
 - Gse70049 Url: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70049
 - Review Basis: Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed.
+- Gse59867 Sample Followup Map Url: https://drgezhang.com/assets/research/gse59867-sample-followup-map.md
+- Gse59867 Sample Followup Csv Url: https://drgezhang.com/assets/research/gse59867-sample-followup-map.csv
+- Gse59867 Map Scope: Source-linked436-row public metadata map for within-series patient-label grouping and collection-time selection; no expression values, outcome propagation or original-analysis reproduction.
 
 ## Evidence-page notice
 

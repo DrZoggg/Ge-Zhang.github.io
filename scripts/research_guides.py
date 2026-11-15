@@ -213,7 +213,7 @@ def search_documents(root, start):
 # Extractive comparisons reuse this guide pipeline. The original frozen guide
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
-    'circadian-evidence-levels': '4dde76f203b9d4705ca90767f10538a60a1420b929d9f76770c11231cc193781',
+    'circadian-evidence-levels': '536184c51b48aaf01810a29299691ebc99ddb9e4897604c2ea4f23e7cd839492',
     'cardiovascular-prediction-evidence': '250f479469ec2f666e9d9a54d3cf8a49394bd2ab98a74cb2db0260169fa93e44',
     'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
 }
