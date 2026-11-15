@@ -849,8 +849,8 @@
     "10.1177/00368504261499186": {
       "slug": "doi-10-1177-00368504261499186",
       "evidence_status": "limited",
-      "reviewed_on": "2026-11-04",
-      "scope": "Original author-maintained explanation of an observational mortality analysis in CKM stages 0–3, based on the indexed abstract and verified publication metadata.",
+      "reviewed_on": "2026-11-15",
+      "scope": "Author-maintained explanation of an observational mortality analysis in CKM stages 0–3, supported by the indexed abstract and source-located reading of the published Methods.",
       "sections": [
         {
           "heading": "Research question and design",
@@ -865,20 +865,20 @@
           "source_locator": "PubMed PMID 42893432, Abstract Results: follow-up, deaths, adjusted HRs and CIs, one-unit exposure scale and lifestyle adjustment."
         },
         {
-          "heading": "Scientific contribution and use",
-          "text": "The analysis connects a composite endothelial-stress index with long-term outcomes among adults at CKM stages 0–3. It provides an observational comparator for epidemiologic discussions of endothelial stress, CKM staging and mortality; survey-weighted Cox models and spline analyses supply the reported association framework. Clinical risk-assessment use requires further validation.",
-          "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
-          "source_locator": "PubMed PMID 42893432, Abstract Methods and Conclusions: survey-weighted Cox models, restricted cubic splines, CKM stage scope and risk-assessment interpretation."
+          "heading": "Cohort and model specification",
+          "text": "Eligibility required a valid fasting-subsample weight and complete CKM-staging, EASIX, mortality-linkage and covariate information; participants were assigned their highest qualifying CKM stage, and stage 4 was excluded. Stage 3 included very-high-risk CKD or PREVENT 10-year total-CVD risk ≥20%; participants aged ≥80 years were assigned age 79 for PREVENT estimation. EASIX used LDH (U/L) × creatinine (mg/dL) / platelet count (10^9/L) and was modeled per one-unit increase and by quartiles. Analyses combined fasting-subsample weights with SDMVSTRA and SDMVPSU in survey-weighted Cox models. Model 2 added current smoking, BMI, systolic blood pressure, fasting glucose and antihypertensive, glucose-lowering and statin use to demographic adjustment. Follow-up ran from the baseline MEC examination to death or 31 December 2019; competing-risk analysis was a sensitivity analysis. These specifications support comparing cohort and model choices; the displayed Methods do not give the pooled-weight formula or exact cardiovascular-death codes.",
+          "source_url": "https://www.researchgate.net/publication/416242591_Endothelial_dysfunction_and_long-term_survival_in_cardiovascular-kidney-metabolic_syndrome_stages_0-3_An_EASIX-based_national_cohort_study",
+          "source_locator": "Published article text displayed on ResearchGate, Materials and Methods Sections 2.1–2.5 (Study Design and Population through Statistical Analysis)."
         },
         {
-          "heading": "Publication chronology",
-          "text": "Electronic publication is recorded as 18 October 2026. The formal journal record is Science Progress, volume 109, issue 4 (2026), article 00368504261499186.",
+          "heading": "Scientific contribution and publication context",
+          "text": "The analysis connects a composite endothelial-stress index with long-term outcomes among adults at CKM stages 0–3. It provides an observational comparator for epidemiologic discussions of endothelial stress, CKM staging and mortality; survey-weighted Cox models and spline analyses supply the reported association framework. Clinical risk-assessment use requires further validation. Electronic publication is recorded as 18 October 2026. The formal journal record is Science Progress, volume 109, issue 4 (2026), article 00368504261499186.",
           "source_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
-          "source_locator": "PubMed ArticleDate DateType=Electronic 2026-10-18; Crossref volume 109, issue 4, article-number 00368504261499186 and published-print [2026,10]."
+          "source_locator": "PubMed PMID 42893432, Abstract Methods and Conclusions: survey-weighted Cox models, restricted cubic splines, CKM stage scope and risk-assessment interpretation. PubMed ArticleDate DateType=Electronic 2026-10-18; Crossref volume 109, issue 4, article-number 00368504261499186 and published-print [2026,10]."
         }
       ],
       "limitations": [
-        "This summary uses the indexed abstract rather than a full-methods audit. The retrospective cohort associations support epidemiologic comparison; they do not establish that changing EASIX changes mortality or that EASIX is an externally validated clinical prediction model."
+        "The retrospective cohort associations support epidemiologic comparison; they do not establish that changing EASIX changes mortality or that EASIX is an externally validated clinical prediction model."
       ],
       "sources": [
         {
@@ -892,6 +892,12 @@
           "label": "Publisher-deposited citation record",
           "format": "Crossref bibliographic metadata",
           "locator": "DOI 10.1177/00368504261499186, volume, issue, article-number and publication dates."
+        },
+        {
+          "url": "https://www.researchgate.net/publication/416242591_Endothelial_dysfunction_and_long-term_survival_in_cardiovascular-kidney-metabolic_syndrome_stages_0-3_An_EASIX-based_national_cohort_study",
+          "label": "Published article text and Methods on ResearchGate",
+          "format": "Published article text displayed publicly on ResearchGate; source-located Methods reading. The article frontmatter states CC BY-NC 4.0.",
+          "locator": "Same DOI and PMID; Materials and Methods Sections 2.1–2.5; original article license notice."
         }
       ]
     },
