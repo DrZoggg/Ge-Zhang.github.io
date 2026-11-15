@@ -467,7 +467,7 @@
       "pmcid": "PMC13080692",
       "openalex_id": "https://openalex.org/W7154461818",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
+      "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1155-humu-5591097.csv",
       "question_count": 4,
       "concept_count": 11,
