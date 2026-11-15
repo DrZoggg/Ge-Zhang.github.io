@@ -32,29 +32,29 @@ This is an author-controlled publication record in the Ge Zhang Academic Hub. It
 <a id="limited-evidence"></a>
 ## Author evidence note
 
-### Publication version and material reviewed
-
-The acquired document is the publisher-typeset advance article first published on 18 December 2024, with 10 authors and DOI 10.1093/hmg/ddae189. The publisher subsequently assigned volume 34, issue 5, pages 381–391 in 2025. The complete article, supplementary figures, supplementary tables and STROBE-MR checklist are available for this review. These publication stages do not justify changing the existing bibliographic identity.
-
-Source: [Publisher article header, author list and publication history; acquired advance-article PDF p. 1; Supplementary data: supplementary_figure_ddae189.docx, supplementary_table_ddae189.xlsx and supplementary_materials_ddae189.docx.](https://academic.oup.com/hmg/article/34/5/381/7926367)
-
 ### Blood and brain expression context
 
 The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.
 
 Source: [Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data.](https://academic.oup.com/hmg/article/34/5/381/7926367)
 
-### Unresolved analysis-input version
-
-The article Methods and Supplementary Table 10 identify FinnGen R9 G6_ALZHEIMER and report 9,301 cases with 367,976 controls. The official R9 Risteys endpoint independently confirms 9,301 cases after genotype quality control. However, STROBE-MR item 4d reports 7,759 cases and 334,740 controls under the same R9 label. The available materials do not identify the exact outcome input file used in the reported MR runs. The official R9 case count is known; the unresolved issue is which input generated this paper’s estimates. No disputed denominator is selected and no full V2 genetic conclusion is certified.
-
-Source: [PDF p. 8, GWAS data for Alzheimer’s disease; supplementary_table_ddae189.xlsx, Supplementary Table 10 row 6; supplementary_materials_ddae189.docx, STROBE-MR item 4d. Official cross-check: R9 Risteys G6_ALZHEIMER, Case counts → Remove individuals based on genotype QC (linked in Provenance).](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data)
-
 ### Cell-line follow-up and its limits
 
 The Methods describe PC12 cells exposed to 7 μM Aβ1–42 for 12 hours. Figure 4E–G and the supplementary expression records report higher CDKN2B and ITGAV expression in treated cells than in controls. This is a cell-line expression comparison, not evidence from human Alzheimer’s disease neurons or a demonstration of therapeutic benefit. Because the plotted qPCR scale and supplementary values are inconsistent, this note does not certify an exact fold change or plotted significance value.
 
 Source: [PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolation, reverse transcription, and quantitative real-time PCR; Figure 4E–G; supplementary_table_ddae189.xlsx, sheets labelled Supplemenatry Table 7 (B3:C6, B9:C12) and Supplemenatry Table 8; Supplementary Figures 5–6.](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data)
+
+### Published use beyond Alzheimer's disease
+
+An original gastric-cancer study, published online on 27 October 2026 in Human Mutation (DOI 10.1155/humu/3845963), cites this article as reference 9. In its Introduction, references 9 and 10 appear together in a discussion of summary-data-based Mendelian randomization (SMR), HEIDI testing and Bayesian colocalization in multi-omics MR studies. This documents a cross-disease methodological-background use, rather than replication of the Alzheimer's disease findings.
+
+Source: [Human Mutation, DOI 10.1155/humu/3845963, Introduction paragraph 3, paired references 9 and 10; reference 9 prints DOI 10.1093/hmg/ddae189. Electronic publication date: article metadata.](https://pmc.ncbi.nlm.nih.gov/articles/PMC13714348/)
+
+### Unresolved analysis-input version
+
+The article Methods and Supplementary Table 10 identify FinnGen R9 G6_ALZHEIMER and report 9,301 cases with 367,976 controls. The official R9 Risteys endpoint independently confirms 9,301 cases after genotype quality control. However, STROBE-MR item 4d reports 7,759 cases and 334,740 controls under the same R9 label. The available materials do not identify the exact outcome input file used in the reported MR runs. The official R9 case count is known; the unresolved issue is which input generated this paper’s estimates. No disputed denominator is selected and no full V2 genetic conclusion is certified.
+
+Source: [PDF p. 8, GWAS data for Alzheimer’s disease; supplementary_table_ddae189.xlsx, Supplementary Table 10 row 6; supplementary_materials_ddae189.docx, STROBE-MR item 4d. Official cross-check: R9 Risteys G6_ALZHEIMER, Case counts → Remove individuals based on genotype QC (linked in Provenance).](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data)
 
 ### Evidence scope and limitations
 
@@ -72,6 +72,7 @@ The complete 11-page publisher advance article and three official supplementary 
 - [Official publisher supplementary data](https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data) — Three unique files: two DOCX files and one XLSX workbook, acquired 27 October 2026. supplementary_figure_ddae189.docx: Figures 1–6; supplementary_table_ddae189.xlsx: Tables 1–11; supplementary_materials_ddae189.docx: STROBE-MR checklist, especially item 4d. These materials have been obtained and inspected.
 - [FinnGen R9 official Alzheimer endpoint](https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER) — Official Risteys endpoint HTML, retrieved 27 October 2026. G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input.
 - [Editable experiment-planning record: ITGAV worked example](https://drgezhang.com/assets/research/ad-itgav-experiment-record.md) — Author-designed research resource; published observations and proposed follow-up decisions are labelled separately. Prepared 15 November 2026. Uses the source-reported PC12 expression observation to plan a candidate-specific test, controls, separate functional endpoint and interpretable outcomes; no experiment or new result is reported.
+- [Published methods-use context in gastric-cancer research](https://pmc.ncbi.nlm.nih.gov/articles/PMC13714348/) — Human Mutation original research article; DOI 10.1155/humu/3845963; online 27 October 2026. Introduction paragraph 3 co-cites references 9 and 10 for multi-omics MR methods. Reference 9 identifies this HMG paper by exact DOI. This is a published use context, not independent AD or PC12 validation.
 
 Source review: 2026-11-15.
 
