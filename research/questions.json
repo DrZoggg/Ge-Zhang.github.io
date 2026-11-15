@@ -3644,9 +3644,9 @@
       "profile_type": "clinical_cohort",
       "study_profile": {
         "profile_type": "clinical_cohort",
-        "study_design": "Prospective observational analysis of the 2011 and 2015 CHARLS waves; baseline-index exposures and binary outcome ascertainment at follow-up; logistic regression, restricted cubic splines, and apparent ROC evaluation.",
+        "study_design": "Prospective observational analysis of the 2011 and 2015 CHARLS waves; baseline-index exposures and binary outcome ascertainment at follow-up; logistic regression, restricted cubic splines, and apparent ROC evaluation. All exposure indices used the 2011 measurements, while the waist circumference and triglycerides used for follow-up LAP were measured in 2015. The intervening 2013 survey did not include venous blood collection. The authors used baseline indices because the 2015 measurements coincided with outcome ascertainment and could already reflect disease- or treatment-related changes. Source: Methods, Study design and population; Definition of CLMM.",
         "evidence_type": "Longitudinal observational association and unvalidated, in-sample discrimination",
-        "population": "Community-dwelling adults aged at least 45 years in mainland China, free of baseline CLMM; persons with zero or one component condition could enter the analysis.",
+        "population": "Community-dwelling adults aged at least 45 years in mainland China, free of baseline CLMM; persons with zero or one component condition could enter the analysis. The component conditions were CVD, type 2 diabetes, and LAP-based suspected MASLD; baseline CLMM meant at least two of these components and was excluded. At the 2015 follow-up, participants with no baseline component had to meet at least two component criteria; those with one baseline component had to meet at least two criteria, including at least one additional component. Source: Methods, Definition of CLMM.",
         "unique_total_n": 6534,
         "cohorts": [
           {
@@ -3676,7 +3676,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1111-jdi-70462.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1111-jdi-70462.json",
-      "gold_content_sha256": "1e1e66bb0b3dd4f428b4651b95de103c9864a01baed4626c71a588932c330ae5",
+      "gold_content_sha256": "83a7fa02b4f7a1a620e4df0eacbb93f2d2a709255873e036e3c5e39cd8ab8f1e",
       "provenance": {
         "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jdi.70462",
         "doi_url": "https://doi.org/10.1111/jdi.70462",
