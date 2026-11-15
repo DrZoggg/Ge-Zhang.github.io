@@ -179,6 +179,15 @@
 - Markdown: https://drgezhang.com/papers/doi-10-1172-jci194175.md
 - Deep GEO: yes
 
+## What one patient can teach the next
+- Journal: Clinical and Translational Medicine
+- Year: 2026
+- Type: Article
+- DOI: 10.1002/ctm2.70900
+- HTML: https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html
+- Markdown: https://drgezhang.com/papers/doi-10-1002-ctm2-70900.md
+- Deep GEO: no
+
 ## A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine
 - Journal: Current Proteomics
 - Year: 2025
