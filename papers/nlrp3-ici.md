@@ -453,6 +453,9 @@ B16F10 melanoma, cardiac single-cell RNA sequencing, bulk RNA sequencing, flow c
 - Publisher: https://jitc.bmj.com/content/13/1/e010127
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/39773567/
 - Pmc Url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/
+- Model Timing Comparison Url: https://drgezhang.com/assets/research/nlrp3-ici-model-timing.md
+- Model Timing Comparison Csv Url: https://drgezhang.com/assets/research/nlrp3-ici-model-timing.csv
+- Model Timing Comparison Scope: Source-linked comparison of reported single-ICI and dual-ICI tumor-bearing coadministration experiments versus established cardiac injury without melanoma; retain endpoint-specific arms and unresolved supplementary protocol fields.
 
 ## Evidence-page notice
 

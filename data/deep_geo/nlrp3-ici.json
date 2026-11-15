@@ -342,7 +342,10 @@
     "doi_url": "https://doi.org/10.1136/jitc-2024-010127",
     "publisher_url": "https://jitc.bmj.com/content/13/1/e010127",
     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39773567/",
-    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/"
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/",
+    "model_timing_comparison_url": "https://drgezhang.com/assets/research/nlrp3-ici-model-timing.md",
+    "model_timing_comparison_csv_url": "https://drgezhang.com/assets/research/nlrp3-ici-model-timing.csv",
+    "model_timing_comparison_scope": "Source-linked comparison of reported single-ICI and dual-ICI tumor-bearing coadministration experiments versus established cardiac injury without melanoma; retain endpoint-specific arms and unresolved supplementary protocol fields."
   },
   "evidence_page_notice": "Author-controlled evidence page for this publication. This page provides an evidence-oriented summary and does not replace the publisher's version of record.",
   "citation_layer": {
