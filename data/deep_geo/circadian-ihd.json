@@ -316,7 +316,8 @@
     "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed.",
     "gse59867_sample_followup_map_url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.md",
     "gse59867_sample_followup_csv_url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.csv",
-    "gse59867_map_scope": "Source-linked436-row public metadata map for within-series patient-label grouping and collection-time selection; no expression values, outcome propagation or original-analysis reproduction."
+    "gse59867_map_scope": "Source-linked436-row public metadata map for within-series patient-label grouping and collection-time selection; no expression values, outcome propagation or original-analysis reproduction.",
+    "gse59867_dataset_landing_url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.html"
   },
   "citation_layer": {
     "citation_use_cases": [

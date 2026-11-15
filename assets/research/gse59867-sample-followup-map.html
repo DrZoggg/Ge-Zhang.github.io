@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><script src="/assets/theme-init.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSE59867 follow-up map | Ge Zhang</title>
+<meta name="description" content="A 436-row metadata map derived from public GEO GSE59867 sample headers. It connects GSM accessions to literal patient labels and recorded collection times for planning repeated-sample analyses.">
+<link rel="canonical" href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.html">
+<link rel="alternate" type="text/markdown" href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.md">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "@id": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.html#dataset", "name": "GSE59867 follow-up map", "description": "A 436-row metadata map derived from public GEO GSE59867 sample headers. It connects GSM accessions to literal patient labels and recorded collection times for planning repeated-sample analyses.", "url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.html", "isBasedOn": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867", "distribution": {"@type": "DataDownload", "contentUrl": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.csv", "encodingFormat": "text/csv"}, "isAccessibleForFree": true, "citation": ["Original GSE59867 dataset publication linked by GEO: PMID 25984239. https://pubmed.ncbi.nlm.nih.gov/25984239/", "Secondary expression-subtyping study that reused GSE59867: Molecular subtypes of ischemic heart disease based on circadian rhythm. DOI 10.1038/s41598-024-65236-5. https://doi.org/10.1038/s41598-024-65236-5"]}</script>
+<style>
+main{max-width:960px;margin:auto;padding:24px 24px 52px;overflow-wrap:anywhere}
+main p,main li{max-width:78ch}
+.resource-nav{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.9rem}
+.resource-nav a{min-height:44px;display:inline-flex;align-items:center}
+section{padding:0;margin:2.2rem 0;scroll-margin-top:100px}
+.resource-intro{margin-top:1.2rem}
+h1{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2}
+h2{font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.3}
+.resource-description{font-size:1.08rem;line-height:1.65}
+.download{margin:1.2rem 0 1rem}
+.download .btn{font-size:1rem}
+.resource-counts{font-variant-numeric:tabular-nums}
+.table-wrap{max-width:100%;margin:1.1rem 0}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+caption{text-align:left;font-weight:600;padding:0 0 12px}
+th,td{border:1px solid var(--line);padding:12px 14px;vertical-align:top;text-align:left}
+thead{background:var(--table-head)}
+.collections td{width:6rem;text-align:right;font-variant-numeric:tabular-nums}
+.column-definitions{table-layout:fixed}
+.column-definitions th{width:32%}
+code{font-size:.88em;white-space:normal;overflow-wrap:anywhere}
+li{margin:.45rem 0}
+.source-links{margin-top:1rem}
+.prepared{font-size:.9rem;color:var(--muted)}
+@media(max-width:480px){main{padding:18px 18px 36px}.column-definitions th{width:35%}th,td{padding:10px}.download .btn{width:100%;justify-content:center}}
+</style>
+<link rel="stylesheet" href="/assets/style.css" data-theme-shell="guide-style"><script src="/assets/theme.js" defer></script></head><body><header class="theme-guide-header"><nav aria-label="Display settings"><button class="theme-toggle" type="button" data-theme-toggle title="Switch to light theme" aria-label="Switch to light theme" hidden><span data-theme-label>Light</span></button></nav></header><main>
+<nav class="resource-nav" aria-label="Resource navigation"><a href="/papers/circadian-ihd.html">Study evidence</a><a href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.md">Markdown notes</a></nav>
+<section class="resource-intro" aria-labelledby="resource-title">
+<h1 id="resource-title">GSE59867 follow-up map</h1>
+<p class="resource-description">A 436-row metadata map derived from public GEO GSE59867 sample headers. It connects GSM accessions to literal patient labels and recorded collection times for planning repeated-sample analyses.</p>
+<p class="download"><a class="btn primary" href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.csv" download>Download CSV · 436 rows</a></p>
+<p class="resource-counts"><strong>436 samples · 157 literal labels</strong><br>111 Patient labels across 390 samples, plus 46 Control patient labels with one sample each.</p>
+</section>
+<section aria-labelledby="collections-heading">
+<h2 id="collections-heading">Recorded collection times</h2>
+<p>GEO describes samples from STEMI patients and stable coronary artery disease controls. These collection times describe post-infarction follow-up.</p>
+<div class="table-wrap"><table class="collections"><caption>Samples in the public metadata</caption><thead><tr><th scope="col">Collection recorded by GEO</th><th scope="col">Samples</th></tr></thead><tbody>
+<tr><th scope="row">First day of MI — admission</th><td>111</td></tr>
+<tr><th scope="row">4–6 days after MI — discharge</th><td>101</td></tr>
+<tr><th scope="row">One month after MI</th><td>95</td></tr>
+<tr><th scope="row">Six months after MI</th><td>83</td></tr>
+<tr><th scope="row">N/A — control samples</th><td>46</td></tr>
+</tbody></table></div>
+<p>Missing follow-up samples are left unfilled. Join expression data by GSM accession, and use GSE59867 together with <code>public_patient_label</code> when keeping repeated samples together in a new grouped analysis. The labels retain this series' source wording; they are not verified identifiers for matching people across datasets.</p>
+</section>
+<section aria-labelledby="columns-heading">
+<h2 id="columns-heading">Six CSV columns</h2>
+<div class="table-wrap"><table class="column-definitions"><thead><tr><th scope="col">Column</th><th scope="col">Definition</th></tr></thead><tbody>
+<tr><th scope="row"><code>GSM</code></th><td>GEO sample accession, retained once for each of the 436 samples. Use this to join sample-level data.</td></tr>
+<tr><th scope="row"><code>original_title</code></th><td>The complete sample title recorded by GEO.</td></tr>
+<tr><th scope="row"><code>public_patient_label</code></th><td>The exact Patient label before <code>,sampling N</code>, or the complete Control patient title. Suffixes and source spelling are preserved.</td></tr>
+<tr><th scope="row"><code>original_collection</code></th><td>The full <code>samples collection:</code> value from the source metadata.</td></tr>
+<tr><th scope="row"><code>original_hf_progression</code></th><td>The full <code>hf progression:</code> value from that sample's metadata, including N/A.</td></tr>
+<tr><th scope="row"><code>original_cell_type</code></th><td>The original cell-type field: <code>cell type: PBMC</code> in all 436 rows.</td></tr>
+</tbody></table></div>
+<p><strong>326 rows retain <code>hf progression: N/A</code>.</strong> The other source values are HF in 34 rows, non-HF in 30 and stable CAD in 46. Values stay attached to their recorded samples: no HF label is carried between visits, and N/A is not recoded as a negative outcome.</p>
+</section>
+<section aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources and citation</h2>
+<p>This author-prepared map derives from the sample metadata before the expression table in the <a href="https://ftp.ncbi.nlm.nih.gov/geo/series/GSE59nnn/GSE59867/matrix/GSE59867_series_matrix.txt.gz">official GSE59867 series-matrix file</a>, retrieved on 15 November 2026. Source fields are <code>!Sample_geo_accession</code>, <code>!Sample_title</code> and the collection, HF-progression and cell-type rows of <code>!Sample_characteristics_ch1</code>. The CSV contains metadata rather than expression values.</p>
+<p><strong>Original dataset publication.</strong> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867">GSE59867 in GEO</a> links <a href="https://pubmed.ncbi.nlm.nih.gov/25984239/">PMID 25984239</a> and <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA256954">BioProject PRJNA256954</a>. Cite the original study and GEO record for the dataset.</p>
+<p><strong>Secondary research context.</strong> <em>Molecular subtypes of ischemic heart disease based on circadian rhythm</em>, DOI <a href="https://doi.org/10.1038/s41598-024-65236-5">10.1038/s41598-024-65236-5</a>, reused this dataset. Cite that paper for its reported molecular analysis; its <a href="/papers/circadian-ihd.html">study evidence and formal citation</a> remain separate from this derived metadata map.</p>
+<p class="source-links"><a href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.md">Read the existing Markdown notes</a></p>
+<p class="prepared">Author-prepared metadata resource · 15 November 2026</p>
+</section>
+</main></body></html>
