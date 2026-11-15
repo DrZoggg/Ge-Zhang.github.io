@@ -1854,6 +1854,9 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_regist
                 f"(DOI: {item['doi']})"
             ]
         )
+    guide_links = evidence_presentation.guide_navigation(content['doi'], markdown=True)
+    if guide_links:
+        parts.extend(["", guide_links])
     parts.extend(
         [
             "",

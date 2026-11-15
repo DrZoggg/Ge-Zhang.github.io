@@ -337,8 +337,18 @@ def validate_v2_rendered_page(
     # Validate the original scientific sections exactly; separately validate all
     # explicitly marked new controls/payloads with validate_evidence.
     guide_nav = evidence_presentation.guide_navigation(content['doi'])
-    require(page.count('id="related-evidence-guide"') == bool(guide_nav),
-            'Unexpected/missing guide backlink scope')
+    legacy_guide = evidence_presentation.research_guides.load()
+    legacy_scope = content['doi'].lower() in {
+        row['source_doi'].lower() for row in legacy_guide['studies']
+    }
+    require(page.count('id="related-evidence-guide"') == int(legacy_scope),
+            'Unexpected/missing legacy guide backlink scope')
+    resource_md = evidence_presentation.guide_navigation(content['doi'], markdown=True)
+    require(page.count('aria-label="Related research resource"') == int(bool(resource_md)),
+            'Unexpected/missing opted-in resource backlink scope')
+    require(markdown.count(resource_md) == 1 if resource_md
+            else '## Related research resource' not in markdown,
+            'Opted-in resource HTML/Markdown link mismatch')
     if guide_nav:
         require(page.count(guide_nav) == 1, 'Guide navigation content/link changed')
         require(page.index('data-v2-section="related-research"') < page.index(guide_nav)

@@ -1,0 +1,581 @@
+{
+  "version": 1,
+  "slug": "cancer-omics-validation",
+  "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
+  "question": "How should a new cancer cohort be used for molecular subtyping, prognostic scoring, network-state analysis or immunotherapy-response assessment?",
+  "scope": "A source-linked worked comparison and reusable reporting worksheet for choosing analyses in a new cancer cohort. Six examples separate molecular subtyping, survival prognosis, stage-associated network states and treatment-response evidence, using reviewed study facts and identified methodological guidance.",
+  "reading_rule": "Start with the intended output, cohort and observation unit. Then identify the model/template/network object, its implementation and updating, independent evaluation data, endpoint/time and response measurements. Keep the separate analyses of one publication in separate worksheet rows and cite the original DOI for study findings.",
+  "contribution_first": true,
+  "studies": [
+    {
+      "id": "doi-10-1016-j-joim-2025-06-003",
+      "task": "HCC molecular-subtype assignment and cohort-specific outcome comparisons",
+      "source_doi": "10.1016/j.joim.2025.06.003",
+      "source_json": "data/deep_geo/doi-10-1016-j-joim-2025-06-003.json",
+      "source_fingerprint": "6109d8274d5789232bea9c49f1b559e27ecb2be5ded6abaa9dd5e26adb70d27d",
+      "qa_indices": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "doi-10-3389-fonc-2025-1538574",
+      "task": "TNBC TME associations and cross-cancer ICI-response modeling",
+      "source_doi": "10.3389/fonc.2025.1538574",
+      "source_json": "data/deep_geo/doi-10-3389-fonc-2025-1538574.json",
+      "source_fingerprint": "dcdf1181eed3be4f775db2e2a52619da7bd893959f3f782a30884d5d5ed2aea3",
+      "qa_indices": [
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "id": "doi-10-1002-mdr2-70004",
+      "task": "Thyroid stage-associated DNB states and separate miniPC subtype classification",
+      "source_doi": "10.1002/mdr2.70004",
+      "source_json": "data/deep_geo/doi-10-1002-mdr2-70004.json",
+      "source_fingerprint": "149e21b2139c2d1a5cfa8c2aaa2bdca39956a0ea58587eb6807cc08ba99a6584",
+      "qa_indices": [
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "id": "doi-10-1111-jcmm-18408",
+      "task": "LUAD LPAS survival-score evaluation and separate immune/treatment associations",
+      "source_doi": "10.1111/jcmm.18408",
+      "source_json": "data/deep_geo/doi-10-1111-jcmm-18408.json",
+      "source_fingerprint": "7c78c739fc2aa844d2064f8fef8e91e557f7cca58de84695073483803033229a",
+      "qa_indices": [
+        2,
+        3,
+        5
+      ]
+    }
+  ],
+  "research_use": {
+    "id": "cancer-validation-task-selection",
+    "question": "Which analysis and evidence should be carried into a new external cancer cohort?",
+    "question_zh": "为新的外部癌症队列选择分析时，应迁移什么对象，怎样报告其验证证据？",
+    "answer": "Define the output first. HCCcrds provides a molecular-subtype and cohort-role example; the thyroid study separates a stage-associated DNB state from a compact subtype classifier; LPAS contributes a retrospective survival-score example; the TNBC work distinguishes molecular-state profiling, a mixed-cancer response-model pipeline and target-cancer proxy analyses. ConsensusClusterPlus can assess resampling stability, and SubMap can assess molecular correspondence across independently defined subclasses. For prediction models, record unchanged implementation versus updating/refitting. For treatment claims, identify actual outcome-linked response data separately from molecular proxies. The worksheet makes these choices explicit before a new-cohort analysis.",
+    "answer_zh": "先确定所需输出。HCCcrds提供分子亚型及队列用途的实例；甲状腺研究区分分期相关DNB网络状态与紧凑亚型分类器；LPAS提供回顾性生存风险评分实例；TNBC研究则需分开分子状态、混合癌种响应模型和目标癌种中的预测proxy。ConsensusClusterPlus可评估重采样下的聚类稳定性，SubMap可评估独立数据中既定亚类的分子对应。对预测模型，记录是否原样应用、更新或重拟合；对治疗主张，另列真实结局关联响应数据。工作表用于在新队列分析前明确这些选择。",
+    "answer_source_ids": [
+      "doi-10-1016-j-joim-2025-06-003",
+      "doi-10-3389-fonc-2025-1538574",
+      "doi-10-1002-mdr2-70004",
+      "doi-10-1111-jcmm-18408",
+      "consensusclusterplus-2010",
+      "submap-2007",
+      "external-validation-2024"
+    ],
+    "sources": [
+      {
+        "id": "doi-10-1016-j-joim-2025-06-003",
+        "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
+        "doi": "10.1016/j.joim.2025.06.003",
+        "url": "https://doi.org/10.1016/j.joim.2025.06.003",
+        "locator": "Author-deposited Results 3.3-3.7, Figures 4-6. Detailed figure locators use the ahead-of-print copy; final typeset figure equivalence has not been rechecked."
+      },
+      {
+        "id": "doi-10-3389-fonc-2025-1538574",
+        "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
+        "doi": "10.3389/fonc.2025.1538574",
+        "url": "https://doi.org/10.3389/fonc.2025.1538574",
+        "locator": "PMC12401915 Methods s2_10, Results s3_9, Figure 8D-K and Discussion s4."
+      },
+      {
+        "id": "doi-10-1002-mdr2-70004",
+        "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
+        "doi": "10.1002/mdr2.70004",
+        "url": "https://doi.org/10.1002/mdr2.70004",
+        "locator": "Methods 2.2/2.6-2.8; Results 3.1/3.3-3.4; Figures 1/3-4. Immune hypotheses: Methods 2.10/2.20, Results 3.5/3.9."
+      },
+      {
+        "id": "doi-10-1111-jcmm-18408",
+        "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
+        "doi": "10.1111/jcmm.18408",
+        "url": "https://doi.org/10.1111/jcmm.18408",
+        "locator": "PMC11149493 Methods 2.8 (jcmm18408-sec-0010), Results 3.3-3.4 (sec-0026/0027), Figures 4-5; immune/treatment analyses Results 3.5/3.7/3.9, Figures 6/8/10."
+      },
+      {
+        "id": "consensusclusterplus-2010",
+        "title": "ConsensusClusterPlus: a class discovery tool with confidence assessments and item tracking",
+        "doi": "10.1093/bioinformatics/btq170",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2881355/",
+        "locator": "Introduction SEC1/p[1]; Software Features SEC2/p[1]; Example Application SEC3/p[1]. Repeated subsampling, consensus stability and item tracking; same-input software comparison is described as an integrity check."
+      },
+      {
+        "id": "submap-2007",
+        "title": "Subclass Mapping: Identifying Common Subtypes in Independent Disease Data Sets",
+        "doi": "10.1371/journal.pone.0001195",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2065909/",
+        "locator": "Materials and Methods s4b1 candidate subclasses; s4b2-s4b4 mutual marker enrichment and subclass-association matrix. The paper separately describes prediction (s4c) and survival (s4d) analyses."
+      },
+      {
+        "id": "external-validation-2024",
+        "title": "Evaluation of clinical prediction models (part 2): how to undertake an external validation study",
+        "doi": "10.1136/bmj-2023-074820",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/",
+        "locator": "What do we mean by external validation?; Steps 2-4; Table 1 and performance/calibration sections. Applied here to clinical prediction-model implementation and updating, not as a rule for unsupervised clustering."
+      },
+      {
+        "id": "omics-review",
+        "title": "Omics-based molecular classifications empowering in precision oncology",
+        "doi": "10.1007/s13402-023-00912-8",
+        "url": "https://doi.org/10.1007/s13402-023-00912-8",
+        "locator": "Sections 3.1.4-3.1.5, 5.1-5.2 and 6. Narrative molecular-classification and translation context; later primary examples in this author-maintained resource are separately sourced."
+      },
+      {
+        "id": "hcc-cohort-roles",
+        "title": "Worked example: select HCC cohorts by analysis purpose",
+        "doi": "10.1016/j.joim.2025.06.003",
+        "url": "https://github.com/DrZoggg/ClockProCRC/blob/main/docs/hcc-cohort-comparison.md",
+        "locator": "Author-maintained cohort-role worksheet and linked data/hcc-cohort-roles.csv, derived from HCCcrds Results 3.5/Figure 5A-B for that same study."
+      }
+    ],
+    "checklist": [
+      {
+        "dimension": "Output, cohort and unit",
+        "text": "Record the intended molecular label, survival endpoint, network-state output or treatment response; identify independent patients/specimens and development/model-selection overlap.",
+        "source_ids": [
+          "doi-10-1016-j-joim-2025-06-003",
+          "doi-10-3389-fonc-2025-1538574",
+          "doi-10-1002-mdr2-70004",
+          "doi-10-1111-jcmm-18408"
+        ]
+      },
+      {
+        "dimension": "Stability and molecular correspondence",
+        "text": "Use consensus stability to inspect robustness under subsampling and subclass mapping to inspect cross-dataset correspondence. Report the data, labels/features and method settings for the task actually performed.",
+        "source_ids": [
+          "consensusclusterplus-2010",
+          "submap-2007"
+        ]
+      },
+      {
+        "dimension": "Prediction-model implementation",
+        "text": "For a prognostic or response model, retain the model version, features/weights, preprocessing and any change or refit. Record assessment on data separate from development and selection.",
+        "source_ids": [
+          "external-validation-2024",
+          "doi-10-1111-jcmm-18408",
+          "doi-10-3389-fonc-2025-1538574"
+        ]
+      },
+      {
+        "dimension": "Endpoint and time",
+        "text": "For survival, state endpoint, time origin, horizon, follow-up and censoring. For stage/network analysis, state the stage/reference groups and whether observations are cross-sectional or longitudinal.",
+        "source_ids": [
+          "external-validation-2024",
+          "doi-10-1111-jcmm-18408",
+          "doi-10-1002-mdr2-70004"
+        ]
+      },
+      {
+        "dimension": "Observed response or proxy",
+        "text": "Name the cancer, treatment, sampling time and response definition when measured. Otherwise report the named immune score, expression mapping or predicted group, and keep it separate from observed benefit.",
+        "source_ids": [
+          "doi-10-3389-fonc-2025-1538574",
+          "doi-10-1016-j-joim-2025-06-003",
+          "doi-10-1002-mdr2-70004",
+          "doi-10-1111-jcmm-18408",
+          "submap-2007"
+        ]
+      },
+      {
+        "dimension": "Reusable cohort-role source",
+        "text": "Use the existing HCC worked example and five-dataset CSV for Fig.5A/B membership. This comparison adds output/implementation/reporting roles rather than another accession roster.",
+        "source_ids": [
+          "hcc-cohort-roles",
+          "doi-10-1016-j-joim-2025-06-003"
+        ]
+      }
+    ],
+    "study_roles": [
+      {
+        "work_id": "doi-10-1016-j-joim-2025-06-003",
+        "role": "Molecular-subtype transfer and analysis-specific cohort roles",
+        "text": "HCCcrds connects subtype assignment to retrospective outcome and immune analyses. Its external subtype and survival sets overlap but differ; the linked cohort-role worksheet supplies their membership.",
+        "source_ids": [
+          "doi-10-1016-j-joim-2025-06-003",
+          "hcc-cohort-roles"
+        ]
+      },
+      {
+        "work_id": "doi-10-3389-fonc-2025-1538574",
+        "role": "TME molecular association and mixed-cancer response modeling",
+        "text": "The study contributes TNBC molecular-state comparisons and a separate retrospective ICI-response classifier pipeline. Its mixed-cancer pooled internal evaluation and TNBC proxy/association analyses retain distinct roles.",
+        "source_ids": [
+          "doi-10-3389-fonc-2025-1538574"
+        ]
+      },
+      {
+        "work_id": "doi-10-1002-mdr2-70004",
+        "role": "Stage-associated network state and separate subtype classifier",
+        "text": "DNB instability across stage groups, TCPSLevel associations and miniPC subtype classification are distinct outputs within one study. The stage-associated analysis supplies no observed individual transition time.",
+        "source_ids": [
+          "doi-10-1002-mdr2-70004"
+        ]
+      },
+      {
+        "work_id": "doi-10-1111-jcmm-18408",
+        "role": "Retrospective survival-risk-signature evaluation",
+        "text": "LPAS contributes a prognosis task with additional survival-series evaluation. Its immune/treatment associations and cell-functional experiments are separate from unchanged-score survival evaluation or model updating.",
+        "source_ids": [
+          "doi-10-1111-jcmm-18408"
+        ]
+      }
+    ],
+    "comparison": {
+      "caption": "Choose the analysis by its output, evaluation unit and source evidence",
+      "rows": [
+        {
+          "work_id": "doi-10-1016-j-joim-2025-06-003",
+          "design": "Retrospective single-cell/bulk integration and HCC subtype evaluation",
+          "population": "HCC expression cohorts, with separate circadian reference experiments",
+          "endpoint": "Molecular subtype assignment; subtype-survival comparisons in separately designated datasets",
+          "validation": "External expression/classification and retrospective outcome comparisons; use the linked cohort-role table to select the relevant analysis set",
+          "metrics": "Subtype and survival analyses have different cohort roles; do not add the overlapping Fig.5A/B sets into an independent-cohort total",
+          "doi": "10.1016/j.joim.2025.06.003",
+          "source_ids": [
+            "doi-10-1016-j-joim-2025-06-003",
+            "hcc-cohort-roles"
+          ]
+        },
+        {
+          "work_id": "doi-10-3389-fonc-2025-1538574",
+          "design": "TNBC multi-modal association plus secondary mixed-cancer ICI-response classifier development",
+          "population": "BRCA1-defined TNBC specimens and separately pooled treated cohorts from other cancers",
+          "endpoint": "TME molecular states; response classification in the mixed-cancer source data; separate target-cohort predicted-group associations",
+          "validation": "Within-pooled-source development/evaluation; the study explicitly lacks an independent treated-TNBC response cohort",
+          "metrics": "Retrospective KNN discrimination is distinct from TIDE estimates, predicted-response groups and survival associations",
+          "doi": "10.3389/fonc.2025.1538574",
+          "source_ids": [
+            "doi-10-3389-fonc-2025-1538574"
+          ]
+        },
+        {
+          "work_id": "doi-10-1002-mdr2-70004",
+          "design": "Stage-associated network analysis, molecular subtyping and compact subtype-classifier evaluation",
+          "population": "Public thyroid-cancer expression cohorts; single-cell and tissue/cell follow-up remain separate evidence layers",
+          "endpoint": "DNB network instability, TCPSLevel and miniPC subtype assignment are distinct outputs",
+          "validation": "Cross-sectional stage-associated DNB evidence; separate retrospective external template/classifier evaluation",
+          "metrics": "A stage-associated instability peak is not an individual transition-time forecast; miniPC classification is not a survival-benefit evaluation",
+          "doi": "10.1002/mdr2.70004",
+          "source_ids": [
+            "doi-10-1002-mdr2-70004"
+          ]
+        },
+        {
+          "work_id": "doi-10-1111-jcmm-18408",
+          "design": "Retrospective transcriptomic survival modeling with separate cell-functional and immune analyses",
+          "population": "TCGA development and additional GEO LUAD survival series; other analytic layers are kept separate",
+          "endpoint": "LPAS-associated overall survival; immune/treatment associations have their own definitions",
+          "validation": "Additional retrospective survival-series evaluation; any new-cohort refitting must be reported separately from unchanged-score application",
+          "metrics": "Use horizon-specific survival evidence and the actual implementation; immune matching or cell perturbation is a different evaluation",
+          "doi": "10.1111/jcmm.18408",
+          "source_ids": [
+            "doi-10-1111-jcmm-18408",
+            "external-validation-2024"
+          ]
+        }
+      ]
+    },
+    "comparison_note": "Use these rows for applicability and reporting, rather than to rank unlike performance measures. The original methods establish resampling stability and cross-dataset subclass correspondence as positive capabilities. Requiring measured outcome-linked evidence for a clinical or response claim is this resource's task-based inference, not a statement that those method authors reject clinical applications. External-validation guidance is applied here to prediction models, not as a universal clustering criterion.",
+    "comparison_note_source_ids": [
+      "consensusclusterplus-2010",
+      "submap-2007",
+      "external-validation-2024",
+      "doi-10-1016-j-joim-2025-06-003",
+      "doi-10-3389-fonc-2025-1538574",
+      "doi-10-1002-mdr2-70004",
+      "doi-10-1111-jcmm-18408"
+    ],
+    "research_uses": [
+      {
+        "use": "Plan a new external-cohort analysis",
+        "text": "Select the intended output and fill one blank row for each cohort/model/endpoint. Identify the original artifact and distinguish unchanged application, adaptation/refit, new clustering/network construction and observed-response assessment before running the analysis.",
+        "source_ids": [
+          "external-validation-2024",
+          "consensusclusterplus-2010",
+          "submap-2007",
+          "doi-10-1016-j-joim-2025-06-003",
+          "doi-10-1002-mdr2-70004",
+          "doi-10-1111-jcmm-18408",
+          "doi-10-3389-fonc-2025-1538574"
+        ]
+      },
+      {
+        "use": "Report Methods and Discussion",
+        "text": "Carry the source version, exact locator, actual data role, implementation changes and unresolved details into the manuscript. Use the omics review for narrative methodological context and the primary studies for their empirical claims; this new comparison does not imply the older review cited the later studies.",
+        "source_ids": [
+          "omics-review",
+          "doi-10-1016-j-joim-2025-06-003",
+          "doi-10-3389-fonc-2025-1538574",
+          "doi-10-1002-mdr2-70004",
+          "doi-10-1111-jcmm-18408"
+        ]
+      }
+    ],
+    "task_workspace": {
+      "title": "Choose and report an analysis for a new external cancer cohort",
+      "intro": "Use one row per analysis, cohort, model version and endpoint. Record the output before selecting a method. Split subtype assignment, survival prognosis, network state and treatment response into their actual roles. NR means unresolved in this extraction, not that the original paper omitted a detail. For a new cohort, report the artifact, preprocessing, every adaptation/refit, independence, endpoint/time and available treatment labels; use the blank CSV to retain those decisions.",
+      "columns": [
+        {
+          "id": "analysis",
+          "label": "Reported analysis"
+        },
+        {
+          "id": "formal_doi",
+          "label": "Formal DOI"
+        },
+        {
+          "id": "output_task",
+          "label": "Output and research task"
+        },
+        {
+          "id": "reference_data_role",
+          "label": "Reference data role"
+        },
+        {
+          "id": "object_to_transfer",
+          "label": "Object to transfer or reconstruct"
+        },
+        {
+          "id": "transfer_or_refit",
+          "label": "Application / refit status"
+        },
+        {
+          "id": "time_endpoint",
+          "label": "Time reference and endpoint"
+        },
+        {
+          "id": "validation_role",
+          "label": "Evaluation actually supported"
+        },
+        {
+          "id": "immune_evidence_role",
+          "label": "Immunotherapy evidence role"
+        },
+        {
+          "id": "new_cohort_check",
+          "label": "Checks before new-cohort reuse"
+        },
+        {
+          "id": "reporting_decision",
+          "label": "Claim to report"
+        },
+        {
+          "id": "source_url",
+          "label": "Original source"
+        },
+        {
+          "id": "source_locator",
+          "label": "Reviewed source locator"
+        },
+        {
+          "id": "source_version_gap",
+          "label": "Source version and unresolved detail"
+        }
+      ],
+      "display_columns": [
+        "analysis",
+        "output_task",
+        "transfer_or_refit",
+        "time_endpoint",
+        "validation_role",
+        "immune_evidence_role",
+        "reporting_decision"
+      ],
+      "examples": [
+        {
+          "cells": {
+            "analysis": "HCCcrds external subtype evaluation",
+            "formal_doi": "10.1016/j.joim.2025.06.003",
+            "output_task": "Molecular subtype assignment, not an individual survival-risk model",
+            "reference_data_role": "Retrospective external subtype-analysis set, distinct from the survival-analysis set",
+            "object_to_transfer": "Reported subtype framework / NTP template; obtain the exact locked template and preprocessing before external application",
+            "transfer_or_refit": "External expression/classification evaluation is reported. Whether every preprocessing/template element was frozen is NR here; do not relabel fresh clustering as unchanged classifier application",
+            "time_endpoint": "Expression-defined CS-H/CS-L/CS-M labels; not measured physiological circadian phase",
+            "validation_role": "Retrospective cross-dataset subtype evaluation. Reuse the linked cohort-role worksheet rather than copying its accession inventory",
+            "immune_evidence_role": "Separate CIBERSORT/IPS analyses are inferred immune properties, not observed ICI response",
+            "new_cohort_check": "Record sample unit, expression platform, preprocessing, gene overlap, subtype/template version, and every change made before assigning new labels",
+            "reporting_decision": "Report external subtype assignment/reproducibility with the actual implementation status; keep subtype labels separate from survival prediction",
+            "source_url": "https://doi.org/10.1016/j.joim.2025.06.003",
+            "source_locator": "Author-deposited Results 3.3-3.7, Figures 4-6; linked Figure 5A/B cohort-role worksheet",
+            "source_version_gap": "Author-uploaded ahead-of-print text; final typeset figure equivalence not re-established. Frozen implementation details NR in this proposal"
+          },
+          "source_ids": [
+            "doi-10-1016-j-joim-2025-06-003",
+            "hcc-cohort-roles"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "LPAS retrospective LUAD survival-score evaluation",
+            "formal_doi": "10.1111/jcmm.18408",
+            "output_task": "Prognostic expression score associated with overall survival",
+            "reference_data_role": "TCGA development and additional GEO LUAD survival cohorts",
+            "object_to_transfer": "Published LPAS gene model; exact coefficient artifact, preprocessing and cohort-specific grouping rule must be verified before execution",
+            "transfer_or_refit": "Retrospective external dataset evaluation is reported. Applying an unchanged score and re-estimating coefficients/cutoffs in the new cohort are different analyses",
+            "time_endpoint": "Overall survival; retain time origin, horizon, censoring and the exact metric definition in each analysis row",
+            "validation_role": "Retrospective external survival evaluation; no prospective LPAS-guided clinical decision validation",
+            "immune_evidence_role": "TIDE/SubMap and heterogeneous treatment-cohort associations are separate from an observed response study in the intended new LUAD population",
+            "new_cohort_check": "Freeze the gene/weight/preprocessing artifact before assessment; if any parameter is refitted, record training data and an independent assessment separately",
+            "reporting_decision": "Report the actual score implementation and retrospective prognosis task. Do not rank its survival AUC against subtype accuracy or ICI-response AUC",
+            "source_url": "https://doi.org/10.1111/jcmm.18408",
+            "source_locator": "PMC11149493 Methods 2.8 (jcmm18408-sec-0010), Results 3.3-3.4 (sec-0026/0027), Figures 4-5; treatment analyses Results 3.5/3.7/3.9",
+            "source_version_gap": "Version-of-record/PMC source. Exact frozen coefficients, update status and cohort-specific cutoffs are not established by this comparison"
+          },
+          "source_ids": [
+            "doi-10-1111-jcmm-18408"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "ISG15-related classifier in mixed-cancer ICI source data",
+            "formal_doi": "10.3389/fonc.2025.1538574",
+            "output_task": "Retrospective treated-response classification, distinct from TNBC molecular-state profiling",
+            "reference_data_role": "Mixed-cancer treated cohorts pooled for model selection and an internal development/evaluation split",
+            "object_to_transfer": "Selected KNN response classifier and its feature/preprocessing definition; not a general TNBC prognostic score",
+            "transfer_or_refit": "The reported evaluation is within a pooled source-data pipeline, not independent treated-TNBC external validation",
+            "time_endpoint": "ICI response label in the source treatment cohorts; label definition and pretreatment timing must be verified for reuse",
+            "validation_role": "Modest retrospective response discrimination in other-cancer source data; source cohorts being external to the TNBC atlas does not make the internal split independent TNBC validation",
+            "immune_evidence_role": "Response-labeled treated source data are a different evidence role from TIDE or a predicted-response group in an untreated/unclear-treatment cohort",
+            "new_cohort_check": "Identify cancer, treatment regimen, sampling time and response definition; exclude overlap with model selection; document whether the original model is actually locked",
+            "reporting_decision": "Name the pooled/internal evaluation and its cancer context. Do not report a validated TNBC treatment-selection test",
+            "source_url": "https://doi.org/10.3389/fonc.2025.1538574",
+            "source_locator": "PMC12401915 Methods s2_10, Results s3_9, Figure 8D-G; Discussion s4",
+            "source_version_gap": "Version-of-record/PMC source. Methods reports 13 cohorts and Results reports 12; this comparison does not reconcile that total"
+          },
+          "source_ids": [
+            "doi-10-3389-fonc-2025-1538574"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "ISG15 predicted-response groups in TNBC-related application analyses",
+            "formal_doi": "10.3389/fonc.2025.1538574",
+            "output_task": "Predicted group, immune-signature or survival association; not observed ICI response in treated TNBC",
+            "reference_data_role": "METABRIC/TCGA TNBC analyses kept separate from the mixed-cancer treated training/evaluation data",
+            "object_to_transfer": "Predicted-response grouping and associated signatures, with the actual grouping implementation recorded",
+            "transfer_or_refit": "Application/association layer; do not treat a new grouping or retrospective survival contrast as independent response-model validation",
+            "time_endpoint": "Predicted-response group, immune estimate and overall survival are separate endpoints",
+            "validation_role": "Target-TNBC computational proxy analyses and a nonsignificant TCGA TNBC survival comparison; source-data response-model evaluation is recorded in its separate row",
+            "immune_evidence_role": "TIDE dysfunction/exclusion and predicted-response labels are computational proxies; they are not measured clinical response",
+            "new_cohort_check": "Ask whether the new dataset contains actual treated patients and response labels. If not, report only the proxy or association available",
+            "reporting_decision": "State predicted-response/immune-association results at their actual scope, without claiming treatment benefit",
+            "source_url": "https://doi.org/10.3389/fonc.2025.1538574",
+            "source_locator": "PMC12401915 Results s3_9, Figure 8H-K; Discussion s4",
+            "source_version_gap": "Same VOR/PMC source; no new response-label extraction or treatment efficacy estimate"
+          },
+          "source_ids": [
+            "doi-10-3389-fonc-2025-1538574"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "Thyroid DNB stage-associated network state",
+            "formal_doi": "10.1002/mdr2.70004",
+            "output_task": "Cross-sectional stage-associated network instability, not longitudinal individual transition prediction",
+            "reference_data_role": "Stage-group network comparison in public thyroid expression data",
+            "object_to_transfer": "A group/network-state calculation and its reference/stage grouping; not interchangeable with a one-patient survival-risk score",
+            "transfer_or_refit": "Reconstructing a network/state calculation in new data is a distinct analysis from applying the separate miniPC subtype classifier",
+            "time_endpoint": "Reported Stage II instability peak across stage groups; no observed within-person time-to-transition clock",
+            "validation_role": "Stage-associated molecular evidence. It does not establish when a new patient's disease will deteriorate",
+            "immune_evidence_role": "IPS/CMap are computational immune/drug hypotheses; no observed immunotherapy-response trial is established",
+            "new_cohort_check": "Record stage definitions, group sizes, expression preprocessing, network/reference construction and observation unit; do not substitute pseudotime or stage for longitudinal patient follow-up",
+            "reporting_decision": "Report a stage-associated network-state analysis and its grouping assumptions; do not call it prospective dynamic-risk validation",
+            "source_url": "https://doi.org/10.1002/mdr2.70004",
+            "source_locator": "Methods 2.2, Results 3.1, Figure 1; computational treatment analyses Methods 2.10/2.20, Results 3.5/3.9",
+            "source_version_gap": "The reviewed analysis is cross-sectional and stage-associated. Exact executable network/reference settings require the cited Methods before reproduction"
+          },
+          "source_ids": [
+            "doi-10-1002-mdr2-70004"
+          ]
+        },
+        {
+          "cells": {
+            "analysis": "Thyroid miniPC external molecular-subtype classification",
+            "formal_doi": "10.1002/mdr2.70004",
+            "output_task": "Compact classifier of consensus subtype labels, separate from the DNB-state analysis and TCPSLevel survival associations",
+            "reference_data_role": "External subtype-classifier cohorts; not a direct prospective survival-benefit assessment",
+            "object_to_transfer": "miniPC neural-network classifier and subtype label definition; archive/weights and preprocessing must be verified",
+            "transfer_or_refit": "Externally reported subtype-classifier evaluation. Training a new network or changing the label-generating clustering is a separate fit",
+            "time_endpoint": "Subtype assignment; neither a treatment-response label nor an individual transition time",
+            "validation_role": "Retrospective expression-template/classifier evaluation; internal cluster stability is not external clinical validation",
+            "immune_evidence_role": "Separate IPS/CMap results remain hypotheses rather than measured patient response",
+            "new_cohort_check": "Retain the label reference, complete feature/weight artifact, preprocessing, mapping and confidence/rejection rule; log retraining separately",
+            "reporting_decision": "Report subtype classification at its actual evaluation scope. Do not call miniPC a validated survival model",
+            "source_url": "https://doi.org/10.1002/mdr2.70004",
+            "source_locator": "Methods 2.6-2.8, Results 3.3-3.4, Figures 3-4",
+            "source_version_gap": "Accession/count differences remain unresolved in the reviewed source; figure-only classifier accuracy was not reconstructed. Exact frozen classifier artifact details are not recorded here"
+          },
+          "source_ids": [
+            "doi-10-1002-mdr2-70004"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "rule": "Define the output and unit",
+          "text": "Choose molecular subtype, prognostic risk, a group/network state or observed response before evaluating a new dataset. State the observation unit, reference labels and the particular analysis supported by each cohort.",
+          "source_ids": [
+            "doi-10-1016-j-joim-2025-06-003",
+            "doi-10-3389-fonc-2025-1538574",
+            "doi-10-1002-mdr2-70004",
+            "doi-10-1111-jcmm-18408"
+          ]
+        },
+        {
+          "rule": "Use stability and correspondence for their positive tasks",
+          "text": "ConsensusClusterPlus supplies repeated-subsampling stability and membership evidence. SubMap tests correspondence between previously defined subclasses across independently generated datasets. The reporting inference is that a stability plot or molecular association matrix alone does not supply clinical outcomes that were not measured; the original SubMap paper also includes separate prediction and survival analyses.",
+          "source_ids": [
+            "consensusclusterplus-2010",
+            "submap-2007"
+          ]
+        },
+        {
+          "rule": "Separate prediction-model application from updating",
+          "text": "For a prognostic or response predictor, identify the original model/feature/weight artifact and document any recalibration, coefficient/cutoff refit or retraining, with its development and assessment data. This prediction-model guidance is not used to judge unsupervised clustering as though it were a fixed clinical risk model.",
+          "source_ids": [
+            "external-validation-2024",
+            "doi-10-1111-jcmm-18408",
+            "doi-10-3389-fonc-2025-1538574"
+          ]
+        },
+        {
+          "rule": "Keep stage-associated states separate from patient time",
+          "text": "The thyroid DNB comparison is cross-sectional and stage-associated. Reconstructing its network/state output and applying miniPC subtype labels are distinct analyses; neither supplies an observed within-patient transition time merely from stage membership.",
+          "source_ids": [
+            "doi-10-1002-mdr2-70004"
+          ]
+        },
+        {
+          "rule": "Identify the response evidence actually present",
+          "text": "Record treatment, pretreatment sampling, cancer and measured response when available. Distinguish mixed-cancer source-data evaluation from a new cancer-specific response cohort. IPS/TIDE, predicted-response groups and SubMap molecular correspondence retain their actual computational roles.",
+          "source_ids": [
+            "doi-10-3389-fonc-2025-1538574",
+            "doi-10-1016-j-joim-2025-06-003",
+            "doi-10-1002-mdr2-70004",
+            "doi-10-1111-jcmm-18408",
+            "submap-2007"
+          ]
+        },
+        {
+          "rule": "Reuse the existing HCC cohort-role table",
+          "text": "For HCC Fig.5A subtype versus Fig.5B survival membership, follow the existing worked example and CSV. Do not recreate its dataset list in this resource. Keep cross-study metric ranking unset when tasks, endpoint/time definitions or implementations differ.",
+          "source_ids": [
+            "doi-10-1016-j-joim-2025-06-003",
+            "hcc-cohort-roles",
+            "external-validation-2024"
+          ]
+        }
+      ]
+    }
+  },
+  "paper_navigation": true
+}
