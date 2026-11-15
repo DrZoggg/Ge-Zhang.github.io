@@ -1,0 +1,437 @@
+GSM,original_title,public_patient_label,original_collection,original_hf_progression,original_cell_type
+GSM1448335,"Patient 1Z,sampling 1",Patient 1Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448336,"Patient 1Z,sampling 2",Patient 1Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448337,"Patient 1Z,sampling 3",Patient 1Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448338,"Patient 2Z,sampling 1",Patient 2Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448339,"Patient 2Z,sampling 2",Patient 2Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448340,"Patient 2Z,sampling 3",Patient 2Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448341,"Patient 2Z,sampling 4",Patient 2Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448342,"Patient 3Z,sampling 1",Patient 3Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448343,"Patient 3Z,sampling 2",Patient 3Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448344,"Patient 3Z,sampling 3",Patient 3Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448345,"Patient 3Z,sampling 4",Patient 3Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448346,"Patient 4Z,sampling 1",Patient 4Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448347,"Patient 4Z,sampling 2",Patient 4Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448348,"Patient 4Z,sampling 3",Patient 4Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448349,"Patient 4Z,sampling 4",Patient 4Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448350,"Patient 5Z,sampling 1",Patient 5Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448351,"Patient 5Z,sampling 2",Patient 5Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448352,"Patient 6Z,sampling 1",Patient 6Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448353,"Patient 6Z,sampling 2",Patient 6Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448354,"Patient 6Z,sampling 3",Patient 6Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448355,"Patient 6Z,sampling 4",Patient 6Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448356,"Patient 7Z,sampling 1",Patient 7Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448357,"Patient 7Z,sampling 2",Patient 7Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448358,"Patient 7Z,sampling 3",Patient 7Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448359,"Patient 7Z,sampling 4",Patient 7Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448360,"Patient 8Z,sampling 1",Patient 8Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448361,"Patient 8Z,sampling 2",Patient 8Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448362,"Patient 8Z,sampling 3",Patient 8Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448363,"Patient 8Z,sampling 4",Patient 8Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448364,"Patient 9Z,sampling 1",Patient 9Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448365,"Patient 9Z,sampling 2",Patient 9Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448366,"Patient 9Z,sampling 3",Patient 9Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448367,"Patient 9Z,sampling 4",Patient 9Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448368,"Patient 10Z,sampling 1",Patient 10Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448369,"Patient 10Z,sampling 2",Patient 10Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448370,"Patient 10Z,sampling 3",Patient 10Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448371,"Patient 11Z,sampling 1",Patient 11Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448372,"Patient 11Z,sampling 2",Patient 11Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448373,"Patient 11Z,sampling 3",Patient 11Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448374,"Patient 11Z,sampling 4",Patient 11Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448375,"Patient 12Z,sampling 1",Patient 12Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448376,"Patient 12Z,sampling 2",Patient 12Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448377,"Patient 12Z,sampling 4",Patient 12Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448378,"Patient 13Z,sampling 1",Patient 13Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448379,"Patient 13Z,sampling 2",Patient 13Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448380,"Patient 14Z,sampling 1",Patient 14Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448381,"Patient 14Z,sampling 2",Patient 14Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448382,"Patient 14Z,sampling 3",Patient 14Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448383,"Patient 15Z,sampling 1",Patient 15Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448384,"Patient 15Z,sampling 2",Patient 15Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448385,"Patient 15Z,sampling 3",Patient 15Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448386,"Patient 16Z,sampling 1",Patient 16Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448387,"Patient 16Z,sampling 2",Patient 16Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448388,"Patient 16Z,sampling 3",Patient 16Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448389,"Patient 17Z,sampling 1",Patient 17Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448390,"Patient 17Z,sampling 2",Patient 17Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448391,"Patient 18Z,sampling 1",Patient 18Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448392,"Patient 18Z,sampling 2",Patient 18Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448393,"Patient 18Z,sampling 3",Patient 18Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448394,"Patient 18Z,sampling 4",Patient 18Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448395,"Patient 19Z,sampling 1",Patient 19Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448396,"Patient 19Z,sampling 2",Patient 19Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448397,"Patient 19Z,sampling 3",Patient 19Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448398,"Patient 20Z,sampling 1",Patient 20Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448399,"Patient 20Z,sampling 2",Patient 20Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448400,"Patient 20Z,sampling 3",Patient 20Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448401,"Patient 21Z,sampling 1",Patient 21Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448402,"Patient 21Z,sampling 2",Patient 21Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448403,"Patient 21Z,sampling 3",Patient 21Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448404,"Patient 21Z,sampling 4",Patient 21Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448405,"Patient 22Z,sampling 1",Patient 22Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448406,"Patient 22Z,sampling 2",Patient 22Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448407,"Patient 22Z,sampling 3",Patient 22Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448408,"Patient 22Z,sampling 4",Patient 22Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448409,"Patient 23Z,sampling 1",Patient 23Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448410,"Patient 23Z,sampling 2",Patient 23Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448411,"Patient 23Z,sampling 3",Patient 23Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448412,"Patient 23Z,sampling 4",Patient 23Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448413,"Patient 24Z,sampling 1",Patient 24Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448414,"Patient 24Z,sampling 2",Patient 24Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448415,"Patient 24Z,sampling 3",Patient 24Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448416,"Patient 24Z,sampling 4",Patient 24Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448417,"Patient 25Z,sampling 1",Patient 25Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448418,"Patient 25Z,sampling 2",Patient 25Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448419,"Patient 25Z,sampling 3",Patient 25Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448420,"Patient 25Z,sampling 4",Patient 25Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448421,"Patient 26Z,sampling 1",Patient 26Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448422,"Patient 26Z,sampling 2",Patient 26Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448423,"Patient 26Z,sampling 3",Patient 26Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448424,"Patient 26Z,sampling 4",Patient 26Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448425,"Patient 27Z,sampling 1",Patient 27Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448426,"Patient 27Z,sampling 2",Patient 27Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448427,"Patient 27Z,sampling 3",Patient 27Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448428,"Patient 27Z,sampling 4",Patient 27Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448429,"Patient 28Z,sampling 1",Patient 28Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448430,"Patient 28Z,sampling 2",Patient 28Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448431,"Patient 28Z,sampling 3",Patient 28Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448432,"Patient 28Z,sampling 4",Patient 28Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448433,"Patient 29Z,sampling 1",Patient 29Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448434,"Patient 29Z,sampling 2",Patient 29Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448435,"Patient 29Z,sampling 3",Patient 29Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448436,"Patient 29Z,sampling 4",Patient 29Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448437,"Patient 30Z,sampling 1",Patient 30Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448438,"Patient 30Z,sampling 4",Patient 30Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448439,"Patient 31Z,sampling 1",Patient 31Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448440,"Patient 31Z,sampling 2",Patient 31Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448441,"Patient 31Z,sampling 3",Patient 31Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448442,"Patient 32Z,sampling 1",Patient 32Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448443,"Patient 32Z,sampling 2",Patient 32Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448444,"Patient 32Z,sampling 3",Patient 32Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448445,"Patient 32Z,sampling 4",Patient 32Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448446,"Patient 33Z,sampling 1",Patient 33Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448447,"Patient 33Z,sampling 2",Patient 33Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448448,"Patient 33Z,sampling 3",Patient 33Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448449,"Patient 33Z,sampling 4",Patient 33Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448450,"Patient 34Z,sampling 1",Patient 34Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448451,"Patient 34Z,sampling 2",Patient 34Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448452,"Patient 35Z,sampling 1",Patient 35Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448453,"Patient 35Z,sampling 3",Patient 35Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448454,"Patient 35Z,sampling 4",Patient 35Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448455,"Patient 36Z,sampling 1",Patient 36Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448456,"Patient 36Z,sampling 2",Patient 36Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448457,"Patient 36Z,sampling 3",Patient 36Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448458,"Patient 36Z,sampling 4",Patient 36Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448459,"Patient 37Z,sampling 1",Patient 37Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448460,"Patient 37Z,sampling 2",Patient 37Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448461,"Patient 37Z,sampling 3",Patient 37Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448462,"Patient 37Z,sampling 4",Patient 37Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448463,"Patient 38Z,sampling 1",Patient 38Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448464,"Patient 38Z,sampling 2",Patient 38Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448465,"Patient 38Z,sampling 3",Patient 38Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448466,"Patient 38Z,sampling 4",Patient 38Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448467,"Patient 39Z,sampling 1",Patient 39Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448468,"Patient 40Z,sampling 1",Patient 40Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448469,"Patient 40Z,sampling 2",Patient 40Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448470,"Patient 40Z,sampling 3",Patient 40Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448471,"Patient 41Z,sampling 1",Patient 41Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448472,"Patient 41Z,sampling 2",Patient 41Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448473,"Patient 41Z,sampling 3",Patient 41Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448474,"Patient 41Z,sampling 4",Patient 41Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448475,"Patient 42Z,sampling 1",Patient 42Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448476,"Patient 42Z,sampling 2",Patient 42Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448477,"Patient 42Z,sampling 3",Patient 42Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448478,"Patient 42Z,sampling 4",Patient 42Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448479,"Patient 43Z,sampling 1",Patient 43Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448480,"Patient 43Z,sampling 2",Patient 43Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448481,"Patient 43Z,sampling 3",Patient 43Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448482,"Patient 43Z,sampling 4",Patient 43Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448483,"Patient 44Z,sampling 1",Patient 44Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448484,"Patient 44Z,sampling 2",Patient 44Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448485,"Patient 45Z,sampling 1",Patient 45Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448486,"Patient 45Z,sampling 2",Patient 45Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448487,"Patient 45Z,sampling 3",Patient 45Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448488,"Patient 45Z,sampling 4",Patient 45Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448489,"Patient 46Z,sampling 1",Patient 46Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448490,"Patient 46Z,sampling 2",Patient 46Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448491,"Patient 46Z,sampling 3",Patient 46Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448492,"Patient 46Z,sampling 4",Patient 46Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448493,"Patient 47Z,sampling 1",Patient 47Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448494,"Patient 47Z,sampling 2",Patient 47Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448495,"Patient 47Z,sampling 3",Patient 47Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448496,"Patient 47Z,sampling 4",Patient 47Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448497,"Patient 48Z,sampling 1",Patient 48Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448498,"Patient 48Z,sampling 2",Patient 48Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448499,"Patient 48Z,sampling 3",Patient 48Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448500,"Patient 48Z,sampling 4",Patient 48Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448501,"Patient 49Z,sampling 1",Patient 49Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448502,"Patient 49Z,sampling 2",Patient 49Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448503,"Patient 49Z,sampling 3",Patient 49Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448504,"Patient 49Z,sampling 4",Patient 49Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448505,"Patient 50Z,sampling 1",Patient 50Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448506,"Patient 50Z,sampling 2",Patient 50Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448507,"Patient 50Z,sampling 3",Patient 50Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448508,"Patient 51Z,sampling 1",Patient 51Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448509,"Patient 51Z,sampling 2",Patient 51Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448510,"Patient 51Z,sampling 3",Patient 51Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448511,"Patient 51Z,sampling 4",Patient 51Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448512,"Patient 52Z,sampling 1",Patient 52Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448513,"Patient 52Z,sampling 2",Patient 52Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448514,"Patient 52Z,sampling 3",Patient 52Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448515,"Patient 52Z,sampling 4",Patient 52Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448516,"Patient 53Z,sampling 1",Patient 53Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448517,"Patient 53Z,sampling 2",Patient 53Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448518,"Patient 53Z,sampling 3",Patient 53Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448519,"Patient 54Z,sampling 1",Patient 54Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448520,"Patient 54Z,sampling 2",Patient 54Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448521,"Patient 54Z,sampling 3",Patient 54Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448522,"Patient 54Z,sampling 4",Patient 54Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448523,"Patient 55Z,sampling 1",Patient 55Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448524,"Patient 55Z,sampling 2",Patient 55Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448525,"Patient 55Z,sampling 3",Patient 55Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448526,"Patient 56Z,sampling 1",Patient 56Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448527,"Patient 56Z,sampling 2",Patient 56Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448528,"Patient 56Z,sampling 3",Patient 56Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448529,"Patient 56Z,sampling 4",Patient 56Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448530,"Patient 57Z,sampling 1",Patient 57Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448531,"Patient 57Z,sampling 2",Patient 57Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448532,"Patient 57Z,sampling 3",Patient 57Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448533,"Patient 57Z,sampling 4",Patient 57Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448534,"Patient 58Z,sampling 1",Patient 58Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448535,"Patient 58Z,sampling 2",Patient 58Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448536,"Patient 58Z,sampling 3",Patient 58Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448537,"Patient 58Z,sampling 4",Patient 58Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448538,"Patient 59Z,sampling 1",Patient 59Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448539,"Patient 59Z,sampling 2",Patient 59Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448540,"Patient 59Z,sampling 3",Patient 59Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448541,"Patient 60Z,sampling 1",Patient 60Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448542,"Patient 60Z,sampling 2",Patient 60Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448543,"Patient 60Z,sampling 3",Patient 60Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448544,"Patient 60Z,sampling 4",Patient 60Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448545,"Patient 61Z,sampling 1",Patient 61Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448546,"Patient 61Z,sampling 3",Patient 61Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448547,"Patient 61Z,sampling 4",Patient 61Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448548,"Patient 62Z,sampling 1",Patient 62Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448549,"Patient 62Z,sampling 2",Patient 62Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448550,"Patient 62Z,sampling 3",Patient 62Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448551,"Patient 62Z,sampling 4",Patient 62Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448552,"Patient 63Z,sampling 1",Patient 63Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448553,"Patient 63Z,sampling 2",Patient 63Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448554,"Patient 64Z,sampling 1",Patient 64Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448555,"Patient 64Z,sampling 2",Patient 64Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448556,"Patient 64Z,sampling 3",Patient 64Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448557,"Patient 64Z,sampling 4",Patient 64Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448558,"Patient 65Z,sampling 1",Patient 65Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448559,"Patient 65Z,sampling 3",Patient 65Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448560,"Patient 65Z,sampling 4",Patient 65Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448561,"Patient 66Z,sampling 1",Patient 66Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448562,"Patient 66Z,sampling 3",Patient 66Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448563,"Patient 66Z,sampling 4",Patient 66Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448564,"Patient 67Z,sampling 1",Patient 67Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448565,"Patient 67Z,sampling 2",Patient 67Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448566,"Patient 67Z,sampling 3",Patient 67Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448567,"Patient 67Z,sampling 4",Patient 67Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448568,"Patient 68Z,sampling 1",Patient 68Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448569,"Patient 68Z,sampling 2",Patient 68Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448570,"Patient 68Z,sampling 3",Patient 68Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448571,"Patient 68Z,sampling 4",Patient 68Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448572,"Patient 69Z,sampling 1",Patient 69Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448573,"Patient 69Z,sampling 2",Patient 69Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448574,"Patient 69Z,sampling 3",Patient 69Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448575,"Patient 69Z,sampling 4",Patient 69Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448576,"Patient 70Z,sampling 1",Patient 70Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448577,"Patient 70Z,sampling 2",Patient 70Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448578,"Patient 70Z,sampling 3",Patient 70Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448579,"Patient 70Z,sampling 4",Patient 70Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448580,"Patient 71Z,sampling 1",Patient 71Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448581,"Patient 71Z,sampling 2",Patient 71Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448582,"Patient 71Z,sampling 3",Patient 71Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448583,"Patient 71Z,sampling 4",Patient 71Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448584,"Patient 72Z,sampling 1",Patient 72Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448585,"Patient 72Z,sampling 2",Patient 72Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448586,"Patient 72Z,sampling 3",Patient 72Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448587,"Patient 73Z,sampling 1",Patient 73Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448588,"Patient 73Z,sampling 2",Patient 73Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448589,"Patient 73Z,sampling 3",Patient 73Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448590,"Patient 74Z,sampling 1",Patient 74Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448591,"Patient 74Z,sampling 2",Patient 74Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448592,"Patient 74Z,sampling 3",Patient 74Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448593,"Patient 74Z,sampling 4",Patient 74Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448594,"Patient 75Z,sampling 1",Patient 75Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448595,"Patient 75Z,sampling 2",Patient 75Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448596,"Patient 75Z,sampling 3",Patient 75Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448597,"Patient 75Z,sampling 4",Patient 75Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448598,"Patient 76Z,sampling 1",Patient 76Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448599,"Patient 76Z,sampling 2",Patient 76Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448600,"Patient 76Z,sampling 3",Patient 76Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448601,"Patient 76Z,sampling 4",Patient 76Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448602,"Patient 77Z,sampling 1",Patient 77Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448603,"Patient 77Z,sampling 2",Patient 77Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448604,"Patient 77Z,sampling 3",Patient 77Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448605,"Patient 77Z,sampling 4",Patient 77Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448606,"Patient 78Z,sampling 1",Patient 78Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448607,"Patient 78Z,sampling 4",Patient 78Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448608,"Patient 79Z,sampling 1",Patient 79Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448609,"Patient 79Z,sampling 2",Patient 79Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448610,"Patient 79Z,sampling 3",Patient 79Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448611,"Patient 79Z,sampling 4",Patient 79Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448612,"Patient 80Z,sampling 1",Patient 80Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448613,"Patient 80Z,sampling 3",Patient 80Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448614,"Patient 80Z,sampling 4",Patient 80Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448615,"Patient 81Z,sampling 1",Patient 81Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448616,"Patient 81Z,sampling 2",Patient 81Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448617,"Patient 81Z,sampling 3",Patient 81Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448618,"Patient 81Z,sampling 4",Patient 81Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448619,"Patient 82Z,sampling 1",Patient 82Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448620,"Patient 82Z,sampling 2",Patient 82Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448621,"Patient 83Z,sampling 1",Patient 83Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448622,"Patient 83Z,sampling 2",Patient 83Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448623,"Patient 83Z,sampling 3",Patient 83Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448624,"Patient 83Z,sampling 4",Patient 83Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448625,"Patient 84Z,sampling 1",Patient 84Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448626,"Patient 84Z,sampling 2",Patient 84Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448627,"Patient 84Z,sampling 3",Patient 84Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448628,"Patient 84Z,sampling 4",Patient 84Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448629,"Patient 85Z,sampling 1",Patient 85Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448630,"Patient 86Z,sampling 1",Patient 86Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448631,"Patient 86Z,sampling 2",Patient 86Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448632,"Patient 86Z,sampling 3",Patient 86Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448633,"Patient 86Z,sampling 4",Patient 86Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448634,"Patient 87Z,sampling 1",Patient 87Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448635,"Patient 87Z,sampling 2",Patient 87Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448636,"Patient 87Z,sampling 3",Patient 87Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448637,"Patient 87Z,sampling 4",Patient 87Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448638,"Patient 88Z,sampling 1",Patient 88Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448639,"Patient 89Z,sampling 1",Patient 89Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448640,"Patient 89Z,sampling 2",Patient 89Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448641,"Patient 89Z,sampling 3",Patient 89Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448642,"Patient 90Z,sampling 1",Patient 90Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448643,"Patient 90Z,sampling 2",Patient 90Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448644,"Patient 90Z,sampling 3",Patient 90Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448645,"Patient 90Z,sampling 4",Patient 90Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448646,"Patient 91Z,sampling 1",Patient 91Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448647,"Patient 91Z,sampling 2",Patient 91Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448648,"Patient 91Z,sampling 3",Patient 91Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448649,"Patient 91Z,sampling 4",Patient 91Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448650,"Patient 92Z,sampling 1",Patient 92Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448651,"Patient 92Z,sampling 2",Patient 92Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448652,"Patient 92Z,sampling 3",Patient 92Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448653,"Patient 92Z,sampling 4",Patient 92Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448654,"Patient 93Z,sampling 1",Patient 93Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448655,"Patient 93Z,sampling 2",Patient 93Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448656,"Patient 93Z,sampling 3",Patient 93Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448657,"Patient 93Z,sampling 4",Patient 93Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448658,"Patient 94Z,sampling 1",Patient 94Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448659,"Patient 94Z,sampling 2",Patient 94Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448660,"Patient 94Z,sampling 3",Patient 94Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448661,"Patient 94Z,sampling 4",Patient 94Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448662,"Patient 95Z,sampling 1",Patient 95Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448663,"Patient 95Z,sampling 2",Patient 95Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448664,"Patient 95Z,sampling 3",Patient 95Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448665,"Patient 95Z,sampling 4",Patient 95Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448666,"Patient 96Z,sampling 1",Patient 96Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448667,"Patient 96Z,sampling 2",Patient 96Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448668,"Patient 96Z,sampling 3",Patient 96Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448669,"Patient 96Z,sampling 4",Patient 96Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448670,"Patient 97Z,sampling 1",Patient 97Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448671,"Patient 97Z,sampling 2",Patient 97Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448672,"Patient 98Z,sampling 1",Patient 98Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448673,"Patient 98Z,sampling 2",Patient 98Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448674,"Patient 98Z,sampling 3",Patient 98Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448675,"Patient 98Z,sampling 4",Patient 98Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448676,"Patient 99Z,sampling 1",Patient 99Z,samples collection: on the 1st day of MI (admission),hf progression: non-HF,cell type: PBMC
+GSM1448677,"Patient 99Z,sampling 2",Patient 99Z,samples collection: after 4-6 days of MI (discharge),hf progression: non-HF,cell type: PBMC
+GSM1448678,"Patient 99Z,sampling 3",Patient 99Z,samples collection: 1 month after MI,hf progression: non-HF,cell type: PBMC
+GSM1448679,"Patient 99Z,sampling 4",Patient 99Z,samples collection: 6 months after MI,hf progression: non-HF,cell type: PBMC
+GSM1448680,"Patient 100Z,sampling 1",Patient 100Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448681,"Patient 100Z,sampling 2",Patient 100Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448682,"Patient 100Z,sampling 3",Patient 100Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448683,"Patient 100Z,sampling 4",Patient 100Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448684,"Patient 101Z,sampling 1",Patient 101Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448685,"Patient 101Z,sampling 2",Patient 101Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448686,"Patient 101Z,sampling 3",Patient 101Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448687,"Patient 101Z,sampling 4",Patient 101Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448688,"Patient 102Z,sampling 1",Patient 102Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448689,"Patient 102Z,sampling 2",Patient 102Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448690,"Patient 102Z,sampling 3",Patient 102Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448691,"Patient 102Z,sampling 4",Patient 102Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448692,"Patient 103Z,sampling 1",Patient 103Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448693,"Patient 103Z,sampling 2",Patient 103Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448694,"Patient 103Z,sampling 4",Patient 103Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448695,"Patient 104Z,sampling 1",Patient 104Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448696,"Patient 104Z,sampling 2",Patient 104Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448697,"Patient 104Z,sampling 3",Patient 104Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448698,"Patient 104Z,sampling 4",Patient 104Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448699,"Patient 105Z,sampling 1",Patient 105Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448700,"Patient 105Z,sampling 2",Patient 105Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448701,"Patient 105Z,sampling 4",Patient 105Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448702,"Patient 106Z,sampling 1",Patient 106Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448703,"Patient 106Z,sampling 2",Patient 106Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448704,"Patient 106Z,sampling 3",Patient 106Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448705,"Patient 106Z,sampling 4",Patient 106Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448706,"Patient 107Z,sampling 1",Patient 107Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448707,"Patient 107Z,sampling 2",Patient 107Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448708,"Patient 107Z,sampling 3",Patient 107Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448709,"Patient 107Z,sampling 4",Patient 107Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448710,"Patient 108Z,sampling 1",Patient 108Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448711,"Patient 108Z,sampling 2",Patient 108Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448712,"Patient 108Z,sampling 3",Patient 108Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448713,"Patient 108Z,sampling 4",Patient 108Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448714,"Patient 109Z,sampling 1",Patient 109Z,samples collection: on the 1st day of MI (admission),hf progression: HF,cell type: PBMC
+GSM1448715,"Patient 109Z,sampling 2",Patient 109Z,samples collection: after 4-6 days of MI (discharge),hf progression: HF,cell type: PBMC
+GSM1448716,"Patient 109Z,sampling 3",Patient 109Z,samples collection: 1 month after MI,hf progression: HF,cell type: PBMC
+GSM1448717,"Patient 109Z,sampling 4",Patient 109Z,samples collection: 6 months after MI,hf progression: HF,cell type: PBMC
+GSM1448718,"Patient 110Z,sampling 1",Patient 110Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448719,"Patient 110Z,sampling 2",Patient 110Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448720,"Patient 110Z,sampling 3",Patient 110Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1448721,"Patient 110Z,sampling 4",Patient 110Z,samples collection: 6 months after MI,hf progression: N/A,cell type: PBMC
+GSM1448722,"Patient 111Z,sampling 1",Patient 111Z,samples collection: on the 1st day of MI (admission),hf progression: N/A,cell type: PBMC
+GSM1448723,"Patient 111Z,sampling 2",Patient 111Z,samples collection: after 4-6 days of MI (discharge),hf progression: N/A,cell type: PBMC
+GSM1448724,"Patient 111Z,sampling 3",Patient 111Z,samples collection: 1 month after MI,hf progression: N/A,cell type: PBMC
+GSM1620759,Control patient 1,Control patient 1,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620760,Control patient 2,Control patient 2,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620761,Control patient 3,Control patient 3,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620762,Control patient 4,Control patient 4,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620763,Control patient 5,Control patient 5,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620764,Control patient 6,Control patient 6,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620765,Control patient 7,Control patient 7,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620766,Control patient 8,Control patient 8,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620767,Control patient 9,Control patient 9,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620768,Control patient 10,Control patient 10,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620769,Control patient 11,Control patient 11,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620770,Control patient 12,Control patient 12,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620771,Control patient 13,Control patient 13,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620772,Control patient 14,Control patient 14,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620773,Control patient 15,Control patient 15,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620774,Control patient 16,Control patient 16,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620775,Control patient 17,Control patient 17,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620776,Control patient 18,Control patient 18,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620777,Control patient 19,Control patient 19,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620778,Control patient 20,Control patient 20,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620779,Control patient 21,Control patient 21,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620780,Control patient 22,Control patient 22,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620781,Control patient 23,Control patient 23,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620782,Control patient 24,Control patient 24,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620783,Control patient 25,Control patient 25,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620784,Control patient 26,Control patient 26,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620785,Control patient 27,Control patient 27,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620786,Control patient 28,Control patient 28,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620787,Control patient 29,Control patient 29,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620788,Control patient 30,Control patient 30,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620789,Control patient 31,Control patient 31,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620790,Control patient 32,Control patient 32,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620791,Control patient 33,Control patient 33,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620792,Control patient 34,Control patient 34,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620793,Control patient 35,Control patient 35,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620794,Control patient 36,Control patient 36,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620795,Control patient 37,Control patient 37,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620796,Control patient 38,Control patient 38,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620797,Control patient 39,Control patient 39,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620798,Control patient 40,Control patient 40,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620799,Control patient 41,Control patient 41,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620800,Control patient 42,Control patient 42,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620801,Control patient 43,Control patient 43,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620802,Control patient 44,Control patient 44,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620803,Control patient 45,Control patient 45,samples collection: N/A,hf progression: stable CAD,cell type: PBMC
+GSM1620804,Control patient 46,Control patient 46,samples collection: N/A,hf progression: stable CAD,cell type: PBMC

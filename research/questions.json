@@ -14391,7 +14391,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/circadian-ihd.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/circadian-ihd.json",
-      "gold_content_sha256": "2e6abbe4af114745ecfa37deabe13d9d1e8ff5936f8010a0c4a06c0375f1b23c",
+      "gold_content_sha256": "68a32c935625dcf9628b4b8a12a5d05315c1b73586163406d3880ea61811e408",
       "provenance": {
         "doi_url": "https://doi.org/10.1038/s41598-024-65236-5",
         "publisher_url": "https://www.nature.com/articles/s41598-024-65236-5",
@@ -14399,7 +14399,10 @@
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11187219/",
         "gse59867_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867",
         "gse70049_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70049",
-        "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed."
+        "review_basis": "Evidence synthesis from the cited main text, figure legends and designated primary records. No independent reanalysis of participant-level data. Unavailable supplementary or figure-only details are not reconstructed.",
+        "gse59867_sample_followup_map_url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.md",
+        "gse59867_sample_followup_csv_url": "https://drgezhang.com/assets/research/gse59867-sample-followup-map.csv",
+        "gse59867_map_scope": "Source-linked436-row public metadata map for within-series patient-label grouping and collection-time selection; no expression values, outcome propagation or original-analysis reproduction."
       },
       "scientific_role": "Single-cell network and bulk-expression integration for circadian-related coronary disease scores and research subtypes.",
       "evidence_position": "Retrospective transcriptomics with external template evaluation; expression scores are not physiological circadian measurements, validated mortality models or chronotherapy evidence.",

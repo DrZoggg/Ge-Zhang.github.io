@@ -16,7 +16,7 @@
       "paper_url": "https://drgezhang.com/papers/circadian-ihd.html",
       "doi_url": "https://doi.org/10.1038/s41598-024-65236-5",
       "source_json": "data/deep_geo/circadian-ihd.json",
-      "source_fingerprint": "38df964bf25a842699ba54a3650cc945c72f14d0649c1eafea4c2dbf2e57611d",
+      "source_fingerprint": "2a50a4d25282b0207bde9f629736be727de7d46d492d13dcfbaf829b101b16d1",
       "study_profile": {
         "profile_type": "multicohort_omics",
         "study_design": "Retrospective public single-cell and bulk transcriptomic analysis",
