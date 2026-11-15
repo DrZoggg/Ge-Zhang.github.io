@@ -39,6 +39,7 @@ DOI_LICENSE_URLS = {
     },
 }
 SOURCES = {
+    "10.1136/jitc-2024-010787": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11865799/"),
     "10.1016/j.isci.2025.114320": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12834111/"),
     "10.1186/s12943-024-02047-2": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11201788/"),
     "10.2147/cia.s462542": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11068055/"),

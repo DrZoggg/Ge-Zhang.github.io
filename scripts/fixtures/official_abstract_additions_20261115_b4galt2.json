@@ -1,0 +1,15 @@
+{
+  "baseline_sha": "38d4838a90c6d641cf25a1e8b10a6534fcc4f5b0",
+  "papers": {
+    "10.1136/jitc-2024-010787": {
+      "slug": "b4galt2",
+      "record_sha256": "84d5ec86b31863d4b00cd30a76107caec7947635cfc5175565b505b8528b4890",
+      "text_sha256": "ba6ac9d503c4c430e09d3b9f830e0addec711014d5f8b8a2d9d8bcbb5ec5e40a",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/",
+      "source_sha256": "de2adc9b28940adf1817e5227afbf860ac3bfe3d12d923d111c147184667d7a7",
+      "license": "CC-BY-NC-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "normalization": "Complete four-section main-article abstract from cached PMC page text, source lines177–191. Numbering removed; whitespace normalized only. Separate corrigendum and figure assets excluded."
+    }
+  }
+}

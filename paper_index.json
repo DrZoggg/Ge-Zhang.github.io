@@ -1374,7 +1374,7 @@
       "pmcid": "PMC11865799",
       "openalex_id": "https://openalex.org/W4407984543",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
+      "official_abstract_available": true,
       "evidence_csv_url": "https://drgezhang.com/assets/evidence/b4galt2.csv",
       "question_count": 6,
       "concept_count": 9,
