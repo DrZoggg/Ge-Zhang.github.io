@@ -12,16 +12,39 @@ PILOT_DOIS = frozenset(('10.1021/acs.jproteome.4c00522', '10.1111/jcmm.17789',
 STYLESHEET = '<link rel="stylesheet" href="../assets/evidence-presentation.css">'
 
 
-def guide_navigation(doi):
-    """Only the existing guide's declared source studies receive a static backlink."""
-    guide = research_guides.load()
-    if doi.lower() not in {row['source_doi'].lower() for row in guide['studies']}:
-        return ''
-    return ui('<aside class="evidence-guide-navigation" aria-labelledby="related-evidence-guide">'
-              '<h2 id="related-evidence-guide">Related evidence guide</h2><p><a href="'
-              + research_guides.URL + '">' + html.escape(guide['title']) + '</a></p>'
-              '<p>Compare the specimens, molecular layers and evaluation designs of these selected studies. '
-              'This guide is not a systematic review or a jointly validated diagnostic panel.</p></aside>')
+def guide_navigation(doi, markdown=False):
+    """Preserve the DCM backlink; other registered resources require explicit opt-in."""
+    key = doi.lower()
+    legacy = ''
+    if not markdown:
+        guide = research_guides.load()
+        if key in {row['source_doi'].lower() for row in guide['studies']}:
+            legacy = ui('<aside class="evidence-guide-navigation" aria-labelledby="related-evidence-guide">'
+                        '<h2 id="related-evidence-guide">Related evidence guide</h2><p><a href="'
+                        + research_guides.URL + '">' + html.escape(guide['title']) + '</a></p>'
+                        '<p>Compare the specimens, molecular layers and evaluation designs of these selected studies. '
+                        'This guide is not a systematic review or a jointly validated diagnostic panel.</p></aside>')
+    links = []
+    for guide in research_guides.load_comparisons():
+        if guide.get('paper_navigation') is not True:
+            continue
+        sources = {row['source_doi'].lower() for row in guide['studies']}
+        sources.update(row['doi'].lower() for row in guide.get('research_use', {}).get('sources', []))
+        if key not in sources:
+            continue
+        url = research_guides.comparison_url(guide)
+        if markdown:
+            title = html.escape(guide['title']).replace('\\', '\\\\').replace('[', '\\[').replace(']', '\\]')
+            links.append('- [' + title + '](' + url + ')')
+        else:
+            links.append('<li><a href="' + html.escape(url, quote=True) + '">'
+                         + html.escape(guide['title']) + '</a></li>')
+    if not links:
+        return legacy
+    if markdown:
+        return '## Related research resource\n\n' + '\n'.join(links)
+    return legacy + ui('<aside class="evidence-guide-navigation" aria-label="Related research resource">'
+                       '<h2>Related research resource</h2><ul>' + ''.join(links) + '</ul></aside>')
 
 
 def enabled(doi):
