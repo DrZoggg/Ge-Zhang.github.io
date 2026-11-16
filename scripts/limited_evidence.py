@@ -24,7 +24,7 @@ def source_url(value):
 
 def validate_record(doi, record, publication):
     required = {'slug', 'evidence_status', 'reviewed_on', 'scope', 'sections', 'limitations', 'sources'}
-    if set(record) != required or record['evidence_status'] != 'limited':
+    if set(record) - {'search_description'} != required or record['evidence_status'] != 'limited':
         raise ValueError('Unsupported limited-evidence record')
     if (doi != norm_doi(doi) or doi != publication.get('doi')
             or record['slug'] != publication.get('slug')
@@ -34,6 +34,8 @@ def validate_record(doi, record, publication):
     if date.fromisoformat(record['reviewed_on']).isoformat() != record['reviewed_on']:
         raise ValueError('Invalid review date')
     plain(record['scope'], 500)
+    if 'search_description' in record:
+        plain(record['search_description'], 300)
     if not isinstance(record['sections'], list) or not 1 <= len(record['sections']) <= 4:
         raise ValueError('Limited evidence requires one to four sourced sections')
     for row in record['sections']:
