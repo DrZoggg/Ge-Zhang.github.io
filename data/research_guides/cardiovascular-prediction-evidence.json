@@ -36,7 +36,7 @@
       "task": "Multimodal cardiovascular AI evaluation and deferral",
       "source_doi": "10.1016/j.medd.2026.100004",
       "source_json": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
-      "source_fingerprint": "5fc56c6d6238cb01b81c6ed0ec9d1caf1e9d2a8e09e7c966a3058e35a0e757b6",
+      "source_fingerprint": "b02ac681c8b8f44f2d492594072b13cda1a5a879473c42d63ed8448800c379ba",
       "qa_indices": [
         1,
         3,
