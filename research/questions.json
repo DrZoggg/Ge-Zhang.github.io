@@ -2329,14 +2329,15 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
-      "gold_content_sha256": "bc88a1f00e8669fbf6bb3dd42bf3184d6c03a98df2cbb7f57bde61536e9752ee",
+      "gold_content_sha256": "0e8f8ace3ba72d07b9b92ac9b09cf7edf2cf7860216ca3ffbb790bc96a2da2b4",
       "provenance": {
         "publisher_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
         "evidence_basis": "Evidence synthesis uses the archived publisher corrected proof, compared with the current issue-assigned publisher full text on 2026-10-26. No substantive difference was found in the reviewed passages or Figure 1 caption. Proof pagination is retained as source locators.",
         "version": "Archived publisher corrected proof; compared with current publisher HTML (Volume 1, Issue 1, September 2026) on 2026-10-26. The current publisher PDF was not independently inspected.",
         "figure_verification": "Corrected-proof Figure 1 and caption were inspected for the six conceptual principles and deferral pathway; no figure image is reproduced.",
         "doi_url": "https://doi.org/10.1016/j.medd.2026.100004",
-        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/414623787_Multimodal_AI_for_cardiovascular_care_must_learn_when_not_to_predict"
+        "researchgate_author_shared_copy_url": "https://www.researchgate.net/publication/414623787_Multimodal_AI_for_cardiovascular_care_must_learn_when_not_to_predict",
+        "archived_publisher_article_text_url": "https://drgezhang.com/assets/fulltext/medd-100004-publisher-text-20261026.txt"
       },
       "scientific_role": "Conceptual correspondence proposing explicit deferral criteria and downstream care pathways.",
       "evidence_position": "Methodological perspective with no new dataset, accuracy estimate or clinical trial.",
