@@ -1,0 +1,418 @@
+ARCHIVED PUBLISHER ARTICLE TEXT
+
+Article: Multimodal AI for cardiovascular care must learn when not to predict
+Authors: Yahui Han; Qiang Li; Taiqi Zhao; Shanshan Cai; Biyun Li; Kaisaierjiang Kadier; Tianshu Gu; Zhonghua Sun; Pengyuan Xu; Dezhi Liu; Moyan Li; Xufeng Huang; Qian Guo; Yuan Cheng; Honglin Zheng; Ge Zhang
+Journal: Medicine Discovery. 2026;1(1):100004. Correspondence.
+Formal DOI: https://doi.org/10.1016/j.medd.2026.100004
+Publisher source: https://www.sciencedirect.com/science/article/pii/S3117928226000044
+Snapshot captured: 26 October 2026, 08:48:14 UTC.
+License: CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+This is the archived publisher HTML text, with that version’s declarations.
+Publisher navigation and interface controls were removed; article wording,
+table cells, captions and reference text are retained. Table 1 and the
+Figure 1 caption and publisher image link are included. Figure artwork
+and complete author-affiliation overlays were not captured.
+
+For subsequent publisher updates, follow the formal DOI above.
+
+--- BEGIN ARCHIVED ARTICLE TEXT ---
+
+## [Medicine Discovery](https://www.sciencedirect.com/journal/medicine-discovery "Go to Medicine Discovery on ScienceDirect")
+
+Date:September 2026
+
+Article:100004
+
+Volume:[Volume 1, Issue 1](https://www.sciencedirect.com/journal/medicine-discovery/vol/1/issue/1 "Go to table of contents for this volume/issue")
+
+Correspondence
+
+Open access
+
+Under a Creative Commons [license](http://creativecommons.org/licenses/by/4.0/)
+
+# Correspondence  Multimodal AI for cardiovascular care must learn when not to predict
+
+YahuiHan1, QiangLi1, TaiqiZhao, ShanshanCai2, BiyunLi, KaisaierjiangKadier, TianshuGu, ZhonghuaSun, PengyuanXu, DezhiLiu, MoyanLi, XufengHuang, QianGuoPhD, MD, YuanChengPhD, HonglinZhengPhD, MD, GeZhangPhD, MD
+
+[10.1016/j.medd.2026.100004](https://doi.org/10.1016/j.medd.2026.100004)
+
+## Keywords
+
+Multimodal AI
+
+;
+
+Cardiovascular care
+
+;
+
+Asynchronous
+
+;
+
+Clinical decision-making
+
+Cardiovascular medicine is inherently multimodal, but the patient is not a synchronised stack of tests. A diagnosis or treatment decision rarely depends on a single observation: medical history, laboratory results, electrocardiography, imaging, molecular biomarkers, electronic records, and wearable signals describe different aspects of the same patient. [\[1\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib1), [\[2\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib2) Multimodal artificial intelligence (AI) is often presented as the natural solution to this fragmentation. Combining complementary data may improve phenotyping, risk prediction, treatment selection, and longitudinal monitoring. [\[1\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib1), [\[2\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib2) The central problem, however, is not how to fuse more data. It is how to reason when clinically relevant data are incomplete, temporally misaligned, or no longer representative of the patient’s current state. A model that performs well only when every input is present and synchronised may solve a benchmark problem while remaining unusable for the patient in front of the clinician. We therefore distinguish five linked but non-equivalent problems: conventional multimodal fusion, robustness to missing modalities, temporally aware modelling, uncertainty-aware selective prediction, and clinically informed interpretation of why a modality is unavailable. The last connects the clinical data-generating process to the disease process and is central to the framework proposed here ( [Fig. 1](https://www.sciencedirect.com/science/article/pii/S3117928226000044#fig0005)).
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S3117928226000044-gr1.jpg)
+
+
+Fig. 1. Conceptual framework for trustworthy multimodal artificial intelligence in cardiovascular care. Cardiovascular care generates inherently multimodal data that are frequently incomplete, asynchronously acquired, and dynamically altered by clinical events and treatment. A clinically meaningful patient representation should therefore capture not only what was observed, but also the reliability and timing of each observation, patterns and reasons for missingness, and changes in clinical state over time. Multimodal information can then be encoded and interpreted within its temporal and clinical context. Before a prediction is issued, evidence sufficiency should be assessed to determine whether the available information supports prediction. When prespecified criteria are met, the model may provide clinical decision support; when evidence is insufficient, it should defer to an alternative pathway such as clinician review, additional testing, or usual care. Performance, calibration, model-derived uncertainty, clinical utility, deferral behaviour, generalisability, and equity should be evaluated separately across relevant care settings and patient populations. The lower panel summarises six principles for trustworthy multimodal cardiovascular AI: representing the patient rather than the dataset; treating missingness as clinically meaningful; respecting temporal and clinical context; assessing evidence sufficiency and supporting deferral; validating generalisability and equity; and aligning model outputs with clinical decision-making and workflow.
+
+The conceptual value of multimodal information is clear. Cardiac imaging provides anatomical and functional information; electrocardiography and physiological waveforms capture electrical and haemodynamic dynamics; electronic records provide longitudinal clinical context; and omics and wearable measurements add molecular and out-of-hospital resolution. [\[1\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib1), [\[2\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib2), [\[3\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib3), [\[4\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib4) No individual modality can fully characterise the biological heterogeneity or evolving trajectory of cardiovascular disease. Large multicentre resources such as REFINE positron emission tomography (PET) demonstrate the infrastructure required to connect imaging, clinical variables, and outcomes across institutions. [\[5\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib5) Yet the complete multimodal patient rarely exists. A patient with suspected coronary disease may undergo computed tomography but not cardiovascular magnetic resonance; echocardiography may precede laboratory testing by months; and wearable data may cover only selected periods. Even within one modality, vendors, acquisition protocols, image quality, measurement frequency, and clinical indications vary. Recent reviews identify incomplete datasets, heterogeneous data characteristics, and missing modalities as persistent barriers to multimodal clinical AI. [\[6\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib6), [\[7\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib7), [\[8\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib8) Related work further highlights limited external validation, model generalisability, and the interpretability-performance trade-off as obstacles to broad clinical utility. [\[9\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib9) These are not exceptions to be cleaned away; they are part of the environment in which a useful model must operate.
+
+Missingness is rarely random. A test may be absent because it was not clinically indicated, was ordered but not completed, failed quality control, was unavailable, or was lost during data linkage. These situations produce the same empty field but have different meanings. Missingness can therefore carry information about patient state, clinician decisions, access to care, institutional resources, and the health system. [\[10\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib10) Modality availability should be represented as an observation state alongside, but not conflated with, patient state. Clinically informative missingness, access-related missingness, technical or linkage failure, and missingness caused by prior clinician decisions should not necessarily be handled equivalently. [\[8\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib8), [\[10\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib10) Using availability as a predictor is a predictive modelling choice, not a causal claim about disease biology. Because some of these mechanisms can produce missing-not-at-random patterns, using modality availability as a predictor may introduce or amplify selection bias and encourage models to learn institutional workflow rather than patient biology. Random modality dropout may improve robustness to absent inputs, but it does not reproduce naturally occurring informative co-missingness. Evaluation should therefore include observed co-missingness and sensitivity analyses under different test-ordering policies and site resources, with error and deferral rates reported across clinically relevant patient groups. This helps determine whether a model has learned patient state or a local pattern of care.
+
+Asynchrony creates a second and equally important challenge. Cardiovascular observations are not collected at a single biological moment; their meaning depends on timing, intervening events, and changes in disease state. Each use case should therefore prespecify the clinical index time, prediction horizon, look-back window, at-risk population, and the time at which each input actually became available for decision-making. Ordering, acquisition, report sign-off, and availability in the clinical system should be distinguished, and interventions or state transitions should be recorded to avoid future-information leakage. [\[11\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib11) Temporal validity is modality-, disease-, and decision-specific: a six-month-old genomic measurement may remain relevant, whereas left ventricular ejection fraction may be invalidated by intervening revascularisation or decompensation, a troponin result from several days earlier may be irrelevant to an acute presentation, and wearable rhythm data may require a different validity window. Staleness should therefore be tested using observed time windows or time-forward evaluation rather than a universal age threshold.
+
+Fusion strategy should follow the intended clinical use rather than architectural fashion. Early fusion may capture low-level interactions but usually requires strong alignment and is vulnerable to missing inputs. Intermediate fusion can learn modality-specific representations before combining them in a shared space, whereas late fusion can support variable modality subsets only when an aggregation, gating, or routing scheme is designed and evaluated for those subsets. [\[12\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib12) No strategy is intrinsically superior across cardiovascular applications. Technical approaches should also be grouped by function: transformers, masked modelling, and self-supervised learning primarily support representation learning; modality-aware routing or mixture-of-experts methods can support flexible integration; uncertainty estimation provides a model-derived signal for confidence assessment; and selective prediction determines whether an output should be issued. [\[8\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib8), [\[12\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib12), [\[13\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib13) Random modality dropout should not be interpreted as a simulation of clinically informative missingness. Its value should be judged by resilience under clinically realistic conditions, not by marginal gains on a complete test set.
+
+Abstention, or deferral, should be defined operationally as a prespecified decision not to issue the model’s intended prediction because the available evidence does not satisfy use-case-specific adequacy criteria. It is not synonymous with probability calibration, uncertainty estimation, or distribution-shift detection. Calibration concerns agreement between predicted probabilities and observed outcomes; uncertainty estimation concerns case-level uncertainty; distribution-shift detection asks whether inputs or populations differ materially from the development distribution; and selective prediction uses prespecified criteria to decide whether to predict or defer. [\[13\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib13), [\[14\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib14) Good aggregate calibration should not be treated as evidence of reliable case-level uncertainty, and high confidence should not be used to exclude distribution shift. Evidence sufficiency should therefore not be reduced to a model-derived uncertainty score. A prespecified clinical requirement, such as the absence of a mandatory test or failure of an input-quality check, may warrant deferral regardless of model confidence, whereas learned uncertainty can serve as a graded trigger when no such hard clinical constraint is violated. High-stakes applications may therefore require hybrid deferral rules that combine clinical criteria with model-derived uncertainty. Deferral may be triggered by excessive uncertainty, a missing critical modality, stale information, cross-modal conflict, suspected distribution shift, poor input quality, or a prespecified combination of these factors. These triggers need not be weighted equally. Clinically mandatory inputs or failure of prespecified quality criteria may function as non-compensatory hard-stop criteria, whereas graded signals such as uncertainty, staleness, cross-modal conflict, and distribution shift may be combined using a prespecified composite rule. When multiple partial deficiencies coexist, thresholds should be fixed before evaluation to balance false-negative clinical harm, false-positive or unnecessary-escalation workload, and the review capacity and resource constraints of the target setting. Consider a hypothetical emergency-department model estimating 30-day major adverse cardiovascular events in patients with acute chest pain at the point of disposition. The model might defer when a current electrocardiogram or troponin result is unavailable or fails quality checks, when relevant information has become temporally invalid, or when prespecified uncertainty or shift criteria are exceeded. Coverage and selective risk should then be examined overall and by clinically relevant subgroup. Deferral must trigger care, not suspend it: clinician review, additional testing, or return to the usual clinical pathway should be specified in advance.
+
+The proposed framework complements rather than replaces existing clinical AI guidance ( [Table 1](https://www.sciencedirect.com/science/article/pii/S3117928226000044#tbl0005)). TRIPOD+AI addresses prediction-model reporting, PROBAST+AI assesses quality, risk of bias, and applicability, and FUTURE-AI provides broader lifecycle guidance. [\[15\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib15), [\[16\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib16), [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib17) DECIDE-AI, CONSORT-AI, and SPIRIT-AI address clinical evaluation and trial reporting or protocols. [\[18\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib18), [\[19\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib19), [\[20\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib20) Compliance with a reporting checklist is not, by itself, evidence that a model is safe. The distinctive contribution proposed here is an intended-use-specific framework for cardiovascular multimodality that separates observation state from patient state, preserves asynchronous clinical context, and makes evidence sufficiency, selective prediction, and downstream deferral pathways explicit.
+
+Table 1. Positioning of the proposed cardiovascular multimodal AI framework relative to existing clinical AI guidance and assessment frameworks.
+
+| Framework / guidance | Primary purpose | Stage of AI lifecycle | Key scope | Relationship to the proposed cardiovascular multimodal framework |
+| --- | --- | --- | --- | --- |
+| TRIPOD+AI \[15\] | Reporting of clinical prediction-model studies using regression or machine learning | Development and validation reporting | Transparent reporting of model development, evaluation, and results | Transparent reporting; does not define multimodal evidence-sufficiency or deferral pathways. |
+| PROBAST+AI \[16\] | Assessment of study quality, risk of bias, and applicability of prediction models | Development and validation appraisal | Quality, bias, and applicability assessment | Assesses bias and applicability; does not specify deferral for asynchronous multimodal inputs. |
+| FUTURE-AI \[17\] | Lifecycle guidance for trustworthy and deployable healthcare AI | Across the AI lifecycle | Trustworthiness, fairness, universality, traceability, usability, robustness, and explainability | Broad lifecycle principles; our framework operationalises temporal context, evidence sufficiency, and deferral in cardiovascular care. |
+| DECIDE-AI \[18\] | Reporting of early-stage clinical evaluation of AI decision-support systems | Early clinical evaluation | Human factors, workflow integration, usability, safety, and early clinical performance | Complements early clinical evaluation with deferral-specific metrics and fallback pathways. |
+| CONSORT-AI \[19\] | Reporting of clinical trials evaluating AI interventions | Clinical trial reporting | Transparent reporting of AI interventions, human-AI interaction, errors, and implementation context | Supports trial reporting; does not define when a multimodal model should defer. |
+| SPIRIT-AI \[20\] | Reporting of protocols for clinical trials evaluating AI interventions | Clinical trial protocol | Prespecification of AI intervention design, inputs, human interaction, and evaluation | Supports protocol prespecification; our framework adds observation states, temporal windows, and deferral criteria. |
+| Proposed cardiovascular multimodal AI framework | Intended-use-specific evidence sufficiency for real-world multimodal decision support | Development, evaluation, deployment, and surveillance | Observation state vs patient state; asynchronous context; missingness mechanisms; selective prediction; deferral and fallback pathways | Links data generation and availability to whether to predict or defer and to the subsequent fallback pathway. |
+
+Existing guidance is complementary; the proposed framework adds intended-use-specific handling of multimodal observation, temporal context, evidence sufficiency, deferral, and fallback pathways.
+
+Evaluation should be defined by intended use. Within this conceptual framework, we suggest five candidate conditions for an intended-use-specific minimum evaluation suite, to be adapted to the population, setting, decision point, prediction horizon, available inputs, action threshold, and consequences of error for each application: complete inputs; each clinically critical modality unavailable in turn; naturally occurring patterns of co-missingness; clinically relevant degrees of temporal staleness; and geographically and temporally external data. “Critical modality,” “realistic co-missingness,” and “reliable prediction” are therefore use-case-specific rather than universal. Current care and a simpler model can serve as comparators where appropriate. We suggest reporting discrimination and calibration among non-deferred predictions, coverage, selective risk or error across coverage levels, the frequency and causes of deferral, subgroup-specific error and deferral rates, and deterioration as information becomes older or less complete. Subgroup analysis should also determine whether elevated deferral rates reflect clinically appropriate uncertainty or unequal access to the evidence required for prediction. Persistent excess deferral among socioeconomically disadvantaged or other underserved groups should be treated as a potential equity concern, prompting examination of input availability, deferral thresholds, and access to fallback care rather than being accepted as a neutral safety mechanism. [\[10\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib10), [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib17) Mitigation may require improving data availability or fallback pathways rather than simply relaxing deferral thresholds. Decision-curve or other clinical-utility measures and workflow burden can complement statistical performance at the prespecified action threshold. Where feasible, benchmark datasets should preserve realistic missingness, acquisition and availability times, data quality, reasons for test ordering, intervening treatments, and site-level resource differences rather than relying on artificially complete records. These conditions are intended as a conceptual proposal rather than a consensus standard; prospective evaluation and broader multi-stakeholder consensus will be required before they can be translated into formal field recommendations.
+
+Clinical translation should follow a staged pathway. Retrospective model development should be followed by geographically and temporally independent validation. Silent prospective evaluation should then determine whether predictions remain stable when generated from live clinical data without influencing care. Early clinical studies should assess usability, human factors, workflow integration, failure modes, and communication of missing information, uncertainty, and deferral, as emphasised by DECIDE-AI. [\[18\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib18) Only after these stages should high-stakes systems proceed to pragmatic trials with patient-centred and health-economic outcomes. Trial reports and protocols should follow CONSORT-AI and SPIRIT-AI, respectively. [\[19\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib19), [\[20\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib20) Implementing this evaluation framework requires datasets to retain provenance metadata on why tests were not performed; when observations were ordered, acquired, reported, and made clinically available; intervening clinical events; quality-control failures; reasons for data loss; and how inputs were transformed. [\[11\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib11), [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib17) Many retrospective or publicly available datasets do not capture these fields consistently. Dataset curators should therefore treat such information as core metadata if reproducible evaluation of deferral-aware multimodal AI is to become feasible. Without these details, investigators cannot determine whether performance reflects biological signal, institutional workflow, or leakage from future information.
+
+Governance must continue after deployment. A system that is safe at launch may deteriorate as populations, diagnostic pathways, imaging hardware, treatment practices, modality availability, or relationships among data sources change. [\[14\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib14), [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib17) The deploying institution and model owner should define responsibility for surveillance and prespecify triggers for revalidation, including material changes in data availability or timing, calibration, subgroup performance, coverage, deferral frequency, hardware, or workflow. When a trigger is crossed, the integrated model should be revalidated and, where safety cannot be established, paused or rolled back until acceptable performance is restored. Privacy, security, traceability, and patient involvement should be addressed within broader lifecycle governance such as FUTURE-AI. [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bib17) Multimodal cardiovascular AI should therefore be designed around the evidence actually available at the clinical decision point, including why information is absent and whether it remains temporally relevant. The goal is not to make every case predictable, but to make prediction conditional on evidence that is sufficient for the intended clinical use.
+
+## Declaration of generative AI and AI-assisted technologies in the writing process
+
+No generative AI tools were used in the preparation of this work.
+
+## Funding
+
+This work was supported by the Zhengzhou University Young Student Basic Research Projects for PhD Students ( [ZDBJ2026009](https://www.sciencedirect.com/science/article/pii/S3117928226000044#gs1)). The funder had no role in the conception, preparation, review, or approval of the manuscript, or in the decision to submit it for publication.
+
+## CRediT authorship contribution statement
+
+**Yahui Han:** Writing – original draft, Visualization, Formal analysis. **Qiang Li:** Writing – original draft, Visualization, Methodology. **Taiqi Zhao:** Methodology, Investigation. **Shanshan Cai:** Software, Resources. **Biyun Li:** Validation, Formal analysis. **Kaisaierjiang Kadier:** Visualization. **Tianshu Gu:** Methodology. **Zhonghua Sun:** Methodology. **Pengyuan Xu:** Validation. **Dezhi Liu:** Software. **Moyan Li:** Resources. **Xufeng Huang:** Project administration. **Qian Guo:** Writing – review & editing, Supervision. **Yuan Cheng:** Supervision, Software. **Honglin Zheng:** Writing – review & editing, Validation, Resources. **Ge Zhang:** Supervision, Resources, Funding acquisition.
+
+## Declaration of competing interest
+
+The authors declare the following financial interests which may be considered as potential competing interests: The author Shanshan Cai was employed by PyraGeo Biosciences Co., Ltd., China. No sponsorship or funding for this study was provided by the company. The company had no role in the study design, data collection, analysis, interpretation of data, writing of the manuscript, or the decision to submit the manuscript for publication.
+
+## Acknowledgements
+
+We thank the editors of Medicine Discovery for their constructive comments and suggestions on this Correspondence.
+
+## Data availability
+
+No data was used for the research described in the article.
+
+## References
+
+01. [\[1\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib1)
+
+
+    G. Zhang, J. Xu, Z. Zhang, _et al._
+
+
+
+    A multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine
+
+
+
+    Curr. Proteom., 22 (5) (2025), Article 100054, [10.1016/j.curpro.2025.100054](https://doi.org/10.1016/j.curpro.2025.100054)
+
+
+02. [\[2\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib2)
+
+
+    R. Khera, E.K. Oikonomou, G.N. Nadkarni, _et al._
+
+
+
+    Transforming cardiovascular care with artificial intelligence: from discovery to practice: JACC State-of-the-Art Review
+
+
+
+    J. Am. Coll. Cardiol., 84 (1) (2024), pp. 97-114, [10.1016/j.jacc.2024.05.003](https://doi.org/10.1016/j.jacc.2024.05.003)
+
+
+03. [\[3\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib3)
+
+
+    E.K. Oikonomou, M. Siddique, C. Antoniades
+
+
+
+    Artificial intelligence in medical imaging: a radiomic guide to precision phenotyping of cardiovascular disease
+
+
+
+    Cardiovasc. Res., 116 (13) (2020), pp. 2040-2054, [10.1093/cvr/cvaa021](https://doi.org/10.1093/cvr/cvaa021)
+
+
+04. [\[4\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib4)
+
+
+    Y. Zhou, J. Khasentino, T. Yun, _et al._
+
+
+
+    Applying multimodal AI to physiological waveforms improves genetic prediction of cardiovascular traits
+
+
+
+    Am. J. Hum. Genet., 112 (7) (2025), pp. 1562-1579, [10.1016/j.ajhg.2025.05.015](https://doi.org/10.1016/j.ajhg.2025.05.015)
+
+
+05. [\[5\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib5)
+
+
+    G. Ramirez, M. Lemley, A. Shanbhag, _et al._
+
+
+
+    The REgistry of flow and perfusion imaging for artificial intelligence with positron emission tomography (REFINE PET): rationale and design
+
+
+
+    J. Nucl. Cardiol., 52 (2025), Article 102449, [10.1016/j.nuclcard.2025.102449](https://doi.org/10.1016/j.nuclcard.2025.102449)
+
+
+06. [\[6\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib6)
+
+
+    H.H.V. Tran, A. Thu, A.R. Twayana, _et al._
+
+
+
+    AI-driven multimodality fusion in cardiac imaging: integrating CT, MRI, and echocardiography for precision
+
+
+
+    Cardiol. Rev. Published online (September 19, 2025), [10.1097/CRD.0000000000001052](https://doi.org/10.1097/CRD.0000000000001052)
+
+
+07. [\[7\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib7)
+
+
+    D. Schouten, G. Nicoletti, B. Dille, _et al._
+
+
+
+    Navigating the landscape of multimodal AI in medicine: a scoping review on technical challenges and clinical applications
+
+
+
+    Med. Image Anal., 105 (2025), Article 103621, [10.1016/j.media.2025.103621](https://doi.org/10.1016/j.media.2025.103621)
+
+
+08. [\[8\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib8)
+
+
+    L.P. Le, T. Nguyen, M.A. Riegler, _et al._
+
+
+
+    Multimodal missing data in healthcare: a comprehensive review and future directions
+
+
+
+    Comput. Sci. Rev., 56 (2025), Article 100720, [10.1016/j.cosrev.2024.100720](https://doi.org/10.1016/j.cosrev.2024.100720)
+
+
+09. [\[9\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib9)
+
+
+    H. Zhang, G. Zhang, C. Yu, _et al._
+
+
+
+    From disease-specific models to broad clinical utility: a perspective on AI hybrid ensemble frameworks
+
+
+
+    Adv. Genet., 7 (2026), Article e00053, [10.1002/ggn2.202500053](https://doi.org/10.1002/ggn2.202500053)
+
+
+10. [\[10\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib10)
+
+
+    R.H.H. Groenwold
+
+
+
+    Informative missingness in electronic health record systems: the curse of knowing
+
+
+
+    Diagn. Progn. Res., 4 (2020), p. 8, [10.1186/s41512-020-00077-0](https://doi.org/10.1186/s41512-020-00077-0)
+
+
+11. [\[11\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib11)
+
+
+    S.E. Davis, M.E. Matheny, S. Balu, _et al._
+
+
+
+    A framework for understanding label leakage in machine learning for health care
+
+
+
+    J. Am. Med. Inform. Assoc., 31 (1) (2024), pp. 274-280, [10.1093/jamia/ocad178](https://doi.org/10.1093/jamia/ocad178)
+
+
+12. [\[12\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib12)
+
+
+    S.R. Stahlschmidt, B. Ulfenborg, J. Synnergren
+
+
+
+    Multimodal deep learning for biomedical data fusion: a review
+
+
+
+    Brief. Bioinform., 23 (2) (2022), Article bbab569, [10.1093/bib/bbab569](https://doi.org/10.1093/bib/bbab569)
+
+
+13. [\[13\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib13)
+
+
+    A. Swaminathan, I. Lopez, W. Wang, _et al._
+
+
+
+    Selective prediction for extracting unstructured clinical data
+
+
+
+    J. Am. Med. Inform. Assoc., 31 (1) (2024), pp. 188-197, [10.1093/jamia/ocad182](https://doi.org/10.1093/jamia/ocad182)
+
+
+14. [\[14\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib14)
+
+
+    G.F.D.S. Silva, F.N. Barcellos Filho, R.M. Wichmann, _et al._
+
+
+
+    Strategies for detecting and mitigating dataset shift in machine learning for health predictions: a systematic review
+
+
+
+    J. Biomed. Inform., 170 (2025), Article 104902, [10.1016/j.jbi.2025.104902](https://doi.org/10.1016/j.jbi.2025.104902)
+
+
+15. [\[15\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib15)
+
+
+    G.S. Collins, K.G.M. Moons, P. Dhiman, _et al._
+
+
+
+    TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods
+
+
+
+    BMJ, 385 (2024), Article e078378, [10.1136/bmj-2023-078378](https://doi.org/10.1136/bmj-2023-078378)
+
+
+16. [\[16\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib16)
+
+
+    K.G.M. Moons, J.A.A. Damen, T. Kaul, _et al._
+
+
+
+    PROBAST+AI: an updated quality, risk of bias, and applicability assessment tool for prediction models using regression or artificial intelligence methods
+
+
+
+    BMJ, 388 (2025), Article e082505, [10.1136/bmj-2024-082505](https://doi.org/10.1136/bmj-2024-082505)
+
+
+17. [\[17\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib17)
+
+
+    K. Lekadir, A.F. Frangi, A.R. Porras, _et al._
+
+
+
+    FUTURE-AI: international consensus guideline for trustworthy and deployable artificial intelligence in healthcare
+
+
+
+    BMJ, 388 (2025), Article e081554, [10.1136/bmj-2024-081554](https://doi.org/10.1136/bmj-2024-081554)
+
+
+18. [\[18\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib18)
+
+
+    B. Vasey, M. Nagendran, B. Campbell, _et al._
+
+
+
+    Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI
+
+
+
+    Nat. Med., 28 (5) (2022), pp. 924-933, [10.1038/s41591-022-01772-9](https://doi.org/10.1038/s41591-022-01772-9)
+
+
+19. [\[19\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib19)
+
+
+    X. Liu, S. Cruz Rivera, D. Moher, _et al._
+
+
+
+    Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: the CONSORT-AI extension
+
+
+
+    Nat. Med., 26 (9) (2020), pp. 1364-1374, [10.1038/s41591-020-1034-x](https://doi.org/10.1038/s41591-020-1034-x)
+
+
+20. [\[20\]](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bbib20)
+
+
+    S. Cruz Rivera, X. Liu, A.W. Chan, _et al._
+
+
+
+    Guidelines for clinical trial protocols for interventions involving artificial intelligence: the SPIRIT-AI extension
+
+
+
+    Nat. Med., 26 (9) (2020), pp. 1351-1363, [10.1038/s41591-020-1037-7](https://doi.org/10.1038/s41591-020-1037-7)
+
+
+
+Peer review under the responsibility of the Editorial Board of Medicine Discovery.
+
+[1](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bfn1)
+
+Equal contribution.
+
+[2](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bfn2)
+
+Equal contribution.
+
+[2](https://www.sciencedirect.com/science/article/pii/S3117928226000044#bfn3)
+
+Present address: Division of Biomedical and Life Sciences, Faculty of Health and Medicine, Lancaster University, Lancaster LA1 4YG, UK
+
+© 2026 Zhujiang Hospital of Southern Medical University. Publishing services by Elsevier B.V. on behalf of KeAi Communications Co. Ltd.
+
