@@ -10,10 +10,16 @@ PILOT_DOIS = frozenset(('10.1021/acs.jproteome.4c00522', '10.1111/jcmm.17789',
                         '10.1186/s12915-025-02400-x', '10.1038/s41467-024-50415-9',
                         '10.1186/s12967-022-03795-9', '10.1136/jitc-2024-010127'))
 STYLESHEET = '<link rel="stylesheet" href="../assets/evidence-presentation.css">'
+PAPER_GUIDE_LINKS = {
+    ('10.1038/s41467-024-50415-9', 'cardiovascular-prediction-evidence'): {
+        'anchor': 'model-evaluation',
+        'label': 'Author-maintained comparison guide: heart-failure model validation',
+    },
+}
 
 
 def guide_navigation(doi, markdown=False):
-    """Preserve the DCM backlink; other registered resources require explicit opt-in."""
+    """Preserve the DCM backlink; require guide-wide or paper-specific opt-in."""
     key = doi.lower()
     legacy = ''
     if not markdown:
@@ -26,19 +32,24 @@ def guide_navigation(doi, markdown=False):
                         'This guide is not a systematic review or a jointly validated diagnostic panel.</p></aside>')
     links = []
     for guide in research_guides.load_comparisons():
-        if guide.get('paper_navigation') is not True:
+        scoped = PAPER_GUIDE_LINKS.get((key, guide['slug']))
+        if guide.get('paper_navigation') is not True and scoped is None:
             continue
         sources = {row['source_doi'].lower() for row in guide['studies']}
         sources.update(row['doi'].lower() for row in guide.get('research_use', {}).get('sources', []))
         if key not in sources:
             continue
         url = research_guides.comparison_url(guide)
+        label = guide['title']
+        if scoped:
+            url += '#' + scoped['anchor']
+            label = scoped['label']
         if markdown:
-            title = html.escape(guide['title']).replace('\\', '\\\\').replace('[', '\\[').replace(']', '\\]')
+            title = html.escape(label).replace('\\', '\\\\').replace('[', '\\[').replace(']', '\\]')
             links.append('- [' + title + '](' + url + ')')
         else:
             links.append('<li><a href="' + html.escape(url, quote=True) + '">'
-                         + html.escape(guide['title']) + '</a></li>')
+                         + html.escape(label) + '</a></li>')
     if not links:
         return legacy
     if markdown:
