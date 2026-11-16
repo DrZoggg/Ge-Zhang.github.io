@@ -420,6 +420,10 @@ CRCCD, BIDMC, MIMIC-III
 - [TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients](https://drgezhang.com/papers/doi-10-2147-cia-s462542.html) — Complementary prognostic evidence in advanced heart failure with renal dysfunction (DOI: 10.2147/cia.s462542)
 - [From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks](https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html) — Methodological extension of hybrid ensemble modeling for broader clinical utility (DOI: 10.1002/ggn2.202500053)
 
+## Related research resource
+
+- [Author-maintained comparison guide: heart-failure model validation](https://drgezhang.com/research/cardiovascular-prediction-evidence.html#model-evaluation)
+
 ## Publication & Provenance
 
 - DOI: https://doi.org/10.1038/s41467-024-50415-9

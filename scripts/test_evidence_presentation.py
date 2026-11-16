@@ -205,7 +205,11 @@ class PresentationTests(unittest.TestCase):
         for bad in ['html,body{overflow-x:hidden}', 'body {overflow:clip}']:
             with self.assertRaises(ValueError):validate_css(bad)
     def test_guide_navigation_source_mapping(self):
-        expected = {'10.1021/acs.jproteome.4c00522','10.1111/jcmm.17789','10.1111/jcmm.70258'}
+        # Existing DCM and opted-in resources, plus the single AIHF route.
+        expected = {'10.1021/acs.jproteome.4c00522','10.1111/jcmm.17789','10.1111/jcmm.70258',
+                    '10.1016/j.joim.2025.06.003','10.1007/s13402-023-00912-8',
+                    '10.1111/jcmm.18408','10.3389/fonc.2025.1538574','10.1002/mdr2.70004',
+                    '10.1038/s41467-024-50415-9'}
         self.assertEqual({p['doi'].lower() for p in load_master() if guide_navigation(p.get('doi',''))}, expected)
         self.reject(self.after.replace('related-evidence-guide', 'unexpected-guide', 1))
         self.reject(self.after + guide_navigation(self.doi))
