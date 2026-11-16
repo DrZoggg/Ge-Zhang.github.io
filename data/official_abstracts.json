@@ -632,6 +632,28 @@
         "type": "unstructured",
         "text": "Recent advances in high-throughput proteomic profiling technologies have facilitated the precise quantification of numerous proteins across multiple specimens concurrently. Researchers have the opportunity to comprehensively analyze the molecular signatures in plentiful medical specimens or disease pattern cell lines. Along with advances in data analysis and integration, proteomics data could be efficiently consolidated and employed to recognize precise elementary molecular mechanisms and decode individual biomarkers, guiding the precision treatment of tumors. Herein, we review a broad array of proteomics technologies and the progress and methods for the integration of proteomics data and further discuss how to better merge proteomics in precision medicine and clinical settings."
       }
+    },
+    "10.1007/s10238-026-02130-6": {
+      "source_type": "pmc",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13342204/",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Dilated cardiomyopathy (DCM) is a highly heterogeneous disease, complicating mechanistic understanding and limiting effective patient stratification. To capture this complexity, a gene interaction network-based taxonomy was developed. A total of 245 DCM samples and 174 controls from four cohorts were included. Gene–gene interactions were quantified for each sample to build interaction networks based on transcriptomic data and Reactome database, and representative interactions were used for consensus clustering to identify subtypes. Subtype stability was assessed with Uniform Manifold Approximation and Projection (UMAP), silhouette, and nearest-template prediction. Weighted gene co-expression network analysis (WGCNA), enrichment analysis, and immune-infiltration profiling were applied to characterize subtype heterogeneity. An immunoadsorption-treated cohort was used to predict therapeutic responsiveness. Finally, subtype-specific differentially expressed genes (DEGs) were validated by qPCR in an Angiotensin II–stimulated cardiomyocyte model. Three reproducible DCM subtypes were consistently identified, with EPS1 comprising 43.2–52.5% of patients, EPS2 40.0–44.2%, and EPS3 7.5–13.5%. These subtypes exhibited distinct molecular characteristics, reflecting heterogeneous biological states. Edge-perturbation subtype 1 (EPS1) showed mitochondrial/TCA-cycle and proteostasis dysregulation and corresponded to responders to immunoadsorption with IgG substitution (IA/IgG). EPS2 was characterized by enrichment of humoral immune and platelet activation pathways, accompanied by broad immune cell infiltration. EPS3 displayed abnormalities in respiratory chain and endocytosis, together with cytotoxic and T follicular helper (Tfh) cell–associated signals. qPCR analysis in Angiotensin II–treated cardiomyocytes validated the subtype-specific genes, further supporting subtype stability. This gene interaction network–based taxonomy identifies distinct DCM subtypes with differential therapeutic responsiveness, particularly highlighting that EPS1 patients may benefit from IA/IgG therapy. The classification reveals immune and inflammatory heterogeneity that can guide personalized treatment strategies and improve patient stratification in DCM management."
+      }
+    },
+    "10.1016/j.jma.2023.05.007": {
+      "source_type": "publisher",
+      "source_url": "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Cardiovascular stent has been widely applied to treat cardiovascular disease (CVD), which is the major disease contribution to mortality in the world wide. Biodegradable magnesium (Mg) alloys are the encouraging materials in cardiovascular stents benefit from absorbability and biocompatibility. While, the ability of degradation is a double-edged sword for manufacture stent, modifying the surface to decrease the excessive degradation rate and promote the surface endothelialization could expand the prospect of the further application. In this work, the biodegradable Mg-Zn-Y-Nd alloy was modified by MgF2 and dopamine polymer film (PDA) as the corrosion resistance layer and the bonding layer respectively, and then the exosome, a natural nanoparticle contains mRNAs and proteins, was tailored to give the surface better biocompatibility. The electrochemical test and weight loss test reflected the MgF2-PDA/exosome coating increase the corrosion resistance of the Mg-Zn-Y-Nd alloy. The cytocompatibility data indicated the novel MgF2-PDA/exosome coating selectively reduced the tumor necrosis factor (TNF-α) expression and ROS release from macrophage, and promoted the α-SMA expression of smooth muscle cells. In addition, the MgF2-PDA/exosome coating also improved the adhesion, proliferation, CD31 expression and nitric oxide (NO) release of vascular endothelial cells (ECs), all of which contribute to the surface endothelialization. And the mechanism experiments showed the exosome released from the coating uptake by the ECs and assemble around the lysosome and mitochondria, and the released rate of the exosome on the coating is around 5 to 7 days, indicating excellent multi-functions of MgF2-PDA/exosome coating in cardiovascular stent."
+      }
     }
   }
 }
