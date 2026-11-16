@@ -534,6 +534,17 @@ Do not automatically add:
 
 Only implement tooling that genuinely improves crawlability, retrievability, semantic clarity, evidence density, citation readiness, entity identity, provenance, or machine-readable scholarly structure.
 
+## Real Citation Consumers
+
+Prioritize real literature-matching and claim-to-citation products and their shared
+scholarly sources. Pause new reproduction, model runs, dataset preparation and
+documentation or citation-feature expansion in the owner's research repositories
+unless explicitly reauthorized; preserve prior and unfinished work. Necessary site
+maintenance and third-party source analysis remain allowed. Before implementation,
+verify the consumer's data path, controllable gap and normal delivery route. For
+operator-maintained pools, confirm scope and authorized intake before exports;
+do not build speculative adapters or alter formal identity or type to force inclusion.
+
 ## Execution Speed
 
 For routine engineering tasks:
