@@ -3,7 +3,7 @@ import copy
 import html
 import json
 import unittest
-from citation_common import citation_record, load_citation_metadata
+from citation_common import citation_record, load_citation_metadata, validate_fulltext_pdf
 from sync_common import ROOT, load_master, is_withdrawn, publication_authors
 from site_common import load_site_config
 from validate_site import meta_contents, json_ld_objects
@@ -18,7 +18,9 @@ def validate_metadata(page, item, record):
                           ('citation_doi',[item['doi']] if item.get('doi') else [])]:
         require(meta_contents(page,key)==expected, key+' mismatch')
     require('<h1 ' in page and html.escape(item['title']) in page,'visible title')
-    require(not meta_contents(page,'citation_pdf_url'),'unverified hosted PDF')
+    pdf = record.get('fulltext_pdf') if record else None
+    require(meta_contents(page,'citation_pdf_url') == ([pdf['url']] if pdf else []),
+            'unverified or mismatched hosted PDF')
     if record:
         expected_date=record.get('publication_date',str(item['year'])).replace('-','/')
         require(meta_contents(page,'citation_publication_date')==[expected_date], 'publication date')
@@ -42,6 +44,16 @@ def validate_metadata(page, item, record):
 
 
 class ScholarMetadataTests(unittest.TestCase):
+    def test_hosted_pdf_requires_reviewed_bytes_and_identity_path(self):
+        items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
+        item=next(p for p in items if p.get('doi')=='10.1002/ctm2.70900')
+        record=load_citation_metadata(items)[item['doi']]
+        for key,value in [('url','https://drgezhang.com/assets/fulltext/ctm2-70900.pdf'),
+                          ('sha256','0'*64), ('version','unknown')]:
+            pdf=copy.deepcopy(record['fulltext_pdf']);pdf[key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                validate_fulltext_pdf(pdf,item,record['verified_sources'])
+
     def test_all_public(self):
         items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
         metadata=load_citation_metadata(items)
