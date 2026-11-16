@@ -2009,6 +2009,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             )
     if doi:
         citation.append(f'<meta name="citation_doi" content="{html.escape(doi, quote=True)}">')
+    if citation_data and citation_data.get("fulltext_pdf"):
+        citation.append(
+            f'<meta name="citation_pdf_url" content="{html.escape(citation_data["fulltext_pdf"]["url"], quote=True)}">'
+        )
     if official_abstract:
         citation.append(
             f'<meta name="citation_abstract" content="{html.escape(abstract_text(official_abstract), quote=True)}">'

@@ -645,6 +645,20 @@
         "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
         "https://api.crossref.org/works/10.1097/re9.0000000000000037"
       ]
+    },
+    "10.1002/ctm2.70900": {
+      "fulltext_pdf": {
+        "url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.pdf",
+        "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
+        "sha256": "9d689d55465340f13018aea57e1a89002ed11729091a7021e77df050cb4bd998",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "version": "version_of_record"
+      },
+      "verified_sources": [
+        "https://doi.org/10.1002/ctm2.70900",
+        "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ]
     }
   }
 }

@@ -1,13 +1,14 @@
 """Deterministic, master-led citation records and static exports."""
 
 import html
+import hashlib
 import json
 import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
-from site_common import validate_slug
+from site_common import validate_slug, load_site_config
 from sync_common import ROOT, norm_doi, publication_authors
 
 
@@ -17,6 +18,7 @@ ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
     "verified_sources", "online_publication_date", "ris_authors", "ris_article_locator",
+    "fulltext_pdf",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -42,6 +44,36 @@ def _verified_text(value, label):
 
 def _valid_doi(doi):
     return bool(re.fullmatch(r"10\.\d{4,9}/\S+", doi)) and doi == norm_doi(doi)
+
+
+def validate_fulltext_pdf(value, publication, verified_sources):
+    """Associate a reviewed CC BY version of record with its sibling HTML page."""
+    required = {"url", "source_url", "sha256", "license_url", "version"}
+    if (not isinstance(value, dict) or set(value) != required
+            or any(not isinstance(text, str) for text in value.values())):
+        raise ValueError("Hosted fulltext PDF requires explicit provenance.")
+    site = load_site_config()["site_url"].rstrip("/")
+    slug = validate_slug(publication["slug"])
+    source = urlparse(value["source_url"])
+    if (value["url"] != f"{site}/papers/{slug}.pdf"
+            or value["version"] != "version_of_record"
+            or value["license_url"] != "https://creativecommons.org/licenses/by/4.0/"
+            or not value["source_url"].startswith(site + "/assets/fulltext/")
+            or source.query or source.fragment or source.username or source.password
+            or not source.path.endswith(".pdf")
+            or not re.fullmatch(r"[0-9a-f]{64}", value["sha256"])):
+        raise ValueError("Hosted fulltext PDF must be a licensed, same-directory version of record.")
+    if not {value["source_url"], value["license_url"],
+            f"https://doi.org/{publication['doi']}"}.issubset(verified_sources):
+        raise ValueError("Hosted fulltext PDF requires DOI, source and licence references.")
+    original = (ROOT / source.path.lstrip("/")).resolve()
+    sibling = ROOT / "papers" / f"{slug}.pdf"
+    if not original.is_relative_to((ROOT / "assets" / "fulltext").resolve()):
+        raise ValueError("Hosted fulltext source must stay within the public fulltext directory.")
+    for path in [original, sibling]:
+        data = path.read_bytes()
+        if not data.startswith(b"%PDF-") or hashlib.sha256(data).hexdigest() != value["sha256"]:
+            raise ValueError("Hosted fulltext PDF differs from its reviewed source bytes.")
 
 
 def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
@@ -81,6 +113,8 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                 if any(urlparse(url).scheme != "https" or not urlparse(url).netloc
                        for url in sources):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
+            elif key == "fulltext_pdf":
+                validate_fulltext_pdf(value, publication, fields.get("verified_sources", []))
             elif key == "ris_authors":
                 authors = publication_authors(publication)
                 if (not isinstance(value, list) or len(value) != len(authors)
