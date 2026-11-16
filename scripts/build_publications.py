@@ -1961,7 +1961,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     if is_v2:
         deep_content = with_research_cluster(deep_content, public_by_doi)
     deep_summary = str((deep_content or {}).get("summary") or "").strip()
-    description = deep_summary or (
+    description = deep_summary or str((limited_note or {}).get("search_description") or "").strip() or (
         f"Author-controlled academic record for {title}, published in {journal} ({year})."
     )
     links = []
