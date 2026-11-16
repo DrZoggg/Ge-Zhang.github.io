@@ -1,0 +1,25 @@
+{
+  "baseline_sha": "4a0ed8dcaf67448942b60f645cffd15d3f3c2e95",
+  "papers": {
+    "10.1007/s10238-026-02130-6": {
+      "slug": "doi-10-1007-s10238-026-02130-6",
+      "record_sha256": "8c301fa9cb4d4fb555cf1f494ecf154d2d855e5813ba21935198a03216ae6580",
+      "text_sha256": "3db687b0495f3b70315849912fe6f565f02a67017328ecef7bf4d9d5cc93f0a1",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13342204/",
+      "source_sha256": "b0dd96f4d7b493c122fa7cf6e8fcfae91c4fefa7a9481b8d77cb82f3290659d3",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "normalization": "Flatten inline JATS markup only; preserve original words, Unicode spaces, punctuation and order. Complete selected main abstract; attributed original source text, existing Gold scope unchanged."
+    },
+    "10.1016/j.jma.2023.05.007": {
+      "slug": "doi-10-1016-j-jma-2023-05-007",
+      "record_sha256": "d29ecac82bbe28ea06dd9c71f4f578784aba20b5d3bd9f86da5672714046d658",
+      "text_sha256": "91a94f6a9f0f2be88c22f4932b586e8831942ca2cfea2b00f47304e5f2464460",
+      "source_url": "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
+      "source_sha256": "a65488d3de135ae5c2a35aea42d98bf3bb3a1576fcbcfa1765896e470f58896d",
+      "license": "CC-BY-NC-ND-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "normalization": "Flatten sub/i markup to plain text, preserving MgF2 and α. No wording changes. Complete selected main abstract; attributed original source text, existing Gold scope unchanged."
+    }
+  }
+}

@@ -39,6 +39,8 @@ DOI_LICENSE_URLS = {
     },
 }
 SOURCES = {
+    "10.1007/s10238-026-02130-6": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC13342204/"),
+    "10.1016/j.jma.2023.05.007": ("www.sciopen.com", "/article/10.1016/j.jma.2023.05.007"),
     "10.3389/fnut.2025.1658286": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12501789/"),
     "10.3389/fonc.2025.1538574": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12401915/"),
     "10.1016/j.csbj.2024.04.044": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11058087/"),
