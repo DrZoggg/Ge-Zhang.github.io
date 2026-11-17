@@ -2329,7 +2329,7 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
-      "gold_content_sha256": "0e8f8ace3ba72d07b9b92ac9b09cf7edf2cf7860216ca3ffbb790bc96a2da2b4",
+      "gold_content_sha256": "b62e254f1efd8bbc203a826150ca37f272d19426004d9eea85132563dee91d13",
       "provenance": {
         "publisher_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
         "evidence_basis": "Evidence synthesis uses the archived publisher corrected proof, compared with the current issue-assigned publisher full text on 2026-10-26. No substantive difference was found in the reviewed passages or Figure 1 caption. Proof pagination is retained as source locators.",
