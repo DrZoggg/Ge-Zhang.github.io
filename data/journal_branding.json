@@ -43,16 +43,16 @@
       "verified_at": "2026-11-17"
     },
     "iScience": {
-      "brand": "iScience",
-      "kind": "journal",
-      "asset": "assets/journal-logos/iscience.svg",
+      "brand": "Cell Press",
+      "kind": "publisher",
+      "asset": "assets/journal-logos/cell-press.svg",
       "surface": "dark",
       "shape": "wordmark",
-      "width": 140,
-      "height": 32,
+      "width": 542,
+      "height": 100,
       "abbreviation": "iS",
       "source_url": "https://www.cell.com/iscience/home",
-      "asset_source_url": "https://www.cell.com/pb-assets/ux3/logos/cell/iScience_ICON-1758043617090.svg",
+      "asset_source_url": "https://www.cell.com/pb-assets/ux3/logos/cell/cellpress_rebrand_logo-1744813564367.svg",
       "verified_at": "2026-11-17"
     },
     "Journal of Translational Medicine": {
