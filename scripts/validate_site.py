@@ -1894,6 +1894,7 @@ def validate_circadian_review_v2_regression(content, publication, page):
                 "10.1038/s42003-019-0595-z", "10.1016/j.jacc.2022.03.370",
                 "10.1161/hypertensionaha.114.04980", "10.1160/th-14-05-0453",
                 "10.1093/eurheartj/ehz754", "10.1001/jama.2025.4390",
+                "10.1001/jamanetworkopen.2025.19354",
             ]
             and all(content["qa"][index]["evidence_refs"] == ["KF6", "KF8"]
                     for index in (6, 7, 8))

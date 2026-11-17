@@ -1562,7 +1562,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1002-mdr2-70052.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1002-mdr2-70052.json",
-      "gold_content_sha256": "76178b0ff5cc070e6169ec6071280b1762266a94da4ef78aacb2b87f2763a29c",
+      "gold_content_sha256": "5d3ca50aa3db0b77c477b17fda686e8fb8a2444d7a25c52ed27edb8605f0912d",
       "provenance": {
         "doi": "10.1002/mdr2.70052",
         "publisher": "Wiley Online Library / Med Research",

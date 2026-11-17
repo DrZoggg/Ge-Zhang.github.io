@@ -24,7 +24,7 @@
   "display_title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
   "summary": "Narrative review of circadian immune-vascular mechanisms across cardiovascular disease, distinguishing preclinical chronotherapy rationale from heterogeneous and unresolved clinical timing evidence; no new data were created or analyzed.",
   "research_question": "How do circadian clock disruption and time-of-day biology interact with immune-cell trafficking, inflammatory signaling and vascular homeostasis across cardiovascular diseases, and what level of evidence supports translating these rhythms into cardiovascular chronotherapy?",
-  "author_summary": "This narrative review synthesizes experimental, mechanistic, epidemiological and clinical literature linking the circadian clock to cardiovascular immune and inflammatory biology. It organizes evidence around the CLOCK-BMAL1 transcriptional network, PER/CRY feedback, REV-ERB/ROR regulation, redox-sensitive signaling, NF-kB and NLRP3 inflammasome activity, cytokine and chemokine rhythms, and time-dependent immune-cell trafficking. These mechanisms are discussed across atherosclerosis, stroke, ischemic heart disease and heart failure. The review further evaluates preclinical chronotherapeutic strategies targeting clock and inflammatory pathways and contrasts them with a more limited and heterogeneous clinical evidence base. It does not report new experimental or clinical data, perform a meta-analysis, establish a universal cardiovascular dosing schedule, or demonstrate clinical efficacy for experimental clock-targeting compounds.",
+  "author_summary": "This narrative review synthesizes experimental, mechanistic, epidemiological and clinical literature linking the circadian clock to cardiovascular immune and inflammatory biology. It organizes evidence around the CLOCK-BMAL1 transcriptional network, PER/CRY feedback, REV-ERB/ROR regulation, redox-sensitive signaling, NF-kB and NLRP3 inflammasome activity, cytokine and chemokine rhythms, and time-dependent immune-cell trafficking. These mechanisms are discussed across atherosclerosis, stroke, ischemic heart disease and heart failure. The review further evaluates preclinical chronotherapeutic strategies targeting clock and inflammatory pathways and contrasts them with a more limited and heterogeneous clinical evidence base. For endpoint-aware comparison, OMAN found greater nighttime systolic blood-pressure reduction with bedtime versus morning olmesartan–amlodipine after 12 weeks in 720 adults with hypertension in China. BedMed followed 3,357 Canadian primary-care adults for a median 4.6 years and found no significant difference in all-cause death or hospitalization or emergency-department visits for stroke, acute coronary syndrome or heart failure. The review's cited trials assess blood-pressure efficacy and long-term clinical outcomes, respectively. It does not report new experimental or clinical data, perform a meta-analysis, establish a universal cardiovascular dosing schedule, or demonstrate clinical efficacy for experimental clock-targeting compounds.",
   "study_profile": {
     "profile_type": "narrative_review",
     "study_design": "Narrative evidence synthesis integrating molecular, cellular, animal, epidemiological and clinical chronotherapy literature. The article does not report a PRISMA-style systematic-search or study-selection workflow, quantitative meta-analysis, or a newly generated dataset.",
@@ -176,8 +176,17 @@
       {
         "doi": "10.1001/jama.2025.4390",
         "title": "Antihypertensive Medication Timing and Cardiovascular Events and Death: The BedMed Randomized Clinical Trial",
-        "relationship": "Randomized clinical evidence that did not reproduce the cardiovascular-event benefit reported by Hygia.",
+        "relationship": "Randomized clinical evidence that did not reproduce the cardiovascular-event benefit reported by Hygia. Review reference 392: 3,357 Canadian primary-care adults were followed for a median 4.6 years; the primary composite was all-cause death or hospitalization or emergency-department visits for stroke, acute coronary syndrome or heart failure (adjusted HR 0.96; 95% CI 0.77–1.19).",
         "evidence_refs": ["KF6", "KF8"]
+      },
+      {
+        "doi": "10.1001/jamanetworkopen.2025.19354",
+        "title": "Morning vs Bedtime Dosing and Nocturnal Blood Pressure Reduction in Patients With Hypertension: The OMAN Randomized Clinical Trial",
+        "relationship": "Review reference 389: 720 adults in China were randomized to morning or bedtime olmesartan–amlodipine. The primary endpoint was change in nighttime systolic blood pressure at 12 weeks; bedtime dosing produced greater reduction. This was a blood-pressure efficacy trial, not a cardiovascular-event trial.",
+        "evidence_refs": [
+          "KF6",
+          "KF8"
+        ]
       }
     ]
   },
