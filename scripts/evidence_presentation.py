@@ -11,6 +11,10 @@ PILOT_DOIS = frozenset(('10.1021/acs.jproteome.4c00522', '10.1111/jcmm.17789',
                         '10.1186/s12967-022-03795-9', '10.1136/jitc-2024-010127'))
 STYLESHEET = '<link rel="stylesheet" href="../assets/evidence-presentation.css">'
 PAPER_GUIDE_LINKS = {
+    ('10.1200/po.24.00089', 'cancer-omics-validation'): {
+        'anchor': 'cancer-validation-task-selection',
+        'label': 'Compare clinical prognosis, local recurrence and surgical associations',
+    },
     ('10.1038/s41467-024-50415-9', 'cardiovascular-prediction-evidence'): {
         'anchor': 'model-evaluation',
         'label': 'Author-maintained comparison guide: heart-failure model validation',
