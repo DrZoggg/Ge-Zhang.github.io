@@ -781,6 +781,13 @@
       ],
       "verified_at": "2026-11-07",
       "openalex_id": "https://openalex.org/W7225256893"
+    },
+    "10.1002/ctm2.70900": {
+      "pmid": "43034282",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/43034282/"
+      ],
+      "verified_at": "2026-11-17"
     }
   }
 }
