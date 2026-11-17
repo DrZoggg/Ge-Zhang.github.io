@@ -911,6 +911,27 @@
         "doi": "10.1016/j.joim.2025.06.003",
         "url": "https://github.com/DrZoggg/ClockProCRC/blob/main/docs/hcc-cohort-comparison.md",
         "locator": "Author-maintained cohort-role worksheet and linked data/hcc-cohort-roles.csv, derived from HCCcrds Results 3.5/Figure 5A-B for that same study."
+      },
+      {
+        "id": "doi-10-1200-po-24-00089",
+        "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
+        "doi": "10.1200/po.24.00089",
+        "url": "https://doi.org/10.1200/po.24.00089",
+        "locator": "Results: Extension to External Cohort From the RAP-AIscore; Figure 5A-J. Independent retrospective SYEMH one-, two- and three-year overall-survival evaluation, as recorded in the reviewed study evidence."
+      },
+      {
+        "id": "alrite-local-recurrence",
+        "title": "Analysis of Local Recurrence After Robotic-Assisted Total Mesorectal Excision (ALRITE): An International, Multicentre, Retrospective Cohort",
+        "doi": "10.3390/cancers17060992",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11940555/",
+        "locator": "Methods 2.1 and 2.5; Results 3.4; Discussion. Three-year local recurrence, approximately 10% within-dataset holdout and the reported 0.76 AUC with oversampling in training/testing and validation."
+      },
+      {
+        "id": "surgical-approach-association",
+        "title": "Can Surgical Approach and Postoperative Factors Impact Survival in Rectal Cancer? Robotic Versus Laparoscopic Insights",
+        "doi": "10.1002/cam4.71453",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41407261/",
+        "locator": "Official abstract: retrospective robot-assisted versus laparoscopic rectal-cancer surgery and multivariable Cox overall/disease-free survival associations. This comparison uses the abstract, not the unread original full text."
       }
     ],
     "checklist": [
@@ -1093,6 +1114,15 @@
           "doi-10-3389-fonc-2025-1538574",
           "doi-10-1002-mdr2-70004",
           "doi-10-1111-jcmm-18408"
+        ]
+      },
+      {
+        "use": "Clinical models: compare endpoints and validation",
+        "text": "Compare postoperative models by endpoint, horizon and validation setting. RAP-AIscore assessed overall survival after robot-assisted proctectomy; in its independent retrospective SYEMH cohort, 1-, 2- and 3-year AUCs were 0.587, 0.754 and 0.810. ALRITE modeled three-year local recurrence using an approximately 10% within-dataset holdout. Its highest reported AUC, 0.76, came from an analysis with oversampling in both training/testing and validation. These values do not establish comparative superiority: endpoints and evaluation designs differ, and each AUC must retain its stated horizon. The robotic-versus-laparoscopic study's available abstract reports multivariable Cox associations with overall and disease-free survival; it does not report individual prediction performance. For a Methods or Discussion comparison, distinguish independent-hospital evaluation from a held-out subset of the same dataset.",
+        "source_ids": [
+          "doi-10-1200-po-24-00089",
+          "alrite-local-recurrence",
+          "surgical-approach-association"
         ]
       }
     ],
