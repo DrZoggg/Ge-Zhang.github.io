@@ -1,7 +1,7 @@
 {
   "version": 1,
   "researcher_orcid": "0000-0002-3116-3246",
-  "scope": "Homepage Selected Research labels only; never an authorship-order inference or a master/citation override. Add roles only after formal publication evidence is reviewed.",
+  "scope": "Homepage Selected Research labels only; never an authorship-order inference or a master/citation override. Add roles only after formal publication evidence is reviewed. Verified joint first authors who are listed first in the formal byline display First author on homepage cards; other joint first authors retain Co-first author.",
   "papers": {
     "10.1126/science.aek9583": {
       "status": "verified",
@@ -62,16 +62,17 @@
     "10.1186/s12967-022-03795-9": {
       "status": "verified",
       "roles": [
-        "Co-first author"
+        "First author"
       ],
-      "verified_on": "2026-10-25",
-      "verification_basis": "Publication authorship evidence reviewed and explicitly confirmed by the researcher in the 2026-10-25 Visual 4.1 instruction.",
+      "verified_on": "2026-11-17",
+      "verification_basis": "The formal publication byline lists Ge Zhang first and its equal-contribution statement confirms shared first authorship. Per the researcher's 2026-11-17 homepage display instruction, a first-listed joint first author is labeled First author.",
       "sources": [
         {
           "url": "https://pubmed.ncbi.nlm.nih.gov/36474294/",
-          "locator": "Author information; equal contribution note"
+          "locator": "Author byline: Ge Zhang is listed first; Author information: equal contribution statement."
         }
-      ]
+      ],
+      "identity_note": "Ge Zhang is first in the published author list and shares equal first contribution. The homepage uses First author; the original equal-contribution statement and formal publication metadata are preserved."
     },
     "10.1002/ehf2.14003": {
       "status": "verified",
