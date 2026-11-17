@@ -48,7 +48,7 @@ class HomepageAuthorRolesTests(unittest.TestCase):
         self.assertIn('author 23',self.records['10.1002/mdr2.70052']['identity_note'])
         self.assertIn(self.owner,self.records['10.1002/mdr2.70052']['identity_note'])
         jco = self.records['10.1200/po.24.00089']
-        self.assertEqual(jco['roles'], ['Corresponding author', 'Co-first author'])
+        self.assertEqual(jco['roles'], ['Corresponding author'])
         self.assertEqual(jco['verified_on'], '2026-10-26')
         self.assertEqual(jco['sources'][0]['url'], 'https://ascopubs.org/doi/abs/10.1200/PO.24.00089')
         self.assertIn('Corresponding Author', jco['sources'][0]['locator'])
