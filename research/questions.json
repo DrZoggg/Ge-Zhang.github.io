@@ -2377,7 +2377,7 @@
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md",
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "authors": [
         "Xuanjiang Zhao",
         "Qian Guo",
@@ -2409,65 +2409,564 @@
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.ris",
       "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.csl.json",
-      "evidence_status": "limited",
-      "question_count": 0,
-      "key_findings": [],
-      "field_entry": [],
-      "review_topics": [],
-      "concepts": {},
-      "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#limited-evidence",
-      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
-      "provenance": [
+      "evidence_status": "reviewed_v2",
+      "question_count": 12,
+      "key_findings": [
         {
-          "url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-          "label": "Official publisher abstract and article identity",
-          "format": "Unauthenticated Ovid publisher HTML; full abstract and complete byline/author metadata",
-          "locator": "Review Article - Cardiovascular Disease Epidemiology; Publish Ahead of Print, November 04, 2026; Abstract, sole paragraph, sentences 1-10."
+          "id": "KF1",
+          "claim": "Separate the gut–vascular and gut–heart axes within one host–microbe framework.",
+          "context": "The review connects microbial ecology, metabolic products, intestinal-barrier function and host response to organ-specific cardiovascular phenotypes. A shared upstream signal can have different implications for plaque biology, blood pressure, myocardial remodeling or electrophysiology. Figure 1 moves from diet and the intestinal environment through microbial signals to vascular and myocardial targets, then to representative disease outcomes; its arrows organize a conceptual synthesis with differing evidence strength.",
+          "evidence": [
+            {
+              "label": "Gut–vascular axis",
+              "value": "Atherosclerosis/CAD, thrombosis, hypertension, pulmonary vascular disease, calcification and aortic pathology."
+            },
+            {
+              "label": "Gut–heart axis",
+              "value": "Myocardial remodeling, heart failure and electrophysiology."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 5–7, Introduction and section 2; Figure 1 and legend, pp. 64 and 67.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/0",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf1"
         },
         {
-          "url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-          "label": "Official publisher accepted manuscript: full-text PDF",
-          "format": "Publish Ahead of Print; 70 PDF pages with an ACCEPTED watermark",
-          "locator": "Identity and byline, PDF pp. 1-2; narrative-review selection, p. 6; multimodal study design and validation, pp. 18-21; fusion comparison, Table 2, p. 66."
+          "id": "KF2",
+          "claim": "Resolve microbial function and host context beyond a taxonomic abundance signal.",
+          "context": "Section 2.1 explains why organisms within a genus or species can differ in metabolic capability, strain composition and host interaction. 16S rRNA profiling describes community structure; shotgun metagenomics adds genes and functional potential; metabolomic and experimental measurements test whether those functions are active. The Oscillibacter example joins population metagenomics, metabolomics, computational prioritization and experiments in gut isolates. The discussion also includes preparation-dependent Akkermansia effects, the Segatella copri complex, fungal contributions, stool-versus-mucosal sampling and temporal variation.",
+          "evidence": [
+            {
+              "label": "Measurement distinction",
+              "value": "Gene or pathway presence indicates potential, rather than demonstrated activity."
+            },
+            {
+              "label": "Research implication",
+              "value": "Link functionally resolved microbial measures to metabolites, host state and a defined phenotype."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 7–8, section 2.1; pp. 18–19, section 5.1.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/1",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf2"
+        },
+        {
+          "id": "KF3",
+          "claim": "Interpret microbial metabolites as composite host–microbe readouts.",
+          "context": "The review contrasts TMAO- and PAGln-related thrombo-inflammatory evidence with SCFA, bile-acid, tryptophan-metabolite and indoxyl-sulfate pathways. TMAO concentration combines precursor intake, microbial metabolism, hepatic FMO3 activity and renal clearance, together with medication and disease context. PAGln is discussed through platelet adrenergic signaling. SCFAs and bile acids connect microbial activity with blood-pressure, barrier, immune and metabolic processes, including FXR/TGR5 signaling. These are syntheses of cited human and experimental studies, with different inferential strength across pathways.",
+          "evidence": [
+            {
+              "label": "Interpretation",
+              "value": "A circulating metabolite is not a direct surrogate for one bacterium."
+            },
+            {
+              "label": "Translation",
+              "value": "Biological or prognostic relevance does not establish benefit from lowering a metabolite."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 8–9, section 2.2; Figure 2 and legend, pp. 64 and 68.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/2",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf3"
+        },
+        {
+          "id": "KF4",
+          "claim": "Connect barrier, immune and host-genetic layers while identifying emerging mechanisms.",
+          "context": "Intestinal-barrier disruption can increase exposure to microbial products and inflammatory signaling. Figure 2 organizes TMAO, PAGln, LPS, bile-acid and SCFA routes through receptors, vascular or platelet effects, barrier integrity and immune responses. The text treats mitochondrial-stress links as emerging because direct human cardiovascular evidence is limited. Host genetics provides a more stable contextual layer, illustrated by the LCT–Bifidobacterium association; genetic association alone does not demonstrate microbial mediation. Stronger interpretation comes from convergence across longitudinal, functional and interventional evidence.",
+          "evidence": [
+            {
+              "label": "Host response",
+              "value": "Barrier integrity, immune signaling and cellular stress interact with microbial metabolism."
+            },
+            {
+              "label": "Genetic context",
+              "value": "Genomic association complements microbial and molecular data; mediation requires additional evidence."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 9–10, sections 2.3–2.4; Figure 2, pp. 64 and 68.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/3",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf4"
+        },
+        {
+          "id": "KF5",
+          "claim": "Match a vascular microbiome claim to its specific phenotype and evidence pattern.",
+          "context": "Section 3.1 and Table 1 distinguish relatively developed atherosclerosis/CAD evidence from hypertension, PAH, calcification and aortic disease. CAD combines microbial-functional and outcome associations with selected mechanistic pathways. Hypertension includes human associations, experimental SCFA work and short-term human FMT evidence. PAH studies connect compartment-specific microbial/metabolic variation with hemodynamic severity. Calcification and aortic disease remain more exploratory, with inconsistent taxon-level genetic findings after correction. Shared clinical risk factors need not imply identical organ mechanisms.",
+          "evidence": [
+            {
+              "label": "Atherosclerosis/CAD",
+              "value": "Human metagenomic and prognostic associations plus selected mechanistic evidence."
+            },
+            {
+              "label": "Hypertension",
+              "value": "Biological and short-term intervention signals; durable cardiovascular efficacy remains unresolved."
+            },
+            {
+              "label": "PAH",
+              "value": "Small multi-omics discovery studies and limited broader validation."
+            },
+            {
+              "label": "Calcification/aortic disease",
+              "value": "Emerging population and experimental support, with inconsistent corrected genetic associations."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 11–13, section 3.1; Table 1, p. 65.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/4",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf5"
+        },
+        {
+          "id": "KF6",
+          "claim": "Use distinct cardiac phenotypes to interpret heart-failure and atrial-fibrillation signals.",
+          "context": "The gut–heart synthesis describes bidirectional links between heart failure and intestinal congestion, perfusion, barrier dysfunction and inflammatory metabolism. HF/HFpEF studies include altered SCFA-producing taxa, TMAO and bile-acid profiles. Lower human IPA measurements and mouse supplementation experiments illustrate convergence across evidence types without establishing a human therapy. AF work links dysbiosis and metabolite shifts with preclinical autonomic/inflammatory mechanisms; predominantly cross-sectional human studies leave direction unresolved. The shared research target is a phenotype-specific microbial–metabolic profile.",
+          "evidence": [
+            {
+              "label": "Heart failure/HFpEF",
+              "value": "Human evidence is mainly associative or prognostic; mechanistic support is largely experimental."
+            },
+            {
+              "label": "Atrial fibrillation",
+              "value": "Human microbial/metabolite associations converge with preclinical mechanisms, with causal direction unresolved."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 13–14, section 3.2; Table 1, p. 65.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/5",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf6"
+        },
+        {
+          "id": "KF7",
+          "claim": "Develop phenotype- and stage-aware profiles rather than a universal cardiovascular dysbiosis marker.",
+          "context": "The review uses cross-phenotype cardiometabolic studies and coronary-risk progression to explain why shared pathways coexist with disease-specific patterns. Diet, kidney function, age, medication, metabolic disease, geography and host genetics modify associations. It also cites a model-specific example: 2-methylbutyrylcarnitine supplementation did not increase plaque burden or alter plaque stability in the tested ApoE-deficient mouse setting despite prior prothrombotic findings. That comparison illustrates why an effect on one endpoint should not be transferred to another vascular phenotype.",
+          "evidence": [
+            {
+              "label": "Phenotyping",
+              "value": "Combine microbial–metabolic signals with host molecular features, imaging and clinical risk factors."
+            },
+            {
+              "label": "Endpoint specificity",
+              "value": "Thrombosis, plaque burden, plaque stability and disease stage are distinct biological outcomes."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 14–15, section 3.3; Table 1, p. 65.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/6",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf7"
+        },
+        {
+          "id": "KF8",
+          "claim": "Use the review’s five-stage ladder to calibrate causal language.",
+          "context": "Section 4 separates what each design contributes. Cross-sectional studies establish co-occurrence; longitudinal replication adds temporal ordering; genetic approaches provide genetically proxied estimates; controlled perturbations test mechanisms in a specified model; human interventions manipulate exposure in people. Mediation analysis is compatible with a pathway without proving it. Microbiome MR depends on instrument strength, pleiotropy, ancestry and exposure definition; sensitivity analyses and convergence with other designs strengthen interpretation. The stages describe inference and triangulation rather than making every later-numbered design universally superior.",
+          "evidence": [
+            {
+              "label": "Stage 1",
+              "value": "Cross-sectional association."
+            },
+            {
+              "label": "Stage 2",
+              "value": "Replicated or longitudinal association, or both."
+            },
+            {
+              "label": "Stage 3",
+              "value": "Genetically proxied or other quasi-causal support."
+            },
+            {
+              "label": "Stage 4",
+              "value": "Experimental perturbation with mechanistic validation."
+            },
+            {
+              "label": "Stage 5",
+              "value": "Human intervention."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 16–18, sections 4.1–4.4.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/7",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf8"
+        },
+        {
+          "id": "KF9",
+          "claim": "Assess biomarker maturity separately from causal confidence.",
+          "context": "A predictive marker can be useful without being causal, and a causal pathway may add little predictive information. The review therefore assesses analytical validity, independent reproducibility, prospective validation, transportability and incremental clinical utility separately from mechanistic evidence. This second grading axis explains why a biologically plausible microbial target and a deployable cardiovascular biomarker can be at different stages of development.",
+          "evidence": [
+            {
+              "label": "Level I",
+              "value": "Meets the stated analytical, reproducibility, prospective, external and utility requirements."
+            },
+            {
+              "label": "Level II",
+              "value": "Independent support is present but requirements remain incomplete."
+            },
+            {
+              "label": "Level III",
+              "value": "Evidence is retrospective or confined to a single cohort."
+            },
+            {
+              "label": "Level IV",
+              "value": "Exploratory evidence."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF p. 22, section 6.1; pp. 18 and 22–24, sections 4.4 and 6.2.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/8",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf9"
+        },
+        {
+          "id": "KF10",
+          "claim": "Choose complementary modalities for a defined analytical task before choosing AI.",
+          "context": "Microbiome data describe ecology and potential function; metabolomics measures molecular output; host genomics, transcriptomics and proteomics describe susceptibility or response; imaging defines organ phenotype; digital and longitudinal clinical measurements capture change. Figure 3 contrasts the strengths and limitations of microbial, molecular, clinical and experimental approaches and connects hypothesis generation with mechanistic validation. Mechanism prioritization, endotyping, biomarker reproducibility, risk prediction and treatment-response modeling are distinct tasks. Multimodal integration may use conventional statistical or mechanistic methods; AI is a computational option for appropriately supported complex relationships.",
+          "evidence": [
+            {
+              "label": "Task first",
+              "value": "Select data layers that address the same biological or clinical question."
+            },
+            {
+              "label": "Method choice",
+              "value": "Use higher-capacity methods when complexity solves a demonstrated problem beyond simpler alternatives."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 18–19, section 5.1; Figure 3 and legend, pp. 64 and 69.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/9",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf10"
+        },
+        {
+          "id": "KF11",
+          "claim": "Control biological context, technical variation and leakage before interpreting a model.",
+          "context": "The review identifies age, sex, BMI, kidney function, comorbidities, smoking, medication, diet, fasting, sample handling, platform, batch and imaging parameters as potential sources of distortion. Preprocessing should respect microbial compositionality and missingness. Its future agenda additionally calls out leakage, class imbalance, site/platform effects and uneven subgroup representation. Alignment, modality completeness and temporal validity must support the intended prediction; a model can otherwise learn technical or contextual differences instead of reproducible biology.",
+          "evidence": [
+            {
+              "label": "Biological/clinical modifiers",
+              "value": "Diet, medication, renal function and comorbidity require explicit documentation and control."
+            },
+            {
+              "label": "Data-design safeguards",
+              "value": "Account for compositionality, batch/platform effects, missing modalities, leakage and subgroup imbalance."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; pp. 25–27, sections 6.4 and 7; Table 2, p. 66.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/10",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf11"
+        },
+        {
+          "id": "KF12",
+          "claim": "Early fusion suits well-aligned, largely complete modalities with sufficient sample support.",
+          "context": "Table 2 defines early fusion at the feature/input level. Concatenation can represent direct feature interactions, but participants and measurements must be aligned and harmonized. Increasing feature dimension raises overfitting risk, and missing-modality robustness is generally low unless specifically handled. The review makes the choice conditional on question, sample size relative to dimension, completeness and validation design.",
+          "evidence": [
+            {
+              "label": "Alignment and interactions",
+              "value": "High alignment requirement; direct feature-level interactions can be represented."
+            },
+            {
+              "label": "Missingness and risk",
+              "value": "Generally low robustness without explicit handling; often high overfitting risk for high-dimensional inputs."
+            },
+            {
+              "label": "Computational burden",
+              "value": "Low to moderate."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Early fusion column.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/11",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf12"
+        },
+        {
+          "id": "KF13",
+          "claim": "Late fusion supports modular prediction across heterogeneous or intermittently missing modalities.",
+          "context": "Late fusion combines modality-specific predictions. Separately trained components lower the alignment requirement and permit available modalities to contribute when others are absent. The trade-off is that cross-modal interaction is largely confined to decision-level combination unless interaction terms are introduced. Modality-specific regularization can reduce, but does not remove, overfitting.",
+          "evidence": [
+            {
+              "label": "Alignment and interactions",
+              "value": "Lower alignment requirement; interaction is mainly at decision level."
+            },
+            {
+              "label": "Missingness and risk",
+              "value": "Relatively robust to missing modalities; moderate overfitting risk."
+            },
+            {
+              "label": "Computational burden",
+              "value": "Moderate, involving several modality-specific models."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Late fusion column.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/12",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf13"
+        },
+        {
+          "id": "KF14",
+          "claim": "Intermediate or hybrid fusion is a conditional choice for learning cross-modal representations.",
+          "context": "Table 2 places fusion within learned representation layers. Such architectures can learn complex cross-modal interactions but require alignable representations, adequate samples and a prespecified need for that interaction capacity. Missing-modality robustness depends on design, including missing-tolerant training or modality dropout. Additional interaction parameters can increase overfitting and computation. The review does not identify a universally best fusion architecture.",
+          "evidence": [
+            {
+              "label": "Alignment and interactions",
+              "value": "Moderate-to-high alignment requirement; high potential interaction capacity."
+            },
+            {
+              "label": "Missingness and risk",
+              "value": "Design-dependent robustness and often high/design-dependent overfitting risk."
+            },
+            {
+              "label": "Computational burden",
+              "value": "Moderate to high."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Intermediate / hybrid fusion column and note.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/13",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf14"
+        },
+        {
+          "id": "KF15",
+          "claim": "Demonstrate added value against clinical and simpler models using comparable validation.",
+          "context": "The proposed sequence starts with a clinical baseline, adds modalities individually, tests a simple multimodal model and considers higher-capacity AI only for a clear gain. Clinical, unimodal and simple multimodal comparators should share the same partitions. Assessment includes discrimination, calibration, uncertainty, subgroup stability and decision utility. SHAP, LIME and integrated gradients identify model influences; stable features, independent replication and robustness to confounding are needed for biological interpretation. External testing should span populations, sites, assays and clinical settings and examine missing-modality tolerance.",
+          "evidence": [
+            {
+              "label": "Comparators",
+              "value": "Clinical baseline → individual modalities → simple multimodal model → justified higher-capacity AI."
+            },
+            {
+              "label": "Evidence of value",
+              "value": "External reproducibility and clinically relevant utility complement discrimination."
+            },
+            {
+              "label": "Interpretability",
+              "value": "Feature importance is distinct from mechanistic evidence."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 20–21, sections 5.2–5.3; pp. 25–27, sections 6.4 and 7.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/14",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf15"
+        },
+        {
+          "id": "KF16",
+          "claim": "Distinguish mechanistic/statistical integration from explicit machine-learning applications.",
+          "context": "Section 5.4 and Supplementary Table S1 separate six illustrative study settings. Nemet et al. integrate cohorts and platelet/receptor experiments; Wang et al. combine microbial pathway measurements with animal perturbation; Buffa et al. link gene-cluster discovery and biochemical validation; Ling et al. integrate longitudinal multi-omics through statistical models. Explicit machine-learning roles include protein-language-model functional prioritization in Li et al. and cross-dataset atherosclerosis classification in Shi et al. The supplement uses study-specific outputs rather than implying one uniform clinical fusion system.",
+          "evidence": [
+            {
+              "label": "Integration without a stand-alone ML fusion model",
+              "value": "Mechanistic, biochemical, gene-cluster and statistical multi-omics examples."
+            },
+            {
+              "label": "Explicit AI roles",
+              "value": "Candidate function prioritization and cross-dataset classification."
+            },
+            {
+              "label": "Source matching",
+              "value": "Supplement study names/years identify the examples; its reference numbers differ from the accepted manuscript numbering."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 19 and 21, sections 5.1 and 5.4; Supplementary Table S1, single-page publisher supplement at https://links.lww.com/CARES/A30.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/15",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf16"
+        },
+        {
+          "id": "KF17",
+          "claim": "Connect microbial and molecular signals to organ imaging and clinically defined endotypes.",
+          "context": "The review presents imaging as a downstream phenotype layer complementary to upstream microbial and metabolomic information. Echocardiography, CT, MRI and vascular imaging can characterize organ structure, plaque features or ventricular remodeling. A near-term application is reproducible biological subgrouping rather than case-control classification alone. Risk-model claims should demonstrate added value beyond established predictors, retain calibration in the target population and account for cardiometabolic–renal context. TMAO illustrates why one metabolite can be prognostically informative yet insufficient as a stand-alone precision marker.",
+          "evidence": [
+            {
+              "label": "Endotyping use",
+              "value": "Relate microbial–metabolic patterns to well-defined plaque or cardiac phenotypes."
+            },
+            {
+              "label": "Prediction use",
+              "value": "Test incremental value over established clinical information in independent and prospective settings."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 22–24, section 6.2.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/16",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf17"
+        },
+        {
+          "id": "KF18",
+          "claim": "Place microbiome-directed interventions on an evidence-maturity continuum.",
+          "context": "Dietary modification is presented as the most feasible current approach, with stronger support for biological modulation than cardiovascular-event reduction. Probiotics, prebiotics and FMT remain exploratory for cardiovascular care; the cited hypertension FMT signal weakened after treatment stopped. Microbial enzyme or metabolic-pathway targeting is mechanistically attractive but predominantly preclinical. Diet and drugs can reshape microbial signatures, while microbes can alter drug exposure, illustrated by Eggerthella lenta and digoxin. Baseline microbiome profiles may inform future response stratification, but prospective target-engagement, safety and clinical-benefit evidence is still needed.",
+          "evidence": [
+            {
+              "label": "Diet",
+              "value": "Clinically feasible biological modulation; event-reduction evidence is less established."
+            },
+            {
+              "label": "Ecosystem interventions",
+              "value": "FMT/probiotic/prebiotic strategies remain exploratory for durable cardiovascular benefit."
+            },
+            {
+              "label": "Molecular targeting",
+              "value": "Predominantly preclinical; human target engagement, safety and efficacy require testing."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 24–25, section 6.3; pp. 12 and 17, sections 3.1 and 4.3.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/17",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf18"
+        },
+        {
+          "id": "KF19",
+          "claim": "Translate a model through external validation, prospective workflow testing and monitoring.",
+          "context": "Section 6.4 proposes a staged route from model assessment to independent external testing, prospective evaluation and continued real-world monitoring. Clinical use requires prespecified decisions, calibration, dataset-shift and subgroup checks, and an explicit fallback when missing, temporally invalid or insufficient evidence warrants withholding a prediction. The text names SPIRIT-AI and CONSORT-AI for AI trials and TRIPOD+AI for prediction-model reporting. The future agenda prioritizes reproduced signatures and meaningful incremental value before intervention or decision-support studies.",
+          "evidence": [
+            {
+              "label": "Validation sequence",
+              "value": "Independent external validation → prospective clinical evaluation → real-world monitoring."
+            },
+            {
+              "label": "Clinical fallback",
+              "value": "Specify withholding conditions and clinician review, additional testing or usual-care pathways."
+            },
+            {
+              "label": "Reporting",
+              "value": "Document partitioning, tuning, overfitting safeguards, human–AI interaction and label quality."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 25–28, sections 6.4 and 7; Figure 4 legend, p. 64.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/18",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf19"
+        },
+        {
+          "id": "KF20",
+          "claim": "Read Figure 4 as a proposed assessment–decision–intervention–feedback cycle.",
+          "context": "The figure groups medical imaging, microbiome, metabolome and clinical information under multimodal assessment; links these to risk stratification and decision support; depicts possible dietary, probiotic, targeted-drug and anti-inflammatory interventions; and closes the loop with metabolite, plaque, inflammatory and cardiac-function monitoring. These are conceptual roles in a translational framework. The accompanying text makes validation and prospective clinical assessment prerequisites, rather than reporting that the illustrated platform, personalized dosing or intervention selection has been implemented or proven effective.",
+          "evidence": [
+            {
+              "label": "Framework components",
+              "value": "Assessment, stratification/decision support, intervention and monitoring/feedback."
+            },
+            {
+              "label": "Evidence status",
+              "value": "Conceptual translational pathway, to be tested through the validation sequence described in the text."
+            }
+          ],
+          "source_locator": "Accepted manuscript, PDF pp. 25–26, section 6.4; Figure 4 and legend, pp. 64 and 70.",
+          "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/19",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf20"
         }
       ],
-      "author_evidence_note": {
-        "reviewed_on": "2026-11-07",
-        "source_record": "data/limited_evidence.json#/papers/10.1097~1re9.0000000000000037",
-        "sections": [
-          {
-            "heading": "Review question",
-            "text": "This review examines how microbial processes and host characteristics can be combined to study cardiovascular disease, separating vascular and cardiac pathways.",
-            "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-            "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 1-5."
-          },
-          {
-            "heading": "What the review contributes",
-            "text": "It organizes integration of microbial profiles, genomics and metabolomics with imaging and repeated clinical observations, and compares approaches for combining these data. A central distinction is between support for a mechanism and the maturity of a biomarker. The review prioritizes reproducible cardiovascular subtypes and microbial candidates for subsequent intervention studies.",
-            "source_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-            "source_locator": "Publisher HTML, Abstract, sole paragraph, sentences 5-7 and 10."
-          },
-          {
-            "heading": "Choose a fusion strategy",
-            "text": "Table 2 compares feature-level early fusion, prediction-level late fusion and intermediate or hybrid representations. Early fusion suits well-aligned, largely complete modalities with adequate sample size; late fusion supports heterogeneous data, intermittent missingness and modular deployment. Intermediate or hybrid fusion targets cross-modal interactions when sample size and missing-modality training support the design. The choice depends on alignment, dimensionality, modality completeness and validation rather than a universally best architecture.",
-            "source_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed#page=66",
-            "source_locator": "Publisher accepted manuscript, PDF p. 66, Table 2; p. 20, section 5.2, Data preparation, multimodal fusion, and model development."
-          },
-          {
-            "heading": "Benchmark incremental value",
-            "text": "For microbiome-informed cardiovascular model development, the review recommends starting with a clinical baseline, adding relevant modalities step by step, and testing a simple multimodal model before higher-capacity AI. Clinical, unimodal and simple multimodal models should use the same data partitions. Evaluation includes discrimination, calibration, uncertainty, subgroup stability and decision utility; external validation examines transport across populations, sites, assay platforms and clinical settings, including performance when modalities are missing.",
-            "source_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed#page=20",
-            "source_locator": "Publisher accepted manuscript, PDF pp. 20-21, sections 5.2-5.3, including Benchmarking, interpretability, and external validation."
-          }
+      "field_entry": [
+        "Gut microbiome and cardiovascular phenotyping",
+        "Multimodal methods for precision cardiovascular medicine"
+      ],
+      "review_topics": [
+        "Microbial function across vascular and cardiac disease",
+        "Fusion strategy selection and clinical translation"
+      ],
+      "concepts": {
+        "vascular_phenotypes": [
+          "Atherosclerosis and coronary artery disease",
+          "Thrombosis",
+          "Hypertension",
+          "Pulmonary arterial hypertension",
+          "Vascular calcification and aortic disease"
+        ],
+        "cardiac_phenotypes": [
+          "Heart failure",
+          "Heart failure with preserved ejection fraction",
+          "Atrial fibrillation"
+        ],
+        "microbial_host_signals": [
+          "Trimethylamine N-oxide (TMAO)",
+          "Phenylacetylglutamine (PAGln)",
+          "Short-chain fatty acids (SCFAs)",
+          "Bile-acid signaling",
+          "Lipopolysaccharide and intestinal-barrier integrity",
+          "Indole-3-propionic acid (IPA)",
+          "Microbial functional and strain-level variation"
+        ],
+        "complementary_data": [
+          "16S rRNA profiling and shotgun metagenomics",
+          "Metabolomics",
+          "Host genomics, transcriptomics and proteomics",
+          "Cardiovascular imaging",
+          "Longitudinal clinical and digital measurements",
+          "Experimental perturbation"
+        ],
+        "analysis_and_validation": [
+          "Early, late and intermediate/hybrid fusion",
+          "Mendelian randomization and evidence triangulation",
+          "Compositionality and missing modalities",
+          "External validation and calibration",
+          "Subgroup stability and clinical decision utility"
+        ],
+        "translation": [
+          "Causal confidence",
+          "Biomarker maturity",
+          "Cardiovascular endotyping",
+          "Prospective clinical evaluation",
+          "Microbiome-directed intervention readiness"
         ]
       },
-      "scope": "Source-bound narrative review summary using the publisher abstract and the publisher-hosted accepted manuscript, including multimodal fusion and model-evaluation guidance.",
-      "evidence_notice": "Source-bound narrative review summary using the publisher abstract and the publisher-hosted accepted manuscript, including multimodal fusion and model-evaluation guidance.",
-      "evidence_scope": null,
-      "limitations": [
-        "This is a narrative review drawing on seminal and directly relevant literature available through August 2026, without a formal PRISMA selection process. Its fusion and validation guidance synthesizes existing evidence rather than reporting a newly trained model or an intervention trial."
+      "profile_type": "narrative_review",
+      "study_profile": {
+        "profile_type": "narrative_review",
+        "study_design": "Narrative synthesis of seminal mechanistic and directly relevant literature available through August 2026, selected by biological, evidentiary, multimodal and translational questions rather than a formal PRISMA process (PDF p. 6). Organization: introduction and scope (§1); microbial ecology, metabolites, barrier/immune and host genetics (§2); vascular, cardiac and shared phenotypes (§3); design-specific causal confidence (§4); tasks, fusion, benchmarking and existing applications (§5); biomarker maturity, endotyping, interventions and clinical evaluation (§6); bias, reproducibility and future priorities (§7); phenotype-specific, evidence-triangulated conclusions (§8).",
+        "evidence_type": "Synthesis and conceptual frameworks based on cited human observational, longitudinal and genetic studies, experimental perturbations, human interventions and computational applications. The review distinguishes evidence types rather than pooling them as one clinical dataset.",
+        "evidence_domains": [
+          "Microbial function, metabolites, intestinal barrier and host immune/genetic context",
+          "Gut–vascular and gut–heart phenotype-specific evidence",
+          "Causal-confidence and biomarker-maturity grading",
+          "Multimodal tasks, data preparation, fusion and model validation",
+          "Intervention readiness, prospective evaluation and clinical monitoring"
+        ],
+        "diseases_covered": [
+          "Atherosclerosis and coronary artery disease",
+          "Thrombosis and hypertension",
+          "Pulmonary arterial hypertension",
+          "Vascular calcification and aortic disease",
+          "Heart failure, including HFpEF",
+          "Atrial fibrillation",
+          "Cross-phenotype cardiometabolic risk progression"
+        ],
+        "translation_scope": "Prioritization of reproducible cardiovascular endotypes and candidate microbial targets, with conditional modeling and intervention pathways. Biological discovery and retrospective stratification are more developed than demonstrated AI-guided improvement in cardiovascular care.",
+        "scale_metrics": [
+          {
+            "label": "Review design",
+            "value": "Narrative review; literature available through August 2026"
+          },
+          {
+            "label": "Main visual synthesis",
+            "value": "4 conceptual figures and 2 comparison tables"
+          },
+          {
+            "label": "Supplementary synthesis",
+            "value": "Table S1 compares 6 representative integration/AI study settings"
+          }
+        ],
+        "counting_note": "These counts describe the review’s organization, not a pooled participant total, a newly trained model or a clinical trial conducted for this article."
+      },
+      "study_profile_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/study_profile",
+      "model_profile": null,
+      "model_profile_source": null,
+      "narrative_genre": null,
+      "gold_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json",
+      "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1097-re9-0000000000000037.json",
+      "gold_content_sha256": "2eacb6dd6a6aeb9d585112b608ed999824aeb11aba16775df9b395e94df33ccb",
+      "provenance": {
+        "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "accepted_manuscript_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "supplement_url": "https://links.lww.com/CARES/A30",
+        "source_version": "Cardiac Research, Publish Ahead of Print, 4 November 2026. Full-text source: 70-page ACCEPTED manuscript; Supplementary Table S1: one-page publisher PDF. Publisher identity/date checked against the current official DOI search result on 17 November 2026; the accepted manuscript remains the version used for all page locators.",
+        "review_basis": "Complete scientific body (PDF pp. 5–29), figure legends (p. 64), both main tables (pp. 65–66), all four actual figure images (pp. 67–70), and the actual single-page Supplementary Table S1 were read. Reference identities used for related-paper links were checked against the accepted manuscript bibliography. Main PDF SHA-256: 9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511.",
+        "source_attribution": "New author-site summaries paraphrase the review’s arguments and distinguish prior-study results, conceptual framework components and possible research/citation uses. Source figures were inspected for accuracy rather than redistributed by this evidence layer."
+      },
+      "scientific_role": "Narrative review connecting microbial–host mechanisms and phenotype-specific evidence with separate causal/biomarker appraisal, multimodal study design and staged clinical evaluation.",
+      "evidence_position": "Source-based synthesis of cited human, genetic, experimental and computational studies; current support is stronger for biological discovery than demonstrated AI-guided cardiovascular care.",
+      "related_concepts": [
+        "Causal-confidence triangulation",
+        "Biomarker-maturity grading",
+        "Clinical and unimodal benchmarking"
       ],
-      "scope_source": "data/limited_evidence.json#/papers/10.1097~1re9.0000000000000037/scope"
+      "citation_contexts": [
+        "Introduction or Discussion on phenotype-aware interpretation of microbial and host signals in cardiovascular disease.",
+        "Methods rationale for choosing complementary modalities and fusion strategies, then testing incremental, externally reproducible clinical value."
+      ],
+      "evidence_scope": {
+        "supports": [
+          "Background and discussion of microbial–host processes across vascular and cardiac phenotypes, with design-specific attribution.",
+          "Study-design arguments for complementary modalities, conditional fusion choices and comparable clinical/unimodal benchmarks.",
+          "Separate appraisal of mechanistic confidence, biomarker maturity and prospective clinical utility.",
+          "Research planning for phenotype-specific endotypes, intervention candidates, missing-modality tolerance and evidence-aware clinical fallback."
+        ],
+        "does_not_establish": [
+          "A new pooled patient cohort, model performance estimate or clinical intervention result produced by the review.",
+          "A universal causal microbiome signature or a stand-alone metabolite valid across all cardiovascular settings.",
+          "That mechanistic hypotheses, feature importance or retrospective predictive gains demonstrate treatment benefit.",
+          "That the personalized decision-support and intervention cycle shown conceptually in Figure 4 is an implemented, clinically validated platform."
+        ]
+      },
+      "limitations": [
+        "The review uses a question-guided narrative selection of literature available through August 2026, without a systematic-search/PRISMA selection process or pooled effect estimation.",
+        "The available evidence varies by phenotype and combines human association, genetic analyses, model-system mechanisms and limited human interventions; these cannot be assigned one common causal or clinical-validation status.",
+        "Model complexity, internal discrimination and interpretability do not substitute for independent transportability, calibration, incremental clinical value and prospective outcome evaluation.",
+        "Locators use the publisher-hosted ACCEPTED 70-page manuscript. The supplementary table’s reference numbering differs from this manuscript; its six examples are identified here by study author/year rather than transferred reference numbers."
+      ],
+      "scope_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/evidence_scope"
     },
     {
       "id": "doi-10-1155-humu-5591097",
@@ -4395,7 +4894,7 @@
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.md",
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "authors": [
         "Ge Zhang",
         "Mingxuan Duan",
@@ -4413,71 +4912,328 @@
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.ris",
       "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.csl.json",
-      "evidence_status": "limited",
-      "question_count": 0,
-      "key_findings": [],
-      "field_entry": [],
-      "review_topics": [],
-      "concepts": {},
-      "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#limited-evidence",
-      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
-      "provenance": [
+      "evidence_status": "reviewed_v2",
+      "question_count": 11,
+      "key_findings": [
         {
-          "url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
-          "label": "Read the complete published article (PDF, 3 pages)",
-          "format": "Unmodified publisher version of record, Clinical and Translational Medicine 2026;16:e70900, DOI 10.1002/ctm2.70900",
-          "locator": "Ge Zhang, Mingxuan Duan, Tianshu Gu, Qian Guo, Yahui Han and Teng Li. What one patient can teach the next. Copyright 2026 The Authors; published by John Wiley & Sons Australia, Ltd on behalf of Shanghai Institute of Clinical Bioinformatics."
+          "id": "KF1",
+          "claim": "Move from timely outcome reporting to a specific question about what the next team can learn.",
+          "context": "The opening connects this article to the authors' Science Letter on making major single-patient outcomes public and linking them to preceding research. Visibility supplies the starting material; the present article asks which observation can justify which next action.",
+          "evidence": [
+            {
+              "label": "Starting point",
+              "value": "Publicly visible major outcomes linked to preceding research"
+            },
+            {
+              "label": "Added question",
+              "value": "What should the next clinical team change?"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 1, left column, opening paragraph; p. 2, reference 1; Figure 1 caption.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/0",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf1"
         },
         {
-          "url": "https://doi.org/10.1002/ctm2.70900",
-          "label": "Formal article and DOI",
-          "format": "Publisher article identity",
-          "locator": "Invited Letter; Clinical and Translational Medicine 2026;16:e70900."
+          "id": "KF2",
+          "claim": "An earlier complication can inform safety monitoring while its cause remains uncertain.",
+          "context": "The Letter summarises a separate report of experimental intrathecal antisense treatment in two children with severe KCNT1-related epilepsy. It describes fewer seizures alongside ventricular enlargement or hydrocephalus, and relates the first child's complication to closer monitoring of the second, a pause and resumption at lower doses after protocol revision. The example motivates safety learning; the authors do not infer a shared risk for all similar drugs.",
+          "evidence": [
+            {
+              "label": "Evidence source",
+              "value": "Previously published two-child report, cited as reference 2"
+            },
+            {
+              "label": "Action illustrated",
+              "value": "Closer monitoring and subsequent protocol adjustment"
+            },
+            {
+              "label": "Interpretive scope",
+              "value": "Clinical experience informing vigilance before complete causal explanation"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 1, paragraph beginning \"A recent report\", continuing in the right column; p. 3, reference 2.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/1",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf2"
         },
         {
-          "url": "https://creativecommons.org/licenses/by/4.0/",
-          "label": "Creative Commons Attribution 4.0 licence",
-          "format": "Article-level reuse licence linked in the published PDF",
-          "locator": "PDF p. 1 footer permits use, distribution and reproduction with attribution. This hosted copy preserves the complete article and its original notices."
+          "id": "KF3",
+          "claim": "Choose case similarity according to the safety or benefit question being asked.",
+          "context": "For safety, a shared drug, dose or route can make an earlier case relevant across different diagnoses. For apparent benefit, the comparison instead starts with the course of illness before treatment and outcomes meaningful to the patient. Figure 1 adds event timing, severity and patient characteristics to the safety branch, and comparative cases and alternative explanations to the benefit branch.",
+          "evidence": [
+            {
+              "label": "Safety comparison",
+              "value": "Exposure, delivery, event timing and severity"
+            },
+            {
+              "label": "Benefit comparison",
+              "value": "Pretreatment disease course, meaningful outcomes and appropriate comparative evidence"
+            }
+          ],
+          "source_locator": "Publisher version of record, pp. 1-2, paragraph beginning \"That distinction matters\"; Figure 1, safety-signal and treatment-benefit branches.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/2",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf3"
+        },
+        {
+          "id": "KF4",
+          "claim": "Prognostic prediction answers a different question from whether a particular treatment works.",
+          "context": "The authors use their previously published advanced-heart-failure survival model to illustrate this distinction. Estimating risk can describe prognosis; judging benefit asks whether the patient would have improved without treatment and needs a different evidential basis. The cited causal-machine-learning work provides context for treatment-effect estimation, rather than an effect estimate generated in this Letter.",
+          "evidence": [
+            {
+              "label": "Illustrative prior study",
+              "value": "Survival assessment in advanced heart failure with renal dysfunction, reference 4"
+            },
+            {
+              "label": "Target distinction",
+              "value": "Predicted prognosis versus treatment effect"
+            },
+            {
+              "label": "Comparison question",
+              "value": "Would improvement have occurred without this treatment?"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 2, left column, continuation of \"That distinction matters\"; p. 3, references 3-5.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/3",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf4"
+        },
+        {
+          "id": "KF5",
+          "claim": "Turn biological differences into competing explanations that require different measurements.",
+          "context": "A diagnosis can contain distinct underlying biological states. The Letter cites single-cell and bulk-transcriptomic atherosclerosis research on smooth-muscle-cell states as an example of molecular heterogeneity that generates further questions. It distinguishes failure to affect an intended target from target engagement without functional restoration; these possibilities motivate different experiments rather than establishing different treatment responses.",
+          "evidence": [
+            {
+              "label": "Prior biological example",
+              "value": "Smooth-muscle-cell-associated atherosclerosis molecular subtypes, reference 6"
+            },
+            {
+              "label": "Explanation to distinguish",
+              "value": "No target engagement versus engagement without restored function"
+            },
+            {
+              "label": "Research action",
+              "value": "Select measurements and experiments that discriminate explanations"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"Biological differences\"; p. 3, reference 6; Figure 1, mechanistic-hypothesis branch.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/4",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf5"
+        },
+        {
+          "id": "KF6",
+          "claim": "Figure 1 groups the information needed for comparison into four complementary input domains.",
+          "context": "The figure begins with an individualised treatment and an observed improvement or adverse event. Clinical course contains symptoms, signs, longitudinal trajectory and comorbidities. Treatment details contain drug, dose, route, timeline and concomitant therapy. Biological context contains genomics or multi-omics, cell state, pathways and target engagement. Prior cases and evidence include published reports, registries, databases and real-world experience. Together these feed the central proposed comparison process.",
+          "evidence": [
+            {
+              "label": "Patient context",
+              "value": "Clinical course and biological context"
+            },
+            {
+              "label": "Exposure context",
+              "value": "Treatment details and timing"
+            },
+            {
+              "label": "External context",
+              "value": "Prior cases and evidence"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 1, Figure 1, left-hand individualised-treatment panel and four input panels; Figure 1 caption.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/5",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf6"
+        },
+        {
+          "id": "KF7",
+          "claim": "Use AI-assisted comparison to retrieve question-relevant cases and explain why they matter.",
+          "context": "The proposed role is more specific than assigning an overall similarity label. The article suggests retrieval for a defined safety, benefit or mechanistic question, making pertinent similarities, differences and uncertainties visible. Exposure and event timing matter for a safety signal; baseline course and reliable outcome measures matter for benefit. Computational models may help select informative experiments when molecular findings support competing explanations. These are proposed uses of AI within clinical and research judgment.",
+          "evidence": [
+            {
+              "label": "Central functions in Figure 1",
+              "value": "Find relevant cases; assess similarities and differences; highlight uncertainty; suggest next steps"
+            },
+            {
+              "label": "Mechanistic role",
+              "value": "Help choose an experiment to distinguish explanations"
+            },
+            {
+              "label": "Development status",
+              "value": "Conceptual proposal, with no AI training or validation study reported"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"AI could help\"; p. 1, Figure 1 central comparison panel; p. 3, reference 7.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/6",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf7"
+        },
+        {
+          "id": "KF8",
+          "claim": "Keep the three outputs of Figure 1 distinct while connecting them in a learning cycle.",
+          "context": "The safety branch leads to adapted monitoring for early warning and risk mitigation. The mechanistic branch leads to measurements or experiments that test an explanation. The benefit branch asks whether treatment changed the outcome and calls for stronger comparative evidence to support decisions. The lower loop connects experience from one patient with the next through refined monitoring, generated hypotheses and future studies. The caption emphasises that observations useful for monitoring or investigation do not necessarily establish efficacy or causality.",
+          "evidence": [
+            {
+              "label": "Safety output",
+              "value": "Adapt monitoring"
+            },
+            {
+              "label": "Mechanistic output",
+              "value": "Test the explanation"
+            },
+            {
+              "label": "Benefit output",
+              "value": "Accumulate stronger comparative evidence for benefit"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 1, Figure 1, three right-hand action branches, lower learning-across-patients loop and caption.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/7",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf8"
+        },
+        {
+          "id": "KF9",
+          "claim": "Report major outcomes promptly and make shared cases useful without bypassing consent or privacy.",
+          "context": "The closing paragraph asks case accounts to separate what was observed, what remains uncertain and what another team could reasonably change. It cites existing collaboration on individualised therapies as a setting for collecting experience. Major outcomes should be reported without waiting for a complete mechanism, while detailed patient-level sharing remains governed by consent and privacy safeguards. Better monitoring may be the first practical benefit of another patient's experience.",
+          "evidence": [
+            {
+              "label": "Useful case account",
+              "value": "Observed outcome; uncertainty; justified next action"
+            },
+            {
+              "label": "Timing",
+              "value": "Prompt major-outcome reporting before a complete mechanistic explanation"
+            },
+            {
+              "label": "Patient-level data",
+              "value": "Consent and privacy safeguards"
+            }
+          ],
+          "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"This gives case sharing\"; p. 3, reference 8; Figure 1 lower reporting and learning panels.",
+          "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/8",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf9"
         }
       ],
-      "author_evidence_note": {
-        "reviewed_on": "2026-11-15",
-        "source_record": "data/limited_evidence.json#/papers/10.1002~1ctm2.70900",
-        "sections": [
-          {
-            "heading": "What can one patient teach the next?",
-            "text": "The letter develops a practical framework for learning from individualised treatment outcomes: use earlier cases to adapt safety monitoring, test mechanistic hypotheses and assess treatment benefit as three distinct research questions. Timely outcome reporting makes these comparisons possible, even before a complete mechanistic explanation is available.",
-            "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
-            "source_locator": "Publisher PDF, p. 1, opening paragraph and Figure 1; p. 2, final main-text paragraph."
-          },
-          {
-            "heading": "Compare cases for the question being asked",
-            "text": "Figure 1 proposes AI-assisted comparison of clinical trajectories, treatment exposure, biological context and prior evidence. For a safety signal, drug, dose, route and event timing can make an earlier case informative even across different diagnoses. For apparent benefit, the relevant comparison starts with the pretreatment disease course and reliable outcomes meaningful to the patient.",
-            "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
-            "source_locator": "Publisher PDF, Figure 1; pp. 1-2, paragraph beginning That distinction matters; p. 2, paragraph beginning AI could help."
-          },
-          {
-            "heading": "Turn biological differences into testable hypotheses",
-            "text": "The letter distinguishes a drug failing to affect its intended target from reaching the target without restoring function. These competing explanations motivate different measurements and experiments. Molecular subtypes and computational models can help frame such tests; prognostic risk prediction and estimation of treatment effects require different evidence.",
-            "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
-            "source_locator": "Publisher PDF, p. 2, paragraphs on benefit, biological differences and AI-assisted comparison."
-          },
-          {
-            "heading": "Use in research design and scientific writing",
-            "text": "The framework can support an Introduction or Discussion on learning across individualised therapies, a protocol rationale for safety measurements, or a case report explaining which observations should change monitoring or prompt further investigation. It links the choice of comparison to the intended action, while keeping assessment of treatment benefit tied to appropriate comparative evidence.",
-            "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
-            "source_locator": "Publisher PDF, Figure 1 and p. 2, AI-assisted comparison and case-sharing paragraphs."
-          }
+      "field_entry": [
+        "Individualised treatment research",
+        "Translational evidence assessment"
+      ],
+      "review_topics": [
+        "Learning across patients after individualised therapies",
+        "Purpose-specific safety, mechanistic and benefit comparisons"
+      ],
+      "concepts": {
+        "research_design": [
+          "Individualised therapies",
+          "Cross-patient learning",
+          "Question-specific case comparison",
+          "Comparative treatment-benefit assessment"
+        ],
+        "safety_and_exposure": [
+          "Safety signals",
+          "Drug dose and route",
+          "Event timing and severity",
+          "Adaptive safety monitoring"
+        ],
+        "biological_reasoning": [
+          "Biological heterogeneity",
+          "Target engagement",
+          "Functional restoration",
+          "Mechanistic hypothesis testing"
+        ],
+        "computational_methods": [
+          "AI-assisted case retrieval",
+          "Clinical trajectories",
+          "Prognostic prediction",
+          "Treatment-effect estimation"
+        ],
+        "research_governance": [
+          "Timely outcome reporting",
+          "Case-sharing collaboration",
+          "Patient consent",
+          "Patient-data privacy"
         ]
       },
-      "scope": "Source-located summary of an Invited Letter proposing how individualised treatment outcomes can inform learning across patients.",
-      "evidence_notice": "Source-located summary of an Invited Letter proposing how individualised treatment outcomes can inform learning across patients.",
-      "evidence_scope": null,
-      "limitations": [
-        "This methodological Invited Letter proposes a framework and discusses published examples; it reports no new patient cohort or validated AI system. Detailed patient-level sharing remains subject to consent and privacy safeguards."
+      "profile_type": "narrative_review",
+      "study_profile": {
+        "profile_type": "narrative_review",
+        "narrative_genre": "correspondence",
+        "study_design": "Methodological Invited Letter developing an argument through published examples and a conceptual Figure 1. The discussion proceeds from outcome reporting to safety, benefit, biological differences, AI-assisted comparison and practical case sharing.",
+        "evidence_type": "Conceptual framework and author reasoning, supported by eight references to reporting, individualised therapies, prognosis, treatment-effect inference, molecular heterogeneity, computational biology and collaboration.",
+        "evidence_domains": [
+          "Individualised-treatment outcome reporting and cross-case learning",
+          "Safety signals and exposure-based comparison",
+          "Prognostic prediction and comparative assessment of treatment benefit",
+          "Biological heterogeneity, target engagement and functional restoration",
+          "Question-specific AI-assisted case comparison",
+          "Consent, privacy and collaborative case sharing"
+        ],
+        "diseases_covered": [
+          "KCNT1-related severe epilepsy (cited individualised antisense-treatment example)",
+          "Advanced heart failure with renal dysfunction (cited prognostic-model example)",
+          "Atherosclerosis (cited molecular-heterogeneity example)",
+          "Genetic diseases and individualised therapies (methodological context)"
+        ],
+        "translation_scope": "Use earlier observations to choose the next evidential action: monitoring, further investigation or treatment-benefit evaluation. The article proposes an AI-assisted research workflow; it reports no new patient cohort, treatment-effect estimate or validated AI system.",
+        "scale_metrics": [
+          {
+            "label": "Published genre",
+            "value": "Invited Letter"
+          },
+          {
+            "label": "Article structure",
+            "value": "3 pages, 1 conceptual figure and 8 references"
+          },
+          {
+            "label": "Comparison inputs in Figure 1",
+            "value": "Clinical course; treatment details; biological context; prior cases and evidence"
+          },
+          {
+            "label": "Distinct evidential actions",
+            "value": "Adapt safety monitoring; test mechanistic explanations; evaluate treatment benefit"
+          }
+        ],
+        "counting_note": "The two children in the KCNT1 example belong to the report cited as reference 2. They are not a new study population recruited for this Letter; no synthetic patient total is assigned to its framework."
+      },
+      "study_profile_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/study_profile",
+      "model_profile": null,
+      "model_profile_source": null,
+      "narrative_genre": "correspondence",
+      "gold_source": "data/deep_geo/doi-10-1002-ctm2-70900.json",
+      "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1002-ctm2-70900.json",
+      "gold_content_sha256": "11f0865c11ddece91ce764a874587713f2ccba13161c31cb3250f5ef6a732bc4",
+      "provenance": {
+        "publisher_url": "https://doi.org/10.1002/ctm2.70900",
+        "fulltext_pdf_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "review_basis": "Complete publisher PDF read across all three pages; all main-text paragraphs, Figure 1 and caption, byline, correspondence details and eight references checked. Figure panels were visually inspected in rendered page images, including a higher-resolution rendering of page 1. The cited studies are used only in the role expressly described by this Letter.",
+        "source_version": "Published version of record, Clinical and Translational Medicine 2026;16:e70900, pp. 1-3; labelled Invited Letter. Received and revised 24 October 2026; accepted 1 November 2026. Existing unmodified hosted PDF SHA256: 9d689d55465340f13018aea57e1a89002ed11729091a7021e77df050cb4bd998. Its p. 1 footer provides a Creative Commons Attribution licence; the existing citation metadata identifies CC BY 4.0.",
+        "editorial_scope": "This author evidence explanation and the citation-use suggestions are website editorial content. They paraphrase the published argument and preserve its source locators; they are not a formal abstract or additional clinical evidence."
+      },
+      "scientific_role": "Methodological Invited Letter connecting outcome reporting to question-specific case comparison, proposed AI support and justified next evidential actions.",
+      "evidence_position": "Published conceptual framework using prior studies and Figure 1; no new clinical cohort, treatment-effect estimate or validated AI system.",
+      "related_concepts": [
+        "Exposure-based safety relevance",
+        "Target engagement versus functional restoration",
+        "Prognosis versus treatment effect"
       ],
-      "scope_source": "data/limited_evidence.json#/papers/10.1002~1ctm2.70900/scope"
+      "citation_contexts": [
+        "Introduction or Discussion on how individualised-treatment outcomes can support learning across patients and which comparisons are relevant.",
+        "Research-design rationale separating safety monitoring, mechanistic tests and treatment-benefit evaluation in an AI-assisted case-comparison workflow."
+      ],
+      "evidence_scope": {
+        "supports": [
+          "The authors' methodological framework for learning across individualised-treatment cases.",
+          "Research-design discussion separating exposure-based safety signals, tests of mechanistic explanations and comparative assessment of benefit.",
+          "The distinction between prognostic risk prediction and treatment-effect estimation.",
+          "Discussion of proposed AI-assisted case retrieval, comparison and experiment selection.",
+          "A reporting rationale that combines prompt major-outcome visibility with consent and privacy for detailed data."
+        ],
+        "does_not_establish": [
+          "A new clinical trial, randomized N-of-1 experiment, patient cohort or treatment-effect estimate conducted for this Letter.",
+          "A trained or clinically validated AI case-comparison system, or measured improvement from using the framework.",
+          "Drug-class toxicity, differential treatment response of molecular subtypes or treatment causality inferred from the illustrative cases."
+        ]
+      },
+      "limitations": [
+        "This methodological Invited Letter develops a proposed workflow through prior publications and a conceptual figure; it does not empirically evaluate that workflow.",
+        "The KCNT1 treatment observations, heart-failure prognostic model and atherosclerosis molecular subtypes are examples from cited studies. Their populations and findings remain attributable to those original reports.",
+        "Monitoring relevance and hypotheses generated from a case do not by themselves establish treatment benefit or causality. Individualised-treatment cases should not all be relabelled as randomized crossover N-of-1 trials.",
+        "Detailed patient-level sharing remains subject to consent and privacy safeguards; timely major-outcome reporting does not imply unrestricted data release."
+      ],
+      "scope_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/evidence_scope"
     },
     {
       "id": "doi-10-1016-j-curpro-2025-100054",
@@ -20089,6 +20845,201 @@
       "evidence_refs_status": "resolved"
     },
     {
+      "id": "doi-10-1097-re9-0000000000000037--qa-1",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 1,
+      "question": "What framework does this review offer for microbiome-informed cardiovascular research?",
+      "answer": "It organizes the gut–cardiovascular axis into vascular and cardiac branches, connects microbial functions and host responses to specific phenotypes, and separates causal confidence from biomarker maturity. It then links task-specific multimodal data selection, fusion and validation to a staged path toward precision care. The practical research target is a reproducible phenotype-specific microbial–host profile with a defined use, supported by evidence appropriate to that use.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-1",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/0/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/0/answer",
+      "answer_sha256": "307b0706d59935f61bbd92f1b004a7fafb9922c26659dcbc7fd53dc3f78c6d82",
+      "evidence_refs": [
+        "KF1",
+        "KF7",
+        "KF8",
+        "KF9",
+        "KF10",
+        "KF19"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-2",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 2,
+      "question": "Why do microbial function and strain-level context matter more than a taxon list alone?",
+      "answer": "Members of the same genus or species can differ in metabolic capability and host effects. The review contrasts community profiling with shotgun functional potential and metabolomic or experimental evidence of activity. Oscillibacter–cholesterol work illustrates how complementary measurements and isolate experiments can resolve a candidate function. Strain variation, bacterial preparation, non-bacterial organisms, sampling niche and changes over time further explain why abundance alone may not transfer across cardiovascular settings.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-2",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/1/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/1/answer",
+      "answer_sha256": "7a155875e7a9e5323820238552a52820cb304c8e1db6cbfc1aa779aab9c0de25",
+      "evidence_refs": [
+        "KF2"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-3",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 3,
+      "question": "How should TMAO, PAGln, SCFAs, bile acids and barrier signals be interpreted?",
+      "answer": "TMAO and PAGln are discussed mainly through thrombo-inflammatory evidence; SCFAs, bile acids and tryptophan-related metabolites connect to blood pressure, metabolism, immunity and cardiorenal processes. LPS and barrier dysfunction provide additional host-response routes. Diet, renal clearance, host metabolism, drugs and disease state modify the measured signals. Their mechanistic or prognostic meaning must therefore be assessed in context, with the evidence level distinguished from a claim that changing a concentration improves human outcomes.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-3",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/2/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/2/answer",
+      "answer_sha256": "5cfe41f3453f0a0fa092ebd7ea874c6a2a2e67982a09b30071750d9ca8fd9d8b",
+      "evidence_refs": [
+        "KF3",
+        "KF4"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-4",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 4,
+      "question": "How do the gut–vascular and gut–heart evidence patterns differ?",
+      "answer": "Atherosclerosis/CAD has relatively developed human microbial-functional and outcome evidence with selected mechanistic support. Hypertension includes short-term human intervention signals, while PAH, calcification and aortic disease have more limited or inconsistent evidence. Heart-failure/HFpEF studies connect intestinal dysfunction, metabolic signatures and prognosis; AF combines mainly observational human signals with preclinical mechanisms. Table 1 maps these patterns. The same upstream pathway should not be assigned the same clinical meaning in every organ or disease stage.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-4",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/3/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/3/answer",
+      "answer_sha256": "9ff5a1f8f542feb8a650c44f54af1182bf4f9a0ef1bcfd488d7cc8d4321b1659",
+      "evidence_refs": [
+        "KF5",
+        "KF6",
+        "KF7"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-5",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 5,
+      "question": "What can the five-stage causal-confidence ladder establish?",
+      "answer": "The stages distinguish cross-sectional association; replicated or longitudinal association; genetically proxied or other quasi-causal support; experimental perturbation with mechanistic validation; and human intervention. Each design answers a different inferential question. Temporal order and mediation alone do not prove mechanism; microbiome MR depends on valid instruments; model-system perturbation need not transfer to people. Confidence is strengthened by independent approaches converging on the same explanation.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-5",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/4/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/4/answer",
+      "answer_sha256": "baeea0ccea16af48452ba9e7c3061b5f45251302ea262dd9da8377c4e0f2fdf0",
+      "evidence_refs": [
+        "KF8"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-6",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 6,
+      "question": "How is biomarker maturity different from causal evidence?",
+      "answer": "The review grades a marker against analytical validity, independent reproducibility, prospective validation, external transportability and incremental clinical utility. Level I meets these requirements; Level II has independent support but does not yet meet all requirements; Level III remains retrospective or single-cohort; Level IV is exploratory. This is separate from whether the marker is causally involved. A noncausal marker may predict usefully, while a causal mechanism may offer little extra risk information.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-6",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/5/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/5/answer",
+      "answer_sha256": "39d1eb4bd83973fe810e8199e2d2a378e64ea0caf2576aa360111cd86bf527d8",
+      "evidence_refs": [
+        "KF9"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-7",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 7,
+      "question": "When is multimodal integration useful, and when is AI justified?",
+      "answer": "Integration is useful when complementary microbial, molecular, genomic, imaging or longitudinal measurements answer one defined question: mechanism prioritization, endotyping, biomarker replication, risk prediction or treatment response. Conventional statistical and mechanistic integration are legitimate options. AI is justified when supported data and sample size allow it to solve complex relationships beyond simpler methods. Supplementary Table S1 distinguishes mechanistic/statistical combinations from explicit protein-language-model prioritization and machine-learning classification.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-7",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/6/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/6/answer",
+      "answer_sha256": "a857488d31c5f1ac622b89f67f146397ccdb04b08d2cdfbdd8bdbd8766757d20",
+      "evidence_refs": [
+        "KF10",
+        "KF16"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-8",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 8,
+      "question": "How should early, late and intermediate or hybrid fusion be selected?",
+      "answer": "Early fusion combines features and suits aligned, largely complete data, but high dimension and missing modalities can be problematic. Late fusion combines separate predictions and supports heterogeneous, modular or intermittently missing data, with more limited interaction modeling. Intermediate/hybrid fusion learns shared representations when sample size and a prespecified cross-modal problem justify the added complexity; missing-tolerant training must be designed explicitly. Table 2 compares alignment, interaction capacity, robustness, overfitting, computation and appropriate scenarios. No strategy is universally best.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-8",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/7/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/7/answer",
+      "answer_sha256": "979416e6093ff4027ff7fea0dd87c6a567128a52b4897b929592816c9036aa13",
+      "evidence_refs": [
+        "KF12",
+        "KF13",
+        "KF14"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-9",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 9,
+      "question": "Which design and validation checks make a multimodal cardiovascular model convincing?",
+      "answer": "Control clinical modifiers and technical variation, respect microbiome compositionality and missingness, and guard against leakage and subgroup imbalance. Compare clinical, unimodal and simple multimodal models on the same partitions before claiming benefit from higher-capacity AI. Report calibration, uncertainty, subgroup stability and decision utility alongside discrimination. Test transport across populations, sites, assays and clinical settings, including missing modalities. Feature-importance explanations can aid interpretation but do not establish biological mechanism.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-9",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/8/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/8/answer",
+      "answer_sha256": "f611864308c785b319f6aa9bbddb3cc8463117e01a6a3bf8295a00edcc2b8c83",
+      "evidence_refs": [
+        "KF11",
+        "KF15"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-10",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 10,
+      "question": "What can microbiome-plus-imaging research contribute to cardiovascular endotyping?",
+      "answer": "Microbial and metabolomic information describes upstream biology, whereas echocardiography, CT, MRI and vascular imaging define downstream organ phenotypes. Linking them may help identify reproducible plaque or cardiac-remodeling subgroups. The review identifies endotyping as a useful near-term direction, while requiring independent replication and meaningful incremental value before a model supports clinical risk or treatment decisions. Figure 3 explains complementarity; Figure 4 places integration within a proposed clinical evaluation and feedback cycle.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-10",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/9/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/9/answer",
+      "answer_sha256": "810250382fc68c49fc71f2e73e8c321c619a733fc800133e017fa5b904a9a4d5",
+      "evidence_refs": [
+        "KF10",
+        "KF17",
+        "KF20"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-11",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 11,
+      "question": "How does the review compare diet, probiotics, FMT and microbial metabolic targets?",
+      "answer": "It treats them as interventions at different stages of evidence maturity. Diet is feasible and can modify biology; probiotics, prebiotics and FMT remain exploratory for cardiovascular benefit, and the cited hypertension FMT effect was short-lived. Microbial TMA-pathway or enzyme targeting is predominantly preclinical. Treatment and diet also alter microbial signatures, and microbes can change drug exposure. The research agenda is to establish reproducible response profiles, target engagement, safety and prospective clinical benefit.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-11",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/10/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/10/answer",
+      "answer_sha256": "5f881100b91152e8098a63961124bc7e8ad08ff4fa570ab5388ca7eca6e5a194",
+      "evidence_refs": [
+        "KF18"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1097-re9-0000000000000037--qa-12",
+      "work_id": "doi-10-1097-re9-0000000000000037",
+      "qa_index": 12,
+      "question": "What must happen before microbiome-informed AI can guide cardiovascular care?",
+      "answer": "The review calls for external validation against prespecified clinical baselines, then prospective testing within real workflows and continued monitoring if adoption is justified. Studies should assess patient-relevant decisions, utility, calibration, subgroup performance and changes in populations or measurement platforms. They should also specify when absent, outdated or insufficient evidence triggers withholding and clinician review or usual care. Figure 4 is a conceptual pathway for these functions, not an already validated clinical platform.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-12",
+      "question_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/11/question",
+      "answer_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/11/answer",
+      "answer_sha256": "cf9395323656c0aa265bb57eff09410b51a3debf48e5dac0765f4d90c99dc146",
+      "evidence_refs": [
+        "KF19",
+        "KF20"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
       "id": "doi-10-1155-humu-5591097--qa-1",
       "work_id": "doi-10-1155-humu-5591097",
       "qa_index": 1,
@@ -20606,6 +21557,175 @@
       "evidence_refs": [
         "KF1",
         "KF3"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-1",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 1,
+      "question": "How can an outcome from one individualised treatment inform the next patient?",
+      "answer": "Identify the question and match the comparison to it. The Letter separates safety monitoring, tests of mechanistic explanations and assessment of benefit. An earlier observation may justify closer monitoring or further investigation before it supports a change in treatment.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-1",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/0/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/0/answer",
+      "answer_sha256": "fa671520fc228d20e14e79aac33fc707d05f46c4775f7cfa412b1cdae4c21a4e",
+      "evidence_refs": [
+        "KF1",
+        "KF3",
+        "KF8"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-2",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 2,
+      "question": "What does the KCNT1 antisense-treatment example illustrate?",
+      "answer": "The Letter describes a previously published two-child report in which knowledge of the first child's complication prompted closer monitoring of the second. It uses the example to explain safety learning before a complete causal explanation, without generalising the complication to all similar drugs.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-2",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/1/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/1/answer",
+      "answer_sha256": "b8f1a083ffdbdfbb340fc44a3cca7add50154c99403dcf98743ad31aed80f3f9",
+      "evidence_refs": [
+        "KF2"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-3",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 3,
+      "question": "Can an earlier case with a different diagnosis still inform safety monitoring?",
+      "answer": "Yes, when the relevant question concerns shared drug exposure, dose or route. The Letter argues that these similarities may matter even across diagnoses; Figure 1 also directs attention to event timing, severity and patient characteristics. The comparison should explain its relevance.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-3",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/2/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/2/answer",
+      "answer_sha256": "270c492c16db00f563a0a0e5da99771d5b2d49181d8941e05ed7e36d475b2dc2",
+      "evidence_refs": [
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-4",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 4,
+      "question": "What information matters when evaluating apparent treatment benefit?",
+      "answer": "Begin with the pretreatment disease course and reliable outcomes that matter to the patient. Figure 1 also asks for valid comparison with similar cases and consideration of alternative explanations. Benefit assessment asks whether the observed improvement would have occurred without the treatment.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-4",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/3/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/3/answer",
+      "answer_sha256": "a5f8879df09469574195487c39134da5ffd4267355ceb2d2e27644a13ff653d7",
+      "evidence_refs": [
+        "KF3",
+        "KF4",
+        "KF8"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-5",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 5,
+      "question": "Why does an accurate survival prediction not identify the treatment that will work?",
+      "answer": "A prognostic model estimates an outcome or risk under its study conditions. Treatment-benefit assessment concerns the effect of a particular intervention compared with an appropriate alternative. The Letter uses prior heart-failure survival research to make this distinction and refers separately to treatment-effect inference.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-5",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/4/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/4/answer",
+      "answer_sha256": "066c540e914462457785ff467b5007ccbba1d043b2decf47fd32176807aa3a87",
+      "evidence_refs": [
+        "KF4"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-6",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 6,
+      "question": "How can biological heterogeneity guide the next mechanistic experiment?",
+      "answer": "Cases sharing a diagnosis can differ in molecular state. The Letter contrasts a drug failing to engage its target with target engagement that does not restore function. These explanations require different measurements and experiments; its cited atherosclerosis subtypes supply a biological example, not evidence of different treatment responses.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-6",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/5/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/5/answer",
+      "answer_sha256": "1570d379e600ed599c83bc4b10118ab7170ea44bf317836006c70eba51e734ee",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-7",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 7,
+      "question": "Which four input domains does Figure 1 propose for comparing patients?",
+      "answer": "Clinical course; treatment details; biological context; and prior cases and evidence. They bring together the longitudinal trajectory, drug exposure and timing, molecular or cellular state, and published or recorded experience. Figure 1 directs these domains into its central AI-assisted case-comparison process.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-7",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/6/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/6/answer",
+      "answer_sha256": "cf2c37b40fc37a39c180f4442e8b8bbae758e259d848b1cd2151ea80de2c8886",
+      "evidence_refs": [
+        "KF6"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-8",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 8,
+      "question": "What can AI contribute to learning across individualised-treatment cases?",
+      "answer": "The proposed role is to retrieve cases relevant to a specified question, show useful similarities and differences, highlight uncertainty and suggest next steps. Computational models may help select experiments. The Letter describes a conceptual role for AI rather than reporting a trained or validated system.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-8",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/7/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/7/answer",
+      "answer_sha256": "25372e04de652c091cb3460d9c35a3508795df4c9dcc05f56ae9eebd3c536fc9",
+      "evidence_refs": [
+        "KF7"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-9",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 9,
+      "question": "How do the three action branches in Figure 1 differ?",
+      "answer": "The safety branch adapts monitoring; the mechanistic branch tests an explanation; and the benefit branch seeks stronger comparative evidence for a treatment decision. The learning loop connects these actions across patients while preserving their different evidential requirements.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-9",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/8/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/8/answer",
+      "answer_sha256": "0d417266406d60fef66ee0b53994adb244b4fcf21ba9e1b46a2b9d189ab6cffa",
+      "evidence_refs": [
+        "KF8"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-10",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 10,
+      "question": "Should major outcomes wait for a complete mechanism before being reported?",
+      "answer": "The Letter argues for prompt reporting of major outcomes, with a clear account of observations, uncertainty and the action another team could reasonably take. It keeps that reporting goal distinct from unrestricted sharing of detailed patient-level data, which remains subject to consent and privacy safeguards.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-10",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/9/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/9/answer",
+      "answer_sha256": "aa1dd1aab8666b4ed2f28738ef991b282f4dce10bb8870a8623c0a81975ff151",
+      "evidence_refs": [
+        "KF9"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900--qa-11",
+      "work_id": "doi-10-1002-ctm2-70900",
+      "qa_index": 11,
+      "question": "How does this article build on the Science Letter about single-patient outcome records?",
+      "answer": "The opening explicitly cites the Science Letter as reference 1 for public reporting and linkage to preceding research. The CTM article takes the next methodological step: deciding how visible outcomes should inform comparisons and future action. This is a verified CTM-to-Science citation, not a claim of reciprocal citation.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-11",
+      "question_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/10/question",
+      "answer_source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/10/answer",
+      "answer_sha256": "b59b37b6952682e41f300c8599c99cb6cdbef53bcf39a8fe28e8467fc2183c70",
+      "evidence_refs": [
+        "KF1"
       ],
       "evidence_refs_status": "resolved"
     },
@@ -27682,6 +28802,83 @@
       "evidence_scope": "Empirical improvement in discrimination, safety, equity or patient outcomes."
     },
     {
+      "id": "doi-10-1097-re9-0000000000000037",
+      "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
+      "doi": "10.1097/re9.0000000000000037",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
+      "question": "What framework does this review offer for microbiome-informed cardiovascular research?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#qa-1",
+      "key_finding": {
+        "id": "KF1",
+        "claim": "Separate the gut–vascular and gut–heart axes within one host–microbe framework.",
+        "context": "The review connects microbial ecology, metabolic products, intestinal-barrier function and host response to organ-specific cardiovascular phenotypes. A shared upstream signal can have different implications for plaque biology, blood pressure, myocardial remodeling or electrophysiology. Figure 1 moves from diet and the intestinal environment through microbial signals to vascular and myocardial targets, then to representative disease outcomes; its arrows organize a conceptual synthesis with differing evidence strength.",
+        "evidence": [
+          {
+            "label": "Gut–vascular axis",
+            "value": "Atherosclerosis/CAD, thrombosis, hypertension, pulmonary vascular disease, calcification and aortic pathology."
+          },
+          {
+            "label": "Gut–heart axis",
+            "value": "Myocardial remodeling, heart failure and electrophysiology."
+          }
+        ],
+        "source_locator": "Accepted manuscript, PDF pp. 5–7, Introduction and section 2; Figure 1 and legend, pp. 64 and 67.",
+        "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/key_findings/0",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#kf1"
+      },
+      "key_finding_basis": "question_evidence_ref",
+      "source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": null,
+      "concepts": [
+        "Atherosclerosis and coronary artery disease",
+        "Thrombosis",
+        "Hypertension",
+        "Pulmonary arterial hypertension",
+        "Vascular calcification and aortic disease",
+        "Heart failure",
+        "Heart failure with preserved ejection fraction",
+        "Atrial fibrillation",
+        "Trimethylamine N-oxide (TMAO)",
+        "Phenylacetylglutamine (PAGln)",
+        "Short-chain fatty acids (SCFAs)",
+        "Bile-acid signaling",
+        "Lipopolysaccharide and intestinal-barrier integrity",
+        "Indole-3-propionic acid (IPA)",
+        "Microbial functional and strain-level variation",
+        "16S rRNA profiling and shotgun metagenomics",
+        "Metabolomics",
+        "Host genomics, transcriptomics and proteomics",
+        "Cardiovascular imaging",
+        "Longitudinal clinical and digital measurements",
+        "Experimental perturbation",
+        "Early, late and intermediate/hybrid fusion",
+        "Mendelian randomization and evidence triangulation",
+        "Compositionality and missing modalities",
+        "External validation and calibration",
+        "Subgroup stability and clinical decision utility",
+        "Causal confidence",
+        "Biomarker maturity",
+        "Cardiovascular endotyping",
+        "Prospective clinical evaluation",
+        "Microbiome-directed intervention readiness"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.csl.json",
+      "field_entry": [
+        "Gut microbiome and cardiovascular phenotyping",
+        "Multimodal methods for precision cardiovascular medicine"
+      ],
+      "review_topics": [
+        "Microbial function across vascular and cardiac disease",
+        "Fusion strategy selection and clinical translation"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#paper-discovery",
+      "evidence_scope_kind": "does_not_establish",
+      "evidence_scope": "A new pooled patient cohort, model performance estimate or clinical intervention result produced by the review."
+    },
+    {
       "id": "doi-10-1155-humu-5591097",
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
       "doi": "10.1155/humu/5591097",
@@ -28088,6 +29285,72 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html#paper-discovery",
       "evidence_scope_kind": "does_not_establish",
       "evidence_scope": "That low KIF13B expression or KIF13B methylation causes plaque instability in humans."
+    },
+    {
+      "id": "doi-10-1002-ctm2-70900",
+      "title": "What one patient can teach the next",
+      "doi": "10.1002/ctm2.70900",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html",
+      "question": "How can an outcome from one individualised treatment inform the next patient?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#qa-1",
+      "key_finding": {
+        "id": "KF1",
+        "claim": "Move from timely outcome reporting to a specific question about what the next team can learn.",
+        "context": "The opening connects this article to the authors' Science Letter on making major single-patient outcomes public and linking them to preceding research. Visibility supplies the starting material; the present article asks which observation can justify which next action.",
+        "evidence": [
+          {
+            "label": "Starting point",
+            "value": "Publicly visible major outcomes linked to preceding research"
+          },
+          {
+            "label": "Added question",
+            "value": "What should the next clinical team change?"
+          }
+        ],
+        "source_locator": "Publisher version of record, p. 1, left column, opening paragraph; p. 2, reference 1; Figure 1 caption.",
+        "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/key_findings/0",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#kf1"
+      },
+      "key_finding_basis": "question_evidence_ref",
+      "source": "data/deep_geo/doi-10-1002-ctm2-70900.json#/qa/0/question",
+      "profile_type": "narrative_review",
+      "narrative_genre": "correspondence",
+      "concepts": [
+        "Individualised therapies",
+        "Cross-patient learning",
+        "Question-specific case comparison",
+        "Comparative treatment-benefit assessment",
+        "Safety signals",
+        "Drug dose and route",
+        "Event timing and severity",
+        "Adaptive safety monitoring",
+        "Biological heterogeneity",
+        "Target engagement",
+        "Functional restoration",
+        "Mechanistic hypothesis testing",
+        "AI-assisted case retrieval",
+        "Clinical trajectories",
+        "Prognostic prediction",
+        "Treatment-effect estimation",
+        "Timely outcome reporting",
+        "Case-sharing collaboration",
+        "Patient consent",
+        "Patient-data privacy"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.csl.json",
+      "field_entry": [
+        "Individualised treatment research",
+        "Translational evidence assessment"
+      ],
+      "review_topics": [
+        "Learning across patients after individualised therapies",
+        "Purpose-specific safety, mechanistic and benefit comparisons"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html#paper-discovery",
+      "evidence_scope_kind": "does_not_establish",
+      "evidence_scope": "A new clinical trial, randomized N-of-1 experiment, patient cohort or treatment-effect estimate conducted for this Letter."
     },
     {
       "id": "doi-10-1016-j-curpro-2025-100054",

@@ -364,9 +364,9 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
-    "featured": false
+    "deep_geo": true,
+    "paper_geo_status": "v2",
+    "featured": true
   },
   {
     "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -686,9 +686,9 @@
     "slug": "doi-10-1002-ctm2-70900",
     "paper_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
-    "featured": false
+    "deep_geo": true,
+    "paper_geo_status": "v2",
+    "featured": true
   },
   {
     "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",

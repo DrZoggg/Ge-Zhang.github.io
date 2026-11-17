@@ -105,7 +105,7 @@
 - DOI: 10.1097/re9.0000000000000037
 - HTML: https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html
 - Markdown: https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family
 - Journal: Human Mutation
@@ -186,7 +186,7 @@
 - DOI: 10.1002/ctm2.70900
 - HTML: https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-ctm2-70900.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine
 - Journal: Current Proteomics

@@ -1,0 +1,823 @@
+{
+  "version": 2,
+  "doi": "10.1097/re9.0000000000000037",
+  "display_title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
+  "summary": "This narrative review connects microbial function, host response and organ-specific cardiovascular phenotypes to a practical framework for multimodal research. Its central contributions are the gut–vascular/gut–heart distinction, separate grading of causal confidence and biomarker maturity, conditional selection of data-fusion strategies, and a validation pathway from biological discovery to prospective clinical evaluation.",
+  "research_question": "How can microbial and host information be integrated to identify reproducible cardiovascular endotypes and useful candidate mechanisms, biomarkers or interventions, while keeping causal evidence, model performance and clinical utility distinct?",
+  "author_summary": "The review brings together microbiome ecology, microbial metabolites, barrier and immune pathways, host genetics and cardiovascular phenotyping. It separates vascular from cardiac manifestations and explains why diet, medication, kidney function and disease stage can change the meaning of the same microbial signal. Its five-stage causal-confidence ladder is distinct from a four-level biomarker-maturity framework: mechanism, prediction and clinical actionability require different evidence. For multimodal research, it matches complementary microbial, molecular, imaging and longitudinal clinical measurements to a defined task, then compares early, late and intermediate/hybrid fusion by alignment, dimensionality, missingness, interaction capacity and validation needs. It distinguishes conventional mechanistic or statistical integration from explicit AI roles in functional prioritization and classification. The translational sequence asks whether a reproducible signature or model adds information beyond clinical and simpler alternatives, transports across populations and platforms, remains calibrated and improves a meaningful prospective decision. Diet, ecosystem interventions and microbial metabolic targeting are placed at different evidence stages. Four conceptual figures, two main tables and Supplementary Table S1 organize these links. This author-maintained guide paraphrases that published synthesis and identifies research and citation uses; original-study effects remain attributable to the primary studies discussed in the review.",
+  "evidence_page_notice": "Author-maintained guide to the complete narrative review. Source locators refer to the 70-page publisher-hosted ACCEPTED manuscript and its one-page Supplementary Table S1; the review is published ahead of print, and these locators should be matched to that version.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Narrative synthesis of seminal mechanistic and directly relevant literature available through August 2026, selected by biological, evidentiary, multimodal and translational questions rather than a formal PRISMA process (PDF p. 6). Organization: introduction and scope (§1); microbial ecology, metabolites, barrier/immune and host genetics (§2); vascular, cardiac and shared phenotypes (§3); design-specific causal confidence (§4); tasks, fusion, benchmarking and existing applications (§5); biomarker maturity, endotyping, interventions and clinical evaluation (§6); bias, reproducibility and future priorities (§7); phenotype-specific, evidence-triangulated conclusions (§8).",
+    "evidence_type": "Synthesis and conceptual frameworks based on cited human observational, longitudinal and genetic studies, experimental perturbations, human interventions and computational applications. The review distinguishes evidence types rather than pooling them as one clinical dataset.",
+    "evidence_domains": [
+      "Microbial function, metabolites, intestinal barrier and host immune/genetic context",
+      "Gut–vascular and gut–heart phenotype-specific evidence",
+      "Causal-confidence and biomarker-maturity grading",
+      "Multimodal tasks, data preparation, fusion and model validation",
+      "Intervention readiness, prospective evaluation and clinical monitoring"
+    ],
+    "diseases_covered": [
+      "Atherosclerosis and coronary artery disease",
+      "Thrombosis and hypertension",
+      "Pulmonary arterial hypertension",
+      "Vascular calcification and aortic disease",
+      "Heart failure, including HFpEF",
+      "Atrial fibrillation",
+      "Cross-phenotype cardiometabolic risk progression"
+    ],
+    "translation_scope": "Prioritization of reproducible cardiovascular endotypes and candidate microbial targets, with conditional modeling and intervention pathways. Biological discovery and retrospective stratification are more developed than demonstrated AI-guided improvement in cardiovascular care.",
+    "scale_metrics": [
+      {
+        "label": "Review design",
+        "value": "Narrative review; literature available through August 2026"
+      },
+      {
+        "label": "Main visual synthesis",
+        "value": "4 conceptual figures and 2 comparison tables"
+      },
+      {
+        "label": "Supplementary synthesis",
+        "value": "Table S1 compares 6 representative integration/AI study settings"
+      }
+    ],
+    "counting_note": "These counts describe the review’s organization, not a pooled participant total, a newly trained model or a clinical trial conducted for this article."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Separate the gut–vascular and gut–heart axes within one host–microbe framework.",
+      "context": "The review connects microbial ecology, metabolic products, intestinal-barrier function and host response to organ-specific cardiovascular phenotypes. A shared upstream signal can have different implications for plaque biology, blood pressure, myocardial remodeling or electrophysiology. Figure 1 moves from diet and the intestinal environment through microbial signals to vascular and myocardial targets, then to representative disease outcomes; its arrows organize a conceptual synthesis with differing evidence strength.",
+      "evidence": [
+        {
+          "label": "Gut–vascular axis",
+          "value": "Atherosclerosis/CAD, thrombosis, hypertension, pulmonary vascular disease, calcification and aortic pathology."
+        },
+        {
+          "label": "Gut–heart axis",
+          "value": "Myocardial remodeling, heart failure and electrophysiology."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 5–7, Introduction and section 2; Figure 1 and legend, pp. 64 and 67."
+    },
+    {
+      "id": "KF2",
+      "claim": "Resolve microbial function and host context beyond a taxonomic abundance signal.",
+      "context": "Section 2.1 explains why organisms within a genus or species can differ in metabolic capability, strain composition and host interaction. 16S rRNA profiling describes community structure; shotgun metagenomics adds genes and functional potential; metabolomic and experimental measurements test whether those functions are active. The Oscillibacter example joins population metagenomics, metabolomics, computational prioritization and experiments in gut isolates. The discussion also includes preparation-dependent Akkermansia effects, the Segatella copri complex, fungal contributions, stool-versus-mucosal sampling and temporal variation.",
+      "evidence": [
+        {
+          "label": "Measurement distinction",
+          "value": "Gene or pathway presence indicates potential, rather than demonstrated activity."
+        },
+        {
+          "label": "Research implication",
+          "value": "Link functionally resolved microbial measures to metabolites, host state and a defined phenotype."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 7–8, section 2.1; pp. 18–19, section 5.1."
+    },
+    {
+      "id": "KF3",
+      "claim": "Interpret microbial metabolites as composite host–microbe readouts.",
+      "context": "The review contrasts TMAO- and PAGln-related thrombo-inflammatory evidence with SCFA, bile-acid, tryptophan-metabolite and indoxyl-sulfate pathways. TMAO concentration combines precursor intake, microbial metabolism, hepatic FMO3 activity and renal clearance, together with medication and disease context. PAGln is discussed through platelet adrenergic signaling. SCFAs and bile acids connect microbial activity with blood-pressure, barrier, immune and metabolic processes, including FXR/TGR5 signaling. These are syntheses of cited human and experimental studies, with different inferential strength across pathways.",
+      "evidence": [
+        {
+          "label": "Interpretation",
+          "value": "A circulating metabolite is not a direct surrogate for one bacterium."
+        },
+        {
+          "label": "Translation",
+          "value": "Biological or prognostic relevance does not establish benefit from lowering a metabolite."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 8–9, section 2.2; Figure 2 and legend, pp. 64 and 68."
+    },
+    {
+      "id": "KF4",
+      "claim": "Connect barrier, immune and host-genetic layers while identifying emerging mechanisms.",
+      "context": "Intestinal-barrier disruption can increase exposure to microbial products and inflammatory signaling. Figure 2 organizes TMAO, PAGln, LPS, bile-acid and SCFA routes through receptors, vascular or platelet effects, barrier integrity and immune responses. The text treats mitochondrial-stress links as emerging because direct human cardiovascular evidence is limited. Host genetics provides a more stable contextual layer, illustrated by the LCT–Bifidobacterium association; genetic association alone does not demonstrate microbial mediation. Stronger interpretation comes from convergence across longitudinal, functional and interventional evidence.",
+      "evidence": [
+        {
+          "label": "Host response",
+          "value": "Barrier integrity, immune signaling and cellular stress interact with microbial metabolism."
+        },
+        {
+          "label": "Genetic context",
+          "value": "Genomic association complements microbial and molecular data; mediation requires additional evidence."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 9–10, sections 2.3–2.4; Figure 2, pp. 64 and 68."
+    },
+    {
+      "id": "KF5",
+      "claim": "Match a vascular microbiome claim to its specific phenotype and evidence pattern.",
+      "context": "Section 3.1 and Table 1 distinguish relatively developed atherosclerosis/CAD evidence from hypertension, PAH, calcification and aortic disease. CAD combines microbial-functional and outcome associations with selected mechanistic pathways. Hypertension includes human associations, experimental SCFA work and short-term human FMT evidence. PAH studies connect compartment-specific microbial/metabolic variation with hemodynamic severity. Calcification and aortic disease remain more exploratory, with inconsistent taxon-level genetic findings after correction. Shared clinical risk factors need not imply identical organ mechanisms.",
+      "evidence": [
+        {
+          "label": "Atherosclerosis/CAD",
+          "value": "Human metagenomic and prognostic associations plus selected mechanistic evidence."
+        },
+        {
+          "label": "Hypertension",
+          "value": "Biological and short-term intervention signals; durable cardiovascular efficacy remains unresolved."
+        },
+        {
+          "label": "PAH",
+          "value": "Small multi-omics discovery studies and limited broader validation."
+        },
+        {
+          "label": "Calcification/aortic disease",
+          "value": "Emerging population and experimental support, with inconsistent corrected genetic associations."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 11–13, section 3.1; Table 1, p. 65."
+    },
+    {
+      "id": "KF6",
+      "claim": "Use distinct cardiac phenotypes to interpret heart-failure and atrial-fibrillation signals.",
+      "context": "The gut–heart synthesis describes bidirectional links between heart failure and intestinal congestion, perfusion, barrier dysfunction and inflammatory metabolism. HF/HFpEF studies include altered SCFA-producing taxa, TMAO and bile-acid profiles. Lower human IPA measurements and mouse supplementation experiments illustrate convergence across evidence types without establishing a human therapy. AF work links dysbiosis and metabolite shifts with preclinical autonomic/inflammatory mechanisms; predominantly cross-sectional human studies leave direction unresolved. The shared research target is a phenotype-specific microbial–metabolic profile.",
+      "evidence": [
+        {
+          "label": "Heart failure/HFpEF",
+          "value": "Human evidence is mainly associative or prognostic; mechanistic support is largely experimental."
+        },
+        {
+          "label": "Atrial fibrillation",
+          "value": "Human microbial/metabolite associations converge with preclinical mechanisms, with causal direction unresolved."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 13–14, section 3.2; Table 1, p. 65."
+    },
+    {
+      "id": "KF7",
+      "claim": "Develop phenotype- and stage-aware profiles rather than a universal cardiovascular dysbiosis marker.",
+      "context": "The review uses cross-phenotype cardiometabolic studies and coronary-risk progression to explain why shared pathways coexist with disease-specific patterns. Diet, kidney function, age, medication, metabolic disease, geography and host genetics modify associations. It also cites a model-specific example: 2-methylbutyrylcarnitine supplementation did not increase plaque burden or alter plaque stability in the tested ApoE-deficient mouse setting despite prior prothrombotic findings. That comparison illustrates why an effect on one endpoint should not be transferred to another vascular phenotype.",
+      "evidence": [
+        {
+          "label": "Phenotyping",
+          "value": "Combine microbial–metabolic signals with host molecular features, imaging and clinical risk factors."
+        },
+        {
+          "label": "Endpoint specificity",
+          "value": "Thrombosis, plaque burden, plaque stability and disease stage are distinct biological outcomes."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 14–15, section 3.3; Table 1, p. 65."
+    },
+    {
+      "id": "KF8",
+      "claim": "Use the review’s five-stage ladder to calibrate causal language.",
+      "context": "Section 4 separates what each design contributes. Cross-sectional studies establish co-occurrence; longitudinal replication adds temporal ordering; genetic approaches provide genetically proxied estimates; controlled perturbations test mechanisms in a specified model; human interventions manipulate exposure in people. Mediation analysis is compatible with a pathway without proving it. Microbiome MR depends on instrument strength, pleiotropy, ancestry and exposure definition; sensitivity analyses and convergence with other designs strengthen interpretation. The stages describe inference and triangulation rather than making every later-numbered design universally superior.",
+      "evidence": [
+        {
+          "label": "Stage 1",
+          "value": "Cross-sectional association."
+        },
+        {
+          "label": "Stage 2",
+          "value": "Replicated or longitudinal association, or both."
+        },
+        {
+          "label": "Stage 3",
+          "value": "Genetically proxied or other quasi-causal support."
+        },
+        {
+          "label": "Stage 4",
+          "value": "Experimental perturbation with mechanistic validation."
+        },
+        {
+          "label": "Stage 5",
+          "value": "Human intervention."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 16–18, sections 4.1–4.4."
+    },
+    {
+      "id": "KF9",
+      "claim": "Assess biomarker maturity separately from causal confidence.",
+      "context": "A predictive marker can be useful without being causal, and a causal pathway may add little predictive information. The review therefore assesses analytical validity, independent reproducibility, prospective validation, transportability and incremental clinical utility separately from mechanistic evidence. This second grading axis explains why a biologically plausible microbial target and a deployable cardiovascular biomarker can be at different stages of development.",
+      "evidence": [
+        {
+          "label": "Level I",
+          "value": "Meets the stated analytical, reproducibility, prospective, external and utility requirements."
+        },
+        {
+          "label": "Level II",
+          "value": "Independent support is present but requirements remain incomplete."
+        },
+        {
+          "label": "Level III",
+          "value": "Evidence is retrospective or confined to a single cohort."
+        },
+        {
+          "label": "Level IV",
+          "value": "Exploratory evidence."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF p. 22, section 6.1; pp. 18 and 22–24, sections 4.4 and 6.2."
+    },
+    {
+      "id": "KF10",
+      "claim": "Choose complementary modalities for a defined analytical task before choosing AI.",
+      "context": "Microbiome data describe ecology and potential function; metabolomics measures molecular output; host genomics, transcriptomics and proteomics describe susceptibility or response; imaging defines organ phenotype; digital and longitudinal clinical measurements capture change. Figure 3 contrasts the strengths and limitations of microbial, molecular, clinical and experimental approaches and connects hypothesis generation with mechanistic validation. Mechanism prioritization, endotyping, biomarker reproducibility, risk prediction and treatment-response modeling are distinct tasks. Multimodal integration may use conventional statistical or mechanistic methods; AI is a computational option for appropriately supported complex relationships.",
+      "evidence": [
+        {
+          "label": "Task first",
+          "value": "Select data layers that address the same biological or clinical question."
+        },
+        {
+          "label": "Method choice",
+          "value": "Use higher-capacity methods when complexity solves a demonstrated problem beyond simpler alternatives."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 18–19, section 5.1; Figure 3 and legend, pp. 64 and 69."
+    },
+    {
+      "id": "KF11",
+      "claim": "Control biological context, technical variation and leakage before interpreting a model.",
+      "context": "The review identifies age, sex, BMI, kidney function, comorbidities, smoking, medication, diet, fasting, sample handling, platform, batch and imaging parameters as potential sources of distortion. Preprocessing should respect microbial compositionality and missingness. Its future agenda additionally calls out leakage, class imbalance, site/platform effects and uneven subgroup representation. Alignment, modality completeness and temporal validity must support the intended prediction; a model can otherwise learn technical or contextual differences instead of reproducible biology.",
+      "evidence": [
+        {
+          "label": "Biological/clinical modifiers",
+          "value": "Diet, medication, renal function and comorbidity require explicit documentation and control."
+        },
+        {
+          "label": "Data-design safeguards",
+          "value": "Account for compositionality, batch/platform effects, missing modalities, leakage and subgroup imbalance."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; pp. 25–27, sections 6.4 and 7; Table 2, p. 66."
+    },
+    {
+      "id": "KF12",
+      "claim": "Early fusion suits well-aligned, largely complete modalities with sufficient sample support.",
+      "context": "Table 2 defines early fusion at the feature/input level. Concatenation can represent direct feature interactions, but participants and measurements must be aligned and harmonized. Increasing feature dimension raises overfitting risk, and missing-modality robustness is generally low unless specifically handled. The review makes the choice conditional on question, sample size relative to dimension, completeness and validation design.",
+      "evidence": [
+        {
+          "label": "Alignment and interactions",
+          "value": "High alignment requirement; direct feature-level interactions can be represented."
+        },
+        {
+          "label": "Missingness and risk",
+          "value": "Generally low robustness without explicit handling; often high overfitting risk for high-dimensional inputs."
+        },
+        {
+          "label": "Computational burden",
+          "value": "Low to moderate."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Early fusion column."
+    },
+    {
+      "id": "KF13",
+      "claim": "Late fusion supports modular prediction across heterogeneous or intermittently missing modalities.",
+      "context": "Late fusion combines modality-specific predictions. Separately trained components lower the alignment requirement and permit available modalities to contribute when others are absent. The trade-off is that cross-modal interaction is largely confined to decision-level combination unless interaction terms are introduced. Modality-specific regularization can reduce, but does not remove, overfitting.",
+      "evidence": [
+        {
+          "label": "Alignment and interactions",
+          "value": "Lower alignment requirement; interaction is mainly at decision level."
+        },
+        {
+          "label": "Missingness and risk",
+          "value": "Relatively robust to missing modalities; moderate overfitting risk."
+        },
+        {
+          "label": "Computational burden",
+          "value": "Moderate, involving several modality-specific models."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Late fusion column."
+    },
+    {
+      "id": "KF14",
+      "claim": "Intermediate or hybrid fusion is a conditional choice for learning cross-modal representations.",
+      "context": "Table 2 places fusion within learned representation layers. Such architectures can learn complex cross-modal interactions but require alignable representations, adequate samples and a prespecified need for that interaction capacity. Missing-modality robustness depends on design, including missing-tolerant training or modality dropout. Additional interaction parameters can increase overfitting and computation. The review does not identify a universally best fusion architecture.",
+      "evidence": [
+        {
+          "label": "Alignment and interactions",
+          "value": "Moderate-to-high alignment requirement; high potential interaction capacity."
+        },
+        {
+          "label": "Missingness and risk",
+          "value": "Design-dependent robustness and often high/design-dependent overfitting risk."
+        },
+        {
+          "label": "Computational burden",
+          "value": "Moderate to high."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Intermediate / hybrid fusion column and note."
+    },
+    {
+      "id": "KF15",
+      "claim": "Demonstrate added value against clinical and simpler models using comparable validation.",
+      "context": "The proposed sequence starts with a clinical baseline, adds modalities individually, tests a simple multimodal model and considers higher-capacity AI only for a clear gain. Clinical, unimodal and simple multimodal comparators should share the same partitions. Assessment includes discrimination, calibration, uncertainty, subgroup stability and decision utility. SHAP, LIME and integrated gradients identify model influences; stable features, independent replication and robustness to confounding are needed for biological interpretation. External testing should span populations, sites, assays and clinical settings and examine missing-modality tolerance.",
+      "evidence": [
+        {
+          "label": "Comparators",
+          "value": "Clinical baseline → individual modalities → simple multimodal model → justified higher-capacity AI."
+        },
+        {
+          "label": "Evidence of value",
+          "value": "External reproducibility and clinically relevant utility complement discrimination."
+        },
+        {
+          "label": "Interpretability",
+          "value": "Feature importance is distinct from mechanistic evidence."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 20–21, sections 5.2–5.3; pp. 25–27, sections 6.4 and 7."
+    },
+    {
+      "id": "KF16",
+      "claim": "Distinguish mechanistic/statistical integration from explicit machine-learning applications.",
+      "context": "Section 5.4 and Supplementary Table S1 separate six illustrative study settings. Nemet et al. integrate cohorts and platelet/receptor experiments; Wang et al. combine microbial pathway measurements with animal perturbation; Buffa et al. link gene-cluster discovery and biochemical validation; Ling et al. integrate longitudinal multi-omics through statistical models. Explicit machine-learning roles include protein-language-model functional prioritization in Li et al. and cross-dataset atherosclerosis classification in Shi et al. The supplement uses study-specific outputs rather than implying one uniform clinical fusion system.",
+      "evidence": [
+        {
+          "label": "Integration without a stand-alone ML fusion model",
+          "value": "Mechanistic, biochemical, gene-cluster and statistical multi-omics examples."
+        },
+        {
+          "label": "Explicit AI roles",
+          "value": "Candidate function prioritization and cross-dataset classification."
+        },
+        {
+          "label": "Source matching",
+          "value": "Supplement study names/years identify the examples; its reference numbers differ from the accepted manuscript numbering."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 19 and 21, sections 5.1 and 5.4; Supplementary Table S1, single-page publisher supplement at https://links.lww.com/CARES/A30."
+    },
+    {
+      "id": "KF17",
+      "claim": "Connect microbial and molecular signals to organ imaging and clinically defined endotypes.",
+      "context": "The review presents imaging as a downstream phenotype layer complementary to upstream microbial and metabolomic information. Echocardiography, CT, MRI and vascular imaging can characterize organ structure, plaque features or ventricular remodeling. A near-term application is reproducible biological subgrouping rather than case-control classification alone. Risk-model claims should demonstrate added value beyond established predictors, retain calibration in the target population and account for cardiometabolic–renal context. TMAO illustrates why one metabolite can be prognostically informative yet insufficient as a stand-alone precision marker.",
+      "evidence": [
+        {
+          "label": "Endotyping use",
+          "value": "Relate microbial–metabolic patterns to well-defined plaque or cardiac phenotypes."
+        },
+        {
+          "label": "Prediction use",
+          "value": "Test incremental value over established clinical information in independent and prospective settings."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 22–24, section 6.2."
+    },
+    {
+      "id": "KF18",
+      "claim": "Place microbiome-directed interventions on an evidence-maturity continuum.",
+      "context": "Dietary modification is presented as the most feasible current approach, with stronger support for biological modulation than cardiovascular-event reduction. Probiotics, prebiotics and FMT remain exploratory for cardiovascular care; the cited hypertension FMT signal weakened after treatment stopped. Microbial enzyme or metabolic-pathway targeting is mechanistically attractive but predominantly preclinical. Diet and drugs can reshape microbial signatures, while microbes can alter drug exposure, illustrated by Eggerthella lenta and digoxin. Baseline microbiome profiles may inform future response stratification, but prospective target-engagement, safety and clinical-benefit evidence is still needed.",
+      "evidence": [
+        {
+          "label": "Diet",
+          "value": "Clinically feasible biological modulation; event-reduction evidence is less established."
+        },
+        {
+          "label": "Ecosystem interventions",
+          "value": "FMT/probiotic/prebiotic strategies remain exploratory for durable cardiovascular benefit."
+        },
+        {
+          "label": "Molecular targeting",
+          "value": "Predominantly preclinical; human target engagement, safety and efficacy require testing."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 24–25, section 6.3; pp. 12 and 17, sections 3.1 and 4.3."
+    },
+    {
+      "id": "KF19",
+      "claim": "Translate a model through external validation, prospective workflow testing and monitoring.",
+      "context": "Section 6.4 proposes a staged route from model assessment to independent external testing, prospective evaluation and continued real-world monitoring. Clinical use requires prespecified decisions, calibration, dataset-shift and subgroup checks, and an explicit fallback when missing, temporally invalid or insufficient evidence warrants withholding a prediction. The text names SPIRIT-AI and CONSORT-AI for AI trials and TRIPOD+AI for prediction-model reporting. The future agenda prioritizes reproduced signatures and meaningful incremental value before intervention or decision-support studies.",
+      "evidence": [
+        {
+          "label": "Validation sequence",
+          "value": "Independent external validation → prospective clinical evaluation → real-world monitoring."
+        },
+        {
+          "label": "Clinical fallback",
+          "value": "Specify withholding conditions and clinician review, additional testing or usual-care pathways."
+        },
+        {
+          "label": "Reporting",
+          "value": "Document partitioning, tuning, overfitting safeguards, human–AI interaction and label quality."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 25–28, sections 6.4 and 7; Figure 4 legend, p. 64."
+    },
+    {
+      "id": "KF20",
+      "claim": "Read Figure 4 as a proposed assessment–decision–intervention–feedback cycle.",
+      "context": "The figure groups medical imaging, microbiome, metabolome and clinical information under multimodal assessment; links these to risk stratification and decision support; depicts possible dietary, probiotic, targeted-drug and anti-inflammatory interventions; and closes the loop with metabolite, plaque, inflammatory and cardiac-function monitoring. These are conceptual roles in a translational framework. The accompanying text makes validation and prospective clinical assessment prerequisites, rather than reporting that the illustrated platform, personalized dosing or intervention selection has been implemented or proven effective.",
+      "evidence": [
+        {
+          "label": "Framework components",
+          "value": "Assessment, stratification/decision support, intervention and monitoring/feedback."
+        },
+        {
+          "label": "Evidence status",
+          "value": "Conceptual translational pathway, to be tested through the validation sequence described in the text."
+        }
+      ],
+      "source_locator": "Accepted manuscript, PDF pp. 25–26, section 6.4; Figure 4 and legend, pp. 64 and 70."
+    }
+  ],
+  "what_this_adds": [
+    "An organ- and phenotype-aware account of shared microbial signals across gut–vascular and gut–heart disease.",
+    "Two separate appraisal axes: design-specific causal confidence and clinically oriented biomarker maturity.",
+    "A question-first comparison of data modalities and fusion strategies, including missingness, alignment and overfitting trade-offs.",
+    "A distinction between multimodal mechanistic/statistical integration and explicit AI applications, illustrated with named prior studies.",
+    "A staged research-to-care pathway built around incremental value, external validity, prospective decisions, intervention readiness and monitoring."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Background and discussion of microbial–host processes across vascular and cardiac phenotypes, with design-specific attribution.",
+      "Study-design arguments for complementary modalities, conditional fusion choices and comparable clinical/unimodal benchmarks.",
+      "Separate appraisal of mechanistic confidence, biomarker maturity and prospective clinical utility.",
+      "Research planning for phenotype-specific endotypes, intervention candidates, missing-modality tolerance and evidence-aware clinical fallback."
+    ],
+    "does_not_establish": [
+      "A new pooled patient cohort, model performance estimate or clinical intervention result produced by the review.",
+      "A universal causal microbiome signature or a stand-alone metabolite valid across all cardiovascular settings.",
+      "That mechanistic hypotheses, feature importance or retrospective predictive gains demonstrate treatment benefit.",
+      "That the personalized decision-support and intervention cycle shown conceptually in Figure 4 is an implemented, clinically validated platform."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What framework does this review offer for microbiome-informed cardiovascular research?",
+      "answer": "It organizes the gut–cardiovascular axis into vascular and cardiac branches, connects microbial functions and host responses to specific phenotypes, and separates causal confidence from biomarker maturity. It then links task-specific multimodal data selection, fusion and validation to a staged path toward precision care. The practical research target is a reproducible phenotype-specific microbial–host profile with a defined use, supported by evidence appropriate to that use.",
+      "evidence_refs": [
+        "KF1",
+        "KF7",
+        "KF8",
+        "KF9",
+        "KF10",
+        "KF19"
+      ]
+    },
+    {
+      "question": "Why do microbial function and strain-level context matter more than a taxon list alone?",
+      "answer": "Members of the same genus or species can differ in metabolic capability and host effects. The review contrasts community profiling with shotgun functional potential and metabolomic or experimental evidence of activity. Oscillibacter–cholesterol work illustrates how complementary measurements and isolate experiments can resolve a candidate function. Strain variation, bacterial preparation, non-bacterial organisms, sampling niche and changes over time further explain why abundance alone may not transfer across cardiovascular settings.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How should TMAO, PAGln, SCFAs, bile acids and barrier signals be interpreted?",
+      "answer": "TMAO and PAGln are discussed mainly through thrombo-inflammatory evidence; SCFAs, bile acids and tryptophan-related metabolites connect to blood pressure, metabolism, immunity and cardiorenal processes. LPS and barrier dysfunction provide additional host-response routes. Diet, renal clearance, host metabolism, drugs and disease state modify the measured signals. Their mechanistic or prognostic meaning must therefore be assessed in context, with the evidence level distinguished from a claim that changing a concentration improves human outcomes.",
+      "evidence_refs": [
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "How do the gut–vascular and gut–heart evidence patterns differ?",
+      "answer": "Atherosclerosis/CAD has relatively developed human microbial-functional and outcome evidence with selected mechanistic support. Hypertension includes short-term human intervention signals, while PAH, calcification and aortic disease have more limited or inconsistent evidence. Heart-failure/HFpEF studies connect intestinal dysfunction, metabolic signatures and prognosis; AF combines mainly observational human signals with preclinical mechanisms. Table 1 maps these patterns. The same upstream pathway should not be assigned the same clinical meaning in every organ or disease stage.",
+      "evidence_refs": [
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    },
+    {
+      "question": "What can the five-stage causal-confidence ladder establish?",
+      "answer": "The stages distinguish cross-sectional association; replicated or longitudinal association; genetically proxied or other quasi-causal support; experimental perturbation with mechanistic validation; and human intervention. Each design answers a different inferential question. Temporal order and mediation alone do not prove mechanism; microbiome MR depends on valid instruments; model-system perturbation need not transfer to people. Confidence is strengthened by independent approaches converging on the same explanation.",
+      "evidence_refs": [
+        "KF8"
+      ]
+    },
+    {
+      "question": "How is biomarker maturity different from causal evidence?",
+      "answer": "The review grades a marker against analytical validity, independent reproducibility, prospective validation, external transportability and incremental clinical utility. Level I meets these requirements; Level II has independent support but does not yet meet all requirements; Level III remains retrospective or single-cohort; Level IV is exploratory. This is separate from whether the marker is causally involved. A noncausal marker may predict usefully, while a causal mechanism may offer little extra risk information.",
+      "evidence_refs": [
+        "KF9"
+      ]
+    },
+    {
+      "question": "When is multimodal integration useful, and when is AI justified?",
+      "answer": "Integration is useful when complementary microbial, molecular, genomic, imaging or longitudinal measurements answer one defined question: mechanism prioritization, endotyping, biomarker replication, risk prediction or treatment response. Conventional statistical and mechanistic integration are legitimate options. AI is justified when supported data and sample size allow it to solve complex relationships beyond simpler methods. Supplementary Table S1 distinguishes mechanistic/statistical combinations from explicit protein-language-model prioritization and machine-learning classification.",
+      "evidence_refs": [
+        "KF10",
+        "KF16"
+      ]
+    },
+    {
+      "question": "How should early, late and intermediate or hybrid fusion be selected?",
+      "answer": "Early fusion combines features and suits aligned, largely complete data, but high dimension and missing modalities can be problematic. Late fusion combines separate predictions and supports heterogeneous, modular or intermittently missing data, with more limited interaction modeling. Intermediate/hybrid fusion learns shared representations when sample size and a prespecified cross-modal problem justify the added complexity; missing-tolerant training must be designed explicitly. Table 2 compares alignment, interaction capacity, robustness, overfitting, computation and appropriate scenarios. No strategy is universally best.",
+      "evidence_refs": [
+        "KF12",
+        "KF13",
+        "KF14"
+      ]
+    },
+    {
+      "question": "Which design and validation checks make a multimodal cardiovascular model convincing?",
+      "answer": "Control clinical modifiers and technical variation, respect microbiome compositionality and missingness, and guard against leakage and subgroup imbalance. Compare clinical, unimodal and simple multimodal models on the same partitions before claiming benefit from higher-capacity AI. Report calibration, uncertainty, subgroup stability and decision utility alongside discrimination. Test transport across populations, sites, assays and clinical settings, including missing modalities. Feature-importance explanations can aid interpretation but do not establish biological mechanism.",
+      "evidence_refs": [
+        "KF11",
+        "KF15"
+      ]
+    },
+    {
+      "question": "What can microbiome-plus-imaging research contribute to cardiovascular endotyping?",
+      "answer": "Microbial and metabolomic information describes upstream biology, whereas echocardiography, CT, MRI and vascular imaging define downstream organ phenotypes. Linking them may help identify reproducible plaque or cardiac-remodeling subgroups. The review identifies endotyping as a useful near-term direction, while requiring independent replication and meaningful incremental value before a model supports clinical risk or treatment decisions. Figure 3 explains complementarity; Figure 4 places integration within a proposed clinical evaluation and feedback cycle.",
+      "evidence_refs": [
+        "KF10",
+        "KF17",
+        "KF20"
+      ]
+    },
+    {
+      "question": "How does the review compare diet, probiotics, FMT and microbial metabolic targets?",
+      "answer": "It treats them as interventions at different stages of evidence maturity. Diet is feasible and can modify biology; probiotics, prebiotics and FMT remain exploratory for cardiovascular benefit, and the cited hypertension FMT effect was short-lived. Microbial TMA-pathway or enzyme targeting is predominantly preclinical. Treatment and diet also alter microbial signatures, and microbes can change drug exposure. The research agenda is to establish reproducible response profiles, target engagement, safety and prospective clinical benefit.",
+      "evidence_refs": [
+        "KF18"
+      ]
+    },
+    {
+      "question": "What must happen before microbiome-informed AI can guide cardiovascular care?",
+      "answer": "The review calls for external validation against prespecified clinical baselines, then prospective testing within real workflows and continued monitoring if adoption is justified. Studies should assess patient-relevant decisions, utility, calibration, subgroup performance and changes in populations or measurement platforms. They should also specify when absent, outdated or insufficient evidence triggers withholding and clinician review or usual care. Figure 4 is a conceptual pathway for these functions, not an already validated clinical platform.",
+      "evidence_refs": [
+        "KF19",
+        "KF20"
+      ]
+    }
+  ],
+  "concepts": {
+    "vascular_phenotypes": [
+      "Atherosclerosis and coronary artery disease",
+      "Thrombosis",
+      "Hypertension",
+      "Pulmonary arterial hypertension",
+      "Vascular calcification and aortic disease"
+    ],
+    "cardiac_phenotypes": [
+      "Heart failure",
+      "Heart failure with preserved ejection fraction",
+      "Atrial fibrillation"
+    ],
+    "microbial_host_signals": [
+      "Trimethylamine N-oxide (TMAO)",
+      "Phenylacetylglutamine (PAGln)",
+      "Short-chain fatty acids (SCFAs)",
+      "Bile-acid signaling",
+      "Lipopolysaccharide and intestinal-barrier integrity",
+      "Indole-3-propionic acid (IPA)",
+      "Microbial functional and strain-level variation"
+    ],
+    "complementary_data": [
+      "16S rRNA profiling and shotgun metagenomics",
+      "Metabolomics",
+      "Host genomics, transcriptomics and proteomics",
+      "Cardiovascular imaging",
+      "Longitudinal clinical and digital measurements",
+      "Experimental perturbation"
+    ],
+    "analysis_and_validation": [
+      "Early, late and intermediate/hybrid fusion",
+      "Mendelian randomization and evidence triangulation",
+      "Compositionality and missing modalities",
+      "External validation and calibration",
+      "Subgroup stability and clinical decision utility"
+    ],
+    "translation": [
+      "Causal confidence",
+      "Biomarker maturity",
+      "Cardiovascular endotyping",
+      "Prospective clinical evaluation",
+      "Microbiome-directed intervention readiness"
+    ]
+  },
+  "limitations": [
+    "The review uses a question-guided narrative selection of literature available through August 2026, without a systematic-search/PRISMA selection process or pooled effect estimation.",
+    "The available evidence varies by phenotype and combines human association, genetic analyses, model-system mechanisms and limited human interventions; these cannot be assigned one common causal or clinical-validation status.",
+    "Model complexity, internal discrimination and interpretability do not substitute for independent transportability, calibration, incremental clinical value and prospective outcome evaluation.",
+    "Locators use the publisher-hosted ACCEPTED 70-page manuscript. The supplementary table’s reference numbering differs from this manuscript; its six examples are identified here by study author/year rather than transferred reference numbers."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Explicitly cited in review §6.2 (accepted PDF p. 23; reference 241): AIHFLevel illustrates interpretable survival modeling and external validation using routine clinical variables in advanced heart failure with renal dysfunction. It is a clinical-model comparator context, not a microbiome-fusion validation study."
+    },
+    {
+      "doi": "10.1016/j.medd.2026.100004",
+      "relationship": "Explicitly cited in review §6.4 (accepted PDF p. 26; reference 255): evidence-aware withholding and fallback when multimodal inputs are missing, temporally invalid or insufficient."
+    },
+    {
+      "doi": "10.15212/bioi-2026-0017",
+      "relationship": "Explicitly cited in review §6.2 (accepted PDF p. 22; reference 240): cardiometabolic–renal context in incident cardiovascular-event assessment; the review keeps incremental value beyond established scores unresolved."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+    "accepted_manuscript_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+    "supplement_url": "https://links.lww.com/CARES/A30",
+    "source_version": "Cardiac Research, Publish Ahead of Print, 4 November 2026. Full-text source: 70-page ACCEPTED manuscript; Supplementary Table S1: one-page publisher PDF. Publisher identity/date checked against the current official DOI search result on 17 November 2026; the accepted manuscript remains the version used for all page locators.",
+    "review_basis": "Complete scientific body (PDF pp. 5–29), figure legends (p. 64), both main tables (pp. 65–66), all four actual figure images (pp. 67–70), and the actual single-page Supplementary Table S1 were read. Reference identities used for related-paper links were checked against the accepted manuscript bibliography. Main PDF SHA-256: 9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511.",
+    "source_attribution": "New author-site summaries paraphrase the review’s arguments and distinguish prior-study results, conceptual framework components and possible research/citation uses. Source figures were inspected for accuracy rather than redistributed by this evidence layer."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How should a literature review organize gut–vascular versus gut–heart evidence?",
+        "supported_scope": "Use the review’s phenotype-specific synthesis and Table 1 to frame biological background, keeping individual primary-study effects attributed to their original sources.",
+        "evidence_refs": [
+          "KF1",
+          "KF5",
+          "KF6",
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How can causal confidence and biomarker readiness be assessed separately?",
+        "supported_scope": "Cite the review’s five-stage causal-confidence ladder and separate four-level biomarker-maturity framework, with each level tied to its stated criteria.",
+        "evidence_refs": [
+          "KF8",
+          "KF9"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which fusion strategy fits the planned cardiovascular data and missingness pattern?",
+        "supported_scope": "Cite Table 2 for conditional trade-offs in alignment, interaction capacity, completeness, overfitting and computation; it does not select a universally best architecture.",
+        "evidence_refs": [
+          "KF12",
+          "KF13",
+          "KF14"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What should a microbiome-informed prediction study demonstrate beyond internal accuracy?",
+        "supported_scope": "Use the review for comparator, calibration, uncertainty, subgroup, transportability and prospective-utility requirements in study design or Discussion.",
+        "evidence_refs": [
+          "KF11",
+          "KF15",
+          "KF19"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "How do existing multimodal studies differ from clinically useful AI systems?",
+        "supported_scope": "Cite the review’s integration/AI distinction and its staged translation framework; consult the cited primary study for an individual algorithm, sample or effect estimate.",
+        "evidence_refs": [
+          "KF10",
+          "KF16",
+          "KF17",
+          "KF20"
+        ]
+      },
+      {
+        "id": "CU6",
+        "query": "How mature are current microbiome-directed cardiovascular intervention concepts?",
+        "supported_scope": "Use the evidence-graded comparison to frame research priorities for diet, ecosystem strategies and molecular targets, with human benefits assessed in their actual primary-trial context.",
+        "evidence_refs": [
+          "KF18",
+          "KF19"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "An original patient-level effect estimate or a model-performance result obtained by this review.",
+      "A clinical recommendation to use FMT, probiotics, metabolite suppression or an AI-selected treatment for cardiovascular disease.",
+      "An implemented Figure 4 platform, an optimal fusion architecture for every dataset, or causal interpretation of model feature importance."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-cr-function",
+        "component": "Function-oriented microbial study",
+        "context": "Taxonomic changes can conceal strain, preparation and sampling differences.",
+        "finding": "Join microbial functional potential with metabolomic or experimental activity measurements.",
+        "evidence_level": "Narrative synthesis of cited studies",
+        "scope": "Use for measurement rationale; specific mechanistic findings remain attributable to primary studies.",
+        "source_locator": "Accepted manuscript, PDF pp. 7–8, section 2.1; pp. 18–19, section 5.1.; PDF pp. 8–9, section 2.2; Figure 2 and legend, pp. 64 and 68.",
+        "evidence_refs": [
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-cr-vascular",
+        "component": "Vascular phenotypes",
+        "context": "CAD, hypertension, PAH, calcification and aortic disease have unequal evidence maturity.",
+        "finding": "Specify the vascular phenotype and separate associative, mechanistic and interventional findings.",
+        "evidence_level": "Review synthesis; Table 1",
+        "scope": "Do not transfer one metabolite or endpoint relationship across all vascular diseases.",
+        "source_locator": "Accepted manuscript, PDF pp. 11–13, section 3.1; Table 1, p. 65.; PDF pp. 14–15, section 3.3; Table 1, p. 65.",
+        "evidence_refs": [
+          "KF5",
+          "KF7"
+        ]
+      },
+      {
+        "id": "evidence-cr-cardiac",
+        "component": "Cardiac phenotypes",
+        "context": "HF/HFpEF and AF involve overlapping metabolic and inflammatory processes.",
+        "finding": "Anchor microbial–host profiles to the particular cardiac phenotype and temporal question.",
+        "evidence_level": "Review synthesis; Table 1",
+        "scope": "Human prognosis, experimental mechanism and treatment benefit answer different questions.",
+        "source_locator": "Accepted manuscript, PDF pp. 13–14, section 3.2; Table 1, p. 65.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-cr-appraisal",
+        "component": "Two appraisal axes",
+        "context": "Causal pathways and clinically useful markers can mature independently.",
+        "finding": "Appraise causal design separately from analytical validity, replication and clinical utility.",
+        "evidence_level": "Review frameworks",
+        "scope": "The two grading schemes are proposed interpretive frameworks rather than pooled effect estimates.",
+        "source_locator": "Accepted manuscript, PDF pp. 16–18, sections 4.1–4.4.; PDF p. 22, section 6.1; pp. 18 and 22–24, sections 4.4 and 6.2.",
+        "evidence_refs": [
+          "KF8",
+          "KF9"
+        ]
+      },
+      {
+        "id": "evidence-cr-early-fusion",
+        "component": "Early fusion",
+        "context": "Aligned, harmonized and largely complete measurements; adequate sample support.",
+        "finding": "Combine input features when direct feature interactions address the task.",
+        "evidence_level": "Review comparison; Table 2",
+        "scope": "High dimension and unhandled missing modalities can undermine performance.",
+        "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Early fusion column.",
+        "evidence_refs": [
+          "KF12"
+        ]
+      },
+      {
+        "id": "evidence-cr-late-fusion",
+        "component": "Late fusion",
+        "context": "Heterogeneous or intermittently missing modalities and modular deployment.",
+        "finding": "Combine modality-specific predictions.",
+        "evidence_level": "Review comparison; Table 2",
+        "scope": "Cross-modal interactions remain mainly at decision level unless added explicitly.",
+        "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Late fusion column.",
+        "evidence_refs": [
+          "KF13"
+        ]
+      },
+      {
+        "id": "evidence-cr-hybrid-fusion",
+        "component": "Intermediate/hybrid fusion",
+        "context": "A justified need for cross-modal representation learning and sufficient samples.",
+        "finding": "Learn alignable shared representations with explicit missing-tolerant design.",
+        "evidence_level": "Review comparison; Table 2",
+        "scope": "Extra interaction capacity can increase overfitting and computation.",
+        "source_locator": "Accepted manuscript, PDF p. 20, section 5.2; Table 2, p. 66, Intermediate / hybrid fusion column and note.",
+        "evidence_refs": [
+          "KF14"
+        ]
+      },
+      {
+        "id": "evidence-cr-validation",
+        "component": "Evidence of added value",
+        "context": "Clinical, single-modality and simple multimodal alternatives are meaningful comparators.",
+        "finding": "Use shared partitions, multidimensional performance assessment and independent external tests.",
+        "evidence_level": "Review modeling guidance",
+        "scope": "Biological mechanism and prospective patient benefit require evidence beyond feature importance or internal accuracy.",
+        "source_locator": "Accepted manuscript, PDF pp. 20–21, sections 5.2–5.3; pp. 25–27, sections 6.4 and 7.; PDF pp. 25–28, sections 6.4 and 7; Figure 4 legend, p. 64.",
+        "evidence_refs": [
+          "KF15",
+          "KF19"
+        ]
+      },
+      {
+        "id": "evidence-cr-interventions",
+        "component": "Intervention readiness",
+        "context": "Diet, ecosystem interventions and microbial metabolic targeting occupy different evidence stages.",
+        "finding": "Prioritize reproduced targets, documented exposure and prospective benefit/safety evaluation.",
+        "evidence_level": "Evidence-graded translational synthesis",
+        "scope": "A promising experimental target or short-term physiological change is not routine cardiovascular treatment evidence.",
+        "source_locator": "Accepted manuscript, PDF pp. 24–25, section 6.3; pp. 12 and 17, sections 3.1 and 4.3.",
+        "evidence_refs": [
+          "KF18"
+        ]
+      }
+    ]
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Gut microbiome and cardiovascular phenotyping",
+      "Multimodal methods for precision cardiovascular medicine"
+    ],
+    "review_topics": [
+      "Microbial function across vascular and cardiac disease",
+      "Fusion strategy selection and clinical translation"
+    ],
+    "scientific_role": "Narrative review connecting microbial–host mechanisms and phenotype-specific evidence with separate causal/biomarker appraisal, multimodal study design and staged clinical evaluation.",
+    "evidence_position": "Source-based synthesis of cited human, genetic, experimental and computational studies; current support is stronger for biological discovery than demonstrated AI-guided cardiovascular care.",
+    "related_concepts": [
+      "Causal-confidence triangulation",
+      "Biomarker-maturity grading",
+      "Clinical and unimodal benchmarking"
+    ],
+    "citation_contexts": [
+      "Introduction or Discussion on phenotype-aware interpretation of microbial and host signals in cardiovascular disease.",
+      "Methods rationale for choosing complementary modalities and fusion strategies, then testing incremental, externally reproducible clinical value."
+    ]
+  }
+}

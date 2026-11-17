@@ -2362,7 +2362,10 @@ def render_publications_page(items, config, *, citation_metadata=None):
 
 
 def render_featured_cards(featured_entries, public_by_token, deep_contents):
+    from journal_branding import load_journal_branding, render_journal_mark
+
     author_roles = load_role_records(ROOT / 'data/homepage_author_roles.json', load_profile_config()['orcid'])
+    journal_branding = load_journal_branding()
     cards = []
     for entry in featured_entries:
         token = controller_token(entry)
@@ -2390,9 +2393,10 @@ def render_featured_cards(featured_entries, public_by_token, deep_contents):
         else:
             badge = ""
         cards.append(
-            f'<article class="card paper" data-geo-status="{status}"><div class="eyebrow">'
-            f'{html.escape(str(journal))} · {html.escape(str(year))}'
-            f' <span class="paper-kind">{html.escape(str(publication.get("type") or ""))}</span>{badge}</div>'
+            f'<article class="card paper" data-geo-status="{status}"><div class="eyebrow paper-journal-line">'
+            + render_journal_mark(str(journal), journal_branding)
+            + f'<span class="paper-journal-meta">{html.escape(str(journal))} · {html.escape(str(year))}'
+            f'{badge}</span></div>'
             + render_role_labels(doi, author_roles)
             +
             f'<h3><a href="{html.escape(page_url, quote=True)}">{html.escape(str(title))}</a></h3>'
