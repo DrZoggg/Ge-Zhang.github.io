@@ -44,3 +44,5 @@
 - [From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks](https://drgezhang.com/papers/doi-10-1002-ggn2-202500053.html) — DOI: 10.1002/ggn2.202500053
 - [A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine](https://drgezhang.com/papers/doi-10-1016-j-curpro-2025-100054.html) — DOI: 10.1016/j.curpro.2025.100054
 - [A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo](https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html) — DOI: 10.1007/s11426-026-3629-x
+- [Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html) — DOI: 10.1097/re9.0000000000000037
+- [What one patient can teach the next](https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html) — DOI: 10.1002/ctm2.70900

@@ -8,7 +8,7 @@
   const toggle = document.getElementById('featured-toggle');
   if (collection && toggle) {
     const cards = Array.from(collection.querySelectorAll('.paper'));
-    const firstCount = 12;
+    const firstCount = 14;
     if (cards.length > firstCount) {
       let expanded = true;
       function disclose(next, interacted = false) {

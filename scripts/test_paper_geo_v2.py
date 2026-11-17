@@ -242,6 +242,10 @@ def run_tests():
 
     deep_entries = load_deep_geo()
     featured_entries = load_featured()
+    cr_ctm_status = (
+        ("10.1097/re9.0000000000000037", "v2"),
+        ("10.1002/ctm2.70900", "v2"),
+    )
     expected_deep_dois = [doi for doi, _ in PRIORITY_STATUS]
     expected_featured_dois = expected_deep_dois.copy()
     # PRs #24 and #26 swapped Featured positions 12/29 and 11/23, respectively.
@@ -251,12 +255,16 @@ def run_tests():
     expected_featured_dois[10], expected_featured_dois[22] = (
         expected_featured_dois[22], expected_featured_dois[10]
     )
+    # This release preserves the original twelve and inserts CR/CTM at 13/14;
+    # the independent Deep GEO controller retains its old order and appends them.
+    expected_featured_dois[12:12] = [doi for doi, _ in cr_ctm_status]
+    expected_deep_dois.extend(doi for doi, _ in cr_ctm_status)
     assert [norm_doi(entry["doi"]) for entry in featured_entries] == expected_featured_dois
     assert [norm_doi(entry["doi"]) for entry in deep_entries] == expected_deep_dois
     v1_count = 0
     v2_items = []
     pending_count = 0
-    for entry, (expected_doi, expected_status) in zip(deep_entries, PRIORITY_STATUS):
+    for entry, (expected_doi, expected_status) in zip(deep_entries, PRIORITY_STATUS + cr_ctm_status):
         publication = master_by_token[controller_token(entry)]
         assert norm_doi(publication["doi"]) == expected_doi
         if expected_status == "pending":
@@ -286,7 +294,7 @@ def run_tests():
             official_abstract=official_abstracts.get(norm_doi(publication.get("doi"))),
         ) == (PAPERS_DIR / f"{publication['slug']}.md").read_text(encoding="utf-8")
 
-    assert (len(v2_items), v1_count, pending_count) == (29, 0, 0)
+    assert (len(v2_items), v1_count, pending_count) == (31, 0, 0)
     assert len(v2_items) >= 1
     aihf_items = [
         item for item in v2_items if norm_doi(item[0].get("doi")) == AIHFLEVEL_DOI
@@ -325,8 +333,10 @@ def run_tests():
     ]
     assert len(jci_items) == 1
     assert norm_doi(deep_entries[10].get("doi")) == OLINK_DCM_DOI
-    assert norm_doi(featured_entries[22].get("doi")) == OLINK_DCM_DOI
+    assert norm_doi(featured_entries[24].get("doi")) == OLINK_DCM_DOI
     expected_production_labels = {
+        "10.1097/re9.0000000000000037": ("Review Design & Evidence Synthesis", None),
+        "10.1002/ctm2.70900": ("Article Scope & Approach", None),
         "10.71321/fy14v342": ("Study Design & Analytical Framework", "External dataset evaluation"),
         "10.1126/science.aek9583": ("Article Scope & Approach", None),
         "10.1016/j.curpro.2025.100054": ("Article Scope & Approach", None),

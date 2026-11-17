@@ -15,7 +15,7 @@ from xml.etree import ElementTree
 
 from build_publications import update_homepage
 from citation_common import citation_skip_reason
-from research_guides import URL as GUIDE_URL
+from research_guides import URL as GUIDE_URL, urls as comparison_urls
 from scholarly_discovery import QUESTION_PATH
 from site_common import (controller_token, deep_content_path, index_master,
                          load_deep_geo, load_featured, load_profile_config,
@@ -141,6 +141,7 @@ class Visual3Tests(unittest.TestCase):
                 self.assertEqual(indexed[expected['paper_url']].get(key), value, f'index {key}: {token}')
         expected_urls |= {self.site, urljoin(self.site, 'publications.html'),
                           urljoin(self.site, QUESTION_PATH), GUIDE_URL}
+        expected_urls.update(comparison_urls())
         self.assertEqual(len(sitemap), len(dict(sitemap)), 'duplicate sitemap URL')
         self.assertEqual(set(dict(sitemap)), expected_urls, 'sitemap URL inventory differs from sources')
         for url, lastmod in sitemap:
@@ -229,8 +230,9 @@ class Visual3Tests(unittest.TestCase):
                 summary = (f"A publication in {original.get('journal') or 'Unknown source'} "
                            f"({original.get('year') or 'n.d.'}) titled “{original.get('title') or 'Untitled work'}”.")
             self.assertEqual([normalized(p.text()) for p in current.find('p')], [normalized(summary)], 'Selected summary')
-            kind = self.one(current, 'span', **{'class': 'paper-kind'})
-            self.assertEqual(kind.text(), original.get('type') or '')
+            # The owner removed standalone type labels from all Selected cards;
+            # formal publication types remain protected in assert_inventory.
+            self.assertEqual(current.find('span', **{'class': 'paper-kind'}), [])
             expected_links = [page_url]
             doi = norm_doi(original.get('doi'))
             if doi:

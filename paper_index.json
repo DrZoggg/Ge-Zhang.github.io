@@ -430,9 +430,9 @@
       "doi": "10.1097/re9.0000000000000037",
       "paper_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
-      "featured": false,
+      "deep_geo": true,
+      "paper_geo_status": "v2",
+      "featured": true,
       "doi_url": "https://doi.org/10.1097/re9.0000000000000037",
       "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.bib",
@@ -443,9 +443,30 @@
       "openalex_id": "https://openalex.org/W7225256893",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1097-re9-0000000000000037.csv",
+      "question_count": 12,
+      "concept_count": 31,
+      "discovery_layer": {
+        "field_entry": [
+          "Gut microbiome and cardiovascular phenotyping",
+          "Multimodal methods for precision cardiovascular medicine"
+        ],
+        "review_topics": [
+          "Microbial function across vascular and cardiac disease",
+          "Fusion strategy selection and clinical translation"
+        ],
+        "scientific_role": "Narrative review connecting microbial–host mechanisms and phenotype-specific evidence with separate causal/biomarker appraisal, multimodal study design and staged clinical evaluation.",
+        "evidence_position": "Source-based synthesis of cited human, genetic, experimental and computational studies; current support is stronger for biological discovery than demonstrated AI-guided cardiovascular care.",
+        "related_concepts": [
+          "Causal-confidence triangulation",
+          "Biomarker-maturity grading",
+          "Clinical and unimodal benchmarking"
+        ],
+        "citation_contexts": [
+          "Introduction or Discussion on phenotype-aware interpretation of microbial and host signals in cardiovascular disease.",
+          "Methods rationale for choosing complementary modalities and fusion strategies, then testing incremental, externally reproducible clinical value."
+        ]
+      }
     },
     {
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -757,9 +778,9 @@
       "doi": "10.1002/ctm2.70900",
       "paper_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
-      "featured": false,
+      "deep_geo": true,
+      "paper_geo_status": "v2",
+      "featured": true,
       "doi_url": "https://doi.org/10.1002/ctm2.70900",
       "publisher_url": null,
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1002-ctm2-70900.bib",
@@ -770,9 +791,30 @@
       "openalex_id": null,
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-ctm2-70900.csv",
+      "question_count": 11,
+      "concept_count": 20,
+      "discovery_layer": {
+        "field_entry": [
+          "Individualised treatment research",
+          "Translational evidence assessment"
+        ],
+        "review_topics": [
+          "Learning across patients after individualised therapies",
+          "Purpose-specific safety, mechanistic and benefit comparisons"
+        ],
+        "scientific_role": "Methodological Invited Letter connecting outcome reporting to question-specific case comparison, proposed AI support and justified next evidential actions.",
+        "evidence_position": "Published conceptual framework using prior studies and Figure 1; no new clinical cohort, treatment-effect estimate or validated AI system.",
+        "related_concepts": [
+          "Exposure-based safety relevance",
+          "Target engagement versus functional restoration",
+          "Prognosis versus treatment effect"
+        ],
+        "citation_contexts": [
+          "Introduction or Discussion on how individualised-treatment outcomes can support learning across patients and which comparisons are relevant.",
+          "Research-design rationale separating safety monitoring, mechanistic tests and treatment-benefit evaluation in an AI-assisted case-comparison workflow."
+        ]
+      }
     },
     {
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",

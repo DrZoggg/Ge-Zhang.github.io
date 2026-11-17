@@ -214,6 +214,35 @@
           "locator": "Authors and affiliations only; contribution note not available"
         }
       ]
+    },
+    "10.1002/ctm2.70900": {
+      "status": "verified",
+      "roles": [
+        "First author",
+        "Corresponding author"
+      ],
+      "verified_on": "2026-11-17",
+      "verification_basis": "All three publisher PDF pages visually reviewed. Ge Zhang is first in the p. 2 byline and is explicitly named under Correspondence, alongside Teng Li; no role inferred solely from author order.",
+      "sources": [
+        {
+          "url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
+          "locator": "Publisher version of record, p. 2, right column: author byline beginning Ge Zhang and Correspondence naming Ge Zhang and Teng Li."
+        }
+      ]
+    },
+    "10.1097/re9.0000000000000037": {
+      "status": "verified",
+      "roles": [
+        "Corresponding author"
+      ],
+      "verified_on": "2026-11-17",
+      "verification_basis": "Publisher-hosted accepted manuscript p. 2 explicitly identifies Ge Zhang and Chengliang Yin as corresponding authors; byline # marker on p. 1.",
+      "sources": [
+        {
+          "url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+          "locator": "Accepted manuscript PDF pp. 1–2, # byline marker and Corresponding author statement."
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,515 @@
+{
+  "version": 2,
+  "doi": "10.1002/ctm2.70900",
+  "display_title": "What one patient can teach the next",
+  "summary": "This Invited Letter presents a question-specific framework for learning across individualised treatment cases. It connects timely outcome reporting with AI-assisted comparison of clinical course, treatment exposure, biological context and prior evidence, distinguishing changes to safety monitoring, tests of mechanistic explanations and evaluation of treatment benefit.",
+  "research_question": "How can an outcome from one individualised treatment inform the next patient, and which evidence is needed to change monitoring, test a mechanism or assess treatment benefit?",
+  "author_summary": "The article moves from making individualised-treatment outcomes visible to deciding what another clinical team can learn from them. A previously published KCNT1-related epilepsy report illustrates how an earlier complication can inform monitoring before its mechanism is fully understood. The authors then distinguish three purposes for comparing cases: identifying a safety signal, testing a biological explanation and evaluating benefit. Similar exposure can matter for safety even across diagnoses, whereas benefit assessment requires the pretreatment disease course, meaningful outcomes and appropriate comparison. Prognostic accuracy and molecular subgroup differences answer other questions. Figure 1 organises clinical trajectories, treatment details, biological context and prior evidence around a proposed AI-assisted comparison process that explains relevant similarities, differences and uncertainty. Its outputs are adapted monitoring, informative experiments and stronger comparative evidence for treatment decisions. The closing argument couples prompt reporting of major outcomes with consent and privacy safeguards for detailed patient-level data.",
+  "evidence_page_notice": "Author explanation of the complete three-page published Invited Letter, including Figure 1 and its eight references. Key Arguments distinguish the article's proposed framework from the prior studies used to illustrate it.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "narrative_genre": "correspondence",
+    "study_design": "Methodological Invited Letter developing an argument through published examples and a conceptual Figure 1. The discussion proceeds from outcome reporting to safety, benefit, biological differences, AI-assisted comparison and practical case sharing.",
+    "evidence_type": "Conceptual framework and author reasoning, supported by eight references to reporting, individualised therapies, prognosis, treatment-effect inference, molecular heterogeneity, computational biology and collaboration.",
+    "evidence_domains": [
+      "Individualised-treatment outcome reporting and cross-case learning",
+      "Safety signals and exposure-based comparison",
+      "Prognostic prediction and comparative assessment of treatment benefit",
+      "Biological heterogeneity, target engagement and functional restoration",
+      "Question-specific AI-assisted case comparison",
+      "Consent, privacy and collaborative case sharing"
+    ],
+    "diseases_covered": [
+      "KCNT1-related severe epilepsy (cited individualised antisense-treatment example)",
+      "Advanced heart failure with renal dysfunction (cited prognostic-model example)",
+      "Atherosclerosis (cited molecular-heterogeneity example)",
+      "Genetic diseases and individualised therapies (methodological context)"
+    ],
+    "translation_scope": "Use earlier observations to choose the next evidential action: monitoring, further investigation or treatment-benefit evaluation. The article proposes an AI-assisted research workflow; it reports no new patient cohort, treatment-effect estimate or validated AI system.",
+    "scale_metrics": [
+      {
+        "label": "Published genre",
+        "value": "Invited Letter"
+      },
+      {
+        "label": "Article structure",
+        "value": "3 pages, 1 conceptual figure and 8 references"
+      },
+      {
+        "label": "Comparison inputs in Figure 1",
+        "value": "Clinical course; treatment details; biological context; prior cases and evidence"
+      },
+      {
+        "label": "Distinct evidential actions",
+        "value": "Adapt safety monitoring; test mechanistic explanations; evaluate treatment benefit"
+      }
+    ],
+    "counting_note": "The two children in the KCNT1 example belong to the report cited as reference 2. They are not a new study population recruited for this Letter; no synthetic patient total is assigned to its framework."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Move from timely outcome reporting to a specific question about what the next team can learn.",
+      "context": "The opening connects this article to the authors' Science Letter on making major single-patient outcomes public and linking them to preceding research. Visibility supplies the starting material; the present article asks which observation can justify which next action.",
+      "evidence": [
+        {
+          "label": "Starting point",
+          "value": "Publicly visible major outcomes linked to preceding research"
+        },
+        {
+          "label": "Added question",
+          "value": "What should the next clinical team change?"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 1, left column, opening paragraph; p. 2, reference 1; Figure 1 caption."
+    },
+    {
+      "id": "KF2",
+      "claim": "An earlier complication can inform safety monitoring while its cause remains uncertain.",
+      "context": "The Letter summarises a separate report of experimental intrathecal antisense treatment in two children with severe KCNT1-related epilepsy. It describes fewer seizures alongside ventricular enlargement or hydrocephalus, and relates the first child's complication to closer monitoring of the second, a pause and resumption at lower doses after protocol revision. The example motivates safety learning; the authors do not infer a shared risk for all similar drugs.",
+      "evidence": [
+        {
+          "label": "Evidence source",
+          "value": "Previously published two-child report, cited as reference 2"
+        },
+        {
+          "label": "Action illustrated",
+          "value": "Closer monitoring and subsequent protocol adjustment"
+        },
+        {
+          "label": "Interpretive scope",
+          "value": "Clinical experience informing vigilance before complete causal explanation"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 1, paragraph beginning \"A recent report\", continuing in the right column; p. 3, reference 2."
+    },
+    {
+      "id": "KF3",
+      "claim": "Choose case similarity according to the safety or benefit question being asked.",
+      "context": "For safety, a shared drug, dose or route can make an earlier case relevant across different diagnoses. For apparent benefit, the comparison instead starts with the course of illness before treatment and outcomes meaningful to the patient. Figure 1 adds event timing, severity and patient characteristics to the safety branch, and comparative cases and alternative explanations to the benefit branch.",
+      "evidence": [
+        {
+          "label": "Safety comparison",
+          "value": "Exposure, delivery, event timing and severity"
+        },
+        {
+          "label": "Benefit comparison",
+          "value": "Pretreatment disease course, meaningful outcomes and appropriate comparative evidence"
+        }
+      ],
+      "source_locator": "Publisher version of record, pp. 1-2, paragraph beginning \"That distinction matters\"; Figure 1, safety-signal and treatment-benefit branches."
+    },
+    {
+      "id": "KF4",
+      "claim": "Prognostic prediction answers a different question from whether a particular treatment works.",
+      "context": "The authors use their previously published advanced-heart-failure survival model to illustrate this distinction. Estimating risk can describe prognosis; judging benefit asks whether the patient would have improved without treatment and needs a different evidential basis. The cited causal-machine-learning work provides context for treatment-effect estimation, rather than an effect estimate generated in this Letter.",
+      "evidence": [
+        {
+          "label": "Illustrative prior study",
+          "value": "Survival assessment in advanced heart failure with renal dysfunction, reference 4"
+        },
+        {
+          "label": "Target distinction",
+          "value": "Predicted prognosis versus treatment effect"
+        },
+        {
+          "label": "Comparison question",
+          "value": "Would improvement have occurred without this treatment?"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 2, left column, continuation of \"That distinction matters\"; p. 3, references 3-5."
+    },
+    {
+      "id": "KF5",
+      "claim": "Turn biological differences into competing explanations that require different measurements.",
+      "context": "A diagnosis can contain distinct underlying biological states. The Letter cites single-cell and bulk-transcriptomic atherosclerosis research on smooth-muscle-cell states as an example of molecular heterogeneity that generates further questions. It distinguishes failure to affect an intended target from target engagement without functional restoration; these possibilities motivate different experiments rather than establishing different treatment responses.",
+      "evidence": [
+        {
+          "label": "Prior biological example",
+          "value": "Smooth-muscle-cell-associated atherosclerosis molecular subtypes, reference 6"
+        },
+        {
+          "label": "Explanation to distinguish",
+          "value": "No target engagement versus engagement without restored function"
+        },
+        {
+          "label": "Research action",
+          "value": "Select measurements and experiments that discriminate explanations"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"Biological differences\"; p. 3, reference 6; Figure 1, mechanistic-hypothesis branch."
+    },
+    {
+      "id": "KF6",
+      "claim": "Figure 1 groups the information needed for comparison into four complementary input domains.",
+      "context": "The figure begins with an individualised treatment and an observed improvement or adverse event. Clinical course contains symptoms, signs, longitudinal trajectory and comorbidities. Treatment details contain drug, dose, route, timeline and concomitant therapy. Biological context contains genomics or multi-omics, cell state, pathways and target engagement. Prior cases and evidence include published reports, registries, databases and real-world experience. Together these feed the central proposed comparison process.",
+      "evidence": [
+        {
+          "label": "Patient context",
+          "value": "Clinical course and biological context"
+        },
+        {
+          "label": "Exposure context",
+          "value": "Treatment details and timing"
+        },
+        {
+          "label": "External context",
+          "value": "Prior cases and evidence"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 1, Figure 1, left-hand individualised-treatment panel and four input panels; Figure 1 caption."
+    },
+    {
+      "id": "KF7",
+      "claim": "Use AI-assisted comparison to retrieve question-relevant cases and explain why they matter.",
+      "context": "The proposed role is more specific than assigning an overall similarity label. The article suggests retrieval for a defined safety, benefit or mechanistic question, making pertinent similarities, differences and uncertainties visible. Exposure and event timing matter for a safety signal; baseline course and reliable outcome measures matter for benefit. Computational models may help select informative experiments when molecular findings support competing explanations. These are proposed uses of AI within clinical and research judgment.",
+      "evidence": [
+        {
+          "label": "Central functions in Figure 1",
+          "value": "Find relevant cases; assess similarities and differences; highlight uncertainty; suggest next steps"
+        },
+        {
+          "label": "Mechanistic role",
+          "value": "Help choose an experiment to distinguish explanations"
+        },
+        {
+          "label": "Development status",
+          "value": "Conceptual proposal, with no AI training or validation study reported"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"AI could help\"; p. 1, Figure 1 central comparison panel; p. 3, reference 7."
+    },
+    {
+      "id": "KF8",
+      "claim": "Keep the three outputs of Figure 1 distinct while connecting them in a learning cycle.",
+      "context": "The safety branch leads to adapted monitoring for early warning and risk mitigation. The mechanistic branch leads to measurements or experiments that test an explanation. The benefit branch asks whether treatment changed the outcome and calls for stronger comparative evidence to support decisions. The lower loop connects experience from one patient with the next through refined monitoring, generated hypotheses and future studies. The caption emphasises that observations useful for monitoring or investigation do not necessarily establish efficacy or causality.",
+      "evidence": [
+        {
+          "label": "Safety output",
+          "value": "Adapt monitoring"
+        },
+        {
+          "label": "Mechanistic output",
+          "value": "Test the explanation"
+        },
+        {
+          "label": "Benefit output",
+          "value": "Accumulate stronger comparative evidence for benefit"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 1, Figure 1, three right-hand action branches, lower learning-across-patients loop and caption."
+    },
+    {
+      "id": "KF9",
+      "claim": "Report major outcomes promptly and make shared cases useful without bypassing consent or privacy.",
+      "context": "The closing paragraph asks case accounts to separate what was observed, what remains uncertain and what another team could reasonably change. It cites existing collaboration on individualised therapies as a setting for collecting experience. Major outcomes should be reported without waiting for a complete mechanism, while detailed patient-level sharing remains governed by consent and privacy safeguards. Better monitoring may be the first practical benefit of another patient's experience.",
+      "evidence": [
+        {
+          "label": "Useful case account",
+          "value": "Observed outcome; uncertainty; justified next action"
+        },
+        {
+          "label": "Timing",
+          "value": "Prompt major-outcome reporting before a complete mechanistic explanation"
+        },
+        {
+          "label": "Patient-level data",
+          "value": "Consent and privacy safeguards"
+        }
+      ],
+      "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"This gives case sharing\"; p. 3, reference 8; Figure 1 lower reporting and learning panels."
+    }
+  ],
+  "what_this_adds": [
+    "A purpose-based link between a reported individual outcome and the next decision: monitoring, mechanistic investigation or evaluation of benefit.",
+    "An explanation of why exposure similarity, baseline disease course and biological state have different roles in choosing comparable cases.",
+    "A four-input, three-action conceptual workflow for interpretable AI-assisted comparison across patients.",
+    "A practical connection between prompt major-outcome reporting, collaborative learning and safeguards for detailed patient data."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The authors' methodological framework for learning across individualised-treatment cases.",
+      "Research-design discussion separating exposure-based safety signals, tests of mechanistic explanations and comparative assessment of benefit.",
+      "The distinction between prognostic risk prediction and treatment-effect estimation.",
+      "Discussion of proposed AI-assisted case retrieval, comparison and experiment selection.",
+      "A reporting rationale that combines prompt major-outcome visibility with consent and privacy for detailed data."
+    ],
+    "does_not_establish": [
+      "A new clinical trial, randomized N-of-1 experiment, patient cohort or treatment-effect estimate conducted for this Letter.",
+      "A trained or clinically validated AI case-comparison system, or measured improvement from using the framework.",
+      "Drug-class toxicity, differential treatment response of molecular subtypes or treatment causality inferred from the illustrative cases."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How can an outcome from one individualised treatment inform the next patient?",
+      "answer": "Identify the question and match the comparison to it. The Letter separates safety monitoring, tests of mechanistic explanations and assessment of benefit. An earlier observation may justify closer monitoring or further investigation before it supports a change in treatment.",
+      "evidence_refs": [
+        "KF1",
+        "KF3",
+        "KF8"
+      ]
+    },
+    {
+      "question": "What does the KCNT1 antisense-treatment example illustrate?",
+      "answer": "The Letter describes a previously published two-child report in which knowledge of the first child's complication prompted closer monitoring of the second. It uses the example to explain safety learning before a complete causal explanation, without generalising the complication to all similar drugs.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "Can an earlier case with a different diagnosis still inform safety monitoring?",
+      "answer": "Yes, when the relevant question concerns shared drug exposure, dose or route. The Letter argues that these similarities may matter even across diagnoses; Figure 1 also directs attention to event timing, severity and patient characteristics. The comparison should explain its relevance.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What information matters when evaluating apparent treatment benefit?",
+      "answer": "Begin with the pretreatment disease course and reliable outcomes that matter to the patient. Figure 1 also asks for valid comparison with similar cases and consideration of alternative explanations. Benefit assessment asks whether the observed improvement would have occurred without the treatment.",
+      "evidence_refs": [
+        "KF3",
+        "KF4",
+        "KF8"
+      ]
+    },
+    {
+      "question": "Why does an accurate survival prediction not identify the treatment that will work?",
+      "answer": "A prognostic model estimates an outcome or risk under its study conditions. Treatment-benefit assessment concerns the effect of a particular intervention compared with an appropriate alternative. The Letter uses prior heart-failure survival research to make this distinction and refers separately to treatment-effect inference.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How can biological heterogeneity guide the next mechanistic experiment?",
+      "answer": "Cases sharing a diagnosis can differ in molecular state. The Letter contrasts a drug failing to engage its target with target engagement that does not restore function. These explanations require different measurements and experiments; its cited atherosclerosis subtypes supply a biological example, not evidence of different treatment responses.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which four input domains does Figure 1 propose for comparing patients?",
+      "answer": "Clinical course; treatment details; biological context; and prior cases and evidence. They bring together the longitudinal trajectory, drug exposure and timing, molecular or cellular state, and published or recorded experience. Figure 1 directs these domains into its central AI-assisted case-comparison process.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What can AI contribute to learning across individualised-treatment cases?",
+      "answer": "The proposed role is to retrieve cases relevant to a specified question, show useful similarities and differences, highlight uncertainty and suggest next steps. Computational models may help select experiments. The Letter describes a conceptual role for AI rather than reporting a trained or validated system.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "How do the three action branches in Figure 1 differ?",
+      "answer": "The safety branch adapts monitoring; the mechanistic branch tests an explanation; and the benefit branch seeks stronger comparative evidence for a treatment decision. The learning loop connects these actions across patients while preserving their different evidential requirements.",
+      "evidence_refs": [
+        "KF8"
+      ]
+    },
+    {
+      "question": "Should major outcomes wait for a complete mechanism before being reported?",
+      "answer": "The Letter argues for prompt reporting of major outcomes, with a clear account of observations, uncertainty and the action another team could reasonably take. It keeps that reporting goal distinct from unrestricted sharing of detailed patient-level data, which remains subject to consent and privacy safeguards.",
+      "evidence_refs": [
+        "KF9"
+      ]
+    },
+    {
+      "question": "How does this article build on the Science Letter about single-patient outcome records?",
+      "answer": "The opening explicitly cites the Science Letter as reference 1 for public reporting and linkage to preceding research. The CTM article takes the next methodological step: deciding how visible outcomes should inform comparisons and future action. This is a verified CTM-to-Science citation, not a claim of reciprocal citation.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    }
+  ],
+  "concepts": {
+    "research_design": [
+      "Individualised therapies",
+      "Cross-patient learning",
+      "Question-specific case comparison",
+      "Comparative treatment-benefit assessment"
+    ],
+    "safety_and_exposure": [
+      "Safety signals",
+      "Drug dose and route",
+      "Event timing and severity",
+      "Adaptive safety monitoring"
+    ],
+    "biological_reasoning": [
+      "Biological heterogeneity",
+      "Target engagement",
+      "Functional restoration",
+      "Mechanistic hypothesis testing"
+    ],
+    "computational_methods": [
+      "AI-assisted case retrieval",
+      "Clinical trajectories",
+      "Prognostic prediction",
+      "Treatment-effect estimation"
+    ],
+    "research_governance": [
+      "Timely outcome reporting",
+      "Case-sharing collaboration",
+      "Patient consent",
+      "Patient-data privacy"
+    ]
+  },
+  "limitations": [
+    "This methodological Invited Letter develops a proposed workflow through prior publications and a conceptual figure; it does not empirically evaluate that workflow.",
+    "The KCNT1 treatment observations, heart-failure prognostic model and atherosclerosis molecular subtypes are examples from cited studies. Their populations and findings remain attributable to those original reports.",
+    "Monitoring relevance and hypotheses generated from a case do not by themselves establish treatment benefit or causality. Individualised-treatment cases should not all be relabelled as randomized crossover N-of-1 trials.",
+    "Detailed patient-level sharing remains subject to consent and privacy safeguards; timely major-outcome reporting does not imply unrestricted data release."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1126/science.aek9583",
+      "relationship": "Directly cited as reference 1 in the CTM Letter's opening paragraph and bibliography. The Science Letter argues for current, linked public outcome records; the CTM Letter addresses what can be learned from such records. This establishes the CTM-to-Science citation only."
+    },
+    {
+      "doi": "10.1038/s41467-024-50415-9",
+      "relationship": "Directly cited as reference 4 and discussed on p. 2 as an advanced-heart-failure prognostic-model example. The CTM argument uses it to distinguish survival prediction from estimating benefit of a particular therapy."
+    },
+    {
+      "doi": "10.1186/s12967-022-03795-9",
+      "relationship": "Directly cited as reference 6 and discussed on p. 2 as an example of smooth-muscle-cell-associated molecular heterogeneity in atherosclerosis. Its role here is to motivate mechanistic questions, not to establish subtype-specific treatment response."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://doi.org/10.1002/ctm2.70900",
+    "fulltext_pdf_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "review_basis": "Complete publisher PDF read across all three pages; all main-text paragraphs, Figure 1 and caption, byline, correspondence details and eight references checked. Figure panels were visually inspected in rendered page images, including a higher-resolution rendering of page 1. The cited studies are used only in the role expressly described by this Letter.",
+    "source_version": "Published version of record, Clinical and Translational Medicine 2026;16:e70900, pp. 1-3; labelled Invited Letter. Received and revised 24 October 2026; accepted 1 November 2026. Existing unmodified hosted PDF SHA256: 9d689d55465340f13018aea57e1a89002ed11729091a7021e77df050cb4bd998. Its p. 1 footer provides a Creative Commons Attribution licence; the existing citation metadata identifies CC BY 4.0.",
+    "editorial_scope": "This author evidence explanation and the citation-use suggestions are website editorial content. They paraphrase the published argument and preserve its source locators; they are not a formal abstract or additional clinical evidence."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How should a case report explain what another team can learn from an individualised therapy outcome?",
+        "supported_scope": "Cite the Letter's purpose-specific framework and its distinction between monitoring, investigation and benefit assessment.",
+        "evidence_refs": [
+          "KF1",
+          "KF3",
+          "KF8",
+          "KF9"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Why can exposure-related similarities support safety monitoring across different diagnoses?",
+        "supported_scope": "Cite the methodological rationale for comparing drug, dose, route and event timing; attribute the illustrative KCNT1 observations to the original report when using those observations directly.",
+        "evidence_refs": [
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How can biological heterogeneity inform experiment selection after an individualised treatment?",
+        "supported_scope": "Cite the distinction between failed target engagement and engagement without functional restoration as competing explanations requiring different tests.",
+        "evidence_refs": [
+          "KF5",
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What role could AI play in comparing individualised-treatment cases?",
+        "supported_scope": "Cite the proposed four-input comparison workflow and its three actions in Figure 1, keeping proposal status explicit.",
+        "evidence_refs": [
+          "KF6",
+          "KF7",
+          "KF8"
+        ]
+      },
+      {
+        "id": "CU5",
+        "query": "Why should prognostic prediction and treatment-effect evidence be distinguished?",
+        "supported_scope": "Cite the Letter's methodological distinction; use the original prognostic or causal-inference papers for their specific methods and empirical results.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Measured clinical effectiveness of AI-assisted case comparison.",
+      "A new treatment-effect estimate, a class-wide antisense-drug toxicity conclusion or established molecular-subtype treatment response.",
+      "A claim that every individualised treatment is a randomized crossover N-of-1 trial, or that prognosis alone identifies the best therapy."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-ctm-safety",
+        "component": "Safety question",
+        "context": "Select cases by the relevant exposure and event context, potentially across diagnoses.",
+        "finding": "Use drug, dose, route, event timing and severity to inform monitoring.",
+        "evidence_level": "Methodological argument with a cited clinical illustration",
+        "scope": "Safety relevance can justify vigilance without establishing drug-class risk.",
+        "source_locator": "Publisher version of record, pp. 1-2, paragraph beginning \"That distinction matters\"; Figure 1, safety-signal and treatment-benefit branches.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-ctm-mechanism",
+        "component": "Mechanistic question",
+        "context": "Apparent nonresponse may have different biological explanations.",
+        "finding": "Distinguish absent target engagement from engagement without functional restoration and select an informative test.",
+        "evidence_level": "Mechanistic reasoning in a methodological Letter",
+        "scope": "The cited molecular subtypes motivate investigation rather than establish different treatment responses.",
+        "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"Biological differences\"; p. 3, reference 6; Figure 1, mechanistic-hypothesis branch.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-ctm-benefit",
+        "component": "Treatment-benefit question",
+        "context": "Improvement after treatment must be interpreted against the prior course and alternatives.",
+        "finding": "Use meaningful outcomes and appropriate comparative evidence to assess whether treatment changed the outcome.",
+        "evidence_level": "Methodological argument and conceptual figure",
+        "scope": "Risk prediction and a temporally associated improvement are different from a treatment-effect estimate.",
+        "source_locator": "Publisher version of record, pp. 1–2, paragraph beginning \"That distinction matters\"; p. 1, Figure 1 treatment-benefit branch and caption.",
+        "evidence_refs": [
+          "KF3",
+          "KF4",
+          "KF8"
+        ]
+      },
+      {
+        "id": "evidence-ctm-sharing",
+        "component": "Reporting and learning",
+        "context": "Another team needs observations, uncertainty and the potential justified action.",
+        "finding": "Report major outcomes promptly while protecting detailed patient-level data through consent and privacy safeguards.",
+        "evidence_level": "Closing argument and cited collaborative context",
+        "scope": "Prompt reporting need not wait for a complete mechanism or imply unrestricted data sharing.",
+        "source_locator": "Publisher version of record, p. 2, left column, paragraph beginning \"This gives case sharing\"; p. 3, reference 8; Figure 1 lower reporting and learning panels.",
+        "evidence_refs": [
+          "KF9"
+        ]
+      }
+    ]
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Individualised treatment research",
+      "Translational evidence assessment"
+    ],
+    "review_topics": [
+      "Learning across patients after individualised therapies",
+      "Purpose-specific safety, mechanistic and benefit comparisons"
+    ],
+    "scientific_role": "Methodological Invited Letter connecting outcome reporting to question-specific case comparison, proposed AI support and justified next evidential actions.",
+    "evidence_position": "Published conceptual framework using prior studies and Figure 1; no new clinical cohort, treatment-effect estimate or validated AI system.",
+    "related_concepts": [
+      "Exposure-based safety relevance",
+      "Target engagement versus functional restoration",
+      "Prognosis versus treatment effect"
+    ],
+    "citation_contexts": [
+      "Introduction or Discussion on how individualised-treatment outcomes can support learning across patients and which comparisons are relevant.",
+      "Research-design rationale separating safety monitoring, mechanistic tests and treatment-benefit evaluation in an AI-assisted case-comparison workflow."
+    ]
+  }
+}
