@@ -641,9 +641,18 @@
           "given": "Ge"
         }
       ],
+      "official_abstract": {
+        "text": "Microbial metabolism, intestinal barrier function, and immune signaling link the gut microbiota to vascular and cardiac disease. The clinical significance of these signals nevertheless varies across disease phenotypes and is influenced by host genetics, diet, medication, and kidney function. Multimodal artificial intelligence (AI) offers methods to examine these relationships by integrating microbial and host information. In this review, we synthesize the biological evidence and assess how multimodal analysis can support microbiome-informed precision cardiovascular medicine. We distinguish the gut–vascular and gut–heart axes and evaluate approaches that combine microbiome profiles, host genomics, and metabolomics with cardiovascular imaging and longitudinal clinical data to prioritize candidate mechanisms, identify disease endotypes and assess risk. We compare fusion strategies and examine AI applications in microbial functional prediction and disease classification, distinguishing these from mechanistic and statistical integration. Causal confidence and biomarker maturity are considered separately to clarify the evidence needed for mechanistic claims, risk prediction, and targeted intervention. Current evidence is stronger for biological discovery than for AI-guided cardiovascular care. Clinical translation requires control of confounding, comparison with clinical and unimodal models, external validation, and prospective assessment of clinical utility. The immediate priority is to identify reproducible cardiovascular endotypes and candidate microbial targets for intervention studies.",
+        "source_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "source_version": "publisher_accepted_manuscript",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "verbatim": true
+      },
       "verified_sources": [
         "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-        "https://api.crossref.org/works/10.1097/re9.0000000000000037"
+        "https://api.crossref.org/works/10.1097/re9.0000000000000037",
+        "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "https://creativecommons.org/licenses/by/4.0/"
       ]
     },
     "10.1002/ctm2.70900": {

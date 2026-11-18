@@ -18,7 +18,7 @@ ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
     "verified_sources", "online_publication_date", "ris_authors", "ris_article_locator",
-    "fulltext_pdf",
+    "fulltext_pdf", "official_abstract",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -115,6 +115,20 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
             elif key == "fulltext_pdf":
                 validate_fulltext_pdf(value, publication, fields.get("verified_sources", []))
+            elif key == "official_abstract":
+                required = {"text", "source_url", "source_version", "license_url", "verbatim"}
+                sources = fields.get("verified_sources", [])
+                if (not isinstance(value, dict) or set(value) != required
+                        or value.get("verbatim") is not True
+                        or value.get("source_version") not in ("publisher_accepted_manuscript", "version_of_record")
+                        or value.get("source_url") not in sources
+                        or value.get("license_url") != "https://creativecommons.org/licenses/by/4.0/"
+                        or value["license_url"] not in sources):
+                    raise ValueError(f"Citation metadata {doi} abstract requires explicit verified source and licence.")
+                text = _verified_text(value["text"], f"Citation metadata {doi} official abstract")
+                # This invited Letter has no formal abstract; its author explanation is separate.
+                if doi == "10.1002/ctm2.70900" or "\n" in text or "\r" in text:
+                    raise ValueError(f"Citation metadata {doi} has no supported single-paragraph official abstract.")
             elif key == "ris_authors":
                 authors = publication_authors(publication)
                 if (not isinstance(value, list) or len(value) != len(authors)
@@ -330,6 +344,10 @@ def render_ris(record):
         lines.append(f"C7  - {record['article_number']}")
     if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
         lines.append(f"M3  - {record['type']}")
+    if record.get("official_abstract"):
+        lines.append(f"AB  - {record['official_abstract']['text']}")
+    if record.get("fulltext_pdf"):
+        lines.append(f"L1  - {record['fulltext_pdf']['url']}")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",
@@ -372,4 +390,6 @@ def render_csl_json(record):
         result["genre"] = record["type"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
+    if record.get("official_abstract"):
+        result["abstract"] = record["official_abstract"]["text"]
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"

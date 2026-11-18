@@ -1,6 +1,7 @@
 """Focused citation metadata, export, and Circadian Review regression checks."""
 
 import copy
+import hashlib
 import json
 import re
 import tempfile
@@ -202,12 +203,14 @@ def run_tests():
     withdrawn = [item for item in master if is_withdrawn(item)]
     config = load_site_config()
     enhancements = load_citation_metadata(public)
-    assert set(enhancements) == set(PRIORITY_FIELDS)
+    test_verified_source_handoffs(public, enhancements, config)
+    # These two source handoffs have their own abstract/PDF contract below.
+    assert set(enhancements) == set(PRIORITY_FIELDS) | {"10.1097/re9.0000000000000037", "10.1002/ctm2.70900"}
     by_doi = {norm_doi(item.get("doi")): item for item in public if item.get("doi")}
     for doi, expected in PRIORITY_FIELDS.items():
         enrichment = enhancements[doi]
         assert {key: value for key, value in enrichment.items()
-                if key not in {"verified_sources", "ris_authors", "ris_article_locator"}} == expected
+                if key not in {"verified_sources", "ris_authors", "ris_article_locator", "official_abstract"}} == expected
         assert enrichment["verified_sources"]
         publication = by_doi[doi]
         priority = citation_record(publication, enhancements, config["site_url"])
@@ -368,6 +371,58 @@ def run_tests():
         reject_metadata(public, {doi: {**with_ris_names, **invalid}})
     print(f"CITATION TESTS PASS: {eligible} eligible, {len(public) - eligible} skipped, "
           f"{len(enhancements)} verified enrichments")
+
+
+def test_verified_source_handoffs(public, enhancements, config):
+    """Formal abstracts and reviewed PDFs retain their distinct import contracts."""
+    cr_doi, ctm_doi = "10.1097/re9.0000000000000037", "10.1002/ctm2.70900"
+    by_doi = {norm_doi(item.get("doi")): item for item in public}
+    assert {doi for doi, value in enhancements.items() if "official_abstract" in value} == {cr_doi}
+    cr = citation_record(by_doi[cr_doi], enhancements, config["site_url"])
+    abstract = cr["official_abstract"]
+    text = abstract["text"]
+    assert hashlib.sha256(text.encode("utf-8")).hexdigest() == "ca9148e89175c2b57eda4ccdbe781a68426d35978b92ff9a733c4cd9f00625f2"
+    assert abstract["source_url"] in cr["verified_sources"]
+    assert abstract["source_version"] == "publisher_accepted_manuscript"
+    original = copy.deepcopy(cr)
+    ris = render_ris(cr)
+    assert [line[6:] for line in ris.splitlines() if line.startswith("AB  - ")] == [text]
+    assert json.loads(render_csl_json(cr))["abstract"] == text
+    assert meta_contents((PAPERS_DIR / f"{cr['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == [text]
+    assert cr == original
+
+    ctm = citation_record(by_doi[ctm_doi], enhancements, config["site_url"])
+    ris = render_ris(ctm)
+    assert [line[6:] for line in ris.splitlines() if line.startswith("L1  - ")] == [ctm["fulltext_pdf"]["url"]]
+    assert not any(line.startswith(("AB  - ", "N2  - ")) for line in ris.splitlines())
+    assert "abstract" not in json.loads(render_csl_json(ctm))
+    assert meta_contents((PAPERS_DIR / f"{ctm['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == []
+    for record in (cr, ctm):
+        expected_names = record.get("ris_authors") or [{"literal": name} for name in record["authors"]]
+        expected_ris = ([f"{name['family']}, {name['given']}" for name in expected_names]
+                        if record.get("ris_authors") else record["authors"])
+        assert [line[6:] for line in render_ris(record).splitlines() if line.startswith("AU  - ")] == expected_ris
+        assert json.loads(render_csl_json(record))["author"] == expected_names
+        assert meta_contents((PAPERS_DIR / f"{record['id']}.html").read_text(encoding="utf-8"), "citation_author") == record["authors"]
+
+    from build_publications import render_paper_html
+    item = next(item for item in json.loads((PAPERS_DIR.parent / "publications.json").read_text(encoding="utf-8"))
+                if norm_doi(item.get("doi")) == cr_doi)
+    escaped = copy.deepcopy(cr)
+    edge_text = '<text> "quoted" & Unicode: 张格'
+    escaped["official_abstract"]["text"] = edge_text
+    markup = render_paper_html(item, config=config, citation_data=escaped)
+    assert meta_contents(markup, "citation_abstract") == [edge_text]
+    assert 'content="&lt;text&gt; &quot;quoted&quot; &amp; Unicode: 张格"' in markup
+    for patch in ({"verbatim": False}, {"source_url": "https://example.org/unsourced"},
+                  {"text": "abstract\nDO  - 10.9999/injected"}, {"text": "unknown"}):
+        changed = copy.deepcopy(enhancements[cr_doi])
+        changed["official_abstract"].update(patch)
+        reject_metadata(public, {cr_doi: changed})
+    changed = copy.deepcopy(enhancements[ctm_doi])
+    changed["official_abstract"] = copy.deepcopy(abstract)
+    changed["verified_sources"] += [abstract["source_url"]]
+    reject_metadata(public, {ctm_doi: changed})
 
 
 if __name__ == "__main__":
