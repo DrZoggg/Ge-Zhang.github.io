@@ -216,7 +216,7 @@ COMPARISONS = {
     'circadian-evidence-levels': '0c32dd707dae2749ec5071385be81584656705885fafc659b806990873bd1037',
     'cardiovascular-prediction-evidence': '8812d2c7145adb4f6499ca10e349b953124beafc94643535bf27af51c69b92a9',
     'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
-    'cancer-omics-validation': '624eff3396ded9c45e51b73e38b39581778d07a653664354f3526b3fb665dac4',
+    'cancer-omics-validation': '782fd5f5047b9319b5e81caa50d345e109fa4beab2491bfab59a4eccea787d91',
 }
 
 
