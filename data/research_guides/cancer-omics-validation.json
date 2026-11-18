@@ -119,7 +119,7 @@
         "id": "external-validation-2024",
         "title": "Evaluation of clinical prediction models (part 2): how to undertake an external validation study",
         "doi": "10.1136/bmj-2023-074820",
-        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788734/",
+        "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=10788734&retmode=xml",
         "locator": "What do we mean by external validation?; Steps 2-4; Table 1 and performance/calibration sections. Applied here to clinical prediction-model implementation and updating, not as a rule for unsupervised clustering."
       },
       {
