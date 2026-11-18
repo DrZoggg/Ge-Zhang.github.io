@@ -58,7 +58,7 @@ Source review: 2026-10-27.
 
 ## Cite this paper
 
-Zhaokai Zhou, Yumiao Mai, Ge Zhang, Yingjie Wang, Pan Sun, Zhaohe Jing, Zhengrui Li, Yudi Xu, Bo Han, Jian Liu. Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination. Cancer Letters. 2024. https://doi.org/10.1016/j.canlet.2024.217079
+Zhaokai Zhou, Yumiao Mai, Ge Zhang, Yingjie Wang, Pan Sun, Zhaohe Jing, Zhengrui Li, Yudi Xu, Bo Han, Jian Liu. Emerging role of immunogenic cell death in cancer immunotherapy: Advancing next-generation CAR-T cell immunotherapy by combination. Cancer Letters. 2024;598:217079. https://doi.org/10.1016/j.canlet.2024.217079
 
 - [BibTeX](https://drgezhang.com/citations/icd-cart.bib)
 - [RIS / EndNote](https://drgezhang.com/citations/icd-cart.ris)
