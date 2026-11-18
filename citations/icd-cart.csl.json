@@ -38,10 +38,14 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        8,
+        28
       ]
     ]
   },
   "DOI": "10.1016/j.canlet.2024.217079",
-  "URL": "https://doi.org/10.1016/j.canlet.2024.217079"
+  "URL": "https://doi.org/10.1016/j.canlet.2024.217079",
+  "volume": "598",
+  "number": "217079"
 }
