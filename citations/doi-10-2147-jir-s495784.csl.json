@@ -50,10 +50,14 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        2,
+        22
       ]
     ]
   },
   "DOI": "10.2147/jir.s495784",
-  "URL": "https://doi.org/10.2147/jir.s495784"
+  "URL": "https://doi.org/10.2147/jir.s495784",
+  "volume": "18",
+  "page": "2629-2646"
 }
