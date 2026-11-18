@@ -2093,13 +2093,15 @@ def validate_v2_inventory(v2_dois):
 
 def validate_citations(publications, config):
     enhancements = load_citation_metadata(publications)
+    official_abstracts = load_official_abstracts(publications)
     require(CITATIONS_DIR.is_dir(), "Generated citations directory is missing.")
     expected_names = set()
     counts = {"eligible": 0, "skipped": 0, "bib": 0, "ris": 0, "csl": 0}
     for publication in publications:
         slug = validate_slug(publication["slug"])
         page = (PAPERS_DIR / f"{slug}.html").read_text(encoding="utf-8")
-        record = citation_record(publication, enhancements, config["site_url"])
+        record = citation_record(publication, enhancements, config["site_url"],
+                                 official_abstracts.get(norm_doi(publication.get("doi"))))
         if record is None:
             counts["skipped"] += 1
             require('id="cite-this-paper"' not in page,

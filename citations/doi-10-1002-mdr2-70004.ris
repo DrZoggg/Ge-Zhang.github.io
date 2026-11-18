@@ -31,6 +31,7 @@ EP  - 31
 SN  - 2998-4963
 SN  - 2998-4971
 PB  - Wiley
+AB  - The progression of differentiated thyroid carcinoma (DTC) poses significant clinical challenges, especially in determining the optimal time for intervention. To capture early signals of disease progression, we employed an optimized dynamic network biomarker (DNB) method—a systems biology approach that detects abrupt molecular changes indicating a critical transition signal. This analysis revealed that Stage II marks a critical transition in the disease trajectory. We further developed a scoring system called TCPSLevel (Thyroid Carcinoma Progression Signature Level), which quantifies individual progression risk based on gene expression profiles. TCPSLevel showed strong associations with clinical features and prognosis across multiple datasets. Our ensemble consensus clustering approach uncovered three robust DTC molecular subtypes, which demonstrated distinct clinical outcomes, immune microenvironments, regulatory landscapes, and therapeutic agents. A clinically applicable classifier (miniPC) was constructed using machine learning to facilitate subtype prediction. We also identified ASPH as a key regulator driving progression and validated its expression and function experimentally. Together, these findings offer new insights and practical tools for early risk assessment and personalized management of thyroid cancer.
 DO  - 10.1002/mdr2.70004
 UR  - https://doi.org/10.1002/mdr2.70004
 ER  -

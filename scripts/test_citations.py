@@ -19,6 +19,7 @@ from citation_common import (
 )
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import is_withdrawn, load_master, norm_doi, publication_authors
+from official_abstracts import abstract_text, load_official_abstracts
 from validate_site import meta_contents, validate_citations
 
 
@@ -204,6 +205,8 @@ def run_tests():
     config = load_site_config()
     enhancements = load_citation_metadata(public)
     test_verified_source_handoffs(public, enhancements, config)
+    official_abstracts = load_official_abstracts(public)
+    test_existing_abstract_source_exports(public, enhancements, config, official_abstracts)
     # These two source handoffs have their own abstract/PDF contract below.
     assert set(enhancements) == set(PRIORITY_FIELDS) | {"10.1097/re9.0000000000000037", "10.1002/ctm2.70900"}
     by_doi = {norm_doi(item.get("doi")): item for item in public if item.get("doi")}
@@ -213,7 +216,7 @@ def run_tests():
                 if key not in {"verified_sources", "ris_authors", "ris_article_locator", "official_abstract"}} == expected
         assert enrichment["verified_sources"]
         publication = by_doi[doi]
-        priority = citation_record(publication, enhancements, config["site_url"])
+        priority = citation_record(publication, enhancements, config["site_url"], official_abstracts.get(doi))
         assert priority["title"] == publication["title"]
         assert priority["authors"] == publication_authors(publication)
         assert priority["doi"] == doi
@@ -274,7 +277,8 @@ def run_tests():
             assert f"EP  - {expected['last_page']}" in ris_text
             assert csl_data["page"] == pages.replace("--", "-")
     for publication in public:
-        current = citation_record(publication, enhancements, config["site_url"])
+        current = citation_record(publication, enhancements, config["site_url"],
+                                  official_abstracts.get(norm_doi(publication.get("doi"))))
         if current is None:
             continue
         data = json.loads(render_csl_json(current))
@@ -295,7 +299,7 @@ def run_tests():
         "bib": eligible, "ris": eligible, "csl": eligible,
     }
     circadian = next(item for item in public if norm_doi(item.get("doi")) == CIRCADIAN_DOI)
-    record = citation_record(circadian, enhancements, config["site_url"])
+    record = citation_record(circadian, enhancements, config["site_url"], official_abstracts.get(CIRCADIAN_DOI))
     assert len(record["authors"]) == 23
     assert record["authors"] == publication_authors(circadian)
     assert record["title"] == circadian["title"]
@@ -373,6 +377,46 @@ def run_tests():
           f"{len(enhancements)} verified enrichments")
 
 
+def test_existing_abstract_source_exports(public, enhancements, config, sources):
+    """Only the existing verified source texts enter file-import abstract fields."""
+    by_doi = {norm_doi(item.get("doi")): item for item in public}
+    snapshot = copy.deepcopy(sources)
+    for doi, source in sources.items():
+        record = citation_record(by_doi[doi], enhancements, config["site_url"], source)
+        legacy = citation_record(by_doi[doi], enhancements, config["site_url"])
+        text = abstract_text(source)
+        folded = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", " ")
+        ris = (CITATIONS_DIR / f"{record['id']}.ris").read_text(encoding="utf-8")
+        csl = json.loads((CITATIONS_DIR / f"{record['id']}.csl.json").read_text(encoding="utf-8"))
+        assert [line[6:] for line in ris.splitlines() if line.startswith("AB  - ")] == [folded]
+        assert csl.pop("abstract") == text
+        assert csl == json.loads(render_csl_json(legacy))
+        assert "\n".join(line for line in ris.split("\n") if not line.startswith("AB  - ")) == render_ris(legacy)
+        assert record["authors"] == publication_authors(by_doi[doi])
+    assert sources == snapshot
+    for publication in public:
+        doi = norm_doi(publication.get("doi"))
+        if doi in sources or enhancements.get(doi, {}).get("official_abstract"):
+            continue
+        record = citation_record(publication, enhancements, config["site_url"])
+        if record is None:
+            continue
+        record.update(description="Author explanation", summary="Author explanation")
+        assert "AB  - " not in render_ris(record) and "abstract" not in json.loads(render_csl_json(record))
+    # RIS line folding must retain labels, Unicode and numbers without creating fields.
+    doi = next(iter(sources))
+    edge = copy.deepcopy(sources[doi])
+    edge["abstract"] = {"type": "structured", "sections": [
+        {"label": "Background", "text": '<tag> "quoted" & 张格'},
+        {"label": "Results", "text": "value 2.5\nDO  - 10.9999/fixture"},
+    ]}
+    record = citation_record(by_doi[doi], enhancements, config["site_url"], edge)
+    ris = render_ris(record)
+    assert [line[6:] for line in ris.splitlines() if line.startswith("DO  - ")] == [doi]
+    assert json.loads(render_csl_json(record))["abstract"] == abstract_text(edge)
+    assert 'Background: <tag> "quoted" & 张格 Results: value 2.5 DO  - 10.9999/fixture' in ris
+
+
 def test_verified_source_handoffs(public, enhancements, config):
     """Formal abstracts and reviewed PDFs retain their distinct import contracts."""
     cr_doi, ctm_doi = "10.1097/re9.0000000000000037", "10.1002/ctm2.70900"
@@ -387,6 +431,15 @@ def test_verified_source_handoffs(public, enhancements, config):
     original = copy.deepcopy(cr)
     ris = render_ris(cr)
     assert [line[6:] for line in ris.splitlines() if line.startswith("AB  - ")] == [text]
+    assert [line[6:] for line in ris.splitlines() if line.startswith("L1  - ")] == [cr["fulltext_pdf"]["url"]]
+    assert [line[6:] for line in ris.splitlines() if line.startswith("N1  - ")] == [
+        "Full text PDF: publisher accepted manuscript (Publish Ahead of Print)."]
+    assert cr["fulltext_pdf"]["version"] == "publisher_accepted_manuscript"
+    cr_page = (PAPERS_DIR / f"{cr['id']}.html").read_text(encoding="utf-8")
+    assert meta_contents(cr_page, "citation_pdf_url") == [cr["fulltext_pdf"]["url"]]
+    assert f'href="{cr["fulltext_pdf"]["url"]}">Full text PDF · Accepted manuscript</a>' in cr_page
+    cr_markdown = (PAPERS_DIR / f"{cr['id']}.md").read_text(encoding="utf-8")
+    assert f'[Full text PDF · Accepted manuscript]({cr["fulltext_pdf"]["url"]})' in cr_markdown
     assert json.loads(render_csl_json(cr))["abstract"] == text
     assert meta_contents((PAPERS_DIR / f"{cr['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == [text]
     assert cr == original
@@ -394,6 +447,8 @@ def test_verified_source_handoffs(public, enhancements, config):
     ctm = citation_record(by_doi[ctm_doi], enhancements, config["site_url"])
     ris = render_ris(ctm)
     assert [line[6:] for line in ris.splitlines() if line.startswith("L1  - ")] == [ctm["fulltext_pdf"]["url"]]
+    assert ctm["fulltext_pdf"]["version"] == "version_of_record"
+    assert not any(line.startswith("N1  - ") for line in ris.splitlines())
     assert not any(line.startswith(("AB  - ", "N2  - ")) for line in ris.splitlines())
     assert "abstract" not in json.loads(render_csl_json(ctm))
     assert meta_contents((PAPERS_DIR / f"{ctm['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == []

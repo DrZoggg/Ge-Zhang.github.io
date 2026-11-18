@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 from site_common import validate_slug, load_site_config
 from sync_common import ROOT, norm_doi, publication_authors
+from official_abstracts import abstract_text
 
 
 CITATION_METADATA_PATH = ROOT / "data" / "citation_metadata.json"
@@ -23,6 +24,10 @@ ENHANCEMENT_FIELDS = {
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
 JOURNAL_PUBLICATION_TYPES = {"Article", "Letter", "Correspondence"}
+# Explicitly reviewed publisher-accepted source; other hosted PDFs remain VoR-only.
+REVIEWED_ACCEPTED_PDFS = {
+    "10.1097/re9.0000000000000037": "9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511",
+}
 
 
 def _unique_pairs(pairs):
@@ -47,7 +52,7 @@ def _valid_doi(doi):
 
 
 def validate_fulltext_pdf(value, publication, verified_sources):
-    """Associate a reviewed CC BY version of record with its sibling HTML page."""
+    """Associate reviewed CC BY source bytes and their actual publication version."""
     required = {"url", "source_url", "sha256", "license_url", "version"}
     if (not isinstance(value, dict) or set(value) != required
             or any(not isinstance(text, str) for text in value.values())):
@@ -55,14 +60,17 @@ def validate_fulltext_pdf(value, publication, verified_sources):
     site = load_site_config()["site_url"].rstrip("/")
     slug = validate_slug(publication["slug"])
     source = urlparse(value["source_url"])
+    accepted_hash = REVIEWED_ACCEPTED_PDFS.get(norm_doi(publication["doi"]))
+    expected_version = "publisher_accepted_manuscript" if accepted_hash else "version_of_record"
     if (value["url"] != f"{site}/papers/{slug}.pdf"
-            or value["version"] != "version_of_record"
+            or value["version"] != expected_version
+            or (accepted_hash and value["sha256"] != accepted_hash)
             or value["license_url"] != "https://creativecommons.org/licenses/by/4.0/"
             or not value["source_url"].startswith(site + "/assets/fulltext/")
             or source.query or source.fragment or source.username or source.password
             or not source.path.endswith(".pdf")
             or not re.fullmatch(r"[0-9a-f]{64}", value["sha256"])):
-        raise ValueError("Hosted fulltext PDF must be a licensed, same-directory version of record.")
+        raise ValueError("Hosted fulltext PDF must retain its reviewed version, licence and same-directory URL.")
     if not {value["source_url"], value["license_url"],
             f"https://doi.org/{publication['doi']}"}.issubset(verified_sources):
         raise ValueError("Hosted fulltext PDF requires DOI, source and licence references.")
@@ -197,8 +205,8 @@ def citation_skip_reason(publication):
     return ""
 
 
-def citation_record(publication, enhancement, site_root):
-    """Keep identity exclusively from master; enhancement contributes allowed details."""
+def citation_record(publication, enhancement, site_root, official_abstract=None):
+    """Keep master identity; optional abstract comes from load_official_abstracts."""
     reason = citation_skip_reason(publication)
     if reason:
         return None
@@ -216,6 +224,8 @@ def citation_record(publication, enhancement, site_root):
         "doi_url": f"https://doi.org/{doi}",
     }
     record.update(enhancement.get(doi, {}))
+    if official_abstract is not None:
+        record["official_abstract_text"] = abstract_text(official_abstract)
     return record
 
 
@@ -318,6 +328,13 @@ def render_bibtex(record):
     return f"@{kind}{{{record['id']},\n{body}\n}}\n"
 
 
+def citation_abstract_text(record):
+    """Only explicit verified sources; never infer an abstract from a description."""
+    if "official_abstract_text" in record:
+        return record["official_abstract_text"]
+    return record.get("official_abstract", {}).get("text")
+
+
 def render_ris(record):
     lines = ["TY  - JOUR" if record["type"] in JOURNAL_PUBLICATION_TYPES else "TY  - GEN"]
     authors = record["authors"]
@@ -344,10 +361,14 @@ def render_ris(record):
         lines.append(f"C7  - {record['article_number']}")
     if record["type"] in JOURNAL_PUBLICATION_TYPES - {"Article"}:
         lines.append(f"M3  - {record['type']}")
-    if record.get("official_abstract"):
-        lines.append(f"AB  - {record['official_abstract']['text']}")
+    abstract = citation_abstract_text(record)
+    if abstract:
+        # Keep section labels/words while folding line breaks into one RIS field.
+        lines.append("AB  - " + abstract.replace("\r\n", "\n").replace("\r", "\n").replace("\n", " "))
     if record.get("fulltext_pdf"):
         lines.append(f"L1  - {record['fulltext_pdf']['url']}")
+        if record["fulltext_pdf"]["version"] == "publisher_accepted_manuscript":
+            lines.append("N1  - Full text PDF: publisher accepted manuscript (Publish Ahead of Print).")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",
@@ -390,6 +411,7 @@ def render_csl_json(record):
         result["genre"] = record["type"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
-    if record.get("official_abstract"):
-        result["abstract"] = record["official_abstract"]["text"]
+    abstract = citation_abstract_text(record)
+    if abstract:
+        result["abstract"] = abstract
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"

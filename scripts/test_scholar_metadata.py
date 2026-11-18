@@ -49,10 +49,20 @@ class ScholarMetadataTests(unittest.TestCase):
         item=next(p for p in items if p.get('doi')=='10.1002/ctm2.70900')
         record=load_citation_metadata(items)[item['doi']]
         for key,value in [('url','https://drgezhang.com/assets/fulltext/ctm2-70900.pdf'),
-                          ('sha256','0'*64), ('version','unknown')]:
+                          ('sha256','0'*64), ('version','unknown'),
+                          ('version','publisher_accepted_manuscript')]:
             pdf=copy.deepcopy(record['fulltext_pdf']);pdf[key]=value
             with self.subTest(key=key),self.assertRaises(ValueError):
                 validate_fulltext_pdf(pdf,item,record['verified_sources'])
+
+    def test_reviewed_accepted_pdf_cannot_be_labelled_version_of_record(self):
+        items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
+        item=next(p for p in items if p.get('doi')=='10.1097/re9.0000000000000037')
+        record=load_citation_metadata(items)[item['doi']]
+        pdf=copy.deepcopy(record['fulltext_pdf'])
+        pdf['version']='version_of_record'
+        with self.assertRaises(ValueError):
+            validate_fulltext_pdf(pdf,item,record['verified_sources'])
 
     def test_all_public(self):
         items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
