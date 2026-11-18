@@ -31,6 +31,9 @@ DOI_LICENSE_URLS = {
     "10.15212/bioi-2026-0017": {
         "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     },
+    "10.1002/mdr2.70073": {
+        "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    },
     "10.1016/j.ejphar.2023.175569": {
         "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     },
@@ -60,6 +63,7 @@ SOURCES = {
 
     "10.1038/s41598-024-65236-5": ("www.nature.com", "/articles/s41598-024-65236-5"),
     "10.1002/mdr2.70004": ("onlinelibrary.wiley.com", "/doi/full/10.1002/mdr2.70004"),
+    "10.1002/mdr2.70073": ("onlinelibrary.wiley.com", "/doi/10.1002/mdr2.70073"),
     "10.1111/jcmm.17789": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10339102/"),
     "10.1111/jcmm.70258": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11668728/"),
     "10.2147/ijn.s522157": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12315914/"),
