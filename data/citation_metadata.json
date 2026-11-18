@@ -725,6 +725,18 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC13080692/",
         "https://pubmed.ncbi.nlm.nih.gov/41993134/"
       ]
+    },
+    "10.2147/jir.s495784": {
+      "publication_date": "2025-02-22",
+      "journal_abbrev": "J Inflamm Res",
+      "volume": "18",
+      "first_page": "2629",
+      "last_page": "2646",
+      "verified_sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11863793/",
+        "https://pubmed.ncbi.nlm.nih.gov/40013238/",
+        "https://api.crossref.org/works/10.2147/JIR.S495784"
+      ]
     }
   }
 }
