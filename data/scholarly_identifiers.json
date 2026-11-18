@@ -346,11 +346,15 @@
       "verified_at": "2026-09-30"
     },
     "10.15212/bioi-2026-0017": {
+      "publisher_url": "https://journal.hep.com.cn/bioi/EN/10.15212/bioi-2026-0017",
       "openalex_id": "https://openalex.org/W7164867760",
       "verified_sources": [
-        "https://api.openalex.org/works/W7164867760"
+        "https://api.openalex.org/works/W7164867760",
+        "https://journal.hep.com.cn/bioi/EN/10.15212/bioi-2026-0017",
+        "https://journal.hep.com.cn/bioi/EN/PDF/10.15212/bioi-2026-0017",
+        "https://api.crossref.org/works/10.15212/bioi-2026-0017"
       ],
-      "verified_at": "2026-09-30"
+      "verified_at": "2026-11-18"
     },
     "10.1155/humu/5591097": {
       "openalex_id": "https://openalex.org/W7154461818",
