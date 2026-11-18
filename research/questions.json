@@ -13403,11 +13403,12 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1111-jcmm-18408.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1111-jcmm-18408.json",
-      "gold_content_sha256": "02c01069af3d81cb447fb2316f5d80cb6d8efc6c973d6f7263cf36c31e4cd829",
+      "gold_content_sha256": "ac42e3a304a9807706e6bea1f6aaa9f1fae5a76c0569dd663c09fe5610bb4bc9",
       "provenance": {
         "doi_url": "https://doi.org/10.1111/jcmm.18408",
         "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.18408",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11149493/",
+        "europe_pmc_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11149493/fullTextXML",
         "pmcid": "PMC11149493",
         "license": "CC BY 4.0, as shown in article-specific PMC JATS permissions. This evidence page is original factual synthesis.",
         "license_url": "https://creativecommons.org/licenses/by/4.0/",
