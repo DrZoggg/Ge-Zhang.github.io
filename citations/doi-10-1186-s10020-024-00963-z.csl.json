@@ -49,5 +49,6 @@
     ]
   },
   "DOI": "10.1186/s10020-024-00963-z",
-  "URL": "https://doi.org/10.1186/s10020-024-00963-z"
+  "URL": "https://doi.org/10.1186/s10020-024-00963-z",
+  "abstract": "Pulmonary arterial hypertension (PAH) is a progressive and rapidly fatal disease with an intricate etiology. Identifying biomarkers for early PAH lesions based on the exploration of subtle biological processes is significant for timely diagnosis and treatment. In the present study, nine distinct cell populations identified based on gene expression profiles revealed high heterogeneity in cell composition ratio, biological function, distribution preference, and communication patterns in PAH. Notably, compared to other cells, endothelial cells (ECs) showed prominent variation in multiple perspectives. Further analysis demonstrated the endothelial-to-mesenchymal transition (EndMT) in ECs and identified a subgroup exhibiting a contrasting phenotype. Based on these findings, a machine-learning integrated program consisting of nine learners was developed to create a PAH Endothelial-to-mesenchymal transition Signature (PETS). This study identified cell populations underlying EndMT and furnished a potential tool that might be valuable for PAH diagnosis and new precise therapies."
 }

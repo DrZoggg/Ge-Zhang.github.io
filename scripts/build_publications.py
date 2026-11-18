@@ -1978,6 +1978,11 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     )
     if citation_data:
         links.append('<a class="btn" href="#cite-this-paper">Cite</a>')
+        pdf = citation_data.get("fulltext_pdf")
+        if pdf and pdf["version"] == "publisher_accepted_manuscript":
+            links.append(
+                f'<a class="btn" href="{html.escape(pdf["url"], quote=True)}">Full text PDF · Accepted manuscript</a>'
+            )
     if is_pending:
         deep_badge = '<span class="badge">Deep GEO · Pending</span>'
     elif deep_content is not None and publication.get("deep_geo", True):
@@ -2237,6 +2242,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         [
             "## Links",
             "",
+            *([f"- [Full text PDF · Accepted manuscript]({citation_data['fulltext_pdf']['url']}) (publisher accepted manuscript; Publish Ahead of Print)"]
+              if citation_data and citation_data.get("fulltext_pdf", {}).get("version") == "publisher_accepted_manuscript" else []),
             *([f"- DOI: {doi_url(doi)}"] if doi else []),
             f"- HTML page: {html_url}",
             f"- Google Scholar query: {scholar_url(title)}",
@@ -2575,7 +2582,8 @@ def build_site():
         raise ValueError("Unexpected evidence exports (review membership before removal): " + ", ".join(sorted(stale)))
     write_text_if_changed(evidence_dir / "README.md", "# Study-level evidence exports\n\n" + EXPORT_NOTICE + "\n\n" + CSV_SAFETY + "\n\nList fields are canonical JSON strings. scientific_source_sha256 is a deterministic scientific JSON fingerprint, not a deployment timestamp.\n")
     citation_by_slug = {
-        item["slug"]: citation_record(item, citation_metadata, config["site_url"])
+        item["slug"]: citation_record(item, citation_metadata, config["site_url"],
+                                      official_abstracts.get(norm_doi(item.get("doi"))))
         for item in public_items
     }
     scholarly_ids = scholarly_discovery.load_identifiers(public_items, citation_metadata)

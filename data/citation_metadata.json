@@ -648,7 +648,16 @@
         "license_url": "https://creativecommons.org/licenses/by/4.0/",
         "verbatim": true
       },
+      "fulltext_pdf": {
+        "url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.pdf",
+        "source_url": "https://drgezhang.com/assets/fulltext/re9-0000000000000037.pdf",
+        "sha256": "9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "version": "publisher_accepted_manuscript"
+      },
       "verified_sources": [
+        "https://doi.org/10.1097/re9.0000000000000037",
+        "https://drgezhang.com/assets/fulltext/re9-0000000000000037.pdf",
         "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
         "https://api.crossref.org/works/10.1097/re9.0000000000000037",
         "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
