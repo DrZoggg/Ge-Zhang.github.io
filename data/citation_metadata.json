@@ -686,6 +686,17 @@
         "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
         "https://creativecommons.org/licenses/by/4.0/"
       ]
+    },
+    "10.1002/mdr2.70073": {
+      "online_publication_date": "2026-06-03",
+      "volume": "2",
+      "issue": "3",
+      "first_page": "460",
+      "last_page": "472",
+      "verified_sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/mdr2.70073",
+        "https://api.crossref.org/works/10.1002/mdr2.70073"
+      ]
     }
   }
 }
