@@ -27,12 +27,35 @@ CIRCADIAN_DOI = "10.1002/mdr2.70052"
 VERIFIED_RIS_LOCATORS = {
     "10.1136/jitc-2024-010787": "e010787",
     "10.1016/j.intimp.2024.112574": "112574",
+    "10.1016/j.canlet.2024.217079": "217079",
+    "10.1038/s41598-025-98859-3": "15916",
     "10.1038/s41467-024-50415-9": "6756",
     "10.1038/s41598-024-65236-5": "14155",
+    "10.1155/humu/5591097": "5591097",
+    "10.1186/s12931-024-02978-w": "365",
     "10.1186/s12915-025-02400-x": "280",
     "10.1186/s12967-022-03795-9": "568",
 }
 PRIORITY_FIELDS = {
+    "10.1038/s41598-025-98859-3": {
+        "publication_date": "2025-05-07", "journal_abbrev": "Sci Rep",
+        "volume": "15", "issue": "1", "article_number": "15916",
+        "pmid": "40335605", "pmcid": "PMC12059082",
+    },
+    "10.1186/s12931-024-02978-w": {
+        "volume": "25", "issue": "1", "article_number": "365",
+    },
+    "10.1155/humu/5591097": {
+        "volume": "2026", "article_number": "5591097",
+    },
+    "10.1016/j.canlet.2024.217079": {
+        "publication_date": "2024-08-28", "online_publication_date": "2024-06-25",
+        "journal_abbrev": "Cancer Lett", "volume": "598", "article_number": "217079",
+    },
+    "10.2147/jir.s495784": {
+        "publication_date": "2025-02-22", "journal_abbrev": "J Inflamm Res",
+        "volume": "18", "first_page": "2629", "last_page": "2646",
+    },
     "10.1136/jitc-2024-010787": {
         "volume": "13", "issue": "2", "article_number": "e010787",
     },
