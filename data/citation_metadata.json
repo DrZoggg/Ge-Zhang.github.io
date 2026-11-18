@@ -674,6 +674,12 @@
       ]
     },
     "10.1002/ctm2.70900": {
+      "volume": "16",
+      "issue": "11",
+      "article_number": "e70900",
+      "ris_article_locator": "e70900",
+      "pmid": "43034282",
+      "pmcid": "PMC13770209",
       "fulltext_pdf": {
         "url": "https://drgezhang.com/papers/doi-10-1002-ctm2-70900.pdf",
         "source_url": "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
@@ -683,6 +689,8 @@
       },
       "verified_sources": [
         "https://doi.org/10.1002/ctm2.70900",
+        "https://pubmed.ncbi.nlm.nih.gov/43034282/",
+        "https://api.crossref.org/works/10.1002/ctm2.70900",
         "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
         "https://creativecommons.org/licenses/by/4.0/"
       ]
