@@ -784,10 +784,12 @@
     },
     "10.1002/ctm2.70900": {
       "pmid": "43034282",
+      "pmcid": "PMC13770209",
       "verified_sources": [
-        "https://pubmed.ncbi.nlm.nih.gov/43034282/"
+        "https://pubmed.ncbi.nlm.nih.gov/43034282/",
+        "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=13770209&retmode=xml"
       ],
-      "verified_at": "2026-11-17"
+      "verified_at": "2026-11-18"
     }
   }
 }
