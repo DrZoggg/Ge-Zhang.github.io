@@ -2017,6 +2017,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         citation.append(
             f'<meta name="citation_abstract" content="{html.escape(abstract_text(official_abstract), quote=True)}">'
         )
+    elif citation_data and citation_data.get("official_abstract"):
+        citation.append(
+            f'<meta name="citation_abstract" content="{html.escape(citation_data["official_abstract"]["text"], quote=True)}">'
+        )
     if citation_data:
         for key, tag in (
             ("volume", "citation_volume"), ("issue", "citation_issue"),

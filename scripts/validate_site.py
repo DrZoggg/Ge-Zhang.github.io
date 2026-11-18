@@ -2552,6 +2552,7 @@ def validate_site():
         require(LEGACY_SITE_URL not in markdown, f"Legacy origin remains in {slug}.md.")
         doi = norm_doi(item.get("doi"))
         official = official_abstracts.get(doi)
+        export_abstract = citation_metadata.get(doi, {}).get("official_abstract")
         abstract_sections = re.findall(
             r'<section id="official-abstract"[^>]*>.*?</section>', page, re.S
         )
@@ -2581,6 +2582,11 @@ def validate_site():
             require(official["source_url"] in section and official["license_url"] in section
                     and f"https://doi.org/{doi}" in section and "Text reproduced verbatim" in section,
                     f"Official abstract attribution incomplete for {slug}.")
+        elif export_abstract:
+            require(not abstract_sections and "abstract" not in schema
+                    and "## Official Abstract" not in markdown
+                    and meta_contents(page, "citation_abstract") == [export_abstract["text"]],
+                    f"Verified citation-only abstract mismatch for {slug}.")
         else:
             require(not abstract_sections and not meta_contents(page, "citation_abstract")
                     and "abstract" not in schema and "## Official Abstract" not in markdown,
