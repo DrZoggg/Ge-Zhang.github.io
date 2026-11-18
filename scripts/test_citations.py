@@ -50,6 +50,10 @@ PRIORITY_FIELDS = {
         "publication_date": "2026-10-01", "volume": "394", "issue": "6819",
         "first_page": "38", "last_page": "39", "pmid": "42821669",
     },
+    "10.1002/mdr2.70073": {
+        "online_publication_date": "2026-06-03", "volume": "2", "issue": "3",
+        "first_page": "460", "last_page": "472",
+    },
     "10.1016/j.medd.2026.100004": {
         "publication_date": "2026-09-22", "article_number": "100004",
         "issn": "3117-9282", "publisher": "Elsevier BV",
