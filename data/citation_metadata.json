@@ -1,6 +1,15 @@
 {
   "version": 1,
   "papers": {
+    "10.1136/jitc-2024-010787": {
+      "volume": "13",
+      "issue": "2",
+      "article_number": "e010787",
+      "ris_article_locator": "e010787",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/40010763/"
+      ]
+    },
     "10.1056/nejmc2518964": {
       "publication_date": "2026-03-05",
       "journal_abbrev": "N Engl J Med",

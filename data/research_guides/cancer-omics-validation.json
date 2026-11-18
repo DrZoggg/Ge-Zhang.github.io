@@ -49,7 +49,7 @@
       "task": "LUAD LPAS survival-score evaluation and separate immune/treatment associations",
       "source_doi": "10.1111/jcmm.18408",
       "source_json": "data/deep_geo/doi-10-1111-jcmm-18408.json",
-      "source_fingerprint": "7c78c739fc2aa844d2064f8fef8e91e557f7cca58de84695073483803033229a",
+      "source_fingerprint": "f76764a3acf218dbb0a53e55b22afccd66ccbc7aa943140e0991f041f4e8590e",
       "qa_indices": [
         2,
         3,
