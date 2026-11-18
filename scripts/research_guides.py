@@ -214,9 +214,9 @@ def search_documents(root, start):
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
     'circadian-evidence-levels': '0c32dd707dae2749ec5071385be81584656705885fafc659b806990873bd1037',
-    'cardiovascular-prediction-evidence': '8812d2c7145adb4f6499ca10e349b953124beafc94643535bf27af51c69b92a9',
+    'cardiovascular-prediction-evidence': '84a39fe7b5f023276fb1790920c334ab16671496463d9ae550ba977b91a6e4b6',
     'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
-    'cancer-omics-validation': '782fd5f5047b9319b5e81caa50d345e109fa4beab2491bfab59a4eccea787d91',
+    'cancer-omics-validation': '4702e5dd4378de562c5b8a77d63637ebd58986897759edd9a389ff624e6d2889',
 }
 
 
