@@ -67,6 +67,7 @@ The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated sp
 ### Provenance
 
 - [Article source](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326) — Official publisher or PMC full text reviewed locally. Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)
+- [PubMed Central full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC13048407/) — Public archive of the published article. PMCID PMC13048407; DOI 10.1371/journal.pone.0346326
 - [Official supplementary material](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003) — Publisher-hosted supplementary document. S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025
 - [VigiAccess supplementary workbook](https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0346326.s004&type=supplementary) — Publisher-hosted spreadsheet. S4 Table, Preferred Term worksheet, cells I2:L2073
 - [Official VigiAccess data scope](https://who-umc.org/vigibase-data-access/vigibase-faq/) — Uppsala Monitoring Centre guidance. Is any VigiBase data available to the public?
@@ -75,7 +76,7 @@ Source review: 2026-10-27.
 
 ## Cite this paper
 
-Meirong Shan, Qian Guo, Ruofei Li, Ni Li, Yanhua Fu, Huanyu Qi, Ge Zhang, Qian Wang, Xingli Xu, Jinchuan Lai. Real-world safety of aliskiren in primary hypertension: A cross-database study. PLOS One. 2026. https://doi.org/10.1371/journal.pone.0346326
+Meirong Shan, Qian Guo, Ruofei Li, Ni Li, Yanhua Fu, Huanyu Qi, Ge Zhang, Qian Wang, Xingli Xu, Jinchuan Lai. Real-world safety of aliskiren in primary hypertension: A cross-database study. PLOS One. 2026;21(4):e0346326. https://doi.org/10.1371/journal.pone.0346326
 
 - [BibTeX](https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.bib)
 - [RIS / EndNote](https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.ris)

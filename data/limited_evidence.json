@@ -321,6 +321,12 @@
           "locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)"
         },
         {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13048407/",
+          "label": "PubMed Central full text",
+          "format": "Public archive of the published article",
+          "locator": "PMCID PMC13048407; DOI 10.1371/journal.pone.0346326"
+        },
+        {
           "url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003",
           "label": "Official supplementary material",
           "format": "Publisher-hosted supplementary document",

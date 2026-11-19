@@ -38,10 +38,15 @@
   "issued": {
     "date-parts": [
       [
-        2026
+        2026,
+        4,
+        3
       ]
     ]
   },
   "DOI": "10.1371/journal.pone.0346326",
-  "URL": "https://doi.org/10.1371/journal.pone.0346326"
+  "URL": "https://doi.org/10.1371/journal.pone.0346326",
+  "volume": "21",
+  "issue": "4",
+  "number": "e0346326"
 }

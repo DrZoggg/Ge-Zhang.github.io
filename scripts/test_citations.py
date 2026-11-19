@@ -26,6 +26,7 @@ from validate_site import meta_contents, validate_citations
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 VERIFIED_RIS_LOCATORS = {
     "10.1136/jitc-2024-010787": "e010787",
+    "10.1371/journal.pone.0346326": "e0346326",
     "10.1016/j.intimp.2024.112574": "112574",
     "10.1016/j.canlet.2024.217079": "217079",
     "10.1038/s41598-025-98859-3": "15916",
@@ -37,6 +38,11 @@ VERIFIED_RIS_LOCATORS = {
     "10.1186/s12967-022-03795-9": "568",
 }
 PRIORITY_FIELDS = {
+    "10.1371/journal.pone.0346326": {
+        "publication_date": "2026-04-03", "journal_abbrev": "PLoS One",
+        "volume": "21", "issue": "4", "article_number": "e0346326",
+        "pmid": "41931483", "pmcid": "PMC13048407",
+    },
     "10.1038/s41598-025-98859-3": {
         "publication_date": "2025-05-07", "journal_abbrev": "Sci Rep",
         "volume": "15", "issue": "1", "article_number": "15916",
