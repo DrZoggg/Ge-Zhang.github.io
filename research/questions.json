@@ -17965,10 +17965,11 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1016-j-jma-2023-05-007.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-jma-2023-05-007.json",
-      "gold_content_sha256": "decdf46ba1a2d69beaa90f6c8c1fab328bb3d42fa6e76899881511eb7d567a17",
+      "gold_content_sha256": "2cea9d90348dd9bd5061d29143a206004bb57f7f0b4a2ec672c32953ac4dcb99",
       "provenance": {
         "doi_url": "https://doi.org/10.1016/j.jma.2023.05.007",
         "publisher_url": "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
+        "formal_pdf_url": "https://www.jmamg.com/uploadfiles/2025/03/20250307113750039.pdf",
         "license": "CC BY-NC-ND 4.0 in publisher version-of-record PDF; original evidence summary only, without adapting/reproducing article text, figures or tables.",
         "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
         "version_of_record": "Journal of Magnesium and Alloys 12(12) (2024): 4988–5004; article online 27 June 2023; DOI 10.1016/j.jma.2023.05.007. Existing repository year 2023 is preserved.",
