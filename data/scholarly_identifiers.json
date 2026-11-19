@@ -794,6 +794,14 @@
         "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=13770209&retmode=xml"
       ],
       "verified_at": "2026-11-18"
+    },
+    "10.1016/j.gendis.2026.102480": {
+      "openalex_id": "https://openalex.org/W7213554484",
+      "verified_sources": [
+        "https://api.openalex.org/works/W7213554484?select=id,doi,display_name,locations,authorships",
+        "https://api.crossref.org/works/10.1016/j.gendis.2026.102480"
+      ],
+      "verified_at": "2026-11-19"
     }
   }
 }
