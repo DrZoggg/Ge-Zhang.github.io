@@ -3,7 +3,8 @@ import copy
 import html
 import json
 import unittest
-from citation_common import citation_record, load_citation_metadata, validate_fulltext_pdf
+from build_publications import render_paper_html
+from citation_common import citation_record, highwire_first_page, load_citation_metadata, validate_fulltext_pdf
 from sync_common import ROOT, load_master, is_withdrawn, publication_authors
 from site_common import load_site_config
 from validate_site import meta_contents, json_ld_objects
@@ -28,7 +29,8 @@ def validate_metadata(page, item, record):
                            ('first_page','citation_firstpage'),('last_page','citation_lastpage'),
                            ('article_number','citation_article_number'),('pmid','citation_pmid'),
                            ('publisher','citation_publisher'),('eissn','citation_eIssn')]:
-            require(meta_contents(page,tag)==([record[source]] if record.get(source) else []),tag+' mismatch')
+            value = highwire_first_page(record) if source == 'first_page' else record.get(source)
+            require(meta_contents(page,tag)==([value] if value else []),tag+' mismatch')
         issn=record.get('issn') or record.get('eissn')
         require(meta_contents(page,'citation_issn')==([issn] if issn else []),'citation_issn mismatch')
         for author in record['authors']:
@@ -44,6 +46,37 @@ def validate_metadata(page, item, record):
 
 
 class ScholarMetadataTests(unittest.TestCase):
+    def test_verified_article_locators_are_emitted_only_for_the_reviewed_cohort(self):
+        items = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
+        metadata = load_citation_metadata(items)
+        expected = {
+            "10.1038/s41467-024-50415-9": "6756",
+            "10.1038/s41598-024-65236-5": "14155",
+            "10.1038/s41598-025-98859-3": "15916",
+            "10.1186/s12915-025-02400-x": "280",
+            "10.3389/fpubh.2025.1521372": "1521372",
+            "10.1371/journal.pone.0346326": "e0346326",
+        }
+        self.assertEqual({doi: fields["highwire_article_locator"]["value"]
+                          for doi, fields in metadata.items()
+                          if "highwire_article_locator" in fields}, expected)
+        for item in items:
+            if item.get("doi") in expected:
+                page = (ROOT / "papers" / f'{item["slug"]}.html').read_text(encoding="utf-8")
+                self.assertEqual(meta_contents(page, "citation_firstpage"), [expected[item["doi"]]])
+                self.assertEqual(meta_contents(page, "citation_lastpage"), [])
+        config = load_site_config()
+        item = next(item for item in items if item.get("doi") == "10.1038/s41598-025-98859-3")
+        record = citation_record(item, metadata, config["site_url"])
+        for pagination, expected_first in (
+            ({"first_page": "12", "last_page": "19"}, ["12"]),
+            ({"last_page": "19"}, []),
+        ):
+            page = render_paper_html(item, config=config, citation_data={**record, **pagination})
+            self.assertEqual(meta_contents(page, "citation_firstpage"), expected_first)
+            self.assertEqual(meta_contents(page, "citation_lastpage"), ["19"])
+            self.assertEqual(meta_contents(page, "citation_article_number"), ["15916"])
+
     def test_hosted_pdf_requires_reviewed_bytes_and_identity_path(self):
         items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
         item=next(p for p in items if p.get('doi')=='10.1002/ctm2.70900')

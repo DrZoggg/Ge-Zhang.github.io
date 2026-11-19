@@ -12,6 +12,7 @@ from citation_common import (
     citation_files,
     citation_record,
     citation_skip_reason,
+    highwire_first_page,
     load_citation_metadata,
     render_csl_json,
     render_bibtex,
@@ -250,7 +251,8 @@ def run_tests():
     for doi, expected in PRIORITY_FIELDS.items():
         enrichment = enhancements[doi]
         assert {key: value for key, value in enrichment.items()
-                if key not in {"verified_sources", "ris_authors", "ris_article_locator", "official_abstract"}} == expected
+                if key not in {"verified_sources", "ris_authors", "ris_article_locator",
+                               "official_abstract", "highwire_article_locator"}} == expected
         assert enrichment["verified_sources"]
         publication = by_doi[doi]
         priority = citation_record(publication, enhancements, config["site_url"], official_abstracts.get(doi))
@@ -270,6 +272,8 @@ def run_tests():
             ("pmid", "citation_pmid"), ("publisher", "citation_publisher"),
         ):
             value = expected.get(key) or (expected.get('eissn') if key == 'issn' else None)
+            if key == "first_page":
+                value = highwire_first_page(priority)
             assert meta_contents(markup, tag) == ([value] if value else [])
         export = citation_files(priority)
         bib_text = (CITATIONS_DIR / export["bib"]).read_text(encoding="utf-8")
@@ -411,6 +415,10 @@ def run_tests():
     reject_metadata(public, {doi: {**with_ris_names, "verified_sources": []}})
     for invalid in ({"ris_article_locator": "6757"}, {"first_page": "1"}, {"last_page": "2"}):
         reject_metadata(public, {doi: {**with_ris_names, **invalid}})
+    locator = with_ris_names["highwire_article_locator"]
+    for invalid in ("6756", {**locator, "value": "6757"},
+                    {**locator, "source_url": "https://example.org/unverified"}):
+        reject_metadata(public, {doi: {**with_ris_names, "highwire_article_locator": invalid}})
     print(f"CITATION TESTS PASS: {eligible} eligible, {len(public) - eligible} skipped, "
           f"{len(enhancements)} verified enrichments")
 

@@ -13,6 +13,7 @@ from citation_common import (
     citation_files,
     citation_plain_text,
     citation_record,
+    highwire_first_page,
     citation_skip_reason,
     load_citation_metadata,
     render_bibtex,
@@ -2035,9 +2036,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
             ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
         ):
-            if citation_data.get(key):
+            value = highwire_first_page(citation_data) if key == "first_page" else citation_data.get(key)
+            if value:
                 citation.append(
-                    f'<meta name="{tag}" content="{html.escape(citation_data[key], quote=True)}">'
+                    f'<meta name="{tag}" content="{html.escape(value, quote=True)}">'
                 )
         if citation_data.get('eissn') and not citation_data.get('issn'):
             citation.append(f'<meta name="citation_issn" content="{html.escape(citation_data["eissn"], quote=True)}">')

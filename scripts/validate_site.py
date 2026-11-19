@@ -12,6 +12,7 @@ from citation_common import (
     citation_files,
     citation_plain_text,
     citation_record,
+    highwire_first_page,
     load_citation_metadata,
     render_bibtex,
     render_csl_json,
@@ -2155,7 +2156,8 @@ def validate_citations(publications, config):
             ("issn", "citation_issn"), ("eissn", "citation_eIssn"),
             ("publisher", "citation_publisher"), ("pmid", "citation_pmid"),
         ):
-            expected = [record[source]] if record.get(source) else []
+            value = highwire_first_page(record) if source == "first_page" else record.get(source)
+            expected = [value] if value else []
             if source == 'issn' and not expected and record.get('eissn'):
                 expected = [record['eissn']]
             require(meta_contents(page, tag) == expected,
