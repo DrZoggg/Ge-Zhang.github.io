@@ -29,4 +29,14 @@ The six CSV columns are `GSM`, `original_title`, `public_patient_label`, `origin
 
 The source is [GSE59867 in GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59867), specifically the sample metadata before the expression table in the [official series-matrix file](https://ftp.ncbi.nlm.nih.gov/geo/series/GSE59nnn/GSE59867/matrix/GSE59867_series_matrix.txt.gz), retrieved on 15 November 2026. Source fields are `!Sample_geo_accession`, `!Sample_title` and the collection, HF-progression and cell-type rows of `!Sample_characteristics_ch1`. GEO links the original dataset publication, [PMID 25984239](https://pubmed.ncbi.nlm.nih.gov/25984239/), and [BioProject PRJNA256954](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA256954).
 
-For a published secondary use of this dataset in circadian-related expression subtyping, see the [study evidence and formal citation](https://drgezhang.com/papers/circadian-ihd.html), DOI [10.1038/s41598-024-65236-5](https://doi.org/10.1038/s41598-024-65236-5). Cite that paper for its reported molecular analysis and the original study/GEO record for the dataset. This author-prepared metadata lookup supports new analysis planning; it supplies no expression values and does not reconstruct the secondary study's original split or results.
+### Published analyses using GSE59867
+
+These papers analyze the archived series for different questions. Cite the original study and GEO record for the samples, and the relevant paper for its analysis.
+
+- [Plaque-vulnerability signature development](https://doi.org/10.1016/j.isci.2023.107587). The APVS study used GSE59867 for STEMI versus chronic coronary syndrome gene filtering and included it in its development and internal test split (STAR Methods and Fig. S1B–C).
+- [Molecular subtype assignment](https://doi.org/10.1186/s12967-022-03795-9). The smooth muscle cell fate study applied discovery-derived subtype templates to GSE59867 PBMC profiles (nearest-template prediction and Fig. 6C).
+- [Circadian-related expression subtyping](https://doi.org/10.1038/s41598-024-65236-5). The ischemic heart disease study reused this series for retrospective molecular subtyping. The GEO collection fields record time since infarction.
+- [Admission-only diagnostic comparison](https://doi.org/10.3389/fcvm.2026.1904246). A cross-cohort study compared 111 STEMI admission samples with 46 stable coronary artery disease samples and excluded repeated visits from its diagnostic training comparison (Methods §§2.1 and 2.4).
+- [Longitudinal expression analysis](https://doi.org/10.1371/journal.pone.0358983). A recovery-trajectory study analyzed serial samples from 81 eligible STEMI participants. Its recovery grouping was defined from gene expression (Methods and Figs. 1–3).
+
+See the [circadian-IHD study evidence and formal citation](https://drgezhang.com/papers/circadian-ihd.html). This author-prepared metadata lookup supports new analysis planning; it supplies no expression values and does not reconstruct the secondary studies’ original splits or results.
