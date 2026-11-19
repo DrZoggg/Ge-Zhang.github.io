@@ -64,6 +64,10 @@ class ScholarMetadataTests(unittest.TestCase):
             "10.1155/humu/5591097": "5591097",
             "10.1186/s12931-024-02978-w": "365",
             "10.1186/s12967-022-03795-9": "568",
+            "10.15212/cvia.2024.0023": "e956",
+            "10.1007/s10238-024-01439-4": "169",
+            "10.1186/s12943-024-02047-2": "131",
+            "10.1038/s41598-024-80885-2": "30755",
         }
         self.assertEqual({doi: fields["highwire_article_locator"]["value"]
                           for doi, fields in metadata.items()

@@ -924,6 +924,58 @@
         "https://onlinelibrary.wiley.com/doi/10.1002/tox.24284",
         "https://pubmed.ncbi.nlm.nih.gov/38591820/"
       ]
+    },
+    "10.1007/s13402-023-00912-8": {
+      "volume": "47",
+      "issue": "3",
+      "first_page": "759",
+      "last_page": "777",
+      "verified_sources": [
+        "https://link.springer.com/article/10.1007/s13402-023-00912-8",
+        "https://pubmed.ncbi.nlm.nih.gov/38294647/"
+      ]
+    },
+    "10.1007/s10238-024-01439-4": {
+      "volume": "24",
+      "issue": "1",
+      "article_number": "169",
+      "highwire_article_locator": {
+        "value": "169",
+        "source_url": "https://link.springer.com/article/10.1007/s10238-024-01439-4"
+      },
+      "ris_article_locator": "169",
+      "verified_sources": [
+        "https://link.springer.com/article/10.1007/s10238-024-01439-4",
+        "https://pubmed.ncbi.nlm.nih.gov/39052154/"
+      ]
+    },
+    "10.1186/s12943-024-02047-2": {
+      "volume": "23",
+      "issue": "1",
+      "article_number": "131",
+      "highwire_article_locator": {
+        "value": "131",
+        "source_url": "https://link.springer.com/article/10.1186/s12943-024-02047-2"
+      },
+      "ris_article_locator": "131",
+      "verified_sources": [
+        "https://link.springer.com/article/10.1186/s12943-024-02047-2",
+        "https://pubmed.ncbi.nlm.nih.gov/38918817/"
+      ]
+    },
+    "10.1038/s41598-024-80885-2": {
+      "volume": "14",
+      "issue": "1",
+      "article_number": "30755",
+      "highwire_article_locator": {
+        "value": "30755",
+        "source_url": "https://www.nature.com/articles/s41598-024-80885-2"
+      },
+      "ris_article_locator": "30755",
+      "verified_sources": [
+        "https://www.nature.com/articles/s41598-024-80885-2",
+        "https://pubmed.ncbi.nlm.nih.gov/39730571/"
+      ]
     }
   }
 }
