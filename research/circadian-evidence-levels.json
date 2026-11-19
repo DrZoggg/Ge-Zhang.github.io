@@ -198,7 +198,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
       "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
       "source_json": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
-      "source_fingerprint": "43ba1d7dba4b28ea937d9e6f3ea058ba32fef53a98b4695689ae73faa78fc2ea",
+      "source_fingerprint": "22286032f9115c940c85bdc68f37d29769e96a844c23717b43623e6d067f7587",
       "study_profile": {
         "profile_type": "multicohort_omics",
         "study_design": "Multicohort systems-biology study integrating public bulk transcriptomics, microarrays, single-cell RNA sequencing, cross-species circadian perturbation datasets, gene-regulatory-network analysis, and in-vitro CRC-cell perturbation experiments",
