@@ -751,7 +751,7 @@
     "10.2139/ssrn.5292589": {
       "slug": "doi-10-2139-ssrn-5292589",
       "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
+      "reviewed_on": "2026-11-19",
       "scope": "Preprint-specific identity and research context; the original manuscript and any later-version relationship remain unverified.",
       "sections": [
         {
@@ -771,6 +771,12 @@
           "text": "The indexed landing record labels the work published while retaining a preprint notice, but no explicit successor DOI was obtained. No journal-article results are assigned to this unverified manuscript version.",
           "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5292589",
           "source_locator": "Indexed official record: publication status and preprint notice; Crossref deposit relation field."
+        },
+        {
+          "heading": "Related open-access journal article",
+          "text": "The same eight authors also published an iScience article on ABCA1 and ALS. The PubMed Central record provides the journal article's methods, figures and formal citation (DOI 10.1016/j.isci.2025.114320). Each record retains its own DOI and citation. Formal version linkage remains unverified.",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12834111/",
+          "source_locator": "Journal byline and DOI; STAR Methods and Figures 1–8."
         }
       ],
       "limitations": [
@@ -788,6 +794,12 @@
           "label": "SSRN preprint record",
           "format": "Indexed official landing-page text, not an acquired manuscript",
           "locator": "Abstract: Background, Methods, Results; indexed official landing record"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12834111/",
+          "label": "Related iScience article in PubMed Central",
+          "format": "Official journal full text",
+          "locator": "Formal DOI 10.1016/j.isci.2025.114320; journal byline and STAR Methods"
         }
       ]
     },
