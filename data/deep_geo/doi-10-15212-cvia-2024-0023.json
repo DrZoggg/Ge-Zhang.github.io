@@ -207,6 +207,8 @@
     "version_of_record": "Official ScienceOpen-hosted Cardiovascular Innovations and Applications article; publisher ID cvia.2024.0023; copyright 2024 The Authors.",
     "license": "Creative Commons Attribution 4.0 International, explicitly stated in Article / License.",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "semantic_scholar_pdf_url": "https://pdfs.semanticscholar.org/3b27/7551eadafa156e3354d23df91a5d612f2db9.pdf",
+    "semantic_scholar_pdf_note": "Semantic Scholar hosts an alternate full-text PDF of this article. The PDF displays a CC BY-NC 4.0 notice. The ScienceOpen article page states CC BY 4.0 under Article / License.",
     "evidence_basis": "Current official hosted full-text Methods, Results and Table 1, retrieved 2026-10-26; only AA and AAA main-table findings included.",
     "supporting_material_url": "https://cvia-journal.org/wp-content/uploads/2024/03/Supplementary_tables_1_5.xlsx",
     "supporting_material_note": "Official spreadsheet download returned HTTP 406; equation and figure asset requests returned HTTP 403. No access control bypass and no independent supplement-based sensitivity verification.",
