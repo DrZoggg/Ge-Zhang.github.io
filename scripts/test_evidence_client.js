@@ -210,7 +210,7 @@ async function run() {
   }
   const b4=client.fetch('b4galt2');
   assert.equal(b4.links.publisher_url,'https://jitc.bmj.com/content/13/2/e010787');
-  assert.deepEqual(b4.primary_sources.identifiers,{pmid:'40010763',pmcid:'PMC11865799'});
+  assert.deepEqual(b4.primary_sources.identifiers,{pmid:'40010763',pmcid:'PMC11865799',openalex_id:'https://openalex.org/W4407984543'});
   assert.equal(b4.provenance.correction_doi_url,'https://doi.org/10.1136/jitc-2024-010787corr1');
   assert.equal(b4.provenance.correction_pmc_url,'https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/');
   assert(!b4.primary_sources.reading_routes.some(route=>route.url.includes('PMC12164647')));
@@ -220,6 +220,7 @@ async function run() {
   let sourceRouteCases=0;
   function routeFixture(overrides) {
     const fixture=structuredClone(catalog),work=fixture.works.find(w=>w.id==='aihflevel');
+    delete work.openalex_id;
     Object.assign(work,{pmid:null,pmcid:null,publisher_url:null,provenance:null},overrides);
     const packet=createClient(fixture,loaded.search).fetch('aihflevel--qa-3');sourceRouteCases++;
     assert.equal(packet.publication.doi,hf.publication.doi);
@@ -231,6 +232,20 @@ async function run() {
   const noIdentifiers=routeFixture({provenance:[{url:'https://example.org/a-supplement',label:'Source'}]});
   assert.deepEqual(noIdentifiers.primary_sources.identifiers,{pmid:null,pmcid:null});
   assert.deepEqual(noIdentifiers.primary_sources.reading_routes,[]);
+  const openalexId='https://openalex.org/W4401424168';
+  assert.equal(sameStudy.primary_sources.identifiers.openalex_id,openalexId);
+  const indexProvenance=[{openalex_id:openalexId}];
+  const missingOpenAlex=routeFixture({provenance:indexProvenance});
+  assert.deepEqual(missingOpenAlex.primary_sources,noIdentifiers.primary_sources);
+  const nullOpenAlex=routeFixture({openalex_id:null,provenance:indexProvenance});
+  assert.deepEqual(nullOpenAlex.primary_sources,noIdentifiers.primary_sources);
+  for (const openalex_id of ['',42,`${openalexId}\n`,`${openalexId}?key=secret`,
+    'https://openalex.org:443/W4401424168','https://api.openalex.org/works/W4401424168','https://openalex.org/W0']) {
+    const badOpenAlex=routeFixture({openalex_id,provenance:indexProvenance});
+    assert.deepEqual(badOpenAlex.primary_sources.identifiers,noIdentifiers.primary_sources.identifiers);
+    assert.deepEqual(badOpenAlex.primary_sources.reading_routes,[]);
+    assert.deepEqual(badOpenAlex.primary_sources.metadata_issues,[{field:'work.openalex_id',reason:'invalid_identifier'}]);
+  }
   const listed=routeFixture({provenance:[null,'not a record',{pmid:'39117613',pmcid:'pmc11310499',publisher_url:'https://www.nature.com/articles/s41467-024-50415-9'}]});
   assert.equal(listed.links.pubmed_url,hf.links.pubmed_url);assert.equal(listed.links.pmc_url,hf.links.pmc_url);
   assert(listed.primary_sources.reading_routes.every(route=>route.source_fields.some(field=>field.startsWith('work.provenance[2]'))));
@@ -277,7 +292,7 @@ async function run() {
   }
   const unrelatedPmc=routeFixture({references:[{pmcid:'PMC11865799'}],provenance:{correction_pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/'}});
   assert.equal(unrelatedPmc.primary_sources.identifiers.pmcid,null);
-  assert.equal(sourceRouteCases,23);
+  assert.equal(sourceRouteCases,32);
   // An explicit same-work repository PDF is a reading route; an arbitrary
   // provenance link (even one labelled "full text") remains just provenance.
   const repositorySource={url:'https://repository.example.org/paper.pdf',label:'Institutional full text',
@@ -311,6 +326,7 @@ async function run() {
     assert(!JSON.stringify(invalidRepository.primary_sources.metadata_issues).includes('secret'));
   }
   const genes=client.fetch('doi-10-1016-j-gendis-2026-102480');
+  assert.equal(genes.primary_sources.identifiers.openalex_id,'https://openalex.org/W7213554484');
   const geneRoutes=genes.primary_sources.reading_routes;
   assert.equal(geneRoutes.length,1);
   assert.equal(geneRoutes[0].url,genes.provenance[0].url);
@@ -362,7 +378,10 @@ async function run() {
   assert(calls.every(call=>call.url.startsWith('https://drgezhang.com/')&&!new URL(call.url).search));
   assert(calls.every(call=>call.options.redirect==='error'&&call.options.signal));
   assert.equal(live.retrieval.mode,'public_https');
-  assert.equal(createClient(live.questions,live.search,live.retrieval).fetch(exact.id).answer,exact.answer);
+  const liveClient=createClient(live.questions,live.search,live.retrieval);
+  assert.equal(liveClient.fetch(exact.id).answer,exact.answer);
+  assert.deepEqual(liveClient.fetch(genes.id).primary_sources,genes.primary_sources);
+  assert.equal(calls.length,2);
   await assert.rejects(()=>fetchDataset('../secret',fake),/fixed public/);
   await assert.rejects(()=>fetchDataset('research/questions.json',async()=>({ok:false,status:429})),/HTTP 429/);
   const wrongOrigin=async()=>{const response=new Response('{}',{headers:{'content-type':'application/json'}});Object.defineProperty(response,'url',{value:'https://other.invalid/questions.json'});return response;};

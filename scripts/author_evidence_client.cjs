@@ -314,7 +314,17 @@ function primarySources(work) {
   if (pmcid.value) routes.push({provider:'PMC',kind:'full_text_xml_api',
     url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${pmcid.value.slice(3)}&retmode=xml`,
     source_fields:pmcid.source_fields,availability:'not_checked'});
-  return {identifiers:{pmid:pmid.value,pmcid:pmcid.value},reading_routes:routes,metadata_issues:issues,
+  const identifiers = {pmid:pmid.value,pmcid:pmcid.value};
+  const openAlexId = work.openalex_id;
+  if (openAlexId !== null && openAlexId !== undefined) {
+    if (typeof openAlexId === 'string' && openAlexId === openAlexId.trim()
+        && /^https:\/\/openalex\.org\/W[1-9][0-9]*$/.test(openAlexId)) {
+      identifiers.openalex_id = openAlexId;
+    } else {
+      issue('work.openalex_id','invalid_identifier');
+    }
+  }
+  return {identifiers,reading_routes:routes,metadata_issues:issues,
     links:{pubmed_url:pubmed,pmc_url:pmc,publisher_url:publisher ? publisher.url : null}};
 }
 
