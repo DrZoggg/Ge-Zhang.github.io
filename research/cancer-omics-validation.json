@@ -653,7 +653,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html",
       "doi_url": "https://doi.org/10.1111/jcmm.18408",
       "source_json": "data/deep_geo/doi-10-1111-jcmm-18408.json",
-      "source_fingerprint": "f76764a3acf218dbb0a53e55b22afccd66ccbc7aa943140e0991f041f4e8590e",
+      "source_fingerprint": "aefdf7b42f26e75bbe979387926f49e16fa284d523119fd2edd0098937ed8507",
       "study_profile": {
         "profile_type": "multicohort_omics",
         "study_design": "Secondary integration of human LUAD single-cell and bulk expression cohorts with retrospective survival modeling, computational immune/drug-response inference and in-vitro PSMB1 perturbation.",
