@@ -40,6 +40,7 @@ VERIFIED_RIS_LOCATORS = {
     "10.1186/s12931-024-02978-w": "365",
     "10.1186/s12915-025-02400-x": "280",
     "10.1186/s12967-022-03795-9": "568",
+    "10.15212/cvia.2024.0023": "e956",
 }
 PRIORITY_FIELDS = {
     "10.1016/j.csbj.2024.04.044": {
@@ -110,6 +111,10 @@ PRIORITY_FIELDS = {
         "online_publication_date": "2026-10-18", "publication_date": "2026-10-18",
         "volume": "109", "issue": "4", "article_number": "00368504261499186",
         "publisher": "SAGE Publications", "pmid": "42893432",
+    },
+    "10.15212/cvia.2024.0023": {
+        "publication_date": "2024-04-13", "volume": "9", "issue": "1",
+        "article_number": "e956",
     },
     "10.1056/nejmc2518964": {
         "publication_date": "2026-03-05", "journal_abbrev": "N Engl J Med",

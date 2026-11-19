@@ -861,6 +861,21 @@
         "https://pubmed.ncbi.nlm.nih.gov/40013238/",
         "https://api.crossref.org/works/10.2147/JIR.S495784"
       ]
+    },
+    "10.15212/cvia.2024.0023": {
+      "publication_date": "2024-04-13",
+      "volume": "9",
+      "issue": "1",
+      "article_number": "e956",
+      "highwire_article_locator": {
+        "value": "e956",
+        "source_url": "https://www.scienceopen.com/hosted-document?doi=10.15212%2FCVIA.2024.0023"
+      },
+      "ris_article_locator": "e956",
+      "verified_sources": [
+        "https://www.scienceopen.com/hosted-document?doi=10.15212%2FCVIA.2024.0023",
+        "https://api.crossref.org/works/10.15212/cvia.2024.0023"
+      ]
     }
   }
 }
