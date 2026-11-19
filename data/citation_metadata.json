@@ -876,6 +876,18 @@
         "https://www.scienceopen.com/hosted-document?doi=10.15212%2FCVIA.2024.0023",
         "https://api.crossref.org/works/10.15212/cvia.2024.0023"
       ]
+    },
+    "10.1016/j.jma.2023.05.007": {
+      "publication_date": "2024-12",
+      "online_publication_date": "2023-06-27",
+      "volume": "12",
+      "issue": "12",
+      "first_page": "4988",
+      "last_page": "5004",
+      "verified_sources": [
+        "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
+        "https://api.crossref.org/works/10.1016/j.jma.2023.05.007"
+      ]
     }
   }
 }

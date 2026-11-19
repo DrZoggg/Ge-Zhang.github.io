@@ -120,6 +120,38 @@ class OnlinePublicationDateTests(unittest.TestCase):
         self.assertEqual(json.loads(citations.render_csl_json(record))["issued"]["date-parts"],
                          [[2027, 2, 3]])
 
+    def test_formal_issue_after_master_first_online_year(self):
+        publication = self.publication(2023)
+        fields = {
+            "online_publication_date": "2023-06-27",
+            "publication_date": "2024-12",
+            "volume": "12",
+            "issue": "12",
+            "first_page": "4988",
+            "last_page": "5004",
+            "verified_sources": SOURCES,
+        }
+        record = citations.citation_record(
+            publication, self.metadata(publication, fields), self.config["site_url"])
+        self.assertEqual(publication["year"], 2023)
+        self.assertEqual(record["year"], 2024)
+        self.assertIn("2024;12(12):4988", citations.citation_plain_text(record))
+        self.assertIn("year = {2024}", citations.render_bibtex(record))
+        self.assertIn("PY  - 2024\nDA  - 2024/12", citations.render_ris(record))
+        self.assertEqual(json.loads(citations.render_csl_json(record))["issued"]["date-parts"],
+                         [[2024, 12]])
+        page = builder.render_paper_html(publication, config=self.config, citation_data=record)
+        self.assertIn('<meta name="citation_publication_date" content="2024/12">', page)
+        schema = validator.json_ld_object(page, "ScholarlyArticle", "cross-year issue")
+        self.assertEqual(schema["datePublished"], "2023-06-27")
+        for invalid in ({**fields, "online_publication_date": "2022-06-27"},
+                        {**fields, "publication_date": "2022-12"},
+                        {key: value for key, value in fields.items()
+                         if key != "online_publication_date"}):
+            with self.subTest(metadata=invalid), self.assertRaisesRegex(
+                    ValueError, "publication_date disagrees with master year"):
+                self.metadata(publication, invalid)
+
     def test_validator_rejects_issue_year_in_place_of_explicit_first_date(self):
         publication = self.publication()
         fields = {"online_publication_date": "2026-10-15"}

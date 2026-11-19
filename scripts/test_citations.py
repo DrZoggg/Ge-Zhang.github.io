@@ -112,6 +112,10 @@ PRIORITY_FIELDS = {
         "volume": "109", "issue": "4", "article_number": "00368504261499186",
         "publisher": "SAGE Publications", "pmid": "42893432",
     },
+    "10.1016/j.jma.2023.05.007": {
+        "publication_date": "2024-12", "online_publication_date": "2023-06-27",
+        "volume": "12", "issue": "12", "first_page": "4988", "last_page": "5004",
+    },
     "10.15212/cvia.2024.0023": {
         "publication_date": "2024-04-13", "volume": "9", "issue": "1",
         "article_number": "e956",
