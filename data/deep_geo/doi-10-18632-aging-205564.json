@@ -255,6 +255,10 @@
     "supporting_material": "The publisher’s Supplementary Table 3 lists the reported backpropagation neural-network feature weights and intercepts for the UC-versus-control classifier. The separate UCRScore is described in the main text.",
     "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182272",
     "data_source_note": "This accession is linked to document the unresolved source mismatch, not as a verified download location for the reported UC single-cell analysis.",
+    "external_classifier_validation_gse47908_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47908",
+    "external_classifier_validation_gse59071_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59071",
+    "external_classifier_validation_gse75214_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75214",
+    "external_validation_sample_overlap": "The GEO deposits list 116 sample accessions for GSE59071 and 194 for GSE75214. All 116 GSE59071 accessions also occur in GSE75214. These counts describe the original GEO records. The sample-level membership of the paper’s final analytic subsets has not been independently verified. A synthesis across these two datasets should account for the shared samples.",
     "review_basis": "Published main text and selected figure legends plus the cited GEO record. No raw-data reanalysis or independent reconstruction of the score."
   },
   "version": 2,
