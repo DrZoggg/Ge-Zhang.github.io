@@ -18665,7 +18665,7 @@
         "Jin-Ying Zhang"
       ],
       "doi_url": "https://doi.org/10.18063/ijb.740",
-      "publisher_url": null,
+      "publisher_url": "https://accscience.com/journal/IJB/9/4/10.18063/ijb.740",
       "pmid": "37323481",
       "pmcid": "PMC10261152",
       "openalex_id": "https://openalex.org/W4380872576",
@@ -18916,9 +18916,10 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-18063-ijb-740.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-18063-ijb-740.json",
-      "gold_content_sha256": "95c78c2af5527c6b75ccd3425684093b06314b1bafd561bde4a4c38070b40099",
+      "gold_content_sha256": "684086c3dfe28b90da883570e7d6a451a2bbd161e7e98c3a73cfec239d0da832",
       "provenance": {
-        "publisher_url": "https://doi.org/10.18063/ijb.740",
+        "publisher_url": "https://accscience.com/journal/IJB/9/4/10.18063/ijb.740",
+        "formal_pdf_url": "https://article.accscience.com/journal/IJB/9/4/ijb_740/ijb_740.pdf",
         "doi_url": "https://doi.org/10.18063/ijb.740",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37323481/",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10261152/",

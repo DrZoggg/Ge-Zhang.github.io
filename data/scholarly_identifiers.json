@@ -734,13 +734,15 @@
     },
     "10.18063/ijb.740": {
       "openalex_id": "https://openalex.org/W4380872576",
+      "publisher_url": "https://accscience.com/journal/IJB/9/4/10.18063/ijb.740",
       "verified_sources": [
         "https://api.openalex.org/works/W4380872576",
-        "https://europepmc.org/article/MED/37323481"
+        "https://europepmc.org/article/MED/37323481",
+        "https://accscience.com/journal/IJB/9/4/10.18063/ijb.740"
       ],
       "pmid": "37323481",
       "pmcid": "PMC10261152",
-      "verified_at": "2026-09-30"
+      "verified_at": "2026-11-19"
     },
     "10.3980/j.issn.1672-5123.2020.12.13": {
       "openalex_id": "https://openalex.org/W4399062302",
