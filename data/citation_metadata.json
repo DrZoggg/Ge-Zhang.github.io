@@ -19,6 +19,10 @@
       "volume": "21",
       "issue": "4",
       "article_number": "e0346326",
+      "highwire_article_locator": {
+        "value": "e0346326",
+        "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326"
+      },
       "ris_article_locator": "e0346326",
       "pmid": "41931483",
       "pmcid": "PMC13048407",
@@ -59,6 +63,10 @@
       "volume": "15",
       "issue": "1",
       "article_number": "6756",
+      "highwire_article_locator": {
+        "value": "6756",
+        "source_url": "https://www.nature.com/articles/s41467-024-50415-9"
+      },
       "ris_article_locator": "6756",
       "eissn": "2041-1723",
       "pmid": "39117613",
@@ -244,6 +252,10 @@
       "volume": "23",
       "issue": "1",
       "article_number": "280",
+      "highwire_article_locator": {
+        "value": "280",
+        "source_url": "https://link.springer.com/article/10.1186/s12915-025-02400-x"
+      },
       "ris_article_locator": "280",
       "eissn": "1741-7007",
       "pmid": "41013440",
@@ -370,6 +382,10 @@
       "volume": "14",
       "issue": "1",
       "article_number": "14155",
+      "highwire_article_locator": {
+        "value": "14155",
+        "source_url": "https://www.nature.com/articles/s41598-024-65236-5"
+      },
       "ris_article_locator": "14155",
       "eissn": "2045-2322",
       "pmid": "38898215",
@@ -424,6 +440,10 @@
       "publication_date": "2025-03-26",
       "volume": "13",
       "article_number": "1521372",
+      "highwire_article_locator": {
+        "value": "1521372",
+        "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1521372/full"
+      },
       "pmid": "40206179",
       "pmcid": "PMC11979105",
       "verified_sources": [
@@ -774,12 +794,17 @@
       "volume": "15",
       "issue": "1",
       "article_number": "15916",
+      "highwire_article_locator": {
+        "value": "15916",
+        "source_url": "https://www.nature.com/articles/s41598-025-98859-3"
+      },
       "ris_article_locator": "15916",
       "pmid": "40335605",
       "pmcid": "PMC12059082",
       "verified_sources": [
         "https://pubmed.ncbi.nlm.nih.gov/40335605/",
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12059082/"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12059082/",
+        "https://www.nature.com/articles/s41598-025-98859-3"
       ]
     },
     "10.2147/jir.s495784": {

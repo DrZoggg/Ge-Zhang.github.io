@@ -19,7 +19,7 @@ ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
     "verified_sources", "online_publication_date", "ris_authors", "ris_article_locator",
-    "fulltext_pdf", "official_abstract",
+    "fulltext_pdf", "official_abstract", "highwire_article_locator",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -123,6 +123,13 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
             elif key == "fulltext_pdf":
                 validate_fulltext_pdf(value, publication, fields.get("verified_sources", []))
+            elif key == "highwire_article_locator":
+                if (not isinstance(value, dict)
+                        or set(value) != {"value", "source_url"}
+                        or not fields.get("article_number")
+                        or value["value"] != fields["article_number"]
+                        or value["source_url"] not in fields.get("verified_sources", [])):
+                    raise ValueError(f"Citation metadata {doi} Highwire locator requires a sourced article number.")
             elif key == "official_abstract":
                 required = {"text", "source_url", "source_version", "license_url", "verbatim"}
                 sources = fields.get("verified_sources", [])
@@ -188,6 +195,13 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
         ):
             raise ValueError(f"Citation metadata {doi} RIS locator requires a sourced article number without pagination.")
     return papers
+
+
+def highwire_first_page(record):
+    """Use the verified publisher locator only for unpaginated HTML records."""
+    if record.get("first_page") or record.get("last_page"):
+        return record.get("first_page")
+    return record.get("highwire_article_locator", {}).get("value")
 
 
 def citation_skip_reason(publication):
