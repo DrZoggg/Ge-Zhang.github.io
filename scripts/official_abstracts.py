@@ -7,6 +7,7 @@ from sync_common import ROOT, is_withdrawn, norm_doi
 
 
 PATH = ROOT / "data" / "official_abstracts.json"
+ACCEPTED_MANUSCRIPT_ABSTRACT_DOI = "10.1097/re9.0000000000000037"
 LICENSE_URLS = {
     "CC-BY-NC-4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
     "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
@@ -37,11 +38,18 @@ DOI_LICENSE_URLS = {
     "10.1016/j.ejphar.2023.175569": {
         "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
     },
+    ACCEPTED_MANUSCRIPT_ABSTRACT_DOI: {
+        "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/",
+    },
     "10.1093/eurheartj/ehaf523": {
         "OUP-AUTHOR-ABSTRACT-REUSE": "https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/author-self-archiving-policy",
     },
 }
 SOURCES = {
+    ACCEPTED_MANUSCRIPT_ABSTRACT_DOI: (
+        "www.ovid.com",
+        "/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+    ),
     "10.1007/s10238-026-02130-6": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC13342204/"),
     "10.1016/j.jma.2023.05.007": ("www.sciopen.com", "/article/10.1016/j.jma.2023.05.007"),
     "10.3389/fnut.2025.1658286": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC12501789/"),
@@ -97,7 +105,7 @@ def abstract_text(record):
     )
 
 
-def load_official_abstracts(publications):
+def load_official_abstracts(publications, *, citation_metadata=None):
     if not PATH.is_file():
         return {}
     data = json.loads(PATH.read_text(encoding="utf-8"))
@@ -106,6 +114,19 @@ def load_official_abstracts(publications):
     papers = data["papers"]
     if not isinstance(papers, dict):
         raise ValueError("official_abstracts.papers must be an object.")
+    # Reuse the reviewed citation source for the licensed CR manuscript. Keep the
+    # exact licensed text in one place and keep other citation-only text out.
+    doi = ACCEPTED_MANUSCRIPT_ABSTRACT_DOI
+    accepted = (citation_metadata or {}).get(doi, {}).get("official_abstract")
+    if accepted and doi not in papers:
+        papers[doi] = {
+            "source_type": accepted["source_version"],
+            "source_url": accepted["source_url"],
+            "license": "CC-BY-4.0",
+            "license_url": accepted["license_url"],
+            "verbatim": accepted["verbatim"],
+            "abstract": {"type": "unstructured", "text": accepted["text"]},
+        }
     public_dois = [norm_doi(item.get("doi")) for item in publications if not is_withdrawn(item)]
     for doi, record in papers.items():
         if doi != norm_doi(doi) or public_dois.count(doi) != 1 or doi not in SOURCES or doi in EXCLUDED:
@@ -113,10 +134,10 @@ def load_official_abstracts(publications):
         required = {"source_type", "source_url", "license", "license_url", "verbatim", "abstract"}
         if not isinstance(record, dict) or set(record) != required:
             raise ValueError(f"Official abstract fields invalid for {doi}.")
-        # This indexed abstract is permitted only with its exact DOI/PMID and
-        # independently verified article-specific publisher CC BY grant.
-        source_types = ({"pubmed"} if doi == "10.1016/j.ejphar.2023.175569"
-                        else {"version_of_record", "publisher", "pmc"})
+        source_types = {
+            "10.1016/j.ejphar.2023.175569": {"pubmed"},
+            ACCEPTED_MANUSCRIPT_ABSTRACT_DOI: {"publisher_accepted_manuscript"},
+        }.get(doi, {"version_of_record", "publisher", "pmc"})
         if record["source_type"] not in source_types:
             raise ValueError(f"Official abstract source type invalid for {doi}.")
         parsed = urlparse(record["source_url"])

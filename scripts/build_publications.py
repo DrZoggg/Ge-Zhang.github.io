@@ -1893,6 +1893,15 @@ def render_deep_markdown(content, *, related_papers=None, pmc_url="", trial_regi
     return render_deep_v1_markdown(content)
 
 
+OFFICIAL_ABSTRACT_SOURCE_LABELS = {
+    "version_of_record": "Version of Record",
+    "publisher": "publisher",
+    "pmc": "PMC",
+    "pubmed": "PubMed indexed abstract",
+    "publisher_accepted_manuscript": "publisher-accepted manuscript",
+}
+
+
 def render_official_abstract_html(record, doi):
     abstract = record["abstract"]
     if abstract["type"] == "structured":
@@ -1903,12 +1912,7 @@ def render_official_abstract_html(record, doi):
         )
     else:
         body = f'<p>{html.escape(abstract["text"])}</p>'
-    source = {
-        "version_of_record": "Version of Record",
-        "publisher": "publisher",
-        "pmc": "PMC",
-        "pubmed": "PubMed indexed abstract",
-    }[record["source_type"]]
+    source = OFFICIAL_ABSTRACT_SOURCE_LABELS[record["source_type"]]
     return (
         '<section id="official-abstract" class="paper-geo-v2__section">'
         f'<h2>Official Abstract</h2>{body}'
@@ -1928,7 +1932,7 @@ def render_official_abstract_markdown(record, doi):
             parts.extend([f"### {section['label']}", "", section["text"], ""])
     else:
         parts.extend([abstract["text"], ""])
-    source = {"version_of_record": "Version of Record", "publisher": "publisher", "pmc": "PMC", "pubmed": "PubMed indexed abstract"}[record["source_type"]]
+    source = OFFICIAL_ABSTRACT_SOURCE_LABELS[record["source_type"]]
     parts.extend([
         f"Text reproduced verbatim from {source} ([source]({record['source_url']})); "
         f"[DOI]({doi_url(doi)}); [{record['license']}]({record['license_url']}).",
@@ -2537,7 +2541,7 @@ def build_site():
     deep_tokens = {controller_token(entry) for entry in deep_entries}
     public_master = [publication for publication in master if not is_withdrawn(publication)]
     citation_metadata = load_citation_metadata(public_master)
-    official_abstracts = load_official_abstracts(public_master)
+    official_abstracts = load_official_abstracts(public_master, citation_metadata=citation_metadata)
     deep_contents = {
         publication_token(publication): load_deep_content(publication, allow_missing=True)
         for publication in public_master
