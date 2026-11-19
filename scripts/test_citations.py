@@ -28,6 +28,7 @@ from validate_site import json_ld_object, meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 VERIFIED_RIS_LOCATORS = {
+    "10.1016/j.jtemb.2024.127543": "127543",
     "10.1136/jitc-2024-010787": "e010787",
     "10.1371/journal.pone.0346326": "e0346326",
     "10.1016/j.intimp.2024.112574": "112574",
@@ -41,6 +42,14 @@ VERIFIED_RIS_LOCATORS = {
     "10.1186/s12967-022-03795-9": "568",
 }
 PRIORITY_FIELDS = {
+    "10.1016/j.csbj.2024.04.044": {
+        "publication_date": "2024-12", "online_publication_date": "2024-04-20",
+        "volume": "23", "first_page": "1725", "last_page": "1739",
+    },
+    "10.1016/j.jtemb.2024.127543": {
+        "publication_date": "2024-12", "online_publication_date": "2024-10-09",
+        "volume": "86", "article_number": "127543", "pmid": "39406123",
+    },
     "10.1371/journal.pone.0346326": {
         "publication_date": "2026-04-03", "journal_abbrev": "PLoS One",
         "volume": "21", "issue": "4", "article_number": "e0346326",

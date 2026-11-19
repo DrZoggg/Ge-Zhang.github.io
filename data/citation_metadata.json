@@ -444,6 +444,10 @@
       "publication_date": "2026-01-05",
       "volume": "12",
       "article_number": "1724572",
+      "highwire_article_locator": {
+        "value": "1724572",
+        "source_url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full"
+      },
       "pmid": "41561117",
       "pmcid": "PMC12813168",
       "verified_sources": [
@@ -472,6 +476,10 @@
       "publication_date": "2021-05-03",
       "volume": "11",
       "article_number": "659217",
+      "highwire_article_locator": {
+        "value": "659217",
+        "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full"
+      },
       "pmid": "34012920",
       "pmcid": "PMC8126718",
       "verified_sources": [
@@ -829,6 +837,17 @@
         "https://pubmed.ncbi.nlm.nih.gov/40335605/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC12059082/",
         "https://www.nature.com/articles/s41598-025-98859-3"
+      ]
+    },
+    "10.1016/j.csbj.2024.04.044": {
+      "publication_date": "2024-12",
+      "online_publication_date": "2024-04-20",
+      "volume": "23",
+      "first_page": "1725",
+      "last_page": "1739",
+      "verified_sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058087/",
+        "https://pubmed.ncbi.nlm.nih.gov/38689716/"
       ]
     },
     "10.2147/jir.s495784": {
