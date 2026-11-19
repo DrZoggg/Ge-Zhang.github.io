@@ -329,6 +329,18 @@ with a lawfully saved local JATS file:
 python -X utf8 -B scripts/jats-reader/jats_to_text.py article.xml --include-cited-references -o reading.json
 ```
 
+For an already identified PMCID, use the original response from the
+[PMC OAI-PMH service](https://pmc.ncbi.nlm.nih.gov/tools/oai/) with `GetRecord`,
+`metadataPrefix=pmc`, and identifier `oai:pubmedcentral.nih.gov:` followed by the
+numeric part of the PMCID. The same command accepts this XML directly.
+
+For a versioned file, use the [PMC Article Datasets](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/).
+List objects in the public bucket using the exact PMCID prefix, for example
+`metadata/PMC11058087.`, then inspect the available versions' metadata. Match the DOI,
+manuscript status and licence to the intended edition. Download the XML URL
+declared in that record and compare the file checksum with its published value.
+A missing version or a metadata-only response leaves the body unverified.
+
 For a citation in a table, follow the reference link in the published HTML. With
 JATS, add `--table-id` with the exact `table-wrap` ID and match the bibliography
 `xref` element's `rid` to `bibliography_references[].reference_id`. The paragraph

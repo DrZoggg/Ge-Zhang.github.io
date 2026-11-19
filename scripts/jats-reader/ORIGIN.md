@@ -20,12 +20,13 @@ remain available for consumers maintaining a separate pinned upstream checkout.
 
 The complete upstream MIT notice, Copyright (c) 2025 K-Dense Inc., is retained in
 [LICENSE.kdense.md](LICENSE.kdense.md). `_common.py` is unchanged. The bundled
-reader also includes the optional attachment and exact table-ID flags below.
+reader also includes the optional attachment and exact table-ID flags below,
+plus PMC OAI-PMH GetRecord input support.
 Shipped SHA-256:
 
 | File | SHA-256 |
 | --- | --- |
-| `jats_to_text.py` | `d1b05ed17ae56b313e9bbaa79eb77da6f2265feeb6c5e99ad5edefea857d7934` |
+| `jats_to_text.py` | `22b22f3d8877c6bd75a2639938b05889f6ef942aea0c1bcb0b0be8603c071108` |
 | `_common.py` | `4c6962ddbcb8cb89adc6c6ac02199835310f04b2ab93ffab9855adef38efd369` |
 | `LICENSE.kdense.md` | `09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1` |
 
@@ -43,6 +44,13 @@ The source argument `-` reads stdin. For example, in a POSIX shell:
 ```sh
 cat article.xml | python -X utf8 -B scripts/jats-reader/jats_to_text.py - --include-cited-references -o reading.json
 ```
+
+For a known PMCID, the reader also takes the original single-record
+[PMC OAI-PMH GetRecord XML](https://pmc.ncbi.nlm.nih.gov/tools/oai/) with a
+JATS Archiving 1.4 article. Pass the saved response or use stdin as above.
+For versioned downloadable files, PMC provides an
+[official open article dataset](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/).
+Select the appropriate licensed edition using its per-version metadata.
 
 A consumer can invoke the same argument list with its existing subprocess tool,
 supply XML on stdin and retain the returned JSON with its own reading record.
