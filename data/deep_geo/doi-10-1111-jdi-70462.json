@@ -251,6 +251,8 @@
     "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
     "data_source": "China Health and Retirement Longitudinal Study, 2011 baseline and 2015 follow-up",
     "supporting_material": "Tables S1–S8 are linked in the version-of-record supplementary material; key estimates on this page are located in the full-text Results and principal tables.",
+    "supporting_material_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13651581.1/JDI-9999-0-s001.docx",
+    "supporting_material_note": "The publisher supplement is available as a Word file in the PMC archive. Table S1 gives the study-specific definitions for the surrogate-defined CLMM outcome and its components, including LAP-based suspected MASLD.",
     "author_identity": "Ge Zhang is listed with the Department of Cardiology, The First Affiliated Hospital of Zhengzhou University. The DOI is present in public ORCID 0000-0002-3116-3246; the self-maintained ORCID linkage is distinct from publisher-authenticated identity.",
     "evidence_basis": "Version-of-record full text via Europe PMC XML; Methods, Results, Tables 1–3 and article-level permissions; PubMed and public ORCID metadata."
   },
