@@ -1461,6 +1461,7 @@ def validate_clockprocrc_v2_regression(content, publication, page):
             "publisher_url", "code_url", "datasets_cohorts", "evidence_basis",
             "publication_status", "count_reconciliation", "accession_note",
             "code_note", "score_gene_set_note", "locator_note",
+            "revised_publisher_supplement_url", "supporting_material",
         } and "pmid" not in provenance and "pmcid" not in provenance,
         f"{label} provenance fields changed.",
     )
