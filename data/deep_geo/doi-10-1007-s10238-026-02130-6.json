@@ -302,7 +302,7 @@
     "GSE19303 contributes both to subtype evaluation and to the exploratory response analysis; the response claim is not independent prospective validation.",
     "The cell-line experiment evaluates selected EPS1-associated expression directions, with no basis to infer all subtype mechanisms or treatment effects.",
     "The source does not provide a clinical decision threshold, calibrated individual treatment-benefit model or randomized comparison of subtype-guided care.",
-    "Supplementary-file links were verified, but the Springer supplementary spreadsheets were not retrieved successfully in this run; no claim depends on uninspected supplementary-only values."
+    "The supplementary spreadsheets document the qPCR primers and gene annotations. The findings on this page are based on the main text and figures."
   ],
   "related_papers": [
     {
@@ -325,7 +325,9 @@
     "license_url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
     "author_identity": "The version of record lists Ge Zhang at the Department of Cardiology, Tianjian Laboratory of Advanced Biomedical Sciences, Academy of Medical Sciences, First Affiliated Hospital of Zhengzhou University. The article record does not supply an ORCID for this author; no contradictory author identity was found. The same DOI is present in the public works list of ORCID 0000-0002-3116-3246 (put-code 226787148), independently checked 15 October 2026.",
     "external_datasets": "GSE5406; GSE57338; GSE116250; GSE19303. Counts refer to article-reported analyzed subsets, not the full native GEO series or a verified cross-series unique-person total.",
-    "supporting_material": "Version of record links Supplementary Materials 1-4, including two spreadsheets and two TIFF figures. Main-text claims in this page are supported by the retrieved full-text XML and visible article figures/legends; no supplementary-only values are inferred.",
+    "supporting_material": "The original spreadsheets in the PMC archive contain the qPCR primer list (Table S1, Supplementary Material 1) and functional annotations for the eight genes evaluated by qPCR (Table S2, Supplementary Material 4). The publisher also provides two supplementary figures.",
+    "supplementary_table_s1_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13342204.1/10238_2026_2130_MOESM1_ESM.xlsx",
+    "supplementary_table_s2_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13342204.1/10238_2026_2130_MOESM4_ESM.xlsx",
     "analysis_boundary": "Subtype reproducibility, computational immune/pathway associations, retrospective expression matching and cell-line expression checks are recorded as different evidence layers.",
     "evidence_basis": "Publisher version of record, PMC/Europe PMC full-text XML, PubMed-indexed author-affiliation metadata and Crossref DOI metadata, checked 14 October 2026.",
     "orcid_url": "https://orcid.org/0000-0002-3116-3246"
