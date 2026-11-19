@@ -912,6 +912,18 @@
         "https://doi.org/10.1093/hmg/ddae189",
         "https://academic.oup.com/hmg/issue/34/5"
       ]
+    },
+    "10.1002/tox.24284": {
+      "publication_date": "2024-10",
+      "online_publication_date": "2024-04-09",
+      "volume": "39",
+      "issue": "10",
+      "first_page": "4581",
+      "last_page": "4593",
+      "verified_sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1002/tox.24284",
+        "https://pubmed.ncbi.nlm.nih.gov/38591820/"
+      ]
     }
   }
 }

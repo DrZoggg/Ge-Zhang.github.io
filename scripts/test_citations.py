@@ -124,6 +124,10 @@ PRIORITY_FIELDS = {
         "publication_date": "2025-03-01", "online_publication_date": "2024-12-18",
         "volume": "34", "issue": "5", "first_page": "381", "last_page": "391",
     },
+    "10.1002/tox.24284": {
+        "publication_date": "2024-10", "online_publication_date": "2024-04-09",
+        "volume": "39", "issue": "10", "first_page": "4581", "last_page": "4593",
+    },
     "10.15212/cvia.2024.0023": {
         "publication_date": "2024-04-13", "volume": "9", "issue": "1",
         "article_number": "e956",
