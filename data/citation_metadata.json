@@ -888,6 +888,30 @@
         "https://www.sciopen.com/article/10.1016/j.jma.2023.05.007",
         "https://api.crossref.org/works/10.1016/j.jma.2023.05.007"
       ]
+    },
+    "10.1111/odi.70054": {
+      "publication_date": "2026-01",
+      "online_publication_date": "2025-08-16",
+      "volume": "32",
+      "issue": "1",
+      "first_page": "270",
+      "last_page": "271",
+      "verified_sources": [
+        "https://onlinelibrary.wiley.com/doi/10.1111/odi.70054",
+        "https://pubmed.ncbi.nlm.nih.gov/40818111/"
+      ]
+    },
+    "10.1093/hmg/ddae189": {
+      "publication_date": "2025-03-01",
+      "online_publication_date": "2024-12-18",
+      "volume": "34",
+      "issue": "5",
+      "first_page": "381",
+      "last_page": "391",
+      "verified_sources": [
+        "https://doi.org/10.1093/hmg/ddae189",
+        "https://academic.oup.com/hmg/issue/34/5"
+      ]
     }
   }
 }

@@ -116,6 +116,14 @@ PRIORITY_FIELDS = {
         "publication_date": "2024-12", "online_publication_date": "2023-06-27",
         "volume": "12", "issue": "12", "first_page": "4988", "last_page": "5004",
     },
+    "10.1111/odi.70054": {
+        "publication_date": "2026-01", "online_publication_date": "2025-08-16",
+        "volume": "32", "issue": "1", "first_page": "270", "last_page": "271",
+    },
+    "10.1093/hmg/ddae189": {
+        "publication_date": "2025-03-01", "online_publication_date": "2024-12-18",
+        "volume": "34", "issue": "5", "first_page": "381", "last_page": "391",
+    },
     "10.15212/cvia.2024.0023": {
         "publication_date": "2024-04-13", "volume": "9", "issue": "1",
         "article_number": "e956",

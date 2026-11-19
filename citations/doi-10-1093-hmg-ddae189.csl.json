@@ -38,11 +38,16 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2025,
+        3,
+        1
       ]
     ]
   },
   "DOI": "10.1093/hmg/ddae189",
   "URL": "https://doi.org/10.1093/hmg/ddae189",
+  "volume": "34",
+  "issue": "5",
+  "page": "381-391",
   "PMID": "39690817"
 }
