@@ -4183,7 +4183,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1111-jdi-70462.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1111-jdi-70462.json",
-      "gold_content_sha256": "83a7fa02b4f7a1a620e4df0eacbb93f2d2a709255873e036e3c5e39cd8ab8f1e",
+      "gold_content_sha256": "1e0293eb281e1ef5cbe4a6a829abed1d7d4287434117e61f1ee701ee39a0fce2",
       "provenance": {
         "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jdi.70462",
         "doi_url": "https://doi.org/10.1111/jdi.70462",
@@ -4194,6 +4194,8 @@
         "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
         "data_source": "China Health and Retirement Longitudinal Study, 2011 baseline and 2015 follow-up",
         "supporting_material": "Tables S1–S8 are linked in the version-of-record supplementary material; key estimates on this page are located in the full-text Results and principal tables.",
+        "supporting_material_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13651581.1/JDI-9999-0-s001.docx",
+        "supporting_material_note": "The publisher supplement is available as a Word file in the PMC archive. Table S1 gives the study-specific definitions for the surrogate-defined CLMM outcome and its components, including LAP-based suspected MASLD.",
         "author_identity": "Ge Zhang is listed with the Department of Cardiology, The First Affiliated Hospital of Zhengzhou University. The DOI is present in public ORCID 0000-0002-3116-3246; the self-maintained ORCID linkage is distinct from publisher-authenticated identity.",
         "evidence_basis": "Version-of-record full text via Europe PMC XML; Methods, Results, Tables 1–3 and article-level permissions; PubMed and public ORCID metadata."
       },
