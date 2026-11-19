@@ -706,7 +706,8 @@ def validate_v2_rendered_page(
         require(item["title"] in page_text, f"{label} related title missing from HTML.")
     for key, value in content["provenance"].items():
         if key.endswith("_url"):
-            require(value in page and value in markdown, f"{label} provenance URL missing: {value}")
+            html_href = f'href="{html.escape(value, quote=True)}"'
+            require(html_href in page and value in markdown, f"{label} provenance URL missing: {value}")
     if content.get("citation_pilot"):
         validate_citation_pilot_rendering(content, page, markdown, label)
 
