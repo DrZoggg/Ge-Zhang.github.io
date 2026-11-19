@@ -12629,10 +12629,11 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1002-clc-70019.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1002-clc-70019.json",
-      "gold_content_sha256": "f81568ae896ff66298539d0d4a0476f78b6f1202d386127394b83358d74506db",
+      "gold_content_sha256": "23855a636dcb6f9c56d934506ed744930baea4e267f72a0c3a51e0ffd7211af5",
       "provenance": {
         "publisher_url": "https://doi.org/10.1002/clc.70019",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11420513/",
+        "pmc_archive_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11420513.1/PMC11420513.1.xml",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39314085/",
         "pmcid": "PMC11420513",
         "pmid": "39314085",
@@ -16406,13 +16407,14 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1016-j-csbj-2024-04-044.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-csbj-2024-04-044.json",
-      "gold_content_sha256": "f3216aa52b570b20c9dee3c4e65b053a0bbcdedfbd7aa564fb9c5345a9c60c88",
+      "gold_content_sha256": "8f6717e96df1ba1d0d27e928db83bcc3b41206eb201611430dc2d5902d58071b",
       "provenance": {
         "publisher_url": "https://doi.org/10.1016/j.csbj.2024.04.044",
         "pmcid": "PMC11058087",
         "evidence_basis": "Formal journal XML and figures/tables text. Original paraphrase only; do not redistribute adapted source figures under CC BY-NC-ND.",
         "visual_verification_scope": "FULL_CORE applies to the selected narrative/structural claims, all supported by article body or text-encoded table. No effect size, cohort size or empirical performance is taken from an image. Visual assets were not inspected; figure references are supplementary locators.",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058087/",
+        "pmc_archive_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11058087.1/PMC11058087.1.xml",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38689716/"
       },
       "scientific_role": "Narrative synthesis of measurement platforms, integration strategies and published oncology applications.",
@@ -30978,7 +30980,7 @@
       "answer_preview": {
         "answer": "Only the internally consistent depression analysis. The full publication also analyzes anxiety, but its unresolved count and effect-estimate conflicts are explicitly excluded from this page's supported findings.",
         "source": "data/deep_geo/doi-10-1002-clc-70019.json#/qa/0/answer",
-        "source_content_sha256": "f81568ae896ff66298539d0d4a0476f78b6f1202d386127394b83358d74506db",
+        "source_content_sha256": "23855a636dcb6f9c56d934506ed744930baea4e267f72a0c3a51e0ffd7211af5",
         "answer_sha256": "6051c981118255704ea530a6766eb9972d237c8b761dbdecb50622e59ba9de94",
         "evidence_refs": [
           "KF1",
