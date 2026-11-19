@@ -451,7 +451,7 @@ def validate_generated(items, config, root=ROOT):
     from citation_common import citation_record, load_citation_metadata
     from official_abstracts import load_official_abstracts
     metadata = load_citation_metadata(items)
-    abstracts = load_official_abstracts(items)
+    abstracts = load_official_abstracts(items, citation_metadata=metadata)
     identities = load_identifiers(items, metadata, root)
     contents = {}
     fields = {}

@@ -2095,7 +2095,7 @@ def validate_v2_inventory(v2_dois):
 
 def validate_citations(publications, config):
     enhancements = load_citation_metadata(publications)
-    official_abstracts = load_official_abstracts(publications)
+    official_abstracts = load_official_abstracts(publications, citation_metadata=enhancements)
     require(CITATIONS_DIR.is_dir(), "Generated citations directory is missing.")
     expected_names = set()
     counts = {"eligible": 0, "skipped": 0, "bib": 0, "ris": 0, "csl": 0}
@@ -2300,7 +2300,7 @@ def validate_site():
     master = load_master()
     public_expected = [item for item in master if not is_withdrawn(item)]
     citation_metadata = load_citation_metadata(public_expected)
-    official_abstracts = load_official_abstracts(public_expected)
+    official_abstracts = load_official_abstracts(public_expected, citation_metadata=citation_metadata)
     withdrawn = [item for item in master if is_withdrawn(item)]
     public_json = json.loads((ROOT / "publications.json").read_text(encoding="utf-8"))
     paper_index_payload = json.loads((ROOT / "paper_index.json").read_text(encoding="utf-8"))

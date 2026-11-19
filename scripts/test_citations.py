@@ -487,6 +487,11 @@ def test_verified_source_handoffs(public, enhancements, config):
     cr_markdown = (PAPERS_DIR / f"{cr['id']}.md").read_text(encoding="utf-8")
     assert f'[Full text PDF · Accepted manuscript]({cr["fulltext_pdf"]["url"]})' in cr_markdown
     assert json.loads(render_csl_json(cr))["abstract"] == text
+    assert cr_page.count('id="official-abstract"') == 1
+    assert json_ld_object(cr_page, "ScholarlyArticle", cr["id"])["abstract"] == text
+    assert f"## Official Abstract\n\n{text}\n" in cr_markdown
+    assert "publisher-accepted manuscript" in cr_markdown
+    assert abstract["source_url"] in cr_markdown and abstract["license_url"] in cr_markdown
     assert meta_contents((PAPERS_DIR / f"{cr['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == [text]
     assert cr == original
 
