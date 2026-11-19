@@ -47,12 +47,15 @@
   "issued": {
     "date-parts": [
       [
-        2024
+        2024,
+        12
       ]
     ]
   },
   "DOI": "10.1016/j.csbj.2024.04.044",
   "URL": "https://doi.org/10.1016/j.csbj.2024.04.044",
+  "volume": "23",
+  "page": "1725-1739",
   "PMID": "38689716",
   "PMCID": "PMC11058087",
   "abstract": "Recent advances in high-throughput proteomic profiling technologies have facilitated the precise quantification of numerous proteins across multiple specimens concurrently. Researchers have the opportunity to comprehensively analyze the molecular signatures in plentiful medical specimens or disease pattern cell lines. Along with advances in data analysis and integration, proteomics data could be efficiently consolidated and employed to recognize precise elementary molecular mechanisms and decode individual biomarkers, guiding the precision treatment of tumors. Herein, we review a broad array of proteomics technologies and the progress and methods for the integration of proteomics data and further discuss how to better merge proteomics in precision medicine and clinical settings."
