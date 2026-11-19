@@ -78,7 +78,7 @@ Source review: 2026-11-15.
 
 ## Cite this paper
 
-Yudi Xu, Shutong Liu, Zhaokai Zhou, Hongzhuo Qin, Yuyuan Zhang, Ge Zhang, Hongxuan Ma, Xinwei Han, Huimin Liu, Zaoqu Liu. Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease. Human Molecular Genetics. 2024. https://doi.org/10.1093/hmg/ddae189
+Yudi Xu, Shutong Liu, Zhaokai Zhou, Hongzhuo Qin, Yuyuan Zhang, Ge Zhang, Hongxuan Ma, Xinwei Han, Huimin Liu, Zaoqu Liu. Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease. Human Molecular Genetics. 2025;34(5):381–391. https://doi.org/10.1093/hmg/ddae189
 
 - [BibTeX](https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.bib)
 - [RIS / EndNote](https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.ris)
