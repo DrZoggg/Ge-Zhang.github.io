@@ -10,6 +10,7 @@ from datetime import date, datetime, timezone
 from citation_common import (
     CITATION_METADATA_PATH,
     CITATIONS_DIR,
+    citation_export_record,
     citation_files,
     citation_plain_text,
     citation_record,
@@ -2646,6 +2647,7 @@ def build_site():
     for record in citation_by_slug.values():
         if record is None:
             continue
+        export_record = citation_export_record(record, scholarly_ids)
         files = citation_files(record)
         for name, render in (
             (files["bib"], render_bibtex),
@@ -2653,7 +2655,7 @@ def build_site():
             (files["csl"], render_csl_json),
         ):
             expected_citation_files.add(name)
-            write_text_if_changed(CITATIONS_DIR / name, render(record))
+            write_text_if_changed(CITATIONS_DIR / name, render(export_record))
     unexpected_citation_files = {
         path.name for path in CITATIONS_DIR.iterdir()
     } - expected_citation_files

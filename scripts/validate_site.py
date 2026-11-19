@@ -9,6 +9,7 @@ from html.parser import HTMLParser
 
 from citation_common import (
     CITATIONS_DIR,
+    citation_export_record,
     citation_files,
     citation_plain_text,
     citation_record,
@@ -32,6 +33,7 @@ from build_publications import (
     v2_value,
 )
 from official_abstracts import abstract_text, load_official_abstracts
+from scholarly_discovery import load_identifiers
 from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
 import research_guides
@@ -2096,6 +2098,7 @@ def validate_v2_inventory(v2_dois):
 def validate_citations(publications, config):
     enhancements = load_citation_metadata(publications)
     official_abstracts = load_official_abstracts(publications, citation_metadata=enhancements)
+    scholarly_ids = load_identifiers(publications, enhancements)
     require(CITATIONS_DIR.is_dir(), "Generated citations directory is missing.")
     expected_names = set()
     counts = {"eligible": 0, "skipped": 0, "bib": 0, "ris": 0, "csl": 0}
@@ -2121,6 +2124,7 @@ def validate_citations(publications, config):
         require(f'href="{record["doi_url"]}"' in page,
                 f"Full DOI URL is missing from {slug} citation section.")
         files = citation_files(record)
+        export_record = citation_export_record(record, scholarly_ids)
         renderers = {"bib": render_bibtex, "ris": render_ris, "csl": render_csl_json}
         for format_name, filename in files.items():
             expected_names.add(filename)
@@ -2130,7 +2134,7 @@ def validate_citations(publications, config):
             path = CITATIONS_DIR / filename
             require(path.is_file(), f"Citation export missing: {filename}")
             content = path.read_text(encoding="utf-8")
-            require(content == renderers[format_name](record),
+            require(content == renderers[format_name](export_record),
                     f"Citation export does not preserve source identity: {filename}")
             if format_name == "csl":
                 csl = json.loads(content)

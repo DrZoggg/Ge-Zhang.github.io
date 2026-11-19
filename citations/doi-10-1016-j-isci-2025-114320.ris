@@ -11,6 +11,7 @@ TI  - ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis
 JO  - iScience
 PY  - 2025
 AB  - Amyotrophic lateral sclerosis (ALS) is a progressive motor neuron disease lacking reliable biomarkers and effective therapeutic targets. We performed an integrative multiscale analysis combining global epidemiology, whole-blood transcriptomics, machine learning, and Mendelian randomization (MR). We developed a nine-gene diagnostic signature (AUC = 0.75 in external validation) and identified ATP-binding cassette transporter A1 (ABCA1) as a central feature. MR analyses supported a protective causal relationship between increased ABCA1 expression and reduced ALS risk (OR = 0.93, p = 0.02). We validated this at the protein level, finding serum ABCA1 significantly elevated in an in-house ALS cohort (p = 0.006) and correlated with metabolic parameters (BMI and LDL). Spatiotemporal profiling confirmed ABCA1 upregulation in ALS patient blood and spinal cords, and progressive upregulation in ALS model mice. Collectively, we validated a diagnostic signature and identified ABCA1 as a protective, compensatory biomarker in ALS, emphasizing the link between metabolic adaptation and neurodegeneration.
+L2  - https://pmc.ncbi.nlm.nih.gov/articles/PMC12834111/
 DO  - 10.1016/j.isci.2025.114320
 UR  - https://doi.org/10.1016/j.isci.2025.114320
 ER  -

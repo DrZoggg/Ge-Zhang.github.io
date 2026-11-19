@@ -9,6 +9,7 @@ from pathlib import Path
 
 from citation_common import (
     CITATIONS_DIR,
+    citation_export_record,
     citation_files,
     citation_record,
     citation_skip_reason,
@@ -21,6 +22,7 @@ from citation_common import (
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import is_withdrawn, load_master, norm_doi, publication_authors
 from official_abstracts import abstract_text, load_official_abstracts
+from scholarly_discovery import load_identifiers
 from validate_site import json_ld_object, meta_contents, validate_citations
 
 
@@ -243,6 +245,7 @@ def run_tests():
     config = load_site_config()
     enhancements = load_citation_metadata(public)
     test_verified_source_handoffs(public, enhancements, config)
+    test_scholarly_identifiers_in_exports(public, enhancements, config)
     official_abstracts = load_official_abstracts(public)
     test_existing_abstract_source_exports(public, enhancements, config, official_abstracts)
     # These two source handoffs have their own abstract/PDF contract below.
@@ -426,10 +429,12 @@ def run_tests():
 def test_existing_abstract_source_exports(public, enhancements, config, sources):
     """Only the existing verified source texts enter file-import abstract fields."""
     by_doi = {norm_doi(item.get("doi")): item for item in public}
+    identifiers = load_identifiers(public, enhancements)
     snapshot = copy.deepcopy(sources)
     for doi, source in sources.items():
         record = citation_record(by_doi[doi], enhancements, config["site_url"], source)
         legacy = citation_record(by_doi[doi], enhancements, config["site_url"])
+        legacy = citation_export_record(legacy, identifiers)
         text = abstract_text(source)
         folded = text.replace("\r\n", "\n").replace("\r", "\n").replace("\n", " ")
         ris = (CITATIONS_DIR / f"{record['id']}.ris").read_text(encoding="utf-8")
@@ -461,6 +466,43 @@ def test_existing_abstract_source_exports(public, enhancements, config, sources)
     assert [line[6:] for line in ris.splitlines() if line.startswith("DO  - ")] == [doi]
     assert json.loads(render_csl_json(record))["abstract"] == abstract_text(edge)
     assert 'Background: <tag> "quoted" & 张格 Results: value 2.5 DO  - 10.9999/fixture' in ris
+
+
+def test_scholarly_identifiers_in_exports(public, enhancements, config):
+    """Carry reviewed accessions into imports without replacing the formal URL."""
+    identifiers = load_identifiers(public, enhancements)
+    cases = {
+        "10.3389/fpubh.2025.1521372": ("40206179", "PMC11979105"),
+        "10.1016/j.isci.2025.114320": ("41602910", "PMC12834111"),
+        "10.1200/po.24.00089": ("39432882", None),
+        "10.1002/ctm2.70900": ("43034282", "PMC13770209"),
+    }
+    for publication in public:
+        doi = norm_doi(publication.get("doi"))
+        if doi not in cases:
+            continue
+        pmid, pmcid = cases[doi]
+        record = citation_record(publication, enhancements, config["site_url"])
+        export = citation_export_record(record, identifiers)
+        files = citation_files(record)
+        csl = json.loads((CITATIONS_DIR / files["csl"]).read_text(encoding="utf-8"))
+        bib = (CITATIONS_DIR / files["bib"]).read_text(encoding="utf-8")
+        ris = (CITATIONS_DIR / files["ris"]).read_text(encoding="utf-8").splitlines()
+        assert csl["PMID"] == pmid and csl.get("PMCID") == pmcid
+        assert f"pmid = {{{pmid}}}" in bib
+        if pmcid:
+            assert f"pmcid = {{{pmcid}}}" in bib
+        else:
+            assert "pmcid =" not in bib
+        assert csl["DOI"] == doi and csl["URL"] == record["doi_url"]
+        assert f"DO  - {doi}" in ris and f"UR  - {record['doi_url']}" in ris
+        assert csl["author"] == json.loads(render_csl_json(export))["author"]
+        expected = []
+        if pmcid and not record.get("fulltext_pdf"):
+            expected.append(f"L2  - https://pmc.ncbi.nlm.nih.gov/articles/{pmcid}/")
+        assert [line for line in ris if line.startswith("L2  - ")] == expected
+        if record.get("fulltext_pdf"):
+            assert f"L1  - {record['fulltext_pdf']['url']}" in ris
 
 
 def test_verified_source_handoffs(public, enhancements, config):
