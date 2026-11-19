@@ -159,13 +159,14 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                         raise ValueError(f"Citation metadata {doi} RIS name parts disagree with master authors.")
             else:
                 _verified_text(value, f"Citation metadata {doi} {key}")
+        online_date = None
         if "online_publication_date" in fields:
             value = fields["online_publication_date"]
             try:
-                parsed = date.fromisoformat(value)
+                online_date = date.fromisoformat(value)
             except ValueError as exc:
                 raise ValueError(f"Citation metadata {doi} online_publication_date is invalid.") from exc
-            if parsed.isoformat() != value:
+            if online_date.isoformat() != value:
                 raise ValueError(f"Citation metadata {doi} online_publication_date must use YYYY-MM-DD.")
             if not fields.get("verified_sources"):
                 raise ValueError(f"Citation metadata {doi} online_publication_date requires verified_sources.")
@@ -177,7 +178,13 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                 parsed = date.fromisoformat(calendar_date)
             except ValueError as exc:
                 raise ValueError(f"Citation metadata {doi} publication_date is invalid.") from exc
-            if parsed.isoformat() != calendar_date or parsed.year != publication.get("year"):
+            if parsed.isoformat() != calendar_date:
+                raise ValueError(f"Citation metadata {doi} publication_date is invalid.")
+            master_year = publication.get("year")
+            # An earlier, sourced first-online date can explain the master year.
+            if parsed.year != master_year and not (
+                online_date and online_date.year == master_year and online_date < parsed
+            ):
                 raise ValueError(f"Citation metadata {doi} publication_date disagrees with master year.")
         for key in ("issn", "eissn"):
             if key in fields and not re.fullmatch(r"\d{4}-\d{3}[\dX]", fields[key]):
@@ -240,6 +247,8 @@ def citation_record(publication, enhancement, site_root, official_abstract=None)
         "doi_url": f"https://doi.org/{doi}",
     }
     record.update(enhancement.get(doi, {}))
+    if record.get("publication_date"):
+        record["year"] = int(record["publication_date"][:4])
     if official_abstract is not None:
         record["official_abstract_text"] = abstract_text(official_abstract)
     return record
