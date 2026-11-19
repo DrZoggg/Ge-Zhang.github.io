@@ -245,6 +245,15 @@ def citation_record(publication, enhancement, site_root, official_abstract=None)
     return record
 
 
+def citation_export_record(record, scholarly_identifiers):
+    """Carry verified accessions into downloads alongside the formal DOI."""
+    identifiers = scholarly_identifiers.get(record["doi"], {})
+    return {
+        **record,
+        **{key: identifiers[key] for key in ("pmid", "pmcid") if key in identifiers},
+    }
+
+
 def citation_files(record):
     slug = validate_slug(record["id"])
     return {
@@ -337,6 +346,9 @@ def render_bibtex(record):
     fields.extend([("doi", record["doi"]), ("url", record["doi_url"])])
     if record.get("issn") or record.get("eissn"):
         fields.append(("issn", record.get("issn") or record["eissn"]))
+    for identifier in ("pmid", "pmcid"):
+        if record.get(identifier):
+            fields.append((identifier, record[identifier]))
     body = ",\n".join(
         f"  {key} = {{{_bib_authors(value) if key == 'author' else _bib_text(value)}}}"
         for key, value in fields
@@ -385,6 +397,8 @@ def render_ris(record):
         lines.append(f"L1  - {record['fulltext_pdf']['url']}")
         if record["fulltext_pdf"]["version"] == "publisher_accepted_manuscript":
             lines.append("N1  - Full text PDF: publisher accepted manuscript (Publish Ahead of Print).")
+    elif record.get("pmcid"):
+        lines.append(f"L2  - https://pmc.ncbi.nlm.nih.gov/articles/{record['pmcid']}/")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",
@@ -427,6 +441,9 @@ def render_csl_json(record):
         result["genre"] = record["type"]
     if record.get("issn") or record.get("eissn"):
         result["ISSN"] = record.get("issn") or record["eissn"]
+    for identifier in ("pmid", "pmcid"):
+        if record.get(identifier):
+            result[identifier.upper()] = record[identifier]
     abstract = citation_abstract_text(record)
     if abstract:
         result["abstract"] = abstract

@@ -50,5 +50,7 @@
   "issue": "1",
   "number": "e00053",
   "ISSN": "2641-6573",
+  "PMID": "42016906",
+  "PMCID": "PMC13093795",
   "abstract": "Artificial intelligence (AI) has advanced predictive modeling in medicine, yet many models remain disease-specific and difficult to generalize across clinical settings. Key challenges include the trade-off between interpretability and accuracy, reliance on single algorithms, limited external validation, and biased feature importance estimation.\n\nIn this Perspective, we discuss how methodological advances in computational sciences, including automated machine learning (AutoML) and neural architecture search (NAS), reveal a gap between automated hybrid systems and current clinical modeling practices.\n\nTo address these challenges, we outline a principled artificial intelligence hybrid ensemble framework based on three design principles: integration of diverse learners, consensus-driven validation across independent cohorts, and transparent feature attribution using Shapley Additive exPlanations (SHAP). This framework emphasizes methodological robustness, interpretability, and cross-disease applicability to support the translation of artificial intelligence models into clinical practice."
 }
