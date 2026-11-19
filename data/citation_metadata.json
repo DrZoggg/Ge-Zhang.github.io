@@ -1,6 +1,18 @@
 {
   "version": 1,
   "papers": {
+    "10.1016/j.jtemb.2024.127543": {
+      "publication_date": "2024-12",
+      "online_publication_date": "2024-10-09",
+      "volume": "86",
+      "article_number": "127543",
+      "ris_article_locator": "127543",
+      "pmid": "39406123",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39406123/",
+        "https://api.crossref.org/works/10.1016/j.jtemb.2024.127543"
+      ]
+    },
     "10.1371/journal.pone.0346326": {
       "publication_date": "2026-04-03",
       "journal_abbrev": "PLoS One",
