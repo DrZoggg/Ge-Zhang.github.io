@@ -1,53 +1,46 @@
-# Ge Zhang Academic Hub
+[![Paper-first GEO. Follow a biomedical research question to source evidence and the original publication.](.github/readme/paper-first-cover.png)](https://drgezhang.com/)
 
-**A biomedical research library built around the original paper.**
+# Traceable biomedical evidence
 
-[Explore the live hub](https://drgezhang.com/) · [Browse publications](https://drgezhang.com/publications.html) · [Start with a research question](https://drgezhang.com/research/questions.html) · [ORCID](https://orcid.org/0000-0002-3116-3246)
+The **Ge Zhang Academic Hub** is a live biomedical research library. Paper-first GEO, or generative engine optimization, gives readers and research tools a direct route from a scientific question to evidence they can check and a paper they can cite.
 
-[![Ge Zhang Academic Hub. Find the paper. Follow the evidence. Featured in the cover: a Cardiac Research review on multimodal AI and the microbiome.](.github/readme/academic-hub-cover.png)](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html)
+**[Explore the hub](https://drgezhang.com/) · [Start with a scientific question](https://drgezhang.com/research/questions.html) · [Browse publications](https://drgezhang.com/publications.html)**
 
-The hub is the live academic library of **Ge Zhang (张格)**. It brings together publications in cardiovascular medicine, translational science, and biomedical AI. The **Paper-first GEO** project makes those papers easier to find, read in context, and cite accurately in AI-assisted research and writing.
+## Start with a scientific question
 
-## See it in use
+> How can microbiome, molecular, and clinical data be brought together in cardiovascular research?
 
-### Multimodal AI for microbiome-informed cardiovascular medicine
+[![Reading notes for the Cardiac Research review on multimodal AI and the cardiovascular microbiome. The paper page brings together the research question, evidence matrix, and original DOI.](.github/readme/review-in-context.png)](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html)
 
-Start with the *Cardiac Research* review. Its **Deep GEO** page connects the authors’ evidence summary to a study-level table, source references, and the citation for the original publication. This is one example of how a literature question can lead to a paper and then to evidence a reader can check.
+Start with [*Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine*](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html). The Deep GEO page for this review separates what the authors synthesize from the evidence that supports it. Its [citation guide](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#citation-use-cases) shows where the review can support a literature review or discussion.
 
-**[Explore the review](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html)** · [Cite this paper](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#cite-this-paper) · [Open the DOI](https://doi.org/10.1097/re9.0000000000000037)
+## Follow the evidence back
 
-Other examples show how the same approach works across different publication types:
+[![An example from the review's evidence matrix. The cardiac phenotypes row records the evidence type and points to section 3.2 and Table 1 of the accepted manuscript.](.github/readme/evidence-locator.png)](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#evidence-matrix)
 
-- **[What one patient can teach the next](https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html)** · *Clinical and Translational Medicine*. Explore the perspective on what can be learned from individual patients and how that evidence can inform subsequent cases.
-- **[AI hybrid survival assessment for advanced heart failure](https://drgezhang.com/papers/aihflevel.html)** · *Nature Communications*. Trace the study design and evidence scope behind a published prediction model.
+The [evidence matrix](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#evidence-matrix) shows what kind of evidence supports a synthesis and where to read further. The example above leads to section 3.2 and Table 1 of the accepted manuscript.
 
-## From question to citation
+## Carry the original citation forward
 
-| Step | What the hub provides |
-| --- | --- |
-| **Discover** | The [scientific question index](https://drgezhang.com/research/questions.html) organizes entry points by research question. The [publication library](https://drgezhang.com/publications.html) is the direct route when you already know the paper. |
-| **Read in context** | Deep GEO pages organize selected papers around the research question, study or article design, findings, scope, and provenance. Source locators are included where available. |
-| **Cite the original** | Use the paper’s DOI and citation tools to cite the scholarly work. Paper pages offer citation downloads in BibTeX, RIS, and CSL JSON where available. |
+[![The review's formal DOI is preserved across three citation formats: BibTeX, RIS and CSL JSON.](.github/readme/citation-edition.png)](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html#cite-this-paper)
 
-The evidence pages are author-maintained companions to the publications. For a formal reference, cite the original work using its DOI.
+**[Publisher DOI](https://doi.org/10.1097/re9.0000000000000037)** · [BibTeX](https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.bib) · [RIS](https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.ris) · [CSL JSON](https://drgezhang.com/citations/doi-10-1097-re9-0000000000000037.csl.json)
 
-## Built to be maintained
+## Further reading
 
-This repository generates the live site, paper pages, citation downloads, and machine-readable indexes from versioned publication records. Author identity is anchored to [ORCID 0000-0002-3116-3246](https://orcid.org/0000-0002-3116-3246).
+- [*What one patient can teach the next*](https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html), a *Clinical and Translational Medicine* perspective on learning from individual patients.
+- [*AI hybrid survival assessment for advanced heart failure patients with renal dysfunction*](https://drgezhang.com/papers/aihflevel.html), a *Nature Communications* study with a structured account of the model, study design, and scope.
 
-**Public interfaces:** [Publication catalog JSON](https://drgezhang.com/publications.json) · [Paper index JSON](https://drgezhang.com/paper_index.json) · [Question index JSON](https://drgezhang.com/research/questions.json) · [Site guide for AI readers](https://drgezhang.com/llms.txt)
+## For research tools
 
-For integrations, the [discovery data contract](docs/discovery-contract.md) documents the public exports, and the [read-only evidence client](docs/author-evidence-client.md) shows how to search and fetch paper records.
+The library publishes a [publication catalog](https://drgezhang.com/publications.json), [paper index](https://drgezhang.com/paper_index.json), and [scientific question index](https://drgezhang.com/research/questions.json) as JSON. Start with the [reading guide](https://drgezhang.com/llms.txt), [data contract](docs/discovery-contract.md), or [read-only evidence client](docs/author-evidence-client.md).
 
 <details>
-<summary>Repository map and maintenance · 中文维护入口</summary>
+<summary>Repository and maintenance</summary>
 
-| Area | Source |
-| --- | --- |
-| Publication records | [Publication master](data/publications_master.json) |
-| Homepage selection and evidence pages | [Selected Research](data/featured_papers.json) · [Deep GEO](data/deep_geo_papers.json) |
-| Generation and checks | [Site builder](scripts/build_publications.py) · [Site validator](scripts/validate_site.py) |
-| Publication updates | [Daily Crossref discovery by exact ORCID](.github/workflows/daily-publications.yml) · [Manual import of public ORCID works](.github/workflows/manual-orcid-reconcile.yml) |
-| Editorial controls | [Paper Control Center](.github/workflows/paper-control.yml) · [中文操作指南](PAPER_CONTROL_GUIDE_CN.md) |
+- **Identity:** Ge Zhang · [ORCID 0000-0002-3116-3246](https://orcid.org/0000-0002-3116-3246).
+- **Source records:** [Publication master](data/publications_master.json), [Selected Research](data/featured_papers.json), and [Deep GEO](data/deep_geo_papers.json).
+- **Publishing:** [Site builder](scripts/build_publications.py), [validation](scripts/validate_site.py), [daily Crossref discovery](.github/workflows/daily-publications.yml), and [manual ORCID reconciliation](.github/workflows/manual-orcid-reconcile.yml).
+- **Editorial controls:** [Paper Control Center](.github/workflows/paper-control.yml) and [中文操作指南](PAPER_CONTROL_GUIDE_CN.md).
 
 </details>
