@@ -143,8 +143,14 @@ class OnlinePublicationDateTests(unittest.TestCase):
                 self.assertEqual(record, old_record)
                 if record:
                     self.assertNotIn("online_publication_date", record)
+                    # The old exporters did not serialize scholarly accessions.
+                    # Their live serialization has its own contract in test_citations.
+                    legacy_input = {
+                        key: value for key, value in record.items()
+                        if key not in {"pmid", "pmcid"}
+                    }
                     for name in ("render_bibtex", "render_ris", "render_csl_json"):
-                        self.assertEqual(getattr(citations, name)(record).encode("utf-8"),
+                        self.assertEqual(getattr(citations, name)(legacy_input).encode("utf-8"),
                                          getattr(self.old_citations, name)(old_record).encode("utf-8"))
         expected_catalog = self.old_builder.render_publications_page(self.old_public, self.config)
         actual_catalog = builder.render_publications_page(
