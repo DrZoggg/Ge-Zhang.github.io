@@ -13,8 +13,8 @@ comment as the explanation. Metadata is still emitted, clearly labelled as
 metadata, so the caller can fall back to Europe PMC (a clean 404), Unpaywall, or
 the abstract without a second fetch.
 
-Handles both wrappers: eFetch's `<pmc-articleset><article>` and Europe PMC's bare
-`<article>`.
+Handles eFetch's `<pmc-articleset><article>`, a bare JATS article, and the
+PMC OAI-PMH GetRecord envelope containing one JATS Archiving 1.4 article.
 
     curl -s ".../efetch.fcgi?db=pmc&id=7029759&retmode=xml" | python3 jats_to_text.py -
     python3 jats_to_text.py article.xml --sections METHODS,RESULTS --text-only
@@ -67,6 +67,9 @@ BLOCK_TAGS = frozenset(
 
 #: Publisher restriction notices arrive only as XML comments.
 RESTRICTION_HINT = re.compile(r"does not allow|not allow downloading|restricted", re.IGNORECASE)
+OAI_PMH = "http://www.openarchives.org/OAI/2.0/"
+JATS_ARCHIVING = "{https://jats.nlm.nih.gov/ns/archiving/1.4/}"
+ARTICLE_TAGS = {"article", JATS_ARCHIVING + "article"}
 
 
 def parse(xml_text: str) -> ET.Element:
@@ -77,15 +80,26 @@ def parse(xml_text: str) -> ET.Element:
 
 
 def find_article(root: ET.Element) -> ET.Element:
-    """The `<article>` element, whichever wrapper it arrived in."""
-    if root.tag == "article":
-        return root
-    article = root.find(".//article")
+    """Select the owning article and normalize the known JATS vocabulary."""
+    if root.tag == f"{{{OAI_PMH}}}OAI-PMH":
+        records = root.findall("oai:GetRecord/oai:record/oai:metadata", {"oai": OAI_PMH})
+        articles = [item for record in records for item in record if item.tag in ARTICLE_TAGS]
+        if len(records) != 1 or len(articles) != 1:
+            raise InputError("expected one JATS article in a PMC OAI-PMH GetRecord response")
+        article = articles[0]
+    elif root.tag in ARTICLE_TAGS:
+        article = root
+    else:
+        article = root.find(".//article")
     if article is None:
         raise InputError(
             f"no <article> element (root was <{root.tag}>); "
             "this is not a JATS document -- check whether the response was an error page"
         )
+    if article.tag == JATS_ARCHIVING + "article":
+        for node in article.iter():
+            if node.tag.startswith(JATS_ARCHIVING):
+                node.tag = node.tag[len(JATS_ARCHIVING):]
     return article
 
 
