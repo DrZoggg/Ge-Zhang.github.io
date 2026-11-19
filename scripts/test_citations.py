@@ -20,7 +20,7 @@ from citation_common import (
 from site_common import PAPERS_DIR, load_site_config
 from sync_common import is_withdrawn, load_master, norm_doi, publication_authors
 from official_abstracts import abstract_text, load_official_abstracts
-from validate_site import meta_contents, validate_citations
+from validate_site import json_ld_object, meta_contents, validate_citations
 
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
@@ -390,7 +390,8 @@ def run_tests():
     valid = enhancements[CIRCADIAN_DOI]
     for bad in (
         {"title": "overridden"}, {"publication_date": "2025-01-05"},
-        {"publication_date": "2026-02-30"}, {"issn": "invalid"},
+        {"publication_date": "2026-02-30"}, {"publication_date": "2026-13"},
+        {"publication_date": "2025-11"}, {"issn": "invalid"},
         {"pmid": "none"}, {"pmcid": "PMC0"},
         {"first_page": "279", "last_page": "236"},
         {"volume": "pending"}, {"issue": " "},
@@ -483,12 +484,19 @@ def test_verified_source_handoffs(public, enhancements, config):
 
     ctm = citation_record(by_doi[ctm_doi], enhancements, config["site_url"])
     ris = render_ris(ctm)
+    ctm_page = (PAPERS_DIR / f"{ctm['id']}.html").read_text(encoding="utf-8")
+    assert meta_contents(ctm_page, "citation_publication_date") == ["2026/11"]
+    assert meta_contents(ctm_page, "citation_date") == ["2026/11"]
+    assert json_ld_object(ctm_page, "ScholarlyArticle", ctm["id"])["datePublished"] == "2026-11-14"
+    assert [line for line in ris.splitlines() if line.startswith("DA  - ")] == ["DA  - 2026/11"]
+    ctm_csl = json.loads(render_csl_json(ctm))
+    assert ctm_csl["issued"]["date-parts"] == [[2026, 11]]
     assert [line[6:] for line in ris.splitlines() if line.startswith("L1  - ")] == [ctm["fulltext_pdf"]["url"]]
     assert ctm["fulltext_pdf"]["version"] == "version_of_record"
     assert not any(line.startswith("N1  - ") for line in ris.splitlines())
     assert not any(line.startswith(("AB  - ", "N2  - ")) for line in ris.splitlines())
-    assert "abstract" not in json.loads(render_csl_json(ctm))
-    assert meta_contents((PAPERS_DIR / f"{ctm['id']}.html").read_text(encoding="utf-8"), "citation_abstract") == []
+    assert "abstract" not in ctm_csl
+    assert meta_contents(ctm_page, "citation_abstract") == []
     for record in (cr, ctm):
         expected_names = record.get("ris_authors") or [{"literal": name} for name in record["authors"]]
         expected_ris = ([f"{name['family']}, {name['given']}" for name in expected_names]
