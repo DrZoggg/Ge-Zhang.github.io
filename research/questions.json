@@ -11486,7 +11486,7 @@
         {
           "claim": "The study considered 746 candidate genes and eight learners, applied RF-RFE and named a final 12-gene UCRG panel for a backpropagation neural-network classifier.",
           "context": "The Fig. 3E legend separately states that error was minimized with 14 variables. That statement does not silently replace the named final 12-gene panel with a 14-gene model, and the panel is not proof that all 12 genes are causal drivers.",
-          "source_locator": "Results: Machine learning-based diagnostic models and generated UCRGs; Fig. 3D-E",
+          "source_locator": "Results: Machine learning-based diagnostic models and generated UCRGs and Robust performance of UCRGs-based diagnostic model; Fig. 3D-E; Supplementary Table 3 (reported classifier weights)",
           "evidence": [
             {
               "label": "candidate genes",
@@ -11688,11 +11688,13 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-18632-aging-205564.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-18632-aging-205564.json",
-      "gold_content_sha256": "3e8bcca6475a49015d58c98f3759d5d85fc2044a63ffbdbc9a39899b2acae1f0",
+      "gold_content_sha256": "a6abd129996f4adc0275c75343ea569d969c7523f543fb4a5b1418ca83af104f",
       "provenance": {
         "publication_url": "https://www.aging-us.com/article/205564/text",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38372705/",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10929837/",
+        "supplementary_table_3_url": "https://cdn.aging-us.com/article/205564/supplementary/SD3/0/aging-v16i4-205564-supplementary-material-SD3.docx",
+        "supporting_material": "The publisher’s Supplementary Table 3 lists the reported backpropagation neural-network feature weights and intercepts for the UC-versus-control classifier. The separate UCRScore is described in the main text.",
         "data_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182272",
         "data_source_note": "This accession is linked to document the unresolved source mismatch, not as a verified download location for the reported UC single-cell analysis.",
         "review_basis": "Published main text and selected figure legends plus the cited GEO record. No raw-data reanalysis or independent reconstruction of the score."
