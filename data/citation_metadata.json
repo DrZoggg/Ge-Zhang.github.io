@@ -111,6 +111,10 @@
       "volume": "26",
       "issue": "9",
       "article_number": "107587",
+      "highwire_article_locator": {
+        "value": "107587",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/"
+      },
       "eissn": "2589-0042",
       "pmid": "37664595",
       "pmcid": "PMC10470306",
@@ -125,6 +129,10 @@
       "volume": "20",
       "issue": "1",
       "article_number": "568",
+      "highwire_article_locator": {
+        "value": "568",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9724432/"
+      },
       "ris_article_locator": "568",
       "eissn": "1479-5876",
       "pmid": "36474294",
@@ -306,6 +314,10 @@
       "volume": "28",
       "issue": "24",
       "article_number": "e70258",
+      "highwire_article_locator": {
+        "value": "e70258",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668728/"
+      },
       "issn": "1582-1838",
       "eissn": "1582-4934",
       "publisher": "Wiley",
@@ -323,6 +335,10 @@
       "volume": "29",
       "issue": "15",
       "article_number": "e70725",
+      "highwire_article_locator": {
+        "value": "e70725",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12328994/"
+      },
       "issn": "1582-1838",
       "eissn": "1582-4934",
       "publisher": "Wiley",
@@ -760,6 +776,10 @@
       "volume": "25",
       "issue": "1",
       "article_number": "365",
+      "highwire_article_locator": {
+        "value": "365",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465917/"
+      },
       "ris_article_locator": "365",
       "verified_sources": [
         "https://link.springer.com/article/10.1186/s12931-024-02978-w",
@@ -770,6 +790,10 @@
     "10.1155/humu/5591097": {
       "volume": "2026",
       "article_number": "5591097",
+      "highwire_article_locator": {
+        "value": "5591097",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13080692/"
+      },
       "ris_article_locator": "5591097",
       "verified_sources": [
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC13080692/",
