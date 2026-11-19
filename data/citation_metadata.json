@@ -689,6 +689,8 @@
       ]
     },
     "10.1002/ctm2.70900": {
+      "publication_date": "2026-11",
+      "online_publication_date": "2026-11-14",
       "volume": "16",
       "issue": "11",
       "article_number": "e70900",
@@ -705,6 +707,7 @@
       "verified_sources": [
         "https://doi.org/10.1002/ctm2.70900",
         "https://pubmed.ncbi.nlm.nih.gov/43034282/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13770209/",
         "https://api.crossref.org/works/10.1002/ctm2.70900",
         "https://drgezhang.com/assets/fulltext/ctm2-70900.pdf",
         "https://creativecommons.org/licenses/by/4.0/"

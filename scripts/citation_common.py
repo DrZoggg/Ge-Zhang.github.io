@@ -164,11 +164,13 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                 raise ValueError(f"Citation metadata {doi} online_publication_date requires verified_sources.")
         if "publication_date" in fields:
             value = fields["publication_date"]
+            # Validate a month against the calendar without exporting a fabricated day.
+            calendar_date = value + "-01" if len(value) == 7 else value
             try:
-                parsed = date.fromisoformat(value)
+                parsed = date.fromisoformat(calendar_date)
             except ValueError as exc:
                 raise ValueError(f"Citation metadata {doi} publication_date is invalid.") from exc
-            if parsed.isoformat() != value or parsed.year != publication.get("year"):
+            if parsed.isoformat() != calendar_date or parsed.year != publication.get("year"):
                 raise ValueError(f"Citation metadata {doi} publication_date disagrees with master year.")
         for key in ("issn", "eissn"):
             if key in fields and not re.fullmatch(r"\d{4}-\d{3}[\dX]", fields[key]):
