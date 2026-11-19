@@ -515,6 +515,12 @@
           "label": "Article source",
           "format": "Official publisher or PMC full text reviewed locally",
           "locator": "Introduction: SLC7A7 and the y+L transport system; Methods: Cell culture; RNA interference; cell migration/invasion methods; Figure 5A–E"
+        },
+        {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11680768/fullTextXML",
+          "label": "Europe PMC full-text XML",
+          "format": "Machine-readable full text (JATS XML)",
+          "locator": "PMCID PMC11680768; DOI 10.1038/s41598-024-80885-2"
         }
       ]
     },
