@@ -148,6 +148,11 @@ PRIORITY_FIELDS = {
     "10.1016/j.cmpbup.2024.100164": {
         "volume": "6", "article_number": "100164",
     },
+    "10.2147/cia.s493841": {
+        "publication_date": "2025-11-28", "volume": "20",
+        "first_page": "2241", "last_page": "2253",
+        "pmid": "41347210", "pmcid": "PMC12673264",
+    },
     "10.1111/jcmm.70475": {
         "publication_date": "2025-03", "online_publication_date": "2025-03-11",
         "volume": "29", "issue": "5", "article_number": "e70475",
