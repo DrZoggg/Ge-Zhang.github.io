@@ -28,6 +28,7 @@ from validate_site import json_ld_object, meta_contents, validate_citations
 
 CIRCADIAN_DOI = "10.1002/mdr2.70052"
 VERIFIED_RIS_LOCATORS = {
+    "10.1002/clc.70019": "e70019",
     "10.1016/j.jtemb.2024.127543": "127543",
     "10.1136/jitc-2024-010787": "e010787",
     "10.1371/journal.pone.0346326": "e0346326",
@@ -147,6 +148,11 @@ PRIORITY_FIELDS = {
     },
     "10.1016/j.cmpbup.2024.100164": {
         "volume": "6", "article_number": "100164",
+    },
+    "10.1002/clc.70019": {
+        "publication_date": "2024-09", "online_publication_date": "2024-09-24",
+        "volume": "47", "issue": "9", "article_number": "e70019",
+        "pmid": "39314085", "pmcid": "PMC11420513",
     },
     "10.2147/cia.s493841": {
         "publication_date": "2025-11-28", "volume": "20",

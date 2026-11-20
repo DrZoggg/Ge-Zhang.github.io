@@ -976,6 +976,24 @@
         "https://www.sciencedirect.com/science/article/pii/S2666990024000314"
       ]
     },
+    "10.1002/clc.70019": {
+      "publication_date": "2024-09",
+      "online_publication_date": "2024-09-24",
+      "volume": "47",
+      "issue": "9",
+      "article_number": "e70019",
+      "highwire_article_locator": {
+        "value": "e70019",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/39314085/"
+      },
+      "ris_article_locator": "e70019",
+      "pmid": "39314085",
+      "pmcid": "PMC11420513",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/39314085/",
+        "https://api.crossref.org/works/10.1002/clc.70019"
+      ]
+    },
     "10.2147/cia.s493841": {
       "publication_date": "2025-11-28",
       "volume": "20",

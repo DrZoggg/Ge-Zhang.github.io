@@ -70,6 +70,7 @@ class ScholarMetadataTests(unittest.TestCase):
             "10.1038/s41598-024-80885-2": "30755",
             "10.1016/j.cmpbup.2024.100164": "100164",
             "10.1111/jcmm.70475": "e70475",
+            "10.1002/clc.70019": "e70019",
         }
         self.assertEqual({doi: fields["highwire_article_locator"]["value"]
                           for doi, fields in metadata.items()
