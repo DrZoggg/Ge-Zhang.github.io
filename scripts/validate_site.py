@@ -1466,8 +1466,17 @@ def validate_clockprocrc_v2_regression(content, publication, page):
             "publication_status", "count_reconciliation", "accession_note",
             "code_note", "score_gene_set_note", "locator_note",
             "revised_publisher_supplement_url", "supporting_material",
+            "institutional_repository_url", "institutional_full_text_pdf_url",
+            "institutional_copy_version",
         } and "pmid" not in provenance and "pmcid" not in provenance,
         f"{label} provenance fields changed.",
+    )
+    require(
+        provenance["institutional_repository_url"] == "https://hdl.handle.net/2437/415261"
+        and provenance["institutional_full_text_pdf_url"] ==
+            "https://dea.lib.unideb.hu/server/api/core/bitstreams/08031281-9f61-4950-8ec6-c6a5f69e5584/content"
+        and "Article in Press" in provenance["institutional_copy_version"],
+        f"{label} institutional source must retain its reviewed route and version.",
     )
     require(
         "GSE200977" in provenance["accession_note"]

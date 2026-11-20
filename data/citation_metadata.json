@@ -963,6 +963,38 @@
         "https://pubmed.ncbi.nlm.nih.gov/38918817/"
       ]
     },
+    "10.1016/j.cmpbup.2024.100164": {
+      "volume": "6",
+      "article_number": "100164",
+      "highwire_article_locator": {
+        "value": "100164",
+        "source_url": "https://api.crossref.org/works/10.1016/j.cmpbup.2024.100164"
+      },
+      "ris_article_locator": "100164",
+      "verified_sources": [
+        "https://api.crossref.org/works/10.1016/j.cmpbup.2024.100164",
+        "https://www.sciencedirect.com/science/article/pii/S2666990024000314"
+      ]
+    },
+    "10.1111/jcmm.70475": {
+      "publication_date": "2025-03",
+      "online_publication_date": "2025-03-11",
+      "volume": "29",
+      "issue": "5",
+      "article_number": "e70475",
+      "highwire_article_locator": {
+        "value": "e70475",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/40070032/"
+      },
+      "ris_article_locator": "e70475",
+      "pmid": "40070032",
+      "pmcid": "PMC11897062",
+      "verified_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/40070032/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11897062/",
+        "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.70475"
+      ]
+    },
     "10.1038/s41598-024-80885-2": {
       "volume": "14",
       "issue": "1",

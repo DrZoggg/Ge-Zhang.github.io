@@ -270,10 +270,22 @@
           "locator": "Methods 2.1 Data Source (jcmm70475-sec-0003); 2.9 Animal (jcmm70475-sec-0011)"
         },
         {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE5406",
+          "label": "Reported discovery GEO Series",
+          "format": "GEO Series metadata",
+          "locator": "GSE5406 is one of the two reported discovery sources; its registry lists 210 GSM accessions."
+        },
+        {
           "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
           "label": "Official dataset record",
           "format": "GEO Series metadata",
           "locator": "Series relation: SubSeries of GSE57345, official GEO record"
+        },
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57345",
+          "label": "Reported validation GEO SuperSeries",
+          "format": "GEO Series metadata",
+          "locator": "The registry lists 319 GSM accessions, including all 313 GSE57338 registry accessions. The study's analytic sample selection remains unresolved."
         }
       ]
     },

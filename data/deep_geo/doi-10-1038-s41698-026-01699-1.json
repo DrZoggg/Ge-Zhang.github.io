@@ -500,6 +500,9 @@
   ],
   "provenance": {
     "publisher_url": "https://www.nature.com/articles/s41698-026-01699-1",
+    "institutional_repository_url": "https://hdl.handle.net/2437/415261",
+    "institutional_full_text_pdf_url": "https://dea.lib.unideb.hu/server/api/core/bitstreams/08031281-9f61-4950-8ec6-c6a5f69e5584/content",
+    "institutional_copy_version": "University of Debrecen institutional repository copy of the publisher's Article in Press, carrying the same DOI.",
     "revised_publisher_supplement_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41698-026-01699-1/MediaObjects/41698_2026_1699_MOESM1_ESM.pdf",
     "supporting_material": "The publisher’s revised supplement provides the single-cell and co-expression panels (Supplemental Figure 2, PDF pp. 2–4), the GSE35026 score distributions (Figure 3A, PDF pp. 5–6), and the public cohort inventory (Supplemental Table 1, starting on PDF p. 11).",
     "code_url": "https://github.com/DrZoggg/ClockProCRC",
