@@ -44,6 +44,8 @@ VERIFIED_RIS_LOCATORS = {
     "10.1007/s10238-024-01439-4": "169",
     "10.1186/s12943-024-02047-2": "131",
     "10.1038/s41598-024-80885-2": "30755",
+    "10.1016/j.cmpbup.2024.100164": "100164",
+    "10.1111/jcmm.70475": "e70475",
 }
 PRIORITY_FIELDS = {
     "10.1016/j.csbj.2024.04.044": {
@@ -142,6 +144,14 @@ PRIORITY_FIELDS = {
     },
     "10.1038/s41598-024-80885-2": {
         "volume": "14", "issue": "1", "article_number": "30755",
+    },
+    "10.1016/j.cmpbup.2024.100164": {
+        "volume": "6", "article_number": "100164",
+    },
+    "10.1111/jcmm.70475": {
+        "publication_date": "2025-03", "online_publication_date": "2025-03-11",
+        "volume": "29", "issue": "5", "article_number": "e70475",
+        "pmid": "40070032", "pmcid": "PMC11897062",
     },
     "10.15212/cvia.2024.0023": {
         "publication_date": "2024-04-13", "volume": "9", "issue": "1",

@@ -41,12 +41,16 @@
   "issued": {
     "date-parts": [
       [
-        2025
+        2025,
+        3
       ]
     ]
   },
   "DOI": "10.1111/jcmm.70475",
   "URL": "https://doi.org/10.1111/jcmm.70475",
+  "volume": "29",
+  "issue": "5",
+  "number": "e70475",
   "PMID": "40070032",
   "PMCID": "PMC11897062"
 }
