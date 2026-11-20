@@ -365,6 +365,7 @@ Archival pathology cohort, Mouse anti-PD-1 combination, Published Figure 2 corre
 - Doi Url: https://doi.org/10.1136/jitc-2024-010787
 - Publisher: https://jitc.bmj.com/content/13/2/e010787
 - Pmc Url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/
+- Europe Pmc Xml Url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11865799/fullTextXML
 - PMCID: PMC11865799
 - Correction Doi Url: https://doi.org/10.1136/jitc-2024-010787corr1
 - Correction Pmc Url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/

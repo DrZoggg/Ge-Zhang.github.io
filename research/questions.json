@@ -8833,11 +8833,12 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/b4galt2.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/b4galt2.json",
-      "gold_content_sha256": "939db7daa990b5836cdfe4c1bb97684a4c618762aa6d3c8933df25f94ad78bee",
+      "gold_content_sha256": "09f77fe69c88b3144ce24cb0a7e6c98aacd6ac40e1b44227781d28f4ac3a58ba",
       "provenance": {
         "doi_url": "https://doi.org/10.1136/jitc-2024-010787",
         "publisher_url": "https://jitc.bmj.com/content/13/2/e010787",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/",
+        "europe_pmc_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11865799/fullTextXML",
         "pmcid": "PMC11865799",
         "correction_doi_url": "https://doi.org/10.1136/jitc-2024-010787corr1",
         "correction_pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/",
