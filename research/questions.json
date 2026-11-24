@@ -9359,12 +9359,15 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1200-po-24-00875.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1200-po-24-00875.json",
-      "gold_content_sha256": "49fff6289050d3d3a094abfc0cb1d717d69e53ef5c80d1911ad9ce434ec35bb4",
+      "gold_content_sha256": "699f22c5cb7255f22eb3b6ad2c87d9c1ba88834be2f4e4c0b11b7fdb9b3b501d",
       "provenance": {
         "publisher_url": "https://ascopubs.org/doi/10.1200/PO-24-00875",
         "doi_url": "https://doi.org/10.1200/PO-24-00875",
         "identity_url": "https://pubmed.ncbi.nlm.nih.gov/39787464/",
         "full_text_url": "https://www.researchgate.net/publication/387871458_Reply_to_Addressing_Bias_in_Feature_Importance_A_Hybrid_Approach_for_Risk_Prediction_in_Prognostic_Survival_Models",
+        "independent_letter_url": "https://pubmed.ncbi.nlm.nih.gov/39787463/",
+        "independent_letter_proof_url": "https://neuro.musashino-u.ac.jp/publications/pdf/preoncology.pdf",
+        "independent_letter_scope": "On page 1 of the university-hosted proof, Yoshiyasu Takefuji cites the original RAP-AIscore study (reference 1) and discusses how variable cardinality and correlation can affect tree-model feature importance. The letter comments on interpretation of the published model and reports no additional evaluation of RAP-AIscore.",
         "evidence_basis": "The complete two-page typeset reply, including five-author signature, DOI and January 9, 2025 publication footer, was read from Ge Zhang's public ResearchGate upload. Identity matches the PubMed record; the publisher-hosted full text was not available.",
         "version": "Typeset ASCO correspondence text uploaded by Ge Zhang on January 11, 2025; accessed October 26, 2026 through its HTML rendition. PDF binary not retrieved.",
         "figure_verification": "The two-page reply contains no figures, tables or new experimental results."
