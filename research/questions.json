@@ -7131,6 +7131,12 @@
           "label": "Article source",
           "format": "Official publisher or PMC full text reviewed locally",
           "locator": "Methods: Study design and patients; Figure 1"
+        },
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12059082&retmode=xml",
+          "label": "NCBI PMC full-text XML",
+          "format": "Machine-readable full text (JATS XML)",
+          "locator": "PMCID PMC12059082; Methods: Statistical analysis; Results and Table 1"
         }
       ],
       "author_evidence_note": {
