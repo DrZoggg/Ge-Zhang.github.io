@@ -213,7 +213,7 @@ def search_documents(root, start):
 # Extractive comparisons reuse this guide pipeline. The original frozen guide
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
-    'circadian-evidence-levels': '89ab283c31e47e9dabbf9dbf07c6746b2863a67118c551e02b3019c8c0306598',
+    'circadian-evidence-levels': 'eba84e676d27ea9eafbd9b271365cb96ee37948b3adf0099ac89e45c26074b05',
     'cardiovascular-prediction-evidence': '84a39fe7b5f023276fb1790920c334ab16671496463d9ae550ba977b91a6e4b6',
     'atherosclerosis-cell-mechanisms': 'de30a2e924a343c1348d6e9a070be634e31a304a49b28a0c416c1e00090873be',
     'cancer-omics-validation': '268edd2d2d7641793dbf54d27f02125aeb19ce922815ba1bf9f6046688d5a121',
@@ -433,6 +433,16 @@ def comparison_packet(data, root=ROOT):
         packet['presentation'] = 'contribution-first-v1'
     if 'research_use' in data:
         packet['research_use'] = research_use_packet(data['research_use'], studies)
+    if 'related_primary_source' in data:
+        source = data['related_primary_source']
+        require(isinstance(source, dict) and set(source) == {'title', 'doi', 'summary'}
+                and all(isinstance(value, str) and value.strip() == value and value
+                        for value in source.values()), 'Invalid related primary source')
+        doi = source['doi']
+        require(re.fullmatch(r'10\.\d{4,9}/[-./()_A-Za-z0-9]+', doi)
+                and all(doi.casefold() != study['doi'].casefold() for study in studies),
+                'Related primary source requires a separate DOI')
+        packet['related_primary_source'] = {**source, 'doi_url': 'https://doi.org/' + doi}
     return packet
 
 
@@ -568,6 +578,13 @@ def render_comparison(packet):
             '<div class="comparison" role="region" aria-label="Research task comparison" tabindex="0"><table><caption>Different research tasks and evidence types</caption><thead><tr><th>Research task</th><th>Reviewed design</th><th>Reviewed evidence type</th></tr></thead><tbody>']
     md = ['# ' + packet['title'], '**Selected author evidence guide**' if contribution_first else '**Selected evidence comparison — not a research article**',
           '[Canonical comparison](' + url + ')', '## ' + packet['question'], packet['scope'], packet['reading_rule']]
+    if packet.get('related_primary_source'):
+        source = packet['related_primary_source']
+        heading = 'Related primary evidence in continuing care'
+        body.insert(-1, '<section id="related-primary-source"><h2>' + esc(heading) + '</h2><p>'
+                    + link(source['title'], source['doi_url']) + '</p><p>'
+                    + esc(source['summary']) + '</p></section>')
+        md += ['## ' + heading, '[' + source['title'] + '](' + source['doi_url'] + ')', source['summary']]
     if packet.get('research_use'):
         synthesis_html, synthesis_md = render_research_use(packet['research_use'], packet['studies'], url)
         # Keep every legacy guide byte-identical when the optional section is absent.

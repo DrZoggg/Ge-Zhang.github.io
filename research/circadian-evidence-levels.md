@@ -10,6 +10,12 @@ A selective comparison of three works in this author-maintained collection, usin
 
 Compare the research tasks and validation units, not the sizes of unrelated metrics. Do not add cells, tissue samples, repeated expression samples or bibliography entries into a combined participant total. A publication and its author evidence page represent the same work, not independent evidence.
 
+## Related primary evidence in continuing care
+
+[Bedtime vs Morning Antihypertensive Medications in Frail Older Adults: The BedMed-Frail Randomized Clinical Trial](https://doi.org/10.1001/jamanetworkopen.2025.13812)
+
+The randomized trial analyzed 776 older adults in Canadian continuing care and compared bedtime administration with usual care, which was largely morning use. It measured a composite of death or major cardiovascular events and reported falls from a follow-up assessment and nonvertebral fractures as separate safety outcomes. See Methods and Table 2 for definitions and estimates.
+
 ## Coronary expression subtyping
 
 ### Molecular subtypes of ischemic heart disease based on circadian rhythm
