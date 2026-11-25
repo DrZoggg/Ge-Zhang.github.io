@@ -152,6 +152,14 @@
     {
       "doi": "10.1038/s41467-024-50415-9",
       "relationship": "Related cardiovascular prediction study; its retrospective validation does not validate this correspondence deferral framework."
+    },
+    {
+      "doi": "10.1016/j.curpro.2025.100054",
+      "relationship": "Published reference 1. The Current Proteomics Correspondence is cited in the discussion of complementary cardiovascular data modalities and the potential value of combining them. Its research agenda connects multimodal interpretation and patient-specific simulation."
+    },
+    {
+      "doi": "10.1002/ggn2.202500053",
+      "relationship": "Published reference 9. The Advanced Genetics Perspective is cited for limited external validation, generalizability, and the trade-off between performance and interpretability in AI ensembles."
     }
   ],
   "provenance": {

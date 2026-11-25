@@ -78,8 +78,9 @@ def validate_content(slug, content):
         assert "this study" not in qa["question"].lower()
         assert qa["answer"] == kf["claim"] + " " + kf["context"]
     assert [r["doi"] for r in content["related_papers"]] == (
-        ["10.1038/s41467-024-50415-9", "10.1200/po.24.00089", "10.1016/j.isci.2023.107587"]
-        if slug == A else [TARGETS[A][0]])
+        ["10.1038/s41467-024-50415-9", "10.1200/po.24.00089",
+         "10.1016/j.isci.2023.107587", TARGETS[B][0]]
+        if slug == A else [TARGETS[A][0], "10.1016/j.medd.2026.100004"])
     if slug == B:
         assert "not a claim" in content["related_papers"][0]["relationship"]
         assert "author-deposited" in content["provenance"]["source_version"]
