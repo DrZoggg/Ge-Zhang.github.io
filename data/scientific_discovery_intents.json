@@ -384,6 +384,14 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12313177/#F3",
       "year": 2025,
       "locator": "Study Design and Methods (Table 1), Differential expression and GSEA (Fig. 3c), and Discussion (limitations). In banked lung specimens from four systemic sclerosis-associated PAH cases, four idiopathic PAH cases and four donor controls, vascular endothelial cells showed enrichment of epithelial-to-mesenchymal transition gene sets in systemic sclerosis-associated PAH versus idiopathic PAH. The Discussion describes end-stage sampling and possible treatment effects."
+    },
+    {
+      "id": "single-patient-public-record-letter-2026",
+      "title": "Recording results from single-patient trials",
+      "doi": "10.1126/science.aek9583",
+      "url": "https://doi.org/10.1126/science.aek9583",
+      "year": 2026,
+      "locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context"
     }
   ],
   "intents": [
@@ -1515,6 +1523,53 @@
               "preview_finding_ids": [
                 "KF3",
                 "KF4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "single-patient-research-records",
+      "question": "How can public records from single-patient studies inform the design of later studies of individualized therapies?",
+      "question_zh": "单患者研究的公开记录如何帮助设计后续个体化治疗研究？",
+      "source_context_kind": "letter",
+      "source_ids": [
+        "single-patient-public-record-letter-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "public-protocols-and-outcomes",
+          "question": "What protocol information and major outcomes should trial registries and preclinical papers make public in single-patient genetic therapy research?",
+          "question_zh": "在单患者基因治疗研究中，试验注册记录和临床前论文应公开哪些研究方案信息和重要结局？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1126-science-aek9583",
+              "question_ids": [
+                "doi-10-1126-science-aek9583--qa-4"
+              ],
+              "preview_question_id": "doi-10-1126-science-aek9583--qa-4",
+              "preview_finding_ids": [
+                "KF4"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "designing-the-next-study",
+          "question": "How can an earlier individualized-treatment case inform safety monitoring, mechanistic tests or assessment of benefit in a later study?",
+          "question_zh": "既往个体化治疗病例如何为后续研究的安全监测、机制检验和获益评估提供参考？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-ctm2-70900",
+              "question_ids": [
+                "doi-10-1002-ctm2-70900--qa-1",
+                "doi-10-1002-ctm2-70900--qa-9"
+              ],
+              "preview_question_id": "doi-10-1002-ctm2-70900--qa-1",
+              "preview_finding_ids": [
+                "KF3",
+                "KF8"
               ]
             }
           ]

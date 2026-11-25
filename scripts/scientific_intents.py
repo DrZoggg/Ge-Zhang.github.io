@@ -19,7 +19,8 @@ CONFIG_PATH = 'data/scientific_discovery_intents.json'
 _ID = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*')
 _DOI = re.compile(r'10\.\d{4,9}/[^\s<>"]+', re.I)
 _SOURCE_CONTEXT_LABELS = {'review': 'Review context:',
-                          'original_research': 'Original research context:'}
+                          'original_research': 'Original research context:',
+                          'letter': 'Letter context:'}
 
 
 def _keys(value, expected, label):
