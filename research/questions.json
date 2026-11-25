@@ -2156,7 +2156,7 @@
       "narrative_genre": "perspective",
       "gold_source": "data/deep_geo/doi-10-1002-ggn2-202500053.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1002-ggn2-202500053.json",
-      "gold_content_sha256": "387d5a23e9c712547122fed4e717f06f870241df7d9ecc9c9de71b656cf80b36",
+      "gold_content_sha256": "30469731db9a084a9fd5b486e6e0f08c25165bac6591bf1c9c1a662c120f01c2",
       "provenance": {
         "publisher_url": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/ggn2.202500053",
         "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13093795/",
@@ -2347,7 +2347,7 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-medd-2026-100004.json",
-      "gold_content_sha256": "b62e254f1efd8bbc203a826150ca37f272d19426004d9eea85132563dee91d13",
+      "gold_content_sha256": "527dda6d043dc0e32e8ea62aec5507065d2c192fb416a353d17ed083a80d9baf",
       "provenance": {
         "publisher_url": "https://www.sciencedirect.com/science/article/pii/S3117928226000044",
         "evidence_basis": "Evidence synthesis uses the archived publisher corrected proof, compared with the current issue-assigned publisher full text on 2026-10-26. No substantive difference was found in the reviewed passages or Figure 1 caption. Proof pagination is retained as source locators.",
@@ -5428,7 +5428,7 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1016-j-curpro-2025-100054.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1016-j-curpro-2025-100054.json",
-      "gold_content_sha256": "846bbcd3c3c61a96029b73266fdf9dc4d70cd9d32b8770ad588ba790401b1e57",
+      "gold_content_sha256": "abcbbbbffe8d1917e3b6379ec923ac6efa27dc5825025da4b1e863d12bde9759",
       "provenance": {
         "publisher_url": "https://www.sciencedirect.com/science/article/pii/S1570164625000542",
         "author_full_text_url": "https://www.researchgate.net/publication/400065376_A_Multimodal_artificial_intelligence_framework_for_mechanistic_discovery_and_digital_twin_construction_in_cardiovascular_medicine",

@@ -193,6 +193,10 @@
     {
       "doi": "10.1002/ggn2.202500053",
       "relationship": "Site-curated thematic association: the Perspective addresses ensemble methodology, while this Correspondence addresses cardiovascular multimodal interpretation and simulation. This is not a claim that the Correspondence formally cites the Perspective or independently validates the same model."
+    },
+    {
+      "doi": "10.1016/j.medd.2026.100004",
+      "relationship": "Citing paper. Han and colleagues cite this Correspondence as reference 1 when introducing complementary cardiovascular data and the potential value of combining them. Their Medicine Discovery article proposes evidence-sufficiency criteria for when cardiovascular AI should predict or defer."
     }
   ],
   "provenance": {

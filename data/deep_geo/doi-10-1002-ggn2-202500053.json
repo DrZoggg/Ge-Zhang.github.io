@@ -204,6 +204,10 @@
     {
       "doi": "10.1016/j.isci.2023.107587",
       "relationship": "Cited prior application study (reference 3) in the Perspective. Consult the original study for its samples and model performance; it is not a new validation performed by this Perspective."
+    },
+    {
+      "doi": "10.1016/j.curpro.2025.100054",
+      "relationship": "Site-curated thematic association. This cardiovascular Correspondence discusses multimodal interpretation and patient-specific simulation alongside the broader AI ensemble methodology in this Perspective."
     }
   ],
   "provenance": {
