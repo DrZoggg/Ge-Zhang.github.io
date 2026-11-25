@@ -200,6 +200,10 @@
       "issue": "6",
       "article_number": "e194175",
       "ris_article_locator": "e194175",
+      "highwire_article_locator": {
+        "value": "e194175",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12987658/"
+      },
       "issn": "0021-9738",
       "eissn": "1558-8238",
       "pmid": "41609725",
@@ -285,6 +289,10 @@
       "issue": "1",
       "article_number": "e010127",
       "ris_article_locator": "e010127",
+      "highwire_article_locator": {
+        "value": "e010127",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/"
+      },
       "eissn": "2051-1426",
       "pmid": "39773567",
       "pmcid": "PMC11749606",
@@ -535,6 +543,10 @@
       "issue": "1",
       "article_number": "e00053",
       "ris_article_locator": "e00053",
+      "highwire_article_locator": {
+        "value": "e00053",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13093795/"
+      },
       "eissn": "2641-6573",
       "pmid": "42016906",
       "pmcid": "PMC13093795",
