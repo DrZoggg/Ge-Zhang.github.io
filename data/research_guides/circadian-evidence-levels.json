@@ -5,6 +5,11 @@
   "question": "What do these circadian studies measure, how are they evaluated, and which clinical claims do they not establish?",
   "scope": "A selective comparison of three works in this author-maintained collection, using unchanged reviewed study profiles, answers and evidence boundaries. This is not a systematic review, a new study, a pooled effect estimate or a clinical dosing recommendation.",
   "reading_rule": "Compare the research tasks and validation units, not the sizes of unrelated metrics. Do not add cells, tissue samples, repeated expression samples or bibliography entries into a combined participant total. A publication and its author evidence page represent the same work, not independent evidence.",
+  "related_primary_source": {
+    "title": "Bedtime vs Morning Antihypertensive Medications in Frail Older Adults: The BedMed-Frail Randomized Clinical Trial",
+    "doi": "10.1001/jamanetworkopen.2025.13812",
+    "summary": "The randomized trial analyzed 776 older adults in Canadian continuing care and compared bedtime administration with usual care, which was largely morning use. It measured a composite of death or major cardiovascular events and reported falls from a follow-up assessment and nonvertebral fractures as separate safety outcomes. See Methods and Table 2 for definitions and estimates."
+  },
   "studies": [
     {
       "id": "circadian-ihd",

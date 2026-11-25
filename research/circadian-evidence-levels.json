@@ -815,5 +815,11 @@
         "No universal dosing recommendation is established; high-quality circadian-aware randomized clinical trials are needed."
       ]
     }
-  ]
+  ],
+  "related_primary_source": {
+    "title": "Bedtime vs Morning Antihypertensive Medications in Frail Older Adults: The BedMed-Frail Randomized Clinical Trial",
+    "doi": "10.1001/jamanetworkopen.2025.13812",
+    "summary": "The randomized trial analyzed 776 older adults in Canadian continuing care and compared bedtime administration with usual care, which was largely morning use. It measured a composite of death or major cardiovascular events and reported falls from a follow-up assessment and nonvertebral fractures as separate safety outcomes. See Methods and Table 2 for definitions and estimates.",
+    "doi_url": "https://doi.org/10.1001/jamanetworkopen.2025.13812"
+  }
 }
