@@ -26480,6 +26480,14 @@
       "url": "https://doi.org/10.3389/fpubh.2025.1521372",
       "year": 2025,
       "locator": "Original observational NHANES linked-mortality study: design/population and survey-weighted Cox analysis (Methods 2.1 and 2.6; Results 3.1); distinct self-reported sleep-duration and sleep-trouble measures (Methods 2.3), with separate adjusted mortality associations (Results 3.2; Table 2)."
+    },
+    {
+      "id": "crc-circadian-single-cell-original-2025",
+      "title": "Single-cell and bulk transcriptome sequencing identifies circadian rhythm disruption and cluster-specific clinical insights in colorectal tumorigenesis",
+      "doi": "10.1007/s12672-025-02521-3",
+      "url": "https://link.springer.com/article/10.1007/s12672-025-02521-3#Sec6",
+      "year": 2025,
+      "locator": "Methods 2.4 and Figure 1E–F. Liu et al. used irGSEA to score the human MSigDB circadian gene set in published colorectal single-cell data. Tumor epithelial cells had lower expression scores than normal epithelial cells across the reported scoring algorithms. Compare this gene-set approach with ClockProCRC’s colon rhythmic reference. Human circadian phase and amplitude require separate time-resolved evidence."
     }
   ],
   "intents": [
@@ -26881,6 +26889,36 @@
               "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
               "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#cite-this-paper"
+            }
+          ]
+        },
+        {
+          "id": "circadian-disease-5",
+          "question": "How can single-cell expression profiles compare circadian programs in colorectal tumors when time-series samples are unavailable?",
+          "question_zh": "没有时间序列样本时，如何用单细胞表达谱比较结直肠肿瘤的昼夜节律相关表达程序？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1038-s41698-026-01699-1",
+              "question_ids": [
+                "doi-10-1038-s41698-026-01699-1--qa-1",
+                "doi-10-1038-s41698-026-01699-1--qa-2"
+              ],
+              "preview_question_id": "doi-10-1038-s41698-026-01699-1--qa-1",
+              "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html",
+              "doi": "10.1038/s41698-026-01699-1",
+              "doi_url": "https://doi.org/10.1038/s41698-026-01699-1",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html#cite-this-paper"
+            }
+          ],
+          "related_sources": [
+            {
+              "id": "crc-circadian-single-cell-original-2025",
+              "title": "Single-cell and bulk transcriptome sequencing identifies circadian rhythm disruption and cluster-specific clinical insights in colorectal tumorigenesis",
+              "doi": "10.1007/s12672-025-02521-3",
+              "url": "https://link.springer.com/article/10.1007/s12672-025-02521-3#Sec6",
+              "year": 2025,
+              "locator": "Methods 2.4 and Figure 1E–F. Liu et al. used irGSEA to score the human MSigDB circadian gene set in published colorectal single-cell data. Tumor epithelial cells had lower expression scores than normal epithelial cells across the reported scoring algorithms. Compare this gene-set approach with ClockProCRC’s colon rhythmic reference. Human circadian phase and amplitude require separate time-resolved evidence."
             }
           ]
         }

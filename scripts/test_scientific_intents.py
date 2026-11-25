@@ -117,6 +117,43 @@ class ScientificIntentTests(unittest.TestCase):
         self.assertIn('href="' + self.qa['answer_url'] + '"', document)
         self.assertEqual(validate_intent_html(document, discovery), {'broad_intents': 1, 'focused_queries': 1})
 
+    def test_focused_sources_resolve_in_order_and_render_inside_only_that_question(self):
+        primary = {'id': 'primary-methods', 'title': 'A primary <methods> paper', 'doi': '10.1234/methods',
+                   'url': 'https://example.org/methods?section=1&format=html', 'year': 2025,
+                   'locator': 'Methods & Figure <2> explain the independent cohort.'}
+        second = {**primary, 'id': 'comparison-methods', 'title': 'Another primary methods paper',
+                  'doi': '10.1234/comparison', 'url': 'https://doi.org/10.1234/comparison'}
+        self.config['sources'].extend([primary, second])
+        self.intent['focused_queries'].append({**copy.deepcopy(self.query), 'id': 'another-question'})
+        before = self.build()
+        self.query['source_ids'] = [second['id'], primary['id']]
+        layer = self.build()
+        self.assertEqual(layer['intent_sources'], before['intent_sources'])
+        selected, other = layer['intents'][0]['focused_queries']
+        self.assertEqual(selected['related_sources'], [second, primary])
+        self.assertNotIn('related_sources', other)
+        discovery = {**self.discovery, **layer}
+        document = render_intent_layer(discovery)
+        target = document.split('data-intent-focused="specific-population">', 1)[1].split('</section>', 1)[0]
+        self.assertIn('Related methods evidence', target)
+        for source in (primary, second):
+            self.assertIn('href="' + html.escape(source['url'], quote=True) + '">', target)
+            self.assertIn(html.escape(source['title']), target)
+            self.assertIn(html.escape(source['locator']), target)
+            self.assertEqual(document.count('data-intent-related-source="' + source['id'] + '"'), 1)
+        self.assertLess(target.index(second['title']), target.index(html.escape(primary['title'])))
+        self.assertEqual(validate_intent_html(document, discovery), {'broad_intents': 1, 'focused_queries': 2})
+        with self.assertRaisesRegex(ValueError, 'reference or answer inventory'):
+            validate_intent_html(document + '<li data-intent-related-source="extra"></li>', discovery)
+        del self.query['source_ids']
+        self.assertEqual(self.build(), before)
+
+    def test_focused_sources_reject_empty_duplicate_and_unrecognized_references(self):
+        for refs in ([], ['missing-source'], ['review-context', 'review-context'], 'review-context', [{}]):
+            with self.subTest(refs=refs), self.assertRaisesRegex(ValueError, 'focused source'):
+                self.query['source_ids'] = refs
+                self.build()
+
     def test_same_work_can_support_multiple_queries_without_new_studies(self):
         self.intent['focused_queries'].append({**copy.deepcopy(self.query), 'id': 'another-question'})
         layer = self.build()
