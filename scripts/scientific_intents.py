@@ -117,13 +117,12 @@ def build_intent_layer(discovery, root=ROOT):
             or not isinstance(config['intents'], list) or not config['intents']):
         raise ValueError('Intent sources and intents must be non-empty arrays')
     works, questions = _lookup(discovery)
-    source_ids, sources = set(), []
+    sources = {}
     for source in config['sources']:
         _keys(source, ('id', 'title', 'doi', 'url', 'year', 'locator'), 'review source')
         sid = _identifier(source['id'], 'source')
-        if sid in source_ids:
+        if sid in sources:
             raise ValueError('Duplicate intent review-source ID')
-        source_ids.add(sid)
         for key in ('title', 'locator'):
             _text(source[key], sid + '/' + key)
         if not isinstance(source['doi'], str) or not _DOI.fullmatch(source['doi']):
@@ -134,7 +133,7 @@ def build_intent_layer(discovery, root=ROOT):
             raise ValueError('Intent review-source DOI URL refers to a different work')
         if type(source['year']) is not int or not 1000 <= source['year'] <= 9999:
             raise ValueError('Invalid intent review-source year')
-        sources.append(copy.deepcopy(source))
+        sources[sid] = copy.deepcopy(source)
     seen, intents = set(), []
     for intent in config['intents']:
         intent_keys = ('id', 'question', 'question_zh', 'source_ids', 'focused_queries')
@@ -152,15 +151,15 @@ def build_intent_layer(discovery, root=ROOT):
         for key in ('question', 'question_zh'):
             _text(intent[key], iid + '/' + key)
         refs = _unique(intent['source_ids'], iid + '/source IDs')
-        if not refs or any(source not in source_ids for source in refs):
+        if not refs or any(source not in sources for source in refs):
             raise ValueError('Unknown or absent intent review-source reference')
         if not isinstance(intent['focused_queries'], list) or not intent['focused_queries']:
             raise ValueError('A broad intent requires focused queries')
         focused, seen_queries = [], set()
         for query in intent['focused_queries']:
             query_keys = ('id', 'question', 'question_zh', 'work_refs')
-            if isinstance(query, dict) and 'guide_ref' in query:
-                query_keys += ('guide_ref',)
+            if isinstance(query, dict):
+                query_keys += tuple(key for key in ('guide_ref', 'source_ids') if key in query)
             _keys(query, query_keys, 'focused query')
             qid = _identifier(query['id'], iid + '/focused query')
             if qid in seen_queries:
@@ -234,6 +233,11 @@ def build_intent_layer(discovery, root=ROOT):
                 if 'preview_note_headings' in ref:
                     links[-1]['author_note_previews'] = _note_previews(work, ref['preview_note_headings'])
             resolved = {**{key: query[key] for key in ('id', 'question', 'question_zh')}, 'work_refs': links}
+            if 'source_ids' in query:
+                source_refs = _unique(query['source_ids'], qid + '/focused source IDs')
+                if not source_refs or any(sid not in sources for sid in source_refs):
+                    raise ValueError('Unknown or absent focused source reference')
+                resolved['related_sources'] = [copy.deepcopy(sources[sid]) for sid in source_refs]
             if 'guide_ref' in query:
                 ref = query['guide_ref']
                 _keys(ref, ('slug', 'section_id'), 'research guide reference')
@@ -255,7 +259,7 @@ def build_intent_layer(discovery, root=ROOT):
                         'source_ids': list(refs), 'focused_queries': focused})
         if 'source_context_kind' in intent:
             intents[-1]['source_context_kind'] = intent['source_context_kind']
-    return {'intent_layer_version': 1, 'intent_sources': sources, 'intents': intents}
+    return {'intent_layer_version': 1, 'intent_sources': list(sources.values()), 'intents': intents}
 
 
 def render_intent_layer(discovery):
@@ -342,10 +346,19 @@ def render_intent_layer(discovery):
                                 + '<h5><a href="' + escape(ref['paper_url'], quote=True) + '">'
                                 + escape(work['title']) + '</a></h5><p class="meta">' + escape(identity) + '</p>'
                                 + principal + answer + note_context + detail + question_links + '<p class="links">' + links + '</p></div>')
+            related_sources = ''
+            if query.get('related_sources'):
+                related_sources = ('<div class="intent-reviews"><p><strong>Related methods evidence</strong></p>'
+                                   + '<ul class="intent-locators">' + ''.join('<li data-intent-related-source="'
+                                   + escape(source['id'], quote=True) + '"><a href="'
+                                   + escape(source['url'], quote=True) + '">' + escape(source['title'])
+                                   + '</a> · ' + escape(source['locator']) + '</li>'
+                                   for source in query['related_sources']) + '</ul></div>')
             queries.append('<section class="intent-focused" id="' + escape(anchor + '--' + query['id'], quote=True)
                            + '" data-intent-focused="' + escape(query['id'], quote=True) + '"><h4>'
                            + escape(query['question']) + '</h4><p class="intent-translation" lang="zh">'
-                           + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence) + '</section>')
+                           + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence)
+                           + related_sources + '</section>')
         context_label = ('Original source context:' if any(ref.get('author_note_previews')
                          for query in intent['focused_queries'] for ref in query['work_refs']) else 'Review context:')
         if 'source_context_kind' in intent:
@@ -400,7 +413,8 @@ def validate_intent_html(page, discovery, root=None):
                         'data-intent-answer': sum(ref['preview_question_id'] is not None for ref in refs),
                         'data-intent-finding': sum(len(ref.get('finding_previews', [])) for ref in refs),
                         'data-intent-note': sum(len(ref.get('author_note_previews', [])) for ref in refs),
-                        'data-intent-context-answer': sum(bool(query.get('context_answer')) for query in queries)}
+                        'data-intent-context-answer': sum(bool(query.get('context_answer')) for query in queries),
+                        'data-intent-related-source': sum(len(query.get('related_sources', [])) for query in queries)}
     if any(parsed.markers.get(key, 0) != count for key, count in expected_markers.items()):
         raise ValueError('Scientific intent HTML reference or answer inventory differs')
     if root is not None:
