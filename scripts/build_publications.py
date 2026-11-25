@@ -1092,6 +1092,8 @@ def v2_label(key):
         "external_validation": "External validation",
         "models_tools": "Models & Tools",
         "datasets_cohorts": "Datasets & Cohorts",
+        "human_crc_single_cell_geo_url": "Human CRC single-cell dataset record (GEO GSE166555)",
+        "mouse_colon_circadian_reference_geo_url": "Mouse distal-colon circadian reference record (GEO GSE10644)",
         "publisher_url": "Publisher",
         "pubmed_url": "PubMed",
         "pmcid": "PMCID",

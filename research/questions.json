@@ -3941,7 +3941,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
-      "gold_content_sha256": "4d306056a79f3dd2feed51efd834727aebfa0ef959280b88c0a5a5f7105752ea",
+      "gold_content_sha256": "307d8d3198de8bece1a4eda0518a75503219e42e4ee906d1787eddc78995a96a",
       "provenance": {
         "publisher_url": "https://www.nature.com/articles/s41698-026-01699-1",
         "institutional_repository_url": "https://hdl.handle.net/2437/415261",
@@ -3950,6 +3950,8 @@
         "revised_publisher_supplement_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41698-026-01699-1/MediaObjects/41698_2026_1699_MOESM1_ESM.pdf",
         "supporting_material": "The publisher’s revised supplement provides the single-cell and co-expression panels (Supplemental Figure 2, PDF pp. 2–4), the GSE35026 score distributions (Figure 3A, PDF pp. 5–6), and the public cohort inventory (Supplemental Table 1, starting on PDF p. 11).",
         "code_url": "https://github.com/DrZoggg/ClockProCRC",
+        "human_crc_single_cell_geo_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200166555&retmode=json",
+        "mouse_colon_circadian_reference_geo_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200010644&retmode=json",
         "datasets_cohorts": "GSE166555; GSE200997; GSE196964; GSE41258; GSE44076; GSE68468; GSE62321; GSE140973; GSE17537; GSE39084; GSE103479; GSE77955; GSE81582; GSE117606; GSE37364; GSE26571; GSE186727; GSE71187; GSE49355; GSE51244; GSE124870; GSE98965; GSE54650; GSE10644; GSE57830; GSE143524; GSE56931; GSE98564; GSE30411; GSE39445; GSE45818; GSE11923; GSE98565; GSE43073; GSE35026",
         "evidence_basis": "Publisher early peer-reviewed article plus the revised accepted manuscript, publisher supplementary-material listing, cited GEO accessions, and the associated ClockProCRC code repository. Manuscript Results/Methods and figure legends are used as the primary source for quantitative source locators.",
         "publication_status": "Published 16 September 2026 with a permanent DOI. As of 24 September 2026, Springer Nature labels the available article as an early peer-reviewed accepted version subject to further editing and automatic replacement by the final Version of Record.",
