@@ -213,7 +213,12 @@ phase's starting point. Read current task and short checkpoint before history:
 - Inspect live agents/processes before resuming interrupted work. Reuse their
   existing outputs and handles; do not recreate experiments or submissions merely
   because a new chat has no conversational history.
-- Continue the same `ai-11-26` daily09:00 America/New_York monitor. Registration,
+- During a requested handoff, record the sole engineering owner in the private
+  checkpoint. Confirm the new chat's actual native Goal status and the previous
+  executor's state before resuming writes. Existing monitors use shared receipts
+  to coordinate due observations with the current owner. Keep the established
+  fallback in its configured state.
+- Continue the same `ai-11-26` daily 09:00 America/New_York monitor. Registration,
   actual execution and current due work have separate evidence. Do not create a
   duplicate schedule or duplicate work owned by a live Goal.
 - Update this file for durable policy changes and the existing private ledgers
