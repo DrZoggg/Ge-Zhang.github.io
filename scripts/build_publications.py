@@ -1094,6 +1094,8 @@ def v2_label(key):
         "datasets_cohorts": "Datasets & Cohorts",
         "human_crc_single_cell_geo_url": "Human CRC single-cell dataset record (GEO GSE166555)",
         "mouse_colon_circadian_reference_geo_url": "Mouse distal-colon circadian reference record (GEO GSE10644)",
+        "clinical_trial_registry_reference_1_url": "ClinicalTrials.gov record cited in the Letter (reference 1)",
+        "who_trial_registration_data_set_reference_3_url": "WHO Trial Registration Data Set, item 23 (reference 3)",
         "publisher_url": "Publisher",
         "pubmed_url": "PubMed",
         "pmcid": "PMCID",

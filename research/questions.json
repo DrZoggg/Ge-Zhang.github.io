@@ -3483,10 +3483,12 @@
       "narrative_genre": "correspondence",
       "gold_source": "data/deep_geo/doi-10-1126-science-aek9583.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1126-science-aek9583.json",
-      "gold_content_sha256": "af8ccfac481233d2a2197a018ecacb01b84b57f95af4766808de0f81e2ca6918",
+      "gold_content_sha256": "231aef3de4c8622471520978bdfb2794840ae71b53b51a660f2d3d13243a47a7",
       "provenance": {
         "publisher_url": "https://www.science.org/doi/10.1126/science.aek9583",
         "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42821669/",
+        "clinical_trial_registry_reference_1_url": "https://clinicaltrials.gov/study/NCT06860672",
+        "who_trial_registration_data_set_reference_3_url": "https://www.who.int/tools/clinical-trials-registry-platform/network/who-data-set",
         "review_basis": "Complete Letter reviewed in local publisher print-page images for pages 38-39; exact title, all five authors, DOI, print date and references matched to PubMed, Crossref and publisher identity. Only this Letter's columns were used.",
         "source_version": "Published print pages, Science 394(6819):38-39, 1 October 2026. Page-image download watermark identifies science.org via Shanghai Jiao Tong University on 2 October 2026. Source hashes and paragraph locators are retained in SCIENCE_GOLD_STANDARD.json; the copyrighted full pages are not redistributed by this site."
       },
@@ -29149,7 +29151,7 @@
       "answer_preview": {
         "answer": "The authors describe a gap between a previously reported human outcome and the registry or preclinical publication, and argue that directly related human protocols and major outcomes should remain visible in current public records. The case is contextual evidence from other sources, not a new study in this Letter.",
         "source": "data/deep_geo/doi-10-1126-science-aek9583.json#/qa/0/answer",
-        "source_content_sha256": "af8ccfac481233d2a2197a018ecacb01b84b57f95af4766808de0f81e2ca6918",
+        "source_content_sha256": "231aef3de4c8622471520978bdfb2794840ae71b53b51a660f2d3d13243a47a7",
         "answer_sha256": "0f30a5add0e3542d95a150ff113e7b62af7466d8ae536647684ddb65cf6f40bf",
         "evidence_refs": [
           "KF1"
