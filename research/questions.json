@@ -26488,6 +26488,14 @@
       "url": "https://link.springer.com/article/10.1007/s12672-025-02521-3#Sec6",
       "year": 2025,
       "locator": "Methods 2.4 and Figure 1E–F. Liu et al. used irGSEA to score the human MSigDB circadian gene set in published colorectal single-cell data. Tumor epithelial cells had lower expression scores than normal epithelial cells across the reported scoring algorithms. Compare this gene-set approach with ClockProCRC’s colon rhythmic reference. Human circadian phase and amplitude require separate time-resolved evidence."
+    },
+    {
+      "id": "tuhy-pah-lung-single-cell-2025",
+      "title": "Lung Single-Cell Transcriptomics Reveal Diverging Pathobiology and Opportunities for Precision Targeting in Scleroderma-Associated Versus Idiopathic Pulmonary Arterial Hypertension",
+      "doi": "10.1161/CIRCGEN.124.004936",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12313177/#F3",
+      "year": 2025,
+      "locator": "Study Design and Methods (Table 1), Differential expression and GSEA (Fig. 3c), and Discussion (limitations). In banked lung specimens from four systemic sclerosis-associated PAH cases, four idiopathic PAH cases and four donor controls, vascular endothelial cells showed enrichment of epithelial-to-mesenchymal transition gene sets in systemic sclerosis-associated PAH versus idiopathic PAH. The Discussion describes end-stage sampling and possible treatment effects."
     }
   ],
   "intents": [
@@ -27254,6 +27262,16 @@
                   "evidence_url": "https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html#kf4"
                 }
               ]
+            }
+          ],
+          "related_sources": [
+            {
+              "id": "tuhy-pah-lung-single-cell-2025",
+              "title": "Lung Single-Cell Transcriptomics Reveal Diverging Pathobiology and Opportunities for Precision Targeting in Scleroderma-Associated Versus Idiopathic Pulmonary Arterial Hypertension",
+              "doi": "10.1161/CIRCGEN.124.004936",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12313177/#F3",
+              "year": 2025,
+              "locator": "Study Design and Methods (Table 1), Differential expression and GSEA (Fig. 3c), and Discussion (limitations). In banked lung specimens from four systemic sclerosis-associated PAH cases, four idiopathic PAH cases and four donor controls, vascular endothelial cells showed enrichment of epithelial-to-mesenchymal transition gene sets in systemic sclerosis-associated PAH versus idiopathic PAH. The Discussion describes end-stage sampling and possible treatment effects."
             }
           ]
         },
