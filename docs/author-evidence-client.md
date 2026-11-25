@@ -283,7 +283,9 @@ operational proxy scores separately when each can contribute to the question.
 Read external index results using that tool's returned `primaryId` or a confirmed
 PMID/PMCID. When a reading tool returns no body passages, a packet with an explicit,
 nonconflicting PMCID also offers `full_text_xml_api`, an official PMC EFetch XML
-route. The client only supplies the URL; it does not request the article. PMC's
+route. When its reviewed sources include a PMC OAI GetRecord URL for the same
+PMCID, the packet also offers that URL as `full_text_xml_oai` before EFetch.
+The client supplies these URLs with `availability: "not_checked"`. PMC's
 [developer guidance](https://pmc.ncbi.nlm.nih.gov/tools/developers/) lists
 E-Utilities among its approved automated retrieval services. Before using the
 XML, check the returned article's DOI/PMCID and `body`, retain section/table

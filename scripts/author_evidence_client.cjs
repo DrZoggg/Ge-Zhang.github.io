@@ -311,9 +311,24 @@ function primarySources(work) {
     routes.push({provider:'ResearchGate',kind:'author_shared_copy',url:url.href,doi:work.doi,
       source_fields:[field,row.path + '.doi_url'],availability:'not_checked'});
   }
-  if (pmcid.value) routes.push({provider:'PMC',kind:'full_text_xml_api',
-    url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${pmcid.value.slice(3)}&retmode=xml`,
-    source_fields:pmcid.source_fields,availability:'not_checked'});
+  if (pmcid.value) {
+    const archiveId = pmcid.value.slice(3);
+    for (const row of provenance) {
+      const url = https(row.value?.url);
+      if (!url || url.origin !== 'https://pmc.ncbi.nlm.nih.gov'
+          || url.pathname !== '/api/oai/v1/mh/' || url.hash) continue;
+      const query = url.searchParams;
+      if ([...query.keys()].length !== 3 || query.get('verb') !== 'GetRecord'
+          || query.get('metadataPrefix') !== 'pmc'
+          || query.get('identifier') !== 'oai:pubmedcentral.nih.gov:' + archiveId) continue;
+      routes.push({provider:'PMC',kind:'full_text_xml_oai',url:url.href,
+        source_fields:[row.path + '.url',...pmcid.source_fields],availability:'not_checked'});
+      break;
+    }
+    routes.push({provider:'PMC',kind:'full_text_xml_api',
+      url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${archiveId}&retmode=xml`,
+      source_fields:pmcid.source_fields,availability:'not_checked'});
+  }
   const identifiers = {pmid:pmid.value,pmcid:pmcid.value};
   const openAlexId = work.openalex_id;
   if (openAlexId !== null && openAlexId !== undefined) {
