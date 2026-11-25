@@ -10,8 +10,25 @@ async function main() {
   const events = [];
   const callbacks = {};
   let copyFails = false;
-  const doiLink = { getAttribute: () => "https://doi.org/10.1234/example" };
+  const doiHref = "https://doi.org/10.1234/example";
+  const doiLink = { getAttribute: () => doiHref };
   const section = { querySelector: () => doiLink };
+  function clickLink(href, area) {
+    const link = {
+      getAttribute: () => href,
+      closest: (selector) => {
+        if (selector === "#cite-this-paper") return area === "citation" ? section : null;
+        assert.equal(selector, "main .hero .links");
+        return area === "hero" ? {} : null;
+      },
+    };
+    const target = { closest: (selector) => {
+      if (selector === "#cite-this-paper a[href]") return area === "citation" ? link : null;
+      assert.equal(selector, "a[href]");
+      return link;
+    } };
+    callbacks.click({ target });
+  }
   const button = {
     dataset: { copyCitation: "plain-citation-paper" }, hidden: true, textContent: "Copy citation",
     closest: () => section,
@@ -20,7 +37,7 @@ async function main() {
   const document = {
     addEventListener: (type, callback) => { callbacks.click = callback; },
     querySelectorAll: () => [button],
-    getElementById: () => ({ textContent: "  Citation text  " }),
+    getElementById: (id) => id === "cite-this-paper" ? section : { textContent: "  Citation text  " },
   };
   const window = { location: { pathname: "/papers/paper.html" }, setTimeout: () => {} };
   const navigator = { clipboard: { writeText: async (text) => {
@@ -42,14 +59,20 @@ async function main() {
     ["../citations/paper.ris", "ris"],
     ["../citations/paper.csl.json", "csl_json"],
   ]) {
-    const link = { getAttribute: () => href, closest: () => section };
-    callbacks.click({ target: { closest: () => link } });
+    clickLink(href, "citation");
     assert.equal(events.at(-1).name, "citation_export");
     assert.equal(events.at(-1).params.citation_format, format);
   }
-  callbacks.click({ target: { closest: () => ({ getAttribute: () => "https://doi.org/10.1234/example", closest: () => section }) } });
+  clickLink(doiHref, "citation");
+  clickLink(doiHref, "hero");
+  assert.equal(events.length, 6, "The hero DOI click must emit the same event as the citation DOI click");
+  clickLink("https://doi.org/10.1234/reference", "hero");
+  clickLink("https://doi.org/10.1234/reference", "citation");
+  clickLink("https://doi.org/10.1234/reference", "reference");
+  clickLink(doiHref, "reference");
   assert.deepEqual(events.map((entry) => entry.name), [
     "citation_copy", "citation_export", "citation_export", "citation_export", "citation_doi_click",
+    "citation_doi_click",
   ]);
   for (const event of events) {
     assert.equal(event.type, "event");
@@ -57,8 +80,8 @@ async function main() {
     assert.equal(event.params.paper_path, "/papers/paper.html");
   }
   callbacks.click({ target: { closest: () => null } });
-  assert.equal(events.length, 5);
-  console.log("CITATION INTERACTION TESTS PASS: successful copy, exports, DOI, absent gtag and failed copy");
+  assert.equal(events.length, 6);
+  console.log("CITATION INTERACTION TESTS PASS: copy, exports, original DOI links and ignored references");
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });
