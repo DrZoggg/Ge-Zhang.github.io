@@ -308,6 +308,8 @@ Single-patient research context, Treatment-emergent event reporting, Event occur
 - DOI: https://doi.org/10.1126/science.aek9583
 - Publisher: https://www.science.org/doi/10.1126/science.aek9583
 - PubMed: https://pubmed.ncbi.nlm.nih.gov/42821669/
+- ClinicalTrials.gov record cited in the Letter (reference 1): https://clinicaltrials.gov/study/NCT06860672
+- WHO Trial Registration Data Set, item 23 (reference 3): https://www.who.int/tools/clinical-trials-registry-platform/network/who-data-set
 - Review Basis: Complete Letter reviewed in local publisher print-page images for pages 38-39; exact title, all five authors, DOI, print date and references matched to PubMed, Crossref and publisher identity. Only this Letter's columns were used.
 - Source Version: Published print pages, Science 394(6819):38-39, 1 October 2026. Page-image download watermark identifies science.org via Shanghai Jiao Tong University on 2 October 2026. Source hashes and paragraph locators are retained in SCIENCE_GOLD_STANDARD.json; the copyrighted full pages are not redistributed by this site.
 

@@ -187,6 +187,8 @@
   "provenance": {
     "publisher_url": "https://www.science.org/doi/10.1126/science.aek9583",
     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42821669/",
+    "clinical_trial_registry_reference_1_url": "https://clinicaltrials.gov/study/NCT06860672",
+    "who_trial_registration_data_set_reference_3_url": "https://www.who.int/tools/clinical-trials-registry-platform/network/who-data-set",
     "review_basis": "Complete Letter reviewed in local publisher print-page images for pages 38-39; exact title, all five authors, DOI, print date and references matched to PubMed, Crossref and publisher identity. Only this Letter's columns were used.",
     "source_version": "Published print pages, Science 394(6819):38-39, 1 October 2026. Page-image download watermark identifies science.org via Shanghai Jiao Tong University on 2 October 2026. Source hashes and paragraph locators are retained in SCIENCE_GOLD_STANDARD.json; the copyrighted full pages are not redistributed by this site."
   },
