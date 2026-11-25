@@ -1993,6 +1993,11 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
             links.append(
                 f'<a class="btn" href="{html.escape(pdf["url"], quote=True)}">Full text PDF · Accepted manuscript</a>'
             )
+    escaped_slug = html.escape(slug, quote=True)
+    links.extend([
+        f'<a class="btn" href="../research/questions.html#{escaped_slug}">Research index</a>',
+        f'<a class="btn" href="{escaped_slug}.md">Markdown</a>',
+    ])
     if is_pending:
         deep_badge = '<span class="badge">Deep GEO · Pending</span>'
     elif deep_content is not None and publication.get("deep_geo", True):
