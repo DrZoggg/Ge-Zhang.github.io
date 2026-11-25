@@ -293,6 +293,24 @@ async function run() {
   const unrelatedPmc=routeFixture({references:[{pmcid:'PMC11865799'}],provenance:{correction_pmc_url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12164647/',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC11865799/'}});
   assert.equal(unrelatedPmc.primary_sources.identifiers.pmcid,null);
   assert.equal(sourceRouteCases,32);
+  const slc=client.fetch('doi-10-1038-s41598-024-80885-2');
+  const oaiRoute=slc.primary_sources.reading_routes.find(route=>route.kind==='full_text_xml_oai');
+  const pmcOaiUrl='https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11680768&metadataPrefix=pmc';
+  assert.equal(oaiRoute?.url,pmcOaiUrl);
+  assert.equal(oaiRoute.availability,'not_checked');
+  assert(oaiRoute.source_fields.some(field=>/^work\.provenance\[\d+\]\.url$/.test(field)));
+  assertXmlRoute(slc);
+  const oaiSource={url:pmcOaiUrl};
+  const testOai=packet=>packet.primary_sources.reading_routes.filter(route=>route.kind==='full_text_xml_oai');
+  assert.equal(testOai(routeFixture({pmcid:'PMC11680768',provenance:[oaiSource,oaiSource]})).length,1);
+  assert.deepEqual(testOai(routeFixture({provenance:[oaiSource]})),[]);
+  assert.deepEqual(testOai(routeFixture({pmcid:'PMC11310499',provenance:[oaiSource]})),[]);
+  assert.deepEqual(testOai(routeFixture({pmcid:'PMC11680768',provenance:[oaiSource,{pmcid:'PMC11310499'}]})),[]);
+  for (const url of [pmcOaiUrl+'&verb=GetRecord',pmcOaiUrl+'#body',
+    pmcOaiUrl.replace('metadataPrefix=pmc','metadataPrefix=pmc_fm'),
+    pmcOaiUrl.replace('pmc.ncbi.nlm.nih.gov','pmc.ncbi.nlm.nih.gov.example.org')]) {
+    assert.deepEqual(testOai(routeFixture({pmcid:'PMC11680768',provenance:[{url}]})),[]);
+  }
   // An explicit same-work repository PDF is a reading route; an arbitrary
   // provenance link (even one labelled "full text") remains just provenance.
   const repositorySource={url:'https://repository.example.org/paper.pdf',label:'Institutional full text',
