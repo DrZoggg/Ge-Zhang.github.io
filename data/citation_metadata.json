@@ -111,6 +111,7 @@
       "volume": "26",
       "issue": "9",
       "article_number": "107587",
+      "ris_article_locator": "107587",
       "highwire_article_locator": {
         "value": "107587",
         "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10470306/"
@@ -198,6 +199,7 @@
       "volume": "136",
       "issue": "6",
       "article_number": "e194175",
+      "ris_article_locator": "e194175",
       "issn": "0021-9738",
       "eissn": "1558-8238",
       "pmid": "41609725",
@@ -228,6 +230,7 @@
       "publication_date": "2024-10-21",
       "volume": "8",
       "article_number": "e2400089",
+      "ris_article_locator": "e2400089",
       "eissn": "2473-4284",
       "pmid": "39432882",
       "publisher": "American Society of Clinical Oncology",
@@ -281,6 +284,7 @@
       "volume": "13",
       "issue": "1",
       "article_number": "e010127",
+      "ris_article_locator": "e010127",
       "eissn": "2051-1426",
       "pmid": "39773567",
       "pmcid": "PMC11749606",
@@ -314,6 +318,7 @@
       "volume": "28",
       "issue": "24",
       "article_number": "e70258",
+      "ris_article_locator": "e70258",
       "highwire_article_locator": {
         "value": "e70258",
         "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11668728/"
@@ -335,6 +340,7 @@
       "volume": "29",
       "issue": "15",
       "article_number": "e70725",
+      "ris_article_locator": "e70725",
       "highwire_article_locator": {
         "value": "e70725",
         "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12328994/"
@@ -444,6 +450,7 @@
       "publication_date": "2026-01-05",
       "volume": "12",
       "article_number": "1724572",
+      "ris_article_locator": "1724572",
       "highwire_article_locator": {
         "value": "1724572",
         "source_url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2025.1724572/full"
@@ -460,6 +467,7 @@
       "publication_date": "2025-03-26",
       "volume": "13",
       "article_number": "1521372",
+      "ris_article_locator": "1521372",
       "highwire_article_locator": {
         "value": "1521372",
         "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1521372/full"
@@ -476,6 +484,7 @@
       "publication_date": "2021-05-03",
       "volume": "11",
       "article_number": "659217",
+      "ris_article_locator": "659217",
       "highwire_article_locator": {
         "value": "659217",
         "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.659217/full"
@@ -507,6 +516,7 @@
       "publication_date": "2023-02-03",
       "volume": "943",
       "article_number": "175569",
+      "ris_article_locator": "175569",
       "pmid": "36740037",
       "verified_sources": [
         "https://pubmed.ncbi.nlm.nih.gov/36740037/",
@@ -524,6 +534,7 @@
       "volume": "7",
       "issue": "1",
       "article_number": "e00053",
+      "ris_article_locator": "e00053",
       "eissn": "2641-6573",
       "pmid": "42016906",
       "pmcid": "PMC13093795",
@@ -537,6 +548,7 @@
       "volume": "22",
       "issue": "5",
       "article_number": "100054",
+      "ris_article_locator": "100054",
       "verified_sources": [
         "https://www.sciencedirect.com/science/article/pii/S1570164625000542",
         "https://www.keaipublishing.com/en/journals/current-proteomics/most-downloaded-articles/"
@@ -571,6 +583,7 @@
     "10.1016/j.medd.2026.100004": {
       "publication_date": "2026-09-22",
       "article_number": "100004",
+      "ris_article_locator": "100004",
       "issn": "3117-9282",
       "publisher": "Elsevier BV",
       "verified_sources": [
@@ -584,6 +597,7 @@
       "online_publication_date": "2026-10-15",
       "volume": "270",
       "article_number": "116261",
+      "ris_article_locator": "116261",
       "publisher": "Elsevier BV",
       "pmid": "42896257",
       "verified_sources": [
@@ -596,6 +610,7 @@
       "online_publication_date": "2026-10-18",
       "volume": "109",
       "article_number": "00368504261499186",
+      "ris_article_locator": "00368504261499186",
       "publisher": "SAGE Publications",
       "pmid": "42893432",
       "verified_sources": [
@@ -609,6 +624,7 @@
     "10.1016/j.gendis.2026.102480": {
       "online_publication_date": "2026-09-18",
       "article_number": "102480",
+      "ris_article_locator": "102480",
       "verified_sources": [
         "https://api.crossref.org/works/10.1016/j.gendis.2026.102480",
         "https://www.sciencedirect.com/science/article/pii/S2352304226004526",
