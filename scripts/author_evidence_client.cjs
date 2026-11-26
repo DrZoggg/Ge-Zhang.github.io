@@ -329,6 +329,31 @@ function primarySources(work) {
       url:`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=${archiveId}&retmode=xml`,
       source_fields:pmcid.source_fields,availability:'not_checked'});
   }
+  if (Object.hasOwn(work, 'fulltext_pdf')) {
+    const pdf = work.fulltext_pdf;
+    const paper = https(work.paper_url), doiUrl = https(work.doi_url);
+    const url = https(pdf?.url), source = https(pdf?.source_url);
+    const matchesDoi = typeof work.doi === 'string' && /^10\.\d{4,9}\/\S+$/.test(work.doi)
+      && doiUrl?.href.toLowerCase() === ('https://doi.org/' + work.doi.toLowerCase());
+    if (!pdf || typeof pdf !== 'object' || Array.isArray(pdf)
+        || Object.keys(pdf).sort().join(',') !== 'license_url,sha256,source_url,url,version'
+        || !matchesDoi || !/^[a-z0-9][a-z0-9-]*$/.test(work.id)
+        || paper?.href !== `${ORIGIN}/papers/${work.id}.html`
+        || url?.href !== `${ORIGIN}/papers/${work.id}.pdf`
+        || source?.origin !== ORIGIN || !/^\/assets\/fulltext\/[A-Za-z0-9._-]+\.pdf$/.test(source.pathname)
+        || source.search || source.hash
+        || pdf.version !== 'publisher_accepted_manuscript'
+        || pdf.license_url !== 'https://creativecommons.org/licenses/by/4.0/'
+        || typeof pdf.sha256 !== 'string' || !/^[0-9a-f]{64}$/.test(pdf.sha256)) {
+      issue('work.fulltext_pdf','invalid_same_work_licensed_accepted_manuscript');
+    } else {
+      routes.push({
+        provider:'Author site',kind:'licensed_accepted_manuscript_pdf',url:url.href,
+        doi:work.doi,version:'accepted_manuscript',license_url:pdf.license_url,sha256:pdf.sha256,
+        source_fields:['work.fulltext_pdf','work.paper_url','work.doi_url'],availability:'not_checked',
+      });
+    }
+  }
   const identifiers = {pmid:pmid.value,pmcid:pmcid.value};
   const openAlexId = work.openalex_id;
   if (openAlexId !== null && openAlexId !== undefined) {
