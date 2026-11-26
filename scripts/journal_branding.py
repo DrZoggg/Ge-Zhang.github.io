@@ -3,6 +3,7 @@
 import html
 import json
 import re
+from urllib.parse import quote
 
 from sync_common import ROOT
 
@@ -33,7 +34,5 @@ def render_journal_mark(journal, branding):
     return (
         f'<span class="journal-brand journal-brand--{surface} journal-brand--{shape}" '
         f'aria-hidden="true" data-brand="{brand}" data-brand-kind="{record["kind"]}">'
-        f'<img src="{html.escape(asset, quote=True)}" alt="" '
-        f'width="{int(record["width"])}" height="{int(record["height"])}" '
-        'loading="lazy" decoding="async"></span>'
+        f'<span class="journal-brand-art" style="background-image:url({quote(asset, safe="/")})"></span></span>'
     )

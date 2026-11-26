@@ -3,8 +3,10 @@
 .home main.wrap>section:not(.hero){width:min(1200px,calc(100% - 80px));margin-inline:auto}
 .home .hero{display:flex;align-items:center;isolation:isolate;position:relative;min-height:700px;min-height:min(760px,calc(100svh - 88px));padding:92px max(40px,calc((100% - 1200px)/2)) 108px;overflow:hidden;border:0;background:#090e21}
 .home .hero .gradient-waves-container{position:absolute;inset:0;z-index:-3;width:100%;height:100%;overflow:hidden;pointer-events:none;background:#090e21}
-.gradient-waves-canvas,.wave-poster,.wave-poster img{position:absolute;inset:0;width:100%;height:100%;display:block}
-.wave-poster img{object-fit:cover}
+.gradient-waves-canvas,.wave-poster,.wave-poster>span{position:absolute;inset:0;width:100%;height:100%;display:block}
+.wave-poster>span{background-position:center;background-size:cover;background-repeat:no-repeat}
+.wave-poster .poster-dark{background-image:url("/assets/gradient-waves/waves-dark.webp")}
+.wave-poster .poster-light{background-image:url("/assets/gradient-waves/waves-light.webp")}
 .gradient-waves-canvas{opacity:0;pointer-events:none}
 [data-wave-state="ready"]>.gradient-waves-canvas,[data-wave-state="paused"]>.gradient-waves-canvas{opacity:1}
 [data-wave-state="ready"]>.wave-poster,[data-wave-state="paused"]>.wave-poster{visibility:hidden}
