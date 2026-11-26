@@ -17,6 +17,7 @@ from build_publications import update_homepage
 from citation_common import citation_skip_reason
 from research_guides import URL as GUIDE_URL, urls as comparison_urls
 from scholarly_discovery import QUESTION_PATH
+from search_metadata import SAMPLE_MAP_PATH
 from site_common import (controller_token, deep_content_path, index_master,
                          load_deep_geo, load_featured, load_profile_config,
                          load_site_config, publication_token)
@@ -140,7 +141,8 @@ class Visual3Tests(unittest.TestCase):
                 self.assertEqual(record.get(key), public_value, f'public {key}: {token}')
                 self.assertEqual(indexed[expected['paper_url']].get(key), value, f'index {key}: {token}')
         expected_urls |= {self.site, urljoin(self.site, 'publications.html'),
-                          urljoin(self.site, QUESTION_PATH), GUIDE_URL}
+                          urljoin(self.site, QUESTION_PATH), GUIDE_URL,
+                          urljoin(self.site, SAMPLE_MAP_PATH)}
         expected_urls.update(comparison_urls())
         self.assertEqual(len(sitemap), len(dict(sitemap)), 'duplicate sitemap URL')
         self.assertEqual(set(dict(sitemap)), expected_urls, 'sitemap URL inventory differs from sources')

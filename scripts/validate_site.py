@@ -3162,12 +3162,13 @@ def validate_site():
         *[f"{config['site_url']}/papers/{slug}.html" for slug in slugs],
         *research_guides.urls(ROOT),
         f"{config['site_url']}/research/questions.html",
+        f"{config['site_url']}/{search_metadata.SAMPLE_MAP_PATH}",
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")
     require(set(sitemap_urls) == set(expected_urls), "Sitemap URLs do not match public pages.")
     search_metadata.validate_published(
         ROOT, search_overrides,
-        {search_metadata.route(url) for url in sitemap_urls} | {search_metadata.SAMPLE_MAP_PATH},
+        {search_metadata.route(url) for url in sitemap_urls},
     )
     research_guides.validate(ROOT, search_overrides=search_overrides)
     research_guides.build_comparisons(ROOT, validate_only=True, search_overrides=search_overrides)

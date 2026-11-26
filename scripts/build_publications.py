@@ -2800,13 +2800,13 @@ def build_site():
     html_changed[homepage_url] = write_public_html_if_changed(
         index_path, index_html, search_overrides.get("index.html")
     )
-    sample_map_fields = search_overrides.get(search_metadata.SAMPLE_MAP_PATH)
-    if sample_map_fields:
-        sample_map_path = ROOT / search_metadata.SAMPLE_MAP_PATH
-        previous = sample_map_path.read_bytes().decode("utf-8")
-        current = search_metadata.project(previous, sample_map_fields)
-        if previous != current:
-            sample_map_path.write_bytes(current.encode("utf-8"))
+    sample_map_path = ROOT / search_metadata.SAMPLE_MAP_PATH
+    sample_map_url = absolute(config["site_url"], search_metadata.SAMPLE_MAP_PATH)
+    html_changed[sample_map_url] = write_public_html_if_changed(
+        sample_map_path,
+        sample_map_path.read_text(encoding="utf-8"),
+        search_overrides.get(search_metadata.SAMPLE_MAP_PATH),
+    )
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
     write_machine_indexes(public_items, deep_items, config, discovery_fields)
@@ -2816,6 +2816,7 @@ def build_site():
         *[item["paper_url"] for item in public_items],
         *research_guides.urls(ROOT),
         question_url,
+        sample_map_url,
     ]
     lastmods = {
         url: resolve_lastmod(url, html_changed[url], previous_lastmods, today)
