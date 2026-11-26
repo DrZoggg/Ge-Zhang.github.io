@@ -665,6 +665,45 @@
         "type": "unstructured",
         "text": "Musculoskeletal disorders such as osteoarthritis (OA), rheumatoid arthritis (RA), and osteoporosis (OP) affect millions worldwide, often progressing silently until advanced stages. Accessible early risk stratification remains challenging because conventional diagnosis often depends on imaging, specialist evaluation, and fragmented clinical information. Herein, we developed Luma AI, a multimodal AI platform that integrates routine blood tests and demographic variables with curated patient-reported symptom narratives. The text branch uses a domain-specific clinical text encoder based on LoRA-adapter-fine-tuned Bio_ClinicalBERT, whereas the structured branch uses optimized classical machine learning models. The two branches are fused through an explicit prediction-score and text-representation pipeline for early screening of OA, RA, and OP. Performance was validated using the U.S. NHANES and multi-center Chinese cohorts. We evaluated more than 50 predictive models and applied Bayesian optimization to refine the structured models, achieving over 80% accuracy with structured data alone and exceeding 90% in the multimodal validation cohort when symptom narratives were included. The platform incorporates explainable AI tools to identify key risk factors and provides personalized post-screening recommendations for lifestyle, diet, and medical follow-up. This study demonstrates that Luma AI can support scalable low-cost early risk screening and personalized management of OA, RA, and OP while remaining positioned as a risk-stratification aid rather than a stand-alone diagnostic replacement."
       }
+    },
+    "10.1007/s10238-024-01439-4": {
+      "source_type": "version_of_record",
+      "source_url": "https://link.springer.com/article/10.1007/s10238-024-01439-4",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "unstructured",
+        "text": "Endoplasmic reticulum stress (ERS) is a critical factor influencing lung adenocarcinoma (LUAD) progression and patient outcomes. In this study, we analyzed gene expression data from LUAD samples sourced from The Cancer Genomic Atlas and Gene Expression Omnibus databases. Utilizing advanced statistical methods including LASSO and Cox regression, we developed a ERS-associated signature (ERAS) based on ten ERS-related genes. This model stratified patients into high- and low-risk groups, with the high-risk group exhibiting decreased survival rates, elevated tumor mutational burden, and heightened chemotherapy sensitivity. Additionally, we observed lower immune and ESTIMATE scores in the high-ERAS group, indicating a potentially compromised immune response. Experimental validation through quantitative real-time polymerase chain reaction confirmed the utility of our model. Furthermore, we constructed a nomogram to predict 1-, 3-, and 5-year survival rates, providing clinicians with a valuable tool for personalized patient management. In conclusion, our study demonstrates the efficacy of the ERAS in identifying high-ERAS LUAD patients, offering promising implications for improved prognostication and treatment strategies."
+      }
+    },
+    "10.3389/fonc.2024.1425895": {
+      "source_type": "version_of_record",
+      "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2024.1425895/full",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verbatim": true,
+      "abstract": {
+        "type": "structured",
+        "sections": [
+          {
+            "label": "Background",
+            "text": "The prognosis for lung adenocarcinoma (LUAD) remains dismal, with a 5-year survival rate of <20%. Therefore, the purpose of this study was to identify potentially reliable biomarkers in LUAD by machine learning combination with Mendelian randomization (MR)."
+          },
+          {
+            "label": "Methods",
+            "text": "TCGA-LUAD, GSE40791, and GSE31210 were employed this study. Key module differential genes were identified through differentially expressed analysis and weighted gene co-expression network analysis (WGCNA). Furthermore, candidate biomarkers were derived from protein–protein interaction network (PPI) and machine learning. Ultimately, biomarkers were confirmed using MR analysis. In addition, immunohistochemistry was used to detect the expression levels of genes that have a causal relationship to LUAD in the LUAD group and the control group. Cell experiments were conducted to validate the effect of screening genes on proliferation, migration, and apoptosis of LUAD cells. The correlation between the screened genes and immune infiltration was determined by CIBERSORT algorithm. In the end, the gene-related drugs were predicted through the Drug–Gene Interaction database."
+          },
+          {
+            "label": "Results",
+            "text": "In total, 401 key module differential genes were obtained by intersecting of 5,702 differentially expressed genes (DEGs) and 406 key module genes. Thereafter, GIMAP6, CAV1, PECAM1, and TGFBR2 were identified. Among them, only TGFBR2 had a significant causal relationship with LUAD (p=0.04, b=−0.06), and it is a protective factor for LUAD. Subsequently, sensitivity analyses showed that there were no heterogeneity and horizontal pleiotropy in the univariate MR results, and the results were not overly sensitive to individual SNP loci, further validating the reliability of univariate Mendelian randomization (UVMR) results. However, no causal relationship was found between them by reverse MR analysis. Meanwhile, TGFBR2 expression was decreased in LUAD group through immunohistochemistry. TGFBR2 can inhibit proliferation and migration of lung adenocarcinoma cell line A549 and promote apoptosis of A549 cells. Immune infiltration analysis suggested a potential link between TGFBR2 expression and immune infiltration. Finally, Irinotecan and Hesperetin were predicted through DGIDB database."
+          },
+          {
+            "label": "Conclusion",
+            "text": "In this study, TGFBR2 was identified as a biomarker of LUAD, which provided a new idea for the treatment strategy of LUAD and may aid in the development of personalized immunotherapy strategies."
+          }
+        ]
+      }
     }
   }
 }

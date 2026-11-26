@@ -17,6 +17,8 @@ LICENSE_URLS = {
 # This permission is article-specific and must not authorize other sources.
 DOI_LICENSE_URLS = {
     # V1.6: individually reviewed article grants, never global relaxations.
+    "10.1007/s10238-024-01439-4": {"CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/"},
+    "10.3389/fonc.2024.1425895": {"CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/"},
     "10.2147/cia.s462542": {
         "CC-BY-NC-3.0": "https://creativecommons.org/licenses/by-nc/3.0/",
     },
@@ -46,6 +48,8 @@ DOI_LICENSE_URLS = {
     },
 }
 SOURCES = {
+    "10.1007/s10238-024-01439-4": ("link.springer.com", "/article/10.1007/s10238-024-01439-4"),
+    "10.3389/fonc.2024.1425895": ("www.frontiersin.org", "/journals/oncology/articles/10.3389/fonc.2024.1425895/full"),
     ACCEPTED_MANUSCRIPT_ABSTRACT_DOI: (
         "www.ovid.com",
         "/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",

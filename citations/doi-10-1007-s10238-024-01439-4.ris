@@ -13,6 +13,7 @@ VL  - 24
 IS  - 1
 SP  - 169
 C7  - 169
+AB  - Endoplasmic reticulum stress (ERS) is a critical factor influencing lung adenocarcinoma (LUAD) progression and patient outcomes. In this study, we analyzed gene expression data from LUAD samples sourced from The Cancer Genomic Atlas and Gene Expression Omnibus databases. Utilizing advanced statistical methods including LASSO and Cox regression, we developed a ERS-associated signature (ERAS) based on ten ERS-related genes. This model stratified patients into high- and low-risk groups, with the high-risk group exhibiting decreased survival rates, elevated tumor mutational burden, and heightened chemotherapy sensitivity. Additionally, we observed lower immune and ESTIMATE scores in the high-ERAS group, indicating a potentially compromised immune response. Experimental validation through quantitative real-time polymerase chain reaction confirmed the utility of our model. Furthermore, we constructed a nomogram to predict 1-, 3-, and 5-year survival rates, providing clinicians with a valuable tool for personalized patient management. In conclusion, our study demonstrates the efficacy of the ERAS in identifying high-ERAS LUAD patients, offering promising implications for improved prognostication and treatment strategies.
 L2  - https://pmc.ncbi.nlm.nih.gov/articles/PMC11272744/
 DO  - 10.1007/s10238-024-01439-4
 UR  - https://doi.org/10.1007/s10238-024-01439-4
