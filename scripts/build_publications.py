@@ -1107,6 +1107,7 @@ def v2_label(key):
         "publisher_url": "Publisher",
         "pubmed_url": "PubMed",
         "pmcid": "PMCID",
+        "pmc_cloud_xml_url": "PMC Open Access full-text XML",
         "code_url": "Code",
         "tool_url": "Clinical tool",
     }

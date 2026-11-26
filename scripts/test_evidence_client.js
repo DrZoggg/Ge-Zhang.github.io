@@ -345,6 +345,25 @@ async function run() {
     const packet=routeFixture({pmcid:'PMC11897062',provenance:[{...cloudSource,url}]});
     assert.deepEqual(cloudRoutes(packet),[]);
   }
+  const jdiCloudUrl='https://pmc-oa-opendata.s3.amazonaws.com/PMC13651581.1/PMC13651581.1.xml';
+  const jdi=client.fetch('doi-10-1111-jdi-70462');
+  assert.deepEqual(cloudRoutes(jdi),[{
+    provider:'PMC',kind:'full_text_xml_cloud',url:jdiCloudUrl,archive_version:'PMC13651581.1',
+    source_fields:['work.provenance.pmc_cloud_xml_url','work.pmcid','work.provenance.pmcid'],availability:'not_checked'}]);
+  assert(jdi.primary_sources.reading_routes.some(route=>route.kind==='full_text_xml_api'));
+  assert.equal(jdi.provenance.supporting_material_url,
+    'https://pmc-oa-opendata.s3.amazonaws.com/PMC13651581.1/JDI-9999-0-s001.docx');
+  const v2Source={pmc_cloud_xml_url:jdiCloudUrl};
+  for (const fields of [
+    {provenance:{supporting_material_url:jdiCloudUrl}},
+    {provenance:[v2Source]},
+    {provenance:v2Source,pmcid:'PMC11897062'},
+    {provenance:{pmc_cloud_xml_url:jdiCloudUrl+'#methods'}},
+  ]) assert.deepEqual(cloudRoutes(routeFixture({pmcid:'PMC13651581',...fields})),[]);
+  const limitedCloudFixture=structuredClone(catalog);
+  limitedCloudFixture.works.find(work=>work.id===jcmm.id).provenance={pmc_cloud_xml_url:cloudUrl};
+  assert.deepEqual(cloudRoutes(createClient(limitedCloudFixture,loaded.search).fetch(jcmm.id)),[]);
+  sourceRouteCases++;
   // An explicit same-work repository PDF is a reading route; an arbitrary
   // provenance link (even one labelled "full text") remains just provenance.
   const repositorySource={url:'https://repository.example.org/paper.pdf',label:'Institutional full text',
