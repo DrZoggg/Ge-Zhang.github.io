@@ -411,6 +411,7 @@
     },
     "10.2147/jir.s495784": {
       "slug": "doi-10-2147-jir-s495784",
+      "search_description": "An Olink study compared 92 plasma proteins in 20 patients with acute myocardial infarction and 10 healthy controls, then measured five candidate proteins by ELISA.",
       "evidence_status": "limited",
       "reviewed_on": "2026-10-27",
       "scope": "Protein-discovery design and supplementary sensitivity checks; diagnostic and causal claims remain unverified.",
