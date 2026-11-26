@@ -423,6 +423,7 @@
     "version_of_record": "J Clin Invest. 2026;136(6):e194175; In-Press Preview published 29 January 2026 and electronic publication in Volume 136 Issue 6 on 16 March 2026.",
     "source_material": "JCI version of record, Supplemental Data, unedited blot/gel material, Supporting Data Values, GEO GSE314838, GEO GSE120521, ProteomeXchange PXD062283 and public human plaque omics resources used by the article.",
     "data_availability": "Study-generated single-cell RNA-seq data are deposited as GSE314838. Values for all data points are supplied in the Supporting Data Values file.",
+    "study_generated_geo_series_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE314838&targ=self&form=text&view=full",
     "counting_note": "Human participants, paired tissue regions, public dataset samples, mice, pooled single-cell libraries and cell-culture biological replicates are separate denominators; no overall total n is inferred.",
     "human_sampling_note": "The local six-patient CEA study used paired advanced/culprit and adjacent upstream regions from the same plaque and patient; the anatomical classification was based on location and macroscopic surgical appearance.",
     "proteomics_note": "PXD062283 contains 87 carotid plaques in the repository overall; the JCI Figure 1 comparison uses stable n=19 and unstable n=38.",
