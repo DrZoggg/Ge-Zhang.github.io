@@ -15,6 +15,7 @@ from urllib.parse import unquote, urlsplit
 from sync_common import ROOT, is_withdrawn
 from paper_discovery import scientific_content
 from theme_shell import with_theme_shell, without_theme_shell
+import search_metadata
 
 SLUG = 'dcm-hf-circulating-biomarkers'
 URL = 'https://drgezhang.com/research/' + SLUG + '.html'
@@ -155,9 +156,12 @@ def validate_page(page, expected_url=URL):
     require('ScholarlyArticle' not in page and 'FAQPage' not in page, 'Guide is WebPage only')
 
 
-def build(root=ROOT):
+def build(root=ROOT, *, search_overrides=None):
     data = load(root); sources = resolve(data, root)
-    rendered = render(data, sources)
+    if search_overrides is None:
+        search_overrides = search_metadata.load(root)
+    page, markdown = render(data, sources)
+    rendered = search_metadata.project(page, search_overrides.get(search_metadata.route(URL))), markdown
     validate_page(rendered[0])
     changed = False
     for extension, text in zip(('html', 'md'), rendered):
@@ -172,9 +176,12 @@ def build(root=ROOT):
     return changed
 
 
-def validate(root=ROOT):
+def validate(root=ROOT, *, search_overrides=None):
     data = load(root); sources = resolve(data, root)
-    expected = render(data, sources)
+    if search_overrides is None:
+        search_overrides = search_metadata.load(root)
+    page, markdown = render(data, sources)
+    expected = search_metadata.project(page, search_overrides.get(search_metadata.route(URL))), markdown
     for ext, text in zip(('html', 'md'), expected):
         require((root / 'research' / (SLUG + '.' + ext)).read_text(encoding='utf-8') == text, 'Guide differs from reviewed rendering')
     validate_page(expected[0])
@@ -642,12 +649,16 @@ def render_comparison(packet):
     return page, '\n\n'.join(md)+'\n', json.dumps(packet,ensure_ascii=False,indent=2)+'\n'
 
 
-def build_comparisons(root=ROOT, validate_only=False):
+def build_comparisons(root=ROOT, validate_only=False, *, search_overrides=None):
+    if search_overrides is None:
+        search_overrides = search_metadata.load(root)
     changed = {}
     for data in load_comparisons(root):
         packet = comparison_packet(data, root)
-        rendered = render_comparison(packet)
-        outputs = list(zip(('html', 'md', 'json'), rendered))
+        page, markdown, machine = render_comparison(packet)
+        route = search_metadata.route(comparison_url(data))
+        page = search_metadata.project(page, search_overrides.get(route))
+        outputs = [('html', page), ('md', markdown), ('json', machine)]
         workspace = packet.get('research_use', {}).get('task_workspace')
         if workspace is not None:
             outputs += [('worksheet.csv', task_workspace_csv(workspace)),

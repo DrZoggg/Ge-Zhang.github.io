@@ -1,0 +1,345 @@
+{
+  "assets/research/gse59867-sample-followup-map.html": {
+    "description": "This map links 436 public GSE59867 sample accessions to recorded collection times and 157 literal labels, including repeated samples."
+  },
+  "index.html": {
+    "description": "Ge Zhang (张格), ORCID 0000-0002-3116-3246, studies cardiovascular AI, multi-omics, atherosclerosis, heart failure and circadian biology."
+  },
+  "papers/aihflevel.html": {
+    "title": "AI survival modeling in heart failure with renal dysfunction",
+    "description": "A hybrid machine-learning study evaluated survival prediction for patients with advanced heart failure and renal dysfunction."
+  },
+  "papers/apvs.html": {
+    "title": "Atherosclerotic plaque vulnerability scoring with APVS",
+    "description": "A 14-gene transcriptomic model and single-cell analysis linked atherosclerotic plaque vulnerability scoring to biological interpretation."
+  },
+  "papers/b4galt2.html": {
+    "title": "B4GALT2 and immune exclusion in lung adenocarcinoma",
+    "description": "The study linked a lung adenocarcinoma expression signature to immune context and tested B4GALT2 perturbation in a mouse model."
+  },
+  "papers/circadian-ihd.html": {
+    "title": "Circadian expression subtypes in ischemic heart disease"
+  },
+  "papers/doi-10-1002-clc-70019.html": {
+    "title": "Life’s Essential 8 and depressive symptoms in NHANES",
+    "description": "Cross-sectional NHANES data linked higher Life’s Essential 8 scores to lower odds of depressive symptoms. Conflicting anxiety results remain unresolved."
+  },
+  "papers/doi-10-1002-ctm2-70900.html": {
+    "description": "This methodological letter links outcome reporting to question-specific case comparison and discusses how AI could inform the next study decision."
+  },
+  "papers/doi-10-1002-ehf2-14003.html": {
+    "title": "COVID-19 and heart failure transcriptome comparison",
+    "description": "A systems biology analysis compared independently sampled COVID-19 and heart failure transcriptomes to identify shared inflammatory hypotheses."
+  },
+  "papers/doi-10-1002-ggn2-202500053.html": {
+    "title": "Clinical AI ensembles: a methodological perspective",
+    "description": "This perspective discusses complementary models, independent-cohort evaluation and interpretation for hybrid clinical AI ensembles."
+  },
+  "papers/doi-10-1002-mdr2-70004.html": {
+    "title": "Network biomarkers and molecular subtypes of thyroid cancer"
+  },
+  "papers/doi-10-1002-mdr2-70052.html": {
+    "title": "Circadian immunity and vascular inflammation in heart disease",
+    "description": "This narrative review examines how molecular clocks and vascular inflammation inform research on cardiovascular treatment timing."
+  },
+  "papers/doi-10-1002-mdr2-70073.html": {
+    "title": "Multimodal AI screening for musculoskeletal disorders",
+    "description": "The study evaluates a screening model combining laboratory results and symptom narratives for osteoarthritis, rheumatoid arthritis, and osteoporosis."
+  },
+  "papers/doi-10-1002-tox-24284.html": {
+    "title": "A 13-gene prognostic model in lung adenocarcinoma",
+    "description": "This retrospective lung adenocarcinoma study developed a 13-gene model through outcome screening and explored treatment sensitivity computationally."
+  },
+  "papers/doi-10-1007-s10238-024-01439-4.html": {
+    "title": "ER stress and survival in lung adenocarcinoma",
+    "description": "A retrospective 10-gene ER stress model was evaluated in TCGA and GEO cohorts. Two model genes were checked in paired lung adenocarcinoma specimens."
+  },
+  "papers/doi-10-1007-s10238-026-02130-6.html": {
+    "title": "Expression-network subtypes of dilated cardiomyopathy",
+    "description": "This retrospective study used expression networks to define dilated cardiomyopathy subtypes and infer immune profiles across datasets."
+  },
+  "papers/doi-10-1007-s11426-026-3629-x.html": {
+    "title": "A photoacoustic probe for atherosclerotic plaque redox",
+    "description": "The study tested a reversible redox-responsive photoacoustic probe in solution and evaluated relative aortic readouts in a small animal model."
+  },
+  "papers/doi-10-1007-s13402-023-00912-8.html": {
+    "title": "Review of omics-based classification in precision oncology",
+    "description": "This narrative review connects molecular tumor classification to diagnosis, treatment stratification and prognosis, including data and model limitations."
+  },
+  "papers/doi-10-1016-j-canlet-2024-217083.html": {
+    "title": "T-cell malignancy after CAR-T therapy: a mechanism review",
+    "description": "This narrative review examines candidate mechanisms and competing explanations for T-cell malignancy after CAR-T therapy."
+  },
+  "papers/doi-10-1016-j-cbi-2025-111421.html": {
+    "title": "Human cardiac organoids in diabetic cardiomyopathy research",
+    "description": "The in vitro study used human cardiac organoids to examine viability, transcription and imaging under high glucose and lipid conditions."
+  },
+  "papers/doi-10-1016-j-cmpbup-2024-100164.html": {
+    "title": "Multimorbidity and frailty classification in NHANES",
+    "description": "A cross-sectional NHANES study examines frailty and multimorbidity in US adults and compares classification models using nested cross-validation."
+  },
+  "papers/doi-10-1016-j-colsurfb-2026-116261.html": {
+    "title": "ZFP36 vesicles in endothelial injury and NiTi interfaces",
+    "description": "The study tests engineered ZFP36 vesicles in endothelial-cell and mouse models and examines their immobilization on modified NiTi."
+  },
+  "papers/doi-10-1016-j-csbj-2024-04-044.html": {
+    "title": "Proteomics in precision oncology: a narrative review",
+    "description": "This review examines proteomic measurement platforms, data integration and published applications in precision oncology."
+  },
+  "papers/doi-10-1016-j-curpro-2025-100054.html": {
+    "title": "Multimodal AI and cardiovascular digital twins",
+    "description": "This correspondence outlines a research agenda for cross-modal interpretation and patient-specific cardiovascular physiological models."
+  },
+  "papers/doi-10-1016-j-ejso-2024-108527.html": {
+    "title": "Esophageal GIST management in a retrospective series",
+    "description": "A small retrospective series describes treatment selection, procedures and follow-up for esophageal gastrointestinal stromal tumors."
+  },
+  "papers/doi-10-1016-j-gendis-2026-102480.html": {
+    "title": "Trustworthy AI methods for disease and precision medicine",
+    "description": "This review outlines how data provenance, endpoint design, validation, and reporting shape trustworthy biomedical AI research."
+  },
+  "papers/doi-10-1016-j-intimp-2024-112574.html": {
+    "title": "Cuproptosis-related genes in ischemic cardiomyopathy",
+    "description": "The study nominates five cuproptosis-related genes using retrospective transcriptomes and examines selected proteins in a mouse infarction model."
+  },
+  "papers/doi-10-1016-j-isci-2025-114320.html": {
+    "title": "ABCA1 and amyotrophic lateral sclerosis: expression evidence",
+    "description": "The ALS study combined blood expression modeling, genetic-instrument associations and limited serum measurements to examine ABCA1."
+  },
+  "papers/doi-10-1016-j-jma-2023-05-007.html": {
+    "title": "Exosome coatings for degradable magnesium stent materials",
+    "description": "The study assessed coated magnesium alloy in material and cell assays and used a small rat aortic wire-implant experiment for follow-up."
+  },
+  "papers/doi-10-1016-j-joim-2025-06-003.html": {
+    "title": "Circadian expression subtypes in hepatocellular carcinoma"
+  },
+  "papers/doi-10-1016-j-jtemb-2024-127543.html": {
+    "title": "Magnesium depletion score and depression in NHANES",
+    "description": "A survey-weighted analysis related a four-domain magnesium depletion proxy to concurrent PHQ-9 depression classification in US adults aged 20–60."
+  },
+  "papers/doi-10-1016-j-medd-2026-100004.html": {
+    "title": "When cardiovascular multimodal AI should defer prediction",
+    "description": "This correspondence proposes when cardiovascular AI should defer prediction and how to plan follow-up care under missing or asynchronous inputs."
+  },
+  "papers/doi-10-1038-s41598-024-80885-2.html": {
+    "title": "SLC7A7 across cancers and in colorectal cancer cell models",
+    "description": "The study combines pan-cancer expression analyses with SLC7A7 knockdown assays of migration and invasion in colorectal cancer cell lines."
+  },
+  "papers/doi-10-1038-s41598-025-98859-3.html": {
+    "title": "Endoscopic and laparoscopic resection for junctional GIST",
+    "description": "A single-centre retrospective study compared resection approaches for esophagogastric junction GIST using propensity-score matching."
+  },
+  "papers/doi-10-1038-s41698-026-01699-1.html": {
+    "title": "Circadian expression patterns in colorectal cancer",
+    "description": "The study built a circadian-associated expression score in colorectal cancer, examined tumor cell states and followed up selected regulators in cell assays."
+  },
+  "papers/doi-10-1056-nejmc2518964.html": {
+    "description": "This letter discusses when aspirin is withdrawn after PCI for acute coronary syndromes and identifies questions for future research."
+  },
+  "papers/doi-10-1093-eurheartj-ehaf523.html": {
+    "title": "Macrophage KIF13B and efferocytosis in atherosclerosis",
+    "description": "Mouse experiments examined how macrophage-derived KIF13B regulates MERTK and efferocytosis in experimental atherosclerosis."
+  },
+  "papers/doi-10-1093-hmg-ddae189.html": {
+    "title": "Multi-omics of cellular senescence in Alzheimer's disease"
+  },
+  "papers/doi-10-1097-re9-0000000000000037.html": {
+    "title": "Multimodal AI for cardiovascular microbiome research",
+    "description": "This narrative review separates gut–vascular and gut–heart evidence and proposes how to evaluate multimodal cardiovascular microbiome studies."
+  },
+  "papers/doi-10-1111-jcmm-17789.html": {
+    "title": "Plasma exosomal microRNAs in dilated cardiomyopathy",
+    "description": "An exploratory human study profiled plasma exosomal microRNAs in dilated cardiomyopathy with heart failure and compared expression in follow-up assays."
+  },
+  "papers/doi-10-1111-jcmm-18408.html": {
+    "title": "Lung adenocarcinoma progression signatures from single cells",
+    "description": "The study derived a retrospective lung adenocarcinoma expression signature across datasets and separately examined PSMB1 in cell lines."
+  },
+  "papers/doi-10-1111-jcmm-70258.html": {
+    "title": "Plasma exosomal circular RNA in dilated cardiomyopathy",
+    "description": "A small human study profiled plasma vesicle circular RNAs in dilated cardiomyopathy with heart failure and included external assay follow-up."
+  },
+  "papers/doi-10-1111-jcmm-70475.html": {
+    "title": "Disulfidptosis-related genes in ischaemic cardiomyopathy",
+    "description": "The study examines disulfidptosis-related expression in public myocardial transcriptomes and a mouse model of ischaemic cardiomyopathy."
+  },
+  "papers/doi-10-1111-jcmm-70725.html": {
+    "title": "Circulating vesicle proteomics in abdominal aortic aneurysm",
+    "description": "A two-center human study profiled targeted circulating vesicle proteins in abdominal aortic aneurysm and performed small-scale cross-assay follow-up."
+  },
+  "papers/doi-10-1111-jdi-70462.html": {
+    "title": "CHG and cardiometabolic multimorbidity: a cohort study",
+    "description": "A prospective cohort study evaluated CHG and related indices for cardiovascular–liver–metabolic multimorbidity and assessed discrimination in that cohort."
+  },
+  "papers/doi-10-1111-odi-70054.html": {
+    "title": "Space dentistry, remote support and AI: a letter",
+    "description": "This conceptual letter outlines care strategies and practical constraints for remote and AI-assisted dentistry on long-duration space missions."
+  },
+  "papers/doi-10-1126-science-aek9583.html": {
+    "description": "This Science Letter proposes that public records link individualized genetic therapy research to directly related human protocols and major outcomes."
+  },
+  "papers/doi-10-1155-humu-5591097.html": {
+    "title": "PAPPA2 and IGFBP5 in experimental glaucoma models",
+    "description": "Experiments motivated by a reported glaucoma-family variant examined PAPPA2 and IGFBP5 in transfected cells, primary cultures and mice."
+  },
+  "papers/doi-10-1172-jci194175.html": {
+    "title": "Smooth muscle KIF13B in experimental atherosclerosis",
+    "description": "The study examined smooth muscle KIF13B, inflammatory cell states and KCTD10-dependent KLF4 turnover in experimental atherosclerosis."
+  },
+  "papers/doi-10-1177-00368504261499186.html": {
+    "title": "EASIX and survival in cardiovascular-kidney-metabolic syndrome",
+    "description": "A retrospective NHANES cohort examined EASIX and mortality in adults with cardiovascular-kidney-metabolic syndrome stages 0–3."
+  },
+  "papers/doi-10-1186-s10020-024-00963-z.html": {
+    "title": "EndMT expression signatures in pulmonary arterial hypertension",
+    "description": "This exploratory PAH study combined single-cell and bulk expression to nominate endothelial states and tested a two-gene classifier internally."
+  },
+  "papers/doi-10-1186-s12915-025-02400-x.html": {
+    "title": "T-cell states in abdominal aortic aneurysm",
+    "description": "A human abdominal aortic aneurysm study combined T-cell state analysis, bulk-expression marker assessment and independent human samples."
+  },
+  "papers/doi-10-1186-s12931-024-02978-w.html": {
+    "title": "Disulfidptosis-related genes in pulmonary hypertension",
+    "description": "The study explores gene-expression patterns in pulmonary hypertension through computational analyses and a separate hypoxia-exposed rodent model."
+  },
+  "papers/doi-10-1200-po-24-00089.html": {
+    "title": "Survival modeling after robot-assisted rectal surgery",
+    "description": "A retrospective cohort study evaluated interpretable survival modeling for rectal cancer after robot-assisted proctectomy."
+  },
+  "papers/doi-10-1200-po-24-00875.html": {
+    "title": "Author reply on feature importance in survival models"
+  },
+  "papers/doi-10-1371-journal-pone-0346326.html": {
+    "title": "Aliskiren safety reports in FAERS and WHO VigiAccess"
+  },
+  "papers/doi-10-14283-jpad-2024-161.html": {
+    "title": "Shift work and molecular patterns in Alzheimer's disease",
+    "description": "This computational study examines shift work and Alzheimer’s disease using expression data, Mendelian randomization, and a clock-deviation score."
+  },
+  "papers/doi-10-15212-bioi-2026-0017.html": {
+    "title": "TyG-to-eGFR ratio and cardiovascular events",
+    "description": "UK Biobank analysis linked the TyG-to-eGFR ratio to incident cardiovascular disease. An independent cohort examined major adverse cardiovascular events."
+  },
+  "papers/doi-10-15212-cvia-2024-0023.html": {
+    "title": "Gut microbial genetic proxies and aortic aneurysm",
+    "description": "Two-sample Mendelian randomization linked MiBioGen microbial traits to FinnGen aneurysm outcomes. This record covers verified AA and AAA estimates."
+  },
+  "papers/doi-10-18063-ijb-740.html": {
+    "title": "3D bioprinting of blood vessels: bioinks and methods",
+    "description": "This narrative review examines hydrogel functions, cell compatibility, fabrication methods and translation challenges in vascular bioprinting."
+  },
+  "papers/doi-10-18632-aging-205564.html": {
+    "title": "Gene-expression classification in ulcerative colitis",
+    "description": "A retrospective ulcerative colitis analysis evaluated a gene-expression classifier and separately examined the biology behind its scores."
+  },
+  "papers/doi-10-2139-ssrn-4391582.html": {
+    "title": "Heart failure and renal dysfunction survival: SSRN preprint",
+    "description": "This SSRN preprint describes an AI framework for assessing survival in advanced heart failure with renal dysfunction."
+  },
+  "papers/doi-10-2139-ssrn-4857099.html": {
+    "title": "Lobectomy after chemoimmunotherapy in NSCLC: SSRN preprint",
+    "description": "This preprint describes a retrospective multicentre comparison of sleeve lobectomy and lobectomy after chemoimmunotherapy in central-type NSCLC."
+  },
+  "papers/doi-10-2139-ssrn-5292589.html": {
+    "title": "ABCA1 and metabolism in ALS: SSRN preprint",
+    "description": "This preprint examines ABCA1 in amyotrophic lateral sclerosis using blood transcriptomics, Mendelian randomization, and serum protein assessment."
+  },
+  "papers/doi-10-2147-cia-s462542.html": {
+    "title": "TyG in advanced heart failure with renal dysfunction",
+    "description": "A single-center observational study assessed the association between admission TyG and adverse outcomes in advanced heart failure with renal dysfunction."
+  },
+  "papers/doi-10-2147-cia-s493841.html": {
+    "title": "Mortality modeling after endovascular aneurysm repair",
+    "description": "A single-centre retrospective cohort assessed all-cause mortality after elective endovascular aneurysm repair with internal model validation."
+  },
+  "papers/doi-10-2147-ijn-s522157.html": {
+    "title": "Liposomal miR-185-5p inhibition in cardiac injury models",
+    "description": "The study assessed peptide-functionalized liposomal delivery of a miR-185-5p inhibitor in doxorubicin-associated cellular and mouse injury models."
+  },
+  "papers/doi-10-2147-jir-s495784.html": {
+    "title": "Olink plasma protein profiling in acute myocardial infarction",
+    "description": "An exploratory study profiled 92 plasma proteins in 20 infarction cases and 10 controls, then measured five candidates by ELISA."
+  },
+  "papers/doi-10-32604-or-2025-059290.html": {
+    "title": "Cancer research trends: a bibliometric analysis",
+    "description": "A bibliometric study describes publication and keyword trends across cancer prevention, screening, diagnosis, treatment and rehabilitation."
+  },
+  "papers/doi-10-3389-fcvm-2025-1724572.html": {
+    "title": "Allostatic load and cardiovascular events: a cohort study",
+    "description": "A prospective cohort linked biomarker-defined allostatic load to incident cardiovascular events and examined statistical mediation by inflammation."
+  },
+  "papers/doi-10-3389-fnut-2025-1658286.html": {
+    "title": "Glucose disposal rate, hyperuricemia and gout in NHANES",
+    "description": "An observational analysis in one NHANES adult sample related estimated glucose disposal rate to prevalent hyperuricemia and gout."
+  },
+  "papers/doi-10-3389-fonc-2021-659217.html": {
+    "title": "Apatinib in advanced cholangiocarcinoma: single-arm phase II",
+    "description": "An open-label, single-arm phase II study described apatinib activity and toxicity after gemcitabine-based therapy in advanced cholangiocarcinoma."
+  },
+  "papers/doi-10-3389-fonc-2024-1425895.html": {
+    "title": "TGFBR2 as a candidate marker in lung adenocarcinoma",
+    "description": "This study prioritized TGFBR2 using expression and nominal genetic evidence, then examined it in tissue samples and A549 cell experiments."
+  },
+  "papers/doi-10-3389-fonc-2025-1538574.html": {
+    "title": "BRCA1 status and the immune microenvironment in TNBC",
+    "description": "This exploratory TNBC study compared BRCA1 groups using single-cell and other omics data. Response models used mixed, non-TNBC treatment cohorts."
+  },
+  "papers/doi-10-3389-fpubh-2025-1521372.html": {
+    "title": "Sleep and mortality in US adults with hyperuricemia",
+    "description": "An NHANES analysis linked self-reported sleep duration and sleep trouble to mortality records for adults with hyperuricemia."
+  },
+  "papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html": {
+    "title": "Retinal pigment epithelium differentiation: a culture review",
+    "description": "This narrative review surveys published culture approaches for differentiating embryonic stem cells into retinal pigment epithelial cells."
+  },
+  "papers/doi-10-71321-fy14v342.html": {
+    "title": "Circadian expression subtypes in lung adenocarcinoma",
+    "description": "A retrospective public-cohort study found three circadian-related expression subtypes in lung adenocarcinoma and tested template assignment externally."
+  },
+  "papers/icd-cart.html": {
+    "title": "Immunogenic cell death and CAR-T therapy: a review",
+    "description": "This review discusses how immunogenic cell death might complement CAR-T strategies in solid tumours and summarizes immune and physical barriers."
+  },
+  "papers/idebenone-ferroptosis.html": {
+    "title": "Idebenone and ferroptosis in experimental infarction",
+    "description": "Cell and mouse experiments examined idebenone, ferroptosis and autophagy-associated pathways in experimental myocardial infarction."
+  },
+  "papers/nlrp3-ici.html": {
+    "title": "NLRP3 and immune checkpoint inhibitor cardiotoxicity",
+    "description": "A preclinical study tested NLRP3 inhibition and measured cardiac injury, immune-cell states and tumor outcomes in checkpoint inhibitor-treated mice."
+  },
+  "papers/olink-dcm.html": {
+    "title": "Plasma Olink proteomics in dilated cardiomyopathy",
+    "description": "The DCM heart failure study used Olink plasma screening, local ELISA replication and separate evaluation in public cardiac gene-expression datasets."
+  },
+  "papers/smc-fate.html": {
+    "title": "Smooth muscle cell states in atherosclerosis subtypes",
+    "description": "The study combined human plaque single-cell analysis and multicohort transcriptomics to identify smooth muscle states across atherosclerosis subtypes."
+  },
+  "papers/time-cart.html": {
+    "title": "Tumor microenvironment omics and CAR-T: a review",
+    "description": "This narrative review links tumor immune microenvironment heterogeneity to proposed CAR-T design strategies and computational analysis."
+  },
+  "papers/work-3d25d7e32b86959b.html": {
+    "title": "FOSB and abdominal aortic aneurysm: patent application record",
+    "description": "This record documents South African application 2023/00397 on FOSB-related approaches to abdominal aortic aneurysm."
+  },
+  "research/atherosclerosis-cell-mechanisms.html": {
+    "title": "Atherosclerosis: smooth muscle and macrophage mechanisms",
+    "description": "This guide separates smooth-muscle regulation and macrophage efferocytosis in experimental atherosclerosis from human plaque observations."
+  },
+  "research/cancer-omics-validation.html": {
+    "description": "This guide compares study designs for cancer subtyping, survival prognosis, and network states and provides a worksheet for cohort analysis."
+  },
+  "research/cardiovascular-prediction-evidence.html": {
+    "description": "This worksheet compares heart-failure prediction studies by cohort, endpoint, time horizon, and independent validation design."
+  },
+  "research/circadian-evidence-levels.html": {
+    "title": "Circadian evidence: expression, cell experiments and timing",
+    "description": "This guide compares expression scores, cell experiments, and clinical timing evidence while keeping those study designs separate."
+  },
+  "research/dcm-hf-circulating-biomarkers.html": {
+    "title": "Circulating biomarkers in dilated cardiomyopathy and heart failure",
+    "description": "This guide compares how studies of dilated cardiomyopathy with heart failure evaluated plasma proteins and extracellular-vesicle RNA."
+  }
+}

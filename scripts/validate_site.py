@@ -25,6 +25,8 @@ from build_publications import (
     PENDING_NOTICE,
     SELECTED_EVIDENCE_NOTICE,
     flatten_concepts,
+    homepage_metadata,
+    publications_page_metadata,
     resolve_related_papers,
     validate_deep_v2_content,
     v2_label,
@@ -37,6 +39,7 @@ from scholarly_discovery import load_identifiers
 from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
 import research_guides
+import search_metadata
 import evidence_presentation
 import paper_discovery
 from site_common import (
@@ -335,7 +338,7 @@ def string_leaves(value):
 
 
 def validate_v2_rendered_page(
-    content, publication, page, markdown, schema, public_by_doi, config
+    content, publication, page, markdown, schema, public_by_doi, config, search_fields=None
 ):
     # Validate the original scientific sections exactly; separately validate all
     # explicitly marked new controls/payloads with validate_evidence.
@@ -684,10 +687,12 @@ def validate_v2_rendered_page(
         f"{label} JSON-LD description must equal author_summary.",
     )
     require(schema.get("keywords") == concepts, f"{label} JSON-LD keywords changed.")
+    if search_fields is None:
+        search_fields = search_metadata.load(ROOT).get(f"papers/{publication['slug']}.html", {})
     require(
         single_meta_content(page, "description", f"{label} meta description")
-        == content["summary"],
-        f"{label} meta description must use the short summary.",
+        == search_fields.get("description", content["summary"]),
+        f"{label} meta description must use reviewed search text or the short summary.",
     )
     require(
         single_html_url(
@@ -2191,6 +2196,7 @@ def validate_citations(publications, config):
 
 
 def validate_site():
+    search_overrides = search_metadata.load(ROOT)
     require(PROFILE_CONFIG_PATH.is_file(), "data/profile_config.json is missing.")
     profile = load_profile_config()
     require(
@@ -2679,6 +2685,7 @@ def validate_site():
                     schema,
                     public_by_doi,
                     config,
+                    search_fields=search_overrides.get(f"papers/{slug}.html", {}),
                 )
                 if content_doi == AIHFLEVEL_DOI:
                     validate_aihflevel_v2_regression(content, item, page)
@@ -2817,10 +2824,8 @@ def validate_site():
         in index_html,
         "Homepage must contain a visible zh-CN researcher name span.",
     )
-    expected_homepage_title = (
-        f"{config['researcher_name']} ({config['researcher_name_zh']}) — "
-        "Cardiovascular AI, Multi-omics & Circadian Biology"
-    )
+    expected_homepage_title, expected_homepage_description = homepage_metadata(config)
+    homepage_search = search_overrides.get("index.html", {})
     homepage_description = single_meta_content(
         index_html, "description", "Homepage meta description"
     )
@@ -2833,8 +2838,8 @@ def validate_site():
         single_property_meta_content(
             index_html, "og:description", "Homepage Open Graph description"
         )
-        == homepage_description,
-        "Homepage Open Graph description must match the meta description.",
+        == expected_homepage_description,
+        "Homepage Open Graph description must match the profile description.",
     )
     require(
         single_property_meta_content(index_html, "og:type", "Homepage Open Graph type")
@@ -2842,8 +2847,12 @@ def validate_site():
         "Homepage Open Graph type must be website.",
     )
     require(
-        element_texts(index_html, "title") == [expected_homepage_title],
-        "Homepage title does not use the canonical bilingual identity.",
+        element_texts(index_html, "title") == [homepage_search.get("title", expected_homepage_title)],
+        "Homepage title does not match the approved search text or canonical bilingual identity.",
+    )
+    require(
+        homepage_description == homepage_search.get("description", expected_homepage_description),
+        "Homepage description does not match the approved search text or profile description.",
     )
     require(
         element_texts(
@@ -3017,10 +3026,8 @@ def validate_site():
         ) == publications_url,
         "Wrong publications Open Graph URL.",
     )
-    expected_publications_title = (
-        f"All Publications | {config['researcher_name']} "
-        f"({config['researcher_name_zh']})"
-    )
+    expected_publications_title, expected_publications_description = publications_page_metadata(config)
+    publications_search = search_overrides.get("publications.html", {})
     publications_description = single_meta_content(
         publications_html, "description", "Publications meta description"
     )
@@ -3037,8 +3044,16 @@ def validate_site():
             "og:description",
             "Publications Open Graph description",
         )
-        == publications_description,
-        "Publications Open Graph description must match the meta description.",
+        == expected_publications_description,
+        "Publications Open Graph description must match the publication index description.",
+    )
+    require(
+        publications_description == publications_search.get("description", expected_publications_description),
+        "Publications description does not match the approved search or publication index description.",
+    )
+    require(
+        element_texts(publications_html, "title") == [publications_search.get("title", expected_publications_title)],
+        "Publications title does not match the approved search or publication index title.",
     )
     require(
         single_property_meta_content(
@@ -3150,8 +3165,12 @@ def validate_site():
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")
     require(set(sitemap_urls) == set(expected_urls), "Sitemap URLs do not match public pages.")
-    research_guides.validate(ROOT)
-    research_guides.build_comparisons(ROOT, validate_only=True)
+    search_metadata.validate_published(
+        ROOT, search_overrides,
+        {search_metadata.route(url) for url in sitemap_urls} | {search_metadata.SAMPLE_MAP_PATH},
+    )
+    research_guides.validate(ROOT, search_overrides=search_overrides)
+    research_guides.build_comparisons(ROOT, validate_only=True, search_overrides=search_overrides)
     for item in withdrawn:
         slug = str(item.get("slug") or "")
         require(not slug or not any(slug in url for url in sitemap_urls), "Withdrawn in sitemap.")
