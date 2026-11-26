@@ -466,6 +466,13 @@
           "Introduction or Discussion on phenotype-aware interpretation of microbial and host signals in cardiovascular disease.",
           "Methods rationale for choosing complementary modalities and fusion strategies, then testing incremental, externally reproducible clinical value."
         ]
+      },
+      "fulltext_pdf": {
+        "url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.pdf",
+        "source_url": "https://drgezhang.com/assets/fulltext/re9-0000000000000037.pdf",
+        "sha256": "9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "version": "publisher_accepted_manuscript"
       }
     },
     {

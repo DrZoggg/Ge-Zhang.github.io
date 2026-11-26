@@ -343,6 +343,29 @@ async function run() {
     assert.equal(invalidRepository.primary_sources.metadata_issues[0].reason,'invalid_same_work_repository_route');
     assert(!JSON.stringify(invalidRepository.primary_sources.metadata_issues).includes('secret'));
   }
+  const cardiacId='doi-10-1097-re9-0000000000000037';
+  const cardiac=client.fetch(cardiacId);
+  const accepted=catalog.works.find(work=>work.id===cardiacId).fulltext_pdf;
+  assert.equal(cardiac.primary_sources.reading_routes[0].provider,'Publisher');
+  assert.equal(cardiac.primary_sources.reading_routes[0].url,cardiac.links.publisher_url);
+  assert.deepEqual(cardiac.primary_sources.reading_routes[1],{
+    provider:'Author site',kind:'licensed_accepted_manuscript_pdf',
+    url:'https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.pdf',
+    doi:cardiac.publication.doi,version:'accepted_manuscript',
+    license_url:'https://creativecommons.org/licenses/by/4.0/',
+    sha256:'9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511',
+    source_fields:['work.fulltext_pdf','work.paper_url','work.doi_url'],availability:'not_checked',
+  });
+  const wrongManuscript=routeFixture({fulltext_pdf:accepted});
+  assert.deepEqual(wrongManuscript.primary_sources.reading_routes,[]);
+  assert.equal(wrongManuscript.primary_sources.metadata_issues[0].reason,'invalid_same_work_licensed_accepted_manuscript');
+  const wrongLicense=structuredClone(catalog);
+  wrongLicense.works.find(work=>work.id===cardiacId).fulltext_pdf.license_url='https://example.org/license';
+  const unlicensed=createClient(wrongLicense,loaded.search).fetch(cardiacId);
+  assert.deepEqual(unlicensed.primary_sources.reading_routes,cardiac.primary_sources.reading_routes.slice(0,1));
+  assert.equal(unlicensed.primary_sources.metadata_issues[0].reason,'invalid_same_work_licensed_accepted_manuscript');
+  assert(!client.fetch('doi-10-1002-ctm2-70900').primary_sources.reading_routes
+    .some(route=>route.kind==='licensed_accepted_manuscript_pdf'));
   const genes=client.fetch('doi-10-1016-j-gendis-2026-102480');
   assert.equal(genes.primary_sources.identifiers.openalex_id,'https://openalex.org/W7213554484');
   const geneRoutes=genes.primary_sources.reading_routes;

@@ -170,6 +170,7 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
     base = f'{site_url}/citations/{item["slug"]}'
     identifiers = identifiers or {}
     registry_fields = {}
+    fulltext_pdf = (record or {}).get('fulltext_pdf')
     if context := identifiers.get('trial_registry_context'):
         reported = (v2 or {}).get('provenance', {}).get('trial_registration', '')
         registry_id = context['registry_id']
@@ -194,6 +195,8 @@ def index_fields(item, record, content, abstract, site_url, identifiers=None):
         'question_count': len(v2['qa']) if v2 else 0,
         'concept_count': sum(len(values) for values in v2['concepts'].values()) if v2 else 0,
         **({'discovery_layer': content['discovery_layer']} if v2 and content.get('discovery_layer') else {}),
+        **({'fulltext_pdf': fulltext_pdf}
+           if fulltext_pdf and fulltext_pdf['version'] == 'publisher_accepted_manuscript' else {}),
         **registry_fields,
     }
 
