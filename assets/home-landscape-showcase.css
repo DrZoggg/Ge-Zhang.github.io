@@ -1,17 +1,17 @@
 /* Local C preview: distills Taste A's hierarchy; no global reset or new fonts.
  * Photograph provenance: assets/landscape/SOURCE.json. Wave sources remain intact. */
 body.home .hero .home-landscape{position:absolute;inset:0;z-index:-4;pointer-events:none;visibility:hidden;display:block;opacity:0;transition:opacity .24s ease-out}
-body.home .hero .home-landscape img{display:block;width:100%;height:100%;object-fit:cover;object-position:70% 47%;pointer-events:none}
+body.home .hero .home-landscape-art{display:block;width:100%;height:100%;background-position:70% 47%;background-size:cover;background-repeat:no-repeat;pointer-events:none}
 body.home .hero[data-landscape="ready"] .home-landscape{visibility:visible;opacity:1}
 @media(prefers-reduced-motion:reduce){body.home .hero .home-landscape{transition:none}}
-body.home .hero[data-landscape="ready"] .home-landscape img{filter:brightness(.58) saturate(.65)}
+body.home .hero[data-landscape="ready"] .home-landscape-art{filter:brightness(.58) saturate(.65)}
 body.home .hero[data-landscape="ready"] .gradient-waves-container{mask-image:linear-gradient(180deg,transparent 0%,transparent 25%,rgba(0,0,0,.08) 36%,rgba(0,0,0,.8) 63%,#000 79%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,transparent 25%,rgba(0,0,0,.08) 36%,rgba(0,0,0,.8) 63%,#000 79%)}
-html[data-theme="light"] body.home .hero[data-landscape="ready"] .home-landscape img{filter:brightness(1.06) saturate(.78)}
+html[data-theme="light"] body.home .hero[data-landscape="ready"] .home-landscape-art{filter:brightness(1.06) saturate(.78)}
 @media(min-width:701px){
  body.home .hero .home-landscape{inset:0 0 7% 20%}
- body.home .hero .home-landscape img{object-position:50% 35%}
- body.home .hero[data-landscape="ready"] .home-landscape img{filter:brightness(.8) saturate(.85)}
- html[data-theme="light"] body.home .hero[data-landscape="ready"] .home-landscape img{filter:brightness(.98) saturate(1)}
+ body.home .hero .home-landscape-art{background-position:50% 35%}
+ body.home .hero[data-landscape="ready"] .home-landscape-art{filter:brightness(.8) saturate(.85)}
+ html[data-theme="light"] body.home .hero[data-landscape="ready"] .home-landscape-art{filter:brightness(.98) saturate(1)}
  body.home .hero[data-landscape="ready"] .gradient-waves-container{mask-image:radial-gradient(ellipse 90% 65% at 76% 100%,#000 40%,rgba(0,0,0,.88) 58%,rgba(0,0,0,.15) 82%,transparent 99%);-webkit-mask-image:radial-gradient(ellipse 90% 65% at 76% 100%,#000 40%,rgba(0,0,0,.88) 58%,rgba(0,0,0,.15) 82%,transparent 99%)}
  body.home .hero[data-landscape="ready"]::before{background:linear-gradient(90deg,#090e21 0%,rgba(9,14,33,.98) 30%,rgba(9,14,33,.94) 43%,rgba(9,14,33,.35) 57%,transparent 70%)}
  html[data-theme="light"] body.home .hero[data-landscape="ready"]::before{background:linear-gradient(90deg,#edf3f8 0%,rgba(237,243,248,.99) 30%,rgba(237,243,248,.96) 43%,rgba(237,243,248,.32) 57%,transparent 70%)}
@@ -69,7 +69,9 @@ body.home #featured .journal-brand--light{background:#fff}
 body.home #featured .journal-brand--dark{background:#123650}
 body.home #featured .journal-brand--icon{flex-basis:32px;padding:3px}
 body.home #featured .journal-brand[data-brand="Cell Press"],body.home #featured .journal-brand[data-brand="Elsevier"],body.home #featured .journal-brand[data-brand="Oxford University Press"],body.home #featured .journal-brand[data-brand="KeAi"]{flex-basis:112px}
-body.home #featured .journal-brand img{display:block;width:100%;height:100%;object-fit:contain}
+body.home #featured .journal-brand[data-brand]{content-visibility:auto}
+body.home #featured .journal-brand-art{display:block;width:100%;height:100%;background-position:center;background-size:contain;background-repeat:no-repeat}
+@media print{body.home #featured .journal-brand[data-brand]{content-visibility:visible}body.home #featured .journal-brand-art{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 body.home #featured .journal-brand--fallback{flex-basis:32px;padding:0;color:var(--show-ink);background:transparent;border:1px solid var(--show-line);font-family:var(--body);font-size:11px;line-height:1;font-weight:600;letter-spacing:0}
 body.home #featured .paper:nth-child(-n+2) .eyebrow{font-size:19px;font-weight:500;color:var(--show-ink)}
 body.home #featured .paper :is(.badge,.paper-kind){font-family:var(--body);font-size:14px;font-weight:400;line-height:1.5;color:var(--show-copy);background:none;border:0;border-radius:0;padding:0;margin-left:10px;letter-spacing:0}
@@ -124,7 +126,7 @@ body.home #about .collaboration-note p{font-size:16px;line-height:1.65;color:var
 @media(max-width:700px){
  html[data-theme="light"] body.home .hero[data-landscape="ready"]::before{background:linear-gradient(180deg,rgba(237,243,248,.97) 0%,rgba(237,243,248,.97) 52%,rgba(237,243,248,.94) 61%,rgba(237,243,248,.48) 70%,transparent 86%)}
  body.home .hero .home-landscape{top:38%}
- body.home .hero .home-landscape img{object-position:50% 34%}
+ body.home .hero .home-landscape-art{background-position:50% 34%}
  body.home .hero[data-landscape="ready"] .gradient-waves-container{mask-image:linear-gradient(180deg,#000 0%,#000 48%,rgba(0,0,0,.2) 72%,#000 94%);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 48%,rgba(0,0,0,.2) 72%,#000 94%)}
  body.home .hero[data-landscape="ready"] .home-landscape{mask-image:linear-gradient(180deg,transparent 0%,#000 35%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 35%)}
 }

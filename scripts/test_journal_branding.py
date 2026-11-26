@@ -72,13 +72,12 @@ class JournalBrandingTests(unittest.TestCase):
         self.assertFalse(any("paper-kind" in attrs.get("class", "").split() for _, attrs in tags))
         marks = [(tag, attrs) for tag, attrs in tags if "journal-brand" in attrs.get("class", "").split()]
         self.assertEqual(len(marks), len(self.featured))
-        images = [attrs for tag, attrs in tags if tag == "img"]
-        self.assertEqual(len(images), len(self.featured))
-        for image in images:
-            self.assertEqual(image["alt"], "")
-            self.assertTrue(image["src"].startswith("assets/journal-logos/"))
-            self.assertGreater(int(image["width"]), 0)
-            self.assertGreater(int(image["height"]), 0)
+        self.assertFalse(any(tag == "img" for tag, _ in tags))
+        art = [attrs for _, attrs in tags if attrs.get("class") == "journal-brand-art"]
+        self.assertEqual(len(art), len(self.featured))
+        for (_, mark), logo in zip(marks, art):
+            self.assertEqual(mark["aria-hidden"], "true")
+            self.assertRegex(logo["style"], r"^background-image:url\(assets/journal-logos/[^)]+\)$")
         self.assertEqual(self.by_token, before)
 
     def test_unmapped_or_missing_asset_has_neutral_text_without_a_broken_image(self):
