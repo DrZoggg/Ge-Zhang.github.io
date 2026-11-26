@@ -1946,6 +1946,19 @@ def render_official_abstract_markdown(record, doi):
     return "\n".join(parts)
 
 
+AUTHOR_COPY_LABEL = "Author-shared full text (ResearchGate)"
+
+
+def reviewed_author_copy(content):
+    # Other author-shared records may expose only an abstract or a request form.
+    if not content or norm_doi(content.get("doi")) != "10.1200/po.24.00089":
+        return ""
+    url = content.get("provenance", {}).get("researchgate_author_shared_copy_url", "")
+    if re.fullmatch(r"https://www\.researchgate\.net/publication/385105654(?:_[\w-]+)?/?", url):
+        return url
+    return ""
+
+
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
                       citation_data=None, official_abstract=None, presentation=None, identifiers=None,
                       reviewed_backlinks=None, limited_note=None, trial_registry_context=None):
@@ -1983,6 +1996,9 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         links.append(
             f'<a class="btn primary" href="{html.escape(str(publication["url"]), quote=True)}">Source</a>'
         )
+    author_copy = reviewed_author_copy(deep_content)
+    if author_copy:
+        links.append(f'<a class="btn" href="{html.escape(author_copy, quote=True)}">{AUTHOR_COPY_LABEL}</a>')
     links.append(
         f'<a class="btn" href="{html.escape(scholar_url(title), quote=True)}">Google Scholar search</a>'
     )
@@ -2201,6 +2217,9 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         f"Markdown record: {md_url}",
         "",
     ]
+    author_copy = reviewed_author_copy(deep_content)
+    if author_copy:
+        lines.extend([f"[{AUTHOR_COPY_LABEL}]({author_copy})", ""])
     if is_v2 or (limited_note and citation_data) or (publication_type in {"Letter", "Correspondence"} and publication_authors(publication)):
         lines.extend(
             [
