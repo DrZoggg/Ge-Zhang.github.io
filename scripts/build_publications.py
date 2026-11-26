@@ -25,6 +25,7 @@ from citation_common import (
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
 import research_guides
+import search_metadata
 import scholarly_discovery
 import evidence_presentation
 import paper_discovery
@@ -219,7 +220,8 @@ def without_ga4_tag(page):
     return page.replace(GA4_INSERTION, "").replace(LEGACY_GA4_INSERTION, "")
 
 
-def write_public_html_if_changed(path, content):
+def write_public_html_if_changed(path, content, search_fields=None):
+    content = search_metadata.project(content, search_fields)
     previous = path.read_text(encoding="utf-8") if path.is_file() else None
     content_changed = previous is None or (
         without_evidence_ui(without_theme_shell(without_ga4_tag(previous)))
@@ -286,8 +288,7 @@ def render_homepage_research(profile):
     )
 
 
-def update_homepage(index_html, config):
-    homepage_url = f"{config['site_url']}/"
+def homepage_metadata(config):
     bilingual_name = f"{config['researcher_name']} ({config['researcher_name_zh']})"
     page_title = (
         f"{bilingual_name} — Cardiovascular AI, Multi-omics & Circadian Biology"
@@ -297,6 +298,12 @@ def update_homepage(index_html, config):
         "researcher working in artificial intelligence, multi-omics, atherosclerosis, heart "
         f"failure and circadian biology. ORCID {config['orcid']}."
     )
+    return page_title, meta_description
+
+
+def update_homepage(index_html, config):
+    homepage_url = f"{config['site_url']}/"
+    page_title, meta_description = homepage_metadata(config)
     index_html, title_count = re.subn(
         r"<title>.*?</title>",
         f"<title>{html.escape(page_title)}</title>",
@@ -1961,7 +1968,8 @@ def reviewed_author_copy(content):
 
 def render_paper_html(publication, *, config, deep_content=None, public_by_doi=None,
                       citation_data=None, official_abstract=None, presentation=None, identifiers=None,
-                      reviewed_backlinks=None, limited_note=None, trial_registry_context=None):
+                      reviewed_backlinks=None, limited_note=None, trial_registry_context=None,
+                      search_fields=None):
     site_root = config["site_url"]
     title = publication.get("title") or "Untitled work"
     journal = publication.get("journal") or "Unknown source"
@@ -2136,7 +2144,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     if pilot:
         deep_html = evidence_presentation.finding_sections(deep_html)
     early_html = evidence_presentation.question_summary(deep_content, anchor=True) if pilot or standalone_v2 else ''
-    return with_ga4_tag(f'''<!doctype html>
+    page = with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -2166,6 +2174,9 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
 {'</article>' if pilot else ''}</main><footer><div class="wrap">© {html.escape(config["researcher_name"])} · Academic website · ORCID: {html.escape(config["orcid"])}</div></footer>
 </body></html>
 ''')
+    if search_fields is None:
+        search_fields = search_metadata.load(ROOT).get(f"papers/{slug}.html")
+    return search_metadata.project(page, search_fields)
 
 
 def unmapped_author_record_provenance(config):
@@ -2308,6 +2319,19 @@ def public_record(publication, *, config, deep_tokens, featured_tokens, deep_con
     return item
 
 
+def publications_page_metadata(config):
+    page_title = (
+        f"All Publications | {config['researcher_name']} "
+        f"({config['researcher_name_zh']})"
+    )
+    meta_description = (
+        f"Publication record of {config['researcher_name']} "
+        f"({config['researcher_name_zh']}), using ORCID {config['orcid']} "
+        "as the identity anchor."
+    )
+    return page_title, meta_description
+
+
 def render_publications_page(items, config, *, citation_metadata=None):
     by_year = {}
     for publication in items:
@@ -2369,15 +2393,7 @@ def render_publications_page(items, config, *, citation_metadata=None):
         ],
     }
     safe_schema = json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")
-    page_title = (
-        f"All Publications | {config['researcher_name']} "
-        f"({config['researcher_name_zh']})"
-    )
-    meta_description = (
-        f"Publication record of {config['researcher_name']} "
-        f"({config['researcher_name_zh']}), using ORCID {config['orcid']} "
-        "as the identity anchor."
-    )
+    page_title, meta_description = publications_page_metadata(config)
     publications_url = absolute(config["site_url"], "publications.html")
     return with_ga4_tag(f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -2556,6 +2572,7 @@ def build_site():
     profile = load_profile_config()
     config = load_site_config(profile)
     previous_lastmods = load_sitemap_lastmods(ROOT / "sitemap.xml")
+    search_overrides = search_metadata.load(ROOT)
     today = datetime.now(timezone.utc).date().isoformat()
     html_changed = {}
     master, _ = save_master(load_master())
@@ -2655,6 +2672,7 @@ def build_site():
                 reviewed_backlinks=reviewed_backlinks.get(norm_doi(item.get('doi'))),
                 limited_note=limited_notes.get(norm_doi(item.get('doi'))),
                 trial_registry_context=trial_registry_context,
+                search_fields=search_overrides.get(f"papers/{item['slug']}.html", {}),
             ),
         )
         write_text_if_changed(
@@ -2725,8 +2743,8 @@ def build_site():
                 }
             )
     publications_url = absolute(config["site_url"], "publications.html")
-    html_changed[research_guides.URL] = research_guides.build(ROOT)
-    html_changed.update(research_guides.build_comparisons(ROOT))
+    html_changed[research_guides.URL] = research_guides.build(ROOT, search_overrides=search_overrides)
+    html_changed.update(research_guides.build_comparisons(ROOT, search_overrides=search_overrides))
     question_contents = {
         norm_doi(c['doi']): c for c in deep_contents.values() if c
     }
@@ -2736,7 +2754,9 @@ def build_site():
     question_url = absolute(config['site_url'], scholarly_discovery.QUESTION_PATH)
     html_changed[question_url] = write_public_html_if_changed(
         ROOT / scholarly_discovery.QUESTION_PATH,
-        with_ga4_tag(scholarly_discovery.render_questions(question_rows, config, question_discovery)))
+        with_ga4_tag(scholarly_discovery.render_questions(question_rows, config, question_discovery)),
+        search_overrides.get(scholarly_discovery.QUESTION_PATH),
+    )
     write_text_if_changed(ROOT / scholarly_discovery.QUESTION_JSON_PATH,
                          json.dumps({'version': 1, **question_discovery, 'questions': question_rows}, ensure_ascii=False, indent=2) + '\n')
     write_text_if_changed(
@@ -2747,7 +2767,8 @@ def build_site():
     )
     html_changed[publications_url] = write_public_html_if_changed(
         ROOT / "publications.html", render_publications_page(
-            public_items, config, citation_metadata=citation_metadata)
+            public_items, config, citation_metadata=citation_metadata),
+        search_overrides.get("publications.html"),
     )
 
     index_path = ROOT / "index.html"
@@ -2776,7 +2797,16 @@ def build_site():
     ) + '\n' + question_end + after
     index_html = update_homepage(index_html, config)
     homepage_url = f"{config['site_url']}/"
-    html_changed[homepage_url] = write_public_html_if_changed(index_path, index_html)
+    html_changed[homepage_url] = write_public_html_if_changed(
+        index_path, index_html, search_overrides.get("index.html")
+    )
+    sample_map_fields = search_overrides.get(search_metadata.SAMPLE_MAP_PATH)
+    if sample_map_fields:
+        sample_map_path = ROOT / search_metadata.SAMPLE_MAP_PATH
+        previous = sample_map_path.read_bytes().decode("utf-8")
+        current = search_metadata.project(previous, sample_map_fields)
+        if previous != current:
+            sample_map_path.write_bytes(current.encode("utf-8"))
 
     deep_items = [public_by_token[controller_token(entry)] for entry in deep_entries]
     write_machine_indexes(public_items, deep_items, config, discovery_fields)
