@@ -43,7 +43,7 @@ def validate_record(doi, record, publication):
             raise ValueError('Each limited section requires an exact source locator')
         plain(row['heading'], 100); plain(row['text']); plain(row['source_locator'], 600)
         source_url(row['source_url'])
-    for key, maximum in [('limitations', 5), ('sources', 5)]:
+    for key, maximum in [('limitations', 5), ('sources', 7)]:
         if not isinstance(record[key], list) or not 1 <= len(record[key]) <= maximum:
             raise ValueError('Limited evidence requires explicit limits and provenance')
     for text in record['limitations']:
