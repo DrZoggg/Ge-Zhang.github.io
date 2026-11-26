@@ -292,6 +292,18 @@
           "label": "NCBI PMC full-text XML",
           "format": "Machine-readable full text (JATS XML)",
           "locator": "PMCID PMC11897062; DOI 10.1111/jcmm.70475"
+        },
+        {
+          "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/PMC11897062.1.xml",
+          "label": "NCBI PMC Open Access full-text XML",
+          "format": "Machine-readable full text (JATS XML)",
+          "locator": "PMC11897062.1; DOI 10.1111/jcmm.70475. Main article, including Methods 2.1 and Results 3.7."
+        },
+        {
+          "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/JCMM-29-e70475-s001.docx",
+          "label": "NCBI PMC supporting information (Data S1)",
+          "format": "Supplementary DOCX",
+          "locator": "Supplementary Table 1, cohort accessions, platforms, and sample counts."
         }
       ]
     },

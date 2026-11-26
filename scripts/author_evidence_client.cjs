@@ -313,6 +313,17 @@ function primarySources(work) {
   }
   if (pmcid.value) {
     const archiveId = pmcid.value.slice(3);
+    const cloudOrigin = 'https://pmc-oa-opendata.s3.amazonaws.com';
+    for (const row of provenance) {
+      if (row.value?.format !== 'Machine-readable full text (JATS XML)') continue;
+      const url = https(row.value.url);
+      if (!url || url.origin !== cloudOrigin || row.value.url !== cloudOrigin + url.pathname) continue;
+      const versioned = url.pathname.match(/^\/(PMC[1-9][0-9]{0,9}\.[1-9][0-9]*)\/\1\.xml$/);
+      if (!versioned || versioned[1].split('.')[0] !== pmcid.value
+          || routes.some(route => route.url === url.href && route.kind === 'full_text_xml_cloud')) continue;
+      routes.push({provider:'PMC',kind:'full_text_xml_cloud',url:url.href,archive_version:versioned[1],
+        source_fields:[row.path + '.url',...pmcid.source_fields],availability:'not_checked'});
+    }
     for (const row of provenance) {
       const url = https(row.value?.url);
       if (!url || url.origin !== 'https://pmc.ncbi.nlm.nih.gov'

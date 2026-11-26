@@ -311,6 +311,40 @@ async function run() {
     pmcOaiUrl.replace('pmc.ncbi.nlm.nih.gov','pmc.ncbi.nlm.nih.gov.example.org')]) {
     assert.deepEqual(testOai(routeFixture({pmcid:'PMC11680768',provenance:[{url}]})),[]);
   }
+  const cloudUrl='https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/PMC11897062.1.xml';
+  const supplementUrl='https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/JCMM-29-e70475-s001.docx';
+  const cloudSource={url:cloudUrl,format:'Machine-readable full text (JATS XML)'};
+  const cloudRoutes=packet=>packet.primary_sources.reading_routes.filter(route=>route.kind==='full_text_xml_cloud');
+  const jcmm=client.fetch('doi-10-1111-jcmm-70475');
+  assert.deepEqual(jcmm.primary_sources.reading_routes.slice(-3).map(route=>route.kind),[
+    'full_text_xml_cloud','full_text_xml_oai','full_text_xml_api']);
+  assert.deepEqual(cloudRoutes(jcmm),[{
+    provider:'PMC',kind:'full_text_xml_cloud',url:cloudUrl,archive_version:'PMC11897062.1',
+    source_fields:['work.provenance[5].url','work.pmcid'],availability:'not_checked'}]);
+  assert.equal(jcmm.provenance.find(row=>row.url===supplementUrl)?.format,'Supplementary DOCX');
+  assert(!jcmm.primary_sources.reading_routes.some(route=>route.url===supplementUrl));
+  assert.deepEqual(cloudRoutes(slc),[]);
+  assert.equal(cloudRoutes(routeFixture({pmcid:'PMC11897062',provenance:[cloudSource,cloudSource]})).length,1);
+  for (const fields of [
+    {provenance:[cloudSource]},
+    {pmcid:'PMC11680768',provenance:[cloudSource]},
+    {pmcid:'PMC11897062',provenance:[cloudSource,{pmcid:'PMC11680768'}]},
+    {pmcid:'PMC11897062',provenance:[{url:cloudUrl,label:'PMC full text'}]},
+  ]) assert.deepEqual(cloudRoutes(routeFixture(fields)),[]);
+  for (const url of [
+    cloudUrl.replace('/PMC11897062.1.xml','/PMC11897062.2.xml'),
+    cloudUrl.replaceAll('PMC11897062.1','PMC11897062.0'),
+    cloudUrl.replace('amazonaws.com','amazonaws.com.example.org'),
+    cloudUrl.replace('amazonaws.com','amazonaws.com:443'),
+    cloudUrl.replace('https:','http:'),
+    cloudUrl.replace('.xml','.pdf'),
+    supplementUrl,
+    cloudUrl.replace('amazonaws.com/','amazonaws.com/other/../'),
+    cloudUrl+'?download=1',cloudUrl+'#section',
+  ]) {
+    const packet=routeFixture({pmcid:'PMC11897062',provenance:[{...cloudSource,url}]});
+    assert.deepEqual(cloudRoutes(packet),[]);
+  }
   // An explicit same-work repository PDF is a reading route; an arbitrary
   // provenance link (even one labelled "full text") remains just provenance.
   const repositorySource={url:'https://repository.example.org/paper.pdf',label:'Institutional full text',
