@@ -286,6 +286,12 @@
           "label": "Reported validation GEO SuperSeries",
           "format": "GEO Series metadata",
           "locator": "The registry lists 319 GSM accessions, including all 313 GSE57338 registry accessions. The study's analytic sample selection remains unresolved."
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11897062&metadataPrefix=pmc",
+          "label": "NCBI PMC full-text XML",
+          "format": "Machine-readable full text (JATS XML)",
+          "locator": "PMCID PMC11897062; DOI 10.1111/jcmm.70475"
         }
       ]
     },

@@ -28,7 +28,7 @@
       "task": "Colorectal expression scoring and cell perturbation",
       "source_doi": "10.1038/s41698-026-01699-1",
       "source_json": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
-      "source_fingerprint": "2929fd318b785b63a765411643a42479950ca041be4141d1a34d0360361518c0",
+      "source_fingerprint": "aabc6c9c1266af778dd03701d6d613e4726a05177719ac3690a7b6cd796d0cf7",
       "qa_indices": [
         1,
         7,
