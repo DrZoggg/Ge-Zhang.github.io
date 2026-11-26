@@ -19,6 +19,7 @@ DOI_LICENSE_URLS = {
     # V1.6: individually reviewed article grants, never global relaxations.
     "10.1007/s10238-024-01439-4": {"CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/"},
     "10.3389/fonc.2024.1425895": {"CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/"},
+    "10.1111/jcmm.70475": {"CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/"},
     "10.2147/cia.s462542": {
         "CC-BY-NC-3.0": "https://creativecommons.org/licenses/by-nc/3.0/",
     },
@@ -67,6 +68,7 @@ SOURCES = {
     "10.1186/s10020-024-00963-z": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11513636/"),
     "10.18063/ijb.740": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC10261152/"),
     "10.1111/jdi.70462": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC13651581/"),
+    "10.1111/jcmm.70475": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC11897062/"),
     "10.15212/bioi-2026-0017": ("bio-integration.org", "/10-15212-bioi-2026-0017/"),
     "10.1002/ggn2.202500053": ("advanced.onlinelibrary.wiley.com", "/doi/full/10.1002/ggn2.202500053"),
     "10.18632/aging.205564": ("www.aging-us.com", "/article/205564/text"),

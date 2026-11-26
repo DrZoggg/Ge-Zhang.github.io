@@ -888,7 +888,7 @@
       "pmcid": "PMC11897062",
       "openalex_id": "https://openalex.org/W4408377359",
       "semantic_scholar_id": null,
-      "official_abstract_available": false,
+      "official_abstract_available": true,
       "evidence_csv_url": null,
       "question_count": 0,
       "concept_count": 0

@@ -52,5 +52,6 @@
   "issue": "5",
   "number": "e70475",
   "PMID": "40070032",
-  "PMCID": "PMC11897062"
+  "PMCID": "PMC11897062",
+  "abstract": "Ischaemic cardiomyopathy (IC) predominantly arises from prolonged deprivation of oxygen in the coronary arteries, resulting in compromised cardiac contractility or relaxation. This study investigates the role of disulfidptosis‐associated genes (DiGs) in IC. Through the analysis of datasets GSE5406 and GSE57338, we explored the association between DiGs and immune characteristics to identify crucial genes contributing to IC development. The support vector machine model emerged as the most effective, identifying key genes such as MYH9, NUBPL, MYL6, MYH10 and NCKAP1. Validation with independent datasets GSE57345, GSE48166 and single‐cell GSE145154 further supported these findings, demonstrating high predictive accuracy. Experimental validation in an IC mouse model, using Western blot, immunohistochemistry and RT‐qPCR, confirmed the altered expression of these core genes in myocardial ischaemic regions. This research not only elucidates the significance of DiGs in IC but also underscores the diagnostic potential of identified core genes."
 }
