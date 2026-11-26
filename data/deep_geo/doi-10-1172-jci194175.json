@@ -420,6 +420,8 @@
     "pmcid": "PMC12987658",
     "publisher": "The Journal of Clinical Investigation",
     "publisher_url": "https://www.jci.org/articles/view/194175",
+    "independent_review_url": "https://www.ovid.com/jnls/co-lipidology/fulltext/10.1097/mol.0000000000001064~how-lipoproteins-shape-smooth-muscle-plasticity-and-cell#R38",
+    "independent_review_scope": "The narrative review How lipoproteins shape smooth muscle plasticity and cell state trajectories in atherosclerosis (DOI 10.1097/MOL.0000000000001064) cites this paper in reference 38. Its discussion of inflammatory programs and smooth muscle cell transitions uses the KIF13B and KLF4 findings as mechanistic evidence, and Figure 2a places the study in the review synthesis.",
     "version_of_record": "J Clin Invest. 2026;136(6):e194175; In-Press Preview published 29 January 2026 and electronic publication in Volume 136 Issue 6 on 16 March 2026.",
     "source_material": "JCI version of record, Supplemental Data, unedited blot/gel material, Supporting Data Values, GEO GSE314838, GEO GSE120521, ProteomeXchange PXD062283 and public human plaque omics resources used by the article.",
     "data_availability": "Study-generated single-cell RNA-seq data are deposited as GSE314838. Values for all data points are supplied in the Supporting Data Values file.",
