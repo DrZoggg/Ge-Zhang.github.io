@@ -16,7 +16,7 @@
       "paper_url": "https://drgezhang.com/papers/doi-10-1172-jci194175.html",
       "doi_url": "https://doi.org/10.1172/jci194175",
       "source_json": "data/deep_geo/doi-10-1172-jci194175.json",
-      "source_fingerprint": "cce1217ccfb918d64225b4410ce13625d58207d00630ab29bf051e56ef36c985",
+      "source_fingerprint": "28c4ac3f1bb5dce80488228097066bc4fcc47cfe27cd0c5dc66b394c3c649908",
       "study_profile": {
         "profile_type": "multicohort_omics",
         "study_design": "Mechanistic translational preclinical study integrating associative human plaque observations and public multi-omic datasets with causal mouse genetics, pooled single-cell RNA sequencing, primary HASMC perturbation, biochemical rescue and preclinical pharmacologic intervention.",
