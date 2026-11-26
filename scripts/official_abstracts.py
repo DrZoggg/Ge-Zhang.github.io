@@ -51,8 +51,8 @@ SOURCES = {
     "10.1007/s10238-024-01439-4": ("link.springer.com", "/article/10.1007/s10238-024-01439-4"),
     "10.3389/fonc.2024.1425895": ("www.frontiersin.org", "/journals/oncology/articles/10.3389/fonc.2024.1425895/full"),
     ACCEPTED_MANUSCRIPT_ABSTRACT_DOI: (
-        "www.ovid.com",
-        "/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "drgezhang.com",
+        "/papers/doi-10-1097-re9-0000000000000037.pdf",
     ),
     "10.1007/s10238-026-02130-6": ("pmc.ncbi.nlm.nih.gov", "/articles/PMC13342204/"),
     "10.1016/j.jma.2023.05.007": ("www.sciopen.com", "/article/10.1016/j.jma.2023.05.007"),

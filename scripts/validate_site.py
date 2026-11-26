@@ -1474,6 +1474,7 @@ def validate_clockprocrc_v2_regression(content, publication, page):
             "institutional_repository_url", "institutional_full_text_pdf_url",
             "institutional_copy_version",
             "human_crc_single_cell_geo_url", "mouse_colon_circadian_reference_geo_url",
+            "reused_crc_single_cell_geo_url",
         } and "pmid" not in provenance and "pmcid" not in provenance,
         f"{label} provenance fields changed.",
     )
@@ -1481,8 +1482,10 @@ def validate_clockprocrc_v2_regression(content, publication, page):
         provenance["human_crc_single_cell_geo_url"]
         == "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200166555&retmode=json"
         and provenance["mouse_colon_circadian_reference_geo_url"]
-        == "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200010644&retmode=json",
-        f"{label} GEO links must resolve to the reviewed two source records.",
+        == "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200010644&retmode=json"
+        and provenance["reused_crc_single_cell_geo_url"]
+        == "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200200997&retmode=json",
+        f"{label} GEO links must resolve to the reviewed three source records.",
     )
     require(
         provenance["institutional_repository_url"] == "https://hdl.handle.net/2437/415261"

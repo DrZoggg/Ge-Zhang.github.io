@@ -2951,10 +2951,10 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1097-re9-0000000000000037.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1097-re9-0000000000000037.json",
-      "gold_content_sha256": "2eacb6dd6a6aeb9d585112b608ed999824aeb11aba16775df9b395e94df33ccb",
+      "gold_content_sha256": "de80f025176ac36e31963bffcd40e7dc4e4819916124b589777d19bb951e9cd4",
       "provenance": {
         "publisher_url": "https://www.ovid.com/jnls/cares/fulltext/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
-        "accepted_manuscript_url": "https://www.ovid.com/jnls/cares/pdf/10.1097/re9.0000000000000037~multimodal-artificial-intelligence-for-microbiome-informed",
+        "accepted_manuscript_url": "https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.pdf",
         "supplement_url": "https://links.lww.com/CARES/A30",
         "source_version": "Cardiac Research, Publish Ahead of Print, 4 November 2026. Full-text source: 70-page ACCEPTED manuscript; Supplementary Table S1: one-page publisher PDF. Publisher identity/date checked against the current official DOI search result on 17 November 2026; the accepted manuscript remains the version used for all page locators.",
         "review_basis": "Complete scientific body (PDF pp. 5–29), figure legends (p. 64), both main tables (pp. 65–66), all four actual figure images (pp. 67–70), and the actual single-page Supplementary Table S1 were read. Reference identities used for related-paper links were checked against the accepted manuscript bibliography. Main PDF SHA-256: 9cf98783d861852e896eb58b1d2e1a6d55761248b2161ddd5ee58c753eea7511.",
@@ -3950,7 +3950,7 @@
       "narrative_genre": null,
       "gold_source": "data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
       "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1038-s41698-026-01699-1.json",
-      "gold_content_sha256": "307d8d3198de8bece1a4eda0518a75503219e42e4ee906d1787eddc78995a96a",
+      "gold_content_sha256": "6f2885ccac4391a4bd20210f37f953105c2720a65f806ed98e65a6aedcefe385",
       "provenance": {
         "publisher_url": "https://www.nature.com/articles/s41698-026-01699-1",
         "institutional_repository_url": "https://hdl.handle.net/2437/415261",
@@ -3960,6 +3960,7 @@
         "supporting_material": "The publisher’s revised supplement provides the single-cell and co-expression panels (Supplemental Figure 2, PDF pp. 2–4), the GSE35026 score distributions (Figure 3A, PDF pp. 5–6), and the public cohort inventory (Supplemental Table 1, starting on PDF p. 11).",
         "code_url": "https://github.com/DrZoggg/ClockProCRC",
         "human_crc_single_cell_geo_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200166555&retmode=json",
+        "reused_crc_single_cell_geo_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200200997&retmode=json",
         "mouse_colon_circadian_reference_geo_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gds&id=200010644&retmode=json",
         "datasets_cohorts": "GSE166555; GSE200997; GSE196964; GSE41258; GSE44076; GSE68468; GSE62321; GSE140973; GSE17537; GSE39084; GSE103479; GSE77955; GSE81582; GSE117606; GSE37364; GSE26571; GSE186727; GSE71187; GSE49355; GSE51244; GSE124870; GSE98965; GSE54650; GSE10644; GSE57830; GSE143524; GSE56931; GSE98564; GSE30411; GSE39445; GSE45818; GSE11923; GSE98565; GSE43073; GSE35026",
         "evidence_basis": "Publisher early peer-reviewed article plus the revised accepted manuscript, publisher supplementary-material listing, cited GEO accessions, and the associated ClockProCRC code repository. Manuscript Results/Methods and figure legends are used as the primary source for quantitative source locators.",
@@ -5543,6 +5544,12 @@
           "label": "Reported validation GEO SuperSeries",
           "format": "GEO Series metadata",
           "locator": "The registry lists 319 GSM accessions, including all 313 GSE57338 registry accessions. The study's analytic sample selection remains unresolved."
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11897062&metadataPrefix=pmc",
+          "label": "NCBI PMC full-text XML",
+          "format": "Machine-readable full text (JATS XML)",
+          "locator": "PMCID PMC11897062; DOI 10.1111/jcmm.70475"
         }
       ],
       "author_evidence_note": {
