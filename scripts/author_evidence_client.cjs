@@ -485,7 +485,7 @@ function createClient(questions, searchCorpus, retrieval = {}) {
     const qa = qas.get(id) || null;
     const work = qa ? works.get(qa.work_id) : works.get(id);
     if (!work) throw Error('Unknown stable evidence ID: ' + id);
-    const supporting = qa ? work.key_findings.filter(ref => qa.evidence_refs.includes(ref.id)) : [];
+    const supporting = qa ? qa.evidence_refs.map(id => work.key_findings.find(ref => ref.id === id)) : [];
     const primary = primarySources(work);
     return clone({
       id, work_id:work.id, source_kind:SOURCE_KIND,

@@ -52,7 +52,7 @@ async function run() {
     assert(packet.content_version.answer_sha256_verified);
     assert.deepEqual(packet.supporting_evidence.map(ref=>ref.id),question.evidence_refs);
     assert(packet.supporting_evidence.every(ref=>typeof ref.source_locator==='string'&&ref.source_locator));
-    assert.deepEqual(packet.supporting_evidence,work.key_findings.filter(ref=>question.evidence_refs.includes(ref.id)));
+    assert.deepEqual(packet.supporting_evidence,question.evidence_refs.map(id=>work.key_findings.find(ref=>ref.id===id)));
     const order=Object.keys(packet);
     assert(order.indexOf('publication')<order.indexOf('question'));
     assert(order.indexOf('answer')<order.indexOf('supporting_evidence'));

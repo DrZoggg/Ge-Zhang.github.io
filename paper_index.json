@@ -335,8 +335,8 @@
       "doi": "10.1177/00368504261499186",
       "paper_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1177-00368504261499186.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1177/00368504261499186",
       "publisher_url": "https://journals.sagepub.com/doi/10.1177/00368504261499186",
@@ -348,9 +348,30 @@
       "openalex_id": null,
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1177-00368504261499186.csv",
+      "question_count": 8,
+      "concept_count": 21,
+      "discovery_layer": {
+        "field_entry": [
+          "Cardiovascular-kidney-metabolic mortality research",
+          "Routine-laboratory prognostic associations"
+        ],
+        "review_topics": [
+          "EASIX across CKM stages before clinical CVD",
+          "Survey-weighted survival and component comparisons"
+        ],
+        "scientific_role": "Examines a three-laboratory composite in relation to linked long-term all-cause and cardiovascular mortality, with complex-survey modeling, dose-response analysis and stage-specific observations.",
+        "evidence_position": "Retrospective analysis of prospectively collected survey data and linked deaths; adjusted associations and descriptive discrimination, with main-text sensitivity summaries.",
+        "related_concepts": [
+          "Survey-weighted Cox analysis",
+          "Renal and endothelial-stress proxies",
+          "Stage-specific effect interpretation"
+        ],
+        "citation_contexts": [
+          "Methods: distinguish raw counts, weighted estimates, exposure scale and adjustment models in NHANES survival analysis.",
+          "Discussion: routine-lab risk markers in CKM stages 0-3 and the evidence needed beyond an adjusted mortality association."
+        ]
+      }
     },
     {
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
