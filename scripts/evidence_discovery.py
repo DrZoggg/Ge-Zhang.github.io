@@ -81,7 +81,7 @@ def search_corpus(root, items, contents):
             if not texts:
                 return
             for text in texts:
-                if text not in visible:
+                if ' '.join(text.split()) not in ' '.join(visible.split()):
                     raise ValueError(f'Search text not visibly present: {p["slug"]}/{category}: {text}')
             if anchor and f'id="{anchor}"' not in page:
                 anchor = ''

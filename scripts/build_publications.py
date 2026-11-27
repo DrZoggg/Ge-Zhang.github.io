@@ -1257,7 +1257,8 @@ def render_citation_layer_html(layer, content=None):
     rows = "".join(
         f'<tr id="{html.escape(row["id"], quote=True)}">'
         f'<th scope="row">{html.escape(row["id"])}</th>'
-        + "".join(f'<td>{html.escape(row[key])}</td>' for key in columns)
+        + "".join('<td>' + (research_guides.supporting_locator(row[key], (content or {}).get('doi'))
+                           if key == 'source_locator' else html.escape(row[key])) + '</td>' for key in columns)
         + f'<td>{refs(row)}</td></tr>'
         for row in layer["evidence_matrix"]
     )
@@ -1362,7 +1363,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
         + "</p>"
         + render_v2_evidence_html(finding)
         + '<p class="paper-geo-v2__source"><strong>Source locator:</strong> '
-        + html.escape(finding["source_locator"])
+        + research_guides.supporting_locator(finding["source_locator"], content["doi"])
         + "</p></article>"
         for finding in content["key_findings"]
     )
@@ -1498,7 +1499,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
         + (
             f'<a href="{html.escape(url, quote=True)}">{html.escape(value)}</a>'
             if url
-            else html.escape(value)
+            else research_guides.supporting_locator(value, content["doi"])
         )
         + "</dd>"
         for label, url, value in provenance_rows
@@ -1623,7 +1624,8 @@ def render_citation_layer_markdown(layer, content=None):
     for row in layer["evidence_matrix"]:
         parts.extend([f'<a id="{row["id"]}"></a>', f"### {row['component']}", ""])
         for key in ("context", "finding", "evidence_level", "scope", "source_locator"):
-            parts.append(f"- {v2_label(key)}: {row[key]}")
+            value = research_guides.supporting_locator(row[key], (content or {}).get('doi'), markdown=True) if key == 'source_locator' else row[key]
+            parts.append(f"- {v2_label(key)}: {value}")
         parts.extend([
             "- Evidence refs: " + ", ".join(f"[{ref}](#{ref.lower()})" for ref in row["evidence_refs"]),
             "",
@@ -1704,7 +1706,7 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_regist
                     for item in finding["evidence"]
                 ],
                 "",
-                f"Source locator: {finding['source_locator']}",
+                "Source locator: " + research_guides.supporting_locator(finding['source_locator'], content['doi'], markdown=True),
                 "",
             ]
         )
@@ -1839,7 +1841,7 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_regist
             "",
             f"- DOI: {doi_url(content['doi'])}",
             *[
-                f"- {v2_label(key)}: " + (f"[{value}]({pmc_url})" if key == "pmcid" and pmc_url else value)
+                f"- {v2_label(key)}: " + (f"[{value}]({pmc_url})" if key == "pmcid" and pmc_url else research_guides.supporting_locator(value, content['doi'], markdown=True))
                 for key, value in content["provenance"].items()
             ],
             "",

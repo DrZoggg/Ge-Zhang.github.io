@@ -3,13 +3,39 @@ import hashlib
 import html
 import json
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from urllib.parse import urlsplit
 from evidence_discovery import search_corpus, visible_text, without_evidence_ui
 from sync_common import ROOT, is_withdrawn, load_master
 from build_publications import load_deep_content
 
 
+def check_inline_locator_visibility():
+    with TemporaryDirectory() as temporary:
+        root = Path(temporary)
+        (root / 'papers').mkdir()
+        page = ('<p>Methods; <a href="https://doi.org/10.1021/acs.jproteome.4c00522.s005">'
+                'Table S5</a></p><script>Script-only claim</script><style>Style-only claim</style>'
+                '<!-- EVIDENCE_UI_START --><button>UI-only label</button><!-- EVIDENCE_UI_END -->')
+        (root / 'papers/fixture.html').write_text(page, encoding='utf-8')
+        publication = {'slug': 'fixture', 'paper_url': 'https://example.org/fixture.html',
+                       'title': 'Methods; Table S5', 'doi': '', 'authors': [], 'journal': ''}
+        with patch('research_guides.search_documents', return_value=[]), patch('research_guides.comparison_search_documents', return_value=[]):
+            corpus = search_corpus(root, [publication], {})
+            assert corpus['documents'][0]['text'] == publication['title']
+            for hidden in ('Script-only claim', 'Style-only claim'):
+                try:
+                    search_corpus(root, [{**publication, 'title': hidden}], {})
+                except ValueError as error:
+                    assert 'not visibly present' in str(error)
+                else:
+                    raise AssertionError('Hidden text entered the visible corpus')
+        assert 'UI-only label' not in visible_text(page)
+
+
 def check():
+    check_inline_locator_visibility()
     public = json.loads((ROOT / 'publications.json').read_text(encoding='utf-8'))
     # Scientific V2 status is independent of the 29 manually selected Deep GEO
     # members; ordinary V2 pages also contribute their full evidence to search.

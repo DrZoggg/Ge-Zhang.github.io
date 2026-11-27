@@ -85,6 +85,24 @@ def references(refs, sources, markdown=False):
     return '; '.join(groups)
 
 
+def supporting_locator(text, doi, markdown=False, file_fallback=False):
+    """Link the reviewed Olink S5 locator without changing its source wording."""
+    rendered = text if markdown else html.escape(text)
+    if (doi or '').lower() != '10.1021/acs.jproteome.4c00522' or 'Table S5' not in text:
+        return rendered
+    def link(label, url):
+        return ('[' + label + '](' + url + ')') if markdown else (
+            '<a href="' + html.escape(url, quote=True) + '">' + html.escape(label) + '</a>')
+    rendered = rendered.replace('Table S5', link('Table S5',
+        'https://doi.org/10.1021/acs.jproteome.4c00522.s005'))
+    file_url = 'https://ndownloader.figshare.com/files/48344505'
+    if 'raw ELISA validation data' in text:
+        rendered = rendered.replace('raw ELISA validation data', link('raw ELISA validation data', file_url))
+    elif file_fallback:
+        rendered += ' (' + link('Original supplement (ACS)', file_url) + ')'
+    return rendered
+
+
 def render(data, sources):
     esc = html.escape
     body = ['<nav><a href="../publications.html">Publications</a> · <a href="' + SLUG + '.md">Markdown version</a></nav>',
@@ -125,8 +143,8 @@ def render(data, sources):
         md += ['### ' + s['title']] + ['- [' + label + '](' + url + ')' for label, url in links] + ['**Source locators**']
         for ref in row['evidence_refs']:
             locator = s['findings'][ref]['source_locator']
-            body.append('<li>' + references({row['id']: [ref]}, sources) + ' — ' + esc(locator) + '</li>')
-            md.append('- ' + references({row['id']: [ref]}, sources, True) + ' — ' + locator)
+            body.append('<li>' + references({row['id']: [ref]}, sources) + ' — ' + supporting_locator(locator, s['doi'], file_fallback=True) + '</li>')
+            md.append('- ' + references({row['id']: [ref]}, sources, True) + ' — ' + supporting_locator(locator, s['doi'], markdown=True, file_fallback=True))
         body.append('</ul></article>')
     body.append('</section><p>' + esc(data['closing']) + '</p>')
     md.append(data['closing'])

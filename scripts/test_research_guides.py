@@ -25,7 +25,8 @@ class GuideTests(unittest.TestCase):
             s = sources[row['id']]
             for ref in row['evidence_refs']:
                 self.assertIn(s['url'] + '#' + ref.lower(), page)
-                self.assertIn(s['findings'][ref]['source_locator'], md)
+                self.assertIn(s['findings'][ref]['source_locator'], md.replace(
+                    '[Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005)', 'Table S5'))
             for key, _ in g.FIELDS:
                 if key in row: self.assertIn(row[key], md)
         self.assertEqual(g.render(self.data, sources), (page, md))

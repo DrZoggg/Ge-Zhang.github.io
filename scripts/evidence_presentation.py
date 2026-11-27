@@ -19,6 +19,10 @@ PAPER_GUIDE_LINKS = {
         'anchor': 'model-evaluation',
         'label': 'Author-maintained comparison guide: heart-failure model validation',
     },
+    ('10.1038/s41598-024-65236-5', 'circadian-evidence-levels'): {
+        'anchor': 'scope',
+        'label': 'Author-maintained comparison of circadian expression scores, cell perturbation and clinical timing',
+    },
 }
 
 

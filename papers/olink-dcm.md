@@ -141,7 +141,7 @@ Context: Independent plasma ELISA cohort using a second assay
 | direction | all five higher in DCM-HF |
 | reported group-comparison significance | P<0.001 |
 
-Source locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; Table S5
+Source locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; [Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005)
 
 <a id="kf4"></a>
 ### KF4: The corresponding five-gene expression panel showed diagnostic discrimination across three external human cardiac transcriptomic datasets.
@@ -314,7 +314,7 @@ Evidence: [KF6](#kf6)
 - Finding: The five prioritized plasma markers showed directionally consistent replication with ELISA in an independent local cohort. ELISA cohort: 65 participants; DCM-HF: 30; healthy controls: 35; markers: SPP1, IGFBP7, F11R, CHI3L1 and PLAUR; direction: all five higher in DCM-HF; reported group-comparison significance: P<0.001.
 - Evidence Level: Independent plasma ELISA replication
 - Scope: Independent plasma ELISA cohort using a second assay
-- Source Locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; Table S5
+- Source Locator: Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; [Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005)
 - Evidence refs: [KF3](#kf3)
 
 <a id="evidence-olink-dcm-4"></a>
@@ -453,7 +453,7 @@ biomarker discovery, independent assay replication, diagnostic discrimination, c
 - Local Ethics: The article reports Institutional Review Board approval from the Fourth Affiliated Hospital of Soochow University, approval 2022-KT-105.
 - Article Reported Registration: The article reports ChiCTR2100051469; this identifier is retained as article-reported provenance only because public registry indexing appears inconsistent with the DCM-HF proteomics study.
 - External Datasets: GSE116250; GSE141910; GSE165303
-- Supporting Material: Table S1: all 92 Olink Cardiovascular III proteins; Tables S2-S4: correlation analyses; Table S5: raw ELISA validation data; Figure S1: study flowchart; Figure S2: NetworkAnalyst/PPI analysis; Figure S3: DEP-clinical-indicator correlation visualization
+- Supporting Material: Table S1: all 92 Olink Cardiovascular III proteins; Tables S2-S4: correlation analyses; [Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005): [raw ELISA validation data](https://ndownloader.figshare.com/files/48344505); Figure S1: study flowchart; Figure S2: NetworkAnalyst/PPI analysis; Figure S3: DEP-clinical-indicator correlation visualization
 - Code Repository: No dedicated article-specific code repository was identified in the reviewed version-of-record resources.
 - Source Note External Counts: The article reports GSE116250 as 15 controls and 38 DCM, GSE141910 as 162 controls and 162 DCM, and GSE165303 as 48 controls and 74 DCM. Native or independently documented dataset composition differs: GSE116250 contains 14 non-failing, 37 DCM and 13 ischemic-cardiomyopathy samples; GSE141910 is documented as a 366-sample left-ventricular resource including 166 non-failing and 166 DCM samples plus HCM and PPCM; GSE165303 is a multi-assay heart-tissue series whose RNA-seq subset is independently documented as 51 non-failing and 50 DCM hearts. The exact filtering logic used to obtain the article-reported analyzed counts is not fully specified, so this evidence page preserves the discrepancy and does not aggregate an external total n.
 - Source Note Registration: The article reports ChiCTR2100051469. Publicly indexed information for that identifier describes a magnetocardiography/myocardial-ischemia diagnostic study rather than this DCM-HF proteomics study, so the registration linkage is treated as unresolved and should not be represented as a verified ClinicalTrial entity or trial sameAs link.
