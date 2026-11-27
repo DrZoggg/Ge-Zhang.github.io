@@ -66,7 +66,7 @@ for (const route of targets) {
   click(production, 'https://drgezhang.com/papers/olink-dcm.html?query=UNSENT_TARGET#kf2');
   assert.equal(window.dataLayer.length, 3);
   assert.deepEqual(JSON.parse(JSON.stringify(Array.from(window.dataLayer[2]))),
-    ['event', 'research_handoff', {source_path: route, target_path: '/papers/olink-dcm.html', target_type: 'site_paper'}]);
+    ['event', 'research_handoff', {paper_path: '/papers/olink-dcm.html'}]);
   click(production, 'https://drgezhang.com/papers/olink-dcm.html', {type: 'auxclick', button: 1});
   assert.equal(window.dataLayer.length, 4);
 
