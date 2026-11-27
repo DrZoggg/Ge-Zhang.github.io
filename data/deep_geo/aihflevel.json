@@ -238,7 +238,9 @@
     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39117613/",
     "pmcid": "PMC11310499",
     "code_url": "https://github.com/DrZoggg/AIHFLevel",
-    "tool_url": "https://www.hf-ai-survival.com"
+    "tool_url": "https://www.hf-ai-survival.com",
+    "nih_bioc_full_text_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC11310499/unicode",
+    "biostudies_supplement_pdf_url": "https://www.ebi.ac.uk/biostudies/files/S-EPMC11310499/41467_2024_50415_MOESM1_ESM.pdf"
   },
   "citation_layer": {
     "citation_use_cases": [
