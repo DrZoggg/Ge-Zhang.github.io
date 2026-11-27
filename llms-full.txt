@@ -159,7 +159,7 @@
 - DOI: 10.1002/mdr2.70073
 - HTML: https://drgezhang.com/papers/doi-10-1002-mdr2-70073.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-mdr2-70073.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Trustworthy AI for disease pathogenesis and precision medicine: A disease-agnostic framework from data to deployment
 - Journal: Genes & Diseases
