@@ -2519,8 +2519,8 @@
       "doi": "10.1016/j.intimp.2024.112574",
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.intimp.2024.112574",
       "publisher_url": null,
@@ -2532,9 +2532,30 @@
       "openalex_id": "https://openalex.org/W4400381768",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-intimp-2024-112574.csv",
+      "question_count": 9,
+      "concept_count": 28,
+      "discovery_layer": {
+        "field_entry": [
+          "Ischaemic cardiomyopathy molecular research",
+          "Copper-related gene signatures"
+        ],
+        "review_topics": [
+          "Expression candidate prioritization",
+          "Immune context and animal expression follow-up"
+        ],
+        "scientific_role": "Connects a five-gene candidate set with expression clusters, reported model comparisons, regulatory/chemical hypotheses and mouse cardiac-expression measurements.",
+        "evidence_position": "Public transcriptomic association, computational model/network summaries and separate animal injury/expression evidence.",
+        "related_concepts": [
+          "Cuproptosis-associated genes",
+          "Molecular heterogeneity",
+          "Validation dataset relationships"
+        ],
+        "citation_contexts": [
+          "Methods: distinguish public expression screening, model evaluation and animal protein-expression follow-up.",
+          "Discussion: compare copper-related candidates and immune/network hypotheses across cardiac disease studies."
+        ]
+      }
     },
     {
       "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",

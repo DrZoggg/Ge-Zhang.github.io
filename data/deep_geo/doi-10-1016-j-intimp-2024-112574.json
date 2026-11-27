@@ -1,0 +1,556 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.intimp.2024.112574",
+  "discovery_layer": {
+    "field_entry": [
+      "Ischaemic cardiomyopathy molecular research",
+      "Copper-related gene signatures"
+    ],
+    "review_topics": [
+      "Expression candidate prioritization",
+      "Immune context and animal expression follow-up"
+    ],
+    "scientific_role": "Connects a five-gene candidate set with expression clusters, reported model comparisons, regulatory/chemical hypotheses and mouse cardiac-expression measurements.",
+    "evidence_position": "Public transcriptomic association, computational model/network summaries and separate animal injury/expression evidence.",
+    "related_concepts": [
+      "Cuproptosis-associated genes",
+      "Molecular heterogeneity",
+      "Validation dataset relationships"
+    ],
+    "citation_contexts": [
+      "Methods: distinguish public expression screening, model evaluation and animal protein-expression follow-up.",
+      "Discussion: compare copper-related candidates and immune/network hypotheses across cardiac disease studies."
+    ]
+  },
+  "display_title": "Cuproptosis-related IC candidates: expression, model comparisons and mouse follow-up",
+  "summary": "The study prioritizes DLST, ATP7B, FDX1, SLC31A1 and DLAT through cardiac-expression screening and a four-model comparison. In a separate mouse experiment, LAD ligation was associated with higher DLST and ATP7B protein signals and lower FDX1, SLC31A1 and DLAT signals amid cardiac injury. The paper reports different sample counts and model-evaluation descriptions across source locations.",
+  "research_question": "Which copper-related expression candidates characterize IC, how do their computational clusters and network contexts differ, and which protein directions recur in an injured mouse heart?",
+  "author_summary": "The authors screen 19 cuproptosis-related genes, identify 14 differentially expressed genes and nominate five candidates for computational and mouse follow-up. The paper reports 203 ischemic cardiomyopathy profiles and 152 control profiles after merging two GEO datasets. Its consensus analysis divides the 203 case profiles into groups of 174 and 29. The four-model comparison reports its highest AUC for SVM (0.914). Three additional panels give AUCs of 0.933, 0.800 and 0.932, alongside differences in sample accounting and evaluation descriptions across the source. Inferred immune and pathway profiles, a 218-node ceRNA network and a 370-node chemical–gene network provide follow-up hypotheses. A separate LAD-ligation experiment shows cardiac injury and the same directions for the five protein signals as the human expression comparison.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective public cardiac-expression screening, consensus clustering, CIBERSORT/GSVA, four model comparisons and additional ROC analyses; predicted regulatory/chemical networks and docking; separate sham-versus-LAD-ligation mouse experiment.",
+    "evidence_type": "Bulk-expression association, reported model estimates, inferred relative immune/pathway patterns, predicted molecular networks/docking and animal injury/protein measurements.",
+    "population": "Public cardiac-expression profiles from ischemic cardiomyopathy and control groups. The separate animal experiment used eight-week-old male C57BL/6 mice.",
+    "primary_endpoint": "Nomination and expression characterization of five cuproptosis-related IC candidates.",
+    "secondary_endpoint": "Expression clusters, model and nomogram assessments, inferred immune and pathway patterns, predicted regulatory and chemical interactions, and mouse echocardiography, histology and protein expression.",
+    "data_modalities": [
+      "Bulk gene expression",
+      "Inferred relative immune proportions",
+      "GSVA",
+      "Model ROC/calibration/DCA",
+      "Predicted ceRNA/chemical networks",
+      "Molecular docking",
+      "Mouse echo/histology/proteins"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Expression screen",
+        "value": "19 literature-derived genes screened, 14 differentially expressed and 5 nominated."
+      },
+      {
+        "label": "Reported merged profiles",
+        "value": "203 IC profiles and 152 controls. Figure 1 lists 181 and 91 IC profiles before merging."
+      },
+      {
+        "label": "Expression clusters",
+        "value": "174 profiles in cluster 1 and 29 in cluster 2."
+      },
+      {
+        "label": "Additional dataset counts",
+        "value": "Figure 1 displays 61 IC and 134 controls, 15 IC and 16 controls, and 12 IC and 5 controls. See KF4 for source-specific names."
+      },
+      {
+        "label": "Network sizes",
+        "value": "218 nodes and 264 edges in the ceRNA network. 370 nodes and 615 edges in the chemical–gene network."
+      },
+      {
+        "label": "Mouse allocation and assay counts",
+        "value": "6 allocated per group. Echocardiography caption n = 6. Western blot caption n = 4."
+      }
+    ],
+    "counting_note": "Expression profiles, GEO accessions, inferred cell proportions and mouse assay sizes describe different units. The paper leaves the input-to-merged sample map and the fitted-model transfer procedure unresolved."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Public expression screening and model-based selection nominated five cuproptosis-related IC candidates.",
+      "context": "Literature-derived gene screening followed by expression and model comparison in public cardiac transcriptomic resources.",
+      "evidence": [
+        {
+          "label": "Candidate screen",
+          "value": "Nineteen literature-derived genes considered; Methods differential criteria |log2FC| > 0.5 and adjusted P < 0.05; fourteen genes described as differentially expressed."
+        },
+        {
+          "label": "Nominated set",
+          "value": "DLST, ATP7B, FDX1, SLC31A1 and DLAT are the five candidates carried into the nomogram, network and mouse-expression analyses."
+        },
+        {
+          "label": "Bulk expression direction",
+          "value": "In Figure 2A–B, DLST and ATP7B expression is higher in IC, and FDX1, SLC31A1 and DLAT expression is lower."
+        },
+        {
+          "label": "Reported merged analysis",
+          "value": "Methods reports batch correction and merging of GSE5406 and GSE57338 into 203 IC and 152 control profiles."
+        },
+        {
+          "label": "Input-accounting difference",
+          "value": "Figure 1 labels GSE5406 as 181 IC and 16 controls and GSE57338 as 91 IC and 136 controls. The inputs sum to 272 IC and 152 controls. The figure gives 203 IC and 152 controls after merging. The source does not describe the sample changes between those steps."
+        }
+      ],
+      "source_locator": "Original PDF p. 2, Methods §§2.1–2.2, p. 3, Figure 1, pp. 4–5, Results §3.1 and Figure 2A–B, and p. 7, Figure 4C."
+    },
+    {
+      "id": "KF2",
+      "claim": "Two expression clusters had distinct gene and inferred immune/pathway patterns.",
+      "context": "Consensus clustering within the reported 203 IC profiles, with CIBERSORT and GSVA analyses.",
+      "evidence": [
+        {
+          "label": "Cluster allocation",
+          "value": "Cluster 1 has 174 profiles and cluster 2 has 29, with k = 2."
+        },
+        {
+          "label": "Cluster expression",
+          "value": "Results and Figure 3 show higher LIAS, LIPT1, DLD, FDX1, DLAT, PDHB and DLST in cluster 1. NFE2L2, NLRP3 and ATP7A are higher in cluster 2."
+        },
+        {
+          "label": "Immune measurement",
+          "value": "CIBERSORT estimates relative proportions of 22 immune cell types. Figure 2 shows IC versus control contrasts and correlations between gene expression and those proportions."
+        },
+        {
+          "label": "Main-text supplementary results",
+          "value": "Results §3.2 reports higher inferred M1 macrophage and neutrophil proportions in cluster 2. It reports stronger oxidative-phosphorylation and myocardial-contraction pathway signals in cluster 2 and stronger mTOR signaling in cluster 1. The underlying supplementary plots remain unavailable."
+        },
+        {
+          "label": "Evidence role",
+          "value": "Expression-defined heterogeneity and inferred immune/pathway context for candidate follow-up."
+        }
+      ],
+      "source_locator": "Original PDF pp. 2–3, Methods §§2.3 and 2.6, p. 4, Results §§3.1–3.2, and pp. 5–6, Figures 2D–F and 3A–G. Results cites Figures S1–S5 for cluster, immune and pathway support."
+    },
+    {
+      "id": "KF3",
+      "claim": "The reported four-model comparison favored SVM for its stated evaluation.",
+      "context": "Source-reported model comparison, with target and partition wording retained alongside the estimates.",
+      "evidence": [
+        {
+          "label": "ROC estimates",
+          "value": "Figure 4D reports SVM AUC 0.914, RF 0.911, XGB 0.898 and GLM 0.890."
+        },
+        {
+          "label": "Selection",
+          "value": "The authors nominate DLST, FDX1, DLAT, SLC31A1 and ATP7B after the SVM comparison. Figure 4C displays ten feature-importance entries per model."
+        },
+        {
+          "label": "Evaluation wording",
+          "value": "Figure 4D describes five-fold cross-validation in the testing cohort. Results describes differentiation between IC clusters, and Methods describes identification of IC. The exact fitted task and partitions remain unspecified."
+        },
+        {
+          "label": "Nomogram",
+          "value": "Results reports using 203 IC cases. Figure 5A shows the five-gene score. Figure 5B plots decision curves and Figure 5C plots calibration. The Results text and caption interchange the two descriptions."
+        }
+      ],
+      "source_locator": "Original PDF pp. 2–3, Methods §§2.4–2.5, pp. 5–6, Results §3.3, p. 7, Figure 4A–D and caption, and p. 8, Figure 5A–C and caption."
+    },
+    {
+      "id": "KF4",
+      "claim": "Additional ROC panels provide dataset-specific estimates with explicit accounting and source relationships.",
+      "context": "Article-labelled evaluation datasets and an existing official accession-membership comparison.",
+      "evidence": [
+        {
+          "label": "GSE42955",
+          "value": "Figure 5D shows AUC 0.933 (95% CI 0.767–1.000). The Abstract reports 0.943."
+        },
+        {
+          "label": "GSE48166",
+          "value": "Figure 5E shows AUC 0.800 (95% CI 0.629–0.957)."
+        },
+        {
+          "label": "GSE57345",
+          "value": "Figure 5F shows AUC 0.932 (95% CI 0.892–0.965). Figure 1 prints GSE5345 for the corresponding 61 IC and 134 control box. Methods and the Figure 5 caption name GSE57345."
+        },
+        {
+          "label": "Evaluation procedure",
+          "value": "The Figure 5 caption describes five-fold cross-validation within each named dataset. The paper does not specify whether a frozen model was transferred to an independent cohort."
+        },
+        {
+          "label": "Registry relationship",
+          "value": "The 313 unique GEO Sample (GSM) accessions in the GSE57338 deposit all occur among the 319 accessions in its SuperSeries, GSE57345. The study does not give an analysis-level accession map for those datasets."
+        },
+        {
+          "label": "Other displayed labels",
+          "value": "Figure 1 lists 15 IC and 16 controls for GSE48166 and 12 IC and 5 controls for GSE42955. The counts refer to the article’s reported comparison groups."
+        }
+      ],
+      "source_locator": "Original PDF pp. 1–2, Abstract and Methods §2.1, p. 3, Figure 1, p. 6, Results §3.3, and p. 8, Figure 5D–I and caption. Official GEO Series accession lists for GSE57338 and GSE57345."
+    },
+    {
+      "id": "KF5",
+      "claim": "The predicted ceRNA network organizes candidate regulatory relationships around the five genes.",
+      "context": "Database-derived mRNA–miRNA–lncRNA network construction.",
+      "evidence": [
+        {
+          "label": "Resources",
+          "value": "TargetScan, miRDB, miRanda and SpongeScan supply predictions. Cytoscape 3.7.2 is used for the network."
+        },
+        {
+          "label": "Reported size",
+          "value": "218 nodes and 264 edges. The nodes include 5 mRNAs, 52 miRNAs and 161 long noncoding RNAs."
+        },
+        {
+          "label": "Regulatory example",
+          "value": "Results discusses predicted LINC00969 links with hsa-miR-1238-3p, hsa-miR-1207-5p and hsa-miR-484, and links involving hsa-miR-30b-3p. Figure 6 shows the five nominated gene nodes."
+        },
+        {
+          "label": "Source spelling",
+          "value": "The last sentence of Results §3.4 prints ATP3B. The nominated gene set and the Figure 6 node identify ATP7B."
+        }
+      ],
+      "source_locator": "Original PDF p. 3, Methods §2.7, pp. 6 and 8, Results §3.4, and p. 9, Figure 6 and caption."
+    },
+    {
+      "id": "KF6",
+      "claim": "Chemical–gene associations and molecular docking provide a computational comparison framework.",
+      "context": "Comparative Toxicogenomics Database associations and structure-based docking around the five candidate genes.",
+      "evidence": [
+        {
+          "label": "Network",
+          "value": "365 chemical entities and 5 genes form the reported network of 370 nodes and 615 edges."
+        },
+        {
+          "label": "Structure selection",
+          "value": "The paper reports eight entries associated with all five genes. The vehicle-emission entry was excluded from docking, because the authors found no corresponding molecular structure."
+        },
+        {
+          "label": "Inspected heatmap",
+          "value": "Figure 7B displays seven compound rows and five gene columns. The benzo(a)pyrene–FDX1 cell is −11.3 (kcal/mol, as stated in the Abstract). Figure 7C–G shows tretinoin docking poses for the five targets."
+        },
+        {
+          "label": "Naming difference",
+          "value": "The heatmap labels one row Ethinyl Estradiol. Results §3.5 lists D004997 as acetoestradiol."
+        },
+        {
+          "label": "Scientific use",
+          "value": "The associations and docking scores help generate hypotheses about chemical–gene interactions. The mouse ligation experiment had no compound-treatment arm."
+        },
+        {
+          "label": "Unavailable detail",
+          "value": "Supporting Figures S6–S7 and Tables S2–S3 remain unavailable."
+        }
+      ],
+      "source_locator": "Original PDF p. 2, Abstract, p. 3, Methods §2.8, p. 8, Results §3.5, and p. 10, Figure 7A–G and caption."
+    },
+    {
+      "id": "KF7",
+      "claim": "The ligation mouse model reproduced the nominated protein-expression directions alongside cardiac injury.",
+      "context": "A sham-versus-LAD-ligation expression experiment, separate from human model-performance and chemical-network analyses.",
+      "evidence": [
+        {
+          "label": "Allocation",
+          "value": "Methods reports eight-week-old male C57BL/6 mice, allocated to sham thoracotomy or LAD ligation (n = 6 per group). The collection interval after ligation remains unspecified."
+        },
+        {
+          "label": "Cardiac injury",
+          "value": "H&E and Masson stains show injury and fibrosis in the ligation group. Figure 8D shows lower left ventricular ejection fraction and fractional shortening, and a larger left ventricular end-diastolic diameter (mean ± SD, n = 6)."
+        },
+        {
+          "label": "Protein directions",
+          "value": "Immunohistochemistry and myocardial Western blots show higher DLST and ATP7B signals and lower FDX1, SLC31A1 and DLAT signals in the ligation group."
+        },
+        {
+          "label": "Assay units",
+          "value": "The Figure 8E caption gives n = 4 for GAPDH-normalized Western blots. The immunohistochemistry panel has no separate sample-size label."
+        },
+        {
+          "label": "Evidence role",
+          "value": "The ligation comparison provides direct cardiac injury and protein-expression observations."
+        }
+      ],
+      "source_locator": "Original PDF pp. 3–4, Methods §§2.9–2.14, p. 8, Results §3.6, and p. 11, Figure 8A–E and caption."
+    }
+  ],
+  "what_this_adds": [
+    "Provides a concrete five-gene candidate set with public cardiac-expression context and separate mouse protein-expression observations.",
+    "Connects computational expression clusters and immune/pathway patterns with source-located model and nomogram comparisons.",
+    "Adds predicted regulatory and chemical-interaction maps that can inform follow-up experiments and comparison of evidence roles."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The article-reported candidate-expression patterns and computational cluster/network summaries.",
+      "Exact published ROC values attributed to their panels and original sample/evaluation descriptions.",
+      "Mouse injury and protein-expression directions in the sham-versus-ligation experiment."
+    ],
+    "does_not_establish": [
+      "A reconciled human sample map or frozen independent clinical diagnostic performance.",
+      "Gene perturbation effects or a direct experimental demonstration that these expression changes cause cuproptosis.",
+      "Chemical treatment benefit, measured molecular binding or a therapeutic ranking from the docking scores."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which five genes were nominated and what expression pattern was found?",
+      "answer": "DLST and ATP7B expression is higher in the human IC comparison, and FDX1, SLC31A1 and DLAT expression is lower. The authors select these five genes for the nomogram, network analyses and mouse follow-up after screening 19 genes and reporting 14 differentially expressed genes.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What do the two molecular clusters describe?",
+      "answer": "The 203 reported IC profiles form two groups: 174 in cluster 1 and 29 in cluster 2. The groups differ in gene expression. Results §3.2 also reports differences in inferred immune proportions and pathway scores, including higher inferred M1 macrophage and neutrophil proportions in cluster 2.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What four-model performance was reported?",
+      "answer": "Figure 4D reports AUCs of 0.914 for SVM, 0.911 for RF, 0.898 for XGB and 0.890 for GLM. The caption describes five-fold cross-validation in a testing cohort. Results describes IC-cluster differentiation, while Methods describes identification of IC.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "How should the additional AUC values be cited?",
+      "answer": "Figure 5D gives GSE42955 AUC 0.933 (95% CI 0.767–1.000). The Abstract instead gives 0.943. Figure 5E gives GSE48166 AUC 0.800 (95% CI 0.629–0.957), and Figure 5F gives GSE57345 AUC 0.932 (95% CI 0.892–0.965). The caption describes five-fold cross-validation within these datasets. The displayed Figure 5B is the decision curve, and Figure 5C is the calibration plot.",
+      "evidence_refs": [
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "Why are dataset membership and actual analysed samples kept separate?",
+      "answer": "GSE57338 deposits 313 unique GEO sample accessions, all present among the 319 in GSE57345. Figure 1’s two input case counts, 181 and 91, sum to 272, while the reported merged count is 203. Figure 1 also prints GSE5345 where Methods and the Figure 5 caption name GSE57345. The actual sample-selection map remains unresolved.",
+      "evidence_refs": [
+        "KF1",
+        "KF4"
+      ]
+    },
+    {
+      "question": "What does the ceRNA analysis add?",
+      "answer": "The predicted network has 218 nodes and 264 edges, comprising 5 mRNAs, 52 miRNAs and 161 long noncoding RNAs. It proposes regulatory links around the five candidates, including associations involving LINC00969.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What did chemical prediction and docking evaluate?",
+      "answer": "The CTD network contains 365 chemicals, 5 genes and 615 edges. The authors report eight entries associated with all five genes and exclude vehicle emissions from docking because a structure was unavailable. Figure 7B shows the benzo(a)pyrene–FDX1 docking score of −11.3 kcal/mol. Panels C–G show tretinoin docking poses. The mouse experiment did not administer these chemicals.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "Which observations came from the mouse experiment?",
+      "answer": "In mice with LAD ligation, histology shows myocardial injury, echocardiography shows lower ejection fraction and fractional shortening and greater end-diastolic diameter, and protein assays show higher DLST and ATP7B and lower FDX1, SLC31A1 and DLAT than in controls. Methods allocates six per group. The echo and Western blot captions report n = 6 and n = 4, respectively.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "Where can this work contribute to a research manuscript?",
+      "answer": "The work provides background on copper-related expression patterns in ischemic cardiomyopathy and a methods example linking public expression screening, model comparisons, inferred immune proportions and mouse protein assays. Cite the specific panel and dataset for a model estimate, and the actual mouse assay for an expression observation.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Ischemic cardiomyopathy",
+      "Myocardial injury"
+    ],
+    "genes": [
+      "DLST",
+      "ATP7B",
+      "FDX1",
+      "SLC31A1",
+      "DLAT"
+    ],
+    "methods": [
+      "Consensus clustering",
+      "CIBERSORT",
+      "GSVA",
+      "SVM",
+      "RF",
+      "XGB",
+      "GLM",
+      "ROC",
+      "Nomogram",
+      "ceRNA prediction",
+      "CTD chemical associations",
+      "Molecular docking"
+    ],
+    "experimental_readouts": [
+      "LAD ligation",
+      "LVEF/LVFS/LVEDD",
+      "Histology",
+      "Immunohistochemistry",
+      "Myocardial immunoblot"
+    ],
+    "evidence_concepts": [
+      "Expression candidate prioritization",
+      "Sample inclusion map",
+      "Series/subseries relationship",
+      "Assay-specific units"
+    ]
+  },
+  "limitations": [
+    "The Figure 1 input counts, its GSE5345 label and the Abstract’s GSE42955 AUC differ from corresponding values elsewhere in the paper. A sample inclusion and exclusion map is unavailable.",
+    "Methods frames the model as identifying IC and Results describes cluster discrimination. The reported cross-validation within additional datasets and the deposited accession sets leave the actual partitions and transfer procedure unresolved.",
+    "The animal experiment measures cardiac injury and protein expression. The regulatory networks and docking results supply hypotheses for a different experimental question.",
+    "Mouse allocation, echocardiography and Western blot sample sizes refer to different reported units. Post-ligation sampling time and selection for each assay remain unspecified.",
+    "Supplementary Figures S1–S7 and Tables S1–S3 were unavailable. The source locators distinguish the main-text descriptions from the supporting plots and tables."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1186/s12931-024-02978-w",
+      "relationship": "A separate pulmonary-hypertension study prioritizes disulfidptosis-related genes through expression, immune/pathway and model analyses followed by hypoxic-rat protein measurements. It offers a comparison of computational candidate selection and animal expression follow-up in a different disease and gene program."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S1567576924010956",
+    "doi_url": "https://doi.org/10.1016/j.intimp.2024.112574",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38971104/",
+    "geo_training_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
+    "geo_superseries_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57345",
+    "source_record_url": "https://www.researchgate.net/publication/382061618_Identification_of_diagnostic_signature_and_immune_infiltration_for_ischemic_cardiomyopathy_based_on_cuproptosis-related_genes_through_bioinformatics_analysis_and_experimental_validation",
+    "version_of_record": "International Immunopharmacology, volume 138 (2024), article 112574. Published online 6 July 2024.",
+    "license": "© 2024 Elsevier B.V. All rights reserved.",
+    "evidence_basis": "Original article, Methods §§2.1–2.14, Results §§3.1–3.6, and Figures 1–8. The official GEO records document the GSE57338 and GSE57345 accession lists.",
+    "source_note_accounting": "Figure 1 gives input counts of 181 and 91 cases and 16 and 136 controls, and merged counts of 203 cases and 152 controls. Its comparison box prints GSE5345. Methods and the Figure 5 caption name GSE57345.",
+    "source_note_GEO": "All 313 unique deposited GSE57338 GSM accessions occur among the 319 in GSE57345. The analyses do not provide an accession-level selection map.",
+    "source_note_model": "The GSE42955 AUC is 0.933 in Figure 5D and 0.943 in the Abstract. Figure 5B is the decision curve and Figure 5C is the calibration plot. The reported fitted task and evaluation partition remain unclear.",
+    "source_note_network": "The last sentence of Results §3.4 prints ATP3B. The nominated gene list and the Figure 6 network node identify ATP7B.",
+    "source_note_chemicals": "Figure 7B labels Ethinyl Estradiol, while Results §3.5 calls D004997 acetoestradiol. The docking analysis is separate from the mouse ligation experiment.",
+    "source_note_supplements": "Appendix A points to the publication DOI for supplementary material. Figures S1–S7 and Tables S1–S3 remain unavailable. The article text reports some of their results.",
+    "source_note_animal": "Methods allocates six mice per group. The echocardiography caption gives n = 6 and the Western blot caption n = 4. The IHC sample size and post-ligation collection interval are unspecified."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which copper-related genes were prioritized in IC with animal expression follow-up?",
+        "supported_scope": "Five-gene expression candidates and a separate sham-versus-ligation protein comparison.",
+        "evidence_refs": [
+          "KF1",
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How do public cardiac-expression studies combine clusters, immune context and model evaluation?",
+        "supported_scope": "Reported computational design and source-located model/registry comparisons.",
+        "evidence_refs": [
+          "KF2",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What regulatory and chemical hypotheses accompany the candidate genes?",
+        "supported_scope": "Database-predicted ceRNA/chemical networks and docking, with experimental roles distinct.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A reconciled independent clinical diagnostic accuracy or prospective treatment effect.",
+      "Direct causal cuproptosis mechanisms or clinical benefit of docked compounds."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-icm-copper-1",
+        "component": "KF1: Public expression screening and model-based selection nominated five cuproptosis-related IC candidates.",
+        "context": "Literature-derived gene screening followed by expression and model comparison in public cardiac transcriptomic resources.",
+        "finding": "Public expression screening and model-based selection nominated five cuproptosis-related IC candidates. Candidate screen: Nineteen literature-derived genes considered; Methods differential criteria |log2FC| > 0.5 and adjusted P < 0.05; fourteen genes described as differentially expressed. Nominated set: DLST, ATP7B, FDX1, SLC31A1 and DLAT are the five candidates carried into the nomogram, network and mouse-expression analyses. Bulk expression direction: In Figure 2A–B, DLST and ATP7B expression is higher in IC, and FDX1, SLC31A1 and DLAT expression is lower. Reported merged analysis: Methods reports batch correction and merging of GSE5406 and GSE57338 into 203 IC and 152 control profiles. Input-accounting difference: Figure 1 labels GSE5406 as 181 IC and 16 controls and GSE57338 as 91 IC and 136 controls. The inputs sum to 272 IC and 152 controls. The figure gives 203 IC and 152 controls after merging. The source does not describe the sample changes between those steps.",
+        "evidence_level": "Reported public-expression/model analysis",
+        "scope": "Literature-derived gene screening followed by expression and model comparison in public cardiac transcriptomic resources.",
+        "source_locator": "Original PDF p. 2, Methods §§2.1–2.2, p. 3, Figure 1, pp. 4–5, Results §3.1 and Figure 2A–B, and p. 7, Figure 4C.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-2",
+        "component": "KF2: Two expression clusters had distinct gene and inferred immune/pathway patterns.",
+        "context": "Consensus clustering within the reported 203 IC profiles, with CIBERSORT and GSVA analyses.",
+        "finding": "Two expression clusters had distinct gene and inferred immune/pathway patterns. Cluster allocation: Cluster 1 has 174 profiles and cluster 2 has 29, with k = 2. Cluster expression: Results and Figure 3 show higher LIAS, LIPT1, DLD, FDX1, DLAT, PDHB and DLST in cluster 1. NFE2L2, NLRP3 and ATP7A are higher in cluster 2. Immune measurement: CIBERSORT estimates relative proportions of 22 immune cell types. Figure 2 shows IC versus control contrasts and correlations between gene expression and those proportions. Main-text supplementary results: Results §3.2 reports higher inferred M1 macrophage and neutrophil proportions in cluster 2. It reports stronger oxidative-phosphorylation and myocardial-contraction pathway signals in cluster 2 and stronger mTOR signaling in cluster 1. The underlying supplementary plots remain unavailable. Evidence role: Expression-defined heterogeneity and inferred immune/pathway context for candidate follow-up.",
+        "evidence_level": "Reported public-expression/model analysis",
+        "scope": "Consensus clustering within the reported 203 IC profiles, with CIBERSORT and GSVA analyses.",
+        "source_locator": "Original PDF pp. 2–3, Methods §§2.3 and 2.6, p. 4, Results §§3.1–3.2, and pp. 5–6, Figures 2D–F and 3A–G. Results cites Figures S1–S5 for cluster, immune and pathway support.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-3",
+        "component": "KF3: The reported four-model comparison favored SVM for its stated evaluation.",
+        "context": "Source-reported model comparison, with target and partition wording retained alongside the estimates.",
+        "finding": "The reported four-model comparison favored SVM for its stated evaluation. ROC estimates: Figure 4D reports SVM AUC 0.914, RF 0.911, XGB 0.898 and GLM 0.890. Selection: The authors nominate DLST, FDX1, DLAT, SLC31A1 and ATP7B after the SVM comparison. Figure 4C displays ten feature-importance entries per model. Evaluation wording: Figure 4D describes five-fold cross-validation in the testing cohort. Results describes differentiation between IC clusters, and Methods describes identification of IC. The exact fitted task and partitions remain unspecified. Nomogram: Results reports using 203 IC cases. Figure 5A shows the five-gene score. Figure 5B plots decision curves and Figure 5C plots calibration. The Results text and caption interchange the two descriptions.",
+        "evidence_level": "Reported public-expression/model analysis",
+        "scope": "Source-reported model comparison, with target and partition wording retained alongside the estimates.",
+        "source_locator": "Original PDF pp. 2–3, Methods §§2.4–2.5, pp. 5–6, Results §3.3, p. 7, Figure 4A–D and caption, and p. 8, Figure 5A–C and caption.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-4",
+        "component": "KF4: Additional ROC panels provide dataset-specific estimates with explicit accounting and source relationships.",
+        "context": "Article-labelled evaluation datasets and an existing official accession-membership comparison.",
+        "finding": "Additional ROC panels provide dataset-specific estimates with explicit accounting and source relationships. GSE42955: Figure 5D shows AUC 0.933 (95% CI 0.767–1.000). The Abstract reports 0.943. GSE48166: Figure 5E shows AUC 0.800 (95% CI 0.629–0.957). GSE57345: Figure 5F shows AUC 0.932 (95% CI 0.892–0.965). Figure 1 prints GSE5345 for the corresponding 61 IC and 134 control box. Methods and the Figure 5 caption name GSE57345. Evaluation procedure: The Figure 5 caption describes five-fold cross-validation within each named dataset. The paper does not specify whether a frozen model was transferred to an independent cohort. Registry relationship: The 313 unique GEO Sample (GSM) accessions in the GSE57338 deposit all occur among the 319 accessions in its SuperSeries, GSE57345. The study does not give an analysis-level accession map for those datasets. Other displayed labels: Figure 1 lists 15 IC and 16 controls for GSE48166 and 12 IC and 5 controls for GSE42955. The counts refer to the article’s reported comparison groups.",
+        "evidence_level": "Reported public-expression/model analysis",
+        "scope": "Article-labelled evaluation datasets and an existing official accession-membership comparison.",
+        "source_locator": "Original PDF pp. 1–2, Abstract and Methods §2.1, p. 3, Figure 1, p. 6, Results §3.3, and p. 8, Figure 5D–I and caption. Official GEO Series accession lists for GSE57338 and GSE57345.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-5",
+        "component": "KF5: The predicted ceRNA network organizes candidate regulatory relationships around the five genes.",
+        "context": "Database-derived mRNA–miRNA–lncRNA network construction.",
+        "finding": "The predicted ceRNA network organizes candidate regulatory relationships around the five genes. Resources: TargetScan, miRDB, miRanda and SpongeScan supply predictions. Cytoscape 3.7.2 is used for the network. Reported size: 218 nodes and 264 edges. The nodes include 5 mRNAs, 52 miRNAs and 161 long noncoding RNAs. Regulatory example: Results discusses predicted LINC00969 links with hsa-miR-1238-3p, hsa-miR-1207-5p and hsa-miR-484, and links involving hsa-miR-30b-3p. Figure 6 shows the five nominated gene nodes. Source spelling: The last sentence of Results §3.4 prints ATP3B. The nominated gene set and the Figure 6 node identify ATP7B.",
+        "evidence_level": "Predicted regulatory network",
+        "scope": "Database-derived mRNA–miRNA–lncRNA network construction.",
+        "source_locator": "Original PDF p. 3, Methods §2.7, pp. 6 and 8, Results §3.4, and p. 9, Figure 6 and caption.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-6",
+        "component": "KF6: Chemical–gene associations and molecular docking provide a computational comparison framework.",
+        "context": "Comparative Toxicogenomics Database associations and structure-based docking around the five candidate genes.",
+        "finding": "Chemical–gene associations and molecular docking provide a computational comparison framework. Network: 365 chemical entities and 5 genes form the reported network of 370 nodes and 615 edges. Structure selection: The paper reports eight entries associated with all five genes. The vehicle-emission entry was excluded from docking, because the authors found no corresponding molecular structure. Inspected heatmap: Figure 7B displays seven compound rows and five gene columns. The benzo(a)pyrene–FDX1 cell is −11.3 (kcal/mol, as stated in the Abstract). Figure 7C–G shows tretinoin docking poses for the five targets. Naming difference: The heatmap labels one row Ethinyl Estradiol. Results §3.5 lists D004997 as acetoestradiol. Scientific use: The associations and docking scores help generate hypotheses about chemical–gene interactions. The mouse ligation experiment had no compound-treatment arm. Unavailable detail: Supporting Figures S6–S7 and Tables S2–S3 remain unavailable.",
+        "evidence_level": "Computational chemical hypothesis",
+        "scope": "Comparative Toxicogenomics Database associations and structure-based docking around the five candidate genes.",
+        "source_locator": "Original PDF p. 2, Abstract, p. 3, Methods §2.8, p. 8, Results §3.5, and p. 10, Figure 7A–G and caption.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-icm-copper-7",
+        "component": "KF7: The ligation mouse model reproduced the nominated protein-expression directions alongside cardiac injury.",
+        "context": "A sham-versus-LAD-ligation expression experiment, separate from human model-performance and chemical-network analyses.",
+        "finding": "The ligation mouse model reproduced the nominated protein-expression directions alongside cardiac injury. Allocation: Methods reports eight-week-old male C57BL/6 mice, allocated to sham thoracotomy or LAD ligation (n = 6 per group). The collection interval after ligation remains unspecified. Cardiac injury: H&E and Masson stains show injury and fibrosis in the ligation group. Figure 8D shows lower left ventricular ejection fraction and fractional shortening, and a larger left ventricular end-diastolic diameter (mean ± SD, n = 6). Protein directions: Immunohistochemistry and myocardial Western blots show higher DLST and ATP7B signals and lower FDX1, SLC31A1 and DLAT signals in the ligation group. Assay units: The Figure 8E caption gives n = 4 for GAPDH-normalized Western blots. The immunohistochemistry panel has no separate sample-size label. Evidence role: The ligation comparison provides direct cardiac injury and protein-expression observations.",
+        "evidence_level": "Animal injury/expression",
+        "scope": "A sham-versus-LAD-ligation expression experiment, separate from human model-performance and chemical-network analyses.",
+        "source_locator": "Original PDF pp. 3–4, Methods §§2.9–2.14, p. 8, Results §3.6, and p. 11, Figure 8A–E and caption.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies the formal article."
+}
