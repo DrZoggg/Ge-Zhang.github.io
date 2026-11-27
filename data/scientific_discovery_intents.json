@@ -1208,13 +1208,9 @@
           "work_refs": [
             {
               "work_id": "doi-10-1038-s41598-025-98859-3",
-              "question_ids": [],
-              "preview_question_id": null,
-              "preview_note_headings": [
-                "Research question and design",
-                "How treatment groups were compared",
-                "Unresolved source conflict"
-              ]
+              "question_ids": ["doi-10-1038-s41598-025-98859-3--qa-1", "doi-10-1038-s41598-025-98859-3--qa-2", "doi-10-1038-s41598-025-98859-3--qa-3"],
+              "preview_question_id": "doi-10-1038-s41598-025-98859-3--qa-2",
+              "preview_finding_ids": ["KF1", "KF2", "KF3"]
             }
           ]
         },

@@ -1221,8 +1221,8 @@
       "doi": "10.1038/s41598-025-98859-3",
       "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1038/s41598-025-98859-3",
       "publisher_url": null,
@@ -1234,9 +1234,30 @@
       "openalex_id": "https://openalex.org/W4410166236",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1038-s41598-025-98859-3.csv",
+      "question_count": 8,
+      "concept_count": 24,
+      "discovery_layer": {
+        "field_entry": [
+          "EGJ-GIST treatment comparison",
+          "Upper gastrointestinal function after resection"
+        ],
+        "review_topics": [
+          "Patient selection and procedural choices",
+          "Recovery, symptoms and follow-up reporting"
+        ],
+        "scientific_role": "A single-centre retrospective EGJ-GIST comparison supplying procedure, recovery and symptom observations with original allocation and matching-table conflicts preserved.",
+        "evidence_position": "Reported clinical observations for selected 2–5 cm lesions; unresolved matching integrity limits causal and comparative conclusions.",
+        "related_concepts": [
+          "Propensity score matching",
+          "Symptom versus validated quality-of-life measurement",
+          "Risk-based adjuvant treatment"
+        ],
+        "citation_contexts": [
+          "Methods: compare eligibility, anatomical definitions, matching variables and operative choices.",
+          "Discussion: distinguish published recovery/symptom results from verified balance, causal benefit or oncological equivalence."
+        ]
+      }
     },
     {
       "title": "Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics",

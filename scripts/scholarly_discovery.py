@@ -10,8 +10,11 @@ from sync_common import ROOT
 
 QUESTION_PATH = 'research/questions.html'
 QUESTION_JSON_PATH = 'research/questions.json'
-# Keep the reviewed apatinib-to-PO navigation when a new paper links to apatinib.
-RETAINED_BACKLINKS = frozenset({('10.3389/fonc.2021.659217', '10.1200/po.24.00089')})
+# Keep existing reviewed navigation when a new incoming edge would otherwise suppress it.
+RETAINED_BACKLINKS = frozenset({
+    ('10.3389/fonc.2021.659217', '10.1200/po.24.00089'),
+    ('10.1016/j.ejso.2024.108527', '10.1038/s41598-025-98859-3'),
+})
 MIME_SUFFIXES = {
     'application/vnd.citationstyles.csl+json': '.csl.json',
     'application/x-bibtex': '.bib',

@@ -67,3 +67,4 @@
 - [Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension](https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html) — DOI: 10.1186/s10020-024-00963-z
 - [Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders](https://drgezhang.com/papers/doi-10-1002-clc-70019.html) — DOI: 10.1002/clc.70019
 - [Associations between magnesium depletion score and depression among individuals aged 20 to 60 years](https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html) — DOI: 10.1016/j.jtemb.2024.127543
+- [Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis](https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html) — DOI: 10.1038/s41598-025-98859-3

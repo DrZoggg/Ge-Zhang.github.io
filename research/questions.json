@@ -7656,7 +7656,7 @@
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.md",
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "authors": [
         "Shanshan Zhu",
         "Zhen Liu",
@@ -7683,60 +7683,324 @@
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.ris",
       "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.csl.json",
-      "evidence_status": "limited",
-      "question_count": 0,
-      "key_findings": [],
-      "field_entry": [],
-      "review_topics": [],
-      "concepts": {},
-      "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#limited-evidence",
-      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
-      "provenance": [
+      "evidence_status": "reviewed_v2",
+      "question_count": 8,
+      "key_findings": [
         {
-          "url": "https://www.nature.com/articles/s41598-025-98859-3",
-          "label": "Article source",
-          "format": "Official publisher or PMC full text reviewed locally",
-          "locator": "Methods: Study design and patients; Figure 1"
+          "id": "KF1",
+          "claim": "The study defines a selected anatomical and clinical setting for comparing two resection approaches.",
+          "context": "Single-centre retrospective EGJ-GIST cohort, rather than a randomized treatment trial.",
+          "evidence": [
+            {
+              "label": "Study window",
+              "value": "December 2013–November 2023"
+            },
+            {
+              "label": "Eligibility",
+              "value": "Pathological GIST; CT/EUS-confirmed EGJ origin; no other-organ metastasis; tumour diameter 2–5 cm"
+            },
+            {
+              "label": "Anatomical definition",
+              "value": "Gastric GIST upper border within 5 cm of the esophagogastric line, or esophageal GIST lower border less than 2 cm from that line"
+            },
+            {
+              "label": "Reported cohort",
+              "value": "Figure 1: 176 screened, 85 eligible, then 20 matched ER/LR pairs"
+            },
+            {
+              "label": "Selection context",
+              "value": "Exclusions included other treatment modalities, concurrent malignancy, neoadjuvant imatinib, inability to tolerate surgery, incomplete data and absent or short follow-up"
+            }
+          ],
+          "source_locator": "Methods—Study design and patients (Sec3/Par6), Definition of EGJ-GIST (Sec4/Par9); original Figure 1 (Fig1); Results—Baseline clinicopathologic characteristics (Sec11/Par19).",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/0",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf1"
         },
         {
-          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12059082&retmode=xml",
-          "label": "NCBI PMC full-text XML",
-          "format": "Machine-readable full text (JATS XML)",
-          "locator": "PMCID PMC12059082; Methods: Statistical analysis; Results and Table 1"
+          "id": "KF2",
+          "claim": "The matching method is documented, while source inconsistencies leave group allocation and balance unresolved.",
+          "context": "Reported propensity score procedure and original participant table.",
+          "evidence": [
+            {
+              "label": "Matching",
+              "value": "Logistic-regression propensity scores; nearest-neighbour 1:1 matching using age, sex, tumour size, mitotic count and risk classification"
+            },
+            {
+              "label": "Caliper wording",
+              "value": "Methods describes 0.1 times the standard deviation of the propensity score with logit transformation"
+            },
+            {
+              "label": "Eligible allocation conflict",
+              "value": "Abstract: ER 42/LR 43; Results, Figure 1 and Table 1: ER 43/LR 42"
+            },
+            {
+              "label": "Matched gender inconsistency",
+              "value": "Table 1 LR column n=20; male 10 (50%), female 20 (50%)"
+            },
+            {
+              "label": "Additional unit discrepancy",
+              "value": "Table 1 labels tumour size as mm, with values such as 3.2 after matching, while eligibility specifies 2–5 cm. No corrected unit or value is inferred"
+            },
+            {
+              "label": "Consequence",
+              "value": "The reported lack of significant baseline differences does not verify matching balance or remove residual confounding"
+            }
+          ],
+          "source_locator": "Methods—Statistical analysis (Sec9/Par18); Abstract (Par1) versus Results (Sec11/Par19), original Figure 1 and original Table 1 (Tab1); Results—Propensity score matching (Sec12/Par21).",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/1",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf2"
+        },
+        {
+          "id": "KF3",
+          "claim": "The two treatment labels cover different procedural choices guided by lesion anatomy.",
+          "context": "Procedural context relevant to comparing case selection and operative methods.",
+          "evidence": [
+            {
+              "label": "ER operators",
+              "value": "Experienced endoscopists reported to have independently completed at least 200 gastrointestinal submucosal-tumour cases"
+            },
+            {
+              "label": "ER techniques",
+              "value": "ESD, ESE or EFTR selected according to lesion-layer involvement; dissection and closure with clips or sutures described"
+            },
+            {
+              "label": "LR techniques",
+              "value": "Wedge or partial gastric resection where feasible; proximal gastrectomy when EGJ involvement or inability to preserve the cardia required it"
+            },
+            {
+              "label": "Original image",
+              "value": "Figure 2 illustrates endoscopic/EUS localization, marking, dissection, wound closure and a resected specimen"
+            },
+            {
+              "label": "Scope",
+              "value": "Technique descriptions and an illustrative sequence do not establish one technique as generally safer or suitable for every EGJ lesion"
+            }
+          ],
+          "source_locator": "Methods—Endoscopic resection (Sec5/Par11–Par12), Laparoscopic resection (Sec6/Par14–Par15); original Figure 2 (Fig2).",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/2",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf3"
+        },
+        {
+          "id": "KF4",
+          "claim": "The matched outcome table reports shorter fasting and hospital-stay values in its ER column.",
+          "context": "Published recovery measurements from columns labelled ER n=20 and LR n=20, with the matching-integrity issue retained.",
+          "evidence": [
+            {
+              "label": "Postoperative fasting",
+              "value": "ER median 4.0 days (IQR 3.0–5.0); LR 5.5 (4.3–7.8); p=0.005"
+            },
+            {
+              "label": "Hospitalization",
+              "value": "ER median 6.0 days (IQR 5.0–6.8); LR 8.5 (6.0–11.8); p=0.002"
+            },
+            {
+              "label": "Procedure time",
+              "value": "Both column medians 105.0 min; ER IQR 86.0–203.0, LR 87.5–197.0; p=0.633"
+            },
+            {
+              "label": "Interpretation",
+              "value": "Source-reported comparisons in a selected retrospective sample; the allocation/table conflict prevents certifying an adjusted treatment advantage"
+            }
+          ],
+          "source_locator": "Results—Propensity score matching (Sec12/Par21); original Table 2 (Tab2), procedure time, postoperative NPO and hospitalization rows; Table 1 (Tab1) for the unresolved matched-group counts.",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/3",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf4"
+        },
+        {
+          "id": "KF5",
+          "claim": "The article separately reports resection, acute adverse events and longer-term symptom observations.",
+          "context": "Original Table 2 and Figure 3; symptom categories differ between treatment columns.",
+          "evidence": [
+            {
+              "label": "En bloc resection",
+              "value": "ER 18/20 (90%); LR 19/20 (95%); p=1.000"
+            },
+            {
+              "label": "Acute postoperative adverse events",
+              "value": "ER 2/20; LR 3/20; p=0.572"
+            },
+            {
+              "label": "Long-term symptoms",
+              "value": "ER 3/20 (15%), described as lack of appetite; LR 11/20 (55%), described as acid reflux and heartburn; p=0.005"
+            },
+            {
+              "label": "Case descriptions",
+              "value": "Table 3 details two endoscopic and three laparoscopic adverse-event cases; these are case records, not an extra cohort"
+            },
+            {
+              "label": "Measurement boundary",
+              "value": "Long-term symptom reports were used as functional/QoL proxies. Validated patient-reported QoL instruments and routine direct EGJ physiological measurements were lacking"
+            },
+            {
+              "label": "Inference",
+              "value": "Neither nonsignificant acute-event/resection tests nor the symptom comparison establish safety equivalence, causal benefit or objectively verified functional preservation"
+            }
+          ],
+          "source_locator": "Methods—Definition of EGJ-GIST (Sec4/Par10) and Postoperative management and follow-up (Sec8/Par17); Results (Sec12/Par21); original Tables 2–3 (Tab2/Tab3), Figure 3 (Fig3); Discussion (Sec14/Par37).",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/4",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf5"
+        },
+        {
+          "id": "KF6",
+          "claim": "The follow-up provides reported recurrence observations alongside risk-based adjuvant treatment.",
+          "context": "Descriptive oncological follow-up in a small, selected retrospective cohort.",
+          "evidence": [
+            {
+              "label": "Matched follow-up",
+              "value": "Overall mean 42.3±20.5 months; ER 38.2±23.2 versus LR 46.4±17.0 months, p=0.210"
+            },
+            {
+              "label": "Maximum follow-up",
+              "value": "100 months in Discussion"
+            },
+            {
+              "label": "Reported events",
+              "value": "Results report no recurrence among the 85 eligible patients; the abstract reports no recurrence or metastasis in either group"
+            },
+            {
+              "label": "High-risk treatment",
+              "value": "All high-risk patients were reported to receive postoperative adjuvant imatinib and risk-based imaging follow-up"
+            },
+            {
+              "label": "Scope",
+              "value": "Zero observed events with this sample, follow-up and cointervention do not establish oncological equivalence or isolate an effect of resection modality"
+            }
+          ],
+          "source_locator": "Results—Baseline clinicopathologic characteristics (Sec11/Par19), Propensity score matching (Sec12/Par21), Follow-up strategies and outcomes for high-risk EGJ-GIST (Sec13/Par24); original Table 2 follow-up row; Discussion (Sec14/Par35–Par37); Abstract (Par1).",
+          "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/5",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf6"
         }
       ],
-      "author_evidence_note": {
-        "reviewed_on": "2026-10-27",
-        "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3",
-        "sections": [
-          {
-            "heading": "Research question and design",
-            "text": "This single-centre retrospective study compared endoscopic and laparoscopic resection for pathologically confirmed gastrointestinal stromal tumours at the esophagogastric junction. The stated study window was December 2013 to November 2023, and eligibility focused on tumours measuring 2–5 cm. This is an observational treatment comparison, not a randomized trial.",
-            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-            "source_locator": "Methods: Study design and patients; Figure 1"
-          },
-          {
-            "heading": "How treatment groups were compared",
-            "text": "The authors describe nearest-neighbour propensity matching at a 1:1 ratio, using age, sex, tumour size, mitotic count and risk classification. This establishes the reported analytical approach; it does not verify that matching achieved balance or removed unmeasured confounding. No comparative safety, recovery or oncological benefit is endorsed here.",
-            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-            "source_locator": "Methods: Statistical analysis; Tables 1–3"
-          },
-          {
-            "heading": "Unresolved source conflict",
-            "text": "The abstract reverses the unmatched ER/LR allocation relative to the Results and Table 1. More substantially, the matched laparoscopic group is labelled n=20 but lists 10 males and 20 females. The formal PDF confirms the table inconsistency, so matched-group balance remains unverified.",
-            "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-            "source_locator": "Abstract versus Results: Baseline clinicopathologic characteristics; Table 1 after PSM, LR Gender; publisher PDF p. 5"
-          }
+      "field_entry": [
+        "EGJ-GIST treatment comparison",
+        "Upper gastrointestinal function after resection"
+      ],
+      "review_topics": [
+        "Patient selection and procedural choices",
+        "Recovery, symptoms and follow-up reporting"
+      ],
+      "concepts": {
+        "conditions": [
+          "Esophagogastric-junction gastrointestinal stromal tumour",
+          "Gastroesophageal reflux symptoms"
+        ],
+        "treatments": [
+          "Endoscopic resection",
+          "Laparoscopic resection",
+          "Endoscopic submucosal dissection",
+          "Endoscopic submucosal excavation",
+          "Endoscopic full-thickness resection",
+          "Risk-based adjuvant imatinib"
+        ],
+        "methods": [
+          "Retrospective cohort",
+          "Propensity score matching",
+          "Nearest-neighbour matching",
+          "CT and endoscopic ultrasound",
+          "Postoperative pathology"
+        ],
+        "outcomes": [
+          "Postoperative fasting",
+          "Hospital stay",
+          "En bloc resection",
+          "Postoperative adverse events",
+          "Long-term symptoms",
+          "Reported recurrence"
+        ],
+        "evidence_concepts": [
+          "Selection criteria",
+          "Matched-group accounting",
+          "Residual confounding",
+          "Symptom versus validated QoL measurement",
+          "Oncological follow-up with cointervention"
         ]
       },
-      "scope": "Study design and unresolved matching integrity; treatment comparisons are not verified.",
-      "evidence_notice": "Study design and unresolved matching integrity; treatment comparisons are not verified.",
-      "evidence_scope": null,
-      "limitations": [
-        "Reported methods are summarized without adopting disputed participant allocations.",
-        "A corrected allocation and matching table are required before a complete V2 comparison."
+      "profile_type": "clinical_cohort",
+      "study_profile": {
+        "profile_type": "clinical_cohort",
+        "study_design": "Single-centre retrospective treatment comparison, December 2013–November 2023, with reported 1:1 nearest-neighbour propensity score matching.",
+        "evidence_type": "Observational clinical treatment and follow-up records; reported matched comparisons with unresolved participant-allocation and table-accounting inconsistencies.",
+        "population": "Pathologically confirmed, nonmetastatic 2–5 cm EGJ-GIST treated by endoscopic or laparoscopic resection at the First Affiliated Hospital of Zhengzhou University, China, under the stated eligibility rules.",
+        "primary_endpoint": "Recovery, resection and adverse-event comparisons; the article does not specify a formal primary-versus-secondary endpoint hierarchy.",
+        "secondary_endpoint": "Reported recurrence and long-term symptom follow-up; structured quality-of-life instruments and routine direct physiological assessment were not used.",
+        "unique_total_n": 85,
+        "cohorts": [
+          {
+            "name": "Eligible retrospective EGJ-GIST cohort",
+            "n": 85,
+            "role": "Article-reported eligible analytical patients. The 20-pair matched analysis is a subset, not an additional cohort; unmatched treatment allocations conflict across source sections."
+          }
+        ],
+        "data_modalities": [
+          "Clinical and operative records",
+          "CT/endoscopic-ultrasound localization",
+          "Postoperative pathology and immunohistochemistry",
+          "Postoperative recovery and adverse-event records",
+          "Outpatient/telephone and imaging follow-up"
+        ],
+        "external_validation": false,
+        "counting_note": "The total eligible cohort is consistently reported as 85 and the matched analysis as 20 patients per treatment column (40 of those 85). These are not added. The abstract gives eligible ER 42/LR 43; Results, Figure 1 and Table 1 give ER 43/LR 42. The abstract also reports 176 reviewed patients as ER 82/LR 94, while Figure 1 is a screening flow with exclusions including other modalities. No corrected allocation is inferred. Matched Table 1 labels LR n=20 but lists 10 males plus 20 females; the 50% labels do not reconcile those counts. The published total 85 and matched 40 are described as reported sample sizes, without certifying participant-level matching integrity."
+      },
+      "study_profile_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/study_profile",
+      "model_profile": null,
+      "model_profile_source": null,
+      "narrative_genre": null,
+      "gold_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json",
+      "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1038-s41598-025-98859-3.json",
+      "gold_content_sha256": "fea277900d1dd93e9b9da49c0907f331a25eae6ae9097bf391527fc2c2e574f0",
+      "provenance": {
+        "publisher_url": "https://www.nature.com/articles/s41598-025-98859-3",
+        "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12059082/",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40335605/",
+        "doi_url": "https://doi.org/10.1038/s41598-025-98859-3",
+        "original_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12059082/fullTextXML",
+        "official_manifest_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12059082.1/PMC12059082.1.json",
+        "pmcid": "PMC12059082",
+        "version_of_record": "Scientific Reports. 2025;15(1):15916; published 7 May 2025. Original JATS identifies PMC12059082.1, PMID40335605, the same DOI/title and fifteen ordered authors.",
+        "license": "The original article states Creative Commons Attribution-NonCommercial-NoDerivatives 4.0, https://creativecommons.org/licenses/by-nc-nd/4.0/. This page is an independently written factual source summary; original article images remain linked at their source.",
+        "ethics": "Original Methods/Declarations report approval 2022-KY-1236-001 by the First Affiliated Hospital of Zhengzhou University and waiver of informed consent for this retrospective anonymized study.",
+        "data_availability": "Original back-matter Data availability states that datasets generated/analysed are available from the corresponding author on reasonable request.",
+        "source_note_allocation": "Abstract reports 176 reviewed patients as ER 82/LR 94 and 85 eligible as ER 42/LR 43. Results, Figure 1 and Table 1 give eligible ER 43/LR 42. The original flowchart includes exclusions for other modalities. No corrected allocation or reconstruction of 176 into analytical treatment cohorts is inferred.",
+        "source_note_matching": "Table 1 after PSM LR n=20 lists male 10(50%) and female 20(50%). The original cell values are retained. Reported nonsignificant baseline tests do not establish matching balance.",
+        "source_note_size_units": "Table 1 labels its tumour-size row mm, but prints values around 2.8–3.8 while Methods eligibility is 2–5 cm. The unit is not silently relabelled or numerically converted.",
+        "source_note_symptoms": "Table 2/Figure 3 distinguish lack of appetite in ER from acid reflux and heartburn in LR. Discussion acknowledges missing structured validated QoL tools and incomplete direct/routine EGJ functional assessment.",
+        "source_note_followup": "Mean matched follow-up 42.3±20.5 months; Table 2 ER 38.2±23.2 and LR 46.4±17.0 months; maximum 100 months in Discussion. High-risk patients received adjuvant imatinib, so recurrence observations are not surgery-only effects.",
+        "source_note_case_table": "Table 3 is a five-case adverse-event description. Its second case prints procedure time 790 min and method EFR; those are source cells, not corrected values or a separately added cohort.",
+        "evidence_basis": "Complete official EuropePMC JATS with original Tables 1–3 and full Methods/Results/Discussion; original Figures 1–3 mapped through the matching officialPMC version manifest and visually read; protected publication/citation masters. Article-text and figure/table conflicts are described without inventing corrected observations.",
+        "pmc_efetch_xml_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=12059082&retmode=xml"
+      },
+      "scientific_role": "A single-centre retrospective EGJ-GIST comparison supplying procedure, recovery and symptom observations with original allocation and matching-table conflicts preserved.",
+      "evidence_position": "Reported clinical observations for selected 2–5 cm lesions; unresolved matching integrity limits causal and comparative conclusions.",
+      "related_concepts": [
+        "Propensity score matching",
+        "Symptom versus validated quality-of-life measurement",
+        "Risk-based adjuvant treatment"
       ],
-      "scope_source": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3/scope"
+      "citation_contexts": [
+        "Methods: compare eligibility, anatomical definitions, matching variables and operative choices.",
+        "Discussion: distinguish published recovery/symptom results from verified balance, causal benefit or oncological equivalence."
+      ],
+      "evidence_scope": {
+        "supports": [
+          "The article’s eligibility criteria, anatomical definitions and stated propensity matching procedure.",
+          "Exact published Table 2 comparison values and symptom categories, attributed to their ER/LR columns.",
+          "Reported recurrence follow-up and high-risk adjuvant-treatment context."
+        ],
+        "does_not_establish": [
+          "A corrected unmatched treatment allocation or verified matched-group balance.",
+          "Causal recovery, safety, functional or oncological superiority of ER over LR; nonsignificant tests are not equivalence tests.",
+          "A validated quality-of-life improvement, directly measured EGJ functional preservation or recurrence-risk equivalence.",
+          "Generalization to larger/metastatic lesions, neoadjuvant-treated patients or routine operators outside the stated selection and expertise."
+        ]
+      },
+      "limitations": [
+        "The abstract reverses the eligible unmatched ER/LR allocation relative to the Results, Figure 1 and Table 1; no corrected allocation is supplied here.",
+        "Matched Table 1 lists 10 males and 20 females in an LR group labelled n=20. Its tumour-size row is labelled mm although the eligibility range is 2–5 cm. Group balance and corrected cell/unit values remain unresolved.",
+        "Treatment choice was retrospective and anatomically selected at one centre, with small matched columns and experienced ER operators. Matching cannot remove unmeasured confounding, and its integrity is itself unresolved here.",
+        "Long-term symptom records used different symptom categories and lacked validated structured QoL instruments or routine direct EGJ functional assessment. The reported difference does not certify functional or safety superiority.",
+        "Follow-up averaged about 3.5 years; high-risk patients also received adjuvant imatinib. Zero reported recurrence does not establish oncological equivalence, and prospective multicentre/longer follow-up plans in Discussion are proposals, not completed validation."
+      ],
+      "scope_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/evidence_scope"
     },
     {
       "id": "doi-10-2147-jir-s495784",
@@ -23451,6 +23715,132 @@
       "evidence_refs_status": "resolved"
     },
     {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-1",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 1,
+      "question": "Which patients and anatomical setting does this study describe?",
+      "answer": "It is a single-centre retrospective study from December 2013 to November 2023 of pathologically confirmed, nonmetastatic 2–5 cm EGJ-GIST treated by ER or LR. The EGJ definition includes gastric lesions with an upper border within 5 cm of the esophagogastric line and esophageal lesions with a lower border less than 2 cm from it. Figure 1 reports 85 eligible patients and 20 matched pairs.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-1",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/0/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/0/answer",
+      "answer_sha256": "4d04c5bb55615dc771565ff8fcd1fedb3431baf53b95d7ce4e71d669f1e8fefa",
+      "evidence_refs": [
+        "KF1"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-2",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 2,
+      "question": "How was propensity matching performed, and what is unresolved?",
+      "answer": "The authors describe 1:1 nearest-neighbour matching from logistic-regression propensity scores using age, sex, tumour size, mitotic count and risk classification, with the stated 0.1-SD/logit caliper. The abstract gives ER 42/LR 43, whereas Results, Figure 1 and Table 1 give ER 43/LR 42. After matching, Table 1 labels LR n=20 but prints 10 males and 20 females. These original inconsistencies leave matching balance and exact allocation unresolved.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-2",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/1/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/1/answer",
+      "answer_sha256": "890289ac3c2d28b89b907e2bddc95b96187b344fa23f0a011fd55f007f2e4b15",
+      "evidence_refs": [
+        "KF2"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-3",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 3,
+      "question": "What procedures are represented by ER and LR?",
+      "answer": "ER includes ESD, ESE or EFTR selected by lesion-layer involvement and was performed by experienced endoscopists. LR may involve wedge/partial resection or proximal gastrectomy when the cardia cannot be preserved. The labels therefore represent anatomically selected procedural strategies, not a single standardized operation on every patient.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-3",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/2/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/2/answer",
+      "answer_sha256": "df70b77caf35e2afce1310675748063cfc903bd5d1e5b7990bb3cb6e609e3672",
+      "evidence_refs": [
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-4",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 4,
+      "question": "What recovery results are printed in the matched comparison?",
+      "answer": "Table 2 reports median postoperative fasting of 4.0 days in ER versus 5.5 in LR (p=0.005), and hospitalization of 6.0 versus 8.5 days (p=0.002). Both procedure-time medians are 105 min (p=0.633). These are the published column-wise results; unresolved allocation and matching-table counts prevent certifying a treatment advantage.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-4",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/3/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/3/answer",
+      "answer_sha256": "ea8015158ace7f6bb861eb234e80e91899008747d76e8b35e890eff8aba58638",
+      "evidence_refs": [
+        "KF2",
+        "KF4"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-5",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 5,
+      "question": "What resection and acute adverse-event counts are reported?",
+      "answer": "Table 2 reports en bloc resection in 18/20 ER and 19/20 LR patients (p=1.000), and acute postoperative adverse events in 2/20 and 3/20 (p=0.572). Table 3 supplies the corresponding five case descriptions. Small counts and nonsignificant tests do not demonstrate equivalent safety or equivalent resection outcomes.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-5",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/4/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/4/answer",
+      "answer_sha256": "7d13f0a1a2777cecd6da2c467a407e8160285c9283ac28ad5f7381eec87bf3ab",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-6",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 6,
+      "question": "Do the long-term symptom results establish better quality of life or EGJ function?",
+      "answer": "The original table and Figure 3 report 3/20 ER patients with lack of appetite and 11/20 LR patients with acid reflux/heartburn (p=0.005 for the long-term outcome comparison). These are different reported symptom categories. The Discussion acknowledges no structured validated QoL instruments and no routine direct physiological assessment, so the symptom observations are not a verified QoL or anatomical-function benefit.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-6",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/5/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/5/answer",
+      "answer_sha256": "7712f15e8bb113cf5d0886f286b69f187dfc09b1c0f05b74a172e61b20606c28",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-7",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 7,
+      "question": "How should the absence of reported recurrence be interpreted?",
+      "answer": "Results report no recurrence in the 85 eligible patients; matched follow-up averaged 42.3±20.5 months, with maximum 100 months reported in Discussion. All high-risk patients received postoperative adjuvant imatinib and imaging surveillance. These observations describe the treated cohort and do not establish oncological equivalence or isolate the effect of ER versus LR.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-7",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/6/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/6/answer",
+      "answer_sha256": "bfd75ce8d8f3442efbd130d9f129ad3c4e218caf9e482d91bd199af070497322",
+      "evidence_refs": [
+        "KF6"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3--qa-8",
+      "work_id": "doi-10-1038-s41598-025-98859-3",
+      "qa_index": 8,
+      "question": "How can this paper be used in a treatment-methods comparison?",
+      "answer": "It can support discussion of EGJ-specific patient selection, endoscopic versus laparoscopic procedural choices, and the recovery and symptom outcomes a retrospective comparison recorded. Quote numerical results as reported, preserve the allocation/table inconsistencies, and distinguish symptoms and co-treated follow-up from causal treatment benefit or validated QoL improvement.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-8",
+      "question_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/7/question",
+      "answer_source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/7/answer",
+      "answer_sha256": "45ff5843b7d21bcb3e7280d3cdc7fea5c385391ce30da8183c7811ee9d97b052",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
       "id": "doi-10-2147-jir-s495784--qa-1",
       "work_id": "doi-10-2147-jir-s495784",
       "qa_index": 1,
@@ -29136,37 +29526,111 @@
           "work_refs": [
             {
               "work_id": "doi-10-1038-s41598-025-98859-3",
-              "question_ids": [],
-              "preview_question_id": null,
+              "question_ids": [
+                "doi-10-1038-s41598-025-98859-3--qa-1",
+                "doi-10-1038-s41598-025-98859-3--qa-2",
+                "doi-10-1038-s41598-025-98859-3--qa-3"
+              ],
+              "preview_question_id": "doi-10-1038-s41598-025-98859-3--qa-2",
               "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html",
               "doi": "10.1038/s41598-025-98859-3",
               "doi_url": "https://doi.org/10.1038/s41598-025-98859-3",
-              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#limited-evidence",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#cite-this-paper",
-              "author_note_previews": [
+              "finding_previews": [
                 {
-                  "heading": "Research question and design",
-                  "text": "This single-centre retrospective study compared endoscopic and laparoscopic resection for pathologically confirmed gastrointestinal stromal tumours at the esophagogastric junction. The stated study window was December 2013 to November 2023, and eligibility focused on tumours measuring 2–5 cm. This is an observational treatment comparison, not a randomized trial.",
-                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-                  "source_locator": "Methods: Study design and patients; Figure 1",
-                  "reviewed_on": "2026-10-27",
-                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                  "id": "KF1",
+                  "claim": "The study defines a selected anatomical and clinical setting for comparing two resection approaches.",
+                  "context": "Single-centre retrospective EGJ-GIST cohort, rather than a randomized treatment trial.",
+                  "evidence": [
+                    {
+                      "label": "Study window",
+                      "value": "December 2013–November 2023"
+                    },
+                    {
+                      "label": "Eligibility",
+                      "value": "Pathological GIST; CT/EUS-confirmed EGJ origin; no other-organ metastasis; tumour diameter 2–5 cm"
+                    },
+                    {
+                      "label": "Anatomical definition",
+                      "value": "Gastric GIST upper border within 5 cm of the esophagogastric line, or esophageal GIST lower border less than 2 cm from that line"
+                    },
+                    {
+                      "label": "Reported cohort",
+                      "value": "Figure 1: 176 screened, 85 eligible, then 20 matched ER/LR pairs"
+                    },
+                    {
+                      "label": "Selection context",
+                      "value": "Exclusions included other treatment modalities, concurrent malignancy, neoadjuvant imatinib, inability to tolerate surgery, incomplete data and absent or short follow-up"
+                    }
+                  ],
+                  "source_locator": "Methods—Study design and patients (Sec3/Par6), Definition of EGJ-GIST (Sec4/Par9); original Figure 1 (Fig1); Results—Baseline clinicopathologic characteristics (Sec11/Par19).",
+                  "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/0",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf1"
                 },
                 {
-                  "heading": "How treatment groups were compared",
-                  "text": "The authors describe nearest-neighbour propensity matching at a 1:1 ratio, using age, sex, tumour size, mitotic count and risk classification. This establishes the reported analytical approach; it does not verify that matching achieved balance or removed unmeasured confounding. No comparative safety, recovery or oncological benefit is endorsed here.",
-                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-                  "source_locator": "Methods: Statistical analysis; Tables 1–3",
-                  "reviewed_on": "2026-10-27",
-                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                  "id": "KF2",
+                  "claim": "The matching method is documented, while source inconsistencies leave group allocation and balance unresolved.",
+                  "context": "Reported propensity score procedure and original participant table.",
+                  "evidence": [
+                    {
+                      "label": "Matching",
+                      "value": "Logistic-regression propensity scores; nearest-neighbour 1:1 matching using age, sex, tumour size, mitotic count and risk classification"
+                    },
+                    {
+                      "label": "Caliper wording",
+                      "value": "Methods describes 0.1 times the standard deviation of the propensity score with logit transformation"
+                    },
+                    {
+                      "label": "Eligible allocation conflict",
+                      "value": "Abstract: ER 42/LR 43; Results, Figure 1 and Table 1: ER 43/LR 42"
+                    },
+                    {
+                      "label": "Matched gender inconsistency",
+                      "value": "Table 1 LR column n=20; male 10 (50%), female 20 (50%)"
+                    },
+                    {
+                      "label": "Additional unit discrepancy",
+                      "value": "Table 1 labels tumour size as mm, with values such as 3.2 after matching, while eligibility specifies 2–5 cm. No corrected unit or value is inferred"
+                    },
+                    {
+                      "label": "Consequence",
+                      "value": "The reported lack of significant baseline differences does not verify matching balance or remove residual confounding"
+                    }
+                  ],
+                  "source_locator": "Methods—Statistical analysis (Sec9/Par18); Abstract (Par1) versus Results (Sec11/Par19), original Figure 1 and original Table 1 (Tab1); Results—Propensity score matching (Sec12/Par21).",
+                  "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/1",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf2"
                 },
                 {
-                  "heading": "Unresolved source conflict",
-                  "text": "The abstract reverses the unmatched ER/LR allocation relative to the Results and Table 1. More substantially, the matched laparoscopic group is labelled n=20 but lists 10 males and 20 females. The formal PDF confirms the table inconsistency, so matched-group balance remains unverified.",
-                  "source_url": "https://www.nature.com/articles/s41598-025-98859-3",
-                  "source_locator": "Abstract versus Results: Baseline clinicopathologic characteristics; Table 1 after PSM, LR Gender; publisher PDF p. 5",
-                  "reviewed_on": "2026-10-27",
-                  "source_record": "data/limited_evidence.json#/papers/10.1038~1s41598-025-98859-3"
+                  "id": "KF3",
+                  "claim": "The two treatment labels cover different procedural choices guided by lesion anatomy.",
+                  "context": "Procedural context relevant to comparing case selection and operative methods.",
+                  "evidence": [
+                    {
+                      "label": "ER operators",
+                      "value": "Experienced endoscopists reported to have independently completed at least 200 gastrointestinal submucosal-tumour cases"
+                    },
+                    {
+                      "label": "ER techniques",
+                      "value": "ESD, ESE or EFTR selected according to lesion-layer involvement; dissection and closure with clips or sutures described"
+                    },
+                    {
+                      "label": "LR techniques",
+                      "value": "Wedge or partial gastric resection where feasible; proximal gastrectomy when EGJ involvement or inability to preserve the cardia required it"
+                    },
+                    {
+                      "label": "Original image",
+                      "value": "Figure 2 illustrates endoscopic/EUS localization, marking, dissection, wound closure and a resected specimen"
+                    },
+                    {
+                      "label": "Scope",
+                      "value": "Technique descriptions and an illustrative sequence do not establish one technique as generally safer or suitable for every EGJ lesion"
+                    }
+                  ],
+                  "source_locator": "Methods—Endoscopic resection (Sec5/Par11–Par12), Laparoscopic resection (Sec6/Par14–Par15); original Figure 2 (Fig2).",
+                  "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/2",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf3"
                 }
               ]
             }
@@ -31595,6 +32059,92 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70725.html#paper-discovery",
       "evidence_scope_kind": "does_not_establish",
       "evidence_scope": "A whole-proteome survey or equivalence to unfractionated plasma protein profiling."
+    },
+    {
+      "id": "doi-10-1038-s41598-025-98859-3",
+      "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
+      "doi": "10.1038/s41598-025-98859-3",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html",
+      "question": "How was propensity matching performed, and what is unresolved?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#qa-2",
+      "key_finding": {
+        "id": "KF2",
+        "claim": "The matching method is documented, while source inconsistencies leave group allocation and balance unresolved.",
+        "context": "Reported propensity score procedure and original participant table.",
+        "evidence": [
+          {
+            "label": "Matching",
+            "value": "Logistic-regression propensity scores; nearest-neighbour 1:1 matching using age, sex, tumour size, mitotic count and risk classification"
+          },
+          {
+            "label": "Caliper wording",
+            "value": "Methods describes 0.1 times the standard deviation of the propensity score with logit transformation"
+          },
+          {
+            "label": "Eligible allocation conflict",
+            "value": "Abstract: ER 42/LR 43; Results, Figure 1 and Table 1: ER 43/LR 42"
+          },
+          {
+            "label": "Matched gender inconsistency",
+            "value": "Table 1 LR column n=20; male 10 (50%), female 20 (50%)"
+          },
+          {
+            "label": "Additional unit discrepancy",
+            "value": "Table 1 labels tumour size as mm, with values such as 3.2 after matching, while eligibility specifies 2–5 cm. No corrected unit or value is inferred"
+          },
+          {
+            "label": "Consequence",
+            "value": "The reported lack of significant baseline differences does not verify matching balance or remove residual confounding"
+          }
+        ],
+        "source_locator": "Methods—Statistical analysis (Sec9/Par18); Abstract (Par1) versus Results (Sec11/Par19), original Figure 1 and original Table 1 (Tab1); Results—Propensity score matching (Sec12/Par21).",
+        "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/key_findings/1",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#kf2"
+      },
+      "key_finding_basis": "question_evidence_ref",
+      "source": "data/deep_geo/doi-10-1038-s41598-025-98859-3.json#/qa/1/question",
+      "profile_type": "clinical_cohort",
+      "narrative_genre": null,
+      "concepts": [
+        "Esophagogastric-junction gastrointestinal stromal tumour",
+        "Gastroesophageal reflux symptoms",
+        "Endoscopic resection",
+        "Laparoscopic resection",
+        "Endoscopic submucosal dissection",
+        "Endoscopic submucosal excavation",
+        "Endoscopic full-thickness resection",
+        "Risk-based adjuvant imatinib",
+        "Retrospective cohort",
+        "Propensity score matching",
+        "Nearest-neighbour matching",
+        "CT and endoscopic ultrasound",
+        "Postoperative pathology",
+        "Postoperative fasting",
+        "Hospital stay",
+        "En bloc resection",
+        "Postoperative adverse events",
+        "Long-term symptoms",
+        "Reported recurrence",
+        "Selection criteria",
+        "Matched-group accounting",
+        "Residual confounding",
+        "Symptom versus validated QoL measurement",
+        "Oncological follow-up with cointervention"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1038-s41598-025-98859-3.csl.json",
+      "field_entry": [
+        "EGJ-GIST treatment comparison",
+        "Upper gastrointestinal function after resection"
+      ],
+      "review_topics": [
+        "Patient selection and procedural choices",
+        "Recovery, symptoms and follow-up reporting"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html#paper-discovery",
+      "evidence_scope_kind": "does_not_establish",
+      "evidence_scope": "A corrected unmatched treatment allocation or verified matched-group balance."
     },
     {
       "id": "doi-10-2147-jir-s495784",
