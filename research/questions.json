@@ -28356,6 +28356,51 @@
               ]
             }
           ]
+        },
+        {
+          "id": "gist-site-management-3",
+          "question": "How do studies of esophageal and junctional GIST differ in how they report resection and patient selection?",
+          "question_zh": "食管与胃食管交界部GIST研究所报告的切除术式和患者选择有何不同？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-ejso-2024-108527",
+              "question_ids": [
+                "doi-10-1016-j-ejso-2024-108527--qa-2"
+              ],
+              "preview_question_id": null,
+              "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html",
+              "doi": "10.1016/j.ejso.2024.108527",
+              "doi_url": "https://doi.org/10.1016/j.ejso.2024.108527",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#ev-scope",
+              "citation_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html#cite-this-paper"
+            }
+          ],
+          "guide_ref": {
+            "slug": "gist-resection-evidence",
+            "section_id": "resection-evidence"
+          },
+          "context_answer": {
+            "kind": "source_linked_methodological_synthesis",
+            "answer": "The esophageal series reports treatment allocation in 23 patients. Fifteen underwent endoscopic resection, seven had surgery, including two after neoadjuvant imatinib, and one was managed conservatively. The 15 endoscopic procedures included nine STER, four ESD and two EMBL. Twelve tumors in that subgroup measured no more than 30 mm. The junctional study focused on lesions measuring 2–5 cm and retrospectively compared endoscopic and laparoscopic resection using propensity matching. The abstract and Results disagree on unmatched allocation, and Table 1 labels the matched laparoscopic group n=20 while listing 10 men and 20 women. The studies describe different patient selection and procedure reporting. Their reported results leave comparative effectiveness and a general size cutoff unestablished.",
+            "answer_zh": "食管病例系列报告23名患者的治疗分配。15名接受内镜切除，7名接受手术（其中2名先接受新辅助伊马替尼），1名接受保守管理。15例内镜操作包括9例STER、4例ESD和2例EMBL，其中12个肿瘤不超过30毫米。胃食管交界部研究以2–5厘米病灶为主要纳入范围，用倾向评分匹配回顾性比较内镜和腹腔镜切除。摘要与结果中的未匹配组人数不一致，表1的匹配后腹腔镜组标注20人，但性别行列出10名男性和20名女性。两项研究描述了不同的患者选择和术式，现有结果尚不足以确认比较疗效或普适病灶尺寸阈值。",
+            "guide_url": "https://drgezhang.com/research/gist-resection-evidence.html#resection-evidence",
+            "sources": [
+              {
+                "id": "doi-10-1016-j-ejso-2024-108527",
+                "doi": "10.1016/j.ejso.2024.108527",
+                "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
+                "url": "https://www.sciencedirect.com/science/article/pii/S0748798324005791",
+                "locator": "Publisher-layout PDF pp. 3–4, Results 3.1–3.3 and Tables 1–3. See p. 4 Table 2, Results 3.3/Table 3 and p. 5 Discussion for selected procedure and size interpretation."
+              },
+              {
+                "id": "doi-10-1038-s41598-025-98859-3",
+                "doi": "10.1038/s41598-025-98859-3",
+                "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
+                "url": "https://www.nature.com/articles/s41598-025-98859-3",
+                "locator": "Methods: Study design and patients and Statistical analysis; Figure 1. Abstract vs Results and Table 1 for unmatched allocations; publisher PDF p. 5, Table 1, LR Gender after PSM."
+              }
+            ]
+          }
         }
       ],
       "source_context_kind": "review"
