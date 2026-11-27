@@ -58,3 +58,8 @@
 - [Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis](https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html) — DOI: 10.32604/or.2025.059290
 - [Real-world safety of aliskiren in primary hypertension: A cross-database study](https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html) — DOI: 10.1371/journal.pone.0346326
 - [A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy](https://drgezhang.com/papers/doi-10-1111-jcmm-70475.html) — DOI: 10.1111/jcmm.70475
+- [Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions](https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html) — DOI: 10.1016/j.cbi.2025.111421
+- [Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma](https://drgezhang.com/papers/b4galt2.html) — DOI: 10.1136/jitc-2024-010787
+- [Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models](https://drgezhang.com/papers/doi-10-1200-po-24-00875.html) — DOI: 10.1200/po-24-00875
+- [Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis](https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html) — DOI: 10.3389/fonc.2025.1538574
+- [Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay](https://drgezhang.com/papers/doi-10-1111-odi-70054.html) — DOI: 10.1111/odi.70054

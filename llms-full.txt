@@ -321,7 +321,7 @@
 - DOI: 10.1016/j.cbi.2025.111421
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-cbi-2025-111421.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma
 - Journal: Journal for ImmunoTherapy of Cancer
@@ -330,7 +330,7 @@
 - DOI: 10.1136/jitc-2024-010787
 - HTML: https://drgezhang.com/papers/b4galt2.html
 - Markdown: https://drgezhang.com/papers/b4galt2.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes
 - Journal: Med Research
@@ -348,7 +348,7 @@
 - DOI: 10.1200/po-24-00875
 - HTML: https://drgezhang.com/papers/doi-10-1200-po-24-00875.html
 - Markdown: https://drgezhang.com/papers/doi-10-1200-po-24-00875.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis
 - Journal: Frontiers in Oncology
@@ -357,7 +357,7 @@
 - DOI: 10.3389/fonc.2025.1538574
 - HTML: https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay
 - Journal: Oral Diseases
@@ -366,7 +366,7 @@
 - DOI: 10.1111/odi.70054
 - HTML: https://drgezhang.com/papers/doi-10-1111-odi-70054.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-odi-70054.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy
 - Journal: International Journal of Nanomedicine
