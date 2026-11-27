@@ -11,7 +11,16 @@ const tracker = read('assets/research-handoff.js');
 const map = '/assets/research/gse59867-sample-followup-map.html';
 const targets = [...read('sitemap.xml').matchAll(/<loc>https:\/\/drgezhang\.com(\/research\/[^<]+)<\/loc>/g)]
   .map(match => match[1]).filter(route => route !== '/research/questions.html').concat(map);
-assert.equal(targets.length, 6);
+const expectedTargets = [
+  '/research/dcm-hf-circulating-biomarkers.html',
+  '/research/circadian-evidence-levels.html',
+  '/research/cardiovascular-prediction-evidence.html',
+  '/research/atherosclerosis-cell-mechanisms.html',
+  '/research/cancer-omics-validation.html',
+  '/research/gist-resection-evidence.html',
+  map,
+];
+assert.deepEqual([...targets].sort(), [...expectedTargets].sort());
 
 function install(initializer, address, referrer = '') {
   const window = {location: new URL(address)};
@@ -121,4 +130,4 @@ for (const route of targets) {
   assert.equal(www.loaders.length, 1);
   assert.equal(www.window.dataLayer[1][2].page_referrer, '');
 }
-console.log('RESEARCH MEASUREMENT PASS: six generated pages, one config, fixed ChatGPT labels, two activation types and no production load on previews');
+console.log('RESEARCH MEASUREMENT PASS: ' + targets.length + ' generated pages, one config, fixed ChatGPT labels, two activation types and no production load on previews');
