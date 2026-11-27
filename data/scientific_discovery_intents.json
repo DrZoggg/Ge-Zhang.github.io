@@ -1167,10 +1167,14 @@
             },
             {
               "work_id": "doi-10-1016-j-colsurfb-2026-116261",
-              "question_ids": [],
-              "preview_question_id": null,
-              "preview_note_headings": [
-                "Vascular-interface contribution"
+              "question_ids": [
+                "doi-10-1016-j-colsurfb-2026-116261--qa-4",
+                "doi-10-1016-j-colsurfb-2026-116261--qa-5"
+              ],
+              "preview_question_id": "doi-10-1016-j-colsurfb-2026-116261--qa-5",
+              "preview_finding_ids": [
+                "KF5",
+                "KF6"
               ]
             }
           ]

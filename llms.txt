@@ -86,3 +86,4 @@
 - [Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells](https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html) — DOI: 10.3980/j.issn.1672-5123.2020.12.13
 - [Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension](https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.html) — DOI: 10.1186/s12931-024-02978-w
 - [Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology](https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html) — DOI: 10.14283/jpad.2024.161
+- [Engineered ZFP36-overexpressing AC16 cell-derived extracellular vesicles attenuate ferroptosis-related endothelial injury and functionalize NiTi vascular interfaces](https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html) — DOI: 10.1016/j.colsurfb.2026.116261

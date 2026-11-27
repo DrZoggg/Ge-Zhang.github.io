@@ -15,8 +15,8 @@
       "doi": "10.1016/j.colsurfb.2026.116261",
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.colsurfb.2026.116261",
       "publisher_url": null,
@@ -28,9 +28,30 @@
       "openalex_id": null,
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-colsurfb-2026-116261.csv",
+      "question_count": 8,
+      "concept_count": 29,
+      "discovery_layer": {
+        "field_entry": [
+          "Engineered extracellular vesicles",
+          "Bioactive vascular implant interfaces"
+        ],
+        "review_topics": [
+          "Endothelial ferroptosis-related injury",
+          "EV-functionalized nickel-titanium biomaterials"
+        ],
+        "scientific_role": "Connects donor-cell-engineered EVs with endothelial protection, direct myocardial delivery and PDA/HA-based NiTi surface functionalization.",
+        "evidence_position": "Preclinical preparation characterization, cell stress/intervention assays, mouse cardiac-function observations and short-term rat arterial tissue readouts.",
+        "related_concepts": [
+          "RSL3 endothelial injury",
+          "Polydopamine/hyaluronic acid",
+          "Lipid peroxidation"
+        ],
+        "citation_contexts": [
+          "Methods: distinguish particle-based EV dosing, protein-based myocardial delivery and material-associated release.",
+          "Discussion: compare engineered EV activity in free, direct-contact and short-term implant settings."
+        ]
+      }
     },
     {
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",

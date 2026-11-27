@@ -32,8 +32,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

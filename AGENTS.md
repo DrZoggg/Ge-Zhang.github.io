@@ -68,6 +68,11 @@ answers or evidence links for limited records, patents or missing reference fiel
 An unresolved reference field does not disqualify its whole work. Resolve a field
 from available authoritative evidence when possible; otherwise mark that field
 without inventing a link or suppressing the research identity.
+A complete primary article can support comprehensive source-located Gold while a
+specific appendix detail remains open. Distinguish inspected figures and table
+bodies from supplementary findings described in the main text. Keep the exact
+missing field open, and preserve the work's scientific role and causal level.
+Require the original evidence when a central claim depends on an unread source.
 Keep the canonical paper as the complete evidence context. Prefer derived indexes
 and direct links over duplicate articles, mass Q&A pages or a second research database.
 
