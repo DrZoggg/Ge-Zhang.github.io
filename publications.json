@@ -746,8 +746,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70475.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70475.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

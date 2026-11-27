@@ -113,7 +113,9 @@ async function run() {
   const oldSnapshot=structuredClone(catalog);
   for (const work of oldSnapshot.works) delete work.author_evidence_note;
   const oldClient=createClient(oldSnapshot,loaded.search,loaded.retrieval);
-  for (const id of ['doi-10-1371-journal-pone-0346326','doi-10-2139-ssrn-4857099']) {
+  const limitedArticle=limitedWorks.find(work=>work.type==='Article');
+  assert(limitedArticle);
+  for (const id of [limitedArticle.id,'doi-10-2139-ssrn-4857099']) {
     const packet=client.fetch(id),oldPacket=oldClient.fetch(id);
     assert(packet.author_evidence_note);assert(!Object.hasOwn(oldPacket,'author_evidence_note'));
     delete packet.author_evidence_note;assert.deepEqual(packet,oldPacket);
@@ -130,7 +132,7 @@ async function run() {
     note=>{note.extra='Not part of the source record';},
   ];
   for (const mutate of noteCases) {
-    const fixture=structuredClone(catalog),work=fixture.works.find(work=>work.id==='doi-10-1371-journal-pone-0346326');
+    const fixture=structuredClone(catalog),work=fixture.works.find(work=>work.id===limitedArticle.id);
     mutate(work.author_evidence_note);
     assert.throws(()=>createClient(fixture,loaded.search),/source-bound author evidence note/);
   }
@@ -320,8 +322,12 @@ async function run() {
     'full_text_xml_cloud','full_text_xml_oai','full_text_xml_api']);
   assert.deepEqual(cloudRoutes(jcmm),[{
     provider:'PMC',kind:'full_text_xml_cloud',url:cloudUrl,archive_version:'PMC11897062.1',
-    source_fields:['work.provenance[5].url','work.pmcid'],availability:'not_checked'}]);
-  assert.equal(jcmm.provenance.find(row=>row.url===supplementUrl)?.format,'Supplementary DOCX');
+    source_fields:['work.provenance.pmc_cloud_xml_url','work.pmcid','work.provenance.pmcid'],availability:'not_checked'}]);
+  const jcmmOaiUrl=pmcOaiUrl.replace('11680768','11897062');
+  assert.equal(testOai(jcmm)[0].url,jcmmOaiUrl);
+  assert.deepEqual(testOai(jcmm)[0].source_fields,['work.provenance.pmc_oai_xml_url','work.pmcid','work.provenance.pmcid']);
+  assert.equal(jcmm.provenance.original_xml_url,cloudUrl);
+  assert.equal(jcmm.provenance.supplement_url,supplementUrl);
   assert(!jcmm.primary_sources.reading_routes.some(route=>route.url===supplementUrl));
   assert.deepEqual(cloudRoutes(slc),[]);
   assert.equal(cloudRoutes(routeFixture({pmcid:'PMC11897062',provenance:[cloudSource,cloudSource]})).length,1);
@@ -361,8 +367,24 @@ async function run() {
     {provenance:{pmc_cloud_xml_url:jdiCloudUrl+'#methods'}},
   ]) assert.deepEqual(cloudRoutes(routeFixture({pmcid:'PMC13651581',...fields})),[]);
   const limitedCloudFixture=structuredClone(catalog);
-  limitedCloudFixture.works.find(work=>work.id===jcmm.id).provenance={pmc_cloud_xml_url:cloudUrl};
-  assert.deepEqual(cloudRoutes(createClient(limitedCloudFixture,loaded.search).fetch(jcmm.id)),[]);
+  const limitedFixtureWork=limitedCloudFixture.works.find(work=>work.id===slc.id);
+  assert.equal(limitedFixtureWork.evidence_status,'limited');
+  limitedFixtureWork.pmcid='PMC11897062';
+  delete limitedFixtureWork.pmc_url;
+  limitedFixtureWork.provenance={pmc_cloud_xml_url:cloudUrl,pmc_oai_xml_url:jcmmOaiUrl};
+  const limitedClient=createClient(limitedCloudFixture,loaded.search);
+  assert.deepEqual(cloudRoutes(limitedClient.fetch(slc.id)),[]);
+  assert.deepEqual(testOai(limitedClient.fetch(slc.id)),[]);
+  limitedFixtureWork.provenance=[cloudSource,{url:jcmmOaiUrl},{url:supplementUrl}];
+  const legacyPacket=createClient(limitedCloudFixture,loaded.search).fetch(slc.id);
+  assert.equal(cloudRoutes(legacyPacket)[0].url,cloudUrl);
+  assert.equal(testOai(legacyPacket)[0].url,jcmmOaiUrl);
+  assert(!legacyPacket.primary_sources.reading_routes.some(route=>route.url===supplementUrl));
+  for (const invalid of [jcmmOaiUrl.replace('11897062','11680768'),jcmmOaiUrl+'#page',
+    jcmmOaiUrl.replace('nih.gov','nih.gov.example'),jcmmOaiUrl+'&metadataPrefix=pmc']) {
+    assert.deepEqual(testOai(routeFixture({pmcid:'PMC11897062',provenance:{pmc_oai_xml_url:invalid}})),[]);
+  }
+  assert.equal(testOai(routeFixture({pmcid:'PMC11897062',provenance:{pmc_oai_xml_url:jcmmOaiUrl}}))[0].url,jcmmOaiUrl);
   sourceRouteCases++;
   // An explicit same-work repository PDF is a reading route; an arbitrary
   // provenance link (even one labelled "full text") remains just provenance.

@@ -1,0 +1,624 @@
+{
+  "version": 2,
+  "doi": "10.1111/jcmm.70475",
+  "discovery_layer": {
+    "field_entry": [
+      "Ischaemic cardiomyopathy biology",
+      "Cell-death-associated gene research"
+    ],
+    "review_topics": [
+      "Integrating bulk and single-cell expression",
+      "Candidate signatures and experimental expression follow-up"
+    ],
+    "scientific_role": "Candidate prioritization combining public myocardial expression, model summaries, cell-type context and one-week mouse expression measurements.",
+    "evidence_position": "Multi-dataset association and expression evidence; reported model estimates are distinct from independent clinical validation or causal disulfidptosis.",
+    "related_concepts": [
+      "Myocardial immune deconvolution",
+      "Sex-specific expression observations",
+      "Glycogen-metabolism hypotheses"
+    ],
+    "citation_contexts": [
+      "Methods: separating bulk model evaluation, single-cell localization and animal expression assays.",
+      "Discussion: IC candidate genes, cardiac cell types and sex-specific mouse expression observations."
+    ]
+  },
+  "display_title": "IC disulfidptosis-related genes: bulk signatures, cell context and mouse expression",
+  "summary": "The study prioritizes MYH9, NUBPL, MYL6, MYH10 and NCKAP1 by integrating bulk myocardial expression, computational modeling, single-cell analysis and mouse assays. It connects ischaemic cardiomyopathy candidate signatures with cardiac cell types and sex- and assay-specific expression patterns.",
+  "research_question": "Which disulfidptosis-related expression candidates characterize IC, how do they relate to molecular clusters and cardiac cell types, and which patterns recur in a mouse myocardial-injury model?",
+  "author_summary": "The article combines GSE5406 and GSE57338, reported as 152 control and 203 IC expression samples. It describes 17 differential genes, two clusters among 203 IC profiles, and five prioritized candidates: MYH9, NUBPL, MYL6, MYH10 and NCKAP1. It reports SVM AUC 0.911 and additional dataset AUCs 0.914 and 0.967; these are retained as published evaluations with model-task and sample-independence qualifications in KF3. Single-cell analysis supplies cell-type context across 20 samples. In one-week LAD-ligation mouse experiments, MYH9, MYL6 and NCKAP1 mRNA are lower in both sexes. MYH10 mRNA is higher in males but lower in females; NUBPL is nonsignificant in male mRNA and higher in female mRNA. The Discussion's mirrored-sex description differs from those Results/figures. Male IHC/Western blot show higher MYH10/NUBPL and lower MYH9/MYL6/NCKAP1 proteins. Immune deconvolution, age/MI time-course analysis, metabolic-gene measurements and a predicted ceRNA network provide complementary hypotheses. The contribution is source-located candidate/expression evidence; independent human validation and causal cell-death mechanisms remain separate questions.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective bulk myocardial-expression analysis with batch correction, candidate screening, clustering, CIBERSORT/GSVA, four models and additional dataset analyses; separate single-cell/MI time-course analyses; sham-versus-LAD-ligation mouse assays at one week.",
+    "evidence_type": "Bulk/single-cell transcriptomic association; published model-evaluation summaries; inferred immune/pathway/regulatory networks; mouse qPCR, IHC, Western blot, histology, LDH and echocardiography.",
+    "population": "Article-reported human IC/control expression samples and separate MI time-course samples; male/female C57 mice allocated to sham/control or LAD-ligation groups.",
+    "primary_endpoint": "Prioritization and expression characterization of disulfidptosis-related candidates in IC.",
+    "secondary_endpoint": "Clusters, reported model/nomogram evaluations, immune/cell-type context, age/time associations, predicted ceRNA network and mouse expression/injury readouts.",
+    "data_modalities": [
+      "Bulk myocardial expression",
+      "Public single-cell RNA sequencing",
+      "Separate MI time-course expression",
+      "Inferred immune proportions/pathway activity",
+      "Mouse myocardial mRNA/protein",
+      "Mouse injury histology, serum LDH and echocardiography"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Reported discovery samples",
+        "value": "GSE5406+GSE57338: 152 controls and 203 IC profiles"
+      },
+      {
+        "label": "Candidate/differential genes",
+        "value": "23 considered; 17 differential; 5 prioritized"
+      },
+      {
+        "label": "IC clusters",
+        "value": "116 and 87 profiles among 203 IC samples"
+      },
+      {
+        "label": "Additional ROC sets in Table S1",
+        "value": "GSE48166: 31 samples (16 controls/15 cases); GSE57345: 195 (134/61), as reported"
+      },
+      {
+        "label": "Single-cell analysis",
+        "value": "20 samples; 25,326 control and 56,189 IC cells after QC, as reported"
+      },
+      {
+        "label": "Mouse allocation",
+        "value": "16 per group: 8 males/8 females in each sham/control and IC group"
+      },
+      {
+        "label": "Endpoint caption n",
+        "value": "n=8 for specified functional/LDH endpoints; n=6 for qPCR; n=4 for male Western blot"
+      }
+    ],
+    "counting_note": "Sample, patient, cell and animal-assay units are reported separately. The 152 controls/203 IC profiles and Table S1 counts describe the authors' analytical selections; unique patients were not independently audited. GSE57338 is a SubSeries of GSE57345, but accession membership does not establish which profiles were reused in this analysis. MI timepoint profiles and single cells are not added as independent patients. Animal allocation and endpoint-specific n do not resolve animal reuse or biological-versus-technical replicates. Additional-dataset analyses are reported; analytical nonoverlap and frozen-model transfer remain unresolved, so independent clinical validation is not established."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Bulk myocardial expression identified a disulfidptosis-related candidate pattern in IC.",
+      "context": "Candidate-based analysis of the article-reported discovery data.",
+      "evidence": [
+        {
+          "label": "Reported discovery samples",
+          "value": "GSE5406 and GSE57338: 152 controls and 203 IC expression samples"
+        },
+        {
+          "label": "Screening",
+          "value": "23 literature-derived candidates considered; 17 described as differentially expressed at p<0.05"
+        },
+        {
+          "label": "Five prioritized genes",
+          "value": "MYH9, NUBPL, MYL6, MYH10 and NCKAP1"
+        },
+        {
+          "label": "Bulk direction of the five",
+          "value": "NUBPL/MYH10 higher; MYH9/MYL6/NCKAP1 lower in IC"
+        },
+        {
+          "label": "Unit",
+          "value": "Article-reported analytical expression samples, not an independently audited unique-patient count"
+        }
+      ],
+      "source_locator": "Methods 2.1 Data Source (jcmm70475-sec-0003) and 2.2 (jcmm70475-sec-0004); Results 3.1 (jcmm70475-sec-0021); Figure 2D-E; Data S1 Table S1."
+    },
+    {
+      "id": "KF2",
+      "claim": "The 203 IC profiles formed two clusters with different inferred immune and pathway patterns.",
+      "context": "Unsupervised clustering, bulk-expression deconvolution and GSVA.",
+      "evidence": [
+        {
+          "label": "Cluster counts",
+          "value": "Cluster 1: n=116; Cluster 2: n=87"
+        },
+        {
+          "label": "Method",
+          "value": "ConsensusClusterPlus selected k=2; CIBERSORT estimated relative proportions of 22 immune-cell types"
+        },
+        {
+          "label": "Reported example",
+          "value": "Results describe higher M2-macrophage, CD8 T-cell, activated-dendritic-cell and naive-B-cell proportions in Cluster 2"
+        },
+        {
+          "label": "Interpretation",
+          "value": "Expression clusters and inferred proportions, not measured immune-cell counts or established clinical subtypes"
+        }
+      ],
+      "source_locator": "Methods 2.3 (jcmm70475-sec-0005), 2.7 (jcmm70475-sec-0009); Results 3.1-3.2 (jcmm70475-sec-0021/jcmm70475-sec-0022); Figures 2F-H and 3; Figures S1-S5."
+    },
+    {
+      "id": "KF3",
+      "claim": "The paper reports model-discrimination results and additional dataset analyses using five selected genes.",
+      "context": "Published evaluations with model task and sample independence kept explicit.",
+      "evidence": [
+        {
+          "label": "Four-model AUCs",
+          "value": "SVM 0.911; RF 0.899; XGB 0.895; GLM 0.881 in Figure 4D"
+        },
+        {
+          "label": "GSE48166 model",
+          "value": "AUC 0.914; 95% CI 0.795-0.995 in Figure 5D"
+        },
+        {
+          "label": "GSE57345 model",
+          "value": "AUC 0.967; 95% CI 0.944-0.987 in Figure 5F"
+        },
+        {
+          "label": "Task wording",
+          "value": "Internal Results describe IC-cluster discrimination; additional dataset ROC is described as IC-versus-control"
+        },
+        {
+          "label": "Independence",
+          "value": "The previously verified official GEO relationship identifies GSE57338 as a SubSeries of GSE57345. Analytical nonoverlap and frozen-model external evaluation are not demonstrated"
+        }
+      ],
+      "source_locator": "Methods 2.4-2.5 (jcmm70475-sec-0006/jcmm70475-sec-0007); Results 3.3 (jcmm70475-sec-0023); original Figures 4D and 5A-G/caption; Data S1 Table S1; previously verified official GSE57338/GSE57345 relationship."
+    },
+    {
+      "id": "KF4",
+      "claim": "Single-cell analysis placed the five candidates in distinct cardiac cell-type contexts.",
+      "context": "GSE145154 expression analysis, separate from bulk model evaluation.",
+      "evidence": [
+        {
+          "label": "Reported scale",
+          "value": "20 samples; 25,326 control cells and 56,189 IC cells retained after QC"
+        },
+        {
+          "label": "Cell groups",
+          "value": "Eight annotated groups: myeloid, T/NK, B, endothelial, fibroblast, smooth muscle, cardiomyocyte and stromal"
+        },
+        {
+          "label": "Examples",
+          "value": "MYH10 in fibroblasts; NUBPL in cardiomyocytes/fibroblasts; NCKAP1 in endothelial cells/fibroblasts/smooth muscle"
+        },
+        {
+          "label": "Interpretation",
+          "value": "Cell-expression context; cell counts are not independent patient counts or a classifier validation sample"
+        }
+      ],
+      "source_locator": "Methods 2.16 (jcmm70475-sec-0018); Results 3.6 (jcmm70475-sec-0026); Figure 7; Data S1 Table S1."
+    },
+    {
+      "id": "KF5",
+      "claim": "One-week post-ligation mouse experiments showed injury and sex-specific candidate mRNA observations.",
+      "context": "The authors' LAD-ligation model labelled IC, compared with sham controls.",
+      "evidence": [
+        {
+          "label": "Allocation",
+          "value": "Methods: 16 mice per group, 8 male and 8 female, in each control/sham and IC group"
+        },
+        {
+          "label": "Timing/readouts",
+          "value": "One week postsurgery; lower LVEF/LVFS, greater ventricular dimensions and histological injury; male serum LDH higher"
+        },
+        {
+          "label": "Shared mRNA direction",
+          "value": "MYH9, MYL6 and NCKAP1 lower in both sexes"
+        },
+        {
+          "label": "MYH10 mRNA",
+          "value": "Male Figure 8F higher; female Figure S8D lower. Results 3.7 states opposite directions; Discussion instead says female patterns mirrored males"
+        },
+        {
+          "label": "NUBPL mRNA",
+          "value": "Male Figure 8F nonsignificant; female Figure S8D higher"
+        },
+        {
+          "label": "Caption n",
+          "value": "n=8 for specified weight/LDH/echo endpoints; n=6 for qPCR; independent replicate units not fully specified"
+        }
+      ],
+      "source_locator": "Methods 2.9 (jcmm70475-sec-0011), 2.11-2.15 (jcmm70475-sec-0013 to jcmm70475-sec-0017); Results 3.7 (jcmm70475-sec-0027); original Figure 8A-F; Data S1 Figure S8A-D; Discussion (jcmm70475-sec-0028)."
+    },
+    {
+      "id": "KF6",
+      "claim": "Male protein and metabolic-gene measurements supplied additional expression evidence.",
+      "context": "Mouse IHC/Western blot and qPCR, kept distinct from mRNA and causal pathway evidence.",
+      "evidence": [
+        {
+          "label": "Male proteins",
+          "value": "Higher MYH10/NUBPL and lower MYH9/MYL6/NCKAP1 by IHC/Western blot"
+        },
+        {
+          "label": "Western blot n",
+          "value": "Figure 9B caption: n=4; biological-versus-technical replicate unit not fully resolved"
+        },
+        {
+          "label": "Metabolic/hypoxia mRNA",
+          "value": "Figure S9: GYS1 and HIF-1alpha higher; HK2 and PYGM lower; caption n=6"
+        },
+        {
+          "label": "Modality distinction",
+          "value": "Male NUBPL protein elevation is separate from nonsignificant male NUBPL mRNA"
+        },
+        {
+          "label": "Inference",
+          "value": "No candidate-gene perturbation/rescue establishes causal disulfidptosis or IC"
+        }
+      ],
+      "source_locator": "Methods 2.12-2.15 (jcmm70475-sec-0014 to jcmm70475-sec-0017); Results 3.7 (jcmm70475-sec-0027); original Figure 9A-B; Data S1 Figures S9-S10."
+    },
+    {
+      "id": "KF7",
+      "claim": "Ancillary human analyses examined age-related expression and post-MI time-course context.",
+      "context": "GSE57338 demographics and separate MI datasets.",
+      "evidence": [
+        {
+          "label": "Age correlations",
+          "value": "MYH9: r=-0.27, p=0.0092; MYL6: r=-0.21, p=0.039"
+        },
+        {
+          "label": "Human sex analysis",
+          "value": "The five comparisons were reported non-significant at p>0.05; not proof of equivalence"
+        },
+        {
+          "label": "Time-course designs",
+          "value": "GSE29532: 0, 2, 12, 24, 36 and 48 hours; GSE123342: Day 0, Day 30 and Year 1, plus controls"
+        },
+        {
+          "label": "Role",
+          "value": "Secondary expression associations; timepoint profiles are not unique-patient counts or prospective IC-outcome validation"
+        }
+      ],
+      "source_locator": "Methods 2.6 (jcmm70475-sec-0008); Results 3.4 (jcmm70475-sec-0024); Data S1 Figures S6-S7 and Table S1."
+    },
+    {
+      "id": "KF8",
+      "claim": "A predicted ceRNA network organized possible regulatory relationships around the candidates.",
+      "context": "In silico target-network construction.",
+      "evidence": [
+        {
+          "label": "Reported network",
+          "value": "219 nodes: 5 candidate mRNAs, 54 miRNAs and 160 lncRNAs; 268 links"
+        },
+        {
+          "label": "Resources",
+          "value": "TargetScan, miRDB, miRanda and SpongeScan"
+        },
+        {
+          "label": "Role",
+          "value": "Predicted relationships, not experimentally verified binding or regulatory causation"
+        }
+      ],
+      "source_locator": "Methods 2.8 (jcmm70475-sec-0010); Results 3.5 (jcmm70475-sec-0025); Figure 6."
+    }
+  ],
+  "what_this_adds": [
+    "Nominates a five-gene IC candidate set and connects bulk expression with cell-type localization and experimental expression measurements.",
+    "Provides distinct bulk-cluster, model, immune, regulatory-network and mouse-assay evidence units for methods comparison.",
+    "Makes sex- and modality-specific expression observations available for follow-up design while preserving source discrepancies that affect diagnostic or mechanistic inference."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Source-specific bulk-expression differences, computational clusters and reported model-evaluation results.",
+      "Single-cell expression context and secondary human age/MI time-course associations.",
+      "Expression/injury observations in the one-week mouse model, with sex and assay distinguished."
+    ],
+    "does_not_establish": [
+      "Independently validated clinical accuracy, prospective prognosis, decision benefit or a ready-to-use patient assay.",
+      "Nonoverlapping external evaluation merely because an additional GEO accession is named.",
+      "Causal gene function in IC or direct experimental demonstration/rescue of disulfidptosis from expression changes alone.",
+      "A sex-invariant MYH10 mRNA response or interchangeable mRNA/protein directions for every candidate."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which human datasets and counts underpin bulk discovery?",
+      "answer": "Methods merge GSE5406 and GSE57338 after batch correction and report 152 control and 203 IC expression samples. Table S1 gives 16/108 control/case samples for GSE5406 and 136/95 for GSE57338, reconciling arithmetically with those counts. They are the paper's analyzed-sample descriptions, not an independently audited unique-patient census.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which five genes were prioritized, and how did their bulk expression differ?",
+      "answer": "The paper prioritizes MYH9, NUBPL, MYL6, MYH10 and NCKAP1. In the bulk Results, NUBPL and MYH10 are higher in IC, while MYH9, MYL6 and NCKAP1 are lower. This is an expression association, not proof of a causal cell-death driver.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What model performance is reported, and how independent is the validation?",
+      "answer": "Figure 4D reports SVM 0.911, RF 0.899, XGB 0.895 and GLM 0.881. Figure 5 gives model AUC 0.914 (95% CI 0.795-0.995) for GSE48166 and 0.967 (95% CI 0.944-0.987) for GSE57345. Internal Results refer to IC-cluster discrimination, while the additional analyses are described as IC-versus-control. The GSE57338/GSE57345 relationship and unspecified analytical nonoverlap/frozen evaluation prevent certifying independent clinical performance.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What do the molecular clusters and immune analyses contribute?",
+      "answer": "The article divides 203 IC profiles into clusters of 116 and 87. CIBERSORT and GSVA associate them with different inferred immune proportions and pathway activity. These are useful biological hypotheses, rather than direct immune-cell counts or validated clinical IC subtypes.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What additional evidence comes from single-cell analysis?",
+      "answer": "GSE145154 supplies expression context across 20 samples and eight annotated cell groups. MYH10 is prominent in fibroblasts, NUBPL in cardiomyocytes/fibroblasts, and NCKAP1 in endothelial, fibroblast and smooth-muscle groups. The 25,326 control and 56,189 IC cells are cells, not independent patients or a classifier-validation cohort.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How were the mouse experiments designed, and what do the n values mean?",
+      "answer": "Methods allocate 16 mice per sham/control or IC group, with eight males and eight females in each, and examine tissue one week after LAD ligation. Captions specify n=8 for selected functional endpoints, n=6 for qPCR and n=4 for male Western blot. These endpoint-specific labels do not fully establish animal reuse or the biological-versus-technical replicate unit.",
+      "evidence_refs": [
+        "KF5",
+        "KF6"
+      ]
+    },
+    {
+      "question": "Were MYH10 and NUBPL changes consistent across sex and assay?",
+      "answer": "Results 3.7 and the original plots show male MYH10 mRNA higher but female MYH10 mRNA lower in disease groups. Male NUBPL mRNA is nonsignificant, while female NUBPL mRNA is higher. Male IHC/Western blot show higher MYH10/NUBPL proteins. Discussion describes female patterns as mirrored, which differs from the MYH10 mRNA Results/figures. A sex-invariant or mRNA/protein-equivalent response is not asserted.",
+      "evidence_refs": [
+        "KF5",
+        "KF6"
+      ]
+    },
+    {
+      "question": "What age and post-MI expression context was examined?",
+      "answer": "In GSE57338, MYH9 and MYL6 had reported age correlations r=-0.27 (p=0.0092) and r=-0.21 (p=0.039); human gene/sex comparisons were non-significant. Separate MI datasets examine 0-48 hours and Day 0/Day 30/Year 1. These secondary expression analyses are not prospective chronic-IC outcome validation.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "Does the ceRNA network demonstrate regulatory binding?",
+      "answer": "The reported network contains 219 nodes, comprising five candidate mRNAs, 54 miRNAs and 160 lncRNAs, with 268 predicted links. It organizes possible regulatory relationships but does not experimentally demonstrate binding or show that perturbing a link changes IC.",
+      "evidence_refs": [
+        "KF8"
+      ]
+    },
+    {
+      "question": "How is this study useful for disulfidptosis or biomarker research?",
+      "answer": "It can support candidate selection, bulk/single-cell context and sex- or assay-specific expression follow-up. Its models and mouse expression findings should be cited at those evidence levels. Gene perturbation/rescue, independent clinical model evaluation and direct evidence of a disulfidptosis mechanism remain separate requirements.",
+      "evidence_refs": [
+        "KF1",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6",
+        "KF8"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Ischaemic cardiomyopathy",
+      "Myocardial infarction"
+    ],
+    "candidate_genes": [
+      "MYH9",
+      "NUBPL",
+      "MYL6",
+      "MYH10",
+      "NCKAP1"
+    ],
+    "biological_context": [
+      "Disulfidptosis-related expression",
+      "Actin-cytoskeleton hypotheses",
+      "Immune-cell infiltration",
+      "Glycogen metabolism"
+    ],
+    "assays": [
+      "RT-qPCR",
+      "Immunohistochemistry",
+      "Western blot",
+      "Echocardiography",
+      "Serum LDH"
+    ],
+    "data_types": [
+      "Bulk myocardial expression",
+      "Single-cell RNA sequencing",
+      "Mouse myocardial tissue"
+    ],
+    "methods": [
+      "Consensus clustering",
+      "CIBERSORT",
+      "GSVA",
+      "Support vector machine",
+      "Random forest",
+      "Generalised linear model",
+      "Extreme gradient boosting",
+      "ROC analysis",
+      "ceRNA target prediction"
+    ],
+    "evidence_concepts": [
+      "Dataset overlap",
+      "Model-task definition",
+      "Sex-specific expression",
+      "mRNA-protein distinction",
+      "Candidate-gene association"
+    ]
+  },
+  "limitations": [
+    "Training/validation sample independence is unresolved: the previously verified GEO record identifies GSE57338 as a SubSeries of GSE57345, while the paper does not show a nonoverlapping analytical selection or clearly frozen external evaluation.",
+    "Internal modeling is described as IC-cluster discrimination, whereas additional ROC analyses are described as IC-versus-control. The model target, feature selection and evaluation pipeline require clarification before performance certification.",
+    "Results and original figures show opposite male/female MYH10 mRNA directions, while Discussion describes mirrored patterns. Male NUBPL also differs between mRNA and protein readouts.",
+    "Animal allocation and endpoint-specific n do not establish independent biological replicate counts or which assays share animals. The one-week ligation model is not a longitudinal model of chronic human disease.",
+    "Immune deconvolution, ceRNA prediction and expression changes do not establish cellular causation or direct disulfidptosis. Prospective clinical performance and utility require separate evidence."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.intimp.2024.112574",
+      "relationship": "Examines cuproptosis-associated candidates in IC using bioinformatics and experimental expression follow-up. It provides a comparison of candidate-prioritization approaches, not independent replication of this disulfidptosis signature."
+    },
+    {
+      "doi": "10.2147/jir.s495784",
+      "relationship": "Uses targeted plasma Olink screening and additional ELISA in AMI, followed by separate public gene-expression analyses. It supports comparison of circulating-protein evidence with myocardial expression/animal evidence, without pooling validation claims."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/10.1111/jcmm.70475",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11897062/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40070032/",
+    "doi_url": "https://doi.org/10.1111/jcmm.70475",
+    "pmcid": "PMC11897062",
+    "original_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/PMC11897062.1.xml",
+    "official_manifest_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/PMC11897062.1.json",
+    "supplement_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/JCMM-29-e70475-s001.docx",
+    "version_of_record": "Journal of Cellular and Molecular Medicine. 2025; 29 (5): e70475; electronic publication 11 March 2025. Original JATS identifies PMC11897062.1, PMID40070032, the same DOI/title and eleven authors.",
+    "license": "CC BY 4.0 in original JATS permissions, linking https://creativecommons.org/licenses/by/4.0/.",
+    "data_availability": "The article states datasets used/analyzed are available from the corresponding author on reasonable request. Public accessions are listed in Table S1. No new raw-data mining or closed overlap experiment was performed for this Gold.",
+    "local_ethics": "Animal procedures approved by the Institutional Animal Care and Use Committee of The First Affiliated Hospital, Zhengzhou University, Protocol 20231022013.",
+    "external_datasets": "Discovery: GSE5406/GSE57338; additional ROC: GSE48166/GSE57345; single-cell: GSE145154; MI time-course: GSE29532/GSE123342. Counts remain article-reported and source-specific.",
+    "source_note_dataset_identity": "Methods 2.1 reports 152 controls/203 IC profiles. Table S1 gives GSE5406=16 controls/108 cases and GSE57338=136/95, reconciling with those counts. Registry-level series sizes and selected analytical profiles are different; sample selection was not reconstructed.",
+    "source_note_validation": "A previously accepted official GEO check established GSE57338 as a SubSeries of GSE57345. The paper does not demonstrate analytical nonoverlap or frozen model transfer. Additional dataset ROC estimates are retained as reported, not certified independent clinical validation.",
+    "source_note_model_task": "Results 3.3 describes Figure 4 as patient-cluster discrimination, then Figure 5 additional datasets as IC-versus-control. Captions invoke fivefold cross-validation; fixed coefficients and a fully specified frozen external pipeline are not established here. Figure 5 calls its model SVW in the caption.",
+    "source_note_figure5_panels": "Actual pixels show Figure 5B decision-curve analysis and Figure 5C calibration, while the caption/text describe these in the opposite order. Model AUCs and intervals were read from panels D/F.",
+    "source_note_sex_and_modality": "Results 3.7/Figure 8F show male MYH10 mRNA up and male NUBPL nonsignificant; Results 3.7/Figure S8D show female MYH10 down and NUBPL up. Discussion says female patterns mirrored males. Figure 9 male protein results are higher MYH10/NUBPL and lower MYH9/MYL6/NCKAP1; these are not substituted for mRNA results.",
+    "source_note_animal_units": "Methods 2.9 allocate 16 per group, eight males/eight females. Figures 8/S8 use endpoint caption n=8 or n=6; Figure 9B uses n=4. Replicate type and animal reuse are incompletely defined. The Figure 8 caption repeats label E for mRNA, while the actual image labels it F.",
+    "source_note_temporal_context": "Figure S7 was inspected as separate MI datasets with different time scales. This Gold reports the timepoint designs rather than certifying exact peak ordering from plotted summaries or treating them as longitudinal IC model validation.",
+    "supporting_material": "Data S1 contains Figures S1-S10 and Table S1. Original embedded Figures S6-S9 and Table S1 were inspected; S10 supplies uncropped gels/blots. Main Table 1 supplies qPCR primers.",
+    "evidence_basis": "Accepted complete original JATS and Data S1 DOCX reused unchanged; five same-version manifest-declared main figures (1,4,5,8,9) received with matching MD5s and visually read; original embedded supplementary images; accepted limited record/prior official GEO relationship check; protected publication/citation master.",
+    "source_note_error_bars": "Methods 2.17 states mean ± SD, while Figure 8 and Figure S8 captions state mean ± SEM; Figure 9B states mean ± SD. This Gold uses directions, caption n and explicitly printed model estimates rather than inferring precision from those error bars.",
+    "reported_discovery_geo_gse5406_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE5406",
+    "official_geo_gse57338_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57338",
+    "reported_comparison_geo_gse57345_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57345",
+    "pmc_oai_xml_url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11897062&metadataPrefix=pmc",
+    "pmc_cloud_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11897062.1/PMC11897062.1.xml"
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which disulfidptosis-related candidates and molecular clusters were examined in IC?",
+        "supported_scope": "Bulk-expression association and two computational IC-profile clusters with inferred immune/pathway context.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How do public model evaluations differ from independent diagnostic validation?",
+        "supported_scope": "Published estimates can be described while model task, accession relationships and sample-independent frozen evaluation remain unresolved.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What expression evidence links the candidates to cardiac cell types and mouse tissue?",
+        "supported_scope": "Single-cell localization and sex-/assay-specific mouse expression observations, without causal gene-function inference.",
+        "evidence_refs": [
+          "KF4",
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which secondary analyses generate follow-up hypotheses?",
+        "supported_scope": "Human age/MI time-course associations and predicted ceRNA relationships, with their modalities and hypothesis-generating role retained.",
+        "evidence_refs": [
+          "KF7",
+          "KF8"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Certified independent clinical diagnostic accuracy or prospective outcome benefit.",
+      "Proof that the candidates causally drive IC or that disulfidptosis was directly demonstrated/rescued.",
+      "A uniform sex-independent MYH10 mRNA response or interchangeability of mRNA and protein measurements."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-jcmm70475-1",
+        "component": "KF1: Bulk myocardial expression identified a disulfidptosis-related candidate pattern in IC.",
+        "context": "Candidate-based analysis of the article-reported discovery data.",
+        "finding": "Bulk myocardial expression identified a disulfidptosis-related candidate pattern in IC. Reported discovery samples: GSE5406 and GSE57338: 152 controls and 203 IC expression samples; Screening: 23 literature-derived candidates considered; 17 described as differentially expressed at p<0.05; Five prioritized genes: MYH9, NUBPL, MYL6, MYH10 and NCKAP1; Bulk direction of the five: NUBPL/MYH10 higher; MYH9/MYL6/NCKAP1 lower in IC; Unit: Article-reported analytical expression samples, not an independently audited unique-patient count.",
+        "evidence_level": "Bulk-expression association",
+        "scope": "Candidate-based analysis of the article-reported discovery data.",
+        "source_locator": "Methods 2.1 Data Source (jcmm70475-sec-0003) and 2.2 (jcmm70475-sec-0004); Results 3.1 (jcmm70475-sec-0021); Figure 2D-E; Data S1 Table S1.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-2",
+        "component": "KF2: The 203 IC profiles formed two clusters with different inferred immune and pathway patterns.",
+        "context": "Unsupervised clustering, bulk-expression deconvolution and GSVA.",
+        "finding": "The 203 IC profiles formed two clusters with different inferred immune and pathway patterns. Cluster counts: Cluster 1: n=116; Cluster 2: n=87; Method: ConsensusClusterPlus selected k=2; CIBERSORT estimated relative proportions of 22 immune-cell types; Reported example: Results describe higher M2-macrophage, CD8 T-cell, activated-dendritic-cell and naive-B-cell proportions in Cluster 2; Interpretation: Expression clusters and inferred proportions, not measured immune-cell counts or established clinical subtypes.",
+        "evidence_level": "Computational clustering/deconvolution",
+        "scope": "Unsupervised clustering, bulk-expression deconvolution and GSVA.",
+        "source_locator": "Methods 2.3 (jcmm70475-sec-0005), 2.7 (jcmm70475-sec-0009); Results 3.1-3.2 (jcmm70475-sec-0021/jcmm70475-sec-0022); Figures 2F-H and 3; Figures S1-S5.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-3",
+        "component": "KF3: The paper reports model-discrimination results and additional dataset analyses using five selected genes.",
+        "context": "Published evaluations with model task and sample independence kept explicit.",
+        "finding": "The paper reports model-discrimination results and additional dataset analyses using five selected genes. Four-model AUCs: SVM 0.911; RF 0.899; XGB 0.895; GLM 0.881 in Figure 4D; GSE48166 model: AUC 0.914; 95% CI 0.795-0.995 in Figure 5D; GSE57345 model: AUC 0.967; 95% CI 0.944-0.987 in Figure 5F; Task wording: Internal Results describe IC-cluster discrimination; additional dataset ROC is described as IC-versus-control; Independence: The previously verified official GEO relationship identifies GSE57338 as a SubSeries of GSE57345. Analytical nonoverlap and frozen-model external evaluation are not demonstrated.",
+        "evidence_level": "Published model-evaluation summaries",
+        "scope": "Published evaluations with model task and sample independence kept explicit.",
+        "source_locator": "Methods 2.4-2.5 (jcmm70475-sec-0006/jcmm70475-sec-0007); Results 3.3 (jcmm70475-sec-0023); original Figures 4D and 5A-G/caption; Data S1 Table S1; previously verified official GSE57338/GSE57345 relationship.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-4",
+        "component": "KF4: Single-cell analysis placed the five candidates in distinct cardiac cell-type contexts.",
+        "context": "GSE145154 expression analysis, separate from bulk model evaluation.",
+        "finding": "Single-cell analysis placed the five candidates in distinct cardiac cell-type contexts. Reported scale: 20 samples; 25,326 control cells and 56,189 IC cells retained after QC; Cell groups: Eight annotated groups: myeloid, T/NK, B, endothelial, fibroblast, smooth muscle, cardiomyocyte and stromal; Examples: MYH10 in fibroblasts; NUBPL in cardiomyocytes/fibroblasts; NCKAP1 in endothelial cells/fibroblasts/smooth muscle; Interpretation: Cell-expression context; cell counts are not independent patient counts or a classifier validation sample.",
+        "evidence_level": "Single-cell expression localization",
+        "scope": "GSE145154 expression analysis, separate from bulk model evaluation.",
+        "source_locator": "Methods 2.16 (jcmm70475-sec-0018); Results 3.6 (jcmm70475-sec-0026); Figure 7; Data S1 Table S1.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-5",
+        "component": "KF5: One-week post-ligation mouse experiments showed injury and sex-specific candidate mRNA observations.",
+        "context": "The authors' LAD-ligation model labelled IC, compared with sham controls.",
+        "finding": "One-week post-ligation mouse experiments showed injury and sex-specific candidate mRNA observations. Allocation: Methods: 16 mice per group, 8 male and 8 female, in each control/sham and IC group; Timing/readouts: One week postsurgery; lower LVEF/LVFS, greater ventricular dimensions and histological injury; male serum LDH higher; Shared mRNA direction: MYH9, MYL6 and NCKAP1 lower in both sexes; MYH10 mRNA: Male Figure 8F higher; female Figure S8D lower. Results 3.7 states opposite directions; Discussion instead says female patterns mirrored males; NUBPL mRNA: Male Figure 8F nonsignificant; female Figure S8D higher; Caption n: n=8 for specified weight/LDH/echo endpoints; n=6 for qPCR; independent replicate units not fully specified.",
+        "evidence_level": "Mouse injury and mRNA expression",
+        "scope": "The authors' LAD-ligation model labelled IC, compared with sham controls.",
+        "source_locator": "Methods 2.9 (jcmm70475-sec-0011), 2.11-2.15 (jcmm70475-sec-0013 to jcmm70475-sec-0017); Results 3.7 (jcmm70475-sec-0027); original Figure 8A-F; Data S1 Figure S8A-D; Discussion (jcmm70475-sec-0028).",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-6",
+        "component": "KF6: Male protein and metabolic-gene measurements supplied additional expression evidence.",
+        "context": "Mouse IHC/Western blot and qPCR, kept distinct from mRNA and causal pathway evidence.",
+        "finding": "Male protein and metabolic-gene measurements supplied additional expression evidence. Male proteins: Higher MYH10/NUBPL and lower MYH9/MYL6/NCKAP1 by IHC/Western blot; Western blot n: Figure 9B caption: n=4; biological-versus-technical replicate unit not fully resolved; Metabolic/hypoxia mRNA: Figure S9: GYS1 and HIF-1alpha higher; HK2 and PYGM lower; caption n=6; Modality distinction: Male NUBPL protein elevation is separate from nonsignificant male NUBPL mRNA; Inference: No candidate-gene perturbation/rescue establishes causal disulfidptosis or IC.",
+        "evidence_level": "Mouse protein/metabolic expression",
+        "scope": "Mouse IHC/Western blot and qPCR, kept distinct from mRNA and causal pathway evidence.",
+        "source_locator": "Methods 2.12-2.15 (jcmm70475-sec-0014 to jcmm70475-sec-0017); Results 3.7 (jcmm70475-sec-0027); original Figure 9A-B; Data S1 Figures S9-S10.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-7",
+        "component": "KF7: Ancillary human analyses examined age-related expression and post-MI time-course context.",
+        "context": "GSE57338 demographics and separate MI datasets.",
+        "finding": "Ancillary human analyses examined age-related expression and post-MI time-course context. Age correlations: MYH9: r=-0.27, p=0.0092; MYL6: r=-0.21, p=0.039; Human sex analysis: The five comparisons were reported non-significant at p>0.05; not proof of equivalence; Time-course designs: GSE29532: 0, 2, 12, 24, 36 and 48 hours; GSE123342: Day 0, Day 30 and Year 1, plus controls; Role: Secondary expression associations; timepoint profiles are not unique-patient counts or prospective IC-outcome validation.",
+        "evidence_level": "Secondary human-expression associations",
+        "scope": "GSE57338 demographics and separate MI datasets.",
+        "source_locator": "Methods 2.6 (jcmm70475-sec-0008); Results 3.4 (jcmm70475-sec-0024); Data S1 Figures S6-S7 and Table S1.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      },
+      {
+        "id": "evidence-jcmm70475-8",
+        "component": "KF8: A predicted ceRNA network organized possible regulatory relationships around the candidates.",
+        "context": "In silico target-network construction.",
+        "finding": "A predicted ceRNA network organized possible regulatory relationships around the candidates. Reported network: 219 nodes: 5 candidate mRNAs, 54 miRNAs and 160 lncRNAs; 268 links; Resources: TargetScan, miRDB, miRanda and SpongeScan; Role: Predicted relationships, not experimentally verified binding or regulatory causation.",
+        "evidence_level": "In silico regulatory-network prediction",
+        "scope": "In silico target-network construction.",
+        "source_locator": "Methods 2.8 (jcmm70475-sec-0010); Results 3.5 (jcmm70475-sec-0025); Figure 6.",
+        "evidence_refs": [
+          "KF8"
+        ]
+      }
+    ]
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies, and does not replace, the formal article."
+}

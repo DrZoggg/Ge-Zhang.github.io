@@ -897,8 +897,8 @@
       "doi": "10.1111/jcmm.70475",
       "paper_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70475.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1111-jcmm-70475.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1111/jcmm.70475",
       "publisher_url": null,
@@ -910,9 +910,30 @@
       "openalex_id": "https://openalex.org/W4408377359",
       "semantic_scholar_id": null,
       "official_abstract_available": true,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1111-jcmm-70475.csv",
+      "question_count": 10,
+      "concept_count": 33,
+      "discovery_layer": {
+        "field_entry": [
+          "Ischaemic cardiomyopathy biology",
+          "Cell-death-associated gene research"
+        ],
+        "review_topics": [
+          "Integrating bulk and single-cell expression",
+          "Candidate signatures and experimental expression follow-up"
+        ],
+        "scientific_role": "Candidate prioritization combining public myocardial expression, model summaries, cell-type context and one-week mouse expression measurements.",
+        "evidence_position": "Multi-dataset association and expression evidence; reported model estimates are distinct from independent clinical validation or causal disulfidptosis.",
+        "related_concepts": [
+          "Myocardial immune deconvolution",
+          "Sex-specific expression observations",
+          "Glycogen-metabolism hypotheses"
+        ],
+        "citation_contexts": [
+          "Methods: separating bulk model evaluation, single-cell localization and animal expression assays.",
+          "Discussion: IC candidate genes, cardiac cell types and sex-specific mouse expression observations."
+        ]
+      }
     },
     {
       "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
