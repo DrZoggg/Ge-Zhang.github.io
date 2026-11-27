@@ -15,7 +15,7 @@
 - DOI: 10.1016/j.colsurfb.2026.116261
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-colsurfb-2026-116261.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity
 - Journal: Clinical and Experimental Medicine
