@@ -393,6 +393,10 @@ transcriptomic subtyping, repeated measurements
 - [Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability](https://drgezhang.com/papers/apvs.html) — Related coronary transcriptomic and single-cell evidence with a different research objective; the studies do not validate each other's models. (DOI: 10.1016/j.isci.2023.107587)
 - [System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41698-026-01699-1.html) — Circadian-related expression scoring in a different disease; this does not establish identical gene sets, formula implementation or shared clinical validation. (DOI: 10.1038/s41698-026-01699-1)
 
+## Related research resource
+
+- [Author-maintained comparison of circadian expression scores, cell perturbation and clinical timing](https://drgezhang.com/research/circadian-evidence-levels.html#scope)
+
 ## Publication & Provenance
 
 - DOI: https://doi.org/10.1038/s41598-024-65236-5

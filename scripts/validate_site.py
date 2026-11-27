@@ -546,7 +546,9 @@ def validate_v2_rendered_page(
                     and markdown.count(f'<a id="{anchor}"></a>') == 1,
                     f"{label} matrix row anchor {anchor} changed.")
             for key in ("component", "context", "finding", "evidence_level", "scope", "source_locator"):
-                require(html.escape(row[key]) in page and row[key] in markdown,
+                expected_html = research_guides.supporting_locator(row[key], content['doi']) if key == 'source_locator' else html.escape(row[key])
+                expected_markdown = research_guides.supporting_locator(row[key], content['doi'], markdown=True) if key == 'source_locator' else row[key]
+                require(expected_html in page and expected_markdown in markdown,
                         f"{label} matrix {anchor} {key} differs across HTML and Markdown.")
         for case in layer["citation_use_cases"]:
             require(html.escape(case["query"]) in page and case["query"] in markdown
@@ -664,10 +666,11 @@ def validate_v2_rendered_page(
                        if key not in {"research_cluster_id", "discovery_layer"}}
     for value in string_leaves(visible_content):
         require(
-            normalized_source_text(value) in page_text,
+            visible_text(research_guides.supporting_locator(value, content['doi'])) in page_text,
             f"{label} content lost from HTML: {value!r}",
         )
-        require(value in markdown or value.replace("|", "\\|") in markdown,
+        rendered_value = research_guides.supporting_locator(value, content['doi'], markdown=True)
+        require(rendered_value in markdown or rendered_value.replace("|", "\\|") in markdown,
                 f"{label} content lost from Markdown: {value!r}")
     for key, value in (content.get("model_profile") or {}).items():
         if key in {"final_predictors", "interpretability"}:
