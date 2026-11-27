@@ -1,0 +1,567 @@
+{
+  "version": 2,
+  "doi": "10.1177/00368504261499186",
+  "discovery_layer": {
+    "field_entry": [
+      "Cardiovascular-kidney-metabolic mortality research",
+      "Routine-laboratory prognostic associations"
+    ],
+    "review_topics": [
+      "EASIX across CKM stages before clinical CVD",
+      "Survey-weighted survival and component comparisons"
+    ],
+    "scientific_role": "Examines a three-laboratory composite in relation to linked long-term all-cause and cardiovascular mortality, with complex-survey modeling, dose-response analysis and stage-specific observations.",
+    "evidence_position": "Retrospective analysis of prospectively collected survey data and linked deaths; adjusted associations and descriptive discrimination, with main-text sensitivity summaries.",
+    "related_concepts": [
+      "Survey-weighted Cox analysis",
+      "Renal and endothelial-stress proxies",
+      "Stage-specific effect interpretation"
+    ],
+    "citation_contexts": [
+      "Methods: distinguish raw counts, weighted estimates, exposure scale and adjustment models in NHANES survival analysis.",
+      "Discussion: routine-lab risk markers in CKM stages 0-3 and the evidence needed beyond an adjusted mortality association."
+    ]
+  },
+  "display_title": "EASIX and long-term mortality in CKM stages 0-3: a survey-weighted NHANES analysis",
+  "summary": "Among 10,885 NHANES adults at cardiovascular-kidney-metabolic (CKM) stages 0–3, higher baseline endothelial activation and stress index (EASIX) was associated with all-cause and cardiovascular mortality. The study describes the associations across CKM stages and compares the index with its individual laboratory components.",
+  "research_question": "Is baseline EASIX associated with long-term all-cause and cardiovascular mortality among adults at CKM stages 0-3, and how do those associations vary by exposure shape, CKM group and analytic adjustment?",
+  "author_summary": "The study links NHANES 1999–2018 data for 10,885 adults aged at least 30 years to mortality through 31 December 2019. Over a median 97 months, there were 1,122 deaths, including 295 cardiovascular deaths. In survey-weighted Model 2, each raw EASIX unit was associated with an all-cause mortality HR of 1.41 (95% CI 1.24–1.61) and a cardiovascular mortality HR of 1.30 (1.13–1.49). The highest versus lowest sample quartile HRs were 1.55 (1.22–1.96) and 2.51 (1.54–4.07), respectively. The estimated cardiovascular association was steeper at lower values. EASIX generally had numerically higher discrimination than its individual components earlier in follow-up, whereas creatinine had higher AUCs at the longest times. Full-cohort interactions across CKM stages did not reach statistical significance. Positive associations were also reported after lifestyle and eGFR adjustment and in an age-restricted analysis.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Retrospective analysis of prospectively collected NHANES 1999-2018 baseline data linked to mortality through 2019; complete-case primary survey-weighted Cox analysis with spline, subgroup and sensitivity analyses.",
+    "evidence_type": "Population-based observational mortality association; descriptive time-dependent discrimination against individual laboratory components.",
+    "population": "US civilian noninstitutionalized adults aged ≥30 years with valid fasting-subsample weight, baseline CKM stages 0-3, EASIX components, linked mortality and complete primary covariates. CKM stage 4 excluded.",
+    "primary_endpoint": "The two mortality outcomes were all-cause and cardiovascular death, tracked from the baseline examination to death or 31 December 2019. Cardiovascular death used the linked underlying-cause classification.",
+    "secondary_endpoint": "Additional analyses characterized the shape, discrimination and CKM-group estimates for the same two mortality outcomes.",
+    "data_modalities": [
+      "Survey demographics, medical history and examination",
+      "LDH, creatinine, platelet count and metabolic/renal laboratory measures",
+      "Prescription-medication inventory",
+      "Public-use linked mortality outcomes"
+    ],
+    "external_validation": false,
+    "unique_total_n": 10885,
+    "cohorts": [
+      {
+        "name": "Analytic NHANES CKM cohort",
+        "n": 10885,
+        "role": "Complete-case primary analytic participants; CKM stages 0–3, aged ≥30 years",
+        "contains": [
+          "EASIX Q1",
+          "EASIX Q2",
+          "EASIX Q3",
+          "EASIX Q4"
+        ]
+      },
+      {
+        "name": "EASIX Q1",
+        "n": 2722,
+        "role": "Reference sample quartile; raw EASIX 0.024–0.340",
+        "subset_of": "Analytic NHANES CKM cohort"
+      },
+      {
+        "name": "EASIX Q2",
+        "n": 2733,
+        "role": "Sample quartile; EASIX >0.340–0.457",
+        "subset_of": "Analytic NHANES CKM cohort"
+      },
+      {
+        "name": "EASIX Q3",
+        "n": 2713,
+        "role": "Sample quartile; EASIX >0.457–0.616",
+        "subset_of": "Analytic NHANES CKM cohort"
+      },
+      {
+        "name": "EASIX Q4",
+        "n": 2717,
+        "role": "Sample quartile; EASIX >0.616–11.542",
+        "subset_of": "Analytic NHANES CKM cohort"
+      }
+    ],
+    "counting_note": "The cohort total, EASIX quartile sizes and death counts are unweighted. CKM stages 0–1, 2 and 3 comprise 2,898, 6,751 and 1,236 of the same participants, with survey-weighted proportions of 31.19%, 61.95% and 6.86%. Table 1 uses survey-weighted means and percentages, and sample medians and ranges for EASIX."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The analytic cohort links baseline CKM measurements with long-term mortality in adults without reported clinical CVD.",
+      "context": "Ten NHANES cycles, complete-case selection and public-use mortality linkage.",
+      "evidence": [
+        {
+          "label": "Analytic sample",
+          "value": "10,885 adults aged at least 30 years at CKM stages 0–3. The study excluded stage 4."
+        },
+        {
+          "label": "Selection",
+          "value": "Of 11,922 otherwise eligible participants, 1,037 (8.70%) were excluded for missing primary covariates. Counts of missing values for individual variables overlap."
+        },
+        {
+          "label": "Follow-up",
+          "value": "Follow-up from the baseline mobile examination to death or 31 December 2019. Median follow-up was 97 months."
+        },
+        {
+          "label": "Outcome counts",
+          "value": "1,122 all-cause deaths, including 295 cardiovascular deaths"
+        },
+        {
+          "label": "Baseline summaries",
+          "value": "The weighted mean age was 50.63 years (SE 0.20). Women numbered 5,608 and represented 52.32% after survey weighting."
+        }
+      ],
+      "source_locator": "Methods 2.1, Study Design and Population. Figure 1 caption. Results 3.1 and Table 1."
+    },
+    {
+      "id": "KF2",
+      "claim": "EASIX and the CKM-stage assignment are explicitly defined from baseline survey measurements.",
+      "context": "A routine-laboratory composite and retrospectively operationalized CKM classification.",
+      "evidence": [
+        {
+          "label": "Index formula",
+          "value": "EASIX = lactate dehydrogenase (U/L) × creatinine (mg/dL) ÷ platelet count (10⁹/L). Each component was measured once at the baseline mobile examination."
+        },
+        {
+          "label": "Exposure scale",
+          "value": "Cox models use one raw EASIX unit for continuous estimates and Q1 as the reference for quartile comparisons."
+        },
+        {
+          "label": "Quartile boundaries",
+          "value": "Sample quartile boundaries were 0.340, 0.457 and 0.616. The observed range was 0.024–11.542."
+        },
+        {
+          "label": "CKM definition",
+          "value": "The study assigned the highest qualifying stage under the 2023 AHA framework. Stage 3 was operationalized as very-high-risk CKD or a 10-year PREVENT base total-CVD risk of at least 20%. Stage 4 used self-reported clinical CVD and was excluded."
+        },
+        {
+          "label": "Older-age handling",
+          "value": "The primary PREVENT calculation assigned age 79 to those aged 80 or older. The separate age-restricted analysis covers ages 30–79."
+        }
+      ],
+      "source_locator": "Methods 2.1–2.3. Table 1 (EASIX range). Discussion (PREVENT age range)."
+    },
+    {
+      "id": "KF3",
+      "claim": "The primary estimates use fasting-subsample survey design and stated adjustment sets.",
+      "context": "Complex-survey estimation of mortality associations.",
+      "evidence": [
+        {
+          "label": "Design",
+          "value": "Combined fasting-subsample weights, SDMVSTRA sampling strata and SDMVPSU primary sampling units"
+        },
+        {
+          "label": "Estimator",
+          "value": "Survey-weighted Cox models used svycoxph with design-based linearization variance. The quartile trend test assigned each quartile its median EASIX."
+        },
+        {
+          "label": "Model 1",
+          "value": "Age group (under 60 or at least 60 years), sex, race and ethnicity, marital status, education and family poverty-income ratio"
+        },
+        {
+          "label": "Model 2",
+          "value": "Model 1 plus current smoking, body mass index, systolic blood pressure, fasting plasma glucose and antihypertensive, glucose-lowering and statin use"
+        },
+        {
+          "label": "Reporting units",
+          "value": "Table 1 presents weighted means with standard errors for continuous variables, unweighted counts with weighted percentages for categorical variables, and sample medians, interquartile ranges and ranges for EASIX."
+        }
+      ],
+      "source_locator": "Methods 2.4–2.5. Table 1 and Table 2 footnotes."
+    },
+    {
+      "id": "KF4",
+      "claim": "Higher EASIX is associated with mortality in the primary adjusted Cox summaries.",
+      "context": "Survey-weighted Cox Model 2 estimates for the two mortality outcomes.",
+      "evidence": [
+        {
+          "label": "Per one-unit, all cause",
+          "value": "HR 1.41 (95% CI 1.24–1.61), P < 0.001"
+        },
+        {
+          "label": "Per one-unit, cardiovascular",
+          "value": "HR 1.30 (95% CI 1.13–1.49), P < 0.001"
+        },
+        {
+          "label": "Q4 vs Q1, all cause",
+          "value": "HR 1.55 (95% CI 1.22–1.96), P < 0.001"
+        },
+        {
+          "label": "Q3/Q4 vs Q1, cardiovascular",
+          "value": "Q3 HR 2.08 (95% CI 1.29–3.37), P = 0.003. Q4 HR 2.51 (95% CI 1.54–4.07), P < 0.001."
+        },
+        {
+          "label": "Lower quartiles",
+          "value": "The all-cause Q2 and Q3 confidence intervals included 1. The cardiovascular Q2 HR was 1.58 (95% CI 0.93–2.68), P = 0.093."
+        },
+        {
+          "label": "Across adjustment sets",
+          "value": "In crude, Model 1 and Model 2 analyses, the continuous HRs were 1.59, 1.43 and 1.41 for all-cause mortality and 1.57, 1.34 and 1.30 for cardiovascular mortality. Quartile trend P values were below 0.001 for both outcomes across all three models."
+        }
+      ],
+      "source_locator": "Results 3.2 and Table 2, Model 2 columns."
+    },
+    {
+      "id": "KF5",
+      "claim": "The cardiovascular mortality association rose more steeply at lower EASIX values.",
+      "context": "Spline estimates and descriptive comparisons of the three laboratory components.",
+      "evidence": [
+        {
+          "label": "Spline design",
+          "value": "The 10th, 50th and 90th percentile knots were 0.26, 0.46 and 0.83. EASIX 0.46 was the reference at HR 1.0."
+        },
+        {
+          "label": "All-cause shape",
+          "value": "P for nonlinearity = 0.466"
+        },
+        {
+          "label": "Cardiovascular shape",
+          "value": "P for nonlinearity = 0.008. The main text describes a steeper increase at lower EASIX and a more gradual increase later, with wider confidence intervals at high values."
+        },
+        {
+          "label": "Discrimination",
+          "value": "The study compared time-dependent AUCs for EASIX, LDH, creatinine and platelets at 12–240 months. EASIX generally had numerically higher AUCs earlier in follow-up. Creatinine had higher AUCs at the longest times."
+        },
+        {
+          "label": "Evidence role",
+          "value": "The AUC comparisons were descriptive. The main text does not report exact AUC values."
+        }
+      ],
+      "source_locator": "Methods 2.5 (splines and AUC). Results 3.2–3.3. Figures 2–3 captions."
+    },
+    {
+      "id": "KF6",
+      "claim": "Mortality estimates varied numerically across CKM stages. Full-cohort interaction P values were 0.062 and 0.057.",
+      "context": "Model 2 stratum estimates per one EASIX unit, with stages 0 and 1 combined.",
+      "evidence": [
+        {
+          "label": "CKM strata",
+          "value": "Stages 0–1 included 2,898 participants, stage 2 included 6,751 and stage 3 included 1,236. These are unweighted counts."
+        },
+        {
+          "label": "All-cause HRs by stage",
+          "value": "For stages 0–1, 2 and 3, respectively, HRs were 2.14 (95% CI 1.45–3.16), 1.28 (1.06–1.56) and 1.41 (1.27–1.57). Interaction P = 0.062."
+        },
+        {
+          "label": "Cardiovascular HRs by stage",
+          "value": "For stages 0–1, 2 and 3, respectively, HRs were 2.63 (95% CI 1.34–5.16), 1.27 (1.03–1.57) and 1.01 (0.78–1.31). Interaction P = 0.057."
+        },
+        {
+          "label": "Precision",
+          "value": "The combined stages 0–1 group had 17 cardiovascular deaths. The stage 3 cardiovascular estimate was close to the null."
+        },
+        {
+          "label": "Age-restricted finding",
+          "value": "In ages 30–79, all-cause interaction P was 0.047 and cardiovascular interaction P was 0.068. The authors describe the age-restricted all-cause finding as exploratory."
+        }
+      ],
+      "source_locator": "Methods 2.5 (subgroup design). Results 3.1 and 3.4. Figure 4 caption. Discussion (CKM-stage estimates and 17 early-stage cardiovascular deaths)."
+    },
+    {
+      "id": "KF7",
+      "claim": "The authors report positive associations in several sensitivity analyses, including after additional lifestyle and renal adjustment.",
+      "context": "Sensitivity results reported in the article’s main text.",
+      "evidence": [
+        {
+          "label": "Early deaths/imputation",
+          "value": "The main Results reports positive associations after excluding deaths within two years and after multiple imputation of missing covariates, with details cited in Tables S2 and S3."
+        },
+        {
+          "label": "Lifestyle subset",
+          "value": "Alcohol, sleep duration and HEI-2015 were added. All models were refitted in the same complete-case subset. HRs were 1.66 (95% CI 1.38–1.99) for all-cause and 1.43 (1.08–1.91) for cardiovascular mortality. The main text gives no subset size."
+        },
+        {
+          "label": "eGFR sensitivity",
+          "value": "Adding eGFR categorized at 90 mL/min/1.73 m² gave HRs of 1.40 (95% CI 1.23–1.59) for all-cause and 1.24 (1.08–1.43) for cardiovascular mortality."
+        },
+        {
+          "label": "Age restriction",
+          "value": "Excluding 549 participants aged at least 80 years left 10,336. Model 2 HRs were 1.41 (95% CI 1.23–1.62) for all-cause and 1.33 (1.14–1.55) for cardiovascular mortality."
+        },
+        {
+          "label": "Competing event",
+          "value": "The article describes Fine–Gray and cumulative incidence analyses treating noncardiovascular death as a competing event. Cumulative cardiovascular death incidence was highest in Q4."
+        },
+        {
+          "label": "Ages 30–79, stage-specific all-cause mortality",
+          "value": "For CKM stages 0–1, 2 and 3, the main text gives HRs of 2.10 (95% CI 1.40–3.15), 1.28 (1.05–1.56) and 1.39 (1.23–1.57), respectively. Interaction P = 0.047."
+        },
+        {
+          "label": "Ages 30–79, stage-specific cardiovascular mortality",
+          "value": "For those same stages, the main text gives HRs of 2.48 (95% CI 1.23–4.97), 1.29 (1.05–1.58) and 1.00 (0.75–1.34), respectively. Interaction P = 0.068."
+        }
+      ],
+      "source_locator": "Methods 2.5 (sensitivity analysis). Results 3.4. Discussion (renal, stage and lifestyle paragraphs)."
+    }
+  ],
+  "what_this_adds": [
+    "Extends EASIX research to linked long-term mortality across CKM stages 0-3, using a readily computed three-laboratory index.",
+    "Provides survey-weighted continuous/quartile estimates and complementary shape, component and CKM-group analyses for risk-marker comparison.",
+    "Examines several adjustment/selection sensitivities while identifying renal overlap and the further evidence needed to establish clinical value."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Observed adjusted associations of baseline EASIX with linked all-cause and cardiovascular deaths in the selected NHANES cohort.",
+      "The reported spline shape, descriptive marker-discrimination comparisons and stage-specific estimates with their interaction/precision limits.",
+      "Main-text sensitivity summaries under additional adjustment, missing-data and age/competing-event analyses."
+    ],
+    "does_not_establish": [
+      "A specific endothelial mechanism or a causal effect of EASIX.",
+      "Incremental prediction over an established risk model, a clinical threshold or improved decisions and outcomes.",
+      "Applicability to CKM stage 4, younger adults, institutionalized populations or populations outside the United States."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Who was analyzed and how long were outcomes tracked?",
+      "answer": "The primary cohort included 10,885 NHANES 1999–2018 participants aged at least 30 years at CKM stages 0–3. Mortality follow-up extended to 31 December 2019. Median follow-up was 97 months, with 1,122 deaths, including 295 cardiovascular deaths.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How is EASIX calculated and scaled in the models?",
+      "answer": "EASIX is LDH (U/L) × creatinine (mg/dL) ÷ platelet count (10⁹/L). The components were measured at the baseline examination. Continuous HRs are per one raw unit. Sample-quartile boundaries were 0.340, 0.457 and 0.616.",
+      "evidence_refs": [
+        "KF2",
+        "KF1"
+      ]
+    },
+    {
+      "question": "How were CKM stages and older ages handled?",
+      "answer": "The researchers assigned the highest qualifying stage using the 2023 AHA framework. Stage 3 used very-high-risk CKD or a 10-year PREVENT base total-CVD risk of at least 20%. Stage 4 used self-reported clinical CVD and was excluded. Participants aged 80 or older were assigned 79 for the primary PREVENT calculation. A sensitivity analysis restricted ages to 30–79.",
+      "evidence_refs": [
+        "KF2",
+        "KF7"
+      ]
+    },
+    {
+      "question": "Which weights and covariates define the primary models?",
+      "answer": "The Cox models used combined fasting-subsample weights, strata, sampling units and design-based linearization variance. Model 1 included age group (under 60 or at least 60 years), sex, race and ethnicity, marital status, education and poverty-income ratio. Model 2 added current smoking, body mass index, systolic blood pressure, fasting glucose and antihypertensive, glucose-lowering and statin use.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What mortality associations are reported in Table 2?",
+      "answer": "Model 2 gives per-unit HRs of 1.41 (95% CI 1.24–1.61) for all-cause and 1.30 (1.13–1.49) for cardiovascular mortality. The highest versus lowest quartile HRs were 1.55 (1.22–1.96) and 2.51 (1.54–4.07), respectively.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What did the splines and AUC comparisons show?",
+      "answer": "The nonlinearity P value was 0.466 for all-cause and 0.008 for cardiovascular mortality. The text describes a steeper cardiovascular association at lower EASIX. EASIX generally had higher AUCs than its individual components early and midway in follow-up, while creatinine had higher AUCs at the longest times. These were descriptive comparisons.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "How did the mortality estimates vary across CKM groups?",
+      "answer": "In the full cohort, interaction P values were 0.062 for all-cause and 0.057 for cardiovascular mortality. The cardiovascular HR in stage 3 was 1.01 (95% CI 0.78–1.31), and stages 0–1 had 17 cardiovascular deaths. For ages 30–79 the P values were 0.047 and 0.068, respectively. The authors treat the age-restricted all-cause subgroup pattern as exploratory.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What did additional adjustment and age restriction show?",
+      "answer": "After adjusting for alcohol, sleep and diet quality in a common complete-case subset, the HRs were 1.66 (95% CI 1.38–1.99) for all-cause and 1.43 (1.08–1.91) for cardiovascular mortality. With additional eGFR adjustment they were 1.40 (1.23–1.59) and 1.24 (1.08–1.43). The positive associations also persisted at ages 30–79. Renal function contributes to both EASIX and CKM staging, which limits attribution to a specific endothelial mechanism.",
+      "evidence_refs": [
+        "KF7",
+        "KF2"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Cardiovascular-kidney-metabolic syndrome stages 0-3",
+      "All-cause mortality",
+      "Cardiovascular mortality"
+    ],
+    "data_types": [
+      "NHANES complex-survey measurements",
+      "Routine LDH, creatinine and platelet count",
+      "Public-use linked mortality"
+    ],
+    "models_and_methods": [
+      "EASIX",
+      "AHA CKM staging",
+      "PREVENT base total-CVD risk",
+      "Survey-weighted Cox regression",
+      "Restricted cubic splines",
+      "Time-dependent AUC",
+      "Domain subgroup estimation",
+      "Multiple imputation",
+      "Competing-risk sensitivity analysis"
+    ],
+    "evidence_concepts": [
+      "Raw versus weighted denominators",
+      "Exposure-unit interpretation",
+      "Association versus causal effect",
+      "Interaction versus within-group significance",
+      "Renal overlap of composite markers",
+      "Incremental prediction and clinical utility"
+    ]
+  },
+  "limitations": [
+    "EASIX is a single baseline measurement combining LDH, creatinine and platelets. Residual confounding, including physical activity, and shared creatinine in EASIX and renal staging limit a specific endothelial interpretation.",
+    "The primary analysis excluded 1,037 otherwise eligible participants for missing covariates. Misclassification is possible for survey-derived CKM stages, self-reported clinical disease and cause-of-death coding.",
+    "Participants aged 80 or older were assigned age 79 for PREVENT. The age-restricted sensitivity analysis does not verify those older individual stage assignments.",
+    "Exact AUC points and subgroup values reported only in figures were unavailable for this summary. Supplemental Tables S1–S7 and Figure S1 were also unavailable. This limits verification of supplemental covariate distributions, full sensitivity tables and the competing-risk curve. The primary article reports the estimates cited above."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.2147/cia.s493841",
+      "relationship": "The EVAR survival nomogram provides a comparison between an adjusted risk-marker association and the development of a postoperative prediction tool in a distinct cohort."
+    }
+  ],
+  "provenance": {
+    "doi_url": "https://doi.org/10.1177/00368504261499186",
+    "publisher_url": "https://journals.sagepub.com/doi/10.1177/00368504261499186",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42893432/",
+    "full_text_source_url": "https://www.researchgate.net/publication/416242591_Endothelial_dysfunction_and_long-term_survival_in_cardiovascular-kidney-metabolic_syndrome_stages_0-3_An_EASIX-based_national_cohort_study",
+    "supporting_information_url": "https://journals.sagepub.com/doi/suppl/10.1177/00368504261499186/suppl_file/sj-pdf-1-sci-10.1177_00368504261499186.pdf",
+    "version_of_record": "Science Progress. 2026, 109(4), article 00368504261499186.",
+    "license": "The article is distributed under CC BY-NC 4.0.",
+    "evidence_basis": "Published article text, Tables 1–2 and the four main-figure captions.",
+    "source_note_identity": "Article byline: Asiya Abudesimu, Zhonghua Sun, Ge Zhang, Xiangyu Sun, Xinliang Peng, Dilixiati Siti and Xiang Ma.",
+    "source_note_tables": "Table 1 reports sample counts and survey-weighted percentages. Table 2 reports survey-weighted hazard ratios.",
+    "source_note_figures": "Figure captions and corresponding main-text descriptions support the reported study flow, spline shape, discrimination comparison and subgroup methods. Exact graphical AUC points and additional plot-only values were unavailable.",
+    "supporting_material_scope": "The publisher lists supplemental Tables S1–S7 and Figure S1. These assets were unavailable for this summary. The article’s main Results supplies its reported sensitivity estimates and direction of the competing-risk comparison.",
+    "source_note_scale_and_models": "Continuous HRs are per one raw EASIX unit. Model 1 uses age below 60 or at least 60 years. Table 2 lists the additional Model 2 covariates.",
+    "source_note_stage_interpretation": "Full-cohort CKM-stage interaction P values were 0.062 for all-cause and 0.057 for cardiovascular mortality. The exploratory age-restricted result is reported separately.",
+    "data_availability": "The article directs readers to NCHS for the public NHANES survey data and public-use linked mortality files.",
+    "ethics": "The source reports NCHS ethics approval and informed consent, naming protocols 98-12, 2005-06, 2011-17 and 2018-01; it describes this public deidentified secondary analysis as requiring no additional approval.",
+    "conflicts_of_interest": "The article declares no potential conflicts of interest.",
+    "crossref_url": "https://api.crossref.org/works/10.1177/00368504261499186"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies, and does not replace, the formal article.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How have routine laboratory composites been studied before clinical cardiovascular disease in CKM?",
+        "supported_scope": "The selected national cohort, EASIX definition, linked follow-up and explicitly adjusted mortality associations.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What design details matter when interpreting an NHANES mortality association?",
+        "supported_scope": "Fasting-subsample survey design, raw versus weighted reporting, raw exposure units, adjustment sets, staging and age handling.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What do nonlinear and stage-specific EASIX findings add to risk-marker research?",
+        "supported_scope": "Reported spline shape, descriptive component discrimination and stage-specific estimates with actual interaction tests and precision.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "How robust are reported EASIX associations to alternative analytic choices?",
+        "supported_scope": "The reported main-text early-death, missing-data, lifestyle, eGFR, age-restriction and competing-risk sensitivity results.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "An endothelial causal mechanism or benefit from changing EASIX.",
+      "A clinical screening threshold or prospective improvement over an established risk model.",
+      "A confirmed difference in prognostic performance across CKM stages."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-easix-1",
+        "component": "KF1 — The analytic cohort links baseline CKM measurements with long-term mortality in adults without reported clinical CVD.",
+        "context": "Ten NHANES cycles, complete-case selection and public-use mortality linkage.",
+        "finding": "The analytic cohort links baseline CKM measurements with long-term mortality in adults without reported clinical CVD. 10,885 adults aged at least 30 years at CKM stages 0–3. The study excluded stage 4. Of 11,922 otherwise eligible participants, 1,037 (8.70%) were excluded for missing primary covariates. Counts of missing values for individual variables overlap. Follow-up from the baseline mobile examination to death or 31 December 2019. Median follow-up was 97 months. 1,122 all-cause deaths, including 295 cardiovascular deaths. The weighted mean age was 50.63 years (SE 0.20). Women numbered 5,608 and represented 52.32% after survey weighting.",
+        "evidence_level": "Observational cohort design and linked outcomes",
+        "scope": "Ten NHANES cycles, complete-case selection and public-use mortality linkage.",
+        "source_locator": "Methods 2.1, Study Design and Population. Figure 1 caption. Results 3.1 and Table 1.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-easix-2",
+        "component": "KF2 — EASIX and the CKM-stage assignment are explicitly defined from baseline survey measurements.",
+        "context": "A routine-laboratory composite and retrospectively operationalized CKM classification.",
+        "finding": "EASIX and the CKM-stage assignment are explicitly defined from baseline survey measurements. EASIX = lactate dehydrogenase (U/L) × creatinine (mg/dL) ÷ platelet count (10⁹/L). Each component was measured once at the baseline mobile examination. Cox models use one raw EASIX unit for continuous estimates and Q1 as the reference for quartile comparisons. Sample quartile boundaries were 0.340, 0.457 and 0.616. The observed range was 0.024–11.542. The study assigned the highest qualifying stage under the 2023 AHA framework. Stage 3 was operationalized as very-high-risk CKD or a 10-year PREVENT base total-CVD risk of at least 20%. Stage 4 used self-reported clinical CVD and was excluded. The primary PREVENT calculation assigned age 79 to those aged 80 or older. The separate age-restricted analysis covers ages 30–79.",
+        "evidence_level": "Baseline exposure and stage operationalization",
+        "scope": "A routine-laboratory composite and retrospectively operationalized CKM classification.",
+        "source_locator": "Methods 2.1–2.3. Table 1 (EASIX range). Discussion (PREVENT age range).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-easix-3",
+        "component": "KF3 — The primary estimates use fasting-subsample survey design and stated adjustment sets.",
+        "context": "Complex-survey estimation of mortality associations.",
+        "finding": "The primary estimates use fasting-subsample survey design and stated adjustment sets. Combined fasting-subsample weights, SDMVSTRA sampling strata and SDMVPSU primary sampling units. Survey-weighted Cox models used svycoxph with design-based linearization variance. The quartile trend test assigned each quartile its median EASIX. Age group (under 60 or at least 60 years), sex, race and ethnicity, marital status, education and family poverty-income ratio. Model 1 plus current smoking, body mass index, systolic blood pressure, fasting plasma glucose and antihypertensive, glucose-lowering and statin use. Table 1 presents weighted means with standard errors for continuous variables, unweighted counts with weighted percentages for categorical variables, and sample medians, interquartile ranges and ranges for EASIX.",
+        "evidence_level": "Complex-survey association methods",
+        "scope": "Complex-survey estimation of mortality associations.",
+        "source_locator": "Methods 2.4–2.5. Table 1 and Table 2 footnotes.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-easix-4",
+        "component": "KF4 — Higher EASIX is associated with mortality in the primary adjusted Cox summaries.",
+        "context": "Survey-weighted Cox Model 2 estimates for the two mortality outcomes.",
+        "finding": "Higher EASIX is associated with mortality in the primary adjusted Cox summaries. HR 1.41 (95% CI 1.24–1.61), P < 0.001. HR 1.30 (95% CI 1.13–1.49), P < 0.001. HR 1.55 (95% CI 1.22–1.96), P < 0.001. Q3 HR 2.08 (95% CI 1.29–3.37), P = 0.003. Q4 HR 2.51 (95% CI 1.54–4.07), P < 0.001. The all-cause Q2 and Q3 confidence intervals included 1. The cardiovascular Q2 HR was 1.58 (95% CI 0.93–2.68), P = 0.093. In crude, Model 1 and Model 2 analyses, the continuous HRs were 1.59, 1.43 and 1.41 for all-cause mortality and 1.57, 1.34 and 1.30 for cardiovascular mortality. Quartile trend P values were below 0.001 for both outcomes across all three models.",
+        "evidence_level": "Adjusted observational mortality associations",
+        "scope": "Survey-weighted Cox Model 2 estimates for the two mortality outcomes.",
+        "source_locator": "Results 3.2 and Table 2, Model 2 columns.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-easix-5",
+        "component": "KF5 — The cardiovascular mortality association rose more steeply at lower EASIX values.",
+        "context": "Spline estimates and descriptive comparisons of the three laboratory components.",
+        "finding": "The cardiovascular mortality association rose more steeply at lower EASIX values. The 10th, 50th and 90th percentile knots were 0.26, 0.46 and 0.83. EASIX 0.46 was the reference at HR 1.0. P for nonlinearity = 0.466. P for nonlinearity = 0.008. The main text describes a steeper increase at lower EASIX and a more gradual increase later, with wider confidence intervals at high values. The study compared time-dependent AUCs for EASIX, LDH, creatinine and platelets at 12–240 months. EASIX generally had numerically higher AUCs earlier in follow-up. Creatinine had higher AUCs at the longest times. The AUC comparisons were descriptive. The main text does not report exact AUC values.",
+        "evidence_level": "Main-text spline/discrimination descriptions",
+        "scope": "Spline estimates and descriptive comparisons of the three laboratory components.",
+        "source_locator": "Methods 2.5 (splines and AUC). Results 3.2–3.3. Figures 2–3 captions.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-easix-6",
+        "component": "KF6 — Mortality estimates varied numerically across CKM stages. Full-cohort interaction P values were 0.062 and 0.057.",
+        "context": "Model 2 stratum estimates per one EASIX unit, with stages 0 and 1 combined.",
+        "finding": "Mortality estimates varied numerically across CKM stages. Full-cohort interaction P values were 0.062 and 0.057. Stages 0–1 included 2,898 participants, stage 2 included 6,751 and stage 3 included 1,236. These are unweighted counts. For stages 0–1, 2 and 3, respectively, HRs were 2.14 (95% CI 1.45–3.16), 1.28 (1.06–1.56) and 1.41 (1.27–1.57). Interaction P = 0.062. For stages 0–1, 2 and 3, respectively, HRs were 2.63 (95% CI 1.34–5.16), 1.27 (1.03–1.57) and 1.01 (0.78–1.31). Interaction P = 0.057. The combined stages 0–1 group had 17 cardiovascular deaths. The stage 3 cardiovascular estimate was close to the null. In ages 30–79, all-cause interaction P was 0.047 and cardiovascular interaction P was 0.068. The authors describe the age-restricted all-cause finding as exploratory.",
+        "evidence_level": "Subgroup associations and interaction tests",
+        "scope": "Model 2 stratum estimates per one EASIX unit, with stages 0 and 1 combined.",
+        "source_locator": "Methods 2.5 (subgroup design). Results 3.1 and 3.4. Figure 4 caption. Discussion (CKM-stage estimates and 17 early-stage cardiovascular deaths).",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-easix-7",
+        "component": "KF7 — The authors report positive associations in several sensitivity analyses, including after additional lifestyle and renal adjustment.",
+        "context": "Sensitivity results reported in the article’s main text.",
+        "finding": "The authors report positive associations in several sensitivity analyses, including after additional lifestyle and renal adjustment. The main Results reports positive associations after excluding deaths within two years and after multiple imputation of missing covariates, with details cited in Tables S2 and S3. Alcohol, sleep duration and HEI-2015 were added. All models were refitted in the same complete-case subset. HRs were 1.66 (95% CI 1.38–1.99) for all-cause and 1.43 (1.08–1.91) for cardiovascular mortality. The main text gives no subset size. Adding eGFR categorized at 90 mL/min/1.73 m² gave HRs of 1.40 (95% CI 1.23–1.59) for all-cause and 1.24 (1.08–1.43) for cardiovascular mortality. Excluding 549 participants aged at least 80 years left 10,336. Model 2 HRs were 1.41 (95% CI 1.23–1.62) for all-cause and 1.33 (1.14–1.55) for cardiovascular mortality. The article describes Fine–Gray and cumulative incidence analyses treating noncardiovascular death as a competing event. Cumulative cardiovascular death incidence was highest in Q4. For CKM stages 0–1, 2 and 3, the main text gives HRs of 2.10 (95% CI 1.40–3.15), 1.28 (1.05–1.56) and 1.39 (1.23–1.57), respectively. Interaction P = 0.047. For those same stages, the main text gives HRs of 2.48 (95% CI 1.23–4.97), 1.29 (1.05–1.58) and 1.00 (0.75–1.34), respectively. Interaction P = 0.068.",
+        "evidence_level": "Main-text sensitivity results",
+        "scope": "Sensitivity results reported in the article’s main text.",
+        "source_locator": "Methods 2.5 (sensitivity analysis). Results 3.4. Discussion (renal, stage and lifestyle paragraphs).",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}
