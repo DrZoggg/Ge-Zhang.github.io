@@ -463,7 +463,7 @@ def validate_v2_rendered_page(
         *(["Verify publication identity"] if 'id="scholarly-records"' in page else []),
     ]
     pilot = evidence_presentation.STYLESHEET in page
-    early_summary = pilot or publication.get("deep_geo") is False
+    early_summary = pilot or publication.get("deep_geo") is False or evidence_presentation.standalone_v2(content["doi"])
     if content.get('discovery_layer'):
         expected_discovery = paper_discovery.render_html(content)
         require(raw_page.count(expected_discovery) == 1 and raw_page.count('data-discovery-layer="1"') == 1,
@@ -2746,14 +2746,15 @@ def validate_site():
                         )
         else:
             paper_geo_statuses[token] = "none"
+        standalone_v2 = paper_geo_statuses[token] == "v2" and evidence_presentation.standalone_v2(norm_doi(item.get("doi")))
         require(
             ('<span class="badge">Deep GEO</span>' in page)
-            == (token in deep_tokens and paper_geo_statuses[token] in {"v1", "v2"}),
+            == (token in deep_tokens and paper_geo_statuses[token] in {"v1", "v2"} and not standalone_v2),
             f"Deep GEO badge/state mismatch for {slug}.html.",
         )
         require(
             ('<span class="badge">Paper GEO V2</span>' in page)
-            == (token not in deep_tokens and paper_geo_statuses[token] == "v2"),
+            == (paper_geo_statuses[token] == "v2" and (token not in deep_tokens or standalone_v2)),
             f"Non-selected Paper GEO V2 badge/state mismatch for {slug}.html.",
         )
         require(
