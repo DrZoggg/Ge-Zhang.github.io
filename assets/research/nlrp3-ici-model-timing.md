@@ -26,4 +26,6 @@ For established injury, Supplementary Figure 7A shows IgG or anti-PD-1 on days 1
 
 This is an author-prepared comparison of reported mouse experiments. Read the [published full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/), especially Methods “Mice and cell lines” and “Animal grouping and treatment”, Figures 2, 3 and 6, and the established-injury Results section. Each CSV row retains its source locator and the formal DOI, [10.1136/jitc-2024-010127](https://doi.org/10.1136/jitc-2024-010127). Cite the original article for its experiments and findings. No new experiment or complete operating protocol is supplied by this model-selection record.
 
+The [official versioned archive manifest](https://pmc-oa-opendata.s3.amazonaws.com/PMC11749606.1/PMC11749606.1.json) links the article and supplement; the [original article XML](https://pmc-oa-opendata.s3.amazonaws.com/PMC11749606.1/PMC11749606.1.xml) contains Results section s3-7 and its SP2 references.
+
 Prepared 15 November 2026. The original Supplementary Figure 7 was verified on 27 November 2026.
