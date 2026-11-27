@@ -2034,8 +2034,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

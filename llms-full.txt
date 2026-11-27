@@ -573,7 +573,7 @@
 - DOI: 10.1038/s41598-024-80885-2
 - HTML: https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.html
 - Markdown: https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Omics-based molecular classifications empowering in precision oncology
 - Journal: Cellular Oncology
