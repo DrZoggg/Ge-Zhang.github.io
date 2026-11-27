@@ -12,11 +12,9 @@
       // GA4 Enhanced Measurement owns outbound clicks. This event owns only
       // same-origin paper HTML, including its in-page evidence anchors.
       if (target.origin !== location.origin || !/^\/papers\/[a-z0-9-]+\.html$/.test(target.pathname)) return;
-      gtag('event', 'research_handoff', {
-        source_path: location.pathname,
-        target_path: target.pathname,
-        target_type: 'site_paper',
-      });
+      // The stream already reports paper_path as an event-scoped dimension.
+      // GA4 records the source from the guide's configured page location.
+      gtag('event', 'research_handoff', {paper_path: target.pathname});
     } catch (_) {
       // Analytics must not interrupt navigation.
     }
