@@ -1,0 +1,648 @@
+{
+  "version": 2,
+  "doi": "10.14283/jpad.2024.161",
+  "discovery_layer": {
+    "field_entry": [
+      "Circadian-related molecular research",
+      "Alzheimer disease transcriptomics"
+    ],
+    "review_topics": [
+      "Genetic association and expression candidate integration",
+      "Transcriptomic scores and clinical biomarker associations"
+    ],
+    "scientific_role": "Integrates shift-work GWAS, AD/eQTL data and expression screening to prioritize seven genes, proposes a clock-deviation expression score, and adds local blood-assay and sleep/biomarker observations.",
+    "evidence_position": "Genetic/expression association, reported MR summaries, computational score evaluation and separate clinical-substudy observations.",
+    "related_concepts": [
+      "Circadian disruption",
+      "Sleep and chronotype",
+      "Molecular score construction"
+    ],
+    "citation_contexts": [
+      "Methods: combine candidate screening, eQTL association and expression-background scoring.",
+      "Discussion: distinguish molecular circadian proxies, blood expression and questionnaire/biomarker associations."
+    ]
+  },
+  "display_title": "Shift work and AD: seven molecular candidates, blood assays and clock-deviation scoring",
+  "summary": "The study integrates shift-work and AD genetic/expression data to prioritize seven genes and proposes clock deviation level (CDL), an expression score built against matched random-gene backgrounds. It complements those computational analyses with local blood-expression, serum-protein and sleep/biomarker observations.",
+  "research_question": "Which circadian-related molecular candidates connect the study’s shift-work and AD analyses, how is a transcriptomic clock-deviation score constructed, and what expression and biomarker patterns accompany those candidates?",
+  "author_summary": "The study combines shift-work GWAS, AD GWAS, cis-eQTL data and 4,077 reported expression entries across 16 dataset/platform groups. A 464-gene overlap is reduced to 220 concordant candidates and seven target genes: CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C. The separate local clinical component includes 45 people with AD and 12 healthy participants. Its published assay tables contain four AD/four control qPCR rows and sixteen AD/eight control ELISA rows, with higher CCS/POLR1D/PPP4C mRNA, lower NRP1/PLEKHA5 mRNA, and corresponding selected serum-protein/AD-marker differences. Sleep-questionnaire scores correlate with hippocampal volume and measured biomarkers. CDL uses seven-gene expression, within-dataset centering, 50 expression bins and 1,000 matched-background samplings; the article reports distributions and comparisons in multiple expression datasets. Reported CDL correlations are r=-0.30 with alpha-secretase activity and r=-0.33 with soluble Aβ42. The principal MR interval/instrument-count disagreement and the GSE124870 species/condition mapping remain explicit at their affected claims. The contribution is an integrated candidate/scoring framework and complementary molecular/clinical observations.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Two-sample shift-work-to-AD and gene-expression-to-AD MR analyses; public expression screening and seven-gene score construction; additional perturbation/sleep dataset comparisons; separate retrospective local clinical study with qPCR, serum ELISA, MRI and questionnaires.",
+    "evidence_type": "GWAS/cis-eQTL association, public transcriptomics, published MR summaries, computational expression scoring, local molecular measurements and cross-sectional biomarker associations.",
+    "population": "Article-reported European-ancestry GWAS/eQTL resources; public AD/control expression entries and separate reference experiments; local AD and healthy participants recruited at one hospital in 2023-2024.",
+    "primary_endpoint": "Selection and characterization of seven circadian-related molecular candidates and construction of CDL.",
+    "secondary_endpoint": "Reported shift-work/gene MR estimates; target-gene mRNA/protein directions; questionnaire, hippocampal and biomarker associations; score distribution/comparison and functional enrichment.",
+    "data_modalities": [
+      "GWAS summary statistics",
+      "Cis-eQTL summary statistics",
+      "Public microarray/transcriptomic expression",
+      "Local qPCR and serum ELISA",
+      "Hippocampal MRI measurements",
+      "MEQ-SA/PSQI questionnaires",
+      "Expression-derived CDL and pathway/network analyses"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Shift-work GWAS",
+        "value": "263,315 European-ancestry individuals, as reported"
+      },
+      {
+        "label": "AD GWAS",
+        "value": "63,926 individuals: 21,982 cases and 41,944 controls, as reported"
+      },
+      {
+        "label": "eQTLGen resource",
+        "value": "31,684 healthy Europeans, as reported"
+      },
+      {
+        "label": "Expression data",
+        "value": "4,077 sample entries: 2,241 AD and 1,836 controls across 16 dataset/platform groups"
+      },
+      {
+        "label": "Gene selection",
+        "value": "464 overlapping genes; 220 concordant candidates; 7 selected target genes"
+      },
+      {
+        "label": "Local clinical recruitment",
+        "value": "45 AD and 12 healthy participants"
+      },
+      {
+        "label": "Published assay table rows",
+        "value": "Table S7 qPCR: 4 AD/4 NC; Table S8 ELISA: 16 AD/8 NC"
+      },
+      {
+        "label": "CDL background construction",
+        "value": "50 expression bins; 1,000 matched random samplings"
+      }
+    ],
+    "counting_note": "GWAS participants, eQTL-resource participants, expression entries and local participants are different units and are not added into a total. The 16 expression groups include three platform entries for GSE84422; 4,077 entries are not an independently deduplicated patient count. The local 45/12 recruitment is separate from the smaller rows in the qPCR/ELISA tables; their sample-selection links and biological-versus-technical replication are incompletely specified. The additional datasets contribute group comparisons for the expression-derived CDL score."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Integrated expression screening prioritized seven circadian-related molecular candidates for AD.",
+      "context": "Intersection screening, cis-eQTL association selection and circadian-pathway correlation.",
+      "evidence": [
+        {
+          "label": "Reported expression scale",
+          "value": "4,077 entries: 2,241 AD and 1,836 controls in 16 dataset/platform groups"
+        },
+        {
+          "label": "Selection sequence",
+          "value": "464 genes overlap the AD-expression and shift-work-associated screens; 220 have concordant directions; seven are retained after MR FDR<0.1 and circadian-pathway correlation"
+        },
+        {
+          "label": "Seven candidates",
+          "value": "CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C"
+        },
+        {
+          "label": "Expression direction",
+          "value": "Figure 3B labels CCS, POLR1D and PPP4C as upregulated in AD and positively correlated with shift work. CDS2, MYRIP, NRP1 and PLEKHA5 are downregulated in AD and negatively correlated with shift work."
+        },
+        {
+          "label": "Unit",
+          "value": "Reported expression entries and computational candidates, rather than 4,077 independently established patients"
+        }
+      ],
+      "source_locator": "Methods Sec7/ Sec10; Results Identification of circadian-related genes causally associated with AD (Sec19); Figure 3A-D; Supplementary Methods Gene expression analysis; Table S1; PDF pp. 3-4 and 6-7."
+    },
+    {
+      "id": "KF2",
+      "claim": "The paper reports a positive shift-work MR estimate with unresolved effect-scale and instrument-count differences.",
+      "context": "Published genetic-association analysis, with source-specific numbers kept together.",
+      "evidence": [
+        {
+          "label": "GWAS resources",
+          "value": "UK Biobank shift-work GWAS n=263,315; AD GWAS n=63,926 (21,982 cases/41,944 controls), both described as European ancestry"
+        },
+        {
+          "label": "Reported principal estimate",
+          "value": "Abstract/Results: IVW OR 2.49, 95% CI 1.79-3.19, p=0.01"
+        },
+        {
+          "label": "Plotted scale",
+          "value": "Figure 2B: beta 0.91, SE 0.35, OR 2.49; Figure 2D All-IVW beta 0.91, 95% CI 0.21-1.61. The printed OR interval is inconsistent with that beta-scale interval."
+        },
+        {
+          "label": "Instrument count",
+          "value": "Table S3 lists 36 screened SNPs, with 15 above F=10. Results describes 15 final instruments. Figure 2D lists 13 SNP labels and Table S4 reports 13 SNPs per sensitivity model."
+        },
+        {
+          "label": "Sensitivity estimates",
+          "value": "Table S4: MR Egger p=0.31, weighted median p=0.15, simple mode p=0.30, weighted mode p=0.28; these positive estimates do not independently establish a statistically robust causal effect"
+        },
+        {
+          "label": "Reverse analysis",
+          "value": "Table S5: 40 SNPs, IVW beta -0.003, SE 0.003, p=0.337, reported OR 0.997"
+        }
+      ],
+      "source_locator": "Methods Sec4-Sec5/Sec9; Results Causal effects of shift work on Alzheimer’s disease (Sec18); Figure 2B-E; Supplementary Methods MR analysis; Tables S3-S5; PDF pp. 3-6."
+    },
+    {
+      "id": "KF3",
+      "claim": "Gene-expression MR supplies a second, distinct set of candidate associations.",
+      "context": "Cis-eQTL-based estimates after screening 220 genes; MYRIP uses a Wald ratio and the other six use IVW.",
+      "evidence": [
+        {
+          "label": "Selection threshold",
+          "value": "MR FDR<0.1, followed by significant correlation with the GOBP_CIRCADIAN_RHYTHM GSVA score"
+        },
+        {
+          "label": "Higher-odds associations",
+          "value": "CCS OR 1.05 (1.01-1.09); POLR1D 1.08 (1.03-1.13); PPP4C 1.22 (1.12-1.33)"
+        },
+        {
+          "label": "Lower-odds associations",
+          "value": "CDS2 OR 0.94 (0.91-0.98); MYRIP 0.58 (0.39-0.85); NRP1 0.89 (0.84-0.94); PLEKHA5 0.89 (0.83-0.96)"
+        },
+        {
+          "label": "Method context",
+          "value": "eQTLGen n=31,684 as reported; Supplementary Methods selects cis variants within 1,000 kb upstream/downstream at p<5×10^-6 and clumps at r²<0.1"
+        },
+        {
+          "label": "Role",
+          "value": "Genetically proxied candidate-expression associations; they do not establish gene perturbation effects, treatment benefit or mediation of the disputed shift-work estimate"
+        }
+      ],
+      "source_locator": "Methods eQTL dataset (Sec6), Sec9-Sec10; Results Sec19; Figure 3B-D; Supplementary Methods MR analysis, Figure S1 and Table S6; PDF pp. 3-4 and 6-7."
+    },
+    {
+      "id": "KF4",
+      "claim": "Local blood assays showed target-gene and selected serum-protein differences between AD and controls.",
+      "context": "Molecular observations within the separate recruited clinical component, with assay-table rows distinguished from all recruits.",
+      "evidence": [
+        {
+          "label": "Recruitment",
+          "value": "45 AD and 12 healthy participants at one hospital, January 2023-January 2024"
+        },
+        {
+          "label": "qPCR direction",
+          "value": "CCS, POLR1D and PPP4C higher; NRP1 and PLEKHA5 lower in AD. CDS2 and MYRIP are nonsignificant (Figure 4B p=0.194; 4C p=0.471)."
+        },
+        {
+          "label": "qPCR rows",
+          "value": "Table S7: NC1-NC4 and AD1-AD4; GAPDH-normalized 2^(-ΔΔCt), with starting material written as plasm in Supplementary Methods"
+        },
+        {
+          "label": "Serum ELISA direction",
+          "value": "p-tau181, CCS and PPP4C higher; NRP1 and Aβ1-42 lower in AD"
+        },
+        {
+          "label": "ELISA rows",
+          "value": "Table S8: eight NC and sixteen AD rows. Methods describes duplicate wells; these are not two independent participants per specimen."
+        },
+        {
+          "label": "Scope",
+          "value": "Cross-sectional expression/protein follow-up, separate from causal gene function or diagnostic classifier validation"
+        }
+      ],
+      "source_locator": "Methods Clinical data collection of the inhouse cohort (Sec8) and Validation of the targeted genes (Sec11); Results Sec20; Figure 4A-L; Supplementary Methods qPCR/ELISA; Tables S2/S7/S8; PDF pp. 3-4 and 7-8."
+    },
+    {
+      "id": "KF5",
+      "claim": "The local clinical component links sleep-questionnaire scores with hippocampal and biomarker measurements.",
+      "context": "Retrospective clinical observations; sleep/chronotype questionnaires and MRI are distinct from a transcriptomic circadian score.",
+      "evidence": [
+        {
+          "label": "Clinical design",
+          "value": "AD patients underwent hippocampal MRI and completed PSQI/MEQ-SA questionnaires; reported recruitment is 45 AD/12 healthy participants"
+        },
+        {
+          "label": "PSQI-volume associations",
+          "value": "Left hippocampal volume r=-0.633446, p=3.01×10^-6; right r=-0.6238633, p=4.68×10^-6"
+        },
+        {
+          "label": "MEQ-SA-volume associations",
+          "value": "Left r=0.56260997, p=5.76×10^-5; right r=0.62576542, p=4.29×10^-6"
+        },
+        {
+          "label": "PSQI-biomarker associations",
+          "value": "p-tau181 r=0.50409385, p=0.0464783; Aβ1-42 r=-0.6004647, p=0.0139137"
+        },
+        {
+          "label": "Measurement scope",
+          "value": "Table S10 does not give an explicit valid-pair n per correlation; these questionnaire associations do not directly measure circadian phase or establish a shift-work intervention effect"
+        }
+      ],
+      "source_locator": "Methods Sec8/ Sec11; Results Insight into the association between circadian rhythm performance with AD biomarkers from inhouse cohort (Sec21); Supplementary Methods MEQ-SA/PSQI and association analysis; Tables S9-S10; PDF pp. 3 and 9."
+    },
+    {
+      "id": "KF6",
+      "claim": "Clock deviation level is a defined seven-gene expression-background score.",
+      "context": "Computational construction and distribution summaries across the study’s expression groups.",
+      "evidence": [
+        {
+          "label": "Formula",
+          "value": "CDL = L_random - L_TGs; expression is centered for each gene across the N samples in the analyzed matrix"
+        },
+        {
+          "label": "Background matching",
+          "value": "Genes are divided into 50 mean-expression bins; 1,000 random samplings match the target-gene bin frequencies and gene count"
+        },
+        {
+          "label": "Components",
+          "value": "L_TGs is the average centered target-gene expression; L_random is the average of the matched random features"
+        },
+        {
+          "label": "Reported summaries",
+          "value": "Figure 5A-C presents expression-score distributions, means and proportions using median/quartile cutoffs across 16 dataset/platform groups"
+        },
+        {
+          "label": "Interpretation",
+          "value": "A cohort-normalized molecular score. Similar distributions or cutoff proportions do not by themselves establish an individual clinical threshold, out-of-sample discrimination or direct circadian phase/amplitude measurement."
+        }
+      ],
+      "source_locator": "Methods Clock deviation level generated from the novel integrative program (Sec12), Sec14; Results Sec22; Figure 1/Figure 5A-C; Supplementary Methods integrative program; PDF pp. 2, 4-5 and 8-9."
+    },
+    {
+      "id": "KF7",
+      "claim": "Additional expression-data comparisons explore CDL in perturbation, sleep and AD contexts.",
+      "context": "Article-reported group contrasts, with the GSE124870 species/tissue/condition mismatch retained.",
+      "evidence": [
+        {
+          "label": "GSE43073",
+          "value": "Cardiomyocyte-specific Bmal1-knockout mouse reference data; Figure 5D shows higher CDL in the group labelled CRD, Wilcoxon p=0.043"
+        },
+        {
+          "label": "GSE82114",
+          "value": "Human sleep restriction versus extension: Figure 5F higher in restriction, Wilcoxon p=0.025"
+        },
+        {
+          "label": "AD comparisons",
+          "value": "Figure 5G shows higher AD CDL in six displayed datasets; GSE29378 p=0.064, whereas the other five displayed p values are below 0.05. No diagnostic AUC is supplied."
+        },
+        {
+          "label": "GSE124870 article report",
+          "value": "Figure 5E labels Control, Day SW and Night SW with overall Kruskal-Wallis p=0.0042; Methods calls the source shift-work mice"
+        },
+        {
+          "label": "GSE124870 official identity",
+          "value": "The already accepted official GEO SOFT identifies Rattus norvegicus heart, control/shift-work/shift-work with food restricted to night, and six sampling timepoints. This does not establish the figure’s day-versus-night-worker mapping."
+        },
+        {
+          "label": "Scope",
+          "value": "The figure/source mismatch limits that particular validation claim; no replacement accession or reconstructed analysis is asserted"
+        }
+      ],
+      "source_locator": "Methods Transcriptional data (Sec7), Validation of clock deviation level (Sec13); Results Sec22; Figure 5D-G/caption; prior accepted official GSE124870 Series/Sample SOFT; PDF pp. 3 and 8-9."
+    },
+    {
+      "id": "KF8",
+      "claim": "CDL-biomarker correlations and functional analyses provide further biological hypotheses.",
+      "context": "Reported associations and computational enrichment/network context, separate from the local questionnaire correlations.",
+      "evidence": [
+        {
+          "label": "CDL versus alpha-secretase",
+          "value": "Figure 5H: r=-0.30, p=0.026"
+        },
+        {
+          "label": "CDL versus soluble Aβ42",
+          "value": "Figure 5I: r=-0.33, p=0.014"
+        },
+        {
+          "label": "Target-gene context",
+          "value": "Figure S2 presents a protein-interaction network and over-representation terms, including positive regulation of protein localization to telomere"
+        },
+        {
+          "label": "Score-associated pathways",
+          "value": "Figure S3 includes cytokine/immune receptor activity, complement activation and inflammatory-response enrichment alongside metabolic/respiratory terms"
+        },
+        {
+          "label": "Source scope",
+          "value": "Exact sample/assay mapping for Figure 5H-I is not fully specified. These are reported correlations and enrichment hypotheses, without perturbation or prevention/treatment evidence."
+        }
+      ],
+      "source_locator": "Methods Association between clock deviation level and biomarkers of AD (Sec15); Results The biological significance of target genes and CDL (Sec23) and Association between CDL and clinical markers (Sec24); Figure 5H-I; Figures S2-S3; PDF pp. 5 and 8-10."
+    }
+  ],
+  "what_this_adds": [
+    "Connects shift-work-associated and AD expression screens with cis-eQTL association to prioritize seven concrete molecular candidates.",
+    "Adds local qPCR, serum ELISA and sleep/hippocampal-biomarker observations with their distinct assay and participant units visible.",
+    "Defines an expression-background CDL construction and presents multiple dataset comparisons, enabling comparison of score design, biological context and validation requirements."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The study’s seven-gene selection process and source-specific gene-expression MR associations.",
+      "Local mRNA/serum-protein directions and questionnaire/biomarker correlations as cross-sectional observations.",
+      "The specified CDL construction, reported expression-group comparisons and associated enrichment hypotheses."
+    ],
+    "does_not_establish": [
+      "A resolved causal shift-work effect size from the inconsistent printed intervals/instrument counts.",
+      "A clinically validated individual circadian-disruption diagnostic threshold or prospective AD prevention benefit.",
+      "The GSE124870 day-versus-night-worker interpretation, gene-mediated causation or experimentally proven treatment targets."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What data and sample units does this study combine?",
+      "answer": "Methods describes shift-work GWAS from 263,315 people, AD GWAS from 63,926 (21,982 cases/41,944 controls), eQTLGen data from 31,684 people, 4,077 public expression entries and a separate 45-AD/12-healthy local clinical component. These resources are not added into a patient total. The 16 expression groups include three platform entries from GSE84422; their unique-patient independence was not reconstructed.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4"
+      ]
+    },
+    {
+      "question": "How were the seven molecular candidates selected?",
+      "answer": "The study reports 464 genes overlapping its AD-expression and shift-work-associated screens, then 220 with concordant directions. Cis-eQTL MR at FDR<0.1 and correlation with a circadian-rhythm GSVA score retained CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C.",
+      "evidence_refs": [
+        "KF1",
+        "KF3"
+      ]
+    },
+    {
+      "question": "What is the principal shift-work MR result and which discrepancies matter?",
+      "answer": "The article prints IVW OR 2.49 (95% CI 1.79-3.19), p=0.01. Figure 2 prints beta 0.91, SE 0.35 and beta interval 0.21-1.61, inconsistent with that OR interval. Results reports 15 final instruments. Figure 2D lists 13 SNP labels and Table S4 sensitivity analyses use 13 (p=0.15-0.31). The analyzed instrument set and OR interval remain unresolved.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What gene-expression MR associations were reported?",
+      "answer": "Figure 3B reports higher-odds associations for CCS, POLR1D and PPP4C and lower-odds associations for CDS2, MYRIP, NRP1 and PLEKHA5. The POLR1D IVW OR is 1.08 (95% CI 1.03-1.13), while MYRIP uses a Wald ratio. These estimates compare genetically proxied expression with AD odds. KF3 lists all seven intervals.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Which expression directions were observed in the local assays?",
+      "answer": "qPCR shows higher CCS/POLR1D/PPP4C and lower NRP1/PLEKHA5 in AD, while CDS2 and MYRIP are nonsignificant. Serum ELISA shows higher p-tau181/CCS/PPP4C and lower NRP1/Aβ1-42. Table S7 contains four AD/four NC qPCR rows; Table S8 contains sixteen AD/eight NC ELISA rows. These smaller assay tables are kept separate from the full 45/12 recruitment.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What clinical sleep and biomarker associations are available?",
+      "answer": "Table S10 reports PSQI negatively correlated with left/right hippocampal volumes (r=-0.633446/-0.6238633), positively with p-tau181 (r=0.50409385) and negatively with Aβ1-42 (r=-0.6004647). MEQ-SA correlates positively with left/right volumes (r=0.56260997/0.62576542). Valid-pair n is not explicitly supplied for each correlation. They describe questionnaire-associated clinical variation.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "How is CDL constructed?",
+      "answer": "The expression matrix is centered gene by gene across the analyzed samples. Target genes are matched to random genes using 50 mean-expression bins and 1,000 samplings. CDL=L_random-L_TGs, where each component averages its centered expression features. The formula yields an expression score relative to the analyzed matrix.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What additional CDL evaluations are reported?",
+      "answer": "Figure 5D shows higher CDL in the GSE43073 Bmal1-knockout reference group (p=0.043), and 5F in sleep restriction versus extension in GSE82114 (p=0.025). Figure 5G displays six AD/control datasets; the GSE29378 comparison has p=0.064, while the other five displayed p values are below 0.05.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "Why does the GSE124870 interpretation require a specific source note?",
+      "answer": "The paper calls it shift-work mice and Figure 5E labels Day SW/Night SW. Its already verified official GEO SOFT instead identifies rat heart under control, shift work and shift work with food restricted to night, sampled at six times. The figure’s group-to-condition mapping is therefore unresolved.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "What do the CDL-biomarker and functional analyses add?",
+      "answer": "Figure 5H-I reports CDL correlations of r=-0.30 with alpha-secretase activity (p=0.026) and r=-0.33 with soluble Aβ42 (p=0.014). Figure S2 adds target-gene interaction/over-representation context; Figure S3 adds immune, inflammatory and metabolic/respiratory enrichment. These are candidate mechanisms and associations, with incomplete assay/sample mapping for the two CDL-biomarker plots.",
+      "evidence_refs": [
+        "KF8"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Alzheimer disease",
+      "Circadian disruption",
+      "Shift-work-associated research"
+    ],
+    "candidate_genes": [
+      "CCS",
+      "CDS2",
+      "MYRIP",
+      "NRP1",
+      "PLEKHA5",
+      "POLR1D",
+      "PPP4C"
+    ],
+    "clinical_measures": [
+      "PSQI",
+      "MEQ-SA",
+      "Hippocampal volume",
+      "p-tau181",
+      "Aβ1-42",
+      "Alpha-secretase activity"
+    ],
+    "data_types": [
+      "GWAS",
+      "Cis-eQTL",
+      "Public expression matrices",
+      "Local blood-assay measurements"
+    ],
+    "methods": [
+      "Mendelian randomization",
+      "Wald ratio",
+      "Inverse variance weighting",
+      "Expression intersection screening",
+      "GSVA",
+      "Clock deviation level",
+      "Matched random-gene background",
+      "qPCR",
+      "Serum ELISA",
+      "Correlation analysis",
+      "Functional enrichment"
+    ],
+    "evidence_concepts": [
+      "Candidate-gene association",
+      "Effect-scale consistency",
+      "Instrument inclusion",
+      "Expression-entry versus participant counts",
+      "Dataset-condition mapping",
+      "Molecular score versus physiological measurement"
+    ]
+  },
+  "limitations": [
+    "The principal MR report has inconsistent OR/beta intervals and 15-versus-13 instrument counts. Supplementary sensitivity p values are 0.15-0.31; the causal magnitude is not resolved by the source.",
+    "GSE124870 is rat heart under shift-work/feeding conditions in the accepted official SOFT, rather than the paper’s mice/day-versus-night-worker description; the Figure 5E mapping remains unresolved.",
+    "Public expression entries, including three GSE84422 platform groups, are not a deduplicated patient census. Local qPCR/ELISA row counts and replicate definitions do not equal the full 45/12 recruitment.",
+    "CDL uses within-matrix centering and expression-bin backgrounds. Distribution/cutoff similarities and retrospective group contrasts do not establish a physiological circadian gold standard or prospective individual diagnostic performance; one displayed AD comparison is nonsignificant.",
+    "Clinical correlations are observational, with valid-pair counts or source mapping incomplete for some endpoints. The study does not perturb the candidates, establish biological mediation or test AD prevention/treatment."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1038/s41598-024-65236-5",
+      "relationship": "This coronary disease study uses a random-background transcriptomic score and examines molecular subtypes. It provides a comparison of score construction across disease settings."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://link.springer.com/article/10.14283/jpad.2024.161",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11573866/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39559883/",
+    "doi_url": "https://doi.org/10.14283/jpad.2024.161",
+    "pmcid": "PMC11573866",
+    "pmc_cloud_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11573866.1/PMC11573866.1.xml",
+    "original_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11573866.1/PMC11573866.1.pdf",
+    "official_manifest_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11573866.1/PMC11573866.1.json",
+    "supplement_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11573866.1/42414_2024_362_MOESM1_ESM.docx",
+    "GSE124870_source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE124870",
+    "version_of_record": "The Journal of Prevention of Alzheimer’s Disease. 2024;11(6):1721-1733; electronic publication 3 September 2024. Original JATS/official version metadata identify PMC11573866.1, PMID39559883, the same DOI and eighteen authors. Typographic apostrophe differs between JATS title and protected master, with identity otherwise matching.",
+    "license": "Original JATS permissions: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Gold independently paraphrases the scientific content and links the original article.",
+    "local_ethics": "Zhengzhou University Ethics Committee approval 2023-KY-0741-003; Methods states written informed consent from all participants.",
+    "evidence_basis": "The evidence comes from the version-of-record article, Figures 1–5 and Supplementary Methods, Figures S1–S3 and Tables S1–S10. The official GEO record documents the tissue and experimental conditions for GSE124870.",
+    "source_note_principal_MR": "Abstract/Results gives OR 2.49, CI 1.79-3.19, p 0.01. Figure 2B gives beta 0.91/SE 0.35 and Figure 2D beta CI 0.21-1.61; the scales are inconsistent. Results says 15 F>10 IVs, Table S4 uses 13 and gives nonsignificant sensitivity p values. These are source-specific estimates, not silently recalculated or certified.",
+    "source_note_gene_MR": "The seven gene associations are a second analysis after 220-gene screening, FDR<0.1 and GSVA correlation. MYRIP uses Wald ratio; others IVW. Supplementary Methods reports cis selection ±1000 kb, p<5×10^-6, r²<0.1. Superscript reference 2 follows the clumping threshold.",
+    "source_note_expression_counts": "Table S1 lists 16 dataset/platform groups totaling 4077 expression entries (2,241 AD/1,836 control), including GSE84422_GPL96, _GPL97 and _GPL570. These totals count analytical entries. Unique patient counts across data sources are unknown.",
+    "source_note_local_assays": "Methods recruits 45 AD/12 healthy participants. Table S7 has 4 NC/4 AD rows; Table S8 has 8 NC/16 AD rows. Supplement qPCR material is written plasm, while ELISA uses serum and duplicate wells. Group-to-recruit mapping, independent replication and valid-pair counts are not fully specified; neither technical wells nor table rows are inflated into recruited-patient totals.",
+    "source_note_gene_typography": "Figure 4/Table S7/Results use CSD2 and POLRID in some places, while candidate selection, Figure 3 and primer Table S2 identify CDS2 and POLR1D. Standard candidate labels follow those explicit source identifiers, with these typography differences retained here.",
+    "source_note_clinical_correlations": "Table S10 gives PSQI/MEQ-SA associations with left/right hippocampal volume and PSQI associations with p-tau181/Aβ1-42, without valid-pair n per row. Figure 5H-I CDL associations are separate, with underlying assay/dataset mapping incompletely specified; no unreported CSF or brain measurement is assigned.",
+    "source_note_CDL": "Formula is L_random-L_TGs after per-gene matrix centering; 50 bins/1,000 background samplings. Score distributions and median/quartile proportions across datasets are descriptive; they do not constitute a frozen clinical threshold or direct phase/amplitude measurement.",
+    "source_note_reference_datasets": "GSE43073 is described in Methods as cardiomyocyte-specific Bmal1-knockout mice; GSE82114 as human sleep restriction/extension. Existing official GSE124870 SOFT instead identifies rat heart and control/shift-work/shift-work plus night-restricted feeding, incompatible with unqualified mice/day-vs-night labels.",
+    "source_note_Figure5G": "Six displayed AD/control comparisons have higher AD medians; GSE29378 prints p=0.064. The source’s broader multiple-cohort p<0.05 phrasing is not generalized to that panel.",
+    "supporting_material": "Complete DOCX includes supplementary gene-expression/MR/qPCR/ELISA/questionnaire/CDL Methods; Figures S1-S3; Tables S1-S10 (data, primers, MR/sensitivity, assays, baseline and correlations); and a separate STROBE-MR checklist. Checklist statements are not substituted for underlying result tables.",
+    "polr1d_expression_results_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11573866/#Sec19"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies, and does not replace, the formal article.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which circadian-related molecular candidates were prioritized in AD?",
+        "supported_scope": "The seven-gene screen, reported cis-eQTL associations and local expression/protein directions.",
+        "evidence_refs": [
+          "KF1",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What shift-work genetic evidence is reported and how precise is it?",
+        "supported_scope": "The published principal estimate and its explicit scale/instrument-count/sensitivity discrepancies.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How was the clock-deviation expression score built and evaluated?",
+        "supported_scope": "Within-matrix centering, matched random backgrounds and reported dataset comparisons with source-condition mapping retained.",
+        "evidence_refs": [
+          "KF6",
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What sleep and molecular biomarker associations complement the computational study?",
+        "supported_scope": "Local questionnaire/MRI/biomarker observations and separate CDL correlations/enrichment hypotheses.",
+        "evidence_refs": [
+          "KF5",
+          "KF8"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A resolved causal shift-work effect size or a proven gene-mediated causal pathway.",
+      "A clinically validated individual CDL diagnostic threshold or physiological circadian phase/amplitude measurement.",
+      "The GSE124870 day-versus-night-worker interpretation or demonstrated AD prevention/treatment benefit."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-jpad-1",
+        "component": "KF1: Integrated expression screening prioritized seven circadian-related molecular candidates for AD.",
+        "context": "Intersection screening, cis-eQTL association selection and circadian-pathway correlation.",
+        "finding": "Integrated expression screening prioritized seven circadian-related molecular candidates for AD. Reported expression scale: 4,077 entries: 2,241 AD and 1,836 controls in 16 dataset/platform groups; Selection sequence: 464 genes overlap the AD-expression and shift-work-associated screens; 220 have concordant directions; seven are retained after MR FDR<0.1 and circadian-pathway correlation; Seven candidates: CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C; Expression direction: Figure 3B labels CCS, POLR1D and PPP4C as upregulated in AD and positively correlated with shift work. CDS2, MYRIP, NRP1 and PLEKHA5 are downregulated in AD and negatively correlated with shift work.; Unit: Reported expression entries and computational candidates, rather than 4,077 independently established patients",
+        "evidence_level": "Integrated expression-candidate selection",
+        "scope": "Intersection screening, cis-eQTL association selection and circadian-pathway correlation.",
+        "source_locator": "Methods Sec7/ Sec10; Results Identification of circadian-related genes causally associated with AD (Sec19); Figure 3A-D; Supplementary Methods Gene expression analysis; Table S1; PDF pp. 3-4 and 6-7.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-jpad-2",
+        "component": "KF2: The paper reports a positive shift-work MR estimate with unresolved effect-scale and instrument-count differences.",
+        "context": "Published genetic-association analysis, with source-specific numbers kept together.",
+        "finding": "The paper reports a positive shift-work MR estimate with unresolved effect-scale and instrument-count differences. GWAS resources: UK Biobank shift-work GWAS n=263,315; AD GWAS n=63,926 (21,982 cases/41,944 controls), both described as European ancestry; Reported principal estimate: Abstract/Results: IVW OR 2.49, 95% CI 1.79-3.19, p=0.01; Plotted scale: Figure 2B: beta 0.91, SE 0.35, OR 2.49; Figure 2D All-IVW beta 0.91, 95% CI 0.21-1.61. The printed OR interval is inconsistent with that beta-scale interval.; Instrument count: Table S3 lists 36 screened SNPs, with 15 above F=10. Results describes 15 final instruments. Figure 2D lists 13 SNP labels and Table S4 reports 13 SNPs per sensitivity model.; Sensitivity estimates: Table S4: MR Egger p=0.31, weighted median p=0.15, simple mode p=0.30, weighted mode p=0.28; these positive estimates do not independently establish a statistically robust causal effect; Reverse analysis: Table S5: 40 SNPs, IVW beta -0.003, SE 0.003, p=0.337, reported OR 0.997",
+        "evidence_level": "Published shift-work MR report with source discrepancies",
+        "scope": "Published genetic-association analysis, with source-specific numbers kept together.",
+        "source_locator": "Methods Sec4-Sec5/Sec9; Results Causal effects of shift work on Alzheimer’s disease (Sec18); Figure 2B-E; Supplementary Methods MR analysis; Tables S3-S5; PDF pp. 3-6.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-jpad-3",
+        "component": "KF3: Gene-expression MR supplies a second, distinct set of candidate associations.",
+        "context": "Cis-eQTL-based estimates after screening 220 genes; MYRIP uses a Wald ratio and the other six use IVW.",
+        "finding": "Gene-expression MR supplies a second, distinct set of candidate associations. Selection threshold: MR FDR<0.1, followed by significant correlation with the GOBP_CIRCADIAN_RHYTHM GSVA score; Higher-odds associations: CCS OR 1.05 (1.01-1.09); POLR1D 1.08 (1.03-1.13); PPP4C 1.22 (1.12-1.33); Lower-odds associations: CDS2 OR 0.94 (0.91-0.98); MYRIP 0.58 (0.39-0.85); NRP1 0.89 (0.84-0.94); PLEKHA5 0.89 (0.83-0.96); Method context: eQTLGen n=31,684 as reported; Supplementary Methods selects cis variants within 1,000 kb upstream/downstream at p<5×10^-6 and clumps at r²<0.1; Role: Genetically proxied candidate-expression associations; they do not establish gene perturbation effects, treatment benefit or mediation of the disputed shift-work estimate",
+        "evidence_level": "Published cis-eQTL association summaries",
+        "scope": "Cis-eQTL-based estimates after screening 220 genes; MYRIP uses a Wald ratio and the other six use IVW.",
+        "source_locator": "Methods eQTL dataset (Sec6), Sec9-Sec10; Results Sec19; Figure 3B-D; Supplementary Methods MR analysis, Figure S1 and Table S6; PDF pp. 3-4 and 6-7.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-jpad-4",
+        "component": "KF4: Local blood assays showed target-gene and selected serum-protein differences between AD and controls.",
+        "context": "Molecular observations within the separate recruited clinical component, with assay-table rows distinguished from all recruits.",
+        "finding": "Local blood assays showed target-gene and selected serum-protein differences between AD and controls. Recruitment: 45 AD and 12 healthy participants at one hospital, January 2023-January 2024; qPCR direction: CCS, POLR1D and PPP4C higher; NRP1 and PLEKHA5 lower in AD. CDS2 and MYRIP are nonsignificant (Figure 4B p=0.194; 4C p=0.471).; qPCR rows: Table S7: NC1-NC4 and AD1-AD4; GAPDH-normalized 2^(-ΔΔCt), with starting material written as plasm in Supplementary Methods; Serum ELISA direction: p-tau181, CCS and PPP4C higher; NRP1 and Aβ1-42 lower in AD; ELISA rows: Table S8: eight NC and sixteen AD rows. Methods describes duplicate wells; these are not two independent participants per specimen.; Scope: Cross-sectional expression/protein follow-up, separate from causal gene function or diagnostic classifier validation",
+        "evidence_level": "Local cross-sectional mRNA/serum-protein measurements",
+        "scope": "Molecular observations within the separate recruited clinical component, with assay-table rows distinguished from all recruits.",
+        "source_locator": "Methods Clinical data collection of the inhouse cohort (Sec8) and Validation of the targeted genes (Sec11); Results Sec20; Figure 4A-L; Supplementary Methods qPCR/ELISA; Tables S2/S7/S8; PDF pp. 3-4 and 7-8.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-jpad-5",
+        "component": "KF5: The local clinical component links sleep-questionnaire scores with hippocampal and biomarker measurements.",
+        "context": "Retrospective clinical observations; sleep/chronotype questionnaires and MRI are distinct from a transcriptomic circadian score.",
+        "finding": "The local clinical component links sleep-questionnaire scores with hippocampal and biomarker measurements. Clinical design: AD patients underwent hippocampal MRI and completed PSQI/MEQ-SA questionnaires; reported recruitment is 45 AD/12 healthy participants; PSQI-volume associations: Left hippocampal volume r=-0.633446, p=3.01×10^-6; right r=-0.6238633, p=4.68×10^-6; MEQ-SA-volume associations: Left r=0.56260997, p=5.76×10^-5; right r=0.62576542, p=4.29×10^-6; PSQI-biomarker associations: p-tau181 r=0.50409385, p=0.0464783; Aβ1-42 r=-0.6004647, p=0.0139137; Measurement scope: Table S10 does not give an explicit valid-pair n per correlation; these questionnaire associations do not directly measure circadian phase or establish a shift-work intervention effect",
+        "evidence_level": "Clinical questionnaire/biomarker correlations",
+        "scope": "Retrospective clinical observations; sleep/chronotype questionnaires and MRI are distinct from a transcriptomic circadian score.",
+        "source_locator": "Methods Sec8/ Sec11; Results Insight into the association between circadian rhythm performance with AD biomarkers from inhouse cohort (Sec21); Supplementary Methods MEQ-SA/PSQI and association analysis; Tables S9-S10; PDF pp. 3 and 9.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-jpad-6",
+        "component": "KF6: Clock deviation level is a defined seven-gene expression-background score.",
+        "context": "Computational construction and distribution summaries across the study’s expression groups.",
+        "finding": "Clock deviation level is a defined seven-gene expression-background score. Formula: CDL = L_random - L_TGs; expression is centered for each gene across the N samples in the analyzed matrix; Background matching: Genes are divided into 50 mean-expression bins; 1,000 random samplings match the target-gene bin frequencies and gene count; Components: L_TGs is the average centered target-gene expression; L_random is the average of the matched random features; Reported summaries: Figure 5A-C presents expression-score distributions, means and proportions using median/quartile cutoffs across 16 dataset/platform groups; Interpretation: A cohort-normalized molecular score. Similar distributions or cutoff proportions do not by themselves establish an individual clinical threshold, out-of-sample discrimination or direct circadian phase/amplitude measurement.",
+        "evidence_level": "Computational expression-score construction",
+        "scope": "Computational construction and distribution summaries across the study’s expression groups.",
+        "source_locator": "Methods Clock deviation level generated from the novel integrative program (Sec12), Sec14; Results Sec22; Figure 1/Figure 5A-C; Supplementary Methods integrative program; PDF pp. 2, 4-5 and 8-9.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-jpad-7",
+        "component": "KF7: Additional expression-data comparisons explore CDL in perturbation, sleep and AD contexts.",
+        "context": "Article-reported group contrasts, with the GSE124870 species/tissue/condition mismatch retained.",
+        "finding": "Additional expression-data comparisons explore CDL in perturbation, sleep and AD contexts. GSE43073: Cardiomyocyte-specific Bmal1-knockout mouse reference data; Figure 5D shows higher CDL in the group labelled CRD, Wilcoxon p=0.043; GSE82114: Human sleep restriction versus extension: Figure 5F higher in restriction, Wilcoxon p=0.025; AD comparisons: Figure 5G shows higher AD CDL in six displayed datasets; GSE29378 p=0.064, whereas the other five displayed p values are below 0.05. No diagnostic AUC is supplied.; GSE124870 article report: Figure 5E labels Control, Day SW and Night SW with overall Kruskal-Wallis p=0.0042; Methods calls the source shift-work mice; GSE124870 official identity: The already accepted official GEO SOFT identifies Rattus norvegicus heart, control/shift-work/shift-work with food restricted to night, and six sampling timepoints. This does not establish the figure’s day-versus-night-worker mapping.; Scope: The figure/source mismatch limits that particular validation claim; no replacement accession or reconstructed analysis is asserted",
+        "evidence_level": "Reported public expression-data comparisons",
+        "scope": "Article-reported group contrasts, with the GSE124870 species/tissue/condition mismatch retained.",
+        "source_locator": "Methods Transcriptional data (Sec7), Validation of clock deviation level (Sec13); Results Sec22; Figure 5D-G/caption; prior accepted official GSE124870 Series/Sample SOFT; PDF pp. 3 and 8-9.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      },
+      {
+        "id": "evidence-jpad-8",
+        "component": "KF8: CDL-biomarker correlations and functional analyses provide further biological hypotheses.",
+        "context": "Reported associations and computational enrichment/network context, separate from the local questionnaire correlations.",
+        "finding": "CDL-biomarker correlations and functional analyses provide further biological hypotheses. CDL versus alpha-secretase: Figure 5H: r=-0.30, p=0.026; CDL versus soluble Aβ42: Figure 5I: r=-0.33, p=0.014; Target-gene context: Figure S2 presents a protein-interaction network and over-representation terms, including positive regulation of protein localization to telomere; Score-associated pathways: Figure S3 includes cytokine/immune receptor activity, complement activation and inflammatory-response enrichment alongside metabolic/respiratory terms; Source scope: Exact sample/assay mapping for Figure 5H-I is not fully specified. These are reported correlations and enrichment hypotheses, without perturbation or prevention/treatment evidence.",
+        "evidence_level": "Reported biomarker correlations and functional hypotheses",
+        "scope": "Reported associations and computational enrichment/network context, separate from the local questionnaire correlations.",
+        "source_locator": "Methods Association between clock deviation level and biomarkers of AD (Sec15); Results The biological significance of target genes and CDL (Sec23) and Association between CDL and clinical markers (Sec24); Figure 5H-I; Figures S2-S3; PDF pp. 5 and 8-10.",
+        "evidence_refs": [
+          "KF8"
+        ]
+      }
+    ]
+  }
+}

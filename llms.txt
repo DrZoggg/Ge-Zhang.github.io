@@ -85,3 +85,4 @@
 - [Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease](https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html) — DOI: 10.1093/hmg/ddae189
 - [Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells](https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html) — DOI: 10.3980/j.issn.1672-5123.2020.12.13
 - [Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension](https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.html) — DOI: 10.1186/s12931-024-02978-w
+- [Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology](https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html) — DOI: 10.14283/jpad.2024.161

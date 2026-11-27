@@ -618,7 +618,7 @@
 - DOI: 10.14283/jpad.2024.161
 - HTML: https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html
 - Markdown: https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?
 - Journal: Cancer Letters

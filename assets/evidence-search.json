@@ -15705,6 +15705,286 @@
     {
       "id": 1570,
       "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Research question",
+      "text": "Which circadian-related molecular candidates connect the study’s shift-work and AD analyses, how is a transcriptomic clock-deviation score constructed, and what expression and biomarker patterns accompany those candidates?",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html",
+      "limitation": false
+    },
+    {
+      "id": 1571,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Evidence summary",
+      "text": "The study integrates shift-work and AD genetic/expression data to prioritize seven genes and proposes clock deviation level (CDL), an expression score built against matched random-gene backgrounds. It complements those computational analyses with local blood-expression, serum-protein and sleep/biomarker observations.\nThe study combines shift-work GWAS, AD GWAS, cis-eQTL data and 4,077 reported expression entries across 16 dataset/platform groups. A 464-gene overlap is reduced to 220 concordant candidates and seven target genes: CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C. The separate local clinical component includes 45 people with AD and 12 healthy participants. Its published assay tables contain four AD/four control qPCR rows and sixteen AD/eight control ELISA rows, with higher CCS/POLR1D/PPP4C mRNA, lower NRP1/PLEKHA5 mRNA, and corresponding selected serum-protein/AD-marker differences. Sleep-questionnaire scores correlate with hippocampal volume and measured biomarkers. CDL uses seven-gene expression, within-dataset centering, 50 expression bins and 1,000 matched-background samplings; the article reports distributions and comparisons in multiple expression datasets. Reported CDL correlations are r=-0.30 with alpha-secretase activity and r=-0.33 with soluble Aβ42. The principal MR interval/instrument-count disagreement and the GSE124870 species/condition mapping remain explicit at their affected claims. The contribution is an integrated candidate/scoring framework and complementary molecular/clinical observations.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#ev-summary",
+      "limitation": false
+    },
+    {
+      "id": 1572,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Concepts",
+      "text": "Alzheimer disease\nCircadian disruption\nShift-work-associated research\nCCS\nCDS2\nMYRIP\nNRP1\nPLEKHA5\nPOLR1D\nPPP4C\nPSQI\nMEQ-SA\nHippocampal volume\np-tau181\nAβ1-42\nAlpha-secretase activity\nGWAS\nCis-eQTL\nPublic expression matrices\nLocal blood-assay measurements\nMendelian randomization\nWald ratio\nInverse variance weighting\nExpression intersection screening\nGSVA\nClock deviation level\nMatched random-gene background\nqPCR\nSerum ELISA\nCorrelation analysis\nFunctional enrichment\nCandidate-gene association\nEffect-scale consistency\nInstrument inclusion\nExpression-entry versus participant counts\nDataset-condition mapping\nMolecular score versus physiological measurement",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html",
+      "limitation": false
+    },
+    {
+      "id": 1573,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "Integrated expression screening prioritized seven circadian-related molecular candidates for AD.\nIntersection screening, cis-eQTL association selection and circadian-pathway correlation.\nReported expression scale\n4,077 entries: 2,241 AD and 1,836 controls in 16 dataset/platform groups\nSelection sequence\n464 genes overlap the AD-expression and shift-work-associated screens; 220 have concordant directions; seven are retained after MR FDR<0.1 and circadian-pathway correlation\nSeven candidates\nCCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C\nExpression direction\nFigure 3B labels CCS, POLR1D and PPP4C as upregulated in AD and positively correlated with shift work. CDS2, MYRIP, NRP1 and PLEKHA5 are downregulated in AD and negatively correlated with shift work.\nUnit\nReported expression entries and computational candidates, rather than 4,077 independently established patients\nMethods Sec7/ Sec10; Results Identification of circadian-related genes causally associated with AD (Sec19); Figure 3A-D; Supplementary Methods Gene expression analysis; Table S1; PDF pp. 3-4 and 6-7.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf1",
+      "limitation": false
+    },
+    {
+      "id": 1574,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "The paper reports a positive shift-work MR estimate with unresolved effect-scale and instrument-count differences.\nPublished genetic-association analysis, with source-specific numbers kept together.\nGWAS resources\nUK Biobank shift-work GWAS n=263,315; AD GWAS n=63,926 (21,982 cases/41,944 controls), both described as European ancestry\nReported principal estimate\nAbstract/Results: IVW OR 2.49, 95% CI 1.79-3.19, p=0.01\nPlotted scale\nFigure 2B: beta 0.91, SE 0.35, OR 2.49; Figure 2D All-IVW beta 0.91, 95% CI 0.21-1.61. The printed OR interval is inconsistent with that beta-scale interval.\nInstrument count\nTable S3 lists 36 screened SNPs, with 15 above F=10. Results describes 15 final instruments. Figure 2D lists 13 SNP labels and Table S4 reports 13 SNPs per sensitivity model.\nSensitivity estimates\nTable S4: MR Egger p=0.31, weighted median p=0.15, simple mode p=0.30, weighted mode p=0.28; these positive estimates do not independently establish a statistically robust causal effect\nReverse analysis\nTable S5: 40 SNPs, IVW beta -0.003, SE 0.003, p=0.337, reported OR 0.997\nMethods Sec4-Sec5/Sec9; Results Causal effects of shift work on Alzheimer’s disease (Sec18); Figure 2B-E; Supplementary Methods MR analysis; Tables S3-S5; PDF pp. 3-6.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf2",
+      "limitation": false
+    },
+    {
+      "id": 1575,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "Gene-expression MR supplies a second, distinct set of candidate associations.\nCis-eQTL-based estimates after screening 220 genes; MYRIP uses a Wald ratio and the other six use IVW.\nSelection threshold\nMR FDR<0.1, followed by significant correlation with the GOBP_CIRCADIAN_RHYTHM GSVA score\nHigher-odds associations\nCCS OR 1.05 (1.01-1.09); POLR1D 1.08 (1.03-1.13); PPP4C 1.22 (1.12-1.33)\nLower-odds associations\nCDS2 OR 0.94 (0.91-0.98); MYRIP 0.58 (0.39-0.85); NRP1 0.89 (0.84-0.94); PLEKHA5 0.89 (0.83-0.96)\nMethod context\neQTLGen n=31,684 as reported; Supplementary Methods selects cis variants within 1,000 kb upstream/downstream at p<5×10^-6 and clumps at r²<0.1\nRole\nGenetically proxied candidate-expression associations; they do not establish gene perturbation effects, treatment benefit or mediation of the disputed shift-work estimate\nMethods eQTL dataset (Sec6), Sec9-Sec10; Results Sec19; Figure 3B-D; Supplementary Methods MR analysis, Figure S1 and Table S6; PDF pp. 3-4 and 6-7.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf3",
+      "limitation": false
+    },
+    {
+      "id": 1576,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "Local blood assays showed target-gene and selected serum-protein differences between AD and controls.\nMolecular observations within the separate recruited clinical component, with assay-table rows distinguished from all recruits.\nRecruitment\n45 AD and 12 healthy participants at one hospital, January 2023-January 2024\nqPCR direction\nCCS, POLR1D and PPP4C higher; NRP1 and PLEKHA5 lower in AD. CDS2 and MYRIP are nonsignificant (Figure 4B p=0.194; 4C p=0.471).\nqPCR rows\nTable S7: NC1-NC4 and AD1-AD4; GAPDH-normalized 2^(-ΔΔCt), with starting material written as plasm in Supplementary Methods\nSerum ELISA direction\np-tau181, CCS and PPP4C higher; NRP1 and Aβ1-42 lower in AD\nELISA rows\nTable S8: eight NC and sixteen AD rows. Methods describes duplicate wells; these are not two independent participants per specimen.\nScope\nCross-sectional expression/protein follow-up, separate from causal gene function or diagnostic classifier validation\nMethods Clinical data collection of the inhouse cohort (Sec8) and Validation of the targeted genes (Sec11); Results Sec20; Figure 4A-L; Supplementary Methods qPCR/ELISA; Tables S2/S7/S8; PDF pp. 3-4 and 7-8.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf4",
+      "limitation": false
+    },
+    {
+      "id": 1577,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "The local clinical component links sleep-questionnaire scores with hippocampal and biomarker measurements.\nRetrospective clinical observations; sleep/chronotype questionnaires and MRI are distinct from a transcriptomic circadian score.\nClinical design\nAD patients underwent hippocampal MRI and completed PSQI/MEQ-SA questionnaires; reported recruitment is 45 AD/12 healthy participants\nPSQI-volume associations\nLeft hippocampal volume r=-0.633446, p=3.01×10^-6; right r=-0.6238633, p=4.68×10^-6\nMEQ-SA-volume associations\nLeft r=0.56260997, p=5.76×10^-5; right r=0.62576542, p=4.29×10^-6\nPSQI-biomarker associations\np-tau181 r=0.50409385, p=0.0464783; Aβ1-42 r=-0.6004647, p=0.0139137\nMeasurement scope\nTable S10 does not give an explicit valid-pair n per correlation; these questionnaire associations do not directly measure circadian phase or establish a shift-work intervention effect\nMethods Sec8/ Sec11; Results Insight into the association between circadian rhythm performance with AD biomarkers from inhouse cohort (Sec21); Supplementary Methods MEQ-SA/PSQI and association analysis; Tables S9-S10; PDF pp. 3 and 9.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf5",
+      "limitation": false
+    },
+    {
+      "id": 1578,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "Clock deviation level is a defined seven-gene expression-background score.\nComputational construction and distribution summaries across the study’s expression groups.\nFormula\nCDL = L_random - L_TGs; expression is centered for each gene across the N samples in the analyzed matrix\nBackground matching\nGenes are divided into 50 mean-expression bins; 1,000 random samplings match the target-gene bin frequencies and gene count\nComponents\nL_TGs is the average centered target-gene expression; L_random is the average of the matched random features\nReported summaries\nFigure 5A-C presents expression-score distributions, means and proportions using median/quartile cutoffs across 16 dataset/platform groups\nInterpretation\nA cohort-normalized molecular score. Similar distributions or cutoff proportions do not by themselves establish an individual clinical threshold, out-of-sample discrimination or direct circadian phase/amplitude measurement.\nMethods Clock deviation level generated from the novel integrative program (Sec12), Sec14; Results Sec22; Figure 1/Figure 5A-C; Supplementary Methods integrative program; PDF pp. 2, 4-5 and 8-9.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf6",
+      "limitation": false
+    },
+    {
+      "id": 1579,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "Additional expression-data comparisons explore CDL in perturbation, sleep and AD contexts.\nArticle-reported group contrasts, with the GSE124870 species/tissue/condition mismatch retained.\nGSE43073\nCardiomyocyte-specific Bmal1-knockout mouse reference data; Figure 5D shows higher CDL in the group labelled CRD, Wilcoxon p=0.043\nGSE82114\nHuman sleep restriction versus extension: Figure 5F higher in restriction, Wilcoxon p=0.025\nAD comparisons\nFigure 5G shows higher AD CDL in six displayed datasets; GSE29378 p=0.064, whereas the other five displayed p values are below 0.05. No diagnostic AUC is supplied.\nGSE124870 article report\nFigure 5E labels Control, Day SW and Night SW with overall Kruskal-Wallis p=0.0042; Methods calls the source shift-work mice\nGSE124870 official identity\nThe already accepted official GEO SOFT identifies Rattus norvegicus heart, control/shift-work/shift-work with food restricted to night, and six sampling timepoints. This does not establish the figure’s day-versus-night-worker mapping.\nScope\nThe figure/source mismatch limits that particular validation claim; no replacement accession or reconstructed analysis is asserted\nMethods Transcriptional data (Sec7), Validation of clock deviation level (Sec13); Results Sec22; Figure 5D-G/caption; prior accepted official GSE124870 Series/Sample SOFT; PDF pp. 3 and 8-9.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf7",
+      "limitation": false
+    },
+    {
+      "id": 1580,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Key finding",
+      "text": "CDL-biomarker correlations and functional analyses provide further biological hypotheses.\nReported associations and computational enrichment/network context, separate from the local questionnaire correlations.\nCDL versus alpha-secretase\nFigure 5H: r=-0.30, p=0.026\nCDL versus soluble Aβ42\nFigure 5I: r=-0.33, p=0.014\nTarget-gene context\nFigure S2 presents a protein-interaction network and over-representation terms, including positive regulation of protein localization to telomere\nScore-associated pathways\nFigure S3 includes cytokine/immune receptor activity, complement activation and inflammatory-response enrichment alongside metabolic/respiratory terms\nSource scope\nExact sample/assay mapping for Figure 5H-I is not fully specified. These are reported correlations and enrichment hypotheses, without perturbation or prevention/treatment evidence.\nMethods Association between clock deviation level and biomarkers of AD (Sec15); Results The biological significance of target genes and CDL (Sec23) and Association between CDL and clinical markers (Sec24); Figure 5H-I; Figures S2-S3; PDF pp. 5 and 8-10.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#kf8",
+      "limitation": false
+    },
+    {
+      "id": 1581,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What data and sample units does this study combine?\nMethods describes shift-work GWAS from 263,315 people, AD GWAS from 63,926 (21,982 cases/41,944 controls), eQTLGen data from 31,684 people, 4,077 public expression entries and a separate 45-AD/12-healthy local clinical component. These resources are not added into a patient total. The 16 expression groups include three platform entries from GSE84422; their unique-patient independence was not reconstructed.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-1",
+      "limitation": false
+    },
+    {
+      "id": 1582,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "How were the seven molecular candidates selected?\nThe study reports 464 genes overlapping its AD-expression and shift-work-associated screens, then 220 with concordant directions. Cis-eQTL MR at FDR<0.1 and correlation with a circadian-rhythm GSVA score retained CCS, CDS2, MYRIP, NRP1, PLEKHA5, POLR1D and PPP4C.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-2",
+      "limitation": false
+    },
+    {
+      "id": 1583,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What is the principal shift-work MR result and which discrepancies matter?\nThe article prints IVW OR 2.49 (95% CI 1.79-3.19), p=0.01. Figure 2 prints beta 0.91, SE 0.35 and beta interval 0.21-1.61, inconsistent with that OR interval. Results reports 15 final instruments. Figure 2D lists 13 SNP labels and Table S4 sensitivity analyses use 13 (p=0.15-0.31). The analyzed instrument set and OR interval remain unresolved.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-3",
+      "limitation": false
+    },
+    {
+      "id": 1584,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What gene-expression MR associations were reported?\nFigure 3B reports higher-odds associations for CCS, POLR1D and PPP4C and lower-odds associations for CDS2, MYRIP, NRP1 and PLEKHA5. The POLR1D IVW OR is 1.08 (95% CI 1.03-1.13), while MYRIP uses a Wald ratio. These estimates compare genetically proxied expression with AD odds. KF3 lists all seven intervals.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-4",
+      "limitation": false
+    },
+    {
+      "id": 1585,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "Which expression directions were observed in the local assays?\nqPCR shows higher CCS/POLR1D/PPP4C and lower NRP1/PLEKHA5 in AD, while CDS2 and MYRIP are nonsignificant. Serum ELISA shows higher p-tau181/CCS/PPP4C and lower NRP1/Aβ1-42. Table S7 contains four AD/four NC qPCR rows; Table S8 contains sixteen AD/eight NC ELISA rows. These smaller assay tables are kept separate from the full 45/12 recruitment.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-5",
+      "limitation": false
+    },
+    {
+      "id": 1586,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What clinical sleep and biomarker associations are available?\nTable S10 reports PSQI negatively correlated with left/right hippocampal volumes (r=-0.633446/-0.6238633), positively with p-tau181 (r=0.50409385) and negatively with Aβ1-42 (r=-0.6004647). MEQ-SA correlates positively with left/right volumes (r=0.56260997/0.62576542). Valid-pair n is not explicitly supplied for each correlation. They describe questionnaire-associated clinical variation.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-6",
+      "limitation": false
+    },
+    {
+      "id": 1587,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "How is CDL constructed?\nThe expression matrix is centered gene by gene across the analyzed samples. Target genes are matched to random genes using 50 mean-expression bins and 1,000 samplings. CDL=L_random-L_TGs, where each component averages its centered expression features. The formula yields an expression score relative to the analyzed matrix.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-7",
+      "limitation": false
+    },
+    {
+      "id": 1588,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What additional CDL evaluations are reported?\nFigure 5D shows higher CDL in the GSE43073 Bmal1-knockout reference group (p=0.043), and 5F in sleep restriction versus extension in GSE82114 (p=0.025). Figure 5G displays six AD/control datasets; the GSE29378 comparison has p=0.064, while the other five displayed p values are below 0.05.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-8",
+      "limitation": false
+    },
+    {
+      "id": 1589,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "Why does the GSE124870 interpretation require a specific source note?\nThe paper calls it shift-work mice and Figure 5E labels Day SW/Night SW. Its already verified official GEO SOFT instead identifies rat heart under control, shift work and shift work with food restricted to night, sampled at six times. The figure’s group-to-condition mapping is therefore unresolved.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-9",
+      "limitation": false
+    },
+    {
+      "id": 1590,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Q&A",
+      "text": "What do the CDL-biomarker and functional analyses add?\nFigure 5H-I reports CDL correlations of r=-0.30 with alpha-secretase activity (p=0.026) and r=-0.33 with soluble Aβ42 (p=0.014). Figure S2 adds target-gene interaction/over-representation context; Figure S3 adds immune, inflammatory and metabolic/respiratory enrichment. These are candidate mechanisms and associations, with incomplete assay/sample mapping for the two CDL-biomarker plots.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#qa-10",
+      "limitation": false
+    },
+    {
+      "id": 1591,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Citation use case",
+      "text": "Which circadian-related molecular candidates were prioritized in AD?\nThe seven-gene screen, reported cis-eQTL associations and local expression/protein directions.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#cu1",
+      "limitation": false
+    },
+    {
+      "id": 1592,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Citation use case",
+      "text": "What shift-work genetic evidence is reported and how precise is it?\nThe published principal estimate and its explicit scale/instrument-count/sensitivity discrepancies.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#cu2",
+      "limitation": false
+    },
+    {
+      "id": 1593,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Citation use case",
+      "text": "How was the clock-deviation expression score built and evaluated?\nWithin-matrix centering, matched random backgrounds and reported dataset comparisons with source-condition mapping retained.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#cu3",
+      "limitation": false
+    },
+    {
+      "id": 1594,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Citation use case",
+      "text": "What sleep and molecular biomarker associations complement the computational study?\nLocal questionnaire/MRI/biomarker observations and separate CDL correlations/enrichment hypotheses.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#cu4",
+      "limitation": false
+    },
+    {
+      "id": 1595,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Evidence scope — supports",
+      "text": "The study’s seven-gene selection process and source-specific gene-expression MR associations.\nLocal mRNA/serum-protein directions and questionnaire/biomarker correlations as cross-sectional observations.\nThe specified CDL construction, reported expression-group comparisons and associated enrichment hypotheses.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#ev-scope",
+      "limitation": false
+    },
+    {
+      "id": 1596,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Limitations — does not establish",
+      "text": "A resolved causal shift-work effect size from the inconsistent printed intervals/instrument counts.\nA clinically validated individual circadian-disruption diagnostic threshold or prospective AD prevention benefit.\nThe GSE124870 day-versus-night-worker interpretation, gene-mediated causation or experimentally proven treatment targets.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#ev-scope",
+      "limitation": true
+    },
+    {
+      "id": 1597,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Limitations",
+      "text": "The principal MR report has inconsistent OR/beta intervals and 15-versus-13 instrument counts. Supplementary sensitivity p values are 0.15-0.31; the causal magnitude is not resolved by the source.\nGSE124870 is rat heart under shift-work/feeding conditions in the accepted official SOFT, rather than the paper’s mice/day-versus-night-worker description; the Figure 5E mapping remains unresolved.\nPublic expression entries, including three GSE84422 platform groups, are not a deduplicated patient census. Local qPCR/ELISA row counts and replicate definitions do not equal the full 45/12 recruitment.\nCDL uses within-matrix centering and expression-bin backgrounds. Distribution/cutoff similarities and retrospective group contrasts do not establish a physiological circadian gold standard or prospective individual diagnostic performance; one displayed AD comparison is nonsignificant.\nClinical correlations are observational, with valid-pair counts or source mapping incomplete for some endpoints. The study does not perturb the candidates, establish biological mediation or test AD prevention/treatment.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#ev-scope",
+      "limitation": true
+    },
+    {
+      "id": 1598,
+      "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
       "category": "Title",
@@ -15713,7 +15993,7 @@
       "limitation": false
     },
     {
-      "id": 1571,
+      "id": 1599,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15723,7 +16003,7 @@
       "limitation": false
     },
     {
-      "id": 1572,
+      "id": 1600,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15733,7 +16013,7 @@
       "limitation": false
     },
     {
-      "id": 1573,
+      "id": 1601,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15743,7 +16023,7 @@
       "limitation": false
     },
     {
-      "id": 1574,
+      "id": 1602,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15753,7 +16033,7 @@
       "limitation": false
     },
     {
-      "id": 1575,
+      "id": 1603,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15763,7 +16043,7 @@
       "limitation": false
     },
     {
-      "id": 1576,
+      "id": 1604,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15773,7 +16053,7 @@
       "limitation": false
     },
     {
-      "id": 1577,
+      "id": 1605,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15783,7 +16063,7 @@
       "limitation": false
     },
     {
-      "id": 1578,
+      "id": 1606,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15793,7 +16073,7 @@
       "limitation": false
     },
     {
-      "id": 1579,
+      "id": 1607,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15803,7 +16083,7 @@
       "limitation": false
     },
     {
-      "id": 1580,
+      "id": 1608,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15813,7 +16093,7 @@
       "limitation": false
     },
     {
-      "id": 1581,
+      "id": 1609,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15823,7 +16103,7 @@
       "limitation": false
     },
     {
-      "id": 1582,
+      "id": 1610,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15833,7 +16113,7 @@
       "limitation": false
     },
     {
-      "id": 1583,
+      "id": 1611,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15843,7 +16123,7 @@
       "limitation": false
     },
     {
-      "id": 1584,
+      "id": 1612,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15853,7 +16133,7 @@
       "limitation": false
     },
     {
-      "id": 1585,
+      "id": 1613,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15863,7 +16143,7 @@
       "limitation": false
     },
     {
-      "id": 1586,
+      "id": 1614,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15873,7 +16153,7 @@
       "limitation": false
     },
     {
-      "id": 1587,
+      "id": 1615,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15883,7 +16163,7 @@
       "limitation": false
     },
     {
-      "id": 1588,
+      "id": 1616,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15893,7 +16173,7 @@
       "limitation": false
     },
     {
-      "id": 1589,
+      "id": 1617,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15903,7 +16183,7 @@
       "limitation": false
     },
     {
-      "id": 1590,
+      "id": 1618,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15913,7 +16193,7 @@
       "limitation": false
     },
     {
-      "id": 1591,
+      "id": 1619,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15923,7 +16203,7 @@
       "limitation": false
     },
     {
-      "id": 1592,
+      "id": 1620,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15933,7 +16213,7 @@
       "limitation": false
     },
     {
-      "id": 1593,
+      "id": 1621,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15943,7 +16223,7 @@
       "limitation": false
     },
     {
-      "id": 1594,
+      "id": 1622,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15953,7 +16233,7 @@
       "limitation": true
     },
     {
-      "id": 1595,
+      "id": 1623,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -15963,7 +16243,7 @@
       "limitation": true
     },
     {
-      "id": 1596,
+      "id": 1624,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4857099",
       "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
@@ -15973,7 +16253,7 @@
       "limitation": false
     },
     {
-      "id": 1597,
+      "id": 1625,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4857099",
       "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
@@ -15983,7 +16263,7 @@
       "limitation": false
     },
     {
-      "id": 1598,
+      "id": 1626,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4857099",
       "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
@@ -15993,7 +16273,7 @@
       "limitation": false
     },
     {
-      "id": 1599,
+      "id": 1627,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4857099",
       "title": "Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study",
@@ -16003,7 +16283,7 @@
       "limitation": false
     },
     {
-      "id": 1600,
+      "id": 1628,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16013,7 +16293,7 @@
       "limitation": false
     },
     {
-      "id": 1601,
+      "id": 1629,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16023,7 +16303,7 @@
       "limitation": false
     },
     {
-      "id": 1602,
+      "id": 1630,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16033,7 +16313,7 @@
       "limitation": false
     },
     {
-      "id": 1603,
+      "id": 1631,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16043,7 +16323,7 @@
       "limitation": false
     },
     {
-      "id": 1604,
+      "id": 1632,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16053,7 +16333,7 @@
       "limitation": false
     },
     {
-      "id": 1605,
+      "id": 1633,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16063,7 +16343,7 @@
       "limitation": false
     },
     {
-      "id": 1606,
+      "id": 1634,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16073,7 +16353,7 @@
       "limitation": false
     },
     {
-      "id": 1607,
+      "id": 1635,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16083,7 +16363,7 @@
       "limitation": false
     },
     {
-      "id": 1608,
+      "id": 1636,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16093,7 +16373,7 @@
       "limitation": false
     },
     {
-      "id": 1609,
+      "id": 1637,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16103,7 +16383,7 @@
       "limitation": false
     },
     {
-      "id": 1610,
+      "id": 1638,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16113,7 +16393,7 @@
       "limitation": false
     },
     {
-      "id": 1611,
+      "id": 1639,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16123,7 +16403,7 @@
       "limitation": false
     },
     {
-      "id": 1612,
+      "id": 1640,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16133,7 +16413,7 @@
       "limitation": false
     },
     {
-      "id": 1613,
+      "id": 1641,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16143,7 +16423,7 @@
       "limitation": false
     },
     {
-      "id": 1614,
+      "id": 1642,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16153,7 +16433,7 @@
       "limitation": false
     },
     {
-      "id": 1615,
+      "id": 1643,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16163,7 +16443,7 @@
       "limitation": false
     },
     {
-      "id": 1616,
+      "id": 1644,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16173,7 +16453,7 @@
       "limitation": false
     },
     {
-      "id": 1617,
+      "id": 1645,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16183,7 +16463,7 @@
       "limitation": false
     },
     {
-      "id": 1618,
+      "id": 1646,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16193,7 +16473,7 @@
       "limitation": false
     },
     {
-      "id": 1619,
+      "id": 1647,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16203,7 +16483,7 @@
       "limitation": false
     },
     {
-      "id": 1620,
+      "id": 1648,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16213,7 +16493,7 @@
       "limitation": true
     },
     {
-      "id": 1621,
+      "id": 1649,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -16223,7 +16503,7 @@
       "limitation": true
     },
     {
-      "id": 1622,
+      "id": 1650,
       "result_kind": "paper",
       "doi": "",
       "title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
@@ -16233,7 +16513,7 @@
       "limitation": false
     },
     {
-      "id": 1623,
+      "id": 1651,
       "result_kind": "paper",
       "doi": "",
       "title": "Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm",
@@ -16243,7 +16523,7 @@
       "limitation": false
     },
     {
-      "id": 1624,
+      "id": 1652,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4391582",
       "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
@@ -16253,7 +16533,7 @@
       "limitation": false
     },
     {
-      "id": 1625,
+      "id": 1653,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4391582",
       "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
@@ -16263,7 +16543,7 @@
       "limitation": false
     },
     {
-      "id": 1626,
+      "id": 1654,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4391582",
       "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
@@ -16273,7 +16553,7 @@
       "limitation": false
     },
     {
-      "id": 1627,
+      "id": 1655,
       "result_kind": "paper",
       "doi": "10.2139/ssrn.4391582",
       "title": "Artificial Intelligence-Powered Comprehensive Framework Develops a Survival Assessment System by Multicenter Integration for Advanced Heart Failure with Renal Dysfunction",
@@ -16283,7 +16563,7 @@
       "limitation": false
     },
     {
-      "id": 1628,
+      "id": 1656,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16293,7 +16573,7 @@
       "limitation": false
     },
     {
-      "id": 1629,
+      "id": 1657,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16303,7 +16583,7 @@
       "limitation": false
     },
     {
-      "id": 1630,
+      "id": 1658,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16313,7 +16593,7 @@
       "limitation": false
     },
     {
-      "id": 1631,
+      "id": 1659,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16323,7 +16603,7 @@
       "limitation": false
     },
     {
-      "id": 1632,
+      "id": 1660,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16333,7 +16613,7 @@
       "limitation": false
     },
     {
-      "id": 1633,
+      "id": 1661,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16343,7 +16623,7 @@
       "limitation": false
     },
     {
-      "id": 1634,
+      "id": 1662,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16353,7 +16633,7 @@
       "limitation": false
     },
     {
-      "id": 1635,
+      "id": 1663,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16363,7 +16643,7 @@
       "limitation": false
     },
     {
-      "id": 1636,
+      "id": 1664,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16373,7 +16653,7 @@
       "limitation": false
     },
     {
-      "id": 1637,
+      "id": 1665,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16383,7 +16663,7 @@
       "limitation": false
     },
     {
-      "id": 1638,
+      "id": 1666,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16393,7 +16673,7 @@
       "limitation": false
     },
     {
-      "id": 1639,
+      "id": 1667,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16403,7 +16683,7 @@
       "limitation": false
     },
     {
-      "id": 1640,
+      "id": 1668,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16413,7 +16693,7 @@
       "limitation": false
     },
     {
-      "id": 1641,
+      "id": 1669,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16423,7 +16703,7 @@
       "limitation": false
     },
     {
-      "id": 1642,
+      "id": 1670,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16433,7 +16713,7 @@
       "limitation": false
     },
     {
-      "id": 1643,
+      "id": 1671,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16443,7 +16723,7 @@
       "limitation": false
     },
     {
-      "id": 1644,
+      "id": 1672,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16453,7 +16733,7 @@
       "limitation": false
     },
     {
-      "id": 1645,
+      "id": 1673,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16463,7 +16743,7 @@
       "limitation": false
     },
     {
-      "id": 1646,
+      "id": 1674,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16473,7 +16753,7 @@
       "limitation": false
     },
     {
-      "id": 1647,
+      "id": 1675,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16483,7 +16763,7 @@
       "limitation": false
     },
     {
-      "id": 1648,
+      "id": 1676,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16493,7 +16773,7 @@
       "limitation": false
     },
     {
-      "id": 1649,
+      "id": 1677,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16503,7 +16783,7 @@
       "limitation": false
     },
     {
-      "id": 1650,
+      "id": 1678,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16513,7 +16793,7 @@
       "limitation": false
     },
     {
-      "id": 1651,
+      "id": 1679,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16523,7 +16803,7 @@
       "limitation": false
     },
     {
-      "id": 1652,
+      "id": 1680,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16533,7 +16813,7 @@
       "limitation": false
     },
     {
-      "id": 1653,
+      "id": 1681,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16543,7 +16823,7 @@
       "limitation": false
     },
     {
-      "id": 1654,
+      "id": 1682,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16553,7 +16833,7 @@
       "limitation": false
     },
     {
-      "id": 1655,
+      "id": 1683,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16563,7 +16843,7 @@
       "limitation": false
     },
     {
-      "id": 1656,
+      "id": 1684,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16573,7 +16853,7 @@
       "limitation": true
     },
     {
-      "id": 1657,
+      "id": 1685,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -16583,7 +16863,7 @@
       "limitation": true
     },
     {
-      "id": 1658,
+      "id": 1686,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16593,7 +16873,7 @@
       "limitation": false
     },
     {
-      "id": 1659,
+      "id": 1687,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16603,7 +16883,7 @@
       "limitation": false
     },
     {
-      "id": 1660,
+      "id": 1688,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16613,7 +16893,7 @@
       "limitation": false
     },
     {
-      "id": 1661,
+      "id": 1689,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16623,7 +16903,7 @@
       "limitation": false
     },
     {
-      "id": 1662,
+      "id": 1690,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16633,7 +16913,7 @@
       "limitation": false
     },
     {
-      "id": 1663,
+      "id": 1691,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16643,7 +16923,7 @@
       "limitation": false
     },
     {
-      "id": 1664,
+      "id": 1692,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16653,7 +16933,7 @@
       "limitation": false
     },
     {
-      "id": 1665,
+      "id": 1693,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16663,7 +16943,7 @@
       "limitation": false
     },
     {
-      "id": 1666,
+      "id": 1694,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16673,7 +16953,7 @@
       "limitation": false
     },
     {
-      "id": 1667,
+      "id": 1695,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16683,7 +16963,7 @@
       "limitation": false
     },
     {
-      "id": 1668,
+      "id": 1696,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16693,7 +16973,7 @@
       "limitation": false
     },
     {
-      "id": 1669,
+      "id": 1697,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16703,7 +16983,7 @@
       "limitation": false
     },
     {
-      "id": 1670,
+      "id": 1698,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16713,7 +16993,7 @@
       "limitation": false
     },
     {
-      "id": 1671,
+      "id": 1699,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16723,7 +17003,7 @@
       "limitation": false
     },
     {
-      "id": 1672,
+      "id": 1700,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16733,7 +17013,7 @@
       "limitation": false
     },
     {
-      "id": 1673,
+      "id": 1701,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16743,7 +17023,7 @@
       "limitation": false
     },
     {
-      "id": 1674,
+      "id": 1702,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16753,7 +17033,7 @@
       "limitation": false
     },
     {
-      "id": 1675,
+      "id": 1703,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16763,7 +17043,7 @@
       "limitation": false
     },
     {
-      "id": 1676,
+      "id": 1704,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16773,7 +17053,7 @@
       "limitation": false
     },
     {
-      "id": 1677,
+      "id": 1705,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16783,7 +17063,7 @@
       "limitation": false
     },
     {
-      "id": 1678,
+      "id": 1706,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16793,7 +17073,7 @@
       "limitation": false
     },
     {
-      "id": 1679,
+      "id": 1707,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16803,7 +17083,7 @@
       "limitation": false
     },
     {
-      "id": 1680,
+      "id": 1708,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16813,7 +17093,7 @@
       "limitation": false
     },
     {
-      "id": 1681,
+      "id": 1709,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16823,7 +17103,7 @@
       "limitation": true
     },
     {
-      "id": 1682,
+      "id": 1710,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -16833,7 +17113,7 @@
       "limitation": true
     },
     {
-      "id": 1683,
+      "id": 1711,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16843,7 +17123,7 @@
       "limitation": false
     },
     {
-      "id": 1684,
+      "id": 1712,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16853,7 +17133,7 @@
       "limitation": false
     },
     {
-      "id": 1685,
+      "id": 1713,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16863,7 +17143,7 @@
       "limitation": false
     },
     {
-      "id": 1686,
+      "id": 1714,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16873,7 +17153,7 @@
       "limitation": false
     },
     {
-      "id": 1687,
+      "id": 1715,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16883,7 +17163,7 @@
       "limitation": false
     },
     {
-      "id": 1688,
+      "id": 1716,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16893,7 +17173,7 @@
       "limitation": false
     },
     {
-      "id": 1689,
+      "id": 1717,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16903,7 +17183,7 @@
       "limitation": false
     },
     {
-      "id": 1690,
+      "id": 1718,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16913,7 +17193,7 @@
       "limitation": false
     },
     {
-      "id": 1691,
+      "id": 1719,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16923,7 +17203,7 @@
       "limitation": false
     },
     {
-      "id": 1692,
+      "id": 1720,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16933,7 +17213,7 @@
       "limitation": false
     },
     {
-      "id": 1693,
+      "id": 1721,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16943,7 +17223,7 @@
       "limitation": false
     },
     {
-      "id": 1694,
+      "id": 1722,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16953,7 +17233,7 @@
       "limitation": false
     },
     {
-      "id": 1695,
+      "id": 1723,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16963,7 +17243,7 @@
       "limitation": false
     },
     {
-      "id": 1696,
+      "id": 1724,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16973,7 +17253,7 @@
       "limitation": false
     },
     {
-      "id": 1697,
+      "id": 1725,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16983,7 +17263,7 @@
       "limitation": false
     },
     {
-      "id": 1698,
+      "id": 1726,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -16993,7 +17273,7 @@
       "limitation": false
     },
     {
-      "id": 1699,
+      "id": 1727,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17003,7 +17283,7 @@
       "limitation": false
     },
     {
-      "id": 1700,
+      "id": 1728,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17013,7 +17293,7 @@
       "limitation": false
     },
     {
-      "id": 1701,
+      "id": 1729,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17023,7 +17303,7 @@
       "limitation": false
     },
     {
-      "id": 1702,
+      "id": 1730,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17033,7 +17313,7 @@
       "limitation": false
     },
     {
-      "id": 1703,
+      "id": 1731,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17043,7 +17323,7 @@
       "limitation": false
     },
     {
-      "id": 1704,
+      "id": 1732,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17053,7 +17333,7 @@
       "limitation": false
     },
     {
-      "id": 1705,
+      "id": 1733,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17063,7 +17343,7 @@
       "limitation": false
     },
     {
-      "id": 1706,
+      "id": 1734,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17073,7 +17353,7 @@
       "limitation": false
     },
     {
-      "id": 1707,
+      "id": 1735,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17083,7 +17363,7 @@
       "limitation": false
     },
     {
-      "id": 1708,
+      "id": 1736,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17093,7 +17373,7 @@
       "limitation": false
     },
     {
-      "id": 1709,
+      "id": 1737,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17103,7 +17383,7 @@
       "limitation": true
     },
     {
-      "id": 1710,
+      "id": 1738,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -17113,7 +17393,7 @@
       "limitation": true
     },
     {
-      "id": 1711,
+      "id": 1739,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17123,7 +17403,7 @@
       "limitation": false
     },
     {
-      "id": 1712,
+      "id": 1740,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17133,7 +17413,7 @@
       "limitation": false
     },
     {
-      "id": 1713,
+      "id": 1741,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17143,7 +17423,7 @@
       "limitation": false
     },
     {
-      "id": 1714,
+      "id": 1742,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17153,7 +17433,7 @@
       "limitation": false
     },
     {
-      "id": 1715,
+      "id": 1743,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17163,7 +17443,7 @@
       "limitation": false
     },
     {
-      "id": 1716,
+      "id": 1744,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17173,7 +17453,7 @@
       "limitation": false
     },
     {
-      "id": 1717,
+      "id": 1745,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17183,7 +17463,7 @@
       "limitation": false
     },
     {
-      "id": 1718,
+      "id": 1746,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17193,7 +17473,7 @@
       "limitation": false
     },
     {
-      "id": 1719,
+      "id": 1747,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17203,7 +17483,7 @@
       "limitation": false
     },
     {
-      "id": 1720,
+      "id": 1748,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17213,7 +17493,7 @@
       "limitation": false
     },
     {
-      "id": 1721,
+      "id": 1749,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17223,7 +17503,7 @@
       "limitation": false
     },
     {
-      "id": 1722,
+      "id": 1750,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17233,7 +17513,7 @@
       "limitation": false
     },
     {
-      "id": 1723,
+      "id": 1751,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17243,7 +17523,7 @@
       "limitation": false
     },
     {
-      "id": 1724,
+      "id": 1752,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17253,7 +17533,7 @@
       "limitation": false
     },
     {
-      "id": 1725,
+      "id": 1753,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17263,7 +17543,7 @@
       "limitation": false
     },
     {
-      "id": 1726,
+      "id": 1754,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17273,7 +17553,7 @@
       "limitation": false
     },
     {
-      "id": 1727,
+      "id": 1755,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17283,7 +17563,7 @@
       "limitation": false
     },
     {
-      "id": 1728,
+      "id": 1756,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17293,7 +17573,7 @@
       "limitation": false
     },
     {
-      "id": 1729,
+      "id": 1757,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17303,7 +17583,7 @@
       "limitation": false
     },
     {
-      "id": 1730,
+      "id": 1758,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17313,7 +17593,7 @@
       "limitation": false
     },
     {
-      "id": 1731,
+      "id": 1759,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17323,7 +17603,7 @@
       "limitation": false
     },
     {
-      "id": 1732,
+      "id": 1760,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17333,7 +17613,7 @@
       "limitation": false
     },
     {
-      "id": 1733,
+      "id": 1761,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17343,7 +17623,7 @@
       "limitation": false
     },
     {
-      "id": 1734,
+      "id": 1762,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17353,7 +17633,7 @@
       "limitation": false
     },
     {
-      "id": 1735,
+      "id": 1763,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17363,7 +17643,7 @@
       "limitation": true
     },
     {
-      "id": 1736,
+      "id": 1764,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -17373,7 +17653,7 @@
       "limitation": true
     },
     {
-      "id": 1737,
+      "id": 1765,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17383,7 +17663,7 @@
       "limitation": false
     },
     {
-      "id": 1738,
+      "id": 1766,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17393,7 +17673,7 @@
       "limitation": false
     },
     {
-      "id": 1739,
+      "id": 1767,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17403,7 +17683,7 @@
       "limitation": false
     },
     {
-      "id": 1740,
+      "id": 1768,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17413,7 +17693,7 @@
       "limitation": false
     },
     {
-      "id": 1741,
+      "id": 1769,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17423,7 +17703,7 @@
       "limitation": false
     },
     {
-      "id": 1742,
+      "id": 1770,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17433,7 +17713,7 @@
       "limitation": false
     },
     {
-      "id": 1743,
+      "id": 1771,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17443,7 +17723,7 @@
       "limitation": false
     },
     {
-      "id": 1744,
+      "id": 1772,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17453,7 +17733,7 @@
       "limitation": false
     },
     {
-      "id": 1745,
+      "id": 1773,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17463,7 +17743,7 @@
       "limitation": false
     },
     {
-      "id": 1746,
+      "id": 1774,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17473,7 +17753,7 @@
       "limitation": false
     },
     {
-      "id": 1747,
+      "id": 1775,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17483,7 +17763,7 @@
       "limitation": false
     },
     {
-      "id": 1748,
+      "id": 1776,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17493,7 +17773,7 @@
       "limitation": false
     },
     {
-      "id": 1749,
+      "id": 1777,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17503,7 +17783,7 @@
       "limitation": false
     },
     {
-      "id": 1750,
+      "id": 1778,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17513,7 +17793,7 @@
       "limitation": false
     },
     {
-      "id": 1751,
+      "id": 1779,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17523,7 +17803,7 @@
       "limitation": false
     },
     {
-      "id": 1752,
+      "id": 1780,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17533,7 +17813,7 @@
       "limitation": false
     },
     {
-      "id": 1753,
+      "id": 1781,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17543,7 +17823,7 @@
       "limitation": false
     },
     {
-      "id": 1754,
+      "id": 1782,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17553,7 +17833,7 @@
       "limitation": false
     },
     {
-      "id": 1755,
+      "id": 1783,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17563,7 +17843,7 @@
       "limitation": false
     },
     {
-      "id": 1756,
+      "id": 1784,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17573,7 +17853,7 @@
       "limitation": false
     },
     {
-      "id": 1757,
+      "id": 1785,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17583,7 +17863,7 @@
       "limitation": false
     },
     {
-      "id": 1758,
+      "id": 1786,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17593,7 +17873,7 @@
       "limitation": false
     },
     {
-      "id": 1759,
+      "id": 1787,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17603,7 +17883,7 @@
       "limitation": false
     },
     {
-      "id": 1760,
+      "id": 1788,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17613,7 +17893,7 @@
       "limitation": false
     },
     {
-      "id": 1761,
+      "id": 1789,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17623,7 +17903,7 @@
       "limitation": false
     },
     {
-      "id": 1762,
+      "id": 1790,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17633,7 +17913,7 @@
       "limitation": false
     },
     {
-      "id": 1763,
+      "id": 1791,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17643,7 +17923,7 @@
       "limitation": true
     },
     {
-      "id": 1764,
+      "id": 1792,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -17653,7 +17933,7 @@
       "limitation": true
     },
     {
-      "id": 1765,
+      "id": 1793,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17663,7 +17943,7 @@
       "limitation": false
     },
     {
-      "id": 1766,
+      "id": 1794,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17673,7 +17953,7 @@
       "limitation": false
     },
     {
-      "id": 1767,
+      "id": 1795,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17683,7 +17963,7 @@
       "limitation": false
     },
     {
-      "id": 1768,
+      "id": 1796,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17693,7 +17973,7 @@
       "limitation": false
     },
     {
-      "id": 1769,
+      "id": 1797,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17703,7 +17983,7 @@
       "limitation": false
     },
     {
-      "id": 1770,
+      "id": 1798,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17713,7 +17993,7 @@
       "limitation": false
     },
     {
-      "id": 1771,
+      "id": 1799,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17723,7 +18003,7 @@
       "limitation": false
     },
     {
-      "id": 1772,
+      "id": 1800,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17733,7 +18013,7 @@
       "limitation": false
     },
     {
-      "id": 1773,
+      "id": 1801,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17743,7 +18023,7 @@
       "limitation": false
     },
     {
-      "id": 1774,
+      "id": 1802,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17753,7 +18033,7 @@
       "limitation": false
     },
     {
-      "id": 1775,
+      "id": 1803,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17763,7 +18043,7 @@
       "limitation": false
     },
     {
-      "id": 1776,
+      "id": 1804,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17773,7 +18053,7 @@
       "limitation": false
     },
     {
-      "id": 1777,
+      "id": 1805,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17783,7 +18063,7 @@
       "limitation": false
     },
     {
-      "id": 1778,
+      "id": 1806,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17793,7 +18073,7 @@
       "limitation": false
     },
     {
-      "id": 1779,
+      "id": 1807,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17803,7 +18083,7 @@
       "limitation": false
     },
     {
-      "id": 1780,
+      "id": 1808,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17813,7 +18093,7 @@
       "limitation": false
     },
     {
-      "id": 1781,
+      "id": 1809,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17823,7 +18103,7 @@
       "limitation": false
     },
     {
-      "id": 1782,
+      "id": 1810,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17833,7 +18113,7 @@
       "limitation": false
     },
     {
-      "id": 1783,
+      "id": 1811,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17843,7 +18123,7 @@
       "limitation": false
     },
     {
-      "id": 1784,
+      "id": 1812,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17853,7 +18133,7 @@
       "limitation": false
     },
     {
-      "id": 1785,
+      "id": 1813,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17863,7 +18143,7 @@
       "limitation": false
     },
     {
-      "id": 1786,
+      "id": 1814,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17873,7 +18153,7 @@
       "limitation": false
     },
     {
-      "id": 1787,
+      "id": 1815,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17883,7 +18163,7 @@
       "limitation": false
     },
     {
-      "id": 1788,
+      "id": 1816,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17893,7 +18173,7 @@
       "limitation": false
     },
     {
-      "id": 1789,
+      "id": 1817,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17903,7 +18183,7 @@
       "limitation": false
     },
     {
-      "id": 1790,
+      "id": 1818,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17913,7 +18193,7 @@
       "limitation": false
     },
     {
-      "id": 1791,
+      "id": 1819,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17923,7 +18203,7 @@
       "limitation": false
     },
     {
-      "id": 1792,
+      "id": 1820,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17933,7 +18213,7 @@
       "limitation": false
     },
     {
-      "id": 1793,
+      "id": 1821,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17943,7 +18223,7 @@
       "limitation": true
     },
     {
-      "id": 1794,
+      "id": 1822,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -17953,7 +18233,7 @@
       "limitation": true
     },
     {
-      "id": 1795,
+      "id": 1823,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -17963,7 +18243,7 @@
       "limitation": false
     },
     {
-      "id": 1796,
+      "id": 1824,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -17973,7 +18253,7 @@
       "limitation": false
     },
     {
-      "id": 1797,
+      "id": 1825,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -17983,7 +18263,7 @@
       "limitation": false
     },
     {
-      "id": 1798,
+      "id": 1826,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -17993,7 +18273,7 @@
       "limitation": false
     },
     {
-      "id": 1799,
+      "id": 1827,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18003,7 +18283,7 @@
       "limitation": false
     },
     {
-      "id": 1800,
+      "id": 1828,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18013,7 +18293,7 @@
       "limitation": false
     },
     {
-      "id": 1801,
+      "id": 1829,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18023,7 +18303,7 @@
       "limitation": false
     },
     {
-      "id": 1802,
+      "id": 1830,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18033,7 +18313,7 @@
       "limitation": false
     },
     {
-      "id": 1803,
+      "id": 1831,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18043,7 +18323,7 @@
       "limitation": false
     },
     {
-      "id": 1804,
+      "id": 1832,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18053,7 +18333,7 @@
       "limitation": false
     },
     {
-      "id": 1805,
+      "id": 1833,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18063,7 +18343,7 @@
       "limitation": false
     },
     {
-      "id": 1806,
+      "id": 1834,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18073,7 +18353,7 @@
       "limitation": false
     },
     {
-      "id": 1807,
+      "id": 1835,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18083,7 +18363,7 @@
       "limitation": false
     },
     {
-      "id": 1808,
+      "id": 1836,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18093,7 +18373,7 @@
       "limitation": false
     },
     {
-      "id": 1809,
+      "id": 1837,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18103,7 +18383,7 @@
       "limitation": false
     },
     {
-      "id": 1810,
+      "id": 1838,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18113,7 +18393,7 @@
       "limitation": false
     },
     {
-      "id": 1811,
+      "id": 1839,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18123,7 +18403,7 @@
       "limitation": false
     },
     {
-      "id": 1812,
+      "id": 1840,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18133,7 +18413,7 @@
       "limitation": false
     },
     {
-      "id": 1813,
+      "id": 1841,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18143,7 +18423,7 @@
       "limitation": false
     },
     {
-      "id": 1814,
+      "id": 1842,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18153,7 +18433,7 @@
       "limitation": false
     },
     {
-      "id": 1815,
+      "id": 1843,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18163,7 +18443,7 @@
       "limitation": false
     },
     {
-      "id": 1816,
+      "id": 1844,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18173,7 +18453,7 @@
       "limitation": false
     },
     {
-      "id": 1817,
+      "id": 1845,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18183,7 +18463,7 @@
       "limitation": false
     },
     {
-      "id": 1818,
+      "id": 1846,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18193,7 +18473,7 @@
       "limitation": false
     },
     {
-      "id": 1819,
+      "id": 1847,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18203,7 +18483,7 @@
       "limitation": false
     },
     {
-      "id": 1820,
+      "id": 1848,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18213,7 +18493,7 @@
       "limitation": false
     },
     {
-      "id": 1821,
+      "id": 1849,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18223,7 +18503,7 @@
       "limitation": false
     },
     {
-      "id": 1822,
+      "id": 1850,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18233,7 +18513,7 @@
       "limitation": true
     },
     {
-      "id": 1823,
+      "id": 1851,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -18243,7 +18523,7 @@
       "limitation": true
     },
     {
-      "id": 1824,
+      "id": 1852,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18253,7 +18533,7 @@
       "limitation": false
     },
     {
-      "id": 1825,
+      "id": 1853,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18263,7 +18543,7 @@
       "limitation": false
     },
     {
-      "id": 1826,
+      "id": 1854,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18273,7 +18553,7 @@
       "limitation": false
     },
     {
-      "id": 1827,
+      "id": 1855,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18283,7 +18563,7 @@
       "limitation": false
     },
     {
-      "id": 1828,
+      "id": 1856,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18293,7 +18573,7 @@
       "limitation": false
     },
     {
-      "id": 1829,
+      "id": 1857,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18303,7 +18583,7 @@
       "limitation": false
     },
     {
-      "id": 1830,
+      "id": 1858,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18313,7 +18593,7 @@
       "limitation": false
     },
     {
-      "id": 1831,
+      "id": 1859,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18323,7 +18603,7 @@
       "limitation": false
     },
     {
-      "id": 1832,
+      "id": 1860,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18333,7 +18613,7 @@
       "limitation": false
     },
     {
-      "id": 1833,
+      "id": 1861,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18343,7 +18623,7 @@
       "limitation": false
     },
     {
-      "id": 1834,
+      "id": 1862,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18353,7 +18633,7 @@
       "limitation": false
     },
     {
-      "id": 1835,
+      "id": 1863,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18363,7 +18643,7 @@
       "limitation": false
     },
     {
-      "id": 1836,
+      "id": 1864,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18373,7 +18653,7 @@
       "limitation": false
     },
     {
-      "id": 1837,
+      "id": 1865,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18383,7 +18663,7 @@
       "limitation": false
     },
     {
-      "id": 1838,
+      "id": 1866,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18393,7 +18673,7 @@
       "limitation": false
     },
     {
-      "id": 1839,
+      "id": 1867,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18403,7 +18683,7 @@
       "limitation": false
     },
     {
-      "id": 1840,
+      "id": 1868,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18413,7 +18693,7 @@
       "limitation": false
     },
     {
-      "id": 1841,
+      "id": 1869,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18423,7 +18703,7 @@
       "limitation": false
     },
     {
-      "id": 1842,
+      "id": 1870,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18433,7 +18713,7 @@
       "limitation": false
     },
     {
-      "id": 1843,
+      "id": 1871,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18443,7 +18723,7 @@
       "limitation": false
     },
     {
-      "id": 1844,
+      "id": 1872,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18453,7 +18733,7 @@
       "limitation": true
     },
     {
-      "id": 1845,
+      "id": 1873,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -18463,7 +18743,7 @@
       "limitation": true
     },
     {
-      "id": 1846,
+      "id": 1874,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18473,7 +18753,7 @@
       "limitation": false
     },
     {
-      "id": 1847,
+      "id": 1875,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18483,7 +18763,7 @@
       "limitation": false
     },
     {
-      "id": 1848,
+      "id": 1876,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18493,7 +18773,7 @@
       "limitation": false
     },
     {
-      "id": 1849,
+      "id": 1877,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18503,7 +18783,7 @@
       "limitation": false
     },
     {
-      "id": 1850,
+      "id": 1878,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18513,7 +18793,7 @@
       "limitation": false
     },
     {
-      "id": 1851,
+      "id": 1879,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18523,7 +18803,7 @@
       "limitation": false
     },
     {
-      "id": 1852,
+      "id": 1880,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18533,7 +18813,7 @@
       "limitation": false
     },
     {
-      "id": 1853,
+      "id": 1881,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18543,7 +18823,7 @@
       "limitation": false
     },
     {
-      "id": 1854,
+      "id": 1882,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18553,7 +18833,7 @@
       "limitation": false
     },
     {
-      "id": 1855,
+      "id": 1883,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18563,7 +18843,7 @@
       "limitation": false
     },
     {
-      "id": 1856,
+      "id": 1884,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18573,7 +18853,7 @@
       "limitation": false
     },
     {
-      "id": 1857,
+      "id": 1885,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18583,7 +18863,7 @@
       "limitation": false
     },
     {
-      "id": 1858,
+      "id": 1886,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18593,7 +18873,7 @@
       "limitation": false
     },
     {
-      "id": 1859,
+      "id": 1887,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18603,7 +18883,7 @@
       "limitation": false
     },
     {
-      "id": 1860,
+      "id": 1888,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18613,7 +18893,7 @@
       "limitation": false
     },
     {
-      "id": 1861,
+      "id": 1889,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18623,7 +18903,7 @@
       "limitation": false
     },
     {
-      "id": 1862,
+      "id": 1890,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18633,7 +18913,7 @@
       "limitation": false
     },
     {
-      "id": 1863,
+      "id": 1891,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18643,7 +18923,7 @@
       "limitation": false
     },
     {
-      "id": 1864,
+      "id": 1892,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18653,7 +18933,7 @@
       "limitation": false
     },
     {
-      "id": 1865,
+      "id": 1893,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18663,7 +18943,7 @@
       "limitation": false
     },
     {
-      "id": 1866,
+      "id": 1894,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18673,7 +18953,7 @@
       "limitation": false
     },
     {
-      "id": 1867,
+      "id": 1895,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18683,7 +18963,7 @@
       "limitation": false
     },
     {
-      "id": 1868,
+      "id": 1896,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18693,7 +18973,7 @@
       "limitation": false
     },
     {
-      "id": 1869,
+      "id": 1897,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18703,7 +18983,7 @@
       "limitation": false
     },
     {
-      "id": 1870,
+      "id": 1898,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18713,7 +18993,7 @@
       "limitation": false
     },
     {
-      "id": 1871,
+      "id": 1899,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18723,7 +19003,7 @@
       "limitation": false
     },
     {
-      "id": 1872,
+      "id": 1900,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18733,7 +19013,7 @@
       "limitation": true
     },
     {
-      "id": 1873,
+      "id": 1901,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -18743,7 +19023,7 @@
       "limitation": true
     },
     {
-      "id": 1874,
+      "id": 1902,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18753,7 +19033,7 @@
       "limitation": false
     },
     {
-      "id": 1875,
+      "id": 1903,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18763,7 +19043,7 @@
       "limitation": false
     },
     {
-      "id": 1876,
+      "id": 1904,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18773,7 +19053,7 @@
       "limitation": false
     },
     {
-      "id": 1877,
+      "id": 1905,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18783,7 +19063,7 @@
       "limitation": true
     },
     {
-      "id": 1878,
+      "id": 1906,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18793,7 +19073,7 @@
       "limitation": false
     },
     {
-      "id": 1879,
+      "id": 1907,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18803,7 +19083,7 @@
       "limitation": false
     },
     {
-      "id": 1880,
+      "id": 1908,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18813,7 +19093,7 @@
       "limitation": false
     },
     {
-      "id": 1881,
+      "id": 1909,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18823,7 +19103,7 @@
       "limitation": false
     },
     {
-      "id": 1882,
+      "id": 1910,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18833,7 +19113,7 @@
       "limitation": false
     },
     {
-      "id": 1883,
+      "id": 1911,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18843,7 +19123,7 @@
       "limitation": false
     },
     {
-      "id": 1884,
+      "id": 1912,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18853,7 +19133,7 @@
       "limitation": false
     },
     {
-      "id": 1885,
+      "id": 1913,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18863,7 +19143,7 @@
       "limitation": true
     },
     {
-      "id": 1886,
+      "id": 1914,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18873,7 +19153,7 @@
       "limitation": false
     },
     {
-      "id": 1887,
+      "id": 1915,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18883,7 +19163,7 @@
       "limitation": false
     },
     {
-      "id": 1888,
+      "id": 1916,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18893,7 +19173,7 @@
       "limitation": false
     },
     {
-      "id": 1889,
+      "id": 1917,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18903,7 +19183,7 @@
       "limitation": false
     },
     {
-      "id": 1890,
+      "id": 1918,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18913,7 +19193,7 @@
       "limitation": true
     },
     {
-      "id": 1891,
+      "id": 1919,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18923,7 +19203,7 @@
       "limitation": false
     },
     {
-      "id": 1892,
+      "id": 1920,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18933,7 +19213,7 @@
       "limitation": false
     },
     {
-      "id": 1893,
+      "id": 1921,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18943,7 +19223,7 @@
       "limitation": false
     },
     {
-      "id": 1894,
+      "id": 1922,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18953,7 +19233,7 @@
       "limitation": false
     },
     {
-      "id": 1895,
+      "id": 1923,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18963,7 +19243,7 @@
       "limitation": true
     },
     {
-      "id": 1896,
+      "id": 1924,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18973,7 +19253,7 @@
       "limitation": false
     },
     {
-      "id": 1897,
+      "id": 1925,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18983,7 +19263,7 @@
       "limitation": false
     },
     {
-      "id": 1898,
+      "id": 1926,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18993,7 +19273,7 @@
       "limitation": false
     },
     {
-      "id": 1899,
+      "id": 1927,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19003,7 +19283,7 @@
       "limitation": true
     },
     {
-      "id": 1900,
+      "id": 1928,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19013,7 +19293,7 @@
       "limitation": false
     },
     {
-      "id": 1901,
+      "id": 1929,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19023,7 +19303,7 @@
       "limitation": true
     },
     {
-      "id": 1902,
+      "id": 1930,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19033,7 +19313,7 @@
       "limitation": false
     },
     {
-      "id": 1903,
+      "id": 1931,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19043,7 +19323,7 @@
       "limitation": false
     },
     {
-      "id": 1904,
+      "id": 1932,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19053,7 +19333,7 @@
       "limitation": false
     },
     {
-      "id": 1905,
+      "id": 1933,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19063,7 +19343,7 @@
       "limitation": true
     },
     {
-      "id": 1906,
+      "id": 1934,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19073,7 +19353,7 @@
       "limitation": false
     },
     {
-      "id": 1907,
+      "id": 1935,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19083,7 +19363,7 @@
       "limitation": true
     },
     {
-      "id": 1908,
+      "id": 1936,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19093,7 +19373,7 @@
       "limitation": false
     },
     {
-      "id": 1909,
+      "id": 1937,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -19103,7 +19383,7 @@
       "limitation": false
     },
     {
-      "id": 1910,
+      "id": 1938,
       "result_kind": "paper",
       "doi": "10.1007/s10238-026-02130-6",
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
@@ -19113,7 +19393,7 @@
       "limitation": false
     },
     {
-      "id": 1911,
+      "id": 1939,
       "result_kind": "paper",
       "doi": "10.1007/s11426-026-3629-x",
       "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
@@ -19123,7 +19403,7 @@
       "limitation": false
     },
     {
-      "id": 1912,
+      "id": 1940,
       "result_kind": "paper",
       "doi": "10.3389/fcvm.2025.1724572",
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
@@ -19133,7 +19413,7 @@
       "limitation": false
     },
     {
-      "id": 1913,
+      "id": 1941,
       "result_kind": "paper",
       "doi": "10.1056/nejmc2518964",
       "title": "Aspirin after PCI in Acute Coronary Syndromes",
@@ -19143,7 +19423,7 @@
       "limitation": false
     },
     {
-      "id": 1914,
+      "id": 1942,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70052",
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
@@ -19153,7 +19433,7 @@
       "limitation": false
     },
     {
-      "id": 1915,
+      "id": 1943,
       "result_kind": "paper",
       "doi": "10.15212/bioi-2026-0017",
       "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
@@ -19163,7 +19443,7 @@
       "limitation": false
     },
     {
-      "id": 1916,
+      "id": 1944,
       "result_kind": "paper",
       "doi": "10.1002/ggn2.202500053",
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -19173,7 +19453,7 @@
       "limitation": false
     },
     {
-      "id": 1917,
+      "id": 1945,
       "result_kind": "paper",
       "doi": "10.1016/j.medd.2026.100004",
       "title": "Multimodal AI for cardiovascular care must learn when not to predict",
@@ -19183,7 +19463,7 @@
       "limitation": false
     },
     {
-      "id": 1918,
+      "id": 1946,
       "result_kind": "paper",
       "doi": "10.1097/re9.0000000000000037",
       "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
@@ -19193,7 +19473,7 @@
       "limitation": false
     },
     {
-      "id": 1919,
+      "id": 1947,
       "result_kind": "paper",
       "doi": "10.1155/humu/5591097",
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -19203,7 +19483,7 @@
       "limitation": false
     },
     {
-      "id": 1920,
+      "id": 1948,
       "result_kind": "paper",
       "doi": "10.1371/journal.pone.0346326",
       "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
@@ -19213,7 +19493,7 @@
       "limitation": false
     },
     {
-      "id": 1921,
+      "id": 1949,
       "result_kind": "paper",
       "doi": "10.1126/science.aek9583",
       "title": "Recording results from single-patient trials",
@@ -19223,7 +19503,7 @@
       "limitation": false
     },
     {
-      "id": 1922,
+      "id": 1950,
       "result_kind": "paper",
       "doi": "10.1038/s41698-026-01699-1",
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
@@ -19233,7 +19513,7 @@
       "limitation": false
     },
     {
-      "id": 1923,
+      "id": 1951,
       "result_kind": "paper",
       "doi": "10.1111/jdi.70462",
       "title": "The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study",
@@ -19243,7 +19523,7 @@
       "limitation": false
     },
     {
-      "id": 1924,
+      "id": 1952,
       "result_kind": "paper",
       "doi": "10.1172/jci194175",
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
@@ -19253,7 +19533,7 @@
       "limitation": false
     },
     {
-      "id": 1925,
+      "id": 1953,
       "result_kind": "paper",
       "doi": "10.1002/ctm2.70900",
       "title": "What one patient can teach the next",
@@ -19263,7 +19543,7 @@
       "limitation": false
     },
     {
-      "id": 1926,
+      "id": 1954,
       "result_kind": "paper",
       "doi": "10.1016/j.curpro.2025.100054",
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
@@ -19273,7 +19553,7 @@
       "limitation": false
     },
     {
-      "id": 1927,
+      "id": 1955,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70475",
       "title": "A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy",
@@ -19283,7 +19563,7 @@
       "limitation": false
     },
     {
-      "id": 1928,
+      "id": 1956,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2025.114320",
       "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
@@ -19293,7 +19573,7 @@
       "limitation": false
     },
     {
-      "id": 1929,
+      "id": 1957,
       "result_kind": "paper",
       "doi": "10.3389/fnut.2025.1658286",
       "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
@@ -19303,7 +19583,7 @@
       "limitation": false
     },
     {
-      "id": 1930,
+      "id": 1958,
       "result_kind": "paper",
       "doi": "10.3389/fpubh.2025.1521372",
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -19313,7 +19593,7 @@
       "limitation": false
     },
     {
-      "id": 1931,
+      "id": 1959,
       "result_kind": "paper",
       "doi": "10.32604/or.2025.059290",
       "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
@@ -19323,7 +19603,7 @@
       "limitation": false
     },
     {
-      "id": 1932,
+      "id": 1960,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70725",
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
@@ -19333,7 +19613,7 @@
       "limitation": false
     },
     {
-      "id": 1933,
+      "id": 1961,
       "result_kind": "paper",
       "doi": "10.2147/cia.s493841",
       "title": "Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair",
@@ -19343,7 +19623,7 @@
       "limitation": false
     },
     {
-      "id": 1934,
+      "id": 1962,
       "result_kind": "paper",
       "doi": "10.1038/s41598-025-98859-3",
       "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
@@ -19353,7 +19633,7 @@
       "limitation": false
     },
     {
-      "id": 1935,
+      "id": 1963,
       "result_kind": "paper",
       "doi": "10.2147/jir.s495784",
       "title": "Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics",
@@ -19363,7 +19643,7 @@
       "limitation": false
     },
     {
-      "id": 1936,
+      "id": 1964,
       "result_kind": "paper",
       "doi": "10.1016/j.joim.2025.06.003",
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
@@ -19373,7 +19653,7 @@
       "limitation": false
     },
     {
-      "id": 1937,
+      "id": 1965,
       "result_kind": "paper",
       "doi": "10.1186/s12915-025-02400-x",
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
@@ -19383,7 +19663,7 @@
       "limitation": false
     },
     {
-      "id": 1938,
+      "id": 1966,
       "result_kind": "paper",
       "doi": "10.71321/fy14v342",
       "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
@@ -19393,7 +19673,7 @@
       "limitation": false
     },
     {
-      "id": 1939,
+      "id": 1967,
       "result_kind": "paper",
       "doi": "10.1016/j.cbi.2025.111421",
       "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
@@ -19403,7 +19683,7 @@
       "limitation": false
     },
     {
-      "id": 1940,
+      "id": 1968,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010787",
       "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -19413,7 +19693,7 @@
       "limitation": false
     },
     {
-      "id": 1941,
+      "id": 1969,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70004",
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -19423,7 +19703,7 @@
       "limitation": false
     },
     {
-      "id": 1942,
+      "id": 1970,
       "result_kind": "paper",
       "doi": "10.1200/po-24-00875",
       "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
@@ -19433,7 +19713,7 @@
       "limitation": false
     },
     {
-      "id": 1943,
+      "id": 1971,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2025.1538574",
       "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -19443,7 +19723,7 @@
       "limitation": false
     },
     {
-      "id": 1944,
+      "id": 1972,
       "result_kind": "paper",
       "doi": "10.1111/odi.70054",
       "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
@@ -19453,7 +19733,7 @@
       "limitation": false
     },
     {
-      "id": 1945,
+      "id": 1973,
       "result_kind": "paper",
       "doi": "10.2147/ijn.s522157",
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
@@ -19463,7 +19743,7 @@
       "limitation": false
     },
     {
-      "id": 1946,
+      "id": 1974,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010127",
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
@@ -19473,7 +19753,7 @@
       "limitation": false
     },
     {
-      "id": 1947,
+      "id": 1975,
       "result_kind": "paper",
       "doi": "10.1093/eurheartj/ehaf523",
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
@@ -19483,7 +19763,7 @@
       "limitation": false
     },
     {
-      "id": 1948,
+      "id": 1976,
       "result_kind": "paper",
       "doi": "10.1002/tox.24284",
       "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
@@ -19493,7 +19773,7 @@
       "limitation": false
     },
     {
-      "id": 1949,
+      "id": 1977,
       "result_kind": "paper",
       "doi": "10.1038/s41467-024-50415-9",
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
@@ -19503,7 +19783,7 @@
       "limitation": false
     },
     {
-      "id": 1950,
+      "id": 1978,
       "result_kind": "paper",
       "doi": "10.18632/aging.205564",
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
@@ -19513,7 +19793,7 @@
       "limitation": false
     },
     {
-      "id": 1951,
+      "id": 1979,
       "result_kind": "paper",
       "doi": "10.1200/po.24.00089",
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
@@ -19523,7 +19803,7 @@
       "limitation": false
     },
     {
-      "id": 1952,
+      "id": 1980,
       "result_kind": "paper",
       "doi": "10.1186/s10020-024-00963-z",
       "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
@@ -19533,7 +19813,7 @@
       "limitation": false
     },
     {
-      "id": 1953,
+      "id": 1981,
       "result_kind": "paper",
       "doi": "10.1002/clc.70019",
       "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
@@ -19543,7 +19823,7 @@
       "limitation": false
     },
     {
-      "id": 1954,
+      "id": 1982,
       "result_kind": "paper",
       "doi": "10.1016/j.jtemb.2024.127543",
       "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
@@ -19553,7 +19833,7 @@
       "limitation": false
     },
     {
-      "id": 1955,
+      "id": 1983,
       "result_kind": "paper",
       "doi": "10.15212/cvia.2024.0023",
       "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
@@ -19563,7 +19843,7 @@
       "limitation": false
     },
     {
-      "id": 1956,
+      "id": 1984,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.18408",
       "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -19573,7 +19853,7 @@
       "limitation": false
     },
     {
-      "id": 1957,
+      "id": 1985,
       "result_kind": "paper",
       "doi": "10.1007/s10238-024-01439-4",
       "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
@@ -19583,7 +19863,7 @@
       "limitation": false
     },
     {
-      "id": 1958,
+      "id": 1986,
       "result_kind": "paper",
       "doi": "10.1186/s12943-024-02047-2",
       "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
@@ -19593,7 +19873,7 @@
       "limitation": false
     },
     {
-      "id": 1959,
+      "id": 1987,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70258",
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -19603,7 +19883,7 @@
       "limitation": false
     },
     {
-      "id": 1960,
+      "id": 1988,
       "result_kind": "paper",
       "doi": "10.1186/s12931-024-02978-w",
       "title": "Exploring the diagnostic and immune infiltration roles of disulfidptosis related genes in pulmonary hypertension",
@@ -19613,7 +19893,7 @@
       "limitation": false
     },
     {
-      "id": 1961,
+      "id": 1989,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2024.1425895",
       "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
@@ -19623,7 +19903,7 @@
       "limitation": false
     },
     {
-      "id": 1962,
+      "id": 1990,
       "result_kind": "paper",
       "doi": "10.1093/hmg/ddae189",
       "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
@@ -19633,7 +19913,7 @@
       "limitation": false
     },
     {
-      "id": 1963,
+      "id": 1991,
       "result_kind": "paper",
       "doi": "10.1038/s41598-024-65236-5",
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
@@ -19643,7 +19923,7 @@
       "limitation": false
     },
     {
-      "id": 1964,
+      "id": 1992,
       "result_kind": "paper",
       "doi": "10.1038/s41598-024-80885-2",
       "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
@@ -19653,7 +19933,7 @@
       "limitation": false
     },
     {
-      "id": 1965,
+      "id": 1993,
       "result_kind": "paper",
       "doi": "10.1007/s13402-023-00912-8",
       "title": "Omics-based molecular classifications empowering in precision oncology",
@@ -19663,7 +19943,7 @@
       "limitation": false
     },
     {
-      "id": 1966,
+      "id": 1994,
       "result_kind": "paper",
       "doi": "10.1016/j.ejso.2024.108527",
       "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
@@ -19673,7 +19953,7 @@
       "limitation": false
     },
     {
-      "id": 1967,
+      "id": 1995,
       "result_kind": "paper",
       "doi": "10.1021/acs.jproteome.4c00522",
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -19683,7 +19963,7 @@
       "limitation": false
     },
     {
-      "id": 1968,
+      "id": 1996,
       "result_kind": "paper",
       "doi": "10.1016/j.csbj.2024.04.044",
       "title": "Proteomics appending a complementary dimension to precision oncotherapy",
@@ -19693,7 +19973,17 @@
       "limitation": false
     },
     {
-      "id": 1969,
+      "id": 1997,
+      "result_kind": "paper",
+      "doi": "10.14283/jpad.2024.161",
+      "title": "Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology",
+      "category": "Research & review context",
+      "text": "Circadian-related molecular research\nAlzheimer disease transcriptomics\nGenetic association and expression candidate integration\nTranscriptomic scores and clinical biomarker associations\nIntegrates shift-work GWAS, AD/eQTL data and expression screening to prioritize seven genes, proposes a clock-deviation expression score, and adds local blood-assay and sleep/biomarker observations.\nGenetic/expression association, reported MR summaries, computational score evaluation and separate clinical-substudy observations.\nCircadian disruption\nSleep and chronotype\nMolecular score construction\nMethods: combine candidate screening, eQTL association and expression-background scoring.\nDiscussion: distinguish molecular circadian proxies, blood expression and questionnaire/biomarker associations.",
+      "url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 1998,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -19703,7 +19993,7 @@
       "limitation": false
     },
     {
-      "id": 1970,
+      "id": 1999,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -19713,7 +20003,7 @@
       "limitation": false
     },
     {
-      "id": 1971,
+      "id": 2000,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -19723,7 +20013,7 @@
       "limitation": false
     },
     {
-      "id": 1972,
+      "id": 2001,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -19733,7 +20023,7 @@
       "limitation": false
     },
     {
-      "id": 1973,
+      "id": 2002,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -19743,7 +20033,7 @@
       "limitation": false
     },
     {
-      "id": 1974,
+      "id": 2003,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -19753,7 +20043,7 @@
       "limitation": false
     },
     {
-      "id": 1975,
+      "id": 2004,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -19763,7 +20053,7 @@
       "limitation": false
     },
     {
-      "id": 1976,
+      "id": 2005,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -19773,7 +20063,7 @@
       "limitation": false
     },
     {
-      "id": 1977,
+      "id": 2006,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -19783,7 +20073,7 @@
       "limitation": false
     },
     {
-      "id": 1978,
+      "id": 2007,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -19793,7 +20083,7 @@
       "limitation": false
     },
     {
-      "id": 1979,
+      "id": 2008,
       "result_kind": "paper",
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
@@ -19803,7 +20093,7 @@
       "limitation": false
     },
     {
-      "id": 1980,
+      "id": 2009,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19813,7 +20103,7 @@
       "limitation": false
     },
     {
-      "id": 1981,
+      "id": 2010,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19823,7 +20113,7 @@
       "limitation": false
     },
     {
-      "id": 1982,
+      "id": 2011,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19833,7 +20123,7 @@
       "limitation": false
     },
     {
-      "id": 1983,
+      "id": 2012,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19843,7 +20133,7 @@
       "limitation": false
     },
     {
-      "id": 1984,
+      "id": 2013,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19853,7 +20143,7 @@
       "limitation": false
     },
     {
-      "id": 1985,
+      "id": 2014,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19863,7 +20153,7 @@
       "limitation": false
     },
     {
-      "id": 1986,
+      "id": 2015,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19873,7 +20163,7 @@
       "limitation": false
     },
     {
-      "id": 1987,
+      "id": 2016,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19883,7 +20173,7 @@
       "limitation": false
     },
     {
-      "id": 1988,
+      "id": 2017,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19893,7 +20183,7 @@
       "limitation": false
     },
     {
-      "id": 1989,
+      "id": 2018,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19903,7 +20193,7 @@
       "limitation": false
     },
     {
-      "id": 1990,
+      "id": 2019,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19913,7 +20203,7 @@
       "limitation": false
     },
     {
-      "id": 1991,
+      "id": 2020,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19923,7 +20213,7 @@
       "limitation": false
     },
     {
-      "id": 1992,
+      "id": 2021,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19933,7 +20223,7 @@
       "limitation": false
     },
     {
-      "id": 1993,
+      "id": 2022,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19943,7 +20233,7 @@
       "limitation": false
     },
     {
-      "id": 1994,
+      "id": 2023,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19953,7 +20243,7 @@
       "limitation": false
     },
     {
-      "id": 1995,
+      "id": 2024,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19963,7 +20253,7 @@
       "limitation": false
     },
     {
-      "id": 1996,
+      "id": 2025,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19973,7 +20263,7 @@
       "limitation": false
     },
     {
-      "id": 1997,
+      "id": 2026,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19983,7 +20273,7 @@
       "limitation": false
     },
     {
-      "id": 1998,
+      "id": 2027,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19993,7 +20283,7 @@
       "limitation": false
     },
     {
-      "id": 1999,
+      "id": 2028,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20003,7 +20293,7 @@
       "limitation": false
     },
     {
-      "id": 2000,
+      "id": 2029,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20013,7 +20303,7 @@
       "limitation": false
     },
     {
-      "id": 2001,
+      "id": 2030,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20023,7 +20313,7 @@
       "limitation": false
     },
     {
-      "id": 2002,
+      "id": 2031,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20033,7 +20323,7 @@
       "limitation": false
     },
     {
-      "id": 2003,
+      "id": 2032,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20043,7 +20333,7 @@
       "limitation": false
     },
     {
-      "id": 2004,
+      "id": 2033,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20053,7 +20343,7 @@
       "limitation": false
     },
     {
-      "id": 2005,
+      "id": 2034,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20063,7 +20353,7 @@
       "limitation": false
     },
     {
-      "id": 2006,
+      "id": 2035,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20073,7 +20363,7 @@
       "limitation": false
     },
     {
-      "id": 2007,
+      "id": 2036,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20083,7 +20373,7 @@
       "limitation": false
     },
     {
-      "id": 2008,
+      "id": 2037,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20093,7 +20383,7 @@
       "limitation": false
     },
     {
-      "id": 2009,
+      "id": 2038,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20103,7 +20393,7 @@
       "limitation": false
     },
     {
-      "id": 2010,
+      "id": 2039,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20113,7 +20403,7 @@
       "limitation": false
     },
     {
-      "id": 2011,
+      "id": 2040,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20123,7 +20413,7 @@
       "limitation": false
     },
     {
-      "id": 2012,
+      "id": 2041,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20133,7 +20423,7 @@
       "limitation": false
     },
     {
-      "id": 2013,
+      "id": 2042,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20143,7 +20433,7 @@
       "limitation": false
     },
     {
-      "id": 2014,
+      "id": 2043,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20153,7 +20443,7 @@
       "limitation": false
     },
     {
-      "id": 2015,
+      "id": 2044,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20163,7 +20453,7 @@
       "limitation": false
     },
     {
-      "id": 2016,
+      "id": 2045,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20173,7 +20463,7 @@
       "limitation": false
     },
     {
-      "id": 2017,
+      "id": 2046,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20183,7 +20473,7 @@
       "limitation": false
     },
     {
-      "id": 2018,
+      "id": 2047,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",
@@ -20193,7 +20483,7 @@
       "limitation": false
     },
     {
-      "id": 2019,
+      "id": 2048,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",
@@ -20203,7 +20493,7 @@
       "limitation": false
     },
     {
-      "id": 2020,
+      "id": 2049,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -20213,7 +20503,7 @@
       "limitation": false
     },
     {
-      "id": 2021,
+      "id": 2050,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -20223,7 +20513,7 @@
       "limitation": false
     },
     {
-      "id": 2022,
+      "id": 2051,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -20233,7 +20523,7 @@
       "limitation": false
     },
     {
-      "id": 2023,
+      "id": 2052,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",
