@@ -2912,8 +2912,8 @@
       "doi": "10.14283/jpad.2024.161",
       "paper_url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-14283-jpad-2024-161.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.14283/jpad.2024.161",
       "publisher_url": null,
@@ -2925,9 +2925,30 @@
       "openalex_id": "https://openalex.org/W4401955037",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-14283-jpad-2024-161.csv",
+      "question_count": 10,
+      "concept_count": 37,
+      "discovery_layer": {
+        "field_entry": [
+          "Circadian-related molecular research",
+          "Alzheimer disease transcriptomics"
+        ],
+        "review_topics": [
+          "Genetic association and expression candidate integration",
+          "Transcriptomic scores and clinical biomarker associations"
+        ],
+        "scientific_role": "Integrates shift-work GWAS, AD/eQTL data and expression screening to prioritize seven genes, proposes a clock-deviation expression score, and adds local blood-assay and sleep/biomarker observations.",
+        "evidence_position": "Genetic/expression association, reported MR summaries, computational score evaluation and separate clinical-substudy observations.",
+        "related_concepts": [
+          "Circadian disruption",
+          "Sleep and chronotype",
+          "Molecular score construction"
+        ],
+        "citation_contexts": [
+          "Methods: combine candidate screening, eQTL association and expression-background scoring.",
+          "Discussion: distinguish molecular circadian proxies, blood expression and questionnaire/biomarker associations."
+        ]
+      }
     },
     {
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
