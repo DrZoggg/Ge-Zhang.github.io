@@ -267,7 +267,7 @@
 - DOI: 10.2147/cia.s493841
 - HTML: https://drgezhang.com/papers/doi-10-2147-cia-s493841.html
 - Markdown: https://drgezhang.com/papers/doi-10-2147-cia-s493841.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis
 - Journal: Scientific Reports
