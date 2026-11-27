@@ -3453,8 +3453,8 @@
       "doi": "10.3980/j.issn.1672-5123.2020.12.13",
       "paper_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
       "publisher_url": "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013",
@@ -3466,9 +3466,30 @@
       "openalex_id": "https://openalex.org/W4399062302",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-3980-j-issn-1672-5123-2020-12-13.csv",
+      "question_count": 8,
+      "concept_count": 23,
+      "discovery_layer": {
+        "field_entry": [
+          "Stem-cell differentiation and RPE culture",
+          "Retinal tissue-engineering methods"
+        ],
+        "review_topics": [
+          "Comparing culture-method families",
+          "Cell source, developmental stage and functional readouts"
+        ],
+        "scientific_role": "A narrative taxonomy and practical comparison of soluble cues, culture geometry, coculture and scaffolds for RPE research.",
+        "evidence_position": "Literature synthesis with protocol-specific examples and explicit source-cell distinctions.",
+        "related_concepts": [
+          "Lineage specification and maturation",
+          "Extracellular context",
+          "Scaffold-supported monolayers"
+        ],
+        "citation_contexts": [
+          "Background: introduce RPE culture-method families.",
+          "Methods and discussion: compare starting cells, culture organization, evaluation criteria and material handling."
+        ]
+      }
     }
   ]
 }

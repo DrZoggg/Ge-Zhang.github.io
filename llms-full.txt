@@ -744,4 +744,4 @@
 - DOI: 10.3980/j.issn.1672-5123.2020.12.13
 - HTML: https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html
 - Markdown: https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.md
-- Deep GEO: no
+- Deep GEO: yes

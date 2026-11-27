@@ -2744,8 +2744,14 @@ def build_site():
         with_ga4_tag(scholarly_discovery.render_questions(question_rows, config, question_discovery)),
         search_overrides.get(scholarly_discovery.QUESTION_PATH),
     )
-    write_text_if_changed(ROOT / scholarly_discovery.QUESTION_JSON_PATH,
-                         json.dumps({'version': 1, **question_discovery, 'questions': question_rows}, ensure_ascii=False, indent=2) + '\n')
+    # Retain the existing stock reader limit as the same-schema Questions export grows.
+    write_text_if_changed(
+        ROOT / scholarly_discovery.QUESTION_JSON_PATH,
+        json.dumps(
+            {'version': 1, **question_discovery, 'questions': question_rows},
+            ensure_ascii=False, separators=(',', ':'),
+        ) + '\n',
+    )
     write_text_if_changed(
         ROOT / "assets/evidence-search.json",
         json.dumps(search_corpus(ROOT, public_items, {

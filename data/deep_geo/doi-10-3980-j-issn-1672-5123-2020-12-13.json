@@ -1,0 +1,461 @@
+{
+  "version": 2,
+  "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+  "display_title": "ESC-to-RPE culture methods: soluble cues, tissue organization, coculture and scaffolds",
+  "summary": "This 2020 narrative review organizes retinal pigment epithelial culture methods around soluble cues, two- and three-dimensional organization, coculture and biomaterial supports. Its practical contribution is a framework for comparing differentiation stage, starting cell source, phenotype/function, culture time and material handling.",
+  "research_question": "How can culture approaches for producing and maintaining retinal pigment epithelial cells be compared and combined for stem-cell and tissue-engineering research?",
+  "author_summary": "The review surveys methods relevant to embryonic stem-cell differentiation toward retinal pigment epithelial cells and related RPE culture systems. It organizes the literature into factor-based induction, two- and three-dimensional differentiation, coculture and scaffold encapsulation. Soluble-cue examples include HGF, Activin A, curcumin and sericin; the cited experiments span different starting cells and developmental stages. The geometry discussion separates adherent culture, embryoid bodies and optic-cup-like organization. Coculture and matrix examples address how neighbouring cells and substrates shape phenotype and function. Alginate, fibrin and PEG/gellan examples add material support and monolayer-handling considerations. The synthesis encourages combining methods while comparing efficiency, duration, cost and cell quality. This is a narrative organization of the cited literature, with protocol-specific examples rather than a new experimental comparison.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Chinese-language narrative methods review, published in December 2020, organized into an introduction, four culture-method families and a synthesis/outlook. No systematic-search or meta-analysis procedure is reported.",
+    "evidence_type": "Literature synthesis of stem-cell differentiation and RPE culture, coculture and biomaterial examples; the review does not conduct a new experimental cohort.",
+    "evidence_domains": [
+      "Soluble cues and differentiation stage",
+      "Two-dimensional culture, embryoid bodies and three-dimensional organization",
+      "Coculture, extracellular matrices and functional readouts",
+      "Scaffolds, encapsulation and monolayer handling",
+      "Comparison of efficiency, duration, cost and cell quality"
+    ],
+    "diseases_covered": [
+      "Retinal degeneration as the translational context",
+      "Age-related macular degeneration",
+      "Retinitis pigmentosa"
+    ],
+    "translation_scope": "Research method selection and evaluation for RPE differentiation, culture and transplant-oriented tissue engineering, as discussed in this 2020 review.",
+    "scale_metrics": [
+      {
+        "label": "Publication length",
+        "value": "4 pages, journal pages 2079–2082"
+      },
+      {
+        "label": "Main method families",
+        "value": "4, in sections 1–4"
+      },
+      {
+        "label": "Listed references",
+        "value": "44"
+      }
+    ],
+    "counting_note": "The numbers describe the publication's organization. They are not a pooled number of patients, a count of systematically included independent experiments or a new study cohort."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The review organizes RPE culture research into four complementary method families.",
+      "context": "A 2020 narrative methods synthesis.",
+      "evidence": [
+        {
+          "label": "Organization",
+          "value": "Factor-based induction; two- and three-dimensional differentiation; coculture and extracellular context; biomaterial scaffold encapsulation"
+        },
+        {
+          "label": "Scientific purpose",
+          "value": "Compare how soluble cues, culture geometry, neighbouring cells and support materials influence the production and maintenance of RPE-related cells"
+        },
+        {
+          "label": "Source structure",
+          "value": "Four-page publication, sections 1–4 with a separate synthesis and outlook in section 5; 44 listed references"
+        }
+      ],
+      "source_locator": "Official PDF pp. 1–3 / journal pp. 2079–2081: Abstract, Introduction and §§1–5; references through no.44 on PDF p.4."
+    },
+    {
+      "id": "KF2",
+      "claim": "Soluble-cue and RPE-culture examples are discussed with attention to differentiation stage and cell source.",
+      "context": "Review section 1 rather than a new four-arm experiment.",
+      "evidence": [
+        {
+          "label": "Named examples",
+          "value": "HGF, Activin A, curcumin and silk-protein sericin"
+        },
+        {
+          "label": "Timing example",
+          "value": "Section 1.2 describes Activin A during days 1–7 and later pigmentation/marker evaluation; the numerical examples belong to the cited protocols"
+        },
+        {
+          "label": "Cell-source distinction",
+          "value": "The HGF bibliography entry no.7 concerns rhesus-monkey ESC-derived neural progenitors; sericin reference no.16 concerns cultured primary human RPE. These examples are distinct from a uniform human ESC-to-RPE differentiation assay"
+        },
+        {
+          "label": "Readout selection",
+          "value": "The review discusses pigmentation, lineage-marker expression, proliferation and survival as different culture readouts"
+        }
+      ],
+      "source_locator": "Official PDF p.2 / journal p.2080: §§1.1–1.4; bibliography entries 7–16 on PDF pp.3–4. The cited primary experiments were not independently reanalysed for this summary."
+    },
+    {
+      "id": "KF3",
+      "claim": "The two-dimensional and three-dimensional routes differ in how cells are staged, organized and purified.",
+      "context": "Review sections 2.1–2.3.",
+      "evidence": [
+        {
+          "label": "Two-dimensional routes",
+          "value": "Continuous adherent differentiation or embryoid-body formation followed by adherent culture, with bFGF withdrawal described in the spontaneous-differentiation account"
+        },
+        {
+          "label": "Reported timing illustrations",
+          "value": "Visible pigment foci after approximately 1–8 weeks in continuous adherent culture; embryoid-body suspension for 1–3 weeks and visible pigment foci after 4–8 weeks in the described sequence"
+        },
+        {
+          "label": "Three-dimensional route",
+          "value": "Suspension/aggregation and optic-cup-like organization followed by pigment selection and adherent expansion"
+        },
+        {
+          "label": "Comparison",
+          "value": "The authors contrast developmental organization, maturation-marker timing, pigment appearance and culture duration; these are literature-based comparisons across protocols"
+        }
+      ],
+      "source_locator": "Official PDF p.2 / journal p.2080: §§2.1.1, 2.1.2, 2.2 and 2.3; supporting references 17–35 on PDF p.4."
+    },
+    {
+      "id": "KF4",
+      "claim": "Coculture and extracellular matrices are presented as ways to shape the retinal-cell environment.",
+      "context": "Review sections 3.1–3.4.",
+      "evidence": [
+        {
+          "label": "Neighbour and substrate examples",
+          "value": "Retinal cells or progenitors, PA6 stromal cells, Bruch's membrane and matrix gel"
+        },
+        {
+          "label": "Endothelial-cell example",
+          "value": "Section 3.3 describes six-week coculture with human retinal microvascular endothelial cells; ZO-1 expression, morphology and pigmentation were not significantly different in the described comparison, while barrier/brush-border effects varied by cell line"
+        },
+        {
+          "label": "Other contexts",
+          "value": "Monocytes and serum are also discussed as influences on RPE growth and culture conditions"
+        },
+        {
+          "label": "Research use",
+          "value": "Choose coculture partners and endpoints to match the intended cell phenotype and function"
+        }
+      ],
+      "source_locator": "Official PDF pp.2–3 / journal pp.2080–2081: §§3.1–3.4; bibliography entries 36–40 on PDF p.4."
+    },
+    {
+      "id": "KF5",
+      "claim": "Three scaffold strategies connect material properties with RPE culture and delivery.",
+      "context": "Review sections 4.1–4.3.",
+      "evidence": [
+        {
+          "label": "Alginate",
+          "value": "Alginate-based hydrogels, including curcumin-containing examples, are discussed for encapsulation, growth and tissue-development context"
+        },
+        {
+          "label": "Fibrin",
+          "value": "Fibrin supports RPE monolayers and can be degraded with plasmin to release an intact sheet in the described approach"
+        },
+        {
+          "label": "PEG/gellan",
+          "value": "Combining polyethylene glycol and gellan is discussed in relation to mechanical support, compatibility, adhesion and cell growth"
+        },
+        {
+          "label": "Evaluation",
+          "value": "Material support, monolayer handling and cell-function readouts are separate from the initial specification of an ESC lineage"
+        }
+      ],
+      "source_locator": "Official PDF p.3 / journal p.2081: §§4.1–4.3; bibliography entries 41–44 on PDF p.4."
+    },
+    {
+      "id": "KF6",
+      "claim": "The review proposes combining culture approaches while evaluating yield, time, cost and cell quality together.",
+      "context": "Integrative conclusion and outlook.",
+      "evidence": [
+        {
+          "label": "Design priorities",
+          "value": "Improve directed differentiation and the number and quality of available cells through complementary culture methods"
+        },
+        {
+          "label": "Comparison dimensions",
+          "value": "Differentiation efficiency, culture duration, cost, manual passaging, functional criteria, cell-source variation and transplantation-oriented assessment"
+        },
+        {
+          "label": "Contribution",
+          "value": "A structured starting point for selecting methods and planning comparative culture studies"
+        },
+        {
+          "label": "Evidence unit",
+          "value": "Published narrative synthesis and cited experimental examples, rather than a new patient series or a pooled head-to-head performance estimate"
+        }
+      ],
+      "source_locator": "Official PDF pp.1 and 3 / journal pp.2079 and 2081: Abstract and §5 小结与展望."
+    }
+  ],
+  "what_this_adds": [
+    "A compact taxonomy linking soluble signals, culture organization, neighbouring cells and material supports in RPE research.",
+    "A practical comparison framework that keeps the starting cell source, differentiation stage and endpoint visible alongside timing and handling.",
+    "An integrative rationale for combining approaches and assessing cell quantity, quality and function together."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The review's taxonomy of culture approaches and its stage- and source-specific examples.",
+      "Literature-based comparison of phenotype/function, culture timing, cell context and scaffold purpose.",
+      "The authors' proposed research priorities for combining culture methods."
+    ],
+    "does_not_establish": [
+      "A head-to-head superiority ranking from a new experiment or quantitative pooled synthesis.",
+      "A uniform human ESC differentiation result across the mixed source-cell examples.",
+      "Clinical transplantation efficacy demonstrated by this review."
+    ]
+  },
+  "qa": [
+    {
+      "question": "How does this review organize ESC-to-RPE culture approaches?",
+      "answer": "It groups the literature into factor-based induction, two- and three-dimensional differentiation, coculture and extracellular context, and biomaterial scaffold encapsulation. This organization separates soluble signals, tissue organization, neighbouring cells and physical support as complementary design choices.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which soluble cues and cell sources need to be distinguished?",
+      "answer": "Section 1 discusses HGF, Activin A, curcumin and sericin. The examples include different stages and biological sources: the HGF reference concerns rhesus-monkey ESC-derived neural progenitors, whereas the sericin reference concerns primary human RPE culture. Treat the review as a guide to these approaches and consult the relevant cited protocol for its exact cell model and endpoint.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What distinguishes the two-dimensional routes from three-dimensional organization?",
+      "answer": "The two-dimensional account includes continuous adherent differentiation and embryoid bodies followed by adherent culture, pigment selection and expansion. The three-dimensional account introduces aggregate and optic-cup-like organization before pigment selection. The review compares developmental organization and maturation/readout timing across these approaches.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What timing examples are available for planning a literature comparison?",
+      "answer": "The review describes Activin A during differentiation days 1–7; visible pigment foci after approximately 1–8 weeks in one continuous adherent approach; and embryoid-body suspension for 1–3 weeks with visible pigment foci after 4–8 weeks in the described sequence. These are protocol-specific illustrations. They are not a single standardized operating schedule or a directly comparable pooled efficiency estimate.",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ]
+    },
+    {
+      "question": "What does coculture add to the method comparison?",
+      "answer": "Coculture introduces neighbouring-cell and substrate effects. The review discusses retinal/progenitor cells, PA6 stromal cells, Bruch's membrane, matrix gel, retinal microvascular endothelial cells, monocytes and serum. Its endothelial example distinguishes unchanged ZO-1/morphology/pigmentation from cell-line-specific barrier and brush-border effects, showing why endpoints should be chosen separately.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How are alginate, fibrin and PEG/gellan scaffolds used in the review?",
+      "answer": "Alginate examples concern encapsulation and growth; fibrin provides a degradable support for RPE monolayers and sheet release; PEG/gellan combines support, compatibility, adhesion and growth considerations. These material questions complement the choice of lineage-induction and maturation conditions.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which criteria should a methods comparison extract from each cited experiment?",
+      "answer": "Extract the starting cell type and species, differentiation stage, soluble cues and culture geometry, purification steps, time to the stated readout, phenotype markers, functional assessment and material-handling purpose. The review's outlook adds yield, cost, culture duration, passaging and variation between cell sources as useful comparison dimensions.",
+      "evidence_refs": [
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6"
+      ]
+    },
+    {
+      "question": "When is this publication useful to cite?",
+      "answer": "It is useful as a 2020 narrative overview of RPE culture-method families and their practical comparison. Use it for background, method selection and discussion of combining approaches. For a particular numerical differentiation yield, cellular effect or transplantation outcome, identify and cite the corresponding primary experiment as well.",
+      "evidence_refs": [
+        "KF1",
+        "KF6"
+      ]
+    }
+  ],
+  "concepts": {
+    "cell_types": [
+      "Embryonic stem cells",
+      "Retinal pigment epithelial cells",
+      "Neural and retinal progenitor cells",
+      "Retinal microvascular endothelial cells"
+    ],
+    "culture_approaches": [
+      "Soluble-cue induction",
+      "Adherent culture",
+      "Embryoid bodies",
+      "Three-dimensional optic-cup-like organization",
+      "Coculture",
+      "Extracellular matrices",
+      "Scaffold encapsulation"
+    ],
+    "named_cues": [
+      "HGF",
+      "Activin A",
+      "Curcumin",
+      "Sericin"
+    ],
+    "materials": [
+      "Alginate",
+      "Fibrin",
+      "Polyethylene glycol/gellan"
+    ],
+    "evaluation_dimensions": [
+      "Starting cell source and stage",
+      "Pigmentation and phenotype markers",
+      "Functional assessment",
+      "Culture duration and cost",
+      "Monolayer handling and support"
+    ]
+  },
+  "limitations": [
+    "This is a narrative review without a reported systematic search, formal study-quality assessment or quantitative pooling.",
+    "Cited examples differ in species, cell origin, developmental stage, readouts and protocol; numerical examples should be traced to their primary source for reuse.",
+    "The article describes literature and translational priorities in 2020; it does not report a new clinical transplantation study."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.cbi.2025.111421",
+      "relationship": "A separate in vitro study generates hiPSC-derived cardiac organoids and examines glucose/palmitate-associated viability, transcript and imaging responses. It supplies a companion example of model generation and functional-readout selection in another organ system."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013",
+    "article_url": "https://gjyk.ijournals.cn/gjykcn/article/abstract/202012013",
+    "doi_url": "https://doi.org/10.3980/j.issn.1672-5123.2020.12.13",
+    "publisher_pdf_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
+    "version_of_record": "International Eye Science (国际眼科杂志 / Guoji Yanke Zazhi). 2020;20(12):2079–2082. Complete four-page official journal PDF, Chinese narrative review with an English title and abstract.",
+    "license": "No article-level open redistribution licence identified in the original publication.",
+    "source_note_attribution": "Numerical and experimental examples are attributed to the review and its cited studies; the primary experiments were not independently reanalysed for this summary.",
+    "source_note_cell_origin": "Bibliography reference 7 names rhesus-monkey ESC-derived neural progenitors, while reference 16 names primary human RPE. The summary distinguishes these source contexts instead of combining all examples as one human ESC differentiation experiment.",
+    "source_note_identity": "The original Chinese author line distinguishes 张格 and 张戈; both are printed Ge Zhang in the English line. The six-author order is preserved and no individual author-position assignment is introduced.",
+    "source_note_structure": "No original experimental tables, figures or supplementary-results appendix is identified in the four-page article. Its scientific content consists of the narrative sections and 44 listed references.",
+    "evidence_basis": "Complete official PDF read, with all four pages extracted and rendered; the title, DOI, journal, bilingual author line and sections 0–5 were inspected. Existing source hash and prior identity/source audit were reused."
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This independently written source-located summary accompanies the formal article.",
+  "discovery_layer": {
+    "field_entry": [
+      "Stem-cell differentiation and RPE culture",
+      "Retinal tissue-engineering methods"
+    ],
+    "review_topics": [
+      "Comparing culture-method families",
+      "Cell source, developmental stage and functional readouts"
+    ],
+    "scientific_role": "A narrative taxonomy and practical comparison of soluble cues, culture geometry, coculture and scaffolds for RPE research.",
+    "evidence_position": "Literature synthesis with protocol-specific examples and explicit source-cell distinctions.",
+    "related_concepts": [
+      "Lineage specification and maturation",
+      "Extracellular context",
+      "Scaffold-supported monolayers"
+    ],
+    "citation_contexts": [
+      "Background: introduce RPE culture-method families.",
+      "Methods and discussion: compare starting cells, culture organization, evaluation criteria and material handling."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How are RPE culture approaches organized?",
+        "supported_scope": "Four culture-method families and their different design roles.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How should starting cells, developmental stage and timing be compared?",
+        "supported_scope": "Source-specific soluble-cue and geometry examples with clear cell-model attribution.",
+        "evidence_refs": [
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How do coculture and scaffold choices complement lineage induction?",
+        "supported_scope": "Neighbour/substrate, function and material-handling considerations in the review.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What should a comparative culture-method study measure?",
+        "supported_scope": "The review's integrated criteria and outlook.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A new quantitative superiority ranking across all culture methods.",
+      "An original clinical transplantation effect or a pooled experimental yield."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-rpe-culture-1",
+        "component": "KF1: The review organizes RPE culture research into four complementary method families.",
+        "context": "A 2020 narrative methods synthesis.",
+        "finding": "Organization: Factor-based induction; two- and three-dimensional differentiation; coculture and extracellular context; biomaterial scaffold encapsulation; Scientific purpose: Compare how soluble cues, culture geometry, neighbouring cells and support materials influence the production and maintenance of RPE-related cells; Source structure: Four-page publication, sections 1–4 with a separate synthesis and outlook in section 5; 44 listed references",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "A 2020 narrative methods synthesis.",
+        "source_locator": "Official PDF pp. 1–3 / journal pp. 2079–2081: Abstract, Introduction and §§1–5; references through no.44 on PDF p.4.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-rpe-culture-2",
+        "component": "KF2: Soluble-cue and RPE-culture examples are discussed with attention to differentiation stage and cell source.",
+        "context": "Review section 1 rather than a new four-arm experiment.",
+        "finding": "Named examples: HGF, Activin A, curcumin and silk-protein sericin; Timing example: Section 1.2 describes Activin A during days 1–7 and later pigmentation/marker evaluation; the numerical examples belong to the cited protocols; Cell-source distinction: The HGF bibliography entry no.7 concerns rhesus-monkey ESC-derived neural progenitors; sericin reference no.16 concerns cultured primary human RPE. These examples are distinct from a uniform human ESC-to-RPE differentiation assay; Readout selection: The review discusses pigmentation, lineage-marker expression, proliferation and survival as different culture readouts",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "Review section 1 rather than a new four-arm experiment.",
+        "source_locator": "Official PDF p.2 / journal p.2080: §§1.1–1.4; bibliography entries 7–16 on PDF pp.3–4. The cited primary experiments were not independently reanalysed for this summary.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-rpe-culture-3",
+        "component": "KF3: The two-dimensional and three-dimensional routes differ in how cells are staged, organized and purified.",
+        "context": "Review sections 2.1–2.3.",
+        "finding": "Two-dimensional routes: Continuous adherent differentiation or embryoid-body formation followed by adherent culture, with bFGF withdrawal described in the spontaneous-differentiation account; Reported timing illustrations: Visible pigment foci after approximately 1–8 weeks in continuous adherent culture; embryoid-body suspension for 1–3 weeks and visible pigment foci after 4–8 weeks in the described sequence; Three-dimensional route: Suspension/aggregation and optic-cup-like organization followed by pigment selection and adherent expansion; Comparison: The authors contrast developmental organization, maturation-marker timing, pigment appearance and culture duration; these are literature-based comparisons across protocols",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "Review sections 2.1–2.3.",
+        "source_locator": "Official PDF p.2 / journal p.2080: §§2.1.1, 2.1.2, 2.2 and 2.3; supporting references 17–35 on PDF p.4.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-rpe-culture-4",
+        "component": "KF4: Coculture and extracellular matrices are presented as ways to shape the retinal-cell environment.",
+        "context": "Review sections 3.1–3.4.",
+        "finding": "Neighbour and substrate examples: Retinal cells or progenitors, PA6 stromal cells, Bruch's membrane and matrix gel; Endothelial-cell example: Section 3.3 describes six-week coculture with human retinal microvascular endothelial cells; ZO-1 expression, morphology and pigmentation were not significantly different in the described comparison, while barrier/brush-border effects varied by cell line; Other contexts: Monocytes and serum are also discussed as influences on RPE growth and culture conditions; Research use: Choose coculture partners and endpoints to match the intended cell phenotype and function",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "Review sections 3.1–3.4.",
+        "source_locator": "Official PDF pp.2–3 / journal pp.2080–2081: §§3.1–3.4; bibliography entries 36–40 on PDF p.4.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-rpe-culture-5",
+        "component": "KF5: Three scaffold strategies connect material properties with RPE culture and delivery.",
+        "context": "Review sections 4.1–4.3.",
+        "finding": "Alginate: Alginate-based hydrogels, including curcumin-containing examples, are discussed for encapsulation, growth and tissue-development context; Fibrin: Fibrin supports RPE monolayers and can be degraded with plasmin to release an intact sheet in the described approach; PEG/gellan: Combining polyethylene glycol and gellan is discussed in relation to mechanical support, compatibility, adhesion and cell growth; Evaluation: Material support, monolayer handling and cell-function readouts are separate from the initial specification of an ESC lineage",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "Review sections 4.1–4.3.",
+        "source_locator": "Official PDF p.3 / journal p.2081: §§4.1–4.3; bibliography entries 41–44 on PDF p.4.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-rpe-culture-6",
+        "component": "KF6: The review proposes combining culture approaches while evaluating yield, time, cost and cell quality together.",
+        "context": "Integrative conclusion and outlook.",
+        "finding": "Design priorities: Improve directed differentiation and the number and quality of available cells through complementary culture methods; Comparison dimensions: Differentiation efficiency, culture duration, cost, manual passaging, functional criteria, cell-source variation and transplantation-oriented assessment; Contribution: A structured starting point for selecting methods and planning comparative culture studies; Evidence unit: Published narrative synthesis and cited experimental examples, rather than a new patient series or a pooled head-to-head performance estimate",
+        "evidence_level": "Narrative review of cited culture-method studies",
+        "scope": "Integrative conclusion and outlook.",
+        "source_locator": "Official PDF pp.1 and 3 / journal pp.2079 and 2081: Abstract and §5 小结与展望.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      }
+    ]
+  }
+}
