@@ -59,6 +59,24 @@ for (const route of targets) {
     page_location: 'https://drgezhang.com' + route,
     page_referrer: 'https://example.net',
   });
+  for (const [query, campaign] of [
+    ['utm_source=chatgpt.com&utm_medium=referral&q=PRIVATE_SEARCH'
+      + '&utm_campaign=PRIVATE_CAMPAIGN&utm_term=PRIVATE_TERM&utm_content=PRIVATE_CONTENT#PRIVATE_HASH',
+      {campaign_source: 'chatgpt.com', campaign_medium: 'referral'}],
+    ['utm_source=chatgpt.com&utm_medium=PRIVATE_MEDIUM', {campaign_source: 'chatgpt.com'}],
+    ['utm_source=PRIVATE_SOURCE&utm_medium=referral', {}],
+    ['utm_medium=referral&q=PRIVATE_SEARCH', {}],
+  ]) {
+    const tagged = install(inline[0], 'https://drgezhang.com' + route + '?' + query);
+    assert.equal(tagged.loaders.length, 1);
+    assert.deepEqual(Array.from(tagged.window.dataLayer, entry => entry[0]), ['js', 'config']);
+    assert.deepEqual(JSON.parse(JSON.stringify(tagged.window.dataLayer[1][2])), {
+      page_location: 'https://drgezhang.com' + route,
+      page_referrer: '',
+      ...campaign,
+    });
+  }
+
   // The one config call owns the implicit GA4 page_view.
   assert.equal(Object.hasOwn(conf, 'send_page_view'), false);
   assert.deepEqual([...listeners.keys()], ['click', 'auxclick']);
@@ -94,7 +112,7 @@ for (const route of targets) {
     'http://localhost:8765', 'https://preview.drgezhang.com',
     'http://drgezhang.com', 'https://drgezhang.com:8443', 'https://drzoggg.github.io',
   ]) {
-    const preview = install(inline[0], origin + route);
+    const preview = install(inline[0], origin + route + '?utm_source=chatgpt.com&utm_medium=referral');
     assert.equal(preview.loaders.length, 0, origin);
     assert.equal(preview.listeners.size, 0, origin);
     assert.equal(preview.window.dataLayer, undefined, origin);
@@ -103,4 +121,4 @@ for (const route of targets) {
   assert.equal(www.loaders.length, 1);
   assert.equal(www.window.dataLayer[1][2].page_referrer, '');
 }
-console.log('RESEARCH MEASUREMENT PASS: six generated pages, one production config, two activation types, no custom outbound and five blocked preview origins per route');
+console.log('RESEARCH MEASUREMENT PASS: six generated pages, one config, fixed ChatGPT labels, two activation types and no production load on previews');
