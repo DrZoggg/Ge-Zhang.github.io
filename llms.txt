@@ -83,3 +83,4 @@
 - [Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges](https://drgezhang.com/papers/doi-10-18063-ijb-740.html) — DOI: 10.18063/ijb.740
 - [N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.html) — DOI: 10.1038/s41598-024-80885-2
 - [Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease](https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html) — DOI: 10.1093/hmg/ddae189
+- [Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells](https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html) — DOI: 10.3980/j.issn.1672-5123.2020.12.13

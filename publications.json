@@ -2591,8 +2591,8 @@
     "researcher_author_positions": [],
     "paper_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   }
 ]

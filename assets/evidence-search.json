@@ -18244,6 +18244,246 @@
     },
     {
       "id": 1824,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Research question",
+      "text": "How can culture approaches for producing and maintaining retinal pigment epithelial cells be compared and combined for stem-cell and tissue-engineering research?",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
+      "limitation": false
+    },
+    {
+      "id": 1825,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Evidence summary",
+      "text": "This 2020 narrative review organizes retinal pigment epithelial culture methods around soluble cues, two- and three-dimensional organization, coculture and biomaterial supports. Its practical contribution is a framework for comparing differentiation stage, starting cell source, phenotype/function, culture time and material handling.\nThe review surveys methods relevant to embryonic stem-cell differentiation toward retinal pigment epithelial cells and related RPE culture systems. It organizes the literature into factor-based induction, two- and three-dimensional differentiation, coculture and scaffold encapsulation. Soluble-cue examples include HGF, Activin A, curcumin and sericin; the cited experiments span different starting cells and developmental stages. The geometry discussion separates adherent culture, embryoid bodies and optic-cup-like organization. Coculture and matrix examples address how neighbouring cells and substrates shape phenotype and function. Alginate, fibrin and PEG/gellan examples add material support and monolayer-handling considerations. The synthesis encourages combining methods while comparing efficiency, duration, cost and cell quality. This is a narrative organization of the cited literature, with protocol-specific examples rather than a new experimental comparison.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#ev-summary",
+      "limitation": false
+    },
+    {
+      "id": 1826,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Concepts",
+      "text": "Embryonic stem cells\nRetinal pigment epithelial cells\nNeural and retinal progenitor cells\nRetinal microvascular endothelial cells\nSoluble-cue induction\nAdherent culture\nEmbryoid bodies\nThree-dimensional optic-cup-like organization\nCoculture\nExtracellular matrices\nScaffold encapsulation\nHGF\nActivin A\nCurcumin\nSericin\nAlginate\nFibrin\nPolyethylene glycol/gellan\nStarting cell source and stage\nPigmentation and phenotype markers\nFunctional assessment\nCulture duration and cost\nMonolayer handling and support",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html",
+      "limitation": false
+    },
+    {
+      "id": 1827,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "The review organizes RPE culture research into four complementary method families.\nA 2020 narrative methods synthesis.\nOrganization\nFactor-based induction; two- and three-dimensional differentiation; coculture and extracellular context; biomaterial scaffold encapsulation\nScientific purpose\nCompare how soluble cues, culture geometry, neighbouring cells and support materials influence the production and maintenance of RPE-related cells\nSource structure\nFour-page publication, sections 1–4 with a separate synthesis and outlook in section 5; 44 listed references\nOfficial PDF pp. 1–3 / journal pp. 2079–2081: Abstract, Introduction and §§1–5; references through no.44 on PDF p.4.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf1",
+      "limitation": false
+    },
+    {
+      "id": 1828,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "Soluble-cue and RPE-culture examples are discussed with attention to differentiation stage and cell source.\nReview section 1 rather than a new four-arm experiment.\nNamed examples\nHGF, Activin A, curcumin and silk-protein sericin\nTiming example\nSection 1.2 describes Activin A during days 1–7 and later pigmentation/marker evaluation; the numerical examples belong to the cited protocols\nCell-source distinction\nThe HGF bibliography entry no.7 concerns rhesus-monkey ESC-derived neural progenitors; sericin reference no.16 concerns cultured primary human RPE. These examples are distinct from a uniform human ESC-to-RPE differentiation assay\nReadout selection\nThe review discusses pigmentation, lineage-marker expression, proliferation and survival as different culture readouts\nOfficial PDF p.2 / journal p.2080: §§1.1–1.4; bibliography entries 7–16 on PDF pp.3–4. The cited primary experiments were not independently reanalysed for this summary.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf2",
+      "limitation": false
+    },
+    {
+      "id": 1829,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "The two-dimensional and three-dimensional routes differ in how cells are staged, organized and purified.\nReview sections 2.1–2.3.\nTwo-dimensional routes\nContinuous adherent differentiation or embryoid-body formation followed by adherent culture, with bFGF withdrawal described in the spontaneous-differentiation account\nReported timing illustrations\nVisible pigment foci after approximately 1–8 weeks in continuous adherent culture; embryoid-body suspension for 1–3 weeks and visible pigment foci after 4–8 weeks in the described sequence\nThree-dimensional route\nSuspension/aggregation and optic-cup-like organization followed by pigment selection and adherent expansion\nComparison\nThe authors contrast developmental organization, maturation-marker timing, pigment appearance and culture duration; these are literature-based comparisons across protocols\nOfficial PDF p.2 / journal p.2080: §§2.1.1, 2.1.2, 2.2 and 2.3; supporting references 17–35 on PDF p.4.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf3",
+      "limitation": false
+    },
+    {
+      "id": 1830,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "Coculture and extracellular matrices are presented as ways to shape the retinal-cell environment.\nReview sections 3.1–3.4.\nNeighbour and substrate examples\nRetinal cells or progenitors, PA6 stromal cells, Bruch's membrane and matrix gel\nEndothelial-cell example\nSection 3.3 describes six-week coculture with human retinal microvascular endothelial cells; ZO-1 expression, morphology and pigmentation were not significantly different in the described comparison, while barrier/brush-border effects varied by cell line\nOther contexts\nMonocytes and serum are also discussed as influences on RPE growth and culture conditions\nResearch use\nChoose coculture partners and endpoints to match the intended cell phenotype and function\nOfficial PDF pp.2–3 / journal pp.2080–2081: §§3.1–3.4; bibliography entries 36–40 on PDF p.4.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf4",
+      "limitation": false
+    },
+    {
+      "id": 1831,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "Three scaffold strategies connect material properties with RPE culture and delivery.\nReview sections 4.1–4.3.\nAlginate\nAlginate-based hydrogels, including curcumin-containing examples, are discussed for encapsulation, growth and tissue-development context\nFibrin\nFibrin supports RPE monolayers and can be degraded with plasmin to release an intact sheet in the described approach\nPEG/gellan\nCombining polyethylene glycol and gellan is discussed in relation to mechanical support, compatibility, adhesion and cell growth\nEvaluation\nMaterial support, monolayer handling and cell-function readouts are separate from the initial specification of an ESC lineage\nOfficial PDF p.3 / journal p.2081: §§4.1–4.3; bibliography entries 41–44 on PDF p.4.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf5",
+      "limitation": false
+    },
+    {
+      "id": 1832,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Key finding",
+      "text": "The review proposes combining culture approaches while evaluating yield, time, cost and cell quality together.\nIntegrative conclusion and outlook.\nDesign priorities\nImprove directed differentiation and the number and quality of available cells through complementary culture methods\nComparison dimensions\nDifferentiation efficiency, culture duration, cost, manual passaging, functional criteria, cell-source variation and transplantation-oriented assessment\nContribution\nA structured starting point for selecting methods and planning comparative culture studies\nEvidence unit\nPublished narrative synthesis and cited experimental examples, rather than a new patient series or a pooled head-to-head performance estimate\nOfficial PDF pp.1 and 3 / journal pp.2079 and 2081: Abstract and §5 小结与展望.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#kf6",
+      "limitation": false
+    },
+    {
+      "id": 1833,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "How does this review organize ESC-to-RPE culture approaches?\nIt groups the literature into factor-based induction, two- and three-dimensional differentiation, coculture and extracellular context, and biomaterial scaffold encapsulation. This organization separates soluble signals, tissue organization, neighbouring cells and physical support as complementary design choices.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-1",
+      "limitation": false
+    },
+    {
+      "id": 1834,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "Which soluble cues and cell sources need to be distinguished?\nSection 1 discusses HGF, Activin A, curcumin and sericin. The examples include different stages and biological sources: the HGF reference concerns rhesus-monkey ESC-derived neural progenitors, whereas the sericin reference concerns primary human RPE culture. Treat the review as a guide to these approaches and consult the relevant cited protocol for its exact cell model and endpoint.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-2",
+      "limitation": false
+    },
+    {
+      "id": 1835,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "What distinguishes the two-dimensional routes from three-dimensional organization?\nThe two-dimensional account includes continuous adherent differentiation and embryoid bodies followed by adherent culture, pigment selection and expansion. The three-dimensional account introduces aggregate and optic-cup-like organization before pigment selection. The review compares developmental organization and maturation/readout timing across these approaches.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-3",
+      "limitation": false
+    },
+    {
+      "id": 1836,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "What timing examples are available for planning a literature comparison?\nThe review describes Activin A during differentiation days 1–7; visible pigment foci after approximately 1–8 weeks in one continuous adherent approach; and embryoid-body suspension for 1–3 weeks with visible pigment foci after 4–8 weeks in the described sequence. These are protocol-specific illustrations. They are not a single standardized operating schedule or a directly comparable pooled efficiency estimate.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-4",
+      "limitation": false
+    },
+    {
+      "id": 1837,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "What does coculture add to the method comparison?\nCoculture introduces neighbouring-cell and substrate effects. The review discusses retinal/progenitor cells, PA6 stromal cells, Bruch's membrane, matrix gel, retinal microvascular endothelial cells, monocytes and serum. Its endothelial example distinguishes unchanged ZO-1/morphology/pigmentation from cell-line-specific barrier and brush-border effects, showing why endpoints should be chosen separately.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-5",
+      "limitation": false
+    },
+    {
+      "id": 1838,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "How are alginate, fibrin and PEG/gellan scaffolds used in the review?\nAlginate examples concern encapsulation and growth; fibrin provides a degradable support for RPE monolayers and sheet release; PEG/gellan combines support, compatibility, adhesion and growth considerations. These material questions complement the choice of lineage-induction and maturation conditions.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-6",
+      "limitation": false
+    },
+    {
+      "id": 1839,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "Which criteria should a methods comparison extract from each cited experiment?\nExtract the starting cell type and species, differentiation stage, soluble cues and culture geometry, purification steps, time to the stated readout, phenotype markers, functional assessment and material-handling purpose. The review's outlook adds yield, cost, culture duration, passaging and variation between cell sources as useful comparison dimensions.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-7",
+      "limitation": false
+    },
+    {
+      "id": 1840,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Q&A",
+      "text": "When is this publication useful to cite?\nIt is useful as a 2020 narrative overview of RPE culture-method families and their practical comparison. Use it for background, method selection and discussion of combining approaches. For a particular numerical differentiation yield, cellular effect or transplantation outcome, identify and cite the corresponding primary experiment as well.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#qa-8",
+      "limitation": false
+    },
+    {
+      "id": 1841,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Citation use case",
+      "text": "How are RPE culture approaches organized?\nFour culture-method families and their different design roles.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cu1",
+      "limitation": false
+    },
+    {
+      "id": 1842,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Citation use case",
+      "text": "How should starting cells, developmental stage and timing be compared?\nSource-specific soluble-cue and geometry examples with clear cell-model attribution.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cu2",
+      "limitation": false
+    },
+    {
+      "id": 1843,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Citation use case",
+      "text": "How do coculture and scaffold choices complement lineage induction?\nNeighbour/substrate, function and material-handling considerations in the review.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cu3",
+      "limitation": false
+    },
+    {
+      "id": 1844,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Citation use case",
+      "text": "What should a comparative culture-method study measure?\nThe review's integrated criteria and outlook.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#cu4",
+      "limitation": false
+    },
+    {
+      "id": 1845,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Evidence scope — supports",
+      "text": "The review's taxonomy of culture approaches and its stage- and source-specific examples.\nLiterature-based comparison of phenotype/function, culture timing, cell context and scaffold purpose.\nThe authors' proposed research priorities for combining culture methods.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#ev-scope",
+      "limitation": false
+    },
+    {
+      "id": 1846,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Limitations — does not establish",
+      "text": "A head-to-head superiority ranking from a new experiment or quantitative pooled synthesis.\nA uniform human ESC differentiation result across the mixed source-cell examples.\nClinical transplantation efficacy demonstrated by this review.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#ev-scope",
+      "limitation": true
+    },
+    {
+      "id": 1847,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Limitations",
+      "text": "This is a narrative review without a reported systematic search, formal study-quality assessment or quantitative pooling.\nCited examples differ in species, cell origin, developmental stage, readouts and protocol; numerical examples should be traced to their primary source for reuse.\nThe article describes literature and translational priorities in 2020; it does not report a new clinical transplantation study.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#ev-scope",
+      "limitation": true
+    },
+    {
+      "id": 1848,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18253,7 +18493,7 @@
       "limitation": false
     },
     {
-      "id": 1825,
+      "id": 1849,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18263,7 +18503,7 @@
       "limitation": false
     },
     {
-      "id": 1826,
+      "id": 1850,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18273,7 +18513,7 @@
       "limitation": false
     },
     {
-      "id": 1827,
+      "id": 1851,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18283,7 +18523,7 @@
       "limitation": true
     },
     {
-      "id": 1828,
+      "id": 1852,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18293,7 +18533,7 @@
       "limitation": false
     },
     {
-      "id": 1829,
+      "id": 1853,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18303,7 +18543,7 @@
       "limitation": false
     },
     {
-      "id": 1830,
+      "id": 1854,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18313,7 +18553,7 @@
       "limitation": false
     },
     {
-      "id": 1831,
+      "id": 1855,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18323,7 +18563,7 @@
       "limitation": false
     },
     {
-      "id": 1832,
+      "id": 1856,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18333,7 +18573,7 @@
       "limitation": false
     },
     {
-      "id": 1833,
+      "id": 1857,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18343,7 +18583,7 @@
       "limitation": false
     },
     {
-      "id": 1834,
+      "id": 1858,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18353,7 +18593,7 @@
       "limitation": false
     },
     {
-      "id": 1835,
+      "id": 1859,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18363,7 +18603,7 @@
       "limitation": true
     },
     {
-      "id": 1836,
+      "id": 1860,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18373,7 +18613,7 @@
       "limitation": false
     },
     {
-      "id": 1837,
+      "id": 1861,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18383,7 +18623,7 @@
       "limitation": false
     },
     {
-      "id": 1838,
+      "id": 1862,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18393,7 +18633,7 @@
       "limitation": false
     },
     {
-      "id": 1839,
+      "id": 1863,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18403,7 +18643,7 @@
       "limitation": false
     },
     {
-      "id": 1840,
+      "id": 1864,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18413,7 +18653,7 @@
       "limitation": true
     },
     {
-      "id": 1841,
+      "id": 1865,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18423,7 +18663,7 @@
       "limitation": false
     },
     {
-      "id": 1842,
+      "id": 1866,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18433,7 +18673,7 @@
       "limitation": false
     },
     {
-      "id": 1843,
+      "id": 1867,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18443,7 +18683,7 @@
       "limitation": false
     },
     {
-      "id": 1844,
+      "id": 1868,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18453,7 +18693,7 @@
       "limitation": false
     },
     {
-      "id": 1845,
+      "id": 1869,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18463,7 +18703,7 @@
       "limitation": true
     },
     {
-      "id": 1846,
+      "id": 1870,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18473,7 +18713,7 @@
       "limitation": false
     },
     {
-      "id": 1847,
+      "id": 1871,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18483,7 +18723,7 @@
       "limitation": false
     },
     {
-      "id": 1848,
+      "id": 1872,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18493,7 +18733,7 @@
       "limitation": false
     },
     {
-      "id": 1849,
+      "id": 1873,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18503,7 +18743,7 @@
       "limitation": true
     },
     {
-      "id": 1850,
+      "id": 1874,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18513,7 +18753,7 @@
       "limitation": false
     },
     {
-      "id": 1851,
+      "id": 1875,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18523,7 +18763,7 @@
       "limitation": true
     },
     {
-      "id": 1852,
+      "id": 1876,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18533,7 +18773,7 @@
       "limitation": false
     },
     {
-      "id": 1853,
+      "id": 1877,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18543,7 +18783,7 @@
       "limitation": false
     },
     {
-      "id": 1854,
+      "id": 1878,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18553,7 +18793,7 @@
       "limitation": false
     },
     {
-      "id": 1855,
+      "id": 1879,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18563,7 +18803,7 @@
       "limitation": true
     },
     {
-      "id": 1856,
+      "id": 1880,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18573,7 +18813,7 @@
       "limitation": false
     },
     {
-      "id": 1857,
+      "id": 1881,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18583,7 +18823,7 @@
       "limitation": true
     },
     {
-      "id": 1858,
+      "id": 1882,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18593,7 +18833,7 @@
       "limitation": false
     },
     {
-      "id": 1859,
+      "id": 1883,
       "result_kind": "guide",
       "doi": "",
       "title": "DCM-HF circulating biomarkers: selected plasma protein and extracellular-vesicle RNA studies",
@@ -18603,7 +18843,7 @@
       "limitation": false
     },
     {
-      "id": 1860,
+      "id": 1884,
       "result_kind": "paper",
       "doi": "10.1007/s10238-026-02130-6",
       "title": "A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity",
@@ -18613,7 +18853,7 @@
       "limitation": false
     },
     {
-      "id": 1861,
+      "id": 1885,
       "result_kind": "paper",
       "doi": "10.1007/s11426-026-3629-x",
       "title": "A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo",
@@ -18623,7 +18863,7 @@
       "limitation": false
     },
     {
-      "id": 1862,
+      "id": 1886,
       "result_kind": "paper",
       "doi": "10.3389/fcvm.2025.1724572",
       "title": "Allostatic load-cardiovascular disease associations and the mediating effect of inflammatory factors: a prospective cohort study",
@@ -18633,7 +18873,7 @@
       "limitation": false
     },
     {
-      "id": 1863,
+      "id": 1887,
       "result_kind": "paper",
       "doi": "10.1056/nejmc2518964",
       "title": "Aspirin after PCI in Acute Coronary Syndromes",
@@ -18643,7 +18883,7 @@
       "limitation": false
     },
     {
-      "id": 1864,
+      "id": 1888,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70052",
       "title": "Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment",
@@ -18653,7 +18893,7 @@
       "limitation": false
     },
     {
-      "id": 1865,
+      "id": 1889,
       "result_kind": "paper",
       "doi": "10.15212/bioi-2026-0017",
       "title": "Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study",
@@ -18663,7 +18903,7 @@
       "limitation": false
     },
     {
-      "id": 1866,
+      "id": 1890,
       "result_kind": "paper",
       "doi": "10.1002/ggn2.202500053",
       "title": "From Disease-Specific Models to Broad Clinical Utility: A Perspective on AI Hybrid Ensemble Frameworks",
@@ -18673,7 +18913,7 @@
       "limitation": false
     },
     {
-      "id": 1867,
+      "id": 1891,
       "result_kind": "paper",
       "doi": "10.1016/j.medd.2026.100004",
       "title": "Multimodal AI for cardiovascular care must learn when not to predict",
@@ -18683,7 +18923,7 @@
       "limitation": false
     },
     {
-      "id": 1868,
+      "id": 1892,
       "result_kind": "paper",
       "doi": "10.1097/re9.0000000000000037",
       "title": "Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine",
@@ -18693,7 +18933,7 @@
       "limitation": false
     },
     {
-      "id": 1869,
+      "id": 1893,
       "result_kind": "paper",
       "doi": "10.1155/humu/5591097",
       "title": "PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family",
@@ -18703,7 +18943,7 @@
       "limitation": false
     },
     {
-      "id": 1870,
+      "id": 1894,
       "result_kind": "paper",
       "doi": "10.1371/journal.pone.0346326",
       "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
@@ -18713,7 +18953,7 @@
       "limitation": false
     },
     {
-      "id": 1871,
+      "id": 1895,
       "result_kind": "paper",
       "doi": "10.1126/science.aek9583",
       "title": "Recording results from single-patient trials",
@@ -18723,7 +18963,7 @@
       "limitation": false
     },
     {
-      "id": 1872,
+      "id": 1896,
       "result_kind": "paper",
       "doi": "10.1038/s41698-026-01699-1",
       "title": "System biology analysis reveals circadian rhythm disorder associated with development and progression in colorectal cancer",
@@ -18733,7 +18973,7 @@
       "limitation": false
     },
     {
-      "id": 1873,
+      "id": 1897,
       "result_kind": "paper",
       "doi": "10.1111/jdi.70462",
       "title": "The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study",
@@ -18743,7 +18983,7 @@
       "limitation": false
     },
     {
-      "id": 1874,
+      "id": 1898,
       "result_kind": "paper",
       "doi": "10.1172/jci194175",
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",
@@ -18753,7 +18993,7 @@
       "limitation": false
     },
     {
-      "id": 1875,
+      "id": 1899,
       "result_kind": "paper",
       "doi": "10.1002/ctm2.70900",
       "title": "What one patient can teach the next",
@@ -18763,7 +19003,7 @@
       "limitation": false
     },
     {
-      "id": 1876,
+      "id": 1900,
       "result_kind": "paper",
       "doi": "10.1016/j.curpro.2025.100054",
       "title": "A Multimodal artificial intelligence framework for mechanistic discovery and digital twin construction in cardiovascular medicine",
@@ -18773,7 +19013,7 @@
       "limitation": false
     },
     {
-      "id": 1877,
+      "id": 1901,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70475",
       "title": "A Novel Disulfidptosis-Related Diagnostic Gene Signature and Differential Expression Validation in Ischaemic Cardiomyopathy",
@@ -18783,7 +19023,7 @@
       "limitation": false
     },
     {
-      "id": 1878,
+      "id": 1902,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2025.114320",
       "title": "ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis",
@@ -18793,7 +19033,7 @@
       "limitation": false
     },
     {
-      "id": 1879,
+      "id": 1903,
       "result_kind": "paper",
       "doi": "10.3389/fnut.2025.1658286",
       "title": "Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout",
@@ -18803,7 +19043,7 @@
       "limitation": false
     },
     {
-      "id": 1880,
+      "id": 1904,
       "result_kind": "paper",
       "doi": "10.3389/fpubh.2025.1521372",
       "title": "Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States",
@@ -18813,7 +19053,7 @@
       "limitation": false
     },
     {
-      "id": 1881,
+      "id": 1905,
       "result_kind": "paper",
       "doi": "10.32604/or.2025.059290",
       "title": "Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis",
@@ -18823,7 +19063,7 @@
       "limitation": false
     },
     {
-      "id": 1882,
+      "id": 1906,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70725",
       "title": "Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm",
@@ -18833,7 +19073,7 @@
       "limitation": false
     },
     {
-      "id": 1883,
+      "id": 1907,
       "result_kind": "paper",
       "doi": "10.2147/cia.s493841",
       "title": "Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair",
@@ -18843,7 +19083,7 @@
       "limitation": false
     },
     {
-      "id": 1884,
+      "id": 1908,
       "result_kind": "paper",
       "doi": "10.1038/s41598-025-98859-3",
       "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
@@ -18853,7 +19093,7 @@
       "limitation": false
     },
     {
-      "id": 1885,
+      "id": 1909,
       "result_kind": "paper",
       "doi": "10.2147/jir.s495784",
       "title": "Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics",
@@ -18863,7 +19103,7 @@
       "limitation": false
     },
     {
-      "id": 1886,
+      "id": 1910,
       "result_kind": "paper",
       "doi": "10.1016/j.joim.2025.06.003",
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
@@ -18873,7 +19113,7 @@
       "limitation": false
     },
     {
-      "id": 1887,
+      "id": 1911,
       "result_kind": "paper",
       "doi": "10.1186/s12915-025-02400-x",
       "title": "Machine learning combined with omics-based approaches reveals T-lymphocyte cellular fate imbalance in abdominal aortic aneurysm",
@@ -18883,7 +19123,7 @@
       "limitation": false
     },
     {
-      "id": 1888,
+      "id": 1912,
       "result_kind": "paper",
       "doi": "10.71321/fy14v342",
       "title": "Mapping heterogeneous molecular subtypes of circadian misalignment underlying lung adenocarcinoma risk",
@@ -18893,7 +19133,7 @@
       "limitation": false
     },
     {
-      "id": 1889,
+      "id": 1913,
       "result_kind": "paper",
       "doi": "10.1016/j.cbi.2025.111421",
       "title": "Modeling Diabetic Cardiomyopathy Using Human Cardiac Organoids: Effects of High Glucose and Lipid Conditions",
@@ -18903,7 +19143,7 @@
       "limitation": false
     },
     {
-      "id": 1890,
+      "id": 1914,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010787",
       "title": "Novel post-translational modification learning signature reveals B4GALT2 as an immune exclusion regulator in lung adenocarcinoma",
@@ -18913,7 +19153,7 @@
       "limitation": false
     },
     {
-      "id": 1891,
+      "id": 1915,
       "result_kind": "paper",
       "doi": "10.1002/mdr2.70004",
       "title": "Optimized Dynamic Network Biomarker Deciphers a High-Resolution Heterogeneity Within Thyroid Cancer Molecular Subtypes",
@@ -18923,7 +19163,7 @@
       "limitation": false
     },
     {
-      "id": 1892,
+      "id": 1916,
       "result_kind": "paper",
       "doi": "10.1200/po-24-00875",
       "title": "Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models",
@@ -18933,7 +19173,7 @@
       "limitation": false
     },
     {
-      "id": 1893,
+      "id": 1917,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2025.1538574",
       "title": "Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis",
@@ -18943,7 +19183,7 @@
       "limitation": false
     },
     {
-      "id": 1894,
+      "id": 1918,
       "result_kind": "paper",
       "doi": "10.1111/odi.70054",
       "title": "Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay",
@@ -18953,7 +19193,7 @@
       "limitation": false
     },
     {
-      "id": 1895,
+      "id": 1919,
       "result_kind": "paper",
       "doi": "10.2147/ijn.s522157",
       "title": "Targeted Delivery of Exosome-Derived miRNA-185-5p Inhibitor via Liposomes Alleviates Apoptosis and Cuproptosis in Dilated Cardiomyopathy",
@@ -18963,7 +19203,7 @@
       "limitation": false
     },
     {
-      "id": 1896,
+      "id": 1920,
       "result_kind": "paper",
       "doi": "10.1136/jitc-2024-010127",
       "title": "Targeting the NLRP3 inflammasome abrogates cardiotoxicity of immune checkpoint blockers",
@@ -18973,7 +19213,7 @@
       "limitation": false
     },
     {
-      "id": 1897,
+      "id": 1921,
       "result_kind": "paper",
       "doi": "10.1093/eurheartj/ehaf523",
       "title": "The macrophage-derived motor protein KIF13B enhances MERTK-mediated efferocytosis and prevents atherosclerosis in mice",
@@ -18983,7 +19223,7 @@
       "limitation": false
     },
     {
-      "id": 1898,
+      "id": 1922,
       "result_kind": "paper",
       "doi": "10.1002/tox.24284",
       "title": "Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature",
@@ -18993,7 +19233,7 @@
       "limitation": false
     },
     {
-      "id": 1899,
+      "id": 1923,
       "result_kind": "paper",
       "doi": "10.1038/s41467-024-50415-9",
       "title": "AI hybrid survival assessment for advanced heart failure patients with renal dysfunction",
@@ -19003,7 +19243,7 @@
       "limitation": false
     },
     {
-      "id": 1900,
+      "id": 1924,
       "result_kind": "paper",
       "doi": "10.18632/aging.205564",
       "title": "An assessment system for clinical and biological interpretability in ulcerative colitis",
@@ -19013,7 +19253,7 @@
       "limitation": false
     },
     {
-      "id": 1901,
+      "id": 1925,
       "result_kind": "paper",
       "doi": "10.1200/po.24.00089",
       "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
@@ -19023,7 +19263,7 @@
       "limitation": false
     },
     {
-      "id": 1902,
+      "id": 1926,
       "result_kind": "paper",
       "doi": "10.1186/s10020-024-00963-z",
       "title": "Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension",
@@ -19033,7 +19273,7 @@
       "limitation": false
     },
     {
-      "id": 1903,
+      "id": 1927,
       "result_kind": "paper",
       "doi": "10.1002/clc.70019",
       "title": "Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders",
@@ -19043,7 +19283,7 @@
       "limitation": false
     },
     {
-      "id": 1904,
+      "id": 1928,
       "result_kind": "paper",
       "doi": "10.1016/j.jtemb.2024.127543",
       "title": "Associations between magnesium depletion score and depression among individuals aged 20 to 60 years",
@@ -19053,7 +19293,7 @@
       "limitation": false
     },
     {
-      "id": 1905,
+      "id": 1929,
       "result_kind": "paper",
       "doi": "10.15212/cvia.2024.0023",
       "title": "Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study",
@@ -19063,7 +19303,7 @@
       "limitation": false
     },
     {
-      "id": 1906,
+      "id": 1930,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.18408",
       "title": "Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature",
@@ -19073,7 +19313,7 @@
       "limitation": false
     },
     {
-      "id": 1907,
+      "id": 1931,
       "result_kind": "paper",
       "doi": "10.1007/s10238-024-01439-4",
       "title": "Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies",
@@ -19083,7 +19323,7 @@
       "limitation": false
     },
     {
-      "id": 1908,
+      "id": 1932,
       "result_kind": "paper",
       "doi": "10.1186/s12943-024-02047-2",
       "title": "Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond",
@@ -19093,7 +19333,7 @@
       "limitation": false
     },
     {
-      "id": 1909,
+      "id": 1933,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.70258",
       "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
@@ -19103,7 +19343,7 @@
       "limitation": false
     },
     {
-      "id": 1910,
+      "id": 1934,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2024.1425895",
       "title": "Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments",
@@ -19113,7 +19353,7 @@
       "limitation": false
     },
     {
-      "id": 1911,
+      "id": 1935,
       "result_kind": "paper",
       "doi": "10.1093/hmg/ddae189",
       "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
@@ -19123,7 +19363,7 @@
       "limitation": false
     },
     {
-      "id": 1912,
+      "id": 1936,
       "result_kind": "paper",
       "doi": "10.1038/s41598-024-65236-5",
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",
@@ -19133,7 +19373,7 @@
       "limitation": false
     },
     {
-      "id": 1913,
+      "id": 1937,
       "result_kind": "paper",
       "doi": "10.1038/s41598-024-80885-2",
       "title": "N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer",
@@ -19143,7 +19383,7 @@
       "limitation": false
     },
     {
-      "id": 1914,
+      "id": 1938,
       "result_kind": "paper",
       "doi": "10.1007/s13402-023-00912-8",
       "title": "Omics-based molecular classifications empowering in precision oncology",
@@ -19153,7 +19393,7 @@
       "limitation": false
     },
     {
-      "id": 1915,
+      "id": 1939,
       "result_kind": "paper",
       "doi": "10.1016/j.ejso.2024.108527",
       "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
@@ -19163,7 +19403,7 @@
       "limitation": false
     },
     {
-      "id": 1916,
+      "id": 1940,
       "result_kind": "paper",
       "doi": "10.1021/acs.jproteome.4c00522",
       "title": "Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure",
@@ -19173,7 +19413,7 @@
       "limitation": false
     },
     {
-      "id": 1917,
+      "id": 1941,
       "result_kind": "paper",
       "doi": "10.1016/j.csbj.2024.04.044",
       "title": "Proteomics appending a complementary dimension to precision oncotherapy",
@@ -19183,7 +19423,7 @@
       "limitation": false
     },
     {
-      "id": 1918,
+      "id": 1942,
       "result_kind": "paper",
       "doi": "10.1016/j.canlet.2024.217083",
       "title": "The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?",
@@ -19193,7 +19433,7 @@
       "limitation": false
     },
     {
-      "id": 1919,
+      "id": 1943,
       "result_kind": "paper",
       "doi": "10.2147/cia.s462542",
       "title": "TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients",
@@ -19203,7 +19443,7 @@
       "limitation": false
     },
     {
-      "id": 1920,
+      "id": 1944,
       "result_kind": "paper",
       "doi": "10.1016/j.isci.2023.107587",
       "title": "Atherosclerotic plaque vulnerability quantification system for clinical and biological interpretability",
@@ -19213,7 +19453,7 @@
       "limitation": false
     },
     {
-      "id": 1921,
+      "id": 1945,
       "result_kind": "paper",
       "doi": "10.1016/j.jma.2023.05.007",
       "title": "Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application",
@@ -19223,7 +19463,7 @@
       "limitation": false
     },
     {
-      "id": 1922,
+      "id": 1946,
       "result_kind": "paper",
       "doi": "10.1111/jcmm.17789",
       "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
@@ -19233,7 +19473,7 @@
       "limitation": false
     },
     {
-      "id": 1923,
+      "id": 1947,
       "result_kind": "paper",
       "doi": "10.1016/j.ejphar.2023.175569",
       "title": "Idebenone attenuates ferroptosis by inhibiting excessive autophagy via the ROS-AMPK-mTOR pathway to preserve cardiac function after myocardial infarction",
@@ -19243,7 +19483,7 @@
       "limitation": false
     },
     {
-      "id": 1924,
+      "id": 1948,
       "result_kind": "paper",
       "doi": "10.18063/ijb.740",
       "title": "Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges",
@@ -19253,7 +19493,7 @@
       "limitation": false
     },
     {
-      "id": 1925,
+      "id": 1949,
       "result_kind": "paper",
       "doi": "10.1186/s12967-022-03795-9",
       "title": "Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes",
@@ -19263,7 +19503,7 @@
       "limitation": false
     },
     {
-      "id": 1926,
+      "id": 1950,
       "result_kind": "paper",
       "doi": "10.1002/ehf2.14003",
       "title": "Uncovering the Genetic Links of SARS-CoV-2 Infections on Heart Failure Co-Morbidity by a Systems Biology Approach",
@@ -19273,7 +19513,7 @@
       "limitation": false
     },
     {
-      "id": 1927,
+      "id": 1951,
       "result_kind": "paper",
       "doi": "10.3389/fonc.2021.659217",
       "title": "Efficacy and Safety of Apatinib Treatment for Advanced Cholangiocarcinoma After Failed Gemcitabine-Based Chemotherapy: An Open-Label Phase II Prospective Study",
@@ -19283,7 +19523,17 @@
       "limitation": false
     },
     {
-      "id": 1928,
+      "id": 1952,
+      "result_kind": "paper",
+      "doi": "10.3980/j.issn.1672-5123.2020.12.13",
+      "title": "Culture methods of inducing embryonic stem cells to differentiate into retinal pigment epithelial cells",
+      "category": "Research & review context",
+      "text": "Stem-cell differentiation and RPE culture\nRetinal tissue-engineering methods\nComparing culture-method families\nCell source, developmental stage and functional readouts\nA narrative taxonomy and practical comparison of soluble cues, culture geometry, coculture and scaffolds for RPE research.\nLiterature synthesis with protocol-specific examples and explicit source-cell distinctions.\nLineage specification and maturation\nExtracellular context\nScaffold-supported monolayers\nBackground: introduce RPE culture-method families.\nMethods and discussion: compare starting cells, culture organization, evaluation criteria and material handling.",
+      "url": "https://drgezhang.com/papers/doi-10-3980-j-issn-1672-5123-2020-12-13.html#paper-discovery",
+      "limitation": false
+    },
+    {
+      "id": 1953,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19293,7 +19543,7 @@
       "limitation": false
     },
     {
-      "id": 1929,
+      "id": 1954,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19303,7 +19553,7 @@
       "limitation": false
     },
     {
-      "id": 1930,
+      "id": 1955,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19313,7 +19563,7 @@
       "limitation": false
     },
     {
-      "id": 1931,
+      "id": 1956,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19323,7 +19573,7 @@
       "limitation": false
     },
     {
-      "id": 1932,
+      "id": 1957,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19333,7 +19583,7 @@
       "limitation": false
     },
     {
-      "id": 1933,
+      "id": 1958,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19343,7 +19593,7 @@
       "limitation": false
     },
     {
-      "id": 1934,
+      "id": 1959,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19353,7 +19603,7 @@
       "limitation": false
     },
     {
-      "id": 1935,
+      "id": 1960,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19363,7 +19613,7 @@
       "limitation": false
     },
     {
-      "id": 1936,
+      "id": 1961,
       "result_kind": "guide",
       "doi": "",
       "title": "Circadian evidence: expression scores, cell perturbation and clinical timing",
@@ -19373,7 +19623,7 @@
       "limitation": false
     },
     {
-      "id": 1937,
+      "id": 1962,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19383,7 +19633,7 @@
       "limitation": false
     },
     {
-      "id": 1938,
+      "id": 1963,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19393,7 +19643,7 @@
       "limitation": false
     },
     {
-      "id": 1939,
+      "id": 1964,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19403,7 +19653,7 @@
       "limitation": false
     },
     {
-      "id": 1940,
+      "id": 1965,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19413,7 +19663,7 @@
       "limitation": false
     },
     {
-      "id": 1941,
+      "id": 1966,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19423,7 +19673,7 @@
       "limitation": false
     },
     {
-      "id": 1942,
+      "id": 1967,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19433,7 +19683,7 @@
       "limitation": false
     },
     {
-      "id": 1943,
+      "id": 1968,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19443,7 +19693,7 @@
       "limitation": false
     },
     {
-      "id": 1944,
+      "id": 1969,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19453,7 +19703,7 @@
       "limitation": false
     },
     {
-      "id": 1945,
+      "id": 1970,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19463,7 +19713,7 @@
       "limitation": false
     },
     {
-      "id": 1946,
+      "id": 1971,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19473,7 +19723,7 @@
       "limitation": false
     },
     {
-      "id": 1947,
+      "id": 1972,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19483,7 +19733,7 @@
       "limitation": false
     },
     {
-      "id": 1948,
+      "id": 1973,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19493,7 +19743,7 @@
       "limitation": false
     },
     {
-      "id": 1949,
+      "id": 1974,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19503,7 +19753,7 @@
       "limitation": false
     },
     {
-      "id": 1950,
+      "id": 1975,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19513,7 +19763,7 @@
       "limitation": false
     },
     {
-      "id": 1951,
+      "id": 1976,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19523,7 +19773,7 @@
       "limitation": false
     },
     {
-      "id": 1952,
+      "id": 1977,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19533,7 +19783,7 @@
       "limitation": false
     },
     {
-      "id": 1953,
+      "id": 1978,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19543,7 +19793,7 @@
       "limitation": false
     },
     {
-      "id": 1954,
+      "id": 1979,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19553,7 +19803,7 @@
       "limitation": false
     },
     {
-      "id": 1955,
+      "id": 1980,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19563,7 +19813,7 @@
       "limitation": false
     },
     {
-      "id": 1956,
+      "id": 1981,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19573,7 +19823,7 @@
       "limitation": false
     },
     {
-      "id": 1957,
+      "id": 1982,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19583,7 +19833,7 @@
       "limitation": false
     },
     {
-      "id": 1958,
+      "id": 1983,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19593,7 +19843,7 @@
       "limitation": false
     },
     {
-      "id": 1959,
+      "id": 1984,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19603,7 +19853,7 @@
       "limitation": false
     },
     {
-      "id": 1960,
+      "id": 1985,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19613,7 +19863,7 @@
       "limitation": false
     },
     {
-      "id": 1961,
+      "id": 1986,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19623,7 +19873,7 @@
       "limitation": false
     },
     {
-      "id": 1962,
+      "id": 1987,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19633,7 +19883,7 @@
       "limitation": false
     },
     {
-      "id": 1963,
+      "id": 1988,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19643,7 +19893,7 @@
       "limitation": false
     },
     {
-      "id": 1964,
+      "id": 1989,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19653,7 +19903,7 @@
       "limitation": false
     },
     {
-      "id": 1965,
+      "id": 1990,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19663,7 +19913,7 @@
       "limitation": false
     },
     {
-      "id": 1966,
+      "id": 1991,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",
@@ -19673,7 +19923,7 @@
       "limitation": false
     },
     {
-      "id": 1967,
+      "id": 1992,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",
@@ -19683,7 +19933,7 @@
       "limitation": false
     },
     {
-      "id": 1968,
+      "id": 1993,
       "result_kind": "guide",
       "doi": "",
       "title": "Cardiovascular prediction: study tasks, cohorts and validation",
@@ -19693,7 +19943,7 @@
       "limitation": false
     },
     {
-      "id": 1969,
+      "id": 1994,
       "result_kind": "guide",
       "doi": "",
       "title": "Atherosclerosis: smooth-muscle state and macrophage clearance mechanisms",
@@ -19703,7 +19953,7 @@
       "limitation": false
     },
     {
-      "id": 1970,
+      "id": 1995,
       "result_kind": "guide",
       "doi": "",
       "title": "Cancer omics: subtype transfer, prognosis and network-state evidence",
@@ -19713,7 +19963,7 @@
       "limitation": false
     },
     {
-      "id": 1971,
+      "id": 1996,
       "result_kind": "guide",
       "doi": "",
       "title": "GIST resection evidence by anatomical site",

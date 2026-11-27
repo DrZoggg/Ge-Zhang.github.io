@@ -445,49 +445,6 @@
         }
       ]
     },
-    "10.3980/j.issn.1672-5123.2020.12.13": {
-      "slug": "doi-10-3980-j-issn-1672-5123-2020-12-13",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Methods-review context from the complete official PDF; publisher-verified author and journal metadata are supplied with the citation.",
-      "sections": [
-        {
-          "heading": "Research context",
-          "text": "This narrative review considers how embryonic stem cells can be directed toward retinal pigment epithelial cells. It organizes published culture approaches; it does not report a new patient cohort, clinical trial, or head-to-head experiment by the review authors.",
-          "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
-          "source_locator": "PDF p. 1 / journal p. 2079: 文献综述, 摘要, Abstract and Introduction"
-        },
-        {
-          "heading": "Culture approaches",
-          "text": "The review discusses cytokine induction, two- and three-dimensional differentiation, coculture, and scaffold encapsulation. Its scaffold discussion covers alginate, fibrin, and polyethylene-glycol/gellan systems. Individual experimental outcomes are attributed to the studies cited in these sections.",
-          "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
-          "source_locator": "PDF pp. 2–3 / journal pp. 2080–2081: §§1, 2, 3, 4.1–4.3; References"
-        },
-        {
-          "heading": "Evidence boundary",
-          "text": "The outlook weighs differentiation efficiency, time, cost, function, immune rejection, and ethical concerns. It identifies long-term safety and effectiveness after transplantation as unresolved; this review does not establish a clinically validated replacement therapy.",
-          "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
-          "source_locator": "PDF p. 3 / journal p. 2081: §5 小结与展望"
-        },
-        {
-          "heading": "Authorship boundary",
-          "text": "The publisher lists six authors, including 张格 first and 张戈 last, both printed as Ge Zhang in English; Han Zhu is the corresponding author. The PDF provides no unique ORCID or individual-identifier mapping of either Ge Zhang to this site's researcher, so both remain name-only authors while the complete author list and formal citation are retained.",
-          "source_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
-          "source_locator": "PDF p. 1 / journal p. 2079: Chinese and English author lines, author biography, affiliation and correspondence"
-        }
-      ],
-      "limitations": [
-        "The publisher PDF identifies a narrative review in International Eye Science. The site's broad Article metadata category does not imply an original experiment or clinical study."
-      ],
-      "sources": [
-        {
-          "url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
-          "label": "Official review PDF",
-          "format": "Complete publisher PDF reviewed locally",
-          "locator": "PDF p. 1 / journal p. 2079: 文献综述, 摘要, Abstract and Introduction"
-        }
-      ]
-    },
     "10.1016/j.colsurfb.2026.116261": {
       "slug": "doi-10-1016-j-colsurfb-2026-116261",
       "evidence_status": "limited",
