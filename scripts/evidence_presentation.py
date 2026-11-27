@@ -6,6 +6,8 @@ from sync_common import ROOT, norm_doi
 from evidence_discovery import ui
 import research_guides
 
+STANDALONE_V2 = 'standalone-v2-v1'
+MIGRATED_LIMITED_V2 = 'standalone-v2-from-limited-v1'
 PILOT_DOIS = frozenset(('10.1021/acs.jproteome.4c00522', '10.1111/jcmm.17789',
                         '10.1186/s12915-025-02400-x', '10.1038/s41467-024-50415-9',
                         '10.1186/s12967-022-03795-9', '10.1136/jitc-2024-010127'))
@@ -71,7 +73,7 @@ def configured_modes():
     for doi, mode in config.items():
         if not doi.startswith('10.') or norm_doi(doi) != doi:
             raise ValueError('Invalid paper presentation DOI')
-        if mode == 'standalone-v2-v1':
+        if mode in {STANDALONE_V2, MIGRATED_LIMITED_V2}:
             continue
         if mode != 'scholarly-first-v1' or doi not in PILOT_DOIS:
             raise ValueError('Unsupported paper presentation scope/version')
@@ -83,14 +85,21 @@ def enabled(doi):
 
 
 def standalone_v2(doi):
-    return configured_modes().get(doi.lower()) == 'standalone-v2-v1'
+    return configured_modes().get(doi.lower()) in {STANDALONE_V2, MIGRATED_LIMITED_V2}
 
 
-def question_summary(content, *, anchor=False):
+def migrated_limited_v2(doi):
+    return configured_modes().get(doi.lower()) == MIGRATED_LIMITED_V2
+
+
+def question_summary(content, *, anchor=False, legacy_limited=False):
     return ('<section class="paper-geo-v2__section" data-v2-section="research-question"><h2>Research Question</h2><p>'
             + html.escape(content['research_question']) + '</p></section>\n'
             + '<section class="paper-geo-v2__section" data-v2-section="author-summary"'
-            + (' id="ev-summary"' if anchor else '') + '><h2>Author Evidence Summary</h2><p>'
+            + (' id="ev-summary"' if anchor else '') + '>'
+            + ('<span id="limited-evidence"></span>' if legacy_limited else '')
+            + ('<h2 id="limited-evidence-title">' if legacy_limited else '<h2>')
+            + 'Author Evidence Summary</h2><p>'
             + html.escape(content['author_summary']) + '</p></section>\n')
 
 

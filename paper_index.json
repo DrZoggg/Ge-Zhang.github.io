@@ -1204,8 +1204,8 @@
       "doi": "10.2147/jir.s495784",
       "paper_url": "https://drgezhang.com/papers/doi-10-2147-jir-s495784.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-2147-jir-s495784.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.2147/jir.s495784",
       "publisher_url": null,
@@ -1217,9 +1217,30 @@
       "openalex_id": "https://openalex.org/W4407810609",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-2147-jir-s495784.csv",
+      "question_count": 8,
+      "concept_count": 32,
+      "discovery_layer": {
+        "field_entry": [
+          "Acute myocardial infarction research",
+          "Cardiovascular proteomics"
+        ],
+        "review_topics": [
+          "Circulating protein biomarker selection",
+          "Integration of protein and gene-expression evidence"
+        ],
+        "scientific_role": "Human targeted plasma-protein discovery with additional ELISA measurements, public expression-data evaluation and exploratory genetic association analysis.",
+        "evidence_position": "Observational candidate-biomarker study spanning protein, transcriptomic and genetic evidence; each modality addresses a different inference.",
+        "related_concepts": [
+          "Orthogonal assay follow-up",
+          "Extracellular matrix remodeling",
+          "Innate immune proteins"
+        ],
+        "citation_contexts": [
+          "Methods: targeted Olink panels and prioritization of candidates for a second plasma assay.",
+          "Discussion: separating circulating-protein association, public gene-expression discrimination and genetically proxied disease association."
+        ]
+      }
     },
     {
       "title": "Integrated-omics analysis defines subtypes of hepatocellular carcinoma based on circadian rhythm",
