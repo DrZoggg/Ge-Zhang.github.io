@@ -2547,8 +2547,8 @@
       "doi": "10.1093/hmg/ddae189",
       "paper_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1093/hmg/ddae189",
       "publisher_url": null,
@@ -2560,9 +2560,30 @@
       "openalex_id": "https://openalex.org/W4405558741",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1093-hmg-ddae189.csv",
+      "question_count": 9,
+      "concept_count": 9,
+      "discovery_layer": {
+        "field_entry": [
+          "Alzheimer’s disease biology",
+          "Genetic target prioritization"
+        ],
+        "review_topics": [
+          "Senescence-related blood and brain expression",
+          "Cis-QTL evidence and cell-line follow-up"
+        ],
+        "scientific_role": "Original integrative study combining public expression screens, genetic association prioritization and PC12 expression measurements.",
+        "evidence_position": "Retrospective human expression, summary-level genetic estimates and a rat cell-line expression assay. Source-specific denominator and mediation disagreements are locatable.",
+        "related_concepts": [
+          "CDKN2B",
+          "ITGAV",
+          "Instrument validity"
+        ],
+        "citation_contexts": [
+          "Discussion of tissue-specific senescence-related AD candidate genes with MR and colocalization qualifications.",
+          "Evidence reviews distinguishing genetic prioritization and cellular expression changes from validated clinical targets."
+        ]
+      }
     },
     {
       "title": "Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)",

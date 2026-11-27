@@ -546,7 +546,7 @@
 - DOI: 10.1093/hmg/ddae189
 - HTML: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html
 - Markdown: https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Machine Learning Approaches for Predicting Frailty Base on Multimorbidities in US Adults Using NHANES Data (1999-2018)
 - Journal: Computer Methods and Programs in Biomedicine Update

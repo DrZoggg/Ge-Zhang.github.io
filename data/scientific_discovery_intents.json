@@ -1335,10 +1335,12 @@
           "work_refs": [
             {
               "work_id": "doi-10-1093-hmg-ddae189",
-              "question_ids": [],
+              "question_ids": [
+                "doi-10-1093-hmg-ddae189--qa-9"
+              ],
               "preview_question_id": null,
-              "preview_note_headings": [
-                "Blood and brain expression context"
+              "preview_finding_ids": [
+                "KF1"
               ]
             }
           ]

@@ -157,6 +157,9 @@ def build_discovery(items, contents, fields, root=ROOT):
                         or any(ref not in findings for ref in refs)):
                     raise ValueError('Unresolved or duplicate question evidence reference: ' + slug)
                 pointer = source + '#/qa/' + str(position - 1)
+                locator = {}
+                if 'source_locator' in qa:
+                    locator['source_locator'] = _text(qa['source_locator'], slug + '/question locator')
                 questions.append({
                     'id': slug + '--qa-' + str(position),
                     'work_id': slug,
@@ -169,6 +172,7 @@ def build_discovery(items, contents, fields, root=ROOT):
                     'answer_sha256': hashlib.sha256(answer.encode('utf-8')).hexdigest(),
                     'evidence_refs': list(refs),
                     'evidence_refs_status': 'resolved' if refs else 'not_encoded',
+                    **locator,
                 })
         elif content and content.get('version') == 2:
             raise ValueError('Gold V2 content cannot silently promote a non-V2 work: ' + slug)
