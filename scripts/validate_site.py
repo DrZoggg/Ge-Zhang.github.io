@@ -464,6 +464,12 @@ def validate_v2_rendered_page(
     ]
     pilot = evidence_presentation.STYLESHEET in page
     early_summary = pilot or publication.get("deep_geo") is False or evidence_presentation.standalone_v2(content["doi"])
+    if evidence_presentation.migrated_limited_v2(content["doi"]):
+        require(
+            'id="ev-summary"><span id="limited-evidence"></span><h2 id="limited-evidence-title">'
+            in raw_page and markdown.count('<a id="limited-evidence"></a>') == 1,
+            f"{label} must preserve the previous limited evidence links at the reviewed summary.",
+        )
     if content.get('discovery_layer'):
         expected_discovery = paper_discovery.render_html(content)
         require(raw_page.count(expected_discovery) == 1 and raw_page.count('data-discovery-layer="1"') == 1,

@@ -2109,7 +2109,12 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
         deep_html += export_html(publication, deep_content)
     if pilot:
         deep_html = evidence_presentation.finding_sections(deep_html)
-    early_html = evidence_presentation.question_summary(deep_content, anchor=True) if pilot or standalone_v2 else ''
+    early_html = (
+        evidence_presentation.question_summary(
+            deep_content, anchor=True, legacy_limited=evidence_presentation.migrated_limited_v2(doi)
+        )
+        if pilot or standalone_v2 else ''
+    )
     page = with_ga4_tag(f'''<!doctype html>
 {GENERATED_MARKER}
 <html lang="en"><head><meta charset="utf-8">
@@ -2235,6 +2240,8 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
     if deep_content is not None:
         if official_abstract:
             lines.append(render_official_abstract_markdown(official_abstract, doi))
+        if evidence_presentation.migrated_limited_v2(doi):
+            lines.extend(['<a id="limited-evidence"></a>', ""])
         lines.append(render_deep_markdown(deep_content, related_papers=related_papers,
                                          pmc_url=verified_pmc_provenance(publication, deep_content),
                                          trial_registry_context=trial_registry_context))
