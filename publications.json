@@ -2219,7 +2219,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2280,7 +2280,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-2147-cia-s462542.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2382,7 +2382,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2474,7 +2474,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-18063-ijb-740.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },

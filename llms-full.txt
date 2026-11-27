@@ -627,7 +627,7 @@
 - DOI: 10.1016/j.canlet.2024.217083
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Transition from Sleeve Lobectomy to Lobectomy after Effective Chemoimmunotherapy in Central-Type NSCLC: A Multicenter Retrospective Study
 - Journal: Preprint
@@ -645,7 +645,7 @@
 - DOI: 10.2147/cia.s462542
 - HTML: https://drgezhang.com/papers/doi-10-2147-cia-s462542.html
 - Markdown: https://drgezhang.com/papers/doi-10-2147-cia-s462542.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Application of reagent for detecting and/or regulating FOSB gene in preparation of product for predicting and/or targeting abdominal aortic aneurysm
 - Journal: Patent
@@ -681,7 +681,7 @@
 - DOI: 10.1016/j.jma.2023.05.007
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure
 - Journal: Journal of Cellular and Molecular Medicine
@@ -708,7 +708,7 @@
 - DOI: 10.18063/ijb.740
 - HTML: https://drgezhang.com/papers/doi-10-18063-ijb-740.html
 - Markdown: https://drgezhang.com/papers/doi-10-18063-ijb-740.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Smooth muscle cell fate decisions decipher a high-resolution heterogeneity within atherosclerosis molecular subtypes
 - Journal: Journal of Translational Medicine
