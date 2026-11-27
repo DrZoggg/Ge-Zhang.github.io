@@ -63,3 +63,7 @@
 - [Reply to: Addressing Bias in Feature Importance: A Hybrid Approach for Risk Prediction in Prognostic Survival Models](https://drgezhang.com/papers/doi-10-1200-po-24-00875.html) — DOI: 10.1200/po-24-00875
 - [Resolving tumor microenvironment heterogeneity to forecast immunotherapy response in triple-negative breast cancer through multi-scale analysis](https://drgezhang.com/papers/doi-10-3389-fonc-2025-1538574.html) — DOI: 10.3389/fonc.2025.1538574
 - [Space Dentistry Combined With Remote and AI Technologies, a Necessity for Long-Term Stays: Thoughts of US Astronauts' Unexpected Stay](https://drgezhang.com/papers/doi-10-1111-odi-70054.html) — DOI: 10.1111/odi.70054
+- [Advancing predictive markers in lung adenocarcinoma: A machine learning-based immunotherapy prognostic prediction signature](https://drgezhang.com/papers/doi-10-1002-tox-24284.html) — DOI: 10.1002/tox.24284
+- [Assessing personalized molecular portraits underlying endothelial-to-mesenchymal transition within pulmonary arterial hypertension](https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html) — DOI: 10.1186/s10020-024-00963-z
+- [Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders](https://drgezhang.com/papers/doi-10-1002-clc-70019.html) — DOI: 10.1002/clc.70019
+- [Associations between magnesium depletion score and depression among individuals aged 20 to 60 years](https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html) — DOI: 10.1016/j.jtemb.2024.127543
