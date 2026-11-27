@@ -582,6 +582,8 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
     for key in detail_keys:
         required_text(study.get(key), f"{label} study_profile.{key}")
     if profile_type == "clinical_cohort":
+        if "counting_note" in study:
+            required_text(study["counting_note"], f"{label} study_profile.counting_note")
         unique_total = study.get("unique_total_n")
         if type(unique_total) is not int or unique_total <= 0:
             raise ValueError(f"{label} study_profile.unique_total_n must be positive.")
@@ -1521,7 +1523,7 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
         "<h3>Counting note</h3><p>"
         + html.escape(study["counting_note"])
         + "</p>"
-        if profile_type != "clinical_cohort"
+        if "counting_note" in study
         else ""
     )
     cohort_html = (
@@ -1663,7 +1665,7 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_regist
     )
     snapshot_tail = (
         ["### Counting note", "", study["counting_note"], ""]
-        if profile_type != "clinical_cohort"
+        if "counting_note" in study
         else []
     )
     parts = [

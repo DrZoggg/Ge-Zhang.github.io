@@ -276,7 +276,7 @@
 - DOI: 10.1038/s41598-025-98859-3
 - HTML: https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.html
 - Markdown: https://drgezhang.com/papers/doi-10-1038-s41598-025-98859-3.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics
 - Journal: Journal of Inflammation Research
