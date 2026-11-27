@@ -81,3 +81,4 @@
 - [TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients](https://drgezhang.com/papers/doi-10-2147-cia-s462542.html) — DOI: 10.2147/cia.s462542
 - [Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application](https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html) — DOI: 10.1016/j.jma.2023.05.007
 - [Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges](https://drgezhang.com/papers/doi-10-18063-ijb-740.html) — DOI: 10.18063/ijb.740
+- [N7-methyladenosine-induced SLC7A7 serves as a prognostic biomarker in pan-cancer and promotes CRC progression in colorectal cancer](https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.html) — DOI: 10.1038/s41598-024-80885-2

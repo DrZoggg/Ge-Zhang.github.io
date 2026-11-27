@@ -2642,8 +2642,8 @@
       "doi": "10.1038/s41598-024-80885-2",
       "paper_url": "https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1038-s41598-024-80885-2.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1038/s41598-024-80885-2",
       "publisher_url": null,
@@ -2655,9 +2655,30 @@
       "openalex_id": "https://openalex.org/W4405842054",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1038-s41598-024-80885-2.csv",
+      "question_count": 8,
+      "concept_count": 30,
+      "discovery_layer": {
+        "field_entry": [
+          "Colorectal-cancer cell biology",
+          "Cancer-expression and RNA-regulation research"
+        ],
+        "review_topics": [
+          "Integrating public omics and perturbation assays",
+          "RNA stability and pathway readouts"
+        ],
+        "scientific_role": "A multimodal SLC7A7 study connecting public cancer-expression/prognosis context with CRC motility, molecular and reported RNA-stability experiments.",
+        "evidence_position": "Secondary associations and preclinical observations; chemical identity, selected direction/label conflicts and replicate accounting remain attached to affected claims.",
+        "related_concepts": [
+          "SLC7A7/APC/EMT hypothesis",
+          "Macrophage expression context",
+          "DNA versus RNA modification"
+        ],
+        "citation_contexts": [
+          "Methods: compare datasets, cell perturbation, motility and RNA-decay assays.",
+          "Discussion: distinguish observed readouts and regulatory hypotheses from a unified chemical mechanism or clinical benefit."
+        ]
+      }
     },
     {
       "title": "Omics-based molecular classifications empowering in precision oncology",

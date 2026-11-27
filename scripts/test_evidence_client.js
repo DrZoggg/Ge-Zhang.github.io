@@ -300,7 +300,11 @@ async function run() {
   const pmcOaiUrl='https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11680768&metadataPrefix=pmc';
   assert.equal(oaiRoute?.url,pmcOaiUrl);
   assert.equal(oaiRoute.availability,'not_checked');
-  assert(oaiRoute.source_fields.some(field=>/^work\.provenance\[\d+\]\.url$/.test(field)));
+  assert(oaiRoute.source_fields.includes('work.provenance.pmc_oai_xml_url'));
+  const slcCloud=slc.primary_sources.reading_routes.find(route=>route.kind==='full_text_xml_cloud');
+  assert.equal(slcCloud?.url,'https://pmc-oa-opendata.s3.amazonaws.com/PMC11680768.1/PMC11680768.1.xml');
+  assert.equal(slcCloud.availability,'not_checked');
+  assert(slcCloud.source_fields.includes('work.provenance.pmc_cloud_xml_url'));
   assertXmlRoute(slc);
   const oaiSource={url:pmcOaiUrl};
   const testOai=packet=>packet.primary_sources.reading_routes.filter(route=>route.kind==='full_text_xml_oai');
@@ -329,7 +333,7 @@ async function run() {
   assert.equal(jcmm.provenance.original_xml_url,cloudUrl);
   assert.equal(jcmm.provenance.supplement_url,supplementUrl);
   assert(!jcmm.primary_sources.reading_routes.some(route=>route.url===supplementUrl));
-  assert.deepEqual(cloudRoutes(slc),[]);
+  assert.deepEqual(cloudRoutes(slc),[slcCloud]);
   assert.equal(cloudRoutes(routeFixture({pmcid:'PMC11897062',provenance:[cloudSource,cloudSource]})).length,1);
   for (const fields of [
     {provenance:[cloudSource]},
@@ -367,16 +371,17 @@ async function run() {
     {provenance:{pmc_cloud_xml_url:jdiCloudUrl+'#methods'}},
   ]) assert.deepEqual(cloudRoutes(routeFixture({pmcid:'PMC13651581',...fields})),[]);
   const limitedCloudFixture=structuredClone(catalog);
-  const limitedFixtureWork=limitedCloudFixture.works.find(work=>work.id===slc.id);
+  const limitedFixtureId='doi-10-2139-ssrn-5292589';
+  const limitedFixtureWork=limitedCloudFixture.works.find(work=>work.id===limitedFixtureId);
   assert.equal(limitedFixtureWork.evidence_status,'limited');
   limitedFixtureWork.pmcid='PMC11897062';
   delete limitedFixtureWork.pmc_url;
   limitedFixtureWork.provenance={pmc_cloud_xml_url:cloudUrl,pmc_oai_xml_url:jcmmOaiUrl};
   const limitedClient=createClient(limitedCloudFixture,loaded.search);
-  assert.deepEqual(cloudRoutes(limitedClient.fetch(slc.id)),[]);
-  assert.deepEqual(testOai(limitedClient.fetch(slc.id)),[]);
+  assert.deepEqual(cloudRoutes(limitedClient.fetch(limitedFixtureId)),[]);
+  assert.deepEqual(testOai(limitedClient.fetch(limitedFixtureId)),[]);
   limitedFixtureWork.provenance=[cloudSource,{url:jcmmOaiUrl},{url:supplementUrl}];
-  const legacyPacket=createClient(limitedCloudFixture,loaded.search).fetch(slc.id);
+  const legacyPacket=createClient(limitedCloudFixture,loaded.search).fetch(limitedFixtureId);
   assert.equal(cloudRoutes(legacyPacket)[0].url,cloudUrl);
   assert.equal(testOai(legacyPacket)[0].url,jcmmOaiUrl);
   assert(!legacyPacket.primary_sources.reading_routes.some(route=>route.url===supplementUrl));

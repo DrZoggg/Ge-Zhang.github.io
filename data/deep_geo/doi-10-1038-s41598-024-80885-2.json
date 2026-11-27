@@ -1,0 +1,577 @@
+{
+  "version": 2,
+  "doi": "10.1038/s41598-024-80885-2",
+  "display_title": "SLC7A7 in CRC: expression context, migration assays and reported RNA-stability experiments",
+  "summary": "The study combines public cancer-expression analyses with SLC7A7 knockdown, migration/invasion and RNA-stability experiments in colorectal-cancer models. It supplies candidate prognostic and functional evidence, while the formal title and RNA-assay modification names, DNA-methylation direction and selected experimental labels remain distinct unresolved source questions.",
+  "research_question": "How is SLC7A7 associated with cancer expression and prognosis, and what do CRC cell, lung-colonization and reported RNA-stability experiments show about its possible biological role?",
+  "author_summary": "The article analyzes public expression, survival, immune, DNA-methylation and genomic data, then investigates SLC7A7 in HCT116 and SW480 cells. It reports higher CRC expression in three GEO datasets and TCGA, with adverse survival associations in GSE106584; pan-cancer prognosis varies by cancer. Two SLC7A7 siRNA conditions reduce reported migration/invasion and wound closure in both cell lines. The authors also present a tail-vein HCT116 lung-colonization experiment, without stated animal group sizes. After knockdown, Figure 6C identifies increased APC expression, while epithelial markers rise and beta-catenin falls. These observations motivate an APC/Wnt/EMT model without establishing the complete causal chain. Anti-m7G-labelled RNA immunoprecipitation and SW480 decay experiments with QKI or METTL1 perturbations supply an additional regulatory hypothesis. The formal title says N7-methyladenosine, whereas the abstract and assays name N7-methylguanosine/m7G; that identity is not silently reconciled. DNA-methylation text/plot direction and the final mutant-assay legend also differ. The contribution is a multi-level candidate framework with source-specific observations, rather than a validated clinical biomarker, treatment or unified chemical mechanism.",
+  "study_profile": {
+    "profile_type": "preclinical_multimodal",
+    "study_design": "Secondary public pan-cancer/CRC analyses followed by RNA-interference cell assays, tail-vein mouse lung-colonization observations, immunoblots/qPCR and reported RNA-IP/decay experiments.",
+    "evidence_type": "Public-data expression/survival associations and computational context; preclinical perturbation-associated motility and molecular readouts; reported RNA-regulatory experiments with unresolved source identity/label questions.",
+    "population": "Public cancer datasets; HCT116 and SW480 CRC cell models; a reported female nude-mouse tail-vein HCT116 model. No human treatment cohort or patient risk test was evaluated.",
+    "primary_endpoint": "Cell migration/invasion and associated molecular/RNA-stability readouts, plus reported lung-colonization observations.",
+    "secondary_endpoint": "Public expression/prognosis, pathway/immune, DNA-methylation and genomic-association context.",
+    "data_modalities": [
+      "Public bulk transcriptomic and clinical-survival data",
+      "Normalized single-cell/tissue expression context",
+      "Inferred immune infiltration and pathway enrichment",
+      "TCGA DNA methylation, CNV and SNV/COSMIC context",
+      "CRC cell RNA interference, qPCR and Western blot",
+      "Transwell and wound-healing assays",
+      "Tail-vein mouse imaging and lung histology",
+      "Anti-m7G-labelled RNA IP and actinomycin-D decay assays"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Pan-cancer expression scope",
+        "value": "31 cancer types, as reported; not a unique-patient total"
+      },
+      {
+        "label": "CRC expression datasets",
+        "value": "GSE21510, GSE71187, GSE87211 and TCGA"
+      },
+      {
+        "label": "Displayed GSE106584 survival groups",
+        "value": "Figure 1D risk-table starts 77 high/79 low; endpoint labels RFS and OS"
+      },
+      {
+        "label": "COAD pathway comparison",
+        "value": "Figure 6B caption labels 243 higher/243 lower expression profiles"
+      },
+      {
+        "label": "Cell models",
+        "value": "HCT116 and SW480; two SLC7A7 siRNA conditions displayed"
+      },
+      {
+        "label": "Mouse exposure/readout",
+        "value": "2×10^6 stable HCT116 cells in 100 microlitres PBS by tail vein; lungs collected on day 42; animal group N not stated"
+      }
+    ],
+    "counting_note": "Public cohorts, expression profiles, cell lines, experimental replicates and animals are different units and are not summed. The Figure 1D and Figure 6B counts are source-labeled groups for different analyses, not a deduplicated clinical cohort. Biological replicate counts for the cell experiments and animal group sizes are not established from the source; representative images are not counted as independent animals. Additional GEO datasets supply expression and survival comparisons. Independent clinical and mechanistic validation remain unestablished."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Public datasets provide CRC expression and survival associations within a heterogeneous pan-cancer context.",
+      "context": "Retrospective secondary analyses with expression groups selected using an optimal cutoff.",
+      "evidence": [
+        {
+          "label": "Expression scope",
+          "value": "31 cancer types in TCGA/GTEx analyses"
+        },
+        {
+          "label": "CRC comparisons",
+          "value": "Higher SLC7A7 expression reported in GSE21510, GSE71187, GSE87211 and TCGA"
+        },
+        {
+          "label": "Displayed survival analysis",
+          "value": "GSE106584 Figure 1D: RFS log-rank p<0.0001 and OS p=0.018; baseline risk rows 77 high and 79 low"
+        },
+        {
+          "label": "Heterogeneity",
+          "value": "Results describe better OS with high expression in SARC/SKCM but poorer prognosis in other cancers; no universal adverse pan-cancer direction is assumed"
+        },
+        {
+          "label": "Role",
+          "value": "Prognostic association with data-dependent grouping, not a validated diagnostic or prospective risk assay"
+        }
+      ],
+      "source_locator": "Methods—Data collection/Survival analysis (Sec3/Par6; Sec4/Par7); Results—Expression and prognosis (Sec19/Par31–Par32); original Figure 1A–E (Fig1), PDF p. 5."
+    },
+    {
+      "id": "KF2",
+      "claim": "Pathway and cell-expression analyses place SLC7A7 in adhesion/EMT and immune-cell contexts.",
+      "context": "Computational enrichment, deconvolution and public single-cell expression displays.",
+      "evidence": [
+        {
+          "label": "Enrichment",
+          "value": "ECM-receptor, focal-adhesion, cell-adhesion, EMT and Wnt/beta-catenin-related patterns reported"
+        },
+        {
+          "label": "Immune context",
+          "value": "Positive macrophage and several immune-score associations; selected negative correlations include neutrophil/Th17 scores"
+        },
+        {
+          "label": "Cell context",
+          "value": "Source displays high macrophage expression in colon and other tissues; CRC GSE146771 Smart-seq 2/10X panels provide single-cell context"
+        },
+        {
+          "label": "COAD pathway groups",
+          "value": "Figure 6B caption labels 243 higher and 243 lower SLC7A7 expression profiles; higher EMT activity in the higher group, with printed FDR 1.7e-5."
+        },
+        {
+          "label": "Scope",
+          "value": "Expression enrichment/correlation does not demonstrate recruitment or causal activation of an immune population"
+        }
+      ],
+      "source_locator": "Methods—Enrichment and immune infiltration analysis (Sec5/Par8); Results (Sec20/Par33); original Figures 1F,2,3A–B and 6A–B (Fig1–Fig3/Fig6); PDF pp. 5–7."
+    },
+    {
+      "id": "KF3",
+      "claim": "DNA-methylation and genomic analyses add association context, with a specific methylation-direction conflict.",
+      "context": "TCGA/COSMIC secondary data; separate from RNA modification assays.",
+      "evidence": [
+        {
+          "label": "Data type",
+          "value": "Methods specifies TCGA DNA-methylation data"
+        },
+        {
+          "label": "CRC direction conflict",
+          "value": "Results/Discussion call tumour methylation higher; actual Figure 3D shows a lower tumour box centre than normal, with printed p=0.0014"
+        },
+        {
+          "label": "Expression correlation",
+          "value": "Figure 3F displays an inverse methylation/expression correlation, r=-0.45"
+        },
+        {
+          "label": "Genomic context",
+          "value": "Source reports COSMIC 503 mutation-bearing records and labels a COAD somatic-mutation map 1.23%; these are not a new clinical cohort"
+        },
+        {
+          "label": "Other associations",
+          "value": "CNV/expression and mutation/gain/loss profiles differ across cancers or SLC7A7 expression groups"
+        },
+        {
+          "label": "Scope",
+          "value": "No DNA-methylation direction is chosen as reconciled, and these analyses do not establish SLC7A7-induced genome instability or identify an RNA modification"
+        }
+      ],
+      "source_locator": "Methods—Methylation/Genomic alterations/Genomic instability (Sec6–Sec8, Par9–Par11); Results (Sec21/Par34, Sec22/Par35); original Figures 3C–F and 4 (Fig3/Fig4), PDF pp. 7–8; Discussion (Sec25/Par41–Par42)."
+    },
+    {
+      "id": "KF4",
+      "claim": "SLC7A7 knockdown reduced migration and invasion in the reported CRC cell assays.",
+      "context": "Two RNA-interference conditions in HCT116 and SW480.",
+      "evidence": [
+        {
+          "label": "Perturbation",
+          "value": "si-SLC7A7-01 and -02 versus negative-control siRNA; reduced SLC7A7 by qPCR/Western blot"
+        },
+        {
+          "label": "Transwell",
+          "value": "Reported migrated and invaded cell counts lower after knockdown in both cell lines"
+        },
+        {
+          "label": "Wound healing",
+          "value": "Images at 0/24/48 hours and reduced displayed migration area at 48 hours"
+        },
+        {
+          "label": "Measurement",
+          "value": "Functional cell-model observations; no effect size or biological replicate N is inferred from representative fields or bar counts"
+        }
+      ],
+      "source_locator": "Methods—Cell culture, Cell transfection and Wound healing/transwell (Sec9/Par12; Sec11/Par24; Sec14/Par27); Results (Sec23/Par36); original Figure 5A–E (Fig5); original Supplementary Figure 1."
+    },
+    {
+      "id": "KF5",
+      "claim": "A tail-vein mouse experiment supplies reported lung-colonization observations.",
+      "context": "Preclinical HCT116 dissemination/colonization setting, distinct from spontaneous human metastasis.",
+      "evidence": [
+        {
+          "label": "Model",
+          "value": "Stable HCT116 sh-NC or sh-SLC7A7 cells delivered by tail vein to nude mice"
+        },
+        {
+          "label": "Dose/readout",
+          "value": "Methods: 2×10^6 cells in 100 microlitres PBS; lungs collected on day 42 for H&E"
+        },
+        {
+          "label": "Reported observation",
+          "value": "Figure 5F presents bioluminescence/H&E examples; Results reports reduced lung lesions with SLC7A7 downregulation"
+        },
+        {
+          "label": "Unit limit",
+          "value": "Animal group sizes, replicate accounting and an aggregate quantitative lesion effect are not supplied; displayed mice are not used to infer N"
+        },
+        {
+          "label": "Role",
+          "value": "A reported model observation supporting follow-up of dissemination biology, not clinical antimetastatic efficacy"
+        }
+      ],
+      "source_locator": "Methods—Animal models (Sec16/Par29); Results (Sec23/Par36); original Figure 5F (Fig5); original PDF p. 9."
+    },
+    {
+      "id": "KF6",
+      "claim": "APC and epithelial-marker readouts provide molecular context for an APC/Wnt/EMT hypothesis.",
+      "context": "Molecular measurements after SLC7A7 knockdown in CRC cells.",
+      "evidence": [
+        {
+          "label": "APC",
+          "value": "Figure 6C explicitly labels APC and reports higher APC mRNA/protein after knockdown in HCT116/SW480"
+        },
+        {
+          "label": "Other markers",
+          "value": "Figure 6D reports higher E-cadherin/ZO-1 and lower beta-catenin after knockdown"
+        },
+        {
+          "label": "Source wording",
+          "value": "A Results sentence calls the increased signal si-SLC7A7 expression, while the panel/caption identifies APC; the panel analyte is retained explicitly"
+        },
+        {
+          "label": "Mechanistic scope",
+          "value": "These readouts and enrichment motivate the pathway hypothesis; they do not establish the full SLC7A7-to-APC-to-Wnt causal chain or clinical treatment benefit"
+        }
+      ],
+      "source_locator": "Methods—qRT-PCR/Western blot (Sec10/Par13–Par23; Sec12/Par25); Results (Sec24/Par37); original Figure 6C–D (Fig6); original Supplementary Figures 2–3; Discussion (Sec25/Par40, Par42)."
+    },
+    {
+      "id": "KF7",
+      "claim": "RNA-IP and decay experiments report a regulatory hypothesis without resolving the modification identity.",
+      "context": "SW480 antibody-IP and QKI/METTL1 perturbation experiments.",
+      "evidence": [
+        {
+          "label": "Chemical labels",
+          "value": "Formal title: N7-methyladenosine; Abstract/Methods/Results: N7-methylguanosine or anti-m7G/m7G. These labels are not silently unified"
+        },
+        {
+          "label": "RNA-IP",
+          "value": "Anti-m7G-labelled IP shows SLC7A7-associated signal relative to IgG/input context; predicted sites are shown from m7G-Hub"
+        },
+        {
+          "label": "QKI experiment",
+          "value": "QKI knockdown is accompanied by higher remaining relative SLC7A7 mRNA at later actinomycin-D time points than control"
+        },
+        {
+          "label": "METTL1 overexpression",
+          "value": "The reported overexpression plot labels OV-METTL1 and OV-METTL1-NC. The OV-METTL1 curve shows higher relative SLC7A7 signal at later actinomycin-D time points."
+        },
+        {
+          "label": "Mutant-label issue",
+          "value": "Body/caption describe METTL1 aa 107–109 EIR-to-AAA mutant; the final Figure 6I decay plot instead labels curves NC/knock, leaving intervention assignment unresolved"
+        },
+        {
+          "label": "Time-course designs",
+          "value": "Methods ActD dose 200 ng/mL; QKI figure 0/4/8/12/24 hours; METTL1 plots 0/4/12/20 hours. No numerical half-life is reconstructed."
+        },
+        {
+          "label": "Scope",
+          "value": "Reported RNA stability/IP observations do not certify a unified chemical identity, a specific internal modification site or direct QKI recognition of this transcript"
+        }
+      ],
+      "source_locator": "Formal title versus Abstract; Methods—Actinomycin D/me-RIP (Sec13/Par26; Sec15/Par28); Results (Sec24/Par37); original Figure 6E–I (Fig6); original Supplementary Figures 4–5; Discussion (Sec25/Par45)."
+    }
+  ],
+  "what_this_adds": [
+    "Connects public cancer-expression/prognosis and immune/genomic context with targeted CRC cell-model experiments.",
+    "Supplies SLC7A7 knockdown motility and APC/epithelial-marker observations that can inform mechanistic follow-up.",
+    "Documents reported RNA-IP/decay experiments while preserving the chemical, intervention-label and DNA-methylation questions needed to design discriminating follow-up studies."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "Source-specific CRC expression/survival associations and computational pathway/immune/genomic context.",
+      "Reported knockdown-associated migration/invasion and APC/epithelial-marker readouts in HCT116/SW480.",
+      "Qualitative reported mouse lung-colonization observations and SW480 RNA-IP/decay experiments at their stated evidence level."
+    ],
+    "does_not_establish": [
+      "A uniformly adverse prognostic role in every cancer, or a validated clinical diagnostic/prognostic assay.",
+      "A reconciled N7-methyladenosine versus N7-methylguanosine identity or site-specific internal modification mechanism.",
+      "A proven complete APC/Wnt causal chain, direct QKI recognition of the transcript, or an unambiguously labelled mutant comparison.",
+      "Animal replicate N or quantitative lung-colonization efficacy inferred from displayed examples; clinical treatment benefit."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which public datasets support the expression and prognosis analysis?",
+      "answer": "The article uses TCGA/GTEx pan-cancer data and reports CRC expression comparisons in GSE21510, GSE71187, GSE87211 and TCGA. GSE106584 supplies displayed relapse-free and overall-survival curves, with risk rows 77 high/79 low and log-rank p<0.0001/RFS and p=0.018/OS in Figure 1D. Grouping used an optimal expression cutoff. Pan-cancer survival direction varies, and no pooled unique-patient count or clinical assay validation is inferred.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What do enrichment and immune-cell analyses contribute?",
+      "answer": "They place SLC7A7 in adhesion, EMT/Wnt and immune-expression contexts. Macrophage expression/correlation is prominent in the displayed tissue/single-cell analyses, including GSE146771 panels. These are secondary expression and deconvolution observations, rather than proof that SLC7A7 recruits macrophages or activates immune cells.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How should DNA methylation and genomic results be interpreted?",
+      "answer": "Methods specifies TCGA DNA-methylation data, which is separate from the later RNA-IP assay. Text calls CRC tumour methylation higher, while Figure 3D shows a lower tumour box centre than normal (p=0.0014). CNV/SNV and expression/survival associations supply additional context. These analyses do not settle the direction conflict, prove genome-instability causation or identify an RNA chemical modification.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What functional cell observations followed SLC7A7 knockdown?",
+      "answer": "In HCT116 and SW480, two siRNA conditions reduced SLC7A7 expression and were accompanied by lower transwell migration/invasion and reduced wound closure/migration area. The reported assays support a functional role in these cell models; exact biological replicate counts and a clinical treatment effect are not inferred.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What animal experiment was performed?",
+      "answer": "The authors describe tail-vein delivery of stable HCT116 control or SLC7A7-knockdown cells, 2×10^6 in 100 microlitres PBS, followed by lung collection on day 42. Figure 5F supplies imaging and H&E examples and the text reports reduced lung lesions. Group sizes and aggregate lesion-effect measurements are not provided, so representative images are not treated as a counted animal cohort or clinical antimetastatic efficacy.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which APC/Wnt/EMT readouts are directly shown?",
+      "answer": "Figure 6C identifies APC as the measured analyte and shows higher APC expression after SLC7A7 knockdown. Figure 6D shows higher E-cadherin/ZO-1 and lower beta-catenin. These measurements support a pathway hypothesis alongside enrichment results; they do not by themselves establish the complete causal chain.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What do the RNA-stability experiments establish, and what remains unresolved?",
+      "answer": "The paper reports anti-m7G-labelled IP signal and higher remaining relative SLC7A7 RNA signals after QKI knockdown or reported METTL1 overexpression (OV-METTL1 versus OV-METTL1-NC) in SW480. The body/caption describes a METTL1 EIR-to-AAA mutant, but the final decay plot labels NC/knock. The formal title names N7-methyladenosine whereas the assays name N7-methylguanosine/m7G. The observed readouts can be described without selecting a unified identity, assigning the ambiguous mutant curves, or claiming direct transcript recognition/site-specific chemistry.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "How can this paper be used for research writing or follow-up design?",
+      "answer": "It can support candidate-gene expression/prognosis context, CRC knockdown motility assays, associated molecular readouts and reported RNA-regulation experiments. A follow-up design can separately test the chemical identity, DNA-methylation direction, pathway mediation and transcript-binding mechanism while specifying replicate N and animal group sizes. The article does not demonstrate clinical benefit from targeting SLC7A7.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Colorectal cancer",
+      "Pan-cancer expression/prognosis"
+    ],
+    "genes_and_proteins": [
+      "SLC7A7/y+LAT 1",
+      "APC",
+      "QKI",
+      "METTL1",
+      "Beta-catenin",
+      "E-cadherin",
+      "ZO-1"
+    ],
+    "experimental_models": [
+      "HCT116",
+      "SW480",
+      "Tail-vein HCT116 lung colonization"
+    ],
+    "methods": [
+      "RNA interference",
+      "Transwell migration/invasion",
+      "Wound healing",
+      "qRT-PCR",
+      "Western blot",
+      "RNA immunoprecipitation",
+      "Actinomycin-D RNA decay",
+      "Expression/survival analysis",
+      "Immune deconvolution",
+      "DNA methylation/CNV/SNV analysis"
+    ],
+    "molecular_labels": [
+      "N7-methyladenosine (formal title)",
+      "N7-methylguanosine/m7G (reported assays)",
+      "DNA methylation (public-data analysis)"
+    ],
+    "evidence_concepts": [
+      "Perturbation-associated readouts",
+      "Pathway mediation hypothesis",
+      "Modification identity",
+      "Intervention-label uncertainty",
+      "Replicate accounting"
+    ]
+  },
+  "limitations": [
+    "The formal title and assay text use different RNA-modification names. Anti-m7G-labelled IP and RNA-decay observations do not resolve chemical identity or validate a particular internal site.",
+    "DNA-methylation direction differs between Results/Discussion and actual Figure 3D. Public-data methylation and genomic associations are distinct from the RNA-IP experiment.",
+    "The mutant experiment is described as METTL1 EIR-to-AAA in text/caption, but its final plot legend is NC/knock. APC/Wnt pathway mediation and direct QKI recognition of this transcript are not established by the displayed readouts.",
+    "Cell biological-replicate counts and animal group sizes are not specified sufficiently to infer N from example images. Methods says mean ± SD and also states 95% CI error bars; precision is not reconstructed from the bars.",
+    "Public-data prognosis uses expression cutoffs selected as optimal; dataset units and reused observations are not pooled as independent patients, and cancer-specific directions vary. No diagnostic accuracy or clinical treatment benefit was validated."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.gendis.2026.102480",
+      "relationship": "A separate methodological review offers context for distinguishing omics association, perturbation evidence, mechanistic interpretation and clinical translation. It does not independently replicate SLC7A7 biology."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.nature.com/articles/s41598-024-80885-2",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11680768/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39730571/",
+    "doi_url": "https://doi.org/10.1038/s41598-024-80885-2",
+    "original_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11680768.1/PMC11680768.1.xml",
+    "original_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11680768.1/PMC11680768.1.pdf",
+    "supplement_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11680768.1/41598_2024_80885_MOESM1_ESM.docx",
+    "pmcid": "PMC11680768",
+    "version_of_record": "Scientific Reports. 2024;14:30755; published 28 December 2024. Original JATS/PDF has the same DOI/title/seven-author order as the protected publication master.",
+    "license": "Original article states Creative Commons Attribution 4.0; https://creativecommons.org/licenses/by/4.0/.",
+    "ethics": "Original Declarations reports ethics approval 2019-KY-423 at the First Affiliated Hospital of Zhengzhou University and IACUC approval for mouse procedures at Zhengzhou University.",
+    "data_availability": "The source states analyzed datasets are available from GEO, TCGA and GTEx, and that microarrays derive from those databases. This draft does not reconstruct participant-level dataset overlap.",
+    "source_note_title_identity": "The protected formal title says N7-methyladenosine. Abstract/Methods/Results and anti-m7G experiment name N7-methylguanosine/m7G. Neither the title nor chemical identity is silently rewritten.",
+    "source_note_DNA_methylation": "Methods identifies TCGA DNA-methylation input. Results/Discussion says CRC tumour hypermethylation, but Figure 3D has lower Tumor box centre than Normal (p=0.0014). This is recorded as a direction conflict, not corrected from text or plot alone.",
+    "source_note_APC": "Figure 6C and supplementary Figure 2 identify APC, while a Results sentence calls the increased signal si-SLC7A7 expression. APC-labelled readouts are described explicitly; the text mismatch remains visible.",
+    "source_note_pathway": "The Introduction contains activation wording for the knockdown pathway while Figure 6D shows beta-catenin lower and epithelial markers higher after knockdown. The draft describes the actual marker measurements and proposed pathway rather than certifying a complete causal sequence.",
+    "source_note_mutant": "Text/caption names METTL1 mutation aa 107–109 EIR-to-AAA; last Figure 6I plot labels NC/knock. No intervention identity or curve assignment is invented.",
+    "source_note_RNA_IP": "Supplementary Figure 4 says its upper image half contains other experiments and its lower half is SLC7A7 m7G-RIP in SW480/HCT116. The whole gel is not treated as one fully annotated experiment or chemical-site validation.",
+    "source_note_replicates": "Animal group N and cell biological-replicate counts are not inferred from images. Supplementary raw blots label proteins/cell types but do not fully assign all lanes/replicates; no independent lane accounting is manufactured.",
+    "source_note_survival": "CRC expression comparisons use GSE21510, GSE71187, GSE87211/TCGA; displayed GSE106584 endpoints are RFS/OS. Optimally selected cutoffs, cancer-dependent directions and reused datasets are distinguished from prospective clinical validation.",
+    "evidence_basis": "Complete same-version official JATS/PDF; all six main figures visually read from original PDF pages 5–8 and original Figure 5/6 JPEGs; all five original supplementary figures and accompanying text read in the full DOCX. Raw sources were reused with accepted checksums; no new experiment, correction search or source-script execution was performed.",
+    "pmc_cloud_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11680768.1/PMC11680768.1.xml",
+    "europe_pmc_full_text_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11680768/fullTextXML",
+    "pmc_oai_xml_url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11680768&metadataPrefix=pmc"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This independently written source-located summary accompanies the formal article.",
+  "discovery_layer": {
+    "field_entry": [
+      "Colorectal-cancer cell biology",
+      "Cancer-expression and RNA-regulation research"
+    ],
+    "review_topics": [
+      "Integrating public omics and perturbation assays",
+      "RNA stability and pathway readouts"
+    ],
+    "scientific_role": "A multimodal SLC7A7 study connecting public cancer-expression/prognosis context with CRC motility, molecular and reported RNA-stability experiments.",
+    "evidence_position": "Secondary associations and preclinical observations; chemical identity, selected direction/label conflicts and replicate accounting remain attached to affected claims.",
+    "related_concepts": [
+      "SLC7A7/APC/EMT hypothesis",
+      "Macrophage expression context",
+      "DNA versus RNA modification"
+    ],
+    "citation_contexts": [
+      "Methods: compare datasets, cell perturbation, motility and RNA-decay assays.",
+      "Discussion: distinguish observed readouts and regulatory hypotheses from a unified chemical mechanism or clinical benefit."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What public expression, prognosis and immune context was reported for SLC7A7?",
+        "supported_scope": "CRC and pan-cancer secondary associations with cancer-dependent directions and dataset units retained.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What functional CRC-model observations followed SLC7A7 knockdown?",
+        "supported_scope": "Reported two-cell-line motility assays and qualitative tail-vein lung-colonization observations, without inferred animal replicate N.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "Which molecular readouts motivate the proposed APC/Wnt/EMT and RNA-regulatory hypotheses?",
+        "supported_scope": "APC/epithelial-marker readouts and reported RNA-IP/decay observations, preserving pathway/chemical/label uncertainty.",
+        "evidence_refs": [
+          "KF6",
+          "KF7"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which source distinctions matter for mechanistic follow-up design?",
+        "supported_scope": "DNA-methylation direction, RNA chemical naming, mutant intervention labels and experimental replicate accounting.",
+        "evidence_refs": [
+          "KF3",
+          "KF5",
+          "KF6",
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A reconciled RNA-modification chemical identity or site-specific internal modification mechanism.",
+      "Proven complete APC/Wnt mediation, direct QKI transcript recognition or an unambiguously assigned mutant decay comparison.",
+      "A validated clinical biomarker, clinical treatment efficacy or an inferred quantitative animal effect."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-slc7a7-1",
+        "component": "KF1: Public datasets provide CRC expression and survival associations within a heterogeneous pan-cancer context.",
+        "context": "Retrospective secondary analyses with expression groups selected using an optimal cutoff.",
+        "finding": "Public datasets provide CRC expression and survival associations within a heterogeneous pan-cancer context. Expression scope: 31 cancer types in TCGA/GTEx analyses; CRC comparisons: Higher SLC7A7 expression reported in GSE21510, GSE71187, GSE87211 and TCGA; Displayed survival analysis: GSE106584 Figure 1D: RFS log-rank p<0.0001 and OS p=0.018; baseline risk rows 77 high and 79 low; Heterogeneity: Results describe better OS with high expression in SARC/SKCM but poorer prognosis in other cancers; no universal adverse pan-cancer direction is assumed; Role: Prognostic association with data-dependent grouping, not a validated diagnostic or prospective risk assay.",
+        "evidence_level": "Secondary expression/prognosis associations",
+        "scope": "Retrospective secondary analyses with expression groups selected using an optimal cutoff.",
+        "source_locator": "Methods—Data collection/Survival analysis (Sec3/Par6; Sec4/Par7); Results—Expression and prognosis (Sec19/Par31–Par32); original Figure 1A–E (Fig1), PDF p. 5.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-2",
+        "component": "KF2: Pathway and cell-expression analyses place SLC7A7 in adhesion/EMT and immune-cell contexts.",
+        "context": "Computational enrichment, deconvolution and public single-cell expression displays.",
+        "finding": "Pathway and cell-expression analyses place SLC7A7 in adhesion/EMT and immune-cell contexts. Enrichment: ECM-receptor, focal-adhesion, cell-adhesion, EMT and Wnt/beta-catenin-related patterns reported; Immune context: Positive macrophage and several immune-score associations; selected negative correlations include neutrophil/Th17 scores; Cell context: Source displays high macrophage expression in colon and other tissues; CRC GSE146771 Smart-seq 2/10X panels provide single-cell context; COAD pathway groups: Figure 6B caption labels 243 higher and 243 lower SLC7A7 expression profiles; higher EMT activity in the higher group, with printed FDR 1.7e-5.; Scope: Expression enrichment/correlation does not demonstrate recruitment or causal activation of an immune population.",
+        "evidence_level": "Computational pathway and cell-expression context",
+        "scope": "Computational enrichment, deconvolution and public single-cell expression displays.",
+        "source_locator": "Methods—Enrichment and immune infiltration analysis (Sec5/Par8); Results (Sec20/Par33); original Figures 1F,2,3A–B and 6A–B (Fig1–Fig3/Fig6); PDF pp. 5–7.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-3",
+        "component": "KF3: DNA-methylation and genomic analyses add association context, with a specific methylation-direction conflict.",
+        "context": "TCGA/COSMIC secondary data; separate from RNA modification assays.",
+        "finding": "DNA-methylation and genomic analyses add association context, with a specific methylation-direction conflict. Data type: Methods specifies TCGA DNA-methylation data; CRC direction conflict: Results/Discussion call tumour methylation higher; actual Figure 3D shows a lower tumour box centre than normal, with printed p=0.0014; Expression correlation: Figure 3F displays an inverse methylation/expression correlation, r=-0.45; Genomic context: Source reports COSMIC 503 mutation-bearing records and labels a COAD somatic-mutation map 1.23%; these are not a new clinical cohort; Other associations: CNV/expression and mutation/gain/loss profiles differ across cancers or SLC7A7 expression groups; Scope: No DNA-methylation direction is chosen as reconciled, and these analyses do not establish SLC7A7-induced genome instability or identify an RNA modification.",
+        "evidence_level": "Secondary DNA/genomic association with source conflict",
+        "scope": "TCGA/COSMIC secondary data; separate from RNA modification assays.",
+        "source_locator": "Methods—Methylation/Genomic alterations/Genomic instability (Sec6–Sec8, Par9–Par11); Results (Sec21/Par34, Sec22/Par35); original Figures 3C–F and 4 (Fig3/Fig4), PDF pp. 7–8; Discussion (Sec25/Par41–Par42).",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-4",
+        "component": "KF4: SLC7A7 knockdown reduced migration and invasion in the reported CRC cell assays.",
+        "context": "Two RNA-interference conditions in HCT116 and SW480.",
+        "finding": "SLC7A7 knockdown reduced migration and invasion in the reported CRC cell assays. Perturbation: si-SLC7A7-01 and -02 versus negative-control siRNA; reduced SLC7A7 by qPCR/Western blot; Transwell: Reported migrated and invaded cell counts lower after knockdown in both cell lines; Wound healing: Images at 0/24/48 hours and reduced displayed migration area at 48 hours; Measurement: Functional cell-model observations; no effect size or biological replicate N is inferred from representative fields or bar counts.",
+        "evidence_level": "CRC cell perturbation/motility readouts",
+        "scope": "Two RNA-interference conditions in HCT116 and SW480.",
+        "source_locator": "Methods—Cell culture, Cell transfection and Wound healing/transwell (Sec9/Par12; Sec11/Par24; Sec14/Par27); Results (Sec23/Par36); original Figure 5A–E (Fig5); original Supplementary Figure 1.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-5",
+        "component": "KF5: A tail-vein mouse experiment supplies reported lung-colonization observations.",
+        "context": "Preclinical HCT116 dissemination/colonization setting, distinct from spontaneous human metastasis.",
+        "finding": "A tail-vein mouse experiment supplies reported lung-colonization observations. Model: Stable HCT116 sh-NC or sh-SLC7A7 cells delivered by tail vein to nude mice; Dose/readout: Methods: 2×10^6 cells in 100 microlitres PBS; lungs collected on day 42 for H&E; Reported observation: Figure 5F presents bioluminescence/H&E examples; Results reports reduced lung lesions with SLC7A7 downregulation; Unit limit: Animal group sizes, replicate accounting and an aggregate quantitative lesion effect are not supplied; displayed mice are not used to infer N; Role: A reported model observation supporting follow-up of dissemination biology, not clinical antimetastatic efficacy.",
+        "evidence_level": "Reported qualitative mouse lung-colonization observations",
+        "scope": "Preclinical HCT116 dissemination/colonization setting, distinct from spontaneous human metastasis.",
+        "source_locator": "Methods—Animal models (Sec16/Par29); Results (Sec23/Par36); original Figure 5F (Fig5); original PDF p. 9.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-6",
+        "component": "KF6: APC and epithelial-marker readouts provide molecular context for an APC/Wnt/EMT hypothesis.",
+        "context": "Molecular measurements after SLC7A7 knockdown in CRC cells.",
+        "finding": "APC and epithelial-marker readouts provide molecular context for an APC/Wnt/EMT hypothesis. APC: Figure 6C explicitly labels APC and reports higher APC mRNA/protein after knockdown in HCT116/SW480; Other markers: Figure 6D reports higher E-cadherin/ZO-1 and lower beta-catenin after knockdown; Source wording: A Results sentence calls the increased signal si-SLC7A7 expression, while the panel/caption identifies APC; the panel analyte is retained explicitly; Mechanistic scope: These readouts and enrichment motivate the pathway hypothesis; they do not establish the full SLC7A7-to-APC-to-Wnt causal chain or clinical treatment benefit.",
+        "evidence_level": "CRC molecular expression readouts",
+        "scope": "Molecular measurements after SLC7A7 knockdown in CRC cells.",
+        "source_locator": "Methods—qRT-PCR/Western blot (Sec10/Par13–Par23; Sec12/Par25); Results (Sec24/Par37); original Figure 6C–D (Fig6); original Supplementary Figures 2–3; Discussion (Sec25/Par40, Par42).",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-slc7a7-7",
+        "component": "KF7: RNA-IP and decay experiments report a regulatory hypothesis without resolving the modification identity.",
+        "context": "SW480 antibody-IP and QKI/METTL1 perturbation experiments.",
+        "finding": "RNA-IP and decay experiments report a regulatory hypothesis without resolving the modification identity. Chemical labels: Formal title: N7-methyladenosine; Abstract/Methods/Results: N7-methylguanosine or anti-m7G/m7G. These labels are not silently unified; RNA-IP: Anti-m7G-labelled IP shows SLC7A7-associated signal relative to IgG/input context; predicted sites are shown from m7G-Hub; QKI experiment: QKI knockdown is accompanied by higher remaining relative SLC7A7 mRNA at later actinomycin-D time points than control; METTL1 overexpression: The reported overexpression plot labels OV-METTL1 and OV-METTL1-NC. The OV-METTL1 curve shows higher relative SLC7A7 signal at later actinomycin-D time points.; Mutant-label issue: Body/caption describe METTL1 aa 107–109 EIR-to-AAA mutant; the final Figure 6I decay plot instead labels curves NC/knock, leaving intervention assignment unresolved; Time-course designs: Methods ActD dose 200 ng/mL; QKI figure 0/4/8/12/24 hours; METTL1 plots 0/4/12/20 hours. No numerical half-life is reconstructed.; Scope: Reported RNA stability/IP observations do not certify a unified chemical identity, a specific internal modification site or direct QKI recognition of this transcript.",
+        "evidence_level": "Reported RNA-IP/decay experiments with identity/label uncertainty",
+        "scope": "SW480 antibody-IP and QKI/METTL1 perturbation experiments.",
+        "source_locator": "Formal title versus Abstract; Methods—Actinomycin D/me-RIP (Sec13/Par26; Sec15/Par28); Results (Sec24/Par37); original Figure 6E–I (Fig6); original Supplementary Figures 4–5; Discussion (Sec25/Par45).",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}
