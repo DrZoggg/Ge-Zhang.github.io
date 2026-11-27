@@ -46,3 +46,7 @@
 - [A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo](https://drgezhang.com/papers/doi-10-1007-s11426-026-3629-x.html) — DOI: 10.1007/s11426-026-3629-x
 - [Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine](https://drgezhang.com/papers/doi-10-1097-re9-0000000000000037.html) — DOI: 10.1097/re9.0000000000000037
 - [What one patient can teach the next](https://drgezhang.com/papers/doi-10-1002-ctm2-70900.html) — DOI: 10.1002/ctm2.70900
+- [A gene interaction network-based molecular taxonomy of dilated cardiomyopathy highlighting immune and inflammatory heterogeneity](https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html) — DOI: 10.1007/s10238-026-02130-6
+- [Aspirin after PCI in Acute Coronary Syndromes](https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html) — DOI: 10.1056/nejmc2518964
+- [Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study](https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html) — DOI: 10.15212/bioi-2026-0017
+- [Multimodal AI for cardiovascular care must learn when not to predict](https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html) — DOI: 10.1016/j.medd.2026.100004

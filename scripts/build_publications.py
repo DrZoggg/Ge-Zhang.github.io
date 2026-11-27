@@ -1948,7 +1948,7 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     markdown_url = absolute(site_root, f"papers/{slug}.md")
     is_v2 = bool(deep_content and deep_content.get("version") == 2)
     pilot = is_v2 and (evidence_presentation.enabled(doi) if presentation is None else presentation)
-    standalone_v2 = is_v2 and publication.get("deep_geo") is False
+    standalone_v2 = is_v2 and (publication.get("deep_geo") is False or evidence_presentation.standalone_v2(doi))
     if pilot and (not evidence_presentation.enabled(doi) or not official_abstract):
         raise ValueError('Scholarly-first requires an allowlisted V2 with its Official Abstract')
     is_pending = publication.get("paper_geo_status") == "pending"
@@ -1990,10 +1990,10 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     ])
     if is_pending:
         deep_badge = '<span class="badge">Deep GEO · Pending</span>'
-    elif deep_content is not None and publication.get("deep_geo", True):
-        deep_badge = '<span class="badge">Deep GEO</span>'
     elif standalone_v2:
         deep_badge = '<span class="badge">Paper GEO V2</span>'
+    elif deep_content is not None and publication.get("deep_geo", True):
+        deep_badge = '<span class="badge">Deep GEO</span>'
     else:
         deep_badge = ""
     citation = [
@@ -2315,13 +2315,13 @@ def render_publications_page(items, config, *, citation_metadata=None):
                 links.append(f'<a href="{html.escape(paper_url, quote=True)}#cite-this-paper">Cite</a>')
             if publication["featured"]:
                 links.append('<span class="badge badge-featured">Featured</span>')
-            if publication["deep_geo"]:
+            doi = norm_doi(publication.get("doi"))
+            if publication["deep_geo"] and not evidence_presentation.standalone_v2(doi):
                 badge = (
                     "Deep GEO · Pending"
                     if publication["paper_geo_status"] == "pending" else "Deep GEO"
                 )
                 links.append(f'<span class="badge">{badge}</span>')
-            doi = norm_doi(publication.get("doi"))
             if doi:
                 links.append(f'<a href="{html.escape(doi_url(doi), quote=True)}">DOI</a>')
             elif publication.get("url"):

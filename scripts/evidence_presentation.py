@@ -1,8 +1,8 @@
-"""Presentation-only pilot. No scientific text, metadata or extraction dependencies."""
+"""Reviewed presentation choices for paper evidence."""
 import html
 import json
 from html.parser import HTMLParser
-from sync_common import ROOT
+from sync_common import ROOT, norm_doi
 from evidence_discovery import ui
 import research_guides
 
@@ -66,11 +66,24 @@ def guide_navigation(doi, markdown=False):
                        '<h2>Related research resource</h2><ul>' + ''.join(links) + '</ul></aside>')
 
 
-def enabled(doi):
+def configured_modes():
     config = json.loads((ROOT/'data/evidence_presentation.json').read_text(encoding='utf-8'))
-    if not set(config) <= PILOT_DOIS or any(v != 'scholarly-first-v1' for v in config.values()):
-        raise ValueError('Unsupported presentation pilot scope/version')
-    return doi.lower() in config
+    for doi, mode in config.items():
+        if not doi.startswith('10.') or norm_doi(doi) != doi:
+            raise ValueError('Invalid paper presentation DOI')
+        if mode == 'standalone-v2-v1':
+            continue
+        if mode != 'scholarly-first-v1' or doi not in PILOT_DOIS:
+            raise ValueError('Unsupported paper presentation scope/version')
+    return config
+
+
+def enabled(doi):
+    return configured_modes().get(doi.lower()) == 'scholarly-first-v1'
+
+
+def standalone_v2(doi):
+    return configured_modes().get(doi.lower()) == 'standalone-v2-v1'
 
 
 def question_summary(content, *, anchor=False):

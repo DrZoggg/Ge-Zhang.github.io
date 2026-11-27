@@ -148,9 +148,9 @@ validation, upstream submission, merge, public release, external consumers recei
 the update and observed use separately; acceptance or a PR does not establish
 delivery or adoption growth.
 
-Scientific research, biomedical interpretation, Paper GEO content design, numerical verification, and scientific source-of-truth are prepared outside Codex unless a task explicitly provides them.
+The default supplied-content workflow applies to work scoped to existing scientific material. The owner's full-portfolio contract of 2026-11-27 authorizes Codex to read lawful primary sources, design and draft Gold, verify numbers and locators, and obtain independent scientific review before publishing new content.
 
-Do not independently reinterpret, expand, exaggerate, or invent biomedical evidence.
+Keep source-backed interpretation within the original study design and evidence level. Do not invent biomedical results or overstate the evidence.
 
 The default project workflow is:
 
@@ -168,8 +168,12 @@ For the owner's explicitly authorized Paper-first growth work (including the
 2026-11-02 continuation), Codex may investigate primary literature, develop
 source-backed explanations and cross-paper comparison materials, independently
 verify them and publish within the existing authorization. This overrides the
-default Web Chat preparation step for those work packages. Preserve original
-Gold and paper identity; attach provenance and reasons to new or corrected material.
+default Web Chat preparation step for those work packages. The 2026-11-27 scope
+covers every formally published work in the current master. Reuse reviewed V2
+before drafting missing evidence, keep preprints and patents distinct, and
+preserve formal identity and the Featured membership and order. Keep early paper
+evidence accessible when enabling Deep GEO. Attach provenance and reasons to new
+or corrected material.
 Proactively discover and test relevant growth opportunities, rather than requiring
 a pre-existing code defect or a new platform measurement before acting. Separate
 broad-question answers from narrower paper examples. Before a global external-wait

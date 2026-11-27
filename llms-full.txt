@@ -24,7 +24,7 @@
 - DOI: 10.1007/s10238-026-02130-6
 - HTML: https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.html
 - Markdown: https://drgezhang.com/papers/doi-10-1007-s10238-026-02130-6.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## A redox-responsive reversible photoacoustic molecular probe for visualizing atherosclerotic plaque redox status in vivo
 - Journal: Science China Chemistry
@@ -51,7 +51,7 @@
 - DOI: 10.1056/nejmc2518964
 - HTML: https://drgezhang.com/papers/doi-10-1056-nejmc2518964.html
 - Markdown: https://drgezhang.com/papers/doi-10-1056-nejmc2518964.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Circadian Immunity and Vascular Inflammation in Cardiovascular Disease Chronotherapy Windows: Time for a Re-Assessment
 - Journal: Med Research
@@ -69,7 +69,7 @@
 - DOI: 10.15212/bioi-2026-0017
 - HTML: https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html
 - Markdown: https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Endothelial dysfunction and long-term survival in cardiovascular-kidney-metabolic syndrome stages 0-3: An EASIX-based national cohort study
 - Journal: Science Progress
@@ -96,7 +96,7 @@
 - DOI: 10.1016/j.medd.2026.100004
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Multimodal Artificial Intelligence for Microbiome-Informed Precision Cardiovascular Medicine
 - Journal: Cardiac Research
