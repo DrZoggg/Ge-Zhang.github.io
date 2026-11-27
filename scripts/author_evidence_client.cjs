@@ -329,7 +329,10 @@ function primarySources(work) {
         source_fields:[row.path + '.' + key,...pmcid.source_fields],availability:'not_checked'});
     }
     for (const row of provenance) {
-      const url = https(row.value?.url);
+      const v2OaiField = row.path === 'work.provenance' && work.evidence_status === 'reviewed_v2'
+        && present(row.value?.pmc_oai_xml_url);
+      const key = v2OaiField ? 'pmc_oai_xml_url' : 'url';
+      const url = https(row.value?.[key]);
       if (!url || url.origin !== 'https://pmc.ncbi.nlm.nih.gov'
           || url.pathname !== '/api/oai/v1/mh/' || url.hash) continue;
       const query = url.searchParams;
@@ -337,7 +340,7 @@ function primarySources(work) {
           || query.get('metadataPrefix') !== 'pmc'
           || query.get('identifier') !== 'oai:pubmedcentral.nih.gov:' + archiveId) continue;
       routes.push({provider:'PMC',kind:'full_text_xml_oai',url:url.href,
-        source_fields:[row.path + '.url',...pmcid.source_fields],availability:'not_checked'});
+        source_fields:[row.path + '.' + key,...pmcid.source_fields],availability:'not_checked'});
       break;
     }
     routes.push({provider:'PMC',kind:'full_text_xml_api',

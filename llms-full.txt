@@ -204,7 +204,7 @@
 - DOI: 10.1111/jcmm.70475
 - HTML: https://drgezhang.com/papers/doi-10-1111-jcmm-70475.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-jcmm-70475.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis
 - Journal: iScience
