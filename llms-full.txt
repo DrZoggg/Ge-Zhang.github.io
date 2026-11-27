@@ -528,7 +528,7 @@
 - DOI: 10.1016/j.intimp.2024.112574
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments
 - Journal: Frontiers in Oncology

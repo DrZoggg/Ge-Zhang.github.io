@@ -1883,8 +1883,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-intimp-2024-112574.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {
