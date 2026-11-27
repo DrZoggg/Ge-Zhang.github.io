@@ -274,8 +274,13 @@ def render_intent_layer(discovery):
     navigation = []
     for intent in discovery['intents']:
         anchor = 'intent-' + intent['id']
-        navigation.append('<li><a href="#' + escape(anchor, quote=True) + '">'
-                          + escape(intent['question']) + '</a></li>')
+        topic_link = '<a href="#' + escape(anchor, quote=True) + '">' + escape(intent['question']) + '</a>'
+        for query in intent['focused_queries']:
+            if query['id'] == 'gist-site-management-3' and query.get('context_answer'):
+                # The normal guide exit is beyond the stock reader's Questions-page limit.
+                guide_url = escape(query['context_answer']['guide_url'], quote=True)
+                topic_link += ' · <a href="' + guide_url + '">GIST resection evidence guide</a>'
+        navigation.append('<li>' + topic_link + '</li>')
         queries = []
         for query in intent['focused_queries']:
             evidence = []
