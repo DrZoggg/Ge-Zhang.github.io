@@ -15,6 +15,8 @@ RETAINED_BACKLINKS = frozenset({
     ('10.3389/fonc.2021.659217', '10.1200/po.24.00089'),
     ('10.1016/j.ejso.2024.108527', '10.1038/s41598-025-98859-3'),
     ('10.1016/j.isci.2025.114320', '10.1093/hmg/ddae189'),
+    ('10.1111/jcmm.70475', '10.1016/j.intimp.2024.112574'),
+    ('10.1111/jcmm.70475', '10.2147/jir.s495784'),
 })
 MIME_SUFFIXES = {
     'application/vnd.citationstyles.csl+json': '.csl.json',
