@@ -537,7 +537,7 @@
 - DOI: 10.3389/fonc.2024.1425895
 - HTML: https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease
 - Journal: Human Molecular Genetics
@@ -582,7 +582,7 @@
 - DOI: 10.1007/s13402-023-00912-8
 - HTML: https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html
 - Markdown: https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)
 - Journal: European Journal of Surgical Oncology
@@ -591,7 +591,7 @@
 - DOI: 10.1016/j.ejso.2024.108527
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Plasma Olink Proteomics Reveals Novel Biomarkers for Prediction and Diagnosis in Dilated Cardiomyopathy with Heart Failure
 - Journal: Journal of Proteome Research
@@ -609,7 +609,7 @@
 - DOI: 10.1016/j.csbj.2024.04.044
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Quantifying Personalized Shift-Work Molecular Portraits Underlying Alzheimer's Disease through Computational Biology
 - Journal: The Journal of Prevention of Alzheimer's Disease

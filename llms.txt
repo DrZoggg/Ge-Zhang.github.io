@@ -72,3 +72,7 @@
 - [Deciphering lung adenocarcinoma evolution: Integrative single-cell genomics identifies the prognostic lung progression associated signature](https://drgezhang.com/papers/doi-10-1111-jcmm-18408.html) — DOI: 10.1111/jcmm.18408
 - [Deciphering the prognostic role of endoplasmic reticulum stress in lung adenocarcinoma: integrating prognostic prediction and immunotherapy strategies](https://drgezhang.com/papers/doi-10-1007-s10238-024-01439-4.html) — DOI: 10.1007/s10238-024-01439-4
 - [Deciphering the tumor immune microenvironment from a multidimensional omics perspective: insight into next-generation CAR-T cell immunotherapy and beyond](https://drgezhang.com/papers/time-cart.html) — DOI: 10.1186/s12943-024-02047-2
+- [Identification of potential biomarkers for lung adenocarcinoma: a study based on bioinformatics analysis combined with validation experiments](https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html) — DOI: 10.3389/fonc.2024.1425895
+- [Omics-based molecular classifications empowering in precision oncology](https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html) — DOI: 10.1007/s13402-023-00912-8
+- [Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)](https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html) — DOI: 10.1016/j.ejso.2024.108527
+- [Proteomics appending a complementary dimension to precision oncotherapy](https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html) — DOI: 10.1016/j.csbj.2024.04.044
