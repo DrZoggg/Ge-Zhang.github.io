@@ -108,6 +108,25 @@ class CardiovascularGuideTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'identity/version'):
             self.packet(changed)
 
+    def test_aihf_official_source_bridge_is_scoped_to_the_visible_locator(self):
+        packet = g.comparison_packet(self.data)
+        page, markdown, _ = g.render_comparison(packet)
+        pdf = 'https://www.ebi.ac.uk/biostudies/files/S-EPMC11310499/41467_2024_50415_MOESM1_ESM.pdf#page=63'
+        label = 'comparator predictor-set refitting'
+        title = 'Supplementary Figures 5–6 (BioStudies), pp. 63–64'
+        self.assertEqual(page.count('<a href="' + pdf + '" title="' + title + '">' + label + '</a>'), 1)
+        self.assertEqual(markdown.count('[' + label + '](' + pdf + ' "' + title + '")'), 1)
+        other, _ = g.render_research_use(packet['research_use'], packet['studies'],
+                                        'https://drgezhang.com/research/other-guide.html')
+        self.assertNotIn(pdf, other)
+        source = json.loads((g.ROOT / 'data/deep_geo/aihflevel.json').read_text(encoding='utf-8'))
+        self.assertEqual(source['provenance']['nih_bioc_full_text_url'],
+                         'https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC11310499/unicode')
+        self.assertEqual(source['provenance']['biostudies_supplement_pdf_url'], pdf.split('#')[0])
+        self.assertEqual(next(f for f in source['key_findings'] if f['id'] == 'KF3')['source_locator'],
+                         'Supplementary Fig. 3c')
+        self.assertNotIn(pdf, g.task_workspace_csv(packet['research_use']['task_workspace']))
+
     def test_global_intro_is_main_content_and_legacy_scope_semantics_retained(self):
         class IntroParser(HTMLParser):
             def __init__(self):

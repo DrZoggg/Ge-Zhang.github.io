@@ -432,6 +432,8 @@ CRCCD, BIDMC, MIMIC-III
 - PMCID: [PMC11310499](https://pmc.ncbi.nlm.nih.gov/articles/PMC11310499/)
 - Code: https://github.com/DrZoggg/AIHFLevel
 - Clinical tool: https://www.hf-ai-survival.com
+- Machine-readable full text (NIH BioC): https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC11310499/unicode
+- Supplementary Information PDF (BioStudies): https://www.ebi.ac.uk/biostudies/files/S-EPMC11310499/41467_2024_50415_MOESM1_ESM.pdf
 
 ## Evidence-page notice
 

@@ -86,8 +86,16 @@ def references(refs, sources, markdown=False):
 
 
 def supporting_locator(text, doi, markdown=False, file_fallback=False):
-    """Link the reviewed Olink S5 locator without changing its source wording."""
+    """Link reviewed supplement locators without changing their source wording."""
     rendered = text if markdown else html.escape(text)
+    if (doi or '').lower() == '10.1038/s41467-024-50415-9':
+        url = 'https://www.ebi.ac.uk/biostudies/files/S-EPMC11310499/41467_2024_50415_MOESM1_ESM.pdf#page=63'
+        title = 'Supplementary Figures 5–6 (BioStudies), pp. 63–64'
+        for label in ('comparator predictor-set refitting',):
+            link = ('[' + label + '](' + url + ' "' + title + '")') if markdown else (
+                '<a href="' + url + '" title="' + title + '">' + label + '</a>')
+            rendered = rendered.replace(label, link)
+        return rendered
     if (doi or '').lower() != '10.1021/acs.jproteome.4c00522' or 'Table S5' not in text:
         return rendered
     def link(label, url):
@@ -244,7 +252,7 @@ def search_documents(root, start):
 # and its contract above remain unchanged; each new selection is reviewed alone.
 COMPARISONS = {
     'circadian-evidence-levels': '82177c68ac9c9961ca3fef0434251dc62f737f08d874e7ef1d816b042e74521f',
-    'cardiovascular-prediction-evidence': '35108b08f989b704b194bee90bf683431c342ed98ccfd08523130717871ae395',
+    'cardiovascular-prediction-evidence': '47ad53519b5ea919a5da29adeff38c99533c4fa4e678b83de27b65aadfcebd19',
     'atherosclerosis-cell-mechanisms': '636efc200861e4b176ed9388e7d46df0a2f1a6a82c081b09654be9846c5f225b',
     'cancer-omics-validation': '268edd2d2d7641793dbf54d27f02125aeb19ce922815ba1bf9f6046688d5a121',
 }
@@ -574,11 +582,13 @@ def render_research_use(use, studies, guide_url=None):
     body.append('</ul><h3>Sources and locators</h3><ol>')
     md.append('### Sources and locators')
     for source in use['sources']:
+        locator_doi = source['doi'] if (guide_url == 'https://drgezhang.com/research/cardiovascular-prediction-evidence.html'
+                                        and source['id'] == 'aihflevel') else ''
         body.append('<li id="' + sid + '-source-' + source['id'] + '"><a href="' + esc(source['url'], quote=True) + '">'
                     + esc(source['title']) + '</a> · DOI: <a href="https://doi.org/' + esc(source['doi'], quote=True) + '">'
-                    + esc(source['doi']) + '</a> — ' + esc(source['locator']) + '</li>')
+                    + esc(source['doi']) + '</a> — ' + supporting_locator(source['locator'], locator_doi) + '</li>')
         md.append('- [' + source['title'] + '](' + source['url'] + ') · DOI: [' + source['doi']
-                  + '](https://doi.org/' + source['doi'] + ') — ' + source['locator'])
+                  + '](https://doi.org/' + source['doi'] + ') — ' + supporting_locator(source['locator'], locator_doi, markdown=True))
     body.append('</ol></section>')
     return '\n'.join(body), md
 
