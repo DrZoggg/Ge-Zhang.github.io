@@ -3229,7 +3229,7 @@
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md",
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "authors": [
         "Meirong Shan",
         "Qian Guo",
@@ -3251,85 +3251,299 @@
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.ris",
       "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.csl.json",
-      "evidence_status": "limited",
-      "question_count": 0,
-      "key_findings": [],
-      "field_entry": [],
-      "review_topics": [],
-      "concepts": {},
-      "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#limited-evidence",
-      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
-      "provenance": [
+      "evidence_status": "reviewed_v2",
+      "question_count": 8,
+      "key_findings": [
         {
-          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
-          "label": "Article source",
-          "format": "Official publisher or PMC full text reviewed locally",
-          "locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)"
+          "id": "KF1",
+          "claim": "The study characterizes aliskiren-associated spontaneous reports in two complementary reporting systems.",
+          "context": "Retrospective FAERS and WHO-VigiAccess pharmacovigilance, with database totals kept separate.",
+          "evidence": [
+            {
+              "label": "FAERS reports",
+              "value": "5,596 aliskiren-associated reports"
+            },
+            {
+              "label": "VigiAccess reports",
+              "value": "5,549 aliskiren-associated reports"
+            },
+            {
+              "label": "Evidence unit",
+              "value": "Spontaneously submitted suspected-event reports, not the number of exposed patients"
+            },
+            {
+              "label": "Methods",
+              "value": "ROR, PRR, BCPNN and MGPS disproportionality methods; MedDRA version 26.0 PT/SOC standardization"
+            }
+          ],
+          "source_locator": "Method: Data sources (sec003), Data standardization (sec004), Statistical analysis (sec005). Results: Descriptive analysis of AE report characteristics (sec007); Tables 1-2.",
+          "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/0",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf1"
         },
         {
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13048407/",
-          "label": "PubMed Central full text",
-          "format": "Public archive of the published article",
-          "locator": "PMCID PMC13048407; DOI 10.1371/journal.pone.0346326"
+          "id": "KF2",
+          "claim": "The published analyses identify five shared organ-system reporting-signal categories.",
+          "context": "Source-specific SOC summaries in FAERS and VigiAccess.",
+          "evidence": [
+            {
+              "label": "Shared categories",
+              "value": "Investigations; cardiac disorders; renal and urinary disorders; vascular disorders; metabolism and nutrition disorders"
+            },
+            {
+              "label": "FAERS renal/urinary category",
+              "value": "1,217 entries; reported ROR 3.30 (95% CI 3.12-3.50)"
+            },
+            {
+              "label": "VigiAccess renal/urinary category",
+              "value": "864 entries; reported ROR 3.27 (95% CI 3.06-3.50)"
+            },
+            {
+              "label": "Cardiac disorders",
+              "value": "FAERS: 1,655 entries, ROR 3.31 (95% CI 3.15-3.48); VigiAccess: 1,102 entries, ROR 2.84 (95% CI 2.67-3.02)"
+            },
+            {
+              "label": "Comparison scope",
+              "value": "Agreement in published reporting categories; overlap between databases and unresolved comparison-cell construction preclude treating this as independent clinical-risk validation"
+            }
+          ],
+          "source_locator": "Results: Distribution of AEs at the SOCs level in two databases; Tables 3-4, specifically starred renal/urinary, cardiac, investigations, vascular and metabolism/nutrition rows; Figure 4 caption.",
+          "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/1",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf2"
         },
         {
-          "url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003",
-          "label": "Official supplementary material",
-          "format": "Publisher-hosted supplementary document",
-          "locator": "S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025"
+          "id": "KF3",
+          "claim": "The most frequent reported terms differ from the terms with the largest printed disproportionality estimates.",
+          "context": "PT-level descriptive and signal-strength tables, used to distinguish frequency from signal magnitude.",
+          "evidence": [
+            {
+              "label": "Frequent FAERS terms",
+              "value": "Blood pressure increased: 395; dyspnoea: 351; blood creatinine increased: 335; hypertension: 295; dizziness: 287"
+            },
+            {
+              "label": "Frequent VigiAccess terms",
+              "value": "Blood pressure increased: 465; drug ineffective: 355; dizziness: 334; hypertension: 314; blood creatinine increased: 287"
+            },
+            {
+              "label": "Small-count high-ROR example",
+              "value": "FAERS paradoxical pressor response: n=3, printed ROR 775.96 (95% CI 216.46-2781.64)"
+            },
+            {
+              "label": "Interpretation",
+              "value": "A large reporting ratio can accompany very few reports and a wide interval; it is not an incidence estimate or a ranking of event severity"
+            }
+          ],
+          "source_locator": "Results: Detection of AE signals at the PT level; Table 5 frequency-ranked rows 1-5 and Table 6 FAERS row 1; S3 Table, TABLE 3 and TABLE 4.",
+          "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/2",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf3"
         },
         {
-          "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0346326.s004&type=supplementary",
-          "label": "VigiAccess supplementary workbook",
-          "format": "Publisher-hosted spreadsheet",
-          "locator": "S4 Table, Preferred Term worksheet, cells I2:L2073"
+          "id": "KF4",
+          "claim": "The 2,209 reports with usable onset information had a median reported onset time of 62 days.",
+          "context": "Descriptive time-to-onset analysis of the FAERS reports with usable dates.",
+          "evidence": [
+            {
+              "label": "Usable onset subset",
+              "value": "2,209 reports; S3 records 3,387 missing or invalid onset times, 60.53% of 5,596 reports"
+            },
+            {
+              "label": "Median and IQR",
+              "value": "62 days; IQR 7-282 days"
+            },
+            {
+              "label": "First 30 days",
+              "value": "861 reports: 38.98% of the usable-onset subset, or 15.39% of all 5,596 FAERS reports"
+            },
+            {
+              "label": "After 360 days",
+              "value": "450 reports: 20.37% of the usable-onset subset, or 8.04% of all 5,596 FAERS reports"
+            },
+            {
+              "label": "Figure interpretation",
+              "value": "Figure 6 plots cumulative percent of reported onset times; it does not supply an exposed-population cumulative-incidence denominator"
+            }
+          ],
+          "source_locator": "Results: Analysis of the onset time of aliskiren AEs; Figures 5-6 and Figure 6 caption; S3 Table, TABLE 1 onset-time rows and TABLE 6.",
+          "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/3",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf4"
         },
         {
-          "url": "https://who-umc.org/vigibase-data-access/vigibase-faq/",
-          "label": "Official VigiAccess data scope",
-          "format": "Uppsala Monitoring Centre guidance",
-          "locator": "Is any VigiBase data available to the public?"
+          "id": "KF5",
+          "claim": "Demographic descriptions are strongly affected by missing age information.",
+          "context": "Report-characteristic tables, with recorded demographics distinguished from population-level risk.",
+          "evidence": [
+            {
+              "label": "FAERS age missing",
+              "value": "2,760 of 5,596 reports, 49.32%"
+            },
+            {
+              "label": "VigiAccess age unknown",
+              "value": "2,562 of 5,549 reports, 46.17%"
+            },
+            {
+              "label": "Age 65 and above",
+              "value": "FAERS: 1,747 reports, 31.22% of all reports; VigiAccess: 1,816 reports, 32.73%"
+            },
+            {
+              "label": "Female reports",
+              "value": "FAERS: 2,701 (48.27%); VigiAccess: 2,792 (50.32%)"
+            },
+            {
+              "label": "Interpretation",
+              "value": "These are characteristics of submitted reports; differential exposure, missingness and reporting behavior are not measured by these proportions"
+            }
+          ],
+          "source_locator": "Results: Descriptive analysis of AE report characteristics; Table 1 Sex/Age rows and Table 2 Sex/Age rows; S3 Table, TABLE 1.",
+          "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/4",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf5"
         }
       ],
-      "author_evidence_note": {
-        "reviewed_on": "2026-10-27",
-        "source_record": "data/limited_evidence.json#/papers/10.1371~1journal.pone.0346326",
-        "sections": [
-          {
-            "heading": "Study and evidence unit",
-            "text": "This pharmacovigilance study examines aliskiren-associated spontaneous reports in FAERS and WHO-VigiAccess. The article summarizes 5,596 and 5,549 reports, respectively. Its statistical analysis describes proportional reporting ratio (PRR), reporting odds ratio (ROR), Bayesian confidence propagation neural network (BCPNN), and multi-item gamma Poisson shrinker (MGPS) methods for detecting reporting signals. These descriptive data and methods provide an example for cross-database safety-signal research; the observation units are reports rather than exposed patients.",
-            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
-            "source_locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)"
-          },
-          {
-            "heading": "VigiAccess term counts and report totals",
-            "text": "Public VigiAccess provides aggregated counts. The VigiAccess supplement sums to 17,094 aliskiren-associated preferred-term counts, which is also the target-drug total in each preferred-term comparison. The article separately reports 5,549 VigiAccess reports in its descriptive results. Keep those denominators separate when comparing reporting patterns across databases, and verify the construction of the comparison cells before attempting to reproduce the signal estimates.",
-            "source_url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0346326.s004&type=supplementary",
-            "source_locator": "S4 Table, Preferred Term worksheet, cells I2:L2073; compare the article's descriptive Results and Table 2"
-          },
-          {
-            "heading": "What the supplementary report clarifies",
-            "text": "The official FAERS mining supplement contains annual entries from 2005 through 2025, alongside report characteristics and signal tables. This directly demonstrates a broader reporting period than the main Table 1 caption, which states Q4 2023–Q4 2024. It does not establish the exact extraction quarters or authorize silently replacing the published caption with the Methods window.",
-            "source_url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003",
-            "source_locator": "S3 Table, FAERS Database Mining Report: TABLE 1, Report year rows 2005–2025"
-          },
-          {
-            "heading": "Evidence boundary",
-            "text": "The audit therefore retains study context without endorsing quantitative signal ranking or a clinical safety recommendation. The printed Serious count of 1,037 and Hospitalization count of 1,735 remain unreconciled at the report-versus-outcome level. Author clarification must identify the analytic window and counting rules; reporting associations cannot establish that aliskiren caused an event.",
-            "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
-            "source_locator": "Table 1, AE severity and Serious outcome rows; Discussion limitations"
-          }
+      "field_entry": [
+        "Drug-safety research",
+        "Antihypertensive pharmacovigilance"
+      ],
+      "review_topics": [
+        "Cross-database spontaneous-report analysis",
+        "Interpreting reporting-signal denominators"
+      ],
+      "concepts": {
+        "drug": [
+          "Aliskiren",
+          "Direct renin inhibitor"
+        ],
+        "clinical_context": [
+          "Primary hypertension",
+          "Antihypertensive therapy"
+        ],
+        "data_sources": [
+          "FAERS",
+          "WHO-VigiAccess",
+          "OpenVigil 2.1"
+        ],
+        "reporting_terms": [
+          "MedDRA 26.0",
+          "Preferred term",
+          "System organ class",
+          "Individual case safety report"
+        ],
+        "methods": [
+          "Reporting odds ratio",
+          "Proportional reporting ratio",
+          "BCPNN",
+          "MGPS",
+          "Time to onset"
+        ],
+        "evidence_concepts": [
+          "Disproportionality signal",
+          "Spontaneous reporting",
+          "Report missingness",
+          "Term-count denominator",
+          "Frequency versus signal intensity"
         ]
       },
-      "scope": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
-      "evidence_notice": "The article reports 5,596 FAERS and 5,549 WHO-VigiAccess aliskiren-associated spontaneous reports and describes PRR, ROR, BCPNN and MGPS signal-detection methods. This cross-database design offers material for safety-signal research and methodological comparison. Documented analytic-window and outcome-count uncertainties remain; these are reporting associations rather than incidence or causal risk estimates.",
-      "evidence_scope": null,
-      "limitations": [
-        "Exact FAERS analysis quarters remain unresolved.",
-        "Serious/outcome counting units are not reconciled.",
-        "Spontaneous reporting does not establish incidence or causality."
+      "profile_type": "multicohort_observational",
+      "study_profile": {
+        "profile_type": "multicohort_observational",
+        "study_design": "Retrospective cross-database analysis of aliskiren-associated spontaneous reports. FAERS extraction is described through OpenVigil 2.1 with primary-suspect selection and latest-FDA_DT deduplication for the same CASEID. MedDRA 26.0 standardization precedes descriptive, disproportionality and time-to-onset analyses.",
+        "evidence_type": "Descriptive spontaneous-report characteristics; ROR/PRR and Bayesian BCPNN/MGPS reporting-signal measures; report-based time-to-onset summaries.",
+        "population": "Aliskiren-associated suspected-event reports in FAERS and public WHO-VigiAccess. Primary hypertension is the treatment context; this is not an enrolled or exposure-denominated hypertension patient cohort.",
+        "primary_endpoint": "Database-specific SOC and PT reporting patterns and disproportionality signals.",
+        "secondary_endpoint": "Submitted-report demographics/outcomes and onset-time distribution among records with usable dates.",
+        "data_modalities": [
+          "FAERS spontaneous adverse-event reports",
+          "Public VigiAccess aggregate reporting data",
+          "MedDRA preferred terms and system organ classes",
+          "Report characteristics and outcome categories",
+          "Reported treatment-start/event-onset dates"
+        ],
+        "external_validation": false,
+        "scale_metrics": [
+          {
+            "label": "FAERS descriptive total",
+            "value": "5,596 aliskiren-associated reports"
+          },
+          {
+            "label": "VigiAccess descriptive total",
+            "value": "5,549 aliskiren-associated reports"
+          },
+          {
+            "label": "Usable onset subset",
+            "value": "2,209 reports; median 62 days, IQR 7-282"
+          },
+          {
+            "label": "VigiAccess supplementary term-count total",
+            "value": "17,094 summed preferred-term counts in S4, distinct from the 5,549 descriptive reports"
+          },
+          {
+            "label": "FAERS window stated in Methods",
+            "value": "2004 Q1-2025 Q3; main Table 1 caption instead gives Q4 2023-Q4 2024"
+          },
+          {
+            "label": "VigiAccess stated cutoff",
+            "value": "All historical records through 30 September 2025, as reported in Methods"
+          }
+        ],
+        "counting_note": "The two database totals are not added because reporting-system coverage can overlap and no cross-database patient deduplication is established. Reports, PT/SOC entries, outcome categories and the timed subset are different units. S4 Preferred Term!I2:I2073 sums to 17,094, and I+J is 17,094 for each populated PT row; this does not establish 17,094 unique patients or reports. Time-bin percentages use either 2,209 usable-onset reports or all 5,596 FAERS reports, and their denominators are retained explicitly. Cross-database comparison is not independent external validation of a clinical risk estimate."
+      },
+      "study_profile_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/study_profile",
+      "model_profile": null,
+      "model_profile_source": null,
+      "narrative_genre": null,
+      "gold_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json",
+      "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1371-journal-pone-0346326.json",
+      "gold_content_sha256": "37a5d5ffa64fdf6217cb4a94ab22e766d7bb49969a6ff2d90d59a8138db59a1d",
+      "provenance": {
+        "publisher_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
+        "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13048407/",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41931483/",
+        "doi_url": "https://doi.org/10.1371/journal.pone.0346326",
+        "pmcid": "PMC13048407",
+        "official_bioc_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC13048407/unicode",
+        "version_of_record": "PLOS ONE. Published 3 April 2026;21(4):e0346326. Current publisher citation metadata confirms the title, DOI and ten-author byline.",
+        "license": "Creative Commons Attribution 4.0; current publisher article links the CC BY 4.0 license and NIH BioC identifies CC BY.",
+        "FAERS_supplement_url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s003",
+        "VigiAccess_supplement_url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0346326.s004",
+        "figure6_url": "https://journals.plos.org/plosone/article/figure/image?size=medium&id=10.1371/journal.pone.0346326.g006",
+        "data_availability": "Publisher statement: all relevant data are within the paper and its Supporting Information files. The present summary used the public article and original publisher supplements; no new FAERS or VigiAccess mining experiment was performed.",
+        "source_note_windows": "Methods state FAERS 2004 Q1-2025 Q3 and VigiAccess through 30 September 2025; main Table 1 caption gives Q4 2023-Q4 2024; S3 TABLE 1 includes nonzero annual counts from 2005 through 2025. The exact analytical extraction quarters remain unresolved.",
+        "source_note_outcomes": "Main Table 1 labels 4,559 Non-Serious and 1,037 Serious records, but lists 1,735 Hospitalization and 3,080 Other Serious Medical Events. Outcome categories may differ from or overlap record-level categories, but the exact mapping is not provided and is not inferred.",
+        "source_note_VigiAccess_units": "The original S4 Preferred Term sheet has dimension A1:AN2073, with 2,072 populated data rows. Column I sums to 17,094 and I+J equals 17,094 for each populated PT row; this is separate from 5,549 descriptive reports. Public aggregate counts do not independently demonstrate patient-level deduplication or drug-role filtering.",
+        "source_note_VigiAccess_estimates": "S4 Preferred Term!G2 is Blood pressure increased; I2=465,J2=16629,K2=252991,L2=117665251,M2=13.0055874444361. Main Table 5 prints n 465 with ROR 16.73 (15.21-18.40). Main Table 5 also prints ROR 274.58 for blood pressure inadequately controlled, whereas Table 6 prints 219.24 and S4 M9 stores 219.24275532276. These source-specific estimates are not silently harmonized.",
+        "source_note_SOC_and_PT_totals": "The abstract/body describe 28 SOCs; the original main Tables 3/4 each contain 27 listed SOC data rows. The abstract says 607 significant PTs, while S3 ranked signal tables each contain 220 data rows and the S4 PT sheet has 2,072 populated rows; no merged unique 607-term analysis is inferred from these different source units.",
+        "source_note_signal_rule": "Main Statistical analysis uses EBGM > 2. S3 signal notes specify a >= 3 and EBGM05 > 2 alongside PRR/chi-square, lower ROR confidence limit and IC025 conditions. The point estimate versus lower-bound distinction is preserved.",
+        "source_note_onset": "Original Figure 6 pixels were read after the normal publisher redirect. It labels the y-axis Cumulative Percent(%) and displays median 62.00/IQR 7.00-282.00 days. The title's cumulative-incidence wording is not treated as a patient-incidence estimate.",
+        "evidence_basis": "Current official publisher HTML/citation metadata and license; complete NIH BioC article including original Tables 1-6 XML; actual publisher S3 DOCX and S4 XLSX; original Figure 6 PNG; existing protected publication master and reviewed apatinib Gold for the explicit design-contrast relationship."
+      },
+      "scientific_role": "Retrospective characterization of aliskiren-associated suspected-event reports, organ-system/PT signals and reported time to onset.",
+      "evidence_position": "Spontaneous-report disproportionality and descriptive evidence; database concordance, clinical incidence and causality are different questions.",
+      "related_concepts": [
+        "Renin inhibition",
+        "Report-level missingness",
+        "Frequency versus signal strength"
       ],
-      "scope_source": "data/limited_evidence.json#/papers/10.1371~1journal.pone.0346326/scope"
+      "citation_contexts": [
+        "Methods: comparing FAERS and public VigiAccess data, signal algorithms and observation units.",
+        "Discussion: distinguishing suspected-event reporting patterns from exposed-patient risks and clinical safety recommendations."
+      ],
+      "evidence_scope": {
+        "supports": [
+          "Source-specific descriptions of submitted aliskiren-associated reports and the article's published reporting-signal summaries.",
+          "Comparison of the reported organ-system patterns, PT frequency/intensity tables and a complete-date onset subset.",
+          "Methodological discussion of spontaneous-report denominators, missingness, multiple signal algorithms and cross-source reproducibility."
+        ],
+        "does_not_establish": [
+          "Incidence, absolute or comparative patient risk, a causal adverse-drug reaction, or the relative safety of aliskiren versus another treatment.",
+          "A pooled independent cohort from the two database totals, or event-probability/hazard estimates from cumulative percentages of submitted reports.",
+          "New prescribing restrictions, screening recommendations or proof that an unlisted event is an established aliskiren adverse reaction."
+        ]
+      },
+      "limitations": [
+        "Spontaneous reports are subject to missingness, reporting differences, confounding and possible overlap between databases; there is no exposed-patient denominator for incidence or causal risk.",
+        "The main FAERS window is internally inconsistent: Methods 2004 Q1-2025 Q3, Table 1 caption Q4 2023-Q4 2024 and annual entries 2005-2025 in S3.",
+        "Table 1 reports 1,037 Serious records but 1,735 Hospitalization entries and 3,080 Other Serious Medical Events; the report-versus-outcome relationship is not sufficiently explained to reconcile these counts.",
+        "S4 preferred-term comparison cells use a 17,094 target-drug term-count total rather than the 5,549 descriptive reports, and some stored estimates differ from printed main-table values; exact quantitative signal ranking requires clarification.",
+        "Onset dates are missing or invalid for 3,387 FAERS reports (60.53%). Unequal or open-ended time bins and a cumulative report-time curve do not establish a bimodal patient hazard."
+      ],
+      "scope_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/evidence_scope"
     },
     {
       "id": "doi-10-1126-science-aek9583",
@@ -21566,6 +21780,132 @@
       "evidence_refs_status": "resolved"
     },
     {
+      "id": "doi-10-1371-journal-pone-0346326--qa-1",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 1,
+      "question": "What is the observation unit in this cross-database study?",
+      "answer": "The main descriptive totals are 5,596 FAERS and 5,549 VigiAccess aliskiren-associated spontaneous reports. They are not exposed-patient denominators and should not be pooled as an independent patient cohort. A report can contribute more than one event term or outcome category.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-1",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/0/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/0/answer",
+      "answer_sha256": "72ddc4e268cf026328ec94d77363c269fd742c76495dbd9aa1228fc9920589b2",
+      "evidence_refs": [
+        "KF1"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-2",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 2,
+      "question": "How were the reports standardized and signals identified?",
+      "answer": "The article describes FAERS primary-suspect selection, latest-record deduplication by CASEID/FDA_DT and MedDRA 26.0 PT/SOC standardization. It uses ROR, PRR, BCPNN and MGPS. Main text thresholds include a lower 95% ROR limit above 1, PRR at least 2 with chi-square at least 4, IC025 above 0 and EBGM above 2. S3 additionally specifies at least 3 reports and EBGM05 above 2, so the point-estimate versus lower-bound criterion remains source-specific.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-2",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/1/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/1/answer",
+      "answer_sha256": "e88f2714ce08d6f9ec557cc99ab805b29dcb2109a5bd904bda9e0dd49fdde9d0",
+      "evidence_refs": [
+        "KF1"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-3",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 3,
+      "question": "Which organ-system reporting patterns were shared?",
+      "answer": "The published tables identify investigations, cardiac, renal/urinary, vascular and metabolism/nutrition disorders as the shared signal categories. For example, the printed renal/urinary RORs are 3.30 (95%CI 3.12-3.50) in FAERS and 3.27 (95%CI 3.06-3.50) in VigiAccess. These are reporting associations, with the comparison-cell and denominator issues retained in provenance.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-3",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/2/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/2/answer",
+      "answer_sha256": "a99af901374f68e7331c9cf4642482b4d2e4b7ff05158ce437ee5f7f76ecb145",
+      "evidence_refs": [
+        "KF2"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-4",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 4,
+      "question": "Why should frequency and reporting-ratio rankings be read separately?",
+      "answer": "Blood pressure increased is frequent in both tables, with 395 FAERS and 465 VigiAccess entries. In contrast, the FAERS paradoxical pressor response estimate is based on 3 reports but has a printed ROR of 775.96 and a wide 95% CI 216.46-2781.64. High disproportionality is not the same as common occurrence or greater clinical severity.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-4",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/3/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/3/answer",
+      "answer_sha256": "1a35faf6113a8fca1fa3f4ec19ff8f6831f4837ae5f37ae6887d4aae8e5f2514",
+      "evidence_refs": [
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-5",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 5,
+      "question": "What does the reported 62-day onset median mean?",
+      "answer": "It describes 2,209 reports with usable onset dates, with IQR 7-282 days. The 861 reports within 30 days are 38.98% of that subset but 15.39% of all 5,596 FAERS reports. Figure 6 plots cumulative percent of reported onset times; there is no exposed-user cohort or at-risk follow-up denominator for a cumulative-incidence interpretation.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-5",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/4/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/4/answer",
+      "answer_sha256": "16f4f607a89d10cffaf995b8b3febe6bf9629fcc9a3587e24317b1d5a11d57d5",
+      "evidence_refs": [
+        "KF4"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-6",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 6,
+      "question": "Can the demographic tables identify higher-risk age or sex groups?",
+      "answer": "They describe the demographics of submitted reports. Age is missing or unknown in 49.32% of FAERS and 46.17% of VigiAccess reports. Without age/sex-specific exposure denominators and control of reporting differences, the older-age and female reporting counts cannot establish which aliskiren users have higher clinical risk.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-6",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/5/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/5/answer",
+      "answer_sha256": "3888b060fcda2deab934ae9da87a810df25dbf6f18bbfb317014896bc558834f",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-7",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 7,
+      "question": "Which source discrepancies matter for reproducing the analyses?",
+      "answer": "Methods give FAERS 2004 Q1-2025 Q3, whereas Table 1's caption gives Q4 2023-Q4 2024 and S3 contains annual rows 2005-2025. Table 1's Serious count 1,037 is not reconciled with its Hospitalization count 1,735. S4 uses a 17,094 term-count total; for blood pressure increased it stores ROR 13.005587 at M2, while main Table 5 prints 16.73 with the same n 465. These are recorded separately rather than averaged or silently corrected.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-7",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/6/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/6/answer",
+      "answer_sha256": "90d49aa6545075e6c58b9998bb8a39370b36680349562895f40d6d79d3816738",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326--qa-8",
+      "work_id": "doi-10-1371-journal-pone-0346326",
+      "qa_index": 8,
+      "question": "How is this study useful for a safety-research discussion?",
+      "answer": "It is useful for discussing cross-database signal generation, frequency versus disproportionality, report missingness and the need to preserve the unit and denominator of each safety summary. Suspected signals can motivate further clinical or epidemiologic investigation, while this design itself does not establish drug causation or a prescribing recommendation.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-8",
+      "question_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/7/question",
+      "answer_source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/7/answer",
+      "answer_sha256": "9546b19a7c7101f69ab3510401df4be2b5ed23e78d47e3bd5a5c9220958535fc",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved"
+    },
+    {
       "id": "doi-10-1126-science-aek9583--qa-1",
       "work_id": "doi-10-1126-science-aek9583",
       "qa_index": 1,
@@ -28859,21 +29199,42 @@
           "work_refs": [
             {
               "work_id": "doi-10-1371-journal-pone-0346326",
-              "question_ids": [],
-              "preview_question_id": null,
+              "question_ids": [
+                "doi-10-1371-journal-pone-0346326--qa-1",
+                "doi-10-1371-journal-pone-0346326--qa-2"
+              ],
+              "preview_question_id": "doi-10-1371-journal-pone-0346326--qa-2",
               "paper_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html",
               "doi": "10.1371/journal.pone.0346326",
               "doi_url": "https://doi.org/10.1371/journal.pone.0346326",
-              "scope_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#limited-evidence",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#cite-this-paper",
-              "author_note_previews": [
+              "finding_previews": [
                 {
-                  "heading": "Study and evidence unit",
-                  "text": "This pharmacovigilance study examines aliskiren-associated spontaneous reports in FAERS and WHO-VigiAccess. The article summarizes 5,596 and 5,549 reports, respectively. Its statistical analysis describes proportional reporting ratio (PRR), reporting odds ratio (ROR), Bayesian confidence propagation neural network (BCPNN), and multi-item gamma Poisson shrinker (MGPS) methods for detecting reporting signals. These descriptive data and methods provide an example for cross-database safety-signal research; the observation units are reports rather than exposed patients.",
-                  "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0346326",
-                  "source_locator": "Methods: Data sources and Statistical analysis (sec003, sec005); Results: Tables 1–2 (sec007)",
-                  "reviewed_on": "2026-10-27",
-                  "source_record": "data/limited_evidence.json#/papers/10.1371~1journal.pone.0346326"
+                  "id": "KF1",
+                  "claim": "The study characterizes aliskiren-associated spontaneous reports in two complementary reporting systems.",
+                  "context": "Retrospective FAERS and WHO-VigiAccess pharmacovigilance, with database totals kept separate.",
+                  "evidence": [
+                    {
+                      "label": "FAERS reports",
+                      "value": "5,596 aliskiren-associated reports"
+                    },
+                    {
+                      "label": "VigiAccess reports",
+                      "value": "5,549 aliskiren-associated reports"
+                    },
+                    {
+                      "label": "Evidence unit",
+                      "value": "Spontaneously submitted suspected-event reports, not the number of exposed patients"
+                    },
+                    {
+                      "label": "Methods",
+                      "value": "ROR, PRR, BCPNN and MGPS disproportionality methods; MedDRA version 26.0 PT/SOC standardization"
+                    }
+                  ],
+                  "source_locator": "Method: Data sources (sec003), Data standardization (sec004), Statistical analysis (sec005). Results: Descriptive analysis of AE report characteristics (sec007); Tables 1-2.",
+                  "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/0",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf1"
                 }
               ]
             }
@@ -29816,6 +30177,81 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-1155-humu-5591097.html#paper-discovery",
       "evidence_scope_kind": "does_not_establish",
       "evidence_scope": "Independently reconciled family-wide counts, complete segregation, population allele frequency, penetrance or clinical pathogenicity of PAPPA2 c.392G>C."
+    },
+    {
+      "id": "doi-10-1371-journal-pone-0346326",
+      "title": "Real-world safety of aliskiren in primary hypertension: A cross-database study",
+      "doi": "10.1371/journal.pone.0346326",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html",
+      "question": "How were the reports standardized and signals identified?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#qa-2",
+      "key_finding": {
+        "id": "KF1",
+        "claim": "The study characterizes aliskiren-associated spontaneous reports in two complementary reporting systems.",
+        "context": "Retrospective FAERS and WHO-VigiAccess pharmacovigilance, with database totals kept separate.",
+        "evidence": [
+          {
+            "label": "FAERS reports",
+            "value": "5,596 aliskiren-associated reports"
+          },
+          {
+            "label": "VigiAccess reports",
+            "value": "5,549 aliskiren-associated reports"
+          },
+          {
+            "label": "Evidence unit",
+            "value": "Spontaneously submitted suspected-event reports, not the number of exposed patients"
+          },
+          {
+            "label": "Methods",
+            "value": "ROR, PRR, BCPNN and MGPS disproportionality methods; MedDRA version 26.0 PT/SOC standardization"
+          }
+        ],
+        "source_locator": "Method: Data sources (sec003), Data standardization (sec004), Statistical analysis (sec005). Results: Descriptive analysis of AE report characteristics (sec007); Tables 1-2.",
+        "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/key_findings/0",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#kf1"
+      },
+      "key_finding_basis": "question_evidence_ref",
+      "source": "data/deep_geo/doi-10-1371-journal-pone-0346326.json#/qa/1/question",
+      "profile_type": "multicohort_observational",
+      "narrative_genre": null,
+      "concepts": [
+        "Aliskiren",
+        "Direct renin inhibitor",
+        "Primary hypertension",
+        "Antihypertensive therapy",
+        "FAERS",
+        "WHO-VigiAccess",
+        "OpenVigil 2.1",
+        "MedDRA 26.0",
+        "Preferred term",
+        "System organ class",
+        "Individual case safety report",
+        "Reporting odds ratio",
+        "Proportional reporting ratio",
+        "BCPNN",
+        "MGPS",
+        "Time to onset",
+        "Disproportionality signal",
+        "Spontaneous reporting",
+        "Report missingness",
+        "Term-count denominator",
+        "Frequency versus signal intensity"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1371-journal-pone-0346326.csl.json",
+      "field_entry": [
+        "Drug-safety research",
+        "Antihypertensive pharmacovigilance"
+      ],
+      "review_topics": [
+        "Cross-database spontaneous-report analysis",
+        "Interpreting reporting-signal denominators"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html#paper-discovery",
+      "evidence_scope_kind": "does_not_establish",
+      "evidence_scope": "Incidence, absolute or comparative patient risk, a causal adverse-drug reaction, or the relative safety of aliskiren versus another treatment."
     },
     {
       "id": "doi-10-1126-science-aek9583",

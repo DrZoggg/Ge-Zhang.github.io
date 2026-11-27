@@ -123,7 +123,7 @@
 - DOI: 10.1371/journal.pone.0346326
 - HTML: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html
 - Markdown: https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Recording results from single-patient trials
 - Journal: Science

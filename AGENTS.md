@@ -76,6 +76,9 @@ tools, investigate faults, implement proportionate improvements, test, create PR
 merge, deploy and verify without routine permission requests. Prior task-specific
 file or attempt caps do not restrict a newly authorized task. Preserve platform
 limits and scientific integrity.
+Use or install task-relevant tools, plugins, MCP integrations and Skills under
+the owner's authorization. Prefer mature existing capabilities and free options.
+Explicitly deferred tools, including Scite, remain deferred.
 Only irreducible owner security checks, new sensitive access, fees, irreversible
 major changes or unresolved scientific judgments require the owner.
 

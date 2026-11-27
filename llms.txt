@@ -56,3 +56,4 @@
 - [ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis](https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html) — DOI: 10.1016/j.isci.2025.114320
 - [Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout](https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html) — DOI: 10.3389/fnut.2025.1658286
 - [Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis](https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html) — DOI: 10.32604/or.2025.059290
+- [Real-world safety of aliskiren in primary hypertension: A cross-database study](https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html) — DOI: 10.1371/journal.pone.0346326

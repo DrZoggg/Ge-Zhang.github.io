@@ -10,6 +10,8 @@ from sync_common import ROOT
 
 QUESTION_PATH = 'research/questions.html'
 QUESTION_JSON_PATH = 'research/questions.json'
+# Keep the reviewed apatinib-to-PO navigation when a new paper links to apatinib.
+RETAINED_BACKLINKS = frozenset({('10.3389/fonc.2021.659217', '10.1200/po.24.00089')})
 MIME_SUFFIXES = {
     'application/vnd.citationstyles.csl+json': '.csl.json',
     'application/x-bibtex': '.bib',
@@ -73,11 +75,13 @@ def reviewed_backlinks(items, contents):
     result = {}
     for item in items:
         doi = item.get('doi')
-        if doi not in v2 or doi in incoming:
+        if doi not in v2:
             continue
         for relation in v2[doi].get('related_papers', []):
             target = relation['doi']
             if target not in public or target == doi:
+                continue
+            if doi in incoming and (doi, target) not in RETAINED_BACKLINKS:
                 continue
             result.setdefault(target, []).append({
                 'source_doi': doi, 'title': item['title'],

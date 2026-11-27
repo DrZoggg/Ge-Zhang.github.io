@@ -428,8 +428,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

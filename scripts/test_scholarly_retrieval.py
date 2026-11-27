@@ -23,6 +23,25 @@ class RetrievalTests(unittest.TestCase):
             'url':'https://drgezhang.com/papers/a.html', 'relationship':self.contents['a']['related_papers'][0]['relationship']}])
         self.assertEqual(self.contents, before)
 
+    def test_retains_exact_reviewed_edge_when_source_gains_an_incoming_link(self):
+        apatinib = '10.3389/fonc.2021.659217'
+        po = '10.1200/po.24.00089'
+        items = self.items + [
+            {'doi': doi, 'title': doi, 'paper_url': 'https://drgezhang.com/' + slug}
+            for doi, slug in ((apatinib, 'apatinib'), (po, 'postoperative'))
+        ]
+        source = {'doi': po, 'relationship': 'Original design contrast.'}
+        contents = {
+            'a': {'version': 2, 'related_papers': [{'doi': apatinib, 'relationship': 'New design context.'}]},
+            apatinib: {'version': 2, 'related_papers': [source, {'doi': 'b', 'relationship': 'Other relation.'}]},
+        }
+        rows = reviewed_backlinks(items, contents)
+        self.assertEqual(set(rows), {apatinib, po})
+        self.assertEqual(rows[po][0]['relationship'], source['relationship'])
+        self.assertEqual(rows[apatinib][0]['source_doi'], 'a')
+        contents[apatinib]['related_papers'].remove(source)
+        self.assertNotIn(po, reviewed_backlinks(items, contents))
+
     def test_no_existing_relation_means_no_invented_link(self):
         self.assertEqual(reviewed_backlinks(self.items, {}), {})
         self.assertEqual(backlink_html(None), '')

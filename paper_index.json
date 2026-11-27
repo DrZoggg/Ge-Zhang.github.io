@@ -528,8 +528,8 @@
       "doi": "10.1371/journal.pone.0346326",
       "paper_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1371-journal-pone-0346326.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1371/journal.pone.0346326",
       "publisher_url": null,
@@ -541,9 +541,30 @@
       "openalex_id": "https://openalex.org/W7148844109",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1371-journal-pone-0346326.csv",
+      "question_count": 8,
+      "concept_count": 21,
+      "discovery_layer": {
+        "field_entry": [
+          "Drug-safety research",
+          "Antihypertensive pharmacovigilance"
+        ],
+        "review_topics": [
+          "Cross-database spontaneous-report analysis",
+          "Interpreting reporting-signal denominators"
+        ],
+        "scientific_role": "Retrospective characterization of aliskiren-associated suspected-event reports, organ-system/PT signals and reported time to onset.",
+        "evidence_position": "Spontaneous-report disproportionality and descriptive evidence; database concordance, clinical incidence and causality are different questions.",
+        "related_concepts": [
+          "Renin inhibition",
+          "Report-level missingness",
+          "Frequency versus signal strength"
+        ],
+        "citation_contexts": [
+          "Methods: comparing FAERS and public VigiAccess data, signal algorithms and observation units.",
+          "Discussion: distinguishing suspected-event reporting patterns from exposed-patient risks and clinical safety recommendations."
+        ]
+      }
     },
     {
       "title": "Recording results from single-patient trials",
