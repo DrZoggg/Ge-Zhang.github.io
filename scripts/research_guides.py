@@ -15,6 +15,7 @@ from urllib.parse import unquote, urlsplit
 from sync_common import ROOT, is_withdrawn
 from paper_discovery import scientific_content
 from theme_shell import with_theme_shell, without_theme_shell
+from site_analytics import with_research_measurement, without_ga4_tag
 import search_metadata
 
 SLUG = 'dcm-hf-circulating-biomarkers'
@@ -138,7 +139,8 @@ def render(data, sources):
         page += '<meta property="' + prop + '" content="' + esc(value, quote=True) + '">\n'
     page += '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c') + '</script>\n'
     page += GUIDE_READING_STYLE + '</head><body><main>\n'
-    return with_theme_shell(page + '\n'.join(body) + '\n</main></body></html>\n', guide=True), '\n\n'.join(md) + '\n'
+    page = with_theme_shell(page + '\n'.join(body) + '\n</main></body></html>\n', guide=True)
+    return with_research_measurement(page), '\n\n'.join(md) + '\n'
 
 
 def validate_page(page, expected_url=URL):
@@ -172,7 +174,10 @@ def build(root=ROOT, *, search_overrides=None):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text, encoding='utf-8')
         if extension == 'html':
-            changed = previous is None or without_theme_shell(previous) != without_theme_shell(text)
+            changed = previous is None or (
+                without_theme_shell(without_ga4_tag(previous))
+                != without_theme_shell(without_ga4_tag(text))
+            )
     return changed
 
 
@@ -646,7 +651,7 @@ def render_comparison(packet):
     head += '<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('<','\\u003c')+'</script>'
     page = with_theme_shell(head + GUIDE_READING_STYLE + '</head><body><main>\n' + '\n'.join(body) + '\n</main></body></html>\n', guide=True)
     validate_page(page, url)
-    return page, '\n\n'.join(md)+'\n', json.dumps(packet,ensure_ascii=False,indent=2)+'\n'
+    return with_research_measurement(page), '\n\n'.join(md)+'\n', json.dumps(packet,ensure_ascii=False,indent=2)+'\n'
 
 
 def build_comparisons(root=ROOT, validate_only=False, *, search_overrides=None):
@@ -672,7 +677,11 @@ def build_comparisons(root=ROOT, validate_only=False, *, search_overrides=None):
             elif previous != text:
                 if is_csv: path.write_bytes(text.encode('utf-8'))
                 else: path.write_text(text,encoding='utf-8')
-            if ext == 'html': changed[comparison_url(data)] = previous is None or without_theme_shell(previous) != without_theme_shell(text)
+            if ext == 'html':
+                changed[comparison_url(data)] = previous is None or (
+                    without_theme_shell(without_ga4_tag(previous))
+                    != without_theme_shell(without_ga4_tag(text))
+                )
     return changed
 
 

@@ -34,7 +34,28 @@ li{margin:.45rem 0}
 .prepared{font-size:.9rem;color:var(--muted)}
 @media(max-width:480px){main{padding:18px 18px 36px}.column-definitions th{width:35%}th,td{padding:10px}.download .btn{width:100%;justify-content:center}}
 </style>
-<link rel="stylesheet" href="/assets/style.css" data-theme-shell="guide-style"><script src="/assets/theme.js" defer></script></head><body><header class="theme-guide-header"><nav aria-label="Display settings"><button class="theme-toggle" type="button" data-theme-toggle title="Switch to light theme" aria-label="Switch to light theme" hidden><span data-theme-label>Light</span></button></nav></header><main>
+<link rel="stylesheet" href="/assets/style.css" data-theme-shell="guide-style"><script src="/assets/theme.js" defer></script>
+<!-- Google tag (gtag.js) -->
+<script>
+  (function () {
+    if (window.location.protocol !== 'https:' ||
+        !['drgezhang.com', 'www.drgezhang.com'].includes(window.location.hostname) || window.location.port) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){window.dataLayer.push(arguments);};
+    window.gtag('js', new Date());
+    var page = new URL(window.location.href);
+    var referrer = document.referrer ? new URL(document.referrer) : null;
+    window.gtag('config', 'G-65LDZXWWQK', {
+      page_location: page.origin + page.pathname,
+      page_referrer: referrer && /^https?:$/.test(referrer.protocol) ? referrer.origin : ''
+    });
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65LDZXWWQK';
+    document.head.appendChild(script);
+  })();
+</script>
+<script src="/assets/research-handoff.js" defer></script></head><body><header class="theme-guide-header"><nav aria-label="Display settings"><button class="theme-toggle" type="button" data-theme-toggle title="Switch to light theme" aria-label="Switch to light theme" hidden><span data-theme-label>Light</span></button></nav></header><main>
 <nav class="resource-nav" aria-label="Resource navigation"><a href="/papers/circadian-ihd.html">Study evidence</a><a href="https://drgezhang.com/assets/research/gse59867-sample-followup-map.md">Markdown notes</a></nav>
 <section class="resource-intro" aria-labelledby="resource-title">
 <h1 id="resource-title">GSE59867 follow-up map</h1>

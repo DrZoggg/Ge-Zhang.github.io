@@ -35,10 +35,11 @@ from build_publications import (
     v2_value,
 )
 from official_abstracts import abstract_text, load_official_abstracts
-from scholarly_discovery import load_identifiers
+from scholarly_discovery import QUESTION_PATH, load_identifiers
 from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
 import research_guides
+from site_analytics import RESEARCH_GA4_INSERTION, RESEARCH_GA4_TAG, RESEARCH_HANDOFF_SCRIPT
 import search_metadata
 import evidence_presentation
 import paper_discovery
@@ -98,30 +99,37 @@ def validate_schema_publication_date(schema, publication, citation_data, label):
             f"Schema.org first publication date changed for {label}.")
 
 
-def validate_ga4_rendering(html_files):
+def validate_ga4_rendering(html_files, research_html_files):
     require(GA4_MEASUREMENT_ID == "G-65LDZXWWQK", "GA4 measurement ID changed.")
-    for path in html_files:
+    research_paths = set(research_html_files)
+    for path in [*html_files, *research_html_files]:
         page = path.read_text(encoding="utf-8")
+        research = path in research_paths
+        expected_tag = RESEARCH_GA4_TAG if research else GA4_TAG
         head = (
             page.split("<head>", 1)[1].split("</head>", 1)[0]
             if page.count("<head>") == page.count("</head>") == 1
             else ""
         )
         require(
-            head.count(GA4_TAG) == 1
+            head.count(expected_tag) == 1
             and page.count("googletagmanager.com/gtag/js") == 1
             and page.count("gtag('config'") == 1
-            and page.count(GA4_MEASUREMENT_ID) == 2,
+            and page.count(GA4_MEASUREMENT_ID) == 2
+            and page.count(RESEARCH_HANDOFF_SCRIPT) == int(research)
+            and (not research or head.count(RESEARCH_GA4_INSERTION) == 1),
             f"GA4 tag missing, duplicated, or outside head: {path.name}.",
         )
     for path in [
         *PAPERS_DIR.glob("*.md"),
+        *(path.with_suffix(".md") for path in research_html_files),
         ROOT / "publications.json",
         ROOT / "paper_index.json",
         ROOT / "sitemap.xml",
         ROOT / "llms.txt",
     ]:
-        require(GA4_MEASUREMENT_ID not in path.read_text(encoding="utf-8"),
+        content = path.read_text(encoding="utf-8")
+        require(GA4_MEASUREMENT_ID not in content and RESEARCH_HANDOFF_SCRIPT not in content,
                 f"GA4 tag leaked into non-HTML output: {path.name}.")
 
 
@@ -2395,7 +2403,11 @@ def validate_site():
     require(len(slugs) == len(set(slugs)), "Public paper slugs are not unique.")
     html_files = sorted(PAPERS_DIR.glob("*.html"))
     md_files = sorted(PAPERS_DIR.glob("*.md"))
-    validate_ga4_rendering([ROOT / "index.html", ROOT / "publications.html", *html_files])
+    validate_ga4_rendering(
+        [ROOT / "index.html", ROOT / "publications.html", ROOT / QUESTION_PATH, *html_files],
+        [*(ROOT / search_metadata.route(url) for url in research_guides.urls(ROOT)),
+         ROOT / search_metadata.SAMPLE_MAP_PATH],
+    )
     require(
         len(html_files) == len(public_expected),
         f"HTML paper count {len(html_files)} != public count {len(public_expected)}.",

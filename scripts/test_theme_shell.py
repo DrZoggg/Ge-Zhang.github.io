@@ -9,6 +9,8 @@ from build_publications import (GA4_INSERTION, LEGACY_GA4_INSERTION, render_home
                                 resolve_lastmod, with_ga4_tag,
                                 write_public_html_if_changed)
 import research_guides as guides
+import search_metadata
+from site_analytics import RESEARCH_GA4_INSERTION, without_ga4_tag
 from site_common import load_profile_config
 from sync_common import ROOT
 from theme_shell import (GUIDE_THEME_STYLESHEET, THEME_INIT, THEME_RUNTIME,
@@ -115,21 +117,26 @@ class ThemeShellTests(unittest.TestCase):
         old = path.read_text(encoding='utf-8')
         md = path.with_suffix('.md').read_text(encoding='utf-8')
         self.assert_shell(rendered[0])
-        self.assertEqual(without_theme_shell(rendered[0]), without_theme_shell(old))
+        self.assertEqual(rendered[0].count(RESEARCH_GA4_INSERTION), 1)
+        overrides = search_metadata.load(ROOT)
+        page = search_metadata.project(rendered[0], overrides[search_metadata.route(guides.URL)])
+        self.assertEqual(without_theme_shell(without_ga4_tag(page)),
+                         without_theme_shell(without_ga4_tag(old)))
         self.assertEqual(rendered[1], md)
         self.assertGreater(rendered[0].index(GUIDE_THEME_STYLESHEET), rendered[0].index('</style>'))
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'research').mkdir()
             target = root / 'research' / (guides.SLUG + '.html')
-            target.write_text(without_theme_shell(old), encoding='utf-8')
+            target.write_text(without_theme_shell(without_ga4_tag(old)), encoding='utf-8')
             target.with_suffix('.md').write_text(md, encoding='utf-8')
             with patch.object(guides, 'load', return_value={}), \
                  patch.object(guides, 'resolve', return_value={}), \
                  patch.object(guides, 'render', return_value=rendered):
-                self.assertFalse(guides.build(root))
+                self.assertFalse(guides.build(root, search_overrides=overrides))
                 first = target.read_bytes()
-                self.assertFalse(guides.build(root))
+                self.assertEqual(target.read_text(encoding='utf-8'), page)
+                self.assertFalse(guides.build(root, search_overrides=overrides))
                 self.assertEqual(target.read_bytes(), first)
                 self.assertEqual(target.with_suffix('.md').read_text(encoding='utf-8'), md)
 
