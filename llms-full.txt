@@ -519,7 +519,7 @@
 - DOI: 10.1186/s12931-024-02978-w
 - HTML: https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.html
 - Markdown: https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Identification of diagnostic signature and immune infiltration for ischemic cardiomyopathy based on cuproptosis-related genes through bioinformatics analysis and experimental validation
 - Journal: International Immunopharmacology

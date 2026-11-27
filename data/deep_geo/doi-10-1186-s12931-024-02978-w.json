@@ -1,0 +1,572 @@
+{
+  "version": 2,
+  "doi": "10.1186/s12931-024-02978-w",
+  "discovery_layer": {
+    "field_entry": [
+      "Pulmonary hypertension biology",
+      "Disulfidptosis-related gene research"
+    ],
+    "review_topics": [
+      "Public-expression candidate prioritization",
+      "Immune context and hypoxia-lung expression"
+    ],
+    "scientific_role": "Prioritizes five expression candidates through public transcriptomic screening, model comparisons, immune/pathway analysis and hypoxic-rat lung protein measurements.",
+    "evidence_position": "Human expression associations, published model evaluations, predicted regulatory/drug networks and animal expression follow-up.",
+    "related_concepts": [
+      "Pulmonary vascular remodeling",
+      "Immune deconvolution",
+      "Hypoxic pulmonary hypertension"
+    ],
+    "citation_contexts": [
+      "Methods: separating expression screening, computational model evaluation and animal protein follow-up.",
+      "Discussion: disulfidptosis-related candidates, immune context and computational folic-acid hypotheses in PH."
+    ]
+  },
+  "display_title": "PH disulfidptosis-related candidates: expression, models and hypoxic-lung proteins",
+  "summary": "The study prioritizes NDUFS1, RPN1, TLN1, MYH10 and DSTN through public PH expression data, four model comparisons and immune/pathway analyses. Hypoxic-rat lung measurements show higher MYH10 and lower DSTN, NDUFS1, RPN1 and TLN1 proteins, adding experimental expression context to the computational candidates.",
+  "research_question": "Which disulfidptosis-related expression candidates characterize PH, how do they relate to molecular clusters and immune/pathway patterns, and which protein directions recur in a hypoxic animal lung model?",
+  "author_summary": "The article screens 23 literature-derived disulfidptosis-related genes, identifies 12 differential genes and prioritizes NDUFS1, RPN1, TLN1, MYH10 and DSTN. Methods describe 25 control and 58 PH profiles in GSE117261, with the PH profiles divided into clusters of 48 and 10. Four models and a five-gene nomogram are evaluated; Figure 5 reports additional dataset AUCs of 0.761, 0.889 and 0.937. Dataset labels, model-task wording and the GLM AUC differ across article locations, retained at the affected results below. CIBERSORT and GSVA add relative immune/pathway context. A predicted ceRNA network and CTD/docking analysis nominate regulatory and folic-acid hypotheses. In the four-week hypoxia model, pulmonary arterial wall thickening and greater right ventricular pressure accompany higher MYH10 and lower DSTN, NDUFS1, RPN1 and TLN1 lung proteins. These complementary evidence roles support candidate selection and follow-up design.",
+  "study_profile": {
+    "profile_type": "multicohort_omics",
+    "study_design": "Retrospective public-expression analysis with candidate screening, consensus clustering, CIBERSORT, GSVA, SVM/RF/GLM/XGB comparisons, nomogram and additional dataset ROC analyses; predicted ceRNA/drug networks and docking; separate four-week hypoxic-rat experiment.",
+    "evidence_type": "Bulk-expression association; published model-evaluation summaries; inferred immune/pathway patterns; computational networks/docking; animal lung histology, right ventricular pressure and Western blot.",
+    "population": "Article-reported PH/control expression samples and additional PH-related datasets; male SPF animals described principally as rats allocated to control or hypoxic pulmonary hypertension groups.",
+    "primary_endpoint": "Prioritization and expression characterization of disulfidptosis-related candidates in PH.",
+    "secondary_endpoint": "Molecular clusters, reported model/nomogram evaluations, relative immune patterns, GSVA, predicted ceRNA/drug relationships, and animal lung/pressure/protein readouts.",
+    "data_modalities": [
+      "Public bulk gene expression",
+      "Inferred relative immune-cell proportions",
+      "GSVA pathway/function scores",
+      "Computational ceRNA and drug-target networks",
+      "Molecular docking",
+      "Animal lung histology and protein",
+      "Animal right ventricular pressure"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Methods discovery samples",
+        "value": "GSE117261: 25 controls and 58 PH expression profiles"
+      },
+      {
+        "label": "Screening and prioritization",
+        "value": "23 candidates; 12 differential genes; 5 prioritized genes"
+      },
+      {
+        "label": "PH clusters",
+        "value": "Cluster 1: 48 profiles; Cluster 2: 10 profiles"
+      },
+      {
+        "label": "Additional dataset analyses",
+        "value": "Figure 5D: GSE24988 PH; Figure 5E/F: GSE33463 idiopathic PAH/scleroderma-associated PAH; the supplied supplements contain the sample table heading only"
+      },
+      {
+        "label": "Animal allocation",
+        "value": "Methods: control n=6 and HPH n=6; Figure 8C Western blot caption: n=3"
+      },
+      {
+        "label": "Hypoxia exposure",
+        "value": "10% oxygen, 8 hours/day, 6 days/week for 4 weeks"
+      }
+    ],
+    "counting_note": "Expression profiles, inferred cell proportions and animal assay units are separate. The 25/58 discovery count is the Methods report; abstract accessions differ. Additional dataset group counts and unique-patient independence are not reconstructed. Animal allocation n=6/group and Western blot caption n=3 are retained separately; assay reuse and biological-versus-technical replication are not inferred. The article reports evaluation in additional datasets. Sample independence and transfer of a frozen model remain unclear."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "Public PH expression screening identified a five-gene candidate set with a defined expression pattern.",
+      "context": "Literature-derived candidate screening and subsequent model-based prioritization.",
+      "evidence": [
+        {
+          "label": "Methods discovery data",
+          "value": "GSE117261: 25 control and 58 PH profiles"
+        },
+        {
+          "label": "Screening",
+          "value": "23 disulfidptosis-related candidates considered; 12 described as differentially expressed"
+        },
+        {
+          "label": "Prioritized genes",
+          "value": "NDUFS1, RPN1, TLN1, MYH10 and DSTN"
+        },
+        {
+          "label": "Five-gene bulk direction",
+          "value": "MYH10 higher; NDUFS1, RPN1, TLN1 and DSTN lower in PH in Figure 2"
+        },
+        {
+          "label": "Accession disagreement",
+          "value": "Abstract names GSE11726, GSE57345 and GSE48166; Methods/Figure 1 name GSE117261, GSE24988 and GSE33463. These are retained as source-specific statements."
+        }
+      ],
+      "source_locator": "Abstract; Methods Data source (Sec3) and Selection of differentially expressed DiGs (Sec4); Results DiGs expression and immune infiltration analysis in PH patients (Sec18); Figures 1 and 2A-B; PDF pp. 1-5."
+    },
+    {
+      "id": "KF2",
+      "claim": "Two PH expression clusters showed different inferred immune and pathway patterns.",
+      "context": "Consensus clustering of the 58 PH profiles; CIBERSORT and GSVA analysis.",
+      "evidence": [
+        {
+          "label": "Cluster allocation",
+          "value": "k=2; Cluster 1 n=48 and Cluster 2 n=10"
+        },
+        {
+          "label": "Expression examples",
+          "value": "NDUFS1, DSTN and TLN1 higher in Cluster 1; SLC7A11, LRPPRC, SLC3A2 and IQGAP1 higher in Cluster 2"
+        },
+        {
+          "label": "Immune evidence",
+          "value": "Figure S3 and Results show higher inferred proportions in C2 for follicular helper T cells (**), activated NK cells (*) and activated dendritic cells (**). The caption defines * P < 0.05 and ** P < 0.01."
+        },
+        {
+          "label": "Pathway context",
+          "value": "Actual KEGG image in Figure S5 shows drug/xenobiotic and propanoate metabolism toward C2; NOD-like receptor, NK-mediated cytotoxicity, MAPK and cytokine-receptor pathways toward C1. Actual S4 contains GO terms; the text/caption S4/S5 references are reversed."
+        },
+        {
+          "label": "Measurement unit",
+          "value": "Relative expression-derived proportions of 22 immune-cell types and GSVA scores, rather than directly counted cells or established clinical PH subtypes"
+        }
+      ],
+      "source_locator": "Methods Sec5/Sec8; Results Identification of PH disulfidptosis cluster (Sec19); Figure 3; Supplementary Material 1 Figures S1-S5 (actual images, S4 GO/S5 KEGG); PDF pp. 5-6."
+    },
+    {
+      "id": "KF3",
+      "claim": "The four-model comparison favored XGB in the reported internal evaluation.",
+      "context": "Published discrimination estimates with the source model task and partition wording retained.",
+      "evidence": [
+        {
+          "label": "Shared AUC values",
+          "value": "XGB 0.958; SVM 0.941; RF 0.853 in Figure 4D and Results"
+        },
+        {
+          "label": "GLM discrepancy",
+          "value": "Figure 4D prints 0.576; Results prints 0.756"
+        },
+        {
+          "label": "Feature selection",
+          "value": "The XGB analysis prioritizes NDUFS1, RPN1, TLN1, MYH10 and DSTN"
+        },
+        {
+          "label": "Evaluation wording",
+          "value": "Results calls this fivefold evaluation in the training dataset and differentiation between patient clusters; Figure 4 caption calls it fivefold cross-validation in the testing cohort. Methods also uses diagnosing PH wording."
+        }
+      ],
+      "source_locator": "Methods Predictive model construction based on multiple machine-learning methods (Sec6); Results Machine learning model construction and evaluation (Sec20); Figure 4A-D/caption; PDF pp. 6-8."
+    },
+    {
+      "id": "KF4",
+      "claim": "The five-gene nomogram and additional ROC panels provide source-located model summaries.",
+      "context": "The nomogram uses the 58 PH cases; additional dataset evaluations are reported with conflicting text labels.",
+      "evidence": [
+        {
+          "label": "Nomogram",
+          "value": "Figure 5A-C: five-gene score, calibration and decision-curve plots; Results describes PH-cluster risk in 58 PH cases"
+        },
+        {
+          "label": "Figure 5D",
+          "value": "GSE24988 pulmonary hypertension: AUC 0.761, 95% CI 0.625-0.873"
+        },
+        {
+          "label": "Figure 5E",
+          "value": "GSE33463 idiopathic pulmonary arterial hypertension: AUC 0.889, 95% CI 0.809-0.957"
+        },
+        {
+          "label": "Figure 5F",
+          "value": "GSE33463 scleroderma with pulmonary arterial hypertension: AUC 0.937, 95% CI 0.880-0.980"
+        },
+        {
+          "label": "Text disagreement",
+          "value": "Results assigns 0.889 to GSE24988 and 0.937 to GSE57345, unlike the actual panel labels and Figure 5 caption. Captions describe fivefold cross-validation in those datasets; frozen-model transfer and sample-independent clinical performance are not established."
+        }
+      ],
+      "source_locator": "Methods Nomogram construction and validation (Sec7); Results Sec20; original Figure 5A-I and caption; PDF pp. 8-9."
+    },
+    {
+      "id": "KF5",
+      "claim": "The predicted ceRNA network organizes possible regulatory relationships around the five candidates.",
+      "context": "In silico miRNA-mRNA and miRNA-lncRNA target-network construction.",
+      "evidence": [
+        {
+          "label": "Resources",
+          "value": "TargetScan, miRDB, miRanda and SpongeScan; Cytoscape visualization"
+        },
+        {
+          "label": "Reported network",
+          "value": "160 nodes: 5 candidate mRNAs, 40 miRNAs and 115 lncRNAs; 187 edges"
+        },
+        {
+          "label": "Example hypothesis",
+          "value": "The Results highlights LINC00689 connections involving RPN1 and DSTN"
+        },
+        {
+          "label": "Evidence role",
+          "value": "Database-predicted relationships for experimental prioritization; no binding or regulatory perturbation assay was performed in this study"
+        }
+      ],
+      "source_locator": "Methods CeRNA network construction (Sec9); Results CeRNA network establishment (Sec21); Figure 6; PDF pp. 3 and 9."
+    },
+    {
+      "id": "KF6",
+      "claim": "CTD predictions and docking nominate folic acid as a computational follow-up candidate.",
+      "context": "Drug-target network construction followed by structural docking.",
+      "evidence": [
+        {
+          "label": "Reported network",
+          "value": "338 nodes: 5 genes and 333 predicted drugs; 579 edges"
+        },
+        {
+          "label": "Folic acid",
+          "value": "CTD identifier D005492 is reported to connect with all five core candidates"
+        },
+        {
+          "label": "Docking",
+          "value": "AutoDock Vina 1.1.2; PyMOL 2.0.0; Results reports mean binding energy -8.06 kcal/mol"
+        },
+        {
+          "label": "Read scope",
+          "value": "Figure 7B displays five docking poses. Supplementary Material 1 supplies Table S2/S3 titles without table bodies; individual drug records and per-target energy values cannot be extracted from that DOCX."
+        },
+        {
+          "label": "Evidence role",
+          "value": "Computational interaction hypothesis; this study did not administer folic acid or measure therapeutic benefit"
+        }
+      ],
+      "source_locator": "Methods Identification of candidate small-molecular drugs (Sec10); Results Prediction of targeted drugs (Sec22); Figure 7A-B; Supplementary Material 1 Table S2/S3 headings; PDF pp. 3 and 9-10."
+    },
+    {
+      "id": "KF7",
+      "claim": "Hypoxic animals showed pulmonary vascular injury and the nominated lung protein directions.",
+      "context": "Control-versus-hypoxic model expression follow-up, separate from human diagnostic-model evaluation.",
+      "evidence": [
+        {
+          "label": "Exposure/allocation",
+          "value": "Methods describes male SPF rats, control n=6 and HPH n=6; 10% oxygen for 8 hours/day, 6 days/week, 4 weeks. One allocation sentence switches the word rats to mice."
+        },
+        {
+          "label": "Injury/pressure",
+          "value": "Figure 8A shows thicker pulmonary arterial walls; 8B shows greater right ventricular pressure with an RVSP-labelled quantification axis"
+        },
+        {
+          "label": "Protein direction",
+          "value": "Figure 8C: MYH10 higher; DSTN, NDUFS1, RPN1 and TLN1 lower in HPH lung"
+        },
+        {
+          "label": "Blot caption",
+          "value": "Mean ± SD, n=3, **p≤0.01; separate from allocated n=6/group"
+        },
+        {
+          "label": "Experimental role",
+          "value": "Hypoxia-associated expression and injury; no candidate-gene perturbation/rescue or direct disulfidptosis assay"
+        },
+        {
+          "label": "Supplementary image context",
+          "value": "Complete Supplementary Material 2 displays uncropped target/beta-actin membranes, without explicit lane-group labels; no independent lane assignment or densitometry is inferred."
+        }
+      ],
+      "source_locator": "Methods Animal (Sec11), Histopathological examination of lung (Sec13), Right ventricular pressure measurement (Sec14), Detecting the expression levels of key disulfidptosis proteins in lung tissue (Sec15); Results Sec23; Figure 8A-C/caption; PDF pp. 3-4 and 11. Supplementary Material 2, single-frame TIFF."
+    }
+  ],
+  "what_this_adds": [
+    "Prioritizes a concrete five-gene PH candidate set and connects bulk expression with hypoxic-lung protein observations.",
+    "Provides separable expression-cluster, immune/pathway, model-evaluation and regulatory/drug-network evidence for literature comparisons.",
+    "Makes reported model estimates and computational folic-acid hypotheses citable with exact panel and source locations, while keeping their scientific roles explicit."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The article-reported expression differences and computational PH-profile clusters.",
+      "Published model estimates as source-specific summaries, including the discrepant labels and GLM value.",
+      "Predicted ceRNA/drug relationships, docking hypotheses and animal hypoxia-associated injury/protein directions."
+    ],
+    "does_not_establish": [
+      "A fully specified, independently validated clinical PH test or prospective decision benefit.",
+      "A causal role for the five genes or direct demonstration of disulfidptosis from expression follow-up.",
+      "Experimental folic-acid binding, target engagement or treatment efficacy in this study."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which genes were prioritized and what human expression pattern was reported?",
+      "answer": "The five prioritized candidates are NDUFS1, RPN1, TLN1, MYH10 and DSTN. Figure 2 shows MYH10 higher and the other four lower in PH. Screening started from 23 literature-derived genes and identified 12 differential genes. Methods describes 25 control and 58 PH profiles in GSE117261; abstract accessions differ and are retained explicitly in KF1.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "What do the two molecular clusters represent?",
+      "answer": "They are computational clusters of the 58 PH expression profiles: C1 n=48 and C2 n=10. NDUFS1, DSTN and TLN1 are higher in C1; SLC7A11, LRPPRC, SLC3A2 and IQGAP1 are higher in C2. The clusters describe expression heterogeneity within the dataset.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What immune and pathway evidence is available?",
+      "answer": "CIBERSORT estimates relative proportions of 22 immune-cell types. Figure S3 and Results show higher inferred proportions in C2 for follicular helper T cells (**), activated NK cells (*) and activated dendritic cells (**). The figure caption defines * P < 0.05 and ** P < 0.01. The actual S5 KEGG image contrasts metabolic pathways toward C2 with immune/signaling pathways toward C1; actual S4 contains GO terms. The article references those two figures in reverse order.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What four-model performance can be cited?",
+      "answer": "Figure 4D reports XGB AUC 0.958, SVM 0.941, RF 0.853 and GLM 0.576. Results gives GLM 0.756 instead. Results describes fivefold evaluation in the training data for patient-cluster differentiation, whereas the caption says testing cohort and Methods uses PH diagnosis language. Cite these as the reported model comparison with those task/partition discrepancies.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "How are the additional ROC estimates mapped to datasets?",
+      "answer": "Read directly from Figure 5: D is GSE24988 PH, AUC 0.761 (95% CI 0.625-0.873); E is GSE33463 idiopathic PAH, 0.889 (0.809-0.957); F is GSE33463 scleroderma-associated PAH, 0.937 (0.880-0.980). The caption agrees with those panel labels, while Results assigns the latter two values to GSE24988 and GSE57345. The additional panels are described as fivefold cross-validation; a frozen independent clinical model is not demonstrated.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What regulatory relationships were predicted?",
+      "answer": "The predicted ceRNA network contains 160 nodes and 187 edges, including five mRNAs, 40 miRNAs and 115 lncRNAs. It integrates TargetScan, miRDB, miRanda and SpongeScan predictions. The proposed LINC00689 links to RPN1 and DSTN offer candidates for experimental follow-up.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What does the folic-acid result show?",
+      "answer": "CTD-based prediction links folic acid (D005492) to all five candidates, followed by docking poses in Figure 7B. Results reports a mean binding energy of -8.06 kcal/mol. The folic-acid analysis was limited to prediction and docking. The DOCX contains Table S2/S3 titles without individual drug/energy table bodies.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What did the animal experiment actually measure?",
+      "answer": "Methods describes male SPF rats exposed to 10% oxygen for eight hours/day, six days/week, for four weeks, versus controls. Figure 8 shows pulmonary arterial wall thickening, greater right ventricular pressure, higher MYH10 lung protein and lower DSTN, NDUFS1, RPN1 and TLN1.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "How should animal sample sizes and assay units be described?",
+      "answer": "Methods allocates control n=6 and HPH n=6, while Figure 8C reports Western blot mean ± SD, n=3. Keep those units separate; the source does not fully explain assay reuse or biological-versus-technical replication. One allocation sentence says mice amid an otherwise rat-described model. The pressure plot labels the endpoint RVSP, measured by right-ventricular catheterization.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Pulmonary hypertension",
+      "Idiopathic pulmonary arterial hypertension",
+      "Scleroderma-associated pulmonary arterial hypertension",
+      "Hypoxic pulmonary hypertension"
+    ],
+    "candidate_genes": [
+      "NDUFS1",
+      "RPN1",
+      "TLN1",
+      "MYH10",
+      "DSTN"
+    ],
+    "biological_context": [
+      "Disulfidptosis-related expression",
+      "Pulmonary vascular remodeling",
+      "Immune-cell context",
+      "Hypoxic lung injury"
+    ],
+    "assays": [
+      "Lung histology",
+      "Right ventricular pressure",
+      "Western blot"
+    ],
+    "data_types": [
+      "Public bulk gene expression",
+      "Relative immune-cell proportions",
+      "Animal lung protein"
+    ],
+    "methods": [
+      "Consensus clustering",
+      "CIBERSORT",
+      "GSVA",
+      "Extreme gradient boosting",
+      "Support vector machine",
+      "Random forest",
+      "Generalized linear model",
+      "Nomogram",
+      "ROC analysis",
+      "ceRNA prediction",
+      "CTD drug-target prediction",
+      "Molecular docking"
+    ],
+    "evidence_concepts": [
+      "Candidate prioritization",
+      "Model-task definition",
+      "Source-specific dataset labels",
+      "Expression follow-up",
+      "Computational drug hypotheses"
+    ]
+  },
+  "limitations": [
+    "Dataset identity differs between abstract, Methods and ROC Results: the source-specific accession mapping is retained in KF1/KF4; additional dataset group counts and analytical independence are not reconstructed.",
+    "Model task and partition wording differ between PH diagnosis, patient-cluster differentiation, training-data cross-validation and testing-cohort caption. Figure 4D gives GLM AUC 0.576 versus 0.756 in Results.",
+    "CIBERSORT estimates relative immune proportions. Results reverses the references to S4 and S5. The supplement captions describe S4 as pathway activity and S5 as biological function, while the corresponding images contain GO terms and KEGG pathways, respectively.",
+    "Animal allocation n=6/group and Western blot caption n=3 are different units. Assay reuse/replicate type are incompletely described, and one allocation sentence switches species terminology.",
+    "Expression follow-up and predicted ceRNA/drug networks supply hypotheses; candidate perturbation, direct disulfidptosis assays and folic-acid treatment effects were not tested."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1111/jcmm.70475",
+      "relationship": "Examines disulfidptosis-related candidates in ischaemic cardiomyopathy through public expression analyses and mouse expression follow-up. The two studies illustrate candidate prioritization in distinct cardiovascular disease settings."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://link.springer.com/article/10.1186/s12931-024-02978-w",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11465917/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39385167/",
+    "doi_url": "https://doi.org/10.1186/s12931-024-02978-w",
+    "pmcid": "PMC11465917",
+    "pmc_cloud_xml_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11465917.1/PMC11465917.1.xml",
+    "official_manifest_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11465917.1/PMC11465917.1.json",
+    "original_pdf_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11465917.1/PMC11465917.1.pdf",
+    "supplement_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11465917.1/12931_2024_2978_MOESM1_ESM.docx",
+    "supplement2_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11465917.1/12931_2024_2978_MOESM2_ESM.tif",
+    "version_of_record": "Respiratory Research. 2024;25:365; published 9 October 2024. JATS and official version manifest identify PMC11465917.1, PMID39385167, the same DOI/title and fourteen authors.",
+    "license": "Original JATS permissions: CC BY-NC-ND 4.0, https://creativecommons.org/licenses/by-nc-nd/4.0/. Gold is independent factual paraphrase with original-source links; source PDF/images remain private.",
+    "evidence_basis": "The complete original article and the official PMC11465917.1 archive records support this account. The source review includes all eight main figures, five supplementary figures in the DOCX and the uncropped membrane image in Supplementary Material 2.",
+    "source_note_accessions": "Abstract says GSE11726/GSE57345/GSE48166. Methods Data source and Figure 1 say GSE117261 discovery (25 control/58 PH), GSE24988 and GSE33463 additional analyses. No accession was silently corrected or selected as the true analysis.",
+    "source_note_model_comparison": "Figure 4D GLM AUC 0.576 differs from Results 0.756; XGB 0.958/SVM 0.941/RF 0.853 agree. Results describes training-data fivefold cross-validation and cluster discrimination; caption says testing cohort. Methods diagnostic language does not resolve the target/partition.",
+    "source_note_figure5": "Actual Figure 5D GSE24988 PH: 0.761 (0.625-0.873); E GSE33463 idiopathic PAH: 0.889 (0.809-0.957); F GSE33463 scleroderma-associated PAH: 0.937 (0.880-0.980). Results instead assigns latter values to GSE24988/GSE57345. Fivefold evaluation in the named datasets is not proof of frozen external transfer.",
+    "source_note_supplement_order": "The fourth embedded DOCX image, placed under Figure S4, contains GO terms (including NADPH oxidation and leucine metabolism); the fifth, Figure S5, contains KEGG pathways (including xenobiotic/drug metabolism and immune signaling). Results refers to these in the reverse order. Their visual content is retained rather than relabelled.",
+    "source_note_immune": "Figure S3 shows the C2 increases reported in Results: inferred relative proportions of follicular helper T cells (**), activated NK cells (*) and activated dendritic cells (**). The caption defines * P < 0.05 and ** P < 0.01.",
+    "source_note_animal": "Methods mostly identifies male SPF rats but one allocation sentence says mice; allocated n=6/group. Figure 8C caption n=3, mean ± SD, **p≤0.01. Figure 8B quantification axis reads RVSP(mmHg); catheter Methods measure the right ventricle. No exact pressure mean or independent replicate count was derived from pixels.",
+    "source_note_tables": "The complete DOCX has five embedded figures and Table S1/S2/S3 titles, with zero Word table bodies, embeddings, OLE/altChunk parts or external table relationships. The complete Supplementary Material 2 TIFF contains uncropped blots, not tables. Detailed per-dataset sample tables, drug lists and individual docking-energy table rows are absent from these supplied supplements; they are not invented.",
+    "source_note_folic_acid": "Main Results gives 333 drugs/338 total nodes/579 edges and mean docking energy -8.06 kcal/mol; Figure 7 supplies network/poses. Individual table-based energies and drug records are not asserted from missing DOCX table bodies. No drug intervention was conducted.",
+    "source_note_gene_spelling": "The differential-expression Results spells RNP1 once; candidate selection, figures, ceRNA node and Western blot use RPN1. Candidate identity here follows those explicit five-gene labels, without silently rewriting quoted source statements.",
+    "supporting_material": "Supplementary Material 1 DOCX contains Figures S1-S5 and headings for Tables S1-S3, without those table bodies. Supplementary Material 2 is a single 3855×1474-pixel TIFF with uncropped membrane images labelled TLN1, MYH10, NDUFS1, RPN1 and DSTN alongside beta-actin images; it contains no tables. Its lanes lack explicit Control/HPH assignments, so it is image-source context rather than an independent lane/replicate or densitometry audit."
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which disulfidptosis-related expression candidates were prioritized in PH?",
+        "supported_scope": "Five-gene candidate association, reported discovery counts and expression clusters.",
+        "evidence_refs": [
+          "KF1",
+          "KF2"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What do the reported PH model estimates represent?",
+        "supported_scope": "Source-located internal/additional dataset ROC summaries, with model task and discrepant values/labels retained.",
+        "evidence_refs": [
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What immune, regulatory and drug hypotheses accompany those candidates?",
+        "supported_scope": "Inferred relative immune/pathway context, predicted ceRNA relationships and computational folic-acid docking.",
+        "evidence_refs": [
+          "KF2",
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "Which candidate proteins changed in a hypoxic pulmonary hypertension model?",
+        "supported_scope": "Rat-described hypoxia-associated lung protein, histology and right ventricular pressure observations, with assay-specific n.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A certified independent clinical PH diagnostic test or demonstrated patient decision benefit.",
+      "Causal disulfidptosis or experimentally established gene/ceRNA mechanisms.",
+      "Folic-acid treatment efficacy or experimentally verified target binding in this study."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-ph-1",
+        "component": "KF1: Public PH expression screening identified a five-gene candidate set with a defined expression pattern.",
+        "context": "Literature-derived candidate screening and subsequent model-based prioritization.",
+        "finding": "Public PH expression screening identified a five-gene candidate set with a defined expression pattern. Methods discovery data: GSE117261: 25 control and 58 PH profiles; Screening: 23 disulfidptosis-related candidates considered; 12 described as differentially expressed; Prioritized genes: NDUFS1, RPN1, TLN1, MYH10 and DSTN; Five-gene bulk direction: MYH10 higher; NDUFS1, RPN1, TLN1 and DSTN lower in PH in Figure 2; Accession disagreement: Abstract names GSE11726, GSE57345 and GSE48166; Methods/Figure 1 name GSE117261, GSE24988 and GSE33463. These are retained as source-specific statements.",
+        "evidence_level": "Bulk-expression association",
+        "scope": "Literature-derived candidate screening and subsequent model-based prioritization.",
+        "source_locator": "Abstract; Methods Data source (Sec3) and Selection of differentially expressed DiGs (Sec4); Results DiGs expression and immune infiltration analysis in PH patients (Sec18); Figures 1 and 2A-B; PDF pp. 1-5.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-ph-2",
+        "component": "KF2: Two PH expression clusters showed different inferred immune and pathway patterns.",
+        "context": "Consensus clustering of the 58 PH profiles; CIBERSORT and GSVA analysis.",
+        "finding": "Two PH expression clusters showed different inferred immune and pathway patterns. Cluster allocation: k=2; Cluster 1 n=48 and Cluster 2 n=10; Expression examples: NDUFS1, DSTN and TLN1 higher in Cluster 1; SLC7A11, LRPPRC, SLC3A2 and IQGAP1 higher in Cluster 2; Immune evidence: Figure S3 and Results show higher inferred proportions in C2 for follicular helper T cells (**), activated NK cells (*) and activated dendritic cells (**). The caption defines * P < 0.05 and ** P < 0.01.; Pathway context: Actual KEGG image in Figure S5 shows drug/xenobiotic and propanoate metabolism toward C2; NOD-like receptor, NK-mediated cytotoxicity, MAPK and cytokine-receptor pathways toward C1. Actual S4 contains GO terms; the text/caption S4/S5 references are reversed.; Measurement unit: Relative expression-derived proportions of 22 immune-cell types and GSVA scores, rather than directly counted cells or established clinical PH subtypes",
+        "evidence_level": "Computational clustering/deconvolution",
+        "scope": "Consensus clustering of the 58 PH profiles; CIBERSORT and GSVA analysis.",
+        "source_locator": "Methods Sec5/Sec8; Results Identification of PH disulfidptosis cluster (Sec19); Figure 3; Supplementary Material 1 Figures S1-S5 (actual images, S4 GO/S5 KEGG); PDF pp. 5-6.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-ph-3",
+        "component": "KF3: The four-model comparison favored XGB in the reported internal evaluation.",
+        "context": "Published discrimination estimates with the source model task and partition wording retained.",
+        "finding": "The four-model comparison favored XGB in the reported internal evaluation. Shared AUC values: XGB 0.958; SVM 0.941; RF 0.853 in Figure 4D and Results; GLM discrepancy: Figure 4D prints 0.576; Results prints 0.756; Feature selection: The XGB analysis prioritizes NDUFS1, RPN1, TLN1, MYH10 and DSTN; Evaluation wording: Results calls this fivefold evaluation in the training dataset and differentiation between patient clusters; Figure 4 caption calls it fivefold cross-validation in the testing cohort. Methods also uses diagnosing PH wording.",
+        "evidence_level": "Published internal model comparison",
+        "scope": "Published discrimination estimates with the source model task and partition wording retained.",
+        "source_locator": "Methods Predictive model construction based on multiple machine-learning methods (Sec6); Results Machine learning model construction and evaluation (Sec20); Figure 4A-D/caption; PDF pp. 6-8.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-ph-4",
+        "component": "KF4: The five-gene nomogram and additional ROC panels provide source-located model summaries.",
+        "context": "The nomogram uses the 58 PH cases; additional dataset evaluations are reported with conflicting text labels.",
+        "finding": "The five-gene nomogram and additional ROC panels provide source-located model summaries. Nomogram: Figure 5A-C: five-gene score, calibration and decision-curve plots; Results describes PH-cluster risk in 58 PH cases; Figure 5D: GSE24988 pulmonary hypertension: AUC 0.761, 95% CI 0.625-0.873; Figure 5E: GSE33463 idiopathic pulmonary arterial hypertension: AUC 0.889, 95% CI 0.809-0.957; Figure 5F: GSE33463 scleroderma with pulmonary arterial hypertension: AUC 0.937, 95% CI 0.880-0.980; Text disagreement: Results assigns 0.889 to GSE24988 and 0.937 to GSE57345, unlike the actual panel labels and Figure 5 caption. Captions describe fivefold cross-validation in those datasets; frozen-model transfer and sample-independent clinical performance are not established.",
+        "evidence_level": "Published additional dataset ROC summaries",
+        "scope": "The nomogram uses the 58 PH cases; additional dataset evaluations are reported with conflicting text labels.",
+        "source_locator": "Methods Nomogram construction and validation (Sec7); Results Sec20; original Figure 5A-I and caption; PDF pp. 8-9.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-ph-5",
+        "component": "KF5: The predicted ceRNA network organizes possible regulatory relationships around the five candidates.",
+        "context": "In silico miRNA-mRNA and miRNA-lncRNA target-network construction.",
+        "finding": "The predicted ceRNA network organizes possible regulatory relationships around the five candidates. Resources: TargetScan, miRDB, miRanda and SpongeScan; Cytoscape visualization; Reported network: 160 nodes: 5 candidate mRNAs, 40 miRNAs and 115 lncRNAs; 187 edges; Example hypothesis: The Results highlights LINC00689 connections involving RPN1 and DSTN; Evidence role: Database-predicted relationships for experimental prioritization; no binding or regulatory perturbation assay was performed in this study",
+        "evidence_level": "In silico regulatory-network prediction",
+        "scope": "In silico miRNA-mRNA and miRNA-lncRNA target-network construction.",
+        "source_locator": "Methods CeRNA network construction (Sec9); Results CeRNA network establishment (Sec21); Figure 6; PDF pp. 3 and 9.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-ph-6",
+        "component": "KF6: CTD predictions and docking nominate folic acid as a computational follow-up candidate.",
+        "context": "Drug-target network construction followed by structural docking.",
+        "finding": "CTD predictions and docking nominate folic acid as a computational follow-up candidate. Reported network: 338 nodes: 5 genes and 333 predicted drugs; 579 edges; Folic acid: CTD identifier D005492 is reported to connect with all five core candidates; Docking: AutoDock Vina 1.1.2; PyMOL 2.0.0; Results reports mean binding energy -8.06 kcal/mol; Read scope: Figure 7B displays five docking poses. Supplementary Material 1 supplies Table S2/S3 titles without table bodies; individual drug records and per-target energy values cannot be extracted from that DOCX.; Evidence role: Computational interaction hypothesis; this study did not administer folic acid or measure therapeutic benefit",
+        "evidence_level": "Computational drug/network/docking hypothesis",
+        "scope": "Drug-target network construction followed by structural docking.",
+        "source_locator": "Methods Identification of candidate small-molecular drugs (Sec10); Results Prediction of targeted drugs (Sec22); Figure 7A-B; Supplementary Material 1 Table S2/S3 headings; PDF pp. 3 and 9-10.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-ph-7",
+        "component": "KF7: Hypoxic animals showed pulmonary vascular injury and the nominated lung protein directions.",
+        "context": "Control-versus-hypoxic model expression follow-up, separate from human diagnostic-model evaluation.",
+        "finding": "Hypoxic animals showed pulmonary vascular injury and the nominated lung protein directions. Exposure/allocation: Methods describes male SPF rats, control n=6 and HPH n=6; 10% oxygen for 8 hours/day, 6 days/week, 4 weeks. One allocation sentence switches the word rats to mice.; Injury/pressure: Figure 8A shows thicker pulmonary arterial walls; 8B shows greater right ventricular pressure with an RVSP-labelled quantification axis; Protein direction: Figure 8C: MYH10 higher; DSTN, NDUFS1, RPN1 and TLN1 lower in HPH lung; Blot caption: Mean ± SD, n=3, **p≤0.01; separate from allocated n=6/group; Experimental role: Hypoxia-associated expression and injury; no candidate-gene perturbation/rescue or direct disulfidptosis assay; Supplementary image context: Complete Supplementary Material 2 displays uncropped target/beta-actin membranes, without explicit lane-group labels; no independent lane assignment or densitometry is inferred.",
+        "evidence_level": "Animal hypoxia-associated protein and injury",
+        "scope": "Control-versus-hypoxic model expression follow-up, separate from human diagnostic-model evaluation.",
+        "source_locator": "Methods Animal (Sec11), Histopathological examination of lung (Sec13), Right ventricular pressure measurement (Sec14), Detecting the expression levels of key disulfidptosis proteins in lung tissue (Sec15); Results Sec23; Figure 8A-C/caption; PDF pp. 3-4 and 11. Supplementary Material 2, single-frame TIFF.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies, and does not replace, the formal article."
+}

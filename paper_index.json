@@ -2452,8 +2452,8 @@
       "doi": "10.1186/s12931-024-02978-w",
       "paper_url": "https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1186-s12931-024-02978-w.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1186/s12931-024-02978-w",
       "publisher_url": null,
@@ -2465,9 +2465,30 @@
       "openalex_id": "https://openalex.org/W4403276445",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1186-s12931-024-02978-w.csv",
+      "question_count": 9,
+      "concept_count": 36,
+      "discovery_layer": {
+        "field_entry": [
+          "Pulmonary hypertension biology",
+          "Disulfidptosis-related gene research"
+        ],
+        "review_topics": [
+          "Public-expression candidate prioritization",
+          "Immune context and hypoxia-lung expression"
+        ],
+        "scientific_role": "Prioritizes five expression candidates through public transcriptomic screening, model comparisons, immune/pathway analysis and hypoxic-rat lung protein measurements.",
+        "evidence_position": "Human expression associations, published model evaluations, predicted regulatory/drug networks and animal expression follow-up.",
+        "related_concepts": [
+          "Pulmonary vascular remodeling",
+          "Immune deconvolution",
+          "Hypoxic pulmonary hypertension"
+        ],
+        "citation_contexts": [
+          "Methods: separating expression screening, computational model evaluation and animal protein follow-up.",
+          "Discussion: disulfidptosis-related candidates, immune context and computational folic-acid hypotheses in PH."
+        ]
+      }
     },
     {
       "title": "Identification of diagnostic signature and immune infiltration for ischemic cardiomyopathy based on cuproptosis-related genes through bioinformatics analysis and experimental validation",
