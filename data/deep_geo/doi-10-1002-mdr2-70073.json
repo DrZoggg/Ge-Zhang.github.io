@@ -1,0 +1,576 @@
+{
+  "version": 2,
+  "doi": "10.1002/mdr2.70073",
+  "discovery_layer": {
+    "field_entry": [
+      "Musculoskeletal AI screening research",
+      "Clinical data and text integration"
+    ],
+    "review_topics": [
+      "Structured prediction and symptom-text fusion",
+      "Interpretable screening workflows and evaluation design"
+    ],
+    "scientific_role": "Describes an applied multimodal platform combining routine blood/demographic models with curated symptom-text representations, reported cohort evaluations and patient/physician workflow modules.",
+    "evidence_position": "Model development and reported evaluation using survey and hospital records, with a separate fusion comparison and a description of the screening software.",
+    "related_concepts": [
+      "Two-stage stacking",
+      "Clinical text representations",
+      "SHAP model interpretation"
+    ],
+    "citation_contexts": [
+      "Methods: compare scalar prediction-score plus text-representation fusion and reported leakage-control procedures.",
+      "Discussion: accessible-input screening, reported cohort estimates and the distinction between a platform workflow and prospective clinical benefit."
+    ]
+  },
+  "display_title": "Luma AI: blood-test models, symptom-text fusion and musculoskeletal screening workflows",
+  "summary": "Luma AI combines routine blood tests and demographics with curated symptom narratives for screening support in osteoarthritis (OA), rheumatoid arthritis (RA) and osteoporosis (OP). The study reports structured-model results in NHANES and four Chinese cohorts, a two-stage fusion design, and patient and physician workflows.",
+  "research_question": "How can routine blood-test/demographic predictions and patient symptom-text representations be integrated for musculoskeletal screening support, and what model and workflow evidence does the study report?",
+  "author_summary": "The study reports 58,777 NHANES records, with 49,523 from 1999–2016 for training and 9,254 from 2017–2018 for temporal testing. The Chinese structured evaluation used data from 4,436 patients across four centers. After benchmarking structured classifiers, the authors selected Extra Trees and used SHAP to examine which inputs drove predictions. Reported OA, RA and OP AUCs were 0.914, 0.841 and 0.954 in the temporal test set and 0.892, 0.805 and 0.915 in the Chinese cohorts. The article reports using both test sets to select hyperparameters and separately describes refitting before evaluation in its fusion protocol. Three Extra Trees scores and a 768-dimensional Bio_ClinicalBERT representation feed a 771-dimensional linear classifier. The architecture uses out-of-fold structured scores and curated, redacted symptom text. In a separate comparison using hospitalization records from 126 patients, the authors report 9.176% higher accuracy than blood-data-only models. The underlying counts and gain calculation are referred to Table S11. The platform also provides patient screening outputs, physician model training and SHAP, and post-screening information.",
+  "study_profile": {
+    "profile_type": "multicohort_observational",
+    "study_design": "Supervised model development using existing survey and hospital records, with temporal and multicenter structured evaluations, a separate symptom-text fusion comparison, and software workflow descriptions.",
+    "evidence_type": "Reported classification/ROC estimates, model-selection and feature-attribution analyses, multimodal architecture and software-workflow descriptions.",
+    "population": "NHANES records from 1999–2018, data from 4,436 patients across four Chinese clinical centers, and a separately described fusion comparison using Shanghai Sixth People’s Hospital records from 126 patients.",
+    "primary_endpoint": "OA/RA/OP classification or risk-screening outputs and reported discrimination/accuracy evaluations.",
+    "secondary_endpoint": "Feature attributions, ablation observations, symptom-text fusion and platform workflow/recommendation functions.",
+    "data_modalities": [
+      "Routine laboratory/blood-test measurements",
+      "Demographic variables",
+      "Curated patient-reported symptom narratives"
+    ],
+    "external_validation": true,
+    "scale_metrics": [
+      {
+        "label": "Reported NHANES records",
+        "value": "58,777 from 1999–2018"
+      },
+      {
+        "label": "Training-period records",
+        "value": "49,523 from 1999–2016"
+      },
+      {
+        "label": "Temporal-test records",
+        "value": "9,254 from 2017–2018"
+      },
+      {
+        "label": "Chinese structured evaluation",
+        "value": "4,436 patients across four clinical centers"
+      },
+      {
+        "label": "Multimodal comparison",
+        "value": "Hospitalization records from 126 patients at Shanghai Sixth People’s Hospital"
+      },
+      {
+        "label": "Predictor selection",
+        "value": "42 candidates in Results versus 41 in Figure 2 caption; 25 selected predictors reported"
+      },
+      {
+        "label": "Structured benchmark/optimization",
+        "value": "50 classifiers in Results; 10 Bayesian-optimized Extra Trees configurations evaluated"
+      },
+      {
+        "label": "Fusion representation",
+        "value": "3 structured probability scores + 768 text features = 771 dimensions"
+      }
+    ],
+    "counting_note": "The paper counts NHANES records and describes the size of the Chinese evaluations in patients. The 126-patient fusion comparison is reported separately. Per-disease counts and its overlap with the structured evaluation remain unresolved."
+  },
+  "model_profile": {
+    "model_name": "Luma AI",
+    "structured_branch": "Disease-specific Extra Trees classifiers producing P(OA), P(RA) and P(OP); TabNet-based predictor screening and Bayesian hyperparameter comparisons are reported.",
+    "text_branch": "Bio_ClinicalBERT as a clinical text encoder with LoRA adapters; fixed 768-dimensional final [CLS] representations after validation-checkpoint selection.",
+    "fusion_head": "Concatenated 771-dimensional representation; linear softmax classifier trained with cross-entropy to output OA, RA, OP and other-category probabilities.",
+    "reported_training_controls": "Inner fivefold out-of-fold structured scores, redacted narratives, a validation-selected text checkpoint and fixed branches during fusion-head training. The article reports patient-level separation across training, validation and testing.",
+    "evaluation_scope": "Temporal and Chinese-cohort structured-model estimates, plus a separate comparison using hospital records from 126 patients. Results 2.2 used both structured test sets in model configuration selection.",
+    "intended_use": "Risk stratification, self-screening support and clinical follow-up."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study combines survey and hospital record settings for three musculoskeletal screening targets.",
+      "context": "Reported data roles for OA, RA and OP model development.",
+      "evidence": [
+        {
+          "label": "NHANES",
+          "value": "58,777 blood-test and demographic records from 1999–2018"
+        },
+        {
+          "label": "Temporal partition",
+          "value": "49,523 training-period records from 1999–2016 and 9,254 Test Set 1 records from 2017–2018"
+        },
+        {
+          "label": "Additional cohort setting",
+          "value": "Data from 4,436 patients across four Chinese clinical centers in Test Set 2"
+        },
+        {
+          "label": "Fusion comparison",
+          "value": "Hospitalization records from 126 patients at Shanghai Sixth People’s Hospital"
+        },
+        {
+          "label": "Unit",
+          "value": "NHANES counts are records. The Chinese cohort sizes are reported in patients. Per-disease counts and overlap with the fusion comparison remain unresolved."
+        }
+      ],
+      "source_locator": "Results 2.1, Population Characteristics Overview. Results 2.2 and Figure 3 caption. Results 2.4, final paragraph. Figure 1 caption."
+    },
+    {
+      "id": "KF2",
+      "claim": "The structured branch prioritizes Extra Trees after predictor screening and classifier comparison.",
+      "context": "Article-reported model development and internally inconsistent training summaries.",
+      "evidence": [
+        {
+          "label": "Predictor screening",
+          "value": "Results reports 42 candidates and 25 selected via TabNet. The Figure 2 caption describes 3 demographic and 38 blood-test indicators, totaling 41."
+        },
+        {
+          "label": "Benchmark",
+          "value": "Results benchmarks 50 classifiers and selects Extra Trees. The abstract describes more than 50 models."
+        },
+        {
+          "label": "Printed OA training pair",
+          "value": "AUC 0.975 with 95% CI 0.997–0.998"
+        },
+        {
+          "label": "Printed RA training pair",
+          "value": "AUC 0.931 with 95% CI 0.935–0.957"
+        },
+        {
+          "label": "Printed OP training pair",
+          "value": "AUC 0.984 with 95% CI 0.997–0.998"
+        },
+        {
+          "label": "Source interpretation",
+          "value": "Each training AUC lies below the lower bound of its printed 95% interval."
+        }
+      ],
+      "source_locator": "Abstract. Results 2.2, first paragraph. Figure 2 and Figure 3 captions."
+    },
+    {
+      "id": "KF3",
+      "claim": "Extra Trees is evaluated in a later NHANES period and at four clinical centers in China.",
+      "context": "Published evaluation estimates, separate from the symptom-fusion comparison.",
+      "evidence": [
+        {
+          "label": "Test Set 1, OA",
+          "value": "AUC 0.914 (95% CI 0.900–0.929)"
+        },
+        {
+          "label": "Test Set 1, RA",
+          "value": "AUC 0.841 (95% CI 0.817–0.867)"
+        },
+        {
+          "label": "Test Set 1, OP",
+          "value": "AUC 0.954 (95% CI 0.945–0.962)"
+        },
+        {
+          "label": "Test Set 2, OA",
+          "value": "AUC 0.892 (95% CI 0.868–0.913)"
+        },
+        {
+          "label": "Test Set 2, RA",
+          "value": "AUC 0.805 (95% CI 0.763–0.846)"
+        },
+        {
+          "label": "Test Set 2, OP",
+          "value": "AUC 0.915 (95% CI 0.891–0.938)"
+        },
+        {
+          "label": "Selection boundary",
+          "value": "Results 2.2 reports selecting final settings after evaluating 10 Bayesian-optimized configurations on both test sets. Results 2.4 separately describes refitting on the full training set and applying the resulting models once to validation and test patients. The main text leaves the stage-specific relationship unresolved."
+        }
+      ],
+      "source_locator": "Results 2.2, evaluation and hyperparameter paragraphs. Figure 3C and 3D captions. Results 2.4, two-stage stacking paragraph."
+    },
+    {
+      "id": "KF4",
+      "claim": "SHAP and ablation descriptions characterize which structured inputs the models use.",
+      "context": "Model-attribution and input-ablation analyses.",
+      "evidence": [
+        {
+          "label": "OA examples",
+          "value": "Age, mean corpuscular hemoglobin concentration and total protein are reported as prominent SHAP features"
+        },
+        {
+          "label": "RA examples",
+          "value": "Albumin, globulin and osmolality are reported as prominent features"
+        },
+        {
+          "label": "OP examples",
+          "value": "Age/sex and hematologic measures including red-cell count, hematocrit and mean cell volume are highlighted"
+        },
+        {
+          "label": "Ablation report",
+          "value": "Removing age and sex reduced AUC from 0.848 to 0.720 (−0.128, or −15.1% relative). The paper reports little change after removing common laboratory predictors. Table S15 is cited for the detailed mapping."
+        },
+        {
+          "label": "Interpretation",
+          "value": "The SHAP values describe the contribution of model inputs to the predictions."
+        }
+      ],
+      "source_locator": "Results 2.3 and Figure 4 caption. Results 2.2, sensitivity-analysis paragraph. Discussion, ablation paragraph."
+    },
+    {
+      "id": "KF5",
+      "claim": "The fusion head combines three Extra Trees scores with 768 Bio_ClinicalBERT features.",
+      "context": "Supervised multimodal representation and workflow design.",
+      "evidence": [
+        {
+          "label": "Structured representation",
+          "value": "P(OA), P(RA) and P(OP), the three positive-class probabilities from separate Extra Trees classifiers"
+        },
+        {
+          "label": "Text representation",
+          "value": "Bio_ClinicalBERT base weights were frozen while query and value projections were adapted with LoRA (rank 16, alpha 16, dropout 0.10, no adapter bias) and the text classification head was trainable. Redacted text was capped at 256 tokens. The selected checkpoint supplied a 768-dimensional final [CLS] vector."
+        },
+        {
+          "label": "Fusion",
+          "value": "A 771-dimensional concatenation feeds a linear softmax head trained with cross-entropy to output OA, RA, OP and other-category probabilities."
+        },
+        {
+          "label": "Reported safeguards",
+          "value": "An inner fivefold out-of-fold procedure generated the structured training scores. Both branches were fixed during fusion-head training. The paper reports patient-level separation and removal or masking of diagnostic fields, disease names, abbreviations and near-diagnostic phrases before text encoding."
+        },
+        {
+          "label": "Software role",
+          "value": "LangChain routes records to the two branches, concatenates their outputs and passes the result to the trained fusion head."
+        },
+        {
+          "label": "Detailed protocol scope",
+          "value": "Tables S20–S21 are cited for the code-to-method mapping and complete fusion protocol. They were unavailable for this summary."
+        }
+      ],
+      "source_locator": "Results 2.4, workflow, two-stage stacking and redaction paragraphs. Figure 5 caption. Discussion, fusion-training paragraph."
+    },
+    {
+      "id": "KF6",
+      "claim": "The authors report an accuracy gain in a separate comparison involving 126 patients.",
+      "context": "The hospital symptom-text comparison in Results 2.4.",
+      "evidence": [
+        {
+          "label": "Comparison setting",
+          "value": "Hospitalization records from 126 patients at Shanghai Sixth People’s Hospital included lab results, demographics and curated symptoms."
+        },
+        {
+          "label": "Reported gain",
+          "value": "The authors report 9.176% higher accuracy than models based only on blood data."
+        },
+        {
+          "label": "Unresolved fields",
+          "value": "Table S11 is cited for the comparison. The main text leaves the task denominators, split, overlap, absolute accuracies and relative-percentage versus percentage-point interpretation unresolved."
+        },
+        {
+          "label": "Abstract summary",
+          "value": "The abstract separately summarizes structured-data accuracy as over 80% and multimodal cohort accuracy as over 90%. It gives neither exact values nor a calculation linking them to the 9.176% figure."
+        }
+      ],
+      "source_locator": "Results 2.4, final paragraph and its Table S11 reference. Abstract and Discussion."
+    },
+    {
+      "id": "KF7",
+      "claim": "The platform connects screening outputs with interpretation, physician-training and post-screening information workflows.",
+      "context": "Published software/interface descriptions and recommendation-component design.",
+      "evidence": [
+        {
+          "label": "Patient workflow",
+          "value": "Labs/demographics and symptoms feed OA/RA/OP probabilities with follow-up-oriented information"
+        },
+        {
+          "label": "Physician workflow",
+          "value": "Physicians can compare ten configurations, run predictions and inspect SHAP. The illustrated physician module offers 20 algorithms. The study benchmark covers 50 classifiers in Results."
+        },
+        {
+          "label": "Interpretation views",
+          "value": "The paper describes waterfall, beeswarm, force, bar and dependence plots. A separate tuning application supports cross-validated grid and randomized search."
+        },
+        {
+          "label": "Recommendation basis",
+          "value": "The paper attributes dietary guidance to a systematic review and meta-analytic structural equation modeling (MASEM) of 25 indicators. Tables S12–S13 contain the cited details."
+        },
+        {
+          "label": "Evidence role",
+          "value": "The platform is designed to pair probability outputs with lifestyle, dietary and clinical follow-up information."
+        }
+      ],
+      "source_locator": "Results 2.5–2.6, including dietary guidance, patient and physician interfaces and tuning app. Figure 6 caption."
+    }
+  ],
+  "what_this_adds": [
+    "Provides a concrete fusion example: three disease-specific structured probabilities plus a clinical text-encoder representation, with explicitly described orchestration and training safeguards.",
+    "Provides structured-model estimates from temporal and multicenter settings and reports a separate hospital comparison with symptom text.",
+    "Connects model outputs with SHAP and patient/physician workflow tools, creating an applied context for studying interpretable, accessible-input screening support."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The reported data roles, structured-model comparison estimates and their specific source discrepancies.",
+      "The main-text two-stage fusion architecture, encoder/orchestration roles and described input safeguards.",
+      "SHAP/ablation descriptions and published platform/recommendation workflow components."
+    ],
+    "does_not_establish": [
+      "Corrected training intervals or independent evaluation of the complete frozen fusion pipeline.",
+      "Per-task denominators and the exact calculation of the 9.176% gain.",
+      "Prospective patient benefit, cost-effectiveness or dietary-intervention effects."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which datasets and counts does the study report?",
+      "answer": "NHANES supplied 58,777 records, with 49,523 from 1999–2016 for training and 9,254 from 2017–2018 for Test Set 1. Test Set 2 used data from 4,436 patients across four Chinese clinical centers. The fusion comparison separately used hospital records from 126 patients at Shanghai Sixth People’s Hospital.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "How was the structured model selected?",
+      "answer": "The Results reports 42 candidate predictors, 25 selected with TabNet, and 50 classifiers benchmarked. Extra Trees was selected. Figure 2 describes 41 inputs, and all three training AUCs printed in Results lie outside their paired confidence intervals. The exact printed pairs are listed in the structured-model finding.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What AUCs does the paper report for the two structured test sets?",
+      "answer": "For OA, RA and OP, respectively, the AUCs were 0.914, 0.841 and 0.954 in Test Set 1 and 0.892, 0.805 and 0.915 in Test Set 2. Results 2.2 says both sets were used to select configurations. Results 2.4 describes one-time application after structured-model refitting as part of the fusion protocol.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Which inputs stood out in SHAP and ablation analyses?",
+      "answer": "For OA, prominent features included age, mean corpuscular hemoglobin concentration and total protein. For RA, they included albumin, globulin and osmolality. For OP, they included age, sex and red-cell measures. The paper also reports an AUC decrease from 0.848 to 0.720 after removing age and sex, with the detailed task mapping referred to Table S15.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How are structured outputs and symptom text fused?",
+      "answer": "The head receives three Extra Trees probabilities and a 768-dimensional Bio_ClinicalBERT [CLS] representation. It learns to classify OA, RA, OP and an other category from 771 features. The paper describes inner fivefold out-of-fold scores for training, LoRA tuning with redacted symptom text and fixed branches during fusion-head training. LangChain orchestrates inference.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What accuracy gain did the authors report for symptom-text fusion?",
+      "answer": "In hospital records from 126 patients, the authors report 9.176% higher accuracy than blood-data-only models. The main text refers to Table S11 for the comparison and gives no exact class counts or split, or definition of relative gain versus percentage points.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What post-screening and physician functions are described?",
+      "answer": "The patient portal returns disease probabilities and provides follow-up information. The physician portal offers model training, comparison across ten configurations, inference and SHAP views. The paper attributes dietary guidance to review and meta-analytic structural equation modeling of 25 indicators, with details cited in Tables S12–S13.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "What materials can researchers reuse and what is the intended clinical role?",
+      "answer": "NHANES is public. Hospital data are subject to the access and ethics conditions in the article, and the authors state that code will be shared upon request. The article also provides a link to a grid and randomized search tuning app. The intended clinical role is screening and decision support.",
+      "evidence_refs": [
+        "KF1",
+        "KF5",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Osteoarthritis",
+      "Rheumatoid arthritis",
+      "Osteoporosis"
+    ],
+    "data_types": [
+      "Routine blood-test measurements",
+      "Demographics",
+      "Curated symptom narratives"
+    ],
+    "models_and_methods": [
+      "Extra Trees",
+      "TabNet",
+      "Bayesian optimization",
+      "Bio_ClinicalBERT",
+      "LoRA adapters",
+      "Out-of-fold stacking",
+      "Linear softmax classification",
+      "SHAP"
+    ],
+    "software_roles": [
+      "Deterministic orchestration",
+      "Clinical text representation",
+      "Model-training and prediction interface",
+      "Hyperparameter search",
+      "Post-screening information workflow"
+    ],
+    "evidence_concepts": [
+      "Reported temporal and multicenter evaluation",
+      "Model-selection/test separation",
+      "AUC confidence-interval consistency",
+      "Predictor-count consistency",
+      "Task-specific denominators",
+      "Association versus causal feature effect"
+    ]
+  },
+  "limitations": [
+    "Results 2.2 reports 42 candidate inputs while Figure 2 describes 41. All three printed training AUC points lie below their paired confidence intervals.",
+    "Both structured test sets were used in the configuration selection described in Results 2.2. Results 2.4 describes the refit and one-time application separately. The article does not resolve the stage-specific allocation needed to identify an untouched evaluation of the full fused pipeline.",
+    "Supporting Information S1 was unavailable for this summary. Tables S1–S2 are cited for cohort and predictor detail, S11 for the hospital accuracy comparison, S12–S13 for dietary synthesis, S15 for ablation and S20–S21 for complete fusion and code mapping.",
+    "SHAP and ablation characterize model reliance. Prospective patient benefit, cost-effectiveness and effects of dietary interventions require separate evaluation."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1016/j.gendis.2026.102480",
+      "relationship": "This methodological review provides a framework for comparing the applied platform’s data provenance, model design, evaluation and deployment."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+    "article_url": "https://onlinelibrary.wiley.com/doi/10.1002/mdr2.70073",
+    "doi_url": "https://doi.org/10.1002/mdr2.70073",
+    "supporting_information_url": "https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fmdr2.70073&file=mdr270073-sup-0001-suppl-data.docx",
+    "figure3_url": "https://onlinelibrary.wiley.com/cms/asset/0d6db1f9-ff8f-4bec-9ebc-e533d44bd1fc/mdr270073-fig-0003-m.png",
+    "hyperparameter_tool_url": "https://xqyxqy.shinyapps.io/arthritis-hyperparameter-tuning/",
+    "version_of_record": "Med Research. 2026, 2(3), 460–472. First published 3 June 2026.",
+    "license": "The publisher labels the article CC BY 4.0.",
+    "evidence_basis": "The published article, including Results 2.1–2.6, Discussion and all six figure captions.",
+    "source_note_figures": "The numerical estimates are transcribed from the published Results. Figure 3 shows the structured ROC and benchmark layout. Figure 5 is cited for its caption and the fusion method described in Results 2.4.",
+    "source_note_record_counts": "NHANES counts are records. The four Chinese clinical centers contributed data from 4,436 patients. The fusion comparison uses hospital records from 126 patients, with possible overlap unresolved.",
+    "source_note_training_and_predictors": "Results 2.2 reports 42 candidate predictors and the Figure 2 caption describes 41. Each of the three printed training AUCs is below the lower bound of its paired 95% confidence interval.",
+    "source_note_selection": "Results 2.2 uses both test sets to select settings. Results 2.4 describes inner fivefold out-of-fold training scores, followed by refitting and one-time application. Detailed stage-specific allocations remain unresolved.",
+    "source_note_fusion_role": "The fusion head combines three disease-specific structured scores and a 768-dimensional [CLS] text representation. LangChain orchestrates the pipeline.",
+    "supporting_material_scope": "Supporting Information S1 is listed as mdr270073-sup-0001-suppl-data.docx (3.1 MB). Its content was unavailable for this summary. The cited tables provide more detail on cohort and predictor descriptions, the hospital comparison, dietary synthesis, ablation and the complete fusion protocol.",
+    "data_and_code_availability": "NHANES is public. Hospital data are subject to the article’s access and ethics conditions and may require a data-use agreement. The article states that code will be shared upon request.",
+    "local_ethics": "The article lists approvals from Dalian Medical University First Affiliated Hospital (PJ-KS-KY-2024-235), Zhengzhou University First Affiliated Hospital (2024-KY-1277-001), Longgang People’s Hospital (2025001) and Shanghai Sixth People’s Hospital (2024-009).",
+    "conflicts_of_interest": "The source declares that X.C. and P.X. filed a patent based on the study, and that M.M. partially owned MUHDO Healthcare Aotearoa Limited and provided partial financial support.",
+    "reported_platform": "The article reports a Luma AI screening platform and a separate hyperparameter-tuning application.",
+    "supporting_information_listing_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073#support-information-section"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This source-located summary accompanies, and does not replace, the formal article.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "Which routine clinical data and study settings underpin the platform?",
+        "supported_scope": "Reported record counts, disease targets and separate structured/fusion evaluation roles.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "What structured-model results and feature analyses are reported?",
+        "supported_scope": "Published predictor/model selection, AUC summaries and SHAP/ablation descriptions with their exact discrepancies and boundaries.",
+        "evidence_refs": [
+          "KF2",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "How are structured scores and clinical text representations integrated?",
+        "supported_scope": "Three structured scores, 768 text features and a 771-dimensional fusion input, with reported training safeguards and a comparison using hospital records from 126 patients.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What workflow functions connect the model with patient and physician users?",
+        "supported_scope": "The described patient and clinician interfaces, post-screening guidance, physician training, tuning and SHAP.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "An independently validated estimate for a frozen end-to-end fusion pipeline.",
+      "An exact calculation of the 9.176% accuracy gain.",
+      "Prospective patient benefit or dietary-intervention effects."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-mdr-1",
+        "component": "KF1 — The study combines survey and hospital record settings for three musculoskeletal screening targets.",
+        "context": "Reported data roles for OA, RA and OP model development.",
+        "finding": "The study combines survey and hospital record settings for three musculoskeletal screening targets. 58,777 blood-test and demographic records from 1999–2018. 49,523 training-period records from 1999–2016 and 9,254 Test Set 1 records from 2017–2018. Data from 4,436 patients across four Chinese clinical centers in Test Set 2. Hospitalization records from 126 patients at Shanghai Sixth People’s Hospital. NHANES counts are records. The Chinese cohort sizes are reported in patients. Per-disease counts and overlap with the fusion comparison remain unresolved.",
+        "evidence_level": "Reported retrospective data/evaluation roles",
+        "scope": "Reported data roles for OA, RA and OP model development.",
+        "source_locator": "Results 2.1, Population Characteristics Overview. Results 2.2 and Figure 3 caption. Results 2.4, final paragraph. Figure 1 caption.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-mdr-2",
+        "component": "KF2 — The structured branch prioritizes Extra Trees after predictor screening and classifier comparison.",
+        "context": "Article-reported model development and internally inconsistent training summaries.",
+        "finding": "The structured branch prioritizes Extra Trees after predictor screening and classifier comparison. Results reports 42 candidates and 25 selected via TabNet. The Figure 2 caption describes 3 demographic and 38 blood-test indicators, totaling 41. Results benchmarks 50 classifiers and selects Extra Trees. The abstract describes more than 50 models. AUC 0.975 with 95% CI 0.997–0.998. AUC 0.931 with 95% CI 0.935–0.957. AUC 0.984 with 95% CI 0.997–0.998. Each training AUC lies below the lower bound of its printed 95% interval.",
+        "evidence_level": "Reported structured model-development summaries",
+        "scope": "Article-reported model development and internally inconsistent training summaries.",
+        "source_locator": "Abstract. Results 2.2, first paragraph. Figure 2 and Figure 3 captions.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-mdr-3",
+        "component": "KF3 — Extra Trees is evaluated in a later NHANES period and at four clinical centers in China.",
+        "context": "Published evaluation estimates, separate from the symptom-fusion comparison.",
+        "finding": "Extra Trees is evaluated in a later NHANES period and at four clinical centers in China. AUC 0.914 (95% CI 0.900–0.929). AUC 0.841 (95% CI 0.817–0.867). AUC 0.954 (95% CI 0.945–0.962). AUC 0.892 (95% CI 0.868–0.913). AUC 0.805 (95% CI 0.763–0.846). AUC 0.915 (95% CI 0.891–0.938). Results 2.2 reports selecting final settings after evaluating 10 Bayesian-optimized configurations on both test sets. Results 2.4 separately describes refitting on the full training set and applying the resulting models once to validation and test patients. The main text leaves the stage-specific relationship unresolved.",
+        "evidence_level": "Reported cohort discrimination estimates with selection boundaries",
+        "scope": "Published evaluation estimates, separate from the symptom-fusion comparison.",
+        "source_locator": "Results 2.2, evaluation and hyperparameter paragraphs. Figure 3C and 3D captions. Results 2.4, two-stage stacking paragraph.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-mdr-4",
+        "component": "KF4 — SHAP and ablation descriptions characterize which structured inputs the models use.",
+        "context": "Model-attribution and input-ablation analyses.",
+        "finding": "SHAP and ablation descriptions characterize which structured inputs the models use. Age, mean corpuscular hemoglobin concentration and total protein are reported as prominent SHAP features. Albumin, globulin and osmolality are reported as prominent features. Age/sex and hematologic measures including red-cell count, hematocrit and mean cell volume are highlighted. Removing age and sex reduced AUC from 0.848 to 0.720 (−0.128, or −15.1% relative). The paper reports little change after removing common laboratory predictors. Table S15 is cited for the detailed mapping. The SHAP values describe the contribution of model inputs to the predictions.",
+        "evidence_level": "Model attribution and sensitivity descriptions",
+        "scope": "Model-attribution and input-ablation analyses.",
+        "source_locator": "Results 2.3 and Figure 4 caption. Results 2.2, sensitivity-analysis paragraph. Discussion, ablation paragraph.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-mdr-5",
+        "component": "KF5 — The fusion head combines three Extra Trees scores with 768 Bio_ClinicalBERT features.",
+        "context": "Supervised multimodal representation and workflow design.",
+        "finding": "The fusion head combines three Extra Trees scores with 768 Bio_ClinicalBERT features. P(OA), P(RA) and P(OP), the three positive-class probabilities from separate Extra Trees classifiers. Bio_ClinicalBERT base weights were frozen while query and value projections were adapted with LoRA (rank 16, alpha 16, dropout 0.10, no adapter bias) and the text classification head was trainable. Redacted text was capped at 256 tokens. The selected checkpoint supplied a 768-dimensional final [CLS] vector. A 771-dimensional concatenation feeds a linear softmax head trained with cross-entropy to output OA, RA, OP and other-category probabilities. An inner fivefold out-of-fold procedure generated the structured training scores. Both branches were fixed during fusion-head training. The paper reports patient-level separation and removal or masking of diagnostic fields, disease names, abbreviations and near-diagnostic phrases before text encoding. LangChain routes records to the two branches, concatenates their outputs and passes the result to the trained fusion head. Tables S20–S21 are cited for the code-to-method mapping and complete fusion protocol. They were unavailable for this summary.",
+        "evidence_level": "Main-text supervised multimodal architecture",
+        "scope": "Supervised multimodal representation and workflow design.",
+        "source_locator": "Results 2.4, workflow, two-stage stacking and redaction paragraphs. Figure 5 caption. Discussion, fusion-training paragraph.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-mdr-6",
+        "component": "KF6 — The authors report an accuracy gain in a separate comparison involving 126 patients.",
+        "context": "The hospital symptom-text comparison in Results 2.4.",
+        "finding": "The authors report an accuracy gain in a separate comparison involving 126 patients. Hospitalization records from 126 patients at Shanghai Sixth People’s Hospital included lab results, demographics and curated symptoms. The authors report 9.176% higher accuracy than models based only on blood data. Table S11 is cited for the comparison. The main text leaves the task denominators, split, overlap, absolute accuracies and relative-percentage versus percentage-point interpretation unresolved. The abstract separately summarizes structured-data accuracy as over 80% and multimodal cohort accuracy as over 90%. It gives neither exact values nor a calculation linking them to the 9.176% figure.",
+        "evidence_level": "Reported small-cohort fusion comparison with unresolved detailed table",
+        "scope": "The hospital symptom-text comparison in Results 2.4.",
+        "source_locator": "Results 2.4, final paragraph and its Table S11 reference. Abstract and Discussion.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-mdr-7",
+        "component": "KF7 — The platform connects screening outputs with interpretation, physician-training and post-screening information workflows.",
+        "context": "Published software/interface descriptions and recommendation-component design.",
+        "finding": "The platform connects screening outputs with interpretation, physician-training and post-screening information workflows. Labs/demographics and symptoms feed OA/RA/OP probabilities with follow-up-oriented information. Physicians can compare ten configurations, run predictions and inspect SHAP. The illustrated physician module offers 20 algorithms. The study benchmark covers 50 classifiers in Results. The paper describes waterfall, beeswarm, force, bar and dependence plots. A separate tuning application supports cross-validated grid and randomized search. The paper attributes dietary guidance to a systematic review and meta-analytic structural equation modeling (MASEM) of 25 indicators. Tables S12–S13 contain the cited details. The platform is designed to pair probability outputs with lifestyle, dietary and clinical follow-up information.",
+        "evidence_level": "Described software and information-workflow components",
+        "scope": "Published software/interface descriptions and recommendation-component design.",
+        "source_locator": "Results 2.5–2.6, including dietary guidance, patient and physician interfaces and tuning app. Figure 6 caption.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}

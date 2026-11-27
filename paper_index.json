@@ -732,8 +732,8 @@
       "doi": "10.1002/mdr2.70073",
       "paper_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70073.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1002-mdr2-70073.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1002/mdr2.70073",
       "publisher_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
@@ -745,9 +745,30 @@
       "openalex_id": "https://openalex.org/W7163366492",
       "semantic_scholar_id": null,
       "official_abstract_available": true,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1002-mdr2-70073.csv",
+      "question_count": 8,
+      "concept_count": 25,
+      "discovery_layer": {
+        "field_entry": [
+          "Musculoskeletal AI screening research",
+          "Clinical data and text integration"
+        ],
+        "review_topics": [
+          "Structured prediction and symptom-text fusion",
+          "Interpretable screening workflows and evaluation design"
+        ],
+        "scientific_role": "Describes an applied multimodal platform combining routine blood/demographic models with curated symptom-text representations, reported cohort evaluations and patient/physician workflow modules.",
+        "evidence_position": "Model development and reported evaluation using survey and hospital records, with a separate fusion comparison and a description of the screening software.",
+        "related_concepts": [
+          "Two-stage stacking",
+          "Clinical text representations",
+          "SHAP model interpretation"
+        ],
+        "citation_contexts": [
+          "Methods: compare scalar prediction-score plus text-representation fusion and reported leakage-control procedures.",
+          "Discussion: accessible-input screening, reported cohort estimates and the distinction between a platform workflow and prospective clinical benefit."
+        ]
+      }
     },
     {
       "title": "Trustworthy AI for disease pathogenesis and precision medicine: A disease-agnostic framework from data to deployment",
