@@ -1467,11 +1467,9 @@
           "work_refs": [
             {
               "work_id": "doi-10-2147-cia-s493841",
-              "question_ids": [],
-              "preview_question_id": null,
-              "preview_note_headings": [
-                "Cohort and endpoint"
-              ]
+              "question_ids": ["doi-10-2147-cia-s493841--qa-1", "doi-10-2147-cia-s493841--qa-5", "doi-10-2147-cia-s493841--qa-6"],
+              "preview_question_id": "doi-10-2147-cia-s493841--qa-5",
+              "preview_finding_ids": ["KF1", "KF4", "KF7"]
             }
           ]
         }

@@ -76,3 +76,4 @@
 - [Omics-based molecular classifications empowering in precision oncology](https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html) — DOI: 10.1007/s13402-023-00912-8
 - [Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)](https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html) — DOI: 10.1016/j.ejso.2024.108527
 - [Proteomics appending a complementary dimension to precision oncotherapy](https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html) — DOI: 10.1016/j.csbj.2024.04.044
+- [Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair](https://drgezhang.com/papers/doi-10-2147-cia-s493841.html) — DOI: 10.2147/cia.s493841

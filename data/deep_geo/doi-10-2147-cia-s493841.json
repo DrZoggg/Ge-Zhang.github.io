@@ -1,0 +1,592 @@
+{
+  "version": 2,
+  "doi": "10.2147/cia.s493841",
+  "display_title": "Post-EVAR mortality: a clinical, laboratory and CTA nomogram with internal evaluation",
+  "summary": "This study integrates clinical history, blood measurements and CTA findings into an exploratory nomogram for 1- and 3-year all-cause mortality after elective EVAR. It reports a 304-patient single-centre cohort, selected predictors and internal evaluations, with source-specific performance and sample-accounting discrepancies retained.",
+  "research_question": "Which routinely available clinical, laboratory and CTA features were associated with all-cause mortality after elective EVAR, and how did the proposed 1- and 3-year nomogram perform in the reported internal evaluations?",
+  "author_summary": "This single-centre retrospective study enrolled 304 adults treated with elective EVAR from March 2015 to May 2023, reporting a random 213/91 training/internal-validation split. There were 46 all-cause deaths over a median 24-month follow-up. The authors combined LASSO selection and Cox regression to construct a six-variable nomogram: large AAA, stroke history, common iliac artery atherosclerosis, age, haemoglobin and monocytes. The reported adjusted hazard ratios for the three binary predictors were 3.09, 3.59 and 4.48, respectively; the Cox analytical population remains unspecified. The article supplies discrimination, calibration, Brier, decision-curve and risk-group analyses. These evaluations add methodological context, while inconsistent AUC values, validation mortality percentages and plotted risk-table counts prevent selecting a single certified performance account. The study contributes candidate prognostic associations and a multimodal post-EVAR modeling example. It does not establish an externally validated individual risk tool or show that intervening on a predictor improves survival.",
+  "study_profile": {
+    "profile_type": "clinical_cohort",
+    "study_design": "Single-centre retrospective observational cohort with a reported random 7:3 training/internal-validation split; LASSO-Cox nomogram development and internal evaluation.",
+    "evidence_type": "Clinical prognostic associations and reported model development/evaluation, with unresolved analytic-denominator, scaling and performance-reporting questions.",
+    "population": "Adults undergoing elective EVAR for AAA at the First Affiliated Hospital of Zhengzhou University, March 2015–May 2023; ruptured AAA and open repair excluded.",
+    "primary_endpoint": "All-cause mortality after EVAR; the nomogram targets 1- and 3-year outcomes.",
+    "secondary_endpoint": "Reported discrimination, calibration, time-dependent Brier scores, decision curves and risk-group survival separation are model evaluations rather than additional clinical endpoints.",
+    "unique_total_n": 304,
+    "cohorts": [
+      {
+        "name": "Eligible elective-EVAR cohort",
+        "n": 304,
+        "role": "Single source-centre cohort; parent of the reported random internal split.",
+        "contains": [
+          "Reported training subset",
+          "Reported internal-validation subset"
+        ]
+      },
+      {
+        "name": "Reported training subset",
+        "n": 213,
+        "role": "Article-reported development subset, with 33 all-cause deaths in Table 1.",
+        "subset_of": "Eligible elective-EVAR cohort"
+      },
+      {
+        "name": "Reported internal-validation subset",
+        "n": 91,
+        "role": "Article-reported random holdout from the same centre/period, with 13 deaths in Table 1; not external validation.",
+        "subset_of": "Eligible elective-EVAR cohort"
+      }
+    ],
+    "data_modalities": [
+      "Clinical history and demographics",
+      "Preoperative fasting blood laboratory measurements",
+      "Three-dimensional CTA anatomy",
+      "Clinic-based mortality follow-up"
+    ],
+    "external_validation": false,
+    "counting_note": "The source cohort is 304, split as 213 plus 91; the parent and subsets are counted once. Table 1 reports 33 and 13 all-cause deaths, consistent with 46 overall. Its validation cell prints 13 (14.29%), whereas the performance Results print 13 (14.39%); neither is silently replaced. The original Figure 5 risk tables begin with 49+52=101 and 103+100=203, inconsistent with their caption-assigned training/testing subsets; no revised sample allocation is inferred. The supplement names datacox without defining membership, so the Table 3 Cox analytical denominator/event count is not assigned to 213 or 304."
+  },
+  "model_profile": {
+    "target": "1- and 3-year all-cause mortality after elective EVAR for AAA.",
+    "candidate_information": "Clinical comorbidity, demographics, fasting laboratory measurements and CTA findings.",
+    "selection_method": "LASSO penalty selected with reported 10-fold cross-validation; seven variables carried to univariate/multivariate Cox analysis and AIC-stepwise refinement; six predictors in the nomogram.",
+    "validation_strategy": "Reported random internal holdout and 1,000-resample calibration assessment. Independent external-cohort validation was not performed.",
+    "final_predictors": [
+      "Large AAA as defined by sex-specific diameter thresholds",
+      "History of stroke",
+      "Common iliac artery atherosclerosis",
+      "Age",
+      "Haemoglobin",
+      "Monocyte count"
+    ],
+    "reported_discrimination": "Training Abstract/Results: 0.84 at 1 year and 0.81 at 3 years; original Figure 4a: 0.84 and 0.82; Discussion: 0.88 and 0.87. Internal-validation text/Figure 4b: 0.71 and 0.80. These accounts are preserved separately.",
+    "calibration_and_utility": "Original calibration and decision-curve plots plus reported Brier scores supply internal evaluation context; outcome-axis wording and unspecified cohort attribution prevent certification of a clinical risk tool.",
+    "risk_group_selection": "Youden score cutoff 155.1 selected in the total dataset. Original KM panels report separation but their baseline risk-table totals disagree with the caption-assigned 213/91 split.",
+    "reproducibility": "Supplementary code illustrates mice/glmnet/coxph/timeROC/calibration/DCA calls. It does not construct datacox or fully specify analytical membership, continuous-predictor coding and fitted-model transfer. No patient risk calculator is reconstructed.",
+    "interpretability": [
+      "The predictor set connects comorbidity and aneurysm anatomy with age and blood measurements.",
+      "Association coefficients, nomogram display, discrimination and modeled net benefit answer different questions; none establishes the benefit of changing a predictor or treatment."
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The cohort describes long-term all-cause mortality after elective EVAR rather than emergency rupture treatment.",
+      "context": "Single-centre retrospective population and reported internal split.",
+      "evidence": [
+        {
+          "label": "Population/window",
+          "value": "304 adults, March 2015–May 2023; 258 men and 46 women; median age 72 years (IQR 65–77)"
+        },
+        {
+          "label": "Selection",
+          "value": "CTA-defined AAA; EVAR during hospitalization; age at least 18; ruptured AAA, open surgery, failed follow-up, Marfan syndrome and specified tumour/immune-disease histories excluded"
+        },
+        {
+          "label": "Internal split",
+          "value": "Training 213 and internal validation 91, as reported"
+        },
+        {
+          "label": "Outcome/follow-up",
+          "value": "46 all-cause deaths; median follow-up 24 months (IQR 16–33)"
+        },
+        {
+          "label": "Event accounting",
+          "value": "Table 1: 33/213 and 13/91 deaths; validation percentage 14.29% in the table versus 14.39% in performance Results"
+        }
+      ],
+      "source_locator": "Materials and Methods—Study Population (s0002-s2001), Endpoint and Follow-Up (s0002-s2002); Results—Patient Characteristics (s0003-s2001); original Figure 1 (f0001), Tables 1–2 (t0001/t0002); Model Performance and Clinical Utility (s0003-s2004)."
+    },
+    {
+      "id": "KF2",
+      "claim": "The predictor framework combines clinical history, preoperative blood measures and aneurysm anatomy.",
+      "context": "Baseline measurement and modeling inputs.",
+      "evidence": [
+        {
+          "label": "Laboratory timing",
+          "value": "First-day hospitalization blood measurements after 8-hour fasting, described as pre-EVAR"
+        },
+        {
+          "label": "CTA information",
+          "value": "CIA atherosclerosis, intraluminal thrombus, aneurysm diameter/volume and neck angulation"
+        },
+        {
+          "label": "Large-AAA definition",
+          "value": "Sex-specific diameter threshold:5.5 cm in men and 5.0 cm in women, as stated"
+        },
+        {
+          "label": "Selection pathway",
+          "value": "Reported 10-fold LASSO penalty selection, seven variables carried forward, then Cox/AIC-stepwise refinement"
+        },
+        {
+          "label": "Final set",
+          "value": "Large AAA, stroke history, CIA atherosclerosis, age, haemoglobin and monocytes"
+        }
+      ],
+      "source_locator": "Methods—Clinic and Demographic Characteristics (s0002-s2003), Model Construction (s0002-s2004); Results—Variable Analysis and Selection (s0003-s2002); original Figures 2–3 (f0002/f0003), Table 3 (t0003)."
+    },
+    {
+      "id": "KF3",
+      "claim": "Table 3 reports six adjusted prognostic associations, with analytical membership and continuous-variable scaling unresolved.",
+      "context": "Published Cox estimates, distinct from causal risk factors or treatment effects.",
+      "evidence": [
+        {
+          "label": "Large AAA",
+          "value": "Adjusted HR 3.09 (95% CI 1.43–6.72), p=0.004"
+        },
+        {
+          "label": "Stroke history",
+          "value": "HR 3.59 (1.67–7.70), p=0.001"
+        },
+        {
+          "label": "CIA atherosclerosis",
+          "value": "HR 4.48 (1.92–10.49), p<0.001"
+        },
+        {
+          "label": "Continuous predictor labels",
+          "value": "Age HR 1.54 (1.07–2.23); haemoglobin 0.53 (0.37–0.76); monocyte 1.28 (1.11–1.47), printed in Table 3"
+        },
+        {
+          "label": "Interpretation unit",
+          "value": "The numerical continuous-variable estimates are reported without assigning per-year/per-g/L/per-cell-count scaling; transformations/reference coding are insufficiently specified"
+        },
+        {
+          "label": "Analytical denominator",
+          "value": "Supplementary coxph call uses datacox; no construction or patient/event membership is given, so N is not inferred"
+        }
+      ],
+      "source_locator": "Results—Variable Analysis and Selection (s0003-s2002); original Table 3 (t0003), multivariable rows; Revised Supplementary Table 1, survival/Cox analysis script."
+    },
+    {
+      "id": "KF4",
+      "claim": "The paper supplies source-specific time-dependent AUC estimates that do not fully agree.",
+      "context": "Published discrimination summaries from text and the actual original ROC figure.",
+      "evidence": [
+        {
+          "label": "Training Abstract/Results",
+          "value": "1 year 0.84 (95% CI 0.79–0.89); 3 years 0.81 (0.76–0.86)"
+        },
+        {
+          "label": "Training original Figure 4a",
+          "value": "1-year AUC 0.84; 3-year AUC 0.82"
+        },
+        {
+          "label": "Training Discussion",
+          "value": "1 year 0.88 (95% CI 0.78–0.98); 3 years 0.87 (0.76–0.98)"
+        },
+        {
+          "label": "Internal validation text/Figure 4b",
+          "value": "1 year 0.71 (95% CI 0.62–0.80 in text); 3 years 0.80 (0.73–0.87 in text)"
+        },
+        {
+          "label": "Panel wording",
+          "value": "The actual panels each contain 1- and 3-year curves; the caption instead describes (a)1-year and(b)3-year predictions"
+        },
+        {
+          "label": "Scope",
+          "value": "No competing training estimate is selected or averaged as a reconciled performance value"
+        }
+      ],
+      "source_locator": "Abstract; Results—Model Performance and Clinical Utility (s0003-s2004); original Figure 4 (f0004), panels a/b and caption; Discussion (s0004), paragraph beginning In our study, the new predictive model incorporates laboratory data."
+    },
+    {
+      "id": "KF5",
+      "claim": "Calibration, Brier and decision-curve analyses provide additional reported internal-evaluation context.",
+      "context": "The article’s model-assessment displays and summary scores.",
+      "evidence": [
+        {
+          "label": "Calibration",
+          "value": "Figure 3b/c shown for training/testing; Methods specifies 1,000 bootstrap resamples"
+        },
+        {
+          "label": "Outcome labels",
+          "value": "Figure 3a nomogram shows 1-/3-year survival axes, while calibration axes are labelled predicted probability of ACM and observed events; outcome orientation is not reconciled"
+        },
+        {
+          "label": "Brier scores",
+          "value": "Reported 1-year 0.0691 and 3-year 0.1136; Kaplan–Meier reference 0.0759 and 0.1203. The sentence does not identify the contributing cohort"
+        },
+        {
+          "label": "Decision curves",
+          "value": "Figure 6 plots modeled net benefit for 1-/3-year nomogram strategies versus all/none"
+        },
+        {
+          "label": "Scope",
+          "value": "Internal curves and score summaries do not demonstrate that using the model improves patient outcomes or establish external clinical utility"
+        }
+      ],
+      "source_locator": "Methods—Model Construction (s0002-s2004), Statistical Analysis (s0002-s2005); Results—Nomogram Construction (s0003-s2003), Model Performance and Clinical Utility (s0003-s2004); original Figures 3 and 6 (f0003/f0006)."
+    },
+    {
+      "id": "KF6",
+      "claim": "Risk-group separation was reported after a cutoff selected using the total dataset.",
+      "context": "Kaplan–Meier analysis with source-specific cohort-accounting concerns.",
+      "evidence": [
+        {
+          "label": "Cutoff",
+          "value": "Youden-derived score 155.1 selected in the total dataset"
+        },
+        {
+          "label": "Reported separation",
+          "value": "Both Figure 5 panels display P<0.001. Results reports a log-rank p<0.05. The supplementary example supplies that plot label as fixed annotation text, which alone does not verify a panel-specific p-value"
+        },
+        {
+          "label": "Actual risk-table starts",
+          "value": "Figure 5a starts at 49 high-risk plus 52 low-risk (101 total); Figure 5b:103+100=203"
+        },
+        {
+          "label": "Caption versus reported split",
+          "value": "The caption assigns panel a to training and panel b to testing, whereas Methods/Table 1 report 213/91"
+        },
+        {
+          "label": "Scope",
+          "value": "These are actual plotted counts, not a revised allocation. Cutoff selection using the full dataset and unresolved panel membership limit independent holdout interpretation"
+        }
+      ],
+      "source_locator": "Results—Model Performance and Clinical Utility (s0003-s2004), paragraph on cutoff 155.1; original Figure 5 (f0005), panels a/b and number-at-risk tables; Figure 1/Table 1 for the stated split. Revised Supplementary Table 1, survminer plotting example for the fixed annotation text."
+    },
+    {
+      "id": "KF7",
+      "claim": "The supplement documents an analysis outline rather than a fully specified reproducible fitted model.",
+      "context": "Original Revised Supplementary Table 1 script, read without executing it.",
+      "evidence": [
+        {
+          "label": "Imputation example",
+          "value": "mice(data,m=5, seed=123) is shown; missingness and completed-data construction are not defined"
+        },
+        {
+          "label": "Cox example",
+          "value": "coxph(Surv(time,ACM)~.,data=datacox), followed by step(...,direction=both)"
+        },
+        {
+          "label": "Other calls",
+          "value": "glmnet/cv.glmnet, timeROC at 12/36, survminer, nomogram, DCA, bootstrap calibration and post-hoc power calls"
+        },
+        {
+          "label": "Validation boundary",
+          "value": "The study’s Limitation explicitly states no independent external cohort validation"
+        },
+        {
+          "label": "Use",
+          "value": "Useful for comparing reported workflow choices; it does not determine datacox membership, establish continuous-variable scale or provide a ready-to-use clinical calculator"
+        }
+      ],
+      "source_locator": "Original Revised Supplementary Table 1: R package and script; Methods—Model Construction/Statistical Analysis (s0002-s2004/s0002-s2005); Limitation (s0005)."
+    }
+  ],
+  "what_this_adds": [
+    "Combines routinely recorded comorbidity, blood measures and CTA anatomy in a site-specific post-EVAR prognostic modeling example.",
+    "Supplies exploratory mortality associations and multiple internal-evaluation outputs for comparing endpoint, feature-selection, discrimination and calibration reporting.",
+    "Provides concrete source-located distinctions between an internal split, full-dataset risk stratification, analytical membership, and the external evaluation needed for a transferable risk tool."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The stated elective-EVAR population, all-cause endpoint, baseline measurement framework and reported cohort split.",
+      "The six named predictors and exact published Cox estimates, with unspecified analytical N and continuous scaling retained.",
+      "Source-specific reported AUCs, internal plots, Brier summaries and analysis-script choices."
+    ],
+    "does_not_establish": [
+      "A single reconciled training AUC, corrected validation percentage, or verified Figure 5 training/testing membership.",
+      "A causal effect of a predictor, or survival benefit from modifying a predictor or treatment.",
+      "Independently validated model performance, clinical decision benefit or an individual risk calculator reconstructed from the article."
+    ]
+  },
+  "qa": [
+    {
+      "question": "Which patients and endpoint were studied?",
+      "answer": "The article describes 304 adults undergoing elective EVAR at one centre from March 2015 to May 2023, with ruptured AAA and open repair excluded. The endpoint is all-cause mortality, with median follow-up 24 months (IQR 16–33), and a reported 213/91 random internal split. Tables report 46 total deaths, comprising 33 training and 13 validation deaths. The validation percentage differs between Table 1 (14.29%) and Results (14.39%).",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which information entered the candidate predictor framework?",
+      "answer": "The study combines clinical history and demographics, fasting preoperative blood measurements and three-dimensional CTA anatomy. It defines large AAA using sex-specific 5.5 cm/5.0 cm thresholds and reports LASSO/Cox selection of large AAA, prior stroke, CIA atherosclerosis, age, haemoglobin and monocyte count.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What adjusted associations are printed in Table 3?",
+      "answer": "Large AAA, stroke history and CIA atherosclerosis have reported adjusted HRs 3.09 (1.43–6.72), 3.59 (1.67–7.70) and 4.48 (1.92–10.49). Age, haemoglobin and monocyte labels have HRs 1.54, 0.53 and 1.28, with their printed intervals in KF3. Their precise scaling and the datacox analytical membership are not established, so these values are not interpreted as per-year or per-laboratory-unit effects.",
+      "evidence_refs": [
+        "KF3",
+        "KF7"
+      ]
+    },
+    {
+      "question": "What model output does the nomogram display?",
+      "answer": "Figure 3 combines the six predictors into a point display with 1- and 3-year survival axes. The calibration panels are labelled as ACM probabilities/observed events, creating an outcome-orientation ambiguity. The display can be described as the authors’ proposed model; its individual probabilities are not reconstructed as a certified patient calculator.",
+      "evidence_refs": [
+        "KF2",
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which AUCs are reported, and why are they kept separate?",
+      "answer": "Training Abstract/Results give 0.84 and 0.81 at 1 and 3 years; original Figure 4a gives 0.84 and 0.82; Discussion gives 0.88 and 0.87. Internal-validation text/Figure 4b give 0.71 and 0.80. These are source-specific reports; the conflicting training estimates are not averaged or silently selected.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "Was there independent external validation?",
+      "answer": "No. The article reports a random internal holdout from the same centre and recruitment period, and explicitly acknowledges that independent external validation is outstanding. The LASSO 10-fold penalty-selection step and bootstrap calibration are separate internal procedures. The supplement does not establish the exact membership of every fitted Cox analysis.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF7"
+      ]
+    },
+    {
+      "question": "What do calibration, decision curves and risk groups add?",
+      "answer": "They supply internal model-assessment context: calibration plots, reported Brier scores and modeled net benefit, plus risk-group separation after a score 155.1 cutoff selected in the total dataset. Figure 5 risk tables total 101 and 203 across its panels rather than the stated 213/91 allocation, so panel membership is unresolved. None of these analyses demonstrates better outcomes from using the model in care.",
+      "evidence_refs": [
+        "KF5",
+        "KF6"
+      ]
+    },
+    {
+      "question": "How can this paper support research writing or model design?",
+      "answer": "It can support comparison of elective-EVAR endpoints, clinical/laboratory/CTA predictor integration, exploratory associations and reported internal-evaluation workflows. Cite exact numbers with their source section, keep denominator/scaling and reporting conflicts next to the affected claim, and distinguish proposed prognostic modeling from causal treatment evidence or external clinical validation.",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF4",
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "conditions": [
+      "Abdominal aortic aneurysm",
+      "Post-EVAR all-cause mortality"
+    ],
+    "procedures": [
+      "Elective endovascular aneurysm repair"
+    ],
+    "predictors": [
+      "Stroke history",
+      "Common iliac artery atherosclerosis",
+      "Aneurysm diameter",
+      "Age",
+      "Haemoglobin",
+      "Monocyte count"
+    ],
+    "data_types": [
+      "Clinical records",
+      "Fasting blood laboratory measurements",
+      "Three-dimensional CTA",
+      "Mortality follow-up"
+    ],
+    "methods": [
+      "LASSO",
+      "Cox regression",
+      "AIC-stepwise selection",
+      "Random internal holdout",
+      "Time-dependent ROC",
+      "Calibration",
+      "Brier score",
+      "Decision curve analysis",
+      "Kaplan–Meier analysis"
+    ],
+    "evidence_concepts": [
+      "Analytical denominator",
+      "Continuous-predictor scaling",
+      "Internal versus external validation",
+      "Full-dataset cutoff selection",
+      "Source-specific performance disagreement"
+    ]
+  },
+  "limitations": [
+    "The Cox object datacox is not constructed in the supplementary outline. Patient/event membership, missing-data handling and continuous-predictor transformations/reference coding are incompletely specified.",
+    "Training AUCs disagree across Abstract/Results, Figure 4a and Discussion. The validation mortality percentage differs between Table 1 and Results. No reconciled values are supplied here.",
+    "Figure 5 baseline risk-table totals and caption-assigned cohorts disagree with the reported 213/91 split; the risk cutoff was selected in the total dataset. The nomogram-survival versus calibration-ACM axis wording is also unresolved.",
+    "The retrospective single-centre sample has 46 all-cause deaths and limited information on endograft device types. Selection bias, residual confounding and model instability/generalizability remain relevant.",
+    "Internal discrimination, calibration and modeled net benefit do not establish independent external performance, causal predictor effects or benefit from clinical use. The source’s post-hoc power claim does not replace that evaluation."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1177/00368504261499186",
+      "relationship": "A separate NHANES CKM mortality study uses a composite routine-laboratory index and survey-weighted survival models. It offers a methodological comparator for population, exposure and mortality-association choices, not validation of this post-EVAR nomogram."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.dovepress.com/developing-a-lasso-regression-based-nomogram-to-predict-outcomes-in-ab-peer-reviewed-fulltext-article-CIA",
+    "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12673264/",
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41347210/",
+    "doi_url": "https://doi.org/10.2147/cia.s493841",
+    "original_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12673264/fullTextXML",
+    "supplement_url": "https://www.dovepress.com/article/supplementary_file/493841/493841%20Revised%20Supplementary%20Table%201.docx",
+    "pmcid": "PMC12673264",
+    "version_of_record": "Clinical Interventions in Aging. 2025;20:2241–2253; published 28 November 2025. Formal DOI/title and nine-author order match the original JATS and protected publication master.",
+    "license": "Original article states CC BY-NC 4.0. Earlier deposited metadata/icon labels differ; this summary records the article-level notice.",
+    "ethics": "The article reports First Affiliated Hospital of Zhengzhou University ethics approval and anonymized retrospective data with consent waiver; it lists ChiCTR2200063122 as a study-design identifier. No separate registry verification or randomized-trial classification is inferred.",
+    "data_availability": "The article states data are available from the corresponding author on reasonable request. No contact or new participant-level analysis was undertaken.",
+    "source_note_denominator": "The stated source cohort is 304 with a 213/91 internal split and 33/13 deaths. Supplementary Cox code uses datacox without defining its construction or patient/event membership, so Table 3 estimates are not assigned to either 213 or 304.",
+    "source_note_scaling": "Table 3 age/haemoglobin/monocyte estimates are preserved as printed, without imposing a per-unit scale that the analytic coding does not establish.",
+    "source_note_AUC": "Training 1-/3-year AUCs: Abstract/Results 0.84/0.81, Figure 4a 0.84/0.82, Discussion 0.88/0.87. Internal-validation text/Figure 4b 0.71/0.80. Original Figure 4 contains both time horizons in each panel, unlike its time-horizon caption wording.",
+    "source_note_mortality_percentage": "Table 1 prints validation 13 (14.29%); performance Results prints 13 events (14.39%). The count/percentage conflict is reported rather than silently corrected.",
+    "source_note_KM_membership": "Original Figure 5a risk-table starts 49+52=101 and Figure 5b 103+100=203; its caption calls a training and b testing, while the article’s split is 213/91. The underlying assignments remain unresolved; these counts do not redefine the cohort.",
+    "source_note_calibration": "Nomogram axes show 1-/3-year survival; calibration axes label predicted probability of ACM/observed events. The Brier-score sentence does not identify the evaluated cohort. No outcome orientation or cohort attribution is invented.",
+    "source_note_LASSO": "The main text uses minimum mean-squared-error wording, while the actual Figure 2 cross-validation ordinate is partial likelihood deviance. Penalty selection is described at the reported 10-fold level without inventing a numeric lambda or reconciling loss wording.",
+    "source_note_supplement": "The revised supplementary table is an R package/script outline, including mice m=5/seed=123, Cox/stepwise, timeROC 12/36, KM, nomogram, DCA and bootstrap calibration calls. It was read as source text and was not executed.",
+    "evidence_basis": "Complete official JATS Methods/Results/Discussion and original Tables 1–3; original Revised Supplementary Table 1 DOCX; all six original publisher figures visually inspected. Existing full-source and figure 4 audit receipts were reused unchanged; published values and disagreements are described at their actual evidence level.",
+    "source_note_baseline_counts": "Table 1 reports stroke history as 34 training plus 18 validation patients (52 in sum), while Table 2 and Results report 54 overall. This additional source-accounting disagreement is not used to redefine the Cox analytical population or silently repair a baseline cell.",
+    "adjusted_associations_table_3_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12673264/#t0003"
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This independently written source-located summary accompanies the formal article.",
+  "discovery_layer": {
+    "field_entry": [
+      "Elective-EVAR prognosis",
+      "Clinical and imaging risk modeling"
+    ],
+    "review_topics": [
+      "Mortality endpoints and predictor integration",
+      "Internal validation and model reporting"
+    ],
+    "scientific_role": "A single-centre post-EVAR nomogram combining comorbidity, blood measurements and CTA anatomy, with exploratory Cox associations and multiple internal evaluations.",
+    "evidence_position": "Prognostic association and internally evaluated modeling; unresolved sample/coding and performance-reporting questions remain attached to affected claims.",
+    "related_concepts": [
+      "LASSO-Cox modeling",
+      "Time-dependent discrimination and calibration",
+      "Clinical prediction reproducibility"
+    ],
+    "citation_contexts": [
+      "Methods: compare elective-EVAR selection, endpoint, predictor sources and evaluation procedures.",
+      "Discussion: contrast reported associations and internal model evaluation with independently validated clinical use."
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "What cohort and mortality endpoint were used for an elective-EVAR prognostic study?",
+        "supported_scope": "Reported 304-patient single-centre cohort, random internal split, all-cause endpoint and follow-up.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Which clinical, laboratory and CTA predictors were selected?",
+        "supported_scope": "Named six-variable model and published adjusted associations, with analytical denominator and continuous-variable scaling qualifications.",
+        "evidence_refs": [
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What internal discrimination, calibration and risk-stratification results were reported?",
+        "supported_scope": "Source-specific AUCs, internal plots/Brier summaries and risk-group observations, preserving numerical/panel/cutoff-accounting limitations.",
+        "evidence_refs": [
+          "KF4",
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What does the supplementary analysis outline establish?",
+        "supported_scope": "The stated software/workflow calls and explicit limits on reconstructing model membership, transformations and external evaluation.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "A single reconciled training AUC, verified Figure 5 split assignment or independently validated patient risk calculator.",
+      "Causal effects of blood/anatomical predictors or survival benefit from changing a predictor or treatment.",
+      "Prospective clinical utility, external calibration or generalization to emergency rupture repair."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-evar493841-1",
+        "component": "KF1: The cohort describes long-term all-cause mortality after elective EVAR rather than emergency rupture treatment.",
+        "context": "Single-centre retrospective population and reported internal split.",
+        "finding": "The cohort describes long-term all-cause mortality after elective EVAR rather than emergency rupture treatment. Population/window: 304 adults, March 2015–May 2023; 258 men and 46 women; median age 72 years (IQR 65–77); Selection: CTA-defined AAA; EVAR during hospitalization; age at least 18; ruptured AAA, open surgery, failed follow-up, Marfan syndrome and specified tumour/immune-disease histories excluded; Internal split: Training 213 and internal validation 91, as reported; Outcome/follow-up: 46 all-cause deaths; median follow-up 24 months (IQR 16–33); Event accounting: Table 1: 33/213 and 13/91 deaths; validation percentage 14.29% in the table versus 14.39% in performance Results.",
+        "evidence_level": "Retrospective elective-EVAR cohort",
+        "scope": "Single-centre retrospective population and reported internal split.",
+        "source_locator": "Materials and Methods—Study Population (s0002-s2001), Endpoint and Follow-Up (s0002-s2002); Results—Patient Characteristics (s0003-s2001); original Figure 1 (f0001), Tables 1–2 (t0001/t0002); Model Performance and Clinical Utility (s0003-s2004).",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-2",
+        "component": "KF2: The predictor framework combines clinical history, preoperative blood measures and aneurysm anatomy.",
+        "context": "Baseline measurement and modeling inputs.",
+        "finding": "The predictor framework combines clinical history, preoperative blood measures and aneurysm anatomy. Laboratory timing: First-day hospitalization blood measurements after 8-hour fasting, described as pre-EVAR; CTA information: CIA atherosclerosis, intraluminal thrombus, aneurysm diameter/volume and neck angulation; Large-AAA definition: Sex-specific diameter threshold:5.5 cm in men and 5.0 cm in women, as stated; Selection pathway: Reported 10-fold LASSO penalty selection, seven variables carried forward, then Cox/AIC-stepwise refinement; Final set: Large AAA, stroke history, CIA atherosclerosis, age, haemoglobin and monocytes.",
+        "evidence_level": "Baseline measurements and feature-selection workflow",
+        "scope": "Baseline measurement and modeling inputs.",
+        "source_locator": "Methods—Clinic and Demographic Characteristics (s0002-s2003), Model Construction (s0002-s2004); Results—Variable Analysis and Selection (s0003-s2002); original Figures 2–3 (f0002/f0003), Table 3 (t0003).",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-3",
+        "component": "KF3: Table 3 reports six adjusted prognostic associations, with analytical membership and continuous-variable scaling unresolved.",
+        "context": "Published Cox estimates, distinct from causal risk factors or treatment effects.",
+        "finding": "Table 3 reports six adjusted prognostic associations, with analytical membership and continuous-variable scaling unresolved. Large AAA: Adjusted HR 3.09 (95% CI 1.43–6.72), p=0.004; Stroke history: HR 3.59 (1.67–7.70), p=0.001; CIA atherosclerosis: HR 4.48 (1.92–10.49), p<0.001; Continuous predictor labels: Age HR 1.54 (1.07–2.23); haemoglobin 0.53 (0.37–0.76); monocyte 1.28 (1.11–1.47), printed in Table 3; Interpretation unit: The numerical continuous-variable estimates are reported without assigning per-year/per-g/L/per-cell-count scaling; transformations/reference coding are insufficiently specified; Analytical denominator: Supplementary coxph call uses datacox; no construction or patient/event membership is given, so N is not inferred.",
+        "evidence_level": "Published adjusted prognostic associations",
+        "scope": "Published Cox estimates, distinct from causal risk factors or treatment effects.",
+        "source_locator": "Results—Variable Analysis and Selection (s0003-s2002); original Table 3 (t0003), multivariable rows; Revised Supplementary Table 1, survival/Cox analysis script.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-4",
+        "component": "KF4: The paper supplies source-specific time-dependent AUC estimates that do not fully agree.",
+        "context": "Published discrimination summaries from text and the actual original ROC figure.",
+        "finding": "The paper supplies source-specific time-dependent AUC estimates that do not fully agree. Training Abstract/Results: 1 year 0.84 (95% CI 0.79–0.89); 3 years 0.81 (0.76–0.86); Training original Figure 4a: 1-year AUC 0.84; 3-year AUC 0.82; Training Discussion: 1 year 0.88 (95% CI 0.78–0.98); 3 years 0.87 (0.76–0.98); Internal validation text/Figure 4b: 1 year 0.71 (95% CI 0.62–0.80 in text); 3 years 0.80 (0.73–0.87 in text); Panel wording: The actual panels each contain 1- and 3-year curves; the caption instead describes (a)1-year and(b)3-year predictions; Scope: No competing training estimate is selected or averaged as a reconciled performance value.",
+        "evidence_level": "Source-specific discrimination reports",
+        "scope": "Published discrimination summaries from text and the actual original ROC figure.",
+        "source_locator": "Abstract; Results—Model Performance and Clinical Utility (s0003-s2004); original Figure 4 (f0004), panels a/b and caption; Discussion (s0004), paragraph beginning In our study, the new predictive model incorporates laboratory data.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-5",
+        "component": "KF5: Calibration, Brier and decision-curve analyses provide additional reported internal-evaluation context.",
+        "context": "The article’s model-assessment displays and summary scores.",
+        "finding": "Calibration, Brier and decision-curve analyses provide additional reported internal-evaluation context. Calibration: Figure 3b/c shown for training/testing; Methods specifies 1,000 bootstrap resamples; Outcome labels: Figure 3a nomogram shows 1-/3-year survival axes, while calibration axes are labelled predicted probability of ACM and observed events; outcome orientation is not reconciled; Brier scores: Reported 1-year 0.0691 and 3-year 0.1136; Kaplan–Meier reference 0.0759 and 0.1203. The sentence does not identify the contributing cohort; Decision curves: Figure 6 plots modeled net benefit for 1-/3-year nomogram strategies versus all/none; Scope: Internal curves and score summaries do not demonstrate that using the model improves patient outcomes or establish external clinical utility.",
+        "evidence_level": "Internal calibration and modeled net benefit",
+        "scope": "The article’s model-assessment displays and summary scores.",
+        "source_locator": "Methods—Model Construction (s0002-s2004), Statistical Analysis (s0002-s2005); Results—Nomogram Construction (s0003-s2003), Model Performance and Clinical Utility (s0003-s2004); original Figures 3 and 6 (f0003/f0006).",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-6",
+        "component": "KF6: Risk-group separation was reported after a cutoff selected using the total dataset.",
+        "context": "Kaplan–Meier analysis with source-specific cohort-accounting concerns.",
+        "finding": "Risk-group separation was reported after a cutoff selected using the total dataset. Cutoff: Youden-derived score 155.1 selected in the total dataset; Reported separation: Both Figure 5 panels display P<0.001. Results reports a log-rank p<0.05. The supplementary example supplies that plot label as fixed annotation text, which alone does not verify a panel-specific p-value; Actual risk-table starts: Figure 5a starts at 49 high-risk plus 52 low-risk (101 total); Figure 5b:103+100=203; Caption versus reported split: The caption assigns panel a to training and panel b to testing, whereas Methods/Table 1 report 213/91; Scope: These are actual plotted counts, not a revised allocation. Cutoff selection using the full dataset and unresolved panel membership limit independent holdout interpretation.",
+        "evidence_level": "Reported survival-risk stratification",
+        "scope": "Kaplan–Meier analysis with source-specific cohort-accounting concerns.",
+        "source_locator": "Results—Model Performance and Clinical Utility (s0003-s2004), paragraph on cutoff 155.1; original Figure 5 (f0005), panels a/b and number-at-risk tables; Figure 1/Table 1 for the stated split. Revised Supplementary Table 1, survminer plotting example for the fixed annotation text.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-evar493841-7",
+        "component": "KF7: The supplement documents an analysis outline rather than a fully specified reproducible fitted model.",
+        "context": "Original Revised Supplementary Table 1 script, read without executing it.",
+        "finding": "The supplement documents an analysis outline rather than a fully specified reproducible fitted model. Imputation example: mice(data,m=5, seed=123) is shown; missingness and completed-data construction are not defined; Cox example: coxph(Surv(time,ACM)~.,data=datacox), followed by step(...,direction=both); Other calls: glmnet/cv.glmnet, timeROC at 12/36, survminer, nomogram, DCA, bootstrap calibration and post-hoc power calls; Validation boundary: The study’s Limitation explicitly states no independent external cohort validation; Use: Useful for comparing reported workflow choices; it does not determine datacox membership, establish continuous-variable scale or provide a ready-to-use clinical calculator.",
+        "evidence_level": "Supplementary analysis outline and validation scope",
+        "scope": "Original Revised Supplementary Table 1 script, read without executing it.",
+        "source_locator": "Original Revised Supplementary Table 1: R package and script; Methods—Model Construction/Statistical Analysis (s0002-s2004/s0002-s2005); Limitation (s0005).",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}

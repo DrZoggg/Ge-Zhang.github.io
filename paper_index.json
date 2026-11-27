@@ -1196,8 +1196,8 @@
       "doi": "10.2147/cia.s493841",
       "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.2147/cia.s493841",
       "publisher_url": null,
@@ -1209,9 +1209,30 @@
       "openalex_id": "https://openalex.org/W4416776237",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-2147-cia-s493841.csv",
+      "question_count": 8,
+      "concept_count": 27,
+      "discovery_layer": {
+        "field_entry": [
+          "Elective-EVAR prognosis",
+          "Clinical and imaging risk modeling"
+        ],
+        "review_topics": [
+          "Mortality endpoints and predictor integration",
+          "Internal validation and model reporting"
+        ],
+        "scientific_role": "A single-centre post-EVAR nomogram combining comorbidity, blood measurements and CTA anatomy, with exploratory Cox associations and multiple internal evaluations.",
+        "evidence_position": "Prognostic association and internally evaluated modeling; unresolved sample/coding and performance-reporting questions remain attached to affected claims.",
+        "related_concepts": [
+          "LASSO-Cox modeling",
+          "Time-dependent discrimination and calibration",
+          "Clinical prediction reproducibility"
+        ],
+        "citation_contexts": [
+          "Methods: compare elective-EVAR selection, endpoint, predictor sources and evaluation procedures.",
+          "Discussion: contrast reported associations and internal model evaluation with independently validated clinical use."
+        ]
+      }
     },
     {
       "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",

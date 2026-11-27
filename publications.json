@@ -951,8 +951,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-2147-cia-s493841.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {
