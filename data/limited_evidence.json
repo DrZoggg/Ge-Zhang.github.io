@@ -89,44 +89,6 @@
         }
       ]
     },
-    "10.1016/j.cmpbup.2024.100164": {
-      "slug": "doi-10-1016-j-cmpbup-2024-100164",
-      "evidence_status": "limited",
-      "reviewed_on": "2026-10-27",
-      "scope": "Cross-sectional survey methods and frailty-label definition; sample denominator and model validation remain unresolved.",
-      "sections": [
-        {
-          "heading": "Research question and data source",
-          "text": "This study examines multimorbidity and frailty using NHANES survey cycles from 1999–2018. The paper describes cross-sectional analyses and machine-learning classification, rather than prospective prediction of new frailty or evaluation of a preventive treatment. Its scientific question concerns associations and classification within the analysed survey records.",
-          "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
-          "source_locator": "Methods 2: data source and participant selection; Methods 2.3"
-        },
-        {
-          "heading": "Frailty definition and analysis",
-          "text": "Frailty is defined through a modified 36-item deficit-accumulation index. The Methods describe survey-weighted summaries and regression analyses. The authors report nested cross-validation with ten inner folds for hyperparameter tuning and five outer folds for model assessment. They compare six classifiers, including XGBoost, in Figure 4A (ROC) and Figure 4B (precision–recall). The complete item list, predictor overlap, leakage controls and independence of the evaluation cohort still require verification.",
-          "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#fig0004",
-          "source_locator": "Methods 2.2 (Assessment of disease and frailty), Methods 2.3 (Statistics, steps 2–4), and Results 3.2 (Machine learning), Figure 4A–B. See also the supplementary materials."
-        },
-        {
-          "heading": "Unresolved analytical denominator",
-          "text": "Methods reports 42,886 participants, while Results states 46,187 and then refers to 431 participants. Table 1 sex counts support a different total from the Results headline. These statements cannot be reconciled by selecting the most plausible number. The model-evaluation partition also remains insufficiently specified.",
-          "source_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
-          "source_locator": "Methods 2 first paragraph; Results 3 first paragraph; Table 1 Sex rows; Results 3.2"
-        }
-      ],
-      "limitations": [
-        "No participant total or predictive-performance estimate is endorsed.",
-        "Corrected flow, outcome items and resampling details are needed for complete V2."
-      ],
-      "sources": [
-        {
-          "url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
-          "label": "Article source",
-          "format": "Official publisher or PMC full text reviewed locally",
-          "locator": "Methods 2: data source and participant selection; Methods 2.3"
-        }
-      ]
-    },
     "10.2139/ssrn.4391582": {
       "slug": "doi-10-2139-ssrn-4391582",
       "evidence_status": "limited",

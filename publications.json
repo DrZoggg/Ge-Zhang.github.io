@@ -1973,8 +1973,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

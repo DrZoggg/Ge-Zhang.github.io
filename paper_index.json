@@ -2656,8 +2656,8 @@
       "doi": "10.1016/j.cmpbup.2024.100164",
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.cmpbup.2024.100164",
       "publisher_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
@@ -2669,9 +2669,30 @@
       "openalex_id": "https://openalex.org/W4402525843",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-cmpbup-2024-100164.csv",
+      "question_count": 8,
+      "concept_count": 15,
+      "discovery_layer": {
+        "field_entry": [
+          "Frailty detection",
+          "Multimorbidity in population surveys"
+        ],
+        "review_topics": [
+          "Deficit-accumulation frailty indices",
+          "Survey-based classifier development and evaluation"
+        ],
+        "scientific_role": "Combines survey-based frailty associations with a comparison of predictors and classification algorithms.",
+        "evidence_position": "Cross-sectional survey evidence and source-reported classification results with unresolved analytical denominators and validation partitions.",
+        "related_concepts": [
+          "Survey weights",
+          "Deficit-index construction",
+          "Precision–recall evaluation"
+        ],
+        "citation_contexts": [
+          "Background on frailty and multimorbidity in US adults",
+          "Methods comparison for cross-sectional frailty classifiers"
+        ]
+      }
     },
     {
       "title": "Molecular subtypes of ischemic heart disease based on circadian rhythm",

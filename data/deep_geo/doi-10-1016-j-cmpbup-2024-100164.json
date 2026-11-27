@@ -1,0 +1,511 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.cmpbup.2024.100164",
+  "display_title": "Frailty classification, multimorbidity and model comparison in NHANES",
+  "summary": "The study combines survey-weighted analyses of frailty and multimorbidity with a comparison of six classifiers in 1999–2018 NHANES records. It reports an age-related nonlinear association, different disease correlates across frailty categories and a 13-variable XGBoost model.",
+  "research_question": "How do chronic conditions and demographic characteristics relate to frailty in NHANES, and how do different classifiers perform on the observed deficit-index outcome?",
+  "author_summary": "The study groups NHANES records by a 36-item frailty score and uses survey-weighted regression to compare multimorbidity associations across categories. It reports a turning point at 49 years in the fitted age association and different leading correlates for the two frailty-category comparisons. The model study screens eight feature combinations and compares six classifiers. Results reports ROC AUC 0.8828 and precision–recall area 0.6242 for tuned XGBoost with 13 predictors. Source-located participant counts and evaluation procedures are detailed below.",
+  "study_profile": {
+    "profile_type": "multicohort_observational",
+    "study_design": "Pooled cross-sectional US survey cycles, with survey-weighted descriptive and association analyses and a separate classifier comparison.",
+    "evidence_type": "Complex survey measurements, adjusted cross-sectional associations, and source-reported model discrimination, calibration and decision analysis.",
+    "population": "Adults described in pooled NHANES 1999–2018 survey records. The study’s published counts differ by source location.",
+    "primary_endpoint": "Survey frailty status determined by a modified 36-item deficit-accumulation index.",
+    "secondary_endpoint": "Age spline and adjusted condition associations, feature and classifier comparisons, calibration and decision curves.",
+    "data_modalities": [
+      "Interview and medical history",
+      "Examinations",
+      "Laboratory measures",
+      "Frailty index",
+      "Model evaluation"
+    ],
+    "external_validation": false,
+    "scale_metrics": [
+      {
+        "label": "Survey years",
+        "value": "NHANES 1999–2018"
+      },
+      {
+        "label": "Methods flow",
+        "value": "116,876 records, 73,990 incomplete exclusions, 42,886 retained"
+      },
+      {
+        "label": "Table 1 counts",
+        "value": "16,097 non-frail, 20,780 pre-frail, 6,009 frail"
+      },
+      {
+        "label": "Conflicting Results counts",
+        "value": "46,187 in the opening sentence and 431 later in that paragraph"
+      },
+      {
+        "label": "Frailty assessment",
+        "value": "36 deficits, with cutoffs at 0.10 and 0.25"
+      },
+      {
+        "label": "Model comparison",
+        "value": "Eight feature combinations, 13 retained predictors and six classifiers"
+      }
+    ],
+    "counting_note": "Table 1 counts are unweighted and its percentages are survey weighted. The publication’s Results counts conflict with Methods and Table 1. Its final model-evaluation sample is unspecified."
+  },
+  "model_profile": {
+    "model_task": "Classification based on frailty observed in the survey records. The final ROC and precision–recall class composition is unspecified.",
+    "final_model": "Tuned XGBoost, as selected in Results §3.2",
+    "final_predictor_count": 13,
+    "final_predictors": [
+      "Age",
+      "Diabetes mellitus",
+      "Chronic kidney disease",
+      "Chronic obstructive pulmonary disease",
+      "Stroke",
+      "Hypertension",
+      "Congestive heart failure",
+      "Coronary heart disease",
+      "Arthritis",
+      "Anemia",
+      "Race/ethnicity",
+      "Education level",
+      "Sex"
+    ],
+    "reported_resampling": "Ten-fold comparison of feature combinations, then nested resampling described as ten inner folds and five outer folds.",
+    "reported_metrics": "Results §3.2 reports ROC AUC 0.8828 and precision–recall area 0.6242. The denominator and final evaluation partition remain unresolved."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The study paired cross-sectional survey associations with frailty classification.",
+      "context": "Pooled 1999–2018 NHANES records from a complex US probability survey. The same survey period supplies the observed deficits and the candidate predictors.",
+      "evidence": [
+        {
+          "label": "Survey sources",
+          "value": "The paper draws on interviews, examinations and laboratory measurements from NHANES."
+        },
+        {
+          "label": "Outcome definition",
+          "value": "A modified 36-item deficit-accumulation index divides scored deficits by the possible deficits. Non-frailty is FI ≤ 0.10, pre-frailty is 0.10 < FI < 0.25, and frailty is FI ≥ 0.25."
+        },
+        {
+          "label": "Predictor ascertainment",
+          "value": "The paper uses measures such as haemoglobin, examination blood pressure, laboratory results, recorded medication use and self-reported diagnoses. Operational definitions differ by condition."
+        },
+        {
+          "label": "Survey analyses",
+          "value": "Methods reports survey-weighted means or percentages, with unweighted frequencies, restricted cubic splines for age and survey-weighted adjusted logistic regressions."
+        },
+        {
+          "label": "Outcome item detail",
+          "value": "The main text does not enumerate all 36 deficit items, and the appendix could not be inspected. The extent of overlap between disease predictors and the index cannot be determined from the main text."
+        }
+      ],
+      "source_locator": "Publisher Methods §§2–2.3 and Table 1 footnotes. The 36-item index is described in §2.2."
+    },
+    {
+      "id": "KF2",
+      "claim": "Methods and Table 1 describe a 42,886-record survey analysis, with different counts elsewhere.",
+      "context": "Raw group counts and survey-weighted rates carry different units, and neither identifies the actual model evaluation set.",
+      "evidence": [
+        {
+          "label": "Methods flow",
+          "value": "Methods reports 116,876 screened records and 73,990 exclusions for incomplete data, leaving 42,886."
+        },
+        {
+          "label": "Table 1 totals",
+          "value": "Table 1 lists 21,613 women and 21,273 men. Their row totals sum to 42,886."
+        },
+        {
+          "label": "Table 1 frailty groups",
+          "value": "Adding the female and male counts within the three Table 1 columns gives 16,097 non-frail, 20,780 pre-frail and 6,009 frail records."
+        },
+        {
+          "label": "Conflicting Results statement",
+          "value": "The Abstract and opening Results report 46,187 adults. The same Results paragraph then gives a literal count of 431 immediately before the pre-frailty and frailty percentages. It does not explain either difference from Methods and Table 1."
+        },
+        {
+          "label": "Weighted Results estimates",
+          "value": "Results reports a weighted mean age of 47.16 years, weighted pre-frailty of 46.85%, and weighted frailty of 10.58%. The counts in Table 1 are unweighted."
+        }
+      ],
+      "source_locator": "Publisher Abstract (Results), first paragraph of Methods §2, first paragraph of Results §3 and Table 1, Sex rows."
+    },
+    {
+      "id": "KF3",
+      "claim": "The age analysis reports a nonlinear cross-sectional frailty association.",
+      "context": "Restricted cubic splines and survey-weighted descriptive comparisons examine frailty differences across age and demographic groups.",
+      "evidence": [
+        {
+          "label": "Age analysis",
+          "value": "Results describes age 49 as a turning point in its fitted association. The study measured frailty in a cross-sectional survey and did not follow individuals to observe its onset."
+        },
+        {
+          "label": "Demographic comparisons",
+          "value": "The Figure 1 caption locates age- and sex-stratified mean frailty scores and prevalence, a sex-stratified nonlinear curve, and prevalence comparisons by education, marital status and race/ethnicity."
+        },
+        {
+          "label": "Table context",
+          "value": "The weighted mean ages in Table 1 are 41.63, 49.57 and 58.70 years in the non-frail, pre-frail and frail groups, respectively."
+        }
+      ],
+      "source_locator": "Publisher Methods §2.3, Results §3 above Figure 1, Figure 1A–F caption, Discussion §4.1 and Conclusion §5."
+    },
+    {
+      "id": "KF4",
+      "claim": "The adjusted regressions report different leading correlates across frailty categories.",
+      "context": "Two contemporaneous category comparisons highlight different disease associations.",
+      "evidence": [
+        {
+          "label": "Non-frailty versus pre-frailty",
+          "value": "The Results text starts its ordered list with anaemia, arthritis, diabetes, coronary heart disease and hypertension."
+        },
+        {
+          "label": "Pre-frailty versus frailty",
+          "value": "The Results text starts its ordered list with congestive heart failure, stroke, coronary heart disease, epilepsy and arthritis."
+        },
+        {
+          "label": "Role of the contrasts",
+          "value": "The models compare observed frailty categories. The ordering is the authors’ textual account. Numerical odds ratios and confidence intervals are not provided in that paragraph."
+        }
+      ],
+      "source_locator": "Publisher Results §3.1 and Figure 2A–B caption. The regression and survey-weighting methods are in §2.3."
+    },
+    {
+      "id": "KF5",
+      "claim": "Three feature-ranking methods led to an evaluated 13-variable set.",
+      "context": "A first stage compares feature combinations. A later stage tunes and compares the classifiers.",
+      "evidence": [
+        {
+          "label": "Ranking",
+          "value": "Joint mutual information maximisation, lasso regression and random forest rank the candidates. Features in at least two lists’ top 10 were carried forward. Features appearing once in the top ranks were considered in combinations."
+        },
+        {
+          "label": "Eight combinations",
+          "value": "The authors evaluate eight combinations by ten-fold cross-validation. Model 8 contains the ten core features plus race/ethnicity, education level and sex."
+        },
+        {
+          "label": "Thirteen final inputs",
+          "value": "Age, Diabetes mellitus, Chronic kidney disease, Chronic obstructive pulmonary disease, Stroke, Hypertension, Congestive heart failure, Coronary heart disease, Arthritis, Anemia, Race/ethnicity, Education level, Sex."
+        }
+      ],
+      "source_locator": "Publisher Methods §2.3 step 1, Results §3.2 first paragraph and Figure 3A–D caption."
+    },
+    {
+      "id": "KF6",
+      "claim": "The authors compared six classifiers and report the highest discrimination for tuned XGBoost.",
+      "context": "The model estimates below are the values in Results §3.2. The article’s exact evaluation partition and its relationship to nested resampling are unresolved.",
+      "evidence": [
+        {
+          "label": "Classifiers as named",
+          "value": "Decision tree, logistic regression, k-nearest neighbours, random forest, recursive partitioning and regression trees, and XGBoost."
+        },
+        {
+          "label": "Nested resampling",
+          "value": "Methods describes ten inner folds for hyperparameter tuning and five outer folds for testing inner-loop models. Results reports approximately 31,900 model fits during tuning."
+        },
+        {
+          "label": "Source-reported XGBoost results",
+          "value": "Results reports ROC AUC 0.8828 and area under the precision–recall curve 0.6242 for tuned XGBoost. The abstract rounds the latter to 0.624."
+        },
+        {
+          "label": "Evaluation partition",
+          "value": "Methods calls the ROC evaluation set external. It supplies no separate cohort identity, split counts, time boundary or link between the outer folds and the final reported estimates."
+        }
+      ],
+      "source_locator": "Publisher Abstract, Methods §2.3 steps 2–5, Results §3.2 and Figure 4A–D caption."
+    },
+    {
+      "id": "KF7",
+      "claim": "Calibration and decision curves extend the reported model evaluation.",
+      "context": "The authors evaluate statistical performance within the study and discuss its potential use for frailty assessment.",
+      "evidence": [
+        {
+          "label": "Calibration",
+          "value": "The paper describes comparing predicted and observed probabilities, with the calibration curve in Figure 4C. The main text gives no calibration slope or intercept."
+        },
+        {
+          "label": "Decision analysis",
+          "value": "Figure 4D is the decision curve for XGBoost. The main text does not give a numerical decision threshold, threshold range or net-benefit estimate."
+        },
+        {
+          "label": "Application scope",
+          "value": "The available text supports discussing the reported model development and methods comparison. The full outcome-item list, placement of feature selection within the nested workflow and use of survey weights in the classifiers remain unresolved."
+        }
+      ],
+      "source_locator": "Publisher Methods §2.3 steps 4–5, Results §3.2, Figure 4C–D caption and Discussion §4.3."
+    }
+  ],
+  "what_this_adds": [
+    "Connects a deficit-based frailty assessment to multimorbidity associations in a national survey.",
+    "Compares disease correlates separately across adjacent frailty categories.",
+    "Documents a feature-selection and classifier-comparison workflow that can inform comparisons with other frailty models."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The source-reported cross-sectional survey design, outcome thresholds and descriptive table counts.",
+      "The reported age pattern and adjusted disease-category associations.",
+      "The reported feature screening, model comparison and named evaluation procedures, with their unresolved data partitions."
+    ],
+    "does_not_establish": [
+      "One resolved analytical denominator or complete predictor-to-outcome item independence.",
+      "Prospective individual frailty onset, causal disease effects or a general age-49 clinical threshold.",
+      "Replicated external model performance or realized clinical decision benefit."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What outcome did the NHANES study classify?",
+      "answer": "The study analyses contemporaneous frailty categories in the 1999–2018 NHANES records. Its modified 36-item deficit score defines non-frailty as FI ≤ 0.10, pre-frailty as 0.10 < FI < 0.25 and frailty as FI ≥ 0.25. These are classifications of the survey observations.",
+      "evidence_refs": [
+        "KF1"
+      ]
+    },
+    {
+      "question": "Which participant counts can be attributed to Methods, Table 1 and Results?",
+      "answer": "Methods reports 116,876 screened and 73,990 excluded for incomplete data, leaving 42,886. Table 1’s female and male rows also sum to 42,886, including 16,097 non-frail, 20,780 pre-frail and 6,009 frail records. Results separately prints 46,187 and 431. The actual model-evaluation denominator is unspecified.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "What does the reported age-49 finding mean?",
+      "answer": "The authors identify 49 years as a turning point in a fitted age–frailty association. Figure 1’s caption describes sex-stratified curves and demographic prevalence comparisons. The estimate concerns age differences across the surveyed records.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "Which conditions led the adjusted frailty-category comparisons?",
+      "answer": "Results §3.1 puts anaemia, arthritis, diabetes, coronary heart disease and hypertension first in its non-frailty versus pre-frailty comparison. Congestive heart failure, stroke, coronary heart disease, epilepsy and arthritis lead the pre-frailty versus frailty list. These are cross-sectional associations.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "How were the 13 final inputs chosen?",
+      "answer": "Joint mutual information maximisation, lasso regression and random forest ranked candidate variables. The authors compared eight feature combinations in ten-fold cross-validation. Their highest-ranked combination added race/ethnicity, education and sex to the ten core clinical and demographic inputs in Figure 3’s caption.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "Which performance estimates are reported for tuned XGBoost?",
+      "answer": "Results §3.2 reports ROC AUC 0.8828 and area under the precision–recall curve 0.6242. The paper describes inner ten-fold tuning and outer five-fold assessment and calls a ROC set external. The text leaves the identity, membership and size of that set unresolved.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "How were calibration and decision curves used?",
+      "answer": "The authors compared observed and predicted probabilities using a calibration curve and assessed potential decision utility with decision curve analysis. The Figure 4 caption locates these in panels C and D. The main text gives no exact calibration or decision-curve parameters.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "What design details matter when comparing this study with another frailty model?",
+      "answer": "Match the cross-sectional task and deficit-index definition, then check candidate predictors against the outcome items. Verify whether feature selection was repeated within training folds and whether the final ROC and precision–recall results came from an independent cohort. The published main text leaves those details open.",
+      "evidence_refs": [
+        "KF1",
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "population": [
+      "US adults",
+      "NHANES",
+      "Cross-sectional survey"
+    ],
+    "outcome": [
+      "Frailty index",
+      "Pre-frailty",
+      "Multimorbidity"
+    ],
+    "analytics": [
+      "Survey weighting",
+      "Restricted cubic splines",
+      "Adjusted logistic regression",
+      "Nested cross-validation",
+      "XGBoost"
+    ],
+    "model_evaluation": [
+      "ROC AUC",
+      "Area under the precision–recall curve",
+      "Calibration",
+      "Decision curve analysis"
+    ]
+  },
+  "limitations": [
+    "The publication contains incompatible participant counts. The Methods and Table 1 support the stated bookkeeping for those locations, while the exact model sample remains unspecified.",
+    "The article’s full deficit-item list, hyperparameter definitions and appendix details were unavailable for direct inspection. Possible predictor–index overlap, placement of feature selection within resampling and survey weight use in model fitting remain open.",
+    "The article text and table were available with four figure captions. The individual plotted odds ratios, curve values and supplementary results could not be inspected."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.3389/fnut.2025.1658286",
+      "relationship": "A separate NHANES study examines hyperuricemia and gout in relation to estimated glucose disposal rate. It offers a comparison of survey-based measurement and association methods for a different outcome."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314",
+    "doi_url": "https://doi.org/10.1016/j.cmpbup.2024.100164",
+    "version_of_record": "Computer Methods and Programs in Biomedicine Update, volume 6 (2024), article 100164. Publisher metadata lists 13 September 2024 as the online date.",
+    "license": "CC BY-NC-ND 4.0, as stated on the version-of-record page.",
+    "source_methods": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#sec0002",
+    "source_results": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#sec0006",
+    "source_table_1": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#tbl0001",
+    "source_model_comparison": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#fig0004",
+    "source_appendix": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#sec0016",
+    "evidence_basis": "Publisher main text, Table 1 and the captions for Figures 1–4.",
+    "later_published_methods_context_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12228437/",
+    "later_published_methods_context": "A BMJ Open study (10.1136/bmjopen-2024-095460, reference 25) cites this article in its Introduction as an NHANES frailty model and in its Discussion as a cross-sectional XGBoost comparator.",
+    "frailty_analysis_figure_url": "https://www.sciencedirect.com/science/article/pii/S2666990024000314#fig0004"
+  },
+  "discovery_layer": {
+    "field_entry": [
+      "Frailty detection",
+      "Multimorbidity in population surveys"
+    ],
+    "review_topics": [
+      "Deficit-accumulation frailty indices",
+      "Survey-based classifier development and evaluation"
+    ],
+    "scientific_role": "Combines survey-based frailty associations with a comparison of predictors and classification algorithms.",
+    "evidence_position": "Cross-sectional survey evidence and source-reported classification results with unresolved analytical denominators and validation partitions.",
+    "related_concepts": [
+      "Survey weights",
+      "Deficit-index construction",
+      "Precision–recall evaluation"
+    ],
+    "citation_contexts": [
+      "Background on frailty and multimorbidity in US adults",
+      "Methods comparison for cross-sectional frailty classifiers"
+    ]
+  },
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How have NHANES studies defined frailty in relation to multimorbidity?",
+        "supported_scope": "Deficit-index thresholds, weighted analyses and adjusted comparisons across the reported categories.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3",
+          "KF4"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "Which model features and performance did this NHANES frailty study report?",
+        "supported_scope": "The 13-feature set, six-classifier comparison, Results metrics and unresolved source partition.",
+        "evidence_refs": [
+          "KF5",
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What would a later frailty classification study need to compare?",
+        "supported_scope": "The contemporaneous outcome definition, predictor selection, discrimination, calibration and decision-analysis design.",
+        "evidence_refs": [
+          "KF1",
+          "KF5",
+          "KF6",
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "Prognosis for incident frailty, causal disease effects or an age-49 decision threshold.",
+      "An independently replicated model, a resolved evaluation denominator or a proven clinical benefit."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-frailty-nhanes-1",
+        "component": "The study paired cross-sectional survey associations with frailty classification.",
+        "context": "Pooled 1999–2018 NHANES records from a complex US probability survey. The same survey period supplies the observed deficits and the candidate predictors.",
+        "finding": "Survey sources: The paper draws on interviews, examinations and laboratory measurements from NHANES. Outcome definition: A modified 36-item deficit-accumulation index divides scored deficits by the possible deficits. Non-frailty is FI ≤ 0.10, pre-frailty is 0.10 < FI < 0.25, and frailty is FI ≥ 0.25. Predictor ascertainment: The paper uses measures such as haemoglobin, examination blood pressure, laboratory results, recorded medication use and self-reported diagnoses. Operational definitions differ by condition. Survey analyses: Methods reports survey-weighted means or percentages, with unweighted frequencies, restricted cubic splines for age and survey-weighted adjusted logistic regressions. Outcome item detail: The main text does not enumerate all 36 deficit items, and the appendix could not be inspected. The extent of overlap between disease predictors and the index cannot be determined from the main text.",
+        "evidence_level": "Cross-sectional survey",
+        "scope": "Pooled 1999–2018 NHANES records from a complex US probability survey. The same survey period supplies the observed deficits and the candidate predictors.",
+        "source_locator": "Publisher Methods §§2–2.3 and Table 1 footnotes. The 36-item index is described in §2.2.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-2",
+        "component": "Methods and Table 1 describe a 42,886-record survey analysis, with different counts elsewhere.",
+        "context": "Raw group counts and survey-weighted rates carry different units, and neither identifies the actual model evaluation set.",
+        "finding": "Methods flow: Methods reports 116,876 screened records and 73,990 exclusions for incomplete data, leaving 42,886. Table 1 totals: Table 1 lists 21,613 women and 21,273 men. Their row totals sum to 42,886. Table 1 frailty groups: Adding the female and male counts within the three Table 1 columns gives 16,097 non-frail, 20,780 pre-frail and 6,009 frail records. Conflicting Results statement: The Abstract and opening Results report 46,187 adults. The same Results paragraph then gives a literal count of 431 immediately before the pre-frailty and frailty percentages. It does not explain either difference from Methods and Table 1. Weighted Results estimates: Results reports a weighted mean age of 47.16 years, weighted pre-frailty of 46.85%, and weighted frailty of 10.58%. The counts in Table 1 are unweighted.",
+        "evidence_level": "Cross-sectional survey",
+        "scope": "Raw group counts and survey-weighted rates carry different units, and neither identifies the actual model evaluation set.",
+        "source_locator": "Publisher Abstract (Results), first paragraph of Methods §2, first paragraph of Results §3 and Table 1, Sex rows.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-3",
+        "component": "The age analysis reports a nonlinear cross-sectional frailty association.",
+        "context": "Restricted cubic splines and survey-weighted descriptive comparisons examine frailty differences across age and demographic groups.",
+        "finding": "Age analysis: Results describes age 49 as a turning point in its fitted association. The study measured frailty in a cross-sectional survey and did not follow individuals to observe its onset. Demographic comparisons: The Figure 1 caption locates age- and sex-stratified mean frailty scores and prevalence, a sex-stratified nonlinear curve, and prevalence comparisons by education, marital status and race/ethnicity. Table context: The weighted mean ages in Table 1 are 41.63, 49.57 and 58.70 years in the non-frail, pre-frail and frail groups, respectively.",
+        "evidence_level": "Cross-sectional survey",
+        "scope": "Restricted cubic splines and survey-weighted descriptive comparisons examine frailty differences across age and demographic groups.",
+        "source_locator": "Publisher Methods §2.3, Results §3 above Figure 1, Figure 1A–F caption, Discussion §4.1 and Conclusion §5.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-4",
+        "component": "The adjusted regressions report different leading correlates across frailty categories.",
+        "context": "Two contemporaneous category comparisons highlight different disease associations.",
+        "finding": "Non-frailty versus pre-frailty: The Results text starts its ordered list with anaemia, arthritis, diabetes, coronary heart disease and hypertension. Pre-frailty versus frailty: The Results text starts its ordered list with congestive heart failure, stroke, coronary heart disease, epilepsy and arthritis. Role of the contrasts: The models compare observed frailty categories. The ordering is the authors’ textual account. Numerical odds ratios and confidence intervals are not provided in that paragraph.",
+        "evidence_level": "Cross-sectional survey",
+        "scope": "Two contemporaneous category comparisons highlight different disease associations.",
+        "source_locator": "Publisher Results §3.1 and Figure 2A–B caption. The regression and survey-weighting methods are in §2.3.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-5",
+        "component": "Three feature-ranking methods led to an evaluated 13-variable set.",
+        "context": "A first stage compares feature combinations. A later stage tunes and compares the classifiers.",
+        "finding": "Ranking: Joint mutual information maximisation, lasso regression and random forest rank the candidates. Features in at least two lists’ top 10 were carried forward. Features appearing once in the top ranks were considered in combinations. Eight combinations: The authors evaluate eight combinations by ten-fold cross-validation. Model 8 contains the ten core features plus race/ethnicity, education level and sex. Thirteen final inputs: Age, Diabetes mellitus, Chronic kidney disease, Chronic obstructive pulmonary disease, Stroke, Hypertension, Congestive heart failure, Coronary heart disease, Arthritis, Anemia, Race/ethnicity, Education level, Sex.",
+        "evidence_level": "Source-reported classifier development and evaluation",
+        "scope": "A first stage compares feature combinations. A later stage tunes and compares the classifiers.",
+        "source_locator": "Publisher Methods §2.3 step 1, Results §3.2 first paragraph and Figure 3A–D caption.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-6",
+        "component": "The authors compared six classifiers and report the highest discrimination for tuned XGBoost.",
+        "context": "The model estimates below are the values in Results §3.2. The article’s exact evaluation partition and its relationship to nested resampling are unresolved.",
+        "finding": "Classifiers as named: Decision tree, logistic regression, k-nearest neighbours, random forest, recursive partitioning and regression trees, and XGBoost. Nested resampling: Methods describes ten inner folds for hyperparameter tuning and five outer folds for testing inner-loop models. Results reports approximately 31,900 model fits during tuning. Source-reported XGBoost results: Results reports ROC AUC 0.8828 and area under the precision–recall curve 0.6242 for tuned XGBoost. The abstract rounds the latter to 0.624. Evaluation partition: Methods calls the ROC evaluation set external. It supplies no separate cohort identity, split counts, time boundary or link between the outer folds and the final reported estimates.",
+        "evidence_level": "Source-reported classifier development and evaluation",
+        "scope": "The model estimates below are the values in Results §3.2. The article’s exact evaluation partition and its relationship to nested resampling are unresolved.",
+        "source_locator": "Publisher Abstract, Methods §2.3 steps 2–5, Results §3.2 and Figure 4A–D caption.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-frailty-nhanes-7",
+        "component": "Calibration and decision curves extend the reported model evaluation.",
+        "context": "The authors evaluate statistical performance within the study and discuss its potential use for frailty assessment.",
+        "finding": "Calibration: The paper describes comparing predicted and observed probabilities, with the calibration curve in Figure 4C. The main text gives no calibration slope or intercept. Decision analysis: Figure 4D is the decision curve for XGBoost. The main text does not give a numerical decision threshold, threshold range or net-benefit estimate. Application scope: The available text supports discussing the reported model development and methods comparison. The full outcome-item list, placement of feature selection within the nested workflow and use of survey weights in the classifiers remain unresolved.",
+        "evidence_level": "Source-reported classifier development and evaluation",
+        "scope": "The authors evaluate statistical performance within the study and discuss its potential use for frailty assessment.",
+        "source_locator": "Publisher Methods §2.3 steps 4–5, Results §3.2, Figure 4C–D caption and Discussion §4.3.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  },
+  "evidence_page_notice": "Author evidence summary with links to the published article and its research methods."
+}
