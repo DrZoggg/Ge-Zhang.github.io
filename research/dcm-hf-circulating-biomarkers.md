@@ -122,7 +122,7 @@ Choose the original paper matching the analyte, specimen, assay and claim. Use t
 
 - [10.1021/acs.jproteome.4c00522](https://doi.org/10.1021/acs.jproteome.4c00522): [KF2](https://drgezhang.com/papers/olink-dcm.html#kf2) — Methods 2.7: ELISA Validation in Plasma; Results 3.6: ELISA Validation of Differentially Expressed Proteins in DCM-HF Plasma
 
-- [10.1021/acs.jproteome.4c00522](https://doi.org/10.1021/acs.jproteome.4c00522): [KF3](https://drgezhang.com/papers/olink-dcm.html#kf3) — Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; [Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005) ([Original supplement (ACS)](https://ndownloader.figshare.com/files/48344505))
+- [10.1021/acs.jproteome.4c00522](https://doi.org/10.1021/acs.jproteome.4c00522): [KF3](https://drgezhang.com/papers/olink-dcm.html#kf3) — Methods 2.7: ELISA Validation in Plasma; Results 3.6; Fig. 4A-E; [Table S5](https://doi.org/10.1021/acs.jproteome.4c00522.s005) ([Original supplement (BioStudies)](https://www.ebi.ac.uk/biostudies/files/S-EPMC11385702/pr4c00522_si_005.xlsx))
 
 - [10.1021/acs.jproteome.4c00522](https://doi.org/10.1021/acs.jproteome.4c00522): [KF4](https://drgezhang.com/papers/olink-dcm.html#kf4) — Methods 2.7-2.8; Results 3.6; Fig. 5A-C
 
