@@ -95,11 +95,11 @@ def supporting_locator(text, doi, markdown=False, file_fallback=False):
             '<a href="' + html.escape(url, quote=True) + '">' + html.escape(label) + '</a>')
     rendered = rendered.replace('Table S5', link('Table S5',
         'https://doi.org/10.1021/acs.jproteome.4c00522.s005'))
-    file_url = 'https://ndownloader.figshare.com/files/48344505'
+    file_url = 'https://www.ebi.ac.uk/biostudies/files/S-EPMC11385702/pr4c00522_si_005.xlsx'
     if 'raw ELISA validation data' in text:
         rendered = rendered.replace('raw ELISA validation data', link('raw ELISA validation data', file_url))
     elif file_fallback:
-        rendered += ' (' + link('Original supplement (ACS)', file_url) + ')'
+        rendered += ' (' + link('Original supplement (BioStudies)', file_url) + ')'
     return rendered
 
 
