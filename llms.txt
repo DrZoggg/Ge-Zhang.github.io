@@ -77,3 +77,7 @@
 - [Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)](https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html) — DOI: 10.1016/j.ejso.2024.108527
 - [Proteomics appending a complementary dimension to precision oncotherapy](https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html) — DOI: 10.1016/j.csbj.2024.04.044
 - [Developing a LASSO Regression-Based Nomogram to Predict Outcomes in Abdominal Aortic Aneurysm Patients Post-Endovascular Aneurysm Repair](https://drgezhang.com/papers/doi-10-2147-cia-s493841.html) — DOI: 10.2147/cia.s493841
+- [The underlying mechanism of chimeric antigen receptor (CAR)-T cell therapy triggering secondary T-cell cancers: Mystery of the Sphinx?](https://drgezhang.com/papers/doi-10-1016-j-canlet-2024-217083.html) — DOI: 10.1016/j.canlet.2024.217083
+- [TYG Index as a Novel Predictor of Clinical Outcomes in Advanced Chronic Heart Failure with Renal Dysfunction Patients](https://drgezhang.com/papers/doi-10-2147-cia-s462542.html) — DOI: 10.2147/cia.s462542
+- [Biodegradable Mg alloy modified with bioactive exosomes for cardiovascular stent application](https://drgezhang.com/papers/doi-10-1016-j-jma-2023-05-007.html) — DOI: 10.1016/j.jma.2023.05.007
+- [Three-dimensional bioprinting of artificial blood vessel: Process, bioinks, and challenges](https://drgezhang.com/papers/doi-10-18063-ijb-740.html) — DOI: 10.18063/ijb.740
