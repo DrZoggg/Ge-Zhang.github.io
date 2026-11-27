@@ -13,20 +13,39 @@ LEGACY_GA4_TAG = (
 LEGACY_GA4_INSERTION = "\n" + LEGACY_GA4_TAG
 
 
-def ga4_tag(*, research=False):
+def ga4_tag(*, research=False, include_campaign=True):
     config = f"    window.gtag('config', '{GA4_MEASUREMENT_ID}');\n"
     production_port = ""
     if research:
         production_port = " || window.location.port"
         # Retain referral domains without forwarding referrer path or query text.
+        url_fields = (
+            "      page_location: page.origin + page.pathname,\n"
+            "      page_referrer: referrer && /^https?:$/.test(referrer.protocol) ? referrer.origin : ''\n"
+        )
         config = (
             "    var page = new URL(window.location.href);\n"
             "    var referrer = document.referrer ? new URL(document.referrer) : null;\n"
-            f"    window.gtag('config', '{GA4_MEASUREMENT_ID}', {{\n"
-            "      page_location: page.origin + page.pathname,\n"
-            "      page_referrer: referrer && /^https?:$/.test(referrer.protocol) ? referrer.origin : ''\n"
-            "    });\n"
         )
+        if include_campaign:
+            config += (
+                "    var config = {\n"
+                + url_fields
+                + "    };\n"
+                "    if (page.searchParams.get('utm_source') === 'chatgpt.com') {\n"
+                "      config.campaign_source = 'chatgpt.com';\n"
+                "      if (page.searchParams.get('utm_medium') === 'referral') {\n"
+                "        config.campaign_medium = 'referral';\n"
+                "      }\n"
+                "    }\n"
+                f"    window.gtag('config', '{GA4_MEASUREMENT_ID}', config);\n"
+            )
+        else:
+            config += (
+                f"    window.gtag('config', '{GA4_MEASUREMENT_ID}', {{\n"
+                + url_fields
+                + "    });\n"
+            )
     return (
         "<!-- Google tag (gtag.js) -->\n"
         "<script>\n"
@@ -52,6 +71,9 @@ GA4_INSERTION = "\n" + GA4_TAG
 RESEARCH_GA4_TAG = ga4_tag(research=True)
 RESEARCH_HANDOFF_SCRIPT = '<script src="/assets/research-handoff.js" defer></script>'
 RESEARCH_GA4_INSERTION = "\n" + RESEARCH_GA4_TAG + RESEARCH_HANDOFF_SCRIPT
+PREVIOUS_RESEARCH_GA4_INSERTION = (
+    "\n" + ga4_tag(research=True, include_campaign=False) + RESEARCH_HANDOFF_SCRIPT
+)
 
 
 def insert_ga4_tag(page):
@@ -69,11 +91,15 @@ def with_research_measurement(page):
     if page.count("<head>") != 1 or page.count("</head>") != 1:
         raise ValueError("Research measurement requires exactly one HTML head.")
     if "googletagmanager.com/gtag/js" in page or RESEARCH_HANDOFF_SCRIPT in page:
-        if (page.count(RESEARCH_GA4_INSERTION) == 1
+        head = page.split("</head>", 1)[0].split("<head>", 1)[1]
+        insertion = (
+            PREVIOUS_RESEARCH_GA4_INSERTION
+            if PREVIOUS_RESEARCH_GA4_INSERTION in head else RESEARCH_GA4_INSERTION
+        )
+        if (insertion in head
                 and page.count("googletagmanager.com/gtag/js") == 1
-                and page.count(RESEARCH_HANDOFF_SCRIPT) == 1
-                and RESEARCH_GA4_INSERTION in page.split("</head>", 1)[0].split("<head>", 1)[1]):
-            return page
+                and page.count(RESEARCH_HANDOFF_SCRIPT) == 1):
+            return page.replace(insertion, RESEARCH_GA4_INSERTION, 1)
         raise ValueError("Unexpected existing research measurement markup.")
     return page.replace("</head>", RESEARCH_GA4_INSERTION + "</head>", 1)
 
@@ -81,4 +107,4 @@ def with_research_measurement(page):
 def without_ga4_tag(page):
     """Ignore only exact shared analytics markup in content-date checks."""
     return (page.replace(GA4_INSERTION, "").replace(LEGACY_GA4_INSERTION, "")
-            .replace(RESEARCH_GA4_INSERTION, ""))
+            .replace(PREVIOUS_RESEARCH_GA4_INSERTION, "").replace(RESEARCH_GA4_INSERTION, ""))

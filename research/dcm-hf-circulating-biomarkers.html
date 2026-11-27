@@ -19,10 +19,17 @@
     window.gtag('js', new Date());
     var page = new URL(window.location.href);
     var referrer = document.referrer ? new URL(document.referrer) : null;
-    window.gtag('config', 'G-65LDZXWWQK', {
+    var config = {
       page_location: page.origin + page.pathname,
       page_referrer: referrer && /^https?:$/.test(referrer.protocol) ? referrer.origin : ''
-    });
+    };
+    if (page.searchParams.get('utm_source') === 'chatgpt.com') {
+      config.campaign_source = 'chatgpt.com';
+      if (page.searchParams.get('utm_medium') === 'referral') {
+        config.campaign_medium = 'referral';
+      }
+    }
+    window.gtag('config', 'G-65LDZXWWQK', config);
     var script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-65LDZXWWQK';
