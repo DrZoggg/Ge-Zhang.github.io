@@ -402,7 +402,7 @@
 - DOI: 10.1002/tox.24284
 - HTML: https://drgezhang.com/papers/doi-10-1002-tox-24284.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-tox-24284.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## AI hybrid survival assessment for advanced heart failure patients with renal dysfunction
 - Journal: Nature Communications
@@ -438,7 +438,7 @@
 - DOI: 10.1186/s10020-024-00963-z
 - HTML: https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.html
 - Markdown: https://drgezhang.com/papers/doi-10-1186-s10020-024-00963-z.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Associations Between Cardiovascular Health (Life's Essential 8) and Mental Disorders
 - Journal: Clinical Cardiology
@@ -447,7 +447,7 @@
 - DOI: 10.1002/clc.70019
 - HTML: https://drgezhang.com/papers/doi-10-1002-clc-70019.html
 - Markdown: https://drgezhang.com/papers/doi-10-1002-clc-70019.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Associations between magnesium depletion score and depression among individuals aged 20 to 60 years
 - Journal: Journal of Trace Elements in Medicine and Biology
@@ -456,7 +456,7 @@
 - DOI: 10.1016/j.jtemb.2024.127543
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-jtemb-2024-127543.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Causal Associations Between the Gut Microbiome and Aortic Aneurysm: A Mendelian Randomization Study
 - Journal: Cardiovascular Innovations and Applications
