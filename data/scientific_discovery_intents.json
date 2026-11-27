@@ -392,6 +392,22 @@
       "url": "https://doi.org/10.1126/science.aek9583",
       "year": 2026,
       "locator": "Print p. 39, left column, Letter paragraph 4; reference 3 provides the cited registration-standard context"
+    },
+    {
+      "id": "mdr-lab-symptom-fusion-original-2026",
+      "title": "Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care",
+      "doi": "10.1002/mdr2.70073",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/mdr2.70073",
+      "year": 2026,
+      "locator": "Results 2.2 and 2.4 and the Figure 5 caption cover structured model selection, fivefold out-of-fold training scores and the symptom-text fusion head. The 126-patient accuracy comparison refers to Supporting Information Table S11."
+    },
+    {
+      "id": "shimada-sard-nlp-structured-original-2026",
+      "title": "Non-RA screening for systemic autoimmune rheumatic diseases using a machine learning model based on physical findings and blood test data",
+      "doi": "10.1186/s12911-026-03759-9",
+      "url": "https://europepmc.org/articles/PMC13741617",
+      "year": 2026,
+      "locator": "Methods, Data description and Model development; Table 2; Supplementary R Markdown, nested resampling. The study extracted structured physical findings from physician notes for RA versus non-RA classification in 571 patients with confirmed systemic autoimmune rheumatic disease. The inner folds selected models and thresholds, and the outer test predictions evaluated performance and calibration."
     }
   ],
   "intents": [
@@ -1585,6 +1601,41 @@
               "preview_finding_ids": [
                 "KF3",
                 "KF8"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "musculoskeletal-fusion",
+      "question": "How do studies combine laboratory measurements and symptom text for musculoskeletal screening or diagnostic support?",
+      "question_zh": "研究如何结合实验室指标与症状文本开展肌骨疾病筛查或辅助诊断？",
+      "source_context_kind": "original_research",
+      "source_ids": [
+        "mdr-lab-symptom-fusion-original-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "symptom-representation-and-evaluation",
+          "question": "How did a musculoskeletal screening study build its symptom-text fusion model, and what does its evaluation establish?",
+          "question_zh": "一项肌骨疾病筛查研究如何构建症状文本融合模型，其评估能说明什么？",
+          "source_ids": [
+            "shimada-sard-nlp-structured-original-2026"
+          ],
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-mdr2-70073",
+              "question_ids": [
+                "doi-10-1002-mdr2-70073--qa-3",
+                "doi-10-1002-mdr2-70073--qa-5",
+                "doi-10-1002-mdr2-70073--qa-6"
+              ],
+              "preview_question_id": "doi-10-1002-mdr2-70073--qa-5",
+              "preview_finding_ids": [
+                "KF3",
+                "KF5",
+                "KF6"
               ]
             }
           ]
