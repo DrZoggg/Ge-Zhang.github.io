@@ -280,6 +280,15 @@ def render_intent_layer(discovery):
                 # The normal guide exit is beyond the stock reader's Questions-page limit.
                 guide_url = escape(query['context_answer']['guide_url'], quote=True)
                 topic_link += ' · <a href="' + guide_url + '">GIST resection evidence guide</a>'
+            if (intent['id'] == 'musculoskeletal-fusion'
+                    and query['id'] == 'symptom-representation-and-evaluation'
+                    and query.get('related_sources')):
+                # Keep both direct sources within the stock reader's Questions-page limit.
+                paper_url = escape(query['work_refs'][0]['paper_url'], quote=True)
+                peer_url = escape(query['related_sources'][0]['url'], quote=True)
+                topic_link = ('<a href="#' + escape(anchor, quote=True) + '">Lab tests and symptom text</a>'
+                              + ' · <a href="' + paper_url + '">MDR study</a>'
+                              + ' · <a href="' + peer_url + '">Shimada et al.</a>')
         navigation.append('<li>' + topic_link + '</li>')
         queries = []
         for query in intent['focused_queries']:
