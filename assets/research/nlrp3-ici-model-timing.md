@@ -6,7 +6,7 @@ The published study [Targeting the NLRP3 inflammasome abrogates cardiotoxicity o
 | --- | --- | --- |
 | Cardiac and tumor outcomes during anti-PD-1 coadministration | B16F10 melanoma-bearing mice, with MCC950 during the reported ICI schedule | Figure 2 for cardiac injury; Figure 3 for tumor and immune phenotypes |
 | Cardiac and tumor outcomes during dual-ICI coadministration | B16F10-bearing mice receiving anti-PD-1 plus anti-CTLA-4, with or without MCC950 | Figure 6 |
-| Cardiac function after anti-PD-1 injury has developed | The established-injury experiment explicitly omitted melanoma inoculation | Results “NLRP3 inhibition attenuates established ICI-induced cardiotoxicity” and Supplementary Figure 7 |
+| Cardiac function after anti-PD-1 injury has developed | The established-injury experiment explicitly omitted melanoma inoculation | [Results “NLRP3 inhibition attenuates established ICI-induced cardiotoxicity”](https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/#s3-7) and [Supplementary Figure 7A–B, PDF page 7](https://pmc-oa-opendata.s3.amazonaws.com/PMC11749606.1/jitc-13-1-s002.pdf#page=7) |
 
 ## What the experiments contribute
 
@@ -20,10 +20,10 @@ Figure 2 lists three cardiac groups: IgG plus vehicle, anti-PD-1 plus vehicle, a
 
 Figures 2 and 6 describe tumor inoculation on day 0, indicated treatment every other day on days 7-19, and heart collection on day 20. The tumor captions identify volume at day 19 and weight at day 20. Results s3-1 separately refers to six anti-PD-1 injections; this comparison retains the figure schedules without deriving a total injection count from that unresolved wording.
 
-For established injury, Results s3-7 describes five anti-PD-1 doses before the MCC950 phase. The subsequent dosing phrase is unclear. Exact calendar days, continued ICI treatment, the full control-arm list and group size remain unverified here; consult Supplementary Figure 7 before using that setting as an operating protocol. The CSV preserves this distinction rather than transferring the coadministration schedule.
+For established injury, Supplementary Figure 7A shows IgG or anti-PD-1 on days 1, 3, 5, 7 and 9. On days 11, 13, 15, 17 and 19, the arms were IgG plus vehicle, anti-PD-1 plus vehicle, and anti-PD-1 plus MCC950. Anti-PD-1 continued during MCC950 treatment. Hearts were collected on day 20. Supplementary Figure 7B reports six echocardiographic measures for 9, 8 and 7 mice, respectively. Neither Figure S7 nor the cited Results section specifies a per-mouse cardiac-function threshold or a separate echocardiography acquisition date.
 
 ## Source and citation
 
 This is an author-prepared comparison of reported mouse experiments. Read the [published full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11749606/), especially Methods “Mice and cell lines” and “Animal grouping and treatment”, Figures 2, 3 and 6, and the established-injury Results section. Each CSV row retains its source locator and the formal DOI, [10.1136/jitc-2024-010127](https://doi.org/10.1136/jitc-2024-010127). Cite the original article for its experiments and findings. No new experiment or complete operating protocol is supplied by this model-selection record.
 
-Prepared 15 November 2026.
+Prepared 15 November 2026. The original Supplementary Figure 7 was verified on 27 November 2026.
