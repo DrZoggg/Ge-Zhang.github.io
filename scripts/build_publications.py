@@ -25,6 +25,10 @@ from citation_common import (
 from official_abstracts import abstract_text, load_official_abstracts
 from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
 import research_guides
+from site_analytics import (
+    GA4_INSERTION, GA4_MEASUREMENT_ID, GA4_TAG, LEGACY_GA4_INSERTION,
+    insert_ga4_tag, with_research_measurement, without_ga4_tag,
+)
 import search_metadata
 import scholarly_discovery
 import evidence_presentation
@@ -69,36 +73,6 @@ HOME_IDENTITY_END = "<!-- HOME_IDENTITY_END -->"
 GENERATED_MARKER = "<!-- GEO_PHASE2_GENERATED -->"
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 SITEMAP_BASELINE_DATE = "2026-09-20"
-GA4_MEASUREMENT_ID = "G-65LDZXWWQK"
-LEGACY_GA4_TAG = (
-    "<!-- Google tag (gtag.js) -->\n"
-    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>\n'
-    "<script>\n"
-    "  window.dataLayer = window.dataLayer || [];\n"
-    "  function gtag(){dataLayer.push(arguments);}\n"
-    "  gtag('js', new Date());\n"
-    f"  gtag('config', '{GA4_MEASUREMENT_ID}');\n"
-    "</script>\n"
-)
-LEGACY_GA4_INSERTION = "\n" + LEGACY_GA4_TAG
-GA4_TAG = (
-    "<!-- Google tag (gtag.js) -->\n"
-    "<script>\n"
-    "  (function () {\n"
-    "    if (window.location.protocol !== 'https:' ||\n"
-    "        !['drgezhang.com', 'www.drgezhang.com'].includes(window.location.hostname)) return;\n"
-    "    window.dataLayer = window.dataLayer || [];\n"
-    "    window.gtag = function(){window.dataLayer.push(arguments);};\n"
-    "    window.gtag('js', new Date());\n"
-    f"    window.gtag('config', '{GA4_MEASUREMENT_ID}');\n"
-    "    var script = document.createElement('script');\n"
-    "    script.async = true;\n"
-    f"    script.src = 'https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}';\n"
-    "    document.head.appendChild(script);\n"
-    "  })();\n"
-    "</script>\n"
-)
-GA4_INSERTION = "\n" + GA4_TAG
 PENDING_NOTICE = (
     "Selected for Deep GEO evidence expansion. The evidence-oriented content "
     "layer is pending scientific review. The publisher version remains the "
@@ -203,21 +177,7 @@ def with_ga4_tag(page):
     favicon = '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">'
     if favicon not in page:
         page = page.replace('</head>', favicon + '</head>', 1)
-    if page.count(GA4_INSERTION) + page.count(LEGACY_GA4_INSERTION) > 1:
-        raise ValueError("Google tag must occur exactly once in the HTML head.")
-    page = page.replace(LEGACY_GA4_INSERTION, GA4_INSERTION)
-    if GA4_INSERTION in page:
-        if page.count(GA4_INSERTION) != 1:
-            raise ValueError("Google tag must occur exactly once in the HTML head.")
-        return with_theme_shell(page)
-    if page.count("<head>") != 1:
-        raise ValueError("Google tag requires exactly one HTML head.")
-    return with_theme_shell(page.replace("<head>", "<head>" + GA4_INSERTION, 1))
-
-
-def without_ga4_tag(page):
-    """Ignore only the two exact shared tag versions in content-date checks."""
-    return page.replace(GA4_INSERTION, "").replace(LEGACY_GA4_INSERTION, "")
+    return with_theme_shell(insert_ga4_tag(page))
 
 
 def write_public_html_if_changed(path, content, search_fields=None):
@@ -2806,7 +2766,7 @@ def build_site():
     sample_map_url = absolute(config["site_url"], search_metadata.SAMPLE_MAP_PATH)
     html_changed[sample_map_url] = write_public_html_if_changed(
         sample_map_path,
-        sample_map_path.read_text(encoding="utf-8"),
+        with_research_measurement(sample_map_path.read_text(encoding="utf-8")),
         search_overrides.get(search_metadata.SAMPLE_MAP_PATH),
     )
 
