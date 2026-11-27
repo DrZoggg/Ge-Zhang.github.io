@@ -555,7 +555,7 @@
 - DOI: 10.1016/j.cmpbup.2024.100164
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-cmpbup-2024-100164.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Molecular subtypes of ischemic heart disease based on circadian rhythm
 - Journal: Scientific Reports

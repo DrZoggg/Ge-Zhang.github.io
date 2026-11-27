@@ -1072,6 +1072,7 @@ def v2_label(key):
         "pubmed_url": "PubMed",
         "pmcid": "PMCID",
         "pmc_cloud_xml_url": "PMC Open Access full-text XML",
+        "frailty_analysis_figure_url": "Frailty analysis figure (publisher)",
         "polr1d_expression_results_url": "POLR1D results in the original article (PMC)",
         "nih_bioc_full_text_url": "Machine-readable full text (NIH BioC)",
         "biostudies_supplement_pdf_url": "Supplementary Information PDF (BioStudies)",
