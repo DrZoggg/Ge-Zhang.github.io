@@ -723,6 +723,8 @@ def validate_deep_v2_content(content, label="Paper GEO 2.0 content"):
             raise ValueError(f"{label} Q&A {position} must be an object.")
         question = required_text(item.get("question"), f"{label} Q&A {position} question")
         required_text(item.get("answer"), f"{label} Q&A {position} answer")
+        if "source_locator" in item:
+            required_text(item["source_locator"], f"{label} Q&A {position} source locator")
         if question.casefold() in seen_questions:
             raise ValueError(f"{label} Q&A questions must be unique.")
         seen_questions.add(question.casefold())
@@ -1462,6 +1464,13 @@ def render_deep_v2_html(content, related_papers, *, early_summary=False, pmc_url
             if item.get("evidence_refs")
             else ""
         )
+        + (
+            '<p class="paper-geo-v2__source"><strong>Source locator:</strong> '
+            + research_guides.supporting_locator(item["source_locator"], content["doi"])
+            + "</p>"
+            if "source_locator" in item
+            else ""
+        )
         + "</article>"
         for position, item in enumerate(content["qa"], 1)
     )
@@ -1824,6 +1833,9 @@ def render_deep_v2_markdown(content, related_papers, *, pmc_url="", trial_regist
         parts.extend([f"### {item['question']}", "", item["answer"], ""])
         if item.get("evidence_refs"):
             parts.extend(["Evidence: " + ", ".join(item["evidence_refs"]), ""])
+        if "source_locator" in item:
+            locator = research_guides.supporting_locator(item["source_locator"], content["doi"], markdown=True)
+            parts.extend(["Source locator: " + locator, ""])
     parts.extend(["## Concepts & Entities", ""])
     for category, values in content["concepts"].items():
         parts.extend([f"### {v2_label(category)}", "", ", ".join(values), ""])

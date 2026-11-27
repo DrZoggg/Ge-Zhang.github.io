@@ -14,6 +14,7 @@ QUESTION_JSON_PATH = 'research/questions.json'
 RETAINED_BACKLINKS = frozenset({
     ('10.3389/fonc.2021.659217', '10.1200/po.24.00089'),
     ('10.1016/j.ejso.2024.108527', '10.1038/s41598-025-98859-3'),
+    ('10.1016/j.isci.2025.114320', '10.1093/hmg/ddae189'),
 })
 MIME_SUFFIXES = {
     'application/vnd.citationstyles.csl+json': '.csl.json',

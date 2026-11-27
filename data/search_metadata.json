@@ -141,7 +141,8 @@
     "description": "Mouse experiments examined how macrophage-derived KIF13B regulates MERTK and efferocytosis in experimental atherosclerosis."
   },
   "papers/doi-10-1093-hmg-ddae189.html": {
-    "title": "Multi-omics of cellular senescence in Alzheimer's disease"
+    "title": "Multi-omics of cellular senescence in Alzheimer's disease",
+    "description": "Alzheimer’s disease cellular-senescence research: blood and brain transcriptomic comparisons, GSVA expression scores, and multi-omics genetic prioritization."
   },
   "papers/doi-10-1097-re9-0000000000000037.html": {
     "title": "Multimodal AI for cardiovascular microbiome research",

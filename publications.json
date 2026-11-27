@@ -1942,8 +1942,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

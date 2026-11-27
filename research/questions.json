@@ -16259,7 +16259,7 @@
       "type": "Article",
       "paper_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.md",
-      "paper_geo_status": "none",
+      "paper_geo_status": "v2",
       "authors": [
         "Yudi Xu",
         "Shutong Liu",
@@ -16281,87 +16281,280 @@
       "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.bib",
       "citation_ris_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.ris",
       "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.csl.json",
-      "evidence_status": "limited",
-      "question_count": 0,
-      "key_findings": [],
-      "field_entry": [],
-      "review_topics": [],
-      "concepts": {},
-      "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#limited-evidence",
-      "source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/limited_evidence.json",
-      "provenance": [
+      "evidence_status": "reviewed_v2",
+      "question_count": 9,
+      "key_findings": [
         {
-          "url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
-          "label": "Official publisher article and publication history",
-          "format": "Publisher HTML and complete 11-page publisher-typeset advance-article PDF obtained through the authorized author account",
-          "locator": "DOI 10.1093/hmg/ddae189; advance publication 18 December 2024; final issue 34(5), 381–391 (2025). Main Figures 1–4, Table 1 and Methods were reviewed."
+          "id": "KF1",
+          "claim": "Separate blood and brain expression screens identified 113 and 410 direction-concordant senescence-related candidates.",
+          "context": "Candidate expression changes were aligned with the labelled CellAge signature. A GSVA difference score compares the up- and down-regulated signature sets. Figure S1 shows the blood comparisons in GSE63060 and GSE63061.",
+          "evidence": [
+            {
+              "label": "Senescence signature",
+              "value": "1,259 genes: 525 labelled up and 734 labelled down"
+            },
+            {
+              "label": "Blood expression screen",
+              "value": "GSE63061: 139 AD and 134 controls; 113 direction-consistent candidates"
+            },
+            {
+              "label": "Brain expression screen",
+              "value": "GSE33000: 310 AD and 157 controls; 410 direction-consistent candidates"
+            },
+            {
+              "label": "Supporting blood score comparison",
+              "value": "Figure S1 plots higher AD scores in GSE63060 (145 AD and 104 controls, P=1.6×10⁻⁸) and GSE63061 (139 AD and 134 controls, P=5.5×10⁻⁵)."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF pp. 2 and 5 (Differentially expressed CS genes from blood/brain), pp. 8-9 (Data source and processing; Cellular senescence score calculation); Figures 1, 2A and 4A; supplementary_table_ddae189.xlsx, Supplementary Tables 9-10; supplementary_figure_ddae189.docx, Figure S1.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/0",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf1"
         },
         {
-          "url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
-          "label": "Official publisher supplementary data",
-          "format": "Three unique files: two DOCX files and one XLSX workbook, acquired 27 October 2026",
-          "locator": "supplementary_figure_ddae189.docx: Figures 1–6; supplementary_table_ddae189.xlsx: Tables 1–11; supplementary_materials_ddae189.docx: STROBE-MR checklist, especially item 4d. These materials have been obtained and inspected."
+          "id": "KF2",
+          "claim": "The blood eQTL analysis highlighted five direction-concordant genes with different colocalization results.",
+          "context": "Figure 2C and Table S1 report estimates from the study’s summary-level MR analysis. The five highlighted genes also meet its expression-direction criterion. SLFN12 has a significant IVW Cochran Q result even though its colocalization posterior exceeds the authors’ cutoff.",
+          "evidence": [
+            {
+              "label": "Lower-odds estimates",
+              "value": "CENPW OR 0.56 (95% CI 0.41-0.75); EXOSC9 0.89 (0.84-0.95); HSPB11 0.71 (0.55-0.91)"
+            },
+            {
+              "label": "Higher-odds estimates",
+              "value": "SLC44A2 OR 1.09 (1.04-1.13); SLFN12 1.13 (1.04-1.24)"
+            },
+            {
+              "label": "Colocalization qualification",
+              "value": "At the authors' PPH4 > 0.5 threshold, CENPW 0.554 and SLFN12 0.876 pass; EXOSC9 0.023, HSPB11 0.034 and SLC44A2 0.047 do not"
+            },
+            {
+              "label": "Heterogeneity qualification",
+              "value": "SLFN12 IVW Cochran Q P = 4.29e-5 in Table S2; it is not a uniformly consistent set of instruments"
+            },
+            {
+              "label": "Tested rows and FDR",
+              "value": "Table S1 lists 94 tested gene rows, with 13 adjusted P values below 0.05. Figure 2 highlights five direction-concordant genes."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF p. 2 (Integration analysis from blood), p. 4 Figure 2C-I; supplementary_table_ddae189.xlsx, Supplementary Table 1 rows 15, 42, 49, 83 and 93 and Supplementary Table 2 rows 3-11; Table 9 supplies the expression-direction categories.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/1",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf2"
         },
         {
-          "url": "https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER",
-          "label": "FinnGen R9 official Alzheimer endpoint",
-          "format": "Official Risteys endpoint HTML, retrieved 27 October 2026",
-          "locator": "G6_ALZHEIMER: Case counts → Remove individuals based on genotype QC, 9,301 cases. Control definition is all non-cases; this page does not independently supply the paper’s exact control total or identify its actual analysis input."
+          "id": "KF3",
+          "claim": "The brain eQTL analysis highlighted CDKN2B and ITGAV, with stronger reported colocalization for CDKN2B.",
+          "context": "Figure 4C and Table S4 report higher AD odds estimates for both genes. CDKN2B uses a single-SNP Wald ratio. ITGAV uses a five-SNP IVW estimate. Figure S5 shows higher expression for both genes in the same GSE33000 brain dataset.",
+          "evidence": [
+            {
+              "label": "CDKN2B",
+              "value": "OR 1.28 (95% CI 1.10-1.48); FDR 0.0459; Wald ratio using rs490005; PPH4 0.607"
+            },
+            {
+              "label": "ITGAV",
+              "value": "OR 1.09 (1.04-1.14); FDR 0.0284; IVW using 5 SNPs; PPH4 0.452"
+            },
+            {
+              "label": "Tested rows and FDR",
+              "value": "Table S4 lists 170 tested gene rows and four adjusted P values below 0.05. The Results report 179 genes after instrument selection and highlight two direction-concordant genes. The source does not explain the difference between 179 and 170."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF p. 5 (Integration analysis from brain), p. 7 Figure 4C; supplementary_table_ddae189.xlsx, Supplementary Table 4 rows 22 and 71 and Supplementary Table 5 rows 3-4; Table 9 supplies the expression-direction categories. Supplementary Figure S5 records the display from GSE33000.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/2",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf3"
         },
         {
-          "url": "https://drgezhang.com/assets/research/ad-itgav-experiment-record.md",
-          "label": "Editable experiment-planning record: ITGAV worked example",
-          "format": "Author-designed research resource; published observations and proposed follow-up decisions are labelled separately",
-          "locator": "Prepared 15 November 2026. Uses the source-reported PC12 expression observation to plan a candidate-specific test, controls, separate functional endpoint and interpretable outcomes; no experiment or new result is reported."
+          "id": "KF4",
+          "claim": "Separate blood and brain methylation screens identified candidate probes, and the reported blood mediation annotations disagree across figures.",
+          "context": "The three-step analysis links methylation, expression and AD in the authors’ proposed blood pathways. The directly reported probe associations can be used with their table locators. Specific EXOSC9/SLFN12 mediation coefficients remain unresolved.",
+          "evidence": [
+            {
+              "label": "Blood methylation results",
+              "value": "18 FDR-positive probes across 7 genes in Table 1 and Table S3"
+            },
+            {
+              "label": "Brain methylation results",
+              "value": "15 FDR-positive probes across 6 genes in Table S6; no corresponding expression/methylation intersection reported for step 3"
+            },
+            {
+              "label": "EXOSC9 probe identity",
+              "value": "Figure 1 labels cg25588844 on the arrow into the candidate group containing EXOSC9. Table 1, Figure 3C and Figure S3 label the EXOSC9 probe cg06713675."
+            },
+            {
+              "label": "Expression-to-AD coefficients",
+              "value": "EXOSC9 β is −0.01 in the p. 3 narrative/Figure 3C, −0.11 in Figure 2C and −0.112 in Table S1. Figure 3D labels the SLFN12 link −0.01, while Figure 2C and Table S1 show +0.12 and +0.125 respectively."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF pp. 2 and 5 (blood/brain cis-mQTL analyses), p. 5 Table 1, pp. 6-7 Figures 3B and 4D; supplementary_table_ddae189.xlsx, Supplementary Tables 3 and 6; supplementary_figure_ddae189.docx, Figures S2-S4. Figures 1 and 3C-D contain unresolved mediation annotations.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/3",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf4"
         },
         {
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13714348/",
-          "label": "Published methods-use context in gastric-cancer research",
-          "format": "Human Mutation original research article; DOI 10.1155/humu/3845963; online 27 October 2026",
-          "locator": "Introduction paragraph 3 co-cites references 9 and 10 for multi-omics MR methods. Reference 9 identifies this HMG paper by exact DOI. This is a published use context, not independent AD or PC12 validation."
+          "id": "KF5",
+          "claim": "The cell experiments reported increased CDKN2B and ITGAV expression after amyloid-beta exposure in PC12 cells.",
+          "context": "Methods and Figure 4 identify PC12 cells. The Results wording refers to AD neurons. The recorded measurements support the direction of change, and the ITGAV qPCR fold scale differs between Supplementary Table S7 and Figure 4F.",
+          "evidence": [
+            {
+              "label": "Exposure",
+              "value": "Aβ1-42 at 7 μM for 12 hours"
+            },
+            {
+              "label": "Readouts",
+              "value": "qPCR for CDKN2B and ITGAV; Western blots normalized to β-actin"
+            },
+            {
+              "label": "Recorded measurements",
+              "value": "Table S7 lists 4 values per group for each qPCR target; Table S8 lists 3 labelled entries per group for protein quantification; independence of biological repeats is not specified"
+            },
+            {
+              "label": "Reported direction and scale",
+              "value": "CDKN2B and ITGAV mRNA and protein signals were higher in the exposed PC12 group. The ITGAV qPCR plot and worksheet have different fold scales, so use the direction with its assay locator."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF p. 5 (Validation of the target genes expression), p. 7 Figure 4E-G, p. 9 (PC12 cell culture; qPCR; Western blot); supplementary_table_ddae189.xlsx, Supplementary Table 7 rows 2-12 and Supplementary Table 8 rows 2-26; supplementary_figure_ddae189.docx, Figures S5-S6.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/4",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf5"
+        },
+        {
+          "id": "KF6",
+          "claim": "The Methods and the STROBE-MR supplement report different AD GWAS denominators under the same FinnGen R9 label.",
+          "context": "The official R9 endpoint independently lists the Methods case count after genotype quality control. The endpoint page does not identify the exact summary-statistic input used in this paper or give the matching control total.",
+          "evidence": [
+            {
+              "label": "Article Methods and Supplementary Table S10",
+              "value": "FinnGen R9 G6_ALZHEIMER, 9,301 cases and 367,976 controls."
+            },
+            {
+              "label": "Supplementary STROBE-MR checklist item 4d",
+              "value": "finngen_R9_G6_ALZHEIMER, 7,759 cases and 334,740 controls."
+            },
+            {
+              "label": "Official R9 endpoint documentation",
+              "value": "G6_ALZHEIMER lists 9,301 cases. The analyzed input file and denominator remain unresolved."
+            }
+          ],
+          "source_locator": "Publisher advance-article PDF p. 8, GWAS data for Alzheimer’s disease; Supplementary Table S10, FinnGen AD outcome row; supplementary_materials_ddae189.docx, STROBE-MR item 4d; FinnGen R9 Risteys endpoint G6_ALZHEIMER.",
+          "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/5",
+          "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf6"
         }
       ],
-      "author_evidence_note": {
-        "reviewed_on": "2026-11-15",
-        "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189",
-        "sections": [
-          {
-            "heading": "Blood and brain expression context",
-            "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
-            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
-            "source_locator": "Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data."
-          },
-          {
-            "heading": "Cell-line follow-up and its limits",
-            "text": "The Methods describe PC12 cells exposed to 7 μM Aβ1–42 for 12 hours. Figure 4E–G and the supplementary expression records report higher CDKN2B and ITGAV expression in treated cells than in controls. This is a cell-line expression comparison, not evidence from human Alzheimer’s disease neurons or a demonstration of therapeutic benefit. Because the plotted qPCR scale and supplementary values are inconsistent, this note does not certify an exact fold change or plotted significance value.",
-            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
-            "source_locator": "PDF p. 9, Cell culture and Aβ1–42-induced AD modeling and RNA isolation, reverse transcription, and quantitative real-time PCR; Figure 4E–G; supplementary_table_ddae189.xlsx, sheets labelled Supplemenatry Table 7 (B3:C6, B9:C12) and Supplemenatry Table 8; Supplementary Figures 5–6."
-          },
-          {
-            "heading": "Published use beyond Alzheimer's disease",
-            "text": "An original gastric-cancer study, published online on 27 October 2026 in Human Mutation (DOI 10.1155/humu/3845963), cites this article as reference 9. In its Introduction, references 9 and 10 appear together in a discussion of summary-data-based Mendelian randomization (SMR), HEIDI testing and Bayesian colocalization in multi-omics MR studies. This documents a cross-disease methodological-background use, rather than replication of the Alzheimer's disease findings.",
-            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13714348/",
-            "source_locator": "Human Mutation, DOI 10.1155/humu/3845963, Introduction paragraph 3, paired references 9 and 10; reference 9 prints DOI 10.1093/hmg/ddae189. Electronic publication date: article metadata."
-          },
-          {
-            "heading": "Unresolved analysis-input version",
-            "text": "The article Methods and Supplementary Table 10 identify FinnGen R9 G6_ALZHEIMER and report 9,301 cases with 367,976 controls. The official R9 Risteys endpoint independently confirms 9,301 cases after genotype quality control. However, STROBE-MR item 4d reports 7,759 cases and 334,740 controls under the same R9 label. The available materials do not identify the exact outcome input file used in the reported MR runs. The official R9 case count is known; the unresolved issue is which input generated this paper’s estimates. No disputed denominator is selected and no full V2 genetic conclusion is certified.",
-            "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
-            "source_locator": "PDF p. 8, GWAS data for Alzheimer’s disease; supplementary_table_ddae189.xlsx, Supplementary Table 10 row 6; supplementary_materials_ddae189.docx, STROBE-MR item 4d. Official cross-check: R9 Risteys G6_ALZHEIMER, Case counts → Remove individuals based on genotype QC (linked in Provenance)."
-          }
+      "field_entry": [
+        "Alzheimer’s disease biology",
+        "Genetic target prioritization"
+      ],
+      "review_topics": [
+        "Senescence-related blood and brain expression",
+        "Cis-QTL evidence and cell-line follow-up"
+      ],
+      "concepts": {
+        "disease_and_process": [
+          "Alzheimer’s disease",
+          "Cellular senescence",
+          "Blood and brain expression"
+        ],
+        "genetic_methods": [
+          "cis-QTL Mendelian randomization",
+          "Colocalization",
+          "Instrument heterogeneity"
+        ],
+        "experimental_context": [
+          "PC12 cells",
+          "Aβ1-42 exposure",
+          "CDKN2B and ITGAV expression"
         ]
       },
-      "scope": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
-      "evidence_notice": "The complete 11-page publisher advance article and three official supplementary files have been reviewed. A conflict over the actual GWAS analysis input prevents full V2 certification; the verified source context and bounded expression observations are recorded below.",
-      "evidence_scope": null,
-      "limitations": [
-        "Full V2 remains on hold until an exact archived GWAS input filename/release and checksum, linked to the analysis code or run record, or a formal author clarification resolves which dataset generated the MR estimates. Agreement between the main Methods and the official R9 case count does not establish the analysis input used.",
-        "The source contains unresolved mediation annotations: Figure 1 labels an EXOSC9 probe differently from Table 1/Figure 3C, and Figure 3 coefficients differ from the MR tables, including a SLFN12 sign discrepancy. This note neither corrects the labels nor certifies the proposed mediation chains.",
-        "The qPCR supplement lists four values per group per target and the immunoblot supplement lists three entries per group; biological independence is not specified. The qPCR plot/table scale discrepancy remains unresolved, so no exact fold change, effective biological sample size or plotted P value is certified.",
-        "MR depends on instrument relevance, independence and exclusion restriction. The reported sensitivity checks do not prove all assumptions, and the supplement reports significant SLFN12 heterogeneity. Gene-target causality is not established by this limited note.",
-        "The PC12 experiments measure expression after an amyloid-peptide challenge. They do not test gene knockdown or rescue, animal disease modification, patient outcomes, or the safety and efficacy of a treatment. An ambiguous CDKN2B primer character and absent GAPDH primer sequence in Supplementary Table 11 also limit reproducibility."
+      "profile_type": "multicohort_omics",
+      "study_profile": {
+        "profile_type": "multicohort_omics",
+        "study_design": "Retrospective public transcriptomic screening with cis-eQTL/cis-mQTL two-sample Mendelian randomization, colocalization and a PC12 expression experiment.",
+        "evidence_type": "Human observational expression data, summary-level genetic prioritization and nonclinical cellular expression measurements.",
+        "population": "Public blood and postmortem prefrontal cortex AD/control datasets; predominantly European-ancestry QTL and FinnGen outcome resources; PC12 rat pheochromocytoma-derived cells for the laboratory comparison.",
+        "primary_endpoint": "Association of genetically instrumented gene expression or methylation with the AD GWAS outcome.",
+        "secondary_endpoint": "Senescence-related expression screening, colocalization, and CDKN2B/ITGAV mRNA and protein expression after Aβ1-42 exposure.",
+        "data_modalities": [
+          "Blood and brain expression microarrays",
+          "cis-eQTL and cis-mQTL summary associations",
+          "FinnGen AD GWAS summary associations",
+          "Bayesian colocalization and instrument heterogeneity assessment",
+          "PC12 qPCR and Western-blot expression measurements"
+        ],
+        "external_validation": false,
+        "scale_metrics": [
+          {
+            "label": "Blood expression dataset",
+            "value": "GSE63061: 139 AD and 134 controls"
+          },
+          {
+            "label": "Brain expression dataset",
+            "value": "GSE33000: 310 AD and 157 controls"
+          },
+          {
+            "label": "Supporting blood score comparison",
+            "value": "GSE63060: 145 AD and 104 controls, reported in Table S10/Figure S1"
+          },
+          {
+            "label": "QTL resources",
+            "value": "Blood eQTLGen 31,684; blood mQTL 1,980; brain eQTL 1,194; brain mQTL 1,160, as reported in Table S10"
+          },
+          {
+            "label": "GWAS denominator",
+            "value": "FinnGen G6_ALZHEIMER, labelled R9. Methods/Table S10 report 9,301 cases and 367,976 controls. STROBE-MR item 4d reports 7,759 cases and 334,740 controls. The actual analyzed input remains unidentified."
+          },
+          {
+            "label": "Experimental setting",
+            "value": "PC12 cells, 7 μM Aβ1-42, 12 hours"
+          }
+        ],
+        "counting_note": "Expression subsets, QTL source samples, version-labelled GWAS counts and laboratory measurements describe separate evidence units. The expression screens’ 113/410 candidates precede the supplementary eQTL test rows. The cell-assay workbook does not specify biological independence."
+      },
+      "study_profile_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/study_profile",
+      "model_profile": null,
+      "model_profile_source": null,
+      "narrative_genre": null,
+      "gold_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json",
+      "gold_source_url": "https://github.com/DrZoggg/Ge-Zhang.github.io/blob/main/data/deep_geo/doi-10-1093-hmg-ddae189.json",
+      "gold_content_sha256": "d77c7175322f9597f9e58716bf99e24c0a35f9105ac4cce8206442a94c29d14f",
+      "provenance": {
+        "doi_url": "https://doi.org/10.1093/hmg/ddae189",
+        "publisher_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39690817/",
+        "supplementary_data_url": "https://academic.oup.com/hmg/article/34/5/381/7926367#supplementary-data",
+        "finngen_r9_alzheimer_endpoint_url": "https://r9.risteys.finngen.fi/endpoints/G6_ALZHEIMER",
+        "blood_expression_geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63061",
+        "brain_expression_geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE33000",
+        "author_itgav_planning_record_url": "https://drgezhang.com/assets/research/ad-itgav-experiment-record.md",
+        "separate_published_methods_use_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13714348/",
+        "source_roles": "The OUP article and its supplements are the original scientific sources. The FinnGen and GEO entries document input resource identities. The ITGAV worked example and the separate published methods use are contextual links.",
+        "formal_publication": "Human Molecular Genetics. First published 18 December 2024. Volume 34, issue 5, March 2025, pages 381–391.",
+        "source_rights": "Oxford University Press, all rights reserved. Source links accompany original explanatory material."
+      },
+      "scientific_role": "Original integrative study combining public expression screens, genetic association prioritization and PC12 expression measurements.",
+      "evidence_position": "Retrospective human expression, summary-level genetic estimates and a rat cell-line expression assay. Source-specific denominator and mediation disagreements are locatable.",
+      "related_concepts": [
+        "CDKN2B",
+        "ITGAV",
+        "Instrument validity"
       ],
-      "scope_source": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189/scope"
+      "citation_contexts": [
+        "Discussion of tissue-specific senescence-related AD candidate genes with MR and colocalization qualifications.",
+        "Evidence reviews distinguishing genetic prioritization and cellular expression changes from validated clinical targets."
+      ],
+      "evidence_scope": {
+        "supports": [
+          "Reported case-control expression patterns in the named blood and brain datasets.",
+          "Source-attributed estimates for the highlighted eQTL and methylation candidates.",
+          "CDKN2B and ITGAV expression observations from the specified PC12 model."
+        ],
+        "does_not_establish": [
+          "Exact identity of the GWAS run input or complete EXOSC9/SLFN12 mediation chains.",
+          "Prospective diagnostic performance, human treatment benefit or target-specific functional rescue."
+        ]
+      },
+      "limitations": [
+        "MR interpretation depends on instrument relevance, independence and exclusion restriction, plus LD and ancestry assumptions. Colocalization and Cochran Q describe properties of the reported analyses.",
+        "The FinnGen denominator, certain mediation annotations and the ITGAV qPCR fold scale disagree across original sources. Each affected finding identifies the competing sources.",
+        "The PC12 assay measures expression. Supplementary Tables S7–S8 do not identify independent biological repeats; Supplementary Table S11 does not list the stated GAPDH reference primer and the printed CDKN2B reverse-primer sequence includes an ambiguous character."
+      ],
+      "scope_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/evidence_scope"
     },
     {
       "id": "doi-10-1016-j-cmpbup-2024-100164",
@@ -27119,6 +27312,155 @@
       "evidence_refs_status": "resolved"
     },
     {
+      "id": "doi-10-1093-hmg-ddae189--qa-1",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 1,
+      "question": "How do the five blood and two brain candidates relate to the eQTL test tables?",
+      "answer": "Table S1 has 94 tested rows and 13 adjusted P values below 0.05. Table S4 has 170 tested rows and four below 0.05. The Results report 179 brain genes after instrument selection and do not explain the difference from the table. The article highlights the five blood and two brain expression candidates with concordant directions.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-1",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/0/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/0/answer",
+      "answer_sha256": "ca90f67a7194ddea217f5857affc7782bb23f326f4f4b53f2d251ce227d55e62",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "supplementary_table_ddae189.xlsx: Supplementary Tables 1, 4 and 9; main Figures 2C and 4C."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-2",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 2,
+      "question": "Which blood genes are highlighted?",
+      "answer": "Figure 2C reports ORs below one for CENPW, EXOSC9 and HSPB11, and above one for SLC44A2 and SLFN12. CENPW (PPH4 0.554) and SLFN12 (0.876) cross the study cutoff. SLFN12 also shows significant IVW heterogeneity (Table S2, Q P=4.29×10⁻⁵).",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-2",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/1/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/1/answer",
+      "answer_sha256": "d4ffb7e563db009a74cd27ec8369e298f20ede18abb738652f0e0ccf97ceea0b",
+      "evidence_refs": [
+        "KF2"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF p. 2 (Integration analysis from blood), p. 4 Figure 2C-I; supplementary_table_ddae189.xlsx, Supplementary Table 1 rows 15, 42, 49, 83 and 93 and Supplementary Table 2 rows 3-11; Table 9 supplies the expression-direction categories."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-3",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 3,
+      "question": "How do CDKN2B and ITGAV differ genetically?",
+      "answer": "Reported ORs are 1.28 for CDKN2B and 1.09 for ITGAV. CDKN2B uses the rs490005 Wald ratio and has PPH4 0.607. ITGAV uses a five-SNP IVW model and has PPH4 0.452. The latter is below the study’s colocalization cutoff of 0.5.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-3",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/2/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/2/answer",
+      "answer_sha256": "9c77dd115b6816315b6c0a5d691f2b44a7b4bc0eb0c5204b387090f7a0278bf2",
+      "evidence_refs": [
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF p. 5 (Integration analysis from brain), p. 7 Figure 4C; supplementary_table_ddae189.xlsx, Supplementary Table 4 rows 22 and 71 and Supplementary Table 5 rows 3-4; Table 9 supplies the expression-direction categories."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-4",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 4,
+      "question": "How were the gene expression MR and colocalization estimates produced?",
+      "answer": "The Methods specify TwoSampleMR, a Wald ratio for one instrument and inverse-variance weighting for multiple instruments, plus coloc for region-level colocalization. The instrument criteria include P < 5×10⁻⁶ and LD clumping at r² < 0.1. The SMR resource provides QTL data.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-4",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/3/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/3/answer",
+      "answer_sha256": "154272d4284b61d767b4283fe2bdf2625452cffcf0915acc11b83982f04517bd",
+      "evidence_refs": [
+        "KF2",
+        "KF3"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher PDF p. 9, Mendelian randomization analysis and Colocalization analysis; p. 10, Data availability; Table S10."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-5",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 5,
+      "question": "What supports the methylation analysis, and where do the annotations disagree?",
+      "answer": "The reported methylation screens contain 18 blood probes across seven genes and 15 brain probes across six. The EXOSC9 probe identity and EXOSC9/SLFN12 expression-to-AD coefficients differ across Figures 1, 2C and 3C–D, Table 1, Table S1 and Figure S3. These discrepancies limit mechanistic interpretation of the proposed mediation paths.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-5",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/4/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/4/answer",
+      "answer_sha256": "77b0afa32db2d1313da7627a2b04c1f110240df67b4f549f2705d36c52772247",
+      "evidence_refs": [
+        "KF4"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF pp. 2 and 5 (blood/brain cis-mQTL analyses), p. 5 Table 1, pp. 6-7 Figures 3B and 4D; supplementary_table_ddae189.xlsx, Supplementary Tables 3 and 6; supplementary_figure_ddae189.docx, Figures S2-S4. Figures 1 and 3C-D contain unresolved mediation annotations."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-6",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 6,
+      "question": "Which cell model was used to examine CDKN2B and ITGAV?",
+      "answer": "The Methods and Figure 4 identify rat-derived PC12 cells treated with 7 μM Aβ1–42 for 12 hours. The source’s reference to AD neurons in the Results does not identify another human cell experiment.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-6",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/5/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/5/answer",
+      "answer_sha256": "4b1461a30dd56e7ccf354564254c90705d5439b17923ce3604102ba93b86e040",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF p. 5 (Validation of the target genes expression), p. 7 Figure 4E-G, p. 9 (PC12 cell culture; qPCR; Western blot); supplementary_table_ddae189.xlsx, Supplementary Table 7 rows 2-12 and Supplementary Table 8 rows 2-26; supplementary_figure_ddae189.docx, Figures S5-S6."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-7",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 7,
+      "question": "What changed in the PC12 expression comparison?",
+      "answer": "CDKN2B and ITGAV mRNA and protein signals were higher after Aβ1–42 exposure. The qPCR table records four measurements per group and target. The protein sheet records three labelled measurements per group. The biological independence of those measurements is unspecified. Figure 4F and Table S7 disagree on the ITGAV qPCR fold scale.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-7",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/6/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/6/answer",
+      "answer_sha256": "9913481be6780984ecdc528ff072e8e260f49c7307ae908d43a6b89d6e08ff6b",
+      "evidence_refs": [
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF p. 5 (Validation of the target genes expression), p. 7 Figure 4E-G, p. 9 (PC12 cell culture; qPCR; Western blot); supplementary_table_ddae189.xlsx, Supplementary Table 7 rows 2-12 and Supplementary Table 8 rows 2-26; supplementary_figure_ddae189.docx, Figures S5-S6."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-8",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 8,
+      "question": "Which denominator is documented for the FinnGen AD outcome?",
+      "answer": "Methods and Table S10 give 9,301 cases and 367,976 controls. STROBE-MR item 4d gives 7,759 and 334,740 under the same R9 label. Official R9 Risteys lists 9,301 cases. It does not identify the file analyzed in the paper.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-8",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/7/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/7/answer",
+      "answer_sha256": "3fe719b26ae1da2b3917439743a32290f6b4f22150c1e639c131c2a605f51545",
+      "evidence_refs": [
+        "KF6"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher advance-article PDF p. 8, GWAS data for Alzheimer’s disease; Supplementary Table S10, FinnGen AD outcome row; supplementary_materials_ddae189.docx, STROBE-MR item 4d; FinnGen R9 Risteys endpoint G6_ALZHEIMER."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189--qa-9",
+      "work_id": "doi-10-1093-hmg-ddae189",
+      "qa_index": 9,
+      "question": "How can these results inform Alzheimer’s disease research?",
+      "answer": "They provide tissue-specific candidates for studying relationships among senescence-associated expression, genetic associations and Aβ1–42 exposure. Report the relevant tissue and assay and distinguish the candidate association from clinical validation. Cite the original study for its results and use the linked figure or table for the specific observation.",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-9",
+      "question_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/8/question",
+      "answer_source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/8/answer",
+      "answer_sha256": "7b6fd4c1429efe372e6516217eaa6c4df4ec08480649834f6e88e1408ea1ca36",
+      "evidence_refs": [
+        "KF1",
+        "KF2",
+        "KF3",
+        "KF5"
+      ],
+      "evidence_refs_status": "resolved",
+      "source_locator": "Publisher PDF pp. 8-9, Discussion limitations and Materials and Methods; Figures 2 and 4."
+    },
+    {
       "id": "circadian-ihd--qa-1",
       "work_id": "circadian-ihd",
       "qa_index": 1,
@@ -30763,21 +31105,41 @@
           "work_refs": [
             {
               "work_id": "doi-10-1093-hmg-ddae189",
-              "question_ids": [],
+              "question_ids": [
+                "doi-10-1093-hmg-ddae189--qa-9"
+              ],
               "preview_question_id": null,
               "paper_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html",
               "doi": "10.1093/hmg/ddae189",
               "doi_url": "https://doi.org/10.1093/hmg/ddae189",
-              "scope_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#limited-evidence",
+              "scope_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#ev-scope",
               "citation_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#cite-this-paper",
-              "author_note_previews": [
+              "finding_previews": [
                 {
-                  "heading": "Blood and brain expression context",
-                  "text": "The study reports separate transcriptomic comparisons using blood dataset GSE63061 (139 Alzheimer’s disease cases and 134 controls) and brain dataset GSE33000 (310 cases and 157 controls). For each sample, the authors used Gene Set Variation Analysis (GSVA) to calculate an expression-based senescence score, subtracting enrichment for the 734 negatively associated genes from enrichment for the 525 positively associated genes. The study then integrates expression and methylation QTL with GWAS summary data. An expression-based score is not a direct count of senescent cells; these retrospective comparisons do not establish a treatment effect.",
-                  "source_url": "https://academic.oup.com/hmg/article/34/5/381/7926367",
-                  "source_locator": "Advance-article PDF pp. 2–3, Results (Analysis of cellular senescence features in AD), and pp. 8–9, Methods (Data collection and Processing, Cellular senescence score calculation). Supplementary Table 9 lists the two gene sets, and Supplementary Table 10 rows 3–5 document the source data.",
-                  "reviewed_on": "2026-11-15",
-                  "source_record": "data/limited_evidence.json#/papers/10.1093~1hmg~1ddae189"
+                  "id": "KF1",
+                  "claim": "Separate blood and brain expression screens identified 113 and 410 direction-concordant senescence-related candidates.",
+                  "context": "Candidate expression changes were aligned with the labelled CellAge signature. A GSVA difference score compares the up- and down-regulated signature sets. Figure S1 shows the blood comparisons in GSE63060 and GSE63061.",
+                  "evidence": [
+                    {
+                      "label": "Senescence signature",
+                      "value": "1,259 genes: 525 labelled up and 734 labelled down"
+                    },
+                    {
+                      "label": "Blood expression screen",
+                      "value": "GSE63061: 139 AD and 134 controls; 113 direction-consistent candidates"
+                    },
+                    {
+                      "label": "Brain expression screen",
+                      "value": "GSE33000: 310 AD and 157 controls; 410 direction-consistent candidates"
+                    },
+                    {
+                      "label": "Supporting blood score comparison",
+                      "value": "Figure S1 plots higher AD scores in GSE63060 (145 AD and 104 controls, P=1.6×10⁻⁸) and GSE63061 (139 AD and 134 controls, P=5.5×10⁻⁵)."
+                    }
+                  ],
+                  "source_locator": "Publisher advance-article PDF pp. 2 and 5 (Differentially expressed CS genes from blood/brain), pp. 8-9 (Data source and processing; Cellular senescence score calculation); Figures 1, 2A and 4A; supplementary_table_ddae189.xlsx, Supplementary Tables 9-10; supplementary_figure_ddae189.docx, Figure S1.",
+                  "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/0",
+                  "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf1"
                 }
               ]
             }
@@ -35049,6 +35411,69 @@
       "discovery_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html#paper-discovery",
       "evidence_scope_kind": "does_not_establish",
       "evidence_scope": "Unconditional causality or universal protection against LUAD from a nominal selected-gene MR association."
+    },
+    {
+      "id": "doi-10-1093-hmg-ddae189",
+      "title": "Integrated multi-omics analysis revealed the molecular networks and potential targets of cellular senescence in Alzheimer’s disease",
+      "doi": "10.1093/hmg/ddae189",
+      "paper_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html",
+      "question": "How can these results inform Alzheimer’s disease research?",
+      "answer_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#qa-9",
+      "key_finding": {
+        "id": "KF1",
+        "claim": "Separate blood and brain expression screens identified 113 and 410 direction-concordant senescence-related candidates.",
+        "context": "Candidate expression changes were aligned with the labelled CellAge signature. A GSVA difference score compares the up- and down-regulated signature sets. Figure S1 shows the blood comparisons in GSE63060 and GSE63061.",
+        "evidence": [
+          {
+            "label": "Senescence signature",
+            "value": "1,259 genes: 525 labelled up and 734 labelled down"
+          },
+          {
+            "label": "Blood expression screen",
+            "value": "GSE63061: 139 AD and 134 controls; 113 direction-consistent candidates"
+          },
+          {
+            "label": "Brain expression screen",
+            "value": "GSE33000: 310 AD and 157 controls; 410 direction-consistent candidates"
+          },
+          {
+            "label": "Supporting blood score comparison",
+            "value": "Figure S1 plots higher AD scores in GSE63060 (145 AD and 104 controls, P=1.6×10⁻⁸) and GSE63061 (139 AD and 134 controls, P=5.5×10⁻⁵)."
+          }
+        ],
+        "source_locator": "Publisher advance-article PDF pp. 2 and 5 (Differentially expressed CS genes from blood/brain), pp. 8-9 (Data source and processing; Cellular senescence score calculation); Figures 1, 2A and 4A; supplementary_table_ddae189.xlsx, Supplementary Tables 9-10; supplementary_figure_ddae189.docx, Figure S1.",
+        "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/key_findings/0",
+        "evidence_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#kf1"
+      },
+      "key_finding_basis": "question_evidence_ref",
+      "source": "data/deep_geo/doi-10-1093-hmg-ddae189.json#/qa/8/question",
+      "profile_type": "multicohort_omics",
+      "narrative_genre": null,
+      "concepts": [
+        "Alzheimer’s disease",
+        "Cellular senescence",
+        "Blood and brain expression",
+        "cis-QTL Mendelian randomization",
+        "Colocalization",
+        "Instrument heterogeneity",
+        "PC12 cells",
+        "Aβ1-42 exposure",
+        "CDKN2B and ITGAV expression"
+      ],
+      "citation_bibtex_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.bib",
+      "citation_ris_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.ris",
+      "citation_csl_json_url": "https://drgezhang.com/citations/doi-10-1093-hmg-ddae189.csl.json",
+      "field_entry": [
+        "Alzheimer’s disease biology",
+        "Genetic target prioritization"
+      ],
+      "review_topics": [
+        "Senescence-related blood and brain expression",
+        "Cis-QTL evidence and cell-line follow-up"
+      ],
+      "discovery_url": "https://drgezhang.com/papers/doi-10-1093-hmg-ddae189.html#paper-discovery",
+      "evidence_scope_kind": "does_not_establish",
+      "evidence_scope": "Exact identity of the GWAS run input or complete EXOSC9/SLFN12 mediation chains."
     },
     {
       "id": "circadian-ihd",
