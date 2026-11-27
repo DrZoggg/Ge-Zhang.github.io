@@ -1217,6 +1217,24 @@
               ]
             }
           ]
+        },
+        {
+          "id": "gist-site-management-3",
+          "question": "How do studies of esophageal and junctional GIST differ in how they report resection and patient selection?",
+          "question_zh": "食管与胃食管交界部GIST研究所报告的切除术式和患者选择有何不同？",
+          "guide_ref": {
+            "slug": "gist-resection-evidence",
+            "section_id": "resection-evidence"
+          },
+          "work_refs": [
+            {
+              "work_id": "doi-10-1016-j-ejso-2024-108527",
+              "question_ids": [
+                "doi-10-1016-j-ejso-2024-108527--qa-2"
+              ],
+              "preview_question_id": null
+            }
+          ]
         }
       ]
     },

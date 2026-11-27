@@ -255,6 +255,7 @@ COMPARISONS = {
     'cardiovascular-prediction-evidence': '47ad53519b5ea919a5da29adeff38c99533c4fa4e678b83de27b65aadfcebd19',
     'atherosclerosis-cell-mechanisms': '636efc200861e4b176ed9388e7d46df0a2f1a6a82c081b09654be9846c5f225b',
     'cancer-omics-validation': '268edd2d2d7641793dbf54d27f02125aeb19ce922815ba1bf9f6046688d5a121',
+    'gist-resection-evidence': '0eae15deb0785213e2ed718b4343f0b60cd3e1e56db998547722b7947581b800',
 }
 
 

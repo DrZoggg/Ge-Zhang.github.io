@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "slug": "gist-resection-evidence",
+  "title": "GIST resection evidence by anatomical site",
+  "question": "How do studies of esophageal and junctional GIST differ in how they report resection and patient selection?",
+  "scope": "Compare an esophageal GIST case series with a junctional GIST matched report, focusing on procedure counts, patient selection and source limits.",
+  "contribution_first": true,
+  "reading_rule": "Keep the clinical sites and analytic groups separate. Match the study's procedure and denominator to its original table before comparing results.",
+  "studies": [
+    {
+      "id": "doi-10-1016-j-ejso-2024-108527",
+      "task": "Reported management pathways and endoscopic techniques in esophageal GIST",
+      "source_doi": "10.1016/j.ejso.2024.108527",
+      "source_json": "data/deep_geo/doi-10-1016-j-ejso-2024-108527.json",
+      "source_fingerprint": "444f1b737b67d34af99cbd2a72519c383624069bef016d914f606b9af43558e7",
+      "qa_indices": [
+        2,
+        3
+      ]
+    }
+  ],
+  "research_use": {
+    "id": "resection-evidence",
+    "question": "How do studies of esophageal and junctional GIST differ in how they report resection and patient selection?",
+    "question_zh": "食管与胃食管交界部GIST研究所报告的切除术式和患者选择有何不同？",
+    "answer": "The esophageal series reports treatment allocation in 23 patients. Fifteen underwent endoscopic resection, seven had surgery, including two after neoadjuvant imatinib, and one was managed conservatively. The 15 endoscopic procedures included nine STER, four ESD and two EMBL. Twelve tumors in that subgroup measured no more than 30 mm. The junctional study focused on lesions measuring 2–5 cm and retrospectively compared endoscopic and laparoscopic resection using propensity matching. The abstract and Results disagree on unmatched allocation, and Table 1 labels the matched laparoscopic group n=20 while listing 10 men and 20 women. The studies describe different patient selection and procedure reporting. Their reported results leave comparative effectiveness and a general size cutoff unestablished.",
+    "answer_zh": "食管病例系列报告23名患者的治疗分配。15名接受内镜切除，7名接受手术（其中2名先接受新辅助伊马替尼），1名接受保守管理。15例内镜操作包括9例STER、4例ESD和2例EMBL，其中12个肿瘤不超过30毫米。胃食管交界部研究以2–5厘米病灶为主要纳入范围，用倾向评分匹配回顾性比较内镜和腹腔镜切除。摘要与结果中的未匹配组人数不一致，表1的匹配后腹腔镜组标注20人，但性别行列出10名男性和20名女性。两项研究描述了不同的患者选择和术式，现有结果尚不足以确认比较疗效或普适病灶尺寸阈值。",
+    "answer_source_ids": [
+      "doi-10-1016-j-ejso-2024-108527",
+      "doi-10-1038-s41598-025-98859-3"
+    ],
+    "sources": [
+      {
+        "id": "doi-10-1016-j-ejso-2024-108527",
+        "doi": "10.1016/j.ejso.2024.108527",
+        "title": "Optimal Management Options for Esophageal Gastrointestinal Stromal Tumors (E-GIST)",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0748798324005791",
+        "locator": "Publisher-layout PDF pp. 3–4, Results 3.1–3.3 and Tables 1–3. See p. 4 Table 2, Results 3.3/Table 3 and p. 5 Discussion for selected procedure and size interpretation."
+      },
+      {
+        "id": "doi-10-1038-s41598-025-98859-3",
+        "doi": "10.1038/s41598-025-98859-3",
+        "title": "Endoscopic versus laparoscopic resection of gastrointestinal stromal tumors at the esophagogastric junction using propensity score matching analysis",
+        "url": "https://www.nature.com/articles/s41598-025-98859-3",
+        "locator": "Methods: Study design and patients and Statistical analysis; Figure 1. Abstract vs Results and Table 1 for unmatched allocations; publisher PDF p. 5, Table 1, LR Gender after PSM."
+      },
+      {
+        "id": "jgo-egist-editorial",
+        "doi": "10.21037/jgo-2026-0205",
+        "title": "Defining the role of endoscopic resection for esophageal gastrointestinal stromal tumors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13349985/",
+        "locator": "Body paragraph on Zhu et al.'s 23-patient series, Ref. 18. The editorial uses the reported counts and notes uncertainty in interpreting the comparison."
+      },
+      {
+        "id": "crj-egist-case",
+        "doi": "10.14309/crj.0000000000001901",
+        "title": "Endoscopic Resection of an Esophageal Gastrointestinal Stromal Tumor After Neoadjuvant Treatment: A New Paradigm for Minimally Invasive Therapy?",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12643604/",
+        "locator": "Introduction and Discussion, reference 7 within references 5–8. A separate case cites the earlier study for context on neoadjuvant treatment followed by surgery."
+      },
+      {
+        "id": "bsg-localised-gist-guideline",
+        "doi": "10.1038/s41416-024-02672-0",
+        "title": "Gastrointestinal stromal tumour (GIST): British Sarcoma Group clinical practice guidelines",
+        "url": "https://doi.org/10.1038/s41416-024-02672-0",
+        "locator": "Diagnosis and Localised disease—surgery. This guideline provides context for why anatomic site and treatment setting matter."
+      }
+    ],
+    "checklist": [
+      {
+        "dimension": "Separate the clinical sites",
+        "text": "Check how each report defines the site and eligible lesions before comparing management patterns.",
+        "source_ids": [
+          "doi-10-1016-j-ejso-2024-108527",
+          "doi-10-1038-s41598-025-98859-3",
+          "bsg-localised-gist-guideline"
+        ]
+      },
+      {
+        "dimension": "Read patient and procedure counts separately",
+        "text": "Check the parent cohort, the endoscopic subgroup and each nested treatment step. Compare baseline counts and arm labels before interpreting a matched result.",
+        "source_ids": [
+          "doi-10-1016-j-ejso-2024-108527",
+          "doi-10-1038-s41598-025-98859-3"
+        ]
+      }
+    ],
+    "study_roles": [
+      {
+        "work_id": "doi-10-1016-j-ejso-2024-108527",
+        "role": "Count procedures in the original esophageal series",
+        "text": "Use the full reviewed case series for observed allocation and techniques. The matrix represents the junctional paper separately with its source limitations.",
+        "source_ids": [
+          "doi-10-1016-j-ejso-2024-108527",
+          "doi-10-1038-s41598-025-98859-3"
+        ]
+      }
+    ],
+    "comparison": {
+      "caption": "Reported allocation in the original esophageal case series",
+      "rows": [
+        {
+          "work_id": "doi-10-1016-j-ejso-2024-108527",
+          "design": "Single-centre retrospective descriptive series",
+          "population": "23 people with esophageal GIST",
+          "endpoint": "Reported management and procedures",
+          "validation": "Descriptive treatment-group counts",
+          "metrics": "15 endoscopic, seven surgical including two after neoadjuvant treatment, and one conservative.",
+          "doi": "10.1016/j.ejso.2024.108527",
+          "source_ids": [
+            "doi-10-1016-j-ejso-2024-108527"
+          ]
+        }
+      ]
+    },
+    "comparison_note": "Use the junctional study for its reported matched-design approach and document the contradictory group counts. The groups across these two reports do not form a single cohort.",
+    "comparison_note_source_ids": [
+      "doi-10-1016-j-ejso-2024-108527",
+      "doi-10-1038-s41598-025-98859-3"
+    ],
+    "research_uses": [
+      {
+        "use": "Trace a published Discussion use",
+        "text": "Reference 18 in the editorial cites the esophageal series when discussing selected endoscopic cases. Reference 7 in the separate case report places the study in the context of neoadjuvant treatment followed by surgery.",
+        "source_ids": [
+          "doi-10-1016-j-ejso-2024-108527",
+          "jgo-egist-editorial",
+          "crj-egist-case"
+        ]
+      },
+      {
+        "use": "Review the proposed matched comparison",
+        "text": "Preserve the junctional study setting and mark the conflicting denominator before making any comparative safety or efficacy claim.",
+        "source_ids": [
+          "doi-10-1038-s41598-025-98859-3"
+        ]
+      }
+    ],
+    "task_workspace": {
+      "title": "Two reports and their evidence limits",
+      "intro": "The rows retain the site, reported results and limitations of each formal publication.",
+      "columns": [
+        {
+          "id": "site",
+          "label": "Anatomic site"
+        },
+        {
+          "id": "design",
+          "label": "Study and eligibility"
+        },
+        {
+          "id": "reported",
+          "label": "Original evidence"
+        },
+        {
+          "id": "use",
+          "label": "Appropriate use"
+        },
+        {
+          "id": "boundary",
+          "label": "Evidence boundary"
+        }
+      ],
+      "display_columns": [
+        "site",
+        "design",
+        "reported",
+        "use",
+        "boundary"
+      ],
+      "examples": [
+        {
+          "cells": {
+            "site": "Esophagus",
+            "design": "23-patient, single-centre retrospective case series",
+            "reported": "15 endoscopic, seven surgical including two after neoadjuvant imatinib, and one conservative. Endoscopy: 9 STER, 4 ESD and 2 EMBL. Twelve endoscopically treated tumors were no larger than 30 mm.",
+            "use": "Describe local allocation and techniques from Results 3.2–3.3 and Tables 2–3.",
+            "boundary": "The 30 mm observation applies to the selected endoscopic subgroup."
+          },
+          "source_ids": [
+            "doi-10-1016-j-ejso-2024-108527"
+          ]
+        },
+        {
+          "cells": {
+            "site": "Esophagogastric junction",
+            "design": "Retrospective report comparing endoscopic and laparoscopic resection. Eligibility focused on 2–5 cm lesions.",
+            "reported": "The authors report nearest-neighbour propensity matching. Matched laparoscopic group labelled n=20, with the gender row listing 10 men and 20 women.",
+            "use": "Describe the reported design in Methods and Figure 1. Mark the Table 1 discrepancy before using matched results.",
+            "boundary": "The abstract and Results also disagree on unmatched allocations. The source does not establish group balance or comparative benefit."
+          },
+          "source_ids": [
+            "doi-10-1038-s41598-025-98859-3"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "rule": "Check source and denominator",
+          "text": "Use descriptive-series language for the esophageal paper and matched-design language for the junctional paper. Preserve the reporting discrepancy.",
+          "source_ids": [
+            "doi-10-1016-j-ejso-2024-108527",
+            "doi-10-1038-s41598-025-98859-3"
+          ]
+        }
+      ]
+    }
+  }
+}
