@@ -51,3 +51,8 @@
 - [Combining Insulin Resistance and Renal Function to Predict Cardiovascular Events: A Multicenter Cohort Study](https://drgezhang.com/papers/doi-10-15212-bioi-2026-0017.html) — DOI: 10.15212/bioi-2026-0017
 - [Multimodal AI for cardiovascular care must learn when not to predict](https://drgezhang.com/papers/doi-10-1016-j-medd-2026-100004.html) — DOI: 10.1016/j.medd.2026.100004
 - [Identification of Cardiometabolic Protein Biomarkers for Acute Myocardial Infarction Using Olink Proteomics](https://drgezhang.com/papers/doi-10-2147-jir-s495784.html) — DOI: 10.2147/jir.s495784
+- [PAPPA2 c.392G>C Heterozygous Mutation Associates Primary Open-Angle Glaucoma in a Chinese Family](https://drgezhang.com/papers/doi-10-1155-humu-5591097.html) — DOI: 10.1155/humu/5591097
+- [The cholesterol, high-density lipoprotein, and glucose index and its derivatives related to obesity and inflammation as novel metabolic markers for predicting new-onset cardiovascular-liver-metabolic multimorbidity: A prospective cohort study](https://drgezhang.com/papers/doi-10-1111-jdi-70462.html) — DOI: 10.1111/jdi.70462
+- [ABCA1 acts as a protective modulator in amyotrophic lateral sclerosis](https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html) — DOI: 10.1016/j.isci.2025.114320
+- [Association between higher estimated glucose disposal rate and reduced prevalence of hyperuricemia and gout](https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html) — DOI: 10.3389/fnut.2025.1658286
+- [Current status, hotspots, and trends in cancer prevention, screening, diagnosis, treatment, and rehabilitation: A bibliometric analysis](https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html) — DOI: 10.32604/or.2025.059290

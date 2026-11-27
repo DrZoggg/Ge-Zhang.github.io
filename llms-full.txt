@@ -114,7 +114,7 @@
 - DOI: 10.1155/humu/5591097
 - HTML: https://drgezhang.com/papers/doi-10-1155-humu-5591097.html
 - Markdown: https://drgezhang.com/papers/doi-10-1155-humu-5591097.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Real-world safety of aliskiren in primary hypertension: A cross-database study
 - Journal: PLOS One
@@ -150,7 +150,7 @@
 - DOI: 10.1111/jdi.70462
 - HTML: https://drgezhang.com/papers/doi-10-1111-jdi-70462.html
 - Markdown: https://drgezhang.com/papers/doi-10-1111-jdi-70462.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Transforming Musculoskeletal Disorder Management With Multimodal AI Platform for Early Diagnosis, Self-Screening, and Personalized Care
 - Journal: Med Research
@@ -213,7 +213,7 @@
 - DOI: 10.1016/j.isci.2025.114320
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-isci-2025-114320.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## ABCA1 Acts as a Protective Modulator in Amyotrophic Lateral Sclerosis and Links to Metabolic Status
 - Journal: Preprint
@@ -231,7 +231,7 @@
 - DOI: 10.3389/fnut.2025.1658286
 - HTML: https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.html
 - Markdown: https://drgezhang.com/papers/doi-10-3389-fnut-2025-1658286.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Association between sleep duration, sleep trouble and all-cause mortality in individuals with hyperuricemia in the United States
 - Journal: Frontiers in Public Health
@@ -249,7 +249,7 @@
 - DOI: 10.32604/or.2025.059290
 - HTML: https://drgezhang.com/papers/doi-10-32604-or-2025-059290.html
 - Markdown: https://drgezhang.com/papers/doi-10-32604-or-2025-059290.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Deciphering the Proteomic Landscape of Circulating Extracellular Vesicles in Human Abdominal Aortic Aneurysm
 - Journal: Journal of Cellular and Molecular Medicine
