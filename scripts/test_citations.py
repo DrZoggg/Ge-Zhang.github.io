@@ -138,6 +138,10 @@ PRIORITY_FIELDS = {
     "10.1016/j.jma.2023.05.007": {
         "publication_date": "2024-12", "online_publication_date": "2023-06-27",
         "volume": "12", "issue": "12", "first_page": "4988", "last_page": "5004",
+        "publisher_pdf_url": "https://www.jmamg.com/uploadfiles/2025/03/20250307113750039.pdf",
+    },
+    "10.18063/ijb.740": {
+        "publisher_pdf_url": "https://article.accscience.com/journal/IJB/9/4/ijb_740/ijb_740.pdf",
     },
     "10.1111/odi.70054": {
         "publication_date": "2026-01", "online_publication_date": "2025-08-16",
