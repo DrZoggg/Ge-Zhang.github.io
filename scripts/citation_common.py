@@ -19,7 +19,7 @@ ENHANCEMENT_FIELDS = {
     "publication_date", "journal_abbrev", "issn", "eissn", "volume", "issue",
     "first_page", "last_page", "article_number", "publisher", "pmid", "pmcid",
     "verified_sources", "online_publication_date", "ris_authors", "ris_article_locator",
-    "fulltext_pdf", "official_abstract", "highwire_article_locator",
+    "fulltext_pdf", "publisher_pdf_url", "official_abstract", "highwire_article_locator",
 }
 PLACEHOLDERS = {"unknown", "n/a", "pending", "0", "null", "none", "-", "not available"}
 EXPORT_SUFFIXES = (".bib", ".ris", ".csl.json")
@@ -123,6 +123,16 @@ def load_citation_metadata(publications, path=CITATION_METADATA_PATH):
                     raise ValueError(f"Citation metadata {doi} verified_sources must use HTTPS.")
             elif key == "fulltext_pdf":
                 validate_fulltext_pdf(value, publication, fields.get("verified_sources", []))
+            elif key == "publisher_pdf_url":
+                publisher_pdf = urlparse(_verified_text(value, f"{doi} publisher PDF URL"))
+                site_host = urlparse(load_site_config()["site_url"]).hostname
+                if (publication.get("type") not in JOURNAL_PUBLICATION_TYPES
+                        or publisher_pdf.scheme != "https" or not publisher_pdf.hostname
+                        or publisher_pdf.hostname == site_host
+                        or publisher_pdf.username or publisher_pdf.password
+                        or any(character.isspace() or not character.isprintable() for character in value)
+                        or value not in fields.get("verified_sources", [])):
+                    raise ValueError(f"Citation metadata {doi} publisher PDF requires a verified external HTTPS URL.")
             elif key == "highwire_article_locator":
                 if (not isinstance(value, dict)
                         or set(value) != {"value", "source_url"}
@@ -406,8 +416,11 @@ def render_ris(record):
         lines.append(f"L1  - {record['fulltext_pdf']['url']}")
         if record["fulltext_pdf"]["version"] == "publisher_accepted_manuscript":
             lines.append("N1  - Full text PDF: publisher accepted manuscript (Publish Ahead of Print).")
-    elif record.get("pmcid"):
-        lines.append(f"L2  - https://pmc.ncbi.nlm.nih.gov/articles/{record['pmcid']}/")
+    else:
+        if record.get("publisher_pdf_url"):
+            lines.append(f"L1  - {record['publisher_pdf_url']}")
+        if record.get("pmcid"):
+            lines.append(f"L2  - https://pmc.ncbi.nlm.nih.gov/articles/{record['pmcid']}/")
     lines.extend([
         f"DO  - {record['doi']}",
         f"UR  - {record['doi_url']}",

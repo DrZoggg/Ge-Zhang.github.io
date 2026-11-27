@@ -109,6 +109,7 @@ PRIORITY_FIELDS = {
     "10.3980/j.issn.1672-5123.2020.12.13": {
         "journal_abbrev": "Int Eye Sci", "issn": "1672-5123",
         "volume": "20", "issue": "12", "first_page": "2079", "last_page": "2082",
+        "publisher_pdf_url": "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013",
     },
     "10.1126/science.aek9583": {
         "publication_date": "2026-10-01", "volume": "394", "issue": "6819",

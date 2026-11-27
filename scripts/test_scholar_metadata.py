@@ -106,6 +106,27 @@ class ScholarMetadataTests(unittest.TestCase):
             with self.subTest(key=key),self.assertRaises(ValueError):
                 validate_fulltext_pdf(pdf,item,record['verified_sources'])
 
+    def test_external_publisher_pdf_is_linked_without_hosted_highwire_metadata(self):
+        items = load_master()
+        item = next(p for p in items if p.get("doi") == "10.3980/j.issn.1672-5123.2020.12.13")
+        record = load_citation_metadata(items)[item["doi"]]
+        pdf = record["publisher_pdf_url"]
+        self.assertEqual(pdf, "https://gjyk.ijournals.cn/gjykcn/article/pdf/202012013")
+        page = (ROOT / "papers" / f"{item['slug']}.html").read_text(encoding="utf-8")
+        self.assertEqual(meta_contents(page, "citation_pdf_url"), [])
+        doi_link = f'href="https://doi.org/{item["doi"]}">DOI / publisher</a>'
+        pdf_link = f'type="application/pdf" href="{pdf}">Publisher PDF · Version of record</a>'
+        self.assertTrue(0 < page.index(pdf_link) - page.index(doi_link) < 320)
+        article = next(obj for obj in json_ld_objects(page) if obj.get("@type") == "ScholarlyArticle")
+        self.assertEqual(article["encoding"], {
+            "@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": pdf,
+        })
+        markdown = (ROOT / "papers" / f"{item['slug']}.md").read_text(encoding="utf-8")
+        self.assertIn(f"[Publisher PDF · Version of record]({pdf})", markdown.split("## Full Authors")[0])
+        ris = (ROOT / "citations" / f"{item['slug']}.ris").read_text(encoding="utf-8")
+        self.assertEqual([line for line in ris.splitlines() if line.startswith("L1  - ")], [f"L1  - {pdf}"])
+        self.assertIn(f"UR  - https://doi.org/{item['doi']}", ris.splitlines())
+
     def test_reviewed_accepted_pdf_cannot_be_labelled_version_of_record(self):
         items=json.loads((ROOT/'publications.json').read_text(encoding='utf-8'))
         item=next(p for p in items if p.get('doi')=='10.1097/re9.0000000000000037')

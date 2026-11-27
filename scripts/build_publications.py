@@ -1937,6 +1937,7 @@ def render_official_abstract_markdown(record, doi):
 
 
 AUTHOR_COPY_LABEL = "Author-shared full text (ResearchGate)"
+PUBLISHER_PDF_LABEL = "Publisher PDF · Version of record"
 
 
 def reviewed_author_copy(content):
@@ -1986,6 +1987,11 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     elif publication.get("url"):
         links.append(
             f'<a class="btn primary" href="{html.escape(str(publication["url"]), quote=True)}">Source</a>'
+        )
+    publisher_pdf = (citation_data or {}).get("publisher_pdf_url")
+    if publisher_pdf:
+        links.append(
+            f'<a class="btn" type="application/pdf" href="{html.escape(publisher_pdf, quote=True)}">{PUBLISHER_PDF_LABEL}</a>'
         )
     author_copy = reviewed_author_copy(deep_content)
     if author_copy:
@@ -2090,6 +2096,12 @@ def render_paper_html(publication, *, config, deep_content=None, public_by_doi=N
     schema = paper_schema(publication, canonical, config, citation_data=citation_data)
     if identifiers:
         schema['sameAs'] = list(dict.fromkeys([doi_url(doi)] + [url for _, url in scholarly_discovery.identity_links(identifiers)]))
+    if publisher_pdf:
+        schema["encoding"] = {
+            "@type": "MediaObject",
+            "encodingFormat": "application/pdf",
+            "contentUrl": publisher_pdf,
+        }
     if official_abstract:
         schema["abstract"] = abstract_text(official_abstract)
     if is_v2:
@@ -2216,6 +2228,9 @@ def render_paper_markdown(publication, *, config, deep_content=None, public_by_d
         f"Markdown record: {md_url}",
         "",
     ]
+    publisher_pdf = (citation_data or {}).get("publisher_pdf_url")
+    if publisher_pdf:
+        lines.extend([f"[{PUBLISHER_PDF_LABEL}]({publisher_pdf})", ""])
     author_copy = reviewed_author_copy(deep_content)
     if author_copy:
         lines.extend([f"[{AUTHOR_COPY_LABEL}]({author_copy})", ""])
