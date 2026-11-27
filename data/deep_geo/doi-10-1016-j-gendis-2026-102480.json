@@ -1,0 +1,519 @@
+{
+  "version": 2,
+  "doi": "10.1016/j.gendis.2026.102480",
+  "discovery_layer": {
+    "field_entry": [
+      "Trustworthy biomedical AI",
+      "Disease pathogenesis and precision medicine methods"
+    ],
+    "review_topics": [
+      "Connecting data design with model evidence",
+      "From molecular or clinical prediction to testable mechanisms and deployment"
+    ],
+    "scientific_role": "Proposes an integrated methodological roadmap, a six-level evidence ladder and a model-and-data card for designing, interpreting, validating and maintaining biomedical AI.",
+    "evidence_position": "Narrative methodological synthesis and conceptual framework, read in the repository Journal Pre-proof.",
+    "related_concepts": [
+      "Modality-specific validity threats",
+      "Evidence strength and causal interpretation",
+      "Validation and deployment lifecycle"
+    ],
+    "citation_contexts": [
+      "Methods: justify endpoint design, modality integration, leakage-safe evaluation and reporting.",
+      "Discussion: position AI findings along an evidence ladder and plan mechanistic or translational follow-up."
+    ]
+  },
+  "display_title": "Trustworthy biomedical AI: data design, an evidence ladder and the deployment lifecycle",
+  "summary": "This methodological review connects biomedical data provenance and endpoint design with model choice, interpretation, causal reasoning, validation and deployment. Its practical contributions are a disease-agnostic roadmap, a six-level evidence ladder and a proposed model-and-data card for reusable research and clinical translation.",
+  "research_question": "How can biomedical AI studies connect heterogeneous data, appropriate models and interpretable findings to progressively stronger biological evidence and reliable real-world use?",
+  "author_summary": "The review organizes biomedical AI across multi-omics, imaging and pathology, EHR and text, and longitudinal data. It links each modality’s data-generating process and endpoint choices to validity threats and model selection, covering classical and survival models, deep learning, self-supervised/foundation models, graph-guided learning, multimodal fusion and generative AI. Its evidence ladder distinguishes association, robustness, biological coherence, causal support, perturbation evidence and clinical utility. The evaluation sections connect leakage control, external and temporal validation, calibration, threshold-dependent decisions, uncertainty and subgroup behavior. The translation sections propose a model-and-data card and connect deployment with monitoring, drift detection, accountable updating and auditability. These are methodological proposals and synthesis, with no new data generated or analyzed.",
+  "study_profile": {
+    "profile_type": "narrative_review",
+    "study_design": "Disease-agnostic narrative methodological review and proposed conceptual framework spanning data, models, interpretation, causal reasoning, evaluation and translation.",
+    "evidence_type": "Methodological synthesis, conceptual taxonomy, evidence ladder and reporting/deployment proposals.",
+    "evidence_domains": [
+      "Modality-specific data generation and endpoint design",
+      "Model families and multimodal integration",
+      "Interpretability and causal reasoning",
+      "Evidence strength and perturbation follow-up",
+      "Leakage-safe evaluation, transportability and calibration",
+      "Uncertainty, subgroup behavior and decision thresholds",
+      "Reporting, workflow integration and lifecycle governance"
+    ],
+    "diseases_covered": [
+      "Disease-agnostic biomedical applications",
+      "Cross-disease pathogenesis research and precision medicine"
+    ],
+    "translation_scope": "Study design, interpretation and reporting of biomedical AI; planning the evidence, workflows and maintenance required for translation.",
+    "scale_metrics": [
+      {
+        "label": "Read source version",
+        "value": "60 physical PDF pages, including repository/publisher front matter: Journal Pre-proof"
+      },
+      {
+        "label": "Numbered conceptual figure captions",
+        "value": "5 numbered main figures"
+      },
+      {
+        "label": "Evidence-ladder stages",
+        "value": "6"
+      },
+      {
+        "label": "Listed references",
+        "value": "124"
+      }
+    ],
+    "counting_note": "These counts describe the publication and its proposed framework. They are not patient, experiment, systematically included study or validation-cohort totals. The data-availability statement reports no new data generated or analyzed."
+  },
+  "key_findings": [
+    {
+      "id": "KF1",
+      "claim": "The review connects five stages of biomedical AI into one disease-agnostic roadmap.",
+      "context": "An end-to-end methodological framework rather than an empirical pipeline comparison.",
+      "evidence": [
+        {
+          "label": "Five stages",
+          "value": "Data integration; model selection; explanation and causal reasoning; validation; deployment"
+        },
+        {
+          "label": "Connections",
+          "value": "Data provenance and endpoint definition shape model interpretation, the evidence needed for a claim, and the conditions for reuse"
+        },
+        {
+          "label": "Foundational principles",
+          "value": "Reliability, safety, validity, fairness and transparency"
+        },
+        {
+          "label": "Practical role",
+          "value": "Plan the chain from a biomedical question to a testable finding or a specified decision-support use"
+        }
+      ],
+      "source_locator": "Journal Pre-proof Introduction, manuscript lines 90-133, physical PDF pp. 8-9; Figure 1 legend, lines 1094-1102, physical pp. 53-54."
+    },
+    {
+      "id": "KF2",
+      "claim": "Data generation, labels and preprocessing are treated as scientific design choices across modalities.",
+      "context": "Data foundations and modality-specific validity threats.",
+      "evidence": [
+        {
+          "label": "Modalities",
+          "value": "Multi-omics; imaging/pathology; EHR/text; longitudinal and real-world data"
+        },
+        {
+          "label": "Examples of validity threats",
+          "value": "Batch effects and feature leakage; scanner/staining/site signatures; care-pathway proxies and template drift; informative missingness, temporal leakage and censoring"
+        },
+        {
+          "label": "Endpoint distinction",
+          "value": "Operational prediction targets are separated from mechanistic phenotypes; index times, prediction windows and available-at-decision inputs should match intended use"
+        },
+        {
+          "label": "Design implications",
+          "value": "Evaluate harmonization and missingness handling within appropriate training/evaluation boundaries, and document provenance and permissible reuse"
+        }
+      ],
+      "source_locator": "Data foundations across diseases and modalities, manuscript lines 134-269, physical PDF pp. 10-16; Figure 2 legend, lines 1104-1111, physical p. 54."
+    },
+    {
+      "id": "KF3",
+      "claim": "The model taxonomy relates algorithm families to their data, scientific roles and evaluation needs.",
+      "context": "Model taxonomy and emerging paradigms.",
+      "evidence": [
+        {
+          "label": "Six groups",
+          "value": "Classical ML/survival modeling; deep learning; self-supervised/foundation models; graph/knowledge-guided AI; multimodal fusion; generative AI"
+        },
+        {
+          "label": "Selection principle",
+          "value": "Match model, endpoint, censoring/prediction horizon and intended use; retain credible baselines and assess transfer rather than assuming larger models generalize"
+        },
+        {
+          "label": "Multimodal design",
+          "value": "Early, intermediate and late fusion have different implications for scale imbalance, missing modalities and cross-modal interactions"
+        },
+        {
+          "label": "Generative components",
+          "value": "Augmentation, imputation, representation learning and text workflows are discussed alongside traceability, bias, prompt sensitivity and version drift"
+        }
+      ],
+      "source_locator": "Model taxonomy and emerging paradigms, manuscript lines 270-395, physical PDF pp. 16-21; Figure 3 legend, lines 1113-1121, physical p. 54."
+    },
+    {
+      "id": "KF4",
+      "claim": "Interpretation is organized around stable, biologically anchored and testable explanations.",
+      "context": "From prediction to mechanism: interpretability and causal reasoning.",
+      "evidence": [
+        {
+          "label": "Explanation roles",
+          "value": "Global explanations describe population-level reliance; local explanations help investigate individual predictions, atypical cases and extrapolation"
+        },
+        {
+          "label": "Biological anchoring",
+          "value": "Pathways, gene programs, cell states and orthogonal assays can strengthen omics interpretation; tissue/spatial assays can anchor imaging or pathology signals"
+        },
+        {
+          "label": "Clinical data context",
+          "value": "Orders, codes and notes may describe the care process; temporality and biological anchoring matter when interpreting them mechanistically"
+        },
+        {
+          "label": "Causal framing",
+          "value": "Separate prediction from intervention questions; treatment-effect designs require explicit assumptions and aligned eligibility, assignment, covariates and follow-up time zero"
+        }
+      ],
+      "source_locator": "From prediction to mechanism: Interpretability and causal reasoning, manuscript lines 396-490, physical PDF pp. 21-26."
+    },
+    {
+      "id": "KF5",
+      "claim": "A six-level evidence ladder gives researchers a language for positioning AI-derived findings.",
+      "context": "A proposed hierarchy connecting associative findings with stronger mechanistic and translational support.",
+      "evidence": [
+        {
+          "label": "Stages",
+          "value": "Association; robustness; biological coherence; causal support; perturbation evidence; clinical utility"
+        },
+        {
+          "label": "Progression",
+          "value": "Resampling/pipeline/cohort stability, orthogonal biological agreement, assumption-aware causal analysis, and experimental perturbation add different kinds of support"
+        },
+        {
+          "label": "Top level",
+          "value": "Clinical utility requires actionable, calibrated decisions and benefit in realistic evaluation, ideally including prospective assessment"
+        },
+        {
+          "label": "Use of the ladder",
+          "value": "Lower-rung findings remain useful when their claims match the evidence; the ladder is not a requirement that every study reach clinical utility"
+        }
+      ],
+      "source_locator": "An evidence ladder linking association to mechanism and clinical utility, manuscript lines 491-518, physical PDF pp. 26-27; Figure 4 legend, lines 1123-1131, physical pp. 54-55."
+    },
+    {
+      "id": "KF6",
+      "claim": "Evaluation is linked to transportability, probability quality and the consequences of decisions.",
+      "context": "Validation, generalization and reliability.",
+      "evidence": [
+        {
+          "label": "Evaluation boundaries",
+          "value": "Prevent preprocessing contamination, nonindependent samples across splits and downstream-care proxies; separate model selection from evaluation"
+        },
+        {
+          "label": "Transportability",
+          "value": "Cross-institution, cross-platform and temporal validation probe different shifts"
+        },
+        {
+          "label": "Beyond ranking",
+          "value": "Calibration, clinically meaningful horizons, decision curves/net benefit and context-specific thresholds complement discrimination"
+        },
+        {
+          "label": "Reliability",
+          "value": "Assess missingness, perturbations, uncertainty under shift and explicit failure modes, with subgroup performance treated as part of scientific validity"
+        }
+      ],
+      "source_locator": "Validation, generalization, and reliability, manuscript lines 519-602, physical PDF pp. 27-31."
+    },
+    {
+      "id": "KF7",
+      "claim": "The proposed model-and-data card connects reproducible reporting with a maintained deployment lifecycle.",
+      "context": "Translation, implementation and governance.",
+      "evidence": [
+        {
+          "label": "Card content",
+          "value": "Data provenance/inclusion criteria; endpoint time anchoring; leakage-safe splits and preprocessing; intended population/horizon; validation; uncertainty; calibration; thresholds; subgroup performance"
+        },
+        {
+          "label": "Workflow integration",
+          "value": "Specify who uses the output, at what point in care, what information is available and what action it supports"
+        },
+        {
+          "label": "Lifecycle",
+          "value": "Monitor performance and drift; track model/data versions; document audit trails and use accountable recalibration/updating"
+        },
+        {
+          "label": "Proposed contribution",
+          "value": "A compact reporting template and reviewer checklist that also identifies what can be monitored after deployment"
+        }
+      ],
+      "source_locator": "Translation, implementation, and governance, manuscript lines 603-679, physical PDF pp. 31-34; Discussion lines 680-717, physical pp. 34-36; Figure 5 legend, lines 1133-1141, physical p. 55."
+    }
+  ],
+  "what_this_adds": [
+    "Integrates data, endpoints, modeling, interpretation, causal questions, validation and deployment into one reusable methodological roadmap.",
+    "Provides a six-level evidence ladder for matching biological and clinical claims to the support available.",
+    "Proposes a model-and-data card that connects study reporting with monitoring, auditability and maintenance after deployment."
+  ],
+  "evidence_scope": {
+    "supports": [
+      "The review’s taxonomy of biomedical data/model choices and recurring design challenges.",
+      "Its evidence-ladder, interpretation and validation framework for research planning and reporting.",
+      "Its proposed model-and-data card and lifecycle approach to translation."
+    ],
+    "does_not_establish": [
+      "New measured model-performance gains, pooled effect sizes or original patient outcomes.",
+      "Empirical validation of the evidence ladder or reporting card as a clinical tool.",
+      "That a particular model, treatment or implementation improves clinical outcomes merely by following the proposed framework."
+    ]
+  },
+  "qa": [
+    {
+      "question": "What is the main contribution and research genre?",
+      "answer": "It is a disease-agnostic methodological review and proposed conceptual framework. It connects data and endpoints to models, interpretation, causal reasoning, evaluation and deployment. The specific proposals include a six-level evidence ladder and a model-and-data card. The article reports no new data generation or analysis.",
+      "evidence_refs": [
+        "KF1",
+        "KF5",
+        "KF7"
+      ]
+    },
+    {
+      "question": "How does the framework help with heterogeneous biomedical data and endpoints?",
+      "answer": "It asks researchers to identify how each modality was generated and what the endpoint represents. Omics batch effects, imaging/site signatures, clinical care-process proxies and longitudinal timing create different validity threats. Operational prediction targets, mechanistic phenotypes, index times and prediction windows should be aligned with the question and intended use.",
+      "evidence_refs": [
+        "KF2"
+      ]
+    },
+    {
+      "question": "How are model families and multimodal choices compared?",
+      "answer": "The review covers classical/survival models, deep learning, self-supervised/foundation models, graph/knowledge-guided AI, multimodal fusion and generative AI. It relates each to its data and evaluation needs. Early, intermediate and late fusion differ in how they handle scales, missing modalities and cross-modal interactions; larger representations or attention weights do not supply validation on their own.",
+      "evidence_refs": [
+        "KF3"
+      ]
+    },
+    {
+      "question": "What distinguishes explanation from stronger mechanistic or causal support?",
+      "answer": "The review distinguishes population-level global explanations from case-level local explanations and recommends checking stability, biological coherence and orthogonal measurements. Pathway or cell-state summaries and spatial/tissue assays can help anchor model signals. Intervention questions require causal assumptions and aligned time zero, rather than interpreting feature importance as an intervention effect.",
+      "evidence_refs": [
+        "KF4"
+      ]
+    },
+    {
+      "question": "What are the six levels of the evidence ladder?",
+      "answer": "They are association, robustness, biological coherence, causal support, perturbation evidence and clinical utility. Each adds a different type of support: stability across reasonable analyses or cohorts; agreement with biological systems; assumption-aware intervention reasoning; experimental manipulation; and actionable decisions with benefit in realistic evaluation. The authors explicitly retain the value of studies at lower rungs when claims match their support.",
+      "evidence_refs": [
+        "KF5"
+      ]
+    },
+    {
+      "question": "What should evaluation add beyond a single discrimination metric?",
+      "answer": "The review connects leakage-safe splitting and preprocessing to external, cross-platform and temporal tests. Calibration, prediction horizons and decision-dependent thresholds complement ranking metrics. Missingness, perturbations, uncertainty under shift and subgroup performance help characterize where a model is reliable and how its outputs would affect decisions.",
+      "evidence_refs": [
+        "KF6"
+      ]
+    },
+    {
+      "question": "What does the proposed model-and-data card document?",
+      "answer": "It brings together provenance and inclusion criteria, time-anchored endpoints, splitting and preprocessing, intended population and horizon, validation, uncertainty, calibration, thresholds and subgroup performance. The review connects this documentation with workflow integration, version tracking, monitoring, drift detection, audit trails and accountable updating.",
+      "evidence_refs": [
+        "KF7"
+      ]
+    },
+    {
+      "question": "When is this paper useful to cite, and which source version was read?",
+      "answer": "It provides a methodological rationale for data and endpoint design, an evidence-strength discussion, and guidance for evaluation, reporting and deployment. The Cardiff repository Journal Pre-proof under the same formal DOI supplies the complete main text and five conceptual figure captions used for this summary.",
+      "evidence_refs": [
+        "KF1",
+        "KF5",
+        "KF6",
+        "KF7"
+      ]
+    }
+  ],
+  "concepts": {
+    "research_domains": [
+      "Biomedical AI",
+      "Disease pathogenesis",
+      "Precision medicine"
+    ],
+    "data_types": [
+      "Multi-omics",
+      "Medical imaging",
+      "Digital pathology",
+      "EHR and clinical text",
+      "Longitudinal and real-world data"
+    ],
+    "model_families": [
+      "Classical and survival models",
+      "Deep learning",
+      "Self-supervised and foundation models",
+      "Graph and knowledge-guided learning",
+      "Multimodal fusion",
+      "Generative AI"
+    ],
+    "methodological_concepts": [
+      "Data provenance",
+      "Endpoint and label design",
+      "Time anchoring",
+      "Informative missingness",
+      "Leakage control",
+      "Interpretability",
+      "Causal reasoning",
+      "Evidence ladder",
+      "External and temporal validation",
+      "Calibration",
+      "Decision thresholds and net benefit",
+      "Subgroup performance",
+      "Uncertainty under shift"
+    ],
+    "translational_concepts": [
+      "Model-and-data card",
+      "Human-AI workflow integration",
+      "Monitoring and drift",
+      "Version control and audit trails",
+      "Accountable updating"
+    ]
+  },
+  "limitations": [
+    "This is a narrative methodological synthesis and proposed framework, without a reported systematic-search/selection protocol or quantitative pooling; 124 references are a bibliography count.",
+    "The evidence ladder, model-and-data card and lifecycle guidance are proposals rather than newly tested clinical instruments; the article reports no new data generated or analyzed.",
+    "The read source is the repository Journal Pre-proof, whose publisher notice says it is not the definitive Version of Record. Five conceptual diagrams are summarized from the accompanying body and captions; no diagram-image audit is claimed."
+  ],
+  "related_papers": [
+    {
+      "doi": "10.1002/mdr2.70073",
+      "relationship": "An applied musculoskeletal decision-support study combines structured clinical data with symptom-text representations. It provides an implementation context for comparing multimodal architecture and evaluation design."
+    }
+  ],
+  "provenance": {
+    "publisher_url": "https://www.sciencedirect.com/science/article/pii/S2352304226004526",
+    "article_url": "https://orca.cardiff.ac.uk/id/eprint/189812/",
+    "doi_url": "https://doi.org/10.1016/j.gendis.2026.102480",
+    "original_preproof_url": "https://orca.cardiff.ac.uk/id/eprint/189812/1/1-s2.0-S2352304226004526-main.pdf",
+    "official_metadata_url": "https://api.crossref.org/works/10.1016/j.gendis.2026.102480",
+    "version_of_record": "Genes & Diseases, article 102480, available online 18 September 2026. The read institutional-repository copy is the Journal Pre-proof under the same DOI.",
+    "read_source_version": "Cardiff institutional repository copy, internally labelled Journal Pre-proof. The publisher notice identifies it as an enhanced accepted article preceding the definitive Version of Record.",
+    "source_reader_and_age": "Read on 27 November 2026 through the native PDF reader, which identified a 60-page PDF cached three weeks earlier.",
+    "license": "Publisher-deposited metadata and official Elsevier coredata identify CC BY 4.0, http://creativecommons.org/licenses/by/4.0/. The repository copy is internally labelled Journal Pre-proof.",
+    "evidence_basis": "Complete main source text through manuscript line 748, front matter, data-availability declaration and all five numbered figure captions. The source has 60 physical pages and 124 listed references.",
+    "source_note_locators": "Physical pages are one-based and include repository/publisher front matter. Native reader P numbers are zero-based; printed manuscript line numbers are separately identified in each claim locator.",
+    "source_note_figure_delivery": "The five conceptual figure captions are at printed manuscript lines 1094–1141, physical PDF pp. 53–55. Their descriptions are supported by the main text and captions; diagram pixels were unavailable.",
+    "source_note_tables": "The read main text and final legend section contain five numbered conceptual figures; no original results tables or new empirical dataset are described. The reference count is not a count of systematically included independent studies.",
+    "data_availability": "Printed manuscript lines 738-740, physical PDF p.37, state that no new data were generated or analyzed and data sharing is not applicable.",
+    "source_note_framework_role": "The roadmap, evidence ladder and model-and-data card are proposed methodological contributions, illustrated through the cited literature."
+  },
+  "evidence_page_notice": "Author-controlled evidence page for this publication. This independently written, source-located summary accompanies the formal article.",
+  "citation_layer": {
+    "citation_use_cases": [
+      {
+        "id": "CU1",
+        "query": "How should biomedical data provenance and endpoints shape model choice?",
+        "supported_scope": "A disease-agnostic roadmap linking data-generation processes, labels, modeling families and intended use.",
+        "evidence_refs": [
+          "KF1",
+          "KF2",
+          "KF3"
+        ]
+      },
+      {
+        "id": "CU2",
+        "query": "How can AI findings be positioned between association and mechanism?",
+        "supported_scope": "Stable, biologically anchored explanations and the proposed six-level evidence ladder, with causal and perturbation evidence distinguished.",
+        "evidence_refs": [
+          "KF4",
+          "KF5"
+        ]
+      },
+      {
+        "id": "CU3",
+        "query": "What evaluation makes a biomedical model more reusable?",
+        "supported_scope": "Leakage-safe evaluation, transportability tests, calibration, decision context, uncertainty and subgroup behavior.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "CU4",
+        "query": "What should reporting and deployment planning document?",
+        "supported_scope": "The proposed model-and-data card, workflow integration, monitoring, drift, auditability and accountable updates.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ],
+    "not_appropriate_as_evidence_for": [
+      "New empirical performance improvements, pooled clinical effect sizes or patient-outcome benefits measured by this review.",
+      "Clinical validation of the proposed evidence ladder or reporting card."
+    ],
+    "evidence_matrix": [
+      {
+        "id": "evidence-gendis-1",
+        "component": "KF1: The review connects five stages of biomedical AI into one disease-agnostic roadmap.",
+        "context": "An end-to-end methodological framework rather than an empirical pipeline comparison.",
+        "finding": "The review connects five stages of biomedical AI into one disease-agnostic roadmap. Five stages: Data integration; model selection; explanation and causal reasoning; validation; deployment; Connections: Data provenance and endpoint definition shape model interpretation, the evidence needed for a claim, and the conditions for reuse; Foundational principles: Reliability, safety, validity, fairness and transparency; Practical role: Plan the chain from a biomedical question to a testable finding or a specified decision-support use",
+        "evidence_level": "Proposed integrated methodological roadmap",
+        "scope": "An end-to-end methodological framework rather than an empirical pipeline comparison.",
+        "source_locator": "Journal Pre-proof Introduction, manuscript lines 90-133, physical PDF pp. 8-9; Figure 1 legend, lines 1094-1102, physical pp. 53-54.",
+        "evidence_refs": [
+          "KF1"
+        ]
+      },
+      {
+        "id": "evidence-gendis-2",
+        "component": "KF2: Data generation, labels and preprocessing are treated as scientific design choices across modalities.",
+        "context": "Data foundations and modality-specific validity threats.",
+        "finding": "Data generation, labels and preprocessing are treated as scientific design choices across modalities. Modalities: Multi-omics; imaging/pathology; EHR/text; longitudinal and real-world data; Examples of validity threats: Batch effects and feature leakage; scanner/staining/site signatures; care-pathway proxies and template drift; informative missingness, temporal leakage and censoring; Endpoint distinction: Operational prediction targets are separated from mechanistic phenotypes; index times, prediction windows and available-at-decision inputs should match intended use; Design implications: Evaluate harmonization and missingness handling within appropriate training/evaluation boundaries, and document provenance and permissible reuse",
+        "evidence_level": "Narrative data/endpoint design synthesis",
+        "scope": "Data foundations and modality-specific validity threats.",
+        "source_locator": "Data foundations across diseases and modalities, manuscript lines 134-269, physical PDF pp. 10-16; Figure 2 legend, lines 1104-1111, physical p. 54.",
+        "evidence_refs": [
+          "KF2"
+        ]
+      },
+      {
+        "id": "evidence-gendis-3",
+        "component": "KF3: The model taxonomy relates algorithm families to their data, scientific roles and evaluation needs.",
+        "context": "Model taxonomy and emerging paradigms.",
+        "finding": "The model taxonomy relates algorithm families to their data, scientific roles and evaluation needs. Six groups: Classical ML/survival modeling; deep learning; self-supervised/foundation models; graph/knowledge-guided AI; multimodal fusion; generative AI; Selection principle: Match model, endpoint, censoring/prediction horizon and intended use; retain credible baselines and assess transfer rather than assuming larger models generalize; Multimodal design: Early, intermediate and late fusion have different implications for scale imbalance, missing modalities and cross-modal interactions; Generative components: Augmentation, imputation, representation learning and text workflows are discussed alongside traceability, bias, prompt sensitivity and version drift",
+        "evidence_level": "Narrative model taxonomy and integration synthesis",
+        "scope": "Model taxonomy and emerging paradigms.",
+        "source_locator": "Model taxonomy and emerging paradigms, manuscript lines 270-395, physical PDF pp. 16-21; Figure 3 legend, lines 1113-1121, physical p. 54.",
+        "evidence_refs": [
+          "KF3"
+        ]
+      },
+      {
+        "id": "evidence-gendis-4",
+        "component": "KF4: Interpretation is organized around stable, biologically anchored and testable explanations.",
+        "context": "From prediction to mechanism: interpretability and causal reasoning.",
+        "finding": "Interpretation is organized around stable, biologically anchored and testable explanations. Explanation roles: Global explanations describe population-level reliance; local explanations help investigate individual predictions, atypical cases and extrapolation; Biological anchoring: Pathways, gene programs, cell states and orthogonal assays can strengthen omics interpretation; tissue/spatial assays can anchor imaging or pathology signals; Clinical data context: Orders, codes and notes may describe the care process; temporality and biological anchoring matter when interpreting them mechanistically; Causal framing: Separate prediction from intervention questions; treatment-effect designs require explicit assumptions and aligned eligibility, assignment, covariates and follow-up time zero",
+        "evidence_level": "Methodological interpretation and causal-reasoning framework",
+        "scope": "From prediction to mechanism: interpretability and causal reasoning.",
+        "source_locator": "From prediction to mechanism: Interpretability and causal reasoning, manuscript lines 396-490, physical PDF pp. 21-26.",
+        "evidence_refs": [
+          "KF4"
+        ]
+      },
+      {
+        "id": "evidence-gendis-5",
+        "component": "KF5: A six-level evidence ladder gives researchers a language for positioning AI-derived findings.",
+        "context": "A proposed hierarchy connecting associative findings with stronger mechanistic and translational support.",
+        "finding": "A six-level evidence ladder gives researchers a language for positioning AI-derived findings. Stages: Association; robustness; biological coherence; causal support; perturbation evidence; clinical utility; Progression: Resampling/pipeline/cohort stability, orthogonal biological agreement, assumption-aware causal analysis, and experimental perturbation add different kinds of support; Top level: Clinical utility requires actionable, calibrated decisions and benefit in realistic evaluation, ideally including prospective assessment; Use of the ladder: Lower-rung findings remain useful when their claims match the evidence; the ladder is not a requirement that every study reach clinical utility",
+        "evidence_level": "Proposed evidence-strength hierarchy",
+        "scope": "A proposed hierarchy connecting associative findings with stronger mechanistic and translational support.",
+        "source_locator": "An evidence ladder linking association to mechanism and clinical utility, manuscript lines 491-518, physical PDF pp. 26-27; Figure 4 legend, lines 1123-1131, physical pp. 54-55.",
+        "evidence_refs": [
+          "KF5"
+        ]
+      },
+      {
+        "id": "evidence-gendis-6",
+        "component": "KF6: Evaluation is linked to transportability, probability quality and the consequences of decisions.",
+        "context": "Validation, generalization and reliability.",
+        "finding": "Evaluation is linked to transportability, probability quality and the consequences of decisions. Evaluation boundaries: Prevent preprocessing contamination, nonindependent samples across splits and downstream-care proxies; separate model selection from evaluation; Transportability: Cross-institution, cross-platform and temporal validation probe different shifts; Beyond ranking: Calibration, clinically meaningful horizons, decision curves/net benefit and context-specific thresholds complement discrimination; Reliability: Assess missingness, perturbations, uncertainty under shift and explicit failure modes, with subgroup performance treated as part of scientific validity",
+        "evidence_level": "Narrative evaluation and reliability principles",
+        "scope": "Validation, generalization and reliability.",
+        "source_locator": "Validation, generalization, and reliability, manuscript lines 519-602, physical PDF pp. 27-31.",
+        "evidence_refs": [
+          "KF6"
+        ]
+      },
+      {
+        "id": "evidence-gendis-7",
+        "component": "KF7: The proposed model-and-data card connects reproducible reporting with a maintained deployment lifecycle.",
+        "context": "Translation, implementation and governance.",
+        "finding": "The proposed model-and-data card connects reproducible reporting with a maintained deployment lifecycle. Card content: Data provenance/inclusion criteria; endpoint time anchoring; leakage-safe splits and preprocessing; intended population/horizon; validation; uncertainty; calibration; thresholds; subgroup performance; Workflow integration: Specify who uses the output, at what point in care, what information is available and what action it supports; Lifecycle: Monitor performance and drift; track model/data versions; document audit trails and use accountable recalibration/updating; Proposed contribution: A compact reporting template and reviewer checklist that also identifies what can be monitored after deployment",
+        "evidence_level": "Proposed reporting card and deployment lifecycle",
+        "scope": "Translation, implementation and governance.",
+        "source_locator": "Translation, implementation, and governance, manuscript lines 603-679, physical PDF pp. 31-34; Discussion lines 680-717, physical pp. 34-36; Figure 5 legend, lines 1133-1141, physical p. 55.",
+        "evidence_refs": [
+          "KF7"
+        ]
+      }
+    ]
+  }
+}

@@ -757,8 +757,8 @@
       "doi": "10.1016/j.gendis.2026.102480",
       "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.html",
       "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.md",
-      "deep_geo": false,
-      "paper_geo_status": "none",
+      "deep_geo": true,
+      "paper_geo_status": "v2",
       "featured": false,
       "doi_url": "https://doi.org/10.1016/j.gendis.2026.102480",
       "publisher_url": null,
@@ -770,9 +770,30 @@
       "openalex_id": "https://openalex.org/W7213554484",
       "semantic_scholar_id": null,
       "official_abstract_available": false,
-      "evidence_csv_url": null,
-      "question_count": 0,
-      "concept_count": 0
+      "evidence_csv_url": "https://drgezhang.com/assets/evidence/doi-10-1016-j-gendis-2026-102480.csv",
+      "question_count": 8,
+      "concept_count": 32,
+      "discovery_layer": {
+        "field_entry": [
+          "Trustworthy biomedical AI",
+          "Disease pathogenesis and precision medicine methods"
+        ],
+        "review_topics": [
+          "Connecting data design with model evidence",
+          "From molecular or clinical prediction to testable mechanisms and deployment"
+        ],
+        "scientific_role": "Proposes an integrated methodological roadmap, a six-level evidence ladder and a model-and-data card for designing, interpreting, validating and maintaining biomedical AI.",
+        "evidence_position": "Narrative methodological synthesis and conceptual framework, read in the repository Journal Pre-proof.",
+        "related_concepts": [
+          "Modality-specific validity threats",
+          "Evidence strength and causal interpretation",
+          "Validation and deployment lifecycle"
+        ],
+        "citation_contexts": [
+          "Methods: justify endpoint design, modality integration, leakage-safe evaluation and reporting.",
+          "Discussion: position AI findings along an evidence ladder and plan mechanistic or translational follow-up."
+        ]
+      }
     },
     {
       "title": "Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis",

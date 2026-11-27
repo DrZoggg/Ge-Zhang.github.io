@@ -622,8 +622,8 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.md",
-    "deep_geo": false,
-    "paper_geo_status": "none",
+    "deep_geo": true,
+    "paper_geo_status": "v2",
     "featured": false
   },
   {

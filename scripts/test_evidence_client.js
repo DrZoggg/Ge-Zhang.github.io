@@ -449,13 +449,39 @@ async function run() {
   const genes=client.fetch('doi-10-1016-j-gendis-2026-102480');
   assert.equal(genes.primary_sources.identifiers.openalex_id,'https://openalex.org/W7213554484');
   const geneRoutes=genes.primary_sources.reading_routes;
-  assert.equal(geneRoutes.length,1);
-  assert.equal(geneRoutes[0].url,genes.provenance[0].url);
-  assert.equal(geneRoutes[0].doi,genes.publication.doi);
-  assert.equal(geneRoutes[0].version,'journal_pre_proof');
-  assert.equal(genes.answer,null);assert.deepEqual(genes.available_questions,[]);
-  assert.equal(genes.publication.evidence_status,'limited');
-  assert.equal(genes.links.publisher_url,null);
+  const genePdf='https://orca.cardiff.ac.uk/id/eprint/189812/1/1-s2.0-S2352304226004526-main.pdf';
+  assert.equal(geneRoutes.length,2);
+  assert.equal(geneRoutes[0].kind,'publisher_source');
+  assert.equal(genes.provenance.original_preproof_url,genePdf);
+  assert.deepEqual(geneRoutes[1],{
+    provider:'Institutional repository',kind:'institutional_repository_pdf',url:genePdf,
+    doi:'10.1016/j.gendis.2026.102480',version:'journal_pre_proof',
+    source_fields:['work.provenance.original_preproof_url','work.provenance.doi_url'],
+    availability:'not_checked',
+  });
+  assert.equal(genes.answer,null);
+  assert.equal(genes.available_questions.length,8);
+  assert.equal(genes.publication.evidence_status,'reviewed_v2');
+  assert.equal(genes.links.publisher_url,'https://www.sciencedirect.com/science/article/pii/S2352304226004526');
+  const reviewedRepository={original_preproof_url:repositorySource.url,doi_url:'https://doi.org/'+hf.publication.doi};
+  for (const changed of [
+    {doi_url:'https://doi.org/10.0000/another-work'},
+    {doi_url:null},
+    {original_preproof_url:repositorySource.url+'?token=secret'},
+    {original_preproof_url:repositorySource.url+'#page=2'},
+    {original_preproof_url:'https://user:secret@repository.example.org/paper.pdf'},
+    {original_preproof_url:'https://repository.example.org/paper.txt'},
+  ]) {
+    const invalidRepository=routeFixture({provenance:{...reviewedRepository,...changed}});
+    assert.deepEqual(invalidRepository.primary_sources.reading_routes,[]);
+    assert.equal(invalidRepository.primary_sources.metadata_issues[0].reason,'invalid_same_work_repository_route');
+    assert(!JSON.stringify(invalidRepository.primary_sources.metadata_issues).includes('secret'));
+  }
+  const limitedPreproofFixture=structuredClone(catalog);
+  const limitedPreproofWork=limitedPreproofFixture.works.find(work=>work.id===limitedFixtureId);
+  limitedPreproofWork.provenance={...reviewedRepository,doi_url:limitedPreproofWork.doi_url};
+  assert(!createClient(limitedPreproofFixture,loaded.search).fetch(limitedFixtureId)
+    .primary_sources.reading_routes.some(route=>route.kind==='institutional_repository_pdf'));
   assert(!client.fetch('doi-10-1016-j-colsurfb-2026-116261').primary_sources.reading_routes
     .some(route=>route.kind==='institutional_repository_pdf'));
   const rap=client.fetch('doi-10-1200-po-24-00089--qa-5');

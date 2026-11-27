@@ -168,7 +168,7 @@
 - DOI: 10.1016/j.gendis.2026.102480
 - HTML: https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.html
 - Markdown: https://drgezhang.com/papers/doi-10-1016-j-gendis-2026-102480.md
-- Deep GEO: no
+- Deep GEO: yes
 
 ## Vascular smooth muscle cell-derived KIF13B inhibits proinflammatory responses to protect against atherosclerosis
 - Journal: Journal of Clinical Investigation

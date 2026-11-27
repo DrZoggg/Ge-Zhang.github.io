@@ -277,22 +277,33 @@ function primarySources(work) {
       url:publisher.url,source_fields:[publisher.field],availability:'not_checked'});
   }
   for (const row of provenance) {
-    if (!row.value || typeof row.value !== 'object' || !Object.hasOwn(row.value, 'reading_route')) continue;
-    const route = row.value.reading_route, url = https(row.value.url);
-    if (!route || typeof route !== 'object' || Array.isArray(route)
+    if (!row.value || typeof row.value !== 'object') continue;
+    const reviewedPreproof = row.path === 'work.provenance' && work.evidence_status === 'reviewed_v2'
+      && present(row.value.original_preproof_url);
+    if (!reviewedPreproof && !Object.hasOwn(row.value, 'reading_route')) continue;
+    const urlKey = reviewedPreproof ? 'original_preproof_url' : 'url';
+    const bindingKey = reviewedPreproof ? 'doi_url' : 'reading_route';
+    const route = reviewedPreproof
+      ? {kind:'institutional_repository_pdf',doi:work.doi,version:'journal_pre_proof'}
+      : row.value.reading_route;
+    const url = https(row.value[urlKey]);
+    const reviewedDoiMatches = !reviewedPreproof || (typeof work.doi === 'string'
+      && typeof row.value.doi_url === 'string'
+      && row.value.doi_url.toLowerCase() === 'https://doi.org/' + work.doi.toLowerCase());
+    if (!reviewedDoiMatches || !route || typeof route !== 'object' || Array.isArray(route)
         || Object.keys(route).sort().join(',') !== 'doi,kind,version'
         || route.kind !== 'institutional_repository_pdf'
         || typeof work.doi !== 'string' || typeof route.doi !== 'string'
         || !/^10\.\d{4,9}\/\S+$/.test(route.doi) || route.doi.toLowerCase() !== work.doi.toLowerCase()
         || !['journal_pre_proof','accepted_manuscript','version_of_record'].includes(route.version)
         || !url || !url.pathname.toLowerCase().endsWith('.pdf') || url.search || url.hash) {
-      issue(row.path + '.reading_route','invalid_same_work_repository_route');
+      issue(row.path + '.' + (reviewedPreproof ? urlKey : bindingKey),'invalid_same_work_repository_route');
       continue;
     }
     if (routes.some(existing => existing.url === url.href && existing.version === route.version)) continue;
     routes.push({provider:'Institutional repository',kind:route.kind,url:url.href,
       doi:route.doi,version:route.version,
-      source_fields:[row.path + '.url',row.path + '.reading_route'],availability:'not_checked'});
+      source_fields:[row.path + '.' + urlKey,row.path + '.' + bindingKey],availability:'not_checked'});
   }
   const copyKey = 'researchgate_author_shared_copy_url';
   for (const row of provenance) {
