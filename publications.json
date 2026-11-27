@@ -1913,7 +1913,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-3389-fonc-2024-1425895.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2064,7 +2064,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1007-s13402-023-00912-8.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2094,7 +2094,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-ejso-2024-108527.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
@@ -2155,7 +2155,7 @@
     ],
     "paper_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.html",
     "markdown_url": "https://drgezhang.com/papers/doi-10-1016-j-csbj-2024-04-044.md",
-    "deep_geo": false,
+    "deep_geo": true,
     "paper_geo_status": "v2",
     "featured": false
   },
