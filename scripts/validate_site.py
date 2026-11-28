@@ -26,6 +26,7 @@ from build_publications import (
     SELECTED_EVIDENCE_NOTICE,
     flatten_concepts,
     homepage_metadata,
+    publication_card_status,
     publications_page_metadata,
     resolve_related_papers,
     validate_deep_v2_content,
@@ -3118,10 +3119,21 @@ def validate_site():
         in visible_text(publications_html),
         "Bilingual researcher identity is not visible on publications.html.",
     )
-    require(
-        publications_html.count('data-paper-record="true"') == len(public_expected),
-        "publications.html paper count differs from public master count.",
-    )
+    expected_card_statuses = {
+        f"papers/{item['slug']}.html": publication_card_status(item) for item in public_json
+    }
+    cards = re.findall(r'<article\b[^>]*data-paper-record="true"[^>]*>(.*?)</article>',
+                       publications_html, re.S)
+    for card in cards:
+        card_url = single_html_url(card, r'<div class="pub-title"><a href="([^"]+)">',
+                                   "Publication card paper URL")
+        require(card_url in expected_card_statuses, f"Unexpected or duplicate publication card: {card_url}.")
+        expected_badge = expected_card_statuses.pop(card_url)
+        require(
+            element_texts(card, "span", {"class": "pub-status"}) == [expected_badge],
+            f"Publication card status mismatch: {card_url}.",
+        )
+    require(not expected_card_statuses, "publications.html is missing publication cards.")
     publication_title_regions = element_texts(
         publications_html, "div", {"class": "pub-title"}
     )
