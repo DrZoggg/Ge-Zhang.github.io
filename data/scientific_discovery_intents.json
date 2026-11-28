@@ -408,6 +408,30 @@
       "url": "https://europepmc.org/articles/PMC13741617",
       "year": 2026,
       "locator": "Methods, Data description and Model development; Table 2; Supplementary R Markdown, nested resampling. The study extracted structured physical findings from physician notes for RA versus non-RA classification in 571 patients with confirmed systemic autoimmune rheumatic disease. The inner folds selected models and thresholds, and the outer test predictions evaluated performance and calibration."
+    },
+    {
+      "id": "robotic-proctectomy-rap-original-2024",
+      "title": "Artificial Intelligence Hybrid Survival Assessment System for Robot-Assisted Proctectomy: A Retrospective Cohort Study",
+      "doi": "10.1200/po.24.00089",
+      "url": "https://doi.org/10.1200/po.24.00089",
+      "year": 2024,
+      "locator": "Abstract: Methods; Methods: Data Sources and Study Population; Results: Outcome and Treatment of Missing Values; Results: Extension to External Cohort From the RAP-AIscore; Fig. 5A-J"
+    },
+    {
+      "id": "dcm-plasma-exosomal-circrna-original-2024",
+      "title": "Differential Expression Spectrum of circRNA in Plasma Exosomes in Dilated Cardiomyopathy With Heart Failure",
+      "doi": "10.1111/jcmm.70258",
+      "url": "https://doi.org/10.1111/jcmm.70258",
+      "year": 2024,
+      "locator": "Methods 2.1 and 2.7; Fig. 1A; Results 3.7; Methods 2.9; Results 3.7; Fig. 5"
+    },
+    {
+      "id": "dcm-plasma-exosomal-mirna-original-2023",
+      "title": "Differential expression profiles of plasma exosomal microRNAs in dilated cardiomyopathy with chronic heart failure",
+      "doi": "10.1111/jcmm.17789",
+      "url": "https://doi.org/10.1111/jcmm.17789",
+      "year": 2023,
+      "locator": "Methods 2.1, 2.8 and 2.9; Results 3.10; Fig. 6; Methods 2.9, 2.13 and 2.14; Results 3.10; Fig. 6"
     }
   ],
   "intents": [
@@ -772,9 +796,15 @@
           "work_refs": [
             {
               "work_id": "doi-10-2147-jir-s495784",
-              "question_ids": ["doi-10-2147-jir-s495784--qa-8"],
+              "question_ids": [
+                "doi-10-2147-jir-s495784--qa-8"
+              ],
               "preview_question_id": "doi-10-2147-jir-s495784--qa-8",
-              "preview_finding_ids": ["KF1", "KF2", "KF3"]
+              "preview_finding_ids": [
+                "KF1",
+                "KF2",
+                "KF3"
+              ]
             }
           ]
         }
@@ -886,6 +916,41 @@
               "preview_finding_ids": [
                 "KF3"
               ]
+            }
+          ]
+        },
+        {
+          "id": "multiomics-subtypes-5",
+          "question": "How were the thyroid molecular subtypes evaluated externally?",
+          "question_zh": "甲状腺分子亚型如何接受外部评估？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1002-mdr2-70004",
+              "question_ids": [
+                "doi-10-1002-mdr2-70004--qa-1",
+                "doi-10-1002-mdr2-70004--qa-3",
+                "doi-10-1002-mdr2-70004--qa-4",
+                "doi-10-1002-mdr2-70004--qa-5"
+              ],
+              "preview_question_id": "doi-10-1002-mdr2-70004--qa-3"
+            }
+          ]
+        },
+        {
+          "id": "multiomics-subtypes-6",
+          "question": "How was a nine-gene expression-based lung adenocarcinoma survival score developed and evaluated?",
+          "question_zh": "基于九基因表达的肺腺癌生存评分是如何建立并接受评估的？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1111-jcmm-18408",
+              "question_ids": [
+                "doi-10-1111-jcmm-18408--qa-1",
+                "doi-10-1111-jcmm-18408--qa-2",
+                "doi-10-1111-jcmm-18408--qa-3",
+                "doi-10-1111-jcmm-18408--qa-4",
+                "doi-10-1111-jcmm-18408--qa-5"
+              ],
+              "preview_question_id": "doi-10-1111-jcmm-18408--qa-2"
             }
           ]
         }
@@ -1230,9 +1295,17 @@
           "work_refs": [
             {
               "work_id": "doi-10-1038-s41598-025-98859-3",
-              "question_ids": ["doi-10-1038-s41598-025-98859-3--qa-1", "doi-10-1038-s41598-025-98859-3--qa-2", "doi-10-1038-s41598-025-98859-3--qa-3"],
+              "question_ids": [
+                "doi-10-1038-s41598-025-98859-3--qa-1",
+                "doi-10-1038-s41598-025-98859-3--qa-2",
+                "doi-10-1038-s41598-025-98859-3--qa-3"
+              ],
               "preview_question_id": "doi-10-1038-s41598-025-98859-3--qa-2",
-              "preview_finding_ids": ["KF1", "KF2", "KF3"]
+              "preview_finding_ids": [
+                "KF1",
+                "KF2",
+                "KF3"
+              ]
             }
           ]
         },
@@ -1467,9 +1540,14 @@
           "work_refs": [
             {
               "work_id": "doi-10-1371-journal-pone-0346326",
-              "question_ids": ["doi-10-1371-journal-pone-0346326--qa-1", "doi-10-1371-journal-pone-0346326--qa-2"],
+              "question_ids": [
+                "doi-10-1371-journal-pone-0346326--qa-1",
+                "doi-10-1371-journal-pone-0346326--qa-2"
+              ],
               "preview_question_id": "doi-10-1371-journal-pone-0346326--qa-2",
-              "preview_finding_ids": ["KF1"]
+              "preview_finding_ids": [
+                "KF1"
+              ]
             }
           ]
         }
@@ -1491,9 +1569,17 @@
           "work_refs": [
             {
               "work_id": "doi-10-2147-cia-s493841",
-              "question_ids": ["doi-10-2147-cia-s493841--qa-1", "doi-10-2147-cia-s493841--qa-5", "doi-10-2147-cia-s493841--qa-6"],
+              "question_ids": [
+                "doi-10-2147-cia-s493841--qa-1",
+                "doi-10-2147-cia-s493841--qa-5",
+                "doi-10-2147-cia-s493841--qa-6"
+              ],
               "preview_question_id": "doi-10-2147-cia-s493841--qa-5",
-              "preview_finding_ids": ["KF1", "KF4", "KF7"]
+              "preview_finding_ids": [
+                "KF1",
+                "KF4",
+                "KF7"
+              ]
             }
           ]
         }
@@ -1637,6 +1723,128 @@
                 "KF5",
                 "KF6"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "microbiome-cardiovascular-ai",
+      "question": "How can multimodal AI support microbiome-informed cardiovascular research?",
+      "question_zh": "多模态AI如何支持微生物组相关的心血管研究？",
+      "source_context_kind": "review",
+      "source_ids": [
+        "microbiome-cv-multimodal-review-2026"
+      ],
+      "focused_queries": [
+        {
+          "id": "microbiome-cardiovascular-ai-1",
+          "question": "What can microbiome-plus-imaging research contribute to cardiovascular endotyping?",
+          "question_zh": "微生物组与影像结合的研究能为心血管内表型研究提供什么？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1097-re9-0000000000000037",
+              "question_ids": [
+                "doi-10-1097-re9-0000000000000037--qa-1",
+                "doi-10-1097-re9-0000000000000037--qa-7",
+                "doi-10-1097-re9-0000000000000037--qa-8",
+                "doi-10-1097-re9-0000000000000037--qa-10"
+              ],
+              "preview_question_id": "doi-10-1097-re9-0000000000000037--qa-10"
+            }
+          ]
+        },
+        {
+          "id": "microbiome-cardiovascular-ai-2",
+          "question": "Which design and validation checks make a multimodal cardiovascular model convincing?",
+          "question_zh": "哪些设计和验证检查有助于评估多模态心血管模型？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1097-re9-0000000000000037",
+              "question_ids": [
+                "doi-10-1097-re9-0000000000000037--qa-6",
+                "doi-10-1097-re9-0000000000000037--qa-9",
+                "doi-10-1097-re9-0000000000000037--qa-12"
+              ],
+              "preview_question_id": "doi-10-1097-re9-0000000000000037--qa-9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robotic-rectal-surgery-prognosis",
+      "question": "How are prognostic models developed and evaluated after robot-assisted rectal surgery?",
+      "question_zh": "机器人辅助直肠手术后的预后模型如何建立和评估？",
+      "source_context_kind": "original_research",
+      "source_ids": [
+        "robotic-proctectomy-rap-original-2024"
+      ],
+      "focused_queries": [
+        {
+          "id": "robotic-rectal-surgery-prognosis-1",
+          "question": "Which cohorts and validation results were reported for postoperative survival after robot-assisted proctectomy?",
+          "question_zh": "机器人辅助直肠切除术后生存研究报告了哪些队列和验证结果？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1200-po-24-00089",
+              "question_ids": [
+                "doi-10-1200-po-24-00089--qa-1",
+                "doi-10-1200-po-24-00089--qa-2",
+                "doi-10-1200-po-24-00089--qa-3",
+                "doi-10-1200-po-24-00089--qa-5",
+                "doi-10-1200-po-24-00089--qa-6"
+              ],
+              "preview_question_id": "doi-10-1200-po-24-00089--qa-5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dcm-vesicle-rna",
+      "question": "What can plasma extracellular-vesicle RNA profiling establish in dilated cardiomyopathy with heart failure?",
+      "question_zh": "血浆细胞外囊泡RNA表达谱能为扩张型心肌病合并心衰研究提供什么证据？",
+      "source_context_kind": "original_research",
+      "source_ids": [
+        "dcm-plasma-exosomal-circrna-original-2024",
+        "dcm-plasma-exosomal-mirna-original-2023"
+      ],
+      "focused_queries": [
+        {
+          "id": "dcm-vesicle-rna-1",
+          "question": "Which discovery and external assay groups were used for plasma exosomal circRNA profiling in DCM-HF?",
+          "question_zh": "DCM合并心衰的血浆外泌体circRNA表达谱研究采用了哪些发现组和外部检测组？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1111-jcmm-70258",
+              "question_ids": [
+                "doi-10-1111-jcmm-70258--qa-1",
+                "doi-10-1111-jcmm-70258--qa-2",
+                "doi-10-1111-jcmm-70258--qa-3",
+                "doi-10-1111-jcmm-70258--qa-5",
+                "doi-10-1111-jcmm-70258--qa-6"
+              ],
+              "preview_question_id": "doi-10-1111-jcmm-70258--qa-2"
+            }
+          ]
+        },
+        {
+          "id": "dcm-vesicle-rna-2",
+          "question": "How were plasma exosomal miRNAs assessed in an external DCM comparison group?",
+          "question_zh": "血浆外泌体miRNA在外部DCM比较组中如何接受检测与比较？",
+          "work_refs": [
+            {
+              "work_id": "doi-10-1111-jcmm-17789",
+              "question_ids": [
+                "doi-10-1111-jcmm-17789--qa-1",
+                "doi-10-1111-jcmm-17789--qa-2",
+                "doi-10-1111-jcmm-17789--qa-3",
+                "doi-10-1111-jcmm-17789--qa-4",
+                "doi-10-1111-jcmm-17789--qa-5",
+                "doi-10-1111-jcmm-17789--qa-6"
+              ],
+              "preview_question_id": "doi-10-1111-jcmm-17789--qa-4"
             }
           ]
         }
