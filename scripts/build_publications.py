@@ -2778,6 +2778,18 @@ def build_site():
         with_ga4_tag(scholarly_discovery.render_questions(question_rows, config, question_discovery)),
         search_overrides.get(scholarly_discovery.QUESTION_PATH),
     )
+    from scientific_intents import TOPIC_METADATA, topic_path
+    topic_urls = []
+    for topic_id in TOPIC_METADATA:
+        route = topic_path(topic_id)
+        path = ROOT / route
+        path.parent.mkdir(parents=True, exist_ok=True)
+        url = absolute(config['site_url'], route)
+        html_changed[url] = write_public_html_if_changed(
+            path, scholarly_discovery.render_research_topic(topic_id, config, question_discovery),
+            search_overrides.get(route),
+        )
+        topic_urls.append(url)
     # Retain the existing stock reader limit as the same-schema Questions export grows.
     write_text_if_changed(
         ROOT / scholarly_discovery.QUESTION_JSON_PATH,
@@ -2843,6 +2855,7 @@ def build_site():
         *[item["paper_url"] for item in public_items],
         *research_guides.urls(ROOT),
         question_url,
+        *topic_urls,
         sample_map_url,
     ]
     lastmods = {

@@ -16,6 +16,16 @@ from urllib.parse import unquote, urlsplit
 from sync_common import ROOT
 
 CONFIG_PATH = 'data/scientific_discovery_intents.json'
+TOPIC_METADATA = {
+    'tumour-immunity-therapy': (
+        'Tumour immunity, cancer treatment and cardiac injury',
+        'Reviewed evidence on tumour immunity, cancer treatment, and cardiac injury, with study scope, original-source locators, and formal citations.',
+    ),
+    'vascular-biomaterials-engineering': (
+        'Vascular biomaterials engineering',
+        'Reviewed evidence on vascular biomaterial coatings, bioprinting, and endothelial responses, with source locators and formal citations.',
+    ),
+}
 _ID = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*')
 _DOI = re.compile(r'10\.\d{4,9}/[^\s<>"]+', re.I)
 _SOURCE_CONTEXT_LABELS = {'review': 'Review context:',
@@ -263,16 +273,32 @@ def build_intent_layer(discovery, root=ROOT):
     return {'intent_layer_version': 1, 'intent_sources': list(sources.values()), 'intents': intents}
 
 
-def render_intent_layer(discovery):
+def topic_path(intent_id):
+    return f'research/topics/{intent_id}.html'
+
+
+def render_intent_layer(discovery, *, topic_id=None):
     """Render public navigation and verbatim answers in ordinary static HTML."""
-    if not discovery.get('intents'):
+    intents = discovery.get('intents', [])
+    flat = topic_id is not None
+    if flat:
+        if topic_id not in TOPIC_METADATA:
+            raise ValueError('Unknown standalone research topic')
+        intents = [intent for intent in intents if intent['id'] == topic_id]
+        if len(intents) != 1:
+            raise ValueError('Standalone research topic is missing its reviewed intent')
+    elif not intents:
         return ''
     escape = html.escape
+
+    def block(attributes, content):
+        return content if flat else f'<div {attributes}>{content}</div>'
+
     works, questions = _lookup(discovery)
     sources = {source['id']: source for source in discovery['intent_sources']}
     sections = []
     navigation = []
-    for intent in discovery['intents']:
+    for intent in intents:
         anchor = 'intent-' + intent['id']
         topic_link = '<a href="#' + escape(anchor, quote=True) + '">' + escape(intent['question']) + '</a>'
         for query in intent['focused_queries']:
@@ -296,28 +322,30 @@ def render_intent_layer(discovery):
             context_answer = ''
             if query.get('context_answer'):
                 answer = query['context_answer']
-                context_answer = ('<div class="intent-context-answer" data-intent-context-answer="'
-                                  + escape(query['id'], quote=True) + '"><p><strong>Source-linked methodological synthesis:</strong> '
+                context_identity = 'data-intent-context-answer="' + escape(query['id'], quote=True) + '"'
+                context_answer = block('class="intent-context-answer" ' + context_identity,
+                                  ('<p ' + context_identity + '>' if flat else '<p>')
+                                  + '<strong>Source-linked methodological synthesis:</strong> '
                                   + escape(answer['answer']) + '</p><p lang="zh">' + escape(answer['answer_zh'])
                                   + '</p><p><a href="' + escape(answer['guide_url'], quote=True)
                                   + '">Evaluation checklist, study comparison and source locators</a></p>'
                                   + '<p class="intent-reviews">Sources: ' + ' · '.join('<a href="'
                                   + escape(source['url'], quote=True) + '">' + escape(source['title'])
                                   + '</a> (DOI: <a href="https://doi.org/' + escape(source['doi'], quote=True) + '">'
-                                  + escape(source['doi']) + '</a>)' for source in answer['sources']) + '</p></div>')
+                                  + escape(source['doi']) + '</a>)' for source in answer['sources']) + '</p>')
             for ref in query['work_refs']:
                 work = works[ref['work_id']]
                 original_questions = [questions[qid] for qid in ref['question_ids']]
                 preview = questions.get(ref['preview_question_id'])
                 principal = ''
                 if ref.get('finding_previews'):
-                    principal = ('<div class="intent-findings"><p><strong>Principal findings from this paper:</strong></p><ul>'
+                    principal = block('class="intent-findings"', '<p><strong>Principal findings from this paper:</strong></p><ul>'
                                  + ''.join('<li data-intent-finding="' + escape(work['id'] + '--' + finding['id'], quote=True) + '">'
                                            + '<p>' + escape(finding['claim']) + '</p>'
                                            + '<details><summary>Study context and source</summary><p>' + escape(finding['context']) + '</p>'
                                            + '<p><a href="' + escape(finding['evidence_url'], quote=True) + '">' + escape(finding['id'])
                                            + '</a> · ' + escape(finding['source_locator']) + '</p></details></li>'
-                                           for finding in ref['finding_previews']) + '</ul></div>')
+                                           for finding in ref['finding_previews']) + '</ul>')
                 answer = ''
                 if preview:
                     findings = {finding['id']: finding for finding in work['key_findings']}
@@ -330,13 +358,13 @@ def render_intent_layer(discovery):
                                         for fid in preview['evidence_refs']) + '</ul>')
                 note_context = ''
                 if ref.get('author_note_previews'):
-                    note_context = ('<div class="intent-author-context"><p><strong>Author-reviewed research context:</strong></p><ul>'
+                    note_context = block('class="intent-author-context"', '<p><strong>Author-reviewed research context:</strong></p><ul>'
                                     + ''.join('<li data-intent-note="' + escape(work['id'] + '--' + note['heading'], quote=True) + '">'
                                               + '<p><strong>' + escape(note['heading']) + ':</strong> ' + escape(note['text']) + '</p>'
                                               + '<details><summary>Original source and review</summary><p><a href="'
                                               + escape(note['source_url'], quote=True) + '">Original source</a> · '
                                               + escape(note['source_locator']) + '</p><p>Reviewed ' + escape(note['reviewed_on'])
-                                              + '</p></details></li>' for note in ref['author_note_previews']) + '</ul></div>')
+                                              + '</p></details></li>' for note in ref['author_note_previews']) + '</ul>')
                 links = ('<a data-intent-paper href="' + escape(ref['paper_url'], quote=True)
                          + '">Paper evidence</a>')
                 if ref['doi_url']:
@@ -357,23 +385,34 @@ def render_intent_layer(discovery):
                               + ('<p>' + escape('; '.join(work['authors'])) + '</p>' if work.get('authors') else '')
                               + ('<p>' + escape(profile['study_design']) + '</p>' if profile.get('study_design') else '')
                               + '</details>')
-                evidence.append('<div class="intent-evidence" data-intent-work="' + escape(work['id'], quote=True) + '">'
-                                + '<h5><a href="' + escape(ref['paper_url'], quote=True) + '">'
-                                + escape(work['title']) + '</a></h5><p class="meta">' + escape(identity) + '</p>'
-                                + principal + answer + note_context + detail + question_links + '<p class="links">' + links + '</p></div>')
+                work_marker = 'data-intent-work="' + escape(work['id'], quote=True) + '"'
+                title_link = '<a href="' + escape(ref['paper_url'], quote=True) + '">' + escape(work['title']) + '</a>'
+                heading = '<h3 ' + work_marker + '>' + title_link + '</h3>' if flat else '<h5>' + title_link + '</h5>'
+                available = ''
+                if flat and work.get('evidence_status') == 'limited':
+                    available = ('<p><strong>Full evidence pending.</strong> '
+                                 + escape(work.get('scope') or '') + '</p>')
+                evidence.append(block('class="intent-evidence" ' + work_marker, heading
+                                + '<p class="meta">' + escape(identity) + '</p>' + available
+                                + principal + answer + note_context + detail + question_links + '<p class="links">' + links + '</p>'))
             related_sources = ''
             if query.get('related_sources'):
-                related_sources = ('<div class="intent-reviews"><p><strong>Related methods evidence</strong></p>'
+                related_sources = block('class="intent-reviews"', '<p><strong>Related methods evidence</strong></p>'
                                    + '<ul class="intent-locators">' + ''.join('<li data-intent-related-source="'
                                    + escape(source['id'], quote=True) + '"><a href="'
                                    + escape(source['url'], quote=True) + '">' + escape(source['title'])
                                    + '</a> · ' + escape(source['locator']) + '</li>'
-                                   for source in query['related_sources']) + '</ul></div>')
-            queries.append('<section class="intent-focused" id="' + escape(anchor + '--' + query['id'], quote=True)
-                           + '" data-intent-focused="' + escape(query['id'], quote=True) + '"><h4>'
-                           + escape(query['question']) + '</h4><p class="intent-translation" lang="zh">'
-                           + escape(query['question_zh']) + '</p>' + context_answer + ''.join(evidence)
-                           + related_sources + '</section>')
+                                   for source in query['related_sources']) + '</ul>')
+            query_attributes = ('id="' + escape(anchor + '--' + query['id'], quote=True)
+                                + '" data-intent-focused="' + escape(query['id'], quote=True) + '"')
+            content = ('<p class="intent-translation" lang="zh">' + escape(query['question_zh']) + '</p>'
+                       + context_answer + ''.join(evidence) + related_sources)
+            title = escape(query['question'])
+            if flat:
+                queries.append('<h2 ' + query_attributes + '>' + title + '</h2>' + content)
+            else:
+                queries.append('<section class="intent-focused" ' + query_attributes + '><h4>'
+                               + title + '</h4>' + content + '</section>')
         context_label = ('Original source context:' if any(ref.get('author_note_previews')
                          for query in intent['focused_queries'] for ref in query['work_refs']) else 'Review context:')
         if 'source_context_kind' in intent:
@@ -382,10 +421,14 @@ def render_intent_layer(discovery):
             '<a href="' + escape(sources[sid]['url'], quote=True) + '">'
             + escape(sources[sid]['title']) + ' (' + str(sources[sid]['year']) + ')</a>'
             for sid in intent['source_ids']) + '</p>'
-        sections.append('<article class="intent-topic" id="' + escape(anchor, quote=True)
-                        + '" data-research-intent="' + escape(intent['id'], quote=True) + '"><h3>'
-                        + escape(intent['question']) + '</h3><p class="intent-translation" lang="zh">'
+        class_name = 'research-topic-content' if flat else 'intent-topic'
+        heading_tag = 'h1' if flat else 'h3'
+        sections.append('<article class="' + class_name + '" id="' + escape(anchor, quote=True)
+                        + '" data-research-intent="' + escape(intent['id'], quote=True) + '"><' + heading_tag + '>'
+                        + escape(intent['question']) + '</' + heading_tag + '><p class="intent-translation" lang="zh">'
                         + escape(intent['question_zh']) + '</p>' + ''.join(queries) + context + '</article>')
+    if flat:
+        return sections[0]
     return ('<section class="intent-layer" id="research-intents" data-intent-layer="1" aria-labelledby="intent-layer-title">'
             + '<h2 id="intent-layer-title">Start with a research question</h2>'
             + '<p>Explore broad research directions, focused questions and source-linked evidence from this research program. '
