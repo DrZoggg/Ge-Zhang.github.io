@@ -25,6 +25,13 @@ TOPIC_METADATA = {
         'Vascular biomaterials engineering',
         'Reviewed evidence on vascular biomaterial coatings, bioprinting, and endothelial responses, with source locators and formal citations.',
     ),
+    'microbiome-cardiovascular-ai': (
+        'Microbiome and imaging for cardiovascular risk',
+        'Reviewed narrative evidence on microbiome and imaging for cardiovascular risk research, with source locators and formal citations.',
+    ),
+}
+TOPIC_PATHS = {
+    'microbiome-cardiovascular-ai': 'research/topics/microbiome-imaging-cardiovascular-risk.html',
 }
 _ID = re.compile(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*')
 _DOI = re.compile(r'10\.\d{4,9}/[^\s<>"]+', re.I)
@@ -274,7 +281,7 @@ def build_intent_layer(discovery, root=ROOT):
 
 
 def topic_path(intent_id):
-    return f'research/topics/{intent_id}.html'
+    return TOPIC_PATHS.get(intent_id, f'research/topics/{intent_id}.html')
 
 
 def render_intent_layer(discovery, *, topic_id=None):

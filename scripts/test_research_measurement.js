@@ -20,6 +20,7 @@ const expectedTargets = [
   '/research/gist-resection-evidence.html',
   '/research/topics/tumour-immunity-therapy.html',
   '/research/topics/vascular-biomaterials-engineering.html',
+  '/research/topics/microbiome-imaging-cardiovascular-risk.html',
   map,
 ];
 assert.deepEqual([...targets].sort(), [...expectedTargets].sort());
