@@ -38,7 +38,7 @@ class StagedGuideTests(unittest.TestCase):
     def test_missing_question_answer_anchor(self):
         p=self.stage/'papers/doi-10-1038-s41698-026-01699-1.html'
         p.write_text(p.read_text(encoding='utf-8').replace('id="qa-4"','id="removed"'),encoding='utf-8')
-        with self.assertRaisesRegex(ValueError,'question anchor'):validate_staged(self.stage)
+        with self.assertRaisesRegex(ValueError,'Missing staged research anchor: .*#qa-4'):validate_staged(self.stage)
 
     def test_missing_anchor(self):
         p=self.stage/'papers/olink-dcm.html'
