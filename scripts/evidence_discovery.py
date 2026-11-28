@@ -8,6 +8,20 @@ UI_START = '<!-- EVIDENCE_UI_START -->'
 UI_END = '<!-- EVIDENCE_UI_END -->'
 
 
+def publication_card_status(publication):
+    publication_type = (publication.get("type") or "").casefold()
+    if publication_type in {"preprint", "patent"}:
+        return publication_type.capitalize()
+    status = publication["paper_geo_status"]
+    if status == "v2":
+        return "Deep GEO · Complete" if publication["deep_geo"] else "Paper GEO V2"
+    if status == "v1":
+        return "Deep GEO · V1"
+    if status == "pending":
+        return "Deep GEO · Pending"
+    return "Full evidence pending"
+
+
 def ui(markup):
     return UI_START + markup + UI_END
 
@@ -73,6 +87,7 @@ def search_corpus(root, items, contents):
     discovery_documents = []
     for p in items:
         url = p['paper_url']
+        status_label = publication_card_status(p)
         page = (root / 'papers' / (p['slug'] + '.html')).read_text(encoding='utf-8')
         visible = visible_text(page, include_navigation=True)
         def add(category, texts, anchor='', limitation=False, destination=None):
@@ -88,7 +103,8 @@ def search_corpus(root, items, contents):
             target = documents if destination is None else destination
             target.append({'id': len(target), 'result_kind': 'paper', 'doi': p.get('doi', ''), 'title': p['title'],
                               'category': category, 'text': '\n'.join(texts),
-                              'url': url + ('#' + anchor if anchor else ''), 'limitation': limitation})
+                              'url': url + ('#' + anchor if anchor else ''), 'limitation': limitation,
+                              'paper_status_label': status_label})
         add('Title', [p['title']])
         add('Journal', [p.get('journal')])
         add('DOI', [p['doi']] if p.get('doi') and p['doi'] in visible else [])
