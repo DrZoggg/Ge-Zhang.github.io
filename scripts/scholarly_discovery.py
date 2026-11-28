@@ -361,6 +361,26 @@ def question_directories(config, discovery):
                 + guides + '</ul></section>')
     if not discovery['works']:
         return sections
+    focused = []
+    for intent in discovery.get('intents', []):
+        for query in intent['focused_queries']:
+            refs = query['work_refs']
+            label = escape(query['question'])
+            if len(refs) == 1:
+                label = '<a href="' + escape(refs[0]['paper_url'], quote=True) + '">' + label + '</a>'
+            label += ' <span lang="zh">' + escape(query['question_zh']) + '</span>'
+            if len(refs) > 1:
+                label += ' · ' + ' · '.join(
+                    '<a href="' + escape(ref['paper_url'], quote=True) + '">'
+                    + escape(ref['doi'] or 'Paper evidence') + '</a>' for ref in refs
+                )
+            focused.append('<li data-early-focused-query="' + escape(query['id'], quote=True)
+                           + '">' + label + '</li>')
+    if focused:
+        sections += ('<section id="reviewed-focused-questions" aria-labelledby="reviewed-focused-questions-title">'
+                     '<h2 id="reviewed-focused-questions-title">Focused question-to-paper index</h2>'
+                     '<p>Follow paper links to the available evidence, source locators and study scope.</p><ol>'
+                     + ''.join(focused) + '</ol></section>')
     records = []
     for work in discovery['works']:
         kind = work['type']
