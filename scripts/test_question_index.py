@@ -38,6 +38,24 @@ def validate_questions():
     return len(rows)
 class QuestionTests(unittest.TestCase):
     def test_source_bound_routes(self):validate_questions()
+    def test_early_focused_index_preserves_reviewed_labels_and_every_paper_relationship(self):
+        payload=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))
+        page=(ROOT/'research/questions.html').read_text(encoding='utf-8')
+        block=re.search(r'<section id="reviewed-focused-questions"[^>]*>(.*?)</section>',page,re.S)[1]
+        self.assertIn('Focused question-to-paper index',block)
+        self.assertIn('available evidence, source locators and study scope',block)
+        entries=re.findall(r'<li data-early-focused-query="([^"]+)">(.*?)</li>',block,re.S)
+        queries=[q for intent in payload['intents'] for q in intent['focused_queries']]
+        self.assertEqual([qid for qid,_ in entries],[q['id'] for q in queries])
+        self.assertEqual(len({qid for qid,_ in entries}),len(entries))
+        for (_,entry),query in zip(entries,queries):
+            self.assertIn(html.escape(query['question']),entry)
+            self.assertIn(html.escape(query['question_zh']),entry)
+            self.assertEqual([a['href'] for a in Document(entry).links],
+                             [ref['paper_url'] for ref in query['work_refs']])
+        self.assertLess(page.index('id="focused-evidence-guides"'),page.index('id="reviewed-focused-questions"'))
+        self.assertLess(page.index('id="reviewed-focused-questions"'),page.index('id="all-paper-records"'))
+        self.assertLess(page.index('id="all-paper-records"'),page.index('id="research-intents"'))
     def test_each_card_leads_with_a_complete_work_finding_and_readable_full_scope(self):
         payload=json.loads((ROOT/'research/questions.json').read_text(encoding='utf-8'))
         page=(ROOT/'research/questions.html').read_text(encoding='utf-8')
