@@ -2337,7 +2337,23 @@ def publications_page_metadata(config):
     return page_title, meta_description
 
 
+def publication_card_status(publication):
+    publication_type = (publication.get("type") or "").casefold()
+    if publication_type in {"preprint", "patent"}:
+        return publication_type.capitalize()
+    status = publication["paper_geo_status"]
+    if status == "v2":
+        return "Deep GEO · Complete" if publication["deep_geo"] else "Paper GEO V2"
+    if status == "v1":
+        return "Deep GEO · V1"
+    if status == "pending":
+        return "Deep GEO · Pending"
+    return "Full evidence pending"
+
+
 def render_publications_page(items, config, *, citation_metadata=None):
+    formal = [item for item in items if (item.get("type") or "").casefold() not in {"preprint", "patent"}]
+    complete = sum(item["deep_geo"] and item["paper_geo_status"] == "v2" for item in formal)
     by_year = {}
     for publication in items:
         by_year.setdefault(int(publication.get("year") or 0), []).append(publication)
@@ -2355,12 +2371,11 @@ def render_publications_page(items, config, *, citation_metadata=None):
             if publication["featured"]:
                 links.append('<span class="badge badge-featured">Featured</span>')
             doi = norm_doi(publication.get("doi"))
-            if publication["deep_geo"] and not evidence_presentation.standalone_v2(doi):
-                badge = (
-                    "Deep GEO · Pending"
-                    if publication["paper_geo_status"] == "pending" else "Deep GEO"
-                )
-                links.append(f'<span class="badge">{badge}</span>')
+            status_label = publication_card_status(publication)
+            type_badge = (
+                f' <span class="badge">{html.escape(str(publication_type))}</span>'
+                if status_label not in {"Preprint", "Patent"} else ""
+            )
             if doi:
                 links.append(f'<a href="{html.escape(doi_url(doi), quote=True)}">DOI</a>')
             elif publication.get("url"):
@@ -2375,9 +2390,9 @@ def render_publications_page(items, config, *, citation_metadata=None):
                 f'data-geo-status="{publication["paper_geo_status"]}" '
                 f'data-title="{html.escape(str(title).lower(), quote=True)}" '
                 f'data-journal="{html.escape(str(journal).lower(), quote=True)}">'
-                f'<div class="pub-title"><a href="{html.escape(paper_url, quote=True)}">'
-                f'{html.escape(str(title))}</a> '
-                f'<span class="badge">{html.escape(str(publication_type))}</span></div>'
+                f'<div class="pub-heading"><div class="pub-title">'
+                f'<a href="{html.escape(paper_url, quote=True)}">{html.escape(str(title))}</a>'
+                f'{type_badge}</div><span class="badge pub-status">{status_label}</span></div>'
                 f'<div class="pub-meta">{html.escape(str(journal))} · {year or "n.d."} · '
                 f'{" · ".join(links)}</div></article>'
             )
@@ -2415,7 +2430,8 @@ def render_publications_page(items, config, *, citation_metadata=None):
 <main class="wrap"><section class="hero" style="grid-template-columns:1fr"><div>
 <div class="eyebrow">Publication record</div><h1 style="font-size:clamp(2.8rem,6vw,4.7rem)">Publications</h1>
 <p class="lead">This author-controlled publication record for {html.escape(config["researcher_name"])} ({html.escape(config["researcher_name_zh"])}) uses ORCID {html.escape(config["orcid"])} as the identity anchor. Every public record has a permanent HTML page and a machine-friendly Markdown version.</p>
-<div class="publication-count"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div></div>
+<div class="publication-count"><div class="count">{len(items)}</div><div class="meta">public works in the current database</div>
+<div class="meta">Deep GEO complete for {complete} of {len(formal)} formal publications.</div></div>
 </div></section>
 <section class="publication-search"><label for="pubSearch">Search publications and evidence</label><input id="pubSearch" class="search" placeholder="Search title or journal..." aria-label="Search publications">
 {ui('<p>Search title, journal, DOI, authors and visible scientific evidence. Text relevance is not evidence strength.</p><p id="evidenceSearchStatus" role="status" aria-live="polite">Browse the complete publication list below, or search visible evidence text.</p><div id="evidenceResults"></div>')}

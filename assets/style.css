@@ -253,6 +253,10 @@ body.publications .hero h1{font-size:clamp(2.8rem,4.5vw,4.5rem)!important;font-w
 .year-group{margin:0 0 48px;padding:0;min-width:0}
 .year{font:500 2rem/1.2 var(--display);margin:0 0 10px;padding:10px 0;color:var(--accent)}
 .pub{background:transparent;border:0;border-bottom:1px solid var(--line);padding:24px 0;margin:0;transition:background-color .2s,transform .2s}
+.publications .pub-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.publications .pub-heading .pub-title{min-width:0;overflow-wrap:anywhere}
+.publications .pub-status{flex-shrink:0;margin-left:0}
+.publications .pub[data-geo-status="none"] .pub-status{color:var(--muted)}
 .pub-title{font-size:1.16rem;font-weight:600;line-height:1.5}
 .pub-title .badge{background:transparent;color:var(--muted);font-size:.74rem;padding:0;margin-left:8px}
 .pub-meta{color:var(--muted);line-height:1.9;font-size:.9rem;margin-top:5px}
