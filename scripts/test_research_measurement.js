@@ -18,6 +18,8 @@ const expectedTargets = [
   '/research/atherosclerosis-cell-mechanisms.html',
   '/research/cancer-omics-validation.html',
   '/research/gist-resection-evidence.html',
+  '/research/topics/tumour-immunity-therapy.html',
+  '/research/topics/vascular-biomaterials-engineering.html',
   map,
 ];
 assert.deepEqual([...targets].sort(), [...expectedTargets].sort());

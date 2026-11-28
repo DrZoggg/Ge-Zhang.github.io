@@ -219,6 +219,12 @@ def validate(root=ROOT, *, search_overrides=None):
     return {'guides': 1, 'sources': 3, 'source_KFs': 11}
 
 
+def directory_links():
+    return [(URL, load()['title'])] + [
+        (comparison_url(guide), guide['title']) for guide in load_comparisons()
+    ]
+
+
 def navigation():
     data = load()
     extra = ''.join('<p><a href="' + comparison_url(d) + '">' + html.escape(d['title']) + '</a></p><p>' + html.escape(d['scope']) + '</p>' for d in load_comparisons())

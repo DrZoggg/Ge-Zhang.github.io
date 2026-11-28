@@ -37,6 +37,7 @@ from build_publications import (
 )
 from official_abstracts import abstract_text, load_official_abstracts
 from scholarly_discovery import QUESTION_PATH, load_identifiers
+from scientific_intents import TOPIC_METADATA, topic_path
 from validate_evidence import validate_evidence
 from evidence_discovery import without_evidence_ui
 import research_guides
@@ -100,10 +101,10 @@ def validate_schema_publication_date(schema, publication, citation_data, label):
             f"Schema.org first publication date changed for {label}.")
 
 
-def validate_ga4_rendering(html_files, research_html_files):
+def validate_ga4_rendering(html_files, research_html_files, topic_html=()):
     require(GA4_MEASUREMENT_ID == "G-65LDZXWWQK", "GA4 measurement ID changed.")
-    research_paths = set(research_html_files)
-    for path in [*html_files, *research_html_files]:
+    research_paths = set(research_html_files) | set(topic_html)
+    for path in [*html_files, *research_html_files, *topic_html]:
         page = path.read_text(encoding="utf-8")
         research = path in research_paths
         expected_tag = RESEARCH_GA4_TAG if research else GA4_TAG
@@ -2417,6 +2418,7 @@ def validate_site():
         [ROOT / "index.html", ROOT / "publications.html", ROOT / QUESTION_PATH, *html_files],
         [*(ROOT / search_metadata.route(url) for url in research_guides.urls(ROOT)),
          ROOT / search_metadata.SAMPLE_MAP_PATH],
+        [ROOT / topic_path(topic_id) for topic_id in TOPIC_METADATA],
     )
     require(
         len(html_files) == len(public_expected),
@@ -3199,6 +3201,7 @@ def validate_site():
         *[f"{config['site_url']}/papers/{slug}.html" for slug in slugs],
         *research_guides.urls(ROOT),
         f"{config['site_url']}/research/questions.html",
+        *(f"{config['site_url']}/{topic_path(topic_id)}" for topic_id in TOPIC_METADATA),
         f"{config['site_url']}/{search_metadata.SAMPLE_MAP_PATH}",
     ]
     require(len(sitemap_urls) == len(set(sitemap_urls)), "Sitemap contains duplicate URLs.")

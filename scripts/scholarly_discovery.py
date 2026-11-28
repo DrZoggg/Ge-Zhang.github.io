@@ -311,11 +311,78 @@ def question_records(items, contents, fields, root=ROOT):
     return rows
 
 
+def render_research_topic(topic_id, config, discovery):
+    from scientific_intents import TOPIC_METADATA, render_intent_layer, topic_path
+    from site_analytics import with_research_measurement
+    from theme_shell import with_theme_shell
+
+    title, description = TOPIC_METADATA[topic_id]
+    url = config['site_url'] + '/' + topic_path(topic_id)
+    hub = config['site_url'] + '/' + QUESTION_PATH
+    schema = json.dumps({
+        '@context': 'https://schema.org', '@type': 'CollectionPage',
+        'name': title, 'description': description, 'url': url,
+        'isPartOf': {'@type': 'CollectionPage', '@id': hub},
+    }, ensure_ascii=False).replace('</', '<\\/')
+    article = render_intent_layer(discovery, topic_id=topic_id)
+    root_url = html.escape(config['site_url'], quote=True)
+    page = f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(title)}</title>
+<meta name="description" content="{html.escape(description, quote=True)}">
+<link rel="canonical" href="{html.escape(url, quote=True)}">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/question-discovery.css">
+<script type="application/ld+json">{schema}</script></head><body class="scientific-discovery">
+<header><nav><a class="brand" href="/">{html.escape(config['researcher_name'])}</a><div class="navlinks">
+<a href="/research/questions.html">Scientific questions</a><a href="/publications.html">All publications</a></div></nav></header>
+<main class="wrap">{article}
+<p><a href="{root_url}/research/questions.html#intent-{topic_id}">This topic in the complete question index</a></p>
+</main></body></html>
+'''
+    return with_research_measurement(with_theme_shell(page))
+
+
+def question_directories(config, discovery):
+    from research_guides import directory_links
+    from scientific_intents import TOPIC_METADATA, topic_path
+
+    escape = html.escape
+    guide_entries = directory_links() + [
+        (config['site_url'] + '/' + topic_path(topic_id), metadata[0])
+        for topic_id, metadata in TOPIC_METADATA.items()
+    ]
+    guides = ''.join(
+        '<li>' + escape(title) + ' · <a href="' + escape(url, quote=True) + '">Read evidence</a></li>'
+        for url, title in guide_entries
+    )
+    sections = ('<section id="focused-evidence-guides" aria-labelledby="focused-evidence-guides-title">'
+                '<h2 id="focused-evidence-guides-title">Focused evidence guides and topics</h2><ul>'
+                + guides + '</ul></section>')
+    if not discovery['works']:
+        return sections
+    records = []
+    for work in discovery['works']:
+        kind = work['type']
+        if kind in {'Preprint', 'Patent'}:
+            availability = kind + ' record'
+        elif work['paper_geo_status'] == 'v2':
+            availability = kind + ' · Reviewed full evidence'
+        else:
+            availability = kind + ' · Full evidence pending'
+        records.append('<li><a href="' + escape(work['paper_url'], quote=True) + '">'
+                       + escape(work['title']) + '</a> <span>(' + escape(availability) + ')</span></li>')
+    return (sections + '<section id="all-paper-records" aria-labelledby="all-paper-records-title">'
+            + '<h2 id="all-paper-records-title">All ' + str(len(records)) + ' paper and work records</h2>'
+            + '<ol>' + ''.join(records) + '</ol></section>')
+
+
 def render_questions(rows, config, discovery=None):
     escape = html.escape
     discovery = discovery or {'works': [], 'all_questions': []}
     from scientific_intents import render_intent_layer
     intent_layer = render_intent_layer(discovery)
+    directories = question_directories(config, discovery)
     works = {work['id']: work for work in discovery['works']}
     by_work = {}
     for question in discovery['all_questions']:
@@ -449,7 +516,7 @@ def render_questions(rows, config, discovery=None):
 <p>Start with a broad research direction, follow a focused question, and locate the corresponding study, reviewed answer and formal citation.</p>
 <p>{counts}</p>
 <p class="discovery-shortcuts"><a href="#research-intents">Explore research themes</a> · <a href="#discovery-search-title">Search reviewed questions and papers</a> · <a href="questions.json">Machine-readable question index</a> · <a href="../publications.html">Browse all publications</a></p></section>
-{intent_layer}
+{directories}{intent_layer}
 <section class="discovery-search" aria-labelledby="discovery-search-title"><h2 id="discovery-search-title">Find a question, concept or original work</h2>
 <label for="pubSearch">Search existing paper evidence, questions, concepts, title or DOI</label>
 <input id="pubSearch" type="search" autocomplete="off" placeholder="Question, research concept or DOI" aria-describedby="evidenceSearchStatus">
@@ -499,8 +566,19 @@ def validate_generated(items, config, root=ROOT):
     if actual != {'version':1,'questions':expected, **discovery}:
         raise ValueError('Question index differs from reviewed sources')
     page = (root / QUESTION_PATH).read_text(encoding='utf-8')
-    from scientific_intents import validate_intent_html
+    from scientific_intents import TOPIC_METADATA, topic_path, validate_intent_html
+    from search_metadata import load as load_search_metadata, project
     intent_counts = validate_intent_html(page, discovery, root)
+    if page.count(question_directories(config, discovery)) != 1:
+        raise ValueError('Question-index work and guide directories differ from their source records')
+    search_overrides = load_search_metadata(root)
+    for topic_id in TOPIC_METADATA:
+        route = topic_path(topic_id)
+        expected_topic = project(render_research_topic(topic_id, config, discovery), search_overrides.get(route))
+        if (root / route).read_text(encoding='utf-8') != expected_topic:
+            raise ValueError('Standalone research topic differs from its reviewed source: ' + topic_id)
+        if page.count(f'href="{config["site_url"]}/{route}"') != 1:
+            raise ValueError('Standalone research topic requires one direct link in the question index: ' + topic_id)
     if page.count('data-question-route') != len(discovery['all_questions']):
         raise ValueError('Complete reviewed question HTML inventory differs from Gold')
     for question in discovery['all_questions']:
