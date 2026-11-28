@@ -23,7 +23,7 @@ from citation_common import (
     render_ris,
 )
 from official_abstracts import abstract_text, load_official_abstracts
-from evidence_discovery import navigation_html, search_corpus, ui, without_evidence_ui
+from evidence_discovery import navigation_html, publication_card_status, search_corpus, ui, without_evidence_ui
 import research_guides
 from site_analytics import (
     GA4_INSERTION, GA4_MEASUREMENT_ID, GA4_TAG, LEGACY_GA4_INSERTION,
@@ -2335,20 +2335,6 @@ def publications_page_metadata(config):
         "as the identity anchor."
     )
     return page_title, meta_description
-
-
-def publication_card_status(publication):
-    publication_type = (publication.get("type") or "").casefold()
-    if publication_type in {"preprint", "patent"}:
-        return publication_type.capitalize()
-    status = publication["paper_geo_status"]
-    if status == "v2":
-        return "Deep GEO · Complete" if publication["deep_geo"] else "Paper GEO V2"
-    if status == "v1":
-        return "Deep GEO · V1"
-    if status == "pending":
-        return "Deep GEO · Pending"
-    return "Full evidence pending"
 
 
 def render_publications_page(items, config, *, citation_metadata=None):

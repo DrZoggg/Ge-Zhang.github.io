@@ -9,7 +9,7 @@
   const fallbackGroups = (query) => String(query).toLowerCase().replace(/[\-/–—_]+/gu,' ').match(/[a-z0-9]+/gu)?.filter(t => !fallbackStop.has(t)).map(t => ({raw:t, terms:new Set(fallbackAliases[t] || [t])})) || [];
   const fallbackWeights = {Title:8, 'Research question':6, 'Research & review context':5, Concepts:4, 'Key finding':3.2, 'Evidence summary':3, 'Citation use case':2.5, 'Evidence scope — supports':1, Limitations:0.4, 'Limitations — does not establish':0.4};
   function createBaselineEngine(MiniSearch, data) {
-    const index = new MiniSearch({fields: ['text'], storeFields: ['title', 'doi', 'url', 'category', 'text', 'limitation', 'result_kind'],
+    const index = new MiniSearch({fields: ['text'], storeFields: ['title', 'doi', 'url', 'category', 'text', 'limitation', 'result_kind', 'paper_status_label'],
       processTerm: normalize, searchOptions: {fuzzy: false, prefix: false, combineWith: 'AND'}});
     index.addAll(data.documents);
     const exactQuestions = new Map(data.documents
@@ -314,7 +314,7 @@ function createEngine(MiniSearch,data,options={}){
  const groups=query=>[...new Set(tokens(query))].filter(raw=>process(raw)).map(raw=>({raw,key:process(raw),terms:new Set((ALIASES[raw]||[raw]).map(process).filter(Boolean))}));
  const genericTerms=new Set([...GENERIC].map(process));
  const records=data.documents.map(d=>({...d,question:d.category==='Q&A'?d.text.split('\n')[0]:'',answer:d.category==='Q&A'?d.text.split('\n').slice(1).join('\n'):'',body:d.category==='Q&A'?'':d.text}));
- const index=new MiniSearch({fields:['question','answer','title','body'],storeFields:['title','doi','url','category','text','limitation','result_kind'],tokenize:tokens,processTerm:process,searchOptions:{combineWith:'OR',fuzzy:false,prefix:false,boost:{question:3,answer:1.4,title:.45,body:1}}});
+ const index=new MiniSearch({fields:['question','answer','title','body'],storeFields:['title','doi','url','category','text','limitation','result_kind','paper_status_label'],tokenize:tokens,processTerm:process,searchOptions:{combineWith:'OR',fuzzy:false,prefix:false,boost:{question:3,answer:1.4,title:.45,body:1}}});
  index.addAll(records);
  const papers=new Map();const frequency=new Map();const topicTokens=new Set();
  records.filter(d=>d.doi&&d.result_kind==='paper').forEach(d=>{
@@ -419,7 +419,12 @@ function createEngine(MiniSearch,data,options={}){
       groups.forEach(([label, papers]) => { if (!papers.length) return; results.append(node('h2', label)); papers.forEach(hit => {
         const card = node('article', ''); card.className = 'evidence-search-result';
         const heading = node('h3', ''); const link = node('a', hit.title); link.href = hit.url; heading.append(link); card.append(heading);
-        card.append(node('p', hit.result_kind === 'guide' ? 'Guide — selected evidence comparison; not a research article.' : 'Research record'));
+        const record = node('p', hit.result_kind === 'guide' ? 'Guide — selected evidence comparison; not a research article.' : 'Research record');
+        if (hit.result_kind === 'paper' && hit.paper_status_label) {
+          const badge = node('span', hit.paper_status_label); badge.className = 'badge pub-status';
+          record.append(' ', badge);
+        }
+        card.append(record);
         card.append(node('p', (hit.limitation ? 'LIMITATION / DOES NOT ESTABLISH — not an affirmative conclusion. ' : '') + 'Matched section: ' + hit.category));
         // Preserve full matched field; do not turn a truncated denial into a positive snippet.
         const excerpt = node('p', hit.text); excerpt.className = 'evidence-search-excerpt'; card.append(excerpt);

@@ -6,7 +6,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 from urllib.parse import urlsplit
-from evidence_discovery import search_corpus, visible_text, without_evidence_ui
+from evidence_discovery import publication_card_status, search_corpus, visible_text, without_evidence_ui
 from sync_common import ROOT, is_withdrawn, load_master
 from build_publications import load_deep_content
 
@@ -20,7 +20,8 @@ def check_inline_locator_visibility():
                 '<!-- EVIDENCE_UI_START --><button>UI-only label</button><!-- EVIDENCE_UI_END -->')
         (root / 'papers/fixture.html').write_text(page, encoding='utf-8')
         publication = {'slug': 'fixture', 'paper_url': 'https://example.org/fixture.html',
-                       'title': 'Methods; Table S5', 'doi': '', 'authors': [], 'journal': ''}
+                       'title': 'Methods; Table S5', 'doi': '', 'authors': [], 'journal': '',
+                       'type': 'Article', 'paper_geo_status': 'none', 'deep_geo': False}
         with patch('research_guides.search_documents', return_value=[]), patch('research_guides.comparison_search_documents', return_value=[]):
             corpus = search_corpus(root, [publication], {})
             assert corpus['documents'][0]['text'] == publication['title']
@@ -36,6 +37,16 @@ def check_inline_locator_visibility():
 
 def check():
     check_inline_locator_visibility()
+    for kind, status, deep, expected in [
+        ('Article', 'v2', True, 'Deep GEO · Complete'),
+        ('Article', 'v2', False, 'Paper GEO V2'),
+        ('Article', 'v1', True, 'Deep GEO · V1'),
+        ('Article', 'pending', True, 'Deep GEO · Pending'),
+        ('Article', 'none', False, 'Full evidence pending'),
+        ('Preprint', 'v2', True, 'Preprint'),
+        ('Patent', 'v2', True, 'Patent'),
+    ]:
+        assert publication_card_status({'type':kind, 'paper_geo_status':status, 'deep_geo':deep}) == expected
     public = json.loads((ROOT / 'publications.json').read_text(encoding='utf-8'))
     # Scientific V2 status is independent of the 29 manually selected Deep GEO
     # members; ordinary V2 pages also contribute their full evidence to search.
@@ -45,6 +56,12 @@ def check():
     assert {d['doi'] for d in data['documents'] if d['category']=='Research & review context'} == set(content)
     assert len({d['url'].split('#')[0] for d in data['documents'] if d['result_kind']=='paper'}) == len(public)
     guides = [d for d in data['documents'] if d['result_kind']=='guide']
+    by_url = {p['paper_url']:p for p in public}
+    for d in data['documents']:
+        if d['result_kind']=='paper':
+            assert d['paper_status_label'] == publication_card_status(by_url[d['url'].split('#')[0]])
+        else:
+            assert 'paper_status_label' not in d
     from research_guides import urls as guide_urls
     assert {d['url'].split('#')[0] for d in guides} == set(guide_urls()) and all(d['doi']=='' for d in guides)
     for d in data['documents']:
